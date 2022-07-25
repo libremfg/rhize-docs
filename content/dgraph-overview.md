@@ -121,10 +121,6 @@ Dgraph database instance, there are three distinct entities:
 - [Ristretto](https://dgraph.io/ristretto) - Dgraph's custom-built cache
 - [Dgraph](https://github.com/dgraph-io/dgraph) - the methods and algorithms used to parse DQL (and now GraphQL) and act accordingly
 
-External to the core Dgraph database instance, you will find tools and communication clients to support Dgraph:
-
-- [Ratel]({{< relref "/ratel/overview" >}}) - a GUI Layer to work directly with DQL. (Ratel does not work with the graphql)
-- [DQL Clients]({{< relref "/clients" >}}) written in Go, C#, Java, JavaScript, and Python.
 
 ## Dgraph database clusters
 

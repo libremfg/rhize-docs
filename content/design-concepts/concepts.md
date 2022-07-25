@@ -226,11 +226,6 @@ merge these list of lists into a sorted list with distinct elements to form the 
 * Another network call depending upon where `pred_C21` lies, and this would again give us a list of
 list UIDs / value.
 
-If the query was run via HTTP interface `/query`, this subgraph gets converted into JSON for
-replying back to the client. If the query was run via [gRPC](https://www.grpc.io/) interface using
-the language [clients]({{< relref "clients/_index.md" >}}), the subgraph gets converted to
-[protocol buffer](https://developers.google.com/protocol-buffers/) format and then returned to client.
-
 ## Network Calls
 Compared to RAM or SSD access, network calls are slow.
 Dgraph minimizes the number of network calls required to execute queries. As explained above, the

@@ -213,26 +213,6 @@ mutation {
 }
 ```
 
-## Drop Operations
-
-The `drop all` operations can be triggered only by a [Guardian of the Galaxy](#guardians-of-the-galaxy).
-They're executed at cluster level and delete data across namespaces.
-All other `drop` operations run at namespace level and are namespace specific. For information about other drop operations, see [Alter the database]({{< relref "raw-http.md#alter-the-database" >}}). 
-
-
-{{% notice "note:" %}}
-`drop all` operation is executed at cluster level and the operation deletes data and schema across namespaces. Guardian of the namespace can trigger `drop data` operation within the namespace. The `drop data` operation deletes all the data but retains the schema only. 
-{{% /notice %}}
-
-For example:
-
-```
-curl 'http://localhost:8080/alter' \
-  -H 'X-Dgraph-AccessToken: <your-access-token>' \
-  --data-raw '{"drop_op":"DATA"}' \
-  --compressed
-
-```
 
 ## Backups
 
