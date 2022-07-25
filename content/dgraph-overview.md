@@ -254,7 +254,6 @@ node that exposes each endpoint (*Alpha* or *Zero*) is noted with each endpoint 
 
 - [`/alter`]({{< relref "/deploy/dgraph-administration" >}}) - used to alter the DQL schema (Alpha)
 - [`/health`]({{< relref "/deploy/dgraph-alpha" >}}#querying-health) - used to query the health (Alpha)
-- [`/login`]({{< relref "/enterprise-features/access-control-lists" >}}) - used to log-in an ACL user, and provides them with a JWT. (Enterprise Feature)
 - [`/state`]({{< relref "/deploy/dgraph-zero" >}}#more-about-the-state-endpoint) - used to view information about the nodes that are part of the cluster. (Zero)
 - [`/assign`]({{< relref "/deploy/dgraph-zero" >}}) - used allocate a range of UIDs and request timestamps. (Zero)
 - [`/removeNode`]({{< relref "/deploy/dgraph-zero" >}}) - used to remove a dead Zero or Alpha node from a cluster. (Zero)

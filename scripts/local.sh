@@ -33,16 +33,7 @@ run() {
   pushd "$(dirname "$0")/.." > /dev/null
   pushd themes > /dev/null
 
-  if [ ! -d "hugo-docs" ]; then
-    echo -e "$(date) $GREEN  Hugo-docs repository not found. Cloning the repo. $RESET"
-    git clone https://github.com/libremfg/hugo-docs.git
-  else
-    echo -e "$(date) $GREEN  Hugo-docs repository found. Pulling the latest version from main. $RESET"
-    pushd hugo-docs > /dev/null
-    git checkout main
-    git pull
-    popd > /dev/null
-  fi
+
   popd > /dev/null
 
   if [[ $1 == "-p" || $1 == "--preview" ]]; then

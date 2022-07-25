@@ -97,58 +97,6 @@ dgraph live \
   --schema minio://minio-server:port/<bucket-name>/<directory-with-data-files>/schema.txt
 ```
 
-## Enterprise Features
-
-### Multi-tenancy (Enterprise Feature)
-
-Since [multi-tenancy]({{< relref "multitenancy.md" >}}) requires ACL,
-when using the Live loader you must provide the login credentials using the `--creds` flag.
-By default, Live loader loads the data into the user's namespace.
-
-[Guardians of the Galaxy]({{< relref "multitenancy.md#guardians-of-the-galaxy" >}}) can load the data into multiple namespaces.
-Using `--force-namespace`, a _Guardian_ can load the data into the namespace specified in the data and schema files.
-
-{{% notice "note" %}}
-The Live loader requires that the `namespace` from the data and schema files exist before loading the data.
-{{% /notice %}}
-
-For example, to preserve the namespace while loading data first you need to create the namespace(s) and then run the live loader command:
-
-```sh
-dgraph live \
-  --schema /tmp/data/1million.schema \
-  --files /tmp/data/1million.rdf.gz --creds="user=groot;password=password;namespace=0" \
-  --force-namespace -1
-```
-
-A _Guardian of the Galaxy_ can also load data into a specific namespace. For example, to force the data loading into namespace `123`:
-
-```sh
-dgraph live \
-  --schema /tmp/data/1million.schema \
-  --files /tmp/data/1million.rdf.gz \
-  --creds="user=groot;password=password;namespace=0" \
-  --force-namespace 123
-```
-
-### Encrypted imports (Enterprise Feature)
-
-A new flag `--encryption key-file=value` is added to the Live Loader. This option is required to decrypt the encrypted export data and schema files. Once the export files are decrypted, the Live Loader streams the data to a live Alpha instance.
-Alternatively, starting with v20.07.0, the `vault_*` options can be used to decrypt the encrypted export and schema files.
-
-{{% notice "note" %}}
-If the live Alpha instance has encryption turned on, the `p` directory will be encrypted. Otherwise, the `p` directory is unencrypted.
-{{% /notice %}}
-
-For example, to load an encrypted RDF/JSON file and schema via Live Loader:
-
-```sh
-dgraph live \
- --files <path-containering-encrypted-data-files> \
- --schema <path-to-encrypted-schema> \
- --encryption key-file=<path-to-keyfile-to-decrypt-files>
-```
-
 ## Batch upserts
 
 With batch upserts in Live Loader, you can insert big data-sets (multiple files) into an existing cluster that might contain nodes that already exist in the graph.

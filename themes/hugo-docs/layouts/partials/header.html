@@ -5,29 +5,6 @@
   <script>
     // -1 urls seem to have an issue, why?
     var subPaths = {
-      "/clients/#implementation": "/clients/overview/#implementation",
-      "/clients/#transactions": "/clients/overview/#transactions",
-      "/clients/#create-the-client": "/clients/go/#create-the-client",
-      "/clients/#alter-the-database": "/clients/go/#alter-the-database",
-      "/clients/#create-a-transaction": "/clients/go/#create-a-transaction",
-      "/clients/#read-only-transactions": "/clients/go/#read-only-transactions",
-      "/clients/#run-a-query": "/clients/go/#run-a query",
-      "/clients/#run-a-mutation": "/clients/go/#run-a-mutation",
-      "/clients/#commit-the-transaction": "/clients/go/#commit-the-transaction",
-      "/clients/#complete-example": "/clients/go/#complete-example",
-      "/clients/#grpc": "/clients/javascript/#grpc",
-      "/clients/#http": "/clients/javascript#http",
-      "/clients/#create-the-client-1": "/clients/raw-http/#create-the-client-1",
-      "/clients/#alter-the-database-1": "/clients/raw-http/#alter-the-database-1",
-      "/clients/#start-a-transaction": "/clients/raw-http/#start-a-transaction",
-      "/clients/#run-a-query-1": "/clients/raw-http/#run-a-query",
-      "/clients/#run-a-mutation-1": "/clients/raw-http/#run-a-mutation",
-      "/clients/#committing-the-transaction": "/clients/raw-http/#committing-the-transaction",
-      "/clients/#aborting-the-transaction": "/clients/raw-http/#aborting-the-transaction",
-      "/clients/#running-read-only-queries": "/clients/raw-http/#running-read-only-queries",
-      "/clients/#running-best-effort-queries": "/clients/raw-http/#running-best-effort-queries",
-      "/clients/#compression-via-http": "/clients/raw-http/#compression-via-http",
-      "/clients/#run-a-query-in-json-format": "/clients/raw-http/#run-a-query-in-json-format",
       "/deploy/#install-dgraph": "/deploy/download",
       "/deploy/#docker": "/deploy/download/#docker",
       "/deploy/#automatic-download": "/deploy/download/#automatic-download",
@@ -342,12 +319,6 @@
       "/enterprise-features/#turn-on-encryption": "/enterprise-features/encryption-at-rest/#turn-on-encryption",
       "/enterprise-features/#turn-off-encryption": "/enterprise-features/encryption-at-rest/#turn-off-encryption",
       "/enterprise-features/#change-encryption-key": "/enterprise-features/encryption-at-rest/#change-encryption-key",
-      "/enterprise-features/#change-encryption-key": "/enterprise-features/encryption-at-rest/#change-encryption-key",
-      "/enterprise-features/#change-encryption-key": "/enterprise-features/encryption-at-rest/#change-encryption-key",
-      "/enterprise-features/#change-encryption-key": "/enterprise-features/encryption-at-rest/#change-encryption-key",
-      "/enterprise-features/#change-encryption-key": "/enterprise-features/encryption-at-rest/#change-encryption-key",
-      "/enterprise-features/#change-encryption-key": "/enterprise-features/encryption-at-rest/#change-encryption-key",
-      "/enterprise-features/#change-encryption-key": "/enterprise-features/encryption-at-rest/#change-encryption-key",
       "/howto/#metrics-information": "/howto/retrieving-debug-information/#metrics-information",
       "/howto/#profiling-information": "/howto/retrieving-debug-information/#profiling-information",
       "/howto/#cpu-profile": "/howto/retrieving-debug-information/#cpu-profile",
@@ -360,7 +331,6 @@
       "/howto/#key-history": "/howto/using-debug-tool/#key-history",
       "/howto/#basic-integration": "/howto/dgraph-sentry-integration/#basic-integration",
       "/howto/#data-handling": "/howto/dgraph-sentry-integration/#data-handling",
-      "/howto/#example-usage": "/howto/using-increment-tool/#example-usage",
       "/howto/#increment-tool-output": "/howto/using-increment-tool/#increment-tool-output",
       "/howto/#download-zip": "/howto/load-balancing-nginx/#download-zip",
       "/howto/#start-dgraph-cluster": "/howto/load-balancing-nginx/#start-dgraph-cluster",
@@ -437,14 +407,9 @@
     integrity="sha256-7Bdg/UdDMmHDPafpQDYZNPCEbnRP7eAvu+2hEoqRCXs=" crossorigin="anonymous"></script>
   <!-- END: Required by runnable -->
 
-  <script>
-    {{ $currentBranch:= getenv "CURRENT_BRANCH" }}
-    {{ $dgraphEndpoint:= getenv "DGRAPH_ENDPOINT" }}
 
-    window.DGRAPH_ENDPOINT = {{ if (eq $dgraphEndpoint "" ) }}"https://play.dgraph.io/query?latency=true"{{ else }} {{ $dgraphEndpoint }} {{ end }};
-  </script>
 
-  <title>{{ with .Params.seoTitle }}{{ . }}{{ else }}{{ .Page.Title | default "Dgraph Documentation" }}{{ with .Section }} - {{ $pairs := (dict "Graphql" "GraphQL" "Dql" "DQL" " api" " API") }}{{ $.Scratch.Set "sectionTitle" (. | humanize) }}{{ range $key, $val := $pairs }}{{ $.Scratch.Set "sectionTitle" (replace ($.Scratch.Get "sectionTitle") $key $val) }}{{ end }}{{ $.Scratch.Get  "sectionTitle" }}{{ end }}{{ end }}</title>
+  <title>{{ with .Params.seoTitle }}{{ . }}{{ else }}{{ .Page.Title | default "Baas Documentation" }}{{ with .Section }} - {{ $pairs := (dict "Graphql" "GraphQL" "Dql" "DQL" " api" " API") }}{{ $.Scratch.Set "sectionTitle" (. | humanize) }}{{ range $key, $val := $pairs }}{{ $.Scratch.Set "sectionTitle" (replace ($.Scratch.Get "sectionTitle") $key $val) }}{{ end }}{{ $.Scratch.Get  "sectionTitle" }}{{ end }}{{ end }}</title>
 
   <link href='{{ relURL "css/theme.css"}}?{{ md5 (readFile "themes/hugo-docs/static/css/theme.css") }}'
     rel="stylesheet" />

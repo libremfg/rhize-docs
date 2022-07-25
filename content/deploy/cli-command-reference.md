@@ -78,14 +78,6 @@ The following table maps Dgraph CLI flags from release v20.11 and earlier that
 have been replaced by superflags (and their options) in release v21.03. Any flags
 not shown here are unchanged in release v21.03. 
 
-### ACL superflag
-
-| Old flag | Old type | New superflag and options | New type | Applies to | Notes |
-|---------:|:---------|---------:|:---------|:----:|:----:|
-| | | **`--acl`** | | | [Access Control List]({{< relref "enterprise-features/access-control-lists.md" >}}) superflag |
-| `--acl_secret_file` | string | `secret-file` | string |`alpha`| File that stores the HMAC secret that is used for signing the JWT |
-| `--acl_access_ttl` | time.Duration | `access-ttl` | [string](https://github.com/dgraph-io/ristretto/blob/master/z/flags.go#L80-L98) |`alpha`| TTL for the access JWT |
-| `--acl_refresh_ttl` | time.Duration | `refresh-ttl` | [string](https://github.com/dgraph-io/ristretto/blob/master/z/flags.go#L80-L98) |`alpha`| The TTL for the refresh JWT |
 
 ### Badger superflag
 
@@ -244,9 +236,6 @@ The commands in these groups are shown in the following table:
 | Data loading     | [`bulk`](#dgraph-bulk) | Dgraph [Bulk Loader]({{< relref "deploy/fast-data-loading/bulk-loader.md" >}}) commands     |
 | Data loading     | [`live`](#dgraph-live) | Dgraph [Live Loader]({{< relref "deploy/fast-data-loading/live-loader.md" >}}) commands     |
 | Data loading     | [`restore`](#dgraph-restore) | Command used to restore backups created using Dgraph Enterprise Edition     |
-| Dgraph security  | [`acl`](#dgraph-acl) | Dgraph [Access Control List (ACL)]({{< relref "enterprise-features/access-control-lists.md" >}}) commands |
-| Dgraph security  | [`audit`](#dgraph-audit) | Decrypt audit files     |
-| Dgraph security  | [`cert`](#dgraph-cert) | Configure TLS and manage TLS certificates     |
 | Dgraph debug     | [`debug`](#dgraph-debug)    | Used to debug issues with Dgraph     |
 | Dgraph debug     | [`debuginfo`](#dgraph-debuginfo)    | Generates information about the current node for use in debugging issues with Dgraph clusters   |
 | Dgraph tools     | [`completion`](#dgraph-completion)    | Generates shell completion scripts for `bash` and `zsh`     |

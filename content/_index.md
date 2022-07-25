@@ -44,26 +44,6 @@ aliases = ["/contribute"]
       </p>
     </a>
   </div>
-
-  <div class="item">
-    <div class="icon"><i class="fa fa-building-o" aria-hidden="true"></i></div>
-    <a href="{{< relref "enterprise-features/_index.md">}}">
-      <h2>Enterprise Features</h2>
-      <p>
-        Exclusive features like ACLs, binary backups, encryption at rest, and more
-      </p>
-    </a>
-  </div>
-  <div class="item">
-    <div class="icon"><i class="lni lni-cloud" aria-hidden="true"></i></div>
-    <a href="https://dgraph.io/docs/cloud/">
-      <h2>Dgraph Cloud</h2>
-      <p>
-        Run Dgraph in the Cloud. 
-        Work with your data in a fully-managed cloud service.
-      </p>
-    </a>
-  </div>
   <div class="item">
     <div class="icon"><i class="fa fa-cog" aria-hidden="true"></i></div>
     <a href="https://dgraph.io/docs/badger">
@@ -85,71 +65,6 @@ aliases = ["/contribute"]
   </div>
 
 </div>
-
-## Contribute
-
-<section class="toc">
-  <div class="container">
-    <div class="row row-no-padding">
-      <div class="col-12 col-sm-6">
-        <div class="section-item">
-          <div class="section-name">
-            <a href="https://github.com/dgraph-io/dgraph/blob/master/CONTRIBUTING.md">
-              Contribute to Dgraph
-            </a>
-          </div>
-          <p class="section-desc">
-            Get started with contributing fixes and enhancements to Dgraph and related software.
-          </p>
-        </div>
-      </div>
-      </div>
-  </div>
-</section>
-
-## Our Community
-
-**Dgraph is made better every day by the growing community and the contributors all over the world.**
-
-<section class="toc">
-  <div class="container">
-    <div class="row row-no-padding">
-      <div class="col-12 col-sm-6">
-        <div class="section-item">
-          <div class="section-name">
-            <a href="https://discuss.dgraph.io">
-              Community
-            </a>
-          </div>
-          <p class="section-desc">
-            Discuss Dgraph on the official community.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-## Demo
-
-<section class="toc">
-  <div class="container">
-    <div class="row row-no-padding">
-      <div class="col-12 col-sm-6">
-        <div class="section-item">
-          <div class="section-name">
-            <a href="https://play.dgraph.io">
-              Dgraph Playground
-            </a>
-          </div>
-          <p class="section-desc">
-            Play with Freebase movie dataset with 21 million edges
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <style>
   .content-wrapper {

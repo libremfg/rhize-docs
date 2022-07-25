@@ -26,15 +26,6 @@ weight = 9
     </a>
   </div>
   <div class="item">
-    <div class="icon"><i class="lni lni-control-panel" aria-hidden="true"></i></div>
-    <a href="{{< relref "access-control-lists.md">}}">
-      <h2>Access Control Lists</h2>
-      <p>
-        ACL provides access protection to your data stored in Dgraph
-      </p>
-    </a>
-  </div>
-  <div class="item">
     <div class="icon"><i class="lni lni-lock-alt" aria-hidden="true"></i></div>
     <a href="{{< relref "encryption-at-rest.md">}}">
       <h2>Encryption at Rest</h2>
@@ -53,15 +44,6 @@ weight = 9
     </a>
   </div>
     <div class="item">
-    <div class="icon"><i class="lni lni-network" aria-hidden="true"></i></div>
-    <a  href="{{< relref "multitenancy.md">}}">
-      <h2>Multi-Tenancy</h2>
-      <p>
-        Multiple tenants co-exist in the same Dgraph cluster. 
-      </p>
-    </a>
-  </div>
-    <div class="item">
     <div class="icon"><i class="lni lni-files" aria-hidden="true"></i></div>
     <a  href="{{< relref "learner-nodes.md">}}">
       <h2>Learner Nodes</h2>
@@ -70,16 +52,6 @@ weight = 9
       </p>
     </a>
   </div>
-    <div class="item">
-    <div class="icon"><i class="lni lni-cog" aria-hidden="true"></i></div>
-    <a  href="{{< relref "change-data-capture.md">}}">
-      <h2>Change Data Capture</h2>
-      <p>
-        Track data changes over time. 
-      </p>
-    </a>
-  </div>  
-  
 
 </div>
 
