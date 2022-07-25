@@ -54,12 +54,6 @@ description = "Here, we explain Dgraph Query Language (DQL, formerly GraphQL+-),
   </div>
   <div class="item">
     <div class="icon"><i class="lni lni-code-alt" aria-hidden="true"></i></div>
-    <a href="{{< relref "../clients/_index.md">}}">
-      <h2>Clients</h2>
-      <p>
-        Dgraph clients in various programming languages
-      </p>
-    </a>
   </div>
   <div class="item">
     <div class="icon"><i class="lni lni-cogs" aria-hidden="true"></i></div>
