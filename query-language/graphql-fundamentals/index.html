@@ -1,0 +1,1327 @@
+<!doctype html><html lang=en class="js csstransforms3d"><head><script>var subPaths={"/clients/#implementation":"/clients/overview/#implementation","/clients/#transactions":"/clients/overview/#transactions","/clients/#create-the-client":"/clients/go/#create-the-client","/clients/#alter-the-database":"/clients/go/#alter-the-database","/clients/#create-a-transaction":"/clients/go/#create-a-transaction","/clients/#read-only-transactions":"/clients/go/#read-only-transactions","/clients/#run-a-query":"/clients/go/#run-a query","/clients/#run-a-mutation":"/clients/go/#run-a-mutation","/clients/#commit-the-transaction":"/clients/go/#commit-the-transaction","/clients/#complete-example":"/clients/go/#complete-example","/clients/#grpc":"/clients/javascript/#grpc","/clients/#http":"/clients/javascript#http","/clients/#create-the-client-1":"/clients/raw-http/#create-the-client-1","/clients/#alter-the-database-1":"/clients/raw-http/#alter-the-database-1","/clients/#start-a-transaction":"/clients/raw-http/#start-a-transaction","/clients/#run-a-query-1":"/clients/raw-http/#run-a-query","/clients/#run-a-mutation-1":"/clients/raw-http/#run-a-mutation","/clients/#committing-the-transaction":"/clients/raw-http/#committing-the-transaction","/clients/#aborting-the-transaction":"/clients/raw-http/#aborting-the-transaction","/clients/#running-read-only-queries":"/clients/raw-http/#running-read-only-queries","/clients/#running-best-effort-queries":"/clients/raw-http/#running-best-effort-queries","/clients/#compression-via-http":"/clients/raw-http/#compression-via-http","/clients/#run-a-query-in-json-format":"/clients/raw-http/#run-a-query-in-json-format","/deploy/#install-dgraph":"/deploy/download","/deploy/#docker":"/deploy/download/#docker","/deploy/#automatic-download":"/deploy/download/#automatic-download","/deploy/#manual-download-[optional]":"/deploy/download/#manual-download-[optional]","/deploy/#building-from-source":"/deploy/download/#building-from-source","/deploy/#understanding-dgraph-cluster":"/deploy/cluster-setup/#understanding-dgraph-cluster","/deploy/#sharding":"/deploy/cluster-setup/#sharding","/deploy/#shard-rebalancing":"/deploy/cluster-setup/#shard-rebalancing","/deploy/#consistent-replication":"/deploy/cluster-setup/#consistent-replication","/deploy/#types-of-ports":"/deploy/ports-usage/#types-of-ports","/deploy/#ports-used-by-different-nodes":"/deploy/ports-usage/#ports-used-by-different-nodes","/deploy/#ha-cluster-setup":"/deploy/ports-usage/#ha-cluster-setup","/deploy/#dgraph-zero":"/deploy/ports-usage/#dgraph-zero","/deploy/#dgraph-alpha":"/deploy/ports-usage/#dgraph-alpha","/deploy/#run-directly-on-the-host":"/deploy/single-host-setup/#run-directly-on-the-host","/deploy/#run-dgraph-zero":"/deploy/single-host-setup/#run-dgraph-zero","/deploy/#run-dgraph-alpha":"/deploy/single-host-setup/#run-dgraph-alpha","/deploy/#run-dgraph-ui":"/deploy/single-host-setup/#run-dgraph-ui","/deploy/#run-using-docker":"/deploy/single-host-setup/#run-using-docker","/deploy/#create-docker-network":"/deploy/single-host-setup/#create-docker-network","/deploy/#run-dgraph-zero":"/deploy/single-host-setup/#run-dgraph-zero","/deploy/#run-dgraph-alpha":"/deploy/single-host-setup/#run-dgraph-alpha","/deploy/#run-dgraph-ui":"/deploy/single-host-setup/#run-dgraph-ui","/deploy/#run-using-docker-compose-(on-single-aws-instance)":"/deploy/single-host-setup/#run-using-docker-compose-(on-single-aws-instance)","/deploy/#using-docker-swarm":"/deploy/multi-host-setup/#using-docker-swarm","/deploy/#cluster-setup-using-docker-swarm":"/deploy/multi-host-setup/#cluster-setup-using-docker-swarm","/deploy/#ha-cluster-setup-using-docker-swarm":"/deploy/multi-host-setup/#ha-cluster-setup-using-docker-swarm","/deploy/#single-server":"/deploy/kubernetes/#single-server","/deploy/#deploy-single-server":"/deploy/kubernetes/#deploy-single-server","/deploy/#verify-single-server":"/deploy/kubernetes/#verify-single-server","/deploy/#test-single-server-setup":"/deploy/kubernetes/#test-single-server-setup","/deploy/#remove-single-server-resources":"/deploy/kubernetes/#remove-single-server-resources","/deploy/#ha-cluster-setup-using-kubernetes":"/deploy/kubernetes/#ha-cluster-setup-using-kubernetes","/deploy/#validate-kubernetes-cluster-for-ha":"/deploy/kubernetes/#validate-kubernetes-cluster-for-ha","/deploy/#verify-dgraph-ha-cluster":"/deploy/kubernetes/#verify-dgraph-ha-cluster","/deploy/#test-dgraph-ha-cluster-setup":"/deploy/kubernetes/#test-dgraph-ha-cluster-setup","/deploy/#delete-dgraph-ha-cluster-resources":"/deploy/kubernetes/#delete-dgraph-ha-cluster-resources","/deploy/#using-helm-chart":"/deploy/kubernetes/#using-helm-chart","/deploy/#installing-the-chart":"/deploy/kubernetes/#installing-the-chart","/deploy/#upgrading-the-chart":"/deploy/kubernetes/#upgrading-the-chart","/deploy/#deleting-the-chart":"/deploy/kubernetes/#deleting-the-chart","/deploy/#configuration":"/deploy/kubernetes/#configuration","/deploy/#monitoring-in-kubernetes":"/deploy/kubernetes/#monitoring-in-kubernetes","/deploy/#kubernetes-storage":"/deploy/kubernetes/#kubernetes-storage","/deploy/#local-storage":"/deploy/kubernetes/#local-storage","/deploy/#non-local-persistent-disks":"/deploy/kubernetes/#non-local-persistent-disks","/deploy/#removing-a-dgraph-pod":"/deploy/kubernetes/#removing-a-dgraph-pod","/deploy/#kubernetes-and-bulk-loader":"/deploy/kubernetes/#kubernetes-and-bulk-loader","/deploy/#more-about-dgraph-alpha":"/deploy/dgraph-alpha","/deploy/#querying-health":"/deploy/dgraph-alpha/#querying-health","/deploy/#more-about-dgraph-zero":"/deploy/dgraph-zero","/deploy/#more-about-state-endpoint":"/deploy/dgraph-zero/#more-about-state-endpoint","/deploy/#query-logging":"/deploy/log-format/#query-logging","/deploy/#dgraph-certificate-management-tool":"/deploy/tls-configuration/#dgraph-certificate-management-tool","/deploy/#file-naming-conventions":"/deploy/tls-configuration/#file-naming-conventions","/deploy/#certificate-inspection":"/deploy/tls-configuration/#certificate-inspection","/deploy/#tls-options":"/deploy/tls-configuration/#tls-options","/deploy/#using-tls-without-client-authentication":"/deploy/tls-configuration/#using-tls-without-client-authentication","/deploy/#using-tls-with-client-authentication":"/deploy/tls-configuration/#using-tls-with-client-authentication","/deploy/#client-authentication-options":"/deploy/tls-configuration/#client-authentication-options","/deploy/#using-ratel-ui-with-client-authentication":"/deploy/tls-configuration/#using-ratel-ui-with-client-authentication","/deploy/#using-curl-with-client-authentication":"/deploy/tls-configuration/#using-curl-with-client-authentication","/deploy/#access-data-using-a-client":"/deploy/tls-configuration/#access-data-using-a-client","/deploy/#troubleshooting-ratel-s-client-authentication":"/deploy/tls-configuration/#troubleshooting-ratel-s-client-authentication","/deploy/#live-loader":"/deploy/fast-data-loading/#live-loader","/deploy/#encrypted-imports-via-live-loader":"/deploy/fast-data-loading/#encrypted-imports-via-live-loader","/deploy/#encrypted-rdf-json-file-and-schema-via-live-loader":"/deploy/fast-data-loading/#encrypted-rdf-json-file-and-schema-via-live-loader","/deploy/#other-live-loader-options":"/deploy/fast-data-loading/#other-live-loader-options","/deploy/#bulk-loader":"/deploy/fast-data-loading/#bulk-loader","/deploy/#encryption-at-rest-with-bulk-loader":"/deploy/fast-data-loading/#encryption-at-rest-with-bulk-loader","/deploy/#encrypting-imports-via-bulk-loader":"/deploy/fast-data-loading/#encrypting-imports-via-bulk-loader","/deploy/#other-bulk-loader-options":"/deploy/fast-data-loading/#other-bulk-loader-options","/deploy/#tuning-monitoring":"/deploy/fast-data-loading/#tuning-monitoring","/deploy/#disk-metrics":"/deploy/metrics/#disk-metrics","/deploy/#memory-metrics":"/deploy/metrics/#memory-metrics","/deploy/#activity-metrics":"/deploy/metrics/#activity-metrics","/deploy/#health-metrics":"/deploy/metrics/#health-metrics","/deploy/#go-metrics":"/deploy/metrics/#go-metrics","/deploy/#examining-traces-with-zpages":"/deploy/tracing/#examining-traces-with-zpages","/deploy/#examining-traces-with-jaeger":"/deploy/tracing/#examining-traces-with-jaeger","/deploy/#setting-up-multiple-dgraph-clusters-with-jaeger":"/deploy/tracing/#setting-up-multiple-dgraph-clusters-with-jaeger","/deploy/#whitelisting-admin-operations":"/deploy/dgraph-administration/#whitelisting-admin-operations","/deploy/#restricting-mutation-operations":"/deploy/dgraph-administration/#restricting-mutation-operations","/deploy/#securing-alter-operations":"/deploy/dgraph-administration/#securing-alter-operations","/deploy/#export-database":"/deploy/dgraph-administration/#exporting-database","/deploy/#encrypting-exports":"/deploy/dgraph-administration/#encrypting-exports","/deploy/#shutting-down-database":"/deploy/dgraph-administration/#shutting-down-database","/deploy/#deleting-database":"/deploy/dgraph-administration/#deleting-database","/deploy/#upgrading-database":"/deploy/dgraph-administration/#upgrading-database","/deploy/#upgrading-from-v1-2-2-to-v20-03-0-for-enterprise-customers":"/deploy/dgraph-administration/#upgrading-from-v1-2-2-to-v20-03-0-for-enterprise-customers","/deploy/#post-installation":"/deploy/dgraph-administration/#post-installation","/deploy/#running-oom-out-of-memory":"/deploy/troubleshooting/#running-oom-out-of-memory","/deploy/#too-many-open-files":"/deploy/troubleshooting/#too-many-open-files","/deploy/#cluster-requirements":"/deploy/production-checklist/#cluster-requirements","/deploy/#machine-requirements":"/deploy/production-checklist/#machine-requirements","/deploy/#operating-system":"/deploy/production-checklist/#operating-system","/deploy/#cpu-and-memory":"/deploy/production-checklist/#cpu-and-memory","/deploy/#disk":"/deploy/production-checklist/#disk","/deploy/#firewall-rules":"/deployproduction-checklist/#firewall-rules","/deploy/#operating-system-tuning":"/deploy/production-checklist/#operating-system-tuning","/deploy/#deployment":"/deploy/production-checklist/#deployment","/deploy/#terminology":"/deploy/production-checklist/#terminology","/deploy/#basic-setup-2-node-cluster":"/deploy/production-checklist/#basic-setup-2-node-cluster","/deploy/#ha-setup-6-node-cluster":"/deploy/production-checklist/#ha-setup-6-node-cluster","/deploy/#supplementary-services":"/deploy/production-checklist/#supplementary-services","/deploy/#see-also":"/deploy/","/query-language/#take-a-tour-https-tour-dgraph-io":"/query-language/graphql-fundamentals/#take-a-tour-https-tour-dgraph-io","/query-language/#running-examples":"/query-language/graphql-fundamentals/#running-examples","/query-language/#graphql-fundamentals":"/query-language/graphql-fundamentals/#graphql-fundamentals","/query-language/#returning-values":"/query-language/graphql-fundamentals/#returning-values","/query-language/#expanding-graph-edges":"/query-language/graphql-fundamentals/#expanding-graph-edges","/query-language/#comments":"/query-language/graphql-fundamentals/#comments","/query-language/#applying-filters":"/query-language/graphql-fundamentals/#applying-filters","/query-language/#language-support":"/query-language/graphql-fundamentals/#language-support","/query-language/#functions":"/query-language/functions","/query-language/#term-matching":"/query-language/functions/#term-matching","/query-language/#allofterms":"/query-language/functions/#allofterms","/query-language/#usage-at-root":"/query-language/functions/#usage-at-root","/query-language/#usage-as-filter":"/query-language/functions/#usage-as-filter","/query-language/#anyofterms":"/query-language/functions/#anyofterms","/query-language/#usage-at-root-1":"/query-language/functions/#usage-at-root-1","/query-language/#usage-as-filter-1":"/query-language/functions/#usage-as-filter-1","/query-language/#regular-expressions":"/query-language/functions/#regular-expressions","/query-language/#technical-details":"/query-language/functions/#technical-details","/query-language/#writing-efficient-regular-expressions-and-limitations":"/query-language/functions/#writing-efficient-regular-expressions-and-limitations","/query-language/#fuzzy-matching":"/query-language/functions/#fuzzy-matching","/query-language/#full-text-search":"/query-language/functions/#full-text-search","/query-language/#inequality":"/query-language/functions/#inequality","/query-language/#equal-to":"/query-language/functions/#equal-to","/query-language/#less-than-less-than-or-equal-to-greater-than-and-greater-than-or-equal-to":"/query-language/functions/#less-than-less-than-or-equal-to-greater-than-and-greater-than-or-equal-to","/query-language/#uid":"/query-language/functions/#uid","/query-language/#uid-in":"/query-language/functions/#uid-in","/query-language/#has":"/query-language/functions/#has","/query-language/#geolocation":"/query-language/functions/#geolocation","/query-language/#mutations":"/query-language/functions/#mutations","/query-language/#query":"/query-language/functions/#query","/query-language/#near":"/query-language/functions/#near","/query-language/#within":"/query-language/functions/#within","/query-language/#contains":"/query-language/functions/#contains","/query-language/#intersects":"/query-language/functions/#intersects","/query-language/#connecting-filters":"/query-language/connecting-filters/","/query-language/#and-or-and-not":"/query-language/connecting-filters/#and-or-and-not","/query-language/#alias":"/query-language/alias","/query-language/#pagination":"/query-language/pagination","/query-language/#first":"/query-language/pagination/#first","/query-language/#offset":"/query-language/paginatio/n#offset","/query-language/#after":"/query-language/pagination/#after","/query-language/#count":"/query-language/count","/query-language/#sorting":"/query-language/sorting","/query-language/#multiple-query-blocks":"/query-language/multiple-query-blocks","/query-language/#var-blocks":"/query-language/multiple-query-blocks/#var-blocks","/query-language/#query-variables":"/query-language/query-variables/","/query-language/#value-variables":"/query-language/value-variables/","/query-language/#variable-propagation":"/query-language/value-variables/#variable-propagation","/query-language/#aggregation":"/query-language/aggregation/","/query-language/#min":"/query-language/aggregation/#min","/query-language/#usage-at-root-2":"/query-language/aggregation/#usage-at-root-2","/query-language/#usage-at-other-levels":"/query-language/aggregation/#usage-at-other-levels","/query-language/#max":"/query-language/aggregation/#max","/query-language/#usage-at-root-3":"/query-language/aggregation/#usage-at-root-3","/query-language/#usage-at-other-levels-1":"/query-language/aggregation/#usage-at-other-levels-1","/query-language/#sum-and-avg":"/query-language/aggregation/#sum-and-avg","/query-language/#usage-at-root-4":"/query-language/aggregation/#usage-at-root-4","/query-language/#usage-at-other-levels-2":"/query-language/aggregation/#usage-at-other-levels-2","/query-language/#aggregating-aggregates":"/query-language/aggregation/#aggregating-aggregates","/query-language/#math-on-value-variables":"/query-language/math-on-value-variables/","/query-language/#groupby":"/query-language/groupby/","/query-language/#expand-predicates":"/query-language/expand-predicates/","/query-language/#filtering-during-expand":"/query-language/expand-predicates/#filtering-during-expand","/query-language/#cascade-directive":"/query-language/cascade-directive/","/query-language/#normalize-directive":"/query-language/normalize-directive/","/query-language/#ignorereflex-directive":"/query-language/ignorereflex-directive/","/query-language/#debug":"/query-language/debug/","/query-language/#schema":"/query-language/schema/","/query-language/#schema-types":"/query-language/schema/#schema-types","/query-language/#scalar-types":"/query-language/schema/#scalar-types","/query-language/#uid-type":"/query-language/schema/#uid-type","/query-language/#adding-or-modifying-schema":"/query-language/schema/#adding-or-modifying-schema","/query-language/#indexes-in-background":"/query-language/schema/#indexes-in-background","/query-language/#http-api":"/query-language/schema/#http-api","/query-language/#grpc-api":"/query-language/schema/#grpc-api","/query-language/#predicate-name-rules":"/query-language/schema/#predicate-name-rules","/query-language/#allowed-special-characters":"/query-language/schema/#allowed-special-characters","/query-language/#forbidden-special-characters":"/query-language/schema/#forbidden-special-characters","/query-language/#predicates-i18n":"/query-language/schema/#predicates-i18n","/query-language/#upsert-directive":"/query-language/schema/#upsert-directive","/query-language/#noconflict-directive":"/query-language/schema/#noconflict-directive","/query-language/#rdf-types":"/query-language/schema/#rdf-types","/query-language/#extended-types":"/query-language/schema/#extended-types","/query-language/#password-type":"/query-language/schema/#password-type","/query-language/#indexing":"/query-language/schema/#indexing","/query-language/#string-indices":"/query-language/schema/#string-indices","/query-language/#datetime-indices":"/query-language/schema/#datetime-indices","/query-language/#sortable-indices":"/query-language/schema/#sortable-indices","/query-language/#count-index":"/query-language/schema/#count-index","/query-language/#list-type":"/query-language/schema/#list-type","/query-language/#filtering-on-list":"/query-language/schema/#filtering-on-list","/query-language/#reverse-edges":"/query-language/schema/#reverse-edges","/query-language/#querying-schema":"/query-language/schema/#querying-schema","/query-language/#type-system":"/query-language/type-system/","/query-language/#type-definition":"/query-language/schema/#type-definition","/query-language/#setting-the-type-of-a-node":"/query-language/schema/#setting-the-type-of-a-node","/query-language/#using-types-during-queries":"/query-language/schema/#using-types-during-queries","/query-language/#deleting-a-type":"/query-language/schema/#deleting-a-type","/query-language/#expand-queries-and-types":"/query-language/schema/#expand-queries-and-types","/query-language/#facets-edge-attributes":"/query-language/facets/","/query-language/#facets-on-scalar-predicates":"/query-language/facets/#facets-on-scalar-predicates","/query-language/#facets-i18n":"/query-language/facets/#facets-i18n","/query-language/#alias-with-facets":"/query-language/facets/#alias-with-facets","/query-language/#facets-on-uid-predicates":"/query-language/facets/#facets-on-uid-predicates","/query-language/#filtering-on-facets":"/query-language/facets/#filtering-on-facets","/query-language/#sorting-using-facets":"/query-language/facets/#sorting-using-facets","/query-language/#assigning-facet-values-to-a-variable":"/query-language/facets/#assigning-facet-values-to-a-variable","/query-language/#facets-and-variable-propagation":"/query-language/facets/#facets-and-variable-propagation","/query-language/#facets-and-aggregation":"/query-language/facets/#facets-and-aggregation","/query-language/#k-shortest-path-queries":"/query-language/k-shortest-path-queries/","/query-language/#recurse-query":"/query-language/recurse-query/","/query-language/#fragments":"/query-language/fragments/","/query-language/#graphql-variables":"/query-language/graphql-variables/","/query-language/#indexing-with-custom-tokenizers":"/query-language/indexing-custom-tokenizers/","/query-language/#caveats":"/query-language/indexing-custom-tokenizers/#caveats","/query-language/#implementing-a-plugin":"/query-language/indexing-custom-tokenizers/#implementing-a-plugin","/query-language/#building-the-plugin":"/query-language/indexing-custom-tokenizers/#building-the-plugin","/query-language/#running-dgraph-with-plugins":"/query-language/indexing-custom-tokenizers/#running-dgraph-with-plugins","/query-language/#adding-the-index-to-the-schema":"/query-language/indexing-custom-tokenizers/#adding-the-index-to-the-schema","/query-language/#using-the-index-in-queries":"/query-language/indexing-custom-tokenizers/#using-the-index-in-queries","/query-language/#examples":"/query-language/indexing-custom-tokenizers/#examples","/query-language/#unicode-characters":"/query-language/indexing-custom-tokenizers/#unicode-characters","/query-language/#cidr-range":"/query-language/indexing-custom-tokenizers/#cidr-range","/query-language/#anagram":"/query-language/indexing-custom-tokenizers/#anagram","/query-language/#integer-prime-factors":"/query-language/indexing-custom-tokenizers/#integer-prime-factors","/design-concepts/#can-we-do-pre-writes-only-on-leaders":"/design-concepts/transactions-faq/","/design-concepts/#edges":"/design-concepts/concepts/#edges","/design-concepts/#posting-list":"/design-concepts/concepts/#posting-list","/design-concepts/#badger":"/design-concepts/concepts/#badger","/design-concepts/#group":"/design-concepts/concepts/#group","/design-concepts/#replication-and-server-failure":"/design-concepts/concepts/#replication-and-server-failure","/design-concepts/#new-server-and-discovery":"/design-concepts/concepts/#new-server-and-discovery","/design-concepts/#write-ahead-logs":"/design-concepts/concepts/#write-ahead-logs","/design-concepts/#mutations":"/design-concepts/concepts/#mutations","/design-concepts/#queries":"/design-concepts/concepts/#queries","/design-concepts/#network-calls":"/design-concepts/concepts/#network-calls","/design-concepts/#worker":"/design-concepts/concepts/#worker","/design-concepts/#worker-pool":"/design-concepts/concepts/#worker-pool","/design-concepts/#protocol-buffers":"/design-concepts/concepts/#protocol-buffers","/design-concepts/#sql-nosql":"/design-concepts/minimizing-network-calls/#sql-nosql","/design-concepts/#dgraph":"/design-concepts/minimizing-network-calls/#dgraph","/design-concepts/#term":"/design-concepts/raft/#dgraph","/design-concepts/#server-states":"/design-concepts/raft/#server-states","/design-concepts/#communication":"/design-concepts/raft/#communication","/design-concepts/#log-entries":"/design-concepts/raft/#log-entries","/design-concepts/#voting":"/design-concepts/raft/#voting","/design-concepts/#cluster-membership":"/design-concepts/raft/#cluster-membership","/design-concepts/#log-compaction":"/design-concepts/raft/#log-compaction","/design-concepts/#clients":"/design-concepts/raft/#clients","/design-concepts/#linearizable-semantics":"/design-concepts/raft/#linearizable-semantics","/design-concepts/#read-only-queries":"/design-concepts/raft/#read-only-queries","/mutations/#deletion-of-non-list-predicates":"/mutations/delete/#deletion-of-non-list-predicates","/mutations/#setting-literal-values":"/mutations/json-mutation-format/#setting-literal-values","/mutations/#language-support":"/mutations/json-mutation-format/#language-support","/mutations/#geolocation-support":"/mutations/json-mutation-format/#geolocation-support","/mutations/#referencing-existing-nodes":"/mutations/json-mutation-format/#referencing-existing-nodes","/mutations/#edges-between-nodes":"/mutations/json-mutation-format/#edges-between-nodes","/mutations/#deleting-literal-values":"/mutations/json-mutation-format/#deleting-literal-values","/mutations/#deleting-edges":"/mutations/json-mutation-format/#deleting-edges","/mutations/#facets":"/mutations/json-mutation-format/#facets","/mutations/#deleting-facets":"/mutations/json-mutation-format/#deleting-facets","/mutations/#creating-a-list-with-json-and-interacting-with":"/mutations/json-mutation-format/#creating-a-list-with-json-and-interacting-with","/mutations/#facets-in-list-type-with-json":"/mutations/json-mutation-format/#facets-in-list-type-with-json","/mutations/#specifying-multiple-operations":"/mutations/json-mutation-format/#specifying-multiple-operations","/mutations/#json-syntax-using-raw-http-or-ratel-ui":"/mutations/json-mutation-format/#json-syntax-using-raw-http-or-ratel-ui","/mutations/#using-json-operations-via-curl":"/mutations/json-mutation-format/#using-json-operations-via-curl","/mutations/#uid-function":"/mutations/upsert-block/#uid-function","/mutations/#val-function":"/mutations/upsert-block/#val-function","/mutations/#example-of-uid-function":"/mutations/upsert-block/#example-of-uid-function","/mutations/#example-of-val-function":"/mutations/upsert-block/#example-of-val-function","/mutations/#bulk-delete-example":"/mutations/upsert-block/#bulk-delete-example","/mutations/#example-of-conditional-upsert":"/mutations/conditional-upsert/#example-of-conditional-upsert","/mutations/#example-of-multiple-mutation-blocks":"/mutations/conditional-upsert/#example-of-multiple-mutation-blocks","/enterprise-features/#configure-backup":"/enterprise-features/binary-backups/#configure-backup","/enterprise-features/#configure-amazon-s3-credentials":"/enterprise-features/binary-backups/#configure-amazon-s3-credentials","/enterprise-features/#configure-minio-credentials":"/enterprise-features/binary-backups/#configure-minio-credentials","/enterprise-features/#create-a-backup":"/enterprise-features/binary-backups/#create-a-backup","/enterprise-features/#backup-to-amazon-s3":"/enterprise-features/binary-backups/#backup-to-amazon-s3","/enterprise-features/#backup-to-minio":"/enterprise-features/binary-backups/#backup-to-minio","/enterprise-features/#backup-to-minio":"/enterprise-features/binary-backups/#backup-to-minio","/enterprise-features/#backup-to-google-cloud-storage-via-minio-gateway":"/enterprise-features/binary-backups/#backup-to-google-cloud-storage-via-minio-gateway","/enterprise-features/#test-using-minio-browser":"/enterprise-features/binary-backups/#test-using-minio-browser","/enterprise-features/#test-using-minio-client":"/enterprise-features/binary-backups/#test-using-minio-client","/enterprise-features/#disabling-https-for-s3-and-minio-backups":"/enterprise-features/binary-backups/#disabling-https-for-s3-and-minio-backups","/enterprise-features/#overriding-credentials":"/enterprise-features/binary-backups/#overriding-credentials","/enterprise-features/#backup-to-nfs":"/enterprise-features/binary-backups/#backup-to-nfs","/enterprise-features/#forcing-a-full-backup":"/enterprise-features/binary-backups/#forcing-a-full-backup","/enterprise-features/#encrypted-backups":"/enterprise-features/binary-backups/#encrypted-backups","/enterprise-features/#new-flag-“encrypted”-in-manifest.json":"/enterprise-features/binary-backups/#new-flag-“encrypted”-in-manifest.json","/enterprise-features/#aes-and-chaining-with-gzip":"/enterprise-features/binary-backups/#aes-and-chaining-with-gzip","/enterprise-features/#backup":"/enterprise-features/binary-backups/#backup","/enterprise-features/#restore-from-backup":"/enterprise-features/binary-backups/#restore-from-backup","/enterprise-features/#restore-from-amazon-s3":"/enterprise-features/binary-backups/#restore-from-amazon-s3","/enterprise-features/#restore-from-minio":"/enterprise-features/binary-backups/#restore-from-minio","/enterprise-features/#restore-from-local-directory-or-nfs":"/enterprise-features/binary-backups/#restore-from-local-directory-or-nfs","/enterprise-features/#restore-and-update-timestamp":"/enterprise-features/binary-backups/#restore-and-update-timestamp","/enterprise-features/#turn-on-acls":"/enterprise-features/access-control-lists/#turn-on-acls","/enterprise-features/#set-up-acl-rules":"/enterprise-features/access-control-lists/#set-up-acl-rules","/enterprise-features/#using-graphql-admin-api":"/enterprise-features/access-control-lists/#using-graphql-admin-api","/enterprise-features/#retrieve-users-and-groups-information":"/enterprise-features/access-control-lists/#retrieve-users-and-groups-information","/enterprise-features/#using-a-graphql-tool":"/enterprise-features/access-control-lists/#using-a-graphql-tool","/enterprise-features/#access-data-using-a-client":"/enterprise-features/access-control-lists/#access-data-using-a-client","/enterprise-features/#access-data-using-the-graphql-api":"/enterprise-features/access-control-lists/#access-data-using-the-graphql-api","/enterprise-features/#reset-groot-password":"/enterprise-features/access-control-lists/#reset-groot-password","/enterprise-features/#set-up-encryption":"/enterprise-features/encryption-at-rest/#set-up-encryption","/enterprise-features/#turn-on-encryption":"/enterprise-features/encryption-at-rest/#turn-on-encryption","/enterprise-features/#turn-off-encryption":"/enterprise-features/encryption-at-rest/#turn-off-encryption","/enterprise-features/#change-encryption-key":"/enterprise-features/encryption-at-rest/#change-encryption-key","/enterprise-features/#change-encryption-key":"/enterprise-features/encryption-at-rest/#change-encryption-key","/enterprise-features/#change-encryption-key":"/enterprise-features/encryption-at-rest/#change-encryption-key","/enterprise-features/#change-encryption-key":"/enterprise-features/encryption-at-rest/#change-encryption-key","/enterprise-features/#change-encryption-key":"/enterprise-features/encryption-at-rest/#change-encryption-key","/enterprise-features/#change-encryption-key":"/enterprise-features/encryption-at-rest/#change-encryption-key","/enterprise-features/#change-encryption-key":"/enterprise-features/encryption-at-rest/#change-encryption-key","/howto/#metrics-information":"/howto/retrieving-debug-information/#metrics-information","/howto/#profiling-information":"/howto/retrieving-debug-information/#profiling-information","/howto/#cpu-profile":"/howto/retrieving-debug-information/#cpu-profile","/howto/#memory-profile":"/howto/retrieving-debug-information/#memory-profile","/howto/#block-profile":"/howto/retrieving-debug-information/#block-profile","/howto/#goroutine-stack":"/howto/retrieving-debug-information/#goroutine-stack","/howto/#example-usage":"/howto/using-debug-tool/#example-usage","/howto/#debug-tool-output":"/howto/using-debug-tool/#debug-tool-output","/howto/#key-lookup":"/howto/using-debug-tool/#key-lookup","/howto/#key-history":"/howto/using-debug-tool/#key-history","/howto/#basic-integration":"/howto/dgraph-sentry-integration/#basic-integration","/howto/#data-handling":"/howto/dgraph-sentry-integration/#data-handling","/howto/#example-usage":"/howto/using-increment-tool/#example-usage","/howto/#increment-tool-output":"/howto/using-increment-tool/#increment-tool-output","/howto/#download-zip":"/howto/load-balancing-nginx/#download-zip","/howto/#start-dgraph-cluster":"/howto/load-balancing-nginx/#start-dgraph-cluster","/howto/#use-the-increment-tool-to-start-a-grpc-lb":"/howto/load-balancing-nginx/#use-the-increment-tool-to-start-a-grpc-lb","/howto/#check-logs":"/howto/load-balancing-nginx/#check-logs","/howto/#upsert-procedure":"/howto/upserts/#upsert-procedure","/howto/#upsert-block":"/howto/upserts/#upsert-block","/howto/#conflicts":"/howto/upserts/#conflicts","/howto/#schema-types-scalar-uid-and-list-uid":"/howto/migrate-dgraph-1-1/#schema-types-scalar-uid-and-list-uid","/howto/#type-system":"/howto/migrate-dgraph-1-1/#type-system","/howto/#live-loader-and-bulk-loader-command-line-flags":"/howto/migrate-dgraph-1-1/#live-loader-and-bulk-loader-command-line-flags","/howto/#http-api":"/howto/migrate-dgraph-1-1/#http-api"},urlSplit,origPath,redirectPaths=["clients","query-language","mutations","deploy","enterprise-features","howto","design-concepts"],pathSplit=document.URL.split("/");redirectPaths.includes(pathSplit[pathSplit.length-2])&&(urlSplit=pathSplit[pathSplit.length-1].split("#"),origPath="/"+pathSplit[pathSplit.length-2]+"/#"+urlSplit[1],origPath in subPaths?(loc=""+subPaths[origPath],window.location.replace(loc)):urlSplit[1]&&(loc=""+pathSplit.slice(4,pathSplit.length-1).join("/")+"/#"+urlSplit[1],window.location.replace(loc)))</script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=referrer content="no-referrer-when-downgrade"><meta name=generator content="Hugo 0.101.0"><meta name=description content="GraphQL wasn’t developed for Graph databases, but its graph-like query syntax and subgraph-shaped response make it a compelling choice for a graph database. Dgraph modified GraphQL to create DQL, a language better suited to supporting graph database operations."><link rel=canonical href=/query-language/graphql-fundamentals/><link rel=apple-touch-icon sizes=57x57 href=/images/favicons/apple-touch-icon-57x57.png><link rel=apple-touch-icon sizes=60x60 href=/images/favicons/apple-touch-icon-60x60.png><link rel=apple-touch-icon sizes=72x72 href=/images/favicons/apple-touch-icon-72x72.png><link rel=apple-touch-icon sizes=76x76 href=/images/favicons/apple-touch-icon-76x76.png><link rel=apple-touch-icon sizes=114x114 href=/images/favicons/apple-touch-icon-114x114.png><link rel=apple-touch-icon sizes=120x120 href=/images/favicons/apple-touch-icon-120x120.png><link rel=apple-touch-icon sizes=144x144 href=/images/favicons/apple-touch-icon-144x144.png><link rel=apple-touch-icon sizes=152x152 href=/images/favicons/apple-touch-icon-152x152.png><link rel=apple-touch-icon sizes=180x180 href=/images/favicons/apple-touch-icon-180x180.png><link rel=icon type=image/png href=/images/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/images/favicons/android-chrome-192x192.png sizes=192x192><link rel=icon type=image/png href=/images/favicons/favicon-194x194.png sizes=194x194><link rel=icon type=image/png href=/images/favicons/favicon-96x96.png sizes=96x96><link rel=icon type=image/png href=/images/favicons/favicon-16x16.png sizes=16x16><link rel=manifest href=/images/favicons/manifest.json><link rel=mask-icon href=/images/favicons/safari-pinned-tab.svg color=#fe2c06><link rel="shortcut icon" href=/images/favicons/favicon.ico><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js></script>
+<script async src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/go.min.js></script>
+<script async src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/java.min.js integrity="sha256-RyOs5MjQ+Ef9DQrPHp4QGr2tcNjxLh6mCkkW+sS4doU=" crossorigin=anonymous></script>
+<script src=//code.jquery.com/jquery-3.2.1.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+<script src=//cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.js integrity="sha256-x3BtPVERvw1ozPlwivuFLZoViFCeAAs1Gt6SxEedmo8=" crossorigin=anonymous></script>
+<link href=//cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.css rel=stylesheet integrity="sha256-7sZe9dsqyNZC9Mk+WPRB7nVvPPPXyorzm2QKqlgXC4k=" crossorigin=anonymous><script async src=//cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/addon/edit/closebrackets.min.js integrity="sha256-qhu2a7DSpQaammMaLw1iruxBpxmgdw8mdQaQWQUokcY=" crossorigin=anonymous></script>
+<script async src=//cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/javascript/javascript.min.js integrity="sha256-7Bdg/UdDMmHDPafpQDYZNPCEbnRP7eAvu+2hEoqRCXs=" crossorigin=anonymous></script>
+<script>window.DGRAPH_ENDPOINT="https://play.dgraph.io/query?latency=true"</script><title>DQL Fundamentals - Query language</title><link href=/css/theme.css?6a79ff0832398fa8541cbaef6b6dd556 rel=stylesheet><link href=/css/runnable.css?46648956d99faa2e057d109b9f2a52e6 rel=stylesheet><link href=/css/tabs.css?035edc32762cb7973b740e3067101ced rel=stylesheet><link href=//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css rel=stylesheet integrity=sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ crossorigin=anonymous><script src=//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js integrity=sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb crossorigin=anonymous></script>
+<script src=//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js integrity=sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn crossorigin=anonymous></script>
+<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel=stylesheet><link href=//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css rel=stylesheet integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN crossorigin=anonymous><link href=https://cdn.lineicons.com/2.0/LineIcons.css rel=stylesheet crossorigin=anonymous><link rel=stylesheet href=//cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css><script>!function(){var t,n,e=window.analytics=window.analytics||[];if(!e.initialize)if(e.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{e.invoked=!0,e.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"],e.factory=function(t){return function(){var n=Array.prototype.slice.call(arguments);return n.unshift(t),e.push(n),e}};for(t=0;t<e.methods.length;t++)n=e.methods[t],e[n]=e.factory(n);e.load=function(t,n){var o,s=document.createElement("script");s.type="text/javascript",s.async=!0,s.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(s,o),e._loadOptions=n},e._writeKey="aQlf725vSBKhpQnINiGBc6rCtFyVCiAP",e.SNIPPET_VERSION="4.13.2",e.load("aQlf725vSBKhpQnINiGBc6rCtFyVCiAP"),e.page(),document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelectorAll("a");t.forEach(t=>e.trackLink(t,"Click",{id:t.id,to:t.href,text:t.innerText}))})}}()</script></head><body><nav id=header><div class=header-left><div><a href=https://libremfg.com/features-gql class=brand><img src=/images/libre-logo.png alt=libre class=logo></a><div class=logo-tagline><span>Documentation</span></div></div><ul class=menu><li><a>Libre Baas</a></li></ul></div><div class=header-right><div style=margin-top:10px><div class="menu-search align-middle"><div class=menu-search-inner><input type=search class="form-control form-control-sm" id=algolia-doc-search placeholder="Search documentation" aria-label="Search docs" autocomplete=off></div></div></div><div><ul class=menu><li><a href=https://libremfg.com/features-gql target=_blank>Home</a></li><li><a href=https://www.libremfg.com/pricing-gql/ target=_blank>Pricing</a></li><li><a href=https://discord.gg/vtJ7JE4sha target=_blank>Community</a></li><li><a href=https://github.com/libremfg/libremfg.github.io target=_blank>GitHub</a></li></ul></div></div><a href=# id=sidebar-toggle><i class="fa fa-bars"></i></a></nav><aside id=sidebar><div class=menu-header></div><ul class=topics><li class="topic main-topic"><a href=/>Home</a></li><li class="topic main-topic"><a href=/dgraph-overview/>Dgraph Overview</a></li><li class="topic main-topic children"><a id=graphql href=#>GraphQL</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/graphql/overview/>Overview</a></li><li class="topic sub-topic"><a href=/graphql/quick-start/>Quick Start</a></li><li class="topic sub-topic"><a href=/graphql/how-dgraph-graphql-works/>How GraphQL works in Dgraph</a></li><li class="topic sub-topic"><a href=#>To-Do List App Tutorial</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/graphql/todo-app-tutorial/todo-overview/>Overview</a></li><li class="topic sub-topic"><a href=/graphql/todo-app-tutorial/todo-schema-design/>Schema Design</a></li><li class="topic sub-topic"><a href=/graphql/todo-app-tutorial/todo-ui/>Creating a Basic UI</a></li><li class="topic sub-topic"><a href=/graphql/todo-app-tutorial/todo-auth-rules/>Authorization Rules</a></li><li class="topic sub-topic"><a href=/graphql/todo-app-tutorial/todo-auth0-jwt/>Using Auth0</a></li><li class="topic sub-topic"><a href=/graphql/todo-app-tutorial/todo-firebase-jwt/>Using Firebase Authentication</a></li><li class="topic sub-topic"><a href=/graphql/todo-app-tutorial/deploy/>Deploying on Dgraph Cloud</a></li></ul></li><li class="topic sub-topic"><a href=#>Authorization</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/graphql/authorization/authorization-overview/>Overview</a></li><li class="topic sub-topic"><a href=/graphql/authorization/directive/>The @auth Directive</a></li><li class="topic sub-topic"><a href=/graphql/authorization/mutations/>Mutations</a></li></ul></li><li class="topic sub-topic"><a href=#>API</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/graphql/api/api-overview/>Overview</a></li><li class="topic sub-topic"><a href=/graphql/api/requests/>Requests and Responses</a></li><li class="topic sub-topic"><a href=/graphql/api/variables/>GraphQL Variables</a></li><li class="topic sub-topic"><a href=/graphql/api/fragments/>GraphQL Fragments</a></li><li class="topic sub-topic"><a href=/graphql/api/multiples/>Multiple GraphQL Operations in a Request</a></li><li class="topic sub-topic"><a href=/graphql/api/errors/>GraphQL Errors</a></li></ul></li><li class="topic sub-topic"><a href=#>Schema</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/graphql/schema/schema-overview/>Overview</a></li><li class="topic sub-topic"><a href=/graphql/schema/reserved/>Reserved Names</a></li><li class="topic sub-topic"><a href=/graphql/schema/migration/>Schema Migration</a></li><li class="topic sub-topic"><a href=/graphql/schema/types/>Types</a></li><li class="topic sub-topic"><a href=/graphql/schema/ids/>IDs</a></li><li class="topic sub-topic"><a href=/graphql/schema/graph-links/>Links in the Graph</a></li><li class="topic sub-topic"><a href=/graphql/schema/search/>Search and Filtering</a></li><li class="topic sub-topic"><a href=/graphql/schema/generate/>The @generate Directive</a></li><li class="topic sub-topic"><a href=/graphql/schema/documentation/>Documentation and Comments</a></li><li class="topic sub-topic"><a href=/graphql/schema/deprecated/>Deprecation</a></li><li class="topic sub-topic"><a href=/graphql/schema/dgraph-schema/>Dgraph Schema Fragment</a></li></ul></li><li class="topic sub-topic"><a href=#>Queries</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/graphql/queries/queries-overview/>Overview</a></li><li class="topic sub-topic"><a href=/graphql/queries/search-filtering/>Search and Filtering</a></li><li class="topic sub-topic"><a href=/graphql/queries/aggregate/>Aggregate Queries</a></li><li class="topic sub-topic"><a href=/graphql/queries/persistent-queries/>Persistent Queries</a></li><li class="topic sub-topic"><a href=/graphql/queries/and-or-not/>And, Or and Not</a></li><li class="topic sub-topic"><a href=/graphql/queries/cached-results/>Cached Results</a></li><li class="topic sub-topic"><a href=/graphql/queries/order-page/>Order and Pagination</a></li><li class="topic sub-topic"><a href=/graphql/queries/cascade/>@cascade Directive</a></li><li class="topic sub-topic"><a href=/graphql/queries/skip-include/>@skip and @include Directives</a></li></ul></li><li class="topic sub-topic"><a href=#>Mutations</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/graphql/mutations/mutations-overview/>Overview</a></li><li class="topic sub-topic"><a href=/graphql/mutations/add/>Add</a></li><li class="topic sub-topic"><a href=/graphql/mutations/upsert/>Upsert</a></li><li class="topic sub-topic"><a href=/graphql/mutations/update/>Update</a></li><li class="topic sub-topic"><a href=/graphql/mutations/delete/>Delete</a></li><li class="topic sub-topic"><a href=/graphql/mutations/deep/>Deep</a></li></ul></li><li class="topic sub-topic"><a href=/graphql/subscriptions/>Subscriptions</a></li><li class="topic sub-topic"><a href=#>Custom Resolvers</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/graphql/custom/custom-overview/>Overview</a></li><li class="topic sub-topic"><a href=/graphql/custom/directive/>The @custom Directive</a></li><li class="topic sub-topic"><a href=/graphql/custom/query/>Custom Queries</a></li><li class="topic sub-topic"><a href=/graphql/custom/mutation/>Custom Mutations</a></li><li class="topic sub-topic"><a href=/graphql/custom/field/>Custom Fields</a></li><li class="topic sub-topic"><a href=/graphql/custom/dql/>Custom DQL</a></li></ul></li><li class="topic sub-topic"><a href=#>Lambda Resolvers</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/graphql/lambda/overview/>Overview</a></li><li class="topic sub-topic"><a href=/graphql/lambda/field/>Lambda Fields</a></li><li class="topic sub-topic"><a href=/graphql/lambda/query/>Lambda Queries</a></li><li class="topic sub-topic"><a href=/graphql/lambda/mutation/>Lambda Mutations</a></li><li class="topic sub-topic"><a href=/graphql/lambda/webhook/>Lambda Webhooks</a></li><li class="topic sub-topic"><a href=/graphql/lambda/server/>Lambda Server</a></li></ul></li><li class="topic sub-topic"><a href=/graphql/directives/>Directives</a></li><li class="topic sub-topic"><a href=/graphql/admin/>Administrative API</a></li><li class="topic sub-topic"><a href=/graphql/dgraph/>GraphQL on Existing Dgraph</a></li><li class="topic sub-topic"><a href=/graphql/federation/>Apollo Federation</a></li></ul></li><li class="topic main-topic children active"><a id=dql href=#>DQL</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/get-started/>Get Started</a></li><li class="topic sub-topic"><a href=/tutorials/>Tutorials</a></li><li class="topic sub-topic active"><a href=#>Query Language Reference</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic active"><a href=/query-language/graphql-fundamentals/>DQL Fundamentals</a></li><li class="topic sub-topic"><a href=/query-language/functions/>Functions</a></li><li class="topic sub-topic"><a href=/query-language/connecting-filters/>Connecting Filters</a></li><li class="topic sub-topic"><a href=/query-language/alias/>Aliases</a></li><li class="topic sub-topic"><a href=/query-language/pagination/>Pagination in DQL</a></li><li class="topic sub-topic"><a href=/query-language/count/>Count</a></li><li class="topic sub-topic"><a href=/query-language/sorting/>Sorting</a></li><li class="topic sub-topic"><a href=/query-language/multiple-query-blocks/>Multiple Query Blocks</a></li><li class="topic sub-topic"><a href=/query-language/query-variables/>Query Variables</a></li><li class="topic sub-topic"><a href=/query-language/value-variables/>Value Variables</a></li><li class="topic sub-topic"><a href=/query-language/aggregation/>Aggregation</a></li><li class="topic sub-topic"><a href=/query-language/math-on-value-variables/>Math on Value Variables</a></li><li class="topic sub-topic"><a href=/query-language/groupby/>GroupBy</a></li><li class="topic sub-topic"><a href=/query-language/expand-predicates/>Expand Predicates</a></li><li class="topic sub-topic"><a href=/query-language/cascade-directive/>Cascade Directive</a></li><li class="topic sub-topic"><a href=/query-language/normalize-directive/>@normalize Directive</a></li><li class="topic sub-topic"><a href=/query-language/ignorereflex-directive/>@ignorereflex Directive</a></li><li class="topic sub-topic"><a href=/query-language/debug/>Debug</a></li><li class="topic sub-topic"><a href=/query-language/schema/>Schemas in DQL</a></li><li class="topic sub-topic"><a href=/query-language/type-system/>Type System</a></li><li class="topic sub-topic"><a href=/query-language/facets/>Facets and Edge Attributes</a></li><li class="topic sub-topic"><a href=/query-language/kshortest-path-quries/>Shortest Path Queries</a></li><li class="topic sub-topic"><a href=/query-language/recurse-query/>Recurse Query</a></li><li class="topic sub-topic"><a href=/query-language/fragments/>Fragments</a></li><li class="topic sub-topic"><a href=/query-language/graphql-variables/>GraphQL Variables</a></li><li class="topic sub-topic"><a href=/query-language/indexing-custom-tokenizers/>Indexing with Custom Tokenizers</a></li></ul></li><li class="topic sub-topic"><a href=/tips/>Tips and Tricks</a></li><li class="topic sub-topic"><a href=#>Mutations</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/mutations/triples/>Triples</a></li><li class="topic sub-topic"><a href=/mutations/blank-nodes/>Blank Nodes and UIDs</a></li><li class="topic sub-topic"><a href=/mutations/external-ids/>External IDs</a></li><li class="topic sub-topic"><a href=/mutations/external-ids-upsert-block/>External IDs and Upsert Block</a></li><li class="topic sub-topic"><a href=/mutations/language-rdf-types/>Language and RDF Types</a></li><li class="topic sub-topic"><a href=/mutations/batch-mutations/>Batch Mutations</a></li><li class="topic sub-topic"><a href=/mutations/delete/>Delete</a></li><li class="topic sub-topic"><a href=/mutations/facets-in-list-type-with-rdf/>Facet Lists in RDF</a></li><li class="topic sub-topic"><a href=/mutations/mutations-using-curl/>Mutations Using cURL</a></li><li class="topic sub-topic"><a href=/mutations/json-mutation-format/>JSON Mutation Format</a></li><li class="topic sub-topic"><a href=/mutations/upsert-block/>Upsert Blocks</a></li><li class="topic sub-topic"><a href=/mutations/conditional-upsert/>Conditional Upsert</a></li><li class="topic sub-topic"><a href=/mutations/reverse-edges/>Reverse Edges</a></li></ul></li></ul></li><li class="topic main-topic children"><a id=clients href=#>Clients</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/clients/overview/>Overview</a></li><li class="topic sub-topic"><a href=/clients/go/>Go</a></li><li class="topic sub-topic"><a href=/clients/csharp/>C#</a></li><li class="topic sub-topic"><a href=/clients/java/>Java</a></li><li class="topic sub-topic"><a href=#>JavaScript</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/clients/javascript/grpc/>gRPC Client</a></li><li class="topic sub-topic"><a href=/clients/javascript/http/>HTTP Client</a></li></ul></li><li class="topic sub-topic"><a href=/clients/python/>Python</a></li><li class="topic sub-topic"><a href=/clients/unofficial-clients/>Unofficial Dgraph Clients</a></li><li class="topic sub-topic"><a href=/clients/raw-http/>Raw HTTP</a></li></ul></li><li class="topic main-topic children"><a id=ratel-ui href=#>Ratel UI</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/ratel/overview/>Ratel Overview</a></li><li class="topic sub-topic"><a href=/ratel/connection/>Connection</a></li><li class="topic sub-topic"><a href=/ratel/console/>Console</a></li><li class="topic sub-topic"><a href=/ratel/schema/>Schema</a></li><li class="topic sub-topic"><a href=/ratel/cluster/>Cluster</a></li><li class="topic sub-topic"><a href=/ratel/backups/>Backups</a></li></ul></li><li class="topic main-topic children"><a id=deploy-and-manage href=#>Deploy and Manage</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/deploy/overview/>Deployment and Management Overview</a></li><li class="topic sub-topic"><a href=/deploy/download/>Download Dgraph</a></li><li class="topic sub-topic"><a href=/deploy/config/>Configuration</a></li><li class="topic sub-topic"><a href=/deploy/dgraph-zero/>More about Dgraph Zero</a></li><li class="topic sub-topic"><a href=/deploy/dgraph-alpha/>More about Dgraph Alpha</a></li><li class="topic sub-topic"><a href=/deploy/single-host-setup/>Single Host Setup</a></li><li class="topic sub-topic"><a href=/deploy/multi-host-setup/>Multi-Host Setup</a></li><li class="topic sub-topic"><a href=/deploy/kubernetes/>Using Kubernetes</a></li><li class="topic sub-topic"><a href=/deploy/cluster-setup/>Cluster Setup</a></li><li class="topic sub-topic"><a href=/deploy/cluster-checklist/>Cluster Checklist</a></li><li class="topic sub-topic"><a href=/deploy/production-checklist/>Production Checklist</a></li><li class="topic sub-topic"><a href=#>Administration</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/deploy/dgraph-administration/>Dgraph Administration</a></li><li class="topic sub-topic"><a href=/deploy/log-format/>Logging</a></li><li class="topic sub-topic"><a href=/deploy/ludicrous-mode/>Ludicrous Mode</a></li><li class="topic sub-topic"><a href=/deploy/monitoring/>Monitoring</a></li><li class="topic sub-topic"><a href=/deploy/metrics/>Metrics</a></li><li class="topic sub-topic"><a href=/deploy/tracing/>Tracing</a></li><li class="topic sub-topic"><a href=/deploy/data-compression/>Data compression on Disk</a></li></ul></li><li class="topic sub-topic"><a href=#>Fast Data Loading</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/deploy/fast-data-loading/overview/>Overview</a></li><li class="topic sub-topic"><a href=/deploy/fast-data-loading/bulk-loader/>Bulk Loader</a></li><li class="topic sub-topic"><a href=/deploy/fast-data-loading/live-loader/>Live Loader</a></li></ul></li><li class="topic sub-topic"><a href=#>Security</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/deploy/ports-usage/>Ports Usage</a></li><li class="topic sub-topic"><a href=/deploy/tls-configuration/>TLS Configuration</a></li></ul></li><li class="topic sub-topic"><a href=/deploy/decrypt/>Data Decryption</a></li><li class="topic sub-topic"><a href=/deploy/cli-command-reference/>Dgraph CLI Reference</a></li><li class="topic sub-topic"><a href=/deploy/troubleshooting/>Troubleshooting</a></li></ul></li><li class="topic main-topic children"><a id=enterprise-features href=#>Enterprise Features</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/enterprise-features/access-control-lists/>Access Control Lists</a></li><li class="topic sub-topic"><a href=/enterprise-features/audit-logs/>Audit Logging</a></li><li class="topic sub-topic"><a href=/enterprise-features/lsbackup/>Backup List Tool</a></li><li class="topic sub-topic"><a href=/enterprise-features/binary-backups/>Binary Backups</a></li><li class="topic sub-topic"><a href=/enterprise-features/change-data-capture/>Change Data Capture</a></li><li class="topic sub-topic"><a href=/enterprise-features/encryption-at-rest/>Encryption at Rest</a></li><li class="topic sub-topic"><a href=/enterprise-features/learner-nodes/>Learner Nodes</a></li><li class="topic sub-topic"><a href=/enterprise-features/license/>License</a></li><li class="topic sub-topic"><a href=/enterprise-features/multitenancy/>Multi-Tenancy</a></li></ul></li><li class="topic main-topic children"><a id=migration href=#>Migration</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/migration/loading-csv-data/>Loading CSV Data</a></li><li class="topic sub-topic"><a href=/migration/migrate-tool/>Migration Tool</a></li><li class="topic sub-topic"><a href=/migration/migrate-dgraph-1-1/>Migrate from Dgraph v1.0</a></li><li class="topic sub-topic"><a href=/migration/dgraph-compared-to-other-databases/>Dgraph Compared to Other Databases</a></li></ul></li><li class="topic main-topic"><a href=/faq/>FAQ</a></li><li class="topic main-topic children"><a id=how-to-guides href=#>How To Guides</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/howto/retrieving-debug-information/>Retrieving Debug Information</a></li><li class="topic sub-topic"><a href=/howto/completion/>Shell Completion</a></li><li class="topic sub-topic"><a href=/howto/using-debug-tool/>Using the Debug Tool</a></li><li class="topic sub-topic"><a href=/howto/dgraph-sentry-integration/>Using the Dgraph Sentry Integration</a></li><li class="topic sub-topic"><a href=/howto/using-increment-tool/>Using the Increment Tool</a></li><li class="topic sub-topic"><a href=/howto/giving-nodes-type/>Giving Nodes a Type</a></li><li class="topic sub-topic"><a href=/howto/login-system/>A Simple Login System</a></li><li class="topic sub-topic"><a href=/howto/load-balancing-nginx/>Load Balancing Queries with NGINX</a></li><li class="topic sub-topic"><a href=/howto/upserts/>Upserts</a></li><li class="topic sub-topic"><a href=/howto/jepsen-tests/>Run Jepsen Tests</a></li><li class="topic sub-topic"><a href=/howto/concurrent-modification-java-multithreaded/>Concurrent mutations and conflicts</a></li><li class="topic sub-topic"><a href=/howto/lambda-webhooks-example/>Lambda Webhooks Example</a></li></ul></li><li class="topic main-topic children"><a id=design-concepts href=#>Design Concepts</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=/design-concepts/transactions-faq/>Transactions: FAQ</a></li><li class="topic sub-topic"><a href=/design-concepts/consistency-model/>Consistency Model</a></li><li class="topic sub-topic"><a href=/design-concepts/concepts/>Concepts</a></li><li class="topic sub-topic"><a href=/design-concepts/minimizing-network-calls/>How Dgraph Minimizes Network Calls</a></li><li class="topic sub-topic"><a href=/design-concepts/raft/>RAFT</a></li></ul></li><li class="topic main-topic"><a href=/releases/>Releases</a></li></ul><ul class=sidebar-menu><li><a href=https://dgraph.io/ target=_blank>Home</a></li><li><a href=https://discuss.dgraph.io/ target=_blank>Community</a></li><li><a href=https://github.com/dgraph-io/dgraph target=_blank>GitHub</a></li></ul></aside><main class=content-wrapper><div class=content><div class=top-toc><nav id=TableOfContents><ul><li><a href=#take-a-tour---httpsdgraphiotour>Take a Tour - <a href=https://dgraph.io/tour/>https://dgraph.io/tour/</a></a><ul><li><a href=#running-examples>Running examples</a><ul><li><a href=#example-database-schema>Example database schema</a></li></ul></li></ul></li><li><a href=#queries>Queries</a><ul><li><a href=#error-codes>Error Codes</a><ul><li></li></ul></li></ul></li><li><a href=#returning-values>Returning Values</a></li><li><a href=#expanding-graph-edges>Expanding Graph Edges</a></li><li><a href=#comments>Comments</a></li><li><a href=#applying-filters>Applying Filters</a></li><li><a href=#language-support>Language Support</a></li></ul></nav></div><article><a class=question-btn target=_blank href=https://discuss.dgraph.io/c/docs/49><i class="fa fa-question-circle"></i> Ask a Question</a><h1 class=post-title>DQL Fundamentals</h1><div><p>Dgraph Query Language, <em>DQL</em>, (<a href=https://dgraph.io/blog/post/graphql+-to-dql/>previously named GraphQL+-</a>) is based on <a href=http://spec.graphql.org/>GraphQL</a> maintained by the <a href=https://foundation.graphql.org/>GraphQL Foundation</a>. GraphQL wasn&rsquo;t developed for Graph databases, but its graph-like query syntax, schema validation and subgraph shaped response make it a great language choice. We&rsquo;ve modified the language to better support graph operations, adding and removing features to get the best fit for graph databases.</p><p>DQL is a work in progress. We&rsquo;re adding more features and we might further simplify existing ones.</p><h2 id=take-a-tour---httpsdgraphiotour>Take a Tour - <a href=https://dgraph.io/tour/>https://dgraph.io/tour/</a></h2><p>This document provides the language reference for DQL. Rather than a tutorial,
+it provides a reference for users who already know how to write queries in DQL
+but need to check syntax or other language features (indices, functions, etc.).</p><div class="notices note"><span class=type>Note</span> If you are new to Dgraph and want to learn how to use Dgraph and DQL, take the tour - <a href=https://dgraph.io/tour/>https://dgraph.io/tour/</a></div><h3 id=running-examples>Running examples</h3><p>The examples in this reference use a database of 21 million triples about movies and actors. The example queries run and return results. The queries are executed by an instance of Dgraph running at <a href=https://play.dgraph.io/>https://play.dgraph.io/</a>. To run the queries locally or experiment a bit more, see the <a href=/get-started/>Getting Started</a> guide, which also shows how to load the datasets used in the examples here.</p><h4 id=example-database-schema>Example database schema</h4><p>The example movie database uses the following schema:</p><pre tabindex=0><code># Define Directives and index
+
+director.film: [uid] @reverse .
+actor.film: [uid] @count .
+genre: [uid] @reverse .
+initial_release_date: dateTime @index(year) .
+name: string @index(exact, term) @lang .
+starring: [uid] .
+performance.film: [uid] .
+performance.character_note: string .
+performance.character: [uid] .
+performance.actor: [uid] .
+performance.special_performance_type: [uid] .
+type: [uid] .
+
+# Define Types
+
+type Person {
+    name
+    director.film
+    actor.film
+}
+
+type Movie {
+    name
+    initial_release_date
+    genre
+    starring
+}
+
+type Genre {
+    name
+}
+
+type Performance {
+    performance.film
+    performance.character
+    performance.actor
+}
+</code></pre><h2 id=queries>Queries</h2><p>A DQL query finds nodes based on search criteria, matches patterns in a graph and returns a graph as a result.</p><p>A query is composed of nested blocks, starting with a query root. The root finds the initial set of nodes against which the following graph matching and filtering is applied.</p><div class="notices note"><span class=type>Note</span> See more about Queries in <a href=/design-concepts/concepts/#queries>Queries design concept</a></div><h3 id=error-codes>Error Codes</h3><p>When running a DQL query you might get an error message from the <code>/query</code> endpoint.
+Here we will be focusing on the error <code>"code"</code> returned in the JSON error object.</p><p>You can usually get two types of error codes:</p><ul><li><a href=#errorinvalidrequest><code>ErrorInvalidRequest</code></a>: this error can be either a bad request (<code>400</code>) or an internal server error (<code>500</code>).</li><li><a href=#error><code>Error</code></a>: this is an internal server error (<code>500</code>)</li></ul><p>For example, if you submit a query with a syntax error, you&rsquo;ll get:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;errors&#34;: [
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>      &#34;message&#34;: <span style=color:#a31515>&#34;while lexing {\nq(func: has(\&#34;test)){\nuid\n}\n} at line 2 column 12: Unexpected end of input.&#34;</span>,
+</span></span><span style=display:flex><span>      &#34;extensions&#34;: {
+</span></span><span style=display:flex><span>        &#34;code&#34;: <span style=color:#a31515>&#34;ErrorInvalidRequest&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  ],
+</span></span><span style=display:flex><span>  &#34;data&#34;: <span style=color:#00f>null</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>The error <code>"code"</code> value is returned with the query response.
+In this case, it&rsquo;s a syntax error and the error <code>code</code> is <code>ErrorInvalidRequest</code>.</p><h5 id=error><code>Error</code></h5><p>This is a rare code to get and it&rsquo;s always an internal server error (<code>500</code>).
+This can happen when JSON marsharling is failing (it&rsquo;s returned when the system tries to marshal a Go struct to JSON)</p><h5 id=errorinvalidrequest><code>ErrorInvalidRequest</code></h5><p>This is the most common error code that you can get from the <code>/query</code> endpoint. This error can be either a bad request (<code>400</code>) or an internal server error (<code>500</code>).</p><p>For example, you can get this error:</p><ul><li>If the query parameter is not being parsed correctly. The query parameter could be:<ul><li><code>debug</code></li><li><code>timeout</code></li><li><code>startTs</code></li><li><code>be</code> (best effort)</li><li><code>ro</code> (read-only)</li><li>If the value of these query parameters is incorrect you would get this error code. This is basically a bad request (<code>400</code>)</li></ul></li><li>If the header&rsquo;s <code>Content-Type</code> value is not parsed correctly. The only allowed content types in the header are:<ul><li><code>application/json</code></li><li><code>application/dql</code></li><li><code>application/graphql+-</code> (deprecated)</li><li>Anything else will be wrongly parsed and end up in a bad request (<code>400</code>)</li></ul></li><li>Query timeout (deadline exceeded). This is an internal server error (<code>500</code>)</li><li>Any error in query processing like:<ul><li>syntax error - bad request (<code>400</code>)</li><li>health failing (server not healthy) - internal server error (<code>500</code>)</li><li>Alpha not able to reach zero because of network issue - internal server error (<code>500</code>)</li><li>ACL error (user not found or user does not have privileges) - unauthenticated/unauthorized request (<code>401</code> or <code>403</code>)</li><li>if you set <code>be=true</code> and <code>ro=false</code> - bad request (<code>400</code>)</li><li>any error related to JSON formatting the response - internal server error (<code>500</code>)</li></ul></li></ul><h2 id=returning-values>Returning Values</h2><p>Each query has a name, specified at the query root, and the same name identifies the results.</p><p>If an edge is of a value type, the value can be returned by giving the edge name.</p><p>Query Example: In the example dataset, edges that link movies to directors and actors, movies have a name, release date and identifiers for a number of well known movie databases. This query, with name <code>bladerunner</code>, and root matching a movie name, returns those values for the early 80&rsquo;s sci-fi classic &ldquo;Blade Runner&rdquo;.</p><div class=runnable data-checksum=1f14a2d7f067d19536c593abef948458 data-initial='{
+  bladerunner(func: eq(name@en, "Blade Runner")) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}' data-current='{
+  bladerunner(func: eq(name@en, "Blade Runner")) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}' data-dirty=false><div class=container-fluid><div class=row><div class="runnable-col runnable-col-code col-12 col-sm-12 col-md-12 col-lg-6 nopadding"><div class=runnable-pane><div class=topbar><div class=normal-header><div class=row><div class=col-10><nav class=nav-languages><a class="language active" data-action=nav-lang data-target=query href=#>Query</a>
+<a class=language data-action=nav-lang data-target=go-grpc href=#>Go</a>
+<a class=language data-action=nav-lang data-target=java href=#>Java</a>
+<a class=language data-action=nav-lang data-target=python href=#>Python</a>
+<a class=language data-action=nav-lang data-target=js-grpc href=#>JavaScript (gRPC)</a>
+<a class=language data-action=nav-lang data-target=js-http href=#>JavaScript (HTTP)</a>
+<a class=language data-action=nav-lang data-target=curl href=#>Curl</a></nav></div><div class=col-2><div class="actions pull-right"><a class=code-btn data-action=run href=#>Run</a></div></div></div></div><div class=editing-header><div class=row><div class=col-12><span class=pane-title>Editing query...</span></div></div></div></div><div class="runnable-content runnable-code"><div class="runnable-tab-content active" data-tab=query><pre><code class=no-copy><span class=query-content>{
+  bladerunner(func: eq(name@en, &#34;Blade Runner&#34;)) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}</span></code></pre></div><div class=runnable-tab-content data-tab=edit><textarea class=query-content-editable>{
+  bladerunner(func: eq(name@en, &#34;Blade Runner&#34;)) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}</textarea></div><div class=runnable-tab-content data-tab=curl><pre><code class=no-copy tabindex=-1>curl localhost:8080/query -XPOST -d '<br><span class=query-content>blahblah</span>' | python -m json.tool | less
+    </code></pre></div><div class=runnable-tab-content data-tab=go-grpc><pre><code class=no-copy tabindex=-1>package main
+
+import (
+	"context"
+	"flag"
+	"fmt"
+	"log"
+    
+	"github.com/dgraph-io/dgo"
+	"github.com/dgraph-io/dgo/protos/api"
+    
+	"google.golang.org/grpc"
+)
+
+var (
+	dgraph = flag.String("d", "127.0.0.1:9080", "Dgraph Alpha address")
+)
+
+func main() {
+	flag.Parse()
+	conn, err := grpc.Dial(*dgraph, grpc.WithInsecure())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer conn.Close()
+
+	dg := dgo.NewDgraphClient(api.NewDgraphClient(conn))
+    
+	resp, err := dg.NewTxn().Query(context.Background(), `<span class=query-content>blahblah</span>`)
+	
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("Response: %s\n", resp.Json)
+}</code></pre></div><div class=runnable-tab-content data-tab=java><pre><code class=no-copy tabindex=-1>import io.dgraph.DgraphClient;
+import io.dgraph.DgraphGrpc;
+import io.dgraph.DgraphGrpc.DgraphStub;
+import io.dgraph.DgraphProto.Response;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+
+import java.util.Map;
+
+public class App {
+
+    public static void main(final String[] args) {
+        ManagedChannel channel =
+            ManagedChannelBuilder.forAddress("localhost", 9080).usePlaintext(true).build();
+        DgraphStub stub = DgraphGrpc.newStub(channel);
+        DgraphClient dgraphClient = new DgraphClient(stub);
+
+        String query = "<span class=java-query>blahblah</span>";
+
+    
+        Response res = dgraphClient.newTransaction().query(query);
+    
+        System.out.printf("Response: %s", res.getJson().toStringUtf8());
+    }
+}
+
+</code></pre></div><div class=runnable-tab-content data-tab=python><pre><code class=no-copy tabindex=-1>import pydgraph
+import json
+
+def main():
+    client_stub = pydgraph.DgraphClientStub("localhost:9080")
+    client = pydgraph.DgraphClient(client_stub)
+    query = """<span class=query-content>blahblah</span>"""
+    res = client.txn(read_only=True).query(query)
+    print('Response: {}'.format(json.loads(res.json)))
+
+    client_stub.close()
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as e:
+        print('Error: {}'.format(e))
+
+</code></pre></div><div class=runnable-tab-content data-tab=js-grpc><pre><code class=no-copy tabindex=-1>const dgraph = require("dgraph-js");
+const grpc = require("grpc");
+
+async function main() {
+  const clientStub = new dgraph.DgraphClientStub("localhost:9080", grpc.credentials.createInsecure());
+  const dgraphClient = new dgraph.DgraphClient(clientStub);
+
+  const query = `<span class=query-content>blahblah</span>`;
+  const response = await dgraphClient.newTxn().query(query);
+  console.log("Response: ", JSON.stringify(response.getJson()));
+
+  clientStub.close();
+}
+
+main().then().catch((e) => {
+  console.log("ERROR: ", e);
+});
+</code></pre></div><div class=runnable-tab-content data-tab=js-http><pre><code class=no-copy tabindex=-1>const dgraph = require("dgraph-js-http");
+
+async function main() {
+  const clientStub = new dgraph.DgraphClientStub("http://localhost:8080");
+  const dgraphClient = new dgraph.DgraphClient(clientStub);
+
+  const query = `<span class=query-content>blahblah</span>`;
+  const response = await dgraphClient.newTxn().query(query);
+  console.log("Response: ", JSON.stringify(response.data));
+}
+
+main().then().catch((e) => {
+  console.log("ERROR: ", e);
+});
+</code></pre></div></div><div class="row footer"><div class=col-12><div class="actions pull-right"><div class=edit-actions><a class=code-btn data-action=reset href=#>Reset</a>
+<a class=code-btn data-action=discard href=#>Discard</a>
+<a class=code-btn data-action=save href=#><i class="fa fa-save"></i> Save</a></div><div class=normal-actions><a class=code-btn data-action=edit href=#><i class="fa fa-edit"></i> Edit query</a>
+<span class=code-btn data-action=copy-code href=#>Copy</span></div></div></div></div></div></div><div class="runnable-col runnable-col-output col-12 col-sm-12 col-md-12 col-lg-6 nopadding"><div class=runnable-pane><div class="row topbar"><div class=col-12><span class=pane-title>Response</span></div></div><div class="runnable-content runnable-output" style=background:url(/images/dgraph-black.png);background-repeat:no-repeat;background-position:50%;background-color:#fff><pre class="output-container empty"><code class=output tabindex=-1></code></pre></div><div class="row footer"><div class="col-12 col-sm-8"><div class="latency-info hidden"><div class="stat server-latency"><span class=label>Server latency:</span> <span class=number></span> <i class="fa fa-question-circle server-latency-tooltip-trigger" data-toggle=tooltip data-placement=bottom data-html=true title="Latency information" data-animation=false></i></div><div class="stat network-latency"><span class=label>Network latency:</span> <span class=number></span></div></div></div><div class="col-12 col-sm-4"><div class="actions pull-right"><a class="code-btn hidden-sm-down" data-action=expand href=#><i class="fa fa-expand"></i></a>
+<span class=code-btn data-action=copy-output href=#>Copy</span></div></div></div></div></div></div></div></div><p>The query first searches the graph, using indexes to make the search efficient, for all nodes with a <code>name</code> edge equaling &ldquo;Blade Runner&rdquo;. For the found node the query then returns the listed outgoing edges.</p><p>Every node had a unique 64-bit identifier. The <code>uid</code> edge in the query above returns that identifier. If the required node is already known, then the function <code>uid</code> finds the node.</p><p>Query Example: &ldquo;Blade Runner&rdquo; movie data found by UID.</p><div class=runnable data-checksum=07ae01afe08863dbfaae0740d1dd3f84 data-initial="{
+  bladerunner(func: uid(0x394c)) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}" data-current="{
+  bladerunner(func: uid(0x394c)) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}" data-dirty=false><div class=container-fluid><div class=row><div class="runnable-col runnable-col-code col-12 col-sm-12 col-md-12 col-lg-6 nopadding"><div class=runnable-pane><div class=topbar><div class=normal-header><div class=row><div class=col-10><nav class=nav-languages><a class="language active" data-action=nav-lang data-target=query href=#>Query</a>
+<a class=language data-action=nav-lang data-target=go-grpc href=#>Go</a>
+<a class=language data-action=nav-lang data-target=java href=#>Java</a>
+<a class=language data-action=nav-lang data-target=python href=#>Python</a>
+<a class=language data-action=nav-lang data-target=js-grpc href=#>JavaScript (gRPC)</a>
+<a class=language data-action=nav-lang data-target=js-http href=#>JavaScript (HTTP)</a>
+<a class=language data-action=nav-lang data-target=curl href=#>Curl</a></nav></div><div class=col-2><div class="actions pull-right"><a class=code-btn data-action=run href=#>Run</a></div></div></div></div><div class=editing-header><div class=row><div class=col-12><span class=pane-title>Editing query...</span></div></div></div></div><div class="runnable-content runnable-code"><div class="runnable-tab-content active" data-tab=query><pre><code class=no-copy><span class=query-content>{
+  bladerunner(func: uid(0x394c)) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}</span></code></pre></div><div class=runnable-tab-content data-tab=edit><textarea class=query-content-editable>{
+  bladerunner(func: uid(0x394c)) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}</textarea></div><div class=runnable-tab-content data-tab=curl><pre><code class=no-copy tabindex=-1>curl localhost:8080/query -XPOST -d '<br><span class=query-content>blahblah</span>' | python -m json.tool | less
+    </code></pre></div><div class=runnable-tab-content data-tab=go-grpc><pre><code class=no-copy tabindex=-1>package main
+
+import (
+	"context"
+	"flag"
+	"fmt"
+	"log"
+    
+	"github.com/dgraph-io/dgo"
+	"github.com/dgraph-io/dgo/protos/api"
+    
+	"google.golang.org/grpc"
+)
+
+var (
+	dgraph = flag.String("d", "127.0.0.1:9080", "Dgraph Alpha address")
+)
+
+func main() {
+	flag.Parse()
+	conn, err := grpc.Dial(*dgraph, grpc.WithInsecure())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer conn.Close()
+
+	dg := dgo.NewDgraphClient(api.NewDgraphClient(conn))
+    
+	resp, err := dg.NewTxn().Query(context.Background(), `<span class=query-content>blahblah</span>`)
+	
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("Response: %s\n", resp.Json)
+}</code></pre></div><div class=runnable-tab-content data-tab=java><pre><code class=no-copy tabindex=-1>import io.dgraph.DgraphClient;
+import io.dgraph.DgraphGrpc;
+import io.dgraph.DgraphGrpc.DgraphStub;
+import io.dgraph.DgraphProto.Response;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+
+import java.util.Map;
+
+public class App {
+
+    public static void main(final String[] args) {
+        ManagedChannel channel =
+            ManagedChannelBuilder.forAddress("localhost", 9080).usePlaintext(true).build();
+        DgraphStub stub = DgraphGrpc.newStub(channel);
+        DgraphClient dgraphClient = new DgraphClient(stub);
+
+        String query = "<span class=java-query>blahblah</span>";
+
+    
+        Response res = dgraphClient.newTransaction().query(query);
+    
+        System.out.printf("Response: %s", res.getJson().toStringUtf8());
+    }
+}
+
+</code></pre></div><div class=runnable-tab-content data-tab=python><pre><code class=no-copy tabindex=-1>import pydgraph
+import json
+
+def main():
+    client_stub = pydgraph.DgraphClientStub("localhost:9080")
+    client = pydgraph.DgraphClient(client_stub)
+    query = """<span class=query-content>blahblah</span>"""
+    res = client.txn(read_only=True).query(query)
+    print('Response: {}'.format(json.loads(res.json)))
+
+    client_stub.close()
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as e:
+        print('Error: {}'.format(e))
+
+</code></pre></div><div class=runnable-tab-content data-tab=js-grpc><pre><code class=no-copy tabindex=-1>const dgraph = require("dgraph-js");
+const grpc = require("grpc");
+
+async function main() {
+  const clientStub = new dgraph.DgraphClientStub("localhost:9080", grpc.credentials.createInsecure());
+  const dgraphClient = new dgraph.DgraphClient(clientStub);
+
+  const query = `<span class=query-content>blahblah</span>`;
+  const response = await dgraphClient.newTxn().query(query);
+  console.log("Response: ", JSON.stringify(response.getJson()));
+
+  clientStub.close();
+}
+
+main().then().catch((e) => {
+  console.log("ERROR: ", e);
+});
+</code></pre></div><div class=runnable-tab-content data-tab=js-http><pre><code class=no-copy tabindex=-1>const dgraph = require("dgraph-js-http");
+
+async function main() {
+  const clientStub = new dgraph.DgraphClientStub("http://localhost:8080");
+  const dgraphClient = new dgraph.DgraphClient(clientStub);
+
+  const query = `<span class=query-content>blahblah</span>`;
+  const response = await dgraphClient.newTxn().query(query);
+  console.log("Response: ", JSON.stringify(response.data));
+}
+
+main().then().catch((e) => {
+  console.log("ERROR: ", e);
+});
+</code></pre></div></div><div class="row footer"><div class=col-12><div class="actions pull-right"><div class=edit-actions><a class=code-btn data-action=reset href=#>Reset</a>
+<a class=code-btn data-action=discard href=#>Discard</a>
+<a class=code-btn data-action=save href=#><i class="fa fa-save"></i> Save</a></div><div class=normal-actions><a class=code-btn data-action=edit href=#><i class="fa fa-edit"></i> Edit query</a>
+<span class=code-btn data-action=copy-code href=#>Copy</span></div></div></div></div></div></div><div class="runnable-col runnable-col-output col-12 col-sm-12 col-md-12 col-lg-6 nopadding"><div class=runnable-pane><div class="row topbar"><div class=col-12><span class=pane-title>Response</span></div></div><div class="runnable-content runnable-output" style=background:url(/images/dgraph-black.png);background-repeat:no-repeat;background-position:50%;background-color:#fff><pre class="output-container empty"><code class=output tabindex=-1></code></pre></div><div class="row footer"><div class="col-12 col-sm-8"><div class="latency-info hidden"><div class="stat server-latency"><span class=label>Server latency:</span> <span class=number></span> <i class="fa fa-question-circle server-latency-tooltip-trigger" data-toggle=tooltip data-placement=bottom data-html=true title="Latency information" data-animation=false></i></div><div class="stat network-latency"><span class=label>Network latency:</span> <span class=number></span></div></div></div><div class="col-12 col-sm-4"><div class="actions pull-right"><a class="code-btn hidden-sm-down" data-action=expand href=#><i class="fa fa-expand"></i></a>
+<span class=code-btn data-action=copy-output href=#>Copy</span></div></div></div></div></div></div></div></div><p>A query can match many nodes and return the values for each.</p><p>Query Example: All nodes that have either &ldquo;Blade&rdquo; or &ldquo;Runner&rdquo; in the name.</p><div class=runnable data-checksum=bb6bee019eb02da7f2e22be14d0d8c45 data-initial='{
+  bladerunner(func: anyofterms(name@en, "Blade Runner")) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}' data-current='{
+  bladerunner(func: anyofterms(name@en, "Blade Runner")) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}' data-dirty=false><div class=container-fluid><div class=row><div class="runnable-col runnable-col-code col-12 col-sm-12 col-md-12 col-lg-6 nopadding"><div class=runnable-pane><div class=topbar><div class=normal-header><div class=row><div class=col-10><nav class=nav-languages><a class="language active" data-action=nav-lang data-target=query href=#>Query</a>
+<a class=language data-action=nav-lang data-target=go-grpc href=#>Go</a>
+<a class=language data-action=nav-lang data-target=java href=#>Java</a>
+<a class=language data-action=nav-lang data-target=python href=#>Python</a>
+<a class=language data-action=nav-lang data-target=js-grpc href=#>JavaScript (gRPC)</a>
+<a class=language data-action=nav-lang data-target=js-http href=#>JavaScript (HTTP)</a>
+<a class=language data-action=nav-lang data-target=curl href=#>Curl</a></nav></div><div class=col-2><div class="actions pull-right"><a class=code-btn data-action=run href=#>Run</a></div></div></div></div><div class=editing-header><div class=row><div class=col-12><span class=pane-title>Editing query...</span></div></div></div></div><div class="runnable-content runnable-code"><div class="runnable-tab-content active" data-tab=query><pre><code class=no-copy><span class=query-content>{
+  bladerunner(func: anyofterms(name@en, &#34;Blade Runner&#34;)) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}</span></code></pre></div><div class=runnable-tab-content data-tab=edit><textarea class=query-content-editable>{
+  bladerunner(func: anyofterms(name@en, &#34;Blade Runner&#34;)) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}</textarea></div><div class=runnable-tab-content data-tab=curl><pre><code class=no-copy tabindex=-1>curl localhost:8080/query -XPOST -d '<br><span class=query-content>blahblah</span>' | python -m json.tool | less
+    </code></pre></div><div class=runnable-tab-content data-tab=go-grpc><pre><code class=no-copy tabindex=-1>package main
+
+import (
+	"context"
+	"flag"
+	"fmt"
+	"log"
+    
+	"github.com/dgraph-io/dgo"
+	"github.com/dgraph-io/dgo/protos/api"
+    
+	"google.golang.org/grpc"
+)
+
+var (
+	dgraph = flag.String("d", "127.0.0.1:9080", "Dgraph Alpha address")
+)
+
+func main() {
+	flag.Parse()
+	conn, err := grpc.Dial(*dgraph, grpc.WithInsecure())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer conn.Close()
+
+	dg := dgo.NewDgraphClient(api.NewDgraphClient(conn))
+    
+	resp, err := dg.NewTxn().Query(context.Background(), `<span class=query-content>blahblah</span>`)
+	
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("Response: %s\n", resp.Json)
+}</code></pre></div><div class=runnable-tab-content data-tab=java><pre><code class=no-copy tabindex=-1>import io.dgraph.DgraphClient;
+import io.dgraph.DgraphGrpc;
+import io.dgraph.DgraphGrpc.DgraphStub;
+import io.dgraph.DgraphProto.Response;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+
+import java.util.Map;
+
+public class App {
+
+    public static void main(final String[] args) {
+        ManagedChannel channel =
+            ManagedChannelBuilder.forAddress("localhost", 9080).usePlaintext(true).build();
+        DgraphStub stub = DgraphGrpc.newStub(channel);
+        DgraphClient dgraphClient = new DgraphClient(stub);
+
+        String query = "<span class=java-query>blahblah</span>";
+
+    
+        Response res = dgraphClient.newTransaction().query(query);
+    
+        System.out.printf("Response: %s", res.getJson().toStringUtf8());
+    }
+}
+
+</code></pre></div><div class=runnable-tab-content data-tab=python><pre><code class=no-copy tabindex=-1>import pydgraph
+import json
+
+def main():
+    client_stub = pydgraph.DgraphClientStub("localhost:9080")
+    client = pydgraph.DgraphClient(client_stub)
+    query = """<span class=query-content>blahblah</span>"""
+    res = client.txn(read_only=True).query(query)
+    print('Response: {}'.format(json.loads(res.json)))
+
+    client_stub.close()
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as e:
+        print('Error: {}'.format(e))
+
+</code></pre></div><div class=runnable-tab-content data-tab=js-grpc><pre><code class=no-copy tabindex=-1>const dgraph = require("dgraph-js");
+const grpc = require("grpc");
+
+async function main() {
+  const clientStub = new dgraph.DgraphClientStub("localhost:9080", grpc.credentials.createInsecure());
+  const dgraphClient = new dgraph.DgraphClient(clientStub);
+
+  const query = `<span class=query-content>blahblah</span>`;
+  const response = await dgraphClient.newTxn().query(query);
+  console.log("Response: ", JSON.stringify(response.getJson()));
+
+  clientStub.close();
+}
+
+main().then().catch((e) => {
+  console.log("ERROR: ", e);
+});
+</code></pre></div><div class=runnable-tab-content data-tab=js-http><pre><code class=no-copy tabindex=-1>const dgraph = require("dgraph-js-http");
+
+async function main() {
+  const clientStub = new dgraph.DgraphClientStub("http://localhost:8080");
+  const dgraphClient = new dgraph.DgraphClient(clientStub);
+
+  const query = `<span class=query-content>blahblah</span>`;
+  const response = await dgraphClient.newTxn().query(query);
+  console.log("Response: ", JSON.stringify(response.data));
+}
+
+main().then().catch((e) => {
+  console.log("ERROR: ", e);
+});
+</code></pre></div></div><div class="row footer"><div class=col-12><div class="actions pull-right"><div class=edit-actions><a class=code-btn data-action=reset href=#>Reset</a>
+<a class=code-btn data-action=discard href=#>Discard</a>
+<a class=code-btn data-action=save href=#><i class="fa fa-save"></i> Save</a></div><div class=normal-actions><a class=code-btn data-action=edit href=#><i class="fa fa-edit"></i> Edit query</a>
+<span class=code-btn data-action=copy-code href=#>Copy</span></div></div></div></div></div></div><div class="runnable-col runnable-col-output col-12 col-sm-12 col-md-12 col-lg-6 nopadding"><div class=runnable-pane><div class="row topbar"><div class=col-12><span class=pane-title>Response</span></div></div><div class="runnable-content runnable-output" style=background:url(/images/dgraph-black.png);background-repeat:no-repeat;background-position:50%;background-color:#fff><pre class="output-container empty"><code class=output tabindex=-1></code></pre></div><div class="row footer"><div class="col-12 col-sm-8"><div class="latency-info hidden"><div class="stat server-latency"><span class=label>Server latency:</span> <span class=number></span> <i class="fa fa-question-circle server-latency-tooltip-trigger" data-toggle=tooltip data-placement=bottom data-html=true title="Latency information" data-animation=false></i></div><div class="stat network-latency"><span class=label>Network latency:</span> <span class=number></span></div></div></div><div class="col-12 col-sm-4"><div class="actions pull-right"><a class="code-btn hidden-sm-down" data-action=expand href=#><i class="fa fa-expand"></i></a>
+<span class=code-btn data-action=copy-output href=#>Copy</span></div></div></div></div></div></div></div></div><p>Multiple IDs can be specified in a list to the <code>uid</code> function.</p><p>Query Example:<div class=runnable data-checksum=4d9f9318dcc6104108e0f77e231adca1 data-initial="{
+  movies(func: uid(0xb5849, 0x394c)) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}" data-current="{
+  movies(func: uid(0xb5849, 0x394c)) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}" data-dirty=false><div class=container-fluid><div class=row><div class="runnable-col runnable-col-code col-12 col-sm-12 col-md-12 col-lg-6 nopadding"><div class=runnable-pane><div class=topbar><div class=normal-header><div class=row><div class=col-10><nav class=nav-languages><a class="language active" data-action=nav-lang data-target=query href=#>Query</a>
+<a class=language data-action=nav-lang data-target=go-grpc href=#>Go</a>
+<a class=language data-action=nav-lang data-target=java href=#>Java</a>
+<a class=language data-action=nav-lang data-target=python href=#>Python</a>
+<a class=language data-action=nav-lang data-target=js-grpc href=#>JavaScript (gRPC)</a>
+<a class=language data-action=nav-lang data-target=js-http href=#>JavaScript (HTTP)</a>
+<a class=language data-action=nav-lang data-target=curl href=#>Curl</a></nav></div><div class=col-2><div class="actions pull-right"><a class=code-btn data-action=run href=#>Run</a></div></div></div></div><div class=editing-header><div class=row><div class=col-12><span class=pane-title>Editing query...</span></div></div></div></div><div class="runnable-content runnable-code"><div class="runnable-tab-content active" data-tab=query><pre><code class=no-copy><span class=query-content>{
+  movies(func: uid(0xb5849, 0x394c)) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}</span></code></pre></div><div class=runnable-tab-content data-tab=edit><textarea class=query-content-editable>{
+  movies(func: uid(0xb5849, 0x394c)) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}</textarea></div><div class=runnable-tab-content data-tab=curl><pre><code class=no-copy tabindex=-1>curl localhost:8080/query -XPOST -d '<br><span class=query-content>blahblah</span>' | python -m json.tool | less
+    </code></pre></div><div class=runnable-tab-content data-tab=go-grpc><pre><code class=no-copy tabindex=-1>package main
+
+import (
+	"context"
+	"flag"
+	"fmt"
+	"log"
+    
+	"github.com/dgraph-io/dgo"
+	"github.com/dgraph-io/dgo/protos/api"
+    
+	"google.golang.org/grpc"
+)
+
+var (
+	dgraph = flag.String("d", "127.0.0.1:9080", "Dgraph Alpha address")
+)
+
+func main() {
+	flag.Parse()
+	conn, err := grpc.Dial(*dgraph, grpc.WithInsecure())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer conn.Close()
+
+	dg := dgo.NewDgraphClient(api.NewDgraphClient(conn))
+    
+	resp, err := dg.NewTxn().Query(context.Background(), `<span class=query-content>blahblah</span>`)
+	
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("Response: %s\n", resp.Json)
+}</code></pre></div><div class=runnable-tab-content data-tab=java><pre><code class=no-copy tabindex=-1>import io.dgraph.DgraphClient;
+import io.dgraph.DgraphGrpc;
+import io.dgraph.DgraphGrpc.DgraphStub;
+import io.dgraph.DgraphProto.Response;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+
+import java.util.Map;
+
+public class App {
+
+    public static void main(final String[] args) {
+        ManagedChannel channel =
+            ManagedChannelBuilder.forAddress("localhost", 9080).usePlaintext(true).build();
+        DgraphStub stub = DgraphGrpc.newStub(channel);
+        DgraphClient dgraphClient = new DgraphClient(stub);
+
+        String query = "<span class=java-query>blahblah</span>";
+
+    
+        Response res = dgraphClient.newTransaction().query(query);
+    
+        System.out.printf("Response: %s", res.getJson().toStringUtf8());
+    }
+}
+
+</code></pre></div><div class=runnable-tab-content data-tab=python><pre><code class=no-copy tabindex=-1>import pydgraph
+import json
+
+def main():
+    client_stub = pydgraph.DgraphClientStub("localhost:9080")
+    client = pydgraph.DgraphClient(client_stub)
+    query = """<span class=query-content>blahblah</span>"""
+    res = client.txn(read_only=True).query(query)
+    print('Response: {}'.format(json.loads(res.json)))
+
+    client_stub.close()
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as e:
+        print('Error: {}'.format(e))
+
+</code></pre></div><div class=runnable-tab-content data-tab=js-grpc><pre><code class=no-copy tabindex=-1>const dgraph = require("dgraph-js");
+const grpc = require("grpc");
+
+async function main() {
+  const clientStub = new dgraph.DgraphClientStub("localhost:9080", grpc.credentials.createInsecure());
+  const dgraphClient = new dgraph.DgraphClient(clientStub);
+
+  const query = `<span class=query-content>blahblah</span>`;
+  const response = await dgraphClient.newTxn().query(query);
+  console.log("Response: ", JSON.stringify(response.getJson()));
+
+  clientStub.close();
+}
+
+main().then().catch((e) => {
+  console.log("ERROR: ", e);
+});
+</code></pre></div><div class=runnable-tab-content data-tab=js-http><pre><code class=no-copy tabindex=-1>const dgraph = require("dgraph-js-http");
+
+async function main() {
+  const clientStub = new dgraph.DgraphClientStub("http://localhost:8080");
+  const dgraphClient = new dgraph.DgraphClient(clientStub);
+
+  const query = `<span class=query-content>blahblah</span>`;
+  const response = await dgraphClient.newTxn().query(query);
+  console.log("Response: ", JSON.stringify(response.data));
+}
+
+main().then().catch((e) => {
+  console.log("ERROR: ", e);
+});
+</code></pre></div></div><div class="row footer"><div class=col-12><div class="actions pull-right"><div class=edit-actions><a class=code-btn data-action=reset href=#>Reset</a>
+<a class=code-btn data-action=discard href=#>Discard</a>
+<a class=code-btn data-action=save href=#><i class="fa fa-save"></i> Save</a></div><div class=normal-actions><a class=code-btn data-action=edit href=#><i class="fa fa-edit"></i> Edit query</a>
+<span class=code-btn data-action=copy-code href=#>Copy</span></div></div></div></div></div></div><div class="runnable-col runnable-col-output col-12 col-sm-12 col-md-12 col-lg-6 nopadding"><div class=runnable-pane><div class="row topbar"><div class=col-12><span class=pane-title>Response</span></div></div><div class="runnable-content runnable-output" style=background:url(/images/dgraph-black.png);background-repeat:no-repeat;background-position:50%;background-color:#fff><pre class="output-container empty"><code class=output tabindex=-1></code></pre></div><div class="row footer"><div class="col-12 col-sm-8"><div class="latency-info hidden"><div class="stat server-latency"><span class=label>Server latency:</span> <span class=number></span> <i class="fa fa-question-circle server-latency-tooltip-trigger" data-toggle=tooltip data-placement=bottom data-html=true title="Latency information" data-animation=false></i></div><div class="stat network-latency"><span class=label>Network latency:</span> <span class=number></span></div></div></div><div class="col-12 col-sm-4"><div class="actions pull-right"><a class="code-btn hidden-sm-down" data-action=expand href=#><i class="fa fa-expand"></i></a>
+<span class=code-btn data-action=copy-output href=#>Copy</span></div></div></div></div></div></div></div></div></p><div class="notices note"><span class=type>Note</span> If your predicate has special characters, then you should wrap it with angular
+brackets while asking for it in the query. E.g. <code>&lt;first:name></code></div><h2 id=expanding-graph-edges>Expanding Graph Edges</h2><p>A query expands edges from node to node by nesting query blocks with <code>{ }</code>.</p><p>Query Example: The actors and characters played in &ldquo;Blade Runner&rdquo;. The query first finds the node with name &ldquo;Blade Runner&rdquo;, then follows outgoing <code>starring</code> edges to nodes representing an actor&rsquo;s performance as a character. From there the <code>performance.actor</code> and <code>performance.character</code> edges are expanded to find the actor names and roles for every actor in the movie.<div class=runnable data-checksum=eb87715dbc34efc993119442929a3b01 data-initial='{
+  brCharacters(func: eq(name@en, "Blade Runner")) {
+    name@en
+    initial_release_date
+    starring {
+      performance.actor {
+        name@en  # actor name
+      }
+      performance.character {
+        name@en  # character name
+      }
+    }
+  }
+}' data-current='{
+  brCharacters(func: eq(name@en, "Blade Runner")) {
+    name@en
+    initial_release_date
+    starring {
+      performance.actor {
+        name@en  # actor name
+      }
+      performance.character {
+        name@en  # character name
+      }
+    }
+  }
+}' data-dirty=false><div class=container-fluid><div class=row><div class="runnable-col runnable-col-code col-12 col-sm-12 col-md-12 col-lg-6 nopadding"><div class=runnable-pane><div class=topbar><div class=normal-header><div class=row><div class=col-10><nav class=nav-languages><a class="language active" data-action=nav-lang data-target=query href=#>Query</a>
+<a class=language data-action=nav-lang data-target=go-grpc href=#>Go</a>
+<a class=language data-action=nav-lang data-target=java href=#>Java</a>
+<a class=language data-action=nav-lang data-target=python href=#>Python</a>
+<a class=language data-action=nav-lang data-target=js-grpc href=#>JavaScript (gRPC)</a>
+<a class=language data-action=nav-lang data-target=js-http href=#>JavaScript (HTTP)</a>
+<a class=language data-action=nav-lang data-target=curl href=#>Curl</a></nav></div><div class=col-2><div class="actions pull-right"><a class=code-btn data-action=run href=#>Run</a></div></div></div></div><div class=editing-header><div class=row><div class=col-12><span class=pane-title>Editing query...</span></div></div></div></div><div class="runnable-content runnable-code"><div class="runnable-tab-content active" data-tab=query><pre><code class=no-copy><span class=query-content>{
+  brCharacters(func: eq(name@en, &#34;Blade Runner&#34;)) {
+    name@en
+    initial_release_date
+    starring {
+      performance.actor {
+        name@en  # actor name
+      }
+      performance.character {
+        name@en  # character name
+      }
+    }
+  }
+}</span></code></pre></div><div class=runnable-tab-content data-tab=edit><textarea class=query-content-editable>{
+  brCharacters(func: eq(name@en, &#34;Blade Runner&#34;)) {
+    name@en
+    initial_release_date
+    starring {
+      performance.actor {
+        name@en  # actor name
+      }
+      performance.character {
+        name@en  # character name
+      }
+    }
+  }
+}</textarea></div><div class=runnable-tab-content data-tab=curl><pre><code class=no-copy tabindex=-1>curl localhost:8080/query -XPOST -d '<br><span class=query-content>blahblah</span>' | python -m json.tool | less
+    </code></pre></div><div class=runnable-tab-content data-tab=go-grpc><pre><code class=no-copy tabindex=-1>package main
+
+import (
+	"context"
+	"flag"
+	"fmt"
+	"log"
+    
+	"github.com/dgraph-io/dgo"
+	"github.com/dgraph-io/dgo/protos/api"
+    
+	"google.golang.org/grpc"
+)
+
+var (
+	dgraph = flag.String("d", "127.0.0.1:9080", "Dgraph Alpha address")
+)
+
+func main() {
+	flag.Parse()
+	conn, err := grpc.Dial(*dgraph, grpc.WithInsecure())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer conn.Close()
+
+	dg := dgo.NewDgraphClient(api.NewDgraphClient(conn))
+    
+	resp, err := dg.NewTxn().Query(context.Background(), `<span class=query-content>blahblah</span>`)
+	
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("Response: %s\n", resp.Json)
+}</code></pre></div><div class=runnable-tab-content data-tab=java><pre><code class=no-copy tabindex=-1>import io.dgraph.DgraphClient;
+import io.dgraph.DgraphGrpc;
+import io.dgraph.DgraphGrpc.DgraphStub;
+import io.dgraph.DgraphProto.Response;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+
+import java.util.Map;
+
+public class App {
+
+    public static void main(final String[] args) {
+        ManagedChannel channel =
+            ManagedChannelBuilder.forAddress("localhost", 9080).usePlaintext(true).build();
+        DgraphStub stub = DgraphGrpc.newStub(channel);
+        DgraphClient dgraphClient = new DgraphClient(stub);
+
+        String query = "<span class=java-query>blahblah</span>";
+
+    
+        Response res = dgraphClient.newTransaction().query(query);
+    
+        System.out.printf("Response: %s", res.getJson().toStringUtf8());
+    }
+}
+
+</code></pre></div><div class=runnable-tab-content data-tab=python><pre><code class=no-copy tabindex=-1>import pydgraph
+import json
+
+def main():
+    client_stub = pydgraph.DgraphClientStub("localhost:9080")
+    client = pydgraph.DgraphClient(client_stub)
+    query = """<span class=query-content>blahblah</span>"""
+    res = client.txn(read_only=True).query(query)
+    print('Response: {}'.format(json.loads(res.json)))
+
+    client_stub.close()
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as e:
+        print('Error: {}'.format(e))
+
+</code></pre></div><div class=runnable-tab-content data-tab=js-grpc><pre><code class=no-copy tabindex=-1>const dgraph = require("dgraph-js");
+const grpc = require("grpc");
+
+async function main() {
+  const clientStub = new dgraph.DgraphClientStub("localhost:9080", grpc.credentials.createInsecure());
+  const dgraphClient = new dgraph.DgraphClient(clientStub);
+
+  const query = `<span class=query-content>blahblah</span>`;
+  const response = await dgraphClient.newTxn().query(query);
+  console.log("Response: ", JSON.stringify(response.getJson()));
+
+  clientStub.close();
+}
+
+main().then().catch((e) => {
+  console.log("ERROR: ", e);
+});
+</code></pre></div><div class=runnable-tab-content data-tab=js-http><pre><code class=no-copy tabindex=-1>const dgraph = require("dgraph-js-http");
+
+async function main() {
+  const clientStub = new dgraph.DgraphClientStub("http://localhost:8080");
+  const dgraphClient = new dgraph.DgraphClient(clientStub);
+
+  const query = `<span class=query-content>blahblah</span>`;
+  const response = await dgraphClient.newTxn().query(query);
+  console.log("Response: ", JSON.stringify(response.data));
+}
+
+main().then().catch((e) => {
+  console.log("ERROR: ", e);
+});
+</code></pre></div></div><div class="row footer"><div class=col-12><div class="actions pull-right"><div class=edit-actions><a class=code-btn data-action=reset href=#>Reset</a>
+<a class=code-btn data-action=discard href=#>Discard</a>
+<a class=code-btn data-action=save href=#><i class="fa fa-save"></i> Save</a></div><div class=normal-actions><a class=code-btn data-action=edit href=#><i class="fa fa-edit"></i> Edit query</a>
+<span class=code-btn data-action=copy-code href=#>Copy</span></div></div></div></div></div></div><div class="runnable-col runnable-col-output col-12 col-sm-12 col-md-12 col-lg-6 nopadding"><div class=runnable-pane><div class="row topbar"><div class=col-12><span class=pane-title>Response</span></div></div><div class="runnable-content runnable-output" style=background:url(/images/dgraph-black.png);background-repeat:no-repeat;background-position:50%;background-color:#fff><pre class="output-container empty"><code class=output tabindex=-1></code></pre></div><div class="row footer"><div class="col-12 col-sm-8"><div class="latency-info hidden"><div class="stat server-latency"><span class=label>Server latency:</span> <span class=number></span> <i class="fa fa-question-circle server-latency-tooltip-trigger" data-toggle=tooltip data-placement=bottom data-html=true title="Latency information" data-animation=false></i></div><div class="stat network-latency"><span class=label>Network latency:</span> <span class=number></span></div></div></div><div class="col-12 col-sm-4"><div class="actions pull-right"><a class="code-btn hidden-sm-down" data-action=expand href=#><i class="fa fa-expand"></i></a>
+<span class=code-btn data-action=copy-output href=#>Copy</span></div></div></div></div></div></div></div></div></p><h2 id=comments>Comments</h2><p>Anything on a line following a <code>#</code> is a comment</p><h2 id=applying-filters>Applying Filters</h2><p>The query root finds an initial set of nodes and the query proceeds by returning values and following edges to further nodes - any node reached in the query is found by traversal after the search at root. The nodes found can be filtered by applying <code>@filter</code>, either after the root or at any edge.</p><p>Query Example: &ldquo;Blade Runner&rdquo; director Ridley Scott&rsquo;s movies released before the year 2000.<div class=runnable data-checksum=a8868eaba5335df81f7bcc61d11482a2 data-initial='{
+  scott(func: eq(name@en, "Ridley Scott")) {
+    name@en
+    initial_release_date
+    director.film @filter(le(initial_release_date, "2000")) {
+      name@en
+      initial_release_date
+    }
+  }
+}' data-current='{
+  scott(func: eq(name@en, "Ridley Scott")) {
+    name@en
+    initial_release_date
+    director.film @filter(le(initial_release_date, "2000")) {
+      name@en
+      initial_release_date
+    }
+  }
+}' data-dirty=false><div class=container-fluid><div class=row><div class="runnable-col runnable-col-code col-12 col-sm-12 col-md-12 col-lg-6 nopadding"><div class=runnable-pane><div class=topbar><div class=normal-header><div class=row><div class=col-10><nav class=nav-languages><a class="language active" data-action=nav-lang data-target=query href=#>Query</a>
+<a class=language data-action=nav-lang data-target=go-grpc href=#>Go</a>
+<a class=language data-action=nav-lang data-target=java href=#>Java</a>
+<a class=language data-action=nav-lang data-target=python href=#>Python</a>
+<a class=language data-action=nav-lang data-target=js-grpc href=#>JavaScript (gRPC)</a>
+<a class=language data-action=nav-lang data-target=js-http href=#>JavaScript (HTTP)</a>
+<a class=language data-action=nav-lang data-target=curl href=#>Curl</a></nav></div><div class=col-2><div class="actions pull-right"><a class=code-btn data-action=run href=#>Run</a></div></div></div></div><div class=editing-header><div class=row><div class=col-12><span class=pane-title>Editing query...</span></div></div></div></div><div class="runnable-content runnable-code"><div class="runnable-tab-content active" data-tab=query><pre><code class=no-copy><span class=query-content>{
+  scott(func: eq(name@en, &#34;Ridley Scott&#34;)) {
+    name@en
+    initial_release_date
+    director.film @filter(le(initial_release_date, &#34;2000&#34;)) {
+      name@en
+      initial_release_date
+    }
+  }
+}</span></code></pre></div><div class=runnable-tab-content data-tab=edit><textarea class=query-content-editable>{
+  scott(func: eq(name@en, &#34;Ridley Scott&#34;)) {
+    name@en
+    initial_release_date
+    director.film @filter(le(initial_release_date, &#34;2000&#34;)) {
+      name@en
+      initial_release_date
+    }
+  }
+}</textarea></div><div class=runnable-tab-content data-tab=curl><pre><code class=no-copy tabindex=-1>curl localhost:8080/query -XPOST -d '<br><span class=query-content>blahblah</span>' | python -m json.tool | less
+    </code></pre></div><div class=runnable-tab-content data-tab=go-grpc><pre><code class=no-copy tabindex=-1>package main
+
+import (
+	"context"
+	"flag"
+	"fmt"
+	"log"
+    
+	"github.com/dgraph-io/dgo"
+	"github.com/dgraph-io/dgo/protos/api"
+    
+	"google.golang.org/grpc"
+)
+
+var (
+	dgraph = flag.String("d", "127.0.0.1:9080", "Dgraph Alpha address")
+)
+
+func main() {
+	flag.Parse()
+	conn, err := grpc.Dial(*dgraph, grpc.WithInsecure())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer conn.Close()
+
+	dg := dgo.NewDgraphClient(api.NewDgraphClient(conn))
+    
+	resp, err := dg.NewTxn().Query(context.Background(), `<span class=query-content>blahblah</span>`)
+	
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("Response: %s\n", resp.Json)
+}</code></pre></div><div class=runnable-tab-content data-tab=java><pre><code class=no-copy tabindex=-1>import io.dgraph.DgraphClient;
+import io.dgraph.DgraphGrpc;
+import io.dgraph.DgraphGrpc.DgraphStub;
+import io.dgraph.DgraphProto.Response;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+
+import java.util.Map;
+
+public class App {
+
+    public static void main(final String[] args) {
+        ManagedChannel channel =
+            ManagedChannelBuilder.forAddress("localhost", 9080).usePlaintext(true).build();
+        DgraphStub stub = DgraphGrpc.newStub(channel);
+        DgraphClient dgraphClient = new DgraphClient(stub);
+
+        String query = "<span class=java-query>blahblah</span>";
+
+    
+        Response res = dgraphClient.newTransaction().query(query);
+    
+        System.out.printf("Response: %s", res.getJson().toStringUtf8());
+    }
+}
+
+</code></pre></div><div class=runnable-tab-content data-tab=python><pre><code class=no-copy tabindex=-1>import pydgraph
+import json
+
+def main():
+    client_stub = pydgraph.DgraphClientStub("localhost:9080")
+    client = pydgraph.DgraphClient(client_stub)
+    query = """<span class=query-content>blahblah</span>"""
+    res = client.txn(read_only=True).query(query)
+    print('Response: {}'.format(json.loads(res.json)))
+
+    client_stub.close()
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as e:
+        print('Error: {}'.format(e))
+
+</code></pre></div><div class=runnable-tab-content data-tab=js-grpc><pre><code class=no-copy tabindex=-1>const dgraph = require("dgraph-js");
+const grpc = require("grpc");
+
+async function main() {
+  const clientStub = new dgraph.DgraphClientStub("localhost:9080", grpc.credentials.createInsecure());
+  const dgraphClient = new dgraph.DgraphClient(clientStub);
+
+  const query = `<span class=query-content>blahblah</span>`;
+  const response = await dgraphClient.newTxn().query(query);
+  console.log("Response: ", JSON.stringify(response.getJson()));
+
+  clientStub.close();
+}
+
+main().then().catch((e) => {
+  console.log("ERROR: ", e);
+});
+</code></pre></div><div class=runnable-tab-content data-tab=js-http><pre><code class=no-copy tabindex=-1>const dgraph = require("dgraph-js-http");
+
+async function main() {
+  const clientStub = new dgraph.DgraphClientStub("http://localhost:8080");
+  const dgraphClient = new dgraph.DgraphClient(clientStub);
+
+  const query = `<span class=query-content>blahblah</span>`;
+  const response = await dgraphClient.newTxn().query(query);
+  console.log("Response: ", JSON.stringify(response.data));
+}
+
+main().then().catch((e) => {
+  console.log("ERROR: ", e);
+});
+</code></pre></div></div><div class="row footer"><div class=col-12><div class="actions pull-right"><div class=edit-actions><a class=code-btn data-action=reset href=#>Reset</a>
+<a class=code-btn data-action=discard href=#>Discard</a>
+<a class=code-btn data-action=save href=#><i class="fa fa-save"></i> Save</a></div><div class=normal-actions><a class=code-btn data-action=edit href=#><i class="fa fa-edit"></i> Edit query</a>
+<span class=code-btn data-action=copy-code href=#>Copy</span></div></div></div></div></div></div><div class="runnable-col runnable-col-output col-12 col-sm-12 col-md-12 col-lg-6 nopadding"><div class=runnable-pane><div class="row topbar"><div class=col-12><span class=pane-title>Response</span></div></div><div class="runnable-content runnable-output" style=background:url(/images/dgraph-black.png);background-repeat:no-repeat;background-position:50%;background-color:#fff><pre class="output-container empty"><code class=output tabindex=-1></code></pre></div><div class="row footer"><div class="col-12 col-sm-8"><div class="latency-info hidden"><div class="stat server-latency"><span class=label>Server latency:</span> <span class=number></span> <i class="fa fa-question-circle server-latency-tooltip-trigger" data-toggle=tooltip data-placement=bottom data-html=true title="Latency information" data-animation=false></i></div><div class="stat network-latency"><span class=label>Network latency:</span> <span class=number></span></div></div></div><div class="col-12 col-sm-4"><div class="actions pull-right"><a class="code-btn hidden-sm-down" data-action=expand href=#><i class="fa fa-expand"></i></a>
+<span class=code-btn data-action=copy-output href=#>Copy</span></div></div></div></div></div></div></div></div></p><p>Query Example: Movies with either &ldquo;Blade&rdquo; or &ldquo;Runner&rdquo; in the title and released before the year 2000.</p><div class=runnable data-checksum=14821b03af4eb8b3d94a56041c586bf9 data-initial='{
+  bladerunner(func: anyofterms(name@en, "Blade Runner")) @filter(le(initial_release_date, "2000")) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}' data-current='{
+  bladerunner(func: anyofterms(name@en, "Blade Runner")) @filter(le(initial_release_date, "2000")) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}' data-dirty=false><div class=container-fluid><div class=row><div class="runnable-col runnable-col-code col-12 col-sm-12 col-md-12 col-lg-6 nopadding"><div class=runnable-pane><div class=topbar><div class=normal-header><div class=row><div class=col-10><nav class=nav-languages><a class="language active" data-action=nav-lang data-target=query href=#>Query</a>
+<a class=language data-action=nav-lang data-target=go-grpc href=#>Go</a>
+<a class=language data-action=nav-lang data-target=java href=#>Java</a>
+<a class=language data-action=nav-lang data-target=python href=#>Python</a>
+<a class=language data-action=nav-lang data-target=js-grpc href=#>JavaScript (gRPC)</a>
+<a class=language data-action=nav-lang data-target=js-http href=#>JavaScript (HTTP)</a>
+<a class=language data-action=nav-lang data-target=curl href=#>Curl</a></nav></div><div class=col-2><div class="actions pull-right"><a class=code-btn data-action=run href=#>Run</a></div></div></div></div><div class=editing-header><div class=row><div class=col-12><span class=pane-title>Editing query...</span></div></div></div></div><div class="runnable-content runnable-code"><div class="runnable-tab-content active" data-tab=query><pre><code class=no-copy><span class=query-content>{
+  bladerunner(func: anyofterms(name@en, &#34;Blade Runner&#34;)) @filter(le(initial_release_date, &#34;2000&#34;)) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}</span></code></pre></div><div class=runnable-tab-content data-tab=edit><textarea class=query-content-editable>{
+  bladerunner(func: anyofterms(name@en, &#34;Blade Runner&#34;)) @filter(le(initial_release_date, &#34;2000&#34;)) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}</textarea></div><div class=runnable-tab-content data-tab=curl><pre><code class=no-copy tabindex=-1>curl localhost:8080/query -XPOST -d '<br><span class=query-content>blahblah</span>' | python -m json.tool | less
+    </code></pre></div><div class=runnable-tab-content data-tab=go-grpc><pre><code class=no-copy tabindex=-1>package main
+
+import (
+	"context"
+	"flag"
+	"fmt"
+	"log"
+    
+	"github.com/dgraph-io/dgo"
+	"github.com/dgraph-io/dgo/protos/api"
+    
+	"google.golang.org/grpc"
+)
+
+var (
+	dgraph = flag.String("d", "127.0.0.1:9080", "Dgraph Alpha address")
+)
+
+func main() {
+	flag.Parse()
+	conn, err := grpc.Dial(*dgraph, grpc.WithInsecure())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer conn.Close()
+
+	dg := dgo.NewDgraphClient(api.NewDgraphClient(conn))
+    
+	resp, err := dg.NewTxn().Query(context.Background(), `<span class=query-content>blahblah</span>`)
+	
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("Response: %s\n", resp.Json)
+}</code></pre></div><div class=runnable-tab-content data-tab=java><pre><code class=no-copy tabindex=-1>import io.dgraph.DgraphClient;
+import io.dgraph.DgraphGrpc;
+import io.dgraph.DgraphGrpc.DgraphStub;
+import io.dgraph.DgraphProto.Response;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+
+import java.util.Map;
+
+public class App {
+
+    public static void main(final String[] args) {
+        ManagedChannel channel =
+            ManagedChannelBuilder.forAddress("localhost", 9080).usePlaintext(true).build();
+        DgraphStub stub = DgraphGrpc.newStub(channel);
+        DgraphClient dgraphClient = new DgraphClient(stub);
+
+        String query = "<span class=java-query>blahblah</span>";
+
+    
+        Response res = dgraphClient.newTransaction().query(query);
+    
+        System.out.printf("Response: %s", res.getJson().toStringUtf8());
+    }
+}
+
+</code></pre></div><div class=runnable-tab-content data-tab=python><pre><code class=no-copy tabindex=-1>import pydgraph
+import json
+
+def main():
+    client_stub = pydgraph.DgraphClientStub("localhost:9080")
+    client = pydgraph.DgraphClient(client_stub)
+    query = """<span class=query-content>blahblah</span>"""
+    res = client.txn(read_only=True).query(query)
+    print('Response: {}'.format(json.loads(res.json)))
+
+    client_stub.close()
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as e:
+        print('Error: {}'.format(e))
+
+</code></pre></div><div class=runnable-tab-content data-tab=js-grpc><pre><code class=no-copy tabindex=-1>const dgraph = require("dgraph-js");
+const grpc = require("grpc");
+
+async function main() {
+  const clientStub = new dgraph.DgraphClientStub("localhost:9080", grpc.credentials.createInsecure());
+  const dgraphClient = new dgraph.DgraphClient(clientStub);
+
+  const query = `<span class=query-content>blahblah</span>`;
+  const response = await dgraphClient.newTxn().query(query);
+  console.log("Response: ", JSON.stringify(response.getJson()));
+
+  clientStub.close();
+}
+
+main().then().catch((e) => {
+  console.log("ERROR: ", e);
+});
+</code></pre></div><div class=runnable-tab-content data-tab=js-http><pre><code class=no-copy tabindex=-1>const dgraph = require("dgraph-js-http");
+
+async function main() {
+  const clientStub = new dgraph.DgraphClientStub("http://localhost:8080");
+  const dgraphClient = new dgraph.DgraphClient(clientStub);
+
+  const query = `<span class=query-content>blahblah</span>`;
+  const response = await dgraphClient.newTxn().query(query);
+  console.log("Response: ", JSON.stringify(response.data));
+}
+
+main().then().catch((e) => {
+  console.log("ERROR: ", e);
+});
+</code></pre></div></div><div class="row footer"><div class=col-12><div class="actions pull-right"><div class=edit-actions><a class=code-btn data-action=reset href=#>Reset</a>
+<a class=code-btn data-action=discard href=#>Discard</a>
+<a class=code-btn data-action=save href=#><i class="fa fa-save"></i> Save</a></div><div class=normal-actions><a class=code-btn data-action=edit href=#><i class="fa fa-edit"></i> Edit query</a>
+<span class=code-btn data-action=copy-code href=#>Copy</span></div></div></div></div></div></div><div class="runnable-col runnable-col-output col-12 col-sm-12 col-md-12 col-lg-6 nopadding"><div class=runnable-pane><div class="row topbar"><div class=col-12><span class=pane-title>Response</span></div></div><div class="runnable-content runnable-output" style=background:url(/images/dgraph-black.png);background-repeat:no-repeat;background-position:50%;background-color:#fff><pre class="output-container empty"><code class=output tabindex=-1></code></pre></div><div class="row footer"><div class="col-12 col-sm-8"><div class="latency-info hidden"><div class="stat server-latency"><span class=label>Server latency:</span> <span class=number></span> <i class="fa fa-question-circle server-latency-tooltip-trigger" data-toggle=tooltip data-placement=bottom data-html=true title="Latency information" data-animation=false></i></div><div class="stat network-latency"><span class=label>Network latency:</span> <span class=number></span></div></div></div><div class="col-12 col-sm-4"><div class="actions pull-right"><a class="code-btn hidden-sm-down" data-action=expand href=#><i class="fa fa-expand"></i></a>
+<span class=code-btn data-action=copy-output href=#>Copy</span></div></div></div></div></div></div></div></div><h2 id=language-support>Language Support</h2><div class="notices note"><span class=type>Note</span> A <code>@lang</code> directive must be specified in the schema to query or mutate
+predicates with language tags.</div><p>Dgraph supports UTF-8 strings.</p><p>In a query, for a string valued edge <code>edge</code>, the syntax</p><pre tabindex=0><code>edge@lang1:...:langN
+</code></pre><p>specifies the preference order for returned languages, with the following rules.</p><ul><li>At most one result will be returned (except in the case where the language list is set to *).</li><li>The preference list is considered left to right: if a value in given language is not found, the next language from the list is considered.</li><li>If there are no values in any of the specified languages, no value is returned.</li><li>A final <code>.</code> means that a value without a specified language is returned or if there is no value without language, a value in &lsquo;&lsquo;some&rsquo;&rsquo; language is returned.</li><li>Setting the language list value to * will return all the values for that predicate along with their language. Values without a language tag are also returned.</li></ul><p>For example:</p><ul><li><code>name</code> => Look for an untagged string; return nothing if no untagged value exits.</li><li><code>name@.</code> => Look for an untagged string, then any language.</li><li><code>name@en</code> => Look for <code>en</code> tagged string; return nothing if no <code>en</code> tagged string exists.</li><li><code>name@en:.</code> => Look for <code>en</code>, then untagged, then any language.</li><li><code>name@en:pl</code> => Look for <code>en</code>, then <code>pl</code>, otherwise nothing.</li><li><code>name@en:pl:.</code> => Look for <code>en</code>, then <code>pl</code>, then untagged, then any language.</li><li><code>name@*</code> => Look for all the values of this predicate and return them along with their language. For example, if there are two values with languages en and hi, this query will return two keys named &ldquo;name@en&rdquo; and &ldquo;name@hi&rdquo;.</li></ul><div class="notices note"><span class=type>Note</span><p>In functions, language lists (including the <code>@*</code> notation) are not allowed.
+Untagged predicates, Single language tags, and <code>.</code> notation work as described
+above.</p><hr><p>In <a href=/query-language/functions/#full-text-search>full-text search functions</a>
+(<code>alloftext</code>, <code>anyoftext</code>), when no language is specified (untagged or <code>@.</code>),
+the default (English) full-text tokenizer is used. This does not mean that
+the value with the <code>en</code> tag will be searched when querying the untagged value,
+but that untagged values will be treated as English text. If you don&rsquo;t want that
+to be the case, use the appropriate tag for the desired language, both for
+mutating and querying the value.</p></div><p>Query Example: Some of Bollywood director and actor Farhan Akhtar&rsquo;s movies have a name stored in Russian as well as Hindi and English, others do not.</p><div class=runnable data-checksum=f93ef7d8fe2d2bc0cd47f75263f5d52a data-initial='{
+  q(func: allofterms(name@en, "Farhan Akhtar")) {
+    name@hi
+    name@en
+
+    director.film {
+      name@ru:hi:en
+      name@en
+      name@hi
+      name@ru
+    }
+  }
+}' data-current='{
+  q(func: allofterms(name@en, "Farhan Akhtar")) {
+    name@hi
+    name@en
+
+    director.film {
+      name@ru:hi:en
+      name@en
+      name@hi
+      name@ru
+    }
+  }
+}' data-dirty=false><div class=container-fluid><div class=row><div class="runnable-col runnable-col-code col-12 col-sm-12 col-md-12 col-lg-6 nopadding"><div class=runnable-pane><div class=topbar><div class=normal-header><div class=row><div class=col-10><nav class=nav-languages><a class="language active" data-action=nav-lang data-target=query href=#>Query</a>
+<a class=language data-action=nav-lang data-target=go-grpc href=#>Go</a>
+<a class=language data-action=nav-lang data-target=java href=#>Java</a>
+<a class=language data-action=nav-lang data-target=python href=#>Python</a>
+<a class=language data-action=nav-lang data-target=js-grpc href=#>JavaScript (gRPC)</a>
+<a class=language data-action=nav-lang data-target=js-http href=#>JavaScript (HTTP)</a>
+<a class=language data-action=nav-lang data-target=curl href=#>Curl</a></nav></div><div class=col-2><div class="actions pull-right"><a class=code-btn data-action=run href=#>Run</a></div></div></div></div><div class=editing-header><div class=row><div class=col-12><span class=pane-title>Editing query...</span></div></div></div></div><div class="runnable-content runnable-code"><div class="runnable-tab-content active" data-tab=query><pre><code class=no-copy><span class=query-content>{
+  q(func: allofterms(name@en, &#34;Farhan Akhtar&#34;)) {
+    name@hi
+    name@en
+
+    director.film {
+      name@ru:hi:en
+      name@en
+      name@hi
+      name@ru
+    }
+  }
+}</span></code></pre></div><div class=runnable-tab-content data-tab=edit><textarea class=query-content-editable>{
+  q(func: allofterms(name@en, &#34;Farhan Akhtar&#34;)) {
+    name@hi
+    name@en
+
+    director.film {
+      name@ru:hi:en
+      name@en
+      name@hi
+      name@ru
+    }
+  }
+}</textarea></div><div class=runnable-tab-content data-tab=curl><pre><code class=no-copy tabindex=-1>curl localhost:8080/query -XPOST -d '<br><span class=query-content>blahblah</span>' | python -m json.tool | less
+    </code></pre></div><div class=runnable-tab-content data-tab=go-grpc><pre><code class=no-copy tabindex=-1>package main
+
+import (
+	"context"
+	"flag"
+	"fmt"
+	"log"
+    
+	"github.com/dgraph-io/dgo"
+	"github.com/dgraph-io/dgo/protos/api"
+    
+	"google.golang.org/grpc"
+)
+
+var (
+	dgraph = flag.String("d", "127.0.0.1:9080", "Dgraph Alpha address")
+)
+
+func main() {
+	flag.Parse()
+	conn, err := grpc.Dial(*dgraph, grpc.WithInsecure())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer conn.Close()
+
+	dg := dgo.NewDgraphClient(api.NewDgraphClient(conn))
+    
+	resp, err := dg.NewTxn().Query(context.Background(), `<span class=query-content>blahblah</span>`)
+	
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("Response: %s\n", resp.Json)
+}</code></pre></div><div class=runnable-tab-content data-tab=java><pre><code class=no-copy tabindex=-1>import io.dgraph.DgraphClient;
+import io.dgraph.DgraphGrpc;
+import io.dgraph.DgraphGrpc.DgraphStub;
+import io.dgraph.DgraphProto.Response;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+
+import java.util.Map;
+
+public class App {
+
+    public static void main(final String[] args) {
+        ManagedChannel channel =
+            ManagedChannelBuilder.forAddress("localhost", 9080).usePlaintext(true).build();
+        DgraphStub stub = DgraphGrpc.newStub(channel);
+        DgraphClient dgraphClient = new DgraphClient(stub);
+
+        String query = "<span class=java-query>blahblah</span>";
+
+    
+        Response res = dgraphClient.newTransaction().query(query);
+    
+        System.out.printf("Response: %s", res.getJson().toStringUtf8());
+    }
+}
+
+</code></pre></div><div class=runnable-tab-content data-tab=python><pre><code class=no-copy tabindex=-1>import pydgraph
+import json
+
+def main():
+    client_stub = pydgraph.DgraphClientStub("localhost:9080")
+    client = pydgraph.DgraphClient(client_stub)
+    query = """<span class=query-content>blahblah</span>"""
+    res = client.txn(read_only=True).query(query)
+    print('Response: {}'.format(json.loads(res.json)))
+
+    client_stub.close()
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as e:
+        print('Error: {}'.format(e))
+
+</code></pre></div><div class=runnable-tab-content data-tab=js-grpc><pre><code class=no-copy tabindex=-1>const dgraph = require("dgraph-js");
+const grpc = require("grpc");
+
+async function main() {
+  const clientStub = new dgraph.DgraphClientStub("localhost:9080", grpc.credentials.createInsecure());
+  const dgraphClient = new dgraph.DgraphClient(clientStub);
+
+  const query = `<span class=query-content>blahblah</span>`;
+  const response = await dgraphClient.newTxn().query(query);
+  console.log("Response: ", JSON.stringify(response.getJson()));
+
+  clientStub.close();
+}
+
+main().then().catch((e) => {
+  console.log("ERROR: ", e);
+});
+</code></pre></div><div class=runnable-tab-content data-tab=js-http><pre><code class=no-copy tabindex=-1>const dgraph = require("dgraph-js-http");
+
+async function main() {
+  const clientStub = new dgraph.DgraphClientStub("http://localhost:8080");
+  const dgraphClient = new dgraph.DgraphClient(clientStub);
+
+  const query = `<span class=query-content>blahblah</span>`;
+  const response = await dgraphClient.newTxn().query(query);
+  console.log("Response: ", JSON.stringify(response.data));
+}
+
+main().then().catch((e) => {
+  console.log("ERROR: ", e);
+});
+</code></pre></div></div><div class="row footer"><div class=col-12><div class="actions pull-right"><div class=edit-actions><a class=code-btn data-action=reset href=#>Reset</a>
+<a class=code-btn data-action=discard href=#>Discard</a>
+<a class=code-btn data-action=save href=#><i class="fa fa-save"></i> Save</a></div><div class=normal-actions><a class=code-btn data-action=edit href=#><i class="fa fa-edit"></i> Edit query</a>
+<span class=code-btn data-action=copy-code href=#>Copy</span></div></div></div></div></div></div><div class="runnable-col runnable-col-output col-12 col-sm-12 col-md-12 col-lg-6 nopadding"><div class=runnable-pane><div class="row topbar"><div class=col-12><span class=pane-title>Response</span></div></div><div class="runnable-content runnable-output" style=background:url(/images/dgraph-black.png);background-repeat:no-repeat;background-position:50%;background-color:#fff><pre class="output-container empty"><code class=output tabindex=-1></code></pre></div><div class="row footer"><div class="col-12 col-sm-8"><div class="latency-info hidden"><div class="stat server-latency"><span class=label>Server latency:</span> <span class=number></span> <i class="fa fa-question-circle server-latency-tooltip-trigger" data-toggle=tooltip data-placement=bottom data-html=true title="Latency information" data-animation=false></i></div><div class="stat network-latency"><span class=label>Network latency:</span> <span class=number></span></div></div></div><div class="col-12 col-sm-4"><div class="actions pull-right"><a class="code-btn hidden-sm-down" data-action=expand href=#><i class="fa fa-expand"></i></a>
+<span class=code-btn data-action=copy-output href=#>Copy</span></div></div></div></div></div></div></div></div></div><div class=post__comments><footer class=clearfix><a target=_blank href=https://discuss.dgraph.io><img class=logo src=https://discuss-dgraph-io.s3.dualstack.us-west-1.amazonaws.com/original/2X/4/4167dff901e0bed240f529edd1d9f318462968f8.png></a>
+<a class=question-btn target=_blank href=https://discuss.dgraph.io/c/docs/49><i class="fa fa-question-circle"></i> Ask a Question</a>
+<a class=edit-btn target=_blank href=https://github.com/dgraph-io/librebaas-docs/edit/master/content/query-language/graphql-fundamentals.md><i class="fa fa-github-alt"></i> Edit Page</a></footer></div></article><div class=right-toc><nav id=TableOfContents><ul><li><a href=#take-a-tour---httpsdgraphiotour>Take a Tour - <a href=https://dgraph.io/tour/>https://dgraph.io/tour/</a></a><ul><li><a href=#running-examples>Running examples</a><ul><li><a href=#example-database-schema>Example database schema</a></li></ul></li></ul></li><li><a href=#queries>Queries</a><ul><li><a href=#error-codes>Error Codes</a><ul><li></li></ul></li></ul></li><li><a href=#returning-values>Returning Values</a></li><li><a href=#expanding-graph-edges>Expanding Graph Edges</a></li><li><a href=#comments>Comments</a></li><li><a href=#applying-filters>Applying Filters</a></li><li><a href=#language-support>Language Support</a></li></ul></nav></div></div></main><div class="modal fade" id=runnable-modal tabindex=-1 role=dialog aria-labelledby=exampleModalLabel aria-hidden=true><a href=# data-dismiss=modal class=modal-close-btn>Close</a><div class=modal-dialog role=document><div class=modal-content><div class=modal-body></div></div></div></div><script type=text/javascript src=https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js></script>
+<script type=text/javascript>if(window.docsearch){var version="latest",path=window.location.pathname,arr=/(?:\/)?((?:master)|(?:v[0-9][^/]+))(?:\/)?.*$/.exec(path);arr!=null&&arr.length>1&&(version=arr[1]),window.docsearch({apiKey:"fe4cbc1640c6c87bbc5f099902d86f97",indexName:"dgraph",inputSelector:"#algolia-doc-search",algoliaOptions:{filters:`version:${version}`},debug:!1})}</script><script type=text/javascript>adroll_adv_id="L42C3U2UXBBPVAMISVXVLC",adroll_pix_id="MOR4VUNPK5B2LHEZ2NNTDX",adroll_version="2.0",function(e,t,n,s,o){e.__adroll_loaded=!0,e.adroll=e.adroll||[],e.adroll.f=["setProperties","identify","track"];var i="https://s.adroll.com/j/"+adroll_adv_id+"/roundtrip.js";for(o=0;o<e.adroll.f.length;o++)e.adroll[e.adroll.f[o]]=e.adroll[e.adroll.f[o]]||function(t){return function(){e.adroll.push([t,arguments])}}(e.adroll.f[o]);n=t.createElement("script"),s=t.getElementsByTagName("script")[0],n.async=1,n.src=i,s.parentNode.insertBefore(n,s)}(window,document),adroll.track("pageView")</script><script src=/js/clipboard.min.js></script>
+<script src=/js/dgraph.js?a9873668f1334ff6c49d4edea0a4bc38></script>
+<script src=/js/runnable.js?6e7f328df4134d18ba5c8dd11f84deb8></script>
+<script>hljs.initHighlightingOnLoad()</script><script async src=//unpkg.com/@dgraph-io/community></script>
+<script src=https://cdn.ranksci.com/dgraph-411505.min.js type=text/javascript></script></body></html>
