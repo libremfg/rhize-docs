@@ -1,7 +1,7 @@
 +++
 date = "2017-03-20T19:35:35+11:00"
-title = "Get started with Dgraph"
-description = "From learning the basics of graph databases to advanced functions and capabilities, Dgraph docs have the information you need."
+title = "Get started with Libre Baas"
+description = "From learning the basics of graph databases to advanced functions and capabilities, LibreBaas docs have the information you need."
 aliases = ["/contribute"]
 [menu.main]
   name = "Home"
@@ -11,12 +11,11 @@ aliases = ["/contribute"]
 
 <div class="landing">
   <div class="hero">
-    <h1>Get started with Dgraph</h1>
+    <h1>Get started with Libre Baas</h1>
     <p>
-      Designed from the ground up to be run in production, Dgraph is the native GraphQL database with a graph backend. It is open-source, scalable, distributed, highly available and lightning fast.
+      Designed from the ground up to be run in production, Libre Baas is a native GraphQL database with a graph backend. It is scalable, distributed, highly available and lightning fast.
     </p>
-    <p><b>Tip</b>: New to Dgraph? Take the <a href="https://dgraph.io/tour">Dgraph Tour</a> to run live queries in your browser. Then, try Dgraph as a <a href="https://cloud.dgraph.io">cloud service</a>, or <a href="https://dgraph.io/docs/deploy/download">download</a> Dgraph to deploy it yourself.</p>
-    <img class="hero-deco" src="/images/hero-deco_403x160.png" />
+
   </div>
   <div class="item">
     <div class="icon"><i class="lni lni-keyword-research" aria-hidden="true"></i></div>
@@ -33,15 +32,6 @@ aliases = ["/contribute"]
       <h2>GraphQL</h2>
       <p>
         Dgraph gives you GraphQL, not a translation layer
-      </p>
-    </a>
-  </div>
-  <div class="item">
-    <div class="icon"><i class="fa fa-code-fork" aria-hidden="true"></i></div>
-    <a href="{{< relref "dql/_index.md">}}">
-      <h2>DQL</h2>
-      <p>
-        A reference guide for Dgraph Query Language (DQL)
       </p>
     </a>
   </div>
