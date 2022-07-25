@@ -1,0 +1,49 @@
+<nav id="header">
+  <div class="header-left">
+    <div>
+      <a href="https://libremfg.com/features-gql" class="brand">
+        <img src="{{ .Site.BaseURL }}/images/libre-logo.png" alt="libre" class="logo" />
+      </a>
+      <div class="logo-tagline">
+        <span>Documentation</span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li {{ if eq .Site.Params.site "dgraph-docs" }}class="active"{{ end }}>
+        <a >Libre Baas</a>
+      </li>
+    </ul>
+  </div>
+  <div class="header-right">
+    <div style="
+      margin-top: 10px;
+    ">
+      <div class="menu-search align-middle">
+        <div class="menu-search-inner">
+          <input type="search" class="form-control form-control-sm" id="algolia-doc-search" placeholder="Search documentation" aria-label="Search docs" autocomplete="off">
+        </div>
+      </div>
+    </div>
+    <div>
+      <ul class="menu">
+        <li>
+          <a href="https://libremfg.com/features-gql" target="_blank">Home</a>
+        </li>
+        <li>
+          <a href="https://www.libremfg.com/pricing-gql/" target="_blank">Pricing</a>
+        </li>
+        <li>
+          <a href="https://discord.gg/vtJ7JE4sha" target="_blank">Community</a>
+        </li>
+        {{ with .Site.Params.site }}
+          <li>
+            <a href="https://github.com/libremfg/libremfg.github.io" target="_blank">GitHub</a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+  <a href="#" id="sidebar-toggle">
+    <i class="fa fa-bars"></i>
+  </a>
+</nav>

@@ -1,0 +1,22 @@
+{{ partial "header.html" . }}
+
+<main class="content-wrapper">
+  <div class="content">
+    <article id="{{ .Slug }}">
+      {{if (ne .Title "Get started with Dgraph") }}
+      {{ partial "ask-question.html" . }}
+      {{ partial "suggest-edit.html" . }}
+      {{ end }}
+
+      <div class="page-not-found">
+        <h1>Uh-oh</h1>
+
+        <h3>Sorry, but we can't find the page!</h3>
+
+        <p><a href="{{.Site.BaseURL}}">Go to homepage</a></p>
+      </div>
+    </article>
+  </div>
+</main>
+
+{{ partial "footer.html" . }}
