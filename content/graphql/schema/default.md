@@ -26,7 +26,7 @@ Where a value is not provided as input for a mutation, the `add` value will be u
 
 ## Timestamp support
 
-The directive supports timestamping the mutation event
+The directive supports timestamping mutation events.
 ```graphql
 type Type {
     createdAt: DateTime! @default(
@@ -40,7 +40,39 @@ type Type {
 ```
 The string `$now` is replaced by the current DateTime string on the server.
 
-The u
+### Propagation
+Where the timestamp method is used across related nodes, the update is confined to the specific node updated in 
+the mutation and does not propagate across relationships.
+
+In the example schema below, performing a mutation on a `Child` node to update the `parent` relationship will not affect the 
+`createdAt` or `updatedAt` on any `Parent` node types
+
+```graphql
+type Child {
+    id: ID!
+    name: String 
+    parent :  Parent @hasInverse(field: child)
+    createdAt: DateTime! @default(
+        add: { value: "$now" }
+    )
+    updatedAt: DateTime! @default(
+        add: { value: "$now" }
+        update: { value: "$now" }
+    )
+}
+type Parent {
+    id: ID!
+    name: String 
+    child : Child @hasInverse(field: parent)
+    createdAt: DateTime! @default(
+        add: { value: "$now" }
+    )
+    updatedAt: DateTime! @default(
+        add: { value: "$now" }
+        update: { value: "$now" }
+    )
+}
+```
 
 ## Schema Validation
 ### Field Type Conversion
