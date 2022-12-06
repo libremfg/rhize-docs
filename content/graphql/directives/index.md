@@ -126,3 +126,10 @@ Reference: [Subscriptions](/graphql/subscriptions)
 The `@lambdaOnMutate` directive allows you to listen to mutation events(`add`/`update`/`delete`). Depending on the defined events and the occurrence of a mutation event, `@lambdaOnMutate` triggers the appropriate lambda function implemented on a given lambda server.
 
 Reference: [LambdaOnMutate directive](/graphql/lambda/webhook)
+
+
+### @default
+
+The `@default` directive provides default values to be stored when not supplied in a mutation (`add`/`update`).  The directive can be used with the current DateTime (via `$now') to allow timestamping of mutation events.
+
+Reference: [Default directive](/graphql/schema/default)
