@@ -32,7 +32,7 @@ Reference: [Custom directive](/graphql/custom/directive)
 
 The `@default` directive allows you to specify values that should be used when nil values are received for either `add` mutations or `update` mutations
 
-Reference: [Default directive](/graphql/directives/defaultDirective)
+Reference: [Default directive](/graphql/directives/default)
 
 ### @deprecated
 
