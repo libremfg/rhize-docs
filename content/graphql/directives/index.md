@@ -32,7 +32,7 @@ Reference: [Custom directive](/graphql/custom/directive)
 
 The `@default` directive allows you to specify values that should be used when nil values are received for either `add` mutations or `update` mutations
 
-Reference: [Default directive](defaultDirective.md)
+Reference: [Default directive](/graphql/directives/defaultDirective)
 
 ### @deprecated
 
@@ -82,7 +82,7 @@ Reference: [Lambda directive](/graphql/lambda/overview)
 
 The `@primary-key`  allows you to specify a list of fields where the concatenation of values of those fields must be unique in the database
 
-Reference: [Primary Key](primaryKey.md)
+Reference: [Primary Key](/graphql/directives/primaryKey)
 
 ### @remote
 
