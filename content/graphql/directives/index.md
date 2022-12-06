@@ -28,6 +28,12 @@ Reference: [Cascade](/graphql/queries/cascade)
 
 Reference: [Custom directive](/graphql/custom/directive)
 
+### @default
+
+The `@default` directive allows you to specify values that should be used when nil values are received for either `add` mutations or `update` mutations
+
+Reference: [Default directive](defaultDirective.md)
+
 ### @deprecated
 
 The `@deprecated` directive lets you mark the schema definition of a field or `enum` value as deprecated, and also lets you provide an optional reason for the deprecation.
@@ -71,6 +77,12 @@ Reference: [Include directive](/graphql/queries/skip-include)
 The `@lambda` directive allows you to call custom JavaScript resolvers. The `@lambda` queries, mutations, and fields are resolved through the lambda functions implemented on a given lambda server.
 
 Reference: [Lambda directive](/graphql/lambda/overview)
+
+### @primary-key
+
+The `@primary-key`  allows you to specify a list of fields where the concatenation of values of those fields must be unique in the database
+
+Reference: [Primary Key](primaryKey.md)
 
 ### @remote
 
