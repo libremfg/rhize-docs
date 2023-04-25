@@ -2,27 +2,26 @@
 date = "2017-03-20T19:35:35+11:00"
 title = "Get started with Libre Baas"
 description = "From learning the basics of graph databases to advanced functions and capabilities, LibreBaas docs have the information you need."
-aliases = ["/contribute"]
 [menu.main]
-  name = "Home"
-  identifier = "home"
-  weight = 1
+name = "Home"
+identifier = "home"
+weight = 1
 +++
 
 <div class="landing">
   <div class="hero">
-    <h1>Get started with Libre Baas</h1>
+    <h1>Get started with LibreMfg Data Hub</h1>
     <p>
-      Designed from the ground up to be run in production, Libre Baas is a native GraphQL database with a graph backend. It is scalable, distributed, highly available and lightning fast.
+      The Libremfg DataHub has been designed from the ground up to transform industrial data management. It is scalable, distributed, highly available and lightning fast.
     </p>
 
   </div>
   <div class="item">
     <div class="icon"><i class="lni lni-keyword-research" aria-hidden="true"></i></div>
-    <a href="{{< relref "dgraph-overview.md">}}">
-      <h2>Overview</h2>
+    <a href="{{< relref "/datahub/overview.md">}}">
+      <h2>Data Hub Overview</h2>
       <p>
-      Dgraph basics, including deployment options and a glossary of terms
+      Data Hub overview
       </p>
     </a>
   </div>
@@ -31,7 +30,7 @@ aliases = ["/contribute"]
     <a  href="{{< relref "graphql/_index.md">}}">
       <h2>GraphQL</h2>
       <p>
-        Dgraph gives you GraphQL, not a translation layer
+        BAAS gives you GraphQL, not a translation layer
       </p>
     </a>
   </div>
@@ -40,7 +39,7 @@ aliases = ["/contribute"]
     <a href="{{< relref "deploy/overview.md">}}">
       <h2>Deploy and Manage</h2>
       <p>
-        Running a Dgraph cluster in production
+        Running a BAAS cluster in production
       </p>
     </a>
   </div>
@@ -49,7 +48,7 @@ aliases = ["/contribute"]
     <a href="https://dgraph.io/docs/badger">
       <h2>Badger</h2>
       <p>
-        Embeddable, persistent and fast key-value database that powers Dgraph
+        Embeddable, persistent and fast key-value database that powers BAAS
       </p>
     </a>
   </div>
