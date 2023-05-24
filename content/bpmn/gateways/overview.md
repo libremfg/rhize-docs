@@ -15,7 +15,7 @@ An inclusive gateway allows multiple outgoing sequence flows to be chosen simult
 ## Parallel Gateway
 A parallel gateway represents a synchronization point where multiple incoming sequence flows are merged into a single outgoing flow or vice versa. It is used to split the process flow into parallel paths or to join parallel paths back together. All incoming sequence flows must complete before the gateway allows the process to continue.
 ## Event-Based Gateway
-
+Event-based gateways are used to model decision points within a business process that are triggered by events. Unlike exclusive or parallel gateways that rely on conditions or parallel execution, event-based gateways make decisions based on the occurrence or non-occurrence of events.
 ## Complex Gateway
 Complex gateways are a type of BPMN gateway that combines multiple conditions and routing rules to determine the flow of a process. They are used to model more intricate decision-making scenarios that cannot be adequately represented using the basic gateways (exclusive, inclusive, parallel, and event-based). They provide a way to express complex business logic by evaluating multiple conditions simultaneously and determining the appropriate path based on the combination of these conditions.
 
