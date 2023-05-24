@@ -6,10 +6,14 @@ weight = 1
 parent = "gateways"
 +++
 
-This is an overview of all the different types of gateways that we can have. 
+BPMN gateways are used to depict decision points and control flow within a process in business process modelling. Gateways enable the modelling of complex routing and branching logic, allowing for conditional paths and synchronisation of process flows. They help define how the process should behave based on certain conditions or events. The 5 gateway types, Parallel, Inclusive, Exclusive, Complex and Event Based, each represent different condition logic, such as AND, XOR, OR and +.
 
-## Start Event
+## Exclusive Gateway
 
-## Intermediate Event
+## Inclusive Gateway
 
-## End Event
+## Parallel Gateway
+
+## Event-Based Gateway
+
+## Complex Gateway
