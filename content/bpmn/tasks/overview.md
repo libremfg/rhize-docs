@@ -6,15 +6,18 @@ weight = 1
 parent = "tasks"
 +++
 
-This is an overview of all the different types of events that we can have. These include start, intermediate and end events. Within these events you can have specific type events.
+## Tasks
 
+## Send Task
 
-## Start Event
+## Receive Task
 
+## User Task
 
+## Manual Task
 
-## Intermediate Event
+## Business Rule Task
 
+## Service Task
 
-
-## End Event
+## Script Task
