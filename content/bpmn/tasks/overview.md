@@ -14,8 +14,10 @@ Tasks in BPMN are represented by rectangles with rounded corners. Tasks represen
 ## Receive Task
 
 ## User Task
+User tasks require user involvement. This typically involves user interaction for input or actions and involves interfaces that facilitate interaction with the task. Some examples of user tasks are form submissions, approvals, reviews and scheduling.
 
 ## Manual Task
+Manual tasks require human involvement. This typically involves human interaction, decision-making or physical actions. Some examples of manual tasks are reviews and approvals, data entry, inspections and documentation.
 
 ## Business Rule Task
 
