@@ -26,3 +26,4 @@ Manual tasks require human involvement. This typically involves human interactio
 ## Service Task
 
 ## Script Task
+Script tasks involve running a snippet of code or a script. This typically involves the execution of custom scripts or code snippets written in a programming language to perform computational tasks, data transformations, or decision-making processes that require custom logic. Some examples of script tasks are error and exception handling, processing variables and API interactions.
