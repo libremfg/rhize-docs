@@ -22,8 +22,10 @@ User tasks require user involvement. This typically involves user interaction fo
 Manual tasks require human involvement. This typically involves human interaction, decision-making or physical actions. Some examples of manual tasks are reviews and approvals, data entry, inspections and documentation.
 
 ## Business Rule Task
+Business tasks involve business rules. This involves applying business rules or decision logic within the process flow. They can be used to evaluate conditions, make decisions, and determine the path the process should follow based on predefined rules. Some examples of business rule tasks are credit approvals, discount calculations and pricing determinations.
 
 ## Service Task
+Service tasks involve services and systems. This involves invoking services, performing operations, integrating with external applications, or executing predefined service activities. Some examples of service tasks are integration and orchestration, service operations and synchronous and asynchronous communication.
 
 ## Script Task
 Script tasks involve running a snippet of code or a script. This typically involves the execution of custom scripts or code snippets written in a programming language to perform computational tasks, data transformations, or decision-making processes that require custom logic. Some examples of script tasks are error and exception handling, processing variables and API interactions.
