@@ -7,8 +7,6 @@ weight = 2
     parent = "admin"
 +++
 
-Dgraph logs requests for queries and mutations, and also provides audit logging
-capabilities with a Dgraph [enterprise license]({{< relref "enterprise-features/license.md" >}}).
 
 Dgraph's log format comes from the glog library and is [formatted](https://github.com/golang/glog/blob/23def4e6c14b4da8ac2ed8007337bc5eb5007998/glog.go#L523-L533) as follows:
 
@@ -97,21 +95,3 @@ As you can see, we got the query that Alpha received. To read it in the original
 }
 ```
 
-Similarly, you can turn off request logging by setting `logRequest` to `false` in the `/admin` mutation.
-
-```graphql
-mutation {
-  config(input: {logRequest: false}) {
-    response {
-      code
-      message
-    }
-  }
-}
-```
-
-## Audit logging (enterprise feature)
-
-With a Dgraph enterprise license, you can enable audit logging so that all
-requests are tracked and available for use in security audits. To learn more, see
-[Audit Logging]({{< relref "enterprise-features/audit-logs.md" >}}).

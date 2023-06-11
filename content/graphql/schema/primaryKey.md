@@ -1,9 +1,9 @@
 +++
-title = "The @primaryKey Directive"
-description = "The @primaryKey directive is used to define a set of fields whos combination of values must be unique in the database"
-weight = 2
+title = "@primaryKey Directive"
+description = "The @primaryKey directive allows a group of string fields to be specified as collectively unique."
+weight = 12
 [menu.main]
-parent = "directives"
+parent = "schema"
 +++
 
 Here's the GraphQL definition of the directives:

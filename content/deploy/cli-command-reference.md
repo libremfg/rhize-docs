@@ -235,13 +235,11 @@ The commands in these groups are shown in the following table:
 | Dgraph core      | [`zero`](#dgraph-zero) | Dgraph Zero management node commands |
 | Data loading     | [`bulk`](#dgraph-bulk) | Dgraph [Bulk Loader]({{< relref "deploy/fast-data-loading/bulk-loader.md" >}}) commands     |
 | Data loading     | [`live`](#dgraph-live) | Dgraph [Live Loader]({{< relref "deploy/fast-data-loading/live-loader.md" >}}) commands     |
-| Data loading     | [`restore`](#dgraph-restore) | Command used to restore backups created using Dgraph Enterprise Edition     |
 | Dgraph debug     | [`debug`](#dgraph-debug)    | Used to debug issues with Dgraph     |
 | Dgraph debug     | [`debuginfo`](#dgraph-debuginfo)    | Generates information about the current node for use in debugging issues with Dgraph clusters   |
 | Dgraph tools     | [`completion`](#dgraph-completion)    | Generates shell completion scripts for `bash` and `zsh`     |
 | Dgraph tools     | [`conv`](#dgraph-conv)    | Converts geographic files into RDF so that they can be consumed by Dgraph    |
 | Dgraph tools     | [`decrypt`](#dgraph-decrypt)    | Decrypts an export file created by an encrypted Dgraph cluster     |
-| Dgraph tools     | [`export_backup`](#dgraph-export_backup)    | Converts a binary backup created using Dgraph Enterprise Edition into an exported folder.      |
 | Dgraph tools     | [`increment`](#dgraph-increment)    | Increments a counter transactionally to confirm that a Dgraph Alpha node can handle query and mutation requests |
 | Dgraph tools     | [`lsbackup`](#dgraph-lsbackup)    | Lists information on backups in a given location   |
 | Dgraph tools     | [`migrate`](#dgraph-migrate)    | Migrates data from a MySQL database to Dgraph |
@@ -974,7 +972,7 @@ Use "dgraph decrypt [command] --help" for more information about a command.
 
 #### `dgraph export_backup`
 
-This command is used to convert a [binary backup]({{< relref "enterprise-features/binary-backups.md" >}})
+This command is used to convert a 
 created using Dgraph Enterprise Edition into an exported folder. The following
 replicates key information from the help listing shown when you run `dgraph export_backup --help`:
 
@@ -1051,7 +1049,7 @@ Use "dgraph increment [command] --help" for more information about a command.
 #### `dgraph lsbackup`
 
 This command lists information on backups in a given location for Dgraph Enterprise
-Edition. To learn more, see [Backup List Tool]({{< relref "enterprise-features/lsbackup.md" >}}).
+Edition. To learn more, see 
 The following replicates the help listing shown when you run `dgraph lsbackup --help`:
 
 ```shell
