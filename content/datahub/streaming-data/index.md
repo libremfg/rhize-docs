@@ -55,6 +55,17 @@ with the `--cdc` command and the sub-option shown below, as follows:
 dgraph alpha --cdc "file=local-file-path"
 ```
 
+## Enable CDC with nats jetstream KV store sink
+
+To enable CDC and sink results to a nats jetstream KV store, start Dgraph Alpha
+with the `--cdc` command and the sub-option shown below, as follows:
+
+```bash
+dgraph alpha --cdc "nats=nats://system:system@localhost:4222"
+```
+
+
+
 ## CDC command reference
 
 The `--cdc` option includes several sub-options that you can use to configure
