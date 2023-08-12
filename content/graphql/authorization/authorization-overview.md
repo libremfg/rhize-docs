@@ -1,48 +1,79 @@
 +++
-title = "Overview of Authorization and Authentication with GraphQL"
-description = "The Rhize GraphQL implementation comes with built-in authorization, and supports various authentication methods, so you can annotate your schema with rules that determine who can access or mutate the data."
+title = "Keycloak Integration"
+description = "The Rhize GraphQL implementation uses OpenIDConnect for Authentication and role-based access control. This section decribes how to set up Keycloak"
 weight = 1
 [menu.main]
-    name = "Overview"
+    name = "KeyCloak Integraiton"
     parent = "authorization"
-    identifier = "authorization-overview"
+    identifier = "keycloak-integration"
 +++
 
-The Rhize GraphQL implementation comes with built-in authorization. This lets you annotate your schema with rules that determine who can query and mutate your data.
 
-First, let's get some concepts defined. There are two important concepts included in what's often called *auth*:
+## Authentication Overview
 
-* Authorization: access permissions (what are you allowed to do)
-* Authentication: establishment of identity (who you are)
+Rhize uses OpenIDConnect to connect to a Keycloak server to authenticate users and manage Role-based access controls.
 
-Rhize lets you use your GraphQL schema to manage both authorization and authentication:
-* You set authorization rules by annotating your schema with the `@auth` directive
-* Authentication is handled via OpenIDConnect, allowing single-sign-on through Keycloak.
+### Overview of OpenIDConnect
 
-Establishing identity and managing identity-based permissions are closely related,
-so this page covers both Rhize's authorization capabilities, and how Rhize works with
-various authentication methods.
+Open ID Connect is a security architecture that uses Json Web Tokens (JWTs) to access secured resources.
+JWT are issued by KeyCloak, and the users can be managed in KeyCloak, or managed in other services like LDAP, Google, Azure AD, Facebook, etc.
 
-## Authorization
+When a user accesses the user interface, the UI redirects to Keycloak, which depending on how it is configured, will redirect to the authentication provider so that the user can log in. If the user is successfully authenticated, Keycloak will redirect back to the user interface with an authentication code in the url parameters.
+The UI then calls a secure API to exchange the authentication code for a JWT.
 
-You can add authorization rules to your schema using the `@auth` directive. But,
-you also need to configure the `Rhize.Authorization` object (which handles
-authentication) on the last line of your schema for the `@auth` directive to
-work (as described below).
+The UI then uses that JWT to access secured API like the RHIZE GraphQL API.
 
-When authentication and authorization are complete, your schema should look similar to the following:
+The RHIZE DB has the public key from Keycloak, which can be used to verify the JWT.
 
-```graphql
-type A @auth(...) {
-    ...
-}
+```mermaid
+sequenceDiagram
+	actor User
+	participant UI as Web UI
+	participant Rhize as RHIZE DB
+	participant KC as KeyCloak
+	participant AP as AuthProvider
+	Rhize->>KC: Get Public Key
+	User->>UI: Log In
+	UI-->>KC: Redirect
+	KC-->>AP: Redirect
+	AP->>User: Credentials
+	AP-->>KC: Auth Result
+	KC-->>UI: Redirect with Code
+	UI->>KC: Exchange Code for Token
+	KC->>UI: Reply with id_token and access_token
+	UI->>Rhize: Access API with Bearer Token
+	Rhize->>Rhize: Verify Token with Public Key from Keycloak
 
-type B @auth(...) {
-    ...
-}
 ```
 
-## Authentication
+The following sections step through how to set up Keycloak.
+
+### 1 - Create a Realm 
+Keycloak need to have a realm, which is like a tenant that contains all of the configuration. 
+Here we have created a realm named "libre"
+
+![Alt text](<Screenshot 2023-08-12 at 5.39.15 pm.png>)
+
+### 2 - Create a Client 
+Once we have created a realm, we can go head and create a client for the database, and a client for the UI.
+
+Here we have a client for the UI named libreUI, and a client for the database called libreBaas
+
+![Alt text](<Screenshot 2023-08-12 at 5.41.00 pm.png>)
+
+The LibreBaas client should be configured like this:
+
+![Alt text](<Screenshot 2023-08-12 at 5.43.51 pm.png>)
+
+### 3 - Assign permissions to the client system account
+
+We need to assign permissions to the service account in the client so that the Rhize DB can create roles 
+
+Add these roles to the service account in the libreBaas client
+
+![Alt text](<Screenshot 2023-08-12 at 5.45.47 pm.png>)
+
+### 4 - Configure Rhize to connect to the keycloak client
 
 Whe you start Rhize, you provide the credentials to your OIDC server in the startup flags like this:
 ```
@@ -56,7 +87,8 @@ the --oidc flag has the following sub-flags
 - client-id=libreBaas The name of the client within Keycloak
 - client-secret=YourSecretHere The secret to use to access the client in KeyCloak
 
-### ScopeMap
+
+#### ScopeMap
 
 The ScopeMap is a json file that allows you to map client roles in KeyCloak to types in the schema.
 
@@ -80,8 +112,34 @@ this scopemap would provide the "libre" role with access to the listed types in 
 }
 ```
 
+
+
+### 5 - Check the Client Roles
+
 When Rhize starts up and receives the schema, it connects to Keycloak and creates client roles in the libreBaas client for each of the roles in the scopeMap, adding the operation type as shown below:
 
 ![Keycloak Client Roles](../../../static/images/graphql/KeyCloakClientRoles.png)
 
-In order to assign permission for a user to query or mutate in the Rhize database, create a group in Keycloak and map the client roles into the group. Then assign the user to the group.
+### 6 - Create a Group
+
+We will need a group to act as a collection of the client roles that users should be granted. Here we will create an Admin group that has all of the client roles
+
+![Alt text](<Screenshot 2023-08-12 at 5.48.02 pm.png>)
+
+Map the client roles from the libreBaas client into the group.
+
+![Alt text](<Screenshot 2023-08-12 at 5.49.23 pm.png>)
+
+### 7 - Assign Users to the group
+
+Add a user, and assign them to the group. Here we have added a username 
+![Alt text](<Screenshot 2023-08-12 at 5.51.59 pm.png>)
+
+### 8 - Check the roles in the token
+
+We can check our configuration by generating an access token from the libreBaas client.
+Select the user you created, and click on `Generate access token`
+
+We want to see that the roles that we mapped into the group that the user is a member of show in the token under resource_access.libreBaas.roles like this:
+
+![Alt text](<Screenshot 2023-08-12 at 5.53.38 pm.png>)
