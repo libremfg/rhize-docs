@@ -52,18 +52,18 @@ The following sections step through how to set up Keycloak.
 Keycloak need to have a realm, which is like a tenant that contains all of the configuration. 
 Here we have created a realm named "libre"
 
-![Alt text](Screenshot 2023-08-12 at 5.39.15 pm.png)
+![Alt text](/images/graphql/Screenshot%202023-08-12%20at%205.39.15%20pm.png)
 
 ### 2 - Create a Client 
 Once we have created a realm, we can go head and create a client for the database, and a client for the UI.
 
 Here we have a client for the UI named libreUI, and a client for the database called libreBaas
 
-![Alt text](Screenshot 2023-08-12 at 5.41.00 pm.png)
+![Alt text](/images/graphql/Screenshot%202023-08-12%20at%205.41.00%20pm.png)
 
 The LibreBaas client should be configured like this:
 
-![Alt text](Screenshot 2023-08-12 at 5.43.51 pm.png)
+![Alt text](/images/graphql/Screenshot%202023-08-12%20at%205.43.51%20pm.png)
 
 ### 3 - Assign permissions to the client system account
 
@@ -71,7 +71,7 @@ We need to assign permissions to the service account in the client so that the R
 
 Add these roles to the service account in the libreBaas client
 
-![Alt text](Screenshot 2023-08-12 at 5.45.47 pm.png)
+![Alt text](/images/graphql/Screenshot%202023-08-12%20at%205.45.47%20pm.png)
 
 ### 4 - Configure Rhize to connect to the keycloak client
 
@@ -118,22 +118,22 @@ this scopemap would provide the "libre" role with access to the listed types in 
 
 When Rhize starts up and receives the schema, it connects to Keycloak and creates client roles in the libreBaas client for each of the roles in the scopeMap, adding the operation type as shown below:
 
-![Keycloak Client Roles](/static/images/graphql/KeyCloakClientRoles.png)
+![Keycloak Client Roles](/images/graphql/KeyCloakClientRoles.png)
 
 ### 6 - Create a Group
 
 We will need a group to act as a collection of the client roles that users should be granted. Here we will create an Admin group that has all of the client roles
 
-![Alt text](Screenshot 2023-08-12 at 5.48.02 pm.png)
+![Alt text](/images/graphql/Screenshot%202023-08-12%20at%205.48.02%20pm.png)
 
 Map the client roles from the libreBaas client into the group.
 
-![Alt text](Screenshot 2023-08-12 at 5.49.23 pm.png)
+![Alt text](/images/graphql/Screenshot%202023-08-12%20at%205.49.23%20pm.png)
 
 ### 7 - Assign Users to the group
 
 Add a user, and assign them to the group. Here we have added a username 
-![Alt text](Screenshot 2023-08-12 at 5.51.59 pm.png)
+![Alt text](/images/graphql/Screenshot%202023-08-12%20at%205.51.59%20pm.png)
 
 ### 8 - Check the roles in the token
 
@@ -142,4 +142,4 @@ Select the user you created, and click on `Generate access token`
 
 We want to see that the roles that we mapped into the group that the user is a member of show in the token under resource_access.libreBaas.roles like this:
 
-![Alt text](Screenshot 2023-08-12 at 5.53.38 pm.png)
+![Alt text](/images/graphql/Screenshot%202023-08-12%20at%205.53.38%20pm.png)
