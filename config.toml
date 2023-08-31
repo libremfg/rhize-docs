@@ -36,7 +36,7 @@ ordered = false
 startLevel = 2
 
 # set by build script: title, baseurl
-title = "Libre Baas Documentation"
+title = "RHIZE Baas Documentation"
 
 [params]
 discourse = "https://discuss.librebaas.io/"

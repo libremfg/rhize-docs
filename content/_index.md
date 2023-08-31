@@ -1,7 +1,7 @@
 +++
 date = "2017-03-20T19:35:35+11:00"
-title = "Get started with Libre Baas"
-description = "From learning the basics of graph databases to advanced functions and capabilities, LibreBaas docs have the information you need."
+title = "Get started with Rhize"
+description = "From learning the basics of graph databases to advanced functions and capabilities, RHIZE docs have the information you need."
 [menu.main]
 name = "Home"
 identifier = "home"
@@ -10,11 +10,21 @@ weight = 1
 
 <div class="landing">
   <div class="hero">
-    <h1>Get started with LibreMfg Data Hub</h1>
+    <h1>Get started with the RHIZE Manufacturing Data Hub</h1>
     <p>
-      The Libremfg DataHub has been designed from the ground up to transform industrial data management. It is scalable, distributed, highly available and lightning fast.
+      The RHIZE Manufacturing DataHub has been designed from the ground up to transform industrial data management. It is scalable, distributed, highly available and lightning fast.
     </p>
 
+  </div>
+
+  <div class="item">
+    <div class="icon"><i class="fa-duotone fa-building" aria-hidden="true"></i></div>
+    <a href="{{< relref "/architecture/_index.md">}}">
+      <h2>Architecture</h2>
+      <p>
+      Rhize Real-time Event-driven Data hub architecture
+      </p>
+    </a>
   </div>
   <div class="item">
     <div class="icon"><i class="lni lni-keyword-research" aria-hidden="true"></i></div>

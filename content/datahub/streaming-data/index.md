@@ -1,6 +1,6 @@
 +++
 title = "Streaming Data"
-description = "Streaming data in and out of Libre"
+description = "Streaming data in and out of RHIZE"
 [menu.main]
 name = "Streaming Data"
 identifier = "streaming data"
@@ -13,17 +13,17 @@ parent = "datahub"
 ## Publishing Changes with Change-Data-Capture
 
 You can use change data capture (CDC) to track data changes over time; including
-mutations and drops in your database. Libre's CDC implementation lets you use
-Kafka, Nats or a local file as a *sink* to store CDC updates streamed by Libre's Alpha
+mutations and drops in your database. RHIZE's CDC implementation lets you use
+Kafka, Nats or a local file as a *sink* to store CDC updates streamed by RHIZE's Alpha
 leader nodes.
 
-When CDC is enabled, Libre streams events for all `set` and `delete` mutations,
+When CDC is enabled, RHIZE streams events for all `set` and `delete` mutations,
 except those that affect password fields; along with any drop  events. Live
 Loader events are recorded by CDC, but Bulk Loader events aren't.
 
 CDC events are based on changes to Raft logs. So, if the sink is not reachable
 by the Alpha leader node, then Raft logs expand as events are collected on
-that node until the sink is available again. You should enable CDC on all Libre
+that node until the sink is available again. You should enable CDC on all RHIZE
 Alpha nodes to avoid interruptions in the stream of CDC events.
 
 ## Enable CDC with Kafka sink
