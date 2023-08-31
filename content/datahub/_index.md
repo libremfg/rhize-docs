@@ -18,7 +18,7 @@ weight = 1
     <a  href="{{< relref "overview.md">}}">
       <h2>Overview</h2>
       <p>
-        A guide to streaming data from OPCUA into the Libre MFG Data Hub
+        A guide to streaming data from OPCUA into the RHIZE MFG Data Hub
       </p>
     </a>
   </div>
@@ -27,7 +27,7 @@ weight = 1
     <a  href="{{< relref "streaming-data/index.md">}}">
       <h2>Streaming Data</h2>
       <p>
-        A guide to streaming data from OPCUA into the Libre MFG Data Hub
+        A guide to streaming data from OPCUA into the RHIZE MFG Data Hub
       </p>
     </a>
   </div>
@@ -36,7 +36,7 @@ weight = 1
     <a  href="{{< relref "streaming-data/index.md">}}">
       <h2>Streaming Data</h2>
       <p>
-        A guide to streaming data from OPCUA into the Libre MFG Data Hub
+        A guide to streaming data from OPCUA into the RHIZE MFG Data Hub
       </p>
     </a>
   </div>
