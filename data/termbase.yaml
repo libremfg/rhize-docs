@@ -1,0 +1,32 @@
+- term: Business Process Model and Notation
+  abbr: BPMN
+  definition: A standardized graphical notation used to represent business processes in an intuitive, visual way.
+  links:
+    - text: BPMN Specification 2.0
+      uri: https://www.omg.org/spec/BPMN/2.0/PDF
+
+- term: Event-driven architecture
+  abbr: EDA
+  definition: A software design pattern that revolves around the concept of events and event-driven messaging.
+  links:
+    - text: Rhize architecture
+      uri: /architecture/overview/
+- term: Event-driven data updates
+  definition: When an event leads to an update in the real-time database.
+  links:
+    - text: Rhize architecture
+      uri: /architecture/overview/
+- term: Manufacturing execution system
+  abbr: MES
+  definition: A system in a manufactoring process that tracks and documents the transformation of raw materials to finished goods
+  links:
+    - text: Manufactoring execution system
+      uri: https://en.wikipedia.org/wiki/Manufacturing_execution_system
+- term:
+    Manufacturing data hub
+  abbr: MDH
+  definition:
+    A centralized platform or infrastructure that serves as a hub for collecting, integrating, storing, and processing data from various sources within an organization.
+  links:
+    - text: Data hub architecture
+      uri: /architecture/data-hub/
