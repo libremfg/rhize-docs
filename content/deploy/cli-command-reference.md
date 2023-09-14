@@ -148,7 +148,7 @@ The `--badger` superflag allows you to set many advanced [Badger options](https:
 
 | Old flag | Old type | New superflag and options | New type | Applies to | Notes |
 |---------:|:---------|---------:|:---------|:----:|:----:|
-| | | **`--raft`** | | | [Raft]({{< relref "design-concepts/raft.md" >}}) superflag  |
+| | | **`--raft`** | | | [Raft]({{< relref "old/design-concepts/raft.md" >}}) superflag  |
 | `--pending_proposals` | int | `pending-proposals` | int |`alpha`|  Maximum number of pending mutation proposals; useful for rate limiting |
 | `--idx` | int | `idx` | int |`alpha`, `zero`| Provides an optional Raft ID that an Alpha node can use to join Raft groups |
 | `--group` | int | `group` | int |`alpha`| Provides an optional Raft group ID that an Alpha node can use to request group membership from a Zero node |
@@ -824,7 +824,7 @@ Use "dgraph cert [command] --help" for more information about a command.
 ### Dgraph debug commands
 
 Dgraph debug commands provide support for debugging issues with Dgraph deployments.
-To learn more, see [Using the Debug Tool]({{< relref "howto/using-debug-tool.md" >}}).
+To learn more, see [Using the Debug Tool]({{< relref "old/howto/using-debug-tool.md" >}}).
 
 #### `dgraph debug`
 
@@ -1011,7 +1011,7 @@ Use "dgraph export_backup [command] --help" for more information about a command
 
 This command increments a counter transactionally, so that you can confirm that
 an Alpha node is able to handle both query and mutation requests. To learn more,
-see [Using the Increment Tool]({{< relref "howto/using-increment-tool.md" >}}). 
+see [Using the Increment Tool]({{< relref "old/howto/using-increment-tool.md" >}}). 
 The following replicates the help listing shown when you run `dgraph increment --help`:
 
 ```shell
@@ -1067,7 +1067,7 @@ Use "dgraph lsbackup [command] --help" for more information about a command.
 
 #### `dgraph migrate`
 
-This command runs the Dgraph [migration tool]({{< relref "migration/migrate-tool.md" >}})
+This command runs the Dgraph [migration tool]({{< relref "old/migration/migrate-tool.md" >}})
 to move data from a MySQL database to Dgraph. The following replicates the help
 listing shown when you run `dgraph migrate --help`:
 
