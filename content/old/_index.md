@@ -1,7 +1,10 @@
 ---
-title: Old content
-description: Content that's from the old docs. Only visible as draft
+title: Legacy docs
+description: Content from the old docs.
+menu:
+  main:
+    identifier: old
 ---
 
-Content from the old docs. Only visible as draft
+Content from the old docs.
 
