@@ -28,8 +28,6 @@ The accompanying video of the tutorial will be out shortly, so stay tuned to [ou
 
 Here's a sample tweet.
 
-{{< tweet 1194740206177402880>}}
-
 Let's dissect the tweet above. Here are the components of the tweet:
 
 - **The Author**
@@ -136,9 +134,6 @@ Here is the graph of our sample tweet.
 
 Let's add a couple of tweets to the list.
 
-{{< tweet 1142124111650443273>}}
-
-{{< tweet 1192822660679577602>}}
 
 We'll be using these two tweets and the sample tweet, which we used in the beginning as our dataset.
 Open Ratel, go to the mutate tab, paste the mutation, and click Run.
