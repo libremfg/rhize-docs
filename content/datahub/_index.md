@@ -3,7 +3,7 @@ title = "DataHub"
 description = "The Manufacturing Data Hub"
 [menu.main]
 identifier = "datahub"
-weight = 1
+weight = 2
 +++
 
 <div class="landing">
