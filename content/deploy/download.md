@@ -11,7 +11,7 @@ weight = 2
 Dgraph is available to download in a variety of ways:
 
 {{% notice "tip" %}}
-For a single server setup, recommended for new users, please see [Get Started]({{< relref "get-started/index.md" >}}) page.
+For a single server setup, recommended for new users, please see [Get Started]({{< relref "old/get-started/index.md" >}}) page.
 {{% /notice %}}
 
 ## Docker

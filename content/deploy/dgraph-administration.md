@@ -87,7 +87,7 @@ This would allow admin operations from hosts with hostnames `admin-bastion` and 
 By default, you can perform mutation operations for any predicate.
 If the predicate in mutation doesn't exist in the schema,
 the predicate gets added to the schema with an appropriate
-[Dgraph Type]({{< relref "query-language/schema.md" >}}).
+[Dgraph Type]({{< relref "old/query-language/schema.md" >}}).
 
 You can use `--limit "mutations=disallow"` to disable all mutations,
 which is set to `allow` by default.
@@ -480,7 +480,7 @@ This stops the Alpha on which the command is executed and not the entire cluster
 
 ## Delete database
 
-Individual triples, patterns of triples and predicates can be deleted as described in the [DQL docs]({{< relref "mutations/delete.md" >}}).
+Individual triples, patterns of triples and predicates can be deleted as described in the [DQL docs]({{< relref "old/mutations/delete.md" >}}).
 
 To drop all data, you could send a `DropAll` request via `/alter` endpoint.
 

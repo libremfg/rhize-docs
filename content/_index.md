@@ -65,10 +65,10 @@ weight = 1
 
   <div class="item">
     <div class="icon"><i class="fa fa-question-circle-o" aria-hidden="true"></i></div>
-    <a href="{{< relref "faq/_index.md">}}">
-      <h2>FAQ</h2>
+    <a href="{{< relref "operationsevents">}}">
+      <h2>ISA95</h2>
       <p>
-        Frequently asked questions
+        The standard that defines the schema and makes all data accessible through one endpoint
       </p>
     </a>
   </div>
