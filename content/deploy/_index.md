@@ -2,7 +2,7 @@
 date = "2017-03-20T22:25:17+11:00"
 title = "Deploy and Manage"
 description = "This section covers deployment and management of Dgraph in various deployment modes: either a single-host setup, or over multiple nodes in a cluster."
-weight = 8
+weight = 1100
 [menu.main]
   identifier = "deploy"
 +++
