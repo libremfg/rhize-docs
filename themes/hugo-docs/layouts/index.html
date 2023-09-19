@@ -3,7 +3,7 @@
 <main class="content-wrapper">
   <div class="content">
     <article id="{{ .Slug }}">
-      {{if (ne .Title "Get started with Rhiz") }}
+      {{if (ne .Title "Get started with Rhize") }}
         {{ partial "ask-question.html" . }}
         {{ partial "suggest-edit.html" . }}
       {{ end }}
@@ -14,6 +14,10 @@
         {{ .Content }}
       </div>
     </article>
+  
+  </div>
+  <div class="right-toc">
+    {{ .TableOfContents }}
   </div>
 </main>
 
