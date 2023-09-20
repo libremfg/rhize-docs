@@ -4,7 +4,8 @@
   links:
     - text: BPMN Specification 2.0
       uri: https://www.omg.org/spec/BPMN/2.0/PDF
-
+- term: Event
+  definition: Discrete occurrences or notifications that represent changes or actions within a system.
 - term: Event-driven architecture
   abbr: EDA
   definition: A software design pattern that revolves around the concept of events and event-driven messaging.
