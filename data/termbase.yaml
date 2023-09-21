@@ -32,13 +32,16 @@
     - text: Data hub architecture
       uri: /concepts/datahub/
 - term: NATS
-  definition: Connective infrastructure to address, discover, and exchange messages in a distributed system.
+  definition:
+    Connective infrastructure to address, discover, and exchange messages in a distributed system.
   links:
     - text: Official NATS documentation
       uri: https://docs.nats.io/nats-concepts/overview
 
 - term: Overall Equipment Effectiveness
-  definition: A measure of manufacturing productivity. OEE is commonly calculated as the product of three critical factors: availability, performance, and quality.
+  definition: >-
+    A measure of manufacturing productivity.
+    OEE is commonly calculated as the product of three critical factors: availability, performance, and quality.
   abbr: OEE
   links:
       - text: An understanding of OEE
