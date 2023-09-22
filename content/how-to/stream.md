@@ -4,8 +4,8 @@ description = "Streaming data in and out of RHIZE"
 [menu.main]
 name = "Streaming Data"
 identifier = "streaming data"
-weight = 3
-parent = "datahub"
+weight = 500
+parent = "how-to"
 +++
 
 Stream data in and out of Rhize.
