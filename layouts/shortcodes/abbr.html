@@ -1,0 +1,11 @@
+<!--- variables based on shortcode argument -->
+{{ $entry := (.Get 0 | lower) }} {{ $count_id := print $entry "_count"}}
+
+<!-- range over data file -->
+{{ range $.Site.Data.termbase }}
+<!-- Find matches -->
+{{ if eq ( .abbr | lower) $entry }} {{ if gt ( $.Page.Scratch.Get ( $count_id ))
+0 }}
+<abbr title="{{- .term -}}">{{- .abbr -}}</abbr>
+{{ else }} {{ .term }} ({{ .abbr }}) {{ $.Page.Scratch.Set ( $count_id ) 1 }} {{
+end }} {{ end }} {{ end }}
