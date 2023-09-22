@@ -2,8 +2,8 @@
 title = "Data Hub Architecture"
 weight = 3
 [menu.main]
-  identifier = "ARCH-DATAHUB"
-  parent = "ARCH"
+  identifier = "arch-datahub"
+  parent = "arch"
 +++
 
 # What is a Data Hub Architecture?

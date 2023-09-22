@@ -3,7 +3,7 @@ title = "Realtime Database"
 weight = 2
 [menu.main]
   identifier = "realtime-database"
-  parent = "ARCH"
+  parent = "arch"
 +++
 
 # Overview

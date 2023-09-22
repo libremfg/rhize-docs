@@ -2,8 +2,8 @@
 title = "Business Process Orchestration"
 weight = 5
 [menu.main]
-  identifier = "ARCH-BPMN"
-  parent = "ARCH"
+  identifier = "arch-bpmn"
+  parent = "arch"
 +++
 
 # Overview

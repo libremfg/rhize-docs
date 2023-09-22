@@ -2,8 +2,8 @@
 title = "Event Driven Architecture"
 weight = 4
 [menu.main]
-  identifier = "ARCH-EDA"
-  parent = "ARCH"
+  identifier = "eda"
+  parent = "arch"
 +++
 
 # Overview
