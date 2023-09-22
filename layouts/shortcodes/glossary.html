@@ -1,6 +1,8 @@
 <dl>
   {{ range .Site.Data.termbase }}
-  <dt id="{{ .term }}">{{- .term -}}{{ with .abbr }} ({{- . -}}) {{ end }}</dt>
+  <dt id="{{ .term | anchorize }}">
+    {{- .term -}}{{ with .abbr }} ({{- . -}}) {{ end }}
+  </dt>
   <dd>{{ .definition }}</dd>
   {{ end }}
 </dl>
