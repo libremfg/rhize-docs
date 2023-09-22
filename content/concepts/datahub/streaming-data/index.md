@@ -1,5 +1,5 @@
 +++
-title = "Streaming Data"
+title = "Stream Data"
 description = "Streaming data in and out of RHIZE"
 [menu.main]
 name = "Streaming Data"
@@ -8,7 +8,7 @@ weight = 3
 parent = "datahub"
 +++
 
-## Overview
+Stream data in and out of Rhize.
 
 ## Publishing Changes with Change-Data-Capture
 

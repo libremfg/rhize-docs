@@ -6,9 +6,7 @@ weight = 3
   parent = "arch"
 +++
 
-# What is a Data Hub Architecture?
-
-A data hub architecture is a centralized platform or infrastructure that serves as a hub for collecting, integrating, storing, and processing data from various sources within an organization. It provides a unified view of data and enables seamless data sharing and analysis across different systems and applications. In the context of manufacturing digitalization, a data hub architecture can help address several challenges:
+A _data hub architecture_ is a centralized platform or infrastructure that serves as a hub for collecting, integrating, storing, and processing data from various sources within an organization. It provides a unified view of data and enables seamless data sharing and analysis across different systems and applications. In the context of manufacturing digitalization, a data hub architecture can help address several challenges:
 
 1. Data Integration: Manufacturing facilities generate data from various sources, such as production equipment, sensors, supply chain systems, and quality control processes. A data hub architecture can integrate data from disparate sources, normalize it, and provide a consistent format, making it easier to analyze and gain insights from the data.
 

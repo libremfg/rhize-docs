@@ -6,14 +6,14 @@ weight = 5
   parent = "arch"
 +++
 
-# Overview
-Event orchestration refers to the coordination and management of various events, actions, and processes within a system or across multiple systems. It involves arranging and controlling the sequence of events to ensure that they occur in a logical and efficient manner, often to achieve a specific goal or outcome. Event orchestration is commonly used in various domains, including IT operations, business processes, and even in the context of cloud computing and automation.
+_Event orchestration_ is the coordination and management of various events, actions, and processes within a system or across multiple systems. It involves arranging and controlling the sequence of events to ensure that they occur in a logical and efficient manner, often to achieve a specific goal or outcome. Event orchestration is commonly used in various domains, including IT operations, business processes, and even in the context of cloud computing and automation.
 
 In the context of IT operations and business processes, event orchestration involves automating and streamlining workflows by defining the sequence of steps, conditions, and actions that need to take place based on different events. This can include tasks like system provisioning, application deployment, incident response, and more. By orchestrating these events, organizations can ensure consistent and repeatable processes, reduce manual intervention, and improve overall efficiency.
 
 Event orchestration is also an important concept in the realm of cloud computing and distributed systems. In cloud environments, resources and services are often spread across various servers, data centers, and geographic regions. Orchestrating events in such environments involves managing the deployment, scaling, monitoring, and interaction of these resources to meet the desired objectives, such as ensuring high availability, optimizing resource usage, and responding to changes in demand.
 
 Overall, event orchestration provides a structured approach to managing complex processes and interactions by defining rules, dependencies, and actions that guide the system's behavior. It enables automation, scalability, and reliability in various domains, contributing to more efficient and effective operations.
+
 ## What is BPMN?
 
 BPMN stands for Business Process Model and Notation. It is a standardized graphical notation used to represent and model business processes in a visual and intuitive way. BPMN provides a way to depict the sequence of activities, events, gateways, and decisions within a business process. It's widely used in business analysis, process design, and process improvement efforts.

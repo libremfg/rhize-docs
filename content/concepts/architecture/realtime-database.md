@@ -6,11 +6,8 @@ weight = 2
   parent = "arch"
 +++
 
-# Overview
 
-## What is a Real-time Database?
-
-A real-time database is a type of database system that is designed to handle and process data in real-time or near real-time, meaning that data changes are immediately reflected and accessible to users or applications without any noticeable delay. These databases are commonly used in scenarios where data needs to be continuously updated and retrieved in a highly responsive manner.
+A _real-time database_ is a type of database system that is designed to handle and process data in real-time or near real-time, meaning that data changes are immediately reflected and accessible to users or applications without any noticeable delay. These databases are commonly used in scenarios where data needs to be continuously updated and retrieved in a highly responsive manner.
 
 Traditional databases, such as relational databases, are optimized for handling transactions and data consistency but may not be as efficient for real-time applications. Real-time databases, on the other hand, prioritize low-latency data access, and they are often used in applications that require instant data synchronization, responsiveness, and fast processing of data.
 
