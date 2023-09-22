@@ -2,8 +2,8 @@
 title = "Stream Data"
 description = "Streaming data in and out of RHIZE"
 [menu.main]
-name = "Streaming Data"
-identifier = "streaming data"
+name = "Stream Data"
+identifier = "stream-data"
 weight = 500
 parent = "how-to"
 +++
