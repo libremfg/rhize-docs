@@ -46,3 +46,7 @@
   links:
       - text: An understanding of OEE
         uri: https://blog.isa.org/an-understanding-of-overall-equipment-effectiveness-oee
+
+- term: sink
+  definition: >-
+    The destination of a data flow
