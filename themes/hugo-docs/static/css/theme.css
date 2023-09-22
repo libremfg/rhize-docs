@@ -512,7 +512,7 @@ pre.collapsed .showmore:hover {
 .topics .main-topic.active > a,
 .topics .main-topic > a:hover {
   font-weight: 600;
-  color: #fb5812;
+  color: #006838;
 }
 
 .topics .main-topic > .arrow-down,
@@ -552,11 +552,11 @@ pre.collapsed .showmore:hover {
 
 .topic:hover > .fa {
   visibility: visible;
-  color: #fb5812;
+  color: #006838;
 }
 .topic.active > .fa {
   visibility: visible;
-  color: #fb5812;
+  color: #006838;
 } */
 
 .sub-topics {
@@ -581,7 +581,7 @@ pre.collapsed .showmore:hover {
 .sub-topics li.active,
 .sub-topics li:hover {
   /*color: #ff6929;*/
-  color: #fb5812;
+  color: #006838;
 }
 ul.sub-topics li a,
 #TableOfContents ul li a {
@@ -924,8 +924,8 @@ section.toc .section-item {
 }
 
 .landing .item .icon * {
-  fill: #fb5812;
-  color: #fb5812;
+  fill: #006838;
+  color: #006838;
 }
 
 .landing .item p {
@@ -940,7 +940,7 @@ section.toc .section-item {
 .landing .item p.cta {
   margin: 0 0 16px;
   padding: 0;
-  color: #fb5812;
+  color: #006838;
 }
 
 .landing .hero {
