@@ -11,10 +11,10 @@ Rhize is a [real-time]({{< relref "../concepts/architecture/realtime-database" >
 So what's all that then?
 
 
-## The challenges of digitilizing manufacturing
+## Challenges
 
-Digitilizing manufacturing can bring numerous benefits, such as increased productivity, improved efficiency, and enhanced decision-making capabilities.
-However, successful implementation must overcome manay challenges:
+For manufacturers, digitalization can bring numerous benefits, including increased productivity, improved efficiency, and enhanced decision-making capabilities.
+However, successful implementation must overcome many challenges:
 
 - **Legacy Systems and Infrastructure:** Many manufacturing facilities have outdated systems and equipment that may not be compatible with digital technologies. Integrating new digital solutions with existing infrastructure can be complex and require significant investments to upgrade or replace outdated systems.
 
