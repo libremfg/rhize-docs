@@ -19,7 +19,7 @@
       uri: /architecture/overview/
 - term: Manufacturing execution system
   abbr: MES
-  definition: A system in a manufactoring process that tracks and documents the transformation of raw materials to finished goods
+  definition: A system in a manufactoring process that tracks and documents the transformation of raw materials to finished goods.
   links:
     - text: Manufactoring execution system
       uri: https://en.wikipedia.org/wiki/Manufacturing_execution_system
@@ -47,6 +47,6 @@
       - text: An understanding of OEE
         uri: https://blog.isa.org/an-understanding-of-overall-equipment-effectiveness-oee
 
-- term: sink
+- term: Sink
   definition: >-
-    The destination of a data flow
+    The destination of a data flow.
