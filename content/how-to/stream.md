@@ -4,7 +4,7 @@ description = "Streaming data in and out of RHIZE"
 [menu.main]
 name = "Stream Data"
 identifier = "stream-data"
-weight = 500
+weight = 300
 parent = "how-to"
 +++
 

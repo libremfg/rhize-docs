@@ -1,10 +1,10 @@
 +++
-title = "Keycloak Integration"
+title = "Authenticate with Keycloak"
 description = "The Rhize GraphQL implementation uses OpenIDConnect for Authentication and role-based access control. This section describes how to set up Keycloak"
 weight = 1
 [menu.main]
-    name = "KeyCloak Integration"
-    parent = "authorization"
+    name = "Auth with Keycloak"
+    parent = "install"
     identifier = "keycloak-integration"
 +++
 
