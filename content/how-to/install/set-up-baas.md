@@ -1,7 +1,7 @@
 ---
 title: 'Set Up BaaS admin resources'
 date: '2023-09-22T14:49:53-03:00'
-draft: false
+draft: true
 category: how-to
 description:
 weight: 300

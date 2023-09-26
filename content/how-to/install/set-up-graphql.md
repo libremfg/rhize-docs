@@ -1,7 +1,7 @@
 ---
 title: 'Set Up Graphql'
 date: '2023-09-22T14:49:10-03:00'
-draft: false
+draft: true
 category: how-to
 description:
 weight: 200
