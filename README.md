@@ -28,9 +28,7 @@ For your convenience, use the `archetypes` to avoid writing bolerplate propertie
 2. Run `hugo new content/<type>/<name-of-document>.md`
 
 At the time of writing, the templated types are `concepts`, `how-to`, `reference`, and `releases`.
-To decide which topic you want to write, consult this diagram:
-
-![Diataxis picker](https://wellshapedwords.com/images/diataxis.svg)
+To decide which topic you want to write, consult [this Diagram](https://wellshapedwords.com/images/diataxis.svg "diataxis-topic picker")
 
 Topics are clustered in groups of the sidebar, corresponding to directories of the same name.
 If you want to make a type in a different content directory, use the `--kind` flag:
