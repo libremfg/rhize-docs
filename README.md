@@ -43,7 +43,8 @@ To learn how to update templates, read the [Hugo Archetypes documentation](https
 
 ### Page is not showing
 
-One possible reason is that the page has the `draft: true` property in it's frontmatter. If you want to keep it in draft and view it locally, use the `hugo server -D` command.
+Checke whether the page has the `draft: true` property in its frontmatter.
+To view a draft locally, use the `hugo server -D` command.
 To make it so the page appears on the published site, change the value to `false`.
 
 ### Page is in the wrong place in the sidebar
