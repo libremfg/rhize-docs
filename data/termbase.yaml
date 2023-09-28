@@ -1,3 +1,6 @@
+- term: Andon
+  definition: >-
+    A system that alerts manufacturing teams about problems in processes or quality.
 - term: Business Process Model and Notation
   abbr: BPMN
   definition: A standardized graphical notation used to represent business processes in an intuitive, visual way.
