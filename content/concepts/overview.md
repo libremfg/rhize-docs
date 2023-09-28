@@ -3,7 +3,7 @@ title = "Overview"
 description = "Real-time, Event Driven, Data Hub Architecture"
 weight = 1
 [menu.main]
-parent = "get-started"
+parent = "arch"
 +++
 
 Rhize is a [real-time]({{< relref "../concepts/architecture/realtime-database" >}}), [Event-driven]({{< relref "../concepts/architecture/eda" >}}), Manufacturing [Data Hub]({{< relref "../concepts/architecture/data-hub" >}}) that has built-in [Business Process Orchestration]({{< relref "../concepts/architecture/eda" >}}).
