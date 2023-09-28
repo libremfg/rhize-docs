@@ -18,7 +18,7 @@ weight = 0
   </div>
   <div class="item">
     <div class="icon"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
-    <a href="{{< relref "/get-started/overview">}}">
+    <a href="{{< relref "/get-started/introduction">}}">
       <h2>Introduction</h2>
       <p>
       Automation and data exploration for real manufacturing problems, based on open standards and open source.
