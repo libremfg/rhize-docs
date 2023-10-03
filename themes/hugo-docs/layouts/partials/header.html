@@ -2,37 +2,10 @@
 <html lang="en" class="js csstransforms3d">
   <head>
     <script>
-      var redirectPaths = [
-        "clients",
-        "query-language",
-        "mutations",
-        "deploy",
-        "enterprise-features",
-        "howto",
-        "design-concepts",
-      ];
-      var pathSplit = document.URL.split("/");
       // Example: ["https:", "", "dgraph.io", "docs", "deploy", "#bulk-loader"]
       // Using location.replace is better for SEO:
       // 		1. https://socpub.com/articles/leveraging-googlebots-detection-javascript-redirects-ranking-16789
       //		2. https://www.contentkingapp.com/academy/redirects/faq/javascript-redirect-bad-seo/
-      if (redirectPaths.includes(pathSplit[pathSplit.length - 2])) {
-        var urlSplit = pathSplit[pathSplit.length - 1].split("#");
-        var origPath =
-          "/" + pathSplit[pathSplit.length - 2] + "/#" + urlSplit[1];
-        if (origPath in subPaths) {
-          loc = "{{ .Site.BaseURL }}" + subPaths[origPath];
-          window.location.replace(loc);
-        } else if (urlSplit[1]) {
-          // an anchor tag
-          loc =
-            "{{ .Site.BaseURL }}" +
-            pathSplit.slice(4, pathSplit.length - 1).join("/") +
-            "/#" +
-            urlSplit[1];
-          window.location.replace(loc);
-        }
-      }
     </script>
     <meta charset="utf-8" />
     <meta
@@ -225,82 +198,6 @@
       rel="stylesheet"
       href="//cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"
     />
-
-    <!-- Segment -->
-    <script>
-      !(function () {
-        var analytics = (window.analytics = window.analytics || []);
-        if (!analytics.initialize)
-          if (analytics.invoked)
-            window.console &&
-              console.error &&
-              console.error("Segment snippet included twice.");
-          else {
-            analytics.invoked = !0;
-            analytics.methods = [
-              "trackSubmit",
-              "trackClick",
-              "trackLink",
-              "trackForm",
-              "pageview",
-              "identify",
-              "reset",
-              "group",
-              "track",
-              "ready",
-              "alias",
-              "debug",
-              "page",
-              "once",
-              "off",
-              "on",
-              "addSourceMiddleware",
-              "addIntegrationMiddleware",
-              "setAnonymousId",
-              "addDestinationMiddleware",
-            ];
-            analytics.factory = function (e) {
-              return function () {
-                var t = Array.prototype.slice.call(arguments);
-                t.unshift(e);
-                analytics.push(t);
-                return analytics;
-              };
-            };
-            for (var e = 0; e < analytics.methods.length; e++) {
-              var key = analytics.methods[e];
-              analytics[key] = analytics.factory(key);
-            }
-            analytics.load = function (key, e) {
-              var t = document.createElement("script");
-              t.type = "text/javascript";
-              t.async = !0;
-              t.src =
-                "https://cdn.segment.com/analytics.js/v1/" +
-                key +
-                "/analytics.min.js";
-              var n = document.getElementsByTagName("script")[0];
-              n.parentNode.insertBefore(t, n);
-              analytics._loadOptions = e;
-            };
-            analytics._writeKey = "aQlf725vSBKhpQnINiGBc6rCtFyVCiAP";
-            analytics.SNIPPET_VERSION = "4.13.2";
-            analytics.load("aQlf725vSBKhpQnINiGBc6rCtFyVCiAP");
-            analytics.page();
-            // Track clicks
-            document.addEventListener("DOMContentLoaded", () => {
-              const links = document.querySelectorAll("a");
-              links.forEach((link) =>
-                analytics.trackLink(link, "Click", {
-                  id: link.id,
-                  to: link.href,
-                  text: link.innerText,
-                })
-              );
-            });
-          }
-      })();
-    </script>
   </head>
 
   <body>
