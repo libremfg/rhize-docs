@@ -13,8 +13,16 @@ menu:
 
 Rhize is a real-time, event-driven manufacturing data hub.
 It unites data analysis, event monitoring, and process execution in one platform.
-Its interface is designed to conform to your processes.
-We don't impose our opinion on what your manufacturing workflow should look like.
+Its interface and architecture is designed to conform to your processes.
+We assume nothing about what your manufacturing workflows look like.
+
+Rhize has only one strong opinion: all data exchanged must be modeled on the ISA-95 standard.
+This standards-based schema is how Rhize connects every data event across an entire operation.
+If you aren't an ISA-95 fan, we're happy to convert you, but adoption is a requirement to use the platform.
+
+And if do adopt ISA-95, you open your organization to Rhize's far-reaching transformations.
+
+## Use cases
 
 Rhize's flexible, data-centric architecture can serve many functions.
 It has components that can completely replace your MES, historian, andon, and real-time monitoring solutions.
