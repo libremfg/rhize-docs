@@ -7,13 +7,12 @@ description:
 weight:
 menu:
   main:
-    parent: reference ##or subdirectory
+    parent: reference
     identifier:
 ---
 
 <!-- Title must be a verb -->
 
-<!---
 Summarize what this reference article is about. Explain what all the entries defined on the page have in common. 
 --->
 

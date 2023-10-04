@@ -12,26 +12,22 @@ menu:
 
 Release notes for v{{ replace .File.ContentBaseName `-` `.` | title }} of the Rhize application.
 
-## Release notes
-
-### Breaking changes
+<!---
+## Breaking changes
+-
+-
+## Features
 
 -
 -
-
-### Features
-
--
--
-
-### Fixes and refactoring
+## Fixes and refactoring
 
 -
 -
-
 ## Upgrade instructions
 
 1.
 1.
 
 Confirm the upgrade succeeded by ...
+-->
