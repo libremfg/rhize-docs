@@ -4,7 +4,7 @@ date: '2023-10-03T19:39:39-03:00'
 draft: false
 category: concept
 description: >-
-  A high-level overview of how Rhize collects, exchanges, and stores, starting with data collection and ending with user interaction.
+  A high-level overview of how Rhize collects, exchanges, and stores data, starting with data collection and ending with user interaction.
 weight: 200
 menu:
   main:
@@ -37,7 +37,6 @@ Correspondingly, Rhize accepts data from all levels, including measurements, sch
 
 Common sources of data collection come from MQTT brokers and devices, OPC-UA servers, and over HTTP through the GraphQL endpoint.
 This depends entirely on what you want to send to the Rhize message broker or database.
-
 
 ## The message broker
 
