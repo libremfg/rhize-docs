@@ -35,7 +35,7 @@ Rhize's database schema is modeled on the ISA-95 standard.
 ISA-95 covers all levels of the manufacturing operation.
 Correspondingly, Rhize accepts data from all levels, including measurements, schedules, and ERP documents.
 
-  * [ ] Common sources of data collection come from MQTT brokers and devices, OPC-UA servers, and over HTTP through the GraphQL endpoint.
+Common sources of data collection come from MQTT brokers and devices, OPC-UA servers, and over HTTP through the GraphQL endpoint.
 This depends entirely on what you want to send to the Rhize message broker or database.
 
 
