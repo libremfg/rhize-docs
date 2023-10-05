@@ -14,7 +14,7 @@ menu:
 
 The heart of the Rhize platform is its manufacturing knowledge graph, which stores data from all levels of the operation and exposes this data through a single endpoint.
 Around the database are services that exchange messages and process events in real-time.
-Finally, outside of the Rhize deployment are the two most important components: the manufacturing operation, which sends event data to Rhize, and the Rhize users, who interact with Rhize data through a number of purpose-driven interfaces.
+Finally, outside of the Rhize deployment are the two most important components: the manufacturing operation, which sends event data to Rhize, and the Rhize users, who interact with Rhize data through a number of special-purpose interfaces.
 
 {{< figure
 src="/get-started/diagram-rhize-arch-overview.png"
