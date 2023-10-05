@@ -20,6 +20,9 @@
   links:
     - text: Rhize architecture
       uri: /architecture/overview/
+- term: Laboratory information management system
+  abbr: LIMS
+  definition: Software that tracks laboratory data, including samples, experiments, and workflows.
 - term: Manufacturing execution system
   abbr: MES
   definition: A system in a manufactoring process that tracks and documents the transformation of raw materials to finished goods.
@@ -53,3 +56,6 @@
 - term: Sink
   definition: >-
     The destination of a data flow.
+- term: Warehouse management system
+  definition: >-
+    A system to organize processes and policies of warehouses. It may include processes to manage and track inventory and exchange data.
