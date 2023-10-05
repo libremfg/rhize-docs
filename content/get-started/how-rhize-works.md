@@ -35,7 +35,7 @@ Rhize's database schema is modeled on the ISA-95 standard.
 ISA-95 covers all levels of the manufacturing operation.
 Correspondingly, Rhize accepts data from all levels, including measurements, schedules, and ERP documents.
 
-Common sources of data collection come from MQTT brokers and devices, OPC-UA servers, and over HTTP through the GraphQL endpoint.
+  * [ ] Common sources of data collection come from MQTT brokers and devices, OPC-UA servers, and over HTTP through the GraphQL endpoint.
 This depends entirely on what you want to send to the Rhize message broker or database.
 
 
@@ -49,21 +49,22 @@ width="80%"
 
 Rhize's architecture is event-driven, low-latency, and scalable.
 To communicate events in real-time and across services, Rhize uses a publish-subscribe model through the NATS message broker.
+The message infrastructure enables complex interaction between services without creating dependencies between them.
 
 Services in the Rhize application subscribe to their relevant topics and handle events as they come in.
 Services also publish events to the event broker.
 Thus, Rhize services can communicate with each other and with customer systems in a completely decoupled manner.
 
-The message infrastructure enables complex interaction between services without creating dependencies between them.
-
 ## The database
 
-The Graph database creates a contextual, queryable relationship between all data in the system.
-Additionally, real-time data streams to the time-series component of the database.
-
-Using the ISA-95 standard to define its schema, the graph database is how Rhize stores event data from disparate places and decoupled services.
-It also stores declarative configuration data to instruct different services on how to respond to events.
+With a schema defined by the ISA-95 standard,
+the graph database creates a contextual, queryable relationships that link all data stored in the system.
 This graph data, accessible through a single endpoint, provides a single source to perform vast combinations of analysis.
+
+Along with event data from disparate places and decoupled services,
+the database also stores declarative configuration data to instruct different services on how to respond to events.
+
+Finally, the time-series component of the database accepts real-time data streams.
 
 ## The interfaces
 
@@ -80,11 +81,11 @@ Last but not least, the time-series data is observable through monitoring tools 
 
 ## Examples in practice
 
-To make the previous sections less abstract, consider these ways that Rhize creates common data hub for diverse human and system interaction.
+To make the previous sections less abstract, consider these examples of how Rhize creates a common data hub for diverse human and system interaction.
 
 |Process| Examples in practice|
 |-|-|
 |Data collection| <ul><li>An instrumenter configures an MQTT-compatible device to send sensor data to Rhize.</li><li> A business analyst sends an ERP order through an integration with the GraphQL API.</li></ul>|
 |Message exchange| <ol> <li> A piece of equipment publishes information about its status over MQTT.</li> <li> A BPMN process subscribes to the equipment's `TestResult` subtopic. When the `TestResult` status changes to `fail`, the BPMN process publishes a maintenance order to the broker.</li> <li>The ERP system, which subscribes to the `maintenance` topic, prepares a document for maintenance personnel.</li> </ol> |
-|Data storage| <ul><li>A data scientist writes a Python script that discovers production outliers for a specific segment class across all production sites</li><li>A procurer uses an Excel-Rhize integration to call the API and receive a production order that the BPMN process wrote to the database one month earlier.</li></ul> |
-| User-data interaction | <ul><li>An operator queries sensor values from a custom-built mobile interface</li><li>A quality-engineer observes real-time data in a custom dashboard built for statistical process control</li></ul>|
+|Data storage| <ul><li>A data scientist writes a Python script that discovers production outliers for a specific segment class across all production sites.</li><li>A procurer uses an Excel-Rhize integration to call the API and receive a production order that the BPMN process wrote to the database one month earlier.</li></ul> |
+| User-data interaction | <ul><li>An operator queries sensor values from a custom-built mobile interface.</li><li>A quality-engineer observes real-time data in a custom dashboard built for statistical process control.</li></ul>|
