@@ -23,11 +23,54 @@ For general use, refer to the [NATS official documentation](https://docs.nats.io
 Generally, operators have complete control over what events a service publishes or subscribes to.
 However, a few critical topics are built-in to some services.
 
-- `Topic_name`
-  - Purpose:
+## Root topics
+- $JS
+  - Purpose:  Jet Stream
+
+- $KV
+  - Purpose:  Key-Value store
+
+- _INBOX
+  - Purpose:  Temporary inbox for request-response messaging????
+
+- libreBPMN
+  - Purpose:  BPMN engine
+
+## Subtopics
+
+
+- $KV/JobResponses
+  - Purpose: 
   - Expected structure:
   - Publishers: serviceOne, serviceTwo
   - Subcribers: serviceX, serviceY
+
+- libreBPMN/command/START_EVENT
+  - Purpose: 
+  - Expected structure:
+  - Publishers: serviceOne, serviceTwo
+  - Subcribers: serviceX, serviceY
+
+- libreBPMN/command/TASK_COMPLETE
+  - Purpose: 
+  - Expected structure:
+  - Publishers: serviceOne, serviceTwo
+  - Subcribers: serviceX, serviceY
+
+- libreBPMN/command/SERVICE_TASK
+  - Purpose: 
+  - Expected structure:
+  - Publishers: serviceOne, serviceTwo
+  - Subcribers: serviceX, serviceY
+
+- libreBPMN/command/EXCLUSIVE_GATEWAY (or just GATEWAY?)
+  - Purpose: 
+  - Expected structure:
+  - Publishers: serviceOne, serviceTwo
+  - Subcribers: serviceX, serviceY
+
+
+![Alt text](image.png)
 
 _Editor's note:
 Maybe it makes more sense to make list by service, rather than by topic._
