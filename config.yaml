@@ -1,4 +1,5 @@
 canonifyURLs: true
+baseURL: "https://libremfg.github.io"
 languageCode: en-us
 theme: hugo-docs
 sectionPagesMenu: main
