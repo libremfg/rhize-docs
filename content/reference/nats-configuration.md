@@ -18,69 +18,81 @@ and receive event data from all levels of the operation.
 These sections describe NATS parameters that are particularly relevant to Rhize's configuration.
 For general use, refer to the [NATS official documentation](https://docs.nats.io/nats-concepts/overview).
 
-## Built-in topics
+## Reserved topics
 
-Generally, operators have complete control over what events a service publishes or subscribes to.
-However, a few critical topics are built-in to some services.
+Topics that begin with a dollar sign ($) denote topics specifically about the NATS system.
 
-## Root topics
-- $JS
-  - Purpose:  Jet Stream
+### Jet stream (`$JS`)
 
-- $KV
-  - Purpose:  Key-Value store
+The `$JS` topic is reserved for messages about the NATS [JetStream](https://docs.nats.io/nats-concepts/jetstream).
 
-- _INBOX
-  - Purpose:  Temporary inbox for request-response messaging????
+### Key value store (`$KV`)
 
-- libreBPMN
-  - Purpose:  BPMN engine
+The `$KV` topic is reserved for messages about the [Key/Value Store](https://docs.nats.io/nats-concepts/jetstream/key-value-store).
 
-## Subtopics
+Subtopics include the following:
 
+| Topic              | Description |
+|--------------------|-------------|
+| `$KV/JobResponses` |             |
 
-- $KV/JobResponses
-  - Purpose: 
-  - Expected structure:
-  - Publishers: serviceOne, serviceTwo
-  - Subcribers: serviceX, serviceY
+## BPMN topics and configuration
 
-- libreBPMN/command/START_EVENT
-  - Purpose: 
-  - Expected structure:
-  - Publishers: serviceOne, serviceTwo
-  - Subcribers: serviceX, serviceY
-
-- libreBPMN/command/TASK_COMPLETE
-  - Purpose: 
-  - Expected structure:
-  - Publishers: serviceOne, serviceTwo
-  - Subcribers: serviceX, serviceY
-
-- libreBPMN/command/SERVICE_TASK
-  - Purpose: 
-  - Expected structure:
-  - Publishers: serviceOne, serviceTwo
-  - Subcribers: serviceX, serviceY
-
-- libreBPMN/command/EXCLUSIVE_GATEWAY (or just GATEWAY?)
-  - Purpose: 
-  - Expected structure:
-  - Publishers: serviceOne, serviceTwo
-  - Subcribers: serviceX, serviceY
+The `libreBPMN` topic is for messages about the BPMN engine.
+Subtopics include the following:
 
 
-![Alt text](image.png)
+| Topic                                 | Description |
+|---------------------------------------|-------------|
+| `libreBPMN/command/START_EVENT`       |             |
+| `libreBPMN/command/TASK_COMPLETE`     |             |
+| `libreBPMN/command/SERVICE_TASK`      |             |
+| `libreBPMN/command/EXCLUSIVE_GATEWAY` |             |
 
-_Editor's note:
-Maybe it makes more sense to make list by service, rather than by topic._
+### Streams
 
-## Message queue parameters
+- `libreBpmn_Command`
+- `LibreTimerStart`
+- `JobResponses KV`
+- `WorkflowSpecificationKV`
 
-You can configure message queues in two ways:
-- By size (for example `2GB`)
-- By TTL limits (for example, `7 days`)
 
-_Editor's note: Make a list or table of parameters.
-Whatever would help people look up values while they implement._
+## NATS configuration
+
+The following parameters configure the NATS message queues for different services.
+
+### BPMN
+
+The NATS configuration parameters for the BMPN streams are as follows:
+
+| Topic                             | Description |
+|-----------------------------------|-------------|
+| `CommandStreamReplicas`           |             |
+| `JobResponseKVMaxGB`              |             |
+| `JobResponseKVReplicas`           |             |
+| `JobResponseKVTTLMinutes`         |             |
+| `WorkflowSpecificationKVReplicas` |             |
+
+For example:
+
+```json
+ "NATS": {
+    "CommandStreamReplicas": 1,
+    "JobResponseKVMaxGB": 2,
+    "JobResponseKVReplicas": 1,
+    "JobResponseKVTTLMinutes": 7,
+    "WorkflowSpecificationKVReplicas": 1
+  },
+```
+
+### Libre core 
+
+The NATS configuration parameters for the Libre core topics are as follows:
+
+| Parameter   | Description |
+|-------------|-------------|
+| `serverUrl` |             |
+| `replicas`  |             |
+
+
 
