@@ -14,7 +14,7 @@ Stream data in and out of Rhize.
 
 You can use change data capture (CDC) to track data changes over time; including
 mutations and drops in your database. RHIZE's CDC implementation lets you use
-Kafka, Nats or a local file as a *sink* to store CDC updates streamed by RHIZE's Alpha
+Kafka, Nats or a local file as a *{{< abbr "sink" >}}* to store CDC updates streamed by RHIZE's Alpha
 leader nodes.
 
 When CDC is enabled, RHIZE streams events for all `set` and `delete` mutations,

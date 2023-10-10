@@ -6,7 +6,7 @@ weight = 4
   parent = "arch"
 +++
 
-_{{< abbr "eda" >}}_ is a software design pattern that focuses on the flow of events, notifications, and messages within a system to facilitate communication and interaction between different components or services. In {{< abbr "eda" >}}, systems are built to respond to events rather than following a strict procedural flow.
+_Event-driven architecture (EDA)_ is a software design pattern that focuses on the flow of events, notifications, and messages within a system to facilitate communication and interaction between different components or services. In EDA, systems are built to respond to events rather than following a strict procedural flow.
 
 At the heart of  is the concept of events. Events are discrete occurrences or notifications that represent changes or actions within a system. These events can include user actions, changes in data, external triggers, or any other meaningful incident. Event-driven systems typically have three main components:
 
@@ -18,17 +18,17 @@ At the heart of  is the concept of events. Events are discrete occurrences or no
 
 The benefits of an Event-Driven Architecture include:
 
-- **Scalability:** {{< abbr "eda" >}} can easily scale since new components can be added to the system by simply subscribing to relevant events on the event bus.
+- **Scalability:** EDA can easily scale since new components can be added to the system by simply subscribing to relevant events on the event bus.
 
 - **Decoupling:** By decoupling event producers and consumers through the event bus, components become more independent, making the system more flexible and adaptable to changes.
 
 - **Modularity:** Different parts of the system can be developed and updated independently as long as they adhere to the events they produce and consume.
 
-- **Real-time Responsiveness:** {{< abbr "eda" >}} enables real-time processing and reaction to events, which is crucial for systems requiring quick responses to changing conditions.
+- **Real-time Responsiveness:** EDA enables real-time processing and reaction to events, which is crucial for systems requiring quick responses to changing conditions.
 
 - **Flexibility:** It allows for easier integration of new functionalities, third-party services, and external systems without disrupting the existing architecture.
 
-{{< abbr "eda" >}} is commonly used in various domains, including microservice architectures, internet of things (IoT) systems, financial trading platforms, and real-time analytics applications. It's particularly useful in scenarios where asynchronous communication, flexibility, and responsiveness are critical.
+EDA is commonly used in various domains, including microservice architectures, internet of things (IoT) systems, financial trading platforms, and real-time analytics applications. It's particularly useful in scenarios where asynchronous communication, flexibility, and responsiveness are critical.
 
 ## The 4 Patterns of EDA
 
