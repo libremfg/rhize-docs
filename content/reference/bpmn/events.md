@@ -60,8 +60,8 @@ Throwing events are represented with icons that are filled in.
 
 - Purpose: An error occurred in the system
 - Icon: A flash
-- Dimension: End
 - Example: A REST server returns a 500 error.
+- Dimension: End
 
 
 
