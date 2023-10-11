@@ -1,5 +1,5 @@
 ---
-title: 'Activies and tasks'
+title: 'Activities and tasks'
 date: '2023-09-26T11:10:37-03:00'
 draft: true
 category: reference
