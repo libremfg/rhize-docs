@@ -31,11 +31,12 @@
 
       <div>
         {{ .Content }}
-        <ul class="contents">
+        <table class="contents">
           {{ range .Pages.ByWeight }}
-          <li>
+          <dt>
             <a href="{{ .Permalink }}">{{ .Title }}</a>
-          </li>
+          </dt>
+          <dl>{{ .Description }}</dl>
           {{ end }}
         </ul>
       </div>
