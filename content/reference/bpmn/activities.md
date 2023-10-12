@@ -4,7 +4,7 @@ date: '2023-09-26T11:10:37-03:00'
 draft: false
 category: reference
 description: >-
-  BPMN tasks in the Rhize engine.
+  A reference of BPMN tasks available from the Rhize UI.
 weight: 200
 menu:
   main:
@@ -27,10 +27,11 @@ boilerplate:
 
 In BPMN, an _activity_ is work performed within a business process.
 
-On the Rhize platform, most activities are tasks, work that does not have finer levels of detail.
+On the Rhize platform, most activities are _tasks_, work that cannot be broken down into smaller levels of detail.
 Tasks are drawn with rectangles with rounded corners.
-
 Like [Events]({{< relref "events" >}}), task have different types denoted by their icon marker.
+
+Besides tasks, you can also use _call activities_, processes which call and invoke other processes.
 
 
 ## Service task templates
