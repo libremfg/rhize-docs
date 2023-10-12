@@ -33,7 +33,6 @@ Like [Events]({{< relref "events" >}}), task have different types denoted by the
 
 Besides tasks, you can also use _call activities_, processes which call and invoke other processes.
 
-
 ## Service task templates
 
 {{< figure
@@ -133,5 +132,16 @@ Write values to topics of a datasource.
   - `Variables`
   - `Connection Timeout`
   - `Max Payload size`
-## Call activities
  -->
+
+## Call activities
+
+A _call activity_ invokes another process defined in your BPMN interface.
+In this flow, the process that contains the call is the _parent_, and the process that is called is the _child_
+
+Besides the input and output variables, call activities have the following parameters:
+
+| Parameters         | Description                                        |
+| Called element     | The ID of the called process                       |
+| Output propagation | Whether to propagate the child output variables to the parent process |
+
