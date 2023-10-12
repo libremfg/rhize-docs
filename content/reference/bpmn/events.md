@@ -34,6 +34,7 @@ All end events are throw events; that is, they terminate with some output&mdash;
 Intermediate events may throw or catch.
 
 Rhize supports various event types to categorize an event, as described in the following sections.
+As with [Gateways]({{< ref "gateways" >}}) and [Activities]({{< ref "activities" >}}), event types are marked by their icons.
 Throwing events are represented with icons that are filled in.
 
 ### Message
