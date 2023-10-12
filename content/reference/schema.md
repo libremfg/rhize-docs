@@ -1,6 +1,7 @@
 ---
 date: "2023-09-12T19:35:35+11:00"
 title: Schema
+draft: true
 description: The manufacturing data hub models schema according to ISA-95.
 weight: 500
 menu:
