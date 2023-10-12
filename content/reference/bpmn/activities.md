@@ -136,12 +136,15 @@ Write values to topics of a datasource.
 
 ## Call activities
 
+![Call activities have a task with an icon to expand](/images/bpmn/bpmn-call-activity.svg)
+
 A _call activity_ invokes another process defined in your BPMN interface.
-In this flow, the process that contains the call is the _parent_, and the process that is called is the _child_
+In this flow, the process that contains the call is the _parent_, and the process that is called is the _child_.
 
 Besides the input and output variables, call activities have the following parameters:
 
-| Parameters         | Description                                        |
-| Called element     | The ID of the called process                       |
+| Parameters         | Description                                                           |
+|--------------------|-----------------------------------------------------------------------|
+| Called element     | The ID of the called process                                          |
 | Output propagation | Whether to propagate the child output variables to the parent process |
 
