@@ -17,6 +17,8 @@ To make these concepts more concrete, the final section provides examples of eac
 
 The heart of the Rhize platform is its manufacturing knowledge graph, which stores data from all levels of the operation and exposes this data through a single endpoint.
 Around the database are services that exchange messages and process events in real-time.
+The system runs on distributed, containerized systems, ensuring horizontal scalability and high availability.
+
 Finally, outside of the Rhize deployment are the two most important components: the manufacturing operation, which sends event data to Rhize, and the Rhize users, who interact with Rhize data through a number of special-purpose interfaces.
 
 {{< figure
@@ -78,13 +80,25 @@ Rhize customers also use the GraphQL interface to build their own applications, 
 
 Last but not least, the time-series data is observable through monitoring tools like Grafana.
 
+## Deployment
+
+Rhize runs on Kubernetes configured through CI-CD servers.
+
+Using Kubernetes, Rhize can deploy to multiple instances using a common configuration.
+Such distribution removes single points of failure, and system upgrades can happen on a rolling basis, with zero down-time.
+All deployment is version controlled, which makes regressions easier to spot.
+
+Deployment is vendor neutral, giving organizations complete control to run the system on their local networks or preferred cloud host.
+The modern tools of DevOps also makes the system easier to maintain, as they come with vast tooling ecosystems and training material.
+
 ## Examples in practice
 
 To make the previous sections less abstract, consider these examples of how Rhize creates a common data hub for diverse human and system interaction.
 
-|Process| Examples in practice|
-|-|-|
-|Data collection| <ul><li>An instrumenter configures an MQTT-compatible device to send sensor data to Rhize.</li><li> A business analyst sends an ERP order through an integration with the GraphQL API.</li></ul>|
-|Message exchange| <ol> <li> A piece of equipment publishes information about its status over MQTT.</li> <li> A BPMN process subscribes to the equipment's `TestResult` subtopic. When the `TestResult` status changes to `fail`, the BPMN process publishes a maintenance order to the broker.</li> <li>The ERP system, which subscribes to the `maintenance` topic, prepares a document for maintenance personnel.</li> </ol> |
-|Data storage| <ul><li>A data scientist writes a Python script that discovers production outliers for a specific segment class across all production sites.</li><li>A procurer uses an Excel-Rhize integration to call the API and receive a production order that the BPMN process wrote to the database one month earlier.</li></ul> |
-| User-data interaction | <ul><li>An operator queries sensor values from a custom-built mobile interface.</li><li>A quality-engineer observes real-time data in a custom dashboard built for statistical process control.</li></ul>|
+| Process               | Examples in practice                                                                                                                                                                                                                                                                                                                                                                                         |
+|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Data collection       | <ul><li>An instrumenter configures an MQTT-compatible device to send sensor data to Rhize.</li><li> A business analyst sends an ERP order through an integration with the GraphQL API.</li></ul>                                                                                                                                                                                                             |
+| Message exchange      | <ol> <li> A piece of equipment publishes information about its status over MQTT.</li> <li> A BPMN process subscribes to the equipment's `TestResult` subtopic. When the `TestResult` status changes to `fail`, the BPMN process publishes a maintenance order to the broker.</li> <li>The ERP system, which subscribes to the `maintenance` topic, prepares a document for maintenance personnel.</li> </ol> |
+| Data storage          | <ul><li>A data scientist writes a Python script that discovers production outliers for a specific segment class across all production sites.</li><li>A procurer uses an Excel-Rhize integration to call the API and receive a production order that the BPMN process wrote to the database one month earlier.</li></ul>                                                                                      |
+| User-data interaction | <ul><li>An operator queries sensor values from a custom-built mobile interface.</li><li>A quality-engineer observes real-time data in a custom dashboard built for statistical process control.</li></ul>                                                                                                                                                                                                    |
+| Deployment            | <ul><li>A DevOps engineer pushes an upgrade that handles message-streams more efficiently. This upgrade rolls out node-by-node across each instance.</li><li>A plant process causes a heavy inflow of data. The system autoscales to meet the temporary computation demand.</li></ul>                                                                                                     |
