@@ -30,17 +30,34 @@ src="/images/bpmn/bpmn-gateway-overview.svg"
 
 ![exclusive gateways are marked by an "x" icon](/images/bpmn/bpmn-gateway-exclusive.svg)
 
-Marked by an "X" icon, an exclusive gateway represents a point in a process where only one path is followed.
-In some conversations, exclusive gateways are also called "XORs".
+Marked by an "X" icon, an _exclusive gateway_ represents a point in a process where only one path is followed.
+In some conversations, exclusive gateways are also called _XORs_.
 
-If a gateway has multiple sequence flows, all flows except one must have a conditional expression that the engine can evaluate.
+Exclusive gateways can only branch. That is, they cannot join multiple flows.
+If a gateway has multiple sequence flows, all flows except one must have a conditional [JSONata expression](https://docs.jsonata.org/1.7.0/overview) that the engine can evaluate.
 To designate a default, leave one flow without an expression.
+
+{{< figure
+alt="An exclusive gateway that has a condition and a default"
+src="/images/bpmn/rhize-bpmn-exclusive-gateway.png"
+width="50%"
+caption="<em>An exclusive gateway with a condition and default. Configure conditions as JSONata expressions</em>"
+>}}
 
 ### Parallel gateway
 
 ![Parallel gateways are marked by a "+" icon](/images/bpmn/bpmn-gateway-parallel.svg)
 
-Marked by a "+" icon, parallel flows indicate a point where parallel tasks are run.
+Marked by a "+" icon, _parallel gateways_ indicate a point where parallel tasks are run.
+
+Parallel gateways must be paired, and all flows must rejoin.
+
+{{< figure
+alt="A parallel gateway that branches and rejoins"
+src="/images/bpmn/rhize-bpmn-parallel-gateway.png"
+width="50%"
+caption="<em>Parallel gateways are always paired. The first gateway branches. The second joins the flows.</em>"
+>}}
 
 <!---
 ### Inclusive gateway
