@@ -3,6 +3,6 @@
   <dt id="{{ .term | anchorize }}">
     {{- .term -}}{{ with .abbr }} ({{- . -}}) {{ end }}
   </dt>
-  <dd>{{ .definition }}</dd>
+  <dd>{{ .definition | safeHTML }}</dd>
   {{ end }}
 </dl>
