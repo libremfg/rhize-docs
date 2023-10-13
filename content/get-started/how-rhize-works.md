@@ -82,11 +82,11 @@ Last but not least, the time-series data is observable through monitoring tools 
 
 ## Deployment
 
-Rhize runs on Kubernetes configured through CI-CD servers.
+Rhize runs on Kubernetes and is configured through CI/CD servers.
 
 Using Kubernetes, Rhize can deploy to multiple instances using a common configuration.
-Such distribution removes single points of failure, and system upgrades can happen on a rolling basis, with zero down-time.
-All deployment is version controlled, which makes regressions easier to spot.
+Such distribution removes single points of failure, and system upgrades can happen on a rolling basis, with zero downtime.
+All deployment is version controlled, which makes regressions easier to recover from.
 
 Deployment is vendor neutral, giving organizations complete control to run the system on their local networks or preferred cloud host.
 The modern tools of DevOps also makes the system easier to maintain, as they come with vast tooling ecosystems and training material.
