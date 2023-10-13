@@ -7,6 +7,9 @@
   links:
     - text: BPMN Specification 2.0
       uri: https://www.omg.org/spec/BPMN/2.0/PDF
+- term: Catch event
+  definition: >-
+    In BPMN, a catch event reacts to a trigger (compared to a <a href="#throw-event">throw event</a>, which returns some result). Only start and intermediate events can catch.
 - term: Event
   definition: Discrete occurrences or notifications that represent changes or actions within a system.
 - term: Event-driven architecture
@@ -56,6 +59,9 @@
 - term: Sink
   definition: >-
     The destination of a data flow.
+- term: Throw event
+  definition: >-
+    In BPMN, a throw event returns some response (compared to a <a href="#catch-event">catch event</a>, which reacts to some trigger). Only intermediate and end events can throw.
 - term: Warehouse management system
   definition: >-
     A system to organize processes and policies of warehouses. It may include processes to manage and track inventory and exchange data.
