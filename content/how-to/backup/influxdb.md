@@ -18,8 +18,8 @@ For general instructions to back up Influx, refer to the official [Backup and re
 
 Before you start, ensure you have the following:
 
-- Access to the customer [Rhize Kubernetes Environment]({{< relref "../install/configure-kubernetes" >}})
-- A token with backup priviliges on the Rhize (Libre) organization and bucket
+- Access to the [Rhize Kubernetes Environment]({{< relref "../install/configure-kubernetes" >}})
+- A token with backup privileges on the Rhize (Libre) organization and bucket
 - [kubectl](https://kubernetes.io/docs/tasks/tools/) and [kubectx](https://github.com/ahmetb/kubectx)
 - Optional: the [k8 Lens IDE](https://k8lens.dev), if you prefer to manage Kubernetes graphically
 
