@@ -2,8 +2,8 @@
 title: '{{ replace .File.ContentBaseName `-` ` ` | title | humanize }}'
 date: '{{ .Date }}'
 draft: true
-category: how-to
-description:
+categories: ["how-to"]
+description: How to {{ replace .File.ContentBaseName `-` ` ` | title }}
 weight:
 menu:
   main:
@@ -20,27 +20,24 @@ Link to relevant explanations and reference topics, if needed -->
 
 Before you start, ensure you have the following:
 
-- [ ]
 
-## {{ replace .File.ContentBaseName `-` ` ` | title }} procedure
+## Procedure
 
 <!-- if procedure is very long, consider using h3s -->
-
-To <do_thing> , follow these steps:
 
 1.
 1.
 
 <!--Define what success looks like -->
 
+<!-- 
 ### Error recovery
-
-<!-- Optional. Define common failure modes and how to recover -->
-
-## Conclusion
+Optional. Define common failure modes and how to recover
+-->
 
 <!--
-Summarize what was done. Give an example of what success looks like.
+## Next steps
+Optional. Summarize what was done. Give an example of what success looks like.
 
 Where applicable, provide links to next steps or to read more.
---->
+-->

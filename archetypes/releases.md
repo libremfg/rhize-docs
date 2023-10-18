@@ -4,7 +4,7 @@ date: '{{ .Date }}'
 draft: true 
 version:
 description: Release notes for v{{ replace .File.ContentBaseName `-` `.` | title }} of the Rhize application
-category: releases
+categories: ["releases"]
 menu:
   main:
     parent: releases

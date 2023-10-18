@@ -2,7 +2,7 @@
 title: '{{ replace .File.ContentBaseName `-` ` ` | title | humanize }}'
 date: '{{ .Date }}'
 draft: true
-category: reference
+categories: ["reference"]
 description:
 weight:
 menu:
