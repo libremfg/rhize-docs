@@ -9,6 +9,10 @@ menu:
   main:
     parent: how-to
     identifier: install
+cascade:
+  domain_name: libremfg.ai
+  brand_name: Libre
+  application_name: libre
 ---
 
 Follow these steps to create new Rhize installations and secure them in a Kubernetes environment.

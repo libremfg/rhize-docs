@@ -17,19 +17,20 @@ application_name: libre
 
 This procedure guides you on how to install Rhize services on your Kubernetes cluster.
 
+You can also use this procedure as the model for an automation workflow in your CI.
+
 ## Prerequisites
 
-This guide assumes that you are comfortable navigating the command line.
 
-Besides that, ensure you have the following technical requirements:
+Before starting, ensure that you have the following technical requirements:
 
 - Access to our helm charts
-- Administrative priviliges for running Kubernetes cluster
-For AWS, refer to our [Set up AWS EKS]({{< ref "set-up-aws-eks" >}}) guide.
+- Administrative priviliges for running Kubernetes cluster.
+  For AWS, refer to our [Set up AWS EKS]({{< ref "set-up-aws-eks" >}}) guide.
 - Internet access
 - [kubectx](https://github.com/ahmetb/kubectx) and kubens installed
 - A way to programmatically make HTTP requests (this guide uses Curl)
-- MQTT Explorer
+- [MQTT Explorer](https://mqtt-explorer.com/)
 - DNS records created and pointing to the following subdomains:
 
 | Service  | Domain                                                                    |

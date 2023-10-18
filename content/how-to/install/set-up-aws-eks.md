@@ -77,7 +77,7 @@ For this step, follow the official AWS documentation to [Create service role](ht
 
 1. For the role name, use `eksClusterRole-CUSTOMER-ENVIRONMENT`.
 
-1. Add [tags](#tags):
+1. Add [tags](#tags).
 
 On success, the role is visible in IAM.
 
@@ -88,7 +88,7 @@ Security groups allow traffic to and from your VPC.
 To create a group, navigate to the VPC and follow the AWS [Create security group](https://docs.aws.amazon.com/vpc/latest/userguide/security-groups.html#creating-security-groups) procedure.
 
 1. For the **Name** field, enter `eksCluster-sg-<customer>-<environment>`.
-- Add [tags](#tags)
+1. Add the recommended [Tags](#tags).
 
 On success, the security group creates without error and is visible in **VPC Security Groups**.
 
@@ -196,7 +196,7 @@ From the AWS console, use the Certificate Manager (ACM) to request a certificate
 For each record, apply the following:
 - **Validation Method**: DNS
 - **Key algorithm**: RSA 2048
-- Suggested [Tags](#tags)
+- The recommended [Tags](#tags)
 
 After success, all certificates show as issued.
 
