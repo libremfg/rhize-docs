@@ -10,9 +10,6 @@ menu:
     parent: install
     identifier:
 vars:
-  domain_name: libremfg.ai
-  brand_name: libre
-  application_name: Libre
   eks_tags: |-
     | key         | value                                 |
     |-------------|---------------------------------------|
@@ -51,13 +48,13 @@ Before you start, ensure you have the following:
 
   | Service  | Domain                                                                    |
   |----------|---------------------------------------------------------------------------|
-  | Admin UI | `<CUSTOMER>-{{< param vars.brand_name >}}.{{< param vars.domain_name >}}` |
-  | Keycloak | `<CUSTOMER>-auth.{{< param vars.domain_name >}}`                          |
-  | GraphQL  | `<CUSTOMER>-graphql.{{< param vars.domain_name >}}`                       |
-  | NATS     | `<CUSTOMER>-mqtt.{{< param vars.domain_name >}}`                          |
-  | Highbyte | `<CUSTOMER>-highbyte.{{< param vars.domain_name >}}`                      |
-  | Grafana  | `<CUSTOMER>-grafana.{{< param vars.domain_name >}}`                       |
-  | BPMN     | `<CUSTOMER>-bpmn.{{< param vars.domain_name >}}`                          |
+  | Admin UI | `<CUSTOMER>-{{< param application_name >}}.{{< param domain_name >}}` |
+  | Keycloak | `<CUSTOMER>-auth.{{< param domain_name >}}`                          |
+  | GraphQL  | `<CUSTOMER>-graphql.{{< param domain_name >}}`                       |
+  | NATS     | `<CUSTOMER>-mqtt.{{< param domain_name >}}`                          |
+  | Highbyte | `<CUSTOMER>-highbyte.{{< param domain_name >}}`                      |
+  | Grafana  | `<CUSTOMER>-grafana.{{< param domain_name >}}`                       |
+  | BPMN     | `<CUSTOMER>-bpmn.{{< param domain_name >}}`                          |
 
 ### Tags
 
@@ -187,11 +184,11 @@ volumeBindingMode: Immediate
 
 From the AWS console, use the Certificate Manager (ACM) to request a certificate for each of the following sub-domains:
 
-- `<CUSTOMER>-auth.{{< param vars.domain_name >}}`
-- `<CUSTOMER>-api.{{< param vars.domain_name >}}`
-- `<CUSTOMER>-mqtt.{{< param vars.domain_name >}}`
-- `<CUSTOMER>-dashboard.{{< param vars.domain_name >}}`
-- `<CUSTOMER>-historian.{{< param vars.domain_name >}}`
+- `<CUSTOMER>-auth.{{< param domain_name >}}`
+- `<CUSTOMER>-api.{{< param domain_name >}}`
+- `<CUSTOMER>-mqtt.{{< param domain_name >}}`
+- `<CUSTOMER>-dashboard.{{< param domain_name >}}`
+- `<CUSTOMER>-historian.{{< param domain_name >}}`
 
 For each record, apply the following:
 - **Validation Method**: DNS

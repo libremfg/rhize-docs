@@ -10,9 +10,6 @@ menu:
   main:
     parent: install
     identifier:
-domain_name: libremfg.ai
-brand_name: Libre
-application_name: libre
 ---
 
 This procedure guides you on how to install Rhize services on your Kubernetes cluster.
