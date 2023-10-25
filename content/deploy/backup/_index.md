@@ -7,7 +7,7 @@ categories: ["howto"]
 weight: 200
 menu:
   main:
-    parent: how-to
+    parent: deploy
     identifier: backup
 ---
 

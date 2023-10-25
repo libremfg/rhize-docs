@@ -1,14 +1,14 @@
 ---
-title: How-to guides
-description: A collection of pages to look up values for schemas, definitions, and anything else related to using Rhize. 
-weight: 200
-identifier: how-to
+title: Deploy
+description: >-
+  A collection of pages to administrate Rhize: install, upgrade, back up, and more.
+weight: 100
+identifier: deploy
 cascade:
   domain_name: libremfg.ai
   brand_name: Libre
   application_name: libre
   pre_reqs: |-
-    - Permissions to access the [Rhize Kubernetes Environment](/how-to/install/configure-kubernetes")
     - [kubectl](https://kubernetes.io/docs/tasks/tools/)
     - Optional: [kubectx](https://github.com/ahmetb/kubectx) utilities
         - `kubectx` to manage multiple clusters
@@ -25,3 +25,4 @@ cascade:
 ---
 
 A collection of pages to look up values for schemas, definitions, and anything else related to using Rhize. 
+

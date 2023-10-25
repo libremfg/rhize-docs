@@ -7,7 +7,7 @@ description:
 weight: 100
 menu:
   main:
-    parent: how-to
+    parent: deploy
     identifier: install
 cascade:
   domain_name: libremfg.ai

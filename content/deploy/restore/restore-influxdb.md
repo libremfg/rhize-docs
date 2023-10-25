@@ -1,13 +1,13 @@
 ---
-title: 'Set Up Graphql'
-date: '2023-09-22T14:49:10-03:00'
+title: 'Restore influxdb'
+date: '2023-10-19T13:52:58-03:00'
 draft: true
-category: how-to
-description:
-weight: 200
+categories: ["how-to"]
+description: How to Restore Influxdb
+weight:
 menu:
   main:
-    parent: install
+    parent: how-to
     identifier:
 ---
 
@@ -20,27 +20,24 @@ Link to relevant explanations and reference topics, if needed -->
 
 Before you start, ensure you have the following:
 
-- [ ]
 
-## Set Up Graphql procedure
+## Procedure
 
 <!-- if procedure is very long, consider using h3s -->
-
-To <do_thing> , follow these steps:
 
 1.
 1.
 
 <!--Define what success looks like -->
 
+<!-- 
 ### Error recovery
-
-<!-- Optional. Define common failure modes and how to recover -->
-
-## Conclusion
+Optional. Define common failure modes and how to recover
+-->
 
 <!--
-Summarize what was done. Give an example of what success looks like.
+## Next steps
+Optional. Summarize what was done. Give an example of what success looks like.
 
 Where applicable, provide links to next steps or to read more.
---->
+-->
