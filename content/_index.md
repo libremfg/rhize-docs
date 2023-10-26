@@ -36,20 +36,20 @@ weight = 0
     </a>
   </div>
   <div class="item">
-    <div class="icon"><i class="fa fa-wrench" aria-hidden="true"></i></div>
-    <a href="{{< relref "/how-to">}}">
-      <h2>How-to guides</h2>
+    <div class="icon"><i class="fa fa-building" aria-hidden="true"></i></div>
+    <a href="{{< relref "/deploy">}}">
+      <h2>Deploy</h2>
       <p>
-      Deploy, manage, and configure your data hub.
+      Install, backup, upgrade, and restore.
       </p>
     </a>
   </div>
   <div class="item">
-    <div class="icon"><i class="fa fa-building" aria-hidden="true"></i></div>
-    <a href="{{< relref "/concepts/architecture">}}">
-      <h2>Architecture</h2>
+    <div class="icon"><i class="fa fa-wrench" aria-hidden="true"></i></div>
+    <a href="{{< relref "/how-to">}}">
+      <h2>User guides</h2>
       <p>
-      Low-latency, event-driven architecture to store data and orchestrate processes.
+      Query, model equipment, write event-driven workflows.
       </p>
     </a>
   </div>
