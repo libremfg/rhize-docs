@@ -8,7 +8,7 @@ weight: 400
 menu:
   main:
     parent: restore
-    identifier:
+    identifier: restore-influx
 ---
 
 
@@ -19,7 +19,7 @@ This guide shows you how to restore InfluxDB in your Rhize environment.
 Before you start, ensure you have the following:
 
 {{% param pre_reqs %}} 
-- An [InfluxDB backup]({{< relref "../backup/influxdb" >}})
+- An [InfluxDB backup]({{< relref "../backup/" >}})
 
 ## Procedure
 
