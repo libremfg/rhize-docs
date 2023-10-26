@@ -1,7 +1,7 @@
 +++
 date = "2017-03-20T19:35:35+11:00"
 title = "Get started with Rhize"
-description = "From learning the basics of graph databases to advanced functions and capabilities, RHIZE docs have the information you need."
+description = "From deploying the datahub to automating processes, Rhize docs have the information you need."
 [menu.main]
 name = "Home"
 identifier = "home"
@@ -10,9 +10,9 @@ weight = 0
 
 <div class="landing">
   <div class="hero">
-    <h1>The RHIZE Manufacturing Data Hub</h1>
+    <h1>The Rhize Manufacturing Data Hub</h1>
     <p>
-      The RHIZE Manufacturing DataHub has been designed from the ground up to transform industrial data management. It is scalable, distributed, highly available and lightning fast.
+      The Rhize Manufacturing Data Hub has been designed from the ground up to transform industrial data management. It is scalable, distributed, highly available, and ready for every level of a manufacturing operation.
     </p>
 
   </div>
