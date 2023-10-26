@@ -1,5 +1,7 @@
 name: PR preview
 
+# All credit goes to https://daiyi.co/blog/pr-previews-for-github-pages/
+
 on:
    pull_request: # This will publish a site preview on every pull request, and also run the build command to test if the site is broken.
 
