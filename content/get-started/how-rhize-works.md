@@ -28,6 +28,26 @@ caption="<em><small>A simplified view of Rhize's architecture</small></em>"
 width="40%"
 >}}
 
+## Examples in practice
+
+To make the next sections less abstract, consider these examples of how Rhize creates a common data hub for diverse human and system interaction.
+
+- **[Data Collection](#data-collection)**
+    - An instrumenter configures an MQTT-compatible device to send sensor data to Rhize.
+    - A business analyst sends an ERP order through an integration with the GraphQL API.
+- **[Message exchange](#message-exchange)**
+    1. A piece of equipment publishes information about its status over MQTT.
+    1. A BPMN process subscribes to the equipment's `TestResult` subtopic. When the `TestResult` status changes to `fail`, the BPMN process publishes a maintenance order to the broker.
+    1. The ERP system, which subscribes to the `maintenance` topic, prepares a document for maintenance personnel. 
+- **[Data storage](#storage)**
+    - A data scientist writes a Python script that discovers production outliers for a specific segment class across all production sites.
+    - A procurer uses an Excel-Rhize integration to call the API and receive a production order that the BPMN process wrote to the database one month earlier.
+- **[User-data interaction](#interfaces)**
+    - An operator queries sensor values from a custom-built mobile interface.
+    - A quality-engineer observes real-time data in a custom dashboard built for statistical process control.
+- **[Deployment](#deployment)**
+    - A DevOps engineer pushes an upgrade that handles message-streams more efficiently. This upgrade rolls out node-by-node across each instance.
+    - A plant process causes a heavy inflow of data. The system autoscales to meet the temporary computation demand.
 
 ## Data collection
 
@@ -40,7 +60,7 @@ Correspondingly, Rhize accepts data from all levels, including measurements, sch
 Common sources of data collection come from MQTT brokers and devices, OPC-UA servers, and over HTTP through the GraphQL endpoint.
 This depends entirely on what you want to send to the Rhize message broker or database.
 
-## The message broker
+## Message exchange
 
 {{< figure
 src="/get-started/rhize-diagram-data-sources.png"
@@ -56,7 +76,7 @@ Services in the Rhize application subscribe to their relevant topics and handle 
 Services also publish events to the event broker.
 Thus, Rhize services can communicate with each other and with customer systems in a completely decoupled manner.
 
-## The database
+## Data storage {#database}
 
 With a schema defined by the ISA-95 standard,
 the graph database creates a contextual, queryable relationships that link all data stored in the system.
@@ -67,7 +87,7 @@ the database also stores declarative configuration data to instruct different se
 
 Finally, the time-series component of the database accepts real-time data streams.
 
-## The interfaces
+## The interfaces {#interfaces}
 
 The Rhize application comes with a graphical interface.
 Some uses include:
@@ -80,7 +100,7 @@ Rhize customers also use the GraphQL interface to build their own applications, 
 
 Last but not least, the time-series data is observable through monitoring tools like Grafana.
 
-## Deployment
+## Deployment {#deployment}
 
 Rhize runs on Kubernetes and is configured through CI/CD servers.
 
@@ -91,14 +111,3 @@ All deployment is version controlled, which makes regressions easier to recover 
 Deployment is vendor neutral, giving organizations complete control to run the system on their local networks or preferred cloud host.
 The modern tools of DevOps also makes the system easier to maintain, as they come with vast tooling ecosystems and training material.
 
-## Examples in practice
-
-To make the previous sections less abstract, consider these examples of how Rhize creates a common data hub for diverse human and system interaction.
-
-| Process               | Examples in practice                                                                                                                                                                                                                                                                                                                                                                                         |
-|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Data collection       | <ul><li>An instrumenter configures an MQTT-compatible device to send sensor data to Rhize.</li><li> A business analyst sends an ERP order through an integration with the GraphQL API.</li></ul>                                                                                                                                                                                                             |
-| Message exchange      | <ol> <li> A piece of equipment publishes information about its status over MQTT.</li> <li> A BPMN process subscribes to the equipment's `TestResult` subtopic. When the `TestResult` status changes to `fail`, the BPMN process publishes a maintenance order to the broker.</li> <li>The ERP system, which subscribes to the `maintenance` topic, prepares a document for maintenance personnel.</li> </ol> |
-| Data storage          | <ul><li>A data scientist writes a Python script that discovers production outliers for a specific segment class across all production sites.</li><li>A procurer uses an Excel-Rhize integration to call the API and receive a production order that the BPMN process wrote to the database one month earlier.</li></ul>                                                                                      |
-| User-data interaction | <ul><li>An operator queries sensor values from a custom-built mobile interface.</li><li>A quality-engineer observes real-time data in a custom dashboard built for statistical process control.</li></ul>                                                                                                                                                                                                    |
-| Deployment            | <ul><li>A DevOps engineer pushes an upgrade that handles message-streams more efficiently. This upgrade rolls out node-by-node across each instance.</li><li>A plant process causes a heavy inflow of data. The system autoscales to meet the temporary computation demand.</li></ul>                                                                                                     |
