@@ -1,3 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Get started on</title><link>https://libremfg.github.io/get-started/</link><description>Recent content in Get started on</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 03 Oct 2023 19:39:39 -0300</lastBuildDate><atom:link href="https://libremfg.github.io/get-started/index.xml" rel="self" type="application/rss+xml"/><item><title>What is Rhize?</title><link>https://libremfg.github.io/get-started/introduction/</link><pubDate>Tue, 26 Sep 2023 12:25:46 -0300</pubDate><guid>https://libremfg.github.io/get-started/introduction/</guid><description>Rhize is a real-time, event-driven manufacturing data hub. It unites data analysis, event monitoring, and process execution in one platform. Its interface and architecture is designed to conform to your processes. We assume nothing about what your manufacturing workflows look like.
-Rhize has only one strong opinion: all data exchanged must be modeled on the ISA-95 standard. This standards-based schema is how Rhize connects every data event across an entire operation.</description></item><item><title>How Rhize works</title><link>https://libremfg.github.io/get-started/how-rhize-works/</link><pubDate>Tue, 03 Oct 2023 19:39:39 -0300</pubDate><guid>https://libremfg.github.io/get-started/how-rhize-works/</guid><description>This article provides a high-level overview of how Rhize works, starting with data collection and ending with user interaction. To make these concepts more concrete, the final section provides examples of each process.
-The heart of the Rhize platform is its manufacturing knowledge graph, which stores data from all levels of the operation and exposes this data through a single endpoint. Around the database are services that exchange messages and process events in real-time.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Get started on </title>
+    <link>https://MattDodsonEnglish.github.io/libremfg.github.io/pull/20/get-started/</link>
+    <description>Recent content in Get started on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Oct 2023 19:39:39 -0300</lastBuildDate><atom:link href="https://MattDodsonEnglish.github.io/libremfg.github.io/pull/20/get-started/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is Rhize?</title>
+      <link>https://MattDodsonEnglish.github.io/libremfg.github.io/pull/20/get-started/introduction/</link>
+      <pubDate>Tue, 26 Sep 2023 12:25:46 -0300</pubDate>
+      
+      <guid>https://MattDodsonEnglish.github.io/libremfg.github.io/pull/20/get-started/introduction/</guid>
+      <description>Rhize is a real-time, event-driven manufacturing data hub. It unites data analysis, event monitoring, and process execution in one platform. Its interface and architecture is designed to conform to your processes. We assume nothing about what your manufacturing workflows look like.
+Rhize has only one strong opinion: all data exchanged must be modeled on the ISA-95 standard. This standards-based schema is how Rhize connects every data event across an entire operation.</description>
+    </item>
+    
+    <item>
+      <title>How Rhize works</title>
+      <link>https://MattDodsonEnglish.github.io/libremfg.github.io/pull/20/get-started/how-rhize-works/</link>
+      <pubDate>Tue, 03 Oct 2023 19:39:39 -0300</pubDate>
+      
+      <guid>https://MattDodsonEnglish.github.io/libremfg.github.io/pull/20/get-started/how-rhize-works/</guid>
+      <description>This article provides a high-level overview of how Rhize works, starting with data collection and ending with user interaction. To make these concepts more concrete, the final section provides examples of each process.
+The heart of the Rhize platform is its manufacturing knowledge graph, which stores data from all levels of the operation and exposes this data through a single endpoint. Around the database are services that exchange messages and process events in real-time.</description>
+    </item>
+    
+  </channel>
+</rss>
