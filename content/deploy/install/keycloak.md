@@ -1,143 +1,311 @@
-+++
-title = "Authenticate with Keycloak"
-description = "The Rhize GraphQL implementation uses OpenIDConnect for Authentication and role-based access control. This section describes how to set up Keycloak"
-weight = 100
-[menu.main]
-    name = "Auth with Keycloak"
-    parent = "install"
-    identifier = "keycloak-integration"
-+++
+---
+title: Configure Keycloak
+description: The Rhize GraphQL implementation uses OpenIDConnect for
+  Authentication and role-based access control. This section describes how to
+  set up Keycloak
+weight: 100
+categories: "how-to"
+menu:
+  main:
+    name: Configure Keycloak
+    parent: install
+    identifier: keycloak-integration
+create_client: 1. In the side menu, select **Clients > create client**.
+ 
+---
+
+Rhize uses Keycloak as an OpenID provider.
+In your cluster, the Keycloak server to authenticate users, services, and manages Role-based access controls.
+
+This topic describes how to set up Keycloak in your Rhize cluster.
+
+> To get a conceptual picture of the authentication flow, read [About OpenID Connect]({{< relref "../about-openidconnect.md" >}})
 
 
-Rhize uses OpenIDConnect to connect to a Keycloak server to authenticate users and manage Role-based access controls.
+## Prerequisites
 
-## Overview of OpenIDConnect
+First, ensure that you have followed the instructions from [Set up Kubernetes]({{< ref "configure-kubernetes.md" >}}). All of the prerequistes for that step apply here.
 
-Open ID Connect is a security architecture that uses JSON Web Tokens (JWTs) to access secured resources.
-JWT are issued by KeyCloak, and the users can be managed in KeyCloak, or managed in other services like LDAP, Google, Azure AD, Facebook, etc.
+## Log in
 
-When a user accesses the user interface, the UI redirects to Keycloak, which depending on how it is configured, will redirect to the authentication provider so that the user can log in. If the user is successfully authenticated, Keycloak will redirect back to the user interface with an authentication code in the url parameters.
-The UI then calls a secure API to exchange the authentication code for a JWT.
+1. Go to localhost on the port where you forwarded the URL.
+1. Use the container credentials to log in.
 
-The UI then uses that JWT to access secured API like the RHIZE GraphQL API.
+   To find this, look in the `keycloak.yaml` file.
 
-The RHIZE DB has the public key from Keycloak, which can be used to verify the JWT.
+## Create a realm
 
-```mermaid
-sequenceDiagram
-	actor User
-	participant UI as Web UI
-	participant Rhize as RHIZE DB
-	participant KC as KeyCloak
-	participant AP as AuthProvider
-	Rhize->>KC: Get Public Key
-	User->>UI: Log In
-	UI-->>KC: Redirect
-	KC-->>AP: Redirect
-	AP->>User: Credentials
-	AP-->>KC: Auth Result
-	KC-->>UI: Redirect with Code
-	UI->>KC: Exchange Code for Token
-	KC->>UI: Reply with id_token and access_token
-	UI->>Rhize: Access API with Bearer Token
-	Rhize->>Rhize: Verify Token with Public Key from Keycloak
+A Keycloak _realm_ is like a tenant that contains all configuration.
 
-```
+1. In the side menu, select **Master** then **Create Realm**.
+1. For the **Realm Name**, enter `{{< param application_name >}}`. **Create.**
+1. In the side menu, select **Realm Settings**.
+1. Enter the following values:
+  | Field        | value                 |
+  |--------------|-----------------------|
+  | Frontend URL | keycloak frontend URL |
+  | Require SSL  | External requests     |
+  
 
-## Set up Keycloak
+After you've created the realm, you can create clients.
+  
+## Create clients
 
-The following sections step through how to set up Keycloak.
+In Keycloak, _clients_ are entities that request Keycloak to authenticate a user.
+You need to create a client for each service.
 
-### 1. Create a realm
+First, create a client for the DB as follows:
+{{% param create_client %}}
 
-Keycloak need to have a realm, which is like a tenant that contains all of the configuration.
-Here we have created a realm named "libre"
+1. Configure the **General Settings**:
 
-![Alt text](/images/graphql/Screenshot%202023-08-12%20at%205.39.15%20pm.png)
+    - **Client Type**: OpenID Connect
+    - **Client ID**: {{< param application_name >}}Baas
+    - **Name**: {{< param brand_name >}} Backend as a Service
+    - **Description**: {{< param brand_name >}} Backend as a Service
 
-### 2. Create a client
+    When finished, select **Next.**
+  
+1. Configure the **Capability config**:
+    - **Client Authentication**: On
+    - **Authorization**: On
+    - For **Authentication flow**, enable:
+       - 🗸 Standard flow
+       - 🗸 Direct access grants
+       - 🗸 Implicit flow
 
-Once we have created a realm, we can go head and create a client for the database, and a client for the UI.
+1. Select **Next**, then **Save**.
 
-Here we have a client for the UI named libreUI, and a client for the database called libreBaas
 
-![Alt text](/images/graphql/Screenshot%202023-08-12%20at%205.41.00%20pm.png)
+Repeat this process for the following services:
 
-The LibreBaas client should be configured like this:
+- UI
+    - **Client Type**: OpenID Connect
+    - **Client ID**: {{< param application_name >}}UI
+    - **Name**: Rhize user interface 
+    - **Description**: Rhize user interface
+    - **Client Authentication**: `On`
+    - **Authorization**: `Off`
+    - For **Authentication flow**, enable:
+       - 🗸 Standard flow
+       - 🗸 Direct access grants
+       - 🗸 Implicit flow
+- Core
+    - **Client Type**: OpenID Connect
+    - **Client ID**: {{< param application_name >}}Core
+    - **Name**: {{< param application_name >}} Core
+    - **Description**: {{< param application_name >}} Core
+    - **Client Authentication**: `On`
+    - **Authorization**: `Off`
+    - For **Authentication flow**, enable:
+       - 🗸 Standard flow
+       - 🗸 Direct access grants
+       - 🗸 Implicit flow
+- Router
+    - **Client Type**: OpenID Connect
+    - **Client ID**: {{< param application_name >}}Router
+    - **Name**: {{< param application_name >}} Router
+    - **Description**: {{< param application_name >}} Router
+    - **Client Authentication**: `On`
+    - **Authorization**: `Off`
+    - For **Authentication flow**, enable:
+       - 🗸 Standard flow
+       - 🗸 Direct access grants
+       - 🗸 Implicit flow
 
-![Alt text](/images/graphql/Screenshot%202023-08-12%20at%205.43.51%20pm.png)
+- BPMN
+    - **Client Type**: OpenID Connect
+    - **Client ID**: {{< param application_name >}}Bpmn
+    - **Name**: {{< param application_name >}} BPMN
+    - **Description**: {{< param application_name >}} BPMN
+    - **Client Authentication**: `On`
+    - **Authorization**: `Off`
+    - For **Authentication flow**, enable:
+       - 🗸 Standard flow
+       - 🗸 Direct access grants
+       - 🗸 Implicit 
+- Dashboard
+    - **Client Type**: OpenID Connect
+    - **Client ID**: dashboard
+    - **Name**: Rhize Dashboard
+    - **Description**: Grafana dashboard
+    - **Client Authentication**: `On`
+    - **Authorization**: `Off`
+    - For **Authentication flow**, enable:
+       - 🗸 Standard flow
 
-### 3. Assign permissions to the client system account
+## Scope services
 
-We need to assign permissions to the service account in the client so that the Rhize DB can create roles
+### Create a client scope
 
-Add these roles to the service account in the libreBaas client
+In Keycloak, a _scope_ bounds a services access.
+Rhize creates a default client scope, then binds each services to that scope.
 
-![Alt text](/images/graphql/Screenshot%202023-08-12%20at%205.45.47%20pm.png)
+To create a scope for your Rhize services, follow these steps:
 
-### 4. Configure Rhize to connect to the Keycloak client
 
-Whe you start Rhize, you provide the credentials to your OIDC server in the startup flags like this:
 
-```shell
-alpha --my=0.0.0.0:7080 --zero=0.0.0.0:5080 --security whitelist=0.0.0.0/0 --graphql debug=true --cdc nats="nats://system:system@localhost:4222" --oidc bypass=false;url=http://localhost:8090;realm=libre;client-id=libreBaas;client-secret=pk98t8jVtwF9P8erRHZpLklWtz1TzGTR;scopemap=./scopemap.json
-```
+1. Select **Client Scopes > Create client scope**.
+1. Fill in the following values:
+    - **Name**: {{< param application_name >}}ClientScope
+    - **Description**: {{< param brand_name >}} Client Scope
+    - **Type**: None
+    - **Display on consent screen**: On
+    - **Include in token scope**: On
+1. **Create**.
+1. Select the **Mappers** tab, then **Configure new mapper**. Add an audience mapper for the DB client:
 
-The `--oidc` flag has the following sub-flags:
+    - Mapper Type: Audience
+    - Name: {{< param application_name >}}BaasAudienceMapper
+    - Include Client Audience: {{< param application_name >}}Baas
+    - Add to ID Token: On
+    - Add to access token: On
+1. Repeat the preceding step for a mapper for the UI client:
 
-- `bypass=false` This flag allows you to bypass security completely to help you get started quickly. To bypass security, set this to true. The server will then not try to validate your access token.
-- `url=http://localhost:8090`  This is the url of the keycloak server
-- `realm=libre` The realm within the Keycloak server that holds your users, groups and clients
-- `client-id=libreBaas` The name of the client within Keycloak
-- `client-secret=YourSecretHere` The secret to use to access the client in KeyCloak
-- `scopemap=./scopemap`. The path to your ScopeMap, an example JSON file that maps client roles in KeyCloak to types in the schema.
+    - Mapper Type: Audience
+    - Name: {{< param application_name >}}UIAudienceMapper
+    - Include Client Audience: {{< param application_name >}}UI
+    - Add to ID Token: On
+    - Add to access token: Off
 
-  For example, this scopemap provides the `libre` role access to the listed types in the schema:
+### Add services to the scope
 
-  ```json
-  {
-  	"libre": [
-  		"AccessPermission",
-  		"Comment",
-  		"EnvironmentalVariable",
-  		"EnvironmentalVariableVersion",
-  		"HierarchyScope",
-  		"LibreService",
-  		"Menu",
-  		"Secret",
-  		"SecretVersion",
-  		"Signature",
-  		"SignatureReason"
-  	]
-  }
-  ```
+1. Go to **Clients**. Select {{< param db >}}
+1. Select the **Client Scopes** tab.
+1. Select **Add Client scope**
+1. Select {{< param application_name >}}ClientScope from the list.
+1. **Add > Default**.
 
-### 5. Check the client Roles
+Repeat this process for the {{< param application_name >}}UI client.
 
-When Rhize starts up and receives the schema, it connects to Keycloak and creates client roles in the libreBaas client for each of the roles in the scopeMap, adding the operation type as shown below:
+## Create roles and groups
 
-![Keycloak Client Roles](/images/graphql/KeyCloakClientRoles.png)
+### Add the admin realm role
 
-### 6. Create a group
+1. Select **Realm Roles**. Then **Create role**.
+1. Enter the following values:
+     - Role name: `ADMIN`
+     - Description: `ADMIN`
+ 1. **Save**
 
-We will need a group to act as a collection of the client roles that users should be granted. Here we will create an Admin group that has all of the client roles
+### Add the Admin Group
 
-![Alt text](/images/graphql/Screenshot%202023-08-12%20at%205.48.02%20pm.png)
+1. In the left hand menu, select **Groups > Create group**.
+1. Give the group a name like `{{< param application_name >}}AdminGroup`
+1. **Create**
 
-Map the client roles from the libreBaas client into the group.
+Now map a role.
 
-![Alt text](/images/graphql/Screenshot%202023-08-12%20at%205.49.23%20pm.png)
+1. From the group list, select the group you just created.
+1. Select the **Role mapping** tab.
+1. Select **Assign Role**
+1. **Select ADMIN**
+1. **Assign.**
 
-### 7. Assign users to the group
+### Add the dashboard realm roles
 
-Add a user, and assign them to the group. Here we have added a username
-![Alt text](/images/graphql/Screenshot%202023-08-12%20at%205.51.59%20pm.png)
+1. Select **Realm Roles**, and then **Create role**.
+1. Name the role `dashboard-admin`.
+1. **Save**.
+1. Repeat the process to create a role `dashboard-dev`.
 
-### 8. Check the roles in the token
+### Add the dashboard groups
 
-We can check our configuration by generating an access token from the libreBaas client.
-Select the user you created, and click on `Generate access token`
+1. In the left hand menu, select **Groups**, and then **Create Group**.
+1. Name the group `dashboard-admin`
+1. **Create.**
+1. Repeat the process to create `dashboard-dev` and `dashboard-user` groups.
 
-We want to see that the roles that we mapped into the group that the user is a member of show in the token under resource_access.libreBaas.roles like this:
+Now map the group to a role:
+1. Select dashboard-admin from the list
+1. Select the **Role mapping** tab.
+1. Select **Assign Role.**
+1. Select **`dashboard-admin`**
+1. **Assign.**
+1. Repeat the process for `dashboard-dev`
 
-![Alt text](/images/graphql/Screenshot%202023-08-12%20at%205.53.38%20pm.png)
+
+## Add the group client scope
+
+1. In the left hand menu, select **Client scopes** and **Create client scope**.
+1. Name it `groups` and provide a description.
+1. **Save**.
+
+Now map the scope:
+1. Select the **Mappers** tab.
+1. **Add predefined mappers.**
+1. Select `groups`.
+1. **Add**.
+
+## Add new client scopes to dashboard client
+
+1. In the left hand menu, select **Clients**, and then `dashboard`.
+1. Select the **Client scopes** tab.
+1. **Add client scope**.
+1. Select `groups` and {{< param application_name >}}ClientScope.
+1. **Add Default**.
+
+## Add Client Policy
+
+1. In the left hand menu, select **Clients**, and then `{{< param application_name >}}Baas`.
+1. Select the **Authorization** tab.
+1. Select **Policies > Create Policy**
+1. Select **Group > Create Policy**.
+1. Name the policy `{{< param application_name >}}AdminGroupPolicy`.
+1. Select **Add Groups**.
+1. Select `{{< param application_name >}}AdminGroup`.
+1. **Add**.
+1. For **Logic**, choose `Positive`.
+1. **Save**.
+
+## Add users
+
+1. In the left hand menu, select **Users**, and **Add User**.
+1. Fill in the following values:
+     - **Username**: `system@{{< param domain_name >}}`.
+     - **Email**: `system@{{< param domain_name >}}`.
+     - **Email Verified**: `On`
+     - **First name**: `system`
+     - **Last name**: `{{< param brand_name >}}`
+     - **Join Groups**: `{{< param application_name >}}AdminGroup`
+1. **Create** 
+
+Now create a user password:
+1. Select the **Credentials** tab.
+1. **Set Password**. 
+1. Enter a strong 
+1. For **Temporary**, choose `Off`.
+1. **Save**.
+
+Repeat this process for the following accounts:
+
+- Core:
+    - **Username**: `{{< param application_name >}}Core@{{< param domain_name >}}`
+    - **Email**: `{{< param application_name >}}Core@{{< param domain_name >}}`
+    - **Email Verified**: `On`
+    - **First name**: `Core`
+    - **Last name**: `{{< param brand_name >}}`
+    - **Join Groups**: `{{< param application_name >}}AdminGroup`
+-  BPMN
+     - **Username**: `{{< param application_name >}}Bpmn@{{< param domain_name >}}`
+     - **Email**: `{{< param application_name >}}Bpmn@{{< param domain_name >}}`
+     - **Email Verified**: `On`
+     - **First name**: `Bpmn`
+     - **Last name**: `{{< param brand_name >}}`
+     - **Join Groups**: `{{< param application_name >}}AdminGroup`
+- Router
+    - **Username**: `{{< param application_name >}}Router@{{< param domain_name >}}`
+    - **Email**: `{{< param application_name >}}Router@{{< param domain_name >}}`
+    - **Email Verified**: `On`
+    - **First name**: `Router`
+    - **Last name**: `{{< param brand_name >}}`
+    - **Join Groups**: `{{< param application_name >}}AdminGroup`
+- Agent
+    - **Username**: `{{< param application_name >}}Agent@{{< param domain_name >}}`
+    - **Email**: `{{< param application_name >}}Agent@{{< param domain_name >}}`
+    - **Email Verified**: `On`
+    - **First name**: `Agent`
+    - **Last name**: `{{< param brand_name >}}`
+    - **Join Groups**: `{{< param application_name >}}AdminGroup`
+`
+`

@@ -8,12 +8,15 @@ cascade:
   domain_name: libremfg.ai
   brand_name: Libre
   application_name: libre
+  db: libreBaaS
   pre_reqs: |-
     - [kubectl](https://kubernetes.io/docs/tasks/tools/)
+    
+    You also may want to use these optional tools to make manual install easier:
     - Optional: [kubectx](https://github.com/ahmetb/kubectx) utilities
         - `kubectx` to manage multiple clusters
         - `kubens` to switch between and configure namespaces easily
-    - Optional: the [k8 Lens IDE](https://k8lens.dev), if you prefer to manage Kubernetes graphically
+    - Optional: the [k8 Lens IDE](https://k8lens.dev), if you prefer to use Kubernetes graphically
   k8s_cluster_ns: |-
     ```bash
     ## context
