@@ -16,7 +16,7 @@ It unites data analysis, event monitoring, and process execution in one platform
 Its interface and architecture is designed to conform to your processes.
 We assume nothing about what your manufacturing workflows look like.
 
-Rhize has only one strong opinion: all data exchanged must be modeled on the ISA-95 standard.
+Rhize has only one strong opinion: all data exchanged must be modeled on the [ISA-95 standard](https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa95).
 This standards-based schema is how Rhize connects every data event across an entire operation.
 If you aren't an ISA-95 fan, we're happy to convert you, but adoption is a requirement to use the platform.
 
@@ -32,9 +32,11 @@ Some uses of Rhize include:
 
 - **Manufacturing knowledge graph**.
 
-  All data that Rhize collects, whether from sensors or from an ERP, is contextual and interconnected. Rather than a relational database, Rhize uses a graph structure, where any node can be traversed from any other.
+  All data that Rhize collects, whether from sensors or from an ERP, is contextual and interconnected. Rather than a relational database, Rhize uses a graph database, where any node can link to any other, and users can query any data combination, without requiring complex joins.
   
-  The graph database unlocks new possibilities for manufacturing analysis and data science, especially when used as a source to train deep-learning models.
+  The graph database unlocks new possibilities for manufacturing analysis and data science.
+  For example, you can use it to find anomalies in a segment across many sites,
+  or as a data source to train deep-learning models.
 
 - **Real-time monitoring and alerts**.
 
@@ -52,7 +54,7 @@ Some uses of Rhize include:
 
 ## Modern IT for manufacturing 
 
-Rhize is innovative, practical, and built on modern tools and practices:
+Rhize's system design is flexible, practical, and built on modern tools and practices:
 
 - **All data is accessible through a single endpoint.**
 While the data collected and processed may span multiple segments, events, units, areas, and even plants, all data is stored in a graph database and exposed through a GraphQL interface.
