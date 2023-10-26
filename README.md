@@ -1,6 +1,7 @@
 # libremfg.github.io
 
-Documentation pages
+Documentation pages.
+
 
 ## Build locally
 
@@ -39,11 +40,15 @@ hugo new content --kind reference get-started/fake-reference-page.md
 
 To learn how to update templates, read the [Hugo Archetypes documentation](https://gohugo.io/content-management/archetypes/). 
 
+## Preview PRs
+
+An action previews PRs.
+
 ## Troubleshooting
 
 ### Page is not showing
 
-Checke whether the page has the `draft: true` property in its frontmatter.
+Check whether the page has the `draft: true` property in its frontmatter.
 To view a draft locally, use the `hugo server -D` command.
 To make it so the page appears on the published site, change the value to `false`.
 
