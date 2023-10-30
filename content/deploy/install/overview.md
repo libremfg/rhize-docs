@@ -21,7 +21,7 @@ You can also use these docs to model automation workflows in your CI.
 This guide has three steps, each of which has its own page.
 The essential procedure is as follows:
 
-1. **[Set up the Kubernetes environment]({{< relref "setup-kubernetes" >}})**.
+1. **[Set up the Kubernetes environment](/deploy/install/setup-kubernetes)**.
 
     1. Within a Kubernetes cluster, create a new namespace.
     1. In this namespace, add the Rhize container images and Helm repos.

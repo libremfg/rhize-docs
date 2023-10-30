@@ -14,7 +14,7 @@ The final installation step is to install the Rhize services in your Kubernetes 
 
 ## Prerequisites
 
-- This topic assumes you have [Set up Kubernetes]({{< relref "setup-kubernetes" >}}) and [Configured Keycloak]({{< relref "keycloak" >}}). All the prerequisites for those topics apply here.
+- This topic assumes you have [Set up Kubernetes](/deploy/install/setup-kubernetes) and [Configured Keycloak]({{< relref "keycloak" >}}). All the prerequisites for those topics apply here.
 - Configure load balancing for the following DNS records:
 
     | Service  | Domain                                                                |

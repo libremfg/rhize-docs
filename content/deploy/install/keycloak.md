@@ -21,7 +21,7 @@ For a conceptual overview of the authentication flow, read [About OpenID Connect
 
 ## Prerequisites
 
-First, ensure that you have followed the instructions from [Set up Kubernetes]({{< ref "setup-kubernetes.md" >}}).
+First, ensure that you have followed the instructions from [Set up Kubernetes](/deploy/install/setup-kubernetes).
 All prerequisites for that step apply here.
 
 ## Log in
