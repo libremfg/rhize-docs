@@ -47,7 +47,7 @@ Common values that are changed include:
 
 As you install services through Helm, their respective YAML files reference these secrets.
 
-## Install and add roles for the DB
+## Install and add roles for the DB {#db}
 
 The first service to install must be the {{< param db >}} database.
 You also need to configure {{< param db >}} service to have roles in Keycloak.
@@ -121,7 +121,7 @@ helm install <service_name> \
 For the full configuration options,
 read the official [Helm `install` reference](https://helm.sh/docs/helm/helm_install/).
 
-### NATS
+### NATS {#nats}
 
 [NATS](https://nats.io) is the message broker that powers Rhize's event-driven architecture.
 
@@ -158,7 +158,7 @@ Install Tempo with these steps:
 
 The {{< param application_name >}} service is the custom edge agent that monitors data sources, like OPC-UA servers, and publishes and subscribes topics to NATS.
 
-> **Requirements**: Core requires the {{< param db >}} and NATS services.
+> **Requirements**: Core requires the [{{< param db >}}](#db) and [NATS](#nats) services.
 
 Install the Core agent with these steps:
 
@@ -176,7 +176,7 @@ Install the Core agent with these steps:
 
 The BPMN service is the custom engine Rhize uses to process low-code workflows modelled in the BPMN UI.
 
-> **Requirements**: The BPMN service requires the {{< param db >}}, NATS, and Tempo services.
+> **Requirements**: The BPMN service requires the [{{< param db >}}](#db), [NATS](#nats), and [Tempo](#tempo) services.
 
 Install the BPMN engine with these steps:
 
@@ -192,7 +192,7 @@ Install the BPMN engine with these steps:
 
 Rhize uses the [Apollo router](https://duckduckgo.com/?t=ffab&q=apollo+router&ia=web) to unite queries for different services in a single endpoint.
 
-> **Requirements:** Router requires the GraphDB, BPMN, and Core services.
+> **Requirements:** Router requires the [GraphDB](#db), [BPMN](#bpmn), and [Core](#core) services.
 
 Install the router with these steps:
 
@@ -222,7 +222,7 @@ Install Grafana with these steps:
 
 The [UI]({{< relref "/how-to/" >}}) is the graphical frontend to progrman business processes and define work masters.
 
-> **Requirements:** The UI requires the GraphDB, BPMN, Core, and Router services.
+> **Requirements:** The UI requires the [GraphDB](#db), [BPMN](#bpmn), [Core](#core), and [Router](#router) services.
 
 After installing all other services, install the UI with these steps:
 

@@ -243,12 +243,12 @@ Rhize requires authorization for the database service.
      - **First name**: `system`
      - **Last name**: `{{< param brand_name >}}`
      - **Join Groups**: `{{< param application_name >}}AdminGroup`
-1. **Create**
+1. **Create**.
 
 Now create a user password:
 1. Select the **Credentials** tab.
 1. **Set Password**.
-1. Enter a strong
+1. Enter a strong password.
 1. For **Temporary**, choose `Off`.
 1. **Save**.
 
