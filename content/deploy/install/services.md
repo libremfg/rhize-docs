@@ -12,6 +12,12 @@ menu:
 
 The final installation step is to install the Rhize services in your Kubernetes cluster.
 
+
+
+There's a fair few things, generally the keycloak configuration will need to be set (although not as prevalent if we use secrets which you saw last week). Also the links to the other applications usually use the fqdn which includes <service name>.<namespace>.svc.cluster.local and is for some reason set to the l3dev URL by default so will need updating by the user.
+Also if the user wants more than 1 replica running of each pod (which if they're running in production they will want) they'll need to specify that.
+Also, if they're exposing the service to the internet (Generally, keycloak, Baas, NATS, router, UI, and Grafana) they'll need to specify the ingress overrides which are blank by default.
+Here's core as an example.
 ## Prerequisites
 
 - This topic assumes you have [Set up Kubernetes](/deploy/install/setup-kubernetes) and [Configured Keycloak]({{< relref "keycloak" >}}). All the prerequisites for those topics apply here.
@@ -27,6 +33,16 @@ The final installation step is to install the Rhize services in your Kubernetes 
     | Grafana  | `<CUSTOMER>-grafana.{{< param domain_name >}}`                        |
     | BPMN     | `<CUSTOMER>-bpmn.{{< param domain_name >}}`                           |
 
+### Overrides
+
+Each service is installed through a Helm YAML file.
+For some of these services, you might need to edit this file to add credential information and modify defaults.
+
+Common values that are changed include:
+- URLs and URL links
+- The number of replicas running for each pod
+- Ingress values for services exposed on the internet
+
 ## Get client secrets.
 
 1. Go to Keycloak and get the secrets for each client you've created.
@@ -39,17 +55,17 @@ As you install services through Helm, their respective YAML files reference thes
 
 ## Install and add roles for the DB
 
-The first service to install must be the {{< param db >}}.
+The first service to install must be the {{< param db >}} database.
 You also need to configure {{< param db >}} service to have roles in Keycloak.
 
-    
-1. Use helm to install the database:
+
+1. Use Helm to install the database:
 
     ```bash
     helm install -f baas.yaml {{< param application_name >}}-baas {{< param application_name >}}/baas -n {{< param application_name >}}
     ```
 
-    To confirm it works, run the following 
+    To confirm it works, run the following
 
     ```bash
     kubectl get pods
@@ -84,9 +100,9 @@ You also need to configure {{< param db >}} service to have roles in Keycloak.
     --header 'Content-Type: application/octet-stream' \
     --data-binary '{ SCHEMA FILE }’
     ```
-  
+
     This creates more roles.
-  
+
 1. Go to Keycloak UI and all new {{< param db >}} roles to the `ADMIN` group.
 
 ## Install services
@@ -110,24 +126,24 @@ helm install <service_name> \
 
 For the full configuration options,
 read the official [Helm `install` reference](https://helm.sh/docs/helm/helm_install/).
-  
+
 ### NATS
 
-NATS is the message broker that powers Rhize's event-driven architecture.
+[NATS](https://nats.io) is the message broker that powers Rhize's event-driven architecture.
 
 Install NATS with these steps:
 
-1. Open `NATS-overrides.yaml` with your code editor. Edit any necessary overrides.
+1. Modify the NATS Helm file with your code editor. Edit any necessary overrides.
 1. Install with Helm:
 
     ```
     helm install nats -f nats.yaml {{< param application_name >}}/nats -n {{< param application_name >}}
     ```
-    
+
 
 ### Tempo
 
-Rhize uses Tempo to trace BPMN processes.
+Rhize uses [Tempo](https://grafana.com/oss/tempo/) to trace BPMN processes.
 
 Install Tempo with these steps:
 
@@ -136,7 +152,8 @@ Install Tempo with these steps:
     ```bash
     helm repo add grafana https://grafana.github.io/helm-charts
     ```
-    
+
+1. Modify the Helm file as needed.
 1. Install with Helm:
 
     ```bash
@@ -151,7 +168,7 @@ The {{< param application_name >}} service is the custom edge agent that monitor
 
 Install the Core agent with these steps:
 
-1. In the `core.yaml` file, edit the `clientSecret` and `password` with settings from the Keycloak client.
+1. In the `core.yaml` Helm file, edit the `clientSecret` and `password` with settings from the Keycloak client.
 1. Override any other values, as needed.
 1. Install with Helm:
 
@@ -185,7 +202,7 @@ Rhize uses the [Apollo router](https://duckduckgo.com/?t=ffab&q=apollo+router&ia
 
 Install the router with these steps:
 
-1. In your build repo, modify the router YAML file with your code editor. Edit any necessary overrides.
+1. Modify the router Helm YAML file as needed.
 1. Install with Helm:
 
     ```bash
@@ -199,7 +216,7 @@ Rhize uses [Grafana](https://grafana.com) for its dashboard to monitor real time
 
 Install Grafana with these steps:
 
-1. In your build repo, modify the Grafana YAML with your code editor. Edit any necessary overrides.
+1. Modify the Grafana Helm YAML file as needed.
 1. Install with Helm:
 
     ```bash
@@ -231,11 +248,11 @@ On success, the UI is accessible on its port.
 - **Is my service running?**
 
    To check that an installed service is running, use this command:
-   
+
    ```bash
     kubectl get pods
     ```
-    
+
     Look for the pod name and its status.
 
 - **I installed a service too early**.
@@ -246,4 +263,3 @@ On success, the UI is accessible on its port.
     ```
 
     Then perform the steps you need and reinstall when ready.
-

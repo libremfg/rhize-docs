@@ -14,14 +14,14 @@ menu:
 This guide shows you how to install Rhize services on your Kubernetes cluster.
 You can also use this procedure as the model for an automation workflow in your CI.
 
-  
+
 ## Prerequisites {#prereqs}
 
 Before starting, ensure that you have the following technical requirements.
 
 **Software requirements**:
 - [kubectl](https://kubernetes.io/docs/tasks/tools/)
-- [Helm](https://helm.sh) installed
+- [Helm](https://helm.sh)
 - Curl, or some similar program to make HTTP requests from the command line
 
 **Access requirements**:
@@ -29,7 +29,7 @@ Before starting, ensure that you have the following technical requirements.
   Your organization must set this up.
 - Access to Rhize Helm charts and its build repo.
   Rhize provides these to all customers.
-  
+
 **Optional utilities.**
 For manual installs, the following auxiliary tools might make
 the experience a little more human friendly:
@@ -61,7 +61,7 @@ Then, follow these steps.
     ```
 
     Alternatively, you can modify the kube `config` file or use the `kubens` tool.
-    
+
 1. Add the Helm repo:
 
     ```bash
@@ -69,9 +69,9 @@ Then, follow these steps.
          --username <EMAIL_ADDRESS> \
          --password <ACCESS_TOKEN> \
          {{< param application_name >}} \
-   <REPO> 
+   <REPO>
     ```
-  
+
 
 1. Create the container image pull secret:
 
@@ -81,13 +81,13 @@ Then, follow these steps.
      --docker-password= <ACCESS_TOKEN> \
      --docker-email= <EMAIL_ADDRESS>
     ```
-    
+
     Confirm the secrets with this command:
-    
+
     ```bash
     kubectl get secrets
     ```
-  
+
 
 1. Add the Bitnami Helm repo:
 
@@ -102,7 +102,7 @@ Then, follow these steps.
      ```bash
      helm install keycloak -f ./keycloak.yaml bitnami/keycloak -n libre
      ```
-     
+
 1. Set up port forwarding from Keycloak. For example, this forwards traffic to port `5101` on `localhost`
 
      ```bash

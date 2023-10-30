@@ -45,21 +45,21 @@ To create your Rhize realm, follow these steps.
   |--------------|-----------------------|
   | Frontend URL | keycloak frontend URL |
   | Require SSL  | External requests     |
-  
+
 
 After you've created the realm, you can create clients.
-  
+
 ## Create clients
 
 In Keycloak, _clients_ are entities that request Keycloak to authenticate a user.
 You need to create a client for each service.
 
-The DB client requires additionally configuration of flows and grant, so install this first.
+The DB client requires additional configuration of flows and grants.
 
 ### Create DB client
 
 
-First, create a client for the DB as follows:
+Create a client for the DB as follows:
 1. In the side menu, select **Clients > create client**.
 1. Configure the **General Settings**:
 
@@ -69,7 +69,7 @@ First, create a client for the DB as follows:
     - **Description**: `{{< param brand_name >}} Backend as a Service`
 
     When finished, select **Next.**
-  
+
 1. Configure the **Capability config**:
     - **Client Authentication**: On
     - **Authorization**: On
@@ -83,7 +83,7 @@ First, create a client for the DB as follows:
 ### Create other service clients
 
 The other services do not need authorization.
-By default you need to only add the client ID.
+By default you need to add only the client ID.
 
 For example, to create the UI client:
 1. In the side menu, select **Clients > create client**.
@@ -104,7 +104,7 @@ For example, to create the UI client:
 
 ## Scope services
 
-In Keycloak, a _scope_ bounds a services access.
+In Keycloak, a _scope_ bounds the access a service has.
 Rhize creates a default client scope, then binds services to that scope.
 
 ### Create a client scope
@@ -137,10 +137,10 @@ To create a scope for your Rhize services, follow these steps:
 
 ### Add services to the scope
 
-1. Go to **Clients**. Select {{< param db >}}
+1. Go to **Clients**. Select `{{< param db >}}`.
 1. Select the **Client Scopes** tab.
 1. Select **Add Client scope**
-1. Select {{< param application_name >}}ClientScope from the list.
+1. Select `{{< param application_name >}}ClientScope` from the list.
 1. **Add > Default**.
 
 Repeat this process for the {{< param application_name >}}UI client.
@@ -158,13 +158,13 @@ Rhize creates an `ADMIN` role and group.
 1. Enter the following values:
      - Role name: `ADMIN`
      - Description: `ADMIN`
- 1. **Save**
+ 1. **Save**.
 
 ### Add the Admin Group
 
 1. In the left hand menu, select **Groups > Create group**.
-1. Give the group a name like `{{< param application_name >}}AdminGroup`
-1. **Create**
+1. Give the group a name like `{{< param application_name >}}AdminGroup`.
+1. **Create**.
 
 Now map a role.
 
@@ -243,12 +243,12 @@ Rhize requires authorization for the database service.
      - **First name**: `system`
      - **Last name**: `{{< param brand_name >}}`
      - **Join Groups**: `{{< param application_name >}}AdminGroup`
-1. **Create** 
+1. **Create**
 
 Now create a user password:
 1. Select the **Credentials** tab.
-1. **Set Password**. 
-1. Enter a strong 
+1. **Set Password**.
+1. Enter a strong
 1. For **Temporary**, choose `Off`.
 1. **Save**.
 
@@ -282,7 +282,7 @@ Repeat this process for the following accounts:
     - **First name**: `Agent`
     - **Last name**: `{{< param brand_name >}}`
     - **Join Groups**: `{{< param application_name >}}AdminGroup`
-    
+
 ## Next steps
 
 [Install services]({{< relref "services" >}}).
