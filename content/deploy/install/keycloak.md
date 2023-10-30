@@ -63,10 +63,10 @@ First, create a client for the DB as follows:
 1. In the side menu, select **Clients > create client**.
 1. Configure the **General Settings**:
 
-    - **Client Type**: `OpenID Connect``
-    - **Client ID**: `{{< param db >}}``
-    - **Name**: `{{< param brand_name >}} Backend as a Service``
-    - **Description**: `{{< param brand_name >}} Backend as a Service``
+    - **Client Type**: `OpenID Connect`
+    - **Client ID**: `{{< param db >}}`
+    - **Name**: `{{< param brand_name >}} Backend as a Service`
+    - **Description**: `{{< param brand_name >}} Backend as a Service`
 
     When finished, select **Next.**
   
