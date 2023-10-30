@@ -10,9 +10,6 @@ cascade:
   application_name: libre
   db: libreBaaS
   pre_reqs: |-
-    - [kubectl](https://kubernetes.io/docs/tasks/tools/)
-    
-    You also may want to use these optional tools to make manual install easier:
     - Optional: [kubectx](https://github.com/ahmetb/kubectx) utilities
         - `kubectx` to manage multiple clusters
         - `kubens` to switch between and configure namespaces easily
@@ -27,5 +24,4 @@ cascade:
     
 ---
 
-A collection of pages to look up values for schemas, definitions, and anything else related to using Rhize. 
-
+A collection of pages to administrate Rhize: install, upgrade, back up, and more.

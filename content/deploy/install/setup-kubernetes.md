@@ -13,24 +13,32 @@ menu:
 ---
 
 This guide shows you how to install Rhize services on your Kubernetes cluster.
-
-This procedure aims to be as generic and vendor-neutral as possible.
-Some configuration depends on where and how you run your IT infrastructure&mdash;what cloud provider you use, preferred auxiliary tools, and so on---so your team must adapt the process for its particular use cases.
-
 You can also use this procedure as the model for an automation workflow in your CI.
 
   
-## Prerequisites
+## Prerequisites {#prereqs}
 
+Before starting, ensure that you have the following technical requirements.
 
-Before starting, ensure that you have the following technical requirements:
-
-- Access to our Helm charts
-- Administrative privileges for running Kubernetes cluster.
-- Internet access
-- A way to programmatically make HTTP requests (this guide uses Curl)
+**Software requirements**:
+- [kubectl](https://kubernetes.io/docs/tasks/tools/)
 - [Helm](https://helm.sh) installed
+- Curl, or some similar program to make HTTP requests from the command line
+
+**Access requirements**:
+- Administrative privileges for a running Kubernetes cluster in your environment.
+  Your organization must set this up.
+- Access to Rhize Helm charts and its build repo.
+  Rhize provides these to all customers.
+  
+**Optional utilities.**
+For manual installs, the following auxiliary tools might make
+the experience a little more human friendly:
 {{% param pre_reqs %}}
+
+  Again, these are helpers, not requirements.
+  You can install everything with only the `kubectl` and `helm` commands.
+
 
 ## Steps to set up Kubernetes
 
@@ -53,7 +61,7 @@ Then, follow these steps.
     kubectl config set-context --current --namespace={{< param application_name >}}
     ```
 
-    Alternatively, you can modify the config file. For frequent switching, consider kubens.
+    Alternatively, you can modify the kube `config` file or use the `kubens` tool.
     
 1. Add the Helm repo:
 
@@ -70,8 +78,7 @@ Then, follow these steps.
 
     ```bash
     kubectl create secret docker-registry {{< param application_name >}}-registry-credential \
-     --docker-server=<DOCKER_SERVER> \
-     --docker-username= <USERNAME> \
+     --docker-server=<DOCKER_SERVER> \ ## the repo
      --docker-password= <ACCESS_TOKEN> \
      --docker-email= <EMAIL_ADDRESS>
     ```
@@ -82,7 +89,6 @@ Then, follow these steps.
     kubectl get secrets
     ```
   
-  
 
 1. Add the Bitnami Helm repo:
 
@@ -90,7 +96,7 @@ Then, follow these steps.
      helm repo add bitnami https://charts.bitnami.com/bitnami
      ```
 
-1. Pull the build template repo.
+1. Pull the build template repo (we will supply this).
 
 1. Update overrides to `keycloak.yaml`. Then install with this command:
 

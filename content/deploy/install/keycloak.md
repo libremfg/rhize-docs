@@ -10,25 +10,23 @@ menu:
     name: Configure Keycloak
     parent: install
     identifier: keycloak-integration
-create_client: 1. In the side menu, select **Clients > create client**.
- 
 ---
 
-Rhize uses Keycloak as an OpenID provider.
-In your cluster, the Keycloak server to authenticate users, services, and manages Role-based access controls.
+Rhize uses [Keycloak](https://keycloak.org) as an OpenID provider.
+In your cluster, the Keycloak server to authenticate users, services, and manage Role-based access controls.
 
 This topic describes how to set up Keycloak in your Rhize cluster.
-
-> To get a conceptual picture of the authentication flow, read [About OpenID Connect]({{< relref "../about-openidconnect.md" >}})
+For a conceptual overview of the authentication flow, read [About OpenID Connect]({{< relref "../about-openidconnect.md" >}})
 
 
 ## Prerequisites
 
-First, ensure that you have followed the instructions from [Set up Kubernetes]({{< ref "configure-kubernetes.md" >}}). All of the prerequistes for that step apply here.
+First, ensure that you have followed the instructions from [Set up Kubernetes]({{< ref "setup-kubernetes.md" >}}).
+All prerequisites for that step apply here.
 
 ## Log in
 
-1. Go to localhost on the port where you forwarded the URL.
+1. Go to `localhost` on the port where you forwarded the URL. If you used the example values from the last step, that's `localhost:5101`.
 1. Use the container credentials to log in.
 
    To find this, look in the `keycloak.yaml` file.
@@ -36,6 +34,8 @@ First, ensure that you have followed the instructions from [Set up Kubernetes]({
 ## Create a realm
 
 A Keycloak _realm_ is like a tenant that contains all configuration.
+
+To create your Rhize realm, follow these steps.
 
 1. In the side menu, select **Master** then **Create Realm**.
 1. For the **Realm Name**, enter `{{< param application_name >}}`. **Create.**
@@ -54,15 +54,19 @@ After you've created the realm, you can create clients.
 In Keycloak, _clients_ are entities that request Keycloak to authenticate a user.
 You need to create a client for each service.
 
-First, create a client for the DB as follows:
-{{% param create_client %}}
+The DB client requires additionally configuration of flows and grant, so install this first.
 
+### Create DB client
+
+
+First, create a client for the DB as follows:
+1. In the side menu, select **Clients > create client**.
 1. Configure the **General Settings**:
 
-    - **Client Type**: OpenID Connect
-    - **Client ID**: {{< param application_name >}}Baas
-    - **Name**: {{< param brand_name >}} Backend as a Service
-    - **Description**: {{< param brand_name >}} Backend as a Service
+    - **Client Type**: `OpenID Connect``
+    - **Client ID**: `{{< param db >}}``
+    - **Name**: `{{< param brand_name >}} Backend as a Service``
+    - **Description**: `{{< param brand_name >}} Backend as a Service``
 
     When finished, select **Next.**
   
@@ -76,97 +80,60 @@ First, create a client for the DB as follows:
 
 1. Select **Next**, then **Save**.
 
+### Create other service clients
 
-Repeat this process for the following services:
+The other services do not need authorization.
+By default you need to only add the client ID.
 
-- UI
-    - **Client Type**: OpenID Connect
-    - **Client ID**: {{< param application_name >}}UI
-    - **Name**: Rhize user interface 
-    - **Description**: Rhize user interface
-    - **Client Authentication**: `On`
-    - **Authorization**: `Off`
-    - For **Authentication flow**, enable:
-       - 🗸 Standard flow
-       - 🗸 Direct access grants
-       - 🗸 Implicit flow
-- Core
-    - **Client Type**: OpenID Connect
-    - **Client ID**: {{< param application_name >}}Core
-    - **Name**: {{< param application_name >}} Core
-    - **Description**: {{< param application_name >}} Core
-    - **Client Authentication**: `On`
-    - **Authorization**: `Off`
-    - For **Authentication flow**, enable:
-       - 🗸 Standard flow
-       - 🗸 Direct access grants
-       - 🗸 Implicit flow
-- Router
-    - **Client Type**: OpenID Connect
-    - **Client ID**: {{< param application_name >}}Router
-    - **Name**: {{< param application_name >}} Router
-    - **Description**: {{< param application_name >}} Router
-    - **Client Authentication**: `On`
-    - **Authorization**: `Off`
-    - For **Authentication flow**, enable:
-       - 🗸 Standard flow
-       - 🗸 Direct access grants
-       - 🗸 Implicit flow
+For example, to create the UI client:
+1. In the side menu, select **Clients > create client**.
+1. For **Client ID**, enter `{{< param application_name >}}UI`
+1. Select **Next**, then **Save**.
 
-- BPMN
-    - **Client Type**: OpenID Connect
-    - **Client ID**: {{< param application_name >}}Bpmn
-    - **Name**: {{< param application_name >}} BPMN
-    - **Description**: {{< param application_name >}} BPMN
-    - **Client Authentication**: `On`
-    - **Authorization**: `Off`
-    - For **Authentication flow**, enable:
-       - 🗸 Standard flow
-       - 🗸 Direct access grants
-       - 🗸 Implicit 
-- Dashboard
-    - **Client Type**: OpenID Connect
-    - **Client ID**: dashboard
-    - **Name**: Rhize Dashboard
-    - **Description**: Grafana dashboard
-    - **Client Authentication**: `On`
-    - **Authorization**: `Off`
-    - For **Authentication flow**, enable:
-       - 🗸 Standard flow
+
+
+**Repeat this process for each of the following services:**
+
+| Client ID                              | Description       |
+|----------------------------------------|-------------------|
+| `{{< param application_name >}}Bpmn`   | The BPMN engine   |
+| `{{< param application_name >}}Core`   | The edge agent    |
+| `{{< param application_name >}}Router` | API router        |
+| `dashboard`                            | Grafana dashboard |
+
 
 ## Scope services
 
-### Create a client scope
-
 In Keycloak, a _scope_ bounds a services access.
-Rhize creates a default client scope, then binds each services to that scope.
+Rhize creates a default client scope, then binds services to that scope.
+
+### Create a client scope
 
 To create a scope for your Rhize services, follow these steps:
 
 
-
 1. Select **Client Scopes > Create client scope**.
 1. Fill in the following values:
-    - **Name**: {{< param application_name >}}ClientScope
-    - **Description**: {{< param brand_name >}} Client Scope
-    - **Type**: None
-    - **Display on consent screen**: On
-    - **Include in token scope**: On
+    - **Name**: `{{< param application_name >}}ClientScope`
+    - **Description**: `{{< param brand_name >}} Client Scope`
+    - **Type**: `None`
+    - **Display on consent screen**: `On`
+    - **Include in token scope**: `On`
 1. **Create**.
 1. Select the **Mappers** tab, then **Configure new mapper**. Add an audience mapper for the DB client:
 
-    - Mapper Type: Audience
-    - Name: {{< param application_name >}}BaasAudienceMapper
-    - Include Client Audience: {{< param application_name >}}Baas
-    - Add to ID Token: On
-    - Add to access token: On
+    - **Mapper Type**: `Audience`
+    - **Name**: `{{< param db >}}AudienceMapper`
+    - **Include Client Audience**: `{{< param db >}}`
+    - **Add to ID Token**: `On`
+    - **Add to access token**: `On`
 1. Repeat the preceding step for a mapper for the UI client:
 
-    - Mapper Type: Audience
-    - Name: {{< param application_name >}}UIAudienceMapper
-    - Include Client Audience: {{< param application_name >}}UI
-    - Add to ID Token: On
-    - Add to access token: Off
+    - **Mapper Type**: `Audience`
+    - **Name**: `{{< param application_name >}}UIAudienceMapper`
+    - **Include Client Audience**: `{{< param application_name >}}UI`
+    - **Add to ID Token**: `On`
+    - **Add to access token**: `Off`
 
 ### Add services to the scope
 
@@ -179,6 +146,11 @@ To create a scope for your Rhize services, follow these steps:
 Repeat this process for the {{< param application_name >}}UI client.
 
 ## Create roles and groups
+
+In Keycloak, _roles_ identify a category or type of user.
+_Groups_ are a common set of attributes for a set of users.
+
+Rhize creates an `ADMIN` role and group.
 
 ### Add the admin realm role
 
@@ -199,7 +171,7 @@ Now map a role.
 1. From the group list, select the group you just created.
 1. Select the **Role mapping** tab.
 1. Select **Assign Role**
-1. **Select ADMIN**
+1. Select `ADMIN`.
 1. **Assign.**
 
 ### Add the dashboard realm roles
@@ -225,7 +197,7 @@ Now map the group to a role:
 1. Repeat the process for `dashboard-dev`
 
 
-## Add the group client scope
+### Add the group client scope
 
 1. In the left hand menu, select **Client scopes** and **Create client scope**.
 1. Name it `groups` and provide a description.
@@ -237,7 +209,7 @@ Now map the scope:
 1. Select `groups`.
 1. **Add**.
 
-## Add new client scopes to dashboard client
+### Add new client scopes to dashboard client
 
 1. In the left hand menu, select **Clients**, and then `dashboard`.
 1. Select the **Client scopes** tab.
@@ -247,7 +219,10 @@ Now map the scope:
 
 ## Add Client Policy
 
-1. In the left hand menu, select **Clients**, and then `{{< param application_name >}}Baas`.
+In Keycloak, _policies_ define authorization.
+Rhize requires authorization for the database service.
+
+1. In the left hand menu, select **Clients**, and then `{{< param db >}}`.
 1. Select the **Authorization** tab.
 1. Select **Policies > Create Policy**
 1. Select **Group > Create Policy**.
@@ -307,5 +282,7 @@ Repeat this process for the following accounts:
     - **First name**: `Agent`
     - **Last name**: `{{< param brand_name >}}`
     - **Join Groups**: `{{< param application_name >}}AdminGroup`
-`
-`
+    
+## Next steps
+
+[Install services]({{< relref "services" >}}).
