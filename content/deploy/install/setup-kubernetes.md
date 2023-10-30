@@ -1,7 +1,6 @@
 ---
 title: 'Set up Kubernetes'
 date: '2023-09-22T14:49:53-03:00'
-draft: true
 categories: ["how-to"]
 description:
   How to install Rhize services on your Kubernetes cluster.
