@@ -17,7 +17,7 @@ This guide shows you the procedure to back up the Rhize Graph database.
 
 Before you start, ensure you have the following:
 
-- Access to the [Rhize Kubernetes Environment]({{< relref "../install/configure-kubernetes" >}})
+- Access to the [Rhize Kubernetes Environment]({{< relref "../install/setup-kubernetes" >}})
 - [kubectl](https://kubernetes.io/docs/tasks/tools/) and [kubectx](https://github.com/ahmetb/kubectx)
 - Optional: the [k8 Lens IDE](https://k8lens.dev), if you prefer to manage Kubernetes graphically
 
