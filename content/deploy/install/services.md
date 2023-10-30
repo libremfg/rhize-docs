@@ -12,12 +12,6 @@ menu:
 
 The final installation step is to install the Rhize services in your Kubernetes cluster.
 
-
-
-There's a fair few things, generally the keycloak configuration will need to be set (although not as prevalent if we use secrets which you saw last week). Also the links to the other applications usually use the fqdn which includes <service name>.<namespace>.svc.cluster.local and is for some reason set to the l3dev URL by default so will need updating by the user.
-Also if the user wants more than 1 replica running of each pod (which if they're running in production they will want) they'll need to specify that.
-Also, if they're exposing the service to the internet (Generally, keycloak, Baas, NATS, router, UI, and Grafana) they'll need to specify the ingress overrides which are blank by default.
-Here's core as an example.
 ## Prerequisites
 
 - This topic assumes you have [Set up Kubernetes](/deploy/install/setup-kubernetes) and [Configured Keycloak]({{< relref "keycloak" >}}). All the prerequisites for those topics apply here.
