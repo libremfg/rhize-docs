@@ -52,7 +52,7 @@ Then, follow these steps.
 
     Confirm it works with `kubectl get ns`.
 
-    The output should how an active {{< param application_name >}} namespace.
+    On success, the output shows an active {{< param application_name >}} namespace.
 
 1. Set this namespace as a default with
 
