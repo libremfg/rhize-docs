@@ -1,7 +1,6 @@
 ---
 title: 'Restore InfluxDB'
 date: '2023-10-19T13:52:23-03:00'
-draft: true
 categories: ["how-to"]
 description: How to restore an InfluxDB backup on Rhize
 weight: 400
@@ -18,11 +17,10 @@ This guide shows you how to restore InfluxDB in your Rhize environment.
 
 Before you start, ensure you have the following:
 
-{{% param pre_reqs %}} 
+{{% param pre_reqs %}}
 - An [InfluxDB backup]({{< relref "../backup/" >}})
 
-## Procedure
-
+## Steps
 
 1. Confirm the cluster and namespace are correct.
 
@@ -70,8 +68,8 @@ Before you start, ensure you have the following:
        - mountPath: /tmp/backup
        name: influx-backup
      ```
-     
-     
+
+
 1. Copy the backup file in the Kubernetes backup destination created in thre preceding step:
 
      ```bash
