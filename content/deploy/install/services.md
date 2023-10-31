@@ -49,8 +49,8 @@ As you install services through Helm, their respective YAML files reference thes
 
 ## Install and add roles for the DB {#db}
 
-The first service to install must be the {{< param db >}} database.
-You also need to configure {{< param db >}} service to have roles in Keycloak.
+You must install the {{< param db >}} database service first.
+You also need to configure the {{< param db >}} service to have roles in Keycloak.
 
 
 1. Use Helm to install the database:
@@ -59,7 +59,7 @@ You also need to configure {{< param db >}} service to have roles in Keycloak.
     helm install -f baas.yaml {{< param application_name >}}-baas {{< param application_name >}}/baas -n {{< param application_name >}}
     ```
 
-    To confirm it works, run the following
+    To confirm it works, run the following command:
 
     ```bash
     kubectl get pods
@@ -70,9 +70,9 @@ You also need to configure {{< param db >}} service to have roles in Keycloak.
 
 1. Return to the Keycloak UI and add all {{< param application_name >}} to the admin group.
 
-1. Proxy the `http:8080` port on `{{< param application_name >}}-baas-dgraph-alpha`
+1. Proxy the `http:8080` port on `{{< param application_name >}}-baas-dgraph-alpha`.
 
-1. Get a token using the credentials. With curl, it looks like this:
+1. Get a token using the credentials. With `curl`, it looks like this:
 
     ```bash
     curl --location --request POST 'https://<customer>-
@@ -97,13 +97,13 @@ You also need to configure {{< param db >}} service to have roles in Keycloak.
 
     This creates more roles.
 
-1. Go to Keycloak UI and all new {{< param db >}} roles to the `ADMIN` group.
+1. Go to Keycloak UI and add all new {{< param db >}} roles to the `ADMIN` group.
 
 ## Install services
 
 Each of the following procedures installs a service through Helm.
 
-The syntax to install a Rhize service must have arguments for the the following:
+The syntax to install a Rhize service must have arguments for the following:
 - The chart YAML file
 - The packaged chart
 - The path to the unpackaged chart or directory
@@ -170,11 +170,9 @@ Install the Core agent with these steps:
     helm install core -f core.yaml {{< param application_name >}}/core -n {{< param application_name >}}
     ```
 
-
-
 ### BPMN
 
-The BPMN service is the custom engine Rhize uses to process low-code workflows modelled in the BPMN UI.
+The BPMN service is the custom engine Rhize uses to process low-code workflows modeled in the BPMN UI.
 
 > **Requirements**: The BPMN service requires the [{{< param db >}}](#db), [NATS](#nats), and [Tempo](#tempo) services.
 
@@ -203,7 +201,6 @@ Install the router with these steps:
     helm install router -f router.yaml {{< param application_name >}}/router -n {{< param application_name >}}
     ```
 
-
 ### Grafana
 
 Rhize uses [Grafana](https://grafana.com) for its dashboard to monitor real time data.
@@ -227,7 +224,7 @@ The [UI]({{< relref "/how-to/" >}}) is the graphical frontend to progrman busine
 After installing all other services, install the UI with these steps:
 
 1. Forward the port from the Router API.
-1. Open the UI YAML file. Update the `envVars` object with settings from the UI Keycloak client.
+1. Open the UI Helm file. Update the `envVars` object with settings from the UI Keycloak client.
 1. Modify any other values, as needed.
 1. Install with Helm:
 
