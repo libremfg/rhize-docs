@@ -24,14 +24,18 @@ For a conceptual overview of the authentication flow, read [About OpenID Connect
 First, ensure that you have followed the instructions from [Set up Kubernetes](/deploy/install/setup-kubernetes).
 All prerequisites for that step apply here.
 
-## Log in
+## Steps
+
+Follow these steps to configure a Keycloak realm and associate Rhize services to Keycloak clients, groups, roles, and policies.
+
+### Log in
 
 1. Go to `localhost` on the port where you forwarded the URL. If you used the example values from the last step, that's `localhost:5101`.
 1. Use the container credentials to log in.
 
    To find this, look in the `keycloak.yaml` file.
 
-## Create a realm
+### Create a realm
 
 A Keycloak _realm_ is like a tenant that contains all configuration.
 
@@ -49,14 +53,14 @@ To create your Rhize realm, follow these steps.
 
 After you've created the realm, you can create clients.
 
-## Create clients
+### Create clients
 
 In Keycloak, _clients_ are entities that request Keycloak to authenticate a user.
 You need to create a client for each service.
 
 The DB client requires additional configuration of flows and grants.
 
-### Create DB client
+#### Create DB client
 
 
 Create a client for the DB as follows:
@@ -80,7 +84,7 @@ Create a client for the DB as follows:
 
 1. Select **Next**, then **Save**.
 
-### Create other service clients
+#### Create other service clients
 
 The other services do not need authorization.
 By default you need to add only the client ID.
@@ -102,12 +106,12 @@ For example, to create the UI client:
 | `dashboard`                            | Grafana dashboard |
 
 
-## Scope services
+### Scope services
 
 In Keycloak, a _scope_ bounds the access a service has.
 Rhize creates a default client scope, then binds services to that scope.
 
-### Create a client scope
+#### Create a client scope
 
 To create a scope for your Rhize services, follow these steps:
 
@@ -135,7 +139,7 @@ To create a scope for your Rhize services, follow these steps:
     - **Add to ID Token**: `On`
     - **Add to access token**: `Off`
 
-### Add services to the scope
+#### Add services to the scope
 
 1. Go to **Clients**. Select `{{< param db >}}`.
 1. Select the **Client Scopes** tab.
@@ -145,14 +149,14 @@ To create a scope for your Rhize services, follow these steps:
 
 Repeat this process for the {{< param application_name >}}UI client.
 
-## Create roles and groups
+### Create roles and groups
 
 In Keycloak, _roles_ identify a category or type of user.
 _Groups_ are a common set of attributes for a set of users.
 
 Rhize creates an `ADMIN` role and group.
 
-### Add the admin realm role
+#### Add the admin realm role
 
 1. Select **Realm Roles**. Then **Create role**.
 1. Enter the following values:
@@ -160,7 +164,7 @@ Rhize creates an `ADMIN` role and group.
      - Description: `ADMIN`
  1. **Save**.
 
-### Add the Admin Group
+#### Add the Admin Group
 
 1. In the left hand menu, select **Groups > Create group**.
 1. Give the group a name like `{{< param application_name >}}AdminGroup`.
@@ -174,14 +178,14 @@ Now map a role.
 1. Select `ADMIN`.
 1. **Assign.**
 
-### Add the dashboard realm roles
+#### Add the dashboard realm roles
 
 1. Select **Realm Roles**, and then **Create role**.
 1. Name the role `dashboard-admin`.
 1. **Save**.
 1. Repeat the process to create a role `dashboard-dev`.
 
-### Add the dashboard groups
+#### Add the dashboard groups
 
 1. In the left hand menu, select **Groups**, and then **Create Group**.
 1. Name the group `dashboard-admin`
@@ -197,7 +201,7 @@ Now map the group to a role:
 1. Repeat the process for `dashboard-dev`
 
 
-### Add the group client scope
+#### Add the group client scope
 
 1. In the left hand menu, select **Client scopes** and **Create client scope**.
 1. Name it `groups` and provide a description.
@@ -209,7 +213,7 @@ Now map the scope:
 1. Select `groups`.
 1. **Add**.
 
-### Add new client scopes to dashboard client
+#### Add new client scopes to dashboard client
 
 1. In the left hand menu, select **Clients**, and then `dashboard`.
 1. Select the **Client scopes** tab.
@@ -217,7 +221,7 @@ Now map the scope:
 1. Select `groups` and {{< param application_name >}}ClientScope.
 1. **Add Default**.
 
-## Add Client Policy
+### Add Client Policy
 
 In Keycloak, _policies_ define authorization.
 Rhize requires authorization for the database service.
@@ -233,7 +237,7 @@ Rhize requires authorization for the database service.
 1. For **Logic**, choose `Positive`.
 1. **Save**.
 
-## Add users
+### Add users
 
 1. In the left hand menu, select **Users**, and **Add User**.
 1. Fill in the following values:

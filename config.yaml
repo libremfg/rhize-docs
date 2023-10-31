@@ -21,7 +21,7 @@ markup:
     style: vs
     tabWidth: 4
   tableOfContents:
-    endLevel: 4
+    endLevel: 3
     ordered: false
     startLevel: 2
     title: Rhize Documentation
