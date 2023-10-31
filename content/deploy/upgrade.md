@@ -17,9 +17,8 @@ This guide shows you how to upgrade Rhize.
 Before you start, ensure you have the following:
 
 - Access to the [Rhize Kubernetes Environment]({{< relref ".." >}})
-- [kubectl](https://kubernetes.io/docs/tasks/tools/) and [kubectx](https://github.com/ahmetb/kubectx)
-- Optional: the [k8 Lens IDE](https://k8lens.dev), if you prefer to manage Kubernetes graphically
 - [helm](https://helm.sh/docs/helm/helm_install/)
+{{% param pre_reqs %}}
 
 Be sure that you notify relevant parties of the coming upgrade.
 
