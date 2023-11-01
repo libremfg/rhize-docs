@@ -82,4 +82,4 @@ There are likely three zipped files:
 ## Next Steps
 
 - Test the [Restore Graph Database]({{< relref "../restore/influxdb" >}}) procedure to ensure you can recover data in case of an emergency.
-- To back up other Rhize services, read how to backup [Grafana]({{< relref "grafana" >}}) and [InfluxDB](/deploy/backup/influx).
+- To back up other Rhize services, read how to backup [Grafana]({{< relref "grafana" >}}).

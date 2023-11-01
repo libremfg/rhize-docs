@@ -71,4 +71,4 @@ To check that the backup succeeded, unzip the files and inspect the data.
 ## Next steps
 
 - Test the [Restore Grafana]({{< relref "../restore" >}}) procedure to ensure you can recover data in case of an emergency.
-- To back up other Rhize services, read how to backup [the Graph Database]({{< relref "graphdb" >}}) and [InfluxDB](/deploy/backup/influx).
+- To back up other Rhize services, read how to backup [the Graph Database]({{< relref "graphdb" >}}).
