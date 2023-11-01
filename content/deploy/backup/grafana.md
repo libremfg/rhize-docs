@@ -39,32 +39,35 @@ Then, to back up the Grafana, follow these steps:
 
 1. Open a pod shell for one of the Grafana pods:
 
-    ```bash
-    kubectl exec --stdin --tty <GRAFANA_POD_NAME> -- /bin/bash
-    ```
+     ```bash
+     kubectl exec --stdin --tty <GRAFANA_POD_NAME> -- /bin/bash
+     ```
 
     For details, read the Kubernetes topic [Get Shell to a Running Container](https://kubernetes.io/docs/tasks/debug/debug-application/get-shell-running-container/).
 
 1. Use `tar` to backup the Grafana data and `conf` directories:
 
-    ```bash
-    ## Data Directory Backup Command
-    tar -v -c -f /home/grafana/grafana-data-$(date +"%Y-%m-%dT%H.%M.%S").tar.gz /var/lib/grafana
-    ## Conf Directory Backup Command
-    tar -v -c -f /home/grafana/grafana-conf-$(date +"%Y-%m-%dT%H.%M.%S").tar.gz /usr/share/grafana/conf
-    ```
+     ```bash
+     ## Data Directory Backup Command
+     tar -v -c -f /home/grafana/grafana-data-$(date +"%Y-%m-%dT%H.%M.%S").tar.gz /var/lib/grafana
+     ## Conf Directory Backup Command
+     tar -v -c -f /home/grafana/grafana-conf-$(date +"%Y-%m-%dT%H.%M.%S").tar.gz /usr/share/grafana/conf
+     ```
 
 1. Open the backup directory. Check the latest directory (for example with `ls -lt`) for the latest `.gz` files. Its name should be a timestamp from when you ran the preceding `tar` command.
 
-1. Copy files out of the container to your backup location:
+1. Exit the container shell, and then copy files out of the container to your backup location:
 
-   ```bash
-   kubectl cp <grafana-pod>:/home/grafana/<new-data-backup-filename> \
-   ./<new-data-backup-filename> -c grafana
+    ```bash
+    ## exit shell
+    exit
+    ## copy container files to backup
+    kubectl cp <grafana-pod>:/home/grafana/<new-data-backup-filename> \
+    ./<new-data-backup-filename> -c grafana
 
-   kubectl cp <grafana-pod>:/home/grafana/<new-conf-backup-filename> \
-   ./<new-conf-backup-filename> -c grafana
-   ```
+    kubectl cp <grafana-pod>:/home/grafana/<new-conf-backup-filename> \
+    ./<new-conf-backup-filename> -c grafana
+    ```
 
 To check that the backup succeeded, unzip the files and inspect the data.
 
