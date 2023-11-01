@@ -35,6 +35,10 @@ To back up the database, follow these steps:
 
 1. Check the logs for the alpha and zero pods, either in Lens or with [`kubectl logs`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs).
     Ensure there are no errors.
+    
+    ```bash
+    kubectl logs {{< param application_name >}}-baas-baas-alpha-0 --tail=80
+    ```
 
 1. Open a pod shell for one of the alpha pods.
 
@@ -45,12 +49,12 @@ To back up the database, follow these steps:
 
     For details, read the Kubernetes topic [Get Shell to a Running Container](https://kubernetes.io/docs/tasks/debug/debug-application/get-shell-running-container/).
 
-1. Use `curl` or something similar to create a backup of the node:
+1. Send a POST to `localhost:8080/admin` to create a backup of the node. For example, with `curl`:
 
     ```bash
     curl --location --request POST 'http://localhost:8080/admin' \
     --header 'Content-Type: application/json' \
-    --data-raw '{"query":"mutation {\r\n export(input: {format: \"json\", destination: \"/dgraph/backups/'" $(date +"%Y-%m-%dT%H.%M.%SZ")"'\"}) {\r\n response {\r\n message\r\n code\r\n }\r\n}\r\n}","variables":{}}'
+    --data-raw '{"query":"mutation {\r\n export(input: {format: \"json\", destination: \"/dgraph/backups/'"$(date +"%Y-%m-%dT%H.%M.%SZ")"'\"}) {\r\n response {\r\n message\r\n code\r\n }\r\n}\r\n}","variables":{}}'
     ```
 
 1. Change to the backup directory (the `destination` parameter in the preceding `curl` command).
@@ -81,5 +85,5 @@ There are likely three zipped files:
 
 ## Next Steps
 
-- Test the [Restore Graph Database]({{< relref "../restore/influxdb" >}}) procedure to ensure you can recover data in case of an emergency.
+- Test the [Restore Graph Database]({{< relref "../restore/graphdb" >}}) procedure to ensure you can recover data in case of an emergency.
 - To back up other Rhize services, read how to backup [Grafana]({{< relref "grafana" >}}).
