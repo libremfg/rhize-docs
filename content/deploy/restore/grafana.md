@@ -10,22 +10,20 @@ menu:
     identifier:
 ---
 
-
 This guide shows you how to restore Grafana in your Rhize environment.
 
 ## Prerequisites
 
 Before you start, ensure you have the following:
 
-{{% param pre_reqs %}}
+- [kubectl](https://kubernetes.io/docs/tasks/tools/)
 - A [Grafana backup]({{< relref "../backup/grafana" >}})
 
 ## Steps
 
-
 1. Confirm the cluster and namespace are correct.
 
-    {{% param "k8s_cluster_ns" %}
+    {{% param "k8s_cluster_ns" %}}
 
 1. Copy the grafana data tar file into the new Grafana Pod within the /var/lib/grafana directory.
 
