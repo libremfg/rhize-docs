@@ -16,9 +16,9 @@ This guide shows you how to restore the Graph database in your Rhize environment
 
 Before you start, ensure you have the following:
 
-{{% param pre_reqs %}}
 - The GraphDB helm chart
 - A [Database backup]({{< relref "../backup/graphdb" >}})
+{{% param pre_reqs %}}
 
 ## Steps
 
