@@ -25,7 +25,7 @@ Before you start, ensure you have the following:
 
 1. Confirm the cluster and namespace are correct.
 
-    {{% param k8s_cluster_ns %}
+    {{% param "k8s_cluster_ns" %}
 
 1. Copy the grafana data tar file into the new Grafana Pod within the /var/lib/grafana directory.
 
@@ -52,3 +52,4 @@ Before you start, ensure you have the following:
     ```
 
 1. Restart the Grafana Deployment.
+
