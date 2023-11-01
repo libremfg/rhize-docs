@@ -10,8 +10,8 @@ menu:
     identifier:
 ---
 
-This guide shows you the procedure to back up the Grafana on your Rhize Kubernetes deployment.
-For general instructions, refer to the official [Backup Influx](https://docs.influxdata.com/influxdb/v1/administration/backup_and_restore/) documentation.
+This guide shows you the procedure to back up Grafana on your Rhize Kubernetes deployment.
+For general instructions, refer to the official [Back up Grafana](https://grafana.com/docs/grafana/latest/administration/back-up-grafana/) documentation.
 
 ## Prerequisites
 
