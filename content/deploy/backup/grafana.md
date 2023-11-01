@@ -40,7 +40,7 @@ Then, to back up the Grafana, follow these steps:
 1. Open a pod shell for one of the Grafana pods:
 
     ```bash
-    kubectl exec <GRAFANA_POD_NAME> -- /bin/bash
+    kubectl exec --stdin --tty <GRAFANA_POD_NAME> -- /bin/bash
     ```
 
     For details, read the Kubernetes topic [Get Shell to a Running Container](https://kubernetes.io/docs/tasks/debug/debug-application/get-shell-running-container/).

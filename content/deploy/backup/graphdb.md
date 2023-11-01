@@ -39,7 +39,8 @@ To back up the database, follow these steps:
 1. Open a pod shell for one of the alpha pods.
 
     ```bash
-    kubectl exec {{< param application_name >}}-baas-baas-alpha-0 -- /bin/bash
+    kubectl exec --stdin --tty \
+    {{< param application_name >}}-baas-baas-alpha-0 -- /bin/bash
     ```
 
     For details, read the Kubernetes topic [Get Shell to a Running Container](https://kubernetes.io/docs/tasks/debug/debug-application/get-shell-running-container/).

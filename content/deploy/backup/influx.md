@@ -43,7 +43,7 @@ Then, to back up the Influx, follow these steps:
 1. Open a pod shell for one of the Influx pods:
 
     ```bash
-    kubectl exec <INFLUX_POD_NAME> -- /bin/bash
+    kubectl exec --stdin --tty <INFLUX_POD_NAME> -- /bin/bash
     ```
 
     For details, read the Kubernetes topic [Get Shell to a Running Container](https://kubernetes.io/docs/tasks/debug/debug-application/get-shell-running-container/).
