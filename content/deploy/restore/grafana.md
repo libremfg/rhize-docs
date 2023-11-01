@@ -22,25 +22,33 @@ Before you start, ensure you have the following:
 
 ## Steps
 
-<!-- if procedure is very long, consider using h3s -->
 
 1. Confirm the cluster and namespace are correct.
 
-    {{% param k8s_cluster_ns %}}
+    {{% param k8s_cluster_ns %}
 
-1.  Copy the tar file into the new Grafana Pod within the `/var/lib/grafana/` directory.
+1. Copy the grafana data tar file into the new Grafana Pod within the /var/lib/grafana directory.
 
     ```bash
-    kubectl cp ./local-dest-of-backup <grafana-pod>:/var/lib/grafana/
+    kubectl cp ./grafana-data-2023-11-01T16.05.53.tar.gz grafana-64cd6db6f4-8txc2:/var/lib/grafana/
     ```
-1. Untar the file.
 
-   ```bash
-   tar -xvf <backup>.tar.gz
-   ```
+1. Untar the file
 
-1. Move the de-compressed files to `/var/lib/grafana`
+     ```bash
+     tar -xvf grafana-data-2023-11-01T16.05.53.tar.gz --directory /
+     ```
 
-1. Restart the Grafana deployment.
+1. Copy the Grafana configuration file into the new Grafana Pod within /usr/share/grafana/conf directory.
 
-To confirm sucess, log in and verify the backup contents are where they should be.
+     ```bash
+     kubectl cp ./grafana-conf-2023-11-01T16.05.53.tar.gz grafana-64cd6db6f4-8txc2:/usr/share/grafana/conf
+     ```
+
+1. Untar the file
+
+    ```bash
+    tar -xvf grafana-conf-2023-11-01T16.05.53.tar.gz --directory /
+    ```
+
+1. Restart the Grafana Deployment.
