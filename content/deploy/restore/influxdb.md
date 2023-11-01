@@ -3,6 +3,7 @@ title: 'Restore InfluxDB'
 date: '2023-10-19T13:52:23-03:00'
 categories: ["how-to"]
 description: How to restore an InfluxDB backup on Rhize
+draft: true
 weight: 400
 menu:
   main:
