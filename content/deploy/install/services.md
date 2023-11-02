@@ -68,7 +68,7 @@ You also need to configure the {{< param db >}} service to have roles in Keycloa
     All statuses should be `RUNNING`.
 
 
-1. Return to the Keycloak UI and add all {{< param application_name >}} to the admin group.
+1. Return to the Keycloak UI and add all `{{< param application_name >}}` roles to the admin group.
 
 1. Proxy the `http:8080` port on `{{< param application_name >}}-baas-dgraph-alpha`.
 
@@ -80,9 +80,9 @@ You also need to configure the {{< param db >}} service to have roles in Keycloa
     --header 'Content-Type: application/x-www-form-urlencoded' \
     --data-urlencode 'grant_type=password' \
     --data-urlencode 'username=system@{{< param application_name >}}.com' \
-    --data-urlencode 'password=<password>' \
+    --data-urlencode 'password=<PASSWORD>' \
     --data-urlencode 'client_id={{< param application_name >}}Baas' \
-    --data-urlencode 'client_secret=<client secret>'
+    --data-urlencode 'client_secret=<CLIENT_SECRET>'
     ```
 
 1. Post the schema:
@@ -92,7 +92,7 @@ You also need to configure the {{< param db >}} service to have roles in Keycloa
     --header 'Authorization: Bearer {{ TOKEN }}' \
     --data grant_type=urn:ietf:params:oauth:grant-type:uma-ticket" \
     --header 'Content-Type: application/octet-stream' \
-    --data-binary '{ SCHEMA FILE }’
+    --data-binary '<SCHEMA_FILE>’
     ```
 
     This creates more roles.
@@ -156,7 +156,7 @@ Install Tempo with these steps:
 
 ### Core
 
-The {{< param application_name >}} service is the custom edge agent that monitors data sources, like OPC-UA servers, and publishes and subscribes topics to NATS.
+The {{< param brand_name >}} Core service is the custom edge agent that monitors data sources, like OPC-UA servers, and publishes and subscribes topics to NATS.
 
 > **Requirements**: Core requires the [{{< param db >}}](#db) and [NATS](#nats) services.
 
