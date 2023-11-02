@@ -8,3 +8,4 @@ menu:
 ---
 
 Read about new Rhize features and how to upgrade versions.
+

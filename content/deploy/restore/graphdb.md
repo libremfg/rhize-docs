@@ -1,8 +1,7 @@
 ---
 title: 'Restore the GraphDB'
 date: '2023-10-19T13:52:23-03:00'
-draft: true
-categories: ["how-to"]
+ategories: ["how-to"]
 description: How to restore a backup of the Rhize Graph DB.
 weight: 200
 menu:
@@ -11,18 +10,17 @@ menu:
     identifier:
 ---
 
-
 This guide shows you how to restore the Graph database in your Rhize environment.
 
 ## Prerequisites
 
 Before you start, ensure you have the following:
 
-{{% param pre_reqs %}} 
-- The GraphDB helm chart
+- The GraphDB Helm chart
+- [kubectl](https://kubernetes.io/docs/tasks/tools/)
 - A [Database backup]({{< relref "../backup/graphdb" >}})
 
-## Procedure
+## Steps
 
 <!-- if procedure is very long, consider using h3s -->
 
@@ -49,13 +47,13 @@ Before you start, ensure you have the following:
     ```bash
     helm install dgraph . -n <namespace>
     ```
-    
+
 1. In the Alpha 0 initialization container, create the backup directory.
 
     ```bash
     kubectl exec -t dgraph-dgraph-alpha-0 -c dgraph-dgraph-alpha-init -- mkdir -p /dgraph/backups
     ```
-    
+
 1. Copy the backup into the initialization container.
 
     ```bash
@@ -64,15 +62,15 @@ Before you start, ensure you have the following:
     ```
 
 1. Restore the backup to the restore directory.
-  Replace <path-to-backup> and `<namespace`> in the arguments for the following command.
+  Replace the `<PATH_TO_BACKUP>` and `<NAMESPACE>` in the arguments for the following command:
 
 
     ```bash
     kubectl exec -t dgraph-dgraph-alpha-0 -c dgraph-dgraph-alpha-init --  \
-    dgraph bulk -f /dgraph/backups/<path-to-backup>/g01.json.gz \
-    -g /dgraph/backups/<path-to-backup>/g01.gql_schema.gz \
-    -s /dgraph/backups/<path-to-backup>/g01.schema.gz - \
-    -zero=dgraph-dgraph-zero-0.dgraph-dgraph-zero-headless.<namespace>.svc.cluster.local:5080 \
+    dgraph bulk -f /dgraph/backups/<PATH_TO_BACKUP>/g01.json.gz \
+    -g /dgraph/backups/<PATH_TO_BACKUP>/g01.gql_schema.gz \
+    -s /dgraph/backups/<PATH_TO_BACKUP>/g01.schema.gz - \
+    -zero=dgraph-dgraph-zero-0.dgraph-dgraph-zero-headless.<NAMESPACE>.svc.cluster.local:5080 \
     --out /dgraph/restore --replace_out
     ```
 1. Copy the backup to the correct directory:
@@ -82,7 +80,7 @@ Before you start, ensure you have the following:
     mv /dgraph/restore/0/p/dgraph/p
     ```
 
-1. Complete the initialization countainer for alpha 0.
+1. Complete the initialization container for alpha 0.
 
     ```bash
     kubectl exec -t dgraph-dgraph-alpha-0 -c dgraph-
@@ -100,8 +98,8 @@ For example, create a `UnitOfMeasure` then delete it:
     --header 'Content-Type: application/json' \
     --data-raw '{"query":"mutation RestoringDatabase($input:[AddUnitOfMeasureInput!]!){\r\n addUnitOfMeasure(input:$input){\r\n unitOfMeasure{\r\n id\r\n dataType\r\n code\r\n }\r\n}\r\n}","variables":{"input":[{"code":"Restoring","isActive":true,"dataType":"BOOL"}]}}'
     ```
-    Wait until you see a snapshot in the logs. For example: 
-  
+    Wait until you see a snapshot in the logs. For example:
+
     ```bash
     I0314 20:32:21.282271 19 draft.go:805] Creating snapshot at Index: 16, ReadTs: 9
     ```
@@ -114,7 +112,7 @@ For example, create a `UnitOfMeasure` then delete it:
     --header 'Content-Type: application/json' \
     --data-raw '{"query":"mutation {\r\n deleteUnitOfMeasure(filter:{code:{eq:\"Restoring\"}}){\r\n unitOfMeasure{\r\n id\r\n }\r\n }\r\n}","variables":{"input":[{"code":"Restoring","isActive":true,"dataType":"BOOL"}]}}'
     ```
-    
+
 1. Complete the initialization container for alpha 1:
 
     ```bash
@@ -123,24 +121,8 @@ For example, create a `UnitOfMeasure` then delete it:
     ```
 
     And alpha 2:
-  
+
     ```bash
     kubectl exec -t dgraph-dgraph-alpha-2 -c dgraph-dgraph-alpha-init -- \
     touch /dgraph/doneinit
     ```
-
-
-<!--Define what success looks like -->
-
-<!-- 
-### Error recovery
-Optional. Define common failure modes and how to recover
--->
-
-<!--
-## Next steps
-Optional. Summarize what was done. Give an example of what success looks like.
-
-Where applicable, provide links to next steps or to read more.
--->
-

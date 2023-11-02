@@ -1,9 +1,9 @@
 ---
 title: 'Restore InfluxDB'
 date: '2023-10-19T13:52:23-03:00'
-draft: true
 categories: ["how-to"]
 description: How to restore an InfluxDB backup on Rhize
+draft: true
 weight: 400
 menu:
   main:
@@ -18,11 +18,10 @@ This guide shows you how to restore InfluxDB in your Rhize environment.
 
 Before you start, ensure you have the following:
 
-{{% param pre_reqs %}} 
+- [kubectl](https://kubernetes.io/docs/tasks/tools/)
 - An [InfluxDB backup]({{< relref "../backup/" >}})
 
-## Procedure
-
+## Steps
 
 1. Confirm the cluster and namespace are correct.
 
@@ -70,13 +69,14 @@ Before you start, ensure you have the following:
        - mountPath: /tmp/backup
        name: influx-backup
      ```
-     
-     
-1. Copy the backup file in the Kubernetes backup destination created in thre preceding step:
+
+
+1. Copy the backup file in the Kubernetes backup destination created in the preceding step:
 
      ```bash
      kubectl cp <local_path> <namespace>/<pod_name>:/tmp/backup/
      ```
+
 1. Delete the InfluxDB deployment, as it needs to be stopped for the backup import.
 1. Create a job that uses the same container image and volume. Modify the command:
 
@@ -111,7 +111,7 @@ Before you start, ensure you have the following:
             restartPolicy: Never
     ```
 
-1. Apply the job config. Check it ran successfully
+1. Apply the job config. Check that it ran successfully
 
-1. Recreate your InfluxDB deployment and check if it worked via CLI or HTTP.
-1. Remove backup persistent claim and remove its use from the deployment config.
+1. Re-create your InfluxDB deployment. Use the CLI or HTTP to test that it's available.
+1. Remove the backup persistent claim and remove its use from the deployment config.

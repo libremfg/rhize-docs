@@ -1,33 +1,23 @@
 ---
-title: Version '{{ replace .File.ContentBaseName `-` `.` | title | humanize }}'
+title: {{ replace .File.ContentBaseName `-` `.` | title | humanize }}
 date: '{{ .Date }}'
-draft: true 
-version:
 description: Release notes for v{{ replace .File.ContentBaseName `-` `.` | title }} of the Rhize application
 categories: ["releases"]
+weight: 0 ##zero if latest, 1 if otherwise
 menu:
   main:
     parent: releases
 ---
 
-Release notes for v{{ replace .File.ContentBaseName `-` `.` | title }} of the Rhize application.
+Release notes for version {{ replace .File.ContentBaseName `-` `.` | title }} of the Rhize application.
 
-<!---
+
+_Release date:_
+
 ## Breaking changes
--
--
-## Features
 
--
--
-## Fixes and refactoring
+## Changes by service
 
--
--
-## Upgrade instructions
+## Upgrade
 
-1.
-1.
-
-Confirm the upgrade succeeded by ...
--->
+To upgrade to v{{ replace .File.ContentBaseName `-` `.` | title }}, follow the [Upgrade instructions](/deploy/upgrade).

@@ -1,16 +1,21 @@
-name: github pages
+name: Deploy PR previews
 
 on:
-  push:
-    branches:
-      - main  # Set a branch to deploy
   pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+concurrency: preview-${{ github.ref }}
 
 jobs:
-  deploy:
+  deploy-preview:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
@@ -24,10 +29,7 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          clean-exclude: pr-preview/
+          source-dir: ./public
