@@ -2,7 +2,7 @@
 date: "2023-09-12T19:35:35+11:00"
 title: Back up
 description: Guides to back up your data on Rhize
-categories: ["howto"]
+categories: ["how-to"]
 weight: 200
 menu:
   main:

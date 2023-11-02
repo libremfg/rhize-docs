@@ -2,7 +2,7 @@
 date: "2023-09-12T19:35:35+11:00"
 title: Restore
 description: Guides to restore your data on Rhize
-categories: ["howto"]
+categories: ["how-to"]
 weight: 200
 menu:
   main:
