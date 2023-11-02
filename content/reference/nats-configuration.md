@@ -2,7 +2,7 @@
 title: 'NATS configuration'
 date: '2023-10-04T10:22:15-03:00'
 draft: true
-category: reference
+categories: ["reference"]
 description: Values and parameters to configure NATS in your Rhize operation
 weight: 300
 menu:

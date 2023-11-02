@@ -2,7 +2,7 @@
 title: 'What is Rhize?'
 date: '2023-09-26T12:25:46-03:00'
 draft: false
-category: concept
+categories: "concepts"
 description:
 weight: 1
 menu:

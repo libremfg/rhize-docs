@@ -2,7 +2,7 @@
 title: 'How Rhize works'
 date: '2023-10-03T19:39:39-03:00'
 draft: false
-category: concept
+categories: "concepts"
 description: >-
   A high-level overview of how Rhize collects, exchanges, and stores data, starting with data collection and ending with user interaction.
 weight: 200
