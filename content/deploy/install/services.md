@@ -88,8 +88,8 @@ You also need to configure the {{< param db >}} service to have roles in Keycloa
 1. Post the schema:
 
     ```bash
-    curl --location --request POST 'http://localhost:{{ FORWARDED PORT }}/admin/schema' \
-    --header 'Authorization: Bearer {{ TOKEN }}' \
+    curl --location --request POST 'http://localhost:<FORWARDED_PORT>/admin/schema' \
+    --header 'Authorization: Bearer <TOKEN>' \
     --data grant_type=urn:ietf:params:oauth:grant-type:uma-ticket" \
     --header 'Content-Type: application/octet-stream' \
     --data-binary '<SCHEMA_FILE>’
