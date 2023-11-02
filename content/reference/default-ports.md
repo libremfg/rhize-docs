@@ -21,14 +21,3 @@ After you [install Rhize services](/deploy/install/services), they are accessibl
 | Keycloak                | `localhost:8090` |
 | `baas-alpha` command line | `localhost:8080` |
 
-
-
-<!---
-Summarize what this reference article is about. Explain what all the entries defined on the page have in common. 
-
-Use repetitive phrasing for every value.
-
-Break sections into tables and lists. Avoid tables with more than three columns, to minimize horizontal scroll.
-
---->
-
