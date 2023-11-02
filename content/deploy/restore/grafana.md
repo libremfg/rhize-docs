@@ -25,7 +25,7 @@ Before you start, ensure you have the following:
 
     {{% param "k8s_cluster_ns" %}}
 
-1. Copy the grafana data tar file into the new Grafana Pod within the /var/lib/grafana directory.
+1. Copy the Grafana data tar file into the new Grafana Pod within the `/var/lib/grafana` directory.
 
     ```bash
     kubectl cp ./grafana-data-2023-11-01T16.05.53.tar.gz grafana-64cd6db6f4-8txc2:/var/lib/grafana/
@@ -37,7 +37,7 @@ Before you start, ensure you have the following:
      tar -xvf grafana-data-2023-11-01T16.05.53.tar.gz --directory /
      ```
 
-1. Copy the Grafana configuration file into the new Grafana Pod within /usr/share/grafana/conf directory.
+1. Copy the Grafana configuration file into the new Grafana Pod in the `/usr/share/grafana/conf` directory.
 
      ```bash
      kubectl cp ./grafana-conf-2023-11-01T16.05.53.tar.gz grafana-64cd6db6f4-8txc2:/usr/share/grafana/conf

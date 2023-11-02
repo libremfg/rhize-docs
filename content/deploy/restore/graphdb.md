@@ -62,15 +62,15 @@ Before you start, ensure you have the following:
     ```
 
 1. Restore the backup to the restore directory.
-  Replace <path-to-backup> and `<namespace`> in the arguments for the following command.
+  Replace the `<PATH_TO_BACKUP>` and `<NAMESPACE>` in the arguments for the following command:
 
 
     ```bash
     kubectl exec -t dgraph-dgraph-alpha-0 -c dgraph-dgraph-alpha-init --  \
-    dgraph bulk -f /dgraph/backups/<path-to-backup>/g01.json.gz \
-    -g /dgraph/backups/<path-to-backup>/g01.gql_schema.gz \
-    -s /dgraph/backups/<path-to-backup>/g01.schema.gz - \
-    -zero=dgraph-dgraph-zero-0.dgraph-dgraph-zero-headless.<namespace>.svc.cluster.local:5080 \
+    dgraph bulk -f /dgraph/backups/<PATH_TO_BACKUP>/g01.json.gz \
+    -g /dgraph/backups/<PATH_TO_BACKUP>/g01.gql_schema.gz \
+    -s /dgraph/backups/<PATH_TO_BACKUP>/g01.schema.gz - \
+    -zero=dgraph-dgraph-zero-0.dgraph-dgraph-zero-headless.<NAMESPACE>.svc.cluster.local:5080 \
     --out /dgraph/restore --replace_out
     ```
 1. Copy the backup to the correct directory:
