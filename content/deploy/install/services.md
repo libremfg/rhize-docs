@@ -99,6 +99,10 @@ You also need to configure the {{< param db >}} service to have roles in Keycloa
 
 1. Go to Keycloak UI and add all new {{< param db >}} roles to the `ADMIN` group.
 
+If the install is successful, the Keycloak UI is available on its
+[default port]({{< ref "default-ports" >}}).
+
+
 ## Install services
 
 Each of the following procedures installs a service through Helm.
@@ -201,6 +205,9 @@ Install the router with these steps:
     helm install router -f router.yaml {{< param application_name >}}/router -n {{< param application_name >}}
     ```
 
+If the install is successful, the Router explorer is available on its
+[default port]({{< ref "default-ports" >}}).
+
 ### Grafana
 
 Rhize uses [Grafana](https://grafana.com) for its dashboard to monitor real time data.
@@ -213,6 +220,9 @@ Install Grafana with these steps:
     ```bash
     helm repo add grafana https://grafana.github.io/helm-charts
     ```
+
+If the install is successful, the Grafana service is available on its
+[default port]({{< ref "default-ports" >}}).
 
 ## Install UI
 
@@ -232,7 +242,8 @@ After installing all other services, install the UI with these steps:
     helm install ui -f ui-overrides.yaml {{< param application_name >}}/admin-ui -n {{< param application_name >}}
     ```
 
-On success, the UI is accessible on its port.
+If the install is successful, the UI is available on its
+[default port]({{< ref "default-ports" >}}).
 
 ## Troubleshoot
 
@@ -245,6 +256,11 @@ On success, the UI is accessible on its port.
     ```
 
     Look for the pod name and its status.
+
+- **Access service through browser**
+
+    Some services are accessible through the browser.
+    To access them, visit local host on the service's [default port]({{< ref "default-ports" >}}).
 
 - **I installed a service too early**.
     If you installed a service too early, use Helm to uninstall:
