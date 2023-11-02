@@ -1,6 +1,6 @@
 ---
 title: 'Agent authentication types'
-categories: ["how-to"]
+categories: ["reference"]
 description: Authentication types for the Rhize agent
 weight: 900
 menu:
@@ -11,7 +11,7 @@ menu:
 
 The Rhize agent collects data emitted in the manufacturing process to make it visible in the Rhize system.
 
-It works by connecting to equipment or groups of equipment that run over protocols like OPC UA,
+It works by connecting to equipment or groups of equipment that run over protocols such as OPC UA,
 then reading and writing tags to re-publish them to NATS.
 
 ## OPC UA authentication types
