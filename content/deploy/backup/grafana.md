@@ -23,16 +23,11 @@ Before you start, ensure you have the following:
 
 Also, before you start, confirm you are in the right context and namespace.
 
-```bash
-## context
-kubectl config current-context
-## namespace
-kubectl get namespace
-```
+{{% param k8s_cluster_ns %}}
 
 ## Steps
 
-Then, to back up the Grafana, follow these steps:
+To back up the Grafana, follow these steps:
 
 1. Check the logs for the Grafana pods, either in Lens or with [`kubectl logs`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs).
     Ensure there are no errors.

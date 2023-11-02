@@ -23,12 +23,8 @@ Before you start, ensure you have the following:
 
 Also, before you start, confirm you are in the right context and namespace.
 
-```bash
-## context
-kubectl config current-context
-## namespace
-kubectl get namespace
-```
+{{% param "k8s_cluster_ns" %}}
+
 ## Steps
 
 To back up the database, follow these steps:
