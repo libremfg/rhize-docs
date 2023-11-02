@@ -16,7 +16,7 @@ This guide shows you how to restore the Graph database in your Rhize environment
 
 Before you start, ensure you have the following:
 
-- The GraphDB helm chart
+- The GraphDB Helm chart
 - [kubectl](https://kubernetes.io/docs/tasks/tools/)
 - A [Database backup]({{< relref "../backup/graphdb" >}})
 
