@@ -49,7 +49,21 @@ To back up the Grafana, follow these steps:
      tar -v -c -f /home/grafana/grafana-conf-$(date +"%Y-%m-%dT%H.%M.%S").tar.gz /usr/share/grafana/conf
      ```
 
-1. Open the backup directory. Check the latest directory (for example with `ls -lt`) for the latest `.gz` files. Its name should be a timestamp from when you ran the preceding `tar` command.
+1. Change to the backup directory. For example:
+
+    ```bash
+    cd /home/grafana/
+    ```
+
+1. Check for the latest `.gz` files (for example, with `ls -lt`).
+   There should be new backup `data` and `conf` files whose names include timestamps from when you ran the preceding `tar` commands.
+
+1. Create a checksum file for the latest backups:
+
+   ```bash
+   sha256sum <LATEST_DATA_FILE>.tar.gz <LATEST_CONF_FILE>.tar.gz > backup.sums
+   ```
+
 
 1. Exit the container shell, and then copy files out of the container to your backup location:
 
@@ -57,14 +71,35 @@ To back up the Grafana, follow these steps:
     ## exit shell
     exit
     ## copy container files to backup
-    kubectl cp <grafana-pod>:/home/grafana/<new-data-backup-filename> \
-    ./<new-data-backup-filename> -c grafana
+    kubectl cp <GRAFANA_POD>:/home/grafana/<NEW_DATA_BACKUP_FILENAME> \
+    ./<NEW_DATA_BACKUP_FILENAME> -c grafana
 
-    kubectl cp <grafana-pod>:/home/grafana/<new-conf-backup-filename> \
-    ./<new-conf-backup-filename> -c grafana
+    kubectl cp <GRAFANA_POD>:/home/grafana/<NEW_CONF_BACKUP_FILENAME> \
+    ./<NEW_CONF_BACKUP_FILENAME> -c grafana
+    kubectl cp <GRAFANA_POD>:/home/grafana/backup.sums \
+    ./backup.sums -c grafana
     ```
 
-To check that the backup succeeded, unzip the files and inspect the data.
+## Confirm success
+
+
+To confirm the backup, check their sha256 sums and their content.
+
+To check the sums:
+
+1. Change to the directory where you sent the backups:
+
+     ```bash
+     cd <BACKUP>/<ON_YOUR_DEVICE>/
+     ```
+1. Compare the checksums:
+
+     ```bash
+     sha256sum -c backup.sums \
+     <LATEST_DATA_FILE>.tar.gz <LATEST_CONF_FILE>.tar.gz
+     ```
+
+To check that the content is correct, unzip the files and inspect the data.
 
 ## Next steps
 

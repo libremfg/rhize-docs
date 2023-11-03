@@ -86,15 +86,29 @@ For example, with `curl`:
 
    With these flags, the first listed directory should be the latest backup, named something like `2023-10-31T16.55.56Z`
 
+1. Create a file that holds the sha256 checksums of the latest backup files. You'll use this file to confirm the copy is identical.
+
+    ```bash
+    sha256sum <LATEST_BACKUP_DIR>/*.gz > backup.sums
+    ```
+
+
 1. Exit the container shell, then copy files out of the container to your backup location:
 
     ```bash
     ## exit shell
     exit
     ## copy container files to backup
-    kubectl cp --retries=10 <name-space>/<pod-name>:backups/<CONTAINER_BACKUP \
+    kubectl cp --retries=10 <name-space>/<pod-name>:backups/<CONTAINER_BACKUP> \
     ./<BACKUP>/<ON_YOUR_DEVICE>
     ```
+
+1. Use the checksum to confirm that the pod files and the local files are the same:
+
+   ```bash
+   cd ./<BACKUP>/<ON_YOUR_DEVICE>/
+   sha256sum -c backup.sums *.gz
+   ```
 
 ## Confirm success
 
