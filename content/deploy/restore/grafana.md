@@ -37,7 +37,7 @@ Before you start, ensure you have the following:
      <GRAFANA_POD_NAME>:/var/lib/grafana/
      ```
 
-     A that the checksums match:
+     Confirm that the checksums match:
 
      ```bash
      kubectl exec -it <GRAFANA_POD_NAME> -- \
