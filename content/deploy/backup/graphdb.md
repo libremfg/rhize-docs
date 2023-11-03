@@ -55,7 +55,7 @@ For example, with `curl` and `jq`:
     && curl --location \
       --request POST "${BAAS_OIDC_URL}/realms/libre/protocol/openid-connect/token" \
       --header 'Content-Type\ application/x-www-form-urlencoded' \
-      --data -urlencode 'grant_type=password' \
+      --data-urlencode 'grant_type=password' \
       --data-urlencode "username=${USERNAME}" \
       --data-urlencode "password=${PASSWORD}"  \
       --data-urlencode "client_id=${BAAS_OIDC_CLIENT_ID}" \
@@ -93,7 +93,7 @@ For example, with `curl`:
     ## exit shell
     exit
     ## copy container files to backup
-    kubectl cp <name-space>/<pod-name>:backups/<CONTAINER_BACKUP \
+    kubectl cp --retries=5 <name-space>/<pod-name>:backups/<CONTAINER_BACKUP \
     ./<BACKUP>/<ON_YOUR_DEVICE>
     ```
 
