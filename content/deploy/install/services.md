@@ -229,7 +229,7 @@ If the install is successful, the Grafana service is available on its
 The Rhize agent bridges your plant processes with the Rhize data hub.
 It collects data emitted from the plant and publishes it to the NATS message broker.
 
-> **Requirements:** Agent requires the [Graph DB](#db), [Nats](#nats), and [Grafana](#grafana) services.
+> **Requirements:** Agent requires the [Graph DB](#db), [Nats](#nats), and [Tempo](#tempo) services.
 
 Install the agent with these steps:
 
