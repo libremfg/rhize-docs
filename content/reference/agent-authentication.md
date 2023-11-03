@@ -10,11 +10,11 @@ menu:
 ---
 
 The Rhize agent collects data that is emitted in the manufacturing process and makes this data visible in the Rhize system.
-As the communication bridge between the Rhize Data Hub and your plant, the agent can handle reads and writes to and from data sources, and it can be called by a [BPMN task]({{< relref "bpmn/activities" >}}).
+It works by connecting to equipment or groups of equipment that run over protocols such as OPC UA.
 
-It works by connecting to equipment or groups of equipment that run over protocols such as OPC UA,
-and then reading and writing tags to re-publish them to NATS.
-This connection has various authentication options.
+As the communication bridge between the Rhize Data Hub and your plant, the agent has multiple functions:
+- It subscribes to tags and republishes the changes in NATS.
+- It creates an interface for the BPMN engine to send reads and writes to a data source and its associated equipment.
 
 ## OPC UA authentication types
 
