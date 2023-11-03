@@ -92,7 +92,8 @@ To check the sums:
      ```bash
      cd <BACKUP>/<ON_YOUR_DEVICE>/
      ```
-1. Compare the checksums:
+
+1. Confirm the checksums match:
 
      ```bash
      sha256sum -c backup.sums \
