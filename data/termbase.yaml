@@ -47,6 +47,7 @@
 - term: NATS
   definition:
     Connective infrastructure to address, discover, and exchange messages in a distributed system.
+    Rhize uses NATS as the broker to publish and subscribe to event data, decoupling communication between services and equipment.
   links:
     - text: Official NATS documentation
       uri: https://docs.nats.io/nats-concepts/overview
