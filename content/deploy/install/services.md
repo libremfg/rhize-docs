@@ -237,7 +237,7 @@ Install the agent with these steps:
 2. Install with Helm:
 
     ```bash
-    helm install agent -f agent.yaml libre/agent -n {{< para application_name >}}
+    helm install agent -f agent.yaml libre/agent -n {{< param application_name >}}
     ```
 
 ## Install UI
