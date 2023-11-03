@@ -1,3 +1,6 @@
+- term: Agent
+  definition: >-
+    The Rhize agent bridges your plant processes with the Rhize data hub. It collects data emitted from the plant and publishes it to the NATS message broker.
 - term: Andon
   definition: >-
     A system that alerts manufacturing teams about problems in processes or quality.
