@@ -9,7 +9,7 @@ menu:
     identifier:
 ---
 
-The Rhize agent collects data emitted that is emitted in the manufacturing process and makes this data visible in the Rhize system.
+The Rhize agent collects data that is emitted in the manufacturing process and makes this data visible in the Rhize system.
 
 It works by connecting to equipment or groups of equipment that run over protocols such as OPC UA,
 and then subscribing to tags to re-publish them to NATS.
