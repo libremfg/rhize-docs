@@ -92,7 +92,6 @@ For example, with `curl`:
     sha256sum <LATEST_BACKUP_DIR>/*.gz > backup.sums
     ```
 
-
 1. Exit the container shell, then copy files out of the container to your backup location:
 
     ```bash
