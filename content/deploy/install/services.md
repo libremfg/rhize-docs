@@ -224,6 +224,22 @@ Install Grafana with these steps:
 If the install is successful, the Grafana service is available on its
 [default port]({{< ref "default-ports" >}}).
 
+### Agent
+
+The Rhize agent bridges your plant processes with the Rhize data hub.
+It collects data emitted from the plant and publishes it to the NATS message broker.
+
+> **Requirements:** Agent requires the [Graph DB](#db), [Nats](#nats), and [Grafana](#grafana) services.
+
+Install the agent with these steps:
+
+1. Modify the Agent Helm file as needed.
+2. Install with Helm:
+
+    ```bash
+    helm install agent -f agent.yaml libre/agent -n {{< para application_name >}}
+    ```
+
 ## Install UI
 
 
