@@ -1,5 +1,5 @@
 ---
-title: 'Agent authentication types'
+title: 'Agent configuration'
 categories: ["reference"]
 description: Authentication types for the Rhize agent
 weight: 900
