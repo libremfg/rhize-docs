@@ -12,7 +12,7 @@ menu:
 The Rhize agent collects data emitted that is emitted in the manufacturing process and makes this data visible in the Rhize system.
 
 It works by connecting to equipment or groups of equipment that run over protocols such as OPC UA,
-and then reading and writing tags to re-publish them to NATS.
+and then subscribing to tags to re-publish them to NATS.
 
 ## OPC UA authentication types
 
