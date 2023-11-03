@@ -21,33 +21,47 @@ Before you start, ensure you have the following:
 
 ## Steps
 
-1. Confirm the cluster and namespace are correct.
+1. Confirm the cluster and namespace are correct:
 
     {{% param "k8s_cluster_ns" %}}
 
-1. Copy the Grafana data tar file into the new Grafana Pod within the `/var/lib/grafana` directory.
+1. If a checksum file does not exist for the latest backups, create one:
 
     ```bash
-    kubectl cp ./grafana-data-2023-11-01T16.05.53.tar.gz grafana-64cd6db6f4-8txc2:/var/lib/grafana/
+    sha256sum <LATEST_DATA_FILE>.tar.gz <LATEST_CONF_FILE>.tar.gz > backup.sums
     ```
+1. Copy the Grafana data tar file into the new Grafana Pod within the `/var/lib/grafana` directory:
 
-1. Untar the file
+     ```bash
+     kubectl cp ./grafana-data-2023-11-01T16.05.53.tar.gz \
+     <GRAFANA_POD_NAME>:/var/lib/grafana/
+     ```
+
+     A that the checksums match:
+
+     ```bash
+     kubectl exec -it <GRAFANA_POD_NAME> -- \
+     'sha256sum ./<LATEST_DATA_FILE>.tar.gz  <LATEST_CONF_FILE>.tar.gz \
+     > ./<PATH_TO_BACKUP>/backup.sums'
+     ```
+
+1. Untar the file:
 
      ```bash
      tar -xvf grafana-data-2023-11-01T16.05.53.tar.gz --directory /
      ```
 
-1. Copy the Grafana configuration file into the new Grafana Pod in the `/usr/share/grafana/conf` directory.
+1. Copy the Grafana configuration file into the new Grafana Pod in the `/usr/share/grafana/conf` directory:
 
      ```bash
-     kubectl cp ./grafana-conf-2023-11-01T16.05.53.tar.gz grafana-64cd6db6f4-8txc2:/usr/share/grafana/conf
+     kubectl cp ./grafana-conf-2023-11-01T16.05.53.tar.gz \
+     <GRAFANA_POD_NAME>:/usr/share/grafana/conf
      ```
 
-1. Untar the file
+1. Untar the file:
 
-    ```bash
-    tar -xvf grafana-conf-2023-11-01T16.05.53.tar.gz --directory /
-    ```
+     ```bash
+     tar -xvf grafana-conf-2023-11-01T16.05.53.tar.gz --directory /
+     ```
 
 1. Restart the Grafana Deployment.
-
