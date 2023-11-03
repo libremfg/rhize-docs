@@ -86,14 +86,13 @@ For example, with `curl`:
 
    With these flags, the first listed directory should be the latest backup, named something like `2023-10-31T16.55.56Z`
 
-
 1. Exit the container shell, then copy files out of the container to your backup location:
 
     ```bash
     ## exit shell
     exit
     ## copy container files to backup
-    kubectl cp --retries=5 <name-space>/<pod-name>:backups/<CONTAINER_BACKUP \
+    kubectl cp --retries=10 <name-space>/<pod-name>:backups/<CONTAINER_BACKUP \
     ./<BACKUP>/<ON_YOUR_DEVICE>
     ```
 
