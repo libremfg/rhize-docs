@@ -9,7 +9,7 @@ menu:
     identifier:
 ---
 
-The Rhize agent collects data emitted that is emitted in the manufacturing process and makes this data visible in the Rhize system.
+The Rhize agent collects data that is emitted in the manufacturing process and makes this data visible in the Rhize system.
 As the communication bridge between the Rhize Data Hub and your plant, the agent can handle reads and writes to and from data sources, and it can be called by a [BPMN task]({{< relref "bpmn/activities" >}}).
 
 It works by connecting to equipment or groups of equipment that run over protocols such as OPC UA,
