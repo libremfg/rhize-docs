@@ -1,9 +1,9 @@
 ---
 title: 'Install'
 date: '2023-09-22T13:54:26-03:00'
-draft: false
 category: how-to
-description:
+description: >-
+  A guide to install Rhize services on your Kubernetes cluster.
 weight: 100
 menu:
   main:
@@ -15,4 +15,9 @@ cascade:
   application_name: libre
 ---
 
-Follow these steps to create new Rhize installations and secure them in a Kubernetes environment.
+This guide shows you how to install Rhize services on your Kubernetes cluster.
+
+This procedure aims to be as generic and vendor-neutral as possible.
+Some configuration depends on where and how you run your IT infrastructure&mdash;what cloud provider you use, preferred auxiliary tools, and so on---so your team must adapt the process for its particular use cases.
+
+  

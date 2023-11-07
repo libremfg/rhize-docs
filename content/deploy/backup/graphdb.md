@@ -17,9 +17,11 @@ You can also use it to model an automation workflow.
 
 Before you start, ensure you have the following:
 
+
 - A designated backup location, for example `~/rhize-backups/database`.
 - Access to your [Rhize Kubernetes Environment]({{< relref "install" >}})
 {{% param pre_reqs %}}.
+
 
 Also, before you start, confirm you are in the right context and namespace.
 

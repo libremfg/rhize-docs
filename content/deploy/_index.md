@@ -8,12 +8,12 @@ cascade:
   domain_name: libremfg.ai
   brand_name: Libre
   application_name: libre
+  db: libreBaaS
   pre_reqs: |-
-    - [kubectl](https://kubernetes.io/docs/tasks/tools/)
     - Optional: [kubectx](https://github.com/ahmetb/kubectx) utilities
         - `kubectx` to manage multiple clusters
         - `kubens` to switch between and configure namespaces easily
-    - Optional: the [OpenLens IDE](https://github.com/MuhammedKalkan/OpenLens/releases), if you prefer to manage Kubernetes graphically
+    - Optional: the [k8 Lens IDE](https://k8lens.dev), if you prefer to use Kubernetes graphically
   k8s_cluster_ns: |-
     ```bash
     ## context
@@ -24,5 +24,4 @@ cascade:
     
 ---
 
-A collection of pages to look up values for schemas, definitions, and anything else related to using Rhize. 
-
+A collection of pages to administrate Rhize: install, upgrade, back up, and more.

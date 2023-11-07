@@ -21,6 +21,7 @@ Before you start, ensure you have the following:
 - Access to the [Rhize Kubernetes Environment](/deploy/install/setup-kubernetes)
 {{% param pre_reqs %}}
 
+
 Also, before you start, confirm you are in the right context and namespace.
 
 {{% param k8s_cluster_ns %}}
