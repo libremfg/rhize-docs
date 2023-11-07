@@ -32,12 +32,13 @@ First, record the old and new versions, their context, and namespaces.
 1. Use Git to pull your Rhize customer build directory.
 1. Change to the `kubernetes/charts/{{< param application_name >}}` directory.
 1. Check your Kubernetes context and namespace.
+
+    {{% param k8s_cluster_ns %}}
+
 1. Use the `helm list` command to check for {{< param application_name >}} services.
 1. Scale down `{{< param application_name >}}-pubsub`.
 1. Delete the `schema` job.
-
-In your editor, edit the config file to match the Influx token of the environment.
-
+1. In your editor, edit the config file to match the Influx token of the environment.
 1. Upgrade with the following command:
 
 
