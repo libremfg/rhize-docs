@@ -1,10 +1,9 @@
 ---
 title: >- ## Title must start with a verb
   '{{ replace .File.ContentBaseName `-` ` ` | title | humanize }}'
-date: '{{ .Date }}'
-draft: true
-category: tutorials
 description:
+draft: false
+categories: tutorials
 weight:
 menu:
   main:
