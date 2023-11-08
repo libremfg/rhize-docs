@@ -9,30 +9,34 @@ menu:
     parent: restore
 ---
 
-[BPMN processes]({{< ref "bpmn" >}}) are one area where availability is critical, since the processes often have longer execution durations and many steps.
+[BPMN processes]({{< ref "bpmn" >}}) often have longer execution durations and many steps.
+If a BPMN node suddenly fails (for example through a panic or loss of power),
+Rhize needs to ensure that the workflow completes.
 
-Through clustering and replication, BPMN execution continues in the event that a BPMN node suddenly fails (for example through a panic or loss of power). 
-As long as the remaining BPMN nodes are not at already full processing capacity,
-the Rhize system recovers and finishes execution.
-This recovery is automatic, though users may experience an execution gap of up to 30s during the execution process.
+To achieve high availability and resiliency, Rhize services run in [Kubernetes nodes](https://kubernetes.io/docs/concepts/architecture/nodes/), and the NATS message broker typically has [data replication](https://docs.nats.io/running-a-nats-service/nats_admin/jetstream_admin/replication).
+As long as the remaining BPMN nodes are not already at full processing capacity,
+if a BPMN node fails while executing a process,
+the Rhize system recovers and finishes the workflow.
+
+This recovery is automatic, though users may experience an execution gap of up to 30 seconds.
 
 ## BPMN failure and recovery modes 
 
-The details about how Rhize recovers from a halted process depend on the point of failure.
+How Rhize recovers from a halted process depends on where the system failed.
 
-### BPMN node fails
+### BPMN node failure
 
-If a BPMN container suddenly dies, the currently executing process times out after 30s.
+If a BPMN container suddenly fails, the process that was currently executing times out after 30 seconds.
 As long as the node had not been running for [longer than 10 minutes](#bpmn-age-out),
-NATS resends the message to another BPMN node
+NATS resends the message to another BPMN node and the process finishes.
 
 ### NATS node unavailable
 
-If the NATS node dies, recovery depends on your replication and backup strategy.
+If the NATS node fails, recovery depends on your replication and backup strategy.
 
 - If the stream has R3 replication or greater, a new NATS node picks up the process. No noticeable performance issues should occur.
 
-- If the stream has no replication, everything is lost in the node. However, if you took a snapshot of a stream with `nats stream backup` before the node became unavailable, and the `WorkflowSpecifications` KV is the same at backup and restore sites, then you can use the `nats stream restore` command to replay the stream from when the backup was made.
+- If the stream has no replication, everything in the node is lost. However, if you took a snapshot of a stream with `nats stream backup` before the node became unavailable, and the `WorkflowSpecifications` KV is the same at backup and restore sites, then you can use the `nats stream restore` command to replay the stream from when the backup was made.
 
 To learn more, read the NATS topic on [Disaster recovery](https://docs.nats.io/running-a-nats-service/nats_admin/jetstream_admin/disaster_recovery)
 
