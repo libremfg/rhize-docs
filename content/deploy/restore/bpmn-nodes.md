@@ -38,7 +38,7 @@ If the NATS node fails, recovery depends on your replication and backup strategy
 
 - If the stream has no replication, everything in the node is lost. However, if you took a snapshot of a stream with `nats stream backup` before the node became unavailable, and the `WorkflowSpecifications` KV is the same at backup and restore sites, then you can use the `nats stream restore` command to replay the stream from when the backup was made.
 
-To learn more, read the NATS topic on [Disaster recovery](https://docs.nats.io/running-a-nats-service/nats_admin/jetstream_admin/disaster_recovery)
+To learn more, read the NATS topic on [Disaster recovery](https://docs.nats.io/running-a-nats-service/nats_admin/jetstream_admin/disaster_recovery).
 
 ## All BPMN elements age out after ten minutes {#bpmn-age-out}
 
