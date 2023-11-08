@@ -28,17 +28,11 @@ Before you start, ensure you have the following:
 
     {{% param k8s_cluster_ns %}}
 
-1.  Copy the tar file into the new Grafana Pod within the `/var/lib/grafana/` directory.
-
-    ```bash
-    kubectl cp ./local-dest-of-backup <grafana-pod>:/var/lib/grafana/
-    ```
 1. Uninstall the Helm chart:
 
    ```bash
    helm uninstall dgraph -n <namespace>
    ```
-
 1. Change to the `dgraph` helm chart directory, and open `values.yaml`.
    Set `alpha.initContainers.init.enable` to `true`.
 
@@ -48,17 +42,33 @@ Before you start, ensure you have the following:
     helm install dgraph . -n <namespace>
     ```
 
+
 1. In the Alpha 0 initialization container, create the backup directory.
 
     ```bash
-    kubectl exec -t dgraph-dgraph-alpha-0 -c dgraph-dgraph-alpha-init -- mkdir -p /dgraph/backups
+    kubectl exec -t dgraph-dgraph-alpha-0 -c dgraph-dgraph-alpha-init -- \
+    mkdir -p /dgraph/backups
+    ```
+
+1. If the backup directory does not have a checksums file, create one:
+
+    ```bash
+    sha256sum ./<PATH_TO_BACKUP>/*.gz > ./<PATH_TO_BACKUP>/backup.sums
     ```
 
 1. Copy the backup into the initialization container.
 
     ```bash
-    kubectl cp ./<path-to-backup> dgraph-dgraph-alpha-0:/dgraph/backups/<path-to-backup> \
+    kubectl cp ./<PATH_TO_BACKUP> \
+    dgraph-dgraph-alpha-0:/dgraph/backups/<PATH_TO_BACKUP> \
     -c dgraph-dgraph-alpha-init
+    ```
+
+    After the process finishes, confirm that the checksums match:
+
+    ```bash
+    kubectl exec -it <POD_NAME> -- 'sha256sum ./<PATH_TO_BACKUP>/*.gz > \
+    ./<PATH_TO_BACKUP>/backup.sums'
     ```
 
 1. Restore the backup to the restore directory.
@@ -70,14 +80,14 @@ Before you start, ensure you have the following:
     dgraph bulk -f /dgraph/backups/<PATH_TO_BACKUP>/g01.json.gz \
     -g /dgraph/backups/<PATH_TO_BACKUP>/g01.gql_schema.gz \
     -s /dgraph/backups/<PATH_TO_BACKUP>/g01.schema.gz - \
-    -zero=dgraph-dgraph-zero-0.dgraph-dgraph-zero-headless.<NAMESPACE>.svc.cluster.local:5080 \
+    --zero=dgraph-dgraph-zero-0.dgraph-dgraph-zero-headless.<NAMESPACE>.svc.cluster.local:5080 \
     --out /dgraph/restore --replace_out
     ```
 1. Copy the backup to the correct directory:
 
     ```bash
     kubectl exec -t dgraph-dgraph-alpha-0 -c dgraph-dgraph-alpha-init -- \
-    mv /dgraph/restore/0/p/dgraph/p
+    mv /dgraph/restore/0/p /dgraph/p
     ```
 
 1. Complete the initialization container for alpha 0.
