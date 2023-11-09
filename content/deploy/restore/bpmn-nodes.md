@@ -2,7 +2,7 @@
 title: "BPMN execution recovery"
 weight: 600
 description: >-
-  Rhize has a number of built-in methods to ensure that a BPMN workflow executes reliably.
+  If a BPMN node suddenly fails, Rhize has a number of recovery methods to ensure that the workflow finishes executing.
 categories: ["concepts"]
 menu:
   main:
