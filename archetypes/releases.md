@@ -3,7 +3,7 @@ title: {{ replace .File.ContentBaseName `-` `.` | title | humanize }}
 date: '{{ .Date }}'
 description: Release notes for v{{ replace .File.ContentBaseName `-` `.` | title }} of the Rhize application
 categories: ["releases"]
-weight: 0 ##zero if latest, 1 if otherwise
+weight: 1 ##one if latest
 menu:
   main:
     parent: releases
