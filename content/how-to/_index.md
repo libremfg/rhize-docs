@@ -1,6 +1,6 @@
 ---
-title: How-to guides
-description: A collection of pages to look up values for schemas, definitions, and anything else related to using Rhize. 
+title: User guides
+description: Topics about how to use Rhize to query data, build and run workflows, and build frontends.
 weight: 200
 identifier: how-to
 cascade:
