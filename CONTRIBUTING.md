@@ -9,15 +9,30 @@ Common use cases are for style, as with notices, and for templating.
 
 ### Notices
 
-Call notices with the ```{{% notice $TYPE %}}`` shortcode.
+Use notices with ```{{% notice $TYPE %}}```:
 
-Rhize docs have three types:
+For example:
+
+```html
+{{% notice note %}}
+
+Just keep this in mind.
+
+{{% /notice %}}
+```
+
+Rhize docs have three types of notices:
 
 - **Note**. For side information
 - **Caution**. To tell people to be careful or understand limitations
 - **Warning**. When an action is irreversible.
 
 For example:
+
+
+![](https://user-images.githubusercontent.com/47385188/282773723-3ac4671a-3cc1-42fe-b27c-340402704fd5.png)
+
+is rendered from:
 
 ```html
 
@@ -40,9 +55,6 @@ This action is irreversible.
 {{% /notice %}}
 ```
 
-Renders as:
-
-![](https://user-images.githubusercontent.com/47385188/282773723-3ac4671a-3cc1-42fe-b27c-340402704fd5.png)
 
 
 ## Document template
