@@ -61,14 +61,13 @@ td {
 }
 
 .notices.note {
-  border-color: #f3d98c;
-  background-color: #fffad5;
-  border: 1px solid #e2e2e2;
-}
-
-.notices.tip {
   border-color: #87cb74;
   background-color: #e3f9e3;
+  border: 1px solid #e2e2e2;
+}
+.notices.caution {
+  border-color: #f3d98c;
+  background-color: #fffad5;
   border: 1px solid #e2e2e2;
 }
 
