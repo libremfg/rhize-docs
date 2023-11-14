@@ -32,7 +32,7 @@
       <div>
         {{ .Content }}
         <table class="contents">
-          {{ range .Pages.ByWeight }}
+          {{ range .Pages }}
           <dt>
             <a href="{{ .Permalink }}">{{ .Title }}</a>
           </dt>
