@@ -17,27 +17,10 @@ To serve locally, follow these steps:
 
 To stop Hugo, use `ctrl+c`.
 
-## Use a template
+## Authoring:
 
-Each document should have a specific purpose.
-Each general purpose has template defined in the `archetypes` directory.
+Refer to [Contributing](CONTRIBUTING.md).
 
-For your convenience, use the `archetypes` to avoid writing bolerplate properties:
-
-1. Navigate to the root of this repository.
-2. Run `hugo new content/<type>/<name-of-document>.md`
-
-At the time of writing, the templated types are `concepts`, `how-to`, `reference`, and `releases`.
-To decide which topic you want to write, consult [this Diagram](https://wellshapedwords.com/images/diataxis.svg "diataxis-topic picker")
-
-Topics are clustered in groups of the sidebar, corresponding to directories of the same name.
-If you want to make a type in a different content directory, use the `--kind` flag:
-
-```sh
-hugo new content --kind reference get-started/fake-reference-page.md
-```
-
-To learn how to update templates, read the [Hugo Archetypes documentation](https://gohugo.io/content-management/archetypes/). 
 
 ## Troubleshooting
 
