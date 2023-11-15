@@ -11,8 +11,8 @@ menu:
 
 Release notes for version {{ replace .File.ContentBaseName `-` `.` | title }} of the Rhize application.
 
-
 _Release date:_
+{{ $t := time.Now }}{{ time.Format "2 Jan 2006" $t }}
 
 ## Breaking changes
 
