@@ -79,7 +79,7 @@ Before you start, ensure you have the following:
 1. Move over the top of current configuration. 
 
      {{< notice note >}}
-     Typically some files are configured as a Kubernetes [`ConfigMap`](https://kubernetes.io/docs/concepts/configuration/configmap/) and may need to be configured as part of installation. The following command will prompt when it is going to overwrite a file, and if it has the permissions to do so.
+Typically some files are configured as a Kubernetes [`ConfigMap`](https://kubernetes.io/docs/concepts/configuration/configmap/) and may need to be configured as part of installation. The following command prompts when it is going to overwrite a file, and if it has the permissions to do so.
      {{< /notice >}}
 
      ```bash
