@@ -31,7 +31,7 @@ Before you start, ensure you have the following:
 1. Change to the {{< param application_name >}}-baas helm chart overrides, `baas.yaml`.
    Set `alpha.initContainers.init.enable` to `true`.
 
-1. Upgrade / Install the Helm chart.
+1. Upgrade or install the Helm chart.
 
     ```bash
     helm upgrade --install -f baas.yaml {{< param application_name >}}-baas {{< param application_name >}}/baas -n {{< param application_name >}}
