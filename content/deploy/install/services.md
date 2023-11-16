@@ -215,10 +215,16 @@ Rhize uses [Grafana](https://grafana.com) for its dashboard to monitor real time
 Install Grafana with these steps:
 
 1. Modify the Grafana Helm YAML file as needed.
+
+1. Add helm repository
+    ```bash
+    helm repo add grafana https://grafana.github.io/helm-charts
+    ```
+
 1. Install with Helm:
 
     ```bash
-    helm repo add grafana https://grafana.github.io/helm-charts
+    helm install grafana -f grafana.yaml grafana/grafana -n {{< param application_name >}}
     ```
 
 If the install is successful, the Grafana service is available on its

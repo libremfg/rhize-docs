@@ -30,38 +30,73 @@ Before you start, ensure you have the following:
     ```bash
     sha256sum <LATEST_DATA_FILE>.tar.gz <LATEST_CONF_FILE>.tar.gz > backup.sums
     ```
-1. Copy the Grafana data tar file into the new Grafana Pod within the `/var/lib/grafana` directory:
+1. Copy the checksum file into the new Grafana Pod within the `/home/grafana` directory:
 
      ```bash
-     kubectl cp ./grafana-data-2023-11-01T16.05.53.tar.gz \
-     <GRAFANA_POD_NAME>:/var/lib/grafana/
+     kubectl cp ./backup.sums \
+     <GRAFANA_POD_NAME>:/home/grafana
      ```
 
-     Confirm that the checksums match:
+1. Copy the Grafana data tar file into the new Grafana Pod within the `/home/grafana` directory:
 
      ```bash
-     kubectl exec -it <GRAFANA_POD_NAME> -- \
-     'sha256sum ./<LATEST_DATA_FILE>.tar.gz  <LATEST_CONF_FILE>.tar.gz \
-     > ./<PATH_TO_BACKUP>/backup.sums'
+     kubectl cp ./<LATEST_DATA_FILE>.tar.gz \
+     <GRAFANA_POD_NAME>:/home/grafana
      ```
 
-1. Untar the file:
+1. Copy the Grafana configuration tar file into the new Grafana Pod within the `/home/grafana` directory:
 
+     
      ```bash
-     tar -xvf grafana-data-2023-11-01T16.05.53.tar.gz --directory /
+     kubectl cp ./<LATEST_CONF_FILE>.tar.gz \
+     <GRAFANA_POD_NAME>:/home/grafana
      ```
 
-1. Copy the Grafana configuration file into the new Grafana Pod in the `/usr/share/grafana/conf` directory:
+1. Confirm that the checksums match:
 
      ```bash
-     kubectl cp ./grafana-conf-2023-11-01T16.05.53.tar.gz \
-     <GRAFANA_POD_NAME>:/usr/share/grafana/conf
+     kubectl exec -it <GRAFANA_POD_NAME> -- /bin/bash 
+
+     <GRAFANA_POD_NAME>:~$ cd /home/grafana
+     <GRAFANA_POD_NAME>:~$ sha256sum -c backup.sums
+     ./<LATEST_DATA_FILE>.tar.gz: OK
+     ./<LATEST_CONF_FILE>.tar.gz: OK
+
      ```
 
-1. Untar the file:
+1. Untar the data file:
 
      ```bash
-     tar -xvf grafana-conf-2023-11-01T16.05.53.tar.gz --directory /
+     tar -xvf <LATEST_DATA_FILE>.tar.gz --directory /
+     ```
+
+1. Untar the configuration file:
+
+     ```bash
+     tar -xvf <LATEST_CONF_FILE>.tar.gz --directory /home/grafana/
+     ```
+
+1. Move over the top of current configuration. 
+
+     {{< notice note >}}
+     Typically some files are configured as a Kubernetes [`ConfigMap`](https://kubernetes.io/docs/concepts/configuration/configmap/) and may need to be configured as part of installation. The following command will prompt when it is going to overwrite a file, and if it has the permissions to do so.
+     {{< /notice >}}
+
+     ```bash
+     mv /home/grafana/usr/share/grafana/conf/* /usr/share/grafana/conf/
+     ```
+
+1. Remove restore files and directory
+
+     ```bash
+     rm /home/grafana/<LATEST_DATA_FILE>.tar.gz
+     rm /home/grafana/<LATEST_CONF_FILE>.tar.gz
+     rm /home/grafana/backup.sums
+     rm -r /home/grafana/usr
      ```
 
 1. Restart the Grafana Deployment.
+
+     ```bash
+     kubectl rollout restart deployment grafana -n libre
+     ```
