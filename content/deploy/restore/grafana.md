@@ -57,8 +57,8 @@ Before you start, ensure you have the following:
      ```bash
      kubectl exec -it <GRAFANA_POD_NAME> -- /bin/bash 
 
-     <GRFANA_POD_NAME>:~$ cd /home/grafana
-     <GRFANA_POD_NAME>:~$ sha256sum -c backup.sums
+     <GRAFANA_POD_NAME>:~$ cd /home/grafana
+     <GRAFANA_POD_NAME>:~$ sha256sum -c backup.sums
      ./<LATEST_DATA_FILE>.tar.gz: OK
      ./<LATEST_CONF_FILE>.tar.gz: OK
 
