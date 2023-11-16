@@ -28,29 +28,23 @@ Before you start, ensure you have the following:
 
     {{% param k8s_cluster_ns %}}
 
-1. Uninstall the Helm chart:
-
-   ```bash
-   helm uninstall dgraph -n <namespace>
-   ```
-1. Change to the `dgraph` helm chart directory, and open `values.yaml`.
+1. Change to the {{< param application_name >}}-baas helm chart overrides, `baas.yaml`.
    Set `alpha.initContainers.init.enable` to `true`.
 
-1. Deploy the Helm chart.
+1. Upgrade / Install the Helm chart.
 
     ```bash
-    helm install dgraph . -n <namespace>
+    helm upgrade --install -f baas.yaml {{< param application_name >}}-baas {{< param application_name >}}/baas -n {{< param application_name >}}
     ```
-
 
 1. In the Alpha 0 initialization container, create the backup directory.
 
     ```bash
-    kubectl exec -t dgraph-dgraph-alpha-0 -c dgraph-dgraph-alpha-init -- \
+    kubectl exec -t {{< param application_name >}}-baas-alpha-0 -c {{< param application_name >}}-baas-alpha-init -- \
     mkdir -p /dgraph/backups
     ```
 
-1. If the backup directory does not have a checksums file, create one:
+1. If the backup directory does not have a checksums file, create one.
 
     ```bash
     sha256sum ./<PATH_TO_BACKUP>/*.gz > ./<PATH_TO_BACKUP>/backup.sums
@@ -59,16 +53,16 @@ Before you start, ensure you have the following:
 1. Copy the backup into the initialization container.
 
     ```bash
-    kubectl cp ./<PATH_TO_BACKUP> \
-    dgraph-dgraph-alpha-0:/dgraph/backups/<PATH_TO_BACKUP> \
-    -c dgraph-dgraph-alpha-init
+    kubectl cp --retries=10 ./<PATH_TO_BACKUP> \
+    {{< param application_name >}}-baas-alpha-0:/dgraph/backups/<PATH_TO_BACKUP> \
+    -c {{< param application_name >}}-baas-alpha-init
     ```
 
     After the process finishes, confirm that the checksums match:
 
     ```bash
-    kubectl exec -it <POD_NAME> -- 'sha256sum ./<PATH_TO_BACKUP>/*.gz > \
-    ./<PATH_TO_BACKUP>/backup.sums'
+    kubectl exec -it {{< param application_name >}}-baas-alpha-0 -c {{< param application_name >}}-baas-alpha-init -- \
+    'sha256sum -c /dgraph/backups/<PATH_TO_BACKUP>/backup.sums /dgraph/backups/<PATH_TO_BACKUP>/*.gz'
     ```
 
 1. Restore the backup to the restore directory.
@@ -76,48 +70,51 @@ Before you start, ensure you have the following:
 
 
     ```bash
-    kubectl exec -t dgraph-dgraph-alpha-0 -c dgraph-dgraph-alpha-init --  \
+    kubectl exec -t {{< param application_name >}}-baas-alpha-0 -c {{< param application_name >}}-baas-alpha-init --  \
     dgraph bulk -f /dgraph/backups/<PATH_TO_BACKUP>/g01.json.gz \
     -g /dgraph/backups/<PATH_TO_BACKUP>/g01.gql_schema.gz \
     -s /dgraph/backups/<PATH_TO_BACKUP>/g01.schema.gz - \
-    --zero=dgraph-dgraph-zero-0.dgraph-dgraph-zero-headless.<NAMESPACE>.svc.cluster.local:5080 \
+    --zero={{< param application_name >}}-baas-zero-0.{{< param application_name >}}-baas-zero-headless.<NAMESPACE>.svc.cluster.local:5080 \
     --out /dgraph/restore --replace_out
     ```
 1. Copy the backup to the correct directory:
 
     ```bash
-    kubectl exec -t dgraph-dgraph-alpha-0 -c dgraph-dgraph-alpha-init -- \
+    kubectl exec -t {{< param application_name >}}-baas-alpha-0 -c {{< param application_name >}}-baas-alpha-init -- \
     mv /dgraph/restore/0/p /dgraph/p
     ```
 
 1. Complete the initialization container for alpha 0.
 
     ```bash
-    kubectl exec -t dgraph-dgraph-alpha-0 -c dgraph-
-    dgraph-alpha-init -- touch /dgraph/doneinit
+    kubectl exec -t {{< param application_name >}}-baas-alpha-0 -c {{< param application_name >}}-baas-alpha-init -- touch /dgraph/doneinit
     ```
 
-1. Wait for `dgraph-dgraph-alpha-0` to start serving the GraphQL API.
+1. Wait for `{{< param application_name >}}-baas-alpha-0` to start serving the GraphQL API.
 
 1. Make a database mutation to force a snapshot to be taken.
 For example, create a `UnitOfMeasure` then delete it:
 
     ```bash
-    kubectl exec -t dgraph-dgraph-alpha-0 -c dgraph-dgraph-alpha -- \
+    kubectl exec -t {{< param application_name >}}-baas-alpha-0 -c {{< param application_name >}}-baas-alpha -- \
     curl --location --request POST 'http://localhost:8080/graphql' \
     --header 'Content-Type: application/json' \
     --data-raw '{"query":"mutation RestoringDatabase($input:[AddUnitOfMeasureInput!]!){\r\n addUnitOfMeasure(input:$input){\r\n unitOfMeasure{\r\n id\r\n dataType\r\n code\r\n }\r\n}\r\n}","variables":{"input":[{"code":"Restoring","isActive":true,"dataType":"BOOL"}]}}'
     ```
-    Wait until you see a snapshot in the logs. For example:
+    Wait until you see {{< param application_name >}}-baas creating a snapshot in the logs. For example:
 
     ```bash
+    $ kubectl logs {{< param application_name >}}-baas-alpha-0
+    ++ hostname -f
+    ++ awk '{gsub(/\.$/,""); print $0}'
+    ...
     I0314 20:32:21.282271 19 draft.go:805] Creating snapshot at Index: 16, ReadTs: 9
     ```
 
     Revert any database mutations:
 
     ```bash
-    kubectl exec -t dgraph-dgraph-alpha-0 -c dgraph-dgraph-alpha -- \
+    kubectl exec -t {{< param application_name >}}-baas-alpha-0 -c {{< param application_name >}}-baas-alpha -- \
     curl --location --request POST 'http://localhost:8080/graphql' \
     --header 'Content-Type: application/json' \
     --data-raw '{"query":"mutation {\r\n deleteUnitOfMeasure(filter:{code:{eq:\"Restoring\"}}){\r\n unitOfMeasure{\r\n id\r\n }\r\n }\r\n}","variables":{"input":[{"code":"Restoring","isActive":true,"dataType":"BOOL"}]}}'
@@ -126,13 +123,13 @@ For example, create a `UnitOfMeasure` then delete it:
 1. Complete the initialization container for alpha 1:
 
     ```bash
-    kubectl exec -t dgraph-dgraph-alpha-1 -c dgraph-dgraph-alpha-init -- \
+    kubectl exec -t {{< param application_name >}}-baas-alpha-1 -c {{< param application_name >}}-baas-alpha-init -- \
     touch /dgraph/doneinit
     ```
 
     And alpha 2:
 
     ```bash
-    kubectl exec -t dgraph-dgraph-alpha-2 -c dgraph-dgraph-alpha-init -- \
+    kubectl exec -t {{< param application_name >}}-baas-alpha-2 -c {{< param application_name >}}-baas-alpha-init -- \
     touch /dgraph/doneinit
     ```
