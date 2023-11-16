@@ -57,8 +57,8 @@ Before you start, ensure you have the following:
      ```bash
      kubectl exec -it <GRAFANA_POD_NAME> -- /bin/bash 
 
-     <GRFANA_POD_NAME>:~$ cd /home/grafana
-     <GRFANA_POD_NAME>:~$ sha256sum -c backup.sums
+     <GRAFANA_POD_NAME>:~$ cd /home/grafana
+     <GRAFANA_POD_NAME>:~$ sha256sum -c backup.sums
      ./<LATEST_DATA_FILE>.tar.gz: OK
      ./<LATEST_CONF_FILE>.tar.gz: OK
 
@@ -78,7 +78,10 @@ Before you start, ensure you have the following:
 
 1. Move over the top of current configuration. 
 
-     | Typically some files are configured as a kubernetes [`ConfigMap`](https://kubernetes.io/docs/concepts/configuration/configmap/) and may need to be configured as part of installation. The following command will prompt when it is going to overwrite a file, and if it has the permissions to do so.
+     {{< notice note >}}
+Typically some files are configured as a Kubernetes [`ConfigMap`](https://kubernetes.io/docs/concepts/configuration/configmap/) and may need to be configured as part of installation. The following command prompts when it is going to overwrite a file, and if it has the permissions to do so.
+     {{< /notice >}}
+
 
      ```bash
      mv /home/grafana/usr/share/grafana/conf/* /usr/share/grafana/conf/
