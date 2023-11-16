@@ -21,7 +21,6 @@ cascade:
     ## namespace
     kubectl get namespace
     ```
-    
 ---
 
-A collection of pages to look up values for schemas, definitions, and anything else related to using Rhize. 
+Topics about how to use Rhize to query data, build and run workflows, and build frontends.
