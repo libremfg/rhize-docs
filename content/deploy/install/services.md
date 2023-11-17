@@ -138,6 +138,33 @@ Install NATS with these steps:
     helm install nats -f nats.yaml {{< param application_name >}}/nats -n {{< param application_name >}}
     ```
 
+### InfluxDB2
+
+[InfluxDB2](http://influxdata.com) is the time-series database. 
+
+Install InfluxDB2 with these steps:
+
+1. Add InfluxDB2 helm chart repository
+
+    ```bash
+    helm repo add influxdata https://helm.influxdata.com
+    ```
+
+1. Create an overrides file for InfluxDB2 and edit any necessary overrides.
+
+    ```yaml influx.yaml
+    env:
+    # Turn off Telemetry
+    env:
+    - name: INFLUXDB_REPORTING_DISABLED
+        value: "true"
+    ```
+
+1. Install InfluxDB2
+
+    ```bash
+    helm install influxdb2 -f ./influx.yaml influxdata/influxdb2 -n {{< param application_name >}}
+    ```
 
 ### Tempo
 
