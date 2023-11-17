@@ -288,6 +288,22 @@ After installing all other services, install the UI with these steps:
 If the install is successful, the UI is available on its
 [default port]({{< ref "default-ports" >}}).
 
+## Install Audit (Optional)
+
+
+Audit captures data changes to that an audit log report can be accurately created.
+
+
+Install audit with these steps:
+
+1. Modify the Audit Helm file as needed.
+2. Install with Helm:
+
+    ```bash
+    helm install audit -f audit.yaml libre/audit -n {{< param application_name >}}
+    ```
+
+
 ## Troubleshoot
 
 - **Is my service running?**
