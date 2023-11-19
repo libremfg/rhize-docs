@@ -1,9 +1,9 @@
 ---
 title: 'Work masters reference'
 date: '2023-11-15T16:29:21-03:00'
-draft: true
+draft: false
 categories: ["reference"]
-description: 
+description:
 weight: 100
 menu:
   main:
@@ -83,13 +83,12 @@ Along with the [Global properties](#global-object-fields), an equipment class ca
 
 | Properties      | Description                              |
 |-----------------|------------------------------------------|
-| 
+|
 | Name            | Name of the property                     |
 | Description     | A freeform text to describe the property |
 | Unit of measure | The properties (unit of measure)[#uom]   |
 <!--
 | Expression      |                                          | -->
-
 
 ## Data Sources
 
@@ -113,7 +112,6 @@ Each data source has topics with the following fields:
 | Description       |             |
 
 Some data sources, such as OPC UA, have methods for RPC calls.
-
 
 ## Material definition
 
@@ -144,7 +142,7 @@ A _material class_ is {{< dfn "material class" >}}.
 | Hierarchy scope        | the [hierarchy scope](#hierarchy-scope) that it belongs to                                                                                                                                                              |
 | Includes properties of | One or more material class to inherit properties from                                                                                                                                                                            |
 | Is assembled from      | Material classes that make this material                                                                                                                                                                                |
- 
+
 Material classes may have an indefinite number of properties with parameters for the following fields:
 - Value
 - [Unit of measure](#uom)
@@ -246,7 +244,6 @@ You can create units of measure in the UI and give them the following parameters
 - Name
 - Data type
 
-
 ## Process segment
 
 A _process segment is a {{< dfn "process segment" >}}.
@@ -269,8 +266,7 @@ You can add additional parameters for:
 - Value
 - Unit of measure
 
-
-## Work Master 
+## Work Master
 
 A _work master_ is {{< dfn "work master" >}}.
 
@@ -280,4 +276,3 @@ A _work master_ is {{< dfn "work master" >}}.
 |--------------------------|-------------------------------------------------------------------------------|
 | Workflow type            | One of: ` Inventory`, `maintenance`, `mixed`, `production`, `quality` |
 | Workflow specification   | An associated BPMN workflow                                           |
-
