@@ -1,11 +1,11 @@
 +++
-title = "Stream Data"
+title = "Track changes"
 description = "Streaming data in and out of RHIZE"
 [menu.main]
 name = "Stream Data"
 identifier = "stream-data"
 weight = 300
-parent = "how-to"
+parent = "pubsub"
 +++
 
 Stream data in and out of Rhize.
