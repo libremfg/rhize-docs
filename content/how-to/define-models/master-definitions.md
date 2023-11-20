@@ -18,9 +18,6 @@ To make a production object visible to the Rhize data hub, you must define it as
 These sections document all the objects that you can add through the UI, and the fields and properties that you can associate with them.
 All these models are based on the ISA-95 standard, mostly from [Part 2](https://www.isa.org/products/ansi-isa-95-00-02-2018-enterprise-control-system-i), which describes the role-based equipment hierarchy.
 
-Often, one object references another: for example, a piece of equipment may belong to an equipment class, have a unit of measure as a property, and be associated with process segment.
-These associations form nodes and edges in your knowledge graph, so the more information relationships that you accurately create, the better.
-
 
 
 ## Global object fields
