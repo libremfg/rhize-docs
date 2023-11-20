@@ -7,14 +7,13 @@ description:
 weight: 100
 menu:
   main:
-    parent: how-to
+    parent: how-to-define
     identifier:
 rule:  A boolean expression that, if it evaluates to `true`, triggers or creates an instance of a workflow.
 
 ---
 
 To make a production object visible to the Rhize data hub, you must define it as a data model.
-For a no-code interface to define an object, use the Work masters UI.
 
 These sections document all the objects that you can add through the UI, and the fields and properties that you can associate with them.
 All these models are based on the ISA-95 standard, and most are explictely defined in Part two, which describes the Role-based equipment hierarchy.
@@ -22,27 +21,21 @@ All these models are based on the ISA-95 standard, and most are explictely defin
 Often, one object references another: for example, a piece of equipment may belong to an equipment class, have a unit of measure as a property, and be associated with process segment.
 These associations form nodes and edges in your knowledge graph, so the more information relationships that you accurately create, the better.
 
-{{< notice "note" >}}
-
-The Work masters UI works best for objects you infrequently update.
-For batch uploads, consider using the GraphQL API or a BPMN process.
-
-{{< /notice >}}
 
 
 ## Global object fields
 
 All objects that you define must have a unique name.
-Additionally, most objects have the following fields
+Additionally, most objects have the following fields:
 
-| Global field | Description                                                                           |
-|--------------|---------------------------------------------------------------------------------------|
-| Version      | The version of the object                                                             |
+| Global field | Description                                                                            |
+|--------------|----------------------------------------------------------------------------------------|
+| Version      | The version of the object (and each version has a [state](#version-state)              |
 | Description  | Freeform text to describe what the object does and help colleagues understand its role |
 
 ### Version states
 
-Each version state can have the following states:
+Each version of an object can have the following states:
 - `Draft`
 - `Active`
 - `For review`
@@ -51,9 +44,9 @@ Each version state can have the following states:
 ## Equipment
 
 A piece of _equipment_ is a tool with a defined role in a [process segment](#process-segment).
-In a baking process, an example of equipment might be a specific brownie oven.
+For example, in a baking process, equipment might be a specific brownie oven.
 
-Along with the preceding fields, you can also connect an equipment item to a [data source](#data-source), add additional properties, and toggle it to be active or inactive.
+Along with the following fields, you can also connect an equipment item to a [data source](#data-source), add additional properties, and toggle it to be active or inactive.
 
 {{% introTable.inline "equipment" %}}
 {{ $term := (.Get 0) }}
@@ -79,7 +72,7 @@ For example, in a baking process, an equipment class might be the category of al
 <!---
 Equipment has **Rules**, which... -->
 
-Along with the [Global properties](#global-object-fields), an equipment class can include an indefinite number of properties with the following fields.
+Along with the [Global properties](#global-object-fields), an equipment class can include an indefinite number of properties with the following fields:
 
 | Properties      | Description                              |
 |-----------------|------------------------------------------|
@@ -93,6 +86,7 @@ Along with the [Global properties](#global-object-fields), an equipment class ca
 ## Data Sources
 
 A _Data source_ is a source of real-time data that is collected by the Rhize agent.
+The general fields for a data source are as follows:
 
 | General fields           | Description                                                                         |
 |--------------------------|-------------------------------------------------------------------------------------|
@@ -102,14 +96,15 @@ A _Data source_ is a source of real-time data that is collected by the Rhize age
 | password                 | If needed, password for [Agent authentication]({{< ref "agent-configuration" >}})    |
 | certificate              | If needed, certificate for [Agent authentication]({{< ref "agent-configuration" >}}) |
 
-Each data source has topics with the following fields:
+Additionally, each data source can have _topics_ that Rhize should be able to subscribe to.
+Each topic has the following fields:
 
-| Topics fields     | Description |
-|-------------------|-------------|
-| Data type         |             |
-| Deduplication key |             |
-| Label             |             |
-| Description       |             |
+| Topic field       | Description                                                                   |
+|-------------------|-------------------------------------------------------------------------------|
+| Data type         | The data type Rhize expects to find when it receives data from that topic     |
+| Deduplication key | The field that NATS uses to de-duplicate messages from multiple data sources. |
+| Label             | The name of the topic on the side of the data source                                                                               |
+| Description       |                                                                               |
 
 Some data sources, such as OPC UA, have methods for RPC calls.
 
