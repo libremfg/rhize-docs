@@ -16,7 +16,7 @@ rule:  A boolean expression that, if it evaluates to `true`, triggers or creates
 To make a production object visible to the Rhize data hub, you must define it as a data model.
 
 These sections document all the objects that you can add through the UI, and the fields and properties that you can associate with them.
-All these models are based on the ISA-95 standard, and most are explictely defined in Part two, which describes the Role-based equipment hierarchy.
+All these models are based on the ISA-95 standard, mostly from [Part 2](https://www.isa.org/products/ansi-isa-95-00-02-2018-enterprise-control-system-i), which describes the role-based equipment hierarchy.
 
 Often, one object references another: for example, a piece of equipment may belong to an equipment class, have a unit of measure as a property, and be associated with process segment.
 These associations form nodes and edges in your knowledge graph, so the more information relationships that you accurately create, the better.
@@ -42,6 +42,7 @@ Each version of an object can have the following states:
 - `Deprecated`
 
 ## Equipment
+
 
 A piece of _equipment_ is a tool with a defined role in a [process segment](#process-segment).
 For example, in a baking process, equipment might be a specific brownie oven.
@@ -85,7 +86,7 @@ Along with the [Global properties](#global-object-fields), an equipment class ca
 
 ## Data Sources
 
-A _Data source_ is a source of real-time data that is collected by the Rhize agent.
+A _data source_ is a source of real-time data that is collected by the Rhize agent.
 The general fields for a data source are as follows:
 
 | General fields           | Description                                                                         |
@@ -103,8 +104,8 @@ Each topic has the following fields:
 |-------------------|-------------------------------------------------------------------------------|
 | Data type         | The data type Rhize expects to find when it receives data from that topic     |
 | Deduplication key | The field that NATS uses to de-duplicate messages from multiple data sources. |
-| Label             | The name of the topic on the side of the data source                                                                               |
-| Description       |                                                                               |
+| Label             | The name of the topic on the side of the data source                          |
+| Description       | A freeform text field to add context                                          |
 
 Some data sources, such as OPC UA, have methods for RPC calls.
 
@@ -126,7 +127,7 @@ Materials may have an indefinite number of properties with parameters for the fo
 
 ## Material Class
 
-A _material class_ is {{< dfn "material class" >}}.
+A _material class_ is a group of material with a shared purpose in the manufacturing process.
 
 {{% introTable.inline "material class" /%}}
 
@@ -134,8 +135,8 @@ A _material class_ is {{< dfn "material class" >}}.
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Assembly type          | Can be one of: <ol type="a"><li>Logical: the components of the material are not necessarily physically connected</li><li>Physical: the components of the material are physically connected or in the same location</li><ol> |
 | Relationship           | Can be one of: <ol type="a"><li>`Permanent`, if a material that can't be split from the production process</li><li> `Transient`, for temporary material in assembly, such as a pallet</li></ol>
-| Hierarchy scope        | the [hierarchy scope](#hierarchy-scope) that it belongs to                                                                                                                                                              |
-| Includes properties of | One or more material class to inherit properties from                                                                                                                                                                            |
+| Hierarchy scope        | The [hierarchy scope](#hierarchy-scope) that material class belongs to                                                                                                                                                              |
+| Includes properties of | One or more material classes to inherit properties from                                                                                                                                                                            |
 | Is assembled from      | Material classes that make this material                                                                                                                                                                                |
 
 Material classes may have an indefinite number of properties with parameters for the following fields:
@@ -157,7 +158,7 @@ A _person_ is a unique member of [personnel class](#personnel-class).
 
 ## Personnel Class
 
-A _personnel class_ is {{< dfn "personnel class" >}}.
+A _personnel class_ is a grouping of persons whose work shares a definite purpose in the manufacturing process.
 In a baking process, an example of a personnel class may be `oven_operators`.
 
 {{% introTable.inline "personnel class" /%}}
@@ -179,28 +180,9 @@ For example, in a baking process, an operational location class may be `northwin
 | Operational location classes | Zero or more [operational location classes](#operational-location-class) to inherit properties from                         |
 | Map view                     | Where the location is on the map                                                  |
 
-## Physical Asset
-
-A _physical asset_ is portable or swappable equipment.
-In a baking process, a physical asset might be the laser jet printer which adds labels to the boxes (and could be used in many segments across the plant).
-
-In many cases, you only need to model [equipment](#equipment).
-
-
-
-## Physical asset class
-
-A _physical asset class_ is a class of [physical assets](#physical asset).
-
-The physical asset class has properties for:
-- ClassType
-- Value
-- Unit of measure
-
-
 ## Operational Location Class
 
-An operational location class is a grouping of operational locations for a defined purpose.
+An _operational location_ class is a grouping of [operational locations](#operational-locations) for a defined purpose.
 For example, in a baking process, an operational location class may be `Kitchens`
 
 {{% introTable.inline "operational location class" /%}}
@@ -211,10 +193,29 @@ For example, in a baking process, an operational location class may be `Kitchens
 | Inherit Operational location class | The Operational location classes to inherit properties from                       |
 
 
+
+## Physical Asset
+
+A _physical asset_ is portable or swappable equipment.
+In a baking process, a physical asset might be the laser jet printer which adds labels to the boxes (and could be used in many segments across the plant).
+
+In many cases, your process may need to model only [equipment](#equipment), not physical assts.
+
+
+
+## Physical asset class
+
+A _physical asset class_ is a class of [physical assets](#physical-assets).
+
+The physical asset class has properties for:
+- ClassType
+- Value
+- Unit of measure
+
+
 ## Operations Definition
 
-An _operations definition_ is {{< dfn "operations definition" >}}.
-For example, in a baking process, an operations definition might be `Brownie_Master_Recipe`.
+An _operations definition_ defines the resources required to perform an operation, including for production, quality, maintenance, and inventory, from the perspective of the level-4 enterprise control systems.
 
 {{% introTable.inline "operations definition" /%}}
 
@@ -233,7 +234,7 @@ While hierarchy scope is often connected to an [operational location](#operation
 
 ## Units of Measure {#uom}
 
-A _Unit of measure_ is {{< dfn "unit of measure" >}}.
+A _Unit of measure_ is a defined unit to consistely compare values, duratation or quantities.
 
 You can create units of measure in the UI and give them the following parameters:
 - Name
@@ -241,7 +242,8 @@ You can create units of measure in the UI and give them the following parameters
 
 ## Process segment
 
-A _process segment is a {{< dfn "process segment" >}}.
+A _process segment_ is a step in a manufacturing activity that is visible to a business process, grouping the necessary personnel, material, equipment, and physical assets.
+In a baking process, an example segment might be `mixing`.
 
 You can associate specifications for:
 - Equipment, Material, Personnel, and Physical Assets
@@ -263,7 +265,8 @@ You can add additional parameters for:
 
 ## Work Master
 
-A _work master_ is {{< dfn "work master" >}}.
+A _work master_ is a template for a job order from the perspective of the level-3 (MES/MOM) systems.
+In a baking process, an example work master might be `Brownie Recipe`.
 
 {{% introTable.inline "work master" /%}}
 
