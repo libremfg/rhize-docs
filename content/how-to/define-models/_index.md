@@ -1,14 +1,14 @@
 ---
 title: 'Define production models'
 date: '2023-09-22T14:50:39-03:00'
-draft: true
+draft: false
 categories: "how-to"
 description:
 weight: 100
 menu:
   main:
     parent: how-to
-    identifier: 
+    identifier: how-to-define
 ---
 
 To connect data, you must define it as a model in the Rhize data hub.

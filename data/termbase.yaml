@@ -1,40 +1,57 @@
 - term: Agent
   definition: >-
     The Rhize agent bridges your plant processes with the Rhize data hub.
-    It collects data that is emitted during data the manufacturing process and publishes it to the NATS message broker.
+    It collects data that is emitted during the manufacturing process and publishes it to the NATS message broker.
 - term: Andon
   definition: >-
     A system that alerts manufacturing teams about problems in processes or quality.
 - term: Business Process Model and Notation
   abbr: BPMN
-  definition: A standardized graphical notation used to represent business processes in an intuitive, visual way.
+  definition: A standardized graphical notation used to represent business processes in an intuitive, visual way
   links:
     - text: BPMN Specification 2.0
       uri: https://www.omg.org/spec/BPMN/2.0/PDF
 - term: Catch event
   definition: >-
     In BPMN, a catch event reacts to a trigger (compared to a <a href="#throw-event">throw event</a>, which returns some result). Only start and intermediate events can catch.
+- term: Data source
+  definition: A source of real-time data that is collected by the <a href="#agent">Rhize agent</a>, such as an MQTT or OPC UA device
+- term: Equipment
+  definition: A tool used in the production process. Equipment has a role in a process segment to convert material into a final good
+  tags: "s95"
+- term: Equipment class
+  definition: An equipment class is a grouping of equipment with a definite purpose
+  tags: "s95"
 - term: Event
-  definition: Discrete occurrences or notifications that represent changes or actions within a system.
+  definition: Discrete occurrences or notifications that represent changes or actions within a system
 - term: Event-driven architecture
   abbr: EDA
-  definition: A software design pattern that revolves around the concept of events and event-driven messaging.
+  definition: A software design pattern that revolves around the concept of events and event-driven messaging
   links:
     - text: Rhize architecture
       uri: /architecture/overview/
 - term: Event-driven data updates
-  definition: When an event leads to an update in the real-time database.
+  definition: When an event leads to an update in the real-time database
   links:
     - text: Rhize architecture
       uri: /architecture/overview/
+- term: Finished goods
+  definition: The final product. Material becomes finished goods when it requires no more processing or production
+  tags: "s95"
+- term: Hierarchy scope
+  definition: The scope of the exchanged information, such as a site or area, for which the information is relevant. The scope identifies associated instances of objects such as material, personnel, and equipment
+  tags: "s95"
+- term: Instance
+  definition: An identifiable member of a manufacturing class, like a material or process segment, that can be tracked and scheduled
+  tags: "s95"
 - term: Laboratory information management system
   abbr: LIMS
-  definition: Software that tracks laboratory data, including samples, experiments, and workflows.
+  definition: Software that tracks laboratory data, including samples, experiments, and workflows
 - term: Manufacturing execution system
   abbr: MES
-  definition: A system in a manufactoring process that tracks and documents the transformation of raw materials to finished goods.
+  definition: A system in a manufacturing process that tracks and documents the transformation of raw materials to finished goods
   links:
-    - text: Manufactoring execution system
+    - text: Manufacturing execution system
       uri: https://en.wikipedia.org/wiki/Manufacturing_execution_system
 - term:
     Manufacturing data hub
@@ -44,6 +61,12 @@
   links:
     - text: Data hub architecture
       uri: /concepts/datahub/
+- term: Material
+  definition: Everything required to produce a finished good. They include raw materials, intermediate materials, and collections of parts
+  tags: ["s95"]
+- term: Material class
+  definition: A group of material with a shared purpose in the manufacturing process
+  tags: "s95"
 - term: NATS
   definition:
     Connective infrastructure to address, discover, and exchange messages in a distributed system.
@@ -52,6 +75,12 @@
     - text: Official NATS documentation
       uri: https://docs.nats.io/nats-concepts/overview
 
+- term: Operational location
+  definition: Where resources are expected to be located in a plant
+  tags: "s95"
+- term: Operations definition
+  definition: The resources required to perform an operation, including for production, quality, maintenance, and inventory, from the perspective of the level-4 enterprise control systems.
+  tags: "s95"
 - term: Overall Equipment Effectiveness
   definition: >-
     A measure of manufacturing productivity.
@@ -61,12 +90,32 @@
       - text: An understanding of OEE
         uri: https://blog.isa.org/an-understanding-of-overall-equipment-effectiveness-oee
 
+- term: Personnel class
+  definition: A grouping of persons whose work shares a definite purpose in the manufacturing process
+  tags: "s95"
+- term: Pattern (process segment)
+  definition: A <a href="#process-segment">process segment</a> that creates a pattern or template for other patterns or process segments to follow
+  tags: "s95"
+- term: Physical asset
+  definition: A physical piece of equipment with an ID
+- term: Process segment
+  definition: A step in a manufacturing activitity that is visible to a business process, grouping the necessary personnel, material, equipment, and physical assets
+  tags: "s95"
+- term: Role-based equipment model
+  definition: A definition of equipment based on the level-3 and level-4 functions and activities that it performs
+  tags: "s95"
 - term: Sink
   definition: >-
     The destination of a data flow.
 - term: Throw event
   definition: >-
     In BPMN, a throw event returns some response (compared to a <a href="#catch-event">catch event</a>, which reacts to some trigger). Only intermediate and end events can throw.
+- term: Unit of measure
+  definition: A defined unit to consistently compare values, duration or quantities
+  tags: "s95"
 - term: Warehouse management system
   definition: >-
     A system to organize processes and policies of warehouses. It may include processes to manage and track inventory and exchange data.
+- term: Work master
+  definition: A template for a job order, corresponding to an operations and process segment, from the perspective of the level-3 (MES/MOM) systems.
+  tags: "s95"
