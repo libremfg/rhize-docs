@@ -30,7 +30,7 @@ Additionally, most objects have the following fields:
 
 | Global field | Description                                                                            |
 |--------------|----------------------------------------------------------------------------------------|
-| Version      | The version of the object (and each version has a [state](#version-state)              |
+| Version      | The version of the object (and each version has a [state](#version-state))              |
 | Description  | Freeform text to describe what the object does and help colleagues understand its role |
 
 ### Version states
