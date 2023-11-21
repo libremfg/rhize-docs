@@ -5,7 +5,7 @@ menu:
   main:
     identifier: stream-data
     weight: 300
-    parent: pubsub
+    parent: howto-pubsub
 ---
 
 

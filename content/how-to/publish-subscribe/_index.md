@@ -8,5 +8,5 @@ weight: 150
 menu:
   main:
     parent: how-to
-    identifier: pubsub
+    identifier: howto-pubsub
 ---
