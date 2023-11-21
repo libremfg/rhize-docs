@@ -8,7 +8,7 @@ description: >-
 weight: 100
 menu:
   main:
-    parent: how-to-definej
+    parent: how-to-define
     identifier: master-definitions
 
 ---
