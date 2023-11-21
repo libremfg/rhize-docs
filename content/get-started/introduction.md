@@ -67,7 +67,7 @@ deployment is version-controlled, and your system can use rolling upgrades with 
 - **Built on open standards.**
 Rhize is based on open standards, like ISA-95, and open protocols, like MQTT.
 Open industry standards and protocols ensure that the application and your manufacturing processes speak a common language.
-Rhize heavily uses open-source software, which brings interoperability and robust tooling ecosystems.
+Rhize heavily uses open-source software, which brings interoperability, reduced vendor lock, and robust tooling ecosystems.
 
   
 ## A tool that fits to your processes
@@ -80,5 +80,5 @@ Our design philosophy empowers manufacturing operators to shape their tool for t
 Some examples of the flexibility include:
 
 - **A headless MES**. While Rhize has a graphical interface, all data is reachable through a single API endpoint. This means your teams can rapidly build custom frontends―and do it with the most comfortable API for frontend development, GraphQL.
-- **No code interface**. Model your schema and execute processes using BPMN, a visual programming language. The visual interface makes Rhize and your manufacturing automation accessible to the widest possible audience.
+- **Low-code interface**. Model your schema and execute processes using BPMN, a visual programming language. The visual interface makes Rhize and your manufacturing automation accessible to the widest possible audience.
 - **Generic data collection**. Rhize receives data from all levels of the manufacturing process. The NATS broker publishes and subscribes to low-level data from MQTT and OPC-UA, but the database can also receive ERP inventories and documents sent over HTTP.

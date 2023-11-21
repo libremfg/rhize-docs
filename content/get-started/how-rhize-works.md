@@ -92,7 +92,7 @@ Finally, the time-series component of the database accepts real-time data stream
 The Rhize application comes with a graphical interface.
 Some uses include:
 - **Configure BPMN rules.** A low-code tool for analysts and operators to create programmable events.
-- **Upload master data.**  Based on the ISA-85 object models.
+- **Upload master data.**  Based on the ISA-95 object models.
 - **Administrate.** Authenticate and scope access to systems and personnel.
 
 The UIs sit on top of the GraphQL API gateway, which serves as a programming interface for data analysis.
