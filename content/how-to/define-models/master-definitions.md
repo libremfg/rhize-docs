@@ -3,13 +3,13 @@ title: 'Master definitions and fields'
 date: '2023-11-15T16:29:21-03:00'
 draft: false
 categories: ["reference"]
-description:
+description: >-
+  A reference of all manufacturing data objects and properties that you can create in the Rhize UI
 weight: 100
 menu:
   main:
-    parent: how-to-define
+    parent: how-to-definej
     identifier: master-definitions
-rule:  A boolean expression that, if it evaluates to `true`, triggers or creates an instance of a workflow.
 
 ---
 

@@ -3,7 +3,7 @@ title: 'Create objects from the UI'
 date: '2023-11-20T15:36:03-03:00'
 draft: false
 categories: ["how-to"]
-description: How to Ui
+description: How to create manufacturing objects from the Rhize UI.
 weight: 010
 menu:
   main:
