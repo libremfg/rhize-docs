@@ -269,12 +269,16 @@ If the install is successful, the UI is available on its
 
 ## Troubleshoot
 
+For general Kubernetes issues, the [Kubernetes dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) is great for troubleshooting, and you can configure it to be accessible through the browser.
+
+For particular problems, try these commands:
+
 - **Is my service running?**
 
-   To check that an installed service is running, use this command:
+   To check deployment status, use this command:
 
    ```bash
-    kubectl get pods
+    kubectl get deployments
     ```
 
     Look for the pod name and its status.
