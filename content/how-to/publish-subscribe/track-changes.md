@@ -1,27 +1,27 @@
-+++
-title = "Track changes"
-description = "Streaming data in and out of RHIZE"
-[menu.main]
-name = "Stream Data"
-identifier = "stream-data"
-weight = 300
-parent = "pubsub"
-+++
+---
+title: Track changes (CDC)
+description: Streaming data in and out of RHIZE
+menu:
+  main:
+    identifier: stream-data
+    weight: 300
+    parent: pubsub
+---
 
-Stream data in and out of Rhize.
 
-## Publishing Changes with Change-Data-Capture
-
-You can use change data capture (CDC) to track data changes over time; including
-mutations and drops in your database. RHIZE's CDC implementation lets you use
-Kafka, Nats or a local file as a *{{< abbr "sink" >}}* to store CDC updates streamed by RHIZE's Alpha
+You can use _change data capture_ (CDC) to track data changes over time, including
+mutations and drops in your database.
+Rhize's CDC implementation can use
+Kafka, Nats or a local file as a *{{< abbr "sink" >}}* to store CDC updates streamed by Rhize's Alpha
 leader nodes.
 
-When CDC is enabled, RHIZE streams events for all `set` and `delete` mutations,
-except those that affect password fields; along with any drop  events. Live
-Loader events are recorded by CDC, but Bulk Loader events aren't.
+When CDC is enabled, Rhize streams events for:
+- All `set` and `delete` mutations, except those that affect password fields
+- Drop events.
 
-CDC events are based on changes to Raft logs. So, if the sink is not reachable
+Live Loader events are recorded by CDC, but Bulk Loader events aren't.
+
+CDC events are based on changes to Raft logs. So, if the sink is unreachable
 by the Alpha leader node, then Raft logs expand as events are collected on
 that node until the sink is available again. You should enable CDC on all RHIZE
 Alpha nodes to avoid interruptions in the stream of CDC events.
@@ -63,7 +63,6 @@ with the `--cdc` command and the sub-option shown below, as follows:
 ```bash
 dgraph alpha --cdc "nats=nats://system:system@localhost:4222"
 ```
-
 
 
 ## CDC command reference
