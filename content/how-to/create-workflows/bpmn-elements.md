@@ -58,7 +58,7 @@ All end events are throw events; that is, they terminate with some output&mdash;
 Intermediate events may throw or catch.
 
 Rhize supports various event types to categorize an event, as described in the following sections.
-As with [Gateways]({{< ref "gateways" >}}) and [Activities]({{< ref "activities" >}}), event types are marked by their icons.
+As with [Gateways](#gateways) and [Activities](#activities), event types are marked by their icons.
 Throwing events are represented with icons that are filled in.
 
 ### Message
@@ -123,7 +123,7 @@ On the Rhize platform, most activities are _tasks_, work that cannot be broken d
 Tasks are drawn with rectangles with rounded corners.
 Besides tasks, you can also use _call activities_, processes which call and invoke other processes.
 
-As with [Gateways]({{< ref "gateways" >}}) and [events]({{< ref "events" >}}), service and call activities types are marked by their icons.
+As with [Gateways](#gateways) and [events](#events), service and call activities types are marked by their icons.
 
 ### Service task templates
 
@@ -248,7 +248,7 @@ They represent mechanisms that either allow or disallow a passage.
 BPMN notation represents gateways as diamonds with single thin lines, as is common in many diagrams with decision flows.
 Besides decisions, however, Rhize's BPMN notation also includes parellel gateways.
 
-As with [Events]({{< ref "events" >}}) and [Activities]({{< ref "activities" >}}), gateway types are marked by their icons.
+As with [Events](#events) and [Activities](#activities), gateway types are marked by their icons.
 
 {{< figure
 alt="Gateway with two branches"
