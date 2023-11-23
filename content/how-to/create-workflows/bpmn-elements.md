@@ -135,6 +135,8 @@ Transform JSON data with a [JSONata expression](https://docs.jsonata.org/overvie
 | Max Payload size | {{< param boilerplate.max_payload >}} |
 
 
+
+
 ### GraphQL Query
 
 Run a [GraphQL query](https://graphql.com/learn/the-query/)
@@ -232,7 +234,6 @@ src="/images/bpmn/bpmn-gateway-overview.svg"
 Marked by an "X" icon, an _exclusive gateway_ represents a point in a process where only one path is followed.
 In some conversations, exclusive gateways are also called _XORs_.
 
-Exclusive gateways can only branch. That is, they cannot join multiple flows.
 If a gateway has multiple sequence flows, all flows except one must have a conditional [JSONata expression](https://docs.jsonata.org/1.7.0/overview) that the engine can evaluate.
 To designate a default, leave one flow without an expression.
 
@@ -242,6 +243,8 @@ src="/images/bpmn/rhize-bpmn-exclusive-gateway.png"
 width="50%"
 caption="<em>An exclusive gateway with a condition and default. Configure conditions as JSONata expressions</em>"
 >}}
+
+Exclusive gateways can only branch. That is, they cannot join multiple flows.
 
 ### Parallel gateway
 
@@ -258,3 +261,16 @@ width="50%"
 caption="<em>Parallel gateways are always paired. The first gateway branches. The second joins the flows.</em>"
 >}}
 
+
+## JSONata expression syntax
+
+Besides service tasks, many of the preceding elements can have JSONata expressions.
+For example, an exclusive gateway requires a JSONata expression for all but the default flow.
+
+The expression has the following syntax:
+- It must begin with an `=`
+- If you reference a variable, you must prefix it with `$.`
+
+    ```json
+    = $.varName > 100
+    ```
