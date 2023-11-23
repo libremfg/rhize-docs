@@ -1,5 +1,5 @@
 ---
-title: 'Exchange event messages'
+title: 'Connect process events'
 date: '2023-09-22T14:50:39-03:00'
 draft: false
 categories: "how-to"
