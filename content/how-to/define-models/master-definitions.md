@@ -86,6 +86,8 @@ Along with the [Global properties](#global-object-fields), an equipment class ca
 ## Data Sources
 
 A _data source_ is a source of real-time data that is collected by the Rhize agent.
+For example, in a baking process, a data source might be an OPC UA server that sends readings from an oven thermometer.
+
 The general fields for a data source are as follows:
 
 | General fields           | Description                                                                         |
