@@ -90,42 +90,25 @@ Throwing events are represented with icons that are filled in.
 
 
 
-<!---
-### Signal
-![An signal event](/images/bpmn/bpmn-signal-event.svg)
-- Purpose: An event that catches or throws a signal
-- Dimension: Start, intermediate, end
-- Example: 
-### Conditional
-![An conditional event](/images/bpmn/bpmn-conditional-event.svg)
-- Purpose: An trigger event caught when some condition is true.
-- Icon: 
-- Example: A sensor reading exceeds 100 degrees celsius (starting a process).
-- Dimension: Start, intermediate
-### Compensation
-![An compensation event](/images/bpmn/bpmn-compensation-event.svg)
-- Purpose: Undo events that already happened
-- Dimension: intermediate, End
-- Example: A failed quality check halts a batch process.
-### Escalation
-![Escalation events](/images/bpmn/bpmn-escalation-event.svg)
-- Purpose: An escalation event caught or thrown
-- Dimension: Start, intermediate, end
-- Example: 
- -->
 
-
-## Activities
+## Service tasks
 
 In BPMN, an _activity_ is work performed within a business process.
 
 On the Rhize platform, most activities are _tasks_, work that cannot be broken down into smaller levels of detail.
 Tasks are drawn with rectangles with rounded corners.
-Besides tasks, you can also use _call activities_, processes which call and invoke other processes.
 
-As with [Gateways](#gateways) and [events](#events), service and call activities types are marked by their icons.
+{{< notice "note" >}}
+Besides tasks, you can also use [_call activities_](#call-activities), processes which call and invoke other processes.
+{{< /notice >}}
 
-### Service task templates
+A service task uses some service.
+In Rhize workflows, service tasks include HTTP calls (GraphQL and REST), database operations, and JSON manipulation.
+These service tasks come with templates.
+
+
+As with [Gateways](#gateways) and [events](#events), service task are marked by their icons.
+
 
 {{< figure
 caption="<small><em>Service tasks have a gear icon marker</em></small>"
@@ -134,16 +117,13 @@ src="/images/bpmn/bpmn-service-task.svg"
 width="100"
 >}}
 
-A service task uses some service.
-In Rhize workflows, service tasks include HTTP calls (GraphQL and REST), database operations, and JSON manipulation.
-These service tasks come with templates.
 
 To add a service task, select the change icon ("wrench"), then select **Service Task**.
 Use **Templates** to structure the service task call and response.
 
-The service task templates are as follows:
+The service task templates are as follows
 
-#### JSONata transform
+### JSONata transform
 
 Transform JSON data with a [JSONata expression](https://docs.jsonata.org/overview.html).
 
@@ -155,7 +135,7 @@ Transform JSON data with a [JSONata expression](https://docs.jsonata.org/overvie
 | Max Payload size | {{< param boilerplate.max_payload >}} |
 
 
-#### GraphQL Query
+### GraphQL Query
 
 Run a [GraphQL query](https://graphql.com/learn/the-query/)
 
@@ -168,7 +148,7 @@ Run a [GraphQL query](https://graphql.com/learn/the-query/)
 
 {{% param boilerplate.jsonata_response %}}
 
-#### GraphQL Mutation
+### GraphQL Mutation
 
 Run a [GraphQL mutation](https://graphql.com/learn/mutations/)
 
@@ -182,8 +162,6 @@ Run a [GraphQL mutation](https://graphql.com/learn/mutations/)
 ### Call REST API
 
 HTTP call to a REST API service.
-
-Description:
 
 | Call parameters    | Description                                                                        |
 |--------------------|------------------------------------------------------------------------------------|
@@ -217,20 +195,11 @@ Write values to topics of a datasource.
 | Data             | {{< param boilerplate.data_expression >}} |
 | Max Payload size | {{< param boilerplate.max_payload >}}     |
 
-
-<!---
-### JSON schema
-  - `Query body`
-  - `Variables`
-  - `Connection Timeout`
-  - `Max Payload size`
- -->
-
-### Call activities
+## Call activities
 
 ![Call activities have a task with an icon to expand](/images/bpmn/bpmn-call-activity.svg)
 
-A _call activity_ invokes another process defined in your BPMN interface.
+A _call activity_ invokes another workflow.
 In this flow, the process that contains the call is the _parent_, and the process that is called is the _child_.
 
 Besides the input and output variables, call activities have the following parameters:
@@ -289,8 +258,3 @@ width="50%"
 caption="<em>Parallel gateways are always paired. The first gateway branches. The second joins the flows.</em>"
 >}}
 
-<!---
-### Inclusive gateway
-### Event-based gateway
-### Complex gateway
- -->
