@@ -1,5 +1,5 @@
 ---
-title: 'Create workflows'
+title: 'Handle events'
 date: '2023-09-22T14:50:39-03:00'
 draft: false
 categories: "how-to"
