@@ -44,6 +44,8 @@ Each version of an object can have the following states:
 A piece of _equipment_ is a tool with a defined role in a [process segment](#process-segment).
 For example, in a baking process, equipment might be a specific brownie oven.
 
+Equipment also might be part of hierarchy of levels, starting with Enterprise and ending with granular levels such as `WorkUnit`.
+
 Along with the following fields, you can also connect an equipment item to a [data source](#data-source), add additional properties, and toggle it to be active or inactive.
 
 {{% introTable.inline "equipment" %}}
