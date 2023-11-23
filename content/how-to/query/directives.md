@@ -2,11 +2,11 @@
 title = "GraphQL Directives"
 description = "The list of all directives supported by Rhize's GraphQL implementation. Full details linked within for all directives available with GraphQL."
 categories = "reference"
-weight = 11
+weight = 200
 [menu.main]
   name = "Directives"
   identifier = "directives"
-  parent = "reference"
+  parent = "how-to-query"
 +++
 
 The list of all [directives](https://www.apollographql.com/docs/apollo-server/schema/directives/) supported by Rhize's implementation of Dgraph.
