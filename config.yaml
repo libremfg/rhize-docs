@@ -5,7 +5,6 @@ theme: hugo-docs
 sectionPagesMenu: main
 
 ignoreErrors:
-  - error-disable-taxonomy
 markup:
   goldmark:
     renderer:
@@ -49,5 +48,4 @@ security:
     urls:
       - .*
 params:
-  discourse: https://discuss.librebaas.io/
   site: librebaas-docs
