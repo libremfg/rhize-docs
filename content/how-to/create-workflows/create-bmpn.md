@@ -13,7 +13,7 @@ menu:
 
 
 This topic shows you how to use the BPMN UI to create event-driven workflows.
-To view the full list of elements and their parameters, refer to the [BPMN elements]({{< relref "bpmn-elements" >}}).
+To view the full list of elements and their parameters, refer to [BPMN elements]({{< relref "bpmn-elements" >}}).
 
 ## Prerequisites
 
@@ -84,7 +84,7 @@ This workflow publishes an alert if a reading from an oven sensor exceeds 100 de
 
 
 
-### Write quantities to the database
+### Write ERP material definition to database
 
 This workflow receives information from the ERP system about a new [material definition]({{< relref "../define-models/master-definitions#material-definition" >}}), extracts the values, then creates a new record in the database.
 
