@@ -20,7 +20,7 @@ To view the full list of elements and their parameters, refer to [BPMN elements]
 To create a workflow, you'll need:
 - [An installed environment](/deploy/install)
 - [Topics to publish and subscribe to]({{< relref "../publish-subscribe" >}})
-- The ability to [call the GraphQL API]({{< relref "query" >}}) and understand JSON.
+- The ability to [call the GraphQL API]({{< relref "../gql" >}}) and understand JSON.
 
 
 ## General procedures

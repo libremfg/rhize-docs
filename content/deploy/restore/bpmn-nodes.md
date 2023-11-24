@@ -45,4 +45,4 @@ To learn more, read the NATS topic on [Disaster recovery](https://docs.nats.io/r
 If an element in a BPMN workflow takes longer than 10 minutes, NATS ages the workflow out of the queue. The process continues, but if the pod executing the element dies or is interrupted, that workflow is permanently dropped.
 
 This ten-minute execution limit should be sufficient for any element in a BPMN process.
-Processes that take longer, such as cooling or fermentation periods, should be implemented as [BPMN event triggers]({{< relref "/how-to/create-workflows/bpmn-elements" >}}) or as polls that periodically check data sources between intervals of sleep.
+Processes that take longer, such as cooling or fermentation periods, should be implemented as [BPMN event triggers]({{< relref "/how-to/bpmn/bpmn-elements" >}}) or as polls that periodically check data sources between intervals of sleep.
