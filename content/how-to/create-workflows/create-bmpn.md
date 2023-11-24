@@ -100,7 +100,7 @@ For simplicity, assume the order has only these properties:
 {
   "MaterialDefinition": [
     {
-      "ID": "RM-8001276",
+      "Definition_ID": "RM-8001276",
       "Description": ["Sugar small bags 20kg"]
     }
   ]
@@ -108,22 +108,27 @@ For simplicity, assume the order has only these properties:
 ```
 
 1. Create a start event that subscribes to the correct topic, for example `orders`.
-1. Connect the start event to a JSONATA task saves the input as a variable, `newMaterial`.
+1. Connect the start event to a JSONATA task.
+1. In the **JSONata transform expression**, filter for only the fields you need, and map them to the field names accepted by the API:
+
+
+    ```js
+    $map($.MaterialDefinition, function($v) {
+        {
+            "id": $v.Definition_ID,
+            "description": $v.Description
+        }
+    })
+    ```
+
+    Name the output variable `newMaterial`.
+
 1. Connect the JSONata task to a GraphQL service task.
 1. Send `$.newMaterial` as the variable for the GraphQL mutation `addMaterialDefinition`.
-  In **Mutation body**Define the operation and fields to return.
+  In **Mutation body**, define the operation and fields to return.
   In **Variables,** add the values for the payload.
 
 {{% tabs %}}
-{{< tab "Variables" >}}
-```json
-{
-  "input":
-    { "id": "RM-8001276",
-    "description": "" }
-}
-```
-{{< /tab >}}
 {{< tab "Mutation" >}}
 ```js
 mutation newMaterial($input: [AddMaterialDefinitionInput!]!) {
@@ -134,6 +139,13 @@ mutation newMaterial($input: [AddMaterialDefinitionInput!]!) {
       _createdOn
     }
   }
+}
+```
+{{< /tab >}}
+{{< tab "Variables" >}}
+```json
+{
+  "input": $.newMaterial
 }
 ```
 {{< /tab >}}
@@ -161,4 +173,3 @@ For modularity, you can call workflows that you already defined.
     src="/images/bpmn/screenshot-rhize-bpmn-called-task-.png"
     width="20%"
     />
-
