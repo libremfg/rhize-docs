@@ -86,7 +86,7 @@ This workflow publishes an alert if a reading from an oven sensor exceeds 100 de
 
 ### Write ERP material definition to database
 
-This workflow receives information from the ERP system about a new [material definition]({{< relref "../define-models/master-definitions#material-definition" >}}), extracts the values, then creates a new record in the database.
+This workflow receives information from the ERP system about a new [material definition]({{< relref "../model/master-definitions#material-definition" >}}), extracts the values, then creates a new record in the database.
 
 <img
 src="/images/bpmn/screenshot-rhize-bpmn-graphql.png"
