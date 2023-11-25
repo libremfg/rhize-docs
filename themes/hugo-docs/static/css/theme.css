@@ -487,7 +487,7 @@ pre.collapsed .showmore:hover {
 #sidebar .sidebar-menu a {
   display: block;
   color: #a7a4a4;
-  font-size: 12px;
+  font-size: 16px;
 }
 #sidebar .sidebar-menu a:hover {
   color: #464646;
@@ -505,7 +505,7 @@ pre.collapsed .showmore:hover {
 }
 .topics .main-topic > a {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   color: black;
   /* display: block; */
   padding-bottom: 8px;
@@ -588,7 +588,7 @@ ul.sub-topics li a,
 #TableOfContents ul li a {
   color: inherit;
   display: inline-block;
-  font-size: 0.95em;
+  font-size: 1em;
   padding: 5px 0px;
 }
 .menu-header {
