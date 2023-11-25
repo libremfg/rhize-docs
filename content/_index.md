@@ -1,6 +1,6 @@
 +++
 date = "2017-03-20T19:35:35+11:00"
-title = "The Rhize manufacturing data hub"
+title = "The Rhize Manufacturing Data Hub"
 description = "User guides, deploy docs, references, and deep dives about the Rhize manufacturing data hub."
 [menu.main]
 name = "Home"
@@ -8,19 +8,23 @@ identifier = "home"
 weight = 0
 +++
 
-<div class="landing">
-  <div class="hero">
-    <p>
-      The Rhize Manufacturing Data Hub has been designed from the ground up to transform industrial data management. It is scalable, distributed, highly available, and ready for every level of a manufacturing operation.
-    </p>
+Rhize is a real-time, event-driven manufacturing data hub,
+Its use cases include:
 
-  </div>
+- As a headless MES to handle events in real time
+- A manufacturing knowledge graph for deep analysis.
+- A backend to build custom manufacturing applications.
+
+**All united in one application, which uses a commmon data model, and is accessible through a single endpoint.**
+
+<div class="landing">
+
   <div class="item">
     <div class="icon"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
     <a href="{{< relref "/get-started/introduction">}}">
       <h2>Introduction</h2>
       <p>
-      A data hub for real manufacturing problems, based on open standards and open source.
+      What is Rhize? How does it work?
       </p>
     </a>
   </div>
@@ -36,28 +40,28 @@ weight = 0
   </div>
   <div class="item">
     <div class="icon"><i class="fa fa-wrench" aria-hidden="true"></i></div>
-    <a href="{{< relref "/how-to">}}">
-      <h2>User guides</h2>
+    <a href="{{< relref "/how-to/bpmn">}}">
+      <h2>Model</h2>
       <p>
-      Model processes, write event-driven workflows, query, and build custom frontends.
-      </p>
-    </a>
-  </div>
-  <div class="item">
-    <div class="icon"><i class="lni lni-keyword-research" aria-hidden="true"></i></div>
-    <a href="{{< relref "/concepts/datahub">}}">
-      <h2>Concepts</h2>
-      <p>
-      Explanations about why and how Rhize works.
+      Define your production in a common data model.
       </p>
     </a>
   </div>
   <div class="item">
     {{< gql-icon >}}
-    <a  href="{{< relref "/reference">}}">
-      <h2>Reference</h2>
+    <a href="{{< relref "/how-to/gql">}}">
+      <h2>Query</h2>
       <p>
-      Look up syntax, definitions, parameters, and more
+      Use the manufacturing knowledge graph for analysis and custom frontends
+      </p>
+    </a>
+  </div>
+  <div class="item">
+    <a  href="{{< relref "/reference">}}">
+    <div class="icon"><i class="lni lni-keyword-research" aria-hidden="true"></i></div>
+      <h2>Handle events</h2>
+      <p>
+      Write custom frontends to monitor process and build pubsub MES.
       </p>
     </a>
   </div>
