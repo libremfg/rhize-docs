@@ -39,7 +39,7 @@ Its use cases include:
     </a>
   </div>
   <div class="item">
-    <div class="icon"><i class="fa fa-wrench" aria-hidden="true"></i></div>
+    <div class="icon"><i class="fa fa-object-group" aria-hidden="true"></i></div>
     <a href="{{< relref "/how-to/bpmn">}}">
       <h2>Model</h2>
       <p>
@@ -58,7 +58,7 @@ Its use cases include:
   </div>
   <div class="item">
     <a  href="{{< relref "/reference">}}">
-    <div class="icon"><i class="lni lni-keyword-research" aria-hidden="true"></i></div>
+    <div class="icon"><i class="fa fa-wrench" aria-hidden="true"></i></div>
       <h2>Handle events</h2>
       <p>
       Write custom frontends to monitor process and build pubsub MES.
