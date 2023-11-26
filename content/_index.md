@@ -8,14 +8,15 @@ identifier = "home"
 weight = 0
 +++
 
-Rhize is a real-time, event-driven manufacturing data hub,
-Its use cases include:
+Rhize is a real-time, event-driven manufacturing data hub.
 
-- As a headless MES to handle events in real time
-- A manufacturing knowledge graph for deep analysis.
-- A backend to build custom manufacturing applications.
+In one hub, Rhize unites all manufacturing event data, relates the events through a standardized data model, and makes all this data accessible through a single endpoint.
+The tight integration of all levels of manufacturing data, from real-time sensor data to operations orders, serves a wide variety of business needs, including:
 
-**All united in one application, which uses a commmon data model, and is accessible through a single endpoint.**
+- **A manufacturing knowledge graph**, helping humans and algorithms analyze plant processes and discover places to optimize.
+- **An {{< abbr "MES" >}} to handle manufacturing events in real time**, moving when you detect and recover from errors to much earlier in the line.
+- **A backend to build lowcode manufacturing applications**, giving your people the power to create interfaces that solve problems close to their work domains.
+
 
 <div class="landing">
 
