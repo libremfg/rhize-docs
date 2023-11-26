@@ -17,12 +17,7 @@
 
   <h1 class="post-title">{{ .Title }}</h1>
 
-  <div>{{ .Content }}</div>
-
-  {{ if eq .Site.Params.site "dgraph-docs" }}
-	{{ partial "navigation.html" . }}
-  {{ end }}
-  {{ partial "post_comments.html" . }}
+  {{ .Content }}
 
 {{ if .Page.Store.Get "hasMermaid" }}
   <script type="module">
