@@ -12,12 +12,19 @@ menu:
 ---
 
 To make a production object visible to the Rhize data hub, you must define it as a data model.
-Along with is API, Rhize also has a graphical interface to create and update objects in your role-based equipment hierarchy.
+Along with its API, Rhize also has a graphical interface to create and update objects in your role-based equipment hierarchy.
 
 Often, one object references another: for example, a piece of equipment may belong to an equipment class, have a unit of measure as a property, and be associated with process segment.
 These associations form nodes and edges in your knowledge graph, so the more information relationships that you accurately create, the better.
 
-## Procedure
+## Prerequisites
+
+Ensure that you have the following:
+
+- Access to the Rhize UI
+- Information about the equipment that you want to model
+
+## General procedure
 
 1. From the UI, select the menu in the top corner.
 1. Select **Master Data**, then the object you want to configure.
@@ -31,7 +38,7 @@ For that reason, a general procedure such as the preceding lacks any interesting
 To make the action more concrete,
 the next section provides an example to create plausible group of objects.
 
-## Example: create an oven class with an instance
+## Example: create oven class and instance
 
 AG holdings is a fictional enterprise that makes product called `Alleman Brownies`.
 These brownies are produced in its UK site, `AG_House`, specifically in the `brownie_kitchen_1` work center of the `south_wing` area.
