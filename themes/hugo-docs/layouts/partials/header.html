@@ -150,12 +150,15 @@
     <!-- END: Required by runnable -->
 
     <title>
-      {{ with .Params.seoTitle }}{{ . }}{{ else }} {{ .Page.Title | default
-      "Baas Documentation" }}{{ with .Section }} - {{ $pairs := (dict "Graphql"
-      "GraphQL" "Dql" "DQL" " api" " API") }}{{ $.Scratch.Set "sectionTitle" (.
-      | humanize) }}{{ range $key, $val := $pairs }}{{ $.Scratch.Set
-      "sectionTitle" (replace ($.Scratch.Get "sectionTitle") $key $val) }}{{ end
-      }}{{ $.Scratch.Get "sectionTitle" }}{{ end }}{{ end }}
+      {{ with .Params.seoTitle }}
+        {{ . }}
+        {{ else }}
+         {{ .Page.Title | default "Rhize Documentation" }}
+         {{ with .Section }} |
+          {{ $.Scratch.Set "sectionTitle" (. | humanize) }}
+         {{ $.Scratch.Get "sectionTitle" }}
+         {{ end }}
+      {{ end }}
     </title>
 
     <link

@@ -3,10 +3,7 @@
 <main class="content-wrapper">
   <div class="content">
     <article id="{{ .Slug }}">
-      {{if (ne .Title "Get started with Rhize") }} {{ partial
-      "ask-question.html" . }} {{ partial "suggest-edit.html" . }} {{ end }}
-
-      <h1 class="post-title">{{ .Title }}</h1>
+      {{ partial "ask-question.html" . }} {{ partial "suggest-edit.html" . }}
 
       <div>{{ .Content }}</div>
     </article>
