@@ -1,17 +1,25 @@
-+++
-date = "2017-03-20T19:35:35+11:00"
-title = "The Rhize Manufacturing Data Hub"
-description = "User guides, deploy docs, references, and deep dives about the Rhize manufacturing data hub."
-[menu.main]
-name = "Home"
-identifier = "home"
-weight = 0
-+++
+---
+title: ##Leave only home page without title
+description: User guides, deploy docs, references, and deep dives about the
+  Rhize manufacturing data hub.
+menu:
+  main:
+    name:
+    identifier: home
+    weight: 0
+---
+
+<!-- define h1 for all other pages in Title in frontmatter -->
+
+<h1 class="post-title">
+The Rhize Manufacturing Data Hub
+</h1>
 
 Rhize is a real-time, event-driven manufacturing data hub.
 
-In one hub, Rhize unites all manufacturing event data, relates the events through a standardized data model, and makes all this data accessible through a single endpoint.
-The tight integration of all levels of manufacturing data, from real-time sensor data to operations orders, serves a wide variety of business needs, including:
+Rhize unites all events from your manufacturing processes, relates these events as a graph model, 
+provides access to the entire data hub through a single endpoint.
+The tight integration of all levels of manufacturing data, from real-time sensor data to operations orders, serves a wide variety of business needs, including as:
 
 - **A manufacturing knowledge graph**, helping humans and algorithms analyze plant processes and discover places to optimize.
 - **An {{< abbr "MES" >}} to handle manufacturing events in real time**, sliding the time when you detect and recover from errors to much earlier in the production line.
@@ -77,4 +85,3 @@ The tight integration of all levels of manufacturing data, from real-time sensor
   </div>
 
 </div>
-
