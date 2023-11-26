@@ -14,7 +14,7 @@ In one hub, Rhize unites all manufacturing event data, relates the events throug
 The tight integration of all levels of manufacturing data, from real-time sensor data to operations orders, serves a wide variety of business needs, including:
 
 - **A manufacturing knowledge graph**, helping humans and algorithms analyze plant processes and discover places to optimize.
-- **An {{< abbr "MES" >}} to handle manufacturing events in real time**, moving when you detect and recover from errors to much earlier in the line.
+- **An {{< abbr "MES" >}} to handle manufacturing events in real time**, sliding the time when you detect and recover from errors to much earlier in the production line.
 - **A backend to build lowcode manufacturing applications**, giving your people the power to create interfaces that solve problems close to their work domains.
 
 
