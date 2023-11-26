@@ -6,8 +6,8 @@
 
 <!-- Find matches -->
     {{ if eq ( .abbr | lower) ( $entry | lower ) }}
-        <abbr title="{{- .term -}}. {{ .definition -}}"> {{- .abbr -}}</abbr>
+        <abbr title="{{- .term -}}. {{ .definition | plainify -}}"> {{- .abbr -}}</abbr>
     {{ else if eq ( .term | lower) ( $entry | lower ) }}
-        <abbr title="{{ .definition -}}"> {{- $entry -}}</abbr>
+        <abbr title="{{ .definition | plainify -}}"> {{- $entry -}}</abbr>
     {{end}}
 {{ end }}
