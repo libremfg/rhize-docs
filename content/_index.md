@@ -31,7 +31,7 @@ The tight integration of all levels of manufacturing data, from real-time sensor
   </div>
 
   <div class="item">
-    <div class="icon"><i class="fa fa-building" aria-hidden="true"></i></div>
+    <div class="icon"><i class="fa fa-server" aria-hidden="true"></i></div>
     <a href="{{< relref "/deploy">}}">
       <h2>Deploy</h2>
       <p>
