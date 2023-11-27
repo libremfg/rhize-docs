@@ -1,6 +1,6 @@
 @charset "UTF-8";
 html body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 18px;
   line-height: 1.6;
   background-color: #fff;
@@ -91,7 +91,7 @@ html h3,
 html h4,
 html h5,
 html h6 {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 700;
   color: #232323;
   line-height: 1.1;
@@ -184,7 +184,7 @@ div.top-toc #TableOfContents ul li ul {
 
 div.right-toc #TableOfContents > ul:before,
 div.top-toc #TableOfContents > ul:before {
-  content: 'Contents';
+  content: "Contents";
   font-weight: 600;
   font-size: 16px;
   color: black;
@@ -369,7 +369,7 @@ pre.collapsed .showmore:hover {
 }
 
 #header .header-right ul.menu {
-  margin-top: 17px
+  margin-top: 17px;
 }
 
 #header ul.menu li {
@@ -390,9 +390,8 @@ pre.collapsed .showmore:hover {
   left: -5px;
   height: 3px;
   border-radius: 2px;
-  background: linear-gradient(90deg, #FF4200 .01%, #E50695 99.99%);
+  background: linear-gradient(90deg, #ff4200 0.01%, #e50695 99.99%);
 }
-
 
 #header ul.menu li a {
   color: #5f5f5f;
@@ -401,14 +400,14 @@ pre.collapsed .showmore:hover {
 }
 
 #header ul.menu li.active a {
-  background: linear-gradient(90deg, #FF4200 .01%, #E50695 99.99%);
+  background: linear-gradient(90deg, #ff4200 0.01%, #e50695 99.99%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 #header ul.menu li a:hover {
-  background: linear-gradient(90deg, #FF4200 .01%, #E50695 99.99%);
+  background: linear-gradient(90deg, #ff4200 0.01%, #e50695 99.99%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -682,15 +681,15 @@ footer .edit-btn {
   margin-right: 3px;
 }
 .clearfix {
-	clear: both;
+  clear: both;
 }
 footer {
-	font-size: 1.2195em;
-	margin-top: 0.5em;
+  font-size: 1.2195em;
+  margin-top: 0.5em;
 }
 footer .logo {
-	float: right;
-	max-height: 30px;
+  float: right;
+  max-height: 30px;
 }
 /* min-width: 800px */
 /* toggle sidebar visibility */
@@ -809,7 +808,7 @@ section.toc .section-item {
 }
 
 /* custom bootstrap */
-.row-no-padding [class^='col-'] {
+.row-no-padding [class^="col-"] {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
@@ -960,4 +959,44 @@ section.toc .section-item {
   height: 160px;
   top: 0;
   max-width: 45%;
+}
+
+.expandable-checkbox {
+  display: none;
+}
+
+.expandable-label {
+  border: 1px solid #ccc;
+  border-radius: 1em;
+  margin-bottom: 1.2em;
+  overflow: hidden;
+  width: 100%;
+}
+
+.expandable-header {
+  background-color: #f7faf4;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.expandable-title {
+  font-weight: bold;
+}
+
+.expandable-toggle {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.expandable-content {
+  padding: 1em;
+  display: none;
+  font-weight: normal;
+}
+
+.expandable-checkbox:checked + .expandable-label .expandable-content {
+  display: block;
 }
