@@ -7,6 +7,20 @@ Hugo processes their instructions to render something on the page.
 
 Common use cases are for style, as with notices, and for templating.
 
+### Expandable
+
+Hide extensive details in an accordion:
+
+```
+{{< expandable title="Click for more details" >}}
+This text should be hidden initially.
+
+Put markdown here
+
+{{< /expandable >}}
+
+```
+
 ### Notices
 
 Use notices with ```{{% notice $TYPE %}}```:

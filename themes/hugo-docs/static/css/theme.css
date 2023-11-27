@@ -960,3 +960,43 @@ section.toc .section-item {
   top: 0;
   max-width: 45%;
 }
+
+.expandable-checkbox {
+  display: none;
+}
+
+.expandable-label {
+  border: 1px solid #ccc;
+  border-radius: 1em;
+  margin-bottom: 1.2em;
+  overflow: hidden;
+  width: 100%;
+}
+
+.expandable-header {
+  background-color: #f7faf4;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.expandable-title {
+  font-weight: bold;
+}
+
+.expandable-toggle {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.expandable-content {
+  padding: 1em;
+  display: none;
+  font-weight: normal;
+}
+
+.expandable-checkbox:checked + .expandable-label .expandable-content {
+  display: block;
+}

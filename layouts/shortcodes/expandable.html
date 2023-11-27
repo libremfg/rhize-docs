@@ -1,0 +1,14 @@
+{{ $uniqueID := .Get "id" | default (printf "expandable-%d" (now.UnixNano)) }}
+
+<input type="checkbox" id="{{ $uniqueID }}" class="expandable-checkbox">
+<label for="{{ $uniqueID }}" class="expandable-label">
+  <div class="expandable-header">
+    <div class="expandable-title">
+      {{ .Get "title" | default "Expandable Title" }}
+    </div>
+    <div class="expandable-toggle">+</div>
+  </div>
+  <div class="expandable-content">
+    {{ .Inner | markdownify }}
+  </div>
+</label>
