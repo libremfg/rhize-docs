@@ -24,8 +24,8 @@ Finally, outside of the Rhize deployment are the two most important components: 
 {{< figure
 src="/get-started/diagram-rhize-arch-overview.png"
 alt="A simplified diagram of Rhize's architecture"
+width="70%"
 caption="<em><small>A simplified view of Rhize's architecture</small></em>"
-width="40%"
 >}}
 
 ## Examples in practice
@@ -65,7 +65,7 @@ This depends entirely on what you want to send to the Rhize message broker or da
 {{< figure
 src="/get-started/rhize-diagram-data-sources.png"
 alt="More granular view of Rhize-Customer messaging"
-width="80%"
+width="100%"
 >}}
 
 Rhize's architecture is event-driven, low-latency, and scalable.
