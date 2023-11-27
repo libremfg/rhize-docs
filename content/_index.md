@@ -17,8 +17,8 @@ The Rhize Manufacturing Data Hub
 
 Rhize is a real-time, event-driven manufacturing data hub.
 
-Rhize unites all events from your manufacturing processes, relates these events as a graph model, 
-provides access to the entire data hub through a single endpoint.
+Rhize unites all events from your manufacturing processes, relates these events as single graph structure, 
+and provides access to any combination of them through a single API endpoint.
 The tight integration of all levels of manufacturing data, from real-time sensor data to operations orders, serves a wide variety of business needs, including as:
 
 - **A manufacturing knowledge graph**, helping humans and algorithms analyze plant processes and discover places to optimize.
