@@ -19,6 +19,8 @@
 - term: Equipment
   definition: A tool used in the production process. Equipment has a role in a process segment to convert material into a final good
   tags: "s95"
+- term: Equipment actual
+  definition: Refer to <a href="#resource-actual">resource actual</a>
 - term: Equipment class
   definition: An equipment class is a grouping of equipment with a definite purpose
   tags: "s95"
@@ -100,6 +102,11 @@
   definition: A physical piece of equipment with an ID
 - term: Process segment
   definition: A step in a manufacturing activitity that is visible to a business process, grouping the necessary personnel, material, equipment, and physical assets
+  tags: "s95"
+- term: Resource actual
+  definition: >-
+    The specific resource used for a specific job.
+    For example, an operations segment may require <code>EquipmentA</code>, but if this equipment is in maintainance at the time of a job, the Equipment actual might be its temporary replacement, <code>EquipmentB</code>
   tags: "s95"
 - term: Role-based equipment model
   definition: A definition of equipment based on the level-3 and level-4 functions and activities that it performs
