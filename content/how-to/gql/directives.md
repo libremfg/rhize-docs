@@ -3,6 +3,7 @@ title = "GraphQL Directives"
 description = "The list of all directives supported by Rhize's GraphQL implementation. Full details linked within for all directives available with GraphQL."
 categories = "reference"
 weight = 200
+draft = true
 [menu.main]
   name = "Directives"
   identifier = "directives"

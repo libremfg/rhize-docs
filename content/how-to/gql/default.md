@@ -2,6 +2,7 @@
 title = "Use the @default Directive"
 description = "The @default directive specifies which GraphQL APIs are generated for a given type. Without it, all queries & mutations are generated except subscription."
 weight = 210
+draft = true
 [menu.main]
     parent = "how-to-query"
 +++
