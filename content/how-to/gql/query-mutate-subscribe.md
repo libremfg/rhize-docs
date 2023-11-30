@@ -1,5 +1,5 @@
 ---
-title: 'Query, mutate, and subcribe'
+title: 'Query, mutate, and subscribe'
 categories: ["concepts"]
 description: Examples of how to use the different GraphQL operations in Rhize
 weight: 200

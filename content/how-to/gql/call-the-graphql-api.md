@@ -1,5 +1,6 @@
 ---
-title: 'Call the GraphQL API'
+title: >-
+  Call the GraphQL API
 date: '2023-11-22T09:43:30-03:00'
 categories: ["how-to"]
 description: How to query your manufacturing knowledge graph
