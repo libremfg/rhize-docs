@@ -1,5 +1,5 @@
 canonifyURLs: true
-baseURL: "https://libremfg.github.io"
+baseURL: "https://docs.rhize.com"
 languageCode: en-us
 theme: hugo-docs
 sectionPagesMenu: main
