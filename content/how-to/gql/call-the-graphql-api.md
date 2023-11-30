@@ -11,18 +11,18 @@ menu:
 ---
 
 In a manufacturing operation, all event data is interrelated.
-To make these relations explorable, Rhize stores data in a special, purpose built graph database.
+To make these relations explorable, Rhize stores data in a special-purpose graph database designed to represent all levels of the manufacturing process.
 This database is enforced by our ISA-95 schema, the most comprehensive data representation of ISA-95 in the world.
 
-Rhize exposes this database through a (GraphQL API).
-Unlike REST, [GraphQL]() requires only one endpoint, and you can define exactly the data that you return for each operation.
+Rhize exposes this database through a [GraphQL API](https://graphql.org/).
+Unlike REST, GraphQL requires only one endpoint, and you can define exactly the data that you return for each operation.
 
 
 If you are a customer, the best way to learn both GraphQL and ISA-95 modelling is to use the [Apollo Explorer](https://www.apollographql.com/) for our schema.
-However, for newcomers to GraphQL, this may look overwhelming.
-These topics introduce the basics of how to use GraphQL with Rhize's custom databaase.
+However, for newcomers to GraphQL, the flexibility may look overwhelming.
+These topics introduce the basics of how to use GraphQL with Rhize's custom database.
 
-Once you learn how to explore the API, you'll quickly find that the interface is more comfortable and discoverable than a comparable swagger document&mdash;and that's before the data advantages.
+Once you learn how to explore the API, you'll find that the interface is more comfortable and discoverable than a comparable OpenAPI (Swagger) document&mdash;and that's before considering the improvements GraphQL brings to precision, performance, and developer experience.
 
 ## Operation types
 
@@ -37,7 +37,7 @@ For details and examples, refer to [Query, Mutate, Subscribe]({{< relref "query-
 
 ## Call syntax
 
-The following sections show you the essential features to make a query
+The following sections show you the essential features to make a query.
 
 ### Authentication
 
@@ -56,7 +56,7 @@ For an overview of how Rhize handles token exchange, read [About OpenID connect]
 ### Request body
 
 By default, all GraphQL operations have the following structure:
-1. Define the operation type (one of, `query`, `mutation`, or `subscription`)
+1. Define the operation type (one of, `query`, `mutation`, or `subscription`).
 1. Name the query anything you want. This example builds a `query` called `myCustomName`:
     ```graphql
     query myCustomName {
@@ -75,7 +75,7 @@ By default, all GraphQL operations have the following structure:
       }
     ```
 
-1. Within the operation, define the fields you want to return. This example queries for the equipment item's ID and who created it.
+1. Within the operation, define the fields you want to return. This example queries for the equipment ID and the person who created the entity.
 
     ```graphql
     query myCustomName {
@@ -100,11 +100,10 @@ By default, all GraphQL operations have the following structure:
 
 ### Request exactly the data you want
 
-A major benefit of GraphQL is that you can endlessly modify queries to return the fields you want.
+A major benefit of GraphQL is that you can modify queries to return only the fields you want.
+Unlike calls to REST APIs, where the server-side code defines what a response looks like, GraphQL calls instruct the server to return only what is specified.
+Furthermore, you can query diverse sets of data in one call, so you can get exactly the entities you want without calling multiple endpoints, as you would in REST, or composing queries with complex recursive joins, as you would in SQL.
 Besides precision, this also brings performance benefits to minimize network calls and their payloads.
-
-- Unlike REST, you do not need to make multiple calls to fetch the precise resources.
-- Unlike SQL, you do not need to make recursive joins.
 
 For example, you modify the previous request to return information about the equipments versions, including their `description`, unique IDs, and the currently active version:
 
@@ -160,7 +159,7 @@ query ExampleQuery {
 {{< /tabs >}}
 
 You can also add multiple operations to one call.
-For example, this query requests all data sources and all persons.
+For example, this query requests all data sources and all persons:
 
 
 {{< tabs >}}
@@ -214,11 +213,11 @@ query peopleAndDataSources {
 ### Make input dynamic with variables {#variables}
 
 The preceding examples place the query input as _inline_ arguments.
-Normally, you put extract these arguments as JSON _variables_.
+Often, calls to production systems separate these arguments out as JSON _variables_.
 
 Variables add dynamism to your requests, which serves to make them more reusable.
 For example:
-- If you build a low-code reporting application, you could use variables to change the arguments based on user input
+- If you build a low-code reporting application, you could use variables to change the arguments based on user input.
 - In a BPMN event orchestration, you could use variables to make a GraphQL call based on a previous JSONata filter. Refer to the example, [Write ERP material definition to DB]({{< relref "../bpmn/create-workflow/#write-erp-material-definition-to-database" >}}).
 
 
@@ -244,7 +243,7 @@ This instructs the query to receive data from outside of its context:
     }
     ```
 1. In the operation, pass the variable as a value in the argument.
-So, to add the variable as a value to the `id` key:
+In this example, add the variable as a value to the `id` key like this:
 
     ```graphql
     query GetEquipment($getEquipmentId: String) {
@@ -255,7 +254,7 @@ So, to add the variable as a value to the `id` key:
     }
     ```
     
-1. In a separate, `variables` section of the query define the JSON object that is your variable:
+1. In a separate `variables` section of the query, define the JSON object that is your variable:
 
    ```json
    {
