@@ -136,7 +136,7 @@ In this example, add the variable as a value to the <code>id</code> key like thi
 </span></span><span style=display:flex><span>    <span style=color:#2b91af>_createdBy</span>
 </span></span><span style=display:flex><span>  }
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div></div><div class=tab-pane title=VARIABLES><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span></code></pre></div><p><strong>Variables</strong>:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
 </span></span><span style=display:flex><span> &#34;getEquipmentId&#34;: <span style=color:#a31515>&#34;Kitchen_mixer_b_01&#34;</span>
 </span></span><span style=display:flex><span>}
 </span></span></code></pre></div></div></div></div><p>The preceding example is minimal, but the use of variables to <em>parameterize</em> arguments also applies to complex object creation and filtering.
@@ -147,7 +147,7 @@ For example, this <em>mutation</em> uses variables to create an array of Persons
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>  }
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div></div><div class=tab-pane title=VARIABLES><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span></code></pre></div><p><strong>Variables</strong>:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
 </span></span><span style=display:flex><span>  &#34;input&#34;: [
 </span></span><span style=display:flex><span> {&#34;id&#34;: <span style=color:#a31515>&#34;234&#34;</span>, &#34;label&#34;:<span style=color:#a31515>&#34;Jan Smith&#34;</span>},
 </span></span><span style=display:flex><span> {&#34;id&#34;: <span style=color:#a31515>&#34;235&#34;</span>, &#34;label&#34;: <span style=color:#a31515>&#34;John Ramirez&#34;</span>}
@@ -174,7 +174,7 @@ Instead of writing these fields in each operation, you could define them in a fr
 </span></span><span style=display:flex><span>    <span style=color:#00f>...</span><span style=color:#2b91af>CommonFields</span>
 </span></span><span style=display:flex><span>  }
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div></div><div class=tab-pane title=RETURNS><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span></code></pre></div><p><strong>Variables:</strong></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
 </span></span><span style=display:flex><span>  &#34;data&#34;: {
 </span></span><span style=display:flex><span>    &#34;getEquipment&#34;: {
 </span></span><span style=display:flex><span>      &#34;id&#34;: <span style=color:#a31515>&#34;Kitchen_mixer_b_02&#34;</span>,
@@ -187,7 +187,8 @@ Instead of writing these fields in each operation, you could define them in a fr
 </span></span></code></pre></div></div></div></div><h3 id=filter>Filter arrays</h3><p>Whether you make a query or mutation, you often may specify to receive an array of items in response.
 To minimize payload, isolate necessary resources, and maximize the signal-to-noise ratio, it&rsquo;s often useful to filter this array to a subset of items.</p><div class="notices note"><span class=type>Note</span> Rhize&rsquo;s filter implementation is based on Dgraph&rsquo;s <a href=https://dgraph.io/docs/graphql/schema/directives/search/>search directive</a>.
 Refer to their document for the full list of fields and filters.</div><p>To use filters:</p><ol><li>Specify a <code>filter</code> field in your argument.</li><li>Use the Apollo explorer to select the object. As a quick reference, you can filter the following data types:<table><thead><tr><th>Data type</th><th>Filters</th></tr></thead><tbody><tr><td>Boolean</td><td><code>true</code> and <code>false</code></td></tr><tr><td>Date and time</td><td><code>lt</code> (less than), <code>gt</code> (greater than), <code>between</code>, <code>eq</code> (equals)</td></tr><tr><td>String</td><td><code>lt</code> (less than), <code>gt</code> (greater than), <code>between</code>, <code>eq</code> (equals),<br><code>regexp</code> (regular expression based on <a href=https://github.com/google/re2/wiki/Syntax/>re2</a> syntax).</td></tr><tr><td>String</td><td><code>exact</code></td></tr></tbody></table></li></ol><h3 id=cascade>Cascade</h3><p><code>@cascade</code> is a <a href=https://www.apollographql.com/docs/apollo-server/schema/directives/>directive</a> that filters certain nodes within a query.
-It is similar to a <code>WHERE</code> clause in SQL.</p><p>For example, this query <a href=https://libremfg.github.io/how-to/gql/call-the-graphql-api/#filter>filters</a> for job responses with an ID of <code>12341</code>, and then filters that set for only the items that have a <code>data.properyLabel</code> field with a value of <code>INSTANCE ID</code>.</p><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=QUERY><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#00f>query</span> <span style=color:#2b91af>QueryJobResponse</span>($filter: <span style=color:#2b91af>JobResponseFilter</span>, $propertyLabel: <span style=color:#2b91af>String</span>) {
+It is similar to a <code>WHERE</code> clause in SQL.</p><div class="notices caution"><span class=type>Caution</span> <code>@cascade</code> is not as performant as flatter queries.
+Consider using it only after you&rsquo;ve exhausted other query structures to return the data you want.</div><p>For example, this query <a href=https://libremfg.github.io/how-to/gql/call-the-graphql-api/#filter>filters</a> for job responses with an ID of <code>12341</code>, and then filters that set for only the items that have a <code>data.properyLabel</code> field with a value of <code>INSTANCE ID</code>.</p><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=QUERY><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#00f>query</span> <span style=color:#2b91af>QueryJobResponse</span>($filter: <span style=color:#2b91af>JobResponseFilter</span>, $propertyLabel: <span style=color:#2b91af>String</span>) {
 </span></span><span style=display:flex><span>  <span style=color:#00f>query</span><span style=color:#2b91af>JobResponse</span>(filter: $filter)  @cascade(<span style=color:#2b91af>fields</span>:[<span style=color:#a31515>&#34;data&#34;</span>]){
 </span></span><span style=display:flex><span>    <span style=color:#2b91af>id</span>
 </span></span><span style=display:flex><span>    iid
@@ -199,7 +200,7 @@ It is similar to a <code>WHERE</code> clause in SQL.</p><p>For example, this que
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>  }
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div></div><div class=tab-pane title=VARIABLES><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span></code></pre></div><p><strong>Variables</strong>:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
 </span></span><span style=display:flex><span>    &#34;filter&#34;: {
 </span></span><span style=display:flex><span>        &#34;id&#34;: {
 </span></span><span style=display:flex><span>            &#34;alloftext&#34;: <span style=color:#a31515>&#34;12341&#34;</span>
