@@ -69,10 +69,8 @@ query allEquipment{
 {{% tab "query" %}}
 ```graphql
 query allEquipment($filter: EquipmentFilter) {
-g
   queryEquipment(filter: $filter) {
     id
-  }
   }
 }
 ```
@@ -103,7 +101,6 @@ query getEquipment($filter: EquipmentFilter) {
   }
   queryEquipment(filter: $filter) {
     id
-  }
   }
 }
 ```
