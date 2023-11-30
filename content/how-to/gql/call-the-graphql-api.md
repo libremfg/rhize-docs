@@ -284,7 +284,7 @@ query GetEquipment($getEquipmentId: String) {
 {{% /tab %}}
 {{% /tab %}}
 
-The preceding example is minimal, but the use of variables to _parameterize_ also applies to complex object creation and filtering.
+The preceding example is minimal, but the use of variables to _parameterize_ arguments also applies to complex object creation and filtering.
 For example, this _mutation_ uses variables to create an array of Persons:
 
 {{< tabs >}}
@@ -313,17 +313,17 @@ mutation AddPerson($input: [AddPersonInput!]!) {
 
 To learn more, read the offical GraphQL documentation on [Variables](https://graphql.org/learn/queries/#variables).
 
-## Shortcuts to make calls more manageable
+## Shortcuts for more expressive requests
 
 The following sections provide some common ways to reduce boilerplate and shorten the necessary coding for a call.
 
 ### Template requested fields with fragments
 
-Along with [variables](#variables), you can use _Fragments_ to reduce repetitive writing.
+Along with [variables](#variables), you can use _fragments_ to reduce repetitive writing.
 
 Fragments are common fields that you use when querying an object.
 For example, imagine you wanted to make queries to different equipment objects for their `id`, `label`, `_createdBy`, and `versions[]` properties.
-Instead of writing these fields in each operation, you could define them in a fragment then refer to that fragment in each specific operation or query.
+Instead of writing these fields in each operation, you could define them in a fragment, and then refer to that fragment in each specific operation or query.
 
 To use a fragment:
 1. Define them with the `fragment` keyword, declaring its name and object.
@@ -404,7 +404,7 @@ To use filters:
 `@cascade` is a [directive](https://www.apollographql.com/docs/apollo-server/schema/directives/) that filters certain nodes within a query.
 It is similar to a `WHERE` clause in SQL.
 
-For example, this query [filters]({{< relref "call-the-graphql-api#filter" >}}) for job responses with an ID of `12341`, then filters that set for only the items that have a `data.properyLabel` field with a value of `INSTANCE ID`.
+For example, this query [filters]({{< relref "call-the-graphql-api#filter" >}}) for job responses with an ID of `12341`, and then filters that set for only the items that have a `data.properyLabel` field with a value of `INSTANCE ID`.
 
 {{< tabs >}}
 

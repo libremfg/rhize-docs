@@ -54,7 +54,7 @@ query mixerCheck {
 Queries that start with `query` return an array of objects.
 For example, a custom dashboard may use `queryEquipmentVersion` to create a page that displays all active versions of equipment that are running in a certain {{< abbr "hierarchy scope" >}}.
 
-For example, this query returns the id of all pieces of equipment.
+For example, this query returns the ID of all pieces of equipment.
 
 ```graphql
 query allEquipment{
@@ -91,8 +91,8 @@ g
 {{% /tab %}}
 {{< /tabs >}}
 
-Often, its convenient to [filter]({{< relref "call-the-graphql-api#filter" >}}) the items returned by a query.
-This query uses a regular expression in its variables to filter for items that begin with either `Kitchen_` or `Cooling_`, case insensitive:
+Often, it's convenient to [filter]({{< relref "call-the-graphql-api#filter" >}}) the items returned by a query.
+This query uses a regular expression in its variables to filter for items that begin with either `Kitchen_` or `Cooling_` (case insensitive):
 
 {{< tabs >}}
 {{% tab "query" %}}
@@ -127,10 +127,10 @@ query getEquipment($filter: EquipmentFilter) {
 
 Like `query`, operations that start with `aggregate` return sets of arrays.
 
-However, the purpose of aggregate is to returns secondary data computed from the properties of the items.
+However, rather than return items, the purpose of aggregate operations is to returns secondary data computed from the properties of these items.
 For example, you might use an `aggregate` query to create a report about operational performance for a set of process segments within a certain time frame.
 
-This request returns the count of all Equipment items that match a certain filter.
+This request returns the count of all Equipment items that match a certain filter:
 
 ```graphql
 query countItems($filter: EquipmentFilter) {
@@ -232,7 +232,7 @@ Be careful! Without a [Database backup]({{< relref "/deploy/backup/graphdb" >}})
 
 Mutations that start with `delete` remove a resource from the database.
 
-For example, this operation delete's a unit of measure:
+For example, this operation deletes a unit of measure:
 
 {{< tabs >}}
 {{% tab "mutation" %}}
@@ -264,7 +264,7 @@ mutation deleteUoM($filter: UnitOfMeasureFilter!){
 ## Subscriptions
 
 The operations for a `subscription` are similar to the operations for a [`query`](#queries).
-They are typically useful for notifying about real-time changes to a manufacturing resource.
+But rather than providing information about the entire item, the purpose of subscriptions is to notify about real-time changes to a manufacturing resource.
 
 This example query subscribes to changes in a specified set of `workResponses`, reporting only their `id` and effective end time.
 
@@ -281,7 +281,7 @@ subscription GetWorkResponse($getWorkResponseId: String) {
 
 Note that you should be sure to minimize the payload for subscription operations.
 Additionally, you only need to subscribe for changes that persist to the knowledge graph.
-For general event handling, it's often better to use a [BPMN workflow]({{< relref "../bpmn" >}}) that subscribes to NATS.
+For general event handling, it's often better to use a [BPMN workflow]({{< relref "../bpmn" >}}) that subscribes to a NATS, MQTT, or OPC UA topic.
 
 ## More examples
 
