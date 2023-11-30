@@ -92,7 +92,7 @@ The Rhize application comes with a graphical interface.
 Some uses include:
 - [**Configure BPMN rules.**]({{< relref "../how-to/bpmn" >}}) A low-code tool for analysts and operators to create programmable events.
 - [**Upload master data.**]({{< relref "../how-to/model" >}})  Based on the ISA-95 object models.
-- **Administrate.** Authenticate and scope access to systems and personnel.
+- [**Administrate.**]({{< relref "../deploy" >}}) Authenticate and scope access to systems and personnel.
 
 The UIs sit on top of the GraphQL API gateway, which serves as a programming interface for data analysis.
 Rhize customers also use the GraphQL interface to build their own applications, either with dedicated frontend developers or through low-code tools like Appsmith.
