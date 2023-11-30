@@ -275,9 +275,7 @@ query GetEquipment($getEquipmentId: String) {
   }
 }
 ```
-{{% /tab %}}
-{{% tab "variables" %}}
-
+**Variables**:
 ```json
 {
  "getEquipmentId": "Kitchen_mixer_b_01"
@@ -300,8 +298,7 @@ mutation AddPerson($input: [AddPersonInput!]!) {
   }
 }
 ```
-{{% /tab %}}
-{{% tab "variables" %}}
+**Variables**:
 ```json
 {
   "input": [
@@ -360,8 +357,7 @@ query kitchenEquipment {
   }
 }
 ```
-{{% /tab %}}
-{{% tab "returns" %}}
+**Variables:**
 ```json
 {
   "data": {
@@ -433,8 +429,7 @@ query QueryJobResponse($filter: JobResponseFilter, $propertyLabel: String) {
   }
 }
 ```
-{{% /tab %}}
-{{% tab "variables" %}}
+**Variables**:
 ```json
 {
     "filter": {

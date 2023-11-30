@@ -18,6 +18,7 @@ Rhize supports three types of operations:
 - **Mutations** change the data on the server side.
 - **Subscriptions** notify about data changes in real time.
 
+
 ## Queries
 
 Most queries start with these three verbs, each of which indicates the resources to return.
@@ -79,8 +80,7 @@ query getEquipment($filter: EquipmentFilter) {
   }
 }
 ```
-{{% /tab %}}
-{{% tab "variables" %}}
+**Variables**
 
 ```json
 {
@@ -104,6 +104,8 @@ For example, you might use an `aggregate` query to create a report about operati
 
 This request returns the count of all Equipment items that match a certain filter:
 
+{{< tabs >}}
+{{% tab "query" %}}
 ```graphql
 query countItems($filter: EquipmentFilter) {
   aggregateEquipment(filter: $filter) {
@@ -111,6 +113,8 @@ query countItems($filter: EquipmentFilter) {
   }
 }
 ```
+{{% /tab %}}
+{{< /tabs >}}
 
 ## Mutations
 
@@ -125,7 +129,7 @@ To add multiple, send the variable as an array of objects, rather than a single 
 The `numUids` property reports how many new objects were created.
 
 {{% tabs %}}
-{{< tab "mutation" >}}
+{{% tab "mutation" %}}
 
 ```graphql
 mutation AddEquipment($input: [AddEquipmentInput!]!) {
@@ -140,7 +144,7 @@ mutation AddEquipment($input: [AddEquipmentInput!]!) {
 ```
 
 {{% /tab %}}
-{{% tab "Create one object" %}}
+{{% tab "Vars: create one object" %}}
 
 ```json
 {
@@ -152,7 +156,7 @@ mutation AddEquipment($input: [AddEquipmentInput!]!) {
 }
 ```
 {{% /tab %}}
-{{% tab "Create many" %}}
+{{% tab "Vars: Create many" %}}
 
 ```json
 {
@@ -174,6 +178,8 @@ mutation AddEquipment($input: [AddEquipmentInput!]!) {
 Mutations that start with `Update` change something in an object that already exists.
 For example, this operation updates the description for a specific version of an equipment item.
 
+{{< tabs >}}
+{{% tab "query" %}}
 
 ```graphql
 mutation updateMixerVersion( $updateEquipmentVersionInput2: UpdateEquipmentVersionInput!){
@@ -184,8 +190,10 @@ mutation updateMixerVersion( $updateEquipmentVersionInput2: UpdateEquipmentVersi
     }
   }
 }
+```
 
-# variables
+**Variables**:
+```json
 {
   "updateEquipmentVersionInput2": {
     "filter": {"iid":"0xcc701"},
@@ -195,6 +203,8 @@ mutation updateMixerVersion( $updateEquipmentVersionInput2: UpdateEquipmentVersi
   }
 }
 ```
+{{% /tab %}}
+{{% /tabs %}}
 
 ### `Delete`
 
@@ -216,9 +226,8 @@ mutation deleteUoM($filter: UnitOfMeasureFilter!){
   }
 }
 ```
-{{% /tab %}}
 
-{{% tab "variables" %}}
+**Variables:**
 ```json
 {
   "filter": {
