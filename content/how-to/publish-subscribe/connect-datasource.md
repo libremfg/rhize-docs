@@ -1,7 +1,7 @@
 ---
 title: 'Connect data source'
 date: '2023-09-22T14:50:39-03:00'
-draft: false
+draft: true
 categories: "how-to"
 description: Configure a data source to publish topics for the Rhize platform.
 weight: 10
