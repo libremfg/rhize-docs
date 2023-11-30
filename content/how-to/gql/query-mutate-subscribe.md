@@ -64,31 +64,6 @@ query allEquipment{
 }
 ```
 
-
-{{< tabs >}}
-{{% tab "query" %}}
-```graphql
-query allEquipment($filter: EquipmentFilter) {
-  queryEquipment(filter: $filter) {
-    id
-  }
-}
-```
-{{% /tab %}}
-{{% tab "variables" %}}
-
-```json
-{
-  "EquipmentFilter": {
-    "id": {
-      "regexp": "/KITCHEN_.*|/i"
-    }
-  },
-}
-```
-{{% /tab %}}
-{{< /tabs >}}
-
 Often, it's convenient to [filter]({{< relref "call-the-graphql-api#filter" >}}) the items returned by a query.
 This query uses a regular expression in its variables to filter for items that begin with either `Kitchen_` or `Cooling_` (case insensitive):
 
@@ -279,72 +254,3 @@ subscription GetWorkResponse($getWorkResponseId: String) {
 Note that you should be sure to minimize the payload for subscription operations.
 Additionally, you only need to subscribe for changes that persist to the knowledge graph.
 For general event handling, it's often better to use a [BPMN workflow]({{< relref "../bpmn" >}}) that subscribes to a NATS, MQTT, or OPC UA topic.
-
-## More examples
-
-
-### Query equipment class
-
-```graphql
-query  Example2 {
-  queryEquipmentClass{
-    id
-    activeVersion {
-      # EquipmentClassVersion
-      iid
-      id
-      version
-      # EquimpentClassProperty
-      properties {
-        id
-        label
-        description
-        propertyType
-        value
-        valueUnitOfMeasure {
-         id
-         dataType
-        }
-        bindingType
-        triggersRules {
-          iid
-        }
-      }
-    }
-  }
-}
-```
-
-
-### Add unit of measure
-
-{{< tabs >}}
-{{% tab "mutation" %}}
-```graphql
-mutation Example6($input: [AddUnitOfMeasureInput!]!) {
-  addUnitOfMeasure(input: $input) {
-    unitOfMeasure {
-      iid
-      id
-    }
-    numUids
-  }
-}
-```
-{{% /tab %}}
-{{% tab "variables" %}}
-
-```json
-{
-  "input": [
-    {
-      "id": "example unit of measure",
-      "dataType": "INT64",
-      "effectiveStart": "2023-08-01T08:00:00Z"
-    }
-  ]
-}
-```
-{{% /tab %}}
-{{< /tabs >}}
-
