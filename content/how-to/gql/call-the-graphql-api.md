@@ -406,6 +406,10 @@ To use filters:
 `@cascade` is a [directive](https://www.apollographql.com/docs/apollo-server/schema/directives/) that filters certain nodes within a query.
 It is similar to a `WHERE` clause in SQL.
 
+{{< notice "note" >}}
+`@cascade` is not as performant as flatter queries.
+Consider using it only after you've exhausted other query structures to return the data you want.
+
 For example, this query [filters]({{< relref "call-the-graphql-api#filter" >}}) for job responses with an ID of `12341`, and then filters that set for only the items that have a `data.properyLabel` field with a value of `INSTANCE ID`.
 
 {{< tabs >}}
