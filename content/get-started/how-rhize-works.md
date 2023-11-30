@@ -32,7 +32,7 @@ caption="<em><small>A simplified view of Rhize's architecture</small></em>"
 
 To make the next sections less abstract, consider these examples of how Rhize creates a common data hub for diverse human and system interaction.
 
-- **[Data Collection](#data-collection)**
+- **[Data inputs](#data-inputs)**
     - An instrumenter configures an MQTT-compatible device to send sensor data to Rhize.
     - A business analyst sends an ERP order through an integration with the GraphQL API.
 - **[Message exchange](#message-exchange)**
@@ -49,16 +49,15 @@ To make the next sections less abstract, consider these examples of how Rhize cr
     - A DevOps engineer pushes an upgrade that handles message-streams more efficiently. This upgrade rolls out node-by-node across each instance.
     - A plant process causes a heavy inflow of data. The system autoscales to meet the temporary computation demand.
 
-## Data collection
+## Data inputs
 
 A manufacturing data hub is useless without manufacturing data.
 
-Rhize's database schema is modeled on the ISA-95 standard.
-ISA-95 covers all levels of the manufacturing operation.
-Correspondingly, Rhize accepts data from all levels, including measurements, schedules, and ERP documents.
+The [Rhize agent]({{< relref "agent-configuration" >}}) collects data from MQTT brokers and devices, OPC-UA servers.
+You can also send data and documents over HTTP through a [GraphQL call]({{< ref "call-the-graphql-api" >}}).
+The Rhize UI also has a graphical interface to [model production]({{< ref "model" >}}) objects.
 
-Common sources of data collection come from MQTT brokers and devices, OPC-UA servers, and over HTTP through the GraphQL endpoint.
-This depends entirely on what you want to send to the Rhize message broker or database.
+All this data is mapped to Rhize's ISA-95 schema, which creates a coherent model for all objects in the data hub.
 
 ## Message exchange
 
