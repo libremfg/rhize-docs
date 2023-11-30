@@ -103,9 +103,8 @@ Besides tasks, you can also use [_call activities_](#call-activities), processes
 {{< /notice >}}
 
 A service task uses some service.
-In Rhize workflows, service tasks include HTTP calls (GraphQL and REST), database operations, and JSON manipulation.
+In Rhize workflows, service tasks include [Calls to the GraphQL API]({{< relref "../gql/call-the-graphql-api" >}}) (and REST APIs), data source reads and writes, and JSON manipulation.
 These service tasks come with templates.
-
 
 As with [Gateways](#gateways) and [events](#events), service task are marked by their icons.
 
@@ -128,18 +127,18 @@ The service task templates are as follows
 Transform JSON data with a [JSONata expression](https://docs.jsonata.org/overview.html).
 
 
-| Call parameters  | Description                           |
-|------------------|---------------------------------------|
-| Input            | Input data for the transform          |
-| Transform        | Variables for the GraphQL query       |
-| Max Payload size | {{< param boilerplate.max_payload >}} |
+| Call parameters  | Description                                                                   |
+|------------------|-------------------------------------------------------------------------------|
+| Input            | Input data for the transform                                                  |
+| Transform        | [Variables for the GraphQL query]({{< relref "../gql/call-the-graphql-api#variables" >}}) |
+| Max Payload size | {{< param boilerplate.max_payload >}}                                         |
 
 
 
 
 ### GraphQL Query
 
-Run a [GraphQL query](https://graphql.com/learn/the-query/)
+Run a [GraphQL query]({{< relref "../gql/query-mutate-subscribe#queries" >}})
 
 | Call parameters    | Description                                  |
 |--------------------|----------------------------------------------|
@@ -152,7 +151,7 @@ Run a [GraphQL query](https://graphql.com/learn/the-query/)
 
 ### GraphQL Mutation
 
-Run a [GraphQL mutation](https://graphql.com/learn/mutations/)
+Run a [GraphQL mutation]({{< relref "../gql/query-mutate-subscribe#mutations" >}})
 
 | Call parameters    | description                                  |
 |--------------------|----------------------------------------------|
