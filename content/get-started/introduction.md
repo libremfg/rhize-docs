@@ -16,7 +16,7 @@ It unites data analysis, event monitoring, and process execution in one platform
 Its interface and architecture is designed to conform to your processes.
 We assume nothing about what your manufacturing workflows look like.
 
-Rhize has only one strong opinion: all data exchanged must be modeled on the [ISA-95 standard](https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa95).
+Rhize has only one strong opinion: all manufacturing objects and data must be modeled on the [ISA-95 standard](https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa95).
 This standards-based schema is how Rhize connects every data event across an entire operation.
 If you aren't an ISA-95 fan, we're happy to convert you, but adoption is a requirement to use the platform.
 
