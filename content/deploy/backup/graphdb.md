@@ -91,7 +91,7 @@ For example, with `curl`:
 1. Create a file that holds the sha256 checksums of the latest backup files. You'll use this file to confirm the copy is identical.
 
     ```bash
-    sha256sum <LATEST_BACKUP_DIR>/*.gz > backup.sums
+    sha256sum <LATEST_BACKUP_DIR>/dgraph.r890268.u1120.1501/*.gz > backup.sums
     ```
 
 1. Exit the container shell, then copy files out of the container to your backup location:
