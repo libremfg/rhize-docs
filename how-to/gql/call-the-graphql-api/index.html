@@ -32,7 +32,8 @@ Be sure to preface the value with the word <code>Bearer </code>:</p><figure><img
 </span></span></code></pre></div></li></ol><h3 id=request-exactly-the-data-you-want>Request exactly the data you want</h3><p>A major benefit of GraphQL is that you can modify queries to return only the fields you want.
 You can join data entities in a single query and query for entity relationships in the same way that you would for entity attributes.</p><p>Unlike calls to REST APIs, where the server-side code defines what a response looks like, GraphQL calls instruct the server to return only what is specified.
 Furthermore, you can query diverse sets of data in one call, so you can get exactly the entities you want without calling multiple endpoints, as you would in REST, or composing queries with complex recursive joins, as you would in SQL.
-Besides precision, this also brings performance benefits to minimize network calls and their payloads.</p><p>For example, you modify the previous request to return information about the equipments versions, including their <code>description</code>, unique IDs, and the currently active version:</p><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=REQUEST><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-graphql data-lang=graphql><span style=display:flex><span>
+Besides precision, this also brings performance benefits to minimize network calls and their payloads.</p><p>For example, this expands the fields requested from the previous example.
+Besides <code>id</code> and <code>_createdBy</code>, it now returns the <code>description</code>, unique ID, and version information about the requested equipment item:</p><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=REQUEST><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-graphql data-lang=graphql><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#00f>query</span> <span style=color:#2b91af>ExampleQuery</span> {
 </span></span><span style=display:flex><span>  <span style=color:#00f>query</span><span style=color:#2b91af>Equipment</span>(filter: { <span style=color:#2b91af>id</span>: { <span style=color:#2b91af>eq</span>: <span style=color:#a31515>&#34;Kitchen_mixer_b_0 1&#34;</span> } }) {
 </span></span><span style=display:flex><span>    <span style=color:#2b91af>id</span>
@@ -85,10 +86,6 @@ For example, this query requests all data sources and all persons:</p><div class
 </span></span></code></pre></div></div><div class=tab-pane title=RESPONSE><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
 </span></span><span style=display:flex><span>  &#34;data&#34;: {
 </span></span><span style=display:flex><span>    &#34;queryPerson&#34;: [
-</span></span><span style=display:flex><span>      {
-</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;999-63-8161&#34;</span>,
-</span></span><span style=display:flex><span>        &#34;label&#34;: <span style=color:#a31515>&#34;999-63-8161&#34;</span>
-</span></span><span style=display:flex><span>      },
 </span></span><span style=display:flex><span>      {
 </span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;235&#34;</span>,
 </span></span><span style=display:flex><span>        &#34;label&#34;: <span style=color:#a31515>&#34;John Ramirez&#34;</span>
