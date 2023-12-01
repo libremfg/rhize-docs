@@ -87,9 +87,6 @@ Even within the same company and segment, processes frequently differ from site 
 Our design philosophy empowers manufacturing operators to shape their tool for their work demands.
 Some examples of the flexibility include:
 
-{{< relref "#usdsa" >}}
-
-
 - **A headless MES**. While Rhize has a graphical interface, all data is reachable through a single API endpoint. This means your teams can rapidly build custom frontends―and do it with the most comfortable API for frontend development, GraphQL.
 - **Low-code interface**. Model your schema and execute processes using BPMN, a visual programming language. The visual interface makes Rhize and your manufacturing automation accessible to the widest possible audience.
 - **Generic data collection**. Rhize receives data from all levels of the manufacturing process. The [NATS](https://nats.io) broker publishes and subscribes to low-level data from [MQTT](https://mqtt.org/) and [OPC-UA](https://opcfoundation.org/about/opc-technologies/opc-ua/), but the database can also receive ERP inventories and documents sent over HTTP.
