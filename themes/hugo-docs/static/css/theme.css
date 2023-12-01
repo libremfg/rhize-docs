@@ -1000,3 +1000,20 @@ section.toc .section-item {
 .expandable-checkbox:checked + .expandable-label .expandable-content {
   display: block;
 }
+
+/* External link icon indicator */
+
+a[href^="https://"]:after {
+  content: "\f08e";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: none;
+  padding-left: 3px;
+}
+/* Strip from links to own domain or with class no_icon */
+a[href^="https://rhize.com"]:after,
+a.no_icon:after {
+  content:"" !important;
+  padding-l
