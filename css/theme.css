@@ -1013,7 +1013,7 @@ a[href^="https://"]:after {
   padding-left: 3px;
 }
 /* Strip from links to own domain or with class no_icon */
-a[href^="https://rhize.com"]:after,
+a[href^="https://docs.rhize.com"]:after,
 a.no_icon:after {
   content:"" !important;
   padding-l
