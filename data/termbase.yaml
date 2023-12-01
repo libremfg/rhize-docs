@@ -16,6 +16,9 @@
     In BPMN, a catch event reacts to a trigger (compared to a <a href="#throw-event">throw event</a>, which returns some result). Only start and intermediate events can catch.
 - term: Data source
   definition: A source of real-time data that is collected by the <a href="#agent">Rhize agent</a>, such as an MQTT or OPC UA device
+- term: Enterprise resource planning
+  abbr: ERP
+  definition: Software to manage business processes. In Rhize, ERP activities usually are named "operations", where lower-level activities are prefixed with "Work".
 - term: Equipment
   definition: A tool used in the production process. Equipment has a role in a process segment to convert material into a final good
   tags: "s95"
