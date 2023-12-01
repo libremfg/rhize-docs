@@ -1003,7 +1003,7 @@ section.toc .section-item {
 
 /* External link icon indicator */
 
-a[href^="https://"]:after {
+a[href^="https://"]:not([href="https://rhize.com"]):not([href="https://docs.rhize.com"])::after {
   content: "\f08e";
   font-family: FontAwesome;
   font-weight: normal;
@@ -1012,8 +1012,3 @@ a[href^="https://"]:after {
   text-decoration: none;
   padding-left: 3px;
 }
-/* Strip from links to own domain or with class no_icon */
-a[href^="https://docs.rhize.com"]:after,
-a.no_icon:after {
-  content:"" !important;
-  padding-l
