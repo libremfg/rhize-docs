@@ -76,7 +76,6 @@ Along with the [Global properties](#global-object-fields), an equipment class ca
 
 | Properties      | Description                              |
 |-----------------|------------------------------------------|
-|
 | Name            | Name of the property                     |
 | Description     | A freeform text to describe the property |
 | Unit of measure | The properties (unit of measure)[#uom]   |
@@ -117,7 +116,7 @@ They include raw materials, intermediate materials, and collections of parts.
 
 {{% introTable.inline "material" /%}}
 
-| General        |                                                                                  |
+| General        | Description                                                                                  |
 |----------------|----------------------------------------------------------------------------------|
 | Material class | One or more [material classes](#material-class) that it inherits propreties from |
 
@@ -202,8 +201,6 @@ In a baking process, a physical asset might be the laser jet printer which adds 
 
 In many cases, your process may need to model only [equipment](#equipment), not physical assts.
 
-
-
 ## Physical asset class
 
 A _physical asset class_ is a class of [physical assets](#physical-assets).
@@ -213,18 +210,16 @@ The physical asset class has properties for:
 - Value
 - Unit of measure
 
-
 ## Operations Definition
 
 An _operations definition_ defines the resources required to perform an operation, including for production, quality, maintenance, and inventory, from the perspective of the level-4 enterprise control systems.
 
 {{% introTable.inline "operations definition" /%}}
 
-| General fields  | Description                                                                                     |
-|-----------------|-------------------------------------------------------------------------------------------------|
-| Operation type  | One of: ` Inventory`, `maintenance`, `mixed`, `production`, `quality`                           |
+| General fields  | Description                                                                                           |
+|-----------------|-------------------------------------------------------------------------------------------------------|
+| Operation type  | One of: ` Inventory`, `maintenance`, `mixed`, `production`, `quality`                                 |
 | Hierarchy scope | The [hierarchy scope](#hierarchy-scope) within which data is exchanged for this operations definition |
-
 
 ## Hierarchy Scope
 
@@ -275,3 +270,4 @@ In a baking process, an example work master might be `Brownie Recipe`.
 |--------------------------|-------------------------------------------------------------------------------|
 | Workflow type            | One of: ` Inventory`, `maintenance`, `mixed`, `production`, `quality` |
 | Workflow specification   | An associated BPMN workflow                                           |
+
