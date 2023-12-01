@@ -53,7 +53,9 @@ To create your Rhize realm, follow these steps.
 
 After you've created the realm, you can create clients.
 
-| If created with the Libre Theme init container, configure the **Login Theme** in **Realm settings** for `libre`
+{{% notice "note" %}}
+If created with the Libre Theme `init` container, configure the **Login Theme** in **Realm settings** for `libre`.
+{{% /notice %}}
 
 ### Create clients
 

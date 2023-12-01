@@ -50,7 +50,7 @@ As you install services through Helm, their respective YAML files reference thes
 You must install the {{< param db >}} database service first.
 You also need to configure the {{< param db >}} service to have roles in Keycloak.
 
-If enabling the Audit Trail include see {{< relref "#enabling-change-data-capture" >}}.
+If enabling the Audit Trail include, refer to [Enable change data capture](#enable-change-data-capture).
 
 
 
@@ -268,16 +268,16 @@ After installing all other services, install the UI with these steps:
 If the install is successful, the UI is available on its
 [default port]({{< ref "default-ports" >}}).
 
-## Audit Trail Service [Optional]
+## Optional: Audit Trail Service
 
 
-The Rhize Audit service provides audit trail for database changes to install. The Audit service uses InfluxDB2 for storage.
+The Rhize Audit service provides an audit trail for database changes to install. The Audit service uses InfluxDB2 for storage.
 
 Install Audit Service with these steps:
 
-1. Modify the InfluxDB Helm YAML file as needed. It is *recommended* to set the admin password and token in the helm yaml file to prevent over writing the values with random values every deploy.
+1. Modify the InfluxDB Helm YAML file as needed. It is *recommended* to set the admin password and token in the Helm YAML file to prevent over writing the values with random values every deploy.
 
-1. Add InfluxDB helm repository
+1. Add InfluxDB Helm repository
     ```bash
     helm repo add influxdata https://helm.influxdata.com
     ```
@@ -288,7 +288,7 @@ Install Audit Service with these steps:
     helm install influxdb2 -f ./influxdb2.yaml influxdata/influxdb2 -n {{< param application_name >}}
     ```
 
-1. Modify the Audit trail helm YAML file. Include the OIDC configuration and InfluxDB2 token.
+1. Modify the Audit trail Helm YAML file. Include the OIDC configuration and InfluxDB2 token.
 
 2. Install with Helm:
 
@@ -326,9 +326,9 @@ For particular problems, try these commands:
 
     Then perform the steps you need and reinstall when ready.
 
-## Enabling Change Data Capture
+## Enable Change Data Capture
 
-The Audit trial requires Change Data Capture (CDC) to function. To enable CDC in {{< param application_name >}} BAAS include the following values for the helm chart overrides:
+The Audit trial requires [Change Data Capture (CDC)]({{< relref "../how-to/publish-subscribe/track-changes/" >}}) to function. To enable CDC in {{< param application_name >}} BAAS, include the following values for the Helm chart overrides:
 
 ```yaml
 alpha:
@@ -336,8 +336,8 @@ alpha:
   cdc:
     # Enable
     enabled: true
-    # If configured for security configure in nats url. For example `nats://username:password@nats:4222`
+    # If configured for security, configure in NATS url. For example `nats://username:password@nats:4222`
     nats: nats://nats:4222 
-    # Adjust based on high availability requirements and cluster size.
+    # Adjust based on high-availability requirements and cluster size.
     replicas: 1 
 ```
