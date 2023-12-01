@@ -53,6 +53,8 @@ To create your Rhize realm, follow these steps.
 
 After you've created the realm, you can create clients.
 
+| If created with the Libre Theme init container, configure the **Login Theme** in **Realm settings** for `libre`
+
 ### Create clients
 
 In Keycloak, _clients_ are entities that request Keycloak to authenticate a user.
@@ -84,27 +86,59 @@ Create a client for the DB as follows:
 
 1. Select **Next**, then **Save**.
 
+#### Create UI client
+
+Create a client for the UI as follows:
+1. In the side menu, select **Clients > create client**.
+1. Configure the **General Settings**:
+
+    - **Client Type**: `OpenID Connect`
+    - **Client ID**: `{{< param application_name >}}UI`
+    - **Name**: `{{< param brand_name >}} User Interface`
+    - **Description**: `{{< param brand_name >}} User Interface`
+
+    When finished, select **Next.**
+
+1. Configure the **Capability config**:
+    - **Client Authentication**: On
+    - **Authorization**: On
+    - For **Authentication flow**, enable:
+       - 🗸 Standard flow
+       - 🗸 Direct access grants
+       - 🗸 Implicit flow
+
+1. Select **Next**, then **Save**.
+
+1. Scroll to **Access Settings** and configure:
+
+    - **Root URL**: The domain to host the {{< param brand_name >}} User Interface without trailing slashes
+    - **Home URL**: The domain to host the {{< param brand_name >}} User Interface without trailing slashes
+    - **Web Origins**: The domain to host the {{< param brand_name >}} User Interface without trailing slashes
+
 #### Create other service clients
 
-The other services do not need authorization.
+The other services do not need authorization but do need client authentication.
 By default you need to add only the client ID.
 
-For example, to create the UI client:
+For example, to create the the BPMN engine client:
 1. In the side menu, select **Clients > create client**.
-1. For **Client ID**, enter `{{< param application_name >}}UI`
+1. For **Client ID**, enter `{{< param application_name >}}Bpmn`
+1. Configure the **Capability config**:
+    - **Client Authentication**: On
 1. Select **Next**, then **Save**.
 
 
 
 **Repeat this process for each of the following services:**
 
-| Client ID                              | Description       |
-|----------------------------------------|-------------------|
-| `{{< param application_name >}}Bpmn`   | The BPMN engine   |
-| `{{< param application_name >}}Core`   | The edge agent    |
-| `{{< param application_name >}}Router` | API router        |
-| `dashboard`                            | Grafana dashboard |
+| Client ID                              | Description           |
+|----------------------------------------|-----------------------|
+| `{{< param application_name >}}Audit`  | The audit log service |
+| `{{< param application_name >}}Core`   | The edge agent        |
+| `{{< param application_name >}}Router` | API router            |
+| `dashboard`                            | Grafana dashboard     |
 
+Based on your architecture repeat for any Libre Edge Agents, `{{< param application_name >}}Agent`
 
 ### Scope services
 
@@ -258,6 +292,13 @@ Now create a user password:
 
 Repeat this process for the following accounts:
 
+- Audit:
+    - **Username**: `{{< param application_name >}}Audit@{{< param domain_name >}}`
+    - **Email**: `{{< param application_name >}}Audit@{{< param domain_name >}}`
+    - **Email Verified**: `On`
+    - **First name**: `Audit`
+    - **Last name**: `{{< param brand_name >}}`
+    - **Join Groups**: `{{< param application_name >}}AdminGroup`
 - Core:
     - **Username**: `{{< param application_name >}}Core@{{< param domain_name >}}`
     - **Email**: `{{< param application_name >}}Core@{{< param domain_name >}}`
@@ -286,6 +327,15 @@ Repeat this process for the following accounts:
     - **First name**: `Agent`
     - **Last name**: `{{< param brand_name >}}`
     - **Join Groups**: `{{< param application_name >}}AdminGroup`
+
+## Enable Keycloak Audit Trail
+
+With the `libre` realm selected:
+1. Select **Realm Settings**, and then **Events**.
+1. Select the tab **User event settings**.
+1. Enable **Save Events** and set an expiration.
+1. **Save**.
+1. Repeat the process for the **Admin event settings** tab.
 
 ## Next steps
 
