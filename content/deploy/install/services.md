@@ -21,11 +21,9 @@ The final installation step is to install the Rhize services in your Kubernetes 
     |----------|-----------------------------------------------------------------------|
     | Admin UI | `<CUSTOMER>-{{< param application_name >}}.{{< param domain_name >}}` |
     | Keycloak | `<CUSTOMER>-auth.{{< param domain_name >}}`                           |
-    | GraphQL  | `<CUSTOMER>-graphql.{{< param domain_name >}}`                        |
+    | GraphQL  | `<CUSTOMER>-api.{{< param domain_name >}}`                            |
     | NATS     | `<CUSTOMER>-mqtt.{{< param domain_name >}}`                           |
-    | Highbyte | `<CUSTOMER>-highbyte.{{< param domain_name >}}`                       |
     | Grafana  | `<CUSTOMER>-grafana.{{< param domain_name >}}`                        |
-    | BPMN     | `<CUSTOMER>-bpmn.{{< param domain_name >}}`                           |
 
 ### Overrides
 
@@ -42,7 +40,7 @@ Common values that are changed include:
 1. Go to Keycloak and get the secrets for each client you've created.
 1. Create a Kubernetes secrets for each service with this command:
     ```bash
-    kubectl delete secret generic {{< param application_name >}}-client-secrets -n {{< param application_name >}} --from-literal=dashboard=123 --from-literal={{< param application_name >}}Agent=123 --from-literal={{< param application_name >}}Baas=KYbMHlRLhXwiDNFuDCl3qtPj1cNdeMSl --from-literal={{< param application_name >}}BPMN=123 --from-literal={{< param application_name >}}Core=123 --from-literal={{< param application_name >}}UI=123 --from-literal=router=123
+    kubectl delete secret generic {{< param application_name >}}-client-secrets -n {{< param application_name >}} --from-literal=dashboard=123 --from-literal={{< param application_name >}}Agent=123 --from-literal={{< param application_name >}}Audit=123 --from-literal={{< param application_name >}}Baas=KYbMHlRLhXwiDNFuDCl3qtPj1cNdeMSl --from-literal={{< param application_name >}}BPMN=123 --from-literal={{< param application_name >}}Core=123 --from-literal={{< param application_name >}}UI=123 --from-literal=router=123
     ```
 
 As you install services through Helm, their respective YAML files reference these secrets.
@@ -51,6 +49,9 @@ As you install services through Helm, their respective YAML files reference thes
 
 You must install the {{< param db >}} database service first.
 You also need to configure the {{< param db >}} service to have roles in Keycloak.
+
+If enabling the Audit Trail include see {{< relref "#enabling-change-data-capture" >}}.
+
 
 
 1. Use Helm to install the database:
@@ -267,6 +268,34 @@ After installing all other services, install the UI with these steps:
 If the install is successful, the UI is available on its
 [default port]({{< ref "default-ports" >}}).
 
+## Audit Trail Service [Optional]
+
+
+The Rhize Audit service provides audit trail for database changes to install. The Audit service uses InfluxDB2 for storage.
+
+Install Audit Service with these steps:
+
+1. Modify the InfluxDB Helm YAML file as needed. It is *recommended* to set the admin password and token in the helm yaml file to prevent over writing the values with random values every deploy.
+
+1. Add InfluxDB helm repository
+    ```bash
+    helm repo add influxdata https://helm.influxdata.com
+    ```
+
+1. Install with Helm:
+
+    ```bash
+    helm install influxdb2 -f ./influxdb2.yaml influxdata/influxdb2 -n {{< param application_name >}}
+    ```
+
+1. Modify the Audit trail helm YAML file. Include the OIDC configuration and InfluxDB2 token.
+
+2. Install with Helm:
+
+    ```bash
+    helm install audit -f audit.yaml libre/audit -n {{< param application_name >}}
+    ```
+
 ## Troubleshoot
 
 For general Kubernetes issues, the [Kubernetes dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) is great for troubleshooting, and you can configure it to be accessible through the browser.
@@ -296,3 +325,19 @@ For particular problems, try these commands:
     ```
 
     Then perform the steps you need and reinstall when ready.
+
+## Enabling Change Data Capture
+
+The Audit trial requires Change Data Capture (CDC) to function. To enable CDC in {{< param application_name >}} BAAS include the following values for the helm chart overrides:
+
+```yaml
+alpha:
+  # Change Data Capture (CDC)
+  cdc:
+    # Enable
+    enabled: true
+    # If configured for security configure in nats url. For example `nats://username:password@nats:4222`
+    nats: nats://nats:4222 
+    # Adjust based on high availability requirements and cluster size.
+    replicas: 1 
+```
