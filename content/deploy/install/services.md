@@ -296,6 +296,22 @@ Install Audit Service with these steps:
     helm install audit -f audit.yaml libre/audit -n {{< param application_name >}}
     ```
 
+### Enable Change Data Capture
+
+The Audit trial requires [Change Data Capture (CDC)]({{< ref "track-changes" >}}) to function. To enable CDC in {{< param application_name >}} BAAS, include the following values for the Helm chart overrides:
+
+```yaml
+alpha:
+  # Change Data Capture (CDC)
+  cdc:
+    # Enable
+    enabled: true
+    # If configured for security, configure in NATS url. For example `nats://username:password@nats:4222`
+    nats: nats://nats:4222
+    # Adjust based on high-availability requirements and cluster size.
+    replicas: 1
+```
+
 ## Troubleshoot
 
 For general Kubernetes issues, the [Kubernetes dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) is great for troubleshooting, and you can configure it to be accessible through the browser.
@@ -325,19 +341,3 @@ For particular problems, try these commands:
     ```
 
     Then perform the steps you need and reinstall when ready.
-
-## Enable Change Data Capture
-
-The Audit trial requires [Change Data Capture (CDC)]({{< relref "../how-to/publish-subscribe/track-changes/" >}}) to function. To enable CDC in {{< param application_name >}} BAAS, include the following values for the Helm chart overrides:
-
-```yaml
-alpha:
-  # Change Data Capture (CDC)
-  cdc:
-    # Enable
-    enabled: true
-    # If configured for security, configure in NATS url. For example `nats://username:password@nats:4222`
-    nats: nats://nats:4222 
-    # Adjust based on high-availability requirements and cluster size.
-    replicas: 1 
-```
