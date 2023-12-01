@@ -1018,3 +1018,7 @@ a.no_icon:after {
   content:"" !important;
   padding-l
 
+a[href^="https://rhize.com"]:after,
+a.no_icon:after {
+  content:"" !important;
+  padding-l
