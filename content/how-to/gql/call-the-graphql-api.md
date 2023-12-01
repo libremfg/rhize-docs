@@ -108,7 +108,8 @@ Unlike calls to REST APIs, where the server-side code defines what a response lo
 Furthermore, you can query diverse sets of data in one call, so you can get exactly the entities you want without calling multiple endpoints, as you would in REST, or composing queries with complex recursive joins, as you would in SQL.
 Besides precision, this also brings performance benefits to minimize network calls and their payloads.
 
-For example, you modify the previous request to return information about the equipments versions, including their `description`, unique IDs, and the currently active version:
+For example, this expands the fields requested from the previous example.
+Besides `id` and `_createdBy`, it now returns the `description`, unique ID, and version information about the requested equipment item:
 
 {{< tabs >}}
 {{% tab "request" %}}
@@ -185,10 +186,6 @@ query peopleAndDataSources {
 {
   "data": {
     "queryPerson": [
-      {
-        "id": "999-63-8161",
-        "label": "999-63-8161"
-      },
       {
         "id": "235",
         "label": "John Ramirez"
