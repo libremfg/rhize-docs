@@ -118,7 +118,7 @@ They include raw materials, intermediate materials, and collections of parts.
 
 | General        | Description                                                                                  |
 |----------------|----------------------------------------------------------------------------------|
-| Material class | One or more [material classes](#material-class) that it inherits propreties from |
+| Material class | One or more [material classes](#material-class) that it inherits properties from |
 
 
 Materials may have an indefinite number of properties with parameters for the following fields:
@@ -133,10 +133,10 @@ A _material class_ is a group of material with a shared purpose in the manufactu
 
 | General fields         | Description                                                                                                                                                                                                             |
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Assembly type          | Can be one of: <ol type="a"><li>Logical: the components of the material are not necessarily physically connected</li><li>Physical: the components of the material are physically connected or in the same location</li><ol> |
+| Assembly type          | Can be one of: <ol type="a"><li>`Logical`: the components of the material are not necessarily physically connected</li><li>`Physical`: the components of the material are physically connected or in the same location</li><ol> |
 | Relationship           | Can be one of: <ol type="a"><li>`Permanent`, if a material that can't be split from the production process</li><li> `Transient`, for temporary material in assembly, such as a pallet</li></ol>
 | Hierarchy scope        | The [hierarchy scope](#hierarchy-scope) that material class belongs to                                                                                                                                                              |
-| Includes properties of | One or more material classes to inherit properties from                                                                                                                                                                            |
+| Includes properties of | One or more material classes that it inherit properties from                                                                                                                                                                            |
 | Is assembled from      | Material classes that make this material                                                                                                                                                                                |
 
 Material classes may have an indefinite number of properties with parameters for the following fields:
@@ -199,7 +199,7 @@ For example, in a baking process, an operational location class may be `Kitchens
 A _physical asset_ is portable or swappable equipment.
 In a baking process, a physical asset might be the laser jet printer which adds labels to the boxes (and could be used in many segments across the plant).
 
-In many cases, your process may need to model only [equipment](#equipment), not physical assts.
+In many cases, your process may need to model only [equipment](#equipment), not physical assets.
 
 ## Physical asset class
 
@@ -230,7 +230,7 @@ While hierarchy scope is often connected to an [operational location](#operation
 
 ## Units of Measure {#uom}
 
-A _Unit of measure_ is a defined unit to consistely compare values, duratation or quantities.
+A _Unit of measure_ is a defined unit to consistently compare values, duration or quantities.
 
 You can create units of measure in the UI and give them the following parameters:
 - Name
