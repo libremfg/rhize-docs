@@ -10,7 +10,7 @@ menu:
 
 
 You can use _change data capture_ (CDC) to track data changes over time, including
-mutations and drops in your database.
+a {{< abbr "mutation" >}} or drop in your database.
 Rhize's CDC implementation can use
 Kafka, Nats or a local file as a *{{< abbr "sink" >}}* to store CDC updates streamed by Rhize's Alpha
 leader nodes.
@@ -23,7 +23,9 @@ Live Loader events are recorded by CDC, but Bulk Loader events aren't.
 
 CDC events are based on changes to Raft logs. So, if the sink is unreachable
 by the Alpha leader node, then Raft logs expand as events are collected on
-that node until the sink is available again. You should enable CDC on all RHIZE
+that node until the sink is available again.
+
+You should enable CDC on all Rhize
 Alpha nodes to avoid interruptions in the stream of CDC events.
 
 ## Enable CDC with Kafka sink

@@ -72,6 +72,9 @@
 - term: Material class
   definition: A group of material with a shared purpose in the manufacturing process
   tags: "s95"
+- term: Mutation
+  definition: A GraphQL operation that modifies some data in the database, usually creating, updating, or deleting a resource
+  tags: "gql"
 - term: NATS
   definition:
     Connective infrastructure to address, discover, and exchange messages in a distributed system.
