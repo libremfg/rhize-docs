@@ -49,25 +49,7 @@ security:
       - .*
 params:
   site: librebaas-docs
-  algolia:
-    vars:
-      - title
-      - summary
-      - date
-      - publishdate
-      - expirydate
-      - permalink
-      - toc
-    params:
-      - tags
 
 outputs:
   home:
     - HTML
-    - Algolia
-outputFormats:
-  Algolia:
-    baseName: algolia
-    isPlainText: true
-    mediaType: application/json
-    notAlternative: true
