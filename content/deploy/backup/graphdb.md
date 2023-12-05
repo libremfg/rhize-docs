@@ -42,7 +42,7 @@ To back up the database, follow these steps:
 
     ```bash
    kubectl exec --stdin --tty {{< param application_name >}}-baas-baas-alpha-0 \
-   -n <NAMESPACE> -- /bin/bash
+   -n {{< param "application_name" >}} -- /bin/bash
     ```
 
     For details, read the Kubernetes topic [Get Shell to a Running Container](https://kubernetes.io/docs/tasks/debug/debug-application/get-shell-running-container/).
