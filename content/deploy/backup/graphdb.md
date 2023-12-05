@@ -105,7 +105,7 @@ For example, with `curl`:
     ```
 
 1. Use the checksum to confirm that the pod files and the local files are the same.
-If you are using windows, you can run an equivalent check with the [`CertUtil`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/certutil) utility:
+If you are using Windows, you can run an equivalent check with the [`CertUtil`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/certutil) utility:
 
    {{< tabs >}}
    {{% tab "bash" %}}
