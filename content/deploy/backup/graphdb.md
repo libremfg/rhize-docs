@@ -23,7 +23,7 @@ Before you start, ensure you have the following:
 {{% param pre_reqs %}}.
 
 
-Also, before you start, confirm you are in the right context and namespace.
+Before you start, confirm you are in the right context and namespace:
 
 {{% param "k8s_cluster_ns" %}}
 
@@ -38,16 +38,16 @@ To back up the database, follow these steps:
     kubectl logs {{< param application_name >}}-baas-baas-alpha-0 --tail=80
     ```
 
-1. Open a pod shell for one of the alpha pods.
+1. Open a pod shell for one of the alpha pods. If you are using the terminal, run this command:
 
     ```bash
-    kubectl exec --stdin --tty \
-    {{< param application_name >}}-baas-baas-alpha-0 -- /bin/bash
+   kubectl exec --stdin --tty {{< param application_name >}}-baas-baas-alpha-0 \
+   -n <NAMESPACE> -- /bin/bash
     ```
 
     For details, read the Kubernetes topic [Get Shell to a Running Container](https://kubernetes.io/docs/tasks/debug/debug-application/get-shell-running-container/).
 
-1. Make a POST request to get the your Keycloak `/token` endpoint to get an `access_token` value.
+1. Make a POST request to your Keycloak `/token` endpoint to get an `access_token` value.
 For example, with `curl` and `jq`:
 
     ```bash
@@ -91,7 +91,7 @@ For example, with `curl`:
 1. Create a file that holds the sha256 checksums of the latest backup files. You'll use this file to confirm the copy is identical.
 
     ```bash
-    sha256sum <LATEST_BACKUP_DIR>/dgraph.r890268.u1120.1501/*.gz > backup.sums
+    sha256sum <LATEST_BACKUP_DIR>/dgraph.<PODNAME>/*.gz > <LATEST_BACKUP_DIR>/backup.sums
     ```
 
 1. Exit the container shell, then copy files out of the container to your backup location:
@@ -100,16 +100,28 @@ For example, with `curl`:
     ## exit shell
     exit
     ## copy container files to backup
-    kubectl cp --retries=10 <name-space>/<pod-name>:backups/<CONTAINER_BACKUP> \
+    kubectl cp --retries=10 <NAMESPACE>/<PODNAME>:backups/<CONTAINER_BACKUP> \
     ./<BACKUP>/<ON_YOUR_DEVICE>
     ```
 
-1. Use the checksum to confirm that the pod files and the local files are the same:
+1. Use the checksum to confirm that the pod files and the local files are the same.
+If you are using windows, you can run an equivalent check with the [`CertUtil`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/certutil) utility:
 
+   {{< tabs >}}
+   {{% tab "bash" %}}
    ```bash
+   ## Change to the directory
    cd ./<BACKUP>/<ON_YOUR_DEVICE>/
+   ## Check sums
    sha256sum -c backup.sums *.gz
    ```
+   {{% /tab %}}
+   {{% tab "cmd" %}}
+   ```cmd
+   CertUtil -hashfile C:\<BACKUP>\<ON_YOUR_DEVICE>\backup.sums sha256
+   ```
+   {{% /tab %}}
+   {{< /tabs >}}
 
 ## Confirm success
 

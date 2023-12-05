@@ -21,7 +21,15 @@ cascade:
     ## namespace
     kubectl get namespace
     ```
-    
+
+    To change the namespace for all subsequent `kubectl` commands to `libre`, run this command:
+
+    ```bash
+    kubectl config set-context --current --namespace=libre
+    ```
+
+    For a reference of useful `kubectl` commands, refer to the official [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/).
+
 ---
 
 A collection of pages to administrate Rhize: install, upgrade, back up, and more.
