@@ -20,7 +20,7 @@ Rhize has only one strong opinion: all manufacturing objects and data must be mo
 This standards-based schema is how Rhize connects every data event across an entire operation.
 If you aren't an ISA-95 fan, we're happy to convert you, but adoption is a requirement to use the platform.
 
-And if do adopt ISA-95, you open your organization to Rhize's far-reaching transformations.
+And if you do adopt ISA-95, you open your organization to Rhize's far-reaching transformations.
 
 ## Use cases
 
