@@ -16,9 +16,14 @@
     In BPMN, a catch event reacts to a trigger (compared to a <a href="#throw-event">throw event</a>, which returns some result). Only start and intermediate events can catch.
 - term: Data source
   definition: A source of real-time data that is collected by the <a href="#agent">Rhize agent</a>, such as an MQTT or OPC UA device
+- term: Discrete manufacturing
+  definition: A form a manufacturing where items are made one at a item, as opposed to in batches or continuously
 - term: Enterprise resource planning
   abbr: ERP
   definition: Software to manage business processes. In Rhize, ERP activities usually are named "operations", where lower-level activities are prefixed with "Work".
+- term: Electronic batch report
+  definition: A detailed report for a batch in a pharmaceutical process, logging items such as the process segments, personnel, equipment, material substance and weight, and so on
+  abbr: eBR
 - term: Equipment
   definition: A tool used in the production process. Equipment has a role in a process segment to convert material into a final good
   tags: "s95"
@@ -40,9 +45,13 @@
   links:
     - text: Rhize architecture
       uri: /architecture/overview/
+- term: Event orchestration
+  definition: A pattern in event-driven architecture where a central service, such as <a href="#nats">NATS</a> listens to events and decides how to handle them.
 - term: Finished goods
   definition: The final product. Material becomes finished goods when it requires no more processing or production
   tags: "s95"
+- term: Genealogy
+  definition: The ability to trace the raw materials that were used across different levels of a manufacturing process
 - term: Hierarchy scope
   definition: The scope of the exchanged information, such as a site or area, for which the information is relevant. The scope identifies associated instances of objects such as material, personnel, and equipment
   tags: "s95"
@@ -117,6 +126,9 @@
 - term: Role-based equipment model
   definition: A definition of equipment based on the level-3 and level-4 functions and activities that it performs
   tags: "s95"
+- term: Serial discrete
+  definition: >-
+    A type of <a href="#discrete-manufacturing">discrete manufacturing</a> where each item produced has a serial number
 - term: Sink
   definition: >-
     The destination of a data flow.
