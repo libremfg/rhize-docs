@@ -121,7 +121,7 @@ src="/images/bpmn/screenshot-rhize-bpmn-add-material-definition.png"
 </a>
 
 This step can involve multiple BPMN processes subscribing to different topics.
-As long as the incoming event data has a common association, for example through the `id` of the batch data and associated `JobResponse`, you can return all necessary data in one GraphQL query&mdash;no recursive SQL joins necessary.
+As long as the incoming event data has a common association, for example through the `id` of the batch data and associated `JobResponse`, you can return all eBR fields in one GraphQL query&mdash;no recursive SQL joins needed.
 
 {{< figure
 alt="Multiple BPMN processes can be united in one batch"
