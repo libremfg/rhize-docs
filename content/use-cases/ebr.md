@@ -88,6 +88,11 @@ caption="<small><em>A simplified BPMN workflow. For an example of a real workflo
 With the sources of data and their corresponding models, the next step
 is to write a [{{< abbr "BPMN" >}}]({{< relref "/how-to/bpmn" >}}) workflow to automatically transform the data and update the database.
 
+{{< notice "note" >}}
+You may want to break these steps into multiple parts.
+Or, for increased modularity, you can call another BPMN workflow with a [Call activity]({{< relref "how-to/bpmn/bpmn-elements">}}#call-activities).
+{{< /notice >}}
+
 The procedure is as follows:
 
 1. Subscribe to the topic for the appropriate data (for example `/lims/lab1`). If the data comes from certain equipment, you first need to [Connect a data source]({{< relref "how-to/publish-subscribe/connect-datasource" >}}).
@@ -99,10 +104,6 @@ The procedure is as follows:
   
    Use the output as a variable for the next step.
    
-   {{< notice "note" >}}
-   You may want to break these steps into multiple parts.
-   Or, for increased modularity, you can call another BPMN workflow with a [Call activity]({{< relref "how-to/bpmn/bpmn-elements">}}#call-activities).
-   {{< /notice >}}
 
 1. POST data with a graph mutation.
 
