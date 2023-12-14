@@ -7,7 +7,7 @@
     A system that alerts manufacturing teams about problems in processes or quality.
 - term: Business Process Model and Notation
   abbr: BPMN
-  definition: A standardized graphical notation used to represent business processes in an intuitive, visual way
+  definition: A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize's BPMN UI and engine provides a low-code interface for complex event handling
   links:
     - text: BPMN Specification 2.0
       uri: https://www.omg.org/spec/BPMN/2.0/PDF
@@ -46,7 +46,7 @@
     - text: Rhize architecture
       uri: /architecture/overview/
 - term: Event orchestration
-  definition: A pattern in event-driven architecture where a central service, such as <a href="#nats">NATS</a> listens to events and decides how to handle them.
+  definition: A pattern in event-driven architecture where a central service, such as <a href="#nats">NATS</a>, listens to events and decides how to handle them.
 - term: Finished goods
   definition: The final product. Material becomes finished goods when it requires no more processing or production
   tags: "s95"
