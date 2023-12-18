@@ -20,8 +20,8 @@ Our experience in production systems shows that Rhize can typically generate an 
 
 The procedure has the following steps:
 
-1. Identify the sources of data
-1. Map the fields for these data sources to Rhize's ISA-95 schema
+1. Identify the sources of data.
+1. Map the fields for these data sources to Rhize's ISA-95 schema.
 1. Write a BPMN process that listens for a data source, transforms the incoming data to the schema, and then sends a {{< abbr "mutation" >}} to update the Rhize database.
 1. After the batch finishes, query the database with the fields for your {{< abbr "ebr" >}}.
 
