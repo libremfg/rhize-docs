@@ -193,7 +193,7 @@ Install the BPMN engine with these steps:
 
 ### Router
 
-Rhize uses the [Apollo router](https://duckduckgo.com/?t=ffab&q=apollo+router&ia=web) to unite queries for different services in a single endpoint.
+Rhize uses the [Apollo router](https://www.apollographql.com/docs/router) to unite queries for different services in a single endpoint.
 
 > **Requirements:** Router requires the [GraphDB](#db), [BPMN](#bpmn), and [Core](#core) services.
 
@@ -249,8 +249,7 @@ Install the agent with these steps:
 
 ## Install UI
 
-
-The [UI]({{< relref "/how-to/" >}}) is the graphical frontend to progrman business processes and define work masters.
+The UI is the graphical frontend to [handle events]({{< relref "/how-to/bpmn" >}}) and [define work masters]({{< relref "/how-to/model" >}}).
 
 > **Requirements:** The UI requires the [GraphDB](#db), [BPMN](#bpmn), [Core](#core), and [Router](#router) services.
 

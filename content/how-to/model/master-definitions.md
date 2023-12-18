@@ -153,8 +153,8 @@ A _person_ is a unique member of [personnel class](#personnel-class).
 |---------------------------|------------------------------------------------------------|
 | Name                      | The name of the person                                                            |
 | Hierarchy scope           | The [hierarchy scope](#hierarchy-scope) that the person belongs to                                                            |
-| Inherit personnel classes | One ore more personnel classes to inherit properties from  |
-| Operational location      | The associated [Operational location](#operation-location) |
+| Inherit personnel classes | One or more personnel classes to inherit properties from  |
+| Operational location      | The associated [Operational location](#operational-location) |
 
 ## Personnel Class
 
@@ -182,7 +182,7 @@ For example, in a baking process, an operational location class may be `northwin
 
 ## Operational Location Class
 
-An _operational location_ class is a grouping of [operational locations](#operational-locations) for a defined purpose.
+An _operational location_ class is a grouping of [operational locations](#operational-location) for a defined purpose.
 For example, in a baking process, an operational location class may be `Kitchens`
 
 {{% introTable.inline "operational location class" /%}}
@@ -191,8 +191,6 @@ For example, in a baking process, an operational location class may be `Kitchens
 |------------------------------------|-----------------------------------------------------------------------------------|
 | Hierarchy scope                    | The [hierarchy scope](#hierarchy-scope) within which this location exchanges data |
 | Inherit Operational location class | The Operational location classes to inherit properties from                       |
-
-
 
 ## Physical Asset
 
@@ -249,7 +247,7 @@ You can associate specifications for:
 | General fields           | Description                                                                   |
 |--------------------------|-------------------------------------------------------------------------------|
 | Operations type          | One of: ` Inventory`, `maintenance`, `mixed`, `production`, `quality`         |
-| Definition type          | One of: Instance, Pattern                                                     |
+| Definition type          | One of: `Instance`, `Pattern`                                                     |
 | Duration                 | The expected duration                                                         |
 | Duration unit of measure | The time [unit of measure](#uom)                                              |
 | Hierarchy scope          | The [hierarchy scope](#hierarchy-scope) within which data is exchanged for this process segment |

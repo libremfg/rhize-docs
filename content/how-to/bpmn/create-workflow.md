@@ -36,9 +36,9 @@ Every workflow is different, but the overall procedure usually works like this:
 
     | If you want to...                | Use this BPMN activity |
     |----------------------------------|------------------------|
-    | Filter the contents of a message | [JSONata transform]({{< relref "bpmn-elements/#jsonata-transform" >}}").    |
-    | Call the GraphQL API             | GraphQL [query]({{< relref "bpmn-elements/#graphql-query" >}}") or [mutation]({{< relref "bpmn-elements/#graphql-mutation" >}}")    |
-    | Call another BPMN workflow       | [Call activity]({{< relref "bpmn-elements/#call-activity)" >}})      |
+    | Filter the contents of a message | [JSONata transform]({{< relref "bpmn-elements/#jsonata-transform" >}}).    |
+    | Call the GraphQL API             | GraphQL [query]({{< relref "bpmn-elements/#graphql-query" >}}) or [mutation]({{< relref "bpmn-elements/#graphql-mutation" >}})    |
+    | Call another BPMN workflow       | [Call activity]({{< relref "bpmn-elements/#call-activities" >}})      |
 
 1. Create [conditional flows]({{< relref "bpmn-elements/#exclusive-gateway" >}}) and [parallel processes]({{< relref "bpmn-elements/#parallel-gateway" >}}) with gateways. To establish a condition, write a JSONata expression in the arrow that leads to the conditional result.
 1. To run the workflow, toggle the **Enabled** switch.
