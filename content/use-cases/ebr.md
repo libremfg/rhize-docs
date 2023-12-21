@@ -65,7 +65,6 @@ Common data sources for an eBR might include:
 
 After you've identified the source data, the next step is to map this data into ISA-95 models.
 
-
 {{< figure
 alt="diagram showing some examples of ISA-95 modeling"
 src="/images/ebr/diagram-rhize-map-ebr-isa95.png"
