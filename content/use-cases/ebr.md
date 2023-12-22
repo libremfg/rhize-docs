@@ -1,7 +1,7 @@
 ---
 title: >-
   Electronic batch records
-description: An example of how to use Rhize to create an Electronic Batch Records for pharmaceuticals
+description: An example of how to use Rhize to create Electronic Batch Records for pharmaceuticals
 draft: false
 categories: ["howto", "use-cases"]
 weight: 001
