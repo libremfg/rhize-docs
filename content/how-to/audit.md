@@ -11,17 +11,17 @@ menu:
 ---
 
 The _Audit Log_ provides a tamper-proof and immutable audit trail of all events that occur in the Rhize system.
-
-Users with appropriate permissions can access the audit log either through the UI menu or the GraphQL API
+Users with appropriate permissions can access the audit log either through the UI menu or the GraphQL API.
 
 ## Prerequisites
 
 To use the audit log, ensure you have the following:
 
-- Access to your Rhize UI environment
+- If accessing to your Rhize UI environment, a user account with appropriate permissions
 - If accessing through GraphQL, you also need:
     - The ability to [Use the Rhize GraphQL API]({{< relref "gql" >}})
     - A token configured so that `audience` includes `audit`, and the scopes contain `audit:query`
+
 
 ## Audit through the UI
 
@@ -54,6 +54,7 @@ In the audit UI, each record in the audit has the following fields:
 The audit log is also exposed through the GraphQL API.
 To access it, use the `queryAuditLog` operation, and add [filters]({{< relref "gql/call-the-graphql-api#filters" >}}) for the time range and users.
 
+
 Here's an example query:
 
 ```gql
@@ -73,4 +74,3 @@ query {
   }
 }
 ```
-
