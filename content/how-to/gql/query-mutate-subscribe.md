@@ -26,6 +26,12 @@ Most queries start with these three verbs, each of which indicates the resources
 - `query` for multiple resources
 - `aggregate` for calculations on arrays
 
+{{< notice "note" >}}
+
+These operations correspond to the `Get` verb defined in [Part 5](https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i) of the ISA-95 standard.
+
+{{< /notice >}}
+
 ### `get` single resource
 
 Queries that start with `get` return one object.
@@ -123,6 +129,7 @@ Rhize supports the following ways to change the API.
 ### `Add`
 
 Mutations that start with `Add` create a resource on the server.
+The `Add` operation corresponds to the `Process` verb defined in [Part 5](https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i) of the ISA-95 standard.
 
 For example, this mutation adds one more items of equipment.
 To add multiple, send the variable as an array of objects, rather than a single object.
@@ -176,6 +183,8 @@ mutation AddEquipment($input: [AddEquipmentInput!]!) {
 ### `Update`
 
 Mutations that start with `Update` change something in an object that already exists.
+The `Update` operation corresponds to the `Change` verb defined in [Part 5](https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i) of the ISA-95 standard.
+
 For example, this operation updates the description for a specific version of an equipment item.
 
 {{< tabs >}}
@@ -213,6 +222,7 @@ Be careful! Without a [Database backup]({{< relref "/deploy/backup/graphdb" >}})
 {{< /notice >}}
 
 Mutations that start with `delete` remove a resource from the database.
+The operation corresponds to the `Cancel` verb defined in [Part 5](https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i) of the ISA-95 standard.
 
 For example, this operation deletes a unit of measure:
 
@@ -244,8 +254,15 @@ mutation deleteUoM($filter: UnitOfMeasureFilter!){
 
 ## Subscriptions
 
+{{< notice "note" >}}
+
+These operations correspond to the `SyncGet` verb defined in [Part 5](https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i) of the ISA-95 standard.
+
+{{< /notice >}}
+
 The operations for a `subscription` are similar to the operations for a [`query`](#queries).
 But rather than providing information about the entire item, the purpose of subscriptions is to notify about real-time changes to a manufacturing resource.
+
 
 This example query subscribes to changes in a specified set of `workResponses`, reporting only their `id` and effective end time.
 
@@ -260,6 +277,6 @@ subscription GetWorkResponse($getWorkResponseId: String) {
 }
 ```
 
-Note that you should be sure to minimize the payload for subscription operations.
-Additionally, you only need to subscribe for changes that persist to the knowledge graph.
+Try to minimize the payload for subscription operations.
+Additionally, you need to subscribe only to changes that persist to the knowledge graph.
 For general event handling, it's often better to use a [BPMN workflow]({{< relref "../bpmn" >}}) that subscribes to a NATS, MQTT, or OPC UA topic.
