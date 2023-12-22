@@ -5,6 +5,9 @@
 - term: Andon
   definition: >-
     A system that alerts manufacturing teams about problems in processes or quality.
+- term: Audit
+  definition: >-
+    The Libre Audit log server is a service that provides a tamper-proof and immutable audit trail of all events that occur in the Rhize system.
 - term: Business Process Model and Notation
   abbr: BPMN
   definition: A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize's BPMN UI and engine provides a low-code interface for complex event handling
@@ -95,6 +98,9 @@
 - term: Operational location
   definition: Where resources are expected to be located in a plant
   tags: "s95"
+- term: Operations event definition
+  definition: >-
+    A definition of the properties that pertain to an _event_ from the perspective of the level-4 (ERP) systems.
 - term: Operations definition
   definition: The resources required to perform an operation, including for production, quality, maintenance, and inventory, from the perspective of the level-4 enterprise control systems.
   tags: "s95"

@@ -10,15 +10,12 @@ menu:
   main:
     parent: how-to-define
     identifier: master-definitions
-
 ---
 
 To make a production object visible to the Rhize data hub, you must define it as a data model.
 
 These sections document all the objects that you can add through the UI, and the fields and properties that you can associate with them.
 All these models are based on the ISA-95 standard, mostly from [Part 2](https://www.isa.org/products/ansi-isa-95-00-02-2018-enterprise-control-system-i), which describes the role-based equipment hierarchy.
-
-
 
 ## Global object fields
 
@@ -27,7 +24,7 @@ Additionally, most objects have the following fields:
 
 | Global field | Description                                                                            |
 |--------------|----------------------------------------------------------------------------------------|
-| Version      | The version of the object (and each version has a [state](#version-states))              |
+| Version      | The version of the object (and each version has a [state](#version-states))            |
 | Description  | Freeform text to describe what the object does and help colleagues understand its role |
 
 ### Version states
@@ -38,51 +35,26 @@ Each version of an object can have the following states:
 - `For review`
 - `Deprecated`
 
-## Equipment
+
+{{< notice "note" >}}
+When recording actual execution, what matters is version of the object, not its general definition.
+Thus, **to add a class to an object, you must give that object a version first.**
+{{< /notice >}}
 
 
-A piece of _equipment_ is a tool with a defined role in a [process segment](#process-segment).
-For example, in a baking process, equipment might be a specific brownie oven.
+## Common models
 
-Equipment also might be part of hierarchy of levels, starting with Enterprise and ending with granular levels such as `WorkUnit`.
+_Common models_ are data objects that can apply to different resources in your manufacturing process
 
-Along with the following fields, you can also connect an equipment item to a [data source](#data-source), add additional properties, and toggle it to be active or inactive.
+### Units of Measure {#uom}
 
-{{% introTable.inline "equipment" %}}
-{{ $term := (.Get 0) }}
-{{ $vowels := slice "a" "e" "i" "o" "u" }}
-Along with the [global object fields](#global-object-fields),
-{{cond (in $vowels (index (split (lower $term) "") 0 )) "an" "a" }}
-{{ $term }} object has the following fields:
-{{% /introTable.inline %}}
+A _Unit of measure_ is a defined unit to consistently compare values, duration or quantities.
 
+You can create units of measure in the UI and give them the following parameters:
+- Name
+- Data type
 
-| General equipment fields  | Description                                                                                                                                                                                                                                                        |
-|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Equipment class | The [class of equipment](#equipment-class) that it belongs to.                                                                                                                                                                                                     |
-| Equipment level | Associated level for the equipment. One of:  `Enterprise`, `Site`, `Area`, `ProcessCell`, `Unit`, `ProductionLine`, `WorkCell`, `ProductionUnit`, `Warehouse`, `StorageZone`, `StorageUnit`, `WorkCenter`, `WorkUnit`, `EquipmentModule`, `ControlModule`, `Other` |
-
-
-
-## Equipment class
-
-An _equipment class_ is a grouping of [equipment](#equipment) for a definite purpose.
-For example, in a baking process, an equipment class might be the category of all ovens, with properties such as `maximum temperature` and `number of shelves`.
-
-<!---
-Equipment has **Rules**, which... -->
-
-Along with the [Global properties](#global-object-fields), an equipment class can include an indefinite number of properties with the following fields:
-
-| Properties      | Description                              |
-|-----------------|------------------------------------------|
-| Name            | Name of the property                     |
-| Description     | A freeform text to describe the property |
-| Unit of measure | The properties (unit of measure)[#uom]   |
-<!--
-| Expression      |                                          | -->
-
-## Data Sources
+### Data Sources
 
 A _data source_ is a source of real-time data that is collected by the Rhize agent.
 For example, in a baking process, a data source might be an OPC UA server that sends readings from an oven thermometer.
@@ -109,7 +81,77 @@ Each topic has the following fields:
 
 Some data sources, such as OPC UA, have methods for RPC calls.
 
-## Material definition
+### Hierarchy Scope
+
+The _hierarchy scope_ represents the scope within which data information is exchanged.
+For example, in a baking process, two plants may have different personnel and equipment, even if they both produce the identical final products.
+The hierarchy scope defines a scope where all granular data within is relevant to it.
+
+While hierarchy scope is often connected to an [operational location](#operational-location), the determining is about _information exchange_.
+
+## Resource models
+
+_Resource models_ are data objects that have a specific role in your role-based equipment hierarchy.
+
+### Equipment class
+
+An _equipment class_ is a grouping of [equipment](#equipment) for a definite purpose.
+For example, in a baking process, an equipment class might be the category of all ovens, with properties such as `maximum temperature` and `number of shelves`.
+
+<!---
+Equipment has **Rules**, which... -->
+
+Along with the [Global properties](#global-object-fields), an equipment class can include an indefinite number of properties with the following fields:
+
+| Properties      | Description                              |
+|-----------------|------------------------------------------|
+| Name            | Name of the property                     |
+| Description     | A freeform text to describe the property |
+| Unit of measure | The properties (unit of measure)[#uom]   |
+<!--
+| Expression      |                                          | -->
+
+### Equipment
+
+A piece of _equipment_ is a tool with a defined role in a [process segment](#process-segment).
+For example, in a baking process, equipment might be a specific brownie oven.
+
+Equipment also might be part of hierarchy of levels, starting with Enterprise and ending with granular levels such as `WorkUnit`.
+
+Along with the following fields, you can also connect an equipment item to a [data source](#data-source), add additional properties, and toggle it to be active or inactive.
+
+{{% introTable.inline "equipment" %}}
+{{ $term := (.Get 0) }}
+{{ $vowels := slice "a" "e" "i" "o" "u" }}
+Along with the [global object fields](#global-object-fields),
+{{cond (in $vowels (index (split (lower $term) "") 0 )) "an" "a" }}
+{{ $term }} object has the following fields:
+{{% /introTable.inline %}}
+
+| General equipment fields  | Description                                                                                                                                                                                                                                                        |
+|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Equipment class | The [class of equipment](#equipment-class) that it belongs to.                                                                                                                                                                                                     |
+| Equipment level | Associated level for the equipment. One of:  `Enterprise`, `Site`, `Area`, `ProcessCell`, `Unit`, `ProductionLine`, `WorkCell`, `ProductionUnit`, `Warehouse`, `StorageZone`, `StorageUnit`, `WorkCenter`, `WorkUnit`, `EquipmentModule`, `ControlModule`, `Other` |
+
+### Material Class
+
+A _material class_ is a group of material with a shared purpose in the manufacturing process.
+
+{{% introTable.inline "material-class" /%}}
+
+| General fields         | Description                                                                                                                                                                                                             |
+|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Assembly type          | Can be one of: <ol type="a"><li>`Logical`: the components of the material are not necessarily physically connected</li><li>`Physical`: the components of the material are physically connected or in the same location</li><ol> |
+| Relationship           | Can be one of: <ol type="a"><li>`Permanent`, if a material that can't be split from the production process</li><li> `Transient`, for temporary material in assembly, such as a pallet</li></ol>
+| Hierarchy scope        | The [hierarchy scope](#hierarchy-scope) that material class belongs to                                                                                                                                                              |
+| Includes properties of | One or more material classes that a version inherits properties from                                                                                                                                                                            |
+| Is assembled from      | Material classes that make this material                                                                                                                                                                                |
+
+Material classes may have an indefinite number of properties with parameters for the following fields:
+- Value
+- [Unit of measure](#uom)
+
+### Material definition
 
 _Materials_ are everything required to produce a finished good.
 They include raw materials, intermediate materials, and collections of parts.
@@ -118,32 +160,25 @@ They include raw materials, intermediate materials, and collections of parts.
 
 | General        | Description                                                                                  |
 |----------------|----------------------------------------------------------------------------------|
-| Material class | One or more [material classes](#material-class) that it inherits properties from |
+| Material class | One or more [material classes](#material-class) that a version inherits properties from |
 
 
 Materials may have an indefinite number of properties with parameters for the following fields:
 - Value
 - [Unit of measure](#uom)
 
-## Material Class
+### Personnel Class
 
-A _material class_ is a group of material with a shared purpose in the manufacturing process.
+A _personnel class_ is a grouping of persons whose work shares a definite purpose in the manufacturing process.
+In a baking process, an example of a personnel class may be `oven_operators`.
 
-{{% introTable.inline "material class" /%}}
+{{% introTable.inline "personnel-class" /%}}
 
-| General fields         | Description                                                                                                                                                                                                             |
-|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Assembly type          | Can be one of: <ol type="a"><li>`Logical`: the components of the material are not necessarily physically connected</li><li>`Physical`: the components of the material are physically connected or in the same location</li><ol> |
-| Relationship           | Can be one of: <ol type="a"><li>`Permanent`, if a material that can't be split from the production process</li><li> `Transient`, for temporary material in assembly, such as a pallet</li></ol>
-| Hierarchy scope        | The [hierarchy scope](#hierarchy-scope) that material class belongs to                                                                                                                                                              |
-| Includes properties of | One or more material classes that it inherit properties from                                                                                                                                                                            |
-| Is assembled from      | Material classes that make this material                                                                                                                                                                                |
+| General fields  | Description                                                                                   |
+|-----------------|------------------------------------------------------------------------------------|
+| Hierarchy scope | The [hierarchy scope](#hierarchy-scope) within which this personnel exchanges data |
 
-Material classes may have an indefinite number of properties with parameters for the following fields:
-- Value
-- [Unit of measure](#uom)
-
-## Person
+### Person
 
 A _person_ is a unique member of [personnel class](#personnel-class).
 
@@ -153,55 +188,10 @@ A _person_ is a unique member of [personnel class](#personnel-class).
 |---------------------------|------------------------------------------------------------|
 | Name                      | The name of the person                                                            |
 | Hierarchy scope           | The [hierarchy scope](#hierarchy-scope) that the person belongs to                                                            |
-| Inherit personnel classes | One ore more personnel classes to inherit properties from  |
-| Operational location      | The associated [Operational location](#operation-location) |
+| Inherit personnel classes | One or more personnel classes that a version inherits properties from  |
+| Operational location      | The associated [Operational location](#operational-location) |
 
-## Personnel Class
-
-A _personnel class_ is a grouping of persons whose work shares a definite purpose in the manufacturing process.
-In a baking process, an example of a personnel class may be `oven_operators`.
-
-{{% introTable.inline "personnel class" /%}}
-
-| General fields  | Description                                                                                   |
-|-----------------|------------------------------------------------------------------------------------|
-| Hierarchy scope | The [hierarchy scope](#hierarchy-scope) within which this personnel exchanges data |
-
-## Operational Location
-
-An _operational location_ is where resources are expected to be located in a plant.
-For example, in a baking process, an operational location class may be `northwing_kitchen_A`
-
-{{% introTable.inline "operational location" /%}}
-
-| General fields               | Description                                                                       |
-|------------------------------|-----------------------------------------------------------------------------------|
-| Hierarchy scope              | The [hierarchy scope](#hierarchy-scope) within which this location exchanges data |
-| Operational location classes | Zero or more [operational location classes](#operational-location-class) to inherit properties from                         |
-| Map view                     | Where the location is on the map                                                  |
-
-## Operational Location Class
-
-An _operational location_ class is a grouping of [operational locations](#operational-locations) for a defined purpose.
-For example, in a baking process, an operational location class may be `Kitchens`
-
-{{% introTable.inline "operational location class" /%}}
-
-| General fields                     | Description                                                                                  |
-|------------------------------------|-----------------------------------------------------------------------------------|
-| Hierarchy scope                    | The [hierarchy scope](#hierarchy-scope) within which this location exchanges data |
-| Inherit Operational location class | The Operational location classes to inherit properties from                       |
-
-
-
-## Physical Asset
-
-A _physical asset_ is portable or swappable equipment.
-In a baking process, a physical asset might be the laser jet printer which adds labels to the boxes (and could be used in many segments across the plant).
-
-In many cases, your process may need to model only [equipment](#equipment), not physical assets.
-
-## Physical asset class
+### Physical asset class
 
 A _physical asset class_ is a class of [physical assets](#physical-assets).
 
@@ -210,33 +200,44 @@ The physical asset class has properties for:
 - Value
 - Unit of measure
 
-## Operations Definition
+### Physical Asset
 
-An _operations definition_ defines the resources required to perform an operation, including for production, quality, maintenance, and inventory, from the perspective of the level-4 enterprise control systems.
+A _physical asset_ is portable or swappable equipment.
+In a baking process, a physical asset might be the laser jet printer which adds labels to the boxes (and could be used in many segments across the plant).
 
-{{% introTable.inline "operations definition" /%}}
+In many cases, your process may need to model only [equipment](#equipment), not physical assets.
 
-| General fields  | Description                                                                                           |
-|-----------------|-------------------------------------------------------------------------------------------------------|
-| Operation type  | One of: ` Inventory`, `maintenance`, `mixed`, `production`, `quality`                                 |
-| Hierarchy scope | The [hierarchy scope](#hierarchy-scope) within which data is exchanged for this operations definition |
 
-## Hierarchy Scope
+### Operational Location Class
 
-The _hierarchy scope_ represents the scope within which data information is exchanged. For example, in a baking process, two plants may have different personnel and equipment, even if they both produce the identical final products.
-The hierarchy scope defines a scope where all granular data within is relevant to it.
+An _operational location_ class is a grouping of [operational locations](#operational-location) for a defined purpose.
+For example, in a baking process, an operational location class may be `Kitchens`
 
-While hierarchy scope is often connected to an [operational location](#operational-location), the determining is about _information exchange_.
+{{% introTable.inline "operational-location-class" /%}}
 
-## Units of Measure {#uom}
+| General fields                     | Description                                                                                  |
+|------------------------------------|-----------------------------------------------------------------------------------|
+| Hierarchy scope                    | The [hierarchy scope](#hierarchy-scope) within which this location exchanges data |
+| Inherit Operational location class | One or more Operational location classes that a version inherits properties from                       |
 
-A _Unit of measure_ is a defined unit to consistently compare values, duration or quantities.
+### Operational Location
 
-You can create units of measure in the UI and give them the following parameters:
-- Name
-- Data type
+An _operational location_ is where resources are expected to be located in a plant.
+For example, in a baking process, an operational location class may be `northwing_kitchen_A`
 
-## Process segment
+{{% introTable.inline "operational-location" /%}}
+
+| General fields               | Description                                                                       |
+|------------------------------|-----------------------------------------------------------------------------------|
+| Hierarchy scope              | The [hierarchy scope](#hierarchy-scope) within which this location exchanges data |
+| Operational location classes | Zero or more [operational location classes](#operational-location-class) that a version inherits properties from                         |
+| Map view                     | Where the location is on the map                                                  |
+
+## Operation models
+
+_Operation models_ are data objects that describe manufacturing processes from the perspective of the level-4 (ERP) systems.
+
+### Process segment
 
 A _process segment_ is a step in a manufacturing activity that is visible to a business process, grouping the necessary personnel, material, equipment, and physical assets.
 In a baking process, an example segment might be `mixing`.
@@ -244,12 +245,12 @@ In a baking process, an example segment might be `mixing`.
 You can associate specifications for:
 - Equipment, Material, Personnel, and Physical Assets
 
-{{% introTable.inline "Process segment" /%}}
+{{% introTable.inline "process-segment" /%}}
 
 | General fields           | Description                                                                   |
 |--------------------------|-------------------------------------------------------------------------------|
 | Operations type          | One of: ` Inventory`, `maintenance`, `mixed`, `production`, `quality`         |
-| Definition type          | One of: Instance, Pattern                                                     |
+| Definition type          | One of: `Instance`, `Pattern`                                                     |
 | Duration                 | The expected duration                                                         |
 | Duration unit of measure | The time [unit of measure](#uom)                                              |
 | Hierarchy scope          | The [hierarchy scope](#hierarchy-scope) within which data is exchanged for this process segment |
@@ -258,13 +259,58 @@ You can add additional parameters for:
 - Name
 - Value
 - Unit of measure
+  
+### Operations Definition
 
-## Work Master
+_Operations Definitions_ describe how resources come together to manufacture product from the perspective of 
+the level-4 (ERP) systems.
+
+The operation model carries enough detail to plan the work at resolutions of hours and days. For more granularity, refer to [work models](#work-models).
+
+{{% introTable.inline "operations-definition" /%}}
+
+| General fields  | Description                                                                                           |
+|-----------------|-------------------------------------------------------------------------------------------------------|
+| Operation type  | One of: ` Inventory`, `maintenance`, `mixed`, `production`, `quality`                                 |
+| Hierarchy scope | The [hierarchy scope](#hierarchy-scope) within which data is exchanged for this operations definition |
+
+### Operations event class
+
+An _operations event class_ defines a class of operations events within some hierarchy.
+
+The class has the following properties:
+- **Version**
+- **Operations event classes,** defining one or more operations event classes that a version inherits properties from
+
+### Operations event definition
+
+An _operations event definition_ defines the properties that pertain to an _event_ from the perspective of the level-4 (ERP) systems.
+Along with the event itself, it may have associated resources, such as material lots or physical assets received.
+
+{{% introTable.inline "operations-event-definition" /%}}
+
+
+| Field                    | Description                                                                                                                                                                                                                                                                      |
+|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Category                 | A string that can be used to group the event                                                                                                                                                                                                                                                               |
+| Source                   |    The activity, function, task or phase that generated the event.       |
+| Event type               | One of: <ol type="a"><li>`Alert`, an potentially significant event, such as an workflow trigger, that does not require notification</li><li> `Alarm`, an event that requires notification</li> <li>`Event`, any other event that is not at the level of alarm or alert</li></ol> |
+| Operations event classes | One or more [operations event classes](#operations-event-class) that a version definition inherits properties from.                                                                                                                                  |
+
+## Work models
+
+_Work models_ describe how the resources come together to manufacture product from the perspective of level-3 (MES) systems.
+As with [Operations models](#operations-models), 
+the steps in the process are called _segments_.
+
+The work model carries enough detail to plan the work at resolotions of hours and minutes. For less granularity, refer to [operations definitions](#operations-definitions).
+
+### Work Master
 
 A _work master_ is a template for a job order from the perspective of the level-3 (MES/MOM) systems.
 In a baking process, an example work master might be `Brownie Recipe`.
 
-{{% introTable.inline "work master" /%}}
+{{% introTable.inline "work-master" /%}}
 
 | General fields           | Description                                                                   |
 |--------------------------|-------------------------------------------------------------------------------|

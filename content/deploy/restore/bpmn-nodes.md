@@ -9,7 +9,7 @@ menu:
     parent: restore
 ---
 
-[BPMN processes]("../how-to/create-workflows") often have longer execution durations and many steps.
+[{{< abbr "BPMN" >}} processes]({{< relref "/how-to/bpmn" >}}) often have longer execution durations and many steps.
 If a BPMN node suddenly fails (for example through a panic or loss of power),
 Rhize needs to ensure that the workflow completes.
 

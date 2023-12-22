@@ -1,0 +1,2 @@
+# Change line endings to LF
+*.md text eol=lf
