@@ -2,7 +2,6 @@
 title: >-
   Electronic batch records
 description: An example of how to use Rhize to create Electronic Batch Records for pharmaceuticals
-draft: false
 categories: ["howto", "use-cases"]
 weight: 001
 menu:
@@ -15,14 +14,14 @@ In pharmaceutical manufacturing, an _Electronic Batch Record (eBR)_ is a detaile
 It includes information about items such as the process segments, material, personnel, and equipment.
 
 As Rhize can ingest data from all levels of the manufacturing process, and do so in real-time, it is an ideal single source of truth to create eBRs.
-The process can be highly automated and highly efficient.
+The process can be automated and highly efficient.
 Our experience in production systems shows that Rhize can typically generate an eBR in less than 500 milliseconds. 
 
 The procedure has the following steps:
 
 1. Identify the sources of data.
 1. Map the fields for these data sources to Rhize's ISA-95 schema.
-1. Write a BPMN process that listens for a data source, transforms the incoming data to the schema, and then sends a {{< abbr "mutation" >}} to update the Rhize database.
+1. Write a {{< abbr "BPMN" >}} process that listens for a data source, transforms the incoming data to the schema, and then sends a {{< abbr "mutation" >}} to update the Rhize database.
 1. After the batch finishes, query the database with the fields for your {{< abbr "ebr" >}}.
 
 The following sections describe this process in a bit more detail.
@@ -31,7 +30,7 @@ The following sections describe this process in a bit more detail.
 
 This procedure involves multiple data sources and different operations to transform the incoming data and store it in the graph database.
 Before you start, ensure that you have the following:
-- Awareness of the different sources of EBR data
+- Awareness of the different sources of eBR data
 - If real-time data comes from equipment, [Connected data sources]({{< relref "how-to/publish-subscribe/connect-datasource" >}})
 - Sufficient knowledge of the ISA-95 standard to model the input data as ISA-95 schema
 - In the BPMN process, the ability to filter JSON and [call the GraphQL API]({{< relref "how-to/gql" >}})
@@ -53,7 +52,6 @@ src="/images/ebr/diagram-rhize-example-ebr-sources.png"
 width="75%"
 >}}
 
-
 Common data sources for an eBR might include:
 
 - **{{< abbr "ERP" >}} documents:** high-level operations documents
@@ -73,7 +71,7 @@ width="80%"
 
 Some common objects to map include raw and final material, equipment, personnel, operations schedule, segments, job responses, and the ERP batch number.
 
-Once ingested, all of this data is linked through common associations in the graph database, and are thus accessible through a single query.
+Once ingested, all data is linked through common associations in the graph database, and is thus accessible through a single query.
 
 ### Write a BPMN workflow to ingest the data in real-time
 
@@ -131,7 +129,7 @@ width="75%"
 ### Query the DB with the eBR fields
 
 After the batch finishes, use a [GraphQL query]({{< relref "how-to/gql/query-mutate-subscribe" >}}) to receive all relevant batch data.
-You only need to write one request, and it will return exactly the data you need.
+You only need to write one request, and it returns exactly the data you specify.
 
 {{< figure
 alt="Diagram showing how a query makes an ebr"
@@ -170,7 +168,7 @@ The only further step to use the returned JSON object as the input for however y
 
 ## Next steps
 
-Fast eBR automation is just one of many use cases of Rhize in the Pharmaceutical industry.
+Fast eBR automation is just one of many use cases of Rhize in the pharmaceutical industry.
 With the same event data that you automatically ingest and filter in this workflow, you can also:
 - Program reactive logic using BPMN for {{< abbr "event orchestration" >}}. For example, you might send an alert after detecting a threshold condition.
 - Analyze multiple batch runs for deviations. For example, you can query every instance of a failure mode across all laboratories.
