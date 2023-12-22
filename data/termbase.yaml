@@ -2,12 +2,12 @@
   definition: >-
     The Rhize agent bridges your plant processes with the Rhize data hub.
     It collects data that is emitted during the manufacturing process and publishes it to the NATS message broker.
-- term: Audit
-  definition: >-
-    The Libre Audit log server is a service that provides a tamper-proof and immutable audit trail of all events that occur in the Rhize system.
 - term: Andon
   definition: >-
     A system that alerts manufacturing teams about problems in processes or quality.
+- term: Audit
+  definition: >-
+    The Libre Audit log server is a service that provides a tamper-proof and immutable audit trail of all events that occur in the Rhize system.
 - term: Business Process Model and Notation
   abbr: BPMN
   definition: A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize's BPMN UI and engine provides a low-code interface for complex event handling
