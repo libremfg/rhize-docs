@@ -34,13 +34,3 @@ jobs:
         with:
           source-dir: ./public
 
-  linkinator:
-    name: "Checks broken links"
-    runs-on: ubuntu-latest
-    continue-on-error: true
-    steps:
-      - uses: actions/checkout@v2
-      - uses: JustinBeckwith/linkinator-action@v1
-        with:
-          paths: "https://docs.rhize.com"
-          config: "linkinator.config.json"
