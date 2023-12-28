@@ -2,7 +2,6 @@
   "concurrency": 10,
   "recurse": true,
   "retry": true,
-  "serverRoot": "./public",
   "retryErrorsCount": 3,
   "retryErrorsJitter": 5,
   "skip": ".*(\\.js|\\.css)$",
