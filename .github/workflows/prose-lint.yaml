@@ -16,4 +16,4 @@ jobs:
           level: warning
           debug: true
           files: >-
-            content/deploy/, content/get-started/, content/how-to/, content/reference/
+            /content/deploy/, /content/get-started/, /content/how-to/, /content/reference/
