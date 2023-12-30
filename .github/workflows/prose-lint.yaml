@@ -13,5 +13,5 @@ jobs:
           fail_on_error: false
           level: warning
           debug: true
-          files:
-            > content/deploy/, content/get-started/, content/how-to/, content/reference/
+          files: >-
+            content/deploy/, content/get-started/, content/how-to/, content/reference/
