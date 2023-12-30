@@ -15,7 +15,7 @@ jobs:
           fail_on_error: false
           level: warning
           debug: true
-          separator: ","
+          separator: ", "
           files: >-
             content/deploy/, content/get-started/, content/how-to/, content/reference/
           vale_flags: '--glob=*.md'
