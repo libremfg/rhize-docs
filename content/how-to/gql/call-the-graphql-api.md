@@ -104,7 +104,7 @@ By default, all GraphQL operations have the following structure:
 A major benefit of GraphQL is that you can modify queries to return only the fields you want.
  You can join data entities in a single query and query for entity relationships  in the same way that you would for entity attributes.
   
-Unlike calls to REST APIs, where the server-side code defines what a response looks like, GraphQL calls instruct the server to return only what is specified.
+Unlike calls to a REST API, where the server-side code defines what a response looks like, GraphQL calls instruct the server to return only what is specified.
 Furthermore, you can query diverse sets of data in one call, so you can get exactly the entities you want without calling multiple endpoints, as you would in REST, or composing queries with complex recursive joins, as you would in SQL.
 Besides precision, this also brings performance benefits to minimize network calls and their payloads.
 
@@ -308,7 +308,7 @@ mutation AddPerson($input: [AddPersonInput!]!) {
 {{% /tab %}}
 {{< /tabs >}}
 
-To learn more, read the offical GraphQL documentation on [Variables](https://graphql.org/learn/queries/#variables).
+To learn more, read the official GraphQL documentation on [Variables](https://graphql.org/learn/queries/#variables).
 
 ## Shortcuts for more expressive requests
 

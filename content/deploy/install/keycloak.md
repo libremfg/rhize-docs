@@ -47,7 +47,7 @@ To create your Rhize realm, follow these steps.
 1. Enter the following values:
   | Field        | value                 |
   |--------------|-----------------------|
-  | Frontend URL | keycloak frontend URL |
+  | Frontend URL | Keycloak frontend URL |
   | Require SSL  | External requests     |
 
 
@@ -122,7 +122,7 @@ Create a client for the UI as follows:
 The other services do not need authorization but do need client authentication.
 By default you need to add only the client ID.
 
-For example, to create the the BPMN engine client:
+For example, to create the BPMN engine client:
 1. In the side menu, select **Clients > create client**.
 1. For **Client ID**, enter `{{< param application_name >}}Bpmn`
 1. Configure the **Capability config**:

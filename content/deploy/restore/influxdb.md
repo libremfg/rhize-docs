@@ -18,7 +18,7 @@ This guide shows you how to restore InfluxDB in your Rhize environment.
 
 Before you start, ensure you have the following:
 
-- [kubectl](https://kubernetes.io/docs/tasks/tools/)
+- [`kubectl`](https://kubernetes.io/docs/tasks/tools/)
 - An [InfluxDB backup]({{< relref "../backup/" >}})
 
 ## Steps

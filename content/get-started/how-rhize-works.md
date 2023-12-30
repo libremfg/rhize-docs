@@ -33,7 +33,7 @@ caption="<em><small>A simplified view of Rhize's architecture</small></em>"
 To make the next sections less abstract, consider these examples of how Rhize creates a common data hub for diverse human and system interaction.
 
 - **[Data inputs](#data-inputs)**
-    - An instrumenter configures an MQTT-compatible device to send sensor data to Rhize.
+    - An instrument fitter configures an MQTT-compatible device to send sensor data to Rhize.
     - A business analyst sends an ERP order through an integration with the GraphQL API.
 - **[Message exchange](#message-exchange)**
     1. A piece of equipment publishes information about its status over MQTT.
@@ -78,7 +78,7 @@ Thus, Rhize services can communicate with each other and with customer systems i
 ## Data storage {#database}
 
 With a schema defined by the ISA-95 standard,
-the graph database creates a contextual, queryable relationships that link all data stored in the system.
+the graph database creates contextual relationships that link all data stored in the system.
 This graph data, accessible through a single endpoint, provides a single source to perform vast combinations of analysis.
 
 Along with event data from disparate places and decoupled services,
@@ -94,7 +94,7 @@ Some uses include:
 - [**Upload master data.**]({{< relref "../how-to/model" >}})  Based on the ISA-95 object models.
 - [**Administrate.**]({{< relref "../deploy" >}}) Authenticate and scope access to systems and personnel.
 
-The UIs sit on top of the GraphQL API gateway, which serves as a programming interface for data analysis.
+These interfaces sit on top of the GraphQL API gateway, which serves as a programming interface for data analysis.
 Rhize customers also use the GraphQL interface to build their own applications, either with dedicated frontend developers or through low-code tools like Appsmith.
 
 Last but not least, the time-series data is observable through monitoring tools like Grafana.

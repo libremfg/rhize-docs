@@ -108,7 +108,7 @@ For simplicity, assume the order has only these properties:
 ```
 
 1. Create a start event that subscribes to the correct topic, for example `orders`.
-1. Connect the start event to a JSONATA task.
+1. Connect the start event to a JSONata task.
 1. In the **JSONata transform expression**, filter for only the fields you need, and map them to the field names accepted by the API:
 
 

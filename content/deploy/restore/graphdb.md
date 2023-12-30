@@ -17,7 +17,7 @@ This guide shows you how to restore the Graph database in your Rhize environment
 Before you start, ensure you have the following:
 
 - The GraphDB Helm chart
-- [kubectl](https://kubernetes.io/docs/tasks/tools/)
+- [`kubectl`](https://kubernetes.io/docs/tasks/tools/)
 - A [Database backup]({{< relref "../backup/graphdb" >}})
 
 ## Steps
@@ -39,10 +39,12 @@ Before you start, ensure you have the following:
 
 1. In the Alpha 0 initialization container, create the backup directory.
 
+<!-- vale off -->
     ```bash
     kubectl exec -t {{< param application_name >}}-baas-alpha-0 -c {{< param application_name >}}-baas-alpha-init -- \
     mkdir -p /dgraph/backups
     ```
+<!-- vale on -->
 
 1. If the backup directory does not have a checksums file, create one.
 
@@ -79,10 +81,13 @@ Before you start, ensure you have the following:
     ```
 1. Copy the backup to the correct directory:
 
+<!-- vale off -->
+
     ```bash
     kubectl exec -t {{< param application_name >}}-baas-alpha-0 -c {{< param application_name >}}-baas-alpha-init -- \
     mv /dgraph/restore/0/p /dgraph/p
     ```
+<!-- vale on -->
 
 1. Complete the initialization container for alpha 0.
 

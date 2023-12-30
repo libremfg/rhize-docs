@@ -20,14 +20,14 @@ You can also use this procedure as the model for an automation workflow in your 
 Before starting, ensure that you have the following technical requirements.
 
 **Software requirements**:
-- [kubectl](https://kubernetes.io/docs/tasks/tools/)
+- [`kubectl`](https://kubernetes.io/docs/tasks/tools/)
 - [Helm](https://helm.sh)
 - Curl, or some similar program to make HTTP requests from the command line
 
 **Access requirements**:
 - Administrative privileges for a running Kubernetes cluster in your environment.
   Your organization must set this up.
-- Access to Rhize Helm charts and its build repo.
+- Access to Rhize Helm charts and its build repository.
   Rhize provides these to all customers.
 
 **Optional utilities.**
@@ -62,7 +62,7 @@ Then, follow these steps.
 
     Alternatively, you can modify the kube `config` file or use the `kubens` tool.
 
-1. Add the Helm repo:
+1. Add the Helm repository:
 
     ```bash
     helm repo add \
@@ -77,7 +77,7 @@ Then, follow these steps.
 
     ```bash
     kubectl create secret docker-registry {{< param application_name >}}-registry-credential \
-     --docker-server=<DOCKER_SERVER> \ ## the repo
+     --docker-server=<DOCKER_SERVER> \ ## the repository
      --docker-password= <ACCESS_TOKEN> \
      --docker-email= <EMAIL_ADDRESS>
     ```
@@ -89,13 +89,13 @@ Then, follow these steps.
     ```
 
 
-1. Add the Bitnami Helm repo:
+1. Add the Bitnami Helm repository:
 
      ```bash
      helm repo add bitnami https://charts.bitnami.com/bitnami
      ```
 
-1. Pull the build template repo (we will supply this).
+1. Pull the build template repository (we will supply this).
 
 1. Update overrides to `keycloak.yaml`. Then install with this command:
 

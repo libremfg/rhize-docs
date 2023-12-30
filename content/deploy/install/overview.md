@@ -24,7 +24,7 @@ The essential procedure is as follows:
 1. **[Set up the Kubernetes environment](/deploy/install/setup-kubernetes)**.
 
     1. Within a Kubernetes cluster, create a new namespace.
-    1. In this namespace, add the Rhize container images and Helm repos.
+    1. In this namespace, add the Rhize container images and Helm repositories.
     1. In the cluster, create passwords.
     1. Use Helm to install Keycloak.
 

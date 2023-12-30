@@ -12,7 +12,7 @@ menu:
 You can use _change data capture_ (CDC) to track data changes over time, including
 a {{< abbr "mutation" >}} or drop in your database.
 Rhize's CDC implementation can use
-Kafka, Nats or a local file as a *{{< abbr "sink" >}}* to store CDC updates streamed by Rhize's Alpha
+Kafka, NATS, or a local file as a *{{< abbr "sink" >}}* to store CDC updates streamed by Rhize's Alpha
 leader nodes.
 
 When CDC is enabled, Rhize streams events for:
@@ -57,9 +57,9 @@ with the `--cdc` command and the sub-option shown below, as follows:
 dgraph alpha --cdc "file=local-file-path"
 ```
 
-## Enable CDC with nats jetstream KV store sink
+## Enable CDC with NATS JetStream KV store sink
 
-To enable CDC and sink results to a nats jetstream KV store, start Dgraph Alpha
+To enable CDC and sink results to a NATS JetStream KV store, start Dgraph Alpha
 with the `--cdc` command and the sub-option shown below, as follows:
 
 ```bash
@@ -72,6 +72,8 @@ dgraph alpha --cdc "nats=nats://system:system@localhost:4222"
 The `--cdc` option includes several sub-options that you can use to configure
 CDC when running the `dgraph alpha` command:
 
+<!-- vale off -->
+
 | Sub-option       | Example `dgraph alpha` command option                                    | Notes                                                                                                            |
 |------------------|--------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
 | `ca-cert`        | `--cdc "ca-cert=/cert-dir/ca.crt"`                                       | Path and filename of the CA root certificate used for TLS encryption, required if Kafka endpoint requires TLS    |
@@ -83,6 +85,8 @@ CDC when running the `dgraph alpha` command:
 | `sasl-user`      | `--cdc "kafka=kafka-hostname; sasl-user=tstark; sasl-password=m3Ta11ic"` | SASL username for Kafka. Requires the `kafka` and `sasl-password` sub-options                                    |
 | `sasl-password`  | `--cdc "kafka=kafka-hostname; sasl-user=tstark; sasl-password=m3Ta11ic"` | SASL password for Kafka. Requires the `kafka` and `sasl-username` sub-options                                    |
 | `sasl-mechanism` | `--cdc "kafka=kafka-hostname; sasl-mechanism=PLAIN"`                     | The SASL mechanism for Kafka (PLAIN, SCRAM-SHA-256 or SCRAM-SHA-512). The default is PLAIN                       |
+
+<!-- vale on -->
 
 ## CDC data format
 

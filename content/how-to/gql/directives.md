@@ -10,6 +10,8 @@ draft = true
   parent = "how-to-query"
 +++
 
+<!-- vale off -->
+
 The list of all [directives](https://www.apollographql.com/docs/apollo-server/schema/directives/) supported by Rhize's implementation of Dgraph.
 
 ### @auth

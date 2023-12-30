@@ -303,7 +303,7 @@ _Work models_ describe how the resources come together to manufacture product fr
 As with [Operations models](#operations-models), 
 the steps in the process are called _segments_.
 
-The work model carries enough detail to plan the work at resolotions of hours and minutes. For less granularity, refer to [operations definitions](#operations-definitions).
+The work model carries enough detail to plan the work at resolutions of hours and minutes. For less granularity, refer to [operations definitions](#operations-definitions).
 
 ### Work Master
 

@@ -14,7 +14,7 @@ menu:
 Rhize uses [OpenIDConnect](https://openid.net/developers/how-connect-works/) to connect to a [Keycloak](https://www.keycloak.org/) server to authenticate users and manage Role-based access controls.
 
 Open ID Connect is a security architecture that uses JSON Web Tokens (JWTs) to access secured resources.
-JWTs are issued by KeyCloak. Users can also be managed in KeyCloak.
+JWTs are issued by Keycloak. Users can also be managed in Keycloak.
 Or you can manage users in other services such as LDAP, Google, Azure AD, Facebook, etc.
 
 The general authentication flow is as follows:
@@ -31,7 +31,7 @@ sequenceDiagram
 	actor User
 	participant UI as Web UI
 	participant Rhize as Rhize DB
-	participant KC as KeyCloak
+	participant KC as Keycloak
 	participant AP as AuthProvider
 	Rhize->>KC: Get Public Key
 	User->>UI: Log In

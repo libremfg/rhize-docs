@@ -28,7 +28,7 @@ How Rhize recovers from a halted process depends on where the system failed.
 
 If a BPMN container suddenly fails, the process that was currently executing times out after 30 seconds.
 As long as the node had not been running for [longer than 10 minutes](#bpmn-age-out),
-NATS resends the message to another BPMN node and the process finishes.
+NATS re-sends the message to another BPMN node and the process finishes.
 
 ### NATS node unavailable
 

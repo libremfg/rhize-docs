@@ -7,6 +7,8 @@ draft = true
     parent = "how-to-query"
 +++
 
+<!-- vale off -->
+
 The `@default` directive provides default values to be stored when not supplied in a mutation (`add`/`update`). 
 
 Here's the GraphQL definition of the directives:

@@ -8,6 +8,8 @@ draft = true
     parent = "how-to-query"
 +++
 
+<!-- vale off -->
+
 The `@generate` directive is used to specify which GraphQL APIs are generated for a given type.
 
 Here's the GraphQL definition of the directive

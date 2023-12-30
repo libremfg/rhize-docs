@@ -16,7 +16,7 @@ This guide shows you how to restore Grafana in your Rhize environment.
 
 Before you start, ensure you have the following:
 
-- [kubectl](https://kubernetes.io/docs/tasks/tools/)
+- [`kubectl`](https://kubernetes.io/docs/tasks/tools/)
 - A [Grafana backup]({{< relref "../backup/grafana" >}})
 
 ## Steps
@@ -64,6 +64,8 @@ Before you start, ensure you have the following:
 
      ```
 
+<!-- vale off -->
+
 1. Untar the data file:
 
      ```bash
@@ -75,6 +77,8 @@ Before you start, ensure you have the following:
      ```bash
      tar -xvf <LATEST_CONF_FILE>.tar.gz --directory /home/grafana/
      ```
+
+<!-- vale on -->
 
 1. Move over the top of current configuration. 
 

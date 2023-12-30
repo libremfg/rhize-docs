@@ -16,6 +16,7 @@ The final installation step is to install the Rhize services in your Kubernetes 
 
 - This topic assumes you have [Set up Kubernetes](/deploy/install/setup-kubernetes) and [Configured Keycloak]({{< relref "keycloak" >}}). All the prerequisites for those topics apply here.
 - Configure load balancing for the following DNS records:
+<!-- vale off -->
 
     | Service  | Domain                                                                |
     |----------|-----------------------------------------------------------------------|
@@ -24,6 +25,8 @@ The final installation step is to install the Rhize services in your Kubernetes 
     | GraphQL  | `<CUSTOMER>-api.{{< param domain_name >}}`                            |
     | NATS     | `<CUSTOMER>-mqtt.{{< param domain_name >}}`                           |
     | Grafana  | `<CUSTOMER>-grafana.{{< param domain_name >}}`                        |
+
+<!-- vale on -->
 
 ### Overrides
 
@@ -126,7 +129,10 @@ helm install <service_name> \
 For the full configuration options,
 read the official [Helm `install` reference](https://helm.sh/docs/helm/helm_install/).
 
+<!-- vale off -->
 ### NATS {#nats}
+<!-- vale on -->
+
 
 [NATS](https://nats.io) is the message broker that powers Rhize's event-driven architecture.
 
@@ -146,7 +152,7 @@ Rhize uses [Tempo](https://grafana.com/oss/tempo/) to trace BPMN processes.
 
 Install Tempo with these steps:
 
-1. If it doesn't exist, add the Tempo repo:
+1. If it doesn't exist, add the Tempo repository:
 
     ```bash
     helm repo add grafana https://grafana.github.io/helm-charts
@@ -217,7 +223,7 @@ Install Grafana with these steps:
 
 1. Modify the Grafana Helm YAML file as needed.
 
-1. Add helm repository
+1. Add the Helm repository
     ```bash
     helm repo add grafana https://grafana.github.io/helm-charts
     ```

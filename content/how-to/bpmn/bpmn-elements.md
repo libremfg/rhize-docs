@@ -216,7 +216,7 @@ _Gateways_ control how sequence flows interact as they converge and diverge with
 They represent mechanisms that either allow or disallow a passage.
 
 BPMN notation represents gateways as diamonds with single thin lines, as is common in many diagrams with decision flows.
-Besides decisions, however, Rhize's BPMN notation also includes parellel gateways.
+Besides decisions, however, Rhize's BPMN notation also includes parallel gateways.
 
 As with [Events](#events) and [Activities](#activities), gateway types are marked by their icons.
 
@@ -231,7 +231,7 @@ src="/images/bpmn/bpmn-gateway-overview.svg"
 ![exclusive gateways are marked by an "x" icon](/images/bpmn/bpmn-gateway-exclusive.svg)
 
 Marked by an "X" icon, an _exclusive gateway_ represents a point in a process where only one path is followed.
-In some conversations, exclusive gateways are also called _XORs_.
+In some conversations, an exclusive gateway is also called an _XOR_.
 
 If a gateway has multiple sequence flows, all flows except one must have a conditional [JSONata expression](https://docs.jsonata.org/1.7.0/overview) that the engine can evaluate.
 To designate a default, leave one flow without an expression.
