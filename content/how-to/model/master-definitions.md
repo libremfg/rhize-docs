@@ -308,7 +308,7 @@ The work model carries enough detail to plan the work at resolutions of hours an
 ### Work Master
 
 A _work master_ is a template for a job order from the perspective of the level-3 (MES/MOM) systems.
-In a baking process, an example work master might be `Brownie Recipe`.
+In abaking process, an example work master might be `Brownie Recipe`.
 
 {{% introTable.inline "work-master" /%}}
 
@@ -317,3 +317,5 @@ In a baking process, an example work master might be `Brownie Recipe`.
 | Workflow type            | One of: ` Inventory`, `maintenance`, `mixed`, `production`, `quality` |
 | Workflow specification   | An associated BPMN workflow                                           |
 
+
+thisis an intentional typw to test the the linter.
