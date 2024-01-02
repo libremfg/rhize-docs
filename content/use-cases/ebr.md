@@ -21,7 +21,7 @@ The procedure has the following steps:
 
 1. Identify the sources of data.
 1. Map the fields for these data sources to Rhize's ISA-95 schema.
-1. Write a {{< abbr "BPMN" >}} process that listens for a data source, transforms the incoming data to the schema, and then sends a {{< abbr "mutation" >}} to update the Rhize database.
+1. Write {{< abbr "BPMN" >}} processes that listen to data sources, transform the incoming data to the schema, and then sends a {{< abbr "mutation" >}} to update the Rhize database.
 1. After the batch finishes, query the database with the fields for your {{< abbr "ebr" >}}.
 
 The following sections describe this process in a bit more detail.
@@ -143,23 +143,22 @@ small, generic snippet of how it looks:
 {{< expandable title="Snippet of a makeEbr query" >}}
 ```graphql
 query makeEbr ($filter: JobOrderFilter) {
-  queryJobOrder(filter: $filter) {
+  queryJobResponse(filter: $filter) {
     EXAMPLE_id: id
-    label
-    matReqProduced: materialRequirements(filter: {materialUse:{eq: Produced}}){
+    description
+    matActualProduced: materialActual(filter:{materialUse: { eq:Produced }}){
       id
-      material {
-    }
-    materialDefinitionVersion {
-      id
-      version
-      versionStatus
-    materialClasses {
-      id
-      label
+      material: materialDefinitionVersion{
+        id
+      }
+      quantity
+      quantityUoM {
+        id
+      }
     }
   ## More EBR fields
   }
+}
 ```
 {{< /expandable >}}
 
