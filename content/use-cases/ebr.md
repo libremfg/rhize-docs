@@ -21,7 +21,7 @@ The procedure has the following steps:
 
 1. Identify the sources of data.
 1. Map the fields for these data sources to Rhize's ISA-95 schema.
-1. Write {{< abbr "BPMN" >}} processes that listen to data sources, transform the incoming data to the schema, and then sends a {{< abbr "mutation" >}} to update the Rhize database.
+1. Write {{< abbr "BPMN" >}} processes that listen to data sources, transform the incoming data to the schema, and then send a {{< abbr "mutation" >}} to update the Rhize database.
 1. After the batch finishes, query the database with the fields for your {{< abbr "ebr" >}}.
 
 The following sections describe this process in a bit more detail.
@@ -172,3 +172,4 @@ With the same event data that you automatically ingest and filter in this workfl
 - Program reactive logic using BPMN for {{< abbr "event orchestration" >}}. For example, you might send an alert after detecting a threshold condition.
 - Analyze multiple batch runs for deviations. For example, you can query every instance of a failure mode across all laboratories.
 - Compare batches against some variable. For example, you can compare all runs for two versions of equipment.
+
