@@ -34,4 +34,6 @@ Prerequisites Before you start, ensure you have the following:
 Access to the Rhize Kubernetes Environment helm Optional: kubectx utilities kubectx to manage multiple clusters kubens to switch between and configure namespaces easily Optional: the k8 Lens IDE, if you prefer to use Kubernetes graphically Be sure that you notify relevant parties of the coming upgrade.
 Procedure First, record the old and new versions, their context, and namespaces.</description></item><item><title>Audit</title><link>https://docs.rhize.com/how-to/audit/</link><pubDate>Wed, 20 Dec 2023 12:47:09 -0300</pubDate><guid>https://docs.rhize.com/how-to/audit/</guid><description>The Audit Log provides a tamper-proof and immutable audit trail of all events that occur in the Rhize system. Users with appropriate permissions can access the audit log either through the UI menu or the GraphQL API.
 Prerequisites To use the audit log, ensure you have the following:
-If accessing to your Rhize UI environment, a user account with appropriate permissions If accessing through GraphQL, you also need: The ability to Use the Rhize GraphQL API A token configured so that audience includes audit, and the scopes contain audit:query.</description></item></channel></rss>
+If accessing to your Rhize UI environment, a user account with appropriate permissions
+If accessing through GraphQL, you also need:
+The ability to Use the Rhize GraphQL API A token configured so that audience includes audit, and the scopes contain audit:query.</description></item></channel></rss>
