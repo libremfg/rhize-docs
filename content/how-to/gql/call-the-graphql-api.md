@@ -84,6 +84,7 @@ By default, all GraphQL operations have the following structure:
         id
         _createdBy
       }
+    }
     ```
 
    As you might expect, the request returns only these fields for the equipment named `Kitchen_mixer_b_01`.
@@ -178,7 +179,6 @@ query peopleAndDataSources {
     id
   }
 }
-
 ```
 {{% /tab %}}
 {{% tab "response" %}}
@@ -228,6 +228,7 @@ query myCustomName {
   getEquipment(id: "Kitchen_mixer_b_01") {
     _createdBy
   }
+}
 ```
 
 Instead, you can pass this argument as a variable.
@@ -251,6 +252,7 @@ In this example, add the variable as a value to the `id` key like this:
       ## pass variable to one or more operations
       getEquipment(id: $getEquipmentId) {
         ## fields go here
+      }
     }
     ```
     
