@@ -21,6 +21,7 @@ Be sure to preface the value with the word <code>Bearer </code>:</p><figure><img
 </span></span><span style=display:flex><span>    <span style=color:#2b91af>id</span>
 </span></span><span style=display:flex><span>    _createdBy
 </span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
 </span></span></code></pre></div><p>As you might expect, the request returns only these fields for the equipment named <code>Kitchen_mixer_b_01</code>.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
 </span></span><span style=display:flex><span>   &#34;data&#34;: {
 </span></span><span style=display:flex><span>     &#34;getEquipment&#34;: {
@@ -112,6 +113,7 @@ For example:</p><ul><li>If you build a low-code reporting application, you could
 </span></span><span style=display:flex><span>  getEquipment(id: <span style=color:#a31515>&#34;Kitchen_mixer_b_01&#34;</span>) {
 </span></span><span style=display:flex><span>    <span style=color:#2b91af>_createdBy</span>
 </span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
 </span></span></code></pre></div><p>Instead, you can pass this argument as a variable.
 This requires the following changes:</p><ol><li><p>In the argument for your query, name the variable and state its type.
 This instructs the query to receive data from outside of its context:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:green>## Name variable and type</span>
@@ -124,6 +126,7 @@ In this example, add the variable as a value to the <code>id</code> key like thi
 </span></span><span style=display:flex><span>  <span style=color:green>## pass variable to one or more operations</span>
 </span></span><span style=display:flex><span>  getEquipment(id: $getEquipmentId) {
 </span></span><span style=display:flex><span>    <span style=color:green>## fields go here</span>
+</span></span><span style=display:flex><span>  }
 </span></span><span style=display:flex><span>}
 </span></span></code></pre></div></li><li><p>In a separate <code>variables</code> section of the query, define the JSON object that is your variable:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
 </span></span><span style=display:flex><span> &#34;getEquipmentId&#34;: <span style=color:#a31515>&#34;Kitchen_mixer_b_01&#34;</span>
