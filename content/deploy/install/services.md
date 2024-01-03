@@ -317,6 +317,35 @@ alpha:
     replicas: 1
 ```
 
+### Enable Audit Subgraph
+
+The Audit trail subgraph is super composed into the router in order to use. To enable router to use and compose the subgraph:
+
+1. Update the Router Helm chart overrides, `router.yaml`, to include:
+
+```yaml
+# Add Audit to the router subgraph url override
+router:
+  configuration:
+    override_subgraph_url:
+      AUDIT: http://audit:8084/query
+
+# If supergraph compose is enabled
+supergraphCompose:
+  supergraphConfig:
+    subgraphs:
+    AUDIT:
+      routing_url: http://audit:8084/query
+      schema:
+        subgraph_url: http://audit:8084/query
+```
+
+2. Update the Router deployment
+
+```shell
+$ helm upgrade --install router -f router.yaml {{< param application_name >}}/router -n {{< param application_name >}}
+```
+
 ## Troubleshoot
 
 For general Kubernetes issues, the [Kubernetes dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) is great for troubleshooting, and you can configure it to be accessible through the browser.
