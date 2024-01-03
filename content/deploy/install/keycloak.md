@@ -161,22 +161,18 @@ To create a scope for your Rhize services, follow these steps:
     - **Include in token scope**: `On`
 1. **Create**.
 1. Select the **Mappers** tab, then **Configure new mapper**. Add an audience mapper for the DB client:
-
     - **Mapper Type**: `Audience`
     - **Name**: `{{< param db >}}AudienceMapper`
     - **Include Client Audience**: `{{< param db >}}`
     - **Add to ID Token**: `On`
     - **Add to access token**: `On`
 1. Repeat the preceding step for a mapper for the UI client:
-
     - **Mapper Type**: `Audience`
     - **Name**: `{{< param application_name >}}UIAudienceMapper`
     - **Include Client Audience**: `{{< param application_name >}}UI`
     - **Add to ID Token**: `On`
     - **Add to access token**: `Off`
-
 1. If using the Rhize Audit microservice, repeat the preceding step for an Audit scope and audience mapper:
-
     - **Mapper Type**: `Audience`
     - **Name**: `{{< param application_name >}}AuditAudienceMapper`
     - **Include Client Audience**: 
