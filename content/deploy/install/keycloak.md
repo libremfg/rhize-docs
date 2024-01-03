@@ -175,6 +175,15 @@ To create a scope for your Rhize services, follow these steps:
     - **Add to ID Token**: `On`
     - **Add to access token**: `Off`
 
+1. If using the Rhize Audit microservice, repeat the preceding step for an Audit scope and audience mapper:
+
+    - **Mapper Type**: `Audience`
+    - **Name**: `{{< param application_name >}}AuditAudienceMapper`
+    - **Include Client Audience**: 
+    - **Included Custom Audience**: `audit`
+    - **Add to ID Token**: `On`
+    - **Add to access token**: `On`
+
 #### Add services to the scope
 
 1. Go to **Clients**. Select `{{< param db >}}`.
@@ -183,7 +192,7 @@ To create a scope for your Rhize services, follow these steps:
 1. Select `{{< param application_name >}}ClientScope` from the list.
 1. **Add > Default**.
 
-Repeat this process for the {{< param application_name >}}UI client.
+Repeat this process for the `dashboard`, `{{< param application_name >}}UI`, `{{< param application_name >}}Bpmn`, `{{< param application_name >}}Core`, `{{< param application_name >}}Router`, `{{< param application_name >}}Audit` (if applicable). Based on your architecture repeat for any Libre Edge Agent clients.
 
 ### Create roles and groups
 
@@ -254,7 +263,7 @@ Now map the scope:
 1. In the left hand menu, select **Clients**, and then `dashboard`.
 1. Select the **Client scopes** tab.
 1. **Add client scope**.
-1. Select `groups` and {{< param application_name >}}ClientScope.
+1. Select `groups` and `{{< param application_name >}}ClientScope`.
 1. **Add Default**.
 
 ### Add Client Policy
