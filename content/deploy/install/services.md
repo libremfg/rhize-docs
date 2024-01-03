@@ -18,9 +18,9 @@ The final installation step is to install the Rhize services in your Kubernetes 
 - Configure load balancing for the following DNS records:
 <!-- vale off -->
 
-    | Service  | Domain                                                                |
-    |----------|-----------------------------------------------------------------------|
-    | Admin UI | `<CUSTOMER>-{{< param application_name >}}.{{< param domain_name >}}` |
+    | Service  | Domain                                                  |
+    |----------|---------------------------------------------------------|
+    | Admin UI | `<CUSTOMER>-{{< param application_name >}}.{{< param domain_name >}}`                          |
     | Keycloak | `<CUSTOMER>-auth.{{< param domain_name >}}`                           |
     | GraphQL  | `<CUSTOMER>-api.{{< param domain_name >}}`                            |
     | NATS     | `<CUSTOMER>-mqtt.{{< param domain_name >}}`                           |
