@@ -319,7 +319,7 @@ alpha:
 
 ### Enable Audit Subgraph
 
-The Audit trail subgraph is super composed into the router in order to use. To enable router to use and compose the subgraph:
+To use the Audit trail in the UI, you must add the Audit trail subgraph into the router. To enable router to use and compose the subgraph:
 
 1. Update the Router Helm chart overrides, `router.yaml`, to include:
 
