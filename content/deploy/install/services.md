@@ -18,9 +18,9 @@ The final installation step is to install the Rhize services in your Kubernetes 
 - Configure load balancing for the following DNS records:
 <!-- vale off -->
 
-    | Service  | Domain                                                                |
-    |----------|-----------------------------------------------------------------------|
-    | Admin UI | `<CUSTOMER>-{{< param application_name >}}.{{< param domain_name >}}` |
+    | Service  | Domain                                                  |
+    |----------|---------------------------------------------------------|
+    | Admin UI | `<CUSTOMER>-{{< param application_name >}}.{{< param domain_name >}}`                          |
     | Keycloak | `<CUSTOMER>-auth.{{< param domain_name >}}`                           |
     | GraphQL  | `<CUSTOMER>-api.{{< param domain_name >}}`                            |
     | NATS     | `<CUSTOMER>-mqtt.{{< param domain_name >}}`                           |
@@ -315,6 +315,35 @@ alpha:
     nats: nats://nats:4222
     # Adjust based on high-availability requirements and cluster size.
     replicas: 1
+```
+
+### Enable Audit Subgraph
+
+To use the Audit trail in the UI, you must add the Audit trail subgraph into the router. To enable router to use and compose the subgraph:
+
+1. Update the Router Helm chart overrides, `router.yaml`, to include:
+
+```yaml
+# Add Audit to the router subgraph url override
+router:
+  configuration:
+    override_subgraph_url:
+      AUDIT: http://audit:8084/query
+
+# If supergraph compose is enabled
+supergraphCompose:
+  supergraphConfig:
+    subgraphs:
+    AUDIT:
+      routing_url: http://audit:8084/query
+      schema:
+        subgraph_url: http://audit:8084/query
+```
+
+2. Update the Router deployment
+
+```shell
+$ helm upgrade --install router -f router.yaml {{< param application_name >}}/router -n {{< param application_name >}}
 ```
 
 ## Troubleshoot
