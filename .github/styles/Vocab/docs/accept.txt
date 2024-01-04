@@ -23,6 +23,8 @@ namespace
 param
 performant
 relref
+subgraph
+supergraph
 swappable
 unpackaged
 unaccepted
