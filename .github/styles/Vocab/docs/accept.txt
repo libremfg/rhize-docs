@@ -1,4 +1,5 @@
 (?i)Rhize
+(?i)gzip
 (?i)bpmn
 APIs
 Appsmith
@@ -14,6 +15,7 @@ NATS
 [Dd]eduplication
 [Dd]graph
 [Ll]ibre
+[Pp]ostgres
 andon
 autoscale
 config

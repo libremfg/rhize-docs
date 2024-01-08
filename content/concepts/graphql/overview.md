@@ -30,4 +30,4 @@ The API in Rhize is a supergraph that is a composition of multiple subgraphs orc
 
 ## Getting Started with Rhize GraphQL
 
-To start leveraging Rhize's GraphQL capabilities, developers can refer to the official documentation for information on available queries, mutations, and subscriptions. The documentation outlines the structure of the supergraph, including the various subgraphs and their corresponding functionalities.
+To start leveraging Rhize's GraphQL capabilities, developers can refer to (Call the GraphQL API)[/how-to/gql/call-the-graphql-api/] for information on available queries, mutations, and subscriptions. The documentation outlines the structure of the supergraph, including the various subgraphs and their corresponding functionalities.
