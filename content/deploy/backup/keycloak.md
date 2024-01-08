@@ -56,7 +56,7 @@ To check that the backup succeeded, unzip the files and inspect the data.
 
 ## Next Steps
 
-- Test the [Restore Keycloak]({{< relref "../restore/keycloak" >}}) procedure to ensure you can recover data in case of an emergency.
+- Test that you can this Keycloak config to ensure you can recover data in case of an emergency.
 - To back up other Rhize services, read how to backup:
   - [Grafana]({{< relref "grafana" >}}).
   - [the Graph Database]({{< relref "graphdb" >}}).
