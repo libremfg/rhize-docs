@@ -31,7 +31,7 @@ To back up Keycloak, follow these steps:
 1. Check the logs for the Keycloak pods, either in Lens or with [`kubectl logs`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs).
     Ensure there are no errors.
 
-1. Retrieve the keycloak user password using:
+1. Retrieve the Keycloak user password using:
 
   ```bash
   kubectl get secret keycloak-<namespace>-postgresql -o jsonpath="{.data.postgres-password}" | base64 --decode
