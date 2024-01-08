@@ -37,7 +37,7 @@ To back up Keycloak, follow these steps:
   kubectl get secret keycloak-<namespace>-postgresql -o jsonpath="{.data.postgres-password}" | base64 --decode
   ```
 
-1. Execute a command on the Keycloak postgres pod to perform a full backup:
+1. Execute a command on the Keycloak Postgres pod to perform a full backup:
 
   ```bash
   kubectl exec -i keycloak-demo2-postgresql-0 -- pg_dumpall -U postgres | gzip > keycloak-postgres-backup-$(date +"%Y%m%dT%I%M%p").sql.gz
@@ -45,7 +45,7 @@ To back up Keycloak, follow these steps:
 
   When prompted use the password from the previous step. Expect the prompt multiple times for each database.
 
-1. Check the logs for the Keycloak postgres pods, either in Lens or with [`kubectl logs`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs).
+1. Check the logs for the Keycloak Postgres pods, either in Lens or with [`kubectl logs`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs).
     Ensure there are no errors relating to the backup.
 
 ## Confirm success
@@ -60,4 +60,3 @@ To check that the backup succeeded, unzip the files and inspect the data.
 - To back up other Rhize services, read how to backup:
   - [Grafana]({{< relref "grafana" >}}).
   - [the Graph Database]({{< relref "graphdb" >}}).
-  - [influx]({{< relref "influx" >}}).
