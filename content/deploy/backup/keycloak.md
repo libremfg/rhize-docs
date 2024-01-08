@@ -3,7 +3,6 @@ title: 'Back up Keycloak'
 date: '2024-01-08T14:30:15-05:00'
 categories: ["how-to"]
 description: How to backup Keycloak on your Rhize deployment
-draft: true
 weight: 300
 menu:
   main:
