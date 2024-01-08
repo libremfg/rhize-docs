@@ -40,7 +40,7 @@ To back up Keycloak, follow these steps:
 1. Execute a command on the Keycloak Postgres pod to perform a full backup:
 
   ```bash
-  kubectl exec -i keycloak-demo2-postgresql-0 -- pg_dumpall -U postgres | gzip > keycloak-postgres-backup-$(date +"%Y%m%dT%I%M%p").sql.gz
+  kubectl exec -i keycloak-<namespace>-postgresql-0 -- pg_dumpall -U postgres | gzip > keycloak-postgres-backup-$(date +"%Y%m%dT%I%M%p").sql.gz
   ```
 
   When prompted use the password from the previous step. Expect the prompt multiple times for each database.
