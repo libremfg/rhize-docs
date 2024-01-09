@@ -10,7 +10,7 @@ menu:
     identifier:
 ---
 
-This guide shows you the procedure to back up Keycloak on your Rhize Kubernetes deployment.
+This guide shows you how to to back up Keycloak on your Rhize Kubernetes deployment.
 
 ## Prerequisites
 
