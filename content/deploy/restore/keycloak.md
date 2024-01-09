@@ -65,7 +65,7 @@ Before you start, ensure you have the following:
   kubectl get pv | grep keycloak
   ```
 
-  It will display a list of persistent volume claims related to keycloak. For example:
+  It will display a list of persistent volume claims related to Keycloak. For example:
   ```
   pvc-95176bc4-88f4-4178-83ab-ee7b256991bc   10Gi       RWO            Delete           Terminating   libre/data-keycloak-postgresql-0   hostpath                48d
   ```
