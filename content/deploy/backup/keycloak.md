@@ -33,6 +33,7 @@ To back up Keycloak, follow these steps:
 
 1. Retrieve the Keycloak user password using the following command, replacing <namespace> with your namespace:
 
+
   ```bash
   kubectl get secret keycloak-<namespace>-postgresql -o jsonpath="{.data.postgres-password}" | base64 --decode
   ```
