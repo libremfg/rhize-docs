@@ -12,9 +12,13 @@ menu:
 
 This guide shows you how to restore Keycloak in your Rhize environment.
 
-| Restoring Keycloak to an existing running instance will involve downtime
+{{% notice "caution" %}}
 
-Expected downtime for an existing running instance depends on the cluster performance sizing, backup size and bandwidth speed to the kubernetes cluster. Downtime is typically under a minute.
+Restoring Keycloak to an existing running instance will involve downtime.
+
+The expected downtime for an existing running instance depends on the cluster performance sizing, backup size and bandwidth speed to the Kubernetes cluster. Downtime is typically under a minute.
+
+{{% /notice %}}
 
 ## Prerequisites
 
