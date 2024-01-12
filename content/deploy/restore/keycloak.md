@@ -14,9 +14,9 @@ This guide shows you how to restore Keycloak in your Rhize environment.
 
 {{% notice "caution" %}}
 
-Restoring Keycloak to an existing running instance will involve downtime.
+Restoring Keycloak to a running instance involves downtime.
 
-The expected downtime for an existing running instance depends on the cluster performance sizing, backup size and bandwidth speed to the Kubernetes cluster. Downtime is typically under a minute.
+Typically, this downtime lasts less than a minute. The exact duration needed depends on network constraints, backup size, and the performance of the Kubernetes cluster.
 
 {{% /notice %}}
 
@@ -33,7 +33,7 @@ Before you start, ensure you have the following:
 
     {{% param "k8s_cluster_ns" %}}
 
-1. Retrieve the Keycloak user password using the following command, replacing <NAMESPACE> with your namespace:
+1. Retrieve the Keycloak user password using the following command, replacing `<NAMESPACE>` with your namespace:
 
     ```bash
     kubectl get secret keycloak-<NAMESPACE>-postgresql -o jsonpath="{.data.postgres-password}" | base64 --decode
@@ -45,7 +45,7 @@ Before you start, ensure you have the following:
     gzip -d keycloak-postgres-backup-YYYYMMDDTHHMMAA.sql
     ```
 
-1. Scale down the replicas of Keycloak to 0 to prevent new records from being created while the backup is restored. Keycloak will be unavailable after this command.
+1.  To prevent new records from being created while the backup is restored, scale down the Keycloak replicas to `0`. Keycloak will be unavailable after this command.
 
     ```bash
     kubectl scale statefulsets keycloak --replicas=0
@@ -57,13 +57,13 @@ Before you start, ensure you have the following:
     kubectl scale statefulsets keycloak-postgresql --replicas=0
     ```
 
-1. Remove the Postgres persistent volume claim
+1. Remove the Postgres persistent volume claim:
 
     ```bash
     kubectl delete pvc data-keycloak-postgresql-0
     ```
 
-1. Identify the Keycloak Postgres volume(s):
+1. Identify the Keycloak Postgres volumes:
 
     ```bash
     kubectl get pv | grep keycloak
@@ -80,7 +80,7 @@ Before you start, ensure you have the following:
 1. Remove the persistent volumes with this command,  replacing `<PVC_FROM_PREVIOUS_STEP>` with the `pvc-*` name  from the previous step:
 
     ```
-    $ kubectl delete pv <pvc-from-previous-step>
+    $ kubectl delete pv <PVC_FROM_PREVIOUS_STEP>
     ```
 
 1. Scale up the replicas of PostgreSQL to 1:
