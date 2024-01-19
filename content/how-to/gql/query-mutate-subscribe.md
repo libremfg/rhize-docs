@@ -1,7 +1,7 @@
 ---
 title: 'Query, mutate, and subscribe'
 categories: ["concepts"]
-description: Examples of how to use the different GraphQL operations in Rhize
+description: A guide to the three GraphQL operations in Rhize
 weight: 200
 menu:
   main:
