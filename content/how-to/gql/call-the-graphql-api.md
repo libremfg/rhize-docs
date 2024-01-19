@@ -373,7 +373,7 @@ query kitchenEquipment {
 {{% /tab %}}
 {{% /tabs %}}
 
-### Filter arrays {#filter}
+### Filter {#filter}
 
 Whether you make a query or mutation, you often may specify to receive an array of items in response.
 To minimize payload, isolate necessary resources, and maximize the signal-to-noise ratio, it's often useful to filter this array to a subset of items.
