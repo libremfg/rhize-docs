@@ -1,5 +1,21 @@
 # Rhize documentation author's guide
 
+How to contribute to the Rhize docs.
+
+## Create new page
+
+To create a new page, run this command:
+
+```shell
+hugo new content/<PATH>/<TO>/<PAGE>.md
+```
+
+## Style
+
+The docs follow the [Google Developer's Style Guide](https://developers.google.com/), a widely used standard for developer docs. 
+
+The Vale CI checker also has a spellchecker for our specific special terms. Check `github/workflows/Vocabularies`.
+
 ## Shortcodes
 
 _Shortcodes_ are built in functions that you call in the markdown file.
@@ -7,11 +23,32 @@ Hugo processes their instructions to render something on the page.
 
 Common use cases are for style, as with notices, and for templating.
 
+### Abbreviation
+
+The abbreviation provides tooltips, using definitions given in `data/termbase.yaml`.
+
+The `abbr`  syntax is as follows:
+
+```html
+{{< abbr "<TERM>" >}} 
+```
+
+For example:
+
+```
+These pages describe the elements to make a Rhize {{< abbr "bpmn" >}} workflow,
+```
+
+Renders as:
+
+![image](https://github.com/libremfg/libremfg.github.io/assets/47385188/2394da77-821b-4379-8814-df2476f6e25c)
+
+
 ### Expandable
 
 Hide extensive details in an accordion:
 
-```
+```html
 {{< expandable title="Click for more details" >}}
 This text should be hidden initially.
 
@@ -71,7 +108,7 @@ This action is irreversible.
 
 
 
-## Document template
+## Use templates
 
 Each document should have a specific purpose:
 At the time of writing, the templated types are `concepts`, `how-to`, `reference`, and `releases`.
