@@ -344,18 +344,18 @@ With the `libre` realm selected:
 1. **Save**.
 1. Repeat the process for the **Admin event settings** tab.
 
-## Configure Password Policy
+## Configure password policy
 
 With the `libre` realm selected:
-1. Select **Authentication** and then **Policies** tab.
+1. Select **Authentication** and then the **Policies** tab.
 1. Select the **Password policy** tab.
 1. Add your organisation's password policy.
 
-## Configure Bruteforce Protections
+## Configure brute-force protections
 
 With the `libre` realm selected:
-1. Select **Realm settings**, then the **Security defenses** tab.
-1. In the **Brute force detection** enable the feature and configure to your requirements. 
+1. Select **Realm settings**  and then the **Security defenses** tab.
+1. In **Brute force detection**, enable the feature and configure it to your requirements. 
 
 ## Next steps
 
