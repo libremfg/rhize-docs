@@ -273,7 +273,7 @@ After installing all other services, install the UI with these steps:
 If the install is successful, the UI is available on its
 [default port]({{< ref "default-ports" >}}).
 
-## Optional: Audit Trail Service
+## Optional: Audit Trail service
 
 
 The Rhize Audit service provides an audit trail for database changes to install. The Audit service uses InfluxDB2 for storage.
@@ -301,9 +301,9 @@ Install Audit Service with these steps:
     helm install audit -f audit.yaml libre/audit -n {{< param application_name >}}
     ```
 
-### Enable Change Data Capture
+### Enable change data dapture
 
-The Audit trial requires [Change Data Capture (CDC)]({{< ref "track-changes" >}}) to function. To enable CDC in {{< param application_name >}} BAAS, include the following values for the Helm chart overrides:
+The Audit trial requires [change data capture (CDC)]({{< ref "track-changes" >}}) to function. To enable CDC in {{< param application_name >}} BAAS, include the following values for the Helm chart overrides:
 
 ```yaml
 alpha:
@@ -317,7 +317,7 @@ alpha:
     replicas: 1
 ```
 
-### Enable Audit Subgraph
+### Enable Audit subgraph
 
 To use the Audit trail in the UI, you must add the Audit trail subgraph into the router. To enable router to use and compose the subgraph:
 
