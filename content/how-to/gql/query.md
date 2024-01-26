@@ -10,8 +10,8 @@ menu:
 ---
 
 A _query_ returns one or more resources from the database.
-A query is the foundational operation to find information in the knowledge graph,
-whether to investigate a resource, make a custom report, or build a data-science script.
+Whether you want to investigate manufacturing processes or build a custom report,
+the work starts with a query to the Rhize knowledge graph.
 
 Most queries start with these three verbs, each of which indicates the resources to return.
 
@@ -29,9 +29,8 @@ These operations correspond to the `Get` verb defined in [Part 5](https://www.is
 ## `get` single resource
 
 Queries that start with `get` return one object.
-Common use cases of gets are to explore all data related to a particular object.
+A common use of `get` is to explore all data related to a particular object.
 For example, in a custom dashboard, you may use `getDataSource` to make a custom page that reports a specified data source.
-
 
 Typically, the argument specifies the resource by either its human-readable ID (`id`) or its unique address in the database (`iid`).
 
