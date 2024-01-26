@@ -124,7 +124,7 @@ For simplicity, assume the order has only these properties:
     Name the output variable `newMaterial`.
 
 1. Connect the JSONata task to a GraphQL service task.
-1. Send `$.newMaterial` as the variable for the [GraphQL mutation]({{< relref "../gql/query-mutate-subscribe" >}}) `addMaterialDefinition`.
+1. Send `$.newMaterial` as the variable for the [GraphQL mutation]({{< relref "../gql/mutate" >}}) `addMaterialDefinition`.
   In **Mutation body**, define the operation and fields to return.
   In **Variables,** add the values for the payload.
 

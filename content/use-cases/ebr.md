@@ -128,7 +128,7 @@ width="75%"
 
 ### Query the DB with the eBR fields
 
-After the batch finishes, use a [GraphQL query]({{< relref "how-to/gql/query-mutate-subscribe" >}}) to receive all relevant batch data.
+After the batch finishes, use a [GraphQL query]({{< relref "how-to/gql/query" >}}) to receive all relevant batch data.
 You only need to write one request, and it returns exactly the data you specify.
 
 {{< figure

@@ -45,7 +45,7 @@ In the audit UI, each record in the audit has the following fields:
 |--------------------|-------------------------------------------------------------------------------------------------------------------------|
 | Timestamp          | The time when the event occurred                                                                                        |
 | User               | The user who performed the operation                                                                                    |
-| Operation          | The [GraphQL operation]({{< relref "gql/query-mutate-subscribe" >}}) involved                                           |
+| Operation          | The [GraphQL operation]({{< relref "gql/call-the-graphql-api#operations" >}}) involved                                           |
 | Entity Internal ID | The ID of the resource that was changed                                                                                 |
 | Attribute          | What changed in the resource. This corresponds to the object properties as defined by the API and its underlying schema |
 | Value              | The new value of the updated attribute                                                                                  |
