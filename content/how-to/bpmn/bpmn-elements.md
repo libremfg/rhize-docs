@@ -138,7 +138,7 @@ Transform JSON data with a [JSONata expression](https://docs.jsonata.org/overvie
 
 ### GraphQL Query
 
-Run a [GraphQL query]({{< relref "../gql/query-mutate-subscribe#queries" >}})
+Run a [GraphQL query]({{< relref "../gql/query" >}})
 
 | Call parameters    | Description                                  |
 |--------------------|----------------------------------------------|
@@ -151,7 +151,7 @@ Run a [GraphQL query]({{< relref "../gql/query-mutate-subscribe#queries" >}})
 
 ### GraphQL Mutation
 
-Run a [GraphQL mutation]({{< relref "../gql/query-mutate-subscribe#mutations" >}})
+Run a [GraphQL mutation]({{< relref "../gql/mutate" >}})
 
 | Call parameters    | description                                  |
 |--------------------|----------------------------------------------|

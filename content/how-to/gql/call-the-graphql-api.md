@@ -25,22 +25,22 @@ These topics introduce the basics of how to use GraphQL with Rhize's custom data
 
 Once you learn how to explore the API, you'll find that the interface is more comfortable and discoverable than a comparable OpenAPI (Swagger) document&mdash;and that's before considering the improvements GraphQL brings to precision, performance, and developer experience.
 
-## Operation types
+## Operation types {#operations}
 
 In GraphQL, an _operation_ is a request to the server.
 Rhize supports three types of operations:
 
-- **Queries** return data and subsets of data.
-- **Mutations** change the data on the server side.
-- **Subscriptions** notify about data changes in real time.
+- **[Queries]({{< relref "query" >}})** return data and subsets of data.
+- **[Mutations]({{< relref "mutate" >}})** change the data on the server side.
+- **[Subscriptions]({{< relref "subscribe" >}})** notify about data changes in real time.
 
-For details and examples, refer to [Query, Mutate, Subscribe]({{< relref "query-mutate-subscribe" >}}).
+For details and examples, refer to their specific documentation pages.
 
 ## Call syntax
 
 The following sections show you the essential features to make a query.
 
-### Authentication
+### Authenticate
 
 To authenticate your requests, pass a bearer token as an `Authorization` header.
 Be sure to preface the value with the word `Bearer `:
