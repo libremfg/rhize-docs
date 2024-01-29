@@ -13,7 +13,7 @@ menu:
 ---
 
 This article provides a high-level overview of how Rhize works, starting with data collection and ending with user interaction.
-To make these concepts more concrete, the final section provides examples of each process.
+To make these concepts more concrete, the next section provides examples of each process.
 
 The heart of the Rhize platform is its manufacturing knowledge graph, which stores data from all levels of the operation and exposes this data through a single endpoint.
 Around the database are services that exchange messages and process events in real-time.
