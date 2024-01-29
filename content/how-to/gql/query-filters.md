@@ -82,7 +82,7 @@ query QueryEquipment {
 {{< /tabs >}}
 
 To filter for items that have multiple properties, include the fields in an array.
-This query returns equipment that both have been modified and have next versions:
+This query returns equipment objects that both have been modified and have next versions:
 
 ```graphql
 query QueryEquipment {
@@ -146,7 +146,7 @@ query getEquipment($filter: EquipmentFilter) {
 
 ## Combine filters with `and`, `or`, `not`
 
-To filter by multiple properties, use the `and`, `or` and `not`, operators.
+To filter by multiple properties, use the `and`, `or`, and `not`, operators.
 GraphQL syntax uses [infix notation](https://en.wikipedia.org/wiki/Infix_notation), so: "a and b" is `a, and: { b }`, “a or b or c” is `a, or: { b, or: c }`, and “not” is a prefix (`not:`).
 
 ### this `and` that property
@@ -154,8 +154,8 @@ GraphQL syntax uses [infix notation](https://en.wikipedia.org/wiki/Infix_notatio
 The `and` operator filters for objects that include all specified properties.
 
 For example, this query returns equipment objects that match two properties:
-- `effectiveStart` must be the 1st and the 10th of January, 2024
-- It must have a non-null `nextVersion`
+- The `effectiveStart` must be the 1st and the 10th of January, 2024.
+- It must have a non-null `nextVersion`.
 
 The `and` function is implicit unless you are searching on the same field.
 So this filter has an implied `and`:
@@ -181,7 +181,7 @@ query{
 
 {{< notice "note" >}}
 
-This is shorter filter syntax is equivalent to `and: {has: nextVersion}`.
+This preceding filter syntax is a shorter equivalent to `and: {has: nextVersion}`.
 
 {{< /notice >}}
 
@@ -228,8 +228,8 @@ or: { not: {has: nextVersion} }
 
 ### A list of filters
 
-The `and` and `or` accept lists of filters.
-For example, this query filters for equipment objects whose `id` is matches `A`, `B`, or `C`:
+The `and` and `or` operators accept lists of filters.
+For example, this query filters for equipment objects whose `id` matches `A`, `B`, or `C`:
 
 ```graphql
 queryEquipment (filter: {
@@ -250,7 +250,7 @@ All directives begin with the `@` sign.
 
 ### Cascade
 
-The `@cascade`  directive filters certain nodes within a query.
+The `@cascade`  directive filters for certain nodes within a query.
 Use it to filter requested resources by a nested sub-property, similar to a `WHERE` clause in SQL.
 
 {{< notice "caution" >}}
@@ -260,7 +260,7 @@ Consider using it only after you've exhausted other query structures to return t
 
 {{< /notice >}}
 
-For example, this query [filters]({{< relref "call-the-graphql-api#filter" >}}) for job responses with an ID of `12341`, and then filters that set for only the items that have a `data.properyLabel` field with a value of `INSTANCE ID`.
+For example, this query filters for job responses with an ID of `12341`, and then filters that set for only the items that have a `data.properyLabel` field with a value of `INSTANCE ID`.
 
 {{< tabs >}}
 
