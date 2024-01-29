@@ -75,6 +75,8 @@ query QueryEquipment {
       },
       // more items
       ]
+    }
+ }
 ```
 {{% /tab %}}
 {{< /tabs >}}
