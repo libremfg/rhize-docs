@@ -79,5 +79,5 @@ query ExampleQuery {
 }
 ```
 
-If you don't have the precise `iid`, you can use one of the string filters.
+If you don't have the precise `iid`, you can use one of the string [filters]({{< relref "query-filters" >}}).
 
