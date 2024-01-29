@@ -67,4 +67,5 @@ They return matches within the specified [GeoJSON polygon](https://datatracker.i
 |------------|-------------------------------------------------|
 | near       | Within the specified `distance` from the polyon |
 | within     | In the polygon coordinates                      |
-| Intersects | In the intersection of two polygons                                                |
+| Intersects | In the intersection of two polygons                     |
+
