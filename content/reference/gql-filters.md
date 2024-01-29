@@ -63,9 +63,13 @@ Boolean filters can be either `true` or `false`.
 Geolocation filters filter by geographic coordinates.
 They return matches within the specified [GeoJSON polygon](https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.6).
 
-| Filter     | Description                                     |
-|------------|-------------------------------------------------|
-| near       | Within the specified `distance` from the polyon |
-| within     | In the polygon coordinates                      |
-| Intersects | In the intersection of two polygons                     |
+| Filter     | Description                                      |
+|------------|--------------------------------------------------|
+| near       | Within the specified `distance` from the polygon |
+| within     | In the polygon coordinates                       |
+| Intersects | In the intersection of two polygons              |
+
+## Read more
+
+These filters are based on Rhize's implementation of the [Dgraph `@search` directive](https://dgraph.io/docs/graphql/schema/directives/search/).
 
