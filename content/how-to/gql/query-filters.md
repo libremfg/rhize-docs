@@ -298,7 +298,6 @@ query QueryJobResponse($filter: JobResponseFilter, $propertyLabel: String) {
 ### Include
 
 The `@include` directive returns a field only if its variable is `true`.
-It is the converse of [`@skip`](#skip), which returns a field if its variable is `false`.
 
 For example, when `includeIf` is `true`, this query omits specified values for `versions`.
 
