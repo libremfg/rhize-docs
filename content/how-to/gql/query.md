@@ -81,3 +81,24 @@ query ExampleQuery {
 
 If you don't have the precise `iid`, you can use one of the string filters.
 
+### `Aggregate` data from multiple resources
+
+Like `query`, operations that start with `aggregate` return sets of arrays.
+
+However, rather than return items, the purpose of aggregate operations is to returns secondary data computed from the properties of these items.
+For example, you might use an `aggregate` query to create a report about operational performance for a set of process segments within a certain time frame.
+
+This request returns the count of all Equipment items that match a certain filter:
+
+{{< tabs >}}
+{{% tab "query" %}}
+```graphql
+query countItems($filter: EquipmentFilter) {
+  aggregateEquipment(filter: $filter) {
+    count
+  }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
+
