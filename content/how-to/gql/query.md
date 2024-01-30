@@ -11,7 +11,7 @@ menu:
 
 A _query_ returns one or more resources from the database.
 Whether you want to investigate manufacturing processes or build a custom report,
-the work starts with a query to the Rhize knowledge graph.
+a good query is likely the foundation of your workflow.
 
 Most queries start with these three verbs, each of which indicates the resources to return.
 
@@ -81,12 +81,13 @@ query ExampleQuery {
 
 If you don't have the precise `iid`, you can use one of the string [filters]({{< relref "query-filters" >}}).
 
-### `Aggregate` data from multiple resources
+## `Aggregate` data from multiple resources
 
-Like `query`, operations that start with `aggregate` return sets of arrays.
+Operations that start with `aggregate` provide aggregated statistics for a specified set of items.
 
-However, rather than return items, the purpose of aggregate operations is to returns secondary data computed from the properties of these items.
-For example, you might use an `aggregate` query to create a report about operational performance for a set of process segments within a certain time frame.
+The syntax and filtering for an `aggregate` operation is the same as for a `query` operation.
+However, rather than returning items, the aggregate operation returns one or more computed statistics about these items.
+For example, you might use an `aggregate` query to create a summary report about a set of process segments within a certain time frame.
 
 This request returns the count of all Equipment items that match a certain filter:
 
@@ -102,3 +103,59 @@ query countItems($filter: EquipmentFilter) {
 {{% /tab %}}
 {{< /tabs >}}
 
+## Sort and paginate
+
+A query can take arguments to order and paginate your results.
+
+{{< notice "note" >}}
+Without an `order` parameter, a query returns items without any default or guaranteed order.
+{{< /notice >}}
+
+### Order
+
+The `order` argument works with any property whose type is `Int`, `Float`, `String`, or `DateTime`.
+For example, this query sorts Person objects by ID in ascending alphabetical order:
+
+```graphql
+query{
+  queryPerson(order:{ asc: id}) {
+    id
+  }
+}
+```
+
+And this orders by the Person's `effectiveStart` date in descending chronological order.
+
+```
+query{
+  queryPerson(order:{ desc: effectiveStart}) {
+    id
+    effectiveStart
+  }
+}
+```
+
+### Paginate with `offset`
+
+The `offset` argument specifies what item to start displaying results from, and the `first` argument specifies how many items to show.
+
+For example, this skips the five most recent Person items (as measured by `effectiveStart`), and then displays the next 10:
+
+```graphql
+query{
+  queryPerson(order:{
+    desc: effectiveStart
+    },
+    offset: 5,
+    first: 10
+    ) {
+    id
+    effectiveStart
+  }
+}
+```
+
+## Filter queries
+
+Rhize also has many queries to filter or return subsets of items.
+To learn how to filter, read [Use query filters]({{< relref "/how-to/gql/query-filters" >}}).
