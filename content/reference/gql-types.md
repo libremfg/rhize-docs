@@ -38,7 +38,7 @@ In official GraphQL terminology, these types are called [_scalar types_](https:/
 - `Boolean`
 - `id`: A string representing a unique object within a defined [object type](#object-type).
 - `iid`: The object's unique address in the database. For example, `0xf9b49`.
-- `DateTime`: A time stamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+- `DateTime`: A timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
 - `Geo`: Geometry types for geo-spatial coordinates
 
 ### Object type
