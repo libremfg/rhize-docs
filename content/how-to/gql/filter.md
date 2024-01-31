@@ -9,9 +9,12 @@ menu:
     identifier:
 ---
 
-When a query or mutation involves many items, it's often helpful to filter the response to some subset.
-Rhize has many filters to make your queries more precise, bringing more meaningful results with less need for secondary processing.
 
+_Filters_  limit an operation to a subset of resources.
+You can use filters to make operations more precise, remove unneeded items from a payload, and reduce the need for secondary processing.
+
+To use a filter, specify it in the operation's argument.
+Most fields in an object can serve as a filter.
 {{< notice "note" >}}
 This page provides a detailed guide of how to use the filters, with examples.
 For a bare reference of filters and data types, refer to the [GraphQL type reference]({{< relref "/reference/gql-types" >}}).
