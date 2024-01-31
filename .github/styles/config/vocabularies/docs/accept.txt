@@ -17,6 +17,7 @@ NATS
 [Ee]num
 [Ll]ibre
 [Pp]ostgres
+[Uu]psert
 andon
 autoscale
 config
