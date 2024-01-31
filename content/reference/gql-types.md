@@ -50,8 +50,9 @@ For example, the `materialActual`  object has basic fields, including:
 - `description`, a `String`.
 - `effectiveEnd`, a `DateTime`
 
-The `materialActual` also has complex fields describing associated manufacturing objects, for example,
-an array of associated `MaterialLot` objects, the `MaterialDefinition` object, and so on.
+The `materialActual` also has complex fields describing associated manufacturing objects.
+For example, its fields include
+the array of associated `MaterialLot` objects, the `MaterialDefinition` object, and so on.
 All objects in the database have relationships to other objects.
 
 ## Scalar filters
@@ -98,7 +99,7 @@ Properties of the type `Enum` can be filtered by the following:
  - `ge`
  - `gt`
 
- Each keyword has the same behavior as described in [string filters](#string-filters).
+Each keyword has the same behavior as described in [string filters](#string-filters).
 
 ### Boolean filters
 

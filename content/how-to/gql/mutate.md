@@ -75,8 +75,9 @@ mutation AddEquipment($input: [AddEquipmentInput!]!) {
 
 Many `add` operations support _upserting_, which _update_ or _insert_ (create).
 That is, if the object already exists, the operation will update it with the additional fields.
+If the object doesn't exist, the operation will create it.
 
-Besides general UX convenience, upsert is useful when data comes from multiple sources and in no guaranteed order, or when data comes from the message broker.
+Besides general UX convenience, upsert is useful when data comes from multiple sources and in no guaranteed order, like from multiple streams from the message broker.
 
 To enable upsert, set the `upsert:` argument to true:
 
@@ -201,7 +202,7 @@ For example, this mutation creates a new version of equipment, and associates a 
 }
 ```
 
-You can confirm the record and its nested property exists with a `get` query.
+You can confirm that the record and its nested property exists with a `get` query.
 If the preceding operation succeeded, this query returns both the new `Widget Maker` and
 its corresponding version:
 
