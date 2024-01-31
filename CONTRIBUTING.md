@@ -10,6 +10,35 @@ To create a new page, run this command:
 hugo new content/<PATH>/<TO>/<PAGE>.md
 ```
 
+### Frontmatter
+
+Each page has the following frontmatter:
+
+- `title`: The name of the page as it appears in the H1
+- `description`: The text that is displayed in social media previews
+- `weight`: The page's relative position in the menu. Heavier weights "sink" to lower on the page.
+- `categories`: (Optional) Meta-data about the topic
+- `menu.main`: An object that configures the sidebar main menu properties
+  - `name`:  The title of the page as it appears in the sidebar
+  - `identifier`: How to reference the page in menu configs, and relrefs and other shortcodes
+  - `parent`: The parent page (use its `identifier`)
+ 
+
+
+<details><summary>**Example config**:</summary>
+```yaml
+title: GraphQL types and filters
+description: A list of the filters you can use to query and update manufacturing models.
+categories: ["reference"]
+weight: 930
+menu:
+  main:
+    name: GQL types and filters
+    identifier: gql-filters
+    parent: reference
+```
+</details>
+
 ## Style
 
 The docs follow the [Google Developer's Style Guide](https://developers.google.com/), a widely used standard for developer docs. 
