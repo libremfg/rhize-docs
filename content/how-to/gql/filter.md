@@ -1,7 +1,7 @@
 ---
-title: 'Use query filters'
+title: 'Filter'
 categories: ["how-to"]
-description: How to filter a GraphQL query to a subset of manufacturing items.
+description: How to filter a GraphQL call to a subset of manufacturing items.
 weight: 210
 menu:
   main:
@@ -9,19 +9,19 @@ menu:
     identifier:
 ---
 
-When a query returns many items, it's often helpful to filter the response to some subset.
+When a query or mutation involves many items, it's often helpful to filter the response to some subset.
 Rhize has many filters to make your queries more precise, bringing more meaningful results with less need for secondary processing.
 
-This page provides a detailed guide of how to use the filters with examples of how to use them.
-For a bare reference, refer to the [Filter reference]({{< relref "/reference/gql-filters" >}}).
-
 {{< notice "note" >}}
-These filters are based on Rhize's implementation of the Dgraph [`@search` directives](https://dgraph.io/docs/graphql/schema/directives/search/).
+This page provides a detailed guide of how to use the filters, with examples.
+For a bare reference of filters and data types, refer to the [GraphQL type reference]({{< relref "/reference/gql-types" >}}).
 {{< /notice >}}
+
   
 ## Filter by property
 
-These filters return only the resources that have some specified property or property range. They typically work on `string` and `dateTime` objects.
+The following sections show some common [scalar filters]({{< relref "/reference/gql-types#scalar-filters" >}}), filters that work on `string`, `dateTime`, and numeric values.
+These filters return only the resources that have some specified property or property range.
 
 ### `between` dates
 
@@ -144,6 +144,14 @@ query getEquipment($filter: EquipmentFilter) {
 {{% /tab %}}
 {{< /tabs >}}
 
+{{< notice "caution" >}}
+
+The `regexp` filters can have performance costs.
+After you refine a query filter to return exactly what you need, consider ways to simplify the regular expression
+or, if possible, use a different filter.
+
+{{< /notice >}}
+
 ## Combine filters with `and`, `or`, `not`
 
 To filter by multiple properties, use the `and`, `or`, and `not`, operators.
@@ -185,7 +193,7 @@ This preceding filter syntax is a shorter equivalent to `and: {has: nextVersion}
 
 {{< /notice >}}
 
-### One `or`  more properties
+### One `or` more properties
 
 The `or` operator filters for objects that have at least one of the specified properties.
 For example, you can take the preceding query and modify it so that it returns objects that have an effective start between the specified range or a `nextVersion` property (inclusive).
@@ -203,7 +211,7 @@ queryEquipment(filter: {
 ```
 
 
-### `not` this properties
+### `not` these properties
 
 The `not` operator filters for objects that do not contain the specified property.
 For example, you can take the preceding query and modify it so that it returns objects that have an effective start between the specified range and _do not_ have a `nextVersion` property:
@@ -226,7 +234,7 @@ To modify this to include both objects within the range and objects that do not 
 or: { not: {has: nextVersion} }
 ```
 
-### A list of filters
+### This list of filters
 
 The `and` and `or` operators accept lists of filters.
 For example, this query filters for equipment objects whose `id` matches `A`, `B`, or `C`:

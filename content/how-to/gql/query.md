@@ -79,7 +79,7 @@ query ExampleQuery {
 }
 ```
 
-If you don't have the precise `iid`, you can use one of the string [filters]({{< relref "query-filters" >}}).
+If you don't have the precise `iid`, you can use one of the string [filters]({{< relref "filter" >}}).
 
 ## `Aggregate` data from multiple resources
 
@@ -158,4 +158,4 @@ query{
 ## Filter queries
 
 Rhize also has many queries to filter or return subsets of items.
-To learn how to filter, read [Use query filters]({{< relref "/how-to/gql/query-filters" >}}).
+To learn how to filter, read [Use query filters]({{< relref "/how-to/gql/filter" >}}).
