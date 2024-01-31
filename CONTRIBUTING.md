@@ -25,10 +25,10 @@ Each page has the following frontmatter:
  
 
 
-<details><summary>**Example config**:</summary>
+Example config:
 ```yaml
 title: GraphQL types and filters
-description: A list of the filters you can use to query and update manufacturing models.
+description: A reference of the data types in the Rhize API and of the filters available for each type.
 categories: ["reference"]
 weight: 930
 menu:
@@ -37,7 +37,7 @@ menu:
     identifier: gql-filters
     parent: reference
 ```
-</details>
+
 
 ## Style
 
