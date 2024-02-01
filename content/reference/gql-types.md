@@ -31,11 +31,12 @@ objects defined precisely by ISA-95 and enforced by Rhize's database schema.
 Every manufacturing object in the Rhize database is made of fields that are of one the following basic types.
 In official GraphQL terminology, these types are called [_scalar types_](https://graphql.org/learn/schema/#scalar-types).
 
-- `String`
-- `Int`
-- `Float`
-- `Enum`
-- `Boolean`
+- `String`: A sequence of characters. For example, `machine_2`
+- `Int`: An integer number.  For example, `2`.
+- `Float`: A number that includes a fraction. For example, `2.25`.
+- `Boolean`: A field whose value is either `true` or `false`.
+- `Enum`: A field whose values are restricted to a defined set. For example, `versionState` might be one of `ACTIVE`, `APPROVED`, `FOR_REVIEW`, `DRAFT`, or `DEPRECATED`
+
 - `id`: A string representing a unique object within a defined [object type](#object-type).
 - `iid`: The object's unique address in the database. For example, `0xf9b49`.
 - `DateTime`: A timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
