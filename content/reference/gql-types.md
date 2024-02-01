@@ -111,6 +111,7 @@ Boolean filters can be either `true` or `false`.
 Geolocation filters return objects within specified geographic coordinates.
 They return matches within the specified [GeoJSON polygon](https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.6).
 
+If a geolocation field can act as a filter, then the filter can work in one of the following behaviors:
 | Filter     | Description                                      |
 |------------|--------------------------------------------------|
 | near       | Within the specified `distance` from the polygon |
