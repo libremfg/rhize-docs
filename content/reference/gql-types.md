@@ -58,7 +58,7 @@ All objects in the database have relationships to other objects.
 
 ## Scalar filters
 
-Every field that has a basic type can be used as a filter.
+Most objects have some fields that can be filters for a query or mutation.
 The filters that are available depend on the data type, but the behavior of the `String` filters corresponds closely to `DateTime` and `Int` filters.
 
 ### String filters
