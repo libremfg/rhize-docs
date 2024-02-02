@@ -87,7 +87,9 @@ Properties that have a type of `Int`, `Float`, or `DateTime` can be filtered by 
  - `gt`
 
 Each keyword has the same behavior as described in [string filters](#string-filters), only they operate on numerical rather than lexicographic values.
-
+{{< notice "note" >}}
+While the dateTime type uses the RFC 3339 format, some string fields may use the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. This depends on the object and customer requirement. For these fields, the string filters work as chronological filters too.
+{{< /notice >}}
 ### Enum filters
 
 Properties of the type `Enum` can be filtered by the following:
