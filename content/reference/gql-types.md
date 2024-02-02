@@ -77,7 +77,6 @@ String properties have the following filters:
 ### Integers, floats, DateTimes
 
 Properties that have a type of `Int`, `Float`, or `DateTime` can be filtered by the following keywords.
-Note that all date times are in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
 
  - `lt`
  - `le`
