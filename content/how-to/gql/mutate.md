@@ -14,7 +14,7 @@ You might use a mutation to update a personnel class, or in to a [{{< abbr "BPMN
 
 Rhize supports the following ways to change the API.
 
-### `Add`
+## `add` {#add}
 
 {{< notice "note" >}}
 The `add` operation corresponds to the `Process` verb defined in [Part 5](https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i) of the ISA-95 standard.
@@ -71,9 +71,24 @@ mutation AddEquipment($input: [AddEquipmentInput!]!) {
 ```
 {{% /tab %}}{{< /tabs >}}
 
-### `update`
+### Upsert
+
+Many `add` operations support _upserting_, which _update_ or _insert_ (create).
+That is, if the object already exists, the operation will update it with the additional fields.
+If the object doesn't exist, the operation will create it.
+
+Besides general UX convenience, upsert is useful when data comes from multiple sources and in no guaranteed order, like from multiple streams from the message broker.
+
+To enable upsert, set the `upsert:` argument to true:
+
+```graphql
+addEquipment(input: $input, upsert: true)
+```
+
+## `update` {#update}
 
 Mutations that start with `update` change something in an object that already exists.
+The `update` operations can use [filters]({{< relref "/how-to/gql/filter" >}}).
 
 {{< notice "note" >}}
 The `update` operation corresponds to the `Change` verb defined in [Part 5](https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i) of the ISA-95 standard.
@@ -109,7 +124,7 @@ mutation updateMixerVersion( $updateEquipmentVersionInput2: UpdateEquipmentVersi
 {{% /tab %}}
 {{% /tabs %}}
 
-### `Delete`
+## `delete` {#delete}
 
 {{< notice "warning" >}}
 Be careful! Without a [Database backup]({{< relref "/deploy/backup/graphdb" >}}), deleted items cannot be recovered.
@@ -117,6 +132,7 @@ Be careful! Without a [Database backup]({{< relref "/deploy/backup/graphdb" >}})
 
 
 Mutations that start with `delete` remove a resource from the database.
+The `delete` operations can use [filters]({{< relref "/how-to/gql/filter" >}}).
 
 
 {{< notice "note" >}}
@@ -150,4 +166,81 @@ mutation deleteUoM($filter: UnitOfMeasureFilter!){
 {{% /tab %}}
 {{% /tabs %}}
 
+## Deep mutations
 
+You can perform deep mutations at multiple levels.
+Deep mutations don't alter linked objects but can add nested new objects or link to existing objects.
+
+For example, this mutation creates a new version of equipment, and associates a new item of equipment with it. Both the `equipmentVersion` and the `equipment` did not exist in the database.
+
+```graphql
+  mutation AddEquipmentVersion($addEquipmentVersionInput2: [AddEquipmentVersionInput!]!) {
+  addEquipmentVersion(input: $addEquipmentVersionInput2) {
+    equipmentVersion {
+      id
+      equipment {
+        id
+      }
+    }
+  }
+}
+```
+
+**Variables:**
+
+```json
+  "addEquipmentVersionInput2": {
+    "id": "widget_machine_version_1",
+    "version": "1",
+    "versionStatus": "DRAFT",
+    "equipment": {
+      "id": "widget_maker_1",
+      "label": "Widget maker 1"
+
+    }
+  }
+}
+```
+
+You can confirm that the record and its nested property exists with a `get` query.
+If the preceding operation succeeded, this query returns both the new `Widget Maker` and
+its corresponding version:
+
+{{< tabs >}}
+{{% tab "query" %}}
+```graphql
+query{
+  getEquipment(id: "widget_maker_1") {
+    id
+    versions{
+      id
+      version
+    }
+  }
+}
+```
+{{% /tab %}}
+
+
+{{% tab "result" %}}
+
+```json
+{
+  "addEquipmentVersionInput2": {
+    "id": "widget_machine_version_1",
+    "version": "1",
+    "versionStatus": "DRAFT",
+    "equipment": {
+      "id": "widget_maker_1",
+      "label": "Widget maker 1"
+
+    }
+  }
+}
+```
+
+{{% /tab %}}
+
+{{< /tabs >}}
+
+To update an existing nested object, use the update mutation for its type.

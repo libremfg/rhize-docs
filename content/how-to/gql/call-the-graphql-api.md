@@ -1,6 +1,6 @@
 ---
 title: >-
-  Call the GraphQL API
+  Overview: the Rhize API
 date: '2023-11-22T09:43:30-03:00'
 categories: ["how-to"]
 description: How to query your manufacturing knowledge graph
@@ -396,51 +396,4 @@ To use filters:
     | String        | `exact`                                                                                                                                                           |
 
 
-
-### Cascade
-
-`@cascade` is a [directive](https://www.apollographql.com/docs/apollo-server/schema/directives/) that filters certain nodes within a query.
-It is similar to a `WHERE` clause in SQL.
-
-{{< notice "caution" >}}
-
-`@cascade` is not as performant as flatter queries.
-Consider using it only after you've exhausted other query structures to return the data you want.
-
-{{< /notice >}}
-
-For example, this query [filters]({{< relref "call-the-graphql-api#filter" >}}) for job responses with an ID of `12341`, and then filters that set for only the items that have a `data.properyLabel` field with a value of `INSTANCE ID`.
-
-{{< tabs >}}
-
-{{% tab "Query" %}}
-
-```graphql
-query QueryJobResponse($filter: JobResponseFilter, $propertyLabel: String) {
-  queryJobResponse(filter: $filter)  @cascade(fields:["data"]){
-    id
-    iid
-    data(filter: { label: { anyoftext: $propertyLabel } }) {
-      id
-      iid
-      label
-      value
-    }
-  }
-}
-```
-**Variables**:
-```json
-{
-    "filter": {
-        "id": {
-            "alloftext": "12341"
-        }
-    },
-    "propertyLabel": "INSTANCE ID"
-}
-
-```
-{{% /tab %}}
-{{< /tabs >}}
 
