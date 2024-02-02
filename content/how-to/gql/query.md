@@ -1,7 +1,7 @@
 ---
 title: 'Query'
 categories: ["how-to"]
-description: A guide to the three GraphQL operations in Rhize
+description: A guide to querying the Rhize Manufacturing Data Hub.
 weight: 200
 menu:
   main:
