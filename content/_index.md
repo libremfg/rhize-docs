@@ -77,7 +77,7 @@ The tight integration of all levels of manufacturing data, from real-time sensor
   </div>
   <div class="item">
     <div class="icon"><i class="fa fa-level-up" aria-hidden="true"></i></div>
-    <a href="{{< relref "/reference/releases">}}">
+    <a href="{{< relref "/releases">}}">
       <h2>Releases</h2>
       <p>
         What's new in Rhize.
