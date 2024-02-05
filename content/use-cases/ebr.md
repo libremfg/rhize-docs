@@ -104,7 +104,7 @@ The procedure is as follows:
 
 1. POST data with a graph mutation.
 
-   Use the Variable returned by the JSONata step to send a mutation to update the Graph database with the new fields.
+   Use the variable returned by the JSONata step to send a mutation to update the Graph database with the new fields.
    To learn more, read the [Guide to GraphQL with Rhize]({{< relref "how-to/gql" >}}).
 
 In real BPMN workflows, you can dynamically create and assign fields as they enter the system.
@@ -129,7 +129,7 @@ width="75%"
 ### Query the DB with the eBR fields
 
 After the batch finishes, use a [GraphQL query]({{< relref "how-to/gql/query" >}}) to receive all relevant batch data.
-You only need to write one request, and it returns exactly the data you specify.
+You only need one precise request to return exactly the data you specify.
 
 {{< figure
 alt="Diagram showing how a query makes an ebr"
