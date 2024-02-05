@@ -49,7 +49,7 @@ The tight integration of all levels of manufacturing data, from real-time sensor
   </div>
   <div class="item">
     <div class="icon"><i class="fa fa-object-group" aria-hidden="true"></i></div>
-    <a href="{{< relref "/how-to/bpmn">}}">
+    <a href="{{< relref "/how-to/model">}}">
       <h2>Model</h2>
       <p>
       Define your production in a common data model.
@@ -66,17 +66,18 @@ The tight integration of all levels of manufacturing data, from real-time sensor
     </a>
   </div>
   <div class="item">
-    <a  href="{{< relref "/reference">}}">
+    <a  href="{{< relref "/how-to/bpmn">}}">
     <div class="icon"><i class="fa fa-wrench" aria-hidden="true"></i></div>
       <h2>Handle events</h2>
       <p>
-      Write custom frontends to monitor process and build pubsub MES.
+      Handle
+      messages and build MES frontends with the low-code BPMN engine.
       </p>
     </a>
   </div>
   <div class="item">
     <div class="icon"><i class="fa fa-level-up" aria-hidden="true"></i></div>
-    <a href="{{< relref "/releases">}}">
+    <a href="{{< relref "/reference/releases">}}">
       <h2>Releases</h2>
       <p>
         What's new in Rhize.
