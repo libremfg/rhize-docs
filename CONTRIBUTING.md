@@ -72,6 +72,17 @@ Renders as:
 
 ![image](https://github.com/libremfg/libremfg.github.io/assets/47385188/2394da77-821b-4379-8814-df2476f6e25c)
 
+### Compatibility
+
+List the compatible versions of a third party software for a specified version of Rhize.
+
+To use:
+1. Update `data/versionCompat.yaml` with the version and tested compatibility.
+2. Call the compatibility shortcode using the Rhize version as an argument.
+
+```html
+{{< compatible "1" >}}
+```
 
 ### Expandable
 

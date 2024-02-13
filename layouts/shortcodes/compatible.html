@@ -1,0 +1,20 @@
+<!--- variables based on shortcode argument -->
+{{ $arg := (.Get 0) }}
+
+<!-- range over data file -->
+{{ range $.Site.Data.versionCompat }}
+
+<!-- Find matches -->
+    {{ if eq ( .version | lower) ( $arg | lower ) }}
+
+<div class="notices note">
+  <span class="type">Note</span>
+  Version {{ $arg }} has been tested to be work with the following third-party applications:
+  <ul>
+    {{ with .nats }}<li> NATS: {{ . }}</li>{{ end }}
+    {{ with .tempo }}<li> Tempo: {{ . }}</li> {{ end }}
+    {{ with .fakey }}<li> Fakey: {{ . }}</li> {{ end }}
+  </ul>
+</div>
+    {{end}}
+{{ end }}
