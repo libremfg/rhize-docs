@@ -84,6 +84,11 @@ To use:
 {{< compatible "1" >}}
 ```
 
+Renders as:
+
+![image](https://github.com/libremfg/libremfg.github.io/assets/47385188/5b5ad2a7-e2e7-4e1f-88f5-0005dbdb355d)
+
+
 ### Expandable
 
 Hide extensive details in an accordion:
