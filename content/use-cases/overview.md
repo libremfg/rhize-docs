@@ -41,7 +41,12 @@ Guide: [Use the knowledge graph]({{< relref "../how-to/gql" >}})
 ## Headless MES or MOM
 
 Rhize serves as a backend to create custom applications to replace traditional MES or MOM systems.
-With the combination of its event-driven architecture and unified data model, Rhize can calculate OEE, schedule, track, and execute dynamic workflows.
+
+With the combination of its event-driven architecture and unified data model, Rhize can:
+- calculate OEE, or far more granular metrics
+- Handle schedules and maintenance orders
+- Track and trace material
+- Execute dynamic workflows.
 
 Besides building bespoke frontends, many operators choose to integrate Rhize with low-code systems like Appsmith.
 For some problems, lowcode models can reduce the time to create applications dramatically, making it easier to create and test prototypes, involve more stakeholders in the application design process, iterate on working models, and generally do useful things more quickly.
