@@ -19,8 +19,8 @@ You can map data from an MES or {{< abbr "ERP" >}} into the database, creating a
 Besides better performance and flexibility, Rhize has far tighter integration of plant and system data.
 Yet, its data model is generic enough to conform to may use cases, chiefly:
 - **A manufacturing knowledge graph**. Query the entire context and history of the operation.
-- **An event handler**. Receive manufacturing message streams and react to them.
 - **Headless MES or MOM**. Use the API to build custom applications for a variety of MES and MOM activities.
+- **An event handler**. Receive manufacturing message streams and react to them.
 
 Of course, each of these use cases has many uses cases.
 These use cases of Rhize are already implemented in discrete, continuous, and batch manufacturing operations.
