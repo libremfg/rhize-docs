@@ -54,16 +54,42 @@ Then, to back up the Influx, follow these steps:
     influx backup --org {{< param brand_name >}} --bucket {{< param brand_name >}}  --token <token-here> /backups/$(date +"%Y-%m-%dT%H.%M.%S")
     ```
 
+| Default audit bucket is `libre`
+
 1. Open the backup directory. Check the latest directory (for example with `ls -lt`) for the latest `.gz` files. Its name should be a timestamp from when you ran the preceding backup command.
+
+1. Create a file that holds the sha256 checksums of the latest backup files. Replace `<backup-folder-date>` below  You'll use this file to confirm the copy is identical.
+
+    ```bash
+    cd /backups/
+    sha256sum ./<backup-folder-date>/* > ./backup.sums
+    ```
 
 1. Leave the container shell. Copy files out of the container to your backup location:
 
    ```bash
-   kubectl cp <namespace>/<INFLUX-POD>:backups/<backup-folder-date> \
-   ./<backup-folder-date>
+   kubectl cp --retries=10 <namespace>/<INFLUX-POD>:backups/<backup-folder-date> ./<backup-folder-date>
+   kubectl cp --retries=10 <namespace>/<INFLUX-POD>:backups/backup.sums ./backup.sums
    ```
 
-To check that the backup succeeded, unzip the files and inspect the data.
+1. Use the checksum to confirm that the pod files and the local files are the same.
+If you are using Windows, you can run an equivalent check with the [`CertUtil`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/certutil) utility:
+
+   {{< tabs >}}
+   {{% tab "bash" %}}
+   ```bash
+   ## Change to the directory
+   cd ./<BACKUP>/<ON_YOUR_DEVICE>/
+   ## Check sums
+   sha256sum -c backup.sums
+   ```
+   {{% /tab %}}
+   {{% tab "cmd" %}}
+   ```cmd
+   CertUtil -hashfile C:\<BACKUP>\<ON_YOUR_DEVICE>\backup.sums sha256
+   ```
+   {{% /tab %}}
+   {{< /tabs >}}
 
 ## Next steps
 
