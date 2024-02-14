@@ -74,10 +74,7 @@
     Manufacturing data hub
   abbr: MDH
   definition:
-    A centralized platform or infrastructure that serves as a hub for collecting, integrating, storing, and processing data from various sources within an organization.
-  links:
-    - text: Data hub architecture
-      uri: /concepts/datahub/
+    A centralized platform or infrastructure that serves as a hub for collecting, integrating, storing, and processing manufacturing data from various sources within an organization.
 - term: Material
   definition: Everything required to produce a finished good. They include raw materials, intermediate materials, and collections of parts
   tags: ["s95"]
