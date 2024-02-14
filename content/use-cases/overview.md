@@ -41,6 +41,9 @@ Guide: [Use the knowledge graph]({{< relref "../how-to/gql" >}})
 ## Headless MES or MOM
 
 Rhize serves as a backend to create custom applications to replace traditional MES or MOM systems.
+Rather than force its opinion of what an MES interface should look like, Rhize provides the only data model, API, and BPMN engine.
+Your frontend teams can then use the tools of their choice to make the MES designed for your use case, with all the backend work delegated to Rhize's normal operation features.
+
 
 With the combination of its event-driven architecture and unified data model, Rhize can:
 - calculate OEE, or far more granular metrics
