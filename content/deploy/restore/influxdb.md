@@ -38,9 +38,9 @@ Before you start, ensure you have the following:
     spec:
       accessModes:
         - ReadWriteOnce
-    resources
-    requests:
-      storage: 1Gi
+    resources:
+      requests:
+        storage: 1Gi # increase based on the size of the backup
     ```
 
 1. Modify the Influx deployment:
@@ -49,27 +49,26 @@ Before you start, ensure you have the following:
     apiVersion: extensions/v1beta1
     kind: Deployment
     metadata:
-    name: influxdb
+      name: influxdb
     labels:
-    name: influxdb
+      name: influxdb
     ...
     volumes:
       - name: influx
-       persistentVolumeClaim:
-         claimName: influxdb
+        persistentVolumeClaim:
+          claimName: influxdb
       - name: influx-backup
-       persistentVolumeClaim:
-         claimName: influxdb-backup
-     containers:
-       - name: influxdb
-       image: "influxdb:alpine"
-       volumeMounts:
-       - mountPath: /var/lib/influxdb
-         name: influx
-       - mountPath: /tmp/backup
-       name: influx-backup
+        persistentVolumeClaim:
+          claimName: influxdb-backup
+    containers:
+      - name: influxdb
+        image: "influxdb:alpine"
+        volumeMounts:
+          - mountPath: /var/lib/influxdb
+            name: influx
+          - mountPath: /tmp/backup
+            name: influx-backup
      ```
-
 
 1. Copy the backup file in the Kubernetes backup destination created in the preceding step:
 

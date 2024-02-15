@@ -4,6 +4,7 @@ title: Maintain
 description: Guides to maintain your Rhize Instance
 categories: ["how-to"]
 weight: 200
+draft: true
 menu:
   main:
     parent: deploy
