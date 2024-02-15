@@ -59,7 +59,7 @@ The max size of the process variable context comes from the default max payload 
 To increase this size, change your NATS configuration.
 {{< /notice >}}
 
-By default, the size of the {{< abbr "process variable context" >}}) is 1MB.
+By default, the size of the {{< abbr "process variable context" >}} is 1MB.
 If the sum size of all variables exceeds this limit, the BPMN process exits.
 
 Be mindful of the overall size of your variables, especially when outputting to new variables.
