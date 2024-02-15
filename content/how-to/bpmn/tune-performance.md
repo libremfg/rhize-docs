@@ -14,15 +14,13 @@ menu:
 This page documents some tips to debug [BPMN workflows]({{< relref "/how-to/bpmn/create-workflow" >}}) and improve their performance.
 
 Manufacturing events can generate a vast amount of data.
-Rhize has no limits on the data it can ingest,
-and a BPMN workflow can have any number of logical flows and data transformations.
+And a BPMN workflow can have any number of logical flows and data transformations.
 So an inefficient BPMN process can introduce performance degradations.
-
-When writing and debugging a BPMN workflow, consider these tips.
 
 ## Avoid parallel gateways
 
 Running processes in [parallel]({{< relref "/how-to/bpmn/bpmn-elements#parallel-gateway" >}}) can increase the workflow's complexity by an order of magnitude.
+Parallel joins, in particular, can also increase memory usage of the NATS service.
 
 Where possible, prefer exclusive branching and sequential execution.
 When a task requires concurrency, keep the amount of data processed and the complexity of the tasks to the minimum necessary.
@@ -53,3 +51,20 @@ A strategy to debug and minimize necessary computation is to break transformatio
 If you use Visual Studio Code, consider the [`jsonata-language`](https://marketplace.visualstudio.com/items?itemName=bigbug.vscode-language-jsonata) extension.
 Similar to a Jupyter notebook, the extension provides an interactive environment to write JSONata expressions and to pass the outputs from one expression into the input of another.
 Besides its benefit for monitoring performance, we have used it to incrementally build complex JSONata in a way that we can  document and share (in the style of literate programming).
+
+## Manage the process context size
+
+{{< notice "note" >}}
+The max size of the process variable context comes from the default max payload size of NATS Jetstreams.
+To increase this size, change your NATS configuration.
+{{< /notice >}}
+
+By default, the size of the {{< abbr "process variable context" >}}) is 1MB.
+If the sum size of all variables exceeds this limit, the BPMN process exits.
+
+Be mindful of the overall size of your variables, especially when outputting to new variables.
+For example, imagine an initial JSON payload, `data`, that is 600MB.
+If a JSONata task slightly modifies and outputs it to a new variable, `data2`, the process variable context will exceed 1000MB and the BPMN process will exit.
+
+To work around this constraint, you can save memory by mutating variables.
+That is, instead of outputting a new variable, you can output the transformed payload to the original variable name.

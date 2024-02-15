@@ -113,17 +113,19 @@
       - text: An understanding of OEE
         uri: https://blog.isa.org/an-understanding-of-overall-equipment-effectiveness-oee
 
-- term: Personnel class
-  definition: A grouping of persons whose work shares a definite purpose in the manufacturing process
-  tags: "s95"
 - term: Pattern (process segment)
   definition: A <a href="#process-segment">process segment</a> that creates a pattern or template for other patterns or process segments to follow
+  tags: "s95"
+- term: Personnel class
+  definition: A grouping of persons whose work shares a definite purpose in the manufacturing process
   tags: "s95"
 - term: Physical asset
   definition: A physical piece of equipment with an ID
 - term: Process segment
   definition: A step in a manufacturing activitity that is visible to a business process, grouping the necessary personnel, material, equipment, and physical assets
   tags: "s95"
+- term: Process variable context
+  definition: The context and variables that are passed between tasks in a <a href="bpmn">BPMN</a> workflow
 - term: Resource actual
   definition: >-
     The specific resource used for a specific job.
