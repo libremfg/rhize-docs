@@ -15,7 +15,7 @@ Similar to a Jupyter notebook, the extension provides an interactive environment
 Besides its benefit for monitoring performance, we have used it to incrementally build complex JSONata in a way that we can document and share (in the style of literate programming).</p><h2 id=manage-the-process-context-size>Manage the process context size</h2><div class="notices note"><span class=type>Note</span> The max size of the process variable context comes from the default max payload size of NATS Jetstreams.
 To increase this size, change your NATS configuration.</div><p>By default, the size of the
 <abbr title="The context and variables that are passed between tasks in a BPMN workflow">process variable context</abbr>
-) is 1MB.
+is 1MB.
 If the sum size of all variables exceeds this limit, the BPMN process exits.</p><p>Be mindful of the overall size of your variables, especially when outputting to new variables.
 For example, imagine an initial JSON payload, <code>data</code>, that is 600MB.
 If a JSONata task slightly modifies and outputs it to a new variable, <code>data2</code>, the process variable context will exceed 1000MB and the BPMN process will exit.</p><p>To work around this constraint, you can save memory by mutating variables.
