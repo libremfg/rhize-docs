@@ -60,7 +60,7 @@ To increase this size, change your NATS configuration.
 {{< /notice >}}
 
 By default, the size of the {{< abbr "process variable context" >}} is 1MB.
-If the sum size of all variables exceeds this limit, the BPMN process exits.
+If the sum size of all variables exceeds this limit, the BPMN process fails to execute.
 
 Be mindful of the overall size of your variables, especially when outputting to new variables.
 For example, imagine an initial JSON payload, `data`, that is 600MB.
