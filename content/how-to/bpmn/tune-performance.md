@@ -64,7 +64,7 @@ If the sum size of all variables exceeds this limit, the BPMN process fails to e
 
 Be mindful of the overall size of your variables, especially when outputting to new variables.
 For example, imagine an initial JSON payload, `data`, that is 600MB.
-If a JSONata task slightly modifies and outputs it to a new variable, `data2`, the process variable context will exceed 1000MB and the BPMN process will exit.
+If a JSONata task slightly modifies and outputs it to a new variable, `data2`, the process variable context will exceed 1MB and the BPMN process will exit.
 
 To work around this constraint, you can save memory by mutating variables.
 That is, instead of outputting a new variable, you can output the transformed payload to the original variable name.
