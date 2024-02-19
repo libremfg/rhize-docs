@@ -84,10 +84,13 @@ Some data sources, such as OPC UA, have methods for RPC calls.
 ### Hierarchy Scope
 
 The _hierarchy scope_ represents the scope within which data information is exchanged.
-For example, in a baking process, two plants may have different personnel and equipment, even if they both produce the identical final products.
-The hierarchy scope defines a scope where all granular data within is relevant to it.
+While hierarchy scope is often connected to an [operational location](#operational-location), the zone of _information exchange_ is what defines it.
 
-While hierarchy scope is often connected to an [operational location](#operational-location), the determining is about _information exchange_.
+For example, in a baking process, two plants might produce identical final products but use different particular personnel and equipment classes.
+Hierarchy scope defines a zone of information exchange where such granular details matter.
+If the enterprise wants to measure only gross final output, then this hierarchy scope is likely irrelevant.
+However, if it wants to analyze specific processes to find inefficiencies, it may be useful to compare one hierarchy scope to another.
+
 
 ## Resource models
 
