@@ -4,7 +4,6 @@ date: '2024-02-09T09:47:47-03:00'
 categories: ["how-to"]
 description: Tips debug and improve the performance of your BPMN process
 weight: 300
-draft: true
 menu:
   main:
     parent: howto-bpmn
