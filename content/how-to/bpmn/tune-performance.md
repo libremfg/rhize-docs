@@ -17,7 +17,7 @@ Manufacturing events can generate a vast amount of data.
 And a BPMN workflow can have any number of logical flows and data transformations.
 So an inefficient BPMN process can introduce performance degradations.
 
-## Avoid parallel gateways
+## Avoid parallel joins
 
 Running processes in [parallel]({{< relref "/how-to/bpmn/bpmn-elements#parallel-gateway" >}}) can increase the workflow's complexity by an order of magnitude.
 Parallel joins, in particular, can also increase memory usage of the NATS service.
