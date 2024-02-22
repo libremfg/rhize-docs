@@ -2,7 +2,7 @@
 title: 'Tune BPMN performance'
 date: '2024-02-09T09:47:47-03:00'
 categories: ["how-to"]
-description: Tips debug and improve the performance of your BPMN process
+description: Tips to debug and improve the performance of your BPMN process
 weight: 300
 menu:
   main:
