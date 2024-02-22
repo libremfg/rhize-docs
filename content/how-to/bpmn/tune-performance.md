@@ -44,11 +44,11 @@ When a task requires concurrency, keep the amount of data processed and the comp
 
 ## Observe JSON size
 
-Each element in a BPMN workflow is passing, evaluating, or transforming a JSON body.
-If that body contains unnecessary fields, the workflow has inefficiencies.
-However, its hard for a human to reason about the size of a JSON object without a tool to provide measurements and context.
+Each element in a BPMN workflow passes, evaluates, or transforms a JSON body.
+Any unnecessary fields occupy unneccessary space in the {{< abbr "process variable context" >}}.
+However, its hard for a human to reason about the size of the inflight payload without a tool to provide measurements and context.
 
-Once you can visualize the memory footprint of a JSON body, it's easier to find places where you can reduce the in-flight payload size.
+It's easier to find places to reduce the in-flight payload size if you can visualize its memory footprint. 
 We recommend the [JSON site analyzer](https://www.debugbear.com/json-size-analyzer), which presents a flame graph of the memory used by the objects in a JSON data structure.
 
 
@@ -59,10 +59,10 @@ width="70%"
 caption="<em><small>The material lot object is dominating the size of this JSON payload. This a good place to start looking for optimizations.</small></em>"
 >}}
 
-## Use the JSONata extension
+## Use the JSONata book extension
 
 A BPMN process performs better when the JSONata transformations are precise.
-A strategy to debug and minimize necessary computation is to break transformations down into smaller steps.
+A strategy to debug and minimize necessary computation is to break transformations into smaller steps.
 
 If you use Visual Studio Code, consider the [`jsonata-language`](https://marketplace.visualstudio.com/items?itemName=bigbug.vscode-language-jsonata) extension.
 Similar to a Jupyter notebook, the extension provides an interactive environment to write JSONata expressions and pass the output from one expression into the input of another.
