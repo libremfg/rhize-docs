@@ -31,9 +31,8 @@ Each element in a BPMN workflow is passing, evaluating, or transforming a JSON b
 If that body contains unnecessary fields, the workflow has inefficiencies.
 However, its hard for a human to reason about the size of a JSON object without a tool to provide measurements and context.
 
-Once you can visualize the memory footprint of a JSON body, it's easier to find places to optimize.
-For this reason, it may help to reduce in-flight payload size by putting it in an analyzer.
-For this purpose, we recommend the [JSON site analyzer](https://www.debugbear.com/json-size-analyzer), which presents a flame graph of the memory used by the objects in a JSON data structure.
+Once you can visualize the memory footprint of a JSON body, it's easier to find places where you can reduce the in-flight payload size.
+We recommend the [JSON site analyzer](https://www.debugbear.com/json-size-analyzer), which presents a flame graph of the memory used by the objects in a JSON data structure.
 
 
 {{< figure
