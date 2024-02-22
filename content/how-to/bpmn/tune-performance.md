@@ -17,6 +17,14 @@ Manufacturing events can generate a vast amount of data.
 And a BPMN workflow can have any number of logical flows and data transformations.
 So an inefficient BPMN process can introduce performance degradations.
 
+## Avoid parallel joins
+
+Running processes in [parallel]({{< relref "/how-to/bpmn/bpmn-elements#parallel-gateway" >}}) can increase the workflow's complexity.
+Parallel joins in particular can also increase memory usage of the NATS service.
+
+Where possible, prefer exclusive branching and sequential execution.
+When a task requires concurrency, keep the amount of data processed and the complexity of the tasks to the minimum necessary.
+
 ## Manage the process context size
 
 {{< notice "note" >}}
@@ -34,19 +42,13 @@ If a JSONata task slightly modifies and outputs it to a new variable, `data2`, t
 To work around this constraint, you can save memory by mutating variables.
 That is, instead of outputting a new variable, you can output the transformed payload to the original variable name.
 
-## Avoid parallel joins
+If you still struggle to find what objects create memory bottlenecks, use a tool to observe their footprint, as documented in the next section.
 
-Running processes in [parallel]({{< relref "/how-to/bpmn/bpmn-elements#parallel-gateway" >}}) can increase the workflow's complexity.
-Parallel joins in particular can also increase memory usage of the NATS service.
-
-Where possible, prefer exclusive branching and sequential execution.
-When a task requires concurrency, keep the amount of data processed and the complexity of the tasks to the minimum necessary.
-
-## Observe JSON size
+## Observe payload size
 
 Each element in a BPMN workflow passes, evaluates, or transforms a JSON body.
-Any unnecessary fields occupy unneccessary space in the {{< abbr "process variable context" >}}.
-However, its hard for a human to reason about the size of the inflight payload without a tool to provide measurements and context.
+Any unnecessary fields occupy unnecessary space in the {{< abbr "process variable context" >}}.
+However, it's hard for a human to reason about the size of the inflight payload without a tool to provide measurements and context.
 
 It's easier to find places to reduce the in-flight payload size if you can visualize its memory footprint. 
 We recommend the [JSON site analyzer](https://www.debugbear.com/json-size-analyzer), which presents a flame graph of the memory used by the objects in a JSON data structure.
