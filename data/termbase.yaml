@@ -122,7 +122,7 @@
   definition: A step in a manufacturing activitity that is visible to a business process, grouping the necessary personnel, material, equipment, and physical assets
   tags: "s95"
 - term: Process variable context
-  definition: The context and variables that are passed between tasks in a <a href="bpmn">BPMN</a> workflow
+  definition: The context and variables that are passed between tasks in a <a href="#business-process-model-and-notation">BPMN</a> workflow
 - term: Resource actual
   definition: >-
     The specific resource used for a specific job.
