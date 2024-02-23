@@ -1,7 +1,7 @@
 <a
   class="edit-btn"
   target="_blank"
-  href='https://github.com/libremfg/libremfg.github.io/edit/{{ with getenv "CURRENT_BRANCH" }}{{ . }}{{ else }}main{{ end }}/content/{{with .File }}{{ replace ( replace .File.Path "\\" "/") "%5C" "/" }}{{ end }}'
+  href='https://github.com/libremfg/libremfg.github.io/edit/{{ with getenv "CURRENT_BRANCH" }}{{ . }}{{ else }}main{{ end }}/content/{{ .File.Path }}'
 >
   <i class="fa fa-github-alt"></i> Edit Page
 </a>
