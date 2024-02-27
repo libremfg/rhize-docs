@@ -42,11 +42,12 @@ In point-to-point networks, each node communicates directly with another.
 For example, a sensor communicates with a PLC, the PLC communicates with the MES, and the MES with the level-4 systems. 
 Additionally, even within a specific level, devices and applications might be responsible for coordinating communication between each other.
 
-{{< figure >}}
+{{< figure
+width="65%"
 alt="Diagram simplifying flows depicted in part 1 of ISA-95"
 src="/images/arch/diagram-rhize-l3-l4-information-flows.png"
-caption="<small>A simplified view of how information might exchange between level 3 and 4 systems in a point-to-point topology.</small>
-{{< /figure >}}
+caption="<small>A simplified view of how information might exchange between level 3 and 4 systems in a point-to-point topology.</small>"
+>}}
 
 While this form of communication is initially simple to implement, it also tightly couples services.
 As the system scales, the complexity of point-to-point communication increases at a  non-linear rate. With each node, the system that becomes increasingly fragile and unobservable.
@@ -62,7 +63,11 @@ Considering the number of devices and volume of exchange in manufacturing, polli
 For this reason, the publish-subscribe pattern has become a popular way for manufacturers to decouple communication.
 Event producers _publish_ topics to a message broker, and the message broker sends the event to consumers that _subscribe_ to the particular topic.
 
-![Diagram showing event producers and subscribers in decoupled pub-sub communication](/images/arch/diagram-rhize-pubsub-hubspoke.png)
+{{< figure
+width="65%"
+alt="Diagram showing event producers and subscribers in decoupled pub-sub communication"
+src="/images/arch/diagram-rhize-pubsub-hubspoke.png"
+>}}
 
 
 But while a publish-subscribe pattern resolves issues of device communication,
@@ -79,7 +84,11 @@ For a coherent data model and contextualization, all event data must be stored i
 Fortunately many bright minds in manufacturing have already collaborated to create a generic data model: ISA-95.
 
 
-![Diagram showing ISA-95 data model](/images/arch/diagram-rhize-isa95-schema.png)
+{{< figure
+width="65%"
+alt="Diagram showing ISA-95 data model"
+src="/images/arch/diagram-rhize-isa95-schema.png"
+>}}
 
 
 The ISA-95 standard provides a perfect source to create a data model.
@@ -101,7 +110,11 @@ To bring true "ubiquitous automation" to manufacturing processes, a data model a
 Manufacturers need responsiveness, so that the system can handle events in real time.
 Thus the hub needs to be programmable, so that users can write intermediary logic to handle events and conditionally publish messages back to subscribers.
 
-![Diagram showing ISA-95 data model](/images/arch/diagram-rhize-bpmn-eda.png)
+{{< figure
+width="70%"
+alt="Diagram showing ISA-95 data model"
+src="/images/arch/diagram-rhize-bpmn-eda.png"
+>}}
 
 The data hub also must be agnostic about the information it receives, so the event handler must have a way to transform incoming events and represent them in the database schema.
 Without such transformation, the hub shifts the burden of work onto the event producer.
