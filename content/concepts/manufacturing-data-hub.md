@@ -10,7 +10,7 @@ menu:
 
 ---
 
-This article explains what a Manufacturing Data Hub is and why it must have these particular components to meet the needs of large, modern manufacturing environments.
+This article explains what the components of a  _manufacturing data hub_ (MDH) are and why the system must have these particular components to meet the needs of large, modern manufacturing environments.
 
 In another phrasing, this article explains why Rhize made the choices it did to become the world's first manufacturing data hub.
 However, the scope of this article is the design considerations that define an MDH in general.
@@ -26,7 +26,7 @@ The components that make an MDH are:
 - The schema-on-write graph database
 - A data model that uses a manufacturing standard
 - The agent that listens for messages
-- The message broker that handles messages from publishers and to subscribers
+- The message broker that directs event messages from publishers to topics that event consumers can subscribe to
 - The rules engine that executes user workflows
 - The API that exposes the database
 - The IT infrastructure that this all runs on, which at certain scale must be clustered.
@@ -39,7 +39,7 @@ The following sections describe how this design arose out of the manufacturing I
 
 In early efforts to digitize manufacturing, information often flows from _point to point_.
 In point-to-point networks, each node communicates directly with another.
-For example, in point-to-point topology, a sensor communicates with a PLC, the PLC communicates with the MES, and the MES with the level-4 systems. 
+For example, a sensor communicates with a PLC, the PLC communicates with the MES, and the MES with the level-4 systems. 
 Additionally, even within a specific level, devices and applications might be responsible for coordinating communication between each other.
 
 ![Diagram simplifying flows depicted in part 1 of ISA-95](/images/arch/diagram-rhize-l3-l4-information-flows.png)
@@ -48,7 +48,7 @@ While this form of communication is initially simple to implement, it also tight
 As the system scales, the complexity of point-to-point communication increases at a  non-linear rate. With each node, the system that becomes increasingly fragile and unobservable.
 To maintain two connected services, an operator must control one channel of communication; for three services, three channels; for four services, six channels; soon complexity explodes.
 
-## Pub/sub architecture decouples
+## Pub/sub messaging decouples devices
 
 After a point-to-point system becomes too difficult to maintain, the next evolution is to adopt a hub and spoke model.
 In this topology, a central hub coordinates communication between nodes.
@@ -61,11 +61,13 @@ Event producers _publish_ topics to a message broker, and the message broker sen
 ![Diagram showing event producers and subscribers in decoupled pub-sub communication](/images/arch/diagram-rhize-pubsub-hubspoke.png)
 
 
-But simply setting up a message broker with publishers and subscribers is not enough.
+But while a publish-subscribe pattern resolves issues of device communication,
+it does not address how make the data useful for analysis or how to build automation workflows using the message stream.
 The data must be stored, and data on its own provides no value.
 What matters is the _event_ that drives the data and the surrounding context of the event that makes it meaningful.
 
-Furthermore, even if data is surrounded by context, every integrated application will have its own structure and format. Without a system to standardize this incoming data, the database becomes a giant blob, not something that can be explored as a cohesive whole.
+Furthermore, without standardization, a storage system reaches scaling issues of its own. 
+If every event-producing application has its own structure and format, the data bucket becomes less and less coherent as more assets are added.
 
 ## ISA-95 and graph structures for cohesive contextualization
 
@@ -77,17 +79,17 @@ Fortunately many bright minds in manufacturing have already collaborated to crea
 
 
 The ISA-95 standard provides a perfect source to create a data model.
-And as it happens, its system of attributes and relations is inherently graph-like.
+And as it happens, its object-oriented system of attributes and relations has an inherent graph structure.
 Thus a database that uses the ISA-95 schema brings built-in standardization for all events, and the graph structure provides the context.
 
 
-Combined with pub-sub messaging, the hub now decouples devices and provides a standardized data model that makes the data from these devices visible as parts of a contextual whole.
+Combined with publish-subscribe messaging, the hub now decouples devices and provides a standardized data model that makes the data from these devices visible as parts of a contextual whole.
 
 However, this system still has major limitations:
 - It lacks a programming engine to evaluate the data and add logical transformations
 - The system needs to structure raw message data in its ISA-95 representation 
 
-For to resolve both of these limitations, a Manufacturing Data Hub must also include a rules engine.
+To resolve both of these limitations, a manufacturing data dub must also include a rules engine.
 
 ## The rules engine creates responsiveness
 
@@ -124,12 +126,16 @@ With a rules engine and API, manufacturers can now use the datahub as a backend 
 However, MES and MOM applications are often mission-critical.
 To protect the operation, the MDH must also support distributed execution.
 
+So with data standardization and storage, decoupled messaging, and a rules engine, the manufacturing data hub becomes a complete system. As a system of record, analysts can use it to investigate past events and predict future ones. Combined with its rules engine, the database also serves as a backend for developers and integrators to build custom level 3 systems. And its messaging provides a mean of integrating communication between devices.
+
+However, one final piece is missing: the system must be robust enough for the data-intensive world of manufacturing IT.
+
 ## Distributed execution provides robustness
 
 The final factor is that the components of an MDH must run on distributed systems.
 Large manufacturing operations can generate enormous volumes of data.
-At some point, scaling vertically, with better hardware on single devices, is impossible.
-Besides size constraints, single devices also creates single points of failure
+At some point, scaling vertically (with better hardware on single devices) is impossible.
+Besides size constraints, single devices also create single points of failure
 
 So the system must scale horizontally, where different nodes share computation responsibilities,
 and extra volumes add data replication.
