@@ -24,6 +24,7 @@ markup:
     ordered: false
     startLevel: 2
     title: Rhize Documentation
+enableEmoji: true
 security:
   enableInlineShortcodes: true
   exec:
