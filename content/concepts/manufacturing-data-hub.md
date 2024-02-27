@@ -54,7 +54,7 @@ To maintain two connected services, an operator must control one channel of comm
 
 ## Pub/sub messaging decouples devices
 
-After a point-to-point system becomes too difficult to maintain, the next evolution is to adopt a hub and spoke model.
+After a point-to-point system becomes too difficult to maintain, the next evolution is to adopt a _hub-and-spoke_ model.
 In this topology, a central hub coordinates communication between nodes.
 Some systems achieve this by polling. That is, each device sends a request to the hub at some interval to see if anything changed.
 
