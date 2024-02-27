@@ -276,7 +276,7 @@ If the install is successful, the UI is available on its
 ## Optional: Audit Trail service
 
 
-The Rhize Audit service provides an audit trail for database changes to install. The Audit service uses InfluxDB2 for storage.
+The Rhize [Audit]({{< relref "/how-to/audit" >}}) service provides an audit trail for database changes to install. The Audit service uses InfluxDB2 for storage.
 
 Install Audit Service with these steps:
 
@@ -303,7 +303,7 @@ Install Audit Service with these steps:
 
 ### Enable change data dapture
 
-The Audit trial requires [change data capture (CDC)]({{< ref "track-changes" >}}) to function. To enable CDC in {{< param application_name >}} BAAS, include the following values for the Helm chart overrides:
+The Audit trail requires [change data capture (CDC)]({{< ref "track-changes" >}}) to function. To enable CDC in {{< param application_name >}} BAAS, include the following values for the Helm chart overrides:
 
 ```yaml
 alpha:
