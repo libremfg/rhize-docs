@@ -42,7 +42,11 @@ In point-to-point networks, each node communicates directly with another.
 For example, a sensor communicates with a PLC, the PLC communicates with the MES, and the MES with the level-4 systems. 
 Additionally, even within a specific level, devices and applications might be responsible for coordinating communication between each other.
 
-![Diagram simplifying flows depicted in part 1 of ISA-95](/images/arch/diagram-rhize-l3-l4-information-flows.png)
+{{< figure >}}
+alt="Diagram simplifying flows depicted in part 1 of ISA-95"
+src="/images/arch/diagram-rhize-l3-l4-information-flows.png"
+caption="<small>A simplified view of how information might exchange between level 3 and 4 systems in a point-to-point topology.</small>
+{{< /figure >}}
 
 While this form of communication is initially simple to implement, it also tightly couples services.
 As the system scales, the complexity of point-to-point communication increases at a  non-linear rate. With each node, the system that becomes increasingly fragile and unobservable.
