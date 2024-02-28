@@ -124,7 +124,7 @@ This is the value of the _rules engine_: it assesses message values for changes 
 width="65%"
 alt="Diagram showing how the rules engine turns topics into events."
 src="/images/arch/diagram-rhize-rule-engine.png"
-caption="<small>A simplified view of how information might be exchanged between level 3 and 4 systems in a point-to-point topology.</small>"
+caption="<small>The rules converts significant values into manufacturing events.</small>"
 >}}
 
 ## A workflow engine makes the system responsive
