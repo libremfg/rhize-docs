@@ -8,7 +8,7 @@ cascade:
   domain_name: libremfg.ai
   brand_name: Libre
   application_name: libre
-  db: libreBaaS
+  db: libreBaas
   pre_reqs: |-
     - Optional: [kubectx](https://github.com/ahmetb/kubectx) utilities
         - `kubectx` to manage multiple clusters
