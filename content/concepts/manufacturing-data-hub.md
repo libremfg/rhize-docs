@@ -118,7 +118,7 @@ src="/images/arch/diagram-rhize-incomplete-mdh.png"
 ## The rules engine creates events
 
 After the hub receives a message, it needs to evaluate whether the data is significant enough to constitute an event.
-This is the value of the _rules engine_: it assesses message values for changes and then evaluates whether these values should be classified as significant _events_.
+This is the function of the _rules engine_: it assesses message values for changes and then evaluates whether these values should be classified as significant _events_.
 
 {{< figure
 width="65%"
@@ -126,6 +126,8 @@ alt="Diagram showing how the rules engine turns topics into events."
 src="/images/arch/diagram-rhize-rule-engine.png"
 caption="<small>The rules converts significant values into manufacturing events.</small>"
 >}}
+
+Once the system receives an event, users then need a way to be able to process it.
 
 ## A workflow engine makes the system responsive
 
