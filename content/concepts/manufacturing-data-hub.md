@@ -23,12 +23,13 @@ A Manufacturing Data Hub is a system that collects all manufacturing events, sto
 Thus, a manufacturing data hub is not only a storage or message system;
 it is a coherent system of interelated parts and interfaces.
 The components that make an MDH are:
-- The schema-on-write graph database
+- The high-performance graph database with integrated time series
 - A data model that uses a manufacturing standard
-- The agent that listens for messages
-- The message broker that directs event messages from publishers to topics that event consumers can subscribe to
-- The rules engine that executes user workflows
-- The API that exposes the database
+- The API to interact with the data
+- The agent that listens for tag changes coming from the process
+- The rules engine that monitors tag changes and triggers user workflows when conditions are met
+- The message broker that communicates events to and from various systems
+- The workflow engine that processes, transforms and contextualises tag and event data
 - The IT infrastructure that this all runs on, which at certain scale must be clustered.
 
 Rhize chose these parts deliberately, after careful consideration and years of experience running into constraints.
@@ -70,7 +71,7 @@ src="/images/arch/diagram-rhize-pubsub-hubspoke.png"
 >}}
 
 
-But while a publish-subscribe pattern resolves issues of device communication,
+But while a publish-subscribe pattern resolves issues of device communication and data accessibility,
 it does not address how make the data useful for analysis or how to build automation workflows using the message stream.
 The data must be stored, and data on its own provides no value.
 What matters is the _event_ that drives the data and the surrounding context of the event that makes it meaningful.
@@ -91,7 +92,7 @@ src="/images/arch/diagram-rhize-isa95-schema.png"
 >}}
 
 
-The ISA-95 standard provides a perfect source to create a data model.
+The ISA-95 standard provides a comprehensive data model for manufacturing.
 And as it happens, its object-oriented system of attributes and relations has an inherent graph structure.
 Thus a database that uses the ISA-95 schema brings built-in standardization for all events, and the graph structure provides the context.
 
@@ -128,7 +129,7 @@ The best MDH should be as accessible as possible to all stakeholders, not only p
 
 ## Sensible interfaces make it accessible
 
-For most operators in manufacturing, IT is part of a job, not a job in itself.
+For many who work in industrial automation, IT is part of a job, not a job in itself.
 So, a well-designed manufacturing data hub should provide high-quality abstractions,
 with interfaces that minimize the need for thinking about IT systems instead of manufacturing systems.
 
