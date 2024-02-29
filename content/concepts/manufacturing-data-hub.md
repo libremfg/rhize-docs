@@ -119,7 +119,7 @@ src="/images/arch/diagram-rhize-incomplete-mdh.png"
 
 ## The rules engine creates events
 
-After the hub receives a message, it needs to evaluate whether the data is significant enough to constitute an event.
+After the hub receives a message, it must evaluate whether the data is significant enough to constitute an event.
 This is the function of the _rules engine_: it assesses message values for changes and then evaluates whether these values should be classified as significant _events_.
 
 {{< figure
