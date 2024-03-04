@@ -43,7 +43,7 @@ Common values that are changed include:
 ## Get client secrets.
 
 1. Go to Keycloak and get the secrets for each client you've created.
- Create Kubernetes secrets for each service. You can either create a secret file, or pass raw data from the command line.
+1. Create Kubernetes secrets for each service. You can either create a secret file, or pass raw data from the command line.
 
    {{< notice "caution" >}}
    How you create Kubernetes secrets **depends on your implementation details and security procedures.**
