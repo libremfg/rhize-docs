@@ -18,7 +18,7 @@ This topic assumes you have done the following:
 - [Set up Kubernetes](/deploy/install/setup-kubernetes) and [Configured Keycloak]({{< relref "keycloak" >}}). All the prerequisites for those topics apply here.
 - Configured load balancing for the following DNS records:
 
-
+   <!-- vale off -->
    | Service  | Domain                                                  |
    |----------|---------------------------------------------------------|
    | Admin UI | `<CUSTOMER>-{{< param application_name >}}.{{< param domain_name >}}`                          |
@@ -26,7 +26,7 @@ This topic assumes you have done the following:
    | GraphQL  | `<CUSTOMER>-api.{{< param domain_name >}}`                            |
    | NATS     | `<CUSTOMER>-mqtt.{{< param domain_name >}}`                           |
    | Grafana  | `<CUSTOMER>-grafana.{{< param domain_name >}}`                        |
-
+   <!-- vale on -->
 
 ### Overrides
 
