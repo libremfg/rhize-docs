@@ -64,7 +64,7 @@ Common values that are changed include:
    --from-literal=router=123
    ```
 
-As you install services through Helm, their respective YAML files reference these secrets.
+   As you install services through Helm, their respective YAML files reference these secrets.
 
 ## Install and add roles for the DB {#db}
 
