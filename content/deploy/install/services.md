@@ -43,9 +43,24 @@ Common values that are changed include:
 ## Get client secrets.
 
 1. Go to Keycloak and get the secrets for each client you've created.
-1. Create a Kubernetes secrets for each service with this command:
+ Create Kubernetes secrets for each service. You can either create a secret file, or pass raw data in the commandline.
+
+   {{< notice "caution" >}}
+   How you create Kubernetes secrets **depends on your implementation details and security procedures.**
+   For guidance, refer to the official Kubernetes topic, [Managing Secrets using `kubectl`](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/).
+   {{< /notice >}}
+
+   With raw data, the command might look something like this.
     ```bash
-    kubectl delete secret generic {{< param application_name >}}-client-secrets -n {{< param application_name >}} --from-literal=dashboard=123 --from-literal={{< param application_name >}}Agent=123 --from-literal={{< param application_name >}}Audit=123 --from-literal={{< param application_name >}}Baas=KYbMHlRLhXwiDNFuDCl3qtPj1cNdeMSl --from-literal={{< param application_name >}}BPMN=123 --from-literal={{< param application_name >}}Core=123 --from-literal={{< param application_name >}}UI=123 --from-literal=router=123
+    kubectl create secret generic {{< param application_name >}}-client-secrets \
+    -n {{< param application_name >}} --from-literal=dashboard=<USER \
+    --from-literal={{< param application_name >}}Agent=123 \
+    --from-literal={{< param application_name >}}Audit=123 \
+    --from-literal={{< param application_name >}}Baas=KYbMHlRLhXwiDNFuDCl3qtPj1cNdeMSl \
+    --from-literal={{< param application_name >}}BPMN=123 \
+    --from-literal={{< param application_name >}}Core=123 \
+    --from-literal={{< param application_name >}}UI=123 \
+    --from-literal=router=123
     ```
 
 As you install services through Helm, their respective YAML files reference these secrets.
