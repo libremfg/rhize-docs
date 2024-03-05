@@ -69,8 +69,7 @@ Common values that are changed include:
 You must install the {{< param db >}} database service first.
 You also need to configure the {{< param db >}} service to have roles in Keycloak.
 
-If enabling the Audit Trail include, refer to [Enable change data capture](#enable-change-data-capture).
-
+If enabling the Audit Trail, also the include the configuration in [Enable change data capture](#enable-change-data-capture).
 
 
 1. Use Helm to install the database:
@@ -298,7 +297,8 @@ Install Audit Service with these steps:
 
 1. Modify the InfluxDB Helm YAML file as needed. It is *recommended* to set the admin password and token in the Helm YAML file to prevent over writing the values with random values every deploy.
 
-1. Add InfluxDB Helm repository
+1. Add InfluxDB Helm repository:
+   
     ```bash
     helm repo add influxdata https://helm.influxdata.com
     ```
