@@ -37,7 +37,7 @@ flowchart LR
 To create a rule, you first must create the models and workflows that you want to associate with this rule.
 The procedure is as follows:
 1. [Create a data source]({{< ref "connect-datasource" >}})
-1. [Write a BPMN workflow]({{< relref "/how-to/bpmn/create-workflow/" >}}) that the rule triggers. You can edit or change this worklflow later.
+1. [Write a BPMN workflow]({{< relref "/how-to/bpmn/create-workflow/" >}}) that the rule triggers. You can edit or change this workflow later.
 1. [Create models]({{< relref "../model" >}}) for the following associated objects
     - A [{{< abbr "data source" >}}]({{< ref "master-definitions#data-source" >}})
     - An [{{< abbr "equipment" >}}]({{< ref "master-definitions#equipment" >}}) item bound to this data source
