@@ -7,8 +7,8 @@ description: Use the Rhize rules engine to turn a value from a data source into 
 weight:
 menu:
   main:
-    parent: howto-pubsub 
-    identifier: 
+    parent: howto-pubsub
+    identifier:
 ---
 
 A {{< abbr "data source" >}} might emit a high volume of data,
@@ -18,7 +18,7 @@ To filter the data for significant events, use the _rules engine_ to write rules
 The Rhize rules engine evaluates incoming values from a data source and then converts significant changes into _events_ to be processed by a {{< abbr "bpmn" >}} workflow.
 Each rule exists on the level of the {{< abbr "equipment class" ->}}.
 Rules work by evaluating the selected properties for a specified change.
-If the evaluation condition is true, the engine throws a trigger to start a workflow. 
+If the evaluation condition is true, the engine throws a trigger to start a workflow.
 You can also use the message payload to create variables for the workflow to use.
 
 
@@ -55,7 +55,7 @@ Then follow these steps:
 1. In **Trigger properties**, add the properties that the rule evaluates. If any of these properties change, the rule will evaluate them.
 1. In **JSONata expression**, enter the JSONata expression that the rule will evaluate. If you need to craft the expression, select the **#** button to open the JSONata editor.
 1. If needed, use the **Message payload** group to pass values from the message payload into the BPMN {{< abbr "process variable context" >}}. Enter the **Field name**, then write a JSONata expression to filter and transform it.
-1. Enable the rule with the toggle. 
+1. Enable the rule with the toggle.
 
 Here is an example of how a rule might look.
 
