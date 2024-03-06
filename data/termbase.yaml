@@ -131,6 +131,8 @@
 - term: Role-based equipment model
   definition: A definition of equipment based on the level-3 and level-4 functions and activities that it performs
   tags: "s95"
+- term: Rules engine
+  definition: A program that evaluates incoming data from a data source and converts significant changes into _events_ to be processed by a BPMN workflow
 - term: Serial discrete
   definition: >-
     A type of <a href="#discrete-manufacturing">discrete manufacturing</a> where each item produced has a serial number
