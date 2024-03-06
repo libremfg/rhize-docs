@@ -82,7 +82,7 @@ src="/images/arch/diagram-rhize-pubsub-hubspoke.png"
 
 
 But while a publish-subscribe pattern resolves issues of device communication and data accessibility,
-it does not address how to make the data useful for analysis or how to build automation workflows using the message stream.
+it does not address how to make the data useful for analysis or how to build automation workflows from the message stream.
 The data on its own provides no value.
 What matters is the _event_ that drives the data and the surrounding context of the event that makes it meaningful.
 
@@ -92,7 +92,6 @@ For a coherent data storage, all event data must be stored in a standardized sch
 Manufacturers also need to be able to _contextualize_ this data, where each event carries additional information about its context within the large system. 
 Fortunately, many bright minds in manufacturing have already collaborated to create a generic data model: ISA-95.
 
-
 {{< figure
 width="65%"
 alt="Diagram showing ISA-95 data model"
@@ -101,7 +100,7 @@ src="/images/arch/diagram-rhize-isa95-schema.png"
 
 
 The ISA-95 standard provides a comprehensive data model for manufacturing.
-And as it happens, its object-oriented system of attributes and relations has an inherent graph structure.
+As it happens, its object-oriented system of attributes and relations has an inherent graph structure.
 Thus a graph database with an ISA-95-based schema combines the complete data model with a built-in structure for users to explore this data as a system of nodes and relations. 
 
 Where publish-subscribe messaging decouples communication, the graph database and schema provide a means to store the events that these messages describe within an interrelated whole.
@@ -115,7 +114,6 @@ width="65%"
 alt="Diagram showing how an MDH is incomplete without a bridge between messages and storage"
 src="/images/arch/diagram-rhize-incomplete-mdh.png"
 >}}
-
 
 ## The rules engine creates events
 
