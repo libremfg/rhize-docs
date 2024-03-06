@@ -24,14 +24,14 @@ To add a data source, you need the following:
 
 The process has two sides:
 - Sending topics from your MQTT, OPCUA, or NATS server to Rhize.
-- In Rhize, [defining the data source]({{< relref "../model" >}}) and its associated objects.
+- In Rhize, [defining the data source]({{< relref "../model/create-objects-ui" >}}) and its associated objects.
 
   To do this, you can create entities in the Rhize UI, or through its [GraphQL API]({{< relref "../gql" >}}).
 
-### Model the data source on Rhize
+### Model the data source in the Rhize UI
 
 1. Enter the Rhize UI and go to **Master Data > Data sources**.
-1. Add the connection string, topics, and other necessary parameters. For details of what these fields mean, review the [Data source object reference]({{< relref "../model/master-definitions/#data-source" >}}).
+1. Add the connection string, topics, and other necessary parameters. For details of what these fields mean, review the [Data source object reference]({{< relref "../model/master-definitions/#data-sources" >}}).
 1. **Create** and then change version state to `Active`.
 
 Now add the data source to its equipment (or, if it doesn't exist [model new equipment]({{< relref "../model/master-definitions#equipment" >}})):
