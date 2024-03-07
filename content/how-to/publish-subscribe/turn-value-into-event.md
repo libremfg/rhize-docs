@@ -1,7 +1,6 @@
 ---
 title: 'Turn values into events'
 date: '2024-03-05T19:10:43-03:00'
-draft: true
 categories: ["how-to"]
 description: Use the Rhize rules engine to turn a value from a data source into an event for orchestration
 weight: 200
