@@ -15,7 +15,7 @@ A {{< abbr "data source" >}}  can emit a high volume of data,
 but not all this data is useful.
 To filter for significant events, use the _rules engine_ to write rules to that trigger workflows when conditions are met.
 
-The Rhize rules engine evaluates incoming values from a data source and then converts significant changes into _events_ to be processed by a {{< abbr "bpmn" >}} workflow.
+The rules engine evaluates incoming values from a data source and converts significant changes into _events_ to be processed by a {{< abbr "bpmn" >}} workflow.
 Each rule exists on the level of the {{< abbr "equipment class" ->}}.
 Each rule evaluates changes that happen to a set of specified properties for a data source.
 If the condition evaluates to `true`, the engine throws a trigger to start a workflow.
