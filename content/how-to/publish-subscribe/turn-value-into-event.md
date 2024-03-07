@@ -38,7 +38,7 @@ To create a rule, you must first create the models and workflows that you want t
 The procedure is as follows:
 1. [Create a data source]({{< ref "connect-datasource" >}}).
 1. [Write a BPMN workflow]({{< relref "/how-to/bpmn/create-workflow/" >}}) that the rule triggers. You can edit or change this workflow later.
-1. [Create models]({{< relref "../model" >}}) for the following associated objects
+1. [Create models]({{< relref "../model" >}}) for the following associated objects:
     - A [{{< abbr "data source" >}}]({{< ref "master-definitions#data-source" >}})
     - An [{{< abbr "equipment" >}}]({{< ref "master-definitions#equipment" >}}) item bound to this data source
     - An [{{< abbr "equipment class" >}}]({{< ref "master-definitions#equipment-class" >}}) that this equipment belongs to
