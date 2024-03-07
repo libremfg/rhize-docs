@@ -4,6 +4,7 @@ description: >-
   What is a Manufacturing Data Hub? Why is it necessary?
   How the design of Rhize meets the needs of modern manufacturing.
 weight: 100
+draft: false
 menu:
   main:
     parent: concepts
