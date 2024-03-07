@@ -11,14 +11,14 @@ menu:
     identifier:
 ---
 
-A {{< abbr "data source" >}} might emit a high volume of data,
+A {{< abbr "data source" >}}  can emit a high volume of data,
 but not all this data is useful.
-To filter the data for significant events, use the _rules engine_ to write rules to trigger workflows.
+To filter for significant events, use the _rules engine_ to write rules to that trigger workflows when conditions are met.
 
 The Rhize rules engine evaluates incoming values from a data source and then converts significant changes into _events_ to be processed by a {{< abbr "bpmn" >}} workflow.
 Each rule exists on the level of the {{< abbr "equipment class" ->}}.
-Rules work by evaluating the selected properties for a specified change.
-If the evaluation condition is true, the engine throws a trigger to start a workflow.
+Each rule evaluates changes that happen to a set of specified properties for a data source.
+If the condition evaluates to `true`, the engine throws a trigger to start a workflow.
 You can also use the message payload to create variables for the workflow to use.
 
 
@@ -34,9 +34,9 @@ flowchart LR
 
 ## Prerequisites
 
-To create a rule, you first must create the models and workflows that you want to associate with this rule.
+To create a rule, you must first create the models and workflows that you want to associate with this rule.
 The procedure is as follows:
-1. [Create a data source]({{< ref "connect-datasource" >}})
+1. [Create a data source]({{< ref "connect-datasource" >}}).
 1. [Write a BPMN workflow]({{< relref "/how-to/bpmn/create-workflow/" >}}) that the rule triggers. You can edit or change this workflow later.
 1. [Create models]({{< relref "../model" >}}) for the following associated objects
     - A [{{< abbr "data source" >}}]({{< ref "master-definitions#data-source" >}})
@@ -52,12 +52,12 @@ Then follow these steps:
 
 1. In the Equipment class, select the **Rules** tab.
 1. In **Workflow specification**, select the BPMN workflow that will orchestrate processes based on the event.
-1. In **Trigger properties**, add the properties that the rule evaluates. If any of these properties change, the rule will evaluate them.
-1. In **JSONata expression**, enter the JSONata expression that the rule will evaluate. If you need to craft the expression, select the **#** button to open the JSONata editor.
+1. In **Trigger properties**, add the data-source properties you want to build the rule on. If any of these properties change, the rule will evaluate them.
+1. In **JSONata expression**, enter the JSONata expression that the rule evaluates. For help building expressions, select the **#** button to open the JSONata editor.
 1. If needed, use the **Message payload** group to pass values from the message payload into the BPMN {{< abbr "process variable context" >}}. Enter the **Field name**, then write a JSONata expression to filter and transform it.
 1. Enable the rule with the toggle.
 
-Here is an example of how a rule might look.
+Here is an example of how a rule might look:
 
 {{< figure
 alt="A screenshot of a configured rule, as described in subsequent paragraph"
