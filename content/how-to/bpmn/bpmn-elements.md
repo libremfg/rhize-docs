@@ -25,7 +25,7 @@ boilerplate:
 
 ---
 
-These pages describe the elements to make a Rhize {{< abbr "bpmn" >}} workflow, and their parameters to set conditions, use variables, and call services. 
+These pages describe the elements to make a Rhize {{< abbr "bpmn" >}} workflow, and their parameters to set conditions, use variables, and call services.
 
 Rhize BPMN elements are based on the Business Process Model and Notation [OMG Standard](https://www.omg.org/spec/BPMN/2.0/).
 While the visual grammar is functionally the same, we extend some elements for specific Rhize features, like service tasks that call the GraphQL API.
@@ -44,7 +44,7 @@ In event-driven models, events can happen in one of three _dimensions_:
 - **Start.**
   All processes begin with some trigger that starts an event. Start events are drawn with a single thin circle.
 
-- **Intermediate.** 
+- **Intermediate.**
   Possible events between the start and end. Intermediate events might start from some trigger, or create some result. They are drawn with a double thin line.
 
 - **End.**
@@ -251,17 +251,45 @@ Exclusive gateways can only branch. That is, they cannot join multiple flows.
 
 Marked by a "+" icon, _parallel gateways_ indicate a point where parallel tasks are run.
 
-Parallel gateways must be paired, and all flows must rejoin.
+{{< figure
+alt="A parallel gateway that branches and rejoins"
+src="/images/bpmn/screenshot-rhize-bpmn-parallel-gateway.png"
+width="50%"
+caption="<em>Parallel gateways run jobs in parallel.</em>"
+>}}
+
+{{% expandable title="Parallel joins" %}}
+
+You can join parallel tasks with another parallel gateway.
+This joins the variables from both branches to [process variable context](#process-variable-context).
+Note that parallel joins have performance costs, so be mindful of using them, especially in large tasks.
+To learn more, read [Tune BPMN performance]({{< relref "tune-performance" >}}).
 
 {{< figure
 alt="A parallel gateway that branches and rejoins"
-src="/images/bpmn/rhize-bpmn-parallel-gateway.png"
+src="/images/bpmn/screenshot-rhize-bpmn-parallel-join.png"
 width="50%"
-caption="<em>Parallel gateways are always paired. The first gateway branches. The second joins the flows.</em>"
+caption="<em>Parallel joins join variable context, but have performance costs.</em>"
 >}}
 
+{{% /expandable %}}
 
-## JSONata expression syntax
+## Variables and expressions
+
+As data passes and transforms from one element to another, variables remain in the _process variable context_.
+You can access these variables through JSONata expressions.
+
+### Process variable context
+
+_Process variable context_ refers to the set of the variables that exist within the context of an overall BPMN process.
+Each node can access this process variable context through a JSONata expression, using the syntax documented in the following section.
+By default, the process variable context has a maximum size of 1MB.
+When an activity outputs data, the output is added to the process variable context.
+
+When variable size gets large, you have multiple strategies to reduce its size.
+For ideas, refer to [Tune BPMN performance]({{< relref "/how-to/bpmn/tune-performance" >}}).
+
+### JSONata expression syntax
 
 Besides service tasks, many of the preceding elements can have JSONata expressions.
 For example, an exclusive gateway requires a JSONata expression for all but the default flow.
