@@ -10,9 +10,9 @@ To increase this size, change your NATS configuration.</div><p>By default, the s
 <abbr title="The context and variables that are passed between tasks in a BPMN workflow">process variable context</abbr>
 is 1MB.
 If the sum size of all variables exceeds this limit, the BPMN process fails to execute.</p><p>Be mindful of the overall size of your variables, especially when outputting to new variables.
-For example, imagine an initial JSON payload, <code>data</code>, that is 600MB.
+For example, imagine an initial JSON payload, <code>data</code>, that is 600KB.
 If a JSONata task slightly modifies and outputs it to a new variable, <code>data2</code>, the process variable context will exceed 1MB and the BPMN process will exit.</p><p>To work around this constraint, you can save memory by mutating variables.
-That is, instead of outputting a new variable, you can output the transformed payload to the original variable name.</p><p>If you still struggle to find what objects create memory bottlenecks, use a tool to observe their footprint, as documented in the next section.</p><h2 id=observe-payload-size>Observe payload size</h2><p>Each element in a BPMN workflow passes, evaluates, or transforms a JSON body.
+That is, instead of outputting a new variable, you can output the transformed payload to the original variable name.</p><p>Additionally, in service tasks that call APIs, use the <strong>Response Transform Expression</strong> to minimize the returned data to only the necessary fields. Rhize stores only the output of the expression, and discards the other part of the response. This is especially useful in service tasks that <a href=https://docs.rhize.com/how-to/bpmn/bpmn-elements/#call-rest-api>Call a REST API</a>, since you cannot precisely specify the fields in the response (as you can with a GraphQL query).</p><p>If you still struggle to find what objects create memory bottlenecks, use a tool to observe their footprint, as documented in the next section.</p><h2 id=observe-payload-size>Observe payload size</h2><p>Each element in a BPMN workflow passes, evaluates, or transforms a JSON body.
 Any unnecessary fields occupy unnecessary space in the
 <abbr title="The context and variables that are passed between tasks in a BPMN workflow">process variable context</abbr>
 .
