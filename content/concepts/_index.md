@@ -4,7 +4,7 @@ description: >-
   These topics explain the concepts, architecture, and philosophy that underpin the design of Rhize.
 identifier: concepts
 weight: 500
-draft: true
+draft: false
 cascade:
   categories: ["concepts"]
 ---
