@@ -17,14 +17,6 @@ Manufacturing events can generate a vast amount of data.
 And a BPMN workflow can have any number of logical flows and data transformations.
 So an inefficient BPMN process can introduce performance degradations.
 
-## Avoid parallel joins
-
-Running processes in [parallel]({{< relref "/how-to/bpmn/bpmn-elements#parallel-gateway" >}}) can increase the workflow's complexity.
-Parallel joins in particular can also increase memory usage of the NATS service.
-
-Where possible, prefer exclusive branching and sequential execution.
-When a task requires concurrency, keep the amount of data processed and the complexity of the tasks to the minimum necessary.
-
 ## Manage the process context size
 
 {{< notice "note" >}}
@@ -67,6 +59,26 @@ alt="A simplified diagram of Rhize's architecture"
 width="70%"
 caption="<em><small>The material lot object is dominating the size of this JSON payload. This a good place to start looking for optimizations.</small></em>"
 >}}
+
+
+## Look for inefficient execution logic
+
+When you first write a workflow, you may use some logical flows slow down execution time.
+If a process seems slow, look for these places to refactor performance.
+
+### Avoid parallel joins
+
+Running processes in [parallel]({{< relref "/how-to/bpmn/bpmn-elements#parallel-gateway" >}}) can increase the workflow's complexity.
+Parallel joins in particular can also increase memory usage of the NATS service.
+
+Where possible, prefer exclusive branching and sequential execution.
+When a task requires concurrency, keep the amount of data processed and the complexity of the tasks to the minimum necessary.
+
+### Avoid loops
+
+A BPMN process can loop back to a previous task node to repeat execution.
+This process can also increase execution time.
+If a process with a loop is taking too long to execute, consider refactoring the loop to process the variables as a batch in JSONata tasks.
 
 ## Use the JSONata book extension
 
