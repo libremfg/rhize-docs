@@ -1,12 +1,12 @@
 ---
-title: Concepts
+title: Explanations
 description: >-
   These topics explain the concepts, architecture, and philosophy that underpin the design of Rhize.
-identifier: concepts
+identifier: explanations
 weight: 500
 draft: false
 cascade:
-  categories: ["concepts"]
+  categories: ["explanations"]
 ---
 
 
