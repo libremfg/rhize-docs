@@ -88,6 +88,13 @@ Create a client for the DB as follows:
 
 1. Select **Next**, then **Save**.
 
+   On success, this opens the **Client details** page for the newly created client.
+
+1. Select the **Roles** tab and add the following roles to the `{{< param db >}}` service account:
+    - `manage-clients`
+    - `manage-account`
+    - `manage-users`
+
 #### Create UI client
 
 Create a client for the UI as follows:
