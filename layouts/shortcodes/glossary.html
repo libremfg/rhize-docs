@@ -1,8 +1,8 @@
 <dl>
-  {{ range sort .Site.Data.termbase "term" }}
+  {{- range sort .Site.Data.termbase "term" -}}
   <dt id="{{ .term | anchorize }}">
-    {{- .term -}}{{ with .abbr }} ({{- . -}}) {{ end }}
+    {{- .term -}}{{ with .abbr }} ({{- . -}}){{- end -}}
   </dt>
-  <dd>{{ .definition | safeHTML }}</dd>
-  {{ end }}
+  <dd>{{- .definition | safeHTML -}}</dd>
+  {{- end -}}
 </dl>

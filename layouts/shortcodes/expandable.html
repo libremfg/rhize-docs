@@ -9,6 +9,6 @@
     <div class="expandable-toggle">+</div>
   </div>
   <div class="expandable-content">
-    {{ .Inner | markdownify }}
+    {{ .Inner | .Page.RenderString }}
   </div>
 </label>

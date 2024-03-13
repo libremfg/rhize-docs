@@ -7,7 +7,7 @@ weight: 100
 draft: false
 menu:
   main:
-    parent: concepts
+    parent: explanations
 ---
 
 This article explains what the components of a _Manufacturing Data Hub_ (MDH) are and why the system must have these particular components to meet the needs of large, modern manufacturing environments.

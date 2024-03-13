@@ -1012,13 +1012,11 @@ a[href^="https://"]:after {
   text-decoration: none;
   padding-left: 3px;
 }
+
 /* Strip from links to own domain or with class no_icon */
 a[href^="https://docs.rhize.com"]:after,
-a.no_icon:after {
-  content:"" !important;
-  padding-l
-
-a[href^="https://rhize.com"]:after,
-a.no_icon:after {
-  content:"" !important;
-  padding-l
+a.no_icon:after,
+a[href^="https://rhize.com"]:after {
+  content: "" !important;
+  padding-left: 0; /* Remove padding */
+}

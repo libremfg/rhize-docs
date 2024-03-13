@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
   <head>
-    <script>
-      // Example: ["https:", "", "dgraph.io", "docs", "deploy", "#bulk-loader"]
-      // Using location.replace is better for SEO:
-      // 		1. https://socpub.com/articles/leveraging-googlebots-detection-javascript-redirects-ranking-16789
-      //		2. https://www.contentkingapp.com/academy/redirects/faq/javascript-redirect-bad-seo/
-    </script>
+    {{ template "_internal/google_analytics.html" . }}
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -123,31 +118,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- START: Required by runnable -->
-    <script
-      src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.js"
-      integrity="sha256-x3BtPVERvw1ozPlwivuFLZoViFCeAAs1Gt6SxEedmo8="
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.css"
-      rel="stylesheet"
-      integrity="sha256-7sZe9dsqyNZC9Mk+WPRB7nVvPPPXyorzm2QKqlgXC4k="
-      crossorigin="anonymous"
-    />
-    <script
-      async
-      src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/addon/edit/closebrackets.min.js"
-      integrity="sha256-qhu2a7DSpQaammMaLw1iruxBpxmgdw8mdQaQWQUokcY="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      async
-      src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/javascript/javascript.min.js"
-      integrity="sha256-7Bdg/UdDMmHDPafpQDYZNPCEbnRP7eAvu+2hEoqRCXs="
-      crossorigin="anonymous"
-    ></script>
-    <!-- END: Required by runnable -->
 
     <title>
       {{ with .Params.seoTitle }}
@@ -174,7 +144,7 @@
       rel="stylesheet"
     />
     <link
-      href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
       crossorigin="anonymous"
@@ -185,7 +155,7 @@
       crossorigin="anonymous"
     ></script>
     <script
-      src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
       integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
       crossorigin="anonymous"
     ></script>
@@ -194,7 +164,7 @@
       rel="stylesheet"
     />
     <link
-      href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
