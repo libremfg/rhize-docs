@@ -17,14 +17,6 @@ Manufacturing events can generate a vast amount of data.
 And a BPMN workflow can have any number of logical flows and data transformations.
 So an inefficient BPMN process can introduce performance degradations.
 
-## Avoid parallel joins
-
-Running processes in [parallel]({{< relref "/how-to/bpmn/bpmn-elements#parallel-gateway" >}}) can increase the workflow's complexity.
-Parallel joins in particular can also increase memory usage of the NATS service.
-
-Where possible, prefer exclusive branching and sequential execution.
-When a task requires concurrency, keep the amount of data processed and the complexity of the tasks to the minimum necessary.
-
 ## Manage the process context size
 
 {{< notice "note" >}}
@@ -35,16 +27,23 @@ To increase this size, change your NATS configuration.
 By default, the size of the {{< abbr "process variable context" >}} is 1MB.
 If the sum size of all variables exceeds this limit, the BPMN process fails to execute.
 
-Be mindful of the overall size of your variables, especially when outputting to new variables.
-For example, imagine an initial JSON payload, `data`, that is 600MB.
+### Be mindful of variable output
+
+Pay attention the overall size of your variables, especially when outputting to new variables.
+For example, imagine an initial JSON payload, `data`, that is 600KB.
 If a JSONata task slightly modifies and outputs it to a new variable, `data2`, the process variable context will exceed 1MB and the BPMN process will exit.
 
 To work around this constraint, you can save memory by mutating variables.
 That is, instead of outputting a new variable, you can output the transformed payload to the original variable name.
 
+### Discard unneeded data from API responses
+
+Additionally, in service tasks that call APIs, use the **Response Transform Expression** to minimize the returned data to only the necessary fields.
+Rhize stores only the output of the expression, and discards the other part of the response. This is especially useful in service tasks that [Call a REST API](https://docs.rhize.com/how-to/bpmn/bpmn-elements/#call-rest-api), since you cannot precisely specify the fields in the response (as you can with a GraphQL query).
+
 If you still struggle to find what objects create memory bottlenecks, use a tool to observe their footprint, as documented in the next section.
 
-## Observe payload size
+### Observe payload size
 
 Each element in a BPMN workflow passes, evaluates, or transforms a JSON body.
 Any unnecessary fields occupy unnecessary space in the {{< abbr "process variable context" >}}.
@@ -60,6 +59,26 @@ alt="A simplified diagram of Rhize's architecture"
 width="70%"
 caption="<em><small>The material lot object is dominating the size of this JSON payload. This a good place to start looking for optimizations.</small></em>"
 >}}
+
+
+## Look for inefficient execution logic
+
+When you first write a workflow, you may use some logical flows slow down execution time.
+If a process seems slow, look for these places to refactor performance.
+
+### Avoid parallel joins
+
+Running processes in [parallel]({{< relref "/how-to/bpmn/bpmn-elements#parallel-gateway" >}}) can increase the workflow's complexity.
+Parallel joins in particular can also increase memory usage of the NATS service.
+
+Where possible, prefer exclusive branching and sequential execution.
+When a task requires concurrency, keep the amount of data processed and the complexity of the tasks to the minimum necessary.
+
+### Avoid loops
+
+A BPMN process can loop back to a previous task node to repeat execution.
+This process can also increase execution time.
+If a process with a loop is taking too long to execute, consider refactoring the loop to process the variables as a batch in JSONata tasks.
 
 ## Use the JSONata book extension
 

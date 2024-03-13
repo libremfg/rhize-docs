@@ -18,17 +18,15 @@ This topic assumes you have done the following:
 - [Set up Kubernetes](/deploy/install/setup-kubernetes) and [Configured Keycloak]({{< relref "keycloak" >}}). All the prerequisites for those topics apply here.
 - Configured load balancing for the following DNS records:
 
-<!-- vale off -->
-
-    | Service  | Domain                                                  |
-    |----------|---------------------------------------------------------|
-    | Admin UI | `<CUSTOMER>-{{< param application_name >}}.{{< param domain_name >}}`                          |
-    | Keycloak | `<CUSTOMER>-auth.{{< param domain_name >}}`                           |
-    | GraphQL  | `<CUSTOMER>-api.{{< param domain_name >}}`                            |
-    | NATS     | `<CUSTOMER>-mqtt.{{< param domain_name >}}`                           |
-    | Grafana  | `<CUSTOMER>-grafana.{{< param domain_name >}}`                        |
-
-<!-- vale on -->
+   <!-- vale off -->
+   | Service  | Domain                                                  |
+   |----------|---------------------------------------------------------|
+   | Admin UI | `<CUSTOMER>-{{< param application_name >}}.{{< param domain_name >}}`                          |
+   | Keycloak | `<CUSTOMER>-auth.{{< param domain_name >}}`                           |
+   | GraphQL  | `<CUSTOMER>-api.{{< param domain_name >}}`                            |
+   | NATS     | `<CUSTOMER>-mqtt.{{< param domain_name >}}`                           |
+   | Grafana  | `<CUSTOMER>-grafana.{{< param domain_name >}}`                        |
+   <!-- vale on -->
 
 ### Overrides
 
@@ -43,20 +41,35 @@ Common values that are changed include:
 ## Get client secrets.
 
 1. Go to Keycloak and get the secrets for each client you've created.
-1. Create a Kubernetes secrets for each service with this command:
-    ```bash
-    kubectl delete secret generic {{< param application_name >}}-client-secrets -n {{< param application_name >}} --from-literal=dashboard=123 --from-literal={{< param application_name >}}Agent=123 --from-literal={{< param application_name >}}Audit=123 --from-literal={{< param application_name >}}Baas=KYbMHlRLhXwiDNFuDCl3qtPj1cNdeMSl --from-literal={{< param application_name >}}BPMN=123 --from-literal={{< param application_name >}}Core=123 --from-literal={{< param application_name >}}UI=123 --from-literal=router=123
-    ```
+1. Create Kubernetes secrets for each service. You can either create a secret file, or pass raw data from the command line.
 
-As you install services through Helm, their respective YAML files reference these secrets.
+   {{< notice "caution" >}}
+   How you create Kubernetes secrets **depends on your implementation details and security procedures.**
+   For guidance, refer to the official Kubernetes topic, [Managing Secrets using `kubectl`](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/).
+   {{< /notice >}}
+
+   With raw data, the command might look something like this.
+
+   ```bash
+   kubectl create secret generic {{< param application_name >}}-client-secrets \
+   -n {{< param application_name >}} --from-literal=dashboard=<USER \
+   --from-literal={{< param application_name >}}Agent=123 \
+   --from-literal={{< param application_name >}}Audit=123 \
+   --from-literal={{< param application_name >}}Baas=KYbMHlRLhXwiDNFuDCl3qtPj1cNdeMSl \
+   --from-literal={{< param application_name >}}BPMN=123 \
+   --from-literal={{< param application_name >}}Core=123 \
+   --from-literal={{< param application_name >}}UI=123 \
+   --from-literal=router=123
+   ```
+
+   As you install services through Helm, their respective YAML files reference these secrets.
 
 ## Install and add roles for the DB {#db}
 
 You must install the {{< param db >}} database service first.
 You also need to configure the {{< param db >}} service to have roles in Keycloak.
 
-If enabling the Audit Trail include, refer to [Enable change data capture](#enable-change-data-capture).
-
+If enabling the Audit Trail, also the include the configuration in [Enable change data capture](#enable-change-data-capture).
 
 
 1. Use Helm to install the database:
@@ -284,7 +297,8 @@ Install Audit Service with these steps:
 
 1. Modify the InfluxDB Helm YAML file as needed. It is *recommended* to set the admin password and token in the Helm YAML file to prevent over writing the values with random values every deploy.
 
-1. Add InfluxDB Helm repository
+1. Add InfluxDB Helm repository:
+   
     ```bash
     helm repo add influxdata https://helm.influxdata.com
     ```

@@ -210,6 +210,10 @@ query peopleAndDataSources {
 {{% /tab %}}
 {{< /tabs >}}
 
+## Shortcuts for more expressive requests
+
+The following sections provide some common ways to reduce boilerplate and shorten the necessary coding for a call.
+
 ### Make input dynamic with variables {#variables}
 
 The preceding examples place the query input as _inline_ arguments.
@@ -312,10 +316,6 @@ mutation AddPerson($input: [AddPersonInput!]!) {
 
 To learn more, read the official GraphQL documentation on [Variables](https://graphql.org/learn/queries/#variables).
 
-## Shortcuts for more expressive requests
-
-The following sections provide some common ways to reduce boilerplate and shorten the necessary coding for a call.
-
 ### Template requested fields with fragments
 
 Along with [variables](#variables), you can use _fragments_ to reduce repetitive writing.
@@ -372,28 +372,4 @@ query kitchenEquipment {
 ```
 {{% /tab %}}
 {{% /tabs %}}
-
-### Filter {#filter}
-
-Whether you make a query or mutation, you often may specify to receive an array of items in response.
-To minimize payload, isolate necessary resources, and maximize the signal-to-noise ratio, it's often useful to filter this array to a subset of items.
-
-{{< notice "note" >}}
-Rhize's filter implementation is based on Dgraph's [search directive](https://dgraph.io/docs/graphql/schema/directives/search/).
-Refer to their document for the full list of fields and filters.
-{{< /notice >}}
-
-
-To use filters:
-1. Specify a `filter` field in your argument.
-1. Use the Apollo explorer to select the object. As a quick reference, you can filter the following data types:
-
-    | Data type     | Filters                                                                                                                                                           |
-    |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | Boolean       | `true` and `false`                                                                                                                                                |
-    | Date and time | `lt` (less than), `gt` (greater than), `between`, `eq` (equals)                                                                                                   |
-    | String        | `lt` (less than), `gt` (greater than), `between`, `eq` (equals), <br/> `regexp` (regular expression based on [re2](https://github.com/google/re2/wiki/Syntax/) syntax). |
-    | String        | `exact`                                                                                                                                                           |
-
-
 

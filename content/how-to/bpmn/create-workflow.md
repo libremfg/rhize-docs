@@ -8,7 +8,7 @@ weight: 300
 menu:
   main:
     parent: howto-bpmn
-    identifier:
+    identifier: guide-create-workflows
 ---
 
 
