@@ -33,11 +33,12 @@ flowchart LR
 
 ## Steps to create a rule
 
-The procedure is as follows:
+This is the broad procedure to create a rule:
 1. In the Rhize UI or through GraphQL, create models for the data source and its associated unit of measure, equipment, and equipment class.
 1. In the Rhize UI, write a BPMN workflow that is triggered when this data source changes and executes some business logic.
 1. In the equipment class, create a rule that triggers the workflow.
 
+The following sections describe how to do these steps in more detail.
 
 ### Prerequisites
 
@@ -45,8 +46,8 @@ To create a rule, you must first create the models and workflows that you want t
 The procedure is as follows:
 1. [Create models]({{< relref "../model" >}}) for the following associated objects:
     - A [{{< abbr "data source" >}}]({{< ref "master-definitions#data-source" >}}) with topics to subscribe to
-    - [Units of measure]({{< ref "master-definitions#uom" >}}) for the values from this data source
-    - An [{{< abbr "equipment" >}}]({{< ref "master-definitions#equipment" >}}) item that binds properties from the data source
+    - A [{{< abbr "unit of measure" >}}]({{< ref "master-definitions#uom" >}}) for each relevant property from this data source
+    - An [{{< abbr "equipment" >}}]({{< ref "master-definitions#equipment" >}}) item that is linked to this data source and binds to its properties
     - An [{{< abbr "equipment class" >}}]({{< ref "master-definitions#equipment-class" >}}) that this equipment belongs to
 1. [Write a BPMN workflow]({{< relref "/how-to/bpmn/create-workflow/" >}}) that the rule triggers. You can edit or change this workflow later.
 
@@ -86,6 +87,6 @@ These outputs might be writes to a database, or messages sent to a broker.
 
 ## Examples
 
-- :movie_camera:[Trigger BPMN]( https://www.youtube.com/watch?v=y5lr9JRmxDA). This video provides an example of creating a rule based on values for an OPC UA server in a baking process.
+- :movie_camera: [Trigger BPMN]( https://www.youtube.com/watch?v=y5lr9JRmxDA). This video provides an example of creating a rule based on values for an OPC UA server in a baking process.
 
 
