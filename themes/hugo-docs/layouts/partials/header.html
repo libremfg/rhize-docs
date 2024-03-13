@@ -7,20 +7,7 @@
       // 		1. https://socpub.com/articles/leveraging-googlebots-detection-javascript-redirects-ranking-16789
       //		2. https://www.contentkingapp.com/academy/redirects/faq/javascript-redirect-bad-seo/
     </script>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-0PJKXDWQ4P"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-0PJKXDWQ4P");
-    </script>
+    {{ template "_internal/google_analytics.html" . }}
     <meta charset="utf-8" />
     <meta
       name="viewport"
