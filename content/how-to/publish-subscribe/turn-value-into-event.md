@@ -54,6 +54,7 @@ Once you you've created these objects, you can create a rule for the equipment c
 
 ### Create a rule in the UI
 
+
 In the Rhize UI, select the equipment class that you want to create a rule for.
 Then follow these steps:
 
@@ -86,4 +87,5 @@ These outputs might be writes to a database, or messages sent to a broker.
 ## Examples
 
 - :movie_camera:[Trigger BPMN]( https://www.youtube.com/watch?v=y5lr9JRmxDA). This video provides an example of creating a rule based on values for an OPC UA server in a baking process.
+
 
