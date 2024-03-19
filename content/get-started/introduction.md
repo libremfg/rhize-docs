@@ -11,7 +11,7 @@ menu:
     identifier:
 ---
 
-Rhize is a real-time, event-driven manufacturing data hub.
+Rhize is a real-time, event-driven [manufacturing data hub]({{< relref "/explanations/manufacturing-data-hub" >}}).
 It unites data analysis, event monitoring, and process execution in one platform.
 Its interface and architecture is designed to conform to your processes.
 We assume nothing about what your manufacturing workflows look like.
@@ -38,7 +38,6 @@ Besides keeping the interface small, the GraphQL query language coheres exactly 
 
 The API is totally open, meaning that your operators can use it as a backend to build any MES, MOM, and data-science applications that they want.
 Rhize also has a built-in low-code BPMN workflow creator, so operators can write logic to handle event data with only API calls and JSON transformation.
-[Read about use cases]({{< relref "/use-cases" >}}).
 
 Finally, Rhize's architecture supports distributed deployment, and its components are loosely coupled microservices.
 This clustered approach is necessary for organizations to scale horizontally and maintain high reliability.
@@ -56,6 +55,7 @@ Some examples of the flexibility include:
 - **Low-code interface**. Model your schema and execute processes using BPMN, a visual programming language. The visual interface makes Rhize and your manufacturing automation accessible to the widest possible audience.
 - **Generic data collection**. Rhize receives data from all levels of the manufacturing process. The [NATS](https://nats.io) broker publishes and subscribes to low-level data from [MQTT](https://mqtt.org/) and [OPC-UA](https://opcfoundation.org/about/opc-technologies/opc-ua/), but the database can also receive ERP inventories and documents sent over HTTP.
 
+[Read about use cases]({{< relref "/use-cases" >}}).
 
 ## Modern IT for manufacturing
 

@@ -13,7 +13,6 @@ menu:
 This article explains what the components of a _Manufacturing Data Hub_ (MDH) are and why the system must have these particular components to meet the needs of large, modern manufacturing environments.
 
 In another phrasing, this article explains why Rhize made the choices it did to become the world's first manufacturing data hub.
-However, the scope of this article is the design considerations that define an MDH in general.
 For introductory explanations about Rhize in particular,
 read [What is Rhize?]({{< relref "/get-started/introduction" >}}) and [How Rhize works]({{< relref "/get-started/how-rhize-works" >}}).
 
@@ -29,26 +28,43 @@ alt="simplified mdh"
 src="/images/arch/diagram-rhize-simplified-mdh.png"
 >}}
 
-Thus, an MDH is not only a storage or message system.
+### Components
+
+An MDH is not only a storage or message system.
 It is a coherent system of interrelated parts and interfaces whose components include the following:
 
 - A high-performance graph database with a standardized schema
 - A data model based on manufacturing standards
 - An API to interact with the data
-- An agent that listens for tag changes coming from devices
+- An agent that listens for tag changes from data sources
 - A rules engine that monitors tag changes and triggers user workflows when conditions are met
 - A message broker that communicates events to and from various systems
 - A workflow engine that processes, transforms, and contextualizes tag and event data
 - The IT infrastructure that this all runs on, which at a certain scale must be clustered.
 
-Rhize chose these parts deliberately, after careful consideration and years of real-world experience.
-The following sections describe how these parts work together and how this design arose from the manufacturing IT landscape.
+### Technical requirements
 
-## Point-to-point reaches scaling issues
+Besides its components and features, Rhize is also explicitly designed to meet the needs of a manufacturing operation of any scale.
+This goal requires a high standard of operational performance, robustness, and extensibility:
+
+- **Zero Downtime Architecture.** A data hub such as Rhize is used in mission-critical environments that run every hour of every day. Outages are unacceptable. Operators must be able to update every component of the system without taking it offline.
+- **Secure.** Users must be able to securely access and integrate with the hub across applications in the enterprise. So the database requires native [OAuth2](https://datatracker.ietf.org/doc/html/rfc6749) security integration for seamless single-sign-on.
+- **ACID-compliant.** The critical features of an MES require the guarantee of an [ACID](https://en.wikipedia.org/wiki/ACID) database. Consistency and availability must be maintained even as the system scales horizontally.
+- **Headless operation.** Users must be able to use the data hub as a backend to run MES functions, using frameworks or low-code tools to build any frontend on top of these functions. This flexibility is how the MDH can adapt to any manufacturing process: Rhize provides the means to store, standardize, and handle information flows; users build on top of this backend to create the applications, workflows, and interfaces that sense for their use cases. 
+- **Type-safe.** Uncontrolled schemas in messages become brittle at scale. Unlike a pure MQTT architecture, which does not check the schema of message payloads, the MDH must enforce that data has a standard structure at the moment that the data is written to the database.
+- **Extensible but Standardized.** While the data hub is built on the ISA-95 standard, it must be able to extend to include customer-specific schemas.
+- **Process orchestration.** The hub must be able to coordinate tasks handled by multiple systems concurrently and provide a way for users to automate and combine workflows.
+
+
+## Why an MDH needs this design
+
+Rhize chose its components deliberately, after careful consideration and years of real-world experience.
+The following sections describe these components work together and how this design arose from the landscape of manufacturing automation.
+
+### Point-to-point reaches scaling issues
 
 In early efforts to digitize manufacturing, information often flows from _point to point_.
 Each node in the system communicates directly with the other nodes that it sends data to or receives data from.
-
 While this form of communication is initially simple to implement, it also tightly couples services.
 As the system scales, the complexity of point-to-point communication increases non-linearly. With each node, the system becomes increasingly fragile and unobservable.
 
@@ -62,7 +78,7 @@ src="/images/arch/diagram-rhize-l3-l4-information-flows.png"
 caption="<small>A simplified view of how information might exchange between level 3 and 4 systems in a point-to-point topology.</small>"
 >}}
 
-## Pub/sub messaging decouples devices
+### Pub/sub messaging decouples devices
 
 When point-to-point communication becomes too difficult to maintain, the _hub-and-spoke_ approach presents the logical next step.
 In this topology, a central hub coordinates communication between nodes.
@@ -90,7 +106,7 @@ they don't address how to make this data useful:
 
 For this, manufacturers need to be able to understand a data point in the _context_ of the manufacturing _event_ that generated it.
 
-## A standard graph model provides context
+### A standard graph model provides context
 
 Every event, person, and object in a manufacturing system is inter-connected.
 To adequately process incoming event data, manufacturers need to _contextualize_ it, where each event carries additional information about its context within the larger system.
@@ -126,7 +142,7 @@ alt="Diagram showing how an MDH is incomplete without a bridge between messages 
 src="/images/arch/diagram-rhize-incomplete-mdh.png"
 >}}
 
-## The rules engine creates events
+### The rules engine creates events
 
 After the hub receives a message, it must evaluate whether the data is significant enough to constitute an event.
 This is the function of the _rules engine_: it assesses message values for changes and then evaluates whether these values should be classified as significant _events_.
@@ -140,7 +156,7 @@ caption="<small>The rules converts significant values into manufacturing events.
 
 Once the system receives an event, users then need a way to be able to process it.
 
-## A workflow engine makes the system responsive
+### A workflow engine makes the system responsive
 
 For true "ubiquitous automation" of manufacturing processes, an MDH must provide a way for users to write their own logic to handle events as they happen.
 Thus, the hub needs a _workflow engine_ that can send messages, process data, and interact with the database in real-time.
@@ -160,7 +176,7 @@ As long as the producer and consumer can accept and receive the same encoding (f
 With components for data ingestion, processing, and standardized storage, the MDH has all the necessary functionality to serve as a knowledge graph, MES backend, and integrator of legacy systems.
 However, this capability cannot be realized unless the system is usable for the widest range of people.
 
-## Sensible interfaces make it accessible
+### Sensible interfaces make it accessible
 
 For many who work in industrial automation, IT is part of a job, not a job in itself.
 So, a well-designed manufacturing data hub should provide high-quality abstractions
@@ -175,7 +191,7 @@ So, the rules engine should also provide a graphical interface to make event han
 
 However, one final piece is missing: the system must be robust enough for the data-intensive world of manufacturing IT.
 
-## Distributed execution provides robustness
+### Distributed execution provides robustness
 
 The final factor is that the components of an MDH must run on distributed systems.
 Large manufacturing operations can generate enormous volumes of data.
