@@ -97,7 +97,7 @@
   tags: "s95"
 - term: Operations event definition
   definition: >-
-    A definition of the properties that pertain to an _event_ from the perspective of the level-4 (ERP) systems.
+    A definition of the properties that pertain to an <em>event</em> from the perspective of the level-4 (ERP) systems.
 - term: Operations definition
   definition: The resources required to perform an operation, including for production, quality, maintenance, and inventory, from the perspective of the level-4 enterprise control systems.
   tags: "s95"
@@ -132,7 +132,7 @@
   definition: A definition of equipment based on the level-3 and level-4 functions and activities that it performs
   tags: "s95"
 - term: Rules engine
-  definition: A program that evaluates incoming data from a data source and converts significant changes into _events_ to be processed by a BPMN workflow
+  definition: A program that evaluates incoming data from a data source and converts significant changes into <em>events</em> to be processed by a BPMN workflow
 - term: Serial discrete
   definition: >-
     A type of <a href="#discrete-manufacturing">discrete manufacturing</a> where each item produced has a serial number
