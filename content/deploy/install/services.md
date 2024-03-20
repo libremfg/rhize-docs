@@ -21,11 +21,16 @@ This topic assumes you have done the following:
    <!-- vale off -->
    | Service  | Domain                                                  |
    |----------|---------------------------------------------------------|
-   | Admin UI | `<CUSTOMER>-{{< param application_name >}}.{{< param domain_name >}}`                          |
-   | Keycloak | `<CUSTOMER>-auth.{{< param domain_name >}}`                           |
-   | GraphQL  | `<CUSTOMER>-api.{{< param domain_name >}}`                            |
-   | NATS     | `<CUSTOMER>-mqtt.{{< param domain_name >}}`                           |
-   | Grafana  | `<CUSTOMER>-grafana.{{< param domain_name >}}`                        |
+   | Admin UI | `<PREFIX>-ui.<YOUR_DOMAIN>`                          |
+   | Keycloak | `<PREFIX>-auth.<YOUR_DOMAIN>`                           |
+   | GraphQL  | `<PREFIX>-api.<YOUR_DOMAIN>`                            |
+   | NATS     | `<PREFIX>-mqtt.<YOUR_DOMAIN>`                           |
+   | Grafana  | `<PREFIX>-grafana.<YOUR_DOMAIN>`                        |
+
+   _Where `<PREFIX>` is a name to identify the application&mdash;preferably Rhize&mdash;
+   and `<YOUR_DOMAIN>` is the domain you run Rhize on.
+   For example, the UI installed for the Example organization might be accessed at
+   `rhize-ui.example.com`._
    <!-- vale on -->
 
 ### Overrides
