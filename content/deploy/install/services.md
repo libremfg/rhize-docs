@@ -18,20 +18,8 @@ This topic assumes you have done the following:
 - [Set up Kubernetes](/deploy/install/setup-kubernetes) and [Configured Keycloak]({{< relref "keycloak" >}}). All the prerequisites for those topics apply here.
 - Configured load balancing for the following DNS records:
 
-   <!-- vale off -->
-   | Service  | Domain                                                  |
-   |----------|---------------------------------------------------------|
-   | Admin UI | `<PREFIX>-ui.<YOUR_DOMAIN>`                          |
-   | Keycloak | `<PREFIX>-auth.<YOUR_DOMAIN>`                           |
-   | GraphQL  | `<PREFIX>-api.<YOUR_DOMAIN>`                            |
-   | NATS     | `<PREFIX>-mqtt.<YOUR_DOMAIN>`                           |
-   | Grafana  | `<PREFIX>-grafana.<YOUR_DOMAIN>`                        |
+    {{< reusable/default-urls >}}
 
-   _Where `<PREFIX>` is a name to identify the application&mdash;preferably Rhize&mdash;
-   and `<YOUR_DOMAIN>` is the domain you run Rhize on.
-   For example, the UI installed for the Example organization might be accessed at
-   `rhize-ui.example.com`._
-   <!-- vale on -->
 
 ### Overrides
 
