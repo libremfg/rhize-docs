@@ -10,4 +10,4 @@ Steps Follow these steps to configure a Keycloak realm and associate Rhize servi
 Prerequisites This topic assumes you have done the following:
 Set up Kubernetes and Configured Keycloak. All the prerequisites for those topics apply here.
 Configured load balancing for the following DNS records:
-Service Domain Admin UI &amp;lt;CUSTOMER&amp;gt;-libre.libremfg.ai Keycloak &amp;lt;CUSTOMER&amp;gt;-auth.libremfg.ai GraphQL &amp;lt;CUSTOMER&amp;gt;-api.libremfg.ai NATS &amp;lt;CUSTOMER&amp;gt;-mqtt.libremfg.ai Grafana &amp;lt;CUSTOMER&amp;gt;-grafana.libremfg.ai Overrides Each service is installed through a Helm YAML file. For some of these services, you might need to edit this file to add credential information and modify defaults.</description></item></channel></rss>
+Where PREFIX is a name to identify the application&amp;mdash;preferably Rhize&amp;mdash; and YOUR_DOMAIN is the domain you run Rhize on. For example: rhize-ui.example.com. Service Domain Admin UI &amp;lt;PREFIX&amp;gt;-ui.</description></item></channel></rss>
