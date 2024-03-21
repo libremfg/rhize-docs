@@ -50,7 +50,7 @@ This goal requires a high standard of operational performance, robustness, and e
 - **Zero Downtime Architecture.** A data hub such as Rhize is used in mission-critical environments that run every hour of every day. Outages are unacceptable. Operators must be able to update every component of the system without taking it offline.
 - **Secure.** Users must be able to securely access and integrate with the hub across applications in the enterprise. So the database requires native [OAuth2](https://datatracker.ietf.org/doc/html/rfc6749) security integration for seamless single-sign-on.
 - **ACID-compliant.** The critical features of an MES require the guarantee of an [ACID](https://en.wikipedia.org/wiki/ACID) database. Consistency and availability must be maintained even as the system scales horizontally.
-- **Headless operation.** Users must be able to use the data hub as a backend to run MES functions, using frameworks or low-code tools to build any frontend on top of these functions. This flexibility is how the MDH can adapt to any manufacturing process: Rhize provides the means to store, standardize, and handle information flows; users build on top of this backend to create the applications, workflows, and interfaces that sense for their use cases. 
+- **Headless operation.** Users must be able to use the data hub as a backend to run MES functions, using frameworks or low-code tools to build any frontend on top of these functions. This flexibility is how the MDH can adapt to any manufacturing process: Rhize provides the means to store, standardize, and handle information flows; users build on top of this backend to create the applications, workflows, and interfaces that make sense for their use cases. 
 - **Type-safe.** Uncontrolled schemas in messages become brittle at scale. Unlike a pure MQTT architecture, which does not check the schema of message payloads, the MDH must enforce that data has a standard structure at the moment that the data is written to the database.
 - **Extensible but Standardized.** While the data hub is built on the ISA-95 standard, it must be able to extend to include customer-specific schemas.
 - **Process orchestration.** The hub must be able to coordinate tasks handled by multiple systems concurrently and provide a way for users to automate and combine workflows.
@@ -59,7 +59,7 @@ This goal requires a high standard of operational performance, robustness, and e
 ## Why an MDH needs this design
 
 Rhize chose its components deliberately, after careful consideration and years of real-world experience.
-The following sections describe these components work together and how this design arose from the landscape of manufacturing automation.
+The following sections describe how these components work together and how this design arose from the landscape of manufacturing automation.
 
 ### Point-to-point reaches scaling issues
 
