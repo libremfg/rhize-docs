@@ -10,4 +10,4 @@ Steps Follow these steps to configure a Keycloak realm and associate Rhize servi
 Prerequisites This topic assumes you have done the following:
 Set up Kubernetes and Configured Keycloak. All the prerequisites for those topics apply here.
 Configured load balancing for the following DNS records:
-Where PREFIX is a name to identify the application&amp;mdash;preferably Rhize&amp;mdash; and YOUR_DOMAIN is the domain you run Rhize on. For example: rhize-ui.example.com. Service Domain Admin UI &amp;lt;PREFIX&amp;gt;-ui.</description></item></channel></rss>
+Service Domain Admin UI rhize-ui.&amp;lt;YOUR_DOMAIN&amp;gt; Keycloak rhize-auth.&amp;lt;YOUR_DOMAIN&amp;gt; GraphQL rhize-api.&amp;lt;YOUR_DOMAIN&amp;gt; NATS rhize-mqtt.&amp;lt;YOUR_DOMAIN&amp;gt; Grafana rhize-grafana.&amp;lt;YOUR_DOMAIN&amp;gt; Note that rhize- is only the recommended prefix of the subdomain. Your organization may use something else.</description></item></channel></rss>
