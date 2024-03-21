@@ -104,7 +104,14 @@ they don't address how to make this data useful:
 - How can users collect and organize the data for analysis?
 - How can this data drive further automation?
 
-For this, manufacturers need to be able to understand a data point in the _context_ of the manufacturing _event_ that generated it.
+An operation with many data sources likely also has many different structures of its in-flight messages.
+The MQTT format, for example, has no prescribed payload format: structured JSON and binary blobs are equally valid.
+While such flexibility provides excellent convenience for producers, the lack of uniformity can make wider integration efforts convoluted and unmaintainable.
+
+The philosophy of a data hub is to address these problems without comprising flexibility.
+So its central components, the database, schema, and message and event handlers,
+can integrate disparate systems while providing a common, standardized storage for the data exchanged between these systems.
+
 
 ### A standard graph model provides context
 
