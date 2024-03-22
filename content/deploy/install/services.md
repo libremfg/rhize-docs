@@ -18,15 +18,10 @@ This topic assumes you have done the following:
 - [Set up Kubernetes](/deploy/install/setup-kubernetes) and [Configured Keycloak]({{< relref "keycloak" >}}). All the prerequisites for those topics apply here.
 - Configured load balancing for the following DNS records:
 
-   <!-- vale off -->
-   | Service  | Domain                                                  |
-   |----------|---------------------------------------------------------|
-   | Admin UI | `<CUSTOMER>-{{< param application_name >}}.{{< param domain_name >}}`                          |
-   | Keycloak | `<CUSTOMER>-auth.{{< param domain_name >}}`                           |
-   | GraphQL  | `<CUSTOMER>-api.{{< param domain_name >}}`                            |
-   | NATS     | `<CUSTOMER>-mqtt.{{< param domain_name >}}`                           |
-   | Grafana  | `<CUSTOMER>-grafana.{{< param domain_name >}}`                        |
-   <!-- vale on -->
+    {{< reusable/default-urls >}}
+
+    _Note that `rhize-` is only the recommended prefix of the subdomain. Your organization may use something else._
+
 
 ### Overrides
 
@@ -298,7 +293,7 @@ Install Audit Service with these steps:
 1. Modify the InfluxDB Helm YAML file as needed. It is *recommended* to set the admin password and token in the Helm YAML file to prevent over writing the values with random values every deploy.
 
 1. Add InfluxDB Helm repository:
-   
+
     ```bash
     helm repo add influxdata https://helm.influxdata.com
     ```

@@ -153,6 +153,12 @@ This action is irreversible.
 
 
 
+### Reusable
+
+Insert a text snippet to use in multiple places.
+To create a snippet, add it to an HTML or MD file in `layouts/shortcodes/reusable`.
+Call it with `{{% reusable/<FILE_NAME> %}}`.
+
 ## Use templates
 
 Each document should have a specific purpose:
