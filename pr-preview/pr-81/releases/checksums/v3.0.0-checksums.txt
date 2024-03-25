@@ -9,3 +9,7 @@ Libre router:
 Libre keycloak:
       registry.gitlab.com/libremfg/frontend/libre-keycloak-theme:v3.0.0
       sha256:7ed4cabf4ac7c3d65eac50412f8c3619ad9b971ef835797d8275ee65b93e372f
+
+Libre BaaS:
+      registry.gitlab.com/libremfg/baas:v3.0.0
+      sha256:8763118064f0ee0230801114fd8534e76d0db51119dd3077913d3a54276c7621
