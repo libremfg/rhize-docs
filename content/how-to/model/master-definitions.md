@@ -320,3 +320,32 @@ In a baking process, an example work master might be `Brownie Recipe`.
 | Workflow type            | One of: ` Inventory`, `maintenance`, `mixed`, `production`, `quality` |
 | Workflow specification   | An associated BPMN workflow                                           |
 
+
+### Work calendar
+
+_Work calendars_ describe a set of rules for specific calendar entries, including duration, start and end dates, and times.
+For example, it may define a set of shifts, along with their length and duration.
+
+The general fields for a calendar duration are as follows:
+
+| General fields  | Description                             |
+|-----------------|-----------------------------------------|
+| Description     | A description of the work calendar      |
+| Hierarchy scope | The [hierarchy scope](#hierarchy-scope) that defines scope of data exchanged for the calendar entries |
+
+The work calendar can have properties with a `description`, `value`, and [`unit of measure`](#uom).
+
+The work calendar object can have one or more _entries_, which define the start, end, duration, and recurrence of a rule.
+The attributes for a time-based rule are represented by the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) standard.
+
+The attributes for an entry are as follows:
+
+| Entry fields             | Description                                                                                                                                              |
+|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description              |                                                                                                                                                          |
+| Type                     | One of: `PlannedBusyTime`, `PlannedDownTime`, and `PlannedShutdown`                                                                                      |
+| Start date and time      | When the entry starts                                                                                                                                    |
+| End date and time        | When the entry finishes                                                                                                                                  |
+| Recurrence time interval | How often the entry repeats according to the [repeating interval representation](https://en.wikipedia.org/wiki/ISO_8601#Repeating_intervals) of IS0 8601 |
+| Duration rule            | How long the work calendar lasts, according to the [Duration representation](https://en.wikipedia.org/wiki/ISO_8601) of IS0 8601.                        |
+
