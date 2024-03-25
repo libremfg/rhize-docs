@@ -71,7 +71,7 @@ mutation AddEquipment($input: [AddEquipmentInput!]!) {
 ```
 {{% /tab %}}{{< /tabs >}}
 
-### Upsert
+### `upsert`
 
 Many `add` operations support _upserting_, which _update_ or _insert_ (create).
 That is, if the object already exists, the operation will update it with the additional fields.
