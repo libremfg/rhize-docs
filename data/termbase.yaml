@@ -148,6 +148,12 @@
 - term: Warehouse management system
   definition: >-
     A system to organize processes and policies of warehouses. It may include processes to manage and track inventory and exchange data.
+- term: Work calendar
+  definition: >-
+    A collection of work calendar <a href="#entry#>entries</a>
+- term: Work calendar entry
+  definition: >-
+    Rules that define a work period, including its start date, duration, and interval.
 - term: Work master
   definition: A template for a job order, corresponding to an operations and process segment, from the perspective of the level-3 (MES/MOM) systems.
   tags: "s95"
