@@ -1,13 +1,13 @@
-{{- $file := (.Get 0) -}}
-{{- $safe := (.Get 1) -}}
-{{- $basefile := (strings.TrimLeft "content/releases/checksums" $file) -}}
+{{- $fileName := (.Get 0) -}}
+{{- $filePath := (printf "%s" (print "/static/checksums/" $fileName)) }}
 
 ### Checksums
 
 When you install, check the container images against these checksums:
+{{ $filePath }}
 
 ```
-{{readFile $file -}}
+{{ readFile "$filePath"|safeHTML }}
 ```
 
-Download [{{ $basefile }}](https://raw.githubusercontent.com/libremfg/libremfg.github.io/main/{{ $file }}).
+Download [{{ $fileName }}](https://github.com/libremfg/libremfg.github.io/main/{{ $filePath }}).
