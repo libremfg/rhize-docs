@@ -336,12 +336,11 @@ The work calendar can have properties with a `description`, `value`, and [`unit 
 
 The work calendar object can have one or more _entries_, which define the start, end, duration, and recurrence of a rule.
 The duration and recurrence attributes for a time-based rule are represented by the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) standard.
-
 The attributes for an entry are as follows:
 
 | Entry fields             | Description                                                                                                                                              |
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Description              |                                                                                                                                                          |
+| Description              | Freeform text that describes the entry                                                                                                                  |
 | Type                     | One of: `PlannedBusyTime`, `PlannedDownTime`, and `PlannedShutdown`                                                                                      |
 | Start date and time      | When the entry starts                                                                                                                                    |
 | End date and time        | When the entry finishes                                                                                                                                  |
