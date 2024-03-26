@@ -324,7 +324,6 @@ In a baking process, an example work master might be `Brownie Recipe`.
 ### Work calendar
 
 _Work calendars_ describe a set of rules for specific calendar entries, including duration, start and end dates, and times.
-For example, it may define a set of shifts, along with their length and duration.
 
 The general fields for a calendar duration are as follows:
 
@@ -336,7 +335,7 @@ The general fields for a calendar duration are as follows:
 The work calendar can have properties with a `description`, `value`, and [`unit of measure`](#uom).
 
 The work calendar object can have one or more _entries_, which define the start, end, duration, and recurrence of a rule.
-The attributes for a time-based rule are represented by the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) standard.
+The duration and recurrence attributes for a time-based rule are represented by the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) standard.
 
 The attributes for an entry are as follows:
 
