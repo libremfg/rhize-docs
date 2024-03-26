@@ -14,6 +14,10 @@ Libre Audit:
      registry.gitlab.com/libremfg/libre-audit:v3.0.0
      sha256:764826140cd2da7764670c22b83914f51459cb2091eaee50a4fb046316e9fcbc
 
+Libre Audit Postgres:
+     registry.gitlab.com/libremfg/libre-audit/postgres:v3.0.0
+     sha256:5f2ae291035575f2e5b682a4225ddfc7e1af0f1910ebb67931a580a00179addd
+
 Libre BaaS:
      registry.gitlab.com/libremfg/baas:v3.0.0
      sha256:8763118064f0ee0230801114fd8534e76d0db51119dd3077913d3a54276c7621
