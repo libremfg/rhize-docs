@@ -79,6 +79,9 @@ Throwing events are represented with icons that are filled in.
 - Examples: An hourly timer starts a process to check quality. An intermediate event starts after a twenty-minute fermentation process.
 - Dimension: Start, intermediate
 
+In Rhize, start timer events can be one of `Cycle`, to begin at recurring intervals, and `Date`, to happen at a certain time. An intermediate time event is always of `Duration`. 
+All timer events are configured in the **Timer** parameter and in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+
 ### Error
 
 ![An error event](/images/bpmn/bpmn-error-event.svg)
