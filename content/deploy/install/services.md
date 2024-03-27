@@ -59,6 +59,16 @@ Common values that are changed include:
 
    As you install services through Helm, their respective YAML files reference these secrets.
 
+## Add the Rhize Helm Chart Repository
+
+You must add the helm chart repository for Rhize.
+
+1. Add the Helm Chart Repository
+
+    ```bash
+    helm repo add libre https://gitlab.com/api/v4/projects/42214456/packages/helm/stable
+    ```
+
 ## Install and add roles for the DB {#db}
 
 You must install the {{< param db >}} database service first.
