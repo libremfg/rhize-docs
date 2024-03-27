@@ -298,10 +298,10 @@ Install Audit Service with these steps:
     helm install audit -f audit.yaml libre/audit -n {{< param application_name >}}
     ```
 
-1. Optional. Setup automatic table partitioning.
+1. Setup automatic table partitioning. If you choose to skip this step, you must manually create table partitions before you can store data.
 
 ```bash
-kubectl exec -i audit-postgresql-0 -- psql -h localhost -d audit -U postgres -c create table public.audit_log_partition( like public.audit_log ); select partman.create_parent( p_parent_table := 'public.audit_log', p_control := 'time',  p_interval := '1 month', p_template_table := 'public.audit_log_partition');'
+kubectl exec -i audit-postgres-0 -- psql -h localhost -d audit -U <DB_USER> -c "create table public.audit_log_partition( like public.audit_log ); select partman.create_parent( p_parent_table := 'public.audit_log', p_control := 'time',  p_interval := '1 month', p_template_table := 'public.audit_log_partition');"
 ```
 
 

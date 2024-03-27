@@ -27,34 +27,34 @@ Also, before you start, confirm you are in the right context and namespace.
 
 ## Steps
 
-Maintaining Audit PostgreSQL involves two steps:
+Maintaining Audit PostgreSQL involves three steps:
 
 1. Detach target partitions from main table
 
 ```bash
-kubectl exec -i audit-postgresql-0 -- psql -h localhost -d audit -U postgres -c 'alter table audit_log detach partition audit_log_p20240101;'
+kubectl exec -i audit-postgresql-0 -- psql -h localhost -d audit -U <DB_USER> -c 'alter table audit_log detach partition audit_log_p20240101;'
 ```
 
 1. Backup partition table
 
 ```bash
 
-pg_dump -U admin -h localhost -p5433 --file ./audit-p20240101.sql --table public.audit_log_p20240101 audit
+pg_dump -U <DB_USER> -h audit-postgres-0 -p5433 --file ./audit-p20240101.sql --table public.audit_log_p20240101 audit
 
 ```
+
+On success, the backup creates a gzip file, `audit-p20240101.sql`.
+
+To check that the backup succeeded, unzip the files and inspect the data.
+
 
 1. Drop partition table to remove from database
 
 ```bash
 
-drop table audit_log_p20240101;
+kubectl exec -i audit-postgres-0 -- psql -h localhost -d audit -U <DB_USER> -c 'drop table audit_log_p20240101;'
 
 ```
-
-
-On success, the backup creates a gzip file, `audit-p20240101.sql`.
-
-To check that the backup succeeded, unzip the files and inspect the data.
 
 ## Next Steps
 

@@ -10,7 +10,7 @@ menu:
     identifier:
 ---
 
-This guide shows you the procedure to backup your Audit Postgres database on your Rhize Kubernetes deployment.
+This guide shows you the procedure to backup your Audit PostgreSQL database on your Rhize Kubernetes deployment.
 
 ## Prerequisites
 
@@ -36,13 +36,13 @@ To back up Audit PostgreSQL, follow these steps:
 
 
     ```bash
-    kubectl get secret audit-<namespace>-postgres -o jsonpath="{.postgresPassword}" | base64 --decode
+    kubectl get secret <SECRET-NAME> -o jsonpath="{.data.<SECRET-KEY>}" | base64 --decode
     ```
 
 1. Execute a command on the Audit Postgres pod to perform a full backup, replacing <NAMESPACE> with your namespace:
 
     ```bash
-    kubectl exec -i audit-<NAMESPACE>-postgresql-0 -- pg_dumpall -U postgres | gzip > audit-postgres-backup-$(date +"%Y%m%dT%I%M%p").sql.gz
+    kubectl exec -i audit-postgres-0 -- pg_dumpall -U <DB_USER> | gzip > audit-postgres-backup-$(date +"%Y%m%dT%I%M%p").sql.gz
     ```
 
 
