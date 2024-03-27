@@ -1,0 +1,12 @@
+{{- $fileName := (.Get 0) -}}
+{{- $filePath := (printf "%s" (print "/content/releases/checksums/" $fileName)) }}
+
+### Checksums
+
+When you install, check the container images against these checksums:
+
+```
+{{ readFile $filePath }}
+```
+
+Download [{{ $fileName }}](https://github.com/libremfg/libremfg.github.io/tree/main/{{$filePath }})
