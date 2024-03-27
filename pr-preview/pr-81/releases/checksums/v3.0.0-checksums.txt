@@ -22,7 +22,7 @@ Libre Core:
 registry.gitlab.com/libremfg/libre-core:v3.0.0
 sha256:cdd97fc7243a06c6eafe65e32a65902084c0fc591fc4bfbf7ceee7012dccde0
 
-Libre Keycloak:
+Libre Keycloak theme:
 registry.gitlab.com/libremfg/frontend/libre-keycloak-theme:v3.0.0
 sha256:7ed4cabf4ac7c3d65eac50412f8c3619ad9b971ef835797d8275ee65b93e372f
 
