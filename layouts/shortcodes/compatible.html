@@ -11,12 +11,13 @@
   <span class="type">Note</span>
   Rhize v{{ $arg }} has been tested to work with the following third-party applications:
   <ul>
-    {{ with .nats }}<li> NATS: {{ . }}</li>{{ end }}
-    {{ with .tempo }}<li> Tempo: {{ . }}</li> {{ end }}
+    {{ with .apollo_router }}<li>Apollo router {{ . }}</li>{{ end }}
     {{ with .grafana }}<li> Grafana: {{ . }}</li> {{ end }}
     {{ with .keycloak }}<li> Keycloak: {{ . }}</li> {{ end }}
     {{ with .keycloak_postgres }}<li> Keycloak Postgres: {{ . }}</li> {{ end }}
     {{ with .loki }}<li> Loki: {{ . }}</li> {{ end }}
+    {{ with .nats }}<li> NATS: {{ . }}</li>{{ end }}
+    {{ with .tempo }}<li> Tempo: {{ . }}</li> {{ end }}
   </ul>
 </div>
     {{end}}
