@@ -1,8 +1,8 @@
 ---
-title: 'Maintain Audit PostgreSQL'
+title: 'Archive the PostgreSQL Audit trail'
 date: '2024-03-26T11:20:56-03:00'
 categories: ["how-to"]
-description: How to maintain Audit PostgreSQL on your Rhize deployment
+description: How to archive a partition of the Audit trail on your Rhize deployment
 weight: 300
 menu:
   main:
@@ -10,7 +10,7 @@ menu:
     identifier:
 ---
 
-This guide shows you the procedure to maintain your Audit Postgres database on your Rhize Kubernetes deployment.
+The [audit trial]({{< relref "/deploy/audit" >}}) can generate a high volume of data, so it is a good practice to periodically _archive_ portions of it. An archive separates a portion of the data from the database and keeps it for long-term storage. This process involves the use of PostgresQL [Table Partitions](https://www.postgresql.org/docs/current/ddl-partitioning.html).
 
 ## Prerequisites
 
