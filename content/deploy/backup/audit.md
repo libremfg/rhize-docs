@@ -32,14 +32,14 @@ To back up Audit PostgreSQL, follow these steps:
 1. Check the logs for the Audit pods, either in Lens or with [`kubectl logs`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs).
     Ensure there are no errors.
 
-1. Retrieve the Audit user password using the following command, replacing <namespace> with your namespace:
+1. Retrieve the Audit user password using the following command:
 
 
     ```bash
     kubectl get secret <SECRET-NAME> -o jsonpath="{.data.<SECRET-KEY>}" | base64 --decode
     ```
 
-1. Execute a command on the Audit Postgres pod to perform a full backup, replacing <NAMESPACE> with your namespace:
+1. Execute a command on the Audit Postgres pod to perform a full backup:
 
     ```bash
     kubectl exec -i audit-postgres-0 -- pg_dumpall -U <DB_USER> | gzip > audit-postgres-backup-$(date +"%Y%m%dT%I%M%p").sql.gz

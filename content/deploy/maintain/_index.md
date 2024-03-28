@@ -15,8 +15,7 @@ Maintenance is critical to ensure reliability over time.
 These guides show you how to maintain different services and data on Rhize.
 They also serve as blueprints for automation.
 
-Your organization must determine how your maintain your services, and how often you archive or remove data.
-The correct practice here is highly contextual,
-depending on the size of the data, the importance of the data, and the general regulatory and governance demands of your industry.
+Your organization must determine how you maintain your services, and how often you archive or remove data.
+The correct practice here is highly contextual, depending on the size of the data, the importance of the data, and the general regulatory and governance demands of your industry.
 
 
