@@ -37,7 +37,7 @@ Maintaining Audit PostgreSQL involves three steps:
       -c 'alter table audit_log detach partition audit_log_p20240101;'
     ```
 
-1. Backup partition table:
+1. Backup the partition table:
 
     ```bash
     pg_dump -U <DB_USER> -h audit-postgres-0 -p5433 \
