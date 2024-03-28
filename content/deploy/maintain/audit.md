@@ -47,7 +47,7 @@ Maintaining Audit PostgreSQL involves three steps:
    On success, the backup creates a GZIP file, `audit-p20240101.sql`.
    To check that the backup succeeded, unzip the files and inspect the data.
 
-1. Drop the partition table to remove from database:
+1. Drop the partition table to remove from the database:
 
     ```bash
     kubectl exec -i audit-postgres-0 -- psql -h localhost -d audit \
