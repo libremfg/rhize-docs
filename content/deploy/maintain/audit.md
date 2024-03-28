@@ -27,7 +27,7 @@ Also, before you start, confirm you are in the right context and namespace.
 
 ## Steps
 
-Maintaining Audit PostgreSQL involves three steps:
+To archive the PostgreSQL Audit trail, follow these steps:
 
 1. Detach target partitions from main table:
 
