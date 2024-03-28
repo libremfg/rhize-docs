@@ -10,7 +10,7 @@ menu:
     identifier:
 ---
 
-The [audit trial]({{< relref "/deploy/audit" >}}) can generate a high volume of data, so it is a good practice to periodically _archive_ portions of it. An archive separates a portion of the data from the database and keeps it for long-term storage. This process involves the use of PostgresQL [Table Partitions](https://www.postgresql.org/docs/current/ddl-partitioning.html).
+The [audit trial]({{< relref "/how-to/audit" >}}) can generate a high volume of data, so it is a good practice to periodically _archive_ portions of it. An archive separates a portion of the data from the database and keeps it for long-term storage. This process involves the use of PostgresQL [Table Partitions](https://www.postgresql.org/docs/current/ddl-partitioning.html).
 
 ## Prerequisites
 
