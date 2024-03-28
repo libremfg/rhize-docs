@@ -45,14 +45,11 @@ To back up Audit PostgreSQL, follow these steps:
     kubectl exec -i audit-postgres-0 -- pg_dumpall -U <DB_USER> | gzip > audit-postgres-backup-$(date +"%Y%m%dT%I%M%p").sql.gz
     ```
 
-
-On success, the backup creates a gzip file, `audit-postgres-backup-YYYYMMDDTHHMMSS.sql.gz`.
-
+On success, the backup creates a GZIP file, `audit-postgres-backup-YYYYMMDDTHHMMSS.sql.gz`.
 To check that the backup succeeded, unzip the files and inspect the data.
 
 ## Next Steps
 
-- Test the [Restore Audit]({{< relref "../restore/audit" >}}) procedure to ensure you can recover data in case of an emergency.
 - To back up other Rhize services, read how to backup:
   - [Keycloak]({{< relref "keycloak" >}}).
   - [Grafana]({{< relref "grafana" >}}).

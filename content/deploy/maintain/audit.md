@@ -29,37 +29,34 @@ Also, before you start, confirm you are in the right context and namespace.
 
 Maintaining Audit PostgreSQL involves three steps:
 
-1. Detach target partitions from main table
+1. Detach target partitions from main table:
 
-```bash
-kubectl exec -i audit-postgresql-0 -- psql -h localhost -d audit -U <DB_USER> -c 'alter table audit_log detach partition audit_log_p20240101;'
-```
+    ```bash
+    kubectl exec -i audit-postgresql-0 -- psql -h localhost \
+      -d audit -U <DB_USER> \
+      -c 'alter table audit_log detach partition audit_log_p20240101;'
+    ```
 
-1. Backup partition table
+1. Backup partition table:
 
-```bash
+    ```bash
+    pg_dump -U <DB_USER> -h audit-postgres-0 -p5433 \
+      --file ./audit-p20240101.sql --table public.audit_log_p20240101 audit
+    ```
 
-pg_dump -U <DB_USER> -h audit-postgres-0 -p5433 --file ./audit-p20240101.sql --table public.audit_log_p20240101 audit
+   On success, the backup creates a GZIP file, `audit-p20240101.sql`.
+   To check that the backup succeeded, unzip the files and inspect the data.
 
-```
+1. Drop the partition table to remove from database:
 
-On success, the backup creates a gzip file, `audit-p20240101.sql`.
-
-To check that the backup succeeded, unzip the files and inspect the data.
-
-
-1. Drop partition table to remove from database
-
-```bash
-
-kubectl exec -i audit-postgres-0 -- psql -h localhost -d audit -U <DB_USER> -c 'drop table audit_log_p20240101;'
-
-```
+    ```bash
+    kubectl exec -i audit-postgres-0 -- psql -h localhost -d audit \
+      -U <DB_USER> -c 'drop table audit_log_p20240101;'
+    ```
 
 ## Next Steps
 
-- Test the [Restore Audit]({{< relref "../restore/audit" >}}) procedure to ensure you can recover data in case of an emergency.
 - To back up other Rhize services, read how to backup:
-  - [Keycloak]({{< relref "keycloak" >}}).
-  - [Grafana]({{< relref "grafana" >}}).
-  - [The Graph Database]({{< relref "graphdb" >}}).
+  - [Keycloak]({{< relref "/deploy/backup/keycloak" >}}).
+  - [Grafana]({{< relref "/deploy/backup/grafana" >}}).
+  - [The Graph Database]({{< relref "/deploy/backup/graphdb" >}}).

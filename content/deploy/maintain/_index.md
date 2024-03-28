@@ -1,9 +1,9 @@
 ---
 date: "2024-03-26T19:35:35+11:00"
-title: Restore
+title: Maintain
 description: Guides to maintain your data on Rhize
 categories: ["how-to"]
-weight: 200
+weight: 250
 menu:
   main:
     parent: deploy
