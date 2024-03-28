@@ -65,6 +65,10 @@ Throwing events are represented with icons that are filled in.
 
 ![A message event](/images/bpmn/bpmn-message-event.svg)
 
+{{< notice "note" >}}
+Message events follow MQTT topic syntax.
+{{< /notice >}}
+
 - Purpose: To denote a message being caught or thrown.
 - Icon: An envelope
 - Examples: A MQTT device publishes a message about a new sensor reading (starting a process). The ERP system sends a confirmation document (ending a process).

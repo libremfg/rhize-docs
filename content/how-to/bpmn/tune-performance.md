@@ -74,6 +74,13 @@ Parallel joins in particular can also increase memory usage of the NATS service.
 Where possible, prefer exclusive branching and sequential execution.
 When a task requires concurrency, keep the amount of data processed and the complexity of the tasks to the minimum necessary.
 
+### Control wildcards in message start events
+
+BPMN message start tasks can start on any topic or data source. However, performance varies with the events that the start task subscribes to.
+
+Subscribing to multiple wildcards can especially drag performance.
+To avoid a possible performance hit, try to subscribe to an exact topic, or limit subscriptions to a single wildcard.
+
 ### Avoid loops
 
 A BPMN process can loop back to a previous task node to repeat execution.
