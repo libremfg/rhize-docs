@@ -1,8 +1,8 @@
 ---
-title: 'Back up Audit PostgreSQL'
+title: 'Restore Audit backup'
 date: '2024-03-26T11:20:56-03:00'
 categories: ["how-to"]
-description: How to backup Audit PostgreSQL on your Rhize deployment
+description: How to restore the backup of the Audit PostgreSQL on your Rhize deployment
 weight: 300
 menu:
   main:
@@ -55,4 +55,4 @@ To restore Audit PostgreSQL, follow these steps:
 ## Next Steps
 
 - Test the [Backup Audit]({{< relref "../backup/audit" >}}) procedure 
-- Plan and execute a [Maintenance Strategy]({{< relref "../maintain/audit" >}}) to handle your audit data 
+- Plan and execute a [Maintenance Strategy]({{< relref "../maintain/audit" >}}) to handle your audit data.

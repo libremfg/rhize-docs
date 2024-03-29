@@ -10,13 +10,17 @@ menu:
     identifier:
 ---
 
-The [audit trial]({{< relref "/how-to/audit" >}}) can generate a high volume of data, so it is a good practice to periodically _archive_ portions of it. An archive separates a portion of the data from the database and keeps it for long-term storage. This process involves the use of PostgresQL [Table Partitions](https://www.postgresql.org/docs/current/ddl-partitioning.html).Doing this speeds up the query of existing data, whilst allowing for cost effective storage of older data.
+The [audit trial]({{< relref "/how-to/audit" >}}) can generate a high volume of data, so it is a good practice to periodically _archive_ portions of it.
+An archive separates a portion of the data from the database and keeps it for long-term storage. This process involves the use of PostgreSQL [Table Partitions](https://www.postgresql.org/docs/current/ddl-partitioning.html).
+
+Archiving a partition improves query speed for current data, while providing a cost-effective way to store older.
+
 
 ## Prerequisites
 
 Before you start, ensure you have the following:
 
-- A designated backup location, for example `~/rhize-backups/libre-audit`.
+- A designated backup location, for example `~/rhize-archives/libre-audit`.
 - Access to the [Rhize Kubernetes Environment](/deploy/install/setup-kubernetes) {{% param pre_reqs %}}
 
 Also, before you start, confirm you are in the right context and namespace.
@@ -27,16 +31,16 @@ Also, before you start, confirm you are in the right context and namespace.
 
 To archive the PostgreSQL Audit trail, follow these steps:
 
-1. Based on your retention period query for the names of the existing partitions:
+1. Record the `<PARTITION_NAME>` of the partition you wish to detach and archive.
+   This is based on the retention-period query for the names of the existing partitions:
 
    ```bash
    kubectl exec -i audit-postgres-0 -- psql -h localhost \ 
      -d audit -U <DB_USER> \
      -c "select * from partman.show_partitions('public.audit_log')"
-   Record the name <PARTITION_NAME> of the partition you wish to detach and archive.
-```
+   ```
 
-1. Detach target partitions from main table:
+1. Detach the target partitions from the main table:
 
     ```bash
 
@@ -56,7 +60,7 @@ To archive the PostgreSQL Audit trail, follow these steps:
    On success, the backup creates a GZIP file, `<PARITION_NAME>.sql`.
    To check that the backup succeeded, unzip the files and inspect the data.
 
-1. Drop the partition table to remove from the database:
+1. Drop the partition table to remove it from the database:
 
     ```bash
     kubectl exec -i audit-postgres-0 -- psql -h localhost -d audit \
@@ -65,7 +69,8 @@ To archive the PostgreSQL Audit trail, follow these steps:
 
 ## Next Steps
 
-- To back up other Rhize services, read how to backup:
-  - [Keycloak]({{< relref "/deploy/backup/keycloak" >}}).
-  - [Grafana]({{< relref "/deploy/backup/grafana" >}}).
-  - [The Graph Database]({{< relref "/deploy/backup/graphdb" >}}).
+- For full backups or Rhize services, read how to back up:
+  - [Keycloak]({{< relref "/deploy/backup/keycloak" >}})
+  - [The Audit trail]({{< relref "/deploy/backup/audit" >}})
+  - [Grafana]({{< relref "/deploy/backup/grafana" >}})
+  - [The Graph Database]({{< relref "/deploy/backup/graphdb" >}})
