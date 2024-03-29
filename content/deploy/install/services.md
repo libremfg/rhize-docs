@@ -296,25 +296,11 @@ If the install is successful, the UI is available on its
 ## Optional: Audit Trail service
 
 
-The Rhize [Audit]({{< relref "/how-to/audit" >}}) service provides an audit trail for database changes to install. The Audit service uses InfluxDB2 for storage.
+The Rhize [Audit]({{< relref "/how-to/audit" >}}) service provides an audit trail for database changes to install. The Audit service uses PostgreSQL for storage.
 
 Install Audit Service with these steps:
 
-1. Modify the InfluxDB Helm YAML file as needed. It is *recommended* to set the admin password and token in the Helm YAML file to prevent over writing the values with random values every deploy.
-
-1. Add InfluxDB Helm repository:
-
-    ```bash
-    helm repo add influxdata https://helm.influxdata.com
-    ```
-
-1. Install with Helm:
-
-    ```bash
-    helm install influxdb2 -f ./influxdb2.yaml influxdata/influxdb2 -n {{< param application_name >}}
-    ```
-
-1. Modify the Audit trail Helm YAML file. Include the OIDC configuration and InfluxDB2 token.
+1. Modify the Audit trail Helm YAML file. It is *recommended* to change the PostgreSQL username and password values.
 
 2. Install with Helm:
 
