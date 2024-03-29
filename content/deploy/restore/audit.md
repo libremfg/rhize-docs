@@ -6,7 +6,7 @@ description: How to restore the backup of the Audit PostgreSQL on your Rhize dep
 weight: 300
 menu:
   main:
-    parent: backup
+    parent: restore
     identifier:
 ---
 
