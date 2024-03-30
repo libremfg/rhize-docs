@@ -15,11 +15,11 @@ After you [install Rhize services](/deploy/install/services), they are accessibl
 
 | Service                   | Default Port                       |
 |---------------------------|------------------------------------|
-| Admin UI                  | [`localhost:3030`](localhost:3030) |
-| Grafana                   | [`localhost:3001`](localhost:3001) |
-| Router                    | [`localhost:4000`](localhost:4000) |
-| Keycloak                  | [`localhost:8090`](localhost:8090) |
-| `baas-alpha` command line | [`localhost:8080`](localhost:8080) |
+| Admin UI                  | [`localhost:3030`](http://localhost:3030) |
+| Grafana                   | [`localhost:3001`](http://localhost:3001) |
+| Router                    | [`localhost:4000`](http://localhost:4000) |
+| Keycloak                  | [`localhost:8090`](http://localhost:8090) |
+| `baas-alpha` command line | [`localhost:8080`](http://localhost:8080) |
 
 ## URLs
 
