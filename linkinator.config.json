@@ -4,7 +4,7 @@
   "retry": true,
   "retryErrorsCount": 3,
   "retryErrorsJitter": 5,
-  "skip": ".*(\\.js|\\.css)$",
+  "skip": [".*(\\.js|\\.css)$", "http://localhost"],
   "verbosity": "error",
   "format": "json"
 }
