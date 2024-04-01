@@ -53,7 +53,7 @@ The best choice of trigger depends on the context of the event and the system th
 
    If you want to initiate a workflow from a value changed in your data sources,
    [create a rule]({{< relref "/how-to/publish-subscribe/turn-value-into-event" >}}).
-   As rules evaluate properties from equipment, they commonly are triggers from data emitted by level-1 and level-2 systems, such as SCADAs.
+   As rules evaluate properties from equipment, they commonly are triggers from data emitted by level-1 and level-2 systems, such as a SCADA.
 
    If you want to initiate a workflow by publishing to the Rhize broker, use a [message start event]({{< relref "bpmn-elements#message" >}}).
    These messages often originate from level-3 and level-4 systems, such as an ERP.
