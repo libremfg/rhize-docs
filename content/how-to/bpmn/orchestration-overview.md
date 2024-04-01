@@ -9,12 +9,12 @@ menu:
     parent: howto-bpmn
 ---
 
-Rhize's {{< abbr "BPMN" >}} engine and UI provides a way to coordinate complex tasks and exchange messages between the Rhize platform and your internal services.
-For example, you can use BPMN to coordinate messages between disparate systems, create alerts and events, and transform incoming work orders into their ISA-95 representation and store them in their Rhize DB.
+Rhize's BPMN engine and UI provides a way to coordinate complex tasks and exchange messages between the Rhize platform and your internal services.
+For example, you can use BPMN to coordinate messages between services, create alerts and events, transform incoming work orders into their ISA-95 representation, and store them in their Rhize DB.
 
 Each workflow is configured through the same high-level process:
-1. Set a start condition that initates the workflow. This condition may be a value from a data source or MQTT mesage, a scheduled timer, or a button pressed in frontend app.
-1. Create logic to evaluate and transform data, send messages, and make calls to the Rhize DB and remote APIs.
+1. Set a start condition that initiates the workflow. This condition may be a value from a data source or MQTT message, a scheduled timer, or a button pressed in frontend app.
+1. Create logic to evaluate and transform data, send messages, and call the Rhize DB and remote APIs.
 1. Create end conditions to handle errors, validate data, and send messages.
 
 This overview provides some high-level discussion of how Rhize's BPMN engine works with data and services and how to create triggers.
@@ -23,7 +23,7 @@ For a detailed list of all elements, refer to the [BPMN elements]({{< relref "bp
 
 ## Message exchange
 
-A BPMN workflow can publish and subscribe to both the Rhize message and to external data sources.
+A BPMN workflow can publish and subscribe to both the Rhize message broker and external data sources.
 This provides substantial flexibility to create start conditions and to pass information between services.
 
 ```mermaid
@@ -42,29 +42,29 @@ throw --> subscribe(Subscribe to relevant broker/topic)
 write_task --> subscribe
 ```
 
-For a more detailed discussion about what trigger to use, refer to the next section.
+For a more detailed discussion about what trigger to use, read the next section.
 
 ## Triggers
 
 You also have multiple ways to {{< abbr "trigger" >}} a BPMN.
-The best choice of trigger depends on the context the event and system that initiates the workflow.
+The best choice of trigger depends on the context of the event and the system that initiates the workflow.
 
-- **Message triggers.** You can start workflows by publishing to your broker or by publishing to this Rhize broker.
+- **Message triggers.** You can start workflows by publishing to your broker or the Rhize broker.
 
    If you want to initiate a workflow from a value changed in your data sources,
    [create a rule]({{< relref "/how-to/publish-subscribe/turn-value-into-event" >}}).
    As rules evaluate properties from equipment, they commonly are triggers from data emitted by level-1 and level-2 systems, such as SCADAs.
 
    If you want to initiate a workflow by publishing to the Rhize broker, use a [message start event]({{< relref "bpmn-elements#message" >}}).
-   These messages often originate from level-3 and level-4 systems, such as ERPs.
+   These messages often originate from level-3 and level-4 systems, such as an ERP.
 - **[Timer events]({{< relref "bpmn-elements#timer" >}}).** These work according to a schedule, either one-off or repeating.
 - **[API call]({{< relref "/how-to/gql/" >}})**. You can also start a BPMN workflow by sending a {{< abbr "mutation" >}} to the GraphQL API.
-  A common use of API triggers is in low-code workflows. For example, an operator may press a button to start a workflow and wait for its response.
+  API triggers are commonly used in low-code workflows. For example, an operator may press a button to start a workflow and wait for its response.
 
   To start BPMN workflows, Rhize has two primary API operations:
 
      - `createAndRunBpmn` starts a workflow and does not wait for the response (asynchronous).
-     - `createAndRunBPMNSync` starts a workflow and waits for the process to complete or abort (synchronous)
+     - `createAndRunBPMNSync` starts a workflow and waits for the process to complete or abort (synchronous).
 
 ## Data processing and API calls
 
