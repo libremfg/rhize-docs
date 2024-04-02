@@ -10,7 +10,7 @@ menu:
 ---
 
 Rhize's BPMN engine and UI provides a way to coordinate complex tasks and exchange messages between the Rhize platform and your internal services.
-For example, you can use BPMN to coordinate messages between services, create alerts and events, transform incoming work orders into their ISA-95 representation, and store them in the Rhize DB.
+For example, you can use BPMN to coordinate messages between systems, create alerts and events, transform incoming work orders into their ISA-95 representation, and store them in the Rhize DB.
 
 Each workflow is configured through the same high-level process:
 1. Set a start condition that initiates the workflow. This condition may be a value from a data source or MQTT message, a scheduled timer, or a button pressed in frontend app.
@@ -49,15 +49,15 @@ For a more detailed discussion about what trigger to use, read the next section.
 You also have multiple ways to {{< abbr "trigger" >}} a BPMN.
 The best choice of trigger depends on the context of the event and the system that initiates the workflow.
 
-- **Message triggers.** You can start workflows by publishing to your broker or the Rhize broker.
+- **Message triggers.** You can start workflows by publishing to your broker or to the Rhize broker.
 
-   If you want to initiate a workflow from a value changed in your data sources,
+   To initiate a workflow from a value changed in your data sources,
    [create a rule]({{< relref "/how-to/publish-subscribe/turn-value-into-event" >}}).
    As rules evaluate properties from equipment, they commonly are triggers from data emitted by level-1 and level-2 systems, such as a SCADA.
 
-   If you want to initiate a workflow by publishing to the Rhize broker, use a [message start event]({{< relref "bpmn-elements#message" >}}).
+   To initiate a workflow by publishing to the Rhize broker, use a [message start event]({{< relref "bpmn-elements#message" >}}).
    These messages often originate from level-3 and level-4 systems, such as an ERP.
-- **[Timer events]({{< relref "bpmn-elements#timer" >}}).** These work according to a schedule, either one-off or repeating.
+- **[Timer events]({{< relref "bpmn-elements#timer" >}}).** These work according to a schedule, either once or repeating.
 - **[API call]({{< relref "/how-to/gql/" >}})**. You can also start a BPMN workflow by sending a {{< abbr "mutation" >}} to the GraphQL API.
   API triggers are commonly used in low-code workflows. For example, an operator may press a button to start a workflow and wait for its response.
 
