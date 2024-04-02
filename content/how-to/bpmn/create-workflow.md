@@ -4,7 +4,7 @@ date: '2023-09-22T14:50:39-03:00'
 draft: false
 categories: "how-to"
 description: Create BPMN workflows to handle inputs, react to events, process data, and throw triggers.
-weight: 300
+weight: 100
 menu:
   main:
     parent: howto-bpmn
