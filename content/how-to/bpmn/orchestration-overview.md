@@ -10,7 +10,7 @@ menu:
 ---
 
 Rhize's BPMN engine and UI provides a way to coordinate complex tasks and exchange messages between the Rhize platform and your internal services.
-For example, you can use BPMN to coordinate messages between services, create alerts and events, transform incoming work orders into their ISA-95 representation, and store them in their Rhize DB.
+For example, you can use BPMN to coordinate messages between services, create alerts and events, transform incoming work orders into their ISA-95 representation, and store them in the Rhize DB.
 
 Each workflow is configured through the same high-level process:
 1. Set a start condition that initiates the workflow. This condition may be a value from a data source or MQTT message, a scheduled timer, or a button pressed in frontend app.
@@ -72,7 +72,7 @@ Besides exchanging messages, BPMN workflows can also transform and evaluate payl
 All the data in a process is stored in a {{< abbr "process variable context" >}} that each element can access.
 
 The general logical elements are as follows:
-- To evaluate conditions, use a [gateway]({{< relref "/how-to/bpmn/bpmn-elements#gateways" >}})
+- To evaluate conditions, use an [exclusive gateway]({{< relref "/how-to/bpmn/bpmn-elements#gateways" >}})
 - To transform JSON expressions, use a [JSONata task]({{< relref "/how-to/bpmn/bpmn-elements#jsonata-transform" >}})
 - To read an write data to the database, use a [GraphQL task]({{< relref "/how-to/bpmn/bpmn-elements#service-tasks" >}}).
 - To make a call to a remote HTTP API, use a [REST service task]({{< relref "/how-to/bpmn/bpmn-elements#call-rest-API" >}}).
