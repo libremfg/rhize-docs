@@ -8,10 +8,27 @@
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
     <meta name="referrer" content="no-referrer-when-downgrade" />
+
+    {{ if .Params.og_image }}
     <meta
       property="og:image"
-      content="{{ .Site.BaseURL }}/images/rhize-logo.png"
+      content="{{ .Site.BaseURL }}{{ .Params.og_image | relURL }}"
+      />
+    <meta
+      property="og:image:secure_url"
+      content="{{ .Params.og_image | absURL }}"
+      />
+    {{ else }}
+    <meta
+      property="og:image"
+      content="{{ .Site.BaseURL }}images/rhize-logo.png"
     />
+    <meta
+      property="og:image:secure_url"
+      content="{{ "images/rhize-log.png" | absURL }}"
+      />
+    {{ end }}
+
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ .Site.Title }}" />
     <meta property="og:site_name" content="{{ .Site.Title }}" />
