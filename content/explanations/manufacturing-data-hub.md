@@ -5,7 +5,7 @@ description: >-
   How the design of Rhize meets the needs of modern manufacturing.
 weight: 100
 draft: false
-og_image: "/images/arch/diagram-rhize-simplified-mdh.png"
+og_image: "/images/og/rhize-mdh-graphic.png"
 menu:
   main:
     parent: explanations
