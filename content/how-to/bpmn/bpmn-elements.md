@@ -5,7 +5,7 @@ draft: false
 categories: [reference]
 description: >-
   A reference of all BPMN elements used in the Rhize BPMN engine.
-weight: 600
+weight: 1000
 menu:
   main:
     parent: howto-bpmn
@@ -22,7 +22,6 @@ boilerplate:
     The ID of the datasource
   data_expression: >-
     JSON or JSONata expression. Topics and values to write to
-
 ---
 
 These pages describe the elements to make a Rhize {{< abbr "bpmn" >}} workflow, and their parameters to set conditions, use variables, and call services.

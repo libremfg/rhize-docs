@@ -26,7 +26,7 @@ These operations correspond to the `Get` verb defined in [Part 5](https://www.is
 
 {{< /notice >}}
 
-## `get` single resource
+## `get` single resource {#get}
 
 Queries that start with `get` return one object.
 A common use of `get` is to explore all data related to a particular object.
@@ -48,7 +48,7 @@ query mixerCheck {
 }
 ```
 
-## `query` multiple resources
+## `query` multiple resources {#query}
 
 Queries that start with `query` return an array of objects.
 For example, a custom dashboard may use `queryEquipmentVersion` to create a page that displays all active versions of equipment that are running in a certain {{< abbr "hierarchy scope" >}}.
@@ -81,7 +81,7 @@ query ExampleQuery {
 
 If you don't have the precise `iid`, you can use one of the string [filters]({{< relref "filter" >}}).
 
-## `Aggregate` data from multiple resources
+## `Aggregate` data from multiple resources {#aggregate}
 
 Operations that start with `aggregate` provide aggregated statistics for a specified set of items.
 
