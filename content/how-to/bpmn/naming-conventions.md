@@ -1,6 +1,6 @@
 ---
 title: 'Naming conventions'
-categories: ["reference"
+categories: ["reference"]
 description: Recommended naming conventions for BPMN processes and their nodes
 weight: 950
 menu:
