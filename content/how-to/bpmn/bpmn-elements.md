@@ -302,9 +302,6 @@ $.orders
 
 By default, the process variable context has a maximum size of 1MB.
 When an activity outputs data, the output is added to the process variable context.
-
-
-
 When variable size gets large, you have multiple strategies to reduce its size.
 For ideas, refer to [Tune BPMN performance]({{< relref "/how-to/bpmn/tune-performance" >}}).
 
@@ -323,17 +320,18 @@ For example, consider these variables sent in a GraphQL mutation task.
 With the `=`, the `quantity` and `id` properties are replaced by what is returned by their JSONata expression.
 Without it, this just creates invalid JSON.
 
+```json
+={
+"input": [
+{
+  "id": "new_stuff_" & $.id,
+  "quantity": $.quantity,
+  "quantityUoM": {
+    "id": "grams"
+  }
+}
+],
+}
+```
 
-    ```json
-    ={
-    "input": [
-    {
-      "id": "new_stuff_" & $.id,
-      "quantity": $.quantity,
-      "quantityUoM": {
-        "id": "grams"
-      }
-    }
-     ],
-    }
-    ```
+
