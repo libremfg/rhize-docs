@@ -136,7 +136,7 @@ Transform JSON data with a [JSONata expression](https://docs.jsonata.org/overvie
 | Call parameters  | Description                                                                   |
 |------------------|-------------------------------------------------------------------------------|
 | Input            | Input data for the transform                                                  |
-| Transform        | [Variables for the GraphQL query]({{< relref "../gql/call-the-graphql-api#variables" >}}) |
+| Transform        | The transform expression  |
 | Max Payload size | {{< param boilerplate.max_payload >}}                                         |
 
 
