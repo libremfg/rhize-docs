@@ -32,6 +32,16 @@ While the visual grammar is functionally the same, we extend some elements for s
 Each BPMN workflow is a _process_ with an ID.
 Each process is made up _events_ (circles), _activities_ (rectangles), _gateways_ (diamonds), and _flows_ (arrows).
 
+## Common parameters
+
+Every BPMN element has the following parameters:
+
+| Parameter            | Description                                                                                                                          |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| Name                 | Must be unique to the workflow. For guidance, follow the [BPMN naming conventions]({{< relref "/how-to/bpmn/naming-conventions" >}}) |
+| Documentation        | Freeform text describing what the node does                                                                                          |
+| Extension properties | Optional metadata to add to a node                                                                                                  |
+
 
 ## Events
 
@@ -60,30 +70,67 @@ Rhize supports various event types to categorize an event, as described in the f
 As with [Gateways](#gateways) and [Activities](#activities), event types are marked by their icons.
 Throwing events are represented with icons that are filled in.
 
-### Message
+
+### Start events
 
 ![A message event](/images/bpmn/bpmn-message-event.svg)
 
+Start events are triggered by the `CreateAndRunBPMN` and `CreateAndRunBPMNSync` {{< abbr "mutation" >}} operations.
+The parameters for a start event are as follows:
+
+| Parameter | Description                                                                                                            |
+|-----------|------------------------------------------------------------------------------------------------------------------------|
+| Outputs   | Optional variables to add to the {{< abbr "process variable context" >}}. The assignment value can be JSON or JSONata. |
+
+
+### Message start events
+
+Message events are triggered from a message published to the Rhize broker.
+The parameters for a message event are as follows:
+
+| Parameter          | Description                                                                                                         |
+|--------------------|---------------------------------------------------------------------------------------------------------------------|
+| Message            | The topic the message subscribes to on the Rhize Broker. The topic structure follows MQTT syntax, even if publishing to NATS |
+| Outputs | Optional variables to add to the {{< abbr "process variable context" >}}. The assignment value can be JSON or JSONata.                                                                                                  |
+
+### Timer start events
+
+Timer start events are triggered either at a specific date or recurring intervals.
+The parameters for a timer start event are as follows:
+
+
 {{< notice "note" >}}
-Message events follow MQTT topic syntax.
 {{< /notice >}}
 
-- Purpose: To denote a message being caught or thrown.
-- Icon: An envelope
-- Examples: A MQTT device publishes a message about a new sensor reading (starting a process). The ERP system sends a confirmation document (ending a process).
-- Dimension: Start, intermediate, end
+| Parameter | Description                                                                                                                                                          |
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Timer     | One of `Cycle`, to begin at recurring intervals, and `Date`, to happen at a certain time. Enter values in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. |
+| Outputs   | Optional variables to add to the {{< abbr "process variable context" >}}. The assignment value can be JSON or JSONata.                                               |
 
+### Intermediate message events
 
-### Timer
+Intermediate message events throw a message to the Rhize NATS broker.
+This may provide info for a subscribing third-party client, or initiate another BPMN workflow.
 
-![A timer event](/images/bpmn/bpmn-timer-event.svg)
-- Purpose: An event after a certain amount of elapsed time or on a certain data
-- Icon: A clock
-- Examples: An hourly timer starts a process to check quality. An intermediate event starts after a twenty-minute fermentation process.
-- Dimension: Start, intermediate
+The parameters for an intermediate message event are as follows:
 
-In Rhize, start timer events can be one of `Cycle`, to begin at recurring intervals, and `Date`, to happen at a certain time. An intermediate time event is always of `Duration`. 
-All timer events are configured in the **Timer** parameter and in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+| Parameter | Description                                                                                                            |
+|-----------|------------------------------------------------------------------------------------------------------------------------|
+| Message   | The topic the message publishes to on the Rhize Broker. The topic structure follows MQTT syntax                        |
+| Inputs    | Variables to name and filter. For example, they may come from a preceding JSONata element.                             |
+| Headers   | Additional headers to send in the request                                                                              |
+| Outputs   | Optional variables to add to the {{< abbr "process variable context" >}}. The assignment value can be JSON or JSONata. |
+
+### Intermediate timer events
+
+An intermediate message pauses for some duration.
+The parameters for an intermediate timer event are as follows:
+
+| Parameter | Description                                                                                                            |
+|-----------|------------------------------------------------------------------------------------------------------------------------|
+| Timer| A duration to pause. Enter values in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.|
+| Outputs   | Optional variables to add to the {{< abbr "process variable context" >}}. The assignment value can be JSON or JSONata. |
+
 
 ## Service tasks
 
