@@ -47,6 +47,21 @@ Every BPMN element has the following parameters:
 
 _Events_ are something that happen in the course of a process.
 In BPMN, events are drawn with circles.
+Events can have a type, and a dimension.
+  
+{{< tabs >}}
+{{% tab "Events" %}}
+![A simplified model of events with no activities](/images/bpmn/rhize-bpmn-events.png)
+{{% /tab %}}
+{{% tab "Message type" %}}
+Message events subscribe or publish to the Rhize broker. <br/>
+![A message event](/images/bpmn/bpmn-message-event.svg)
+{{% /tab %}}
+{{% tab "Timer type" %}}
+Timer events start according to some interval or date, or wait for some duration. <br/>
+![Timer event](/images/bpmn/bpmn-timer-event.svg  )
+{{% /tab %}}
+{{< /tabs >}}
 
 In event-driven models, events can happen in one of three _dimensions_:
 
@@ -59,7 +74,8 @@ In event-driven models, events can happen in one of three _dimensions_:
 - **End.**
   All processes end with some result. End events are drawn with a single thick line.
 
-![A simplified model of events with no activities](/images/bpmn/rhize-bpmn-events.png)
+
+
 
 Besides these dimensions, BPMN also classifies events by whether they _catch_ a trigger or _throw_ a result.
 All start events are catch events; that is, they react to some trigger.
@@ -71,9 +87,9 @@ As with [Gateways](#gateways) and [Activities](#activities), event types are mar
 Throwing events are represented with icons that are filled in.
 
 
+
 ### Start events
 
-![A message event](/images/bpmn/bpmn-message-event.svg)
 
 Start events are triggered by the `CreateAndRunBPMN` and `CreateAndRunBPMNSync` {{< abbr "mutation" >}} operations.
 The parameters for a start event are as follows:
@@ -97,10 +113,6 @@ The parameters for a message event are as follows:
 
 Timer start events are triggered either at a specific date or recurring intervals.
 The parameters for a timer start event are as follows:
-
-
-{{< notice "note" >}}
-{{< /notice >}}
 
 | Parameter | Description                                                                                                                                                          |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
