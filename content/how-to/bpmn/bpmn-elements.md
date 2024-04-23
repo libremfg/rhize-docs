@@ -85,18 +85,6 @@ Message events follow MQTT topic syntax.
 In Rhize, start timer events can be one of `Cycle`, to begin at recurring intervals, and `Date`, to happen at a certain time. An intermediate time event is always of `Duration`. 
 All timer events are configured in the **Timer** parameter and in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
 
-### Error
-
-![An error event](/images/bpmn/bpmn-error-event.svg)
-
-- Purpose: An error occurred in the system
-- Icon: A flash
-- Example: A REST server returns a 500 error.
-- Dimension: End
-
-
-
-
 ## Service tasks
 
 In BPMN, an _activity_ is work performed within a business process.
