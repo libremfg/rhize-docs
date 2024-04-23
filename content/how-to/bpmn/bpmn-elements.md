@@ -11,7 +11,7 @@ menu:
     parent: howto-bpmn
 boilerplate:
   jsonata_response: >-
-    You can optionally add a [JSONata](https://docs.jsonata.org/1.7.0/overview) expression to filter results
+    Optional [JSONata](https://docs.jsonata.org/1.7.0/overview) expression to map to the [process variable context](#process-variable-context).
   max_payload: >-
     Number. If the response length exceeds this number of characters, Rhize throws an error.
   connection_timeout: >-
@@ -22,6 +22,8 @@ boilerplate:
     The ID of the datasource
   data_expression: >-
     JSON or JSONata expression. Topics and values to write to
+  headers: >-
+    Additional headers to send in the request
 ---
 
 These pages describe the elements to make a Rhize {{< abbr "bpmn" >}} workflow, and their parameters to set conditions, use variables, and call services.
@@ -130,7 +132,7 @@ The parameters for an intermediate message event are as follows:
 |-----------|------------------------------------------------------------------------------------------------------------------------|
 | Message   | The topic the message publishes to on the Rhize Broker. The topic structure follows MQTT syntax                        |
 | Inputs    | Variables to name and filter. For example, they may come from a preceding JSONata element.                             |
-| Headers   | Additional headers to send in the request                                                                              |
+| Headers   | {{< param boilerplate.headers >}} |
 | Outputs   | Optional variables to add to the {{< abbr "process variable context" >}}. The assignment value can be JSON or JSONata. |
 
 ### Intermediate timer events
@@ -187,6 +189,11 @@ Transform JSON data with a [JSONata expression](https://docs.jsonata.org/overvie
 | Max Payload size | {{< param boilerplate.max_payload >}}                                         |
 
 
+Besides the call parameters, the JSONata task has following additional fields:
+
+| Parameter      | Description                                                                                                                                                                       |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Input response | The name of the variable to add to the {{< abbr "process variable context" >}}|
 
 
 ### GraphQL Query
@@ -200,7 +207,12 @@ Run a [GraphQL query]({{< relref "../gql/query" >}})
 | Connection Timeout | {{< param boilerplate.connection_timeout >}} |
 | Max Payload size   | {{< param boilerplate.max_payload >}}        |
 
-{{% param boilerplate.jsonata_response %}}
+Besides the call parameters, the Query task has following additional fields:
+
+| Parameter      | Description                                                                                                                                                                       |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Input response | {{% param boilerplate.jsonata_response %}}. For GraphQL operations, use this only to map values. Rely on [GQL filters]({{< relref "/how-to/gql/filter" >}}) to limit the payload. |
+| Headers   | {{< param boilerplate.headers >}} |
 
 ### GraphQL Mutation
 
@@ -212,6 +224,13 @@ Run a [GraphQL mutation]({{< relref "../gql/mutate" >}})
 | Variables          | {{< param boilerplate.graph_vars >}}         |
 | Connection Timeout | {{< param boilerplate.connection_timeout >}} |
 | Max Payload size   | {{< param boilerplate.max_payload >}}        |
+
+Besides the call parameters, the mutation task has following additional fields:
+
+| Parameter      | Description                                                                                                                                                                       |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Input response | {{% param boilerplate.jsonata_response %}}. For mutations, use this only to map values. Use the mutation call to limit the payload. |
+| Headers   | {{% param boilerplate.headers %}} |
 
 ### Call REST API
 
@@ -227,7 +246,12 @@ HTTP call to a REST API service.
 | Connection Timeout | {{% param boilerplate.connection_timeout %}}                                       |
 | Max Payload size   | {{< param boilerplate.max_payload >}}                                              |
 
-{{% param boilerplate.jsonata_response %}}
+Besides the call parameters, the REST task has following additional fields:
+
+| Parameter      | Description                                |
+|----------------|--------------------------------------------|
+| Input response | {{% param boilerplate.jsonata_response %}} |
+| Headers        | {{% param boilerplate.headers %}}                                           |
 
 ### Read Datasource
 
@@ -239,6 +263,13 @@ Read values from topics of a datasource (for example, an OPC-UA server)
 | Data             | {{< param boilerplate.data_expression >}} |
 | Max Payload size | {{< param boilerplate.max_payload >}}     |
 
+Besides the call parameters, the data source task has following additional fields:
+
+| Parameter      | Description                                                                    |
+|----------------|--------------------------------------------------------------------------------|
+| Input response | The variable name to store the response in {{< abbr "process variable context" >}} |
+| Headers        | {{< param boilerplate.headers >}}                                              |
+
 ### Write Datasource
 
 Write values to topics of a datasource.
@@ -248,6 +279,15 @@ Write values to topics of a datasource.
 | Data source      | {{< param boilerplate.data_id >}}         |
 | Data             | {{< param boilerplate.data_expression >}} |
 | Max Payload size | {{< param boilerplate.max_payload >}}     |
+
+
+Besides the call parameters, the data source task has following additional fields:
+
+| Parameter      | Description                                                                    |
+|----------------|--------------------------------------------------------------------------------|
+| Input response | The variable name to store the response in {{< abbr "process variable context" >}} |
+| Headers        | {{< param boilerplate.headers >}}                                              |
+
 
 ## Call activities
 
@@ -331,8 +371,6 @@ caption="<em>Parallel joins join variable context, but have performance costs.</
 
 As data passes and transforms from one element to another, variables remain in the _process variable context_.
 You can access these variables through JSONata expressions.
-
-
 
 ### Process variable context
 
