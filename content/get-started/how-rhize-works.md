@@ -21,11 +21,11 @@ The system runs on distributed, containerized systems, ensuring horizontal scala
 
 Finally, outside of the Rhize deployment are the two most important components: the manufacturing operation, which sends event data to Rhize, and the Rhize users, who interact with Rhize data through a number of special-purpose interfaces.
 
-{{< figure
+{{< bigFigure
 src="/get-started/diagram-rhize-arch-overview.png"
 alt="A simplified diagram of Rhize's architecture"
 width="70%"
-caption="<em><small>A simplified view of Rhize's architecture</small></em>"
+caption="A simplified view of Rhize's architecture"
 >}}
 
 ## Examples in practice
@@ -61,10 +61,11 @@ All this data is mapped to Rhize's ISA-95 schema, which creates a coherent model
 
 ## Message exchange
 
-{{< figure
+{{< bigFigure
 src="/get-started/rhize-diagram-data-sources.png"
 alt="More granular view of Rhize-Customer messaging"
-width="100%"
+caption="More granular view of Rhize-Customer messaging"
+width="90%"
 >}}
 
 Rhize's architecture is event-driven, low-latency, and scalable.

@@ -1020,3 +1020,19 @@ a[href^="https://rhize.com"]:after {
   content: "" !important;
   padding-left: 0; /* Remove padding */
 }
+
+
+  /* override figure style from remote theme */
+
+figure.big-figure img {
+    display: block; /* Make the image a block element for centering */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+
+
+figure.big-figure .caption {
+    text-align: center;
+    font-size: 80%;
+    font-style: italic;
+}

@@ -72,6 +72,21 @@ Renders as:
 
 ![image](https://github.com/libremfg/libremfg.github.io/assets/47385188/2394da77-821b-4379-8814-df2476f6e25c)
 
+### bigFigure
+
+Center images and have them open in a new tab.
+Optional parameters for `width` and `caption`.
+
+```html
+{{< bigFigure
+width="65%"
+alt="Diagram simplifying flows depicted in part 1 of ISA-95"
+src="/images/arch/diagram-rhize-l3-l4-information-flows.png"
+caption="A simplified view of how information might exchange between level 3 and 4 systems in a point-to-point topology."
+>}}
+```
+
+
 ### Compatibility
 
 List the compatible versions of a third party software for a specified version of Rhize.
