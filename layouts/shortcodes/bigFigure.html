@@ -6,7 +6,9 @@
          {{ if ( .Get "width" ) }}width="{{ .Get "width" }}"{{ end }}
     >
   </a>
+  {{ if ( .Get "caption" ) }}
   <figcaption class="caption">
-      {{ .Get "caption" | default "" }}
+      {{ .Get "caption" | .Page.RenderString }}
   </figcaption>
+  {{ end }}
 </figure>
