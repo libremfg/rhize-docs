@@ -49,7 +49,7 @@ Every BPMN element has the following parameters:
 
 _Events_ are something that happen in the course of a process.
 In BPMN, events are drawn with circles.
-Events can have a type, and a dimension.
+Events have a _type_ and a _dimension_.
   
 {{< tabs >}}
 {{% tab "Events" %}}
@@ -98,7 +98,7 @@ The parameters for a start event are as follows:
 
 | Parameter | Description                                                                                                            |
 |-----------|------------------------------------------------------------------------------------------------------------------------|
-| Outputs   | Optional variables to add to the {{< abbr "process variable context" >}}. The assignment value can be JSON or JSONata. |
+| Outputs   | Optional variables to add to the {{< abbr "process variable context" >}}. JSON or JSONata. |
 
 
 ### Message start events
@@ -109,7 +109,7 @@ The parameters for a message event are as follows:
 | Parameter | Description                                                                                       |
 |-----------|---------------------------------------------------------------------------------------------------|
 | Message   | The topic the message subscribes to on the Rhize Broker. The topic structure follows MQTT syntax. |
-| Outputs   | JSON or JSONata. Optional variables to add to the {{< abbr "process variable context" >}}.        |
+| Outputs   |  Optional variables to add to the {{< abbr "process variable context" >}}.  JSON or JSONata.      |
 
 ### Timer start events
 
