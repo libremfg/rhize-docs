@@ -59,6 +59,7 @@ Events can have a type, and a dimension.
 Message events subscribe or publish to the Rhize broker. <br/>
 ![A message event](/images/bpmn/bpmn-message-event.svg)
 {{% /tab %}}
+
 {{% tab "Timer type" %}}
 Timer events start according to some interval or date, or wait for some duration. <br/>
 ![Timer event](/images/bpmn/bpmn-timer-event.svg  )
@@ -119,7 +120,7 @@ The parameters for a timer start event are as follows:
 | Parameter | Description                                                                                                                                                          |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Timer     | One of `Cycle`, to begin at recurring intervals, and `Date`, to happen at a certain time. Enter values in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. |
-| Outputs   | Optional variables to add to the {{< abbr "process variable context" >}}. The assignment value can be JSON or JSONata.                                               |
+| Outputs   | Optional variables to add to the {{< abbr "process variable context" >}}. JSON or JSONata.                                               |
 
 ### Intermediate message events
 
