@@ -408,15 +408,15 @@ Without it, this just creates invalid JSON.
 
 ```json
 ={
-"input": [
-{
-  "id": "new_stuff_" & $.id,
-  "quantity": $.quantity,
-  "quantityUoM": {
-    "id": "grams"
-  }
-}
-],
+  "input": [
+    {
+      "id": "new_stuff_" & $.id,
+      "quantity": $.quantity,
+      "quantityUoM": {
+        "id": "grams"
+      }
+    }
+  ]
 }
 ```
 
