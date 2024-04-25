@@ -2,7 +2,7 @@
 title: ISA-95 diagrams
 description: >-
     Helpful diagrams to present a high-level overview of the ISA-95 models
-    for objects and information flows.
+    for entities and information flows.
 weight: 200
 draft: false
 menu:
@@ -12,7 +12,7 @@ menu:
 
 The ISA-95 standard is long and thorough.
 These diagrams provide some simplified visual explanations to help explain the varied categories of flows and relationships in the standard.
-To read how the standard forms the basis of the Rhize data architecture, read our blog post [Rethinking perspectives on ISA-95](https://rhize.com/blog/reframing-perspective-on-isa95/).
+To read about how the standard fits within the data architecture of Rhize, read our blog post [Rethinking perspectives on ISA-95](https://rhize.com/blog/reframing-perspective-on-isa95/).
 
 ## Information exchange between models and levels
 
@@ -20,9 +20,8 @@ This diagram shows how information exchanges between resource models and systems
 It is a highly simplified view of some flows described in parts 2 and 4 of the standard.
 Each entity in the diagram carries information in multiple dimensions, including:
 - The entity's position in the resource model (as show by vertical orientation and color)
-- Its relationship to other objects
+- Its relationship to other entities
 - Its role in the integration of systems across level 3 and level 4 of the standard.
-
 
 {{< notice "note" >}}
 
