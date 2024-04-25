@@ -26,23 +26,27 @@ boilerplate:
     Additional headers to send in the request
 ---
 
-These pages describe the elements to make a Rhize {{< abbr "bpmn" >}} workflow, and their parameters to set conditions, use variables, and call services.
+This document describes the parameters available to each BPMN element in the Rhize UI.
+These parameters control how users set conditions, transform data, access variables, call services, and so on.
 
-Rhize BPMN elements are based on the Business Process Model and Notation [OMG Standard](https://www.omg.org/spec/BPMN/2.0/).
-While the visual grammar is functionally the same, we extend some elements for specific Rhize features, like service tasks that call the GraphQL API.
+Rhize BPMN workflows conform to the visual grammar described in the OMG standard for [Business Process Model and Notation](https://www.omg.org/spec/BPMN/2.0/).
+Each process is made of _events_ (circles), _activities_ (rectangles), _gateways_ (diamonds), and _flows_ (arrows).
+Some elements are extended for Rhize-specific features, such as service tasks that call the GraphQL API.
+Some elements from the standard are unused and thus do not appear in the UI.
 
-Each BPMN workflow is a _process_ with an ID.
-Each process is made up _events_ (circles), _activities_ (rectangles), _gateways_ (diamonds), and _flows_ (arrows).
+
 
 ## Common parameters
 
-Every BPMN element has the following parameters:
 
-| Parameter            | Description                                                                                                                          |
-|----------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| Name                 | Must be unique to the workflow. For guidance, follow the [BPMN naming conventions]({{< relref "/how-to/bpmn/naming-conventions" >}}) |
-| Documentation        | Freeform text describing what the node does                                                                                          |
-| Extension properties | Optional metadata to add to a node                                                                                                  |
+Every BPMN workflow and every element that the workflow contains have the following parameters:
+
+| Parameter            | Description                                                                                                               |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------|
+| ID                   | Mandatory unique ID. For guidance, follow the [BPMN naming conventions]({{< relref "/how-to/bpmn/naming-conventions" >}}). |
+| Name                 | Optional human readable name. If empty, takes ID value.                                                                              |
+| Documentation        | Optional freeform text for additional information                                                                                  |
+| Extension properties | Optional metadata to add to workflow or node                                                                              |
 
 
 ## Events
