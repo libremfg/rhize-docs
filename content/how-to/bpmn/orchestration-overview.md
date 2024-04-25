@@ -21,10 +21,36 @@ This overview provides some high-level discussion of how Rhize's BPMN engine wor
 For a guide to writing a workflow, read [Create Workflows]({{< relref "create-workflow" >}}).
 For a detailed list of all elements, refer to the [BPMN elements]({{< relref "bpmn-elements" >}}) reference.
 
+## Start conditions
+
+You have multiple ways to trigger a start condition.
+
+{{% reusable/bpmn-triggers %}}
+
+To learn more, read {{< relref "how-to/bpmn/trigger-workflow" >}}.
+
+## Data processing and API calls
+
+Besides exchanging messages, BPMN workflows can also transform and evaluate payloads and make HTTP requests.
+All the data in a process is stored in a {{< abbr "process variable context" >}} that each element can access.
+
+The general logical elements are as follows:
+- To evaluate conditions, use an [exclusive gateway]({{< relref "/how-to/bpmn/bpmn-elements#gateways" >}}).
+- To calculate values and transform data use a [JSONata task]({{< relref "/how-to/bpmn/bpmn-elements#jsonata-transform" >}}).
+- To read and write data to the database, use a [GraphQL task]({{< relref "/how-to/bpmn/bpmn-elements#service-tasks" >}}).
+- To make a call to a remote HTTP API, use a [REST service task]({{< relref "/how-to/bpmn/bpmn-elements#call-rest-API" >}}).
+
+[Examples of end-to-end workflows]({{< relref "/how-to/bpmn/create-workflow#examples" >}}).
+
 ## Message exchange
 
 A BPMN workflow can publish and subscribe to both the Rhize message broker and external data sources.
 This provides substantial flexibility to create start conditions and to pass information between services.
+
+- To exchange messages on the Rhize broker, use [message start events]({{< relref "/how-to/bpmn/bpmn-elements#message-start-events" >}}) and [message throw events]({{< relref "/how-to/bpmn/bpmn-elements#intermediate-message-throw" >}}).
+- To initiate workflows from an edge device, model a data source and [create a rule]({{< relref "turn-value-into-event" >}}).
+- To read or write from a data source during a BPMN task, use the data-source service tasks.
+
 
 ```mermaid
 flowchart TD
@@ -42,39 +68,4 @@ throw --> subscribe(Subscribe to relevant broker/topic)
 write_task --> subscribe
 ```
 
-For a more detailed discussion about what trigger to use, read the next section.
 
-## Triggers
-
-You also have multiple ways to {{< abbr "trigger" >}} a BPMN.
-The best choice of trigger depends on the context of the event and the system that initiates the workflow.
-
-- **Message triggers.** You can start workflows by publishing to your broker or to the Rhize broker.
-
-   To initiate a workflow from a value changed in your data sources,
-   [create a rule]({{< relref "/how-to/publish-subscribe/turn-value-into-event" >}}).
-   As rules evaluate properties from equipment, they commonly are triggers from data emitted by level-1 and level-2 systems, such as a SCADA.
-
-   To initiate a workflow by publishing to the Rhize broker, use a [message start event]({{< relref "bpmn-elements#message" >}}).
-   These messages often originate from level-3 and level-4 systems, such as an ERP.
-- **[Timer events]({{< relref "bpmn-elements#timer" >}}).** These work according to a schedule, either once or repeating.
-- **[API call]({{< relref "/how-to/gql/" >}})**. You can also start a BPMN workflow by sending a {{< abbr "mutation" >}} to the GraphQL API.
-  API triggers are commonly used in low-code workflows. For example, an operator may press a button to start a workflow and wait for its response.
-
-  To start BPMN workflows, Rhize has two primary API operations:
-
-     - `createAndRunBpmn` starts a workflow and does not wait for the response (asynchronous).
-     - `createAndRunBPMNSync` starts a workflow and waits for the process to complete or abort (synchronous).
-
-## Data processing and API calls
-
-Besides exchanging messages, BPMN workflows can also transform and evaluate payloads and make HTTP requests.
-All the data in a process is stored in a {{< abbr "process variable context" >}} that each element can access.
-
-The general logical elements are as follows:
-- To evaluate conditions, use an [exclusive gateway]({{< relref "/how-to/bpmn/bpmn-elements#gateways" >}})
-- To transform JSON expressions, use a [JSONata task]({{< relref "/how-to/bpmn/bpmn-elements#jsonata-transform" >}})
-- To read an write data to the database, use a [GraphQL task]({{< relref "/how-to/bpmn/bpmn-elements#service-tasks" >}}).
-- To make a call to a remote HTTP API, use a [REST service task]({{< relref "/how-to/bpmn/bpmn-elements#call-rest-API" >}}).
-
-[Examples of end-to-end workflows]({{< relref "/how-to/bpmn/create-workflow#examples" >}}).
