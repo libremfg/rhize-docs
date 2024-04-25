@@ -11,7 +11,7 @@ menu:
     parent: howto-bpmn
 boilerplate:
   jsonata_response: >-
-    Optional [JSONata](https://docs.jsonata.org/1.7.0/overview) expression to map to the [process variable context](#process-variable-context).
+    Optional [JSONata](https://docs.jsonata.org/1.7.0/overview) expression to map to the [process variable context](#process-variable-context)
   max_payload: >-
     Number. If the response length exceeds this number of characters, Rhize throws an error.
   connection_timeout: >-
