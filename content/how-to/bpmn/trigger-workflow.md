@@ -80,10 +80,10 @@ For example, this workflow returns `Workflow ran correctly` if the call variable
 {{< bigFigure
 src="/images/bpmn/screenshot-rhize-bpmn-error-handling-custom-response.png"
 alt="A BPMN workflow with customResponse in the output of the end node"
-<!-- vale on -->
 caption="Download this workflow from [BPMN templates](https://github.com/libremfg/bpmn-templates/)"
 width="80%"
 >}}
+<!-- vale on -->
 
 ### Additional properties for workflow calls {#variables-versions}
 
@@ -120,12 +120,12 @@ If incorrect, it sends an alert back to the broker.
 
 <!-- vale off -->
 {{% bigFigure 
-<!-- vale on -->
 alt="BPMN message start with conditional evaluation"
 src="/images/bpmn/rhize-bpmn-message-start-throw-conditional.png"
 width="65%"
 caption="Download this workflow as a [BPMN template](https://github.com/libremfg/bpmn-templates/tree/main/msg-start-and-throw)."
  %}}
+<!-- vale on -->
 
 Note that, for a workflow to run from a message start event, the workflow **must be enabled.**
 
