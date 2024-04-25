@@ -21,14 +21,14 @@ The best choice of trigger depends on the context of the event and the system th
 When a workflow has the default start event, trigger it through an API call.
 For example, an API trigger may originate from a custom frontend application or a developer's local machine.
 
-### Synchronous and asynchronou API triggers
+### Synchronous and asynchronous API triggers
 
 To start BPMN workflows, Rhize has two API operations:
 - `createAndRunBPMNSync` starts a workflow and waits for the process to complete or abort (synchronous).
 - `createAndRunBpmn` starts a workflow and does not wait for the response (asynchronous).
 
 The synchronous call offers slightly better debugging and does not execute further operations until it receives a response from the Rhize server.
-On the other hand, the Async operation frees up the call system to do more work, no matter whether the workflow runs correctly.
+On the other hand, the asynchronous operation frees up the call system to do more work, no matter whether the workflow runs correctly.
 
 The call syntax for the each operation is almost identical.
 For example, compare the syntax for these calls:
@@ -60,7 +60,7 @@ mutation AsyncCall{
 {{% /tabs %}}
 
 The responses for these calls have two differences:
-- For synchronous calls, the returned `JobState` should be a finished value (such as `COMPLETED` or `ABORTED`). For asynchronous calls, the status is likely in progress.  a a different value for synchronous calls.
+- For synchronous calls, the returned `JobState` should be a finished value (such as `COMPLETED` or `ABORTED`). For asynchronous calls, the status is likely in progress.  a different value for synchronous calls.
 - Only the synchronous call receives data in the `customResponse`. For details, refer to the next section.
 
 ### `CustomResponse`
@@ -76,9 +76,11 @@ However, you can use conditional branches and different end nodes to add error h
 
 For example, this workflow returns `Workflow ran correctly` if the call variables include the message `CORRECT` and an error message in all other cases.
 
+<!-- vale off -->
 {{< bigFigure
 src="/images/bpmn/screenshot-rhize-bpmn-error-handling-custom-response.png"
 alt="A BPMN workflow with customResponse in the output of the end node"
+<!-- vale on -->
 caption="Download this workflow from [BPMN templates](https://github.com/libremfg/bpmn-templates/)"
 width="80%"
 >}}
@@ -116,7 +118,9 @@ Whenever a message is published to the topic, it evaluates whether the quantity 
 If the quantity is correct, it uses the [mutation service task]({{< relref "/how-to/bpmn/bpmn-elements#graphql-mutation/" >}}) to add a material lot.
 If incorrect, it sends an alert back to the broker.
 
+<!-- vale off -->
 {{% bigFigure 
+<!-- vale on -->
 alt="BPMN message start with conditional evaluation"
 src="/images/bpmn/rhize-bpmn-message-start-throw-conditional.png"
 width="65%"
