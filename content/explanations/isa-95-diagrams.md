@@ -10,8 +10,7 @@ menu:
     parent: explanations
 ---
 
-The ISA-95 standard is long and thorough.
-These diagrams provide some simplified visual explanations to help explain the varied categories of flows and relationships in the standard.
+These diagrams provide some highly simplified visual explanations gleaned from parts of the thorough [ISA-95 standard](https://www.isa.org/store?query=isa95).
 To read about how the standard fits within the data architecture of Rhize, read our blog post [Rethinking perspectives on ISA-95](https://rhize.com/blog/reframing-perspective-on-isa95/).
 
 ## Information exchange between models and levels
@@ -39,9 +38,7 @@ width="85%"
 ## Overview of relations, levels, and stages
 
 This diagram shows the top-level relations of manufacturing entities in level-3 and level-4 systems across different stages of production. 
-These entities and their built-in inter-relations also are also some of the foundational objects for the Rhize data model (exposed through the Rhize [GraphQL Interface](/how-to/gql/)).
-
-Outside the main diagram are relationships for certain entities.
+These entities and their relationships also represent some foundational objects in the Rhize data model (exposed through the Rhize [GraphQL Interface](/how-to/gql/)).
 
 {{< bigFigure
 src="/images/s95/diagram-rhize-isa95-big-overview.svg"
