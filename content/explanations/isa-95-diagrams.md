@@ -18,9 +18,9 @@ To read about how the standard fits within the data architecture of Rhize, read 
 This diagram shows how information exchanges between resource models and systems.
 It is a highly simplified view of some flows described in parts 2 and 4 of the standard.
 Each entity in the diagram carries information in multiple dimensions, including:
-- The entity's position in the resource model (as show by vertical orientation and color)
+- The entity's position in the resource model (as shown by vertical orientation and color)
 - Its relationship to other entities
-- Its role in the integration of systems across level 3 and level 4 of the standard.
+- Its role in the integration between level-3 and level-4 systems.
 
 {{< notice "note" >}}
 
