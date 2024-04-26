@@ -27,7 +27,7 @@ To start BPMN workflows, Rhize has two API operations:
 - `createAndRunBPMNSync` starts a workflow and waits for the process to complete or abort (synchronous).
 - `createAndRunBpmn` starts a workflow and does not wait for the response (asynchronous).
 
-The synchronous call offers slightly better debugging and does not execute further operations until it receives a response from the Rhize server.
+The synchronous call does not execute further operations until it receives a response from the Rhize server.
 On the other hand, the asynchronous operation frees up the call system to do more work, no matter whether the workflow runs correctly.
 
 The call syntax for the each operation is almost identical.
@@ -60,7 +60,7 @@ mutation AsyncCall{
 {{% /tabs %}}
 
 The responses for these calls have two differences:
-- For synchronous calls, the returned `JobState` should be a finished value (such as `COMPLETED` or `ABORTED`). For asynchronous calls, the status is likely in progress.  a different value for synchronous calls.
+- For synchronous calls, the returned `JobState` should be a finished value (such as `COMPLETED` or `ABORTED`). Asynchronous calls likely return an in-progress status, such as `RUNNING`.
 - Only the synchronous call receives data in the `customResponse`. For details, refer to the next section.
 
 ### `CustomResponse`
@@ -71,7 +71,7 @@ You can set the `customResponse` in any [element]({{< relref "/how-to/bpmn/bpmn-
 It can use any data from the {{< abbr "process variable context" >}}, including variables added on the fly.
 Its format can use JSON or JSONata.
 
-Functionally, only the last value of the `CustomResponse` is returned to the client that sent the response.
+Functionally, only the last value of the `customResponse` is returned to the client that sent the response.
 However, you can use conditional branches and different end nodes to add error handling.
 
 For example, this workflow returns `Workflow ran correctly` if the call variables include the message `CORRECT` and an error message in all other cases.
@@ -111,7 +111,7 @@ To specify a version, use the `version` property. For example, this input specif
 
 The [message start event]({{< relref "/how-to/bpmn/bpmn-elements#message-start-event" >}}) subscribes to a topic on the Rhize broker.
 Whenever a message is published to this topic, the workflow is triggered.
-The Rhize broker can receive messages in MQTT, NATS, and OPC UA.
+The Rhize broker can receive messages published over MQTT, NATS, and OPC UA.
 
 For example, this workflow subscribes to the topic `material/stuff`.
 Whenever a message is published to the topic, it evaluates whether the quantity is in the correct threshold.
