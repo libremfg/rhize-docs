@@ -27,7 +27,7 @@ You have multiple ways to trigger a start condition.
 
 {{% reusable/bpmn-triggers %}}
 
-To learn more, read {{< relref "how-to/bpmn/trigger-workflow" >}}.
+To learn more, read [Trigger workflows]({{< relref "how-to/bpmn/trigger-workflows" >}}).
 
 ## Data processing and API calls
 

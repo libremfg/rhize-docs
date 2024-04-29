@@ -21,6 +21,8 @@ The best choice of trigger depends on the context of the event and the system th
 When a workflow has the default start event, trigger it through an API call.
 For example, an API trigger may originate from a custom frontend application or a developer's local machine.
 
+Each call must specify the workflow ID as an [argument in the request body]({{< relref "/how-to/gql/call-the-graphql-api/#request-body" >}}).
+
 ### Synchronous and asynchronous API triggers
 
 To start BPMN workflows, Rhize has two API operations:
