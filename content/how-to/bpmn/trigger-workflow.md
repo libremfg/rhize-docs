@@ -49,8 +49,8 @@ mutation sychronousCall{
 
 {{% tab "Async" %}}
 ```gql
-mutation AsyncCall{
-  createAndRunBPMNSync{
+mutation asyncCall{
+  createAndRunBpmn(id: "API_demo_custom_response") {
     id
     jobState
     customResponse
