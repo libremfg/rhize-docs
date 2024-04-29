@@ -69,7 +69,6 @@ The `customResponse` is a special variable to return data in the response to cli
 
 You can set the `customResponse` in any [element]({{< relref "/how-to/bpmn/bpmn-elements" >}}) that has an `Output` or `Input response` parameter.
 It can use any data from the {{< abbr "process variable context" >}}, including variables added on the fly.
-Its format can use JSON or JSONata.
 
 Functionally, only the last value of the `customResponse` is returned to the client that sent the response.
 However, you can use conditional branches and different end nodes to add error handling.
