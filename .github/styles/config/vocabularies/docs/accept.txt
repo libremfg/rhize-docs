@@ -20,6 +20,7 @@ NATS
 [Uu]psert
 andon
 bigFigure
+boolean
 autoscale
 config
 explorable
