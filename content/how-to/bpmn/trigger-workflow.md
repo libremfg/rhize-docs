@@ -30,7 +30,7 @@ To start BPMN workflows, Rhize has two API operations:
 Use the synchronous operation if you want to receive information about the result of the workflow in the call response.
 On the other hand, the asynchronous operation frees up the call system to do more work, no matter whether the workflow runs correctly.
 
-The call syntax for the each operation is almost identical.
+Both operations have  similar call syntax.
 For example, compare the syntax for these calls:
 
 {{% tabs %}}
