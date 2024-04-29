@@ -27,7 +27,7 @@ To start BPMN workflows, Rhize has two API operations:
 - `createAndRunBPMNSync` starts a workflow and waits for the process to complete or abort (synchronous).
 - `createAndRunBpmn` starts a workflow and does not wait for the response (asynchronous).
 
-The synchronous call does not execute further operations until it receives a response from the Rhize server.
+Use the synchronous operation if you want to receive information about the result of the workflow in the call response.
 On the other hand, the asynchronous operation frees up the call system to do more work, no matter whether the workflow runs correctly.
 
 The call syntax for the each operation is almost identical.
