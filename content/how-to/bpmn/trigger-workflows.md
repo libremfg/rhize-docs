@@ -66,7 +66,7 @@ The responses for these calls have two differences:
 - For synchronous calls, the returned `JobState` should be a finished value (such as `COMPLETED` or `ABORTED`). Asynchronous calls likely return an in-progress status, such as `RUNNING`.
 - Only the synchronous call receives data in the `customResponse`. For details, refer to the next section.
 
-### `CustomResponse`
+### `customResponse`
 
 The `customResponse` is a special variable to return data in the response to clients that run `createAndRunBPMNSync` operations.
 
