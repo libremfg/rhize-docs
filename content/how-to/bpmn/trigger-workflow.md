@@ -97,7 +97,7 @@ For example, a workflow would access the following string value at `$.input.mess
 }
 ```
 
-To specify a version, use the `version` property. For example, this input specifies that Rhize run version `3` of the `API_demoCallToRemoteAPI` workflow:
+To specify a version, use the `version` property. For example, this input instructs Rhize to run version `3` of the `API_demoCallToRemoteAPI` workflow:
 
 ```json
 {
@@ -106,6 +106,8 @@ To specify a version, use the `version` property. For example, this input specif
 }
 ```
 
+
+If the `version` property is empty, Rhize runs the active version of the workflow (if an active version exists). 
 ## Start from a message
 
 The [message start event]({{< relref "/how-to/bpmn/bpmn-elements#message-start-event" >}}) subscribes to a topic on the Rhize broker.
