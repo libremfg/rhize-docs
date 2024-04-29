@@ -39,6 +39,28 @@ menu:
 ```
 
 
+## Images
+
+Hugo evaluates links relative to the published site, which can create some confusion when linking images.
+
+To avoid worrying about relative positions, put all images in `/static/images/<SUB_DIRECTORY>`.
+
+Then Reference the image as if `static` did not exist.
+
+```
+src="/images/bpmn/screenshot-rhize-bpmn-error-handling-custom-response.png"
+```
+
+### Image naming conventions
+
+Images filepaths provide info for humans and crawlers, so adopt standardized conventions:
+
+Each image should have this structure
+
+`<TYPE>-rhize-<DESCRIPTION>.<EXTENSION>`
+
+Type should be one of `screenshot`, `graphic`, or `diagram`.
+
 ## Style
 
 The docs follow the [Google Developer's Style Guide](https://developers.google.com/), a widely used standard for developer docs. 
