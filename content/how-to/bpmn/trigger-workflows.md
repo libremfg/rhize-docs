@@ -2,7 +2,7 @@
 title: 'Trigger workflows'
 date: '2024-04-24T19:35:09+03:00'
 categories: ["how-to"]
-description: How to Trigger Workflow
+description: How to trigger a workflow in Rhize. Use the API, publish a message to the broker, listen to a data source, or set timers.
 weight: 150
 menu:
   main:
