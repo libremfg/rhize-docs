@@ -36,13 +36,14 @@ For example, compare the syntax for these calls:
 {{% tabs %}}
 {{% tab "Synchronous" %}}
 ```gql
-mutation SynchronousCall($createAndRunBpmnSyncId: String!, $version: String ) {
-  createAndRunBpmnSync(id: $createAndRunBpmnSyncId, version: $version) {
+mutation sychronousCall{
+  createAndRunBpmnSync(id: "API_demo_custom_response") {
     id
     jobState
     customResponse
   }
 }
+
 ```
 {{% /tab %}}
 
