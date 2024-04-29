@@ -13,7 +13,7 @@ menu:
 
 An equipment class rule triggers a BPMN workflow whenever a data source publishes a value that meets a specified threshold.
 
-Imagine a scenario when an oven must be preheated every time a new order number is published to NATS. A rule will listen to messages published to a specific topic and apply a boolean condition to them. If the condition evaluates to true, the rule will trigger a BPMN that will preheat the oven.
+Imagine a scenario when an oven must be preheated every time a new order number is published to NATS. A rule will listen to messages published to a specific topic and apply a Boolean condition to them. If the condition evaluates to true, the rule will trigger a BPMN that will preheat the oven.
 
 {{% notice note %}}
 
