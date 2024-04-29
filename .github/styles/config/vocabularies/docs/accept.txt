@@ -19,6 +19,7 @@ NATS
 [Pp]ostgres
 [Uu]psert
 andon
+bigFigure
 autoscale
 config
 explorable
