@@ -274,7 +274,7 @@ caption="A new equipment class and version created in the UI."
 
 #### Link a data source
 
-1. From the `Data Sources` tab, link the equipment version to the data source you created at the beginning of Section 1.
+1. From the **Data Sources** tab, link the equipment version to the data source you created at the beginning of Section 1.
 
 {{< bigFigure
 width="100%"
@@ -286,7 +286,7 @@ caption="An equipment linked to a data source in the UI."
 #### Set Up the bound property
 
 1. From the properties tab, find a property you want this equipment to inherit and click on the binding icon.
-2. If you chose the property `orderNumber`, add the topic `Oven/OrderNumber` you added in Section 2.
+2. If you chose the property `orderNumber`, add the topic `Oven/OrderNumber` you added previously.
 
 {{< bigFigure
 width="100%"
