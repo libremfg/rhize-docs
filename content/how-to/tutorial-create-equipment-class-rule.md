@@ -47,7 +47,7 @@ Then, create a rule and associate it with an actual equipment item.
 {{< bigFigure
 width="100%"
 alt="A new data source and version created in the UI."
-src="/images/equipment-class-rules/Creating_a_Data_Source_and_Version.png"
+src="/images/equipment-class-rules/screenshot-rhize-Creating_a_Data_Source_and_Version.png"
 caption="A new data source and version created in the UI."
 >}}
 
@@ -64,7 +64,7 @@ caption="A new data source and version created in the UI."
 {{< bigFigure
 width="100%"
 alt="A new data source topic created in the UI."
-src="/images/equipment-class-rules/Creating_a_Data_Source_Topic.png"
+src="/images/equipment-class-rules/screenshot-rhize-Creating_a_Data_Source_Topic.png"
 caption="A new data source topic created in the UI."
 >}}
 
@@ -78,7 +78,7 @@ caption="A new data source topic created in the UI."
 {{< bigFigure
 width="100%"
 alt="A new unit of measure created in the UI."
-src="/images/equipment-class-rules/Creating_a_Unit_of_Measure.png"
+src="/images/equipment-class-rules/screenshot-rhize-Creating_a_Unit_of_Measure.png"
 caption="A new unit of measure created in the UI."
 >}}
 
@@ -98,7 +98,7 @@ For this example, this simple 3-node BPMN is enough:
 {{< bigFigure
 width="100%"
 alt="A BPMN created in the UI."
-src="/images/equipment-class-rules/Creating_a_BPMN.png"
+src="/images/equipment-class-rules/screenshot-rhize-Creating_a_BPMN.png"
 caption="A BPMN created in the UI."
 >}}
 
@@ -113,7 +113,7 @@ The rule engine triggers this BPMN with a payload that includes the order number
 
 ### Create an equipment class with bound properties
 
-#### Equipment Class and Version
+#### Equipment class and version
 
 1. Navigate to **Master Data > Equipment Class**.
 2. Create a new equipment class from the sidebar. The label might be `Pizza Line`, for example.
@@ -122,11 +122,11 @@ The rule engine triggers this BPMN with a payload that includes the order number
 {{< bigFigure
 width="100%"
 alt="A new equipment class and version created in the UI."
-src="/images/equipment-class-rules/Creating_an_Equipment_Class_and_Version.png"
+src="/images/equipment-class-rules/screenshot-rhize-Creating_an_Equipment_Class_and_Version.png"
 caption="A new equipment class and version created in the UI."
 >}}
 
-#### Equipment Class Property
+#### Equipment class property
 
 1. From the properties tab, create a new property.
 2. For type, select `BOUND`.
@@ -136,7 +136,7 @@ caption="A new equipment class and version created in the UI."
 {{< bigFigure
 width="100%"
 alt="A new equipment class property created in the UI."
-src="/images/equipment-class-rules/Creating_an_Equipment_Class_Property.png"
+src="/images/equipment-class-rules/screenshot-rhize-Creating_an_Equipment_Class_Property.png"
 caption="A new equipment class property created in the UI."
 >}}
 
@@ -245,7 +245,7 @@ The entire information that becomes available to the rule engine looks like this
 {{< bigFigure
 width="100%"
 alt="Creating an equipment class rule in the UI."
-src="/images/equipment-class-rules/Creating_a_Rule.png"
+src="/images/equipment-class-rules/screenshot-rhize-Creating_a_Rule.png"
 caption="Creating an equipment class rule in the UI."
 >}}
 
@@ -268,7 +268,7 @@ The final steps to setting up a rule are to:
 {{< bigFigure
 width="100%"
 alt="A new equipment class and version created in the UI."
-src="/images/equipment-class-rules/Creating_an_Equipment_and_Version.png"
+src="/images/equipment-class-rules/screenshot-rhize-Creating_an_Equipment_and_Version.png"
 caption="A new equipment class and version created in the UI."
 >}}
 
@@ -279,11 +279,11 @@ caption="A new equipment class and version created in the UI."
 {{< bigFigure
 width="100%"
 alt="An equipment linked to a data source in the UI."
-src="/images/equipment-class-rules/Link_Equipment_to_Data_Source.png"
+src="/images/equipment-class-rules/screenshot-rhize-Link_Equipment_to_Data_Source.png"
 caption="An equipment linked to a data source in the UI."
 >}}
 
-#### Set Up the bound property
+#### Set up the bound property
 
 1. From the properties tab, find a property you want this equipment to inherit and click on the binding icon.
 2. If you chose the property `orderNumber`, add the topic `Oven/OrderNumber` you added previously.
@@ -291,7 +291,7 @@ caption="An equipment linked to a data source in the UI."
 {{< bigFigure
 width="100%"
 alt="An equipment property bound to a data source topic in the UI."
-src="/images/equipment-class-rules/Binding_an_Equipment_Property_to_a_Topic.png"
+src="/images/equipment-class-rules/screenshot-rhize-Binding_an_Equipment_Property_to_a_Topic.png"
 caption="An equipment property bound to a data source topic in the UI."
 >}}
 
@@ -306,7 +306,7 @@ The microservice Libre Agent (`libre-agent`) should immediately publish a messag
 {{< bigFigure
 width="65%"
 alt="The Libre Agent has connected to the data source."
-src="/images/equipment-class-rules/Libre_Agent_has_Connected_to_the_Data_Source.png"
+src="/images/equipment-class-rules/screenshot-rhize-Libre_Agent_has_Connected_to_the_Data_Source.png"
 caption="The Libre Agent has connected to the data source."
 >}}
 
@@ -315,7 +315,7 @@ caption="The Libre Agent has connected to the data source."
 {{< bigFigure
 width="65%"
 alt="A new order number was published to the data source."
-src="/images/equipment-class-rules/Publish_Order_Number_to_NATS.png"
+src="/images/equipment-class-rules/screenshot-rhize-Publish_Order_Number_to_NATS.png"
 caption="A new order number was published to the data source."
 >}}
 
@@ -328,7 +328,7 @@ In addition, the published value should show in the column `Expression` of the e
 {{< bigFigure
 width="100%"
 alt="The bound property assumes the last value published to the data source."
-src="/images/equipment-class-rules/New_orderNumber_in_the_Admin_UI.png"
+src="/images/equipment-class-rules/screenshot-rhize-New_orderNumber_in_the_Admin_UI.png"
 caption="The bound property assumes the last value published to the data source."
 >}}
 
@@ -341,7 +341,7 @@ If this is the very first message published to the topic, the rule will not be t
 {{< bigFigure
 width="65%"
 alt="The rule engine has published a message to indicate that the equipment class rule has indeed been triggered."
-src="/images/equipment-class-rules/Rule_Triggered_in_broker.png"
+src="/images/equipment-class-rules/screenshot-rhize-Rule_Triggered_in_broker.png"
 caption="The rule engine has published a message to indicate that the equipment class rule has indeed been triggered."
 >}}
 
@@ -350,6 +350,6 @@ To confirm the intended BPMN was executed, navigate to Grafana (Tempo) and look 
 {{< bigFigure
 width="100%"
 alt="Grafana shows a recent trace with the id of the target BPMN."
-src="/images/equipment-class-rules/Executed_BPMNs_in_Grafana.png"
+src="/images/equipment-class-rules/screenshot-rhize-Executed_BPMNs_in_Grafana.png"
 caption="Grafana shows a recent trace with the id of the target BPMN."
 >}}
