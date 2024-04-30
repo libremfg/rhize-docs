@@ -13,17 +13,19 @@ menu:
 
 An equipment class rule triggers a BPMN workflow whenever a data source publishes a value that meets a specified threshold.
 
-Imagine a scenario when an oven must be preheated every time a new order number is published to NATS. A rule will listen to messages published to a specific topic and apply a boolean condition to them. If the condition evaluates to true, the rule will trigger a BPMN that will preheat the oven.
+Imagine a scenario when an oven must be preheated every time a new order number is published to NATS.
+You could automate this workflow with a rule that listens to messages published and evaluates a condition.
+If the condition evaluates to `true`, the rule triggers a {{< abbr "BPMN" >}} workflow to preheat the oven.
 
 {{% notice note %}}
 
-This article assumes the data source protocol is MQTT.
+This tutorial assumes a data source that exchanges messages over the MQTT protocol.
 
 {{% /notice %}}
 
-## Section 1: Prerequisites
+## Set up: configure equipment and workflows
 
-Before setting a rule, configure the following via the admin UI:
+Before setting a rule, configure the following in the Rhize UI:
 
 - Data source
 - Data source topic
@@ -31,15 +33,15 @@ Before setting a rule, configure the following via the admin UI:
 - BPMN
 - Equipment class with bound properties
 
-Then, you’ll be able to create a rule and associate it with an actual equipment.
+Then, create a rule and associate it with an actual equipment item.
 
-### Creating a Data Source
+### Create a data source
 
-1. Navigate to Main Menu > Master Data > Data Sources.
-2. Create a new data source using the sidebar. The label (id) must be identical to the one specified in the configuration file for the libre-agent microservice.
-3. Add a draft data source version from the `General` tab.
-4. Select a data source protocol.
-5. Optionally, enter a connection string, such as `mqtt://nats:1883`, that is identical to the one specified in the configuration file for the libre-agent microservice.
+1. From the main menu, navigate to **Master Data > Data Sources**.
+2. Create a new data source. The label (ID) must match the one specified in the configuration file for the libre-agent microservice.
+3. From the **General** tab, add a draft data source version.
+4. Select `MQTT` as the data-source protocol.
+5. Optionally, enter a connection string, such as `mqtt://nats:1883`, that matches the one specified in the configuration file for the `libre-agent` microservice.
 6. Save the data source version to create it.
 
 {{< bigFigure
@@ -49,15 +51,15 @@ src="/images/equipment-class-rules/Creating_a_Data_Source_and_Version.png"
 caption="A new data source and version created in the UI."
 >}}
 
-### Creating a Data Source Topic
+### Create a data source topic
 
-1. Navigate to the `Topics` tab.
-2. Add a new property (i.e., topic)
-3. Select `STRING` for the property’s data type (assuming an order number will be a string and look like `Order1` for example).
+1. Navigate to the **Topics** tab.
+2. Add a new property (that is, a topic)
+3. Select `STRING` for the property data type (this assumes an order number is a string such as `Order1`).
 4. Select your preferred deduplication key. The default option, `Message Value`, is most appropriate for this scenario.
-5. For label, enter the exact topic name as it appears in the data source. You can use a slash to refer to a nested topic. For this example, all new order numbers will be published to `Oven/OrderNumber`.
-6. Confirm by clicking on the green tick icon.
-7. Navigate to the `General` tab and change the version state to Active
+5. For label, enter the exact topic name as it appears in the data source. Use a slash to access nested topics. For this example, all new order numbers are published to `Oven/OrderNumber`.
+6. Confirm by clicking the green tick icon.
+7. Navigate to the **General** tab and change the version state to active.
 
 {{< bigFigure
 width="100%"
@@ -66,9 +68,9 @@ src="/images/equipment-class-rules/Creating_a_Data_Source_Topic.png"
 caption="A new data source topic created in the UI."
 >}}
 
-### Creating a Unit of Measure
+### Create a unit of measure
 
-1. Navigate to Main Menu > Master Data > Units of Measure.
+1. From the Main Menu, navigate to **Master Data > Units of Measure**.
 2. Add a new unit of measure.
 3. Enter `Order Number` for the unit name.
 4. Select `STRING` for the data type.
@@ -80,14 +82,16 @@ src="/images/equipment-class-rules/Creating_a_Unit_of_Measure.png"
 caption="A new unit of measure created in the UI."
 >}}
 
-### Creating a BPMN
+### Creating a BPMN workflow
 
-A rule cannot be set up without a BPMN. Ensure you have one ready before setting up a rule in the next section. For this example, this simple 3-node BPMN will be enough:
+A rule must trigger a BPMN workflow.
+Before setting up a rule, create its workflow.
+For this example, this simple 3-node BPMN is enough:
 
 [rules_example_bpmn](../../static/BPMNs/rules_example_bpmn.bpmn)
 
-1. Navigate to Main Menu > Workflows > Process List.
-2. Import the BPMN
+1. Navigate to **Workflows > Process List**.
+2. Import the BPMN.
 3. Save it.
 4. Set the version as active.
 
@@ -98,7 +102,8 @@ src="/images/equipment-class-rules/Creating_a_BPMN.png"
 caption="A BPMN created in the UI."
 >}}
 
-The BPMN has a `Libre Jsonata Transform` task that contains an expression `"Preheating oven for order number " & $.orderNumber”` . This means the rule engine must trigger this BPMN with a payload that includes the order number value like so:
+The BPMN has a `Libre Jsonata Transform` task that contains an expression `"Preheating oven for order number " & $.orderNumber"` .
+The rule engine triggers this BPMN with a payload that includes the order number value, as follows:
 
 ```json
 {
@@ -106,12 +111,12 @@ The BPMN has a `Libre Jsonata Transform` task that contains an expression `"Preh
 }
 ```
 
-### Creating an Equipment Class with Bound Properties
+### Create an equipment class with bound properties
 
 #### Equipment Class and Version
 
-1. Navigate to Main Menu > Master Data > Equipment Class.
-2. Create a new equipment class via the sidebar. The label can be `Pizza Line` for example.
+1. Navigate to **Master Data > Equipment Class**.
+2. Create a new equipment class from the sidebar. The label might be `Pizza Line`, for example.
 3. From the `General` tab, create a new Draft version.
 
 {{< bigFigure
@@ -124,9 +129,9 @@ caption="A new equipment class and version created in the UI."
 #### Equipment Class Property
 
 1. From the properties tab, create a new property.
-2. Select `BOUND` for type.
-3. Enter `orderNumber` for name.
-4. Select the unit of measure created earlier (`Order Number`) for UoM.
+2. For type, select `BOUND`.
+3. For name, enter `orderNumber`.
+4. For UoM, select the unit of measure created earlier (`Order Number`).
 
 {{< bigFigure
 width="100%"
@@ -135,9 +140,9 @@ src="/images/equipment-class-rules/Creating_an_Equipment_Class_Property.png"
 caption="A new equipment class property created in the UI."
 >}}
 
-## Section 2: Creating a Rule
+## Create a rule
 
-### Adding a Rule to an Existing Equipment Class
+### Add a rule to an existing equipment class
 
 1. From the Rules tab of an equipment class version, create a new rule.
 2. Enter `Run BPMN on Order Number` for the name and confirm.
@@ -147,11 +152,14 @@ caption="A new equipment class property created in the UI."
 
 {{% notice note %}}
 
-The rule will run the workflow above only if the expression evaluates to true. It’s common to compare the new value with the previous.
+The rule runs the preceding workflow only if the expression evaluates to `true`.
+It’s common to compare the new value with the previous.
 
 {{% /notice %}}
 
-In this case, we can compare the new order number to the previous by adding `orderNumber.current.value != orderNumber.previous.value`. Note that the root of the object path must match the id of the equipment class property we set up earlier. If the property was called Order Number, you need to access it like this instead `"Order Number".current.value != "Order Number".previous.value`.
+In this case, we can compare the new order number to the previous by adding `orderNumber.current.value != orderNumber.previous.value`.
+Note that the root of the object path must match the ID of the equipment class property we set up earlier.
+If the property were called `Order Number`, you would access it like this instead `"Order Number".current.value != "Order Number".previous.value`.
 
 The entire information that becomes available to the rule engine looks like this:
 
@@ -228,7 +236,7 @@ The entire information that becomes available to the rule engine looks like this
 }
 ```
 
-6. Optionally, pass information to the BPMN by adding a payload message. The message will be an object with multiple keys.
+6. Optionally, pass information to the BPMN by adding a payload message. The message is an object with multiple keys.
 7. Enter `orderNumber` for the field name.
 8. Enter `orderNumber.current.value` for the JSON expression.
 9. Create the rule.
@@ -241,7 +249,7 @@ src="/images/equipment-class-rules/Creating_a_Rule.png"
 caption="Creating an equipment class rule in the UI."
 >}}
 
-### Associating an Equipment with a Bound Property
+### Associate an equipment with a bound property
 
 The final steps to setting up a rule are to:
 
@@ -249,7 +257,7 @@ The final steps to setting up a rule are to:
 2. Link it to a data source.
 3. Set up bound properties.
 
-#### Create an Equipment and Version
+#### Create an equipment and version
 
 1. Navigate to Navigate to Main Menu > Master Data > Equipment.
 2. Select a piece of equipment. If none, create one called `Line 1`.
@@ -264,7 +272,7 @@ src="/images/equipment-class-rules/Creating_an_Equipment_and_Version.png"
 caption="A new equipment class and version created in the UI."
 >}}
 
-#### Link a Data Source
+#### Link a data source
 
 1. From the `Data Sources` tab, link the equipment version to the data source you created at the beginning of Section 1.
 
@@ -275,7 +283,7 @@ src="/images/equipment-class-rules/Link_Equipment_to_Data_Source.png"
 caption="An equipment linked to a data source in the UI."
 >}}
 
-#### Set Up the Bound Property
+#### Set Up the bound property
 
 1. From the properties tab, find a property you want this equipment to inherit and click on the binding icon.
 2. If you chose the property `orderNumber`, add the topic `Oven/OrderNumber` you added in Section 2.
@@ -287,7 +295,7 @@ src="/images/equipment-class-rules/Binding_an_Equipment_Property_to_a_Topic.png"
 caption="An equipment property bound to a data source topic in the UI."
 >}}
 
-### Testing the Binding and the Rule
+### Test the binding and the rule
 
 To test the value of the property `orderNumber` of the equipment `Line 1` has been bound to the topic Oven/OrderNumber, you need to:
 
