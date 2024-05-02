@@ -59,6 +59,7 @@ All objects in the database have relationships to other objects.
 {{< notice "note" >}}
 Metadata fields start with an underscore (`_`).
 For example, `_createdOn` reports the time when the object was created.
+{{< /notice >}}
 
 ## Scalar filters
 
