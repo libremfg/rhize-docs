@@ -82,7 +82,7 @@ For example, this workflow returns `Workflow ran correctly` if the call variable
 {{< bigFigure
 src="/images/bpmn/screenshot-rhize-bpmn-error-handling-custom-response.png"
 alt="A BPMN workflow with customResponse in the output of the end node"
-caption="Download this workflow from [BPMN templates](https://github.com/libremfg/bpmn-templates/)"
+caption="Download this workflow from [BPMN templates](https://github.com/libremfg/bpmn-templates/tree/main/custom-response-error-events)"
 width="80%"
 >}}
 <!-- vale on -->
