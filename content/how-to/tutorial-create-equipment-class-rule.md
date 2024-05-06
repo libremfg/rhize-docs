@@ -117,7 +117,7 @@ The rule engine triggers this BPMN with a payload that includes the order number
 
 1. Navigate to **Master Data > Equipment Class**.
 2. Create a new equipment class from the sidebar. The label might be `Pizza Line`, for example.
-3. From the `General` tab, create a new Draft version.
+3. From the **General** tab, create a new Draft version.
 
 {{< bigFigure
 width="100%"
@@ -240,7 +240,7 @@ The entire information that becomes available to the rule engine looks like this
 7. Enter `orderNumber` for the field name.
 8. Enter `orderNumber.current.value` for the JSON expression.
 9. Create the rule.
-10. From the `General` tab, change the equipment class version state to active.
+10. From the **General** tab, change the equipment class version state to active.
 
 {{< bigFigure
 width="100%"
@@ -261,7 +261,7 @@ The final steps to setting up a rule are to:
 
 1. Navigate to Navigate to Main Menu > Master Data > Equipment.
 2. Select a piece of equipment. If none, create one called `Line 1`.
-3. From the `General` tab, add a draft version.
+3. From the **General** tab, add a draft version.
 4. Link the version to the equipment class you created earlier (`Pizza Line`).
 5. Save the version to create it.
 
