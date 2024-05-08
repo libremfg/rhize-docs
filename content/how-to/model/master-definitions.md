@@ -297,7 +297,7 @@ Along with the event itself, it may have associated resources, such as material 
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Category                 | A string that can be used to group the event                                                                                                                                                                                                                                                               |
 | Source                   |    The activity, function, task or phase that generated the event.       |
-| Event type               | One of: <ol type="a"><li>`Alert`, an potentially significant event, such as an workflow trigger, that does not require notification</li><li> `Alarm`, an event that requires notification</li> <li>`Event`, any other event that is not at the level of alarm or alert</li></ol> |
+| Event type               | One of: <ol type="a"><li>`Alert`, an potentially significant event, such as a workflow trigger, that does not require notification</li><li> `Alarm`, an event that requires notification</li> <li>`Event`, any other event that is not at the level of alarm or alert</li></ol> |
 | Operations event classes | One or more [operations event classes](#operations-event-class) that a version definition inherits properties from.                                                                                                                                  |
 
 ## Work models
