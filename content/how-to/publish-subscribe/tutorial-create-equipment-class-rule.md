@@ -352,7 +352,7 @@ If the message has been received,
 a new topic, `Oven`, appears with its subtopic `OrderNumber`.
 
 If there is an equipment property bound to this topic,
-a topic called `MQTT/DS-0806/ValueChanged` also appears.
+a topic called `MQTT/<DATA_SOURCE_NAME>/ValueChanged` also appears.
 In addition, the published value should show in the column `Expression` of the equipment property `orderNumber`.
 
 {{< bigFigure
