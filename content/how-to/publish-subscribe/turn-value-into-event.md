@@ -88,5 +88,6 @@ These outputs might be writes to a database, or messages sent to a broker.
 ## Examples
 
 - :movie_camera: [Trigger BPMN]( https://www.youtube.com/watch?v=y5lr9JRmxDA). This video provides an example of creating a rule based on values for an OPC UA server in a baking process.
+- [Tutorial: trigger a workflow from a rule]({{ relref "tutorial-create-equipment-class-rule" }}). This tutorial provides a step-by-step, reproducible guide. 
 
 
