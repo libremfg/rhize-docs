@@ -121,10 +121,10 @@ The parameters for a message event are as follows:
 Timer start events are triggered either at a specific date or recurring intervals.
 The parameters for a timer start event are as follows:
 
-| Parameter | Description                                                                                                                                                          |
-|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Timer     | One of `Cycle`, to begin at recurring intervals, and `Date`, to happen at a certain time. Enter values in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. |
-| Outputs   | Optional variables to add to the {{< abbr "process variable context" >}}. JSON or JSONata.                                               |
+| Parameter | Description                                                                                                                                                                                                                                                                                     |
+|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Timer     | One of <ul><li>`Cycle`, to begin at recurring intervals. For example,`R5/2024-05-09T08:12:55/PT10S` starts on `2024-05-09` and executes every 10 seconds for 5 repetitions. If `<START_DATE>` is not set, Rhize uses `2023-01-01T00:00:00Z`.</li> <li> `Date`, to happen at a certain time, for example, `2024-05-09T08:12:55`</li></ul> Enter values in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. |
+| Outputs   | Optional variables to add to the {{< abbr "process variable context" >}}. JSON or JSONata.                                                                                                                                                                                                      |
 
 ### Intermediate message events
 
