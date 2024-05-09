@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: create rule to trigger workflow"
+title: "Tutorial: Trigger a workflow from a rule"
 date: "2024-04-29T11:39:29+03:00"
 draft: false
 categories: ["tutorial"]
