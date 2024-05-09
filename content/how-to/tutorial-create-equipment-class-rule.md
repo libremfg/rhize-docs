@@ -13,7 +13,7 @@ menu:
 
 An equipment class rule triggers a BPMN workflow whenever a data source publishes a value that meets a specified threshold.
 
-Imagine a scenario when an oven must be preheated every time a new order number is published to NATS.
+Imagine a scenario when an oven must be preheated every time a new order number is published to an MQTT edge device.
 You could automate this workflow with a rule that listens to messages published and evaluates a condition.
 If the condition evaluates to `true`, the rule triggers a {{< abbr "BPMN" >}} workflow to preheat the oven.
 
@@ -23,25 +23,30 @@ This tutorial assumes a data source that exchanges messages over the MQTT protoc
 
 {{% /notice %}}
 
+## Prerequisites
+
+Before you start, ensure you follow these steps:
+- Access your Rhize customer environment
+- Configure the Agent to listen for your data-source ID
+
 ## Set up: configure equipment and workflows
 
-Before setting a rule, configure the following in the Rhize UI:
-
+The setup involves modeling the objects associated with the rule.
 - Data source
 - Data source topic
 - Unit of measure
 - BPMN
 - Equipment class with bound properties
 
-Then, create a rule and associate it with an actual equipment item.
+Once you have these, you can create a rule and associate it with an actual equipment item.
 
 ### Create a data source
 
 1. From the main menu, navigate to **Master Data > Data Sources**.
-2. Create a new data source. The label (ID) must match the one specified in the configuration file for the libre-agent microservice.
+2. Create a new data source. The label (ID) must match the one specified in the configuration file for the `libre-agent` microservice.
 3. From the **General** tab, add a draft data source version.
 4. Select `MQTT` as the data-source protocol.
-5. Optionally, enter a connection string, such as `mqtt://nats:1883`, that matches the one specified in the configuration file for the `libre-agent` microservice.
+5. Optionally, enter a connection string, such as `mqtt://<REMOTE_HOST>:1883`, that matches the one specified in the configuration file for the `libre-agent` microservice.
 6. Save the data source version to create it.
 
 {{< bigFigure
@@ -117,7 +122,7 @@ The rule engine triggers this BPMN with a payload that includes the order number
 
 1. Navigate to **Master Data > Equipment Class**.
 2. Create a new equipment class from the sidebar. The label might be `Pizza Line`, for example.
-3. From the **General** tab, create a new Draft version.
+3. From the **General** tab, **Create** a new Draft version.
 
 {{< bigFigure
 width="100%"
@@ -129,9 +134,10 @@ caption="A new equipment class and version created in the UI."
 #### Equipment class property
 
 1. From the properties tab, create a new property.
-2. For type, select `BOUND`.
-3. For name, enter `orderNumber`.
-4. For UoM, select the unit of measure created earlier (`Order Number`).
+1. For type, select `BOUND`.
+1. For name, enter `orderNumber`.
+1. For UoM, select the unit of measure created earlier (`Order Number`).
+1. Confirm by clicking the green tick icon.
 
 {{< bigFigure
 width="100%"
@@ -145,10 +151,10 @@ caption="A new equipment class property created in the UI."
 ### Add a rule to an existing equipment class
 
 1. From the Rules tab of an equipment class version, create a new rule.
-2. Enter `Run BPMN on Order Number` for the name and confirm.
-3. Select `rules_example_bpmn` for the workflow specification.
-4. Add `orderNumber` as a trigger property.
-5. Add a trigger expression that evaluates to true or false.
+1. Enter `Run BPMN on Order Number` for the name and confirm.
+1. Select `rules_example_bpmn` for the workflow specification.
+1. Add `orderNumber` as a trigger property.
+1. Add a trigger expression that evaluates to true or false.
 
 {{% notice note %}}
 
@@ -162,6 +168,22 @@ Note that the root of the object path must match the ID of the equipment class p
 If the property were called `Order Number`, you would access it like this instead `"Order Number".current.value != "Order Number".previous.value`.
 
 The entire information that becomes available to the rule engine looks like this:
+
+{{% tabs %}}
+{{% tab "Expression" %}}
+```javascript
+`OrderNumber.current.value != OrderNumber.previous.value`
+```
+{{% /tab %}}
+{{% tab "output" %}}
+```
+True
+```
+
+The expression evaluates to `false`, because the `current` and `previous` values differ.
+
+{{% /tab  %}}
+{{% tab "JSON" %}}
 
 ```javascript
 {
@@ -235,11 +257,15 @@ The entire information that becomes available to the rule engine looks like this
   }
 }
 ```
+{{% /tab %}}
+
+{{% /tabs %}}
 
 6. Optionally, pass information to the BPMN by adding a payload message. The message is an object with multiple keys.
 7. Enter `orderNumber` for the field name.
 8. Enter `orderNumber.current.value` for the JSON expression.
-9. Create the rule.
+1. Confirm by clicking the green tick icon.
+9. **Create**.
 10. From the **General** tab, change the equipment class version state to active.
 
 {{< bigFigure
@@ -259,9 +285,9 @@ The final steps to setting up a rule are to:
 
 #### Create an equipment and version
 
-1. Navigate to Navigate to Main Menu > Master Data > Equipment.
+1. From the Main Menu, navigate to **Master Data > Equipment**.
 2. Select a piece of equipment. If none, create one called `Line 1`.
-3. From the **General** tab, add a draft version.
+3. From the **General** tab, **Create**.
 4. Link the version to the equipment class you created earlier (`Pizza Line`).
 5. Save the version to create it.
 
@@ -274,7 +300,7 @@ caption="A new equipment class and version created in the UI."
 
 #### Link a data source
 
-1. From the **Data Sources** tab, link the equipment version to the data source you created at the beginning of Section 1.
+1. From the **Data Sources** tab, link the equipment version to the data source you created in the previous section.
 
 {{< bigFigure
 width="100%"
@@ -285,7 +311,7 @@ caption="An equipment linked to a data source in the UI."
 
 #### Set up the bound property
 
-1. From the properties tab, find a property you want this equipment to inherit and click on the binding icon.
+1. From the **Properties** tab, find a property that you want this equipment to inherit and select the binding icon.
 2. If you chose the property `orderNumber`, add the topic `Oven/OrderNumber` you added previously.
 
 {{< bigFigure
@@ -295,11 +321,12 @@ src="/images/equipment-class-rules/screenshot-rhize-Binding_an_Equipment_Propert
 caption="An equipment property bound to a data source topic in the UI."
 >}}
 
-### Test the binding and the rule
+## Test the binding and the rule
 
-To test the value of the property `orderNumber` of the equipment `Line 1` has been bound to the topic Oven/OrderNumber, you need to:
+Send a message to test that the value of the property `orderNumber` of the equipment `Line 1` is bound to the topic `Oven/OrderNumber`.
+For example, using MQTT Explorer:
 
-1. Open `MQTT Explorer` and connect to the broker.
+1. Open MQTT Explorer and connect to the broker.
 
 The microservice Libre Agent (`libre-agent`) should immediately publish a message to indicate the data source topic `Oven/OrderNumber` has been set up successfully.
 
@@ -319,10 +346,12 @@ src="/images/equipment-class-rules/screenshot-rhize-Publish_Order_Number_to_NATS
 caption="A new order number was published to the data source."
 >}}
 
-A new topic called `Oven` containing the subtopic `OrderNumber` will appear if the message has been received.
 
-A topic called `MQTT/nats/ValueChanged` will also appear if there is an equipment property bound to this topic.
+If the message has been received,
+a new topic, `Oven`, appears with its subtopic `OrderNumber`.
 
+If there is an equipment property bound to this topic,
+a topic called `MQTT/ValueChanged` also appear
 In addition, the published value should show in the column `Expression` of the equipment property `orderNumber`.
 
 {{< bigFigure
@@ -334,7 +363,7 @@ caption="The bound property assumes the last value published to the data source.
 
 {{% notice note %}}
 
-If this is the very first message published to the topic, the rule will not be triggered because there is no previous value to compare to the latest one. However, if you publish another order number, a new topic called `Core` will show up containing a subtopic called `RuleTriggered` to indicate that the rule has indeed been triggered.
+If this is the first message published to the topic, the rule will not be triggered because Rhize has no previous value to compare it the message value to. However, if you publish another order number, a new topic called `Core` will show up containing a subtopic called `RuleTriggered` to indicate that the rule has indeed been triggered.
 
 {{% /notice %}}
 
@@ -345,7 +374,7 @@ src="/images/equipment-class-rules/screenshot-rhize-Rule_Triggered_in_broker.png
 caption="The rule engine has published a message to indicate that the equipment class rule has indeed been triggered."
 >}}
 
-To confirm the intended BPMN was executed, navigate to Grafana (Tempo) and look for a trace containing the expected BPMN id.
+To confirm the intended BPMN was executed, navigate to Grafana (Tempo) and look for a trace containing the expected BPMN ID.
 
 {{< bigFigure
 width="100%"
