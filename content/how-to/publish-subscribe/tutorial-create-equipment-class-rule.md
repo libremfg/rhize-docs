@@ -7,7 +7,7 @@ description: Follow this tutorial to create a rule to run a workflow every time 
 weight:
 menu:
   main:
-    parent: how-to
+    parent: howto-pubsub
     identifier:
 ---
 
@@ -59,7 +59,7 @@ caption="A new data source and version created in the UI."
 ### Create a data source topic
 
 1. Navigate to the **Topics** tab.
-2. Add a new property (that is, a topic)
+2. Add a new property (that is, a topic).
 3. Select `STRING` for the property data type (this assumes an order number is a string such as `Order1`).
 4. Select your preferred deduplication key. The default option, `Message Value`, is most appropriate for this scenario.
 5. For label, enter the exact topic name as it appears in the data source. Use a slash to access nested topics. For this example, all new order numbers are published to `Oven/OrderNumber`.
@@ -91,9 +91,8 @@ caption="A new unit of measure created in the UI."
 
 A rule must trigger a BPMN workflow.
 Before setting up a rule, create its workflow.
-For this example, this simple 3-node BPMN is enough:
+For this example, this 3-node BPMN is enough:
 
-[rules_example_bpmn](../../static/BPMNs/rules_example_bpmn.bpmn)
 
 1. Navigate to **Workflows > Process List**.
 2. Import the BPMN.
@@ -163,27 +162,13 @@ It’s common to compare the new value with the previous.
 
 {{% /notice %}}
 
-In this case, we can compare the new order number to the previous by adding `orderNumber.current.value != orderNumber.previous.value`.
-Note that the root of the object path must match the ID of the equipment class property we set up earlier.
-If the property were called `Order Number`, you would access it like this instead `"Order Number".current.value != "Order Number".previous.value`.
+In this case, we can compare the new order number to the previous by adding `OrderNumber.current.value != OrderNumber.previous.value`.
+Note that the root of the object path must match the ID of the equipment class property we set up earlier and all evaluations are case-sensitive.
 
 The entire information that becomes available to the rule engine looks like this:
 
 {{% tabs %}}
-{{% tab "Expression" %}}
-```javascript
-`OrderNumber.current.value != OrderNumber.previous.value`
-```
-{{% /tab %}}
-{{% tab "output" %}}
-```
-True
-```
-
-The expression evaluates to `false`, because the `current` and `previous` values differ.
-
-{{% /tab  %}}
-{{% tab "JSON" %}}
+{{% tab "JSON input" %}}
 
 ```javascript
 {
@@ -258,15 +243,28 @@ The expression evaluates to `false`, because the `current` and `previous` values
 }
 ```
 {{% /tab %}}
+{{% tab "Expression" %}}
+```javascript
+`OrderNumber.current.value != OrderNumber.previous.value`
+```
+{{% /tab %}}
 
+{{% tab "output" %}}
+```
+True
+```
+
+The expression evaluates to `false`, because the `current` and `previous` values differ.
+
+{{% /tab  %}}
 {{% /tabs %}}
 
-6. Optionally, pass information to the BPMN by adding a payload message. The message is an object with multiple keys.
-7. Enter `orderNumber` for the field name.
-8. Enter `orderNumber.current.value` for the JSON expression.
+Optionally, pass information to the BPMN by adding a payload message. The message is an object with multiple keys.
+1. Enter `orderNumber` for the field name.
+1. Enter `orderNumber.current.value` for the JSON expression.
 1. Confirm by clicking the green tick icon.
-9. **Create**.
-10. From the **General** tab, change the equipment class version state to active.
+1. **Create**.
+1. From the **General** tab, change the equipment class version state to active.
 
 {{< bigFigure
 width="100%"
@@ -324,6 +322,9 @@ caption="An equipment property bound to a data source topic in the UI."
 ## Test the binding and the rule
 
 Send a message to test that the value of the property `orderNumber` of the equipment `Line 1` is bound to the topic `Oven/OrderNumber`.
+
+### Test using an MQTT client
+
 For example, using MQTT Explorer:
 
 1. Open MQTT Explorer and connect to the broker.
@@ -351,7 +352,7 @@ If the message has been received,
 a new topic, `Oven`, appears with its subtopic `OrderNumber`.
 
 If there is an equipment property bound to this topic,
-a topic called `MQTT/ValueChanged` also appear
+a topic called `MQTT/DS-0806/ValueChanged` also appears.
 In addition, the published value should show in the column `Expression` of the equipment property `orderNumber`.
 
 {{< bigFigure
@@ -373,6 +374,8 @@ alt="The rule engine has published a message to indicate that the equipment clas
 src="/images/equipment-class-rules/screenshot-rhize-Rule_Triggered_in_broker.png"
 caption="The rule engine has published a message to indicate that the equipment class rule has indeed been triggered."
 >}}
+
+### Confirm in execution in Tempo
 
 To confirm the intended BPMN was executed, navigate to Grafana (Tempo) and look for a trace containing the expected BPMN ID.
 
