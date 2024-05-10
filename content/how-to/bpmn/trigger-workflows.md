@@ -16,12 +16,17 @@ The best choice of trigger depends on the context of the event and the system th
 
 {{% reusable/bpmn-triggers %}}
 
+
 ## Start a workflow from an API
 
-When a workflow has the default start event, trigger it through an API call.
+No matter the start event, **all workflows can be triggered by an API call**.
+However, if the workflow uses the default blank start event, you must trigger it through API call.
 For example, an API trigger may originate from a custom frontend application or a developer's local machine.
 
-Each call must specify the workflow ID as an [argument in the request body]({{< relref "/how-to/gql/call-the-graphql-api/#request-body" >}}).
+The Rhize API has two mutations to start workflows.
+Both must specify the workflow ID as an [argument in the request body]({{< relref "/how-to/gql/call-the-graphql-api/#request-body" >}}).
+Each run for a workflow returns a unique `ID` that you can use for debugging. 
+
 
 ### Synchronous and asynchronous API triggers
 
@@ -75,7 +80,6 @@ It can use any data from the {{< abbr "process variable context" >}}, including 
 
 Functionally, only the last value of the `customResponse` is returned to the client that sent the response.
 However, you can use conditional branches and different end nodes to add error handling.
-
 For example, this workflow returns `Workflow ran correctly` if the call variables include the message `CORRECT` and an error message in all other cases.
 
 <!-- vale off -->
@@ -111,6 +115,7 @@ To specify a version, use the `version` property. For example, this input instru
 
 
 If the `version` property is empty, Rhize runs the active version of the workflow (if an active version exists). 
+
 ## Start from a message
 
 The [message start event]({{< relref "/how-to/bpmn/bpmn-elements#message-start-event" >}}) subscribes to a topic on the Rhize broker.
