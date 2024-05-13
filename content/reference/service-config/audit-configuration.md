@@ -5,11 +5,10 @@ description: Configuration for the Rhize audit
 weight: 900
 menu:
   main:
-    parent: reference
-    identifier:
+    parent: reference-service-config
 ---
 
-Audit offers a secure and unchangeable record of all activities taking place within the Rhize system. When changing configuration options, see here for details:
+Audit offers a secure and unchangeable record of all activities that happen within the Rhize system.
 
 ## `logging`
 

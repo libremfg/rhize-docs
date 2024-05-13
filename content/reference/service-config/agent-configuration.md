@@ -5,7 +5,7 @@ description: Authentication types for the Rhize agent
 weight: 900
 menu:
   main:
-    parent: reference
+    parent: reference-service-config
     identifier:
 ---
 
@@ -66,7 +66,7 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `serverUrl`         | The URL of the OpenTelemetry server.  <br />(Default: `localhost:4317`) |   
 
-## OPCUA 
+## `OPCUA`
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

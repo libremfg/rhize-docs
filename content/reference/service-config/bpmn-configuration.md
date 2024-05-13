@@ -5,7 +5,7 @@ description: Authentication types for the Rhize BPMN
 weight: 900
 menu:
   main:
-    parent: reference
+    parent: reference-service-config
     identifier:
 ---
 

@@ -5,7 +5,7 @@ description: Configuration for the Rhize core
 weight: 900
 menu:
   main:
-    parent: reference
+    parent: reference-service-config
     identifier:
 ---
 
