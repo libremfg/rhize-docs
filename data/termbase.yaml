@@ -150,7 +150,7 @@
     A system to organize processes and policies of warehouses. It may include processes to manage and track inventory and exchange data.
 - term: Work calendar
   definition: >-
-    A collection of work calendar <a href="#entry#>entries</a>
+    A collection of work calendar <a href="#entry">entries</a>
 - term: Work calendar entry
   definition: >-
     Rules that define a work period, including its start date, duration, and interval.
