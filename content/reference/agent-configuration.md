@@ -73,7 +73,7 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 | `DiscoveryUrl`         | The URL to locate and connect to OPC UA servers on a network. <br />(Default: `opc.tcp://localhost:4840`) |
 | `Endpoint`         | The URL of the OPC UA service server.  <br />(Default: `opc.tcp://localhost:4840`) |
 | `Username`         | The username credentials to authenticate with the OPC UA server. |
-| `Password`         | The password credentials to authenticate with the. |
+| `Password`         | The password credentials to authenticate with the OPC UA server. |
 | `Mode`         | The operational mode of the OPC UA server/client.  <br />(Default: `None`) |
 | `Policy`         | The security measures for OPC UA server communication.  <br />(Default: `None`) |
 | `Auth`         | The authentication mechanisms and user access control.  <br />(Default: `Anonymous`) |
