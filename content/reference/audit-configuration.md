@@ -17,7 +17,7 @@ Audit offers a secure and unchangeable record of all activities taking place wit
 
 | Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`              | Specifies the logging configuration type: `json`, `multi`, or console by default. <br />(Default: `console`)                                                                                   |                                                                                                                                                 
+| `type`              | Specifies the logging configuration type: `json`, `multi`, or console. <br />(Default: `console`)                                                                                   |                                                                                                                                                 
 | `Level`             | Configures the level of logging: `Trace`, `Debug`, `Info`, `Warn`, `Error`, `Fatal`, and `Panic`. <br />(Default: `Trace`)                                                                     |
 
 ## OIDC
@@ -52,7 +52,7 @@ Audit offers a secure and unchangeable record of all activities taking place wit
 | Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `serverUrl`         | The URL of the InfluxDB server. <br />(Default: `http://localhost:8086`)                                                                                                                       |    
-| `token`             | The authentication token used to authenticate requests to the InfluxDB server. <br />(Default: `my-token`)                                                                                     |               
+| `token`             | The authentication token to authenticate requests to the InfluxDB server. <br />(Default: `my-token`)                                                                                     |               
 
 ## pg
 
@@ -60,7 +60,7 @@ Audit offers a secure and unchangeable record of all activities taking place wit
 
 | Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `host`              | The host name of the PostgreSQL database server to which the client application will connect. <br />(Default: `dbname`)                                                                        |    
-| `user`              | The username used to authenticate with the PostgreSQL database server.                                                                                             |         
+| `host`              | The host name of the PostgreSQL database server to which the client application connects. <br />(Default: `dbname`)                                                                        |    
+| `user`              | The username to authenticate with the PostgreSQL database server.                                                                                             |         
 | `password`          | The password associated with the specified PostgreSQL user account.                                                                                              |    
 | `port`              | The port number on which the PostgreSQL database server is listening for incoming connections. <br />(Default: `5432`)                                                                         |    

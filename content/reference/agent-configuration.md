@@ -32,7 +32,7 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 
 | Attributes | Description |   
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`                | Specifies the logging configuration type: `json`, `multi`, or console by default. <br />(Default: `console`) |
+| `type`                | Specifies the logging configuration type: `json`, `multi`, or console. <br />(Default: `console`) |
 | `Level`               | Configures the level of logging: `Trace`, `Debug`, `Info`, `Warn`, `Error`, `Fatal`, `Panic`. Defaults to `Trace`. <br />(Default: `trace`) |
 
 ## libreDataStoreGraphQL
@@ -56,7 +56,7 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 | `serverUrl`         | The URL of the OpenID Connect server. <br />(Default: `http://localhost:8090`) |
 | `realm`         | Identifies the authentication domain for which the authentication request is being made. |
 | `client_id`         | The unique identifier assigned to the client application by the OIDC server. |
-| `client_secret`         | Used to authenticate the client alongisde the client ID when making confidential requests. |
+| `client_secret`         | Used to authenticate the client alongside the client ID when making confidential requests. |
 | `username`         | The username credentials to authenticate with the OIDC server. |
 | `password`         | The password credentials to authenticate with the OIDC server. |
 
@@ -72,7 +72,7 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `DiscoveryUrl`         | The URL to locate and connect to OPC UA servers on a network. <br />(Default: `opc.tcp://localhost:4840`) |
 | `Endpoint`         | The URL of the OPC UA service server.  <br />(Default: `opc.tcp://localhost:4840`) |
-| `Username`         | The username credentials to authenticate with the OP CUA server. |
+| `Username`         | The username credentials to authenticate with the OPC UA server. |
 | `Password`         | The password credentials to authenticate with the. |
 | `Mode`         | The operational mode of the OPC UA server/client.  <br />(Default: `None`) |
 | `Policy`         | The security measures for OPC UA server communication.  <br />(Default: `None`) |
@@ -90,7 +90,7 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `PollInterval`         | The frequency of scans for component status and health.  <br />(Default: `1000`) |   
-| `SubscriptionTimeout`         | The maximum duration for waiting to receive updates from subscribed data sources.  <br />(Default: `60000`) |   
+| `SubscriptionTimeout`         | The maximum duration to wait to receive updates from subscribed data sources.  <br />(Default: `60000`) |   
 | `SubscriptionMaxCount`         | The maximum number of concurrent subscriptions for monitoring.  <br />(Default: `5`) |   
 
 ## MQTT
@@ -104,7 +104,7 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 | `Password`         | The password credentials to authenticate with the MQTT broker. |   
 | `DecomposeJSON`         | Enables or disables JSON payload decomposition into individual data fields.  <br />(Default: `false`) |   
 | `TimestampField`         | The field to search to return timestamp information.  <br />(Default: `timestamp`) |   
-| `RequestTimeout`         | The maximum duration for waiting to receive a response to an MQTT request from the broker.  <br />(Default: `10`) |   
+| `RequestTimeout`         | The maximum duration to wait to receive a response to an MQTT request from the broker.  <br />(Default: `10`) |   
 
 ## DATASOURCE
 

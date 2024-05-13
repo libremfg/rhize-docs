@@ -9,7 +9,7 @@ menu:
     identifier:
 ---
 
-The Rhize BPMN acts as the tailored engine for processing low-code workflows designed within the BPMN UI. The configurations manage the connection and data flow on the BPMN engine to the other Rhize microservices. 
+The Rhize BPMN acts as the tailored engine for processing low-code workflows designed within the [BPMN UI]{{< relref "/how-to/bpmn" >}}. The configurations manage the connection and data flow on the BPMN engine to the other Rhize microservices. 
 
 ## http
 
@@ -20,7 +20,7 @@ The Rhize BPMN acts as the tailored engine for processing low-code workflows des
 | `ReadHeaderTimeout`   | Wait duration for the request header to be fully read before timing out. <br />(Default: `10`)           |
 | `ReadTimeout`         | Wait duration for the entire request to be read before timing out. <br />(Default: `15`)                 |
 | `WriteTimeout`        | Wait duration for the entire response to be written before timing out. <br />(Default: `10`)             |
-| `IdleTimeout`         | Wait duration for the next request whil the connection is idle before timing out. <br />(Default: `30`)  |
+| `IdleTimeout`         | Wait duration for the next request while the connection is idle before timing out. <br />(Default: `30`)  |
 
 ## logging
 
@@ -28,7 +28,7 @@ The Rhize BPMN acts as the tailored engine for processing low-code workflows des
 
 | Attributes | Description |   
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`                | Specifies the logging configuration type: `json`, `multi`, or console by default. <br />(Default: `console`) |
+| `type`                | Specifies the logging configuration type: `json`, `multi`, or console. <br />(Default: `console`) |
 | `Level`               | Configures the level of logging: `Trace`, `Debug`, `Info`, `Warn`, `Error`, `Fatal`, or `Panic`. <br />(Default: `Debug`) |
 
 ## libreDataStoreGraphQL
@@ -81,7 +81,7 @@ The Rhize BPMN acts as the tailored engine for processing low-code workflows des
 | `serverUrl`         | The URL of the OpenID Connect server. <br />(Default: `http://localhost:8090`) |
 | `realm`         | Identifies the authentication domain for which the authentication request is being made. |
 | `client_id`         | The unique identifier assigned to the client application by the OIDC server. |
-| `client_secret`         | Used to authenticate the client alongisde the client ID when making confidential requests. |
+| `client_secret`         | Used to authenticate the client alongside the client ID when making confidential requests. |
 | `username`         | The username credentials to authenticate with the OIDC server. |
 | `password`         | The password credentials to authenticate with the OIDC server. |
 

@@ -9,7 +9,7 @@ menu:
     identifier:
 ---
 
- Core acts as a bespoke edge agent, overseeing data sources such as OPC-UA servers, and managing the publication and subscription of topics within the NATS messaging system.
+ The Core service oversees data sources such as OPC-UA servers and manages the publication and subscription of topics within the NATS messaging system.
 
 ## logging
 
@@ -17,7 +17,7 @@ menu:
 
 | Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`              | Specifies the logging configuration type: `json`, `multi`, or console by default. <br />(Default: `console`)                                                                                   |                                                                                                                                                 
+| `type`              | Specifies the logging configuration type: `json`, `multi`, or console. <br />(Default: `console`)                                                                                   |                                                                                                                                                 
 | `Level`             | Configures the level of logging: `Trace`, `Debug`, `Info`, `Warn`, `Error`, `Fatal`, and `Panic`. <br />(Default: `Trace`)                                                                     |
 
 ## NATS
