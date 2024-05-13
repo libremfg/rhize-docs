@@ -16,6 +16,7 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 - It subscribes to tags and republishes the changes in NATS.
 - It creates an interface for the BPMN engine to send reads and writes to a data source and its associated equipment.
 
+
 ## OPC UA authentication types
 
  When authenticating over OPC UA, Rhize supports the following authentication types:

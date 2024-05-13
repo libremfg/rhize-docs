@@ -9,3 +9,6 @@ menu:
 ---
 
 The Rhize services have different configuration parameters, as documented in the following pages.
+
+{{% reusable/config-map "core" %}}
+
