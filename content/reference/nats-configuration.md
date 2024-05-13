@@ -49,7 +49,7 @@ Subtopics include the following:
 | `libreBPMN/command/SERVICE_TASK`      |             |
 | `libreBPMN/command/EXCLUSIVE_GATEWAY` |             |
 
-### Streams
+### `Streams`
 
 - `libreBpmn_Command`
 - `LibreTimerStart`
@@ -61,7 +61,7 @@ Subtopics include the following:
 
 The following parameters configure the NATS message queues for different services.
 
-### BPMN
+### `BPMN`
 
 The NATS configuration parameters for the BMPN streams are as follows:
 

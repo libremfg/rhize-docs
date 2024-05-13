@@ -11,7 +11,7 @@ menu:
 
 Audit offers a secure and unchangeable record of all activities taking place within the Rhize system. When changing configuration options, see here for details:
 
-## logging
+## `logging`
 
  Logs the configuration to the console.
 
@@ -20,7 +20,7 @@ Audit offers a secure and unchangeable record of all activities taking place wit
 | `type`              | Specifies the logging configuration type: `json`, `multi`, or console. <br />(Default: `console`)                                                                                   |                                                                                                                                                 
 | `Level`             | Configures the level of logging: `Trace`, `Debug`, `Info`, `Warn`, `Error`, `Fatal`, and `Panic`. <br />(Default: `Trace`)                                                                     |
 
-## OIDC
+## `OIDC`
 
  Configurations for Keycloak authentication and connection with OpenID Connect.
 
@@ -33,19 +33,19 @@ Audit offers a secure and unchangeable record of all activities taking place wit
 | `username`          | The username credentials of the user who is attempting to authenticate with the OIDC server.                                                             |
 | `password`          | The password credentials of the user who is attempting to authenticate with the OIDC server.                                                                      |
 
-## OpenTelemetry
+## `OpenTelemetry`
 
 | Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `serverUrl`         | The URL of the OpenTelemetry server. <br />(Default: `localhost:4317`)     |                                                                                                                                                 
 
-## storage
+## `storage`
 
 | Description                                                                                                                                                                                                         |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Storage system for the configuration data. Value options include: `influxdb` and `pg`.                                                                                                                              |                              
 
-## influxdb
+## `influxdb`
 
  A time-series database that is used in conjunction with Grafana designed for handling time-stamped data, such as metrics, events, and logs, that change over time.
 
@@ -54,7 +54,7 @@ Audit offers a secure and unchangeable record of all activities taking place wit
 | `serverUrl`         | The URL of the InfluxDB server. <br />(Default: `http://localhost:8086`)                                                                                                                       |    
 | `token`             | The authentication token to authenticate requests to the InfluxDB server. <br />(Default: `my-token`)                                                                                     |               
 
-## pg
+## `pg`
 
  PostgreSQL is a general-purpose relational database management system that supports a wide range of features and data types.
 

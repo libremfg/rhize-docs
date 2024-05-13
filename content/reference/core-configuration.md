@@ -11,7 +11,7 @@ menu:
 
  The Core service oversees data sources such as OPC-UA servers and manages the publication and subscription of topics within the NATS messaging system.
 
-## logging
+## `logging`
 
  Logs the configuration to the console.
 
@@ -20,7 +20,7 @@ menu:
 | `type`              | Specifies the logging configuration type: `json`, `multi`, or console. <br />(Default: `console`)                                                                                   |                                                                                                                                                 
 | `Level`             | Configures the level of logging: `Trace`, `Debug`, `Info`, `Warn`, `Error`, `Fatal`, and `Panic`. <br />(Default: `Trace`)                                                                     |
 
-## NATS
+## `NATS`
 
  Message broker that drives Rhize's event-based architecture.
 
@@ -30,7 +30,7 @@ menu:
 | `replicas`          | The number of replicas or instances of the NATS server to be deployed. <br />(Default: `1`)                                                                                                    |
 
 
-## OIDC
+## `OIDC`
 
  Configurations for Keycloak authentication and connection with OpenID Connect.
 
@@ -43,20 +43,20 @@ menu:
 | `username`          | The username credentials of the user who is attempting to authenticate with the OIDC server.                                                           |
 | `password`          | The password credentials of the user who is attempting to authenticate with the OIDC server.                                                                         |
 
-## OpenTelemetry
+## `OpenTelemetry`
 
 | Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `serverUrl`         | The URL of the OpenTelemetry server. <br />(Default: `localhost:4317`)                                                                                                                         | 
 | `samplingRate`      | The sampling rate for for traces. <br />(Default: `1`)                                                                                                                                         | 
 
-## SECRET
+## `SECRET`
 
 | Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `KEY`               | The SECRET KEY used for authorization within Core.       |                                                                                                                                                 
 
-## graphQLServer
+## `graphQLServer`
 
  The server used to connect to the GraphQL playground.
 
@@ -65,20 +65,20 @@ menu:
 | `Port`              | The port used within the URL that connects to the graphQLServer. <br />(Default: `4001`)     |                                                                                                                                                 
 
 
-## libreDataStoreGraphQL
+## `libreDataStoreGraphQL`
 
 | Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `GraphQLUrl`        | The URL of the GraphQL endpoint to use for interacting with Rhize services. <br />(Default: `http://localhost:8080/graphql`) |                                                                                                                                                 
 
 
-## BPMN
+## `BPMN`
 
 | Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `GraphQLUrl`        | The URL of the BPMN endpoint to use for interacting with Rhize services. <br />(Default: `http://localhost:8081`) |                                                                                                                                                 
 
-## TimeSeries
+## `TimeSeries`
 
 | Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

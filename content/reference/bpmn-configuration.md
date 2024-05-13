@@ -11,7 +11,7 @@ menu:
 
 The Rhize BPMN acts as the tailored engine for processing low-code workflows designed within the [BPMN UI]{{< relref "/how-to/bpmn" >}}. The configurations manage the connection and data flow on the BPMN engine to the other Rhize microservices. 
 
-## http
+## `http`
 
  All HTTP configurations are measured in `seconds`.
 
@@ -22,7 +22,7 @@ The Rhize BPMN acts as the tailored engine for processing low-code workflows des
 | `WriteTimeout`        | Wait duration for the entire response to be written before timing out. <br />(Default: `10`)             |
 | `IdleTimeout`         | Wait duration for the next request while the connection is idle before timing out. <br />(Default: `30`)  |
 
-## logging
+## `logging`
 
  Logs the configurations to the console.
 
@@ -31,14 +31,14 @@ The Rhize BPMN acts as the tailored engine for processing low-code workflows des
 | `type`                | Specifies the logging configuration type: `json`, `multi`, or console. <br />(Default: `console`) |
 | `Level`               | Configures the level of logging: `Trace`, `Debug`, `Info`, `Warn`, `Error`, `Fatal`, or `Panic`. <br />(Default: `Debug`) |
 
-## libreDataStoreGraphQL
+## `libreDataStoreGraphQL`
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `GRAPHQL_URL`         | The URL of the GraphQL endpoint to use for interacting with Rhize services. <br />(Default: `http://localhost:4000/`) |
 | `GRAPHQL_CA_FILE`     | The file path of the CA certificate used for secure communication with the GraphQL endpoint.  <br />(Default: `''`) |
 
-## viewInstance
+## `viewInstance`
 
  Configuration for service viewing instances.
 
@@ -48,20 +48,20 @@ The Rhize BPMN acts as the tailored engine for processing low-code workflows des
 | `loki`                | `accessToken`: The access token for authentication with Loki (Default: `''`). <br /> `url`:  The URL of the Loki instance (Default: `http://localhost:3100`).                                                                                   |
 | `tempo`               | `accessToken`: The access token for authentication with Tempo (Default: `''`). <br /> `url`:  The URL of the Tempo instance (Default: `http://localhost:3200`).                                                                                 |
 
-## commandConsumer
+## `commandConsumer`
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `threads`         | The number of threads for command consumption. <br />(Default: `3`)                                                                                                                                                  |
 
-## GraphQLSubscriber
+## `GraphQLSubscriber`
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `GRAPHQL_URL`         | The URL of the GraphQL endpoint for the GraphQLSubscriber. <br />(Default: `http://localhost:4000/`)                                                                                                                                 |
 
 
-## NATS
+## `NATS`
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -72,7 +72,7 @@ The Rhize BPMN acts as the tailored engine for processing low-code workflows des
 | `WorkflowSpecificationKVReplicas`         | The number of replicas for the workflow specification key-value store. <br />(Default: `1`) |
 | `serverUrl`         | The URL for connecting to the NATS server. <br />(Default: `nats://system:system@localhost:4222`) |
 
-## OIDC
+## `OIDC`
 
  Configurations for Keycloak authentication and connection with OpenID Connect.
 
@@ -85,20 +85,20 @@ The Rhize BPMN acts as the tailored engine for processing low-code workflows des
 | `username`         | The username credentials to authenticate with the OIDC server. |
 | `password`         | The password credentials to authenticate with the OIDC server. |
 
-## OpenTelemetry
+## `OpenTelemetry`
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `serverUrl`         | The URL of the OpenTelemetry server.  <br />(Default: `localhost:4317`)                                                                                                                                    |
 | `defaultDebug`         | Enables or disables default debug mode.  <br />(Default: `false`)                                                                                                               |
 
-## RESTAPI
+## `RESTAPI`
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `PORT`         | The port number for RestAPI connection.  <br />(Default: `8080`)                                                                                                                                    |
 
-## SECRET
+## `SECRET`
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

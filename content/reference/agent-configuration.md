@@ -26,7 +26,7 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 | Username            | Authenticates through a `username` and `password` in the config file, or through a Kubernetes secret.                                                                                                                           |
 | Certificate         | Uses the certificate on disk specified in the  `OPCUA.CertFile` and `OPCUA.KeyFile` configs. If no certificate exists and the config specifies the `OPCUA.GenCert` property as `true`, automatically generates one. |
 
-## logging
+## `logging`
 
  Logs the configurations to the console.
 
@@ -35,19 +35,19 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 | `type`                | Specifies the logging configuration type: `json`, `multi`, or console. <br />(Default: `console`) |
 | `Level`               | Configures the level of logging: `Trace`, `Debug`, `Info`, `Warn`, `Error`, `Fatal`, `Panic`. Defaults to `Trace`. <br />(Default: `trace`) |
 
-## libreDataStoreGraphQL
+## `libreDataStoreGraphQL`
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `GRAPHQL_URL`         | The URL of the GraphQL endpoint to use for interacting with Rhize services. <br />(Default: `http://localhost:8080/graphql`) |
 
-## NATS
+## `NATS`
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `SERVER_URL`         | The URL for connecting to the NATS server. <br />(Default: `nats://system:system@localhost:4222`) | 
 
-## OIDC
+## `OIDC`
 
  Configurations for Keycloak authentication and connection with OpenID Connect.
 
@@ -60,7 +60,7 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 | `username`         | The username credentials to authenticate with the OIDC server. |
 | `password`         | The password credentials to authenticate with the OIDC server. |
 
-## OpenTelemetry
+## `OpenTelemetry`
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -79,13 +79,13 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 | `Auth`         | The authentication mechanisms and user access control.  <br />(Default: `Anonymous`) |
 | `AppUri`         | The application's unique URI within the OPC UA system.  <br />(Default: `opc.tcp://localhost:4840`) |
 
-## BUFFERS
+## `BUFFERS`
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `ProtocolQueueType`         | The type of queue used for buffering communication protocol data.  <br />(Default: `0`) |   
 
-## HEALTH
+## `HEALTH`
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -93,7 +93,7 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 | `SubscriptionTimeout`         | The maximum duration to wait to receive updates from subscribed data sources.  <br />(Default: `60000`) |   
 | `SubscriptionMaxCount`         | The maximum number of concurrent subscriptions for monitoring.  <br />(Default: `5`) |   
 
-## MQTT
+## `MQTT`
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -106,13 +106,13 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 | `TimestampField`         | The field to search to return timestamp information.  <br />(Default: `timestamp`) |   
 | `RequestTimeout`         | The maximum duration to wait to receive a response to an MQTT request from the broker.  <br />(Default: `10`) |   
 
-## DATASOURCE
+## `DATASOURCE`
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `ID`              | The source ID to retrieve payload data from.  <br />(Default: `DS_0806`) |   
 
-## AZURE
+## `AZURE`
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
