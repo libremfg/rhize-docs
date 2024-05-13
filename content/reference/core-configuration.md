@@ -48,7 +48,7 @@ menu:
 | Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `serverUrl`         | The URL of the OpenTelemetry server. <br />(Default: `localhost:4317`)                                                                                                                         | 
-| `samplingRate`      | The sampling rate for for traces. <br />(Default: `1`)                                                                                                                                         | 
+| `samplingRate`      | The sampling rate for traces. <br />(Default: `1`)                                                                                                                                         | 
 
 ## `SECRET`
 
