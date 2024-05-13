@@ -1,7 +1,7 @@
 ---
 title: 'Agent configuration'
 categories: ["reference"]
-description: Authentication types for the Rhize agent
+description: Configuration parameters for the Rhize agent
 aliases:
   - "/reference/agent-configuration/"
 weight: 900

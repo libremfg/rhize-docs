@@ -1,7 +1,7 @@
 ---
 title: 'Core configuration'
 categories: ["reference"]
-description: Configuration for the Rhize core
+description: Configuration parameters for the Rhize core
 weight: 900
 menu:
   main:
