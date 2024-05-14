@@ -1,7 +1,7 @@
 ---
 title: 'BPMN configuration'
 categories: ["reference"]
-description: Configuration parameters for the Rhize BPMN service
+description: Authentication types for the Rhize BPMN
 weight: 900
 menu:
   main:
