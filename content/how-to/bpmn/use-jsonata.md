@@ -122,23 +122,12 @@ For example, this expression accesses all IDs for an `equipmentClass` object fro
 
 JSONata can be used in many Rhize BPMN tasks.
 Particularly, the [JSONata service task]({{< relref "/how-to/bpmn/bpmn-elements/#jsonata-transform" >}}) exists to receive input and pass it to another element or system.
-The main parameters of the JSONata task are as follows:
-- **Input JSON**. The incoming JSON. Alternatively, use the `=` character to write JSONata directly in the input field, accessing the process variable context through `$.`
-- **Expression**. The expression to further transform the input JSON and write to the output variable. If the node already uses JSONata in its input, enter a `$` (no period).
-- **Output variable**. The name of the variable to pass to the process variable context.
-
 
 Though JSONata tasks are the most common use of JSONata,
 you can use the `=` prefix to declare an expression in many other fields.
-Parameters that accept expressions include:
+Parameters that accept expressions include API payloads, message payloads, and flow conditions.
 
-- **API payloads**. Calls to the Rhize GraphQL API and to external APIs can both use JSONata in their payloads.
-- **Outgoing payloads**. The messages you send with intermediate message throws can have JSONata.
-- **Response transformations.**
-  - REST. Write JSONata in the input expression to filter data. This is helpful to remove data from over-fetching and to keep the process variable size lower.
-  - GraphQL input. As with JSONata, your GraphQL tasks can pass their results to JSONata. This is less common, as GraphQL already provides tight control of the data it returns, but it is useful for calculating derived values.
-
-Review the full list of parameters that accept JSONata in the [BPMN element reference]({{< relref "bpmn-elements" >}}).
+To review the full list of elements and fields that accept JSONata, read the [BPMN element reference]({{< relref "bpmn-elements" >}}).
 
 ### JSONata version
 
