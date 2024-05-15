@@ -38,7 +38,7 @@ For example:
 {{% tabs %}}
 {{% tab "expression" %}}
 ```JSON
-=( 
+=(
   $logic := "Hello" & " " & "World";
 
   {
@@ -73,12 +73,12 @@ For example, this expression accesses all IDs for an `equipmentClass` object fro
 {{% tabs %}}
 
 {{% tab "expression" %}}
-**Expression:** 
+**Expression:**
 `$.equipmentClass.id`
 {{% /tab%}}
 
 {{% tab "Full transformation" %}}
-**Expression:** 
+**Expression:**
 `$.equipmentClass.id`
 
 
@@ -152,8 +152,8 @@ To experiment with how they work, copy the data and expression into a [JSONata e
 
 ### Filter for items that contain
 
-This expression returns the ID of all `equipmentActual` items that are associated with a specified job response `JR-4`. 
-It outputs the IDs as an array of strings in a new custom object. 
+This expression returns the ID of all `equipmentActual` items that are associated with a specified job response `JR-4`.
+It outputs the IDs as an array of strings in a new custom object.
 
 This is a minimal example of how you can use JSONata to transform data into new representations.
 Such transformation is a common prerequisite step for post-processing and service interoperability.
@@ -161,7 +161,7 @@ Such transformation is a common prerequisite step for post-processing and servic
 $.data.queryJobResponse[`id`="JR-4"].(
     {"associatedEquipment": equipmentActual.id}
 )
-``` 
+```
 
 {{% tabs %}}
 
@@ -430,7 +430,7 @@ In production, you may perform a similar operation to map an SAP schedule order 
 
 ```
 $count(events[0]) > 0
-    
+
     ? events.{
     "id":id,
     "description":title,
@@ -451,7 +451,7 @@ $count(events[0]) > 0
     }
     }
 
-: "No earth events lately" 
+: "No earth events lately"
 ```
 
 {{% tabs %}}
@@ -638,7 +638,7 @@ These functions calculate statistics for an array of numbers.
 Some of the output uses built-in JSONata functions, such as `$max()`.
 Others, such as the ones for median and standard deviation,
 are created in the expression.
-  
+
 You might use statistics such as these to calculate metrics and perform performance analysis on historical or streamed data.
 
 ```
@@ -649,8 +649,8 @@ $stdPop := function($arr) {
             $power($v - $average($a),2)
             });
         $sum($variance) / $count($arr) ~> $sqrt()
-      
-    )}; 
+
+    )};
 
 $median := function($arr) {
     (
@@ -660,7 +660,7 @@ $median := function($arr) {
         $length % 2 = 0
             ? $median := ($sorted[$mid-1] + $sorted[$mid]) /2
             : $median := $sorted[$mid];
-    )}; 
+    )};
 
  {
  "std_population":$stdPop($.data.arr),
@@ -704,10 +704,10 @@ $randomChoice := function($a) {
         $selection :=
             $random() * ($count($a)+1) ~> $floor();
         $a[$selection]
-      
-    )}; 
 
-{ 
+    )};
+
+{
 "segmentRequirement": {
   "workRequirement": {"id": $.PO},
   "equipmentRequirements":[$randomChoice($.available)],
@@ -748,13 +748,13 @@ $randomChoice := function($a) {
 
 This function uses recursion and a predefined set of naming rules
 to generate (or find) a set of child IDs for an entity.
-The `n` value determines how many times it's called. 
+The `n` value determines how many times it's called.
 
 Besides searching, recursive functions have many uses with nested manufacturing data. Recursion is also often used in algorithms to calculate metrics and performance statistics.
 
 ```
 (
-    $next := function($x, $y) {$x > 1 ? 
+    $next := function($x, $y) {$x > 1 ?
         (
             $rules := "123456789ABCEFHJKLNORTUVYZ";
             $substring($y[-1],-1) = "Z" ?
@@ -770,4 +770,3 @@ Besides searching, recursive functions have many uses with nested manufacturing 
     }
 )
 ```
-
