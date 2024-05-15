@@ -10,13 +10,13 @@ menu:
     identifier:
 ---
 
-
-To handle JSON payloads as they pass through {{< abbr "process variable context" >}} and from system to system,
-Rhize uses the JSONata expression language.
-JSONata is a query language to filter, transform, and create JSON objects.
+[JSONata](https://jsonata.org/)
+is a query language to filter, transform, and create JSON objects.
+Rhize BPMN workflows use  JSONata expressions to
+transform JSON payloads as they pass through workflow nodes and across integrated systems.
 In BPMN workflows, JSONata expressions have two essential functions:
-- **Map data.** That is, to move values from one data structure to another.
-- **Calculate data.** That is, to receive values as input and create new data from them.
+- **Map data.** Moving values from one data structure to another.
+- **Calculate data.** Receiving values as input and create new data from them.
 
 This guide details how to use JSONata in your Rhize environment and provides some examples relevant to manufacturing workflows.
 For the full details of the JSONata expression language, read the [Official JSONata documentation](https://docs.jsonata.org/overview.html).
@@ -61,8 +61,8 @@ For example:
 
 ### Begin each expression with a `=`
 
-Note that the previous expression begins with the character for an equals sign, `=`.
-This sign instructs Rhize to parse the subsequent data as JSONata (as opposed to raw JSON or some other data structure).
+Note that the previous expression begins with the equals sign, `=`.
+This character instructs Rhize to parse the subsequent data as JSONata (as opposed to raw JSON or some other data structure).
 
 ### Access root variable context with `$.`
 
@@ -121,8 +121,7 @@ For example, this expression accesses all IDs for an `equipmentClass` object fro
 ### Use JSONata in service tasks
 
 JSONata can be used in many Rhize BPMN tasks.
-
-Particularly, the JSONata service task exists to receive input and pass it to another element or system at a later BPMN element.
+Particularly, the [JSONata service task]({{< relref "/how-to/bpmn/bpmn-elements/#jsonata-transform" >}}) exists to receive input and pass it to another element or system.
 The main parameters of the JSONata task are as follows:
 - **Input JSON**. The incoming JSON. Alternatively, use the `=` character to write JSONata directly in the input field, accessing the process variable context through `$.`
 - **Expression**. The expression to further transform the input JSON and write to the output variable. If the node already uses JSONata in its input, enter a `$` (no period).
@@ -130,11 +129,12 @@ The main parameters of the JSONata task are as follows:
 
 
 Though JSONata tasks are the most common use of JSONata,
-other task parameters can also use JSON if they begin with the  `=` prefix.
+you can use the `=` prefix to declare an expression in many other fields.
+Parameters that accept expressions include:
 
-- API payloads. Calls to the Rhize GraphQL API and to external APIs can both use JSONata in their payloads.
-- Outgoing payloads. The messages you send with intermediate message throws can have JSONata.
-- Response transformations.
+- **API payloads**. Calls to the Rhize GraphQL API and to external APIs can both use JSONata in their payloads.
+- **Outgoing payloads**. The messages you send with intermediate message throws can have JSONata.
+- **Response transformations.**
   - REST. Write JSONata in the input expression to filter data. This is helpful to remove data from overfetching and to keep the process variable size lower.
   - GraphQL input. As with JSONata, your GraphQL tasks can pass their results to JSONata. This is less common, as GraphQL already provides tight control of the data it returns, but it is useful for calculating derived values.
 
@@ -144,29 +144,29 @@ Review the full list of parameters that accept JSONata in the [BPMN element refe
 
 Many implementations of JSONata exist.
 Rhize uses a custom Go implementation for high performance and safe calculation.
-If you are ever wondering about whether a JSONata expression is compatible with the version Rhize uses, test it in the JSONata playground that is built-in to Rhize.
+If you are ever wondering about whether a JSONata expression is compatible with the version Rhize uses, test it in the built-in JSONata playgroun d.
 
 ## JSONata examples
 
 These snippets provide some examples of JSONata from manufacturing workflows.
-To experiment with how they work, copy the data and expression into the JSONata explorer and try changing values.
+To experiment with how they work, copy the data and expression into a [JSONata exerciser](https://try.jsonata.org/) and try changing values.
 
 ### Filter for items that contain
 
-This expression returns all `equipmentActual` items that are associated with a job response, `JR-4`.
+This expression returns the ID of all `equipmentActual` items that are associated with a specified job response `JR-4`. 
+It outputs the IDs as an array of strings in a new custom object. 
+
+This is a minimal example of how you can use JSONata to transform data into into new representations.
+Such transformation is a common prerequisite step for post-processing and service interoperability.
+```
+$.data.queryJobResponse[`id`="JR-4"].(
+    {"associatedEquipment": equipmentActual.id}
+)
+``` 
 
 {{% tabs %}}
 
-{{% tab "Expression" %}}
-
-`$.data.queryJobResponse[id="JR-4"].equipmentActual`
-{{% /tab %}}
-
-{{% tab "Example transformation" %}}
-**Expression:**
-`$.data.queryJobResponse[id="JR-4"].equipmentActual`
-
-**Input:**
+{{% tab "Input" %}}
 ```json
 {
   "data": {
@@ -188,31 +188,6 @@ This expression returns all `equipmentActual` items that are associated with a j
         ]
       },
       {
-        "id": "JR-5",
-        "data": [
-          {
-            "value": 103.2
-          }
-        ],
-        "equipmentActual": [
-          {
-            "id": "actuator-122"
-          },
-          {
-            "id": "actuator-13"
-          }
-        ]
-      },
-      {
-        "id": "JR-2",
-        "data": [],
-        "equipmentActual": [
-          {
-            "id": "actuator-13"
-          }
-        ]
-      },
-      {
         "id": "JR-4",
         "data": [
           {
@@ -227,98 +202,33 @@ This expression returns all `equipmentActual` items that are associated with a j
             "id": "actuator-133"
           }
         ]
-      },
-      {
-        "id": "JR-3",
-        "data": [],
-        "equipmentActual": [
-          {
-            "id": "actuator-091"
-          }
-        ]
-      },
-      {
-        "id": "JR-12",
-        "data": [],
-        "equipmentActual": []
-      },
-      {
-        "id": "JR-123",
-        "data": [],
-        "equipmentActual": [
-          {
-            "id": "actuator-121"
-          }
-        ]
-      },
-      {
-        "id": "JR-6",
-        "data": [],
-        "equipmentActual": []
-      },
-      {
-        "id": "JR-8",
-        "data": [
-          {
-            "value": "96.7"
-          }
-        ],
-        "equipmentActual": [
-          {
-            "id": "actuator-091"
-          }
-        ]
-      },
-      {
-        "id": "JR-9",
-        "data": [],
-        "equipmentActual": []
-      },
-      {
-        "id": "JR-10",
-        "data": [
-          {
-            "value": "105.0"
-          }
-        ],
-        "equipmentActual": [
-          {
-            "id": "actuator-12"
-          }
-        ]
-      },
-      {
-        "id": "JR-7",
-        "data": [
-          {
-            "value": "103.2"
-          }
-        ],
-        "equipmentActual": []
       }
     ]
   }
 }
 ```
-**Output:**
+
+{{% /tab %}}
+
+{{% tab "Output " %}}
+
 ```json
-[
-  {
-    "id": "actuator-132"
-  },
-  {
-    "id": "actuator-133"
-  }
-]
+{
+  "associatedEquipment": [
+    "actuator-132",
+    "actuator-133"
+  ]
+}
 ```
 {{% /tab %}}
 {{% /tabs %}}
 
 ### Find actual associated with high values
 
-This expression finds all Job responses whose `value` exceeds `100`.
-It outputs the matching job response IDs along with their associated equipment actuals.
+This expression finds all job responses whose `value` exceeds `100`.
+It outputs the matching job response IDs along with the associated equipment actual used in the job.
 
+In production, you may use a similar analysis to isolate all {{< abbr "resource actual" >}}s associated with an abnormal production outcome.
 
 ```
 $map($.data.queryJobResponse, function($v,$i,$a){
@@ -515,6 +425,9 @@ This function takes data from an external weather API
 and maps it onto the `operationsEvent` ISA-95 object.
 It takes the earliest value from the event time data as the start, and last value as the end.
 If no event data exists, it outputs a message.
+
+Although this example uses data that is unlikely to be a source of a real manufacturing event, the practice of receiving data from a remote API and mapping it to ISA-95 representation is quite common.
+In production, you may perform a similar operation to map an SAP schedule order to an `operationsSchedule`, or the results from a QA service to the `testResults` object.
 
 ```
 $count(events[0]) > 0
@@ -722,11 +635,13 @@ $count(events[0]) > 0
 
 ### Calculate summary statistics
 
-These functions calculates statistics for an array of numbers.
+These functions calculate statistics for an array of numbers.
 Some of the output uses built-in JSONata functions, such as `$max()`.
 Others, such as the ones for median and standard deviation,
 are created in the expression.
   
+You might use statistics such as these to calculate metrics and perform performance analysis on historical or streamed data.
+
 ```
 (
 $stdPop := function($arr) {
@@ -778,7 +693,9 @@ $median := function($arr) {
 
 ### Select random item
 
-This expression randomly selects an item from the plant's array of available equipment, then makes that item the `equipmentRequirement` for a segment in a job response.
+This expression randomly selects an item from the plant's array of available equipment, and then adds that item as the `equipmentRequirement` for a segment associated with a specific job order.
+
+You might use randomizing functions for scheduling, quality control, and simulation.
 
 ```json
 (
@@ -828,21 +745,24 @@ $randomChoice := function($a) {
 {{% /tab %}}
 {{% /tabs %}}
 
-<!-- Uncomment and add sample data
-### Recursively descend into values
+### Recursively find child IDs
 
-A recursive function to calculate IDs of sub lots made from a parent sublot.
+This function uses recursion and a predefined set of naming rules
+to generate (or find) a set of child IDs for an entity.
+The `n` value determines how many times it's called. 
 
+Besides searching, recursive functions have many uses with nested manufacturing data. Recursion is also often used in algorithms to calculate metrics and performance statistics.
 
-```typescript
+```
 (
     $next := function($x, $y) {$x > 1 ? 
         (
+            $rules := "123456789ABCEFHJKLNORTUVYZ";
             $substring($y[-1],-1) = "Z" ?
             $next($x - 1, $append($y, $y[-1] & '1')) :
             $next($x - 1, $append(
                 $y,
-                 $substring($y[-1],0,$length($y[-1])-1) & $substring($substringAfter("123456789ABCEFHJKLNORTUVYZ",$substring($y[-1],-1)),0,1)
+                $substring($y[-1],0,$length($y[-1])-1) & $substring($substringAfter($rules,$substring($y[-1],-1)),0,1)
             ))
         )
         : $y};
@@ -852,4 +772,3 @@ A recursive function to calculate IDs of sub lots made from a parent sublot.
 )
 ```
 
- -->
