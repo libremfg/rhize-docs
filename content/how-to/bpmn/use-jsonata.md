@@ -118,9 +118,9 @@ For example, this expression accesses all IDs for an `equipmentClass` object fro
 
 {{% /tabs %}}
 
-### Use JSONata in service tasks
+### JSONata in BPMN elements
 
-JSONata can be used in many Rhize BPMN tasks.
+JSONata can be used in many Rhize BPMN elements
 Particularly, the [JSONata service task]({{< relref "/how-to/bpmn/bpmn-elements/#jsonata-transform" >}}) exists to receive input and pass it to another element or system.
 
 Though JSONata tasks are the most common use of JSONata,
