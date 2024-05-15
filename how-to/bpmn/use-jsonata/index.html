@@ -1,0 +1,555 @@
+<!doctype html><html lang=en class="js csstransforms3d"><head><script async src="https://www.googletagmanager.com/gtag/js?id=G-0PJKXDWQ4P"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-0PJKXDWQ4P")}</script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=referrer content="no-referrer-when-downgrade"><meta property="og:image" content="https://docs.rhize.com/images/rhize-logo.png"><meta property="og:image:secure_url" content="https://docs.rhize.com/images/rhize-logo.png"><meta property="og:description" content="A guide with examples of how to use JSONata in Rhize"><meta property="og:type" content="website"><meta property="og:title" content="Use JSONata"><meta property="og:site_name" content="Rhize documentation"><meta property="og:url" content="https://docs.rhize.com/how-to/bpmn/use-jsonata/"><meta property="og:locale" content="en"><meta name=generator content="Hugo 0.126.1"><meta name=description content="A guide with examples of how to use JSONata in Rhize"><link rel=canonical href=https://docs.rhize.com/how-to/bpmn/use-jsonata/><link rel=apple-touch-icon sizes=57x57 href=https://docs.rhize.com/images/favicons/apple-touch-icon-57x57.png><link rel=apple-touch-icon sizes=60x60 href=https://docs.rhize.com/images/favicons/apple-touch-icon-60x60.png><link rel=apple-touch-icon sizes=72x72 href=https://docs.rhize.com/images/favicons/apple-touch-icon-72x72.png><link rel=apple-touch-icon sizes=76x76 href=https://docs.rhize.com/images/favicons/apple-touch-icon-76x76.png><link rel=apple-touch-icon sizes=114x114 href=https://docs.rhize.com/images/favicons/apple-touch-icon-114x114.png><link rel=apple-touch-icon sizes=120x120 href=https://docs.rhize.com/images/favicons/apple-touch-icon-120x120.png><link rel=apple-touch-icon sizes=144x144 href=https://docs.rhize.com/images/favicons/apple-touch-icon-144x144.png><link rel=apple-touch-icon sizes=152x152 href=https://docs.rhize.com/images/favicons/apple-touch-icon-152x152.png><link rel=apple-touch-icon sizes=180x180 href=https://docs.rhize.com/images/favicons/apple-touch-icon-180x180.png><link rel=icon type=image/png href=https://docs.rhize.com/images/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=https://docs.rhize.com/images/favicons/android-chrome-192x192.png sizes=192x192><link rel=icon type=image/png href=https://docs.rhize.com/images/favicons/favicon-96x96.png sizes=96x96><link rel=icon type=image/png href=https://docs.rhize.com/images/favicons/favicon-16x16.png sizes=16x16><link rel=manifest href=https://docs.rhize.com/images/favicons/manifest.webmanifest><link rel=mask-icon href=https://docs.rhize.com/images/favicons/safari-pinned-tab.svg color=#fe2c06><link rel="shortcut icon" href=https://docs.rhize.com/images/favicons/favicon.ico><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js></script><script async src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/go.min.js></script><script async src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/java.min.js integrity="sha256-RyOs5MjQ+Ef9DQrPHp4QGr2tcNjxLh6mCkkW+sS4doU=" crossorigin=anonymous></script><script src=//code.jquery.com/jquery-3.2.1.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><title>Use JSONata
+|
+How to
+</title><link href=https://docs.rhize.com/css/theme.css?07639695cdaf2b91d81cbbea8d450140 rel=stylesheet><link href=https://docs.rhize.com/css/runnable.css?46648956d99faa2e057d109b9f2a52e6 rel=stylesheet><link href=https://docs.rhize.com/css/tabs.css?035edc32762cb7973b740e3067101ced rel=stylesheet><link href=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css rel=stylesheet integrity=sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ crossorigin=anonymous><script src=//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js integrity=sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb crossorigin=anonymous></script><script src=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js integrity=sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn crossorigin=anonymous></script><link href="//fonts.googleapis.com/css?family=Lato:400,700" rel=stylesheet><link href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css rel=stylesheet integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN crossorigin=anonymous><link href=https://cdn.lineicons.com/2.0/LineIcons.css rel=stylesheet crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@docsearch/css@3></head><body><nav id=header><div class=header-left><div><a href=https://docs.rhize.com/ class=brand><img src=https://docs.rhize.com//images/rhize-logo.png alt=RHIZE class=logo></a><div class=logo-tagline><span>Documentation</span></div></div></div><div class=header-right><div id=docsearch><div class="menu-search align-middle"><div id=docsearch></div></div></div><div><ul class=menu><li><a href=https://rhize.com target=_blank>Home</a></li><li><a href=https://forum.rhize.com target=_blank>Community</a></li><li><a href=https://github.com/libremfg/libremfg.github.io target=_blank>GitHub</a></li></ul></div></div><a href=# id=sidebar-toggle><i class="fa fa-bars"></i></a></nav><aside id=sidebar><ul class=topics><li class="topic main-topic children"><a id=get-started href=#>Get started</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/get-started/introduction/>What is Rhize?</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/get-started/how-rhize-works/>How Rhize works</a></li></ul></li><li class="topic main-topic children"><a id=deploy href=#>Deploy</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=#>Install</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/install/overview/>Overview</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/install/setup-kubernetes/>Set up Kubernetes</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/install/keycloak/>Configure Keycloak</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/install/services/>Install Rhize services</a></li></ul></li><li class="topic sub-topic"><a href=#>Back up</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/backup/graphdb/>Back up the Graph DB</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/backup/audit/>Back up Audit PostgreSQL</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/backup/grafana/>Back up Grafana</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/backup/keycloak/>Back up Keycloak</a></li></ul></li><li class="topic sub-topic"><a href=#>Restore</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/restore/graphdb/>Restore the GraphDB</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/restore/audit/>Restore Audit backup</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/restore/grafana/>Restore Grafana</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/restore/keycloak/>Restore Keycloak</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/restore/bpmn-nodes/>BPMN execution recovery</a></li></ul></li><li class="topic sub-topic"><a href=#>Maintain</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/maintain/audit/>Archive the PostgreSQL Audit trail</a></li></ul></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/upgrade/>Upgrade</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/about-openidconnect/>About OpenID connect</a></li></ul></li><li class="topic main-topic children active"><a id=user-guides href=#>User guides</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=#>Define production models</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/model/create-objects-ui/>Create objects from the UI</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/model/master-definitions/>Master definitions and fields</a></li></ul></li><li class="topic sub-topic"><a href=#>Connect event data</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/publish-subscribe/connect-datasource/>Connect data source</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/publish-subscribe/turn-value-into-event/>Turn values into events</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/publish-subscribe/track-changes/>Track changes (CDC)</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/publish-subscribe/tutorial-create-equipment-class-rule/>Tutorial: Trigger a workflow from a rule</a></li></ul></li><li class="topic sub-topic active"><a href=#>Write BPMN workflows</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/orchestration-overview/>Overview: orchestrate processes</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/create-workflow/>Create workflows</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/trigger-workflows/>Trigger workflows</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/tune-performance/>Tune performance</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/naming-conventions/>Naming conventions</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/bpmn-elements/>BMPN elements</a></li><li class="topic sub-topic active"><a href=https://docs.rhize.com/how-to/bpmn/use-jsonata/>Use JSONata</a></li></ul></li><li class="topic sub-topic"><a href=#>Use GraphQL</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/gql/call-the-graphql-api/>Overview: the Rhize API</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/gql/query/>Query</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/gql/filter/>Filter</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/gql/mutate/>Mutate</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/gql/subscribe/>Subscribe</a></li></ul></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/audit/>Audit</a></li></ul></li><li class="topic main-topic children"><a id=use-cases href=#>Use cases</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/use-cases/overview/>Overview</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/use-cases/ebr/>Electronic batch records</a></li></ul></li><li class="topic main-topic children"><a id=reference href=#>Reference</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=#>Service configuration</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/service-config/agent-configuration/>Agent configuration</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/service-config/audit-configuration/>Audit configuration</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/service-config/bpmn-configuration/>BPMN configuration</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/service-config/core-configuration/>Core configuration</a></li></ul></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/default-ports/>Default URLs and local ports</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/gql-types/>GQL types and filters</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/glossary/>Glossary</a></li></ul></li><li class="topic main-topic children"><a id=explanations href=#>Explanations</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/explanations/manufacturing-data-hub/>Manufacturing Data Hub</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/explanations/isa-95-diagrams/>ISA-95 diagrams</a></li></ul></li><li class="topic main-topic children"><a id=releases href=#>Releases</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/3-0/>3.0.0</a></li><li class="topic sub-topic"><a href=#>Changelog</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/changelog/3-0-0/>3.0.0 (general release)</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/changelog/3-0-0rc09/>3.0.0rc09</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/changelog/3-0-0rc08/>3.0.0rc08</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/changelog/3-0-0rc07/>3.0.0rc07</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/changelog/3-0-0rc06/>3.0.0rc06</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/changelog/3-0-0rc05/>3.0.0rc05</a></li></ul></li></ul></li><li class="topic main-topic"><a href=https://docs.rhize.com/></a></li></ul></aside><script src=https://cdn.jsdelivr.net/npm/@docsearch/js@3></script><script type=text/javascript>docsearch({appId:"70JLDGIDQA",apiKey:"2b4c57aa9d3d0386bf1a6df5b54eb3cf",indexName:"rhize",insights:!0,container:"#docsearch",debug:!1})</script></body></html><main class=content-wrapper><div class=content><div class=top-toc><nav id=TableOfContents><ul><li><a href=#use-jsonata-in-rhize>Use JSONata in Rhize</a><ul><li><a href=#begin-each-expression-with-a->Begin each expression with a <code>=</code></a></li><li><a href=#access-root-variable-context-with->Access root variable context with <code>$.</code></a></li><li><a href=#use-jsonata-in-service-tasks>Use JSONata in service tasks</a></li><li><a href=#jsonata-version>JSONata version</a></li></ul></li><li><a href=#jsonata-examples>JSONata examples</a><ul><li><a href=#filter-for-items-that-contain>Filter for items that contain</a></li><li><a href=#find-actual-associated-with-high-values>Find actual associated with high values</a></li><li><a href=#map-event-to-operations-event>Map event to operations event</a></li><li><a href=#calculate-summary-statistics>Calculate summary statistics</a></li><li><a href=#select-random-item>Select random item</a></li><li><a href=#recursively-find-child-ids>Recursively find child IDs</a></li></ul></li></ul></nav></div><article><a class=edit-btn target=_blank href=https://github.com/libremfg/libremfg.github.io/edit/main/content/how-to/bpmn/use-jsonata.md><i class="fa fa-github-alt"></i> Edit Page</a><h1 class=post-title>Use JSONata</h1><p><a href=https://jsonata.org/>JSONata</a>
+is a query language to filter, transform, and create JSON objects.
+Rhize BPMN workflows use JSONata expressions to
+transform JSON payloads as they pass through workflow nodes and across integrated systems.
+In BPMN workflows, JSONata expressions have two essential functions:</p><ul><li><strong>Map data.</strong> Moving values from one data structure to another.</li><li><strong>Calculate data.</strong> Receiving values as input and create new data from them.</li></ul><p>This guide details how to use JSONata in your Rhize environment and provides some examples relevant to manufacturing workflows.
+For the full details of the JSONata expression language, read the <a href=https://docs.jsonata.org/overview.html>Official JSONata documentation</a>.</p><h2 id=use-jsonata-in-rhize>Use JSONata in Rhize</h2><p>JSONata returns the final value of its expression as output.
+This output can be of any data type that JSON supports.
+Generally, we recommend outputting a JSON object with the keys and values of the data you want to subsequently work with.</p><p>In practice, creating an expression usually follows these steps:</p><ol><li>Begin with an <code>=</code>.</li><li>Embed the expression in parenthesis.</li><li>At the top of expression, write your logic, variables, and functions.</li><li>At the bottom of the expression, create a JSON object whose keys are names you configure and whose values are derived from your logic.</li></ol><p>For example:</p><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=EXPRESSION><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-JSON data-lang=JSON><span style=display:flex><span><span>=(</span>
+</span></span><span style=display:flex><span>  <span>$logic</span> <span>:=</span> <span style=color:#a31515>&#34;Hello&#34;</span> <span>&amp;</span> <span style=color:#a31515>&#34; &#34;</span> <span>&amp;</span> <span style=color:#a31515>&#34;World&#34;</span><span>;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    &#34;output&#34;: <span>$logic</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span><span>)</span>
+</span></span></code></pre></div></div><div class=tab-pane title=OUTPUT><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-JSON data-lang=JSON><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;output&#34;: <span style=color:#a31515>&#34;Hello World&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></div></div><h3 id=begin-each-expression-with-a->Begin each expression with a <code>=</code></h3><p>Note that the previous expression begins with the equals sign, <code>=</code>.
+This character instructs Rhize to parse the subsequent data as JSONata (as opposed to raw JSON or some other data structure).</p><h3 id=access-root-variable-context-with->Access root variable context with <code>$.</code></h3><p>To access the root of the entire BPMN variable space,
+use the dollar character followed by a dot, <code>$.</code>.
+For example, this expression accesses all IDs for an <code>equipmentClass</code> object from the root variable context, <code>$.</code>.</p><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=EXPRESSION><strong>Expression:</strong>
+<code>$.equipmentClass.id</code></div><div class=tab-pane title="FULL TRANSFORMATION"><p><strong>Expression:</strong>
+<code>$.equipmentClass.id</code></p><p><strong>Input:</strong></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;equipmentClass&#34;: [
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>      &#34;id&#34;: <span style=color:#a31515>&#34;Vessel-A012&#34;</span>,
+</span></span><span style=display:flex><span>      &#34;description&#34;: <span style=color:#a31515>&#34;Stock Solution Vessel&#34;</span>,
+</span></span><span style=display:flex><span>      &#34;effectiveStart&#34;: <span style=color:#a31515>&#34;2023-05-24T09:58:00Z&#34;</span>,
+</span></span><span style=display:flex><span>      &#34;equipmentClassProperties&#34;: [
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>          &#34;id&#34;: <span style=color:#a31515>&#34;Volume&#34;</span>,
+</span></span><span style=display:flex><span>          &#34;description&#34;: <span style=color:#a31515>&#34;Vessel Volume&#34;</span>
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>      ]
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;Vessel-A013&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;description&#34;: <span style=color:#a31515>&#34;Stock Solution Vessel&#34;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  ]
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p><strong>Output:</strong></p><pre tabindex=0><code>[
+  &#34;Vessel-A012&#34;,
+  &#34;Vessel-A013&#34;
+]
+</code></pre></div></div></div><h3 id=use-jsonata-in-service-tasks>Use JSONata in service tasks</h3><p>JSONata can be used in many Rhize BPMN tasks.
+Particularly, the <a href=https://docs.rhize.com/how-to/bpmn/bpmn-elements/#jsonata-transform>JSONata service task</a> exists to receive input and pass it to another element or system.
+The main parameters of the JSONata task are as follows:</p><ul><li><strong>Input JSON</strong>. The incoming JSON. Alternatively, use the <code>=</code> character to write JSONata directly in the input field, accessing the process variable context through <code>$.</code></li><li><strong>Expression</strong>. The expression to further transform the input JSON and write to the output variable. If the node already uses JSONata in its input, enter a <code>$</code> (no period).</li><li><strong>Output variable</strong>. The name of the variable to pass to the process variable context.</li></ul><p>Though JSONata tasks are the most common use of JSONata,
+you can use the <code>=</code> prefix to declare an expression in many other fields.
+Parameters that accept expressions include:</p><ul><li><strong>API payloads</strong>. Calls to the Rhize GraphQL API and to external APIs can both use JSONata in their payloads.</li><li><strong>Outgoing payloads</strong>. The messages you send with intermediate message throws can have JSONata.</li><li><strong>Response transformations.</strong><ul><li>REST. Write JSONata in the input expression to filter data. This is helpful to remove data from over-fetching and to keep the process variable size lower.</li><li>GraphQL input. As with JSONata, your GraphQL tasks can pass their results to JSONata. This is less common, as GraphQL already provides tight control of the data it returns, but it is useful for calculating derived values.</li></ul></li></ul><p>Review the full list of parameters that accept JSONata in the <a href=https://docs.rhize.com/how-to/bpmn/bpmn-elements/>BPMN element reference</a>.</p><h3 id=jsonata-version>JSONata version</h3><p>Many implementations of JSONata exist.
+Rhize uses a custom Go implementation for high performance and safe calculation.</p><h2 id=jsonata-examples>JSONata examples</h2><p>These snippets provide some examples of JSONata from manufacturing workflows.
+To experiment with how they work, copy the data and expression into a <a href=https://try.jsonata.org/>JSONata exerciser</a> and try changing values.</p><h3 id=filter-for-items-that-contain>Filter for items that contain</h3><p>This expression returns the ID of all <code>equipmentActual</code> items that are associated with a specified job response <code>JR-4</code>.
+It outputs the IDs as an array of strings in a new custom object.</p><p>This is a minimal example of how you can use JSONata to transform data into new representations.
+Such transformation is a common prerequisite step for post-processing and service interoperability.</p><pre tabindex=0><code>$.data.queryJobResponse[`id`=&#34;JR-4&#34;].(
+    {&#34;associatedEquipment&#34;: equipmentActual.id}
+)
+</code></pre><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=INPUT><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;data&#34;: {
+</span></span><span style=display:flex><span>    &#34;queryJobResponse&#34;: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;JR-1&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;data&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;value&#34;: 100
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ],
+</span></span><span style=display:flex><span>        &#34;equipmentActual&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;id&#34;: <span style=color:#a31515>&#34;hauler&#34;</span>
+</span></span><span style=display:flex><span>          },
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;id&#34;: <span style=color:#a31515>&#34;actuator-121&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;JR-4&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;data&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;value&#34;: <span style=color:#a31515>&#34;101.8&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ],
+</span></span><span style=display:flex><span>        &#34;equipmentActual&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;id&#34;: <span style=color:#a31515>&#34;actuator-132&#34;</span>
+</span></span><span style=display:flex><span>          },
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;id&#34;: <span style=color:#a31515>&#34;actuator-133&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div><div class=tab-pane title="OUTPUT "><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;associatedEquipment&#34;: [
+</span></span><span style=display:flex><span>    <span style=color:#a31515>&#34;actuator-132&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a31515>&#34;actuator-133&#34;</span>
+</span></span><span style=display:flex><span>  ]
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></div></div><h3 id=find-actual-associated-with-high-values>Find actual associated with high values</h3><p>This expression finds all job responses whose <code>value</code> exceeds <code>100</code>.
+It outputs the matching job response IDs along with the associated equipment actual used in the job.</p><p>In production, you may use a similar analysis to isolate all <abbr title="The specific resource used for a specific job. For example, an operations segment may require EquipmentA, but if this equipment is in maintainance at the time of a job, the Equipment actual might be its temporary replacement, EquipmentB">resource actual</abbr>s associated with an abnormal production outcome.</p><pre tabindex=0><code>$map($.data.queryJobResponse, function($v,$i,$a){
+    $number($v.data.value) &gt; 102
+        ?  {&#34;jobResponseId&#34;: $v.id, &#34;EquipmentActual&#34;: $v.equipmentActual}
+        }
+    )
+</code></pre><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=INPUT><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;data&#34;: {
+</span></span><span style=display:flex><span>    &#34;queryJobResponse&#34;: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;JR-1&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;data&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;value&#34;: 100
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ],
+</span></span><span style=display:flex><span>        &#34;equipmentActual&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;id&#34;: <span style=color:#a31515>&#34;hauler&#34;</span>
+</span></span><span style=display:flex><span>          },
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;id&#34;: <span style=color:#a31515>&#34;actuator-121&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;JR-5&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;data&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;value&#34;: 103.2
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ],
+</span></span><span style=display:flex><span>        &#34;equipmentActual&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;id&#34;: <span style=color:#a31515>&#34;actuator-122&#34;</span>
+</span></span><span style=display:flex><span>          },
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;id&#34;: <span style=color:#a31515>&#34;actuator-13&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;JR-2&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;data&#34;: [],
+</span></span><span style=display:flex><span>        &#34;equipmentActual&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;id&#34;: <span style=color:#a31515>&#34;actuator-13&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;JR-4&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;data&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;value&#34;: <span style=color:#a31515>&#34;101.8&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ],
+</span></span><span style=display:flex><span>        &#34;equipmentActual&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;id&#34;: <span style=color:#a31515>&#34;actuator-132&#34;</span>
+</span></span><span style=display:flex><span>          },
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;id&#34;: <span style=color:#a31515>&#34;actuator-133&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;JR-3&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;data&#34;: [],
+</span></span><span style=display:flex><span>        &#34;equipmentActual&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;id&#34;: <span style=color:#a31515>&#34;actuator-091&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;JR-12&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;data&#34;: [],
+</span></span><span style=display:flex><span>        &#34;equipmentActual&#34;: []
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;JR-123&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;data&#34;: [],
+</span></span><span style=display:flex><span>        &#34;equipmentActual&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;id&#34;: <span style=color:#a31515>&#34;actuator-121&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;JR-6&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;data&#34;: [],
+</span></span><span style=display:flex><span>        &#34;equipmentActual&#34;: []
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;JR-8&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;data&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;value&#34;: <span style=color:#a31515>&#34;96.7&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ],
+</span></span><span style=display:flex><span>        &#34;equipmentActual&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;id&#34;: <span style=color:#a31515>&#34;actuator-091&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;JR-9&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;data&#34;: [],
+</span></span><span style=display:flex><span>        &#34;equipmentActual&#34;: []
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;JR-10&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;data&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;value&#34;: <span style=color:#a31515>&#34;105.0&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ],
+</span></span><span style=display:flex><span>        &#34;equipmentActual&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;id&#34;: <span style=color:#a31515>&#34;actuator-12&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;JR-7&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;data&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;value&#34;: <span style=color:#a31515>&#34;103.2&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ],
+</span></span><span style=display:flex><span>        &#34;equipmentActual&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;id&#34;: <span style=color:#a31515>&#34;actuator-12&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div><div class=tab-pane title=OUTPUT><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>[
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    &#34;jobResponseId&#34;: <span style=color:#a31515>&#34;JR-5&#34;</span>,
+</span></span><span style=display:flex><span>    &#34;EquipmentActual&#34;: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;actuator-122&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;actuator-13&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    &#34;jobResponseId&#34;: <span style=color:#a31515>&#34;JR-10&#34;</span>,
+</span></span><span style=display:flex><span>    &#34;EquipmentActual&#34;: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;actuator-12&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    &#34;jobResponseId&#34;: <span style=color:#a31515>&#34;JR-7&#34;</span>,
+</span></span><span style=display:flex><span>    &#34;EquipmentActual&#34;: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;actuator-12&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>]
+</span></span></code></pre></div></div></div></div><h3 id=map-event-to-operations-event>Map event to operations event</h3><p>This function takes data from an external weather API
+and maps it onto the <code>operationsEvent</code> ISA-95 object.
+It takes the earliest value from the event time data as the start, and last value as the end.
+If no event data exists, it outputs a message.</p><p>Although this example uses data that is unlikely to be a source of a real manufacturing event, the practice of receiving data from a remote API and mapping it to ISA-95 representation is quite common.
+In production, you may perform a similar operation to map an SAP schedule order to an <code>operationsSchedule</code>, or the results from a QA service to the <code>testResults</code> object.</p><pre tabindex=0><code>$count(events[0]) &gt; 0
+
+    ? events.{
+    &#34;id&#34;:id,
+    &#34;description&#34;:title,
+    &#34;hierarchyScope&#34;:{
+        &#34;id&#34;:&#34;Earth&#34;,
+        &#34;label&#34;: Earth,
+        &#34;effectiveStart&#34;: $sort(geometries.date)[0]
+
+    },
+    &#34;category&#34;:categories.title,
+    &#34;recordTimestamp&#34;: $sort(geometries.date)[0],
+    &#34;effectiveStart&#34;: $sort(geometries.date)[0],
+    &#34;effectiveEnd&#34;: $sort(geometries.date)[$count(geometries.date)-1],
+    &#34;source&#34;: sources.id &amp; &#34; &#34; &amp; sources.url,
+    &#34;operationsEventDefinition&#34;: {
+    &#34;id&#34;: &#34;Earth event&#34;,
+    &#34;label&#34;: &#34;Earth event&#34;
+    }
+    }
+
+: &#34;No earth events lately&#34;
+</code></pre><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=INPUT><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;description&#34;: <span style=color:#a31515>&#34;Natural events from EONET.&#34;</span>,
+</span></span><span style=display:flex><span>  &#34;events&#34;: [
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>      &#34;categories&#34;: [
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>          &#34;id&#34;: 12,
+</span></span><span style=display:flex><span>          &#34;title&#34;: <span style=color:#a31515>&#34;Volcanoes&#34;</span>
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>      ],
+</span></span><span style=display:flex><span>      &#34;description&#34;: <span style=color:#a31515>&#34;&#34;</span>,
+</span></span><span style=display:flex><span>      &#34;geometries&#34;: [
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>          &#34;coordinates&#34;: [
+</span></span><span style=display:flex><span>            -70.8972,
+</span></span><span style=display:flex><span>            -16.345
+</span></span><span style=display:flex><span>          ],
+</span></span><span style=display:flex><span>          &#34;date&#34;: <span style=color:#a31515>&#34;2024-05-06T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>          &#34;type&#34;: <span style=color:#a31515>&#34;Point&#34;</span>
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>      ],
+</span></span><span style=display:flex><span>      &#34;id&#34;: <span style=color:#a31515>&#34;EONET_6516&#34;</span>,
+</span></span><span style=display:flex><span>      &#34;link&#34;: <span style=color:#a31515>&#34;https://eonet.gsfc.nasa.gov/api/v2.1/events/EONET_6516&#34;</span>,
+</span></span><span style=display:flex><span>      &#34;sources&#34;: [
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>          &#34;id&#34;: <span style=color:#a31515>&#34;SIVolcano&#34;</span>,
+</span></span><span style=display:flex><span>          &#34;url&#34;: <span style=color:#a31515>&#34;https://volcano.si.edu/volcano.cfm?vn=354020&#34;</span>
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>      ],
+</span></span><span style=display:flex><span>      &#34;title&#34;: <span style=color:#a31515>&#34;Ubinas Volcano, Peru&#34;</span>
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>      &#34;categories&#34;: [
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>          &#34;id&#34;: 15,
+</span></span><span style=display:flex><span>          &#34;title&#34;: <span style=color:#a31515>&#34;Sea and Lake Ice&#34;</span>
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>      ],
+</span></span><span style=display:flex><span>      &#34;description&#34;: <span style=color:#a31515>&#34;&#34;</span>,
+</span></span><span style=display:flex><span>      &#34;geometries&#34;: [
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>          &#34;coordinates&#34;: [
+</span></span><span style=display:flex><span>            -33.27,
+</span></span><span style=display:flex><span>            -51.88
+</span></span><span style=display:flex><span>          ],
+</span></span><span style=display:flex><span>          &#34;date&#34;: <span style=color:#a31515>&#34;2024-02-16T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>          &#34;type&#34;: <span style=color:#a31515>&#34;Point&#34;</span>
+</span></span><span style=display:flex><span>        },
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>          &#34;coordinates&#34;: [
+</span></span><span style=display:flex><span>            -32.82,
+</span></span><span style=display:flex><span>            -51.09
+</span></span><span style=display:flex><span>          ],
+</span></span><span style=display:flex><span>          &#34;date&#34;: <span style=color:#a31515>&#34;2024-03-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>          &#34;type&#34;: <span style=color:#a31515>&#34;Point&#34;</span>
+</span></span><span style=display:flex><span>        },
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>          &#34;coordinates&#34;: [
+</span></span><span style=display:flex><span>            -30.95,
+</span></span><span style=display:flex><span>            -51.21
+</span></span><span style=display:flex><span>          ],
+</span></span><span style=display:flex><span>          &#34;date&#34;: <span style=color:#a31515>&#34;2024-03-07T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>          &#34;type&#34;: <span style=color:#a31515>&#34;Point&#34;</span>
+</span></span><span style=display:flex><span>        },
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>          &#34;coordinates&#34;: [
+</span></span><span style=display:flex><span>            -27.71,
+</span></span><span style=display:flex><span>            -50.88
+</span></span><span style=display:flex><span>          ],
+</span></span><span style=display:flex><span>          &#34;date&#34;: <span style=color:#a31515>&#34;2024-03-15T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>          &#34;type&#34;: <span style=color:#a31515>&#34;Point&#34;</span>
+</span></span><span style=display:flex><span>        },
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>          &#34;coordinates&#34;: [
+</span></span><span style=display:flex><span>            -32.82,
+</span></span><span style=display:flex><span>            -51.09
+</span></span><span style=display:flex><span>          ],
+</span></span><span style=display:flex><span>          &#34;date&#34;: <span style=color:#a31515>&#34;2024-03-22T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>          &#34;type&#34;: <span style=color:#a31515>&#34;Point&#34;</span>
+</span></span><span style=display:flex><span>        },
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>          &#34;coordinates&#34;: [
+</span></span><span style=display:flex><span>            -27.33,
+</span></span><span style=display:flex><span>            -52.45
+</span></span><span style=display:flex><span>          ],
+</span></span><span style=display:flex><span>          &#34;date&#34;: <span style=color:#a31515>&#34;2024-03-29T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>          &#34;type&#34;: <span style=color:#a31515>&#34;Point&#34;</span>
+</span></span><span style=display:flex><span>        },
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>          &#34;coordinates&#34;: [
+</span></span><span style=display:flex><span>            -25.79,
+</span></span><span style=display:flex><span>            -52.41
+</span></span><span style=display:flex><span>          ],
+</span></span><span style=display:flex><span>          &#34;date&#34;: <span style=color:#a31515>&#34;2024-04-19T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>          &#34;type&#34;: <span style=color:#a31515>&#34;Point&#34;</span>
+</span></span><span style=display:flex><span>        },
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>          &#34;coordinates&#34;: [
+</span></span><span style=display:flex><span>            -25.18,
+</span></span><span style=display:flex><span>            -51.86
+</span></span><span style=display:flex><span>          ],
+</span></span><span style=display:flex><span>          &#34;date&#34;: <span style=color:#a31515>&#34;2024-04-26T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>          &#34;type&#34;: <span style=color:#a31515>&#34;Point&#34;</span>
+</span></span><span style=display:flex><span>        },
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>          &#34;coordinates&#34;: [
+</span></span><span style=display:flex><span>            -22.85,
+</span></span><span style=display:flex><span>            -52.56
+</span></span><span style=display:flex><span>          ],
+</span></span><span style=display:flex><span>          &#34;date&#34;: <span style=color:#a31515>&#34;2024-05-02T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>          &#34;type&#34;: <span style=color:#a31515>&#34;Point&#34;</span>
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>      ],
+</span></span><span style=display:flex><span>      &#34;id&#34;: <span style=color:#a31515>&#34;EONET_6513&#34;</span>,
+</span></span><span style=display:flex><span>      &#34;link&#34;: <span style=color:#a31515>&#34;https://eonet.gsfc.nasa.gov/api/v2.1/events/EONET_6513&#34;</span>,
+</span></span><span style=display:flex><span>      &#34;sources&#34;: [
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>          &#34;id&#34;: <span style=color:#a31515>&#34;NATICE&#34;</span>,
+</span></span><span style=display:flex><span>          &#34;url&#34;: <span style=color:#a31515>&#34;https://usicecenter.gov/pub/Iceberg_Tabular.csv&#34;</span>
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>      ],
+</span></span><span style=display:flex><span>      &#34;title&#34;: <span style=color:#a31515>&#34;Iceberg D28A&#34;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  ],
+</span></span><span style=display:flex><span>  &#34;link&#34;: <span style=color:#a31515>&#34;https://eonet.gsfc.nasa.gov/api/v2.1/events&#34;</span>,
+</span></span><span style=display:flex><span>  &#34;title&#34;: <span style=color:#a31515>&#34;EONET Events&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div><div class=tab-pane title=OUTPUT><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>[
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    &#34;id&#34;: <span style=color:#a31515>&#34;EONET_6516&#34;</span>,
+</span></span><span style=display:flex><span>    &#34;description&#34;: <span style=color:#a31515>&#34;Ubinas Volcano, Peru&#34;</span>,
+</span></span><span style=display:flex><span>    &#34;hierarchyScope&#34;: {
+</span></span><span style=display:flex><span>      &#34;id&#34;: <span style=color:#a31515>&#34;Earth&#34;</span>,
+</span></span><span style=display:flex><span>      &#34;effectiveStart&#34;: <span style=color:#a31515>&#34;2024-05-06T00:00:00Z&#34;</span>
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>    &#34;category&#34;: <span style=color:#a31515>&#34;Volcanoes&#34;</span>,
+</span></span><span style=display:flex><span>    &#34;recordTimestamp&#34;: <span style=color:#a31515>&#34;2024-05-06T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>    &#34;effectiveStart&#34;: <span style=color:#a31515>&#34;2024-05-06T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>    &#34;effectiveEnd&#34;: <span style=color:#a31515>&#34;2024-05-06T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>    &#34;source&#34;: <span style=color:#a31515>&#34;SIVolcano https://volcano.si.edu/volcano.cfm?vn=354020&#34;</span>,
+</span></span><span style=display:flex><span>    &#34;operationsEventDefinition&#34;: {
+</span></span><span style=display:flex><span>      &#34;id&#34;: <span style=color:#a31515>&#34;Earth event&#34;</span>,
+</span></span><span style=display:flex><span>      &#34;label&#34;: <span style=color:#a31515>&#34;Earth event&#34;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    &#34;id&#34;: <span style=color:#a31515>&#34;EONET_6513&#34;</span>,
+</span></span><span style=display:flex><span>    &#34;description&#34;: <span style=color:#a31515>&#34;Iceberg D28A&#34;</span>,
+</span></span><span style=display:flex><span>    &#34;hierarchyScope&#34;: {
+</span></span><span style=display:flex><span>      &#34;id&#34;: <span style=color:#a31515>&#34;Earth&#34;</span>,
+</span></span><span style=display:flex><span>      &#34;effectiveStart&#34;: <span style=color:#a31515>&#34;2024-02-16T00:00:00Z&#34;</span>
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>    &#34;category&#34;: <span style=color:#a31515>&#34;Sea and Lake Ice&#34;</span>,
+</span></span><span style=display:flex><span>    &#34;recordTimestamp&#34;: <span style=color:#a31515>&#34;2024-02-16T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>    &#34;effectiveStart&#34;: <span style=color:#a31515>&#34;2024-02-16T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>    &#34;effectiveEnd&#34;: <span style=color:#a31515>&#34;2024-05-02T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>    &#34;source&#34;: <span style=color:#a31515>&#34;NATICE https://usicecenter.gov/pub/Iceberg_Tabular.csv&#34;</span>,
+</span></span><span style=display:flex><span>    &#34;operationsEventDefinition&#34;: {
+</span></span><span style=display:flex><span>      &#34;id&#34;: <span style=color:#a31515>&#34;Earth event&#34;</span>,
+</span></span><span style=display:flex><span>      &#34;label&#34;: <span style=color:#a31515>&#34;Earth event&#34;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>]
+</span></span></code></pre></div></div></div></div><h3 id=calculate-summary-statistics>Calculate summary statistics</h3><p>These functions calculate statistics for an array of numbers.
+Some of the output uses built-in JSONata functions, such as <code>$max()</code>.
+Others, such as the ones for median and standard deviation,
+are created in the expression.</p><p>You might use statistics such as these to calculate metrics and perform performance analysis on historical or streamed data.</p><pre tabindex=0><code>(
+$stdPop := function($arr) {
+    (
+        $variance := $map($arr, function($v, $i, $a) {
+            $power($v - $average($a),2)
+            });
+        $sum($variance) / $count($arr) ~&gt; $sqrt()
+
+    )};
+
+$median := function($arr) {
+    (
+        $sorted := $sort($arr);
+        $length := $count($arr);
+        $mid := $floor($length/2);
+        $length % 2 = 0
+            ? $median := ($sorted[$mid-1] + $sorted[$mid]) /2
+            : $median := $sorted[$mid];
+    )};
+
+ {
+ &#34;std_population&#34;:$stdPop($.data.arr),
+ &#34;mean&#34;:$average($.data.arr),
+ &#34;median&#34;:$median($.data.arr),
+ &#34;mode&#34;: $max($.data.arr)
+ }
+)
+</code></pre><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=INPUT><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;data&#34;:{&#34;arr&#34;:[1,3,5,7,9,11,50]}
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div><div class=tab-pane title=OUTPUT><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;std_population&#34;: 15.71818133531,
+</span></span><span style=display:flex><span>  &#34;mean&#34;: 12.28571428571,
+</span></span><span style=display:flex><span>  &#34;median&#34;: 7,
+</span></span><span style=display:flex><span>  &#34;mode&#34;: 50
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></div></div><h3 id=select-random-item>Select random item</h3><p>This expression randomly selects an item from the plant&rsquo;s array of available equipment, and then adds that item as the <code>equipmentRequirement</code> for a segment associated with a specific job order.</p><p>You might use randomizing functions for scheduling, quality control, and simulation.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span><span>(</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span>$randomChoice</span> <span>:=</span> <span>function($a)</span> {
+</span></span><span style=display:flex><span>    <span>(</span>
+</span></span><span style=display:flex><span>        <span>$selection</span> <span>:=</span>
+</span></span><span style=display:flex><span>            <span>$random()</span> <span>*</span> <span>($count($a)+1)</span> <span>~&gt;</span> <span>$floor();</span>
+</span></span><span style=display:flex><span>        <span>$a[$selection]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span>)</span>}<span>;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>&#34;segmentRequirement&#34;: {
+</span></span><span style=display:flex><span>  &#34;workRequirement&#34;: {&#34;id&#34;: <span>$.PO</span>},
+</span></span><span style=display:flex><span>  &#34;equipmentRequirements&#34;:[<span>$randomChoice($.available)</span>],
+</span></span><span style=display:flex><span>  &#34;id&#34;: <span style=color:#a31515>&#34;Make widget&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span>)</span>
+</span></span></code></pre></div><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=INPUT><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;available&#34;:[<span style=color:#a31515>&#34;line_1&#34;</span>,<span style=color:#a31515>&#34;line_2&#34;</span>,<span style=color:#a31515>&#34;line_3&#34;</span>,<span style=color:#a31515>&#34;line_4&#34;</span>,<span style=color:#a31515>&#34;line_5&#34;</span>],
+</span></span><span style=display:flex><span>  &#34;PO&#34;:<span style=color:#a31515>&#34;po-123&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span></code></pre></div></div><div class=tab-pane title=OUTPUT><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;segmentRequirement&#34;: {
+</span></span><span style=display:flex><span>    &#34;workRequirement&#34;: {
+</span></span><span style=display:flex><span>      &#34;id&#34;: <span style=color:#a31515>&#34;po-123&#34;</span>
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>    &#34;equipmentRequirements&#34;: [
+</span></span><span style=display:flex><span>      <span style=color:#a31515>&#34;line_2&#34;</span>
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    &#34;id&#34;: <span style=color:#a31515>&#34;Make widget&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></div></div><h3 id=recursively-find-child-ids>Recursively find child IDs</h3><p>This function uses recursion and a predefined set of naming rules
+to generate (or find) a set of child IDs for an entity.
+The <code>n</code> value determines how many times it&rsquo;s called.</p><p>Besides searching, recursive functions have many uses with nested manufacturing data. Recursion is also often used in algorithms to calculate metrics and performance statistics.</p><pre tabindex=0><code>(
+    $next := function($x, $y) {$x &gt; 1 ?
+        (
+            $rules := &#34;123456789ABCEFHJKLNORTUVYZ&#34;;
+            $substring($y[-1],-1) = &#34;Z&#34; ?
+            $next($x - 1, $append($y, $y[-1] &amp; &#39;1&#39;)) :
+            $next($x - 1, $append(
+                $y,
+                $substring($y[-1],0,$length($y[-1])-1) &amp; $substring($substringAfter($rules,$substring($y[-1],-1)),0,1)
+            ))
+        )
+        : $y};
+    {
+        &#34;children&#34;: $next(n, [nextId])
+    }
+)
+</code></pre></article><div class=right-toc><nav id=TableOfContents><ul><li><a href=#use-jsonata-in-rhize>Use JSONata in Rhize</a><ul><li><a href=#begin-each-expression-with-a->Begin each expression with a <code>=</code></a></li><li><a href=#access-root-variable-context-with->Access root variable context with <code>$.</code></a></li><li><a href=#use-jsonata-in-service-tasks>Use JSONata in service tasks</a></li><li><a href=#jsonata-version>JSONata version</a></li></ul></li><li><a href=#jsonata-examples>JSONata examples</a><ul><li><a href=#filter-for-items-that-contain>Filter for items that contain</a></li><li><a href=#find-actual-associated-with-high-values>Find actual associated with high values</a></li><li><a href=#map-event-to-operations-event>Map event to operations event</a></li><li><a href=#calculate-summary-statistics>Calculate summary statistics</a></li><li><a href=#select-random-item>Select random item</a></li><li><a href=#recursively-find-child-ids>Recursively find child IDs</a></li></ul></li></ul></nav></div></div></main><script type=text/javascript src=https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js></script><script src=https://docs.rhize.com/js/clipboard.min.js></script><script src=https://docs.rhize.com/js/dgraph.js?a9873668f1334ff6c49d4edea0a4bc38></script><script>hljs.initHighlightingOnLoad()</script></body></html>
