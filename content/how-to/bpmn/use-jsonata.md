@@ -757,12 +757,12 @@ Recursive functions such as the following provide a concise means of traversing 
 (
     $next := function($x, $y) {$x > 1 ?
         (
-            $rules := "123456789ABCEFHJKLNORTUVYZ";
+            $namingRules := "123456789ABCDFGHJKLMNOPQRSTUVWXYZ";
             $substring($y[-1],-1) = "Z" ?
             $next($x - 1, $append($y, $y[-1] & '1')) :
             $next($x - 1, $append(
                 $y,
-                $substring($y[-1],0,$length($y[-1])-1) & $substring($substringAfter($rules,$substring($y[-1],-1)),0,1)
+                $substring($y[-1],0,$length($y[-1])-1) & $substring($substringAfter($namingRules,$substring($y[-1],-1)),0,1)
             ))
         )
         : $y};
@@ -777,7 +777,7 @@ Recursive functions such as the following provide a concise means of traversing 
 ```json
 {
 "n":10,
-"nextId": "molten-widget-x2fts"
+"nextId": "molten-widet-X2FCS"
 }
 ```
 {{% /tab %}}
@@ -786,16 +786,16 @@ Recursive functions such as the following provide a concise means of traversing 
 ```json
 {
   "children": [
-    "molten-widget-x2fts",
-    "molten-widget-x2ft1",
-    "molten-widget-x2ft2",
-    "molten-widget-x2ft3",
-    "molten-widget-x2ft4",
-    "molten-widget-x2ft5",
-    "molten-widget-x2ft6",
-    "molten-widget-x2ft7",
-    "molten-widget-x2ft8",
-    "molten-widget-x2ft9"
+    "molten-widet-X2FCS",
+    "molten-widet-X2FCT",
+    "molten-widet-X2FCU",
+    "molten-widet-X2FCV",
+    "molten-widet-X2FCW",
+    "molten-widet-X2FCX",
+    "molten-widet-X2FCY",
+    "molten-widet-X2FCZ",
+    "molten-widet-X2FCZ1",
+    "molten-widet-X2FCZ2"
   ]
 }
 ```
