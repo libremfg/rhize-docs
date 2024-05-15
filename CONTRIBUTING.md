@@ -39,6 +39,28 @@ menu:
 ```
 
 
+## Images
+
+Hugo evaluates links relative to the published site, which can create some confusion when linking images.
+
+To avoid worrying about relative positions, put all images in `/static/images/<SUB_DIRECTORY>`.
+
+Then Reference the image as if `static` did not exist.
+
+```
+src="/images/bpmn/screenshot-rhize-bpmn-error-handling-custom-response.png"
+```
+
+### Image naming conventions
+
+Images filepaths provide info for humans and crawlers, so adopt standardized conventions:
+
+Each image should have this structure
+
+`<TYPE>-rhize-<DESCRIPTION>.<EXTENSION>`
+
+Type should be one of `screenshot`, `graphic`, or `diagram`.
+
 ## Style
 
 The docs follow the [Google Developer's Style Guide](https://developers.google.com/), a widely used standard for developer docs. 
@@ -71,6 +93,21 @@ These pages describe the elements to make a Rhize {{< abbr "bpmn" >}} workflow,
 Renders as:
 
 ![image](https://github.com/libremfg/libremfg.github.io/assets/47385188/2394da77-821b-4379-8814-df2476f6e25c)
+
+### bigFigure
+
+Center images and have them open in a new tab.
+Optional parameters for `width` and `caption`.
+
+```html
+{{< bigFigure
+width="65%"
+alt="Diagram simplifying flows depicted in part 1 of ISA-95"
+src="/images/arch/diagram-rhize-l3-l4-information-flows.png"
+caption="A simplified view of how information might exchange between level 3 and 4 systems in a point-to-point topology."
+>}}
+```
+
 
 ### Compatibility
 

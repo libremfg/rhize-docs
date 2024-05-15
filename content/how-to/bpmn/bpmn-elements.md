@@ -5,13 +5,13 @@ draft: false
 categories: [reference]
 description: >-
   A reference of all BPMN elements used in the Rhize BPMN engine.
-weight: 600
+weight: 1000
 menu:
   main:
     parent: howto-bpmn
 boilerplate:
   jsonata_response: >-
-    You can optionally add a [JSONata](https://docs.jsonata.org/1.7.0/overview) expression to filter results
+    Optional [JSONata](https://docs.jsonata.org/1.7.0/overview) expression to map to the [process variable context](#process-variable-context)
   max_payload: >-
     Number. If the response length exceeds this number of characters, Rhize throws an error.
   connection_timeout: >-
@@ -22,22 +22,53 @@ boilerplate:
     The ID of the datasource
   data_expression: >-
     JSON or JSONata expression. Topics and values to write to
-
+  headers: >-
+    Additional headers to send in the request
 ---
 
-These pages describe the elements to make a Rhize {{< abbr "bpmn" >}} workflow, and their parameters to set conditions, use variables, and call services.
+This document describes the parameters available to each BPMN element in the Rhize UI.
+These parameters control how users set conditions, transform data, access variables, call services, and so on.
 
-Rhize BPMN elements are based on the Business Process Model and Notation [OMG Standard](https://www.omg.org/spec/BPMN/2.0/).
-While the visual grammar is functionally the same, we extend some elements for specific Rhize features, like service tasks that call the GraphQL API.
+Rhize BPMN workflows conform to the visual grammar described in the OMG standard for [Business Process Model and Notation](https://www.omg.org/spec/BPMN/2.0/).
+Each process is made of _events_ (circles), _activities_ (rectangles), _gateways_ (diamonds), and _flows_ (arrows).
+Some elements are extended for Rhize-specific features, such as service tasks that call the GraphQL API.
+Some elements from the standard are unused and thus do not appear in the UI.
 
-Each BPMN workflow is a _process_ with an ID.
-Each process is made up _events_ (circles), _activities_ (rectangles), _gateways_ (diamonds), and _flows_ (arrows).
+
+
+## Common parameters
+
+
+Every BPMN workflow and every element that the workflow contains have the following parameters:
+
+| Parameter            | Description                                                                                                               |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------|
+| ID                   | Mandatory unique ID. For guidance, follow the [BPMN naming conventions]({{< relref "/how-to/bpmn/naming-conventions" >}}). |
+| Name                 | Optional human readable name. If empty, takes ID value.                                                                              |
+| Documentation        | Optional freeform text for additional information                                                                                  |
+| Extension properties | Optional metadata to add to workflow or node                                                                              |
 
 
 ## Events
 
 _Events_ are something that happen in the course of a process.
 In BPMN, events are drawn with circles.
+Events have a _type_ and a _dimension_.
+  
+{{< tabs >}}
+{{% tab "Events" %}}
+![A simplified model of events with no activities](/images/bpmn/rhize-bpmn-events.png)
+{{% /tab %}}
+{{% tab "Message type" %}}
+Message events subscribe or publish to the Rhize broker. <br/>
+![A message event](/images/bpmn/bpmn-message-event.svg)
+{{% /tab %}}
+
+{{% tab "Timer type" %}}
+Timer events start according to some interval or date, or wait for some duration. <br/>
+![Timer event](/images/bpmn/bpmn-timer-event.svg  )
+{{% /tab %}}
+{{< /tabs >}}
 
 In event-driven models, events can happen in one of three _dimensions_:
 
@@ -50,7 +81,8 @@ In event-driven models, events can happen in one of three _dimensions_:
 - **End.**
   All processes end with some result. End events are drawn with a single thick line.
 
-![A simplified model of events with no activities](/images/bpmn/rhize-bpmn-events.png)
+
+
 
 Besides these dimensions, BPMN also classifies events by whether they _catch_ a trigger or _throw_ a result.
 All start events are catch events; that is, they react to some trigger.
@@ -61,41 +93,62 @@ Rhize supports various event types to categorize an event, as described in the f
 As with [Gateways](#gateways) and [Activities](#activities), event types are marked by their icons.
 Throwing events are represented with icons that are filled in.
 
-### Message
-
-![A message event](/images/bpmn/bpmn-message-event.svg)
-
-{{< notice "note" >}}
-Message events follow MQTT topic syntax.
-{{< /notice >}}
-
-- Purpose: To denote a message being caught or thrown.
-- Icon: An envelope
-- Examples: A MQTT device publishes a message about a new sensor reading (starting a process). The ERP system sends a confirmation document (ending a process).
-- Dimension: Start, intermediate, end
 
 
-### Timer
-
-![A timer event](/images/bpmn/bpmn-timer-event.svg)
-- Purpose: An event after a certain amount of elapsed time or on a certain data
-- Icon: A clock
-- Examples: An hourly timer starts a process to check quality. An intermediate event starts after a twenty-minute fermentation process.
-- Dimension: Start, intermediate
-
-In Rhize, start timer events can be one of `Cycle`, to begin at recurring intervals, and `Date`, to happen at a certain time. An intermediate time event is always of `Duration`. 
-All timer events are configured in the **Timer** parameter and in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
-
-### Error
-
-![An error event](/images/bpmn/bpmn-error-event.svg)
-
-- Purpose: An error occurred in the system
-- Icon: A flash
-- Example: A REST server returns a 500 error.
-- Dimension: End
+### Start events
 
 
+Start events are triggered by the `CreateAndRunBPMN` and `CreateAndRunBPMNSync` {{< abbr "mutation" >}} operations.
+The parameters for a start event are as follows:
+
+| Parameter | Description                                                                                                            |
+|-----------|------------------------------------------------------------------------------------------------------------------------|
+| Outputs   | Optional variables to add to the {{< abbr "process variable context" >}}. JSON or JSONata. |
+
+
+### Message start events
+
+Message events are triggered from a message published to the Rhize broker.
+The parameters for a message event are as follows:
+
+| Parameter | Description                                                                                       |
+|-----------|---------------------------------------------------------------------------------------------------|
+| Message   | The topic the message subscribes to on the Rhize Broker. The topic structure follows MQTT syntax. |
+| Outputs   |  Optional variables to add to the {{< abbr "process variable context" >}}.  JSON or JSONata.      |
+
+### Timer start events
+
+Timer start events are triggered either at a specific date or recurring intervals.
+The parameters for a timer start event are as follows:
+
+| Parameter | Description                                                                                                                                                                                                                                                                                     |
+|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Timer     | One of <ul><li>`Cycle`, to begin at recurring intervals. For example,`R5/2024-05-09T08:12:55/PT10S` starts on `2024-05-09` and executes every 10 seconds for 5 repetitions. If `<START_DATE>` is not set, Rhize uses `2023-01-01T00:00:00Z`.</li> <li> `Date`, to happen at a certain time, for example, `2024-05-09T08:12:55`</li></ul> Enter values in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. |
+| Outputs   | Optional variables to add to the {{< abbr "process variable context" >}}. JSON or JSONata.                                                                                                                                                                                                      |
+
+### Intermediate message events
+
+Intermediate message events throw a message to the Rhize NATS broker.
+This may provide info for a subscribing third-party client, or initiate another BPMN workflow.
+
+The parameters for an intermediate message event are as follows:
+
+| Parameter | Description                                                                                                            |
+|-----------|------------------------------------------------------------------------------------------------------------------------|
+| Message   | The topic the message publishes to on the Rhize Broker. The topic structure follows MQTT syntax                        |
+| Inputs    | Variables to name and filter. For example, they may come from a preceding JSONata element.                             |
+| Headers   | {{< param boilerplate.headers >}} |
+| Outputs | JSON or JSONata. Optional variables to add to the {{< abbr "process variable context" >}}.                                                                                                   |
+
+### Intermediate timer events
+
+An intermediate message pauses for some duration.
+The parameters for an intermediate timer event are as follows:
+
+| Parameter | Description                                                                                                            |
+|-----------|------------------------------------------------------------------------------------------------------------------------|
+| Timer| A duration to pause. Enter values in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.|
+| Outputs   | Optional variables to add to the {{< abbr "process variable context" >}}. The assignment value can be JSON or JSONata. |
 
 
 ## Service tasks
@@ -137,10 +190,15 @@ Transform JSON data with a [JSONata expression](https://docs.jsonata.org/overvie
 | Call parameters  | Description                                                                   |
 |------------------|-------------------------------------------------------------------------------|
 | Input            | Input data for the transform                                                  |
-| Transform        | [Variables for the GraphQL query]({{< relref "../gql/call-the-graphql-api#variables" >}}) |
+| Transform        | The transform expression  |
 | Max Payload size | {{< param boilerplate.max_payload >}}                                         |
 
 
+Besides the call parameters, the JSONata task has following additional fields:
+
+| Parameter      | Description                                                                                                                                                                       |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Input response | The name of the variable to add to the {{< abbr "process variable context" >}}|
 
 
 ### GraphQL Query
@@ -154,7 +212,12 @@ Run a [GraphQL query]({{< relref "../gql/query" >}})
 | Connection Timeout | {{< param boilerplate.connection_timeout >}} |
 | Max Payload size   | {{< param boilerplate.max_payload >}}        |
 
-{{% param boilerplate.jsonata_response %}}
+Besides the call parameters, the Query task has following additional fields:
+
+| Parameter      | Description                                                                                                                                                                       |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Input response | {{% param boilerplate.jsonata_response %}}. For GraphQL operations, use this only to map values. Rely on [GQL filters]({{< relref "/how-to/gql/filter" >}}) to limit the payload. |
+| Headers   | {{< param boilerplate.headers >}} |
 
 ### GraphQL Mutation
 
@@ -166,6 +229,13 @@ Run a [GraphQL mutation]({{< relref "../gql/mutate" >}})
 | Variables          | {{< param boilerplate.graph_vars >}}         |
 | Connection Timeout | {{< param boilerplate.connection_timeout >}} |
 | Max Payload size   | {{< param boilerplate.max_payload >}}        |
+
+Besides the call parameters, the mutation task has following additional fields:
+
+| Parameter      | Description                                                                                                                                                                       |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Input response | {{% param boilerplate.jsonata_response %}}. For mutations, use this only to map values. Use the mutation call to limit the payload. |
+| Headers   | {{% param boilerplate.headers %}} |
 
 ### Call REST API
 
@@ -181,7 +251,12 @@ HTTP call to a REST API service.
 | Connection Timeout | {{% param boilerplate.connection_timeout %}}                                       |
 | Max Payload size   | {{< param boilerplate.max_payload >}}                                              |
 
-{{% param boilerplate.jsonata_response %}}
+Besides the call parameters, the REST task has following additional fields:
+
+| Parameter      | Description                                |
+|----------------|--------------------------------------------|
+| Input response | {{% param boilerplate.jsonata_response %}} |
+| Headers        | {{% param boilerplate.headers %}}                                           |
 
 ### Read Datasource
 
@@ -193,6 +268,13 @@ Read values from topics of a datasource (for example, an OPC-UA server)
 | Data             | {{< param boilerplate.data_expression >}} |
 | Max Payload size | {{< param boilerplate.max_payload >}}     |
 
+Besides the call parameters, the data source task has following additional fields:
+
+| Parameter      | Description                                                                    |
+|----------------|--------------------------------------------------------------------------------|
+| Input response | The variable name to store the response in {{< abbr "process variable context" >}} |
+| Headers        | {{< param boilerplate.headers >}}                                              |
+
 ### Write Datasource
 
 Write values to topics of a datasource.
@@ -202,6 +284,15 @@ Write values to topics of a datasource.
 | Data source      | {{< param boilerplate.data_id >}}         |
 | Data             | {{< param boilerplate.data_expression >}} |
 | Max Payload size | {{< param boilerplate.max_payload >}}     |
+
+
+Besides the call parameters, the data source task has following additional fields:
+
+| Parameter      | Description                                                                    |
+|----------------|--------------------------------------------------------------------------------|
+| Input response | The variable name to store the response in {{< abbr "process variable context" >}} |
+| Headers        | {{< param boilerplate.headers >}}                                              |
+
 
 ## Call activities
 
@@ -290,9 +381,17 @@ You can access these variables through JSONata expressions.
 
 _Process variable context_ refers to the set of the variables that exist within the context of an overall BPMN process.
 Each node can access this process variable context through a JSONata expression, using the syntax documented in the following section.
+
+For each workflow, access the variable context through the `$` prefix.
+Objects within the variable context are accessed through dot notation.
+For example, the following is a reference to the `orders` object in the variable context:
+
+```
+$.orders
+```
+
 By default, the process variable context has a maximum size of 1MB.
 When an activity outputs data, the output is added to the process variable context.
-
 When variable size gets large, you have multiple strategies to reduce its size.
 For ideas, refer to [Tune BPMN performance]({{< relref "/how-to/bpmn/tune-performance" >}}).
 
@@ -305,6 +404,24 @@ The expression has the following syntax:
 - It must begin with an `=`
 - If you reference a variable, you must prefix it with `$.`
 
-    ```json
-    = $.varName > 100
-    ```
+You can use a JSONata expression as any **Input JSON** field. 
+However, you must prefix the JSON object with a `=`.
+For example, consider these variables sent in a GraphQL mutation task.
+With the `=`, the `quantity` and `id` properties are replaced by what is returned by their JSONata expression.
+Without it, this just creates invalid JSON.
+
+```json
+={
+  "input": [
+    {
+      "id": "new_stuff_" & $.id,
+      "quantity": $.quantity,
+      "quantityUoM": {
+        "id": "grams"
+      }
+    }
+  ]
+}
+```
+
+

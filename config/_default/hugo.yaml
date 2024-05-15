@@ -3,6 +3,7 @@ baseURL: "https://docs.rhize.com"
 languageCode: en-us
 theme: hugo-docs
 sectionPagesMenu: main
+title: Rhize documentation
 
 ignoreErrors:
 markup:
@@ -49,7 +50,7 @@ security:
     urls:
       - .*
 params:
-  site: librebaas-docs
+  site: rhize-docs
 
 outputs:
   home:

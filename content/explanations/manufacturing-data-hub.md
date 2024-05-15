@@ -5,6 +5,7 @@ description: >-
   How the design of Rhize meets the needs of modern manufacturing.
 weight: 100
 draft: false
+og_image: "/images/og/rhize-mdh-graphic.png"
 menu:
   main:
     parent: explanations
@@ -22,7 +23,7 @@ A manufacturing data hub is a system that collects all manufacturing events, sto
 As it comes with all the necessary backend components&mdash;message handling, logic, and storage&mdash;an MDH also serves as a backend for manufacturers to build custom MES and MOM applications.
 
 
-{{< figure
+{{< bigFigure
 width="75%"
 alt="simplified mdh"
 src="/images/arch/diagram-rhize-simplified-mdh.png"
@@ -71,11 +72,11 @@ As the system scales, the complexity of point-to-point communication increases n
 For example, notice how many channels of communication are maintained in this stylized diagram of information
 exchange between level-three and level-four systems in a point-to-point topology:
 
-{{< figure
+{{< bigFigure
 width="65%"
 alt="Diagram simplifying flows depicted in part 1 of ISA-95"
 src="/images/arch/diagram-rhize-l3-l4-information-flows.png"
-caption="<small>A simplified view of how information might exchange between level 3 and 4 systems in a point-to-point topology.</small>"
+caption="A simplified view of how information might exchange between level 3 and 4 systems in a point-to-point topology."
 >}}
 
 ### Pub/sub messaging decouples devices
@@ -92,9 +93,10 @@ Instead of polling, _the publish-subscribe pattern_ can be a more efficient way 
 Event producers _publish_ topics to a message broker, and the message broker sends the event to consumers that _subscribe_ to the particular topic.
 With the proliferation of IoT devices and the popularity of the MQTT protocol, publish-subscribe messaging has gained widespread adoption in manufacturing.
 
-{{< figure
+{{< bigFigure
 width="65%"
 alt="Diagram showing event producers and subscribers in decoupled pub-sub communication"
+caption="Diagram showing event producers and subscribers in decoupled pub-sub communication"
 src="/images/arch/diagram-rhize-pubsub-hubspoke.png"
 >}}
 
@@ -124,7 +126,7 @@ To scale, this model needs to be suitably thorough and generic.
 For any organization, it would be an enormous undertaking to write a bespoke model.
 Fortunately, decades of collaboration have already generated a suitable standard: ISA-95.
 
-{{< figure
+{{< bigFigure
 width="65%"
 alt="Diagram showing ISA-95 data model"
 src="/images/arch/diagram-rhize-isa95-schema.png"
@@ -143,9 +145,10 @@ This gap reveals missing components:
 - The system needs to structure raw message data in its ISA-95 representation.
 - Users need a way to access the database and message flow to program their own applications.
 
-{{< figure
+{{< bigFigure
 width="65%"
 alt="Diagram showing how an MDH is incomplete without a bridge between messages and storage"
+caption="Without a bridge between messages and storage, an MDH is incomplete"
 src="/images/arch/diagram-rhize-incomplete-mdh.png"
 >}}
 
@@ -154,11 +157,11 @@ src="/images/arch/diagram-rhize-incomplete-mdh.png"
 After the hub receives a message, it must evaluate whether the data is significant enough to constitute an event.
 This is the function of the _rules engine_: it assesses message values for changes and then evaluates whether these values should be classified as significant _events_.
 
-{{< figure
+{{< bigFigure
 width="65%"
 alt="Diagram showing how the rules engine turns topics into events."
 src="/images/arch/diagram-rhize-rule-engine.png"
-caption="<small>The rules converts significant values into manufacturing events.</small>"
+caption="The rules converts significant values into manufacturing events."
 >}}
 
 Once the system receives an event, users then need a way to be able to process it.
@@ -168,9 +171,10 @@ Once the system receives an event, users then need a way to be able to process i
 For true "ubiquitous automation" of manufacturing processes, an MDH must provide a way for users to write their own logic to handle events as they happen.
 Thus, the hub needs a _workflow engine_ that can send messages, process data, and interact with the database in real-time.
 
-{{< figure
+{{< bigFigure
 width="70%"
-alt="Diagram showing ISA-95 data model"
+alt="An example BPMN workflow that receives a job order, evaluates whether maintenance is needed, then stores the data in a standardized database"
+caption="An example BPMN workflow that receives a job order, evaluates whether maintenance is needed, then stores the data in a standardized database"
 src="/images/arch/diagram-rhize-bpmn-eda.png"
 >}}
 

@@ -1,0 +1,14 @@
+{{ $src := .Get "src" }}
+
+<figure class="big-figure">
+  <a href="{{ $src }}" target="_blank">
+    <img src="{{ $src }}" alt="{{ .Get "alt" }}"
+         {{ if ( .Get "width" ) }}width="{{ .Get "width" }}"{{ end }}
+    >
+  </a>
+  {{ if ( .Get "caption" ) }}
+  <figcaption class="caption">
+      {{ .Get "caption" | .Page.RenderString }}
+  </figcaption>
+  {{ end }}
+</figure>

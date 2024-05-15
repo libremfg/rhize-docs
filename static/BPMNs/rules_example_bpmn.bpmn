@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1iqe5qx" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="10.2.1">
+  <bpmn:extensionElements />
+  <bpmn:process id="rules_example_bpmn" name="rules_example_bpmn" isExecutable="true">
+    <bpmn:startEvent id="Event_01ublzm">
+      <bpmn:outgoing>Flow_1qn0p68</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_1qn0p68" sourceRef="Event_01ublzm" targetRef="Activity_00p8nbe" />
+    <bpmn:endEvent id="Event_1xw4xvo">
+      <bpmn:incoming>Flow_1t5evy2</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1t5evy2" sourceRef="Activity_00p8nbe" targetRef="Event_1xw4xvo" />
+    <bpmn:serviceTask id="Activity_00p8nbe" zeebe:modelerTemplate="libre.bpmn.jsonata-transform" zeebe:modelerTemplateVersion="2">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="jsonata" />
+        <zeebe:ioMapping>
+          <zeebe:input source="= $" target="input" />
+          <zeebe:input source="&#34;Preheating oven for order number &#34; &#38; $.orderNumber" target="transform" />
+          <zeebe:input source="10000" target="maxPayloadSize" />
+          <zeebe:output source="= response" target="customResponse" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1qn0p68</bpmn:incoming>
+      <bpmn:outgoing>Flow_1t5evy2</bpmn:outgoing>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="rules_example_bpmn">
+      <bpmndi:BPMNShape id="Event_01ublzm_di" bpmnElement="Event_01ublzm">
+        <dc:Bounds x="212" y="202" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1xw4xvo_di" bpmnElement="Event_1xw4xvo">
+        <dc:Bounds x="452" y="202" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1v37387_di" bpmnElement="Activity_00p8nbe">
+        <dc:Bounds x="300" y="180" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1qn0p68_di" bpmnElement="Flow_1qn0p68">
+        <di:waypoint x="248" y="220" />
+        <di:waypoint x="300" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1t5evy2_di" bpmnElement="Flow_1t5evy2">
+        <di:waypoint x="400" y="220" />
+        <di:waypoint x="452" y="220" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

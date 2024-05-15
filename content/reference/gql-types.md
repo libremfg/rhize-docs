@@ -56,6 +56,11 @@ For example, its fields include
 the array of associated `MaterialLot` objects, the `MaterialDefinition` object, and so on.
 All objects in the database have relationships to other objects.
 
+{{< notice "note" >}}
+Metadata fields start with an underscore (`_`).
+For example, `_createdOn` reports the time when the object was created.
+{{< /notice >}}
+
 ## Scalar filters
 
 Most objects have some fields that can be filters for a query or mutation.

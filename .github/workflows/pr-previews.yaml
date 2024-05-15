@@ -1,5 +1,4 @@
-name: Deploy PR previews
-
+name: Check PR
 on:
   pull_request:
     types:
@@ -8,7 +7,7 @@ on:
       - synchronize
       - closed
 
-
+jobs:
   vale:
     name: runner / vale
     runs-on: ubuntu-latest

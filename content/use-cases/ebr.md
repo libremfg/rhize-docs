@@ -75,11 +75,11 @@ Once ingested, all data is linked through common associations in the graph datab
 
 ### Write a BPMN workflow to ingest the data in real-time
 
-{{< figure
+{{< bigFigure
 alt="Example of a BPMN workflow"
 src="/images/ebr/diagram-rhize-bpmn-ebr.png"
 width="60%"
-caption="<small><em>A simplified BPMN workflow. For an example of a real workflow with nodes for each logic step, refer to the next image.</em></small>"
+caption="A simplified BPMN workflow. For an example of a real workflow with nodes for each logic step, refer to the next image."
 >}}
 
 With the sources of data and their corresponding models, the next step
@@ -110,12 +110,10 @@ The procedure is as follows:
 In real BPMN workflows, you can dynamically create and assign fields as they enter the system.
 For example, this workflow creates a new material definition and material-definition version based on whether this object already exists.
 
-<a href="/images/bpmn/screenshot-rhize-bpmn-add-material-definition.png" target="_blank">
-{{< figure
+{{< bigFigure
 alt="Screenshot of a BPMN workflow that adds material only if it exists"
 src="/images/bpmn/screenshot-rhize-bpmn-add-material-definition.png"
 >}}
-</a>
 
 This step can involve multiple BPMN processes subscribing to different topics.
 As long as the incoming event data has a common association, for example through the `id` of the batch data and associated `JobResponse`, you can return all eBR fields in one GraphQL query&mdash;no recursive SQL joins needed.
