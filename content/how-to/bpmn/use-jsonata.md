@@ -135,7 +135,7 @@ Parameters that accept expressions include:
 - **API payloads**. Calls to the Rhize GraphQL API and to external APIs can both use JSONata in their payloads.
 - **Outgoing payloads**. The messages you send with intermediate message throws can have JSONata.
 - **Response transformations.**
-  - REST. Write JSONata in the input expression to filter data. This is helpful to remove data from overfetching and to keep the process variable size lower.
+  - REST. Write JSONata in the input expression to filter data. This is helpful to remove data from over-fetching and to keep the process variable size lower.
   - GraphQL input. As with JSONata, your GraphQL tasks can pass their results to JSONata. This is less common, as GraphQL already provides tight control of the data it returns, but it is useful for calculating derived values.
 
 Review the full list of parameters that accept JSONata in the [BPMN element reference]({{< relref "bpmn-elements" >}}).
@@ -144,7 +144,6 @@ Review the full list of parameters that accept JSONata in the [BPMN element refe
 
 Many implementations of JSONata exist.
 Rhize uses a custom Go implementation for high performance and safe calculation.
-If you are ever wondering about whether a JSONata expression is compatible with the version Rhize uses, test it in the built-in JSONata playgroun d.
 
 ## JSONata examples
 
@@ -156,7 +155,7 @@ To experiment with how they work, copy the data and expression into a [JSONata e
 This expression returns the ID of all `equipmentActual` items that are associated with a specified job response `JR-4`. 
 It outputs the IDs as an array of strings in a new custom object. 
 
-This is a minimal example of how you can use JSONata to transform data into into new representations.
+This is a minimal example of how you can use JSONata to transform data into new representations.
 Such transformation is a common prerequisite step for post-processing and service interoperability.
 ```
 $.data.queryJobResponse[`id`="JR-4"].(
