@@ -747,10 +747,11 @@ $randomChoice := function($a) {
 ### Recursively find child IDs
 
 This function uses recursion and a predefined set of naming rules
-to generate (or find) a set of child IDs for an entity.
+to find (or generate) a set of child IDs for an entity.
 The `n` value determines how many times it's called.
 
-Besides searching, recursive functions have many uses with nested manufacturing data. Recursion is also often used in algorithms to calculate metrics and performance statistics.
+Many payloads in manufacturing have nested data.
+Recursive functions such as the following provide a concise means of traversing a set of subproperties.
 
 ```
 (
@@ -770,3 +771,33 @@ Besides searching, recursive functions have many uses with nested manufacturing 
     }
 )
 ```
+
+{{% tabs %}}
+{{% tab "Input" %}}
+```json
+{
+"n":10,
+"nextId": "molten-widget-x2fts"
+}
+```
+{{% /tab %}}
+
+{{% tab "output" %}}
+```json
+{
+  "children": [
+    "molten-widget-x2fts",
+    "molten-widget-x2ft1",
+    "molten-widget-x2ft2",
+    "molten-widget-x2ft3",
+    "molten-widget-x2ft4",
+    "molten-widget-x2ft5",
+    "molten-widget-x2ft6",
+    "molten-widget-x2ft7",
+    "molten-widget-x2ft8",
+    "molten-widget-x2ft9"
+  ]
+}
+```
+{{% /tab %}}
+{{% /tabs %}}
