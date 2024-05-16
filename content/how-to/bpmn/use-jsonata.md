@@ -14,9 +14,10 @@ menu:
 is a query language to filter, transform, and create JSON objects.
 Rhize BPMN workflows use  JSONata expressions to
 transform JSON payloads as they pass through workflow nodes and across integrated systems.
-In BPMN workflows, JSONata expressions have two essential functions:
+In BPMN workflows, JSONata expressions have some essential functions:
 - **Map data.** Moving values from one data structure to another.
 - **Calculate data.** Receiving values as input and create new data from them.
+- **Create logical conditions.** Generate values to feed to gateways to direct the flow of the BPMN.
 
 This guide details how to use JSONata in your Rhize environment and provides some examples relevant to manufacturing workflows.
 For the full details of the JSONata expression language, read the [Official JSONata documentation](https://docs.jsonata.org/overview.html).
@@ -219,7 +220,7 @@ It outputs the matching job response IDs along with the associated equipment act
 In production, you may use a similar analysis to isolate all {{< abbr "resource actual" >}}s associated with an abnormal production outcome.
 
 ```
-$map($.data.queryJobResponse, function($v,$i,$a){
+$map($.data.queryJobResponse, function($v){
     $number($v.data.value) > 102
         ?  {"jobResponseId": $v.id, "EquipmentActual": $v.equipmentActual}
         }
