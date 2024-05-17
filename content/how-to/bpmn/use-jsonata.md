@@ -418,7 +418,10 @@ If no event data exists, it outputs a message.
 Although this example uses data that is unlikely to be a source of a real manufacturing event, the practice of receiving data from a remote API and mapping it to ISA-95 representation is quite common.
 In production, you may perform a similar operation to map an SAP schedule order to an `operationsSchedule`, or the results from a QA service to the `testResults` object.
 
+
 ```
+(
+
 $count(events[0]) > 0
 
     ? events.{
@@ -427,21 +430,22 @@ $count(events[0]) > 0
     "hierarchyScope":{
         "id":"Earth",
         "label": Earth,
-        "effectiveStart": $sort(geometries.date)[0]
-
-    },
+        "effectiveStart": $sort(geometry.date)[0]
+        },
     "category":categories.title,
-    "recordTimestamp": $sort(geometries.date)[0],
-    "effectiveStart": $sort(geometries.date)[0],
-    "effectiveEnd": $sort(geometries.date)[$count(geometries.date)-1],
+    "recordTimestamp": $sort(geometry.date)[0],
+    "effectiveStart": $sort(geometry.date)[0],
+    "effectiveEnd": $sort(geometry.date)[$count(geometries.date)-1],
     "source": sources.id & " " & sources.url,
     "operationsEventDefinition": {
-    "id": "Earth event",
-    "label": "Earth event"
-    }
+        "id": "Earth event",
+        "label": "Earth event"
+        }
     }
 
-: "No earth events lately"
+    : {"message":"No earth events lately"}
+
+)
 ```
 
 {{% tabs %}}
@@ -449,131 +453,127 @@ $count(events[0]) > 0
 
 ```json
 {
-  "description": "Natural events from EONET.",
-  "events": [
-    {
-      "categories": [
-        {
-          "id": 12,
-          "title": "Volcanoes"
-        }
-      ],
-      "description": "",
-      "geometries": [
-        {
-          "coordinates": [
-            -70.8972,
-            -16.345
-          ],
-          "date": "2024-05-06T00:00:00Z",
-          "type": "Point"
-        }
-      ],
-      "id": "EONET_6516",
-      "link": "https://eonet.gsfc.nasa.gov/api/v2.1/events/EONET_6516",
-      "sources": [
-        {
-          "id": "SIVolcano",
-          "url": "https://volcano.si.edu/volcano.cfm?vn=354020"
-        }
-      ],
-      "title": "Ubinas Volcano, Peru"
-    },
-    {
-      "categories": [
-        {
-          "id": 15,
-          "title": "Sea and Lake Ice"
-        }
-      ],
-      "description": "",
-      "geometries": [
-        {
-          "coordinates": [
-            -33.27,
-            -51.88
-          ],
-          "date": "2024-02-16T00:00:00Z",
-          "type": "Point"
-        },
-        {
-          "coordinates": [
-            -32.82,
-            -51.09
-          ],
-          "date": "2024-03-01T00:00:00Z",
-          "type": "Point"
-        },
-        {
-          "coordinates": [
-            -30.95,
-            -51.21
-          ],
-          "date": "2024-03-07T00:00:00Z",
-          "type": "Point"
-        },
-        {
-          "coordinates": [
-            -27.71,
-            -50.88
-          ],
-          "date": "2024-03-15T00:00:00Z",
-          "type": "Point"
-        },
-        {
-          "coordinates": [
-            -32.82,
-            -51.09
-          ],
-          "date": "2024-03-22T00:00:00Z",
-          "type": "Point"
-        },
-        {
-          "coordinates": [
-            -27.33,
-            -52.45
-          ],
-          "date": "2024-03-29T00:00:00Z",
-          "type": "Point"
-        },
-        {
-          "coordinates": [
-            -25.79,
-            -52.41
-          ],
-          "date": "2024-04-19T00:00:00Z",
-          "type": "Point"
-        },
-        {
-          "coordinates": [
-            -25.18,
-            -51.86
-          ],
-          "date": "2024-04-26T00:00:00Z",
-          "type": "Point"
-        },
-        {
-          "coordinates": [
-            -22.85,
-            -52.56
-          ],
-          "date": "2024-05-02T00:00:00Z",
-          "type": "Point"
-        }
-      ],
-      "id": "EONET_6513",
-      "link": "https://eonet.gsfc.nasa.gov/api/v2.1/events/EONET_6513",
-      "sources": [
-        {
-          "id": "NATICE",
-          "url": "https://usicecenter.gov/pub/Iceberg_Tabular.csv"
-        }
-      ],
-      "title": "Iceberg D28A"
-    }
-  ],
-  "link": "https://eonet.gsfc.nasa.gov/api/v2.1/events",
-  "title": "EONET Events"
+	"title": "EONET Events",
+	"description": "Natural events from EONET.",
+	"link": "https://eonet.gsfc.nasa.gov/api/v3/events",
+	"events": [
+		{
+			"id": "EONET_6516",
+			"title": "Ubinas Volcano, Peru",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_6516",
+			"closed": null,
+				"categories": [
+					{
+					"id": "volcanoes",
+					"title": "Volcanoes"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "SIVolcano",
+					"url": "https://volcano.si.edu/volcano.cfm?vn=354020"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2024-05-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -70.8972, -16.345 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_6513",
+			"title": "Iceberg D28A",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_6513",
+			"closed": null,
+				"categories": [
+					{
+					"id": "seaLakeIce",
+					"title": "Sea and Lake Ice"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "NATICE",
+					"url": "https://usicecenter.gov/pub/Iceberg_Tabular.csv"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 208.00,
+					"magnitudeUnit": "NM^2",
+					"date": "2024-02-16T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -33.27, -51.88 ]
+							},
+
+							{
+							"magnitudeValue": 208.00,
+					"magnitudeUnit": "NM^2",
+					"date": "2024-03-01T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -32.82, -51.09 ]
+							},
+
+							{
+							"magnitudeValue": 208.00,
+					"magnitudeUnit": "NM^2",
+					"date": "2024-03-07T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -30.95, -51.21 ]
+							}
+          ]
+		},
+
+			{
+			"id": "EONET_6515",
+			"title": "Sheveluch Volcano, Russia",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_6515",
+			"closed": null,
+				"categories": [
+					{
+					"id": "volcanoes",
+					"title": "Volcanoes"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "SIVolcano",
+					"url": "https://volcano.si.edu/volcano.cfm?vn=300270"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2024-04-28T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 161.36, 56.653 ]
+							}
+
+						
+			]
+		}
+
+		]
 }
 ```
 {{% /tab %}}
@@ -608,15 +608,31 @@ $count(events[0]) > 0
     "category": "Sea and Lake Ice",
     "recordTimestamp": "2024-02-16T00:00:00Z",
     "effectiveStart": "2024-02-16T00:00:00Z",
-    "effectiveEnd": "2024-05-02T00:00:00Z",
+    "effectiveEnd": "2024-03-07T00:00:00Z",
     "source": "NATICE https://usicecenter.gov/pub/Iceberg_Tabular.csv",
+    "operationsEventDefinition": {
+      "id": "Earth event",
+      "label": "Earth event"
+    }
+  },
+  {
+    "id": "EONET_6515",
+    "description": "Sheveluch Volcano, Russia",
+    "hierarchyScope": {
+      "id": "Earth",
+      "effectiveStart": "2024-04-28T00:00:00Z"
+    },
+    "category": "Volcanoes",
+    "recordTimestamp": "2024-04-28T00:00:00Z",
+    "effectiveStart": "2024-04-28T00:00:00Z",
+    "effectiveEnd": "2024-04-28T00:00:00Z",
+    "source": "SIVolcano https://volcano.si.edu/volcano.cfm?vn=300270",
     "operationsEventDefinition": {
       "id": "Earth event",
       "label": "Earth event"
     }
   }
 ]
-
 ```
 
 {{% /tab %}}
