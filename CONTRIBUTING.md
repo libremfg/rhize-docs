@@ -18,6 +18,7 @@ Each page has the following frontmatter:
 - `description`: The text that is displayed in social media previews
 - `weight`: The page's relative position in the menu. Heavier weights "sink" to lower on the page.
 - `categories`: (Optional) Meta-data about the topic
+- `aliases`: URIs from old pages. Configure redirects here.
 - `menu.main`: An object that configures the sidebar main menu properties
   - `name`:  (Optional) The title of the page as it appears in the sidebar. Default is `title`
   - `identifier`: How to reference the page in menu configs, and relrefs and other shortcodes
@@ -31,6 +32,8 @@ title: GraphQL types and filters
 description: A reference of the data types in the Rhize API and of the filters available for each type.
 categories: ["reference"]
 weight: 930
+aliases:
+  - "/old/page/"
 menu:
   main:
     name: GQL types and filters
