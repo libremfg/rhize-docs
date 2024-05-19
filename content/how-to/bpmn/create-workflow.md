@@ -112,7 +112,7 @@ For example, you might use calculate statistics, or transform a message payload 
 {{< bigFigure
 src="/images/bpmn/screenshot-rhize-jsonata-map.png"
 alt="Annotated and truncated version of an example transformation to the operationEvent definition"
-caption="Annotated and truncated version of a mapping an external event to the `operationEvent` definition"
+caption="Annotated and truncated version of mapping an external event to the `operationEvent` definition"
 width=" 70%"
 >}}
 
