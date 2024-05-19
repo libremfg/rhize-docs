@@ -29,10 +29,6 @@ boilerplate:
 This document describes the parameters available to each BPMN element in the Rhize UI.
 These parameters control how users set conditions, transform data, access variables, call services, and so on.
 
-Rhize BPMN workflows conform to the visual grammar described in the OMG standard for [Business Process Model and Notation](https://www.omg.org/spec/BPMN/2.0/).
-Each process is made of _events_ (circles), _activities_ (rectangles), _gateways_ (diamonds), and _flows_ (arrows).
-Some elements are extended for Rhize-specific features, such as service tasks that call the GraphQL API.
-Some elements from the standard are unused and thus do not appear in the UI.
 
 
 
@@ -217,7 +213,7 @@ Besides the call parameters, the Query task has following additional fields:
 | Parameter      | Description                                                                                                                                                                       |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Input response | {{% param boilerplate.jsonata_response %}}. For GraphQL operations, use this only to map values. Rely on [GQL filters]({{< relref "/how-to/gql/filter" >}}) to limit the payload. |
-| Headers   | {{< param boilerplate.headers >}} |
+| Headers        | {{< param boilerplate.headers >}}                                                                                                                                                 |
 
 ### GraphQL Mutation
 
