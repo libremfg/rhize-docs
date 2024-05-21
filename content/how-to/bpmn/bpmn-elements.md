@@ -254,6 +254,24 @@ Besides the call parameters, the REST task has following additional fields:
 | Input response | {{% param boilerplate.jsonata_response %}} |
 | Headers        | {{% param boilerplate.headers %}}                                           |
 
+### JSON schema
+
+Validate that a payload conforms to a configured [JSON schema](https://json-schema.org/).
+For example, you can validate that `data.arr` contains an array of numbers
+and that `userID` contains a string of certain length.
+
+| Call Parameters  | Description                                                                                                                                    |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| Schema           | A JSON schema. You can also create one from a JSON file with a tool such as [JSON to JSON schema](https://transform.tools/json-to-json-schema) |
+| Variable         | Optional. Key of specific variable to validate (default checks all variables in {{< abbr "process-variable-context" >}}                        |
+
+The Schema task has the following output that you can define as a variable:
+
+| Response mapping | Description                                                             |
+|------------------|-------------------------------------------------------------------------|
+| Valid            | The boolean output of the schema evaluation. `True` if schema is valid. |
+| Validation error | A string that reports the validation errors if the schema is invalid.                                                                        |
+
 ### Read Datasource
 
 Read values from topics of a datasource (for example, an OPC-UA server)
