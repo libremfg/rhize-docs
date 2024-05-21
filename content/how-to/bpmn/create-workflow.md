@@ -5,7 +5,7 @@ description: >
    An overview of how to use Rhize's custom BPMN engine and UI to orchestrate workflows.
 weight: 10
 aliases:
-  - "/how-to/bpmn/orcehstration-overview"
+  - "/how-to/bpmn/orchestration-overview"
 menu:
   main:
     parent: howto-bpmn
