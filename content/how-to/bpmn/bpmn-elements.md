@@ -129,12 +129,12 @@ This may provide info for a subscribing third-party client, or initiate another 
 
 The parameters for an intermediate message event are as follows:
 
-| Parameter | Description                                                                                                            |
-|-----------|------------------------------------------------------------------------------------------------------------------------|
-| Message   | The topic the message publishes to on the Rhize Broker. The topic structure follows MQTT syntax                        |
-| Inputs    | Variables to name and filter. For example, they may come from a preceding JSONata element.                             |
-| Headers   | {{< param boilerplate.headers >}} |
-| Outputs | JSON or JSONata. Optional variables to add to the {{< abbr "process variable context" >}}.                                                                                                   |
+| Parameter | Description                                                                                                                                                                      |
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Message   | The topic the message publishes to on the Rhize Broker. The topic structure follows MQTT syntax                                                                                  |
+| Inputs    | Variables to send in the body. For messages to the Rhize broker, use the [special variable]({{< relref "/how-to/bpmn/special-variables">}}) `BODY`. Value can be JSON or JSONata. |
+| Headers   | {{< param boilerplate.headers >}}                                                                                                                                                |
+| Outputs   | JSON or JSONata. Optional variables to add to the {{< abbr "process variable context" >}}.                                                                                       |
 
 ### Intermediate timer events
 
