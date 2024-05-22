@@ -3,7 +3,7 @@ title: 'Use JSONata'
 date: '2024-05-10T16:20:35-03:00'
 categories: ["how-to"]
 description: The Rhize guide to JSONata, with example transformations and calculations that are relevant to manufacturing.
-weight:
+weight: 200
 menu:
   main:
     parent: howto-bpmn
