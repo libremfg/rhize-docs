@@ -350,7 +350,7 @@ To designate a default, leave one flow without an expression.
 
 {{< figure
 alt="An exclusive gateway that has a condition and a default"
-src="/images/bpmn/rhize-bpmn-exclusive-gateway.png"
+src="/images/bpmn/screenshot-rhize-bpmn-exclusive-gateway.png"
 width="50%"
 caption="<em>An exclusive gateway with a condition and default. Configure conditions as JSONata expressions</em>"
 >}}
