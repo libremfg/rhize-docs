@@ -180,7 +180,9 @@ The service task templates are as follows
 
 ### JSONata transform
 
-Transform JSON data with a [JSONata expression](https://docs.jsonata.org/overview.html).
+
+Transform JSON data with a JSONata expression.
+For detailed examples, read [The Rhize Guide to JSONata]({{< relref "use-jsonata" >}}).
 
 
 | Call parameters  | Description                                                                   |
