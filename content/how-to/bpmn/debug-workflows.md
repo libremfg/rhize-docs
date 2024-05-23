@@ -139,7 +139,7 @@ To debug on the fly, you may also find it useful to use `customResponse` and int
 
 ### Debug from the API calls
 
-When you first test or run a workflow, consider starting the testing and debuggin process from an API trigger.
+When you first test or run a workflow, consider starting the testing and debugging process from an API trigger.
 Specifically, use the `createAndRunBpmnSync` operation to receive information about the workflow state, and the `customResponse` provides information about the last value.
 For details of how this works, read the guide to [triggering workflows]({{< relref "trigger-workflows" >}}).
 
