@@ -32,7 +32,7 @@ and otherwise stop the workflow with an end event.
 
 ### JSON schema validation
 
-Data validation limit the scope of possible errors, often considerably.
+Validation can greatly limit the scope of possible errors.
 To validate your JSON payloads, use the [JSON schema task]({{< relref "/how-to/bpmn/bpmn-elements#json-schema" >}}).
 
 The JSON schema task outputs a boolean value that indicates whether the input conforms to the schema that you set.
