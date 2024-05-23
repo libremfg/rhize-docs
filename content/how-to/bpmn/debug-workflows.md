@@ -27,8 +27,17 @@ This section describes some key strategies.
 ### Gateways
 
 Use [exclusive gateways]({{< relref "/how-to/bpmn/bpmn-elements#gateways" >}}) for any type of error handling.
-For example, you could evaluate that `bodyTemp` is within a normal range to complete the workflow
-and otherwise stop execution with an end event.
+For example, you might define a normal range for a value, then send alerts for when the value falls outside of this range.
+If it makes sense, these error branches also might flow into an early end event.
+
+<!-- vale off -->
+{{< bigFigure
+src="/images/bpmn/screenshot-rhize-bpmn-error-handling-custom-response.png"
+alt="A BPMN workflow with customResponse in the output of the end node"
+caption="Download this workflow from [BPMN templates](https://github.com/libremfg/bpmn-templates/tree/main/custom-response-error-events)"
+width="80%"
+>}}
+<!-- vale on -->
 
 ### JSON schema validation
 
