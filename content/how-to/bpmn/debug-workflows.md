@@ -81,7 +81,7 @@ For example, this expression creates one message body if `valid` is `true` and a
 ```jsonata
 =
 {
-  "message": $.valid ? "Schema is valid" : "Invalid schema" 
+  "message": $.valid ? "payload is valid" : "Invalid payload" 
 }
 ```
 
