@@ -10,25 +10,25 @@ menu:
     identifier:
 ---
 
-Errors come in two categories, expected and unexpected.
+Errors come in two categories: expected and unexpected.
 The Rhize BPMN engine has ways to handle both.
 
-A robust workflow is going to have built-in logic to handle expected workflows.
-For unexpected issues, every node in a workflow is _instrumented_, meaning it that it emits metrics and traces about its performance.
+A robust workflow is going to have built-in logic to anticipate errors.
+For unexpected issues, every node in a workflow is _instrumented_, meaning it emits metrics and traces about its performance.
 You can also use debug flags and variables to trace variable context as it transforms across the workflow.
 
 ## Strategies to handle errors
 
 All error handling likely uses some conditional logic.
-The workflow author anticipates the error, then writes some logic to conditionally handle it.
+The workflow author anticipates the error and then writes some logic to conditionally handle it.
 However, you have many ways to handle conditions, based on the type of error.
 This section describes some key strategies.
 
 ### Gateways
 
 Use [exclusive gateways]({{< relref "/how-to/bpmn/bpmn-elements#gateways" >}}) for any type of error handling.
-For example, you could evaluate that `bodyTemp` is within a normal range to complete the workflow,
-and otherwise stop the workflow with an end event.
+For example, you could evaluate that `bodyTemp` is within a normal range to complete the workflow
+and otherwise stop execution with an end event.
 
 ### JSON schema validation
 
@@ -37,8 +37,8 @@ To validate your JSON payloads, use the [JSON schema task]({{< relref "/how-to/b
 
 The JSON schema task outputs a boolean value that indicates whether the input conforms to the schema that you set.
 You can then set a condition based on whether this `valid` variable is true, and create logic to handle errors accordingly.
-For example, this schema requires that the input variables include a property `arr`,
-and that the value of `arr` is an array of numbers.
+For example, this schema requires that the input variables include a property `arr` whose
+value  is an array of numbers.
 
 
 ```json
@@ -51,7 +51,7 @@ and that the value of `arr` is an array of numbers.
 }
 ```
 
-For example, you might use this schema to validate the input for a function that calculates statistics.
+In a production workflow, you might use this exact schema to validate the input for a function that calculates statistics (perhaps choosing a different variable name).
 
 
 {{< bigFigure
@@ -67,7 +67,7 @@ width="35%"
 ### JSONata conditions
 
 Besides the logical gateway, it may make sense to use JSONata ternary expressions in one of the many parameters that accepts JSONata expressions.
-For example, you could write a message body that has one message if the value of `valid` is `true`, and another if not:
+For example, this expression creates one message body if `valid` is `true` and another if not:
 
 ```jsonata
 =
@@ -78,9 +78,9 @@ For example, you could write a message body that has one message if the value of
 
 ### Check JSONata output
 
-If a field has no value, JSONata does not output anything.
+If a field has no value, JSONata outputs nothing.
 For example, the following expression outputs only `{"name": "Rhize"}`,
-because no $err field exists.
+because no `$err` field exists.
 
 {{< tabs >}}
 {{% tab  "Expression" %}}
@@ -106,7 +106,7 @@ because no $err field exists.
 {{% /tabs %}}
 
 You can use this behavior to direct flows.
-For example, an exclusive gateway may have a condition such as $exists(err) that flows into an error-handling condition.
+For example, an exclusive gateway may have a condition such as `$exists(err)` that flows into an error-handling condition.
 
 ### Define error boundary
 
@@ -127,14 +127,16 @@ width="35%"
 
 ### Create event logging
 
-To persist error handling, you could also create gateways that use the `addEvent` GraphQL mutation to create a record of a point in the workflow in your manufacturing knowledge graph.
-This extra step both increases the observability of errors and facilitates future analysis.
+To persist error handling, you can set gateways that flow to mutation tasks that use the `addEvent` operation. 
+The added event may be a successful operation, an error, or both,
+creating a record of events emitted in the workflow that are stored in your manufacturing knowledge graph.
+This strategy increases the observability of errors and facilitates future analysis.
 It may also be useful when combined with the debugging strategies described in the next section.
 
 ## Strategies to debug
 
 For detailed debugging,
-you can use an embedded instance of Grafana Tempo to inspect the each step of the workflow, node by node.
+you can use an embedded instance of [Grafana Tempo](https://github.com/grafana/tempo) to inspect each step of the workflow, node by node.
 To debug on the fly, you may also find it useful to use `customResponse` and intermediate message throws to print variables and output at different checkpoints. 
 
 ### Debug from the API calls
@@ -143,13 +145,11 @@ When you first test or run a workflow, consider starting the testing and debuggi
 Specifically, use the `createAndRunBpmnSync` operation to receive information about the workflow state, and the `customResponse` provides information about the last value.
 For details of how this works, read the guide to [triggering workflows]({{< relref "trigger-workflows" >}}).
 
-The first information that indicates correctness are the `jobState` and, if set, `customResponse`.
-The `jobState` reports if the workflow finishes, and the `customResponse` reports the value saved into this [special variable]({{< relref "special-variables" >}}) at the last completed node.
-For example, consider a workflow that has two nodes, a Message and a REST task.
+For example, consider a workflow that has two nodes, a Message throw event and a REST task.
 1. When the message completes, the user writes `Message sent` into `customResponse` as an output variable.
-1. When the REST task completes, the response is saved into `customResponse. 
+1. When the REST task completes, the response is saved into `customResponse`. 
 
-So `customResponse` serves as a checkpoint to report the state of each node execution.
+So the `jobState` property reports on the overall workflow status, and `customResponse` serves as a checkpoint to report the state of each node execution.
 Now imagine that the user has started the workflow from the API and receives this response:
 
 ```
@@ -166,11 +166,11 @@ Now imagine that the user has started the workflow from the API and receives thi
 
 
 Note how `ABORTED` indicates the workflow failed somewhere.
-Yet, `customResponse` indicates that the message was sent.
+Yet, the value of `customResponse` must have been set after the message event executed.
 So the problem is likely with the REST node.
 
 You could also use a similar strategy with intermediate message events.
-However, these methods are the BPMN equivalent of `printf()` debugging and are limited.
+However, while undoubtedly useful, these methods are also limited&mdash; the BPMN equivalents of `printf()` debugging.
 For a full-featured debugging, use the `traceID` to explore the workflow through Tempo.
 
 
@@ -178,17 +178,19 @@ For a full-featured debugging, use the `traceID` to explore the workflow through
 
 {{< notice "note" >}}
 The instructions here provide the minimum about using Tempo as a tool.
-Refer to the [official documentation](https://grafana.com/docs/tempo/latest/)
-to discover the many ways you can filter your BPMN traces for debugging and analysis.
+To discover the many ways you can filter your BPMN traces for debugging and analysis,
+refer to the [official documentation](https://grafana.com/docs/tempo/latest/).
 {{< /notice >}}
 
-This ID is reported as the `traceID` in the `createAndRunBPMN` mutation operations.
+Rhize creates a unique ID for each workflow that runs.
+This ID is reported as the `traceID` in the `createAndRunBPMN` mutation operation.
 Use this ID to debug the workflow in Tempo.
 
-To inspect a workflow:
+To inspect a workflow in Tempo:
 1. Go to your Grafana instance.
 2. Select **Explore** and then Tempo.
-3. From the **TraceQL** tab, enter the `traceID` and query. the **Search** tab with the `bpmn-engine` to find traces for all workflows.
+3. From the **TraceQL** tab, enter the `traceID` and query.
+Alternatively, use the **Search** tab with the `bpmn-engine` to find traces for all workflows.
 
 {{< bigFigure
 src="/images/bpmn/screenshot-rhize-bpmn-spans-in-tempo-compact.png"
@@ -198,7 +200,7 @@ width="55%"
 >}}
 
 
-Each workflow instance displays _spans_ that trace the state of each node at its start, execution, and End states.
+Each workflow instance displays _spans_ that trace the state of each node at its start, execution, and end states.
 When debugging, you are likely interested in the spans that result in `ABORTED`. 
 To inspect the errors:
 1. Select the nodes with errors.
@@ -213,10 +215,10 @@ caption="A detailed view of an error for a BPMN process in Tempo"
 width="55%"
 >}}
 
-One more thing to note:
-check the names of the spans in the previous two screenshots.
-Note that the ones that convey semantic information are more easy find, understand, and follow.
-Aiding debugging is one of the reasons we recommend always following a set of [Naming conventions]({{< relref "naming-conventions" >}}).
+Also note the names of the spans in the previous two screenshots.
+Names that convey semantic information it easier to find specific nodes and easier to understand and follow the overall workflow.
+Well-named nodes make debugging easier.
+This is one of the reasons we recommend always following a set of [naming conventions]({{< relref "naming-conventions" >}}) when you author BPMN workflows.
 
 ### Adding the debug flag
 
@@ -224,7 +226,7 @@ For granular debugging, it also helps to trace the variable context as it passes
 To facilitate this, Rhize provides a debugging option that you can pass in multiple ways:
 - From an API call with the `debug:true` [argument]({{< relref "/how-to/gql/call-the-graphql-api/#request-body" >}}).
 - In the process variable context, by setting `__traceDebug: true`
-- In the [BPMN service configuration]({{< relref "/reference/service-config/bpmn-configuration/" >}}) by setting `OpenTelemetry.defaultDebug` to `true`.
+- In the [BPMN service configuration]({{< relref "/reference/service-config/bpmn-configuration/" >}}) by setting `OpenTelemetry.defaultDebug` to `true`
 
 When the debugging variable is set, Tempo reports the entire variable context in the **Span Attributes** at the end of each node.
 
