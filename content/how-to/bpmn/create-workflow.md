@@ -119,6 +119,48 @@ width=" 70%"
 To calculate and transform data, BPMN nodes can interpret the JSONata expression language.
 For details, read the complete [Rhize guide to JSONata](/how-to/bpmn/use-jsonata).
 
+## Control flows
+
+As data passes through a workflow, you might need to conditionally direct it to specific tasks, transformations, and events.
+For this, Rhize has _gateways_, represented as diamonds.
+
+### Exclusive gateway.
+
+Represented by an `X` symbol, exclusive gateways create decision branches based on whether a condition is true.
+While you can use JSONata conditionals to control flows within tasks,
+exclusive gateways are the most common and visually understandable way to execute conditional steps.
+
+To use an exclusive gateway:
+1. Create an arrow from the control start to an exclusive gateway (diamond with `X` symbol).
+1. Use arrows to create outgoing conditions to new tasks or events.
+1. Leave the default condition blank.
+1. In all other arrows, use the **Condition** field to write a boolean expression.
+
+{{< bigFigure
+src="/images/bpmn/screenshot-rhize-bpmn-exclusive-gateway.png"
+alt="Screenshot showing how gateways create a Job order only if the material state is ready."
+caption="This gateway creates a job order only if its material state is ready."
+width="70%"
+>}}
+
+### Parallel gateways
+
+Represented by a `+` (plus sign) symbol, _parallel gateways_ execute multiple tasks at the same time.
+To use a parallel gateway:
+1. Select a gateway.
+1. Use the wrench sign to change its condition to parallel.
+1. Use arrows to create parallel conditions.
+
+When the workflow runs, each parallel branch executes at the same time.
+
+{{< bigFigure
+src="/images/bpmn/screenshot-rhize-bpmn-parallel-gateway.png"
+alt="Simultaneously add a record to the database and send an alert"
+caption="Simultaneously add a record to the database and send an alert"
+width="50%"
+>}}
+
+
 ## Trigger workflows
 
 You have multiple ways to trigger a start condition.
