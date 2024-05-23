@@ -160,6 +160,7 @@ For example, consider a workflow that has two nodes, a Message throw event and a
 1. When the REST task completes, the response is saved into `customResponse`. 
 
 So the `jobState` property reports on the overall workflow status, and `customResponse` serves as a checkpoint to report the state of each node execution.
+You can also query for the `dataJSON` field, which reports the entire variable context at the last node.
 Now imagine that the user has started the workflow from the API and receives this response:
 
 ```
