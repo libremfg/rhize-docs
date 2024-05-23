@@ -14,7 +14,7 @@ Errors come in two categories: expected and unexpected.
 The Rhize BPMN engine has ways to handle both.
 
 A robust workflow is going to have built-in logic to anticipate errors.
-For unexpected issues, every node in a workflow is _instrumented_, meaning it emits metrics and traces about its performance.
+For unexpected issues, every node in a workflow is _instrumented_, meaning it emits  traces about its performance.
 You can also use debug flags and variables to trace variable context as it transforms across the workflow.
 
 ## Strategies to handle errors
