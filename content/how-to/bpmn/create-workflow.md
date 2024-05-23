@@ -180,7 +180,7 @@ Using _call activities_ other workflows can reuse the workflow.
 alt="A call activity"
 src="/images/bpmn/diagram-rhize-bpmn-call-activity.png"
 width="55%"
-caption="An example of a main workflow calling a function"
+caption="An example of a main workflow calling a function. [Template](https://github.com/libremfg/bpmn-templates/tree/main/call-activity-calculate-stats)"
 >}}
 
 To reuse a workflow:

@@ -50,7 +50,7 @@ Every BPMN workflow and every element that the workflow contains have the follow
 _Events_ are something that happen in the course of a process.
 In BPMN, events are drawn with circles.
 Events have a _type_ and a _dimension_.
-  
+
 {{< tabs >}}
 {{% tab "Events" %}}
 ![A simplified model of events with no activities](/images/bpmn/rhize-bpmn-events.png)
@@ -317,12 +317,27 @@ Besides the call parameters, the data source task has following additional field
 A _call activity_ invokes another workflow.
 In this flow, the process that contains the call is the _parent_, and the process that is called is the _child_.
 
-Besides the input and output variables, call activities have the following parameters:
+Call activities have the following parameters:
 
 | Parameters         | Description                                                           |
 |--------------------|-----------------------------------------------------------------------|
 | Called element     | The ID of the called process                                          |
-| Output propagation | Whether to propagate the child output variables to the parent process |
+
+The inputs have the following parameters:
+
+| Parameters         | Description                                                           |
+|--------------------|-----------------------------------------------------------------------|
+|Local variable name     | The name of the variable as it will be accessed in the child process (that is, the key name)  |
+|assignment value | The value to pass from the parent variable context|
+
+The outputs have the following parameters:
+
+| Parameters          | Description                                                                                           |
+|---------------------|-------------------------------------------------------------------------------------------------------|
+|Local variable name | What to name the incoming data,  as it will be accessed in the parent process (that is, the key name) |
+| assignment value    | The value to pass from the child variable context                                                     |
+
+For a guide to reusing functions, read the [Reuse workflows section]({{< relref "/how-to/bpmn/create-workflow/#reuse-workflows" >}}) in the "Create workflow" guide.
 
 ## Gateways
 
@@ -392,52 +407,3 @@ caption="<em>Parallel joins join variable context, but have performance costs.</
 
 As data passes and transforms from one element to another, variables remain in the _process variable context_.
 You can access these variables through JSONata expressions.
-
-### Process variable context
-
-_Process variable context_ refers to the set of the variables that exist within the context of an overall BPMN process.
-Each node can access this process variable context through a JSONata expression, using the syntax documented in the following section.
-
-For each workflow, access the variable context through the `$` prefix.
-Objects within the variable context are accessed through dot notation.
-For example, the following is a reference to the `orders` object in the variable context:
-
-```
-$.orders
-```
-
-By default, the process variable context has a maximum size of 1MB.
-When an activity outputs data, the output is added to the process variable context.
-When variable size gets large, you have multiple strategies to reduce its size.
-For ideas, refer to [Tune BPMN performance]({{< relref "/how-to/bpmn/tune-performance" >}}).
-
-### JSONata expression syntax
-
-Besides service tasks, many of the preceding elements can have JSONata expressions.
-For example, an exclusive gateway requires a JSONata expression for all but the default flow.
-
-The expression has the following syntax:
-- It must begin with an `=`
-- If you reference a variable, you must prefix it with `$.`
-
-You can use a JSONata expression as any **Input JSON** field. 
-However, you must prefix the JSON object with a `=`.
-For example, consider these variables sent in a GraphQL mutation task.
-With the `=`, the `quantity` and `id` properties are replaced by what is returned by their JSONata expression.
-Without it, this just creates invalid JSON.
-
-```json
-={
-  "input": [
-    {
-      "id": "new_stuff_" & $.id,
-      "quantity": $.quantity,
-      "quantityUoM": {
-        "id": "grams"
-      }
-    }
-  ]
-}
-```
-
-
