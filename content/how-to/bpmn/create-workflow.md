@@ -212,15 +212,15 @@ When working with variables, keep the following in mind:
 
     Many output fields offer a way to create a variable.
     For example, the JSON schema field has two variables that you can name,
-    one that outputs a boolean based on whether the schema is valid, and another that outputs
-    the string if the variable is invalid.
+    one that outputs a boolean based on whether the input is valid, and another that outputs
+    the error string if the variable is invalid.
 
     You can access these variables in later nodes (unless you mutate them).
 
-- **You can mutate variables.**
+- **Variables.**
 
-    Variables are mutable, meaning you can change its value during the workflow.
-    This can be an effective strategy to manage overall process variable context size.
+    If you direct output to a variable that already exists, the new value overwrites the old one.
+    This behavior can be used to manage the overall memory footprint of a workflow.
 
 - **The maximum context size is configurable.**
 
