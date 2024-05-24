@@ -132,7 +132,7 @@ The parameters for an intermediate message event are as follows:
 | Parameter | Description                                                                                                                                                                      |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Message   | The topic the message publishes to on the Rhize Broker. The topic structure follows MQTT syntax                                                                                  |
-| Inputs    | Variables to send in the body. For messages to the Rhize broker, use the [special variable]({{< relref "/how-to/bpmn/special-variables">}}) `BODY`. Value can be JSON or JSONata. |
+| Inputs    | Variables to send in the body. For messages to the Rhize broker, use the [special variable]({{< relref "/how-to/bpmn/variables">}}) `BODY`. Value can be JSON or JSONata. |
 | Headers   | {{< param boilerplate.headers >}}                                                                                                                                                |
 | Outputs   | JSON or JSONata. Optional variables to add to the {{< abbr "process variable context" >}}.                                                                                       |
 
