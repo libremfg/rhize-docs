@@ -117,6 +117,8 @@ because no `$err` field exists.
 You can use this behavior to direct flows.
 For example, an exclusive gateway may have a condition such as `$exists(err)` that flows into an error-handling condition.
 
+<!--
+https://github.com/libremfg/rhize-docs/issues/123
 ### Define error boundary
 
 The error boundary is an intermediate event that evaluates whether a task had an error.
@@ -132,7 +134,7 @@ src="/images/bpmn/screenshot-rhize-bpmn-error-boundary.png"
 alt="Screenshot of an error boundary that happens when a REST task returns a non-200 response."
 caption="An error boundary that happens when a REST task returns a non-200 response."
 width="35%"
->}}
+>}} -->
 
 ### Create event logging
 
