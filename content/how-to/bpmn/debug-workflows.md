@@ -184,9 +184,8 @@ Yet, the value of `customResponse` must have been set after the message event ex
 So the problem is likely with the REST node.
 
 You could also use a similar strategy with intermediate message events.
-However, while undoubtedly useful, these methods are also limited&mdash; the BPMN equivalents of `printf()` debugging.
-For a full-featured debugging, use the `traceID` to explore the workflow through Tempo.
-
+However, while `customResponse` and messages are undoubtedly useful debugging methods, they are also limited&mdash; the BPMN equivalents of `printf()` debugging.
+For full-featured debugging, use the `traceID` to explore the workflow through Tempo.
 
 ### Debug in Tempo
 
