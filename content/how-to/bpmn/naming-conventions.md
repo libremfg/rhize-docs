@@ -2,7 +2,7 @@
 title: 'Naming conventions'
 categories: ["reference"]
 description: Recommended naming conventions for BPMN processes and their nodes
-weight: 900
+weight: 950
 menu:
   main:
     parent: howto-bpmn

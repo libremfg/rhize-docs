@@ -3,7 +3,7 @@ title: Handle errors and debug
 date: '2024-04-24T19:35:09+03:00'
 categories: ["how-to"]
 description: Strategies to handle errors in your BPMN workflows, and ways to debug workflows when things don't work as expected.
-weight: 350
+weight: 250
 menu:
   main:
     parent: howto-bpmn
