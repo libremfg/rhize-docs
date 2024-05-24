@@ -222,7 +222,7 @@ To inspect the errors:
 For example, this REST task failed because the URL was invalid.
 
 {{< bigFigure
-src="/images/bpmn/screenshot-rhize-bpmn-spans-in-tempo-compact.png"
+src="/images/bpmn/screenshot-rhize-bpmn-tempo-error-node.png"
 alt="Screenshot of a detailed view of an error for a BPMN process in Tempo"
 caption="A detailed view of an error for a BPMN process in Tempo"
 width="55%"
