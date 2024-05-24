@@ -353,6 +353,11 @@ supergraphCompose:
 $ helm upgrade --install router -f router.yaml {{< param application_name >}}/router -n {{< param application_name >}}
 ```
 
+## Optional: change service configuration
+
+The services installed in the previous step have many parameters that you can configure for your performance and deployment requirements.
+Review the full list in the [Service configuration]({{< relref "/reference/service-config" >}}) reference.
+
 ## Troubleshoot
 
 For general Kubernetes issues, the [Kubernetes dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) is great for troubleshooting, and you can configure it to be accessible through the browser.
