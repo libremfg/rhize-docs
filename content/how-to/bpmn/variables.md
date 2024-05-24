@@ -2,6 +2,8 @@
 title: 'Special variables'
 categories: ["reference"]
 description: Special variables used by Rhize BPMN workflows
+aliases:
+  - "/how-to/bpmn/special-variables"
 weight: 900
 menu:
   main:
