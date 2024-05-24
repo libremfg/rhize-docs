@@ -69,6 +69,7 @@ mutation asyncCall{
 
 The responses for these calls have two differences:
 - For synchronous calls, the returned `JobState` should be a finished value (such as `COMPLETED` or `ABORTED`). Asynchronous calls likely return an in-progress status, such as `RUNNING`.
+- Synchronous calls can request the `dataJSON` field to report the entire variable context at the final node.
 - Only the synchronous call receives data in the `customResponse`. For details, refer to the next section.
 
 ### `customResponse`
