@@ -13,8 +13,9 @@ menu:
 Errors come in two categories: expected and unexpected.
 The Rhize BPMN engine has ways to handle both.
 
-A robust workflow is going to have built-in logic to anticipate errors.
-For unexpected issues, every node in a workflow is _instrumented_, meaning it emits traces so that you can observe its behavior and performance.
+A robust workflow should have built-in logic to anticipate errors.
+For unexpected issues, Rhize also creates a _trace_ for each workflow,
+which you can use to observe the behavior and performance of the workflow at each element as it executes sequentially.
 You can also use debug flags and variables to trace variable context as it transforms across the workflow.
 
 ## Strategies to handle errors
@@ -195,9 +196,10 @@ To discover the many ways you can filter your BPMN traces for debugging and anal
 refer to the [official documentation](https://grafana.com/docs/tempo/latest/).
 {{< /notice >}}
 
-Rhize creates a unique ID for each workflow that runs.
+Rhize creates a unique ID and trace for each workflow that runs.
 This ID is reported as the `traceID` in the `createAndRunBPMN` mutation operation.
-Use this ID to debug the workflow in Tempo.
+Within this trace, each node is _instrumented_, with spans emited at every input and output along each node of execution.
+With the trace ID, you can find the workflow run in Tempo and follow the behavior.
 
 To inspect a workflow in Tempo:
 1. Go to your Grafana instance.
