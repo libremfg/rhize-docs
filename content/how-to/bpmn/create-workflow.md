@@ -189,6 +189,51 @@ To reuse a workflow:
 1. Select **Call Activity**.
 1. Configure it according to the [call activity parameters]({{< relref "/how-to/bpmn/bpmn-elements#call-activities" >}}).
 
+## Access process variable context
+
+As data passes through the nodes of a workflow, the nodes share access to a variable space.
+Nodes can access these variables, create new variables, and mutate existing ones.
+This overall variable object is called _process variable context_.
+
+When working with variables, keep the following in mind:
+- **Access the root variable context through `$.`**.
+
+    This follows the conventions of JSONata.
+    For details and examples, read [Use JSONata]({{< relref "how-to/bpmn/use-jsonata" >}}).
+
+- **Access nested properties with dot notation.**
+
+    For example, the following is a reference to the first item in the `orders` object in the variable context:
+    ```
+    $.orders[]
+    ```
+
+- **You can store a node's output in a variable.**
+
+    Many output fields offer a way to create a variable.
+    For example, the JSON schema field has two variables that you can name,
+    one that outputs a boolean based on whether the input is valid, and another that outputs
+    the error string if the variable is invalid.
+
+    You can access these variables in later nodes (unless you mutate them).
+
+- **Variables.**
+
+    If you direct output to a variable that already exists, the new value overwrites the old one.
+    This behavior can be used to manage the overall memory footprint of a workflow.
+
+- **The maximum context size is configurable.**
+
+    By default, the process variable context has a maximum size of 1MB.
+    When an activity outputs data, the output is added to the process variable context.
+    When variable size gets large, you have multiple strategies to reduce its size (besides mutating variables).
+    For ideas, refer to [Tune BPMN performance]({{< relref "/how-to/bpmn/tune-performance" >}}).
+
+- **You can trace variable context.**
+
+    For details, refer to the [Debug guide]({{< relref "how-to/bpmn/debug-workflows" >}}).
+
+
 ## Examples
  
 Rhize has a repository of templates that you can import and use in your system.
