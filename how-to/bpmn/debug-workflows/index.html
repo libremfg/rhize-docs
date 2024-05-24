@@ -64,8 +64,8 @@ Now imagine that the user has started the workflow from the API and receives thi
 </code></pre><p>Note how <code>ABORTED</code> indicates the workflow failed somewhere.
 Yet, the value of <code>customResponse</code> must have been set after the message event executed.
 So the problem is likely with the REST node.</p><p>You could also use a similar strategy with intermediate message events.
-However, while undoubtedly useful, these methods are also limited— the BPMN equivalents of <code>printf()</code> debugging.
-For a full-featured debugging, use the <code>traceID</code> to explore the workflow through Tempo.</p><h3 id=debug-in-tempo>Debug in Tempo</h3><div class="notices note"><span class=type>Note</span> The instructions here provide the minimum about using Tempo as a tool.
+However, while <code>customResponse</code> and messages are undoubtedly useful debugging methods, they are also limited— the BPMN equivalents of <code>printf()</code> debugging.
+For full-featured debugging, use the <code>traceID</code> to explore the workflow through Tempo.</p><h3 id=debug-in-tempo>Debug in Tempo</h3><div class="notices note"><span class=type>Note</span> The instructions here provide the minimum about using Tempo as a tool.
 To discover the many ways you can filter your BPMN traces for debugging and analysis,
 refer to the <a href=https://grafana.com/docs/tempo/latest/>official documentation</a>.</div><p>Rhize creates a unique ID and trace for each workflow that runs.
 This ID is reported as the <code>traceID</code> in the <code>createAndRunBPMN</code> mutation operation.
