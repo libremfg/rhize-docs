@@ -70,8 +70,7 @@ The tight integration of all levels of manufacturing data, from real-time sensor
     <div class="icon"><i class="fa fa-wrench" aria-hidden="true"></i></div>
       <h2>Handle events</h2>
       <p>
-      Handle
-      messages and build MES frontends with the low-code BPMN engine.
+      Use the BPMN engine to accept, transform, standardize and coordinate data flows.
       </p>
     </a>
   </div>
