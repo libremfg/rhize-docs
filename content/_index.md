@@ -21,9 +21,10 @@ Rhize unites all events from your manufacturing processes, relates these events 
 and provides access to any combination of them through a single API endpoint.
 The tight integration of all levels of manufacturing data, from real-time sensor data to operations orders, serves a wide variety of business needs, including as:
 
-- **A manufacturing knowledge graph**, helping humans and algorithms analyze plant processes and discover places to optimize.
-- **An {{< abbr "MES" >}} to handle manufacturing events in real time**, sliding the time when you detect and recover from errors to much earlier in the production line.
-- **A backend to build lowcode manufacturing applications**, giving your people the power to create interfaces that solve problems close to their work domains.
+- **A manufacturing knowledge graph.** Help humans and algorithms analyze plant processes and discover places to optimize.
+- **An integrator of systems.** Orchestrate processes across applications to standardize, coordinate, and transform data flows.
+- **A backend for {{< abbr "MES" >}} applications.** Rapidly build frontends on top of the database and workflow engine.
+  Design the MES system that makes sense for your processes and people.
 
 
 <div class="landing">
