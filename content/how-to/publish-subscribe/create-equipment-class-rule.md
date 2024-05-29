@@ -6,8 +6,8 @@ draft: false
 categories: ["tutorial"]
 description: Follow this tutorial to create a rule to run a workflow every time a data source changes.
 aliases:
-  - "/how-to/publish-subscribe/tutorial-create-equipment-class-rule"
-  - "/how-to/publish-subscribe/create-equipment-class-rule"
+  - "/how-to/publish-subscribe/tutorial-create-equipment-class-rule/"
+  - "/how-to/publish-subscribe/turn-value-into-event/"
 weight: 10
 menu:
   main:

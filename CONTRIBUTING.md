@@ -33,7 +33,7 @@ description: A reference of the data types in the Rhize API and of the filters a
 categories: ["reference"]
 weight: 930
 aliases:
-  - "/old/page/"
+  - "/old/page/" # use trailing slash
 menu:
   main:
     name: GQL types and filters
