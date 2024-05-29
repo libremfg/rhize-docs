@@ -44,6 +44,6 @@ Once active, Rhize reaches out to this data source and synchronizes the equipmen
 ## Next steps
 
 Now that you have the data source sending data you can:
-- Write a rule to [Turn data into events]({{< ref "turn-value-into-event" >}}) that trigger workflows.
+- Write a rule to [Turn data into events]({{< ref "create-equipment-class-rule" >}}) that trigger workflows.
 - [Create a BPMN workflow]({{< relref "bpmn" >}}) to run on this trigger.
   You can also write a workflow that subscribes to data source directly through a [message start event]({{< relref "/how-to/bpmn/bpmn-elements/#message" >}}).

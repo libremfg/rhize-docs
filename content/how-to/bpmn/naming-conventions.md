@@ -39,7 +39,7 @@ Where:
 |-----------------|------------------------------------------------------------------------------------------------|
 | `NATS`          | Invoked when a message is received in the Rhize NATS broker                                    |
 | `API`           | Expects to be called from the API using `createAndRunBPMNSync` or `createAndRunBPMN` mutations |
-| `RULE`          | Invocation is expected from the [rule engine]({{< relref "turn-value-into-event" >}})          |
+| `RULE`          | Invocation is expected from the [rule engine]({{< relref "create-equipment-class-rule" >}})          |
 | `FUNC`          | Internal functions to be invoked as helpers                                                    |
 
 Examples:

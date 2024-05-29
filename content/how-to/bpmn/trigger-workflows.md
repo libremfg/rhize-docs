@@ -144,7 +144,7 @@ Note that, for a workflow to run from a message start event, the workflow **must
 Rule-based triggers subscribe to tag changes from a data source and trigger when the rule change condition is met.
 Typically, users choose this workflow trigger when they want to orchestrate processes originating from level-1 and level-2 systems.
 
-To add a data source and create a rule based trigger, refer to [Turn values into events]({{< relref "how-to/publish-subscribe/turn-value-into-event" >}}).
+To add a data source and create a rule based trigger, refer to [Turn values into events]({{< relref "how-to/publish-subscribe/create-equipment-class-rule" >}}).
 
 ## Timer triggers
 

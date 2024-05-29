@@ -1,21 +1,44 @@
 ---
-title: "Tutorial: Trigger a workflow from a rule"
+title: >-
+  Tutorial: Trigger a workflow from a rule
 date: "2024-04-29T11:39:29+03:00"
 draft: false
 categories: ["tutorial"]
 description: Follow this tutorial to create a rule to run a workflow every time a data source changes.
-weight:
+aliases:
+  - "/how-to/publish-subscribe/tutorial-create-equipment-class-rule"
+  - "/how-to/publish-subscribe/create-equipment-class-rule"
+weight: 10
 menu:
   main:
     parent: howto-pubsub
     identifier:
 ---
 
-An equipment class rule triggers a BPMN workflow whenever a data source publishes a value that meets a specified threshold.
+An equipment class rule [triggers a BPMN]({{< relref "/how-to/bpmn/trigger-workflows/" >}}) workflow whenever a data source publishes a value that meets a specified threshold.
 
 Imagine a scenario when an oven must be preheated every time a new order number is published to an MQTT edge device.
 You could automate this workflow with a rule that listens to messages published and evaluates a condition.
 If the condition evaluates to `true`, the rule triggers a {{< abbr "BPMN" >}} workflow to preheat the oven.
+
+
+```mermaid
+---
+title: Rules trigger workflows from data-source changes
+---
+flowchart LR
+    A(Property\nchanged?) -->|yes| B{"rule evaluates\nto true?"}
+    B -->|no| C(do nothing)
+    B -->|"yes\n(optional: pass variables)"| D(Run BPMN workflow)
+```
+
+The broad procedure to create a rule is as follows:
+1. In the Rhize UI or through GraphQL, create models for the data source and its associated unit of measure, equipment, and equipment class.
+1. In the Rhize UI, write a BPMN workflow that is triggered when this data source changes and executes some business logic.
+1. In the equipment class, create a rule that triggers the workflow.
+
+The following sections describe how to do these steps in more detail.
+
 
 {{% notice note %}}
 
@@ -25,9 +48,9 @@ This tutorial assumes a data source that exchanges messages over the MQTT protoc
 
 ## Prerequisites
 
-Before you start, ensure you follow these steps:
+Before you start, ensure you have the following:
 - Access your Rhize customer environment
-- Configure the Agent to listen for your data-source ID
+- The [Agent configured]({{< relref "/reference/service-config/agent-configuration" >}}) to listen for your data-source ID
 
 ## Set up: configure equipment and workflows
 
@@ -385,3 +408,9 @@ alt="Grafana shows a recent trace with the id of the target BPMN."
 src="/images/equipment-class-rules/screenshot-rhize-Executed_BPMNs_in_Grafana.png"
 caption="Grafana shows a recent trace with the id of the target BPMN."
 >}}
+
+
+
+## Video example
+
+- :movie_camera: [Trigger BPMN]( https://www.youtube.com/watch?v=y5lr9JRmxDA). This video provides an example of creating a rule based on values for an OPC UA server in a baking process.
