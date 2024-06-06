@@ -61,6 +61,8 @@
 - term: Instance
   definition: An identifiable member of a manufacturing class, like a material or process segment, that can be tracked and scheduled
   tags: "s95"
+- term: ISO 22400
+  definition: A standard on KPIs in manufacturing operations management.
 - term: Laboratory information management system
   abbr: LIMS
   definition: Software that tracks laboratory data, including samples, experiments, and workflows
