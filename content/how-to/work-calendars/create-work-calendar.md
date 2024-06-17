@@ -168,7 +168,7 @@ The hierarchy scope establishes the calendar hierarchy that the Rhize calendar s
 
 
 **Requirements.**
-A calendar hierarchy scope must have the following preperties.
+A calendar hierarchy scope must have the following properties.
 - A time zone.
 - An ID that starts with the prefix `WorkCalendar_`
 
