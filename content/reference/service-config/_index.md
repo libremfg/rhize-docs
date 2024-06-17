@@ -14,5 +14,9 @@ The Rhize services have different configuration parameters, as documented in the
 
 <!---
 instructions to print to file
+
+You can use the CLI to print configurations to a file.
+For example, to do so for the Core service, run this command:
+
 -->
 
