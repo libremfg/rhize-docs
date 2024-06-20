@@ -9,7 +9,7 @@ menu:
     identifier: about-work-calendars
 ---
 
-Work calendars represent planned and unplanned downtime in your operation.
+Work calendars represent planned downtime in your operation.
 They provide helpful abstractions for activities such as scheduling and performance analysis.
 The Rhize API represents calendars through a `workCalendar` entity and this calendar's associated definitions and entries.
 
@@ -69,9 +69,9 @@ So, when you [create a calendar]({{< relref "create-work-calendar" >}}), ensure 
 
 The Rhize database and service has three calendar types:
 
-- `PlannedBusyTime`
 - `PlannedDowntime`
 - `PlannedShutdown`
+- `None`, for events that are not considered in OEE calculations.
 
 ## Calendar precedence
 
