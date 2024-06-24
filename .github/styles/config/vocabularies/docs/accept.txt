@@ -11,6 +11,8 @@ JWT
 JWTs
 Keycloak
 NATS
+URI
+URIs
 [Aa]ctuals
 [Bb]oolean
 [Dd]atasource
