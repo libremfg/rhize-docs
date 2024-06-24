@@ -153,7 +153,7 @@ Create a client for the UI as follows:
 
    - **Root URL**: `<DASHBOARD_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
    - **Home URL**: `<DASHBOARD_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
-   - **Valid redirect URIs**: `<DASHBOARD_URL>/login/generic_oath` without trailing slashes
+   - **Valid redirect URIs**: `<DASHBOARD_URL>/login/generic_oauth` without trailing slashes
    - **Valid post logout redirect URIs**: `+` without trailing slashes
    - **Home URL**: `<DASHBOARD_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
 
