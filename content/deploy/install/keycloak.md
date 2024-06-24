@@ -66,7 +66,7 @@ The DB client requires additional configuration of flows and grants.
 Other clients, such as the UI and Dashboard, use the standard flow to coordinate authorization between the browser and Keycloak to simplify security and improve user convenience.
 
 {{< notice "note" >}}
-Each client has its own subdomain.
+Each standard-flow client has its own subdomain.
 Refer to [Default URLs and Ports]({{< relref "/reference/default-ports" >}}) for our recommended conventions.
 {{< /notice >}}
 
@@ -122,34 +122,42 @@ Create a client for the UI as follows:
        - 🗸 Direct access grants
        - 🗸 Implicit flow
 
-1. Select **Next**, then **Save**.
-
-1. Scroll to **Access Settings** and configure:
+1. Configure the **Access Settings**:
 
    - **Root URL**: `<UI_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
    - **Home URL**: `<UI_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
    - **Web Origins**: `<UI_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
 
-1. **Save**.
+1. Select **Next**, then **Save**.
 
 #### Create dashboard client
 
 1. In the side menu, select **Clients > create client**.
 1. Configure the **General Settings**:
 
-    - **Client Type**: `OpenID Connect`
-    - **Client ID**: `dashboard`
-    - **Name**: `{{< param brand_name >}} Dashboard`
-    - **Description**: `{{< param brand_name >}} Dashboard`
+   - **Client Type**: `OpenID Connect`
+   - **Client ID**: `dashboard`
+   - **Name**: `{{< param brand_name >}} Dashboard`
+   - **Description**: `{{< param brand_name >}} Dashboard`
 
-1. The Dashboard client needs a redirect URL. In **Access settings**, enter these values:
+1. Configure the **Capability config**:
+
+   - **Client Authentication**: On
+   - **Authorization**: On
+   - For **Authentication flow**, enable:
+     - 🗸 Standard flow
+     - 🗸 Direct access grants
+     - 🗸 Implicit flow
+
+1. Configure the **Access Settings**:
+
    - **Root URL**: `<DASHBOARD_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
    - **Home URL**: `<DASHBOARD_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
    - **Valid redirect URIs**: `<DASHBOARD_URL>/login/generic_oath` without trailing slashes
    - **Valid post logout redirect URIs**: `+` without trailing slashes
    - **Home URL**: `<DASHBOARD_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
-1. **Save**.
 
+1. Select **Next**, then **Save**.
 
 #### Create other service clients
 
