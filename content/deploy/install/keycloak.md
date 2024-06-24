@@ -63,6 +63,12 @@ In Keycloak, _clients_ are entities that request Keycloak to authenticate a user
 You need to create a client for each service.
 
 The DB client requires additional configuration of flows and grants.
+Other clients, such as the UI and Dashboard, use the standard flow to coordinate authorization between the browser and Keycloak to simplify security and improve user convenience.
+
+{{< notice "note" >}}
+Each client has its own subdomain.
+Refer to [Default URLs and Ports]({{< relref "/reference/default-ports" >}}) for our recommended conventions.
+{{< /notice >}}
 
 #### Create DB client
 
@@ -120,9 +126,30 @@ Create a client for the UI as follows:
 
 1. Scroll to **Access Settings** and configure:
 
-    - **Root URL**: The domain to host the {{< param brand_name >}} User Interface without trailing slashes
-    - **Home URL**: The domain to host the {{< param brand_name >}} User Interface without trailing slashes
-    - **Web Origins**: The domain to host the {{< param brand_name >}} User Interface without trailing slashes
+   - **Root URL**: `<UI_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
+   - **Home URL**: `<UI_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
+   - **Web Origins**: `<UI_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
+
+1. **Save**.
+
+#### Create dashboard client
+
+1. In the side menu, select **Clients > create client**.
+1. Configure the **General Settings**:
+
+    - **Client Type**: `OpenID Connect`
+    - **Client ID**: `dashboard`
+    - **Name**: `{{< param brand_name >}} Dashboard`
+    - **Description**: `{{< param brand_name >}} Dashboard`
+
+1. The Dashboard client needs a redirect URL. In **Access settings**, enter these values:
+   - **Root URL**: `<DASHBOARD_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
+   - **Home URL**: `<DASHBOARD_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
+   - **Valid redirect URIs**: `<DASHBOARD_URL>/login/generic_oath` without trailing slashes
+   - **Valid post logout redirect URIs**: `+` without trailing slashes
+   - **Home URL**: `<DASHBOARD_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
+1. **Save**.
+
 
 #### Create other service clients
 
@@ -136,7 +163,6 @@ For example, to create the BPMN engine client:
     - **Client Authentication**: On
 1. Select **Next**, then **Save**.
 
-
 **Repeat this process for each of the following services:**
 
 | Client ID                              | Description           |
@@ -144,41 +170,8 @@ For example, to create the BPMN engine client:
 | `{{< param application_name >}}Audit`  | The audit log service |
 | `{{< param application_name >}}Core`   | The edge agent        |
 | `{{< param application_name >}}Router` | API router            |
-| `dashboard`                            | Grafana dashboard     |
 
 Based on your architecture, repeat for any Libre Edge Agents, `{{< param application_name >}}Agent`.
-
-### Create client redirects
-
-Some clients can use _authorization code flow_ to coordinate authorization between Keycloak and your browser.
-This adds user convenience and simplifies the security procedure.
-
-Configure redirects for the clients in the following sections.
-For each client:
-1. Go to **Clients** menu.
-2. Select the client.
-3. From the **Settings** tab, configure URIs in **Access settings** .
-
-
-
-
-#### UI redirects
-
-The UI client needs a redirect URL.
-
-1. From **Clients**, select `{{< param application_name >}}UI`.
-1. Enter the following URLs:
-
-- **Valid redirect URI:** `<UI_URL>`
-
-#### Dashboard redirect
-
-The Dashboard client needs a redirect URL.
-1. From **Clients**, select `dashboard`.
-1. Enter the following URLs:
-- **Root URL**: `<DASHBOARD_URL>`
-- **Valid redirect URIs**: enter `/*` and `<DASHBOARD_URL>/login/generic_oath`.
-- **Web origins**: enter `/*` and `http:://localhost:<DASHBOARD_PORT>/login/generic_oath`.
 
 ### Scope services
 
@@ -213,7 +206,7 @@ To create a scope for your Rhize services, follow these steps:
 1. If using the Rhize Audit microservice, repeat the preceding step for an Audit scope and audience mapper:
     - **Mapper Type**: `Audience`
     - **Name**: `{{< param application_name >}}AuditAudienceMapper`
-    - **Include Client Audience**: 
+    - **Include Client Audience**:
     - **Included Custom Audience**: `audit`
     - **Add to ID Token**: `On`
     - **Add to access token**: `On`
@@ -393,7 +386,7 @@ With the `libre` realm selected:
 
 With the `libre` realm selected:
 1. Select **Realm settings**  and then the **Security defenses** tab.
-1. In **Brute force detection**, enable the feature and configure it to your requirements. 
+1. In **Brute force detection**, enable the feature and configure it to your requirements.
 
 ## Next steps
 
