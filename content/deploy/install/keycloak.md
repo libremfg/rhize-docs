@@ -137,7 +137,6 @@ For example, to create the BPMN engine client:
 1. Select **Next**, then **Save**.
 
 
-
 **Repeat this process for each of the following services:**
 
 | Client ID                              | Description           |
@@ -147,7 +146,39 @@ For example, to create the BPMN engine client:
 | `{{< param application_name >}}Router` | API router            |
 | `dashboard`                            | Grafana dashboard     |
 
-Based on your architecture repeat for any Libre Edge Agents, `{{< param application_name >}}Agent`
+Based on your architecture, repeat for any Libre Edge Agents, `{{< param application_name >}}Agent`.
+
+### Create client redirects
+
+Some clients can use _authorization code flow_ to coordinate authorization between Keycloak and your browser.
+This adds user convenience and simplifies the security procedure.
+
+Configure redirects for the clients in the following sections.
+For each client:
+1. Go to **Clients** menu.
+2. Select the client.
+3. From the **Settings** tab, configure URIs in **Access settings** .
+
+
+
+
+#### UI redirects
+
+The UI client needs a redirect URL.
+
+1. From **Clients**, select `{{< param application_name >}}UI`.
+1. Enter the following URLs:
+
+- **Valid redirect URI:** `<UI_URL>`
+
+#### Dashboard redirect
+
+The Dashboard client needs a redirect URL.
+1. From **Clients**, select `dashboard`.
+1. Enter the following URLs:
+- **Root URL**: `<DASHBOARD_URL>`
+- **Valid redirect URIs**: enter `/*` and `<DASHBOARD_URL>/login/generic_oath`.
+- **Web origins**: enter `/*` and `http:://localhost:<DASHBOARD_PORT>/login/generic_oath`.
 
 ### Scope services
 
