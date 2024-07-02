@@ -29,6 +29,43 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 | Username            | Authenticates through a `username` and `password` in the config file, or through a Kubernetes secret.                                                                                                                           |
 | Certificate         | Uses the certificate on disk specified in the  `opcUa.CertFile` and `opcUa.KeyFile` configs. If no certificate exists and the config specifies the `opcUa.GenCert` property as `true`, automatically generates one. |
 
+# Configurations
+
+## `azure`
+
+| Attribute | Description |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `clientId`         | The ID used to securely authenticate Azure service access. |   
+| `clientSecret`         | The secret key associated with the client ID for authentication. |  
+| `tenantId`         | The ID of the Azure Active Directory tenant where the service is registered. |  
+| `serviceBusHostName`         | The URL of the Azure Service Bus namespace used for Azure ecosystem communication.  <br />(Default: `bsl-dev.servicebus.windows.net`) |  
+
+## `buffers`
+
+| Attribute | Description |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `protocolQueueType`         | The type of queue used for buffering communication protocol data.  <br />(Default: `0`) |   
+
+## `datasource`
+
+| Attribute | Description |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`              | The source ID to retrieve payload data from.  <br />(Default: `DS_0806`) |   
+
+## `health`
+
+| Attribute | Description |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `pollInterval`         | The frequency of scans for component status and health.  <br />(Default: `1000`) |   
+| `subscriptionTimeout`         | The maximum duration to wait to receive updates from subscribed data sources.  <br />(Default: `60000`) |   
+| `subscriptionMaxCount`         | The maximum number of concurrent subscriptions for monitoring.  <br />(Default: `5`) |   
+
+## `libreDataStoreGraphQl`
+
+| Attribute | Description |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `serverUrl`         | The URL of the GraphQL endpoint to use for interacting with Rhize services. <br />(Default: `http://localhost:8080/graphql`) |
+
 ## `logging`
 
  Logs the configurations to the console.
@@ -38,11 +75,18 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 | `type`                | Specifies the logging configuration type: `json`, `multi`, or console. <br />(Default: `console`) |
 | `level`               | Configures the level of logging: `Trace`, `Debug`, `Info`, `Warn`, `Error`, `Fatal`, `Panic`. Defaults to `Trace`. <br />(Default: `trace`) |
 
-## `libreDataStoreGraphQl`
+## `mqtt`
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `serverUrl`         | The URL of the GraphQL endpoint to use for interacting with Rhize services. <br />(Default: `http://localhost:8080/graphql`) |
+| `version`         | The version of MQTT used: `5.0` or `3.1.1`. <br />(Default: `3.1.1`) |   
+| `clientId`         | The ID used in the MQTT broker.  <br />(Default: `mqtt-client`) |   
+| `serverUrl`         | The URL of the MQTT broker.  <br />(Default: `mqtt://localhost:1883`) |   
+| `username`         | The username credentials to authenticate with the MQTT broker. |   
+| `password`         | The password credentials to authenticate with the MQTT broker. |   
+| `decomposeJson`         | Enables or disables JSON payload decomposition into individual data fields.  <br />(Default: `false`) |   
+| `timestampField`         | The field to search to return timestamp information.  <br />(Default: `timestamp`) |   
+| `requestTimeout`         | The maximum duration to wait to receive a response to an MQTT request from the broker.  <br />(Default: `10`) | 
 
 ## `nats`
 
@@ -63,12 +107,6 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 | `username`         | The username credentials to authenticate with the OIDC server. |
 | `password`         | The password credentials to authenticate with the OIDC server. |
 
-## `openTelemetry`
-
-| Attribute | Description |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `serverUrl`         | The URL of the OpenTelemetry server.  <br />(Default: `localhost:4317`) |   
-
 ## `opcUa`
 
 | Attribute | Description |
@@ -82,44 +120,9 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 | `authentication`         | The authentication mechanisms and user access control.  <br />(Default: `Anonymous`) |
 | `applicationUri`         | The application's unique URI within the OPC UA system.  <br />(Default: `opc.tcp://localhost:4840`) |
 
-## `buffers`
+
+## `openTelemetry`
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `protocolQueueType`         | The type of queue used for buffering communication protocol data.  <br />(Default: `0`) |   
-
-## `health`
-
-| Attribute | Description |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `pollInterval`         | The frequency of scans for component status and health.  <br />(Default: `1000`) |   
-| `subscriptionTimeout`         | The maximum duration to wait to receive updates from subscribed data sources.  <br />(Default: `60000`) |   
-| `subscriptionMaxCount`         | The maximum number of concurrent subscriptions for monitoring.  <br />(Default: `5`) |   
-
-## `mqtt`
-
-| Attribute | Description |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `version`         | The version of MQTT used: `5.0` or `3.1.1`. <br />(Default: `3.1.1`) |   
-| `clientId`         | The ID used in the MQTT broker.  <br />(Default: `mqtt-client`) |   
-| `serverUrl`         | The URL of the MQTT broker.  <br />(Default: `mqtt://localhost:1883`) |   
-| `username`         | The username credentials to authenticate with the MQTT broker. |   
-| `password`         | The password credentials to authenticate with the MQTT broker. |   
-| `decomposeJson`         | Enables or disables JSON payload decomposition into individual data fields.  <br />(Default: `false`) |   
-| `timestampField`         | The field to search to return timestamp information.  <br />(Default: `timestamp`) |   
-| `requestTimeout`         | The maximum duration to wait to receive a response to an MQTT request from the broker.  <br />(Default: `10`) |   
-
-## `datasource`
-
-| Attribute | Description |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`              | The source ID to retrieve payload data from.  <br />(Default: `DS_0806`) |   
-
-## `azure`
-
-| Attribute | Description |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `clientId`         | The ID used to securely authenticate Azure service access. |   
-| `clientSecret`         | The secret key associated with the client ID for authentication. |  
-| `tenantId`         | The ID of the Azure Active Directory tenant where the service is registered. |  
-| `serviceBusHostName`         | The URL of the Azure Service Bus namespace used for Azure ecosystem communication.  <br />(Default: `bsl-dev.servicebus.windows.net`) |  
+| `serverUrl`         | The URL of the OpenTelemetry server.  <br />(Default: `localhost:4317`) |   

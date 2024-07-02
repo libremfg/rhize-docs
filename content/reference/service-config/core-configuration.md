@@ -11,6 +11,28 @@ menu:
 
  The Core service oversees data sources such as OPC-UA servers and manages the publication and subscription of topics within the NATS messaging system.
 
+# Configurations
+
+## `bpmn`
+
+| Attributes          | Description                                                                                                                                                                                    |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `serverUrl`        | The URL of the BPMN endpoint to use for interacting with Rhize services. <br />(Default: `http://localhost:8081`) |  
+
+## `graphQlServer`
+
+ The server used to connect to the GraphQL playground.
+
+| Attributes          | Description                                                                                                                                                                                    |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `port`              | The port used within the URL that connects to the graphQLServer. <br />(Default: `4001`)     |           
+
+## `libreDataStoreGraphQl`
+
+| Attributes          | Description                                                                                                                                                                                    |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `serverUrl`        | The URL of the GraphQL endpoint to use for interacting with Rhize services. <br />(Default: `http://localhost:8080/graphql`) |       
+
 ## `logging`
 
  Logs the configuration to the console.
@@ -18,9 +40,9 @@ menu:
 | Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `type`              | Specifies the logging configuration type: `json`, `multi`, or console. <br />(Default: `console`)                                                                                   |                                                                                                                                                 
-| `Level`             | Configures the level of logging: `Trace`, `Debug`, `Info`, `Warn`, `Error`, `Fatal`, and `Panic`. <br />(Default: `Trace`)                                                                     |
+| `level`             | Configures the level of logging: `Trace`, `Debug`, `Info`, `Warn`, `Error`, `Fatal`, and `Panic`. <br />(Default: `Trace`)                                                                     |
 
-## `NATS`
+## `nats`
 
  Message broker that drives Rhize's event-based architecture.
 
@@ -30,7 +52,7 @@ menu:
 | `replicas`          | The number of replicas or instances of the NATS server to be deployed. <br />(Default: `1`)                                                                                                    |
 
 
-## `OIDC`
+## `oidc`
 
  Configurations for Keycloak authentication and connection with OpenID Connect.
 
@@ -38,49 +60,26 @@ menu:
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `serverUrl`         | The URL of the OpenID Connect server. <br />(Default: `http://localhost:8090`)    |                                                                                                                    
 | `realm`             | Identifies the authentication domain for which the authentication request is being made.                                                                              |
-| `client_id`         | The unique identifier assigned to the client application by the OIDC server.                                                                                      |
-| `client_secret`     | Used to authenticate the client when making confidential requests.                                                                       |
+| `clientId`         | The unique identifier assigned to the client application by the OIDC server.                                                                                      |
+| `clientSecret`     | Used to authenticate the client when making confidential requests.                                                                       |
 | `username`          | The username credentials of the user who is attempting to authenticate with the OIDC server.                                                           |
 | `password`          | The password credentials of the user who is attempting to authenticate with the OIDC server.                                                                         |
 
-## `OpenTelemetry`
+## `openTelemetry`
 
 | Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `serverUrl`         | The URL of the OpenTelemetry server. <br />(Default: `localhost:4317`)                                                                                                                         | 
 | `samplingRate`      | The sampling rate for traces. <br />(Default: `1`)                                                                                                                                         | 
 
-## `SECRET`
+## `secret`
 
 | Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `KEY`               | The SECRET KEY used for authorization within Core.       |                                                                                                                                                 
+| `key`               | The SECRET KEY used for authorization within Core.       |              
 
-## `graphQLServer`
-
- The server used to connect to the GraphQL playground.
+## `timeSeries`
 
 | Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Port`              | The port used within the URL that connects to the graphQLServer. <br />(Default: `4001`)     |                                                                                                                                                 
-
-
-## `libreDataStoreGraphQL`
-
-| Attributes          | Description                                                                                                                                                                                    |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `GraphQLUrl`        | The URL of the GraphQL endpoint to use for interacting with Rhize services. <br />(Default: `http://localhost:8080/graphql`) |                                                                                                                                                 
-
-
-## `BPMN`
-
-| Attributes          | Description                                                                                                                                                                                    |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `GraphQLUrl`        | The URL of the BPMN endpoint to use for interacting with Rhize services. <br />(Default: `http://localhost:8081`) |                                                                                                                                                 
-
-## `TimeSeries`
-
-| Attributes          | Description                                                                                                                                                                                    |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Enabled`           | Enables the use of TimeSeries. <br />(Default: `false`)     |                                                                                                                                                 
-
+| `enabled`           | Enables the use of TimeSeries. <br />(Default: `false`)     |                                                                                                                                                 
