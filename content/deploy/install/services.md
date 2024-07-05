@@ -353,19 +353,20 @@ supergraphCompose:
 $ helm upgrade --install router -f router.yaml {{< param application_name >}}/router -n {{< param application_name >}}
 ```
 
-## Optional: Calendar Service (Draft)
+## Optional: calendar service
 
-The {{< param brand_name >}} calendar service monitors work calendar definitions and creates work calendar entries in real time, both in the [Graph](#db) and time-series databases.
+The [{{< param brand_name >}} calendar service]({{< relref "/how-to/work-calendars">}}) monitors work calendar definitions and creates work calendar entries in real time, both in the [Graph](#db) and time-series databases.
 
 > **Requirements:** The calendar service requires the [GraphDB](#db), [Keycloak](#keycloak), and [NATS](#nats) services.
 
 {{% notice "note" %}}
-It is a prerequisite to have a time-series DB installed such as [InfluxDB](https://influxdata.com/), [QuestDB](https://questdb.io) or [TimescaleDB](https://www.timescale.com/). The following instructions are specific to QuestDB.
+The work calendar requires a time-series DB installed such as [InfluxDB](https://influxdata.com/), [QuestDB](https://questdb.io) or [TimescaleDB](https://www.timescale.com/). The following instructions are specific to QuestDB.
 {{% /notice %}}
 
 Install the calendar service with these steps:
 
-1. Create tables in the time series: 
+1. Create tables in the time series. For example:
+
 
     ```sql
     CREATE TABLE IF NOT EXISTS PSDT_POT(
