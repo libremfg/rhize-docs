@@ -355,11 +355,13 @@ $ helm upgrade --install router -f router.yaml {{< param application_name >}}/ro
 
 ## Optional: Calendar Service (Draft)
 
-The {{< param brand_name >}} calendar service monitors work calendar definitions and creates work calendar entries in real time, both in the [Graph DB](#db) and Timeseries DB.
+The {{< param brand_name >}} calendar service monitors work calendar definitions and creates work calendar entries in real time, both in the [Graph](#db) and time-series databases.
 
 > **Requirements:** The calendar service requires the [GraphDB](#db), [Keycloak](#keycloak), and [NATS](#nats) services.
 
-> **Note:** It is a prerequisite to have a Timeseries DB installed such as [InfluxDB](https://influxdata.com/), [QuestDB](https://questdb.io) or [TimescaleDB](https://www.timescale.com/). The following instructions are specific to QuestDB.
+{{% notice "note" %}}
+It is a prerequisite to have a time-series DB installed such as [InfluxDB](https://influxdata.com/), [QuestDB](https://questdb.io) or [TimescaleDB](https://www.timescale.com/). The following instructions are specific to QuestDB.
+{{% /notice %}}
 
 Install the calendar service with these steps:
 
@@ -430,9 +432,9 @@ Install the calendar service with these steps:
     DEDUP UPSERT KEYS(time, EquipmentId, WorkCalendarEntryIid);
     ```
 
-2. Modify the calendar YAML file as needed.
+1. Modify the calendar YAML file as needed.
 
-3. Deploy with helm 
+1. Deploy with helm 
 
 ```bash
 helm install calendar-service -f calendar-service.yaml {{< param application_name >}}/calendar-service -n {{< param application_name >}}
