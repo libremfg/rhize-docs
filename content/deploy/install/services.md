@@ -363,7 +363,7 @@ The {{< param brand_name >}} calendar service monitors work calendar definitions
 
 Install the calendar service with these steps:
 
-1. Create tables in timeseries
+1. Create tables in the time series: 
 
 ```sql
 CREATE TABLE IF NOT EXISTS PSDT_POT(
