@@ -11,7 +11,7 @@ menu:
     identifier: howto-work-calendars
 ---
 
-Work calendars represent planned and unplanned downtime in your operation.
+Work calendars represent planned downtime in your operation.
 The Rhize API represents calendars through the `workCalendar` entity,
 which has close associations with the {{< abbr "equipment" >}} and {{< abbr "hierarchy scope" >}} models.
 
