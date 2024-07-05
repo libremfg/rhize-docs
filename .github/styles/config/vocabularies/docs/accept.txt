@@ -1,14 +1,16 @@
 (?i)Rhize
-(?i)gzip
 (?i)bpmn
+(?i)gzip
 APIs
 Appsmith
 Bitnami
 Grafana
-JetStream
 JSONata
 JWT
 JWTs
+JetStream
+KPI
+KPIs
 Keycloak
 NATS
 [Aa]ctuals
@@ -21,8 +23,8 @@ NATS
 [Pp]ostgres
 [Uu]psert
 andon
-bigFigure
 autoscale
+bigFigure
 config
 explorable
 hostname
@@ -33,6 +35,6 @@ relref
 subgraph
 supergraph
 swappable
-unpackaged
 unaccepted
 unencrypted
+unpackaged
