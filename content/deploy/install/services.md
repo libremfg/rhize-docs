@@ -436,9 +436,9 @@ Install the calendar service with these steps:
 
 1. Deploy with helm 
 
-```bash
-helm install calendar-service -f calendar-service.yaml {{< param application_name >}}/calendar-service -n {{< param application_name >}}
-```
+    ```bash
+    helm install calendar-service -f calendar-service.yaml {{< param application_name >}}/calendar-service -n {{< param application_name >}}
+    ```
 
 ## Optional: change service configuration
 
