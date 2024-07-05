@@ -105,8 +105,8 @@ Postgres server options
 | `Host`         | The hostname of the Postgres database <br />(Default: `localhost`)|
 | `Port`         | Those port of the Postgres database <br />(Default: `5432`)|
 | `User`         | The Postgres user name <br />(Default: `postgres`)|
-| `Password`         | The postgres instance password <br />(Default: `postgres`)|
-| `Database`         | The database name for the postgres instance <br />(Default: `Libre`)|
+| `Password`         | The Postgres instance password <br />(Default: `postgres`)|
+| `Database`         | The database name for the Postgres instance <br />(Default: `Libre`)|
 
 ## `Database`
 
