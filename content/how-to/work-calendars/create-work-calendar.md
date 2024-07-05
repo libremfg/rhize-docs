@@ -1,7 +1,7 @@
 ---
 title: Create work calendars
 description: >-
-  A guide to creating work calendars.
+  A guide to creating work calendars. Control, configure, and calculate planned downtime for your manufacturing equipment.
 weight: 200
 menu:
   main:
