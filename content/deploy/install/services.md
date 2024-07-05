@@ -365,70 +365,70 @@ Install the calendar service with these steps:
 
 1. Create tables in the time series: 
 
-```sql
-CREATE TABLE IF NOT EXISTS PSDT_POT(
-  EquipmentId SYMBOL,
-  EquipmentVersion STRING,
-  WorkCalendarId STRING,
-  WorkCalendarIid STRING,
-  WorkCalendarDefinitionId STRING,
-  WorkCalendarDefinitionEntryId STRING,
-  WorkCalendarDefinitionEntryIid STRING,
-  WorkCalendarEntryId STRING,
-  WorkCalendarEntryIid SYMBOL,
-  HierarchyScopeId STRING,
-  EntryType STRING,
-  ISO22400CalendarState STRING,
-  isDeleted boolean,
-  updatedAt TIMESTAMP,
-  time TIMESTAMP,
-  lockerCount INT,
-  lockers STRING
-) TIMESTAMP(time) PARTITION BY month
-DEDUP UPSERT KEYS(time, EquipmentId, WorkCalendarEntryIid);
+    ```sql
+    CREATE TABLE IF NOT EXISTS PSDT_POT(
+      EquipmentId SYMBOL,
+      EquipmentVersion STRING,
+      WorkCalendarId STRING,
+      WorkCalendarIid STRING,
+      WorkCalendarDefinitionId STRING,
+      WorkCalendarDefinitionEntryId STRING,
+      WorkCalendarDefinitionEntryIid STRING,
+      WorkCalendarEntryId STRING,
+      WorkCalendarEntryIid SYMBOL,
+      HierarchyScopeId STRING,
+      EntryType STRING,
+      ISO22400CalendarState STRING,
+      isDeleted boolean,
+      updatedAt TIMESTAMP,
+      time TIMESTAMP,
+      lockerCount INT,
+      lockers STRING
+    ) TIMESTAMP(time) PARTITION BY month
+    DEDUP UPSERT KEYS(time, EquipmentId, WorkCalendarEntryIid);
 
-CREATE TABLE IF NOT EXISTS PDOT_PBT(
-  EquipmentId SYMBOL,
-  EquipmentVersion STRING,
-  WorkCalendarId STRING,
-  WorkCalendarIid STRING,
-  WorkCalendarDefinitionId STRING,
-  WorkCalendarDefinitionEntryId STRING,
-  WorkCalendarDefinitionEntryIid STRING,
-  WorkCalendarEntryId STRING,
-  WorkCalendarEntryIid SYMBOL,
-  HierarchyScopeId STRING,
-  EntryType STRING,
-  ISO22400CalendarState STRING,
-  isDeleted boolean,
-  updatedAt TIMESTAMP,
-  time TIMESTAMP,
-  lockerCount INT,
-  lockers STRING
-) TIMESTAMP(time) PARTITION BY month
-DEDUP UPSERT KEYS(time, EquipmentId, WorkCalendarEntryIid);
+    CREATE TABLE IF NOT EXISTS PDOT_PBT(
+      EquipmentId SYMBOL,
+      EquipmentVersion STRING,
+      WorkCalendarId STRING,
+      WorkCalendarIid STRING,
+      WorkCalendarDefinitionId STRING,
+      WorkCalendarDefinitionEntryId STRING,
+      WorkCalendarDefinitionEntryIid STRING,
+      WorkCalendarEntryId STRING,
+      WorkCalendarEntryIid SYMBOL,
+      HierarchyScopeId STRING,
+      EntryType STRING,
+      ISO22400CalendarState STRING,
+      isDeleted boolean,
+      updatedAt TIMESTAMP,
+      time TIMESTAMP,
+      lockerCount INT,
+      lockers STRING
+    ) TIMESTAMP(time) PARTITION BY month
+    DEDUP UPSERT KEYS(time, EquipmentId, WorkCalendarEntryIid);
 
-CREATE TABLE IF NOT EXISTS Calendar_AdHoc(
-  EquipmentId SYMBOL,
-  EquipmentVersion STRING,
-  WorkCalendarId STRING,
-  WorkCalendarIid STRING,
-  WorkCalendarDefinitionId STRING,
-  WorkCalendarDefinitionEntryId STRING,
-  WorkCalendarDefinitionEntryIid STRING,
-  WorkCalendarEntryId STRING,
-  WorkCalendarEntryIid SYMBOL,
-  HierarchyScopeId STRING,
-  EntryType STRING,
-  ISO22400CalendarState STRING,
-  isDeleted boolean,
-  updatedAt TIMESTAMP,
-  time TIMESTAMP,
-  lockerCount INT,
-  lockers STRING
-) TIMESTAMP(time) PARTITION BY month
-DEDUP UPSERT KEYS(time, EquipmentId, WorkCalendarEntryIid);
-```
+    CREATE TABLE IF NOT EXISTS Calendar_AdHoc(
+      EquipmentId SYMBOL,
+      EquipmentVersion STRING,
+      WorkCalendarId STRING,
+      WorkCalendarIid STRING,
+      WorkCalendarDefinitionId STRING,
+      WorkCalendarDefinitionEntryId STRING,
+      WorkCalendarDefinitionEntryIid STRING,
+      WorkCalendarEntryId STRING,
+      WorkCalendarEntryIid SYMBOL,
+      HierarchyScopeId STRING,
+      EntryType STRING,
+      ISO22400CalendarState STRING,
+      isDeleted boolean,
+      updatedAt TIMESTAMP,
+      time TIMESTAMP,
+      lockerCount INT,
+      lockers STRING
+    ) TIMESTAMP(time) PARTITION BY month
+    DEDUP UPSERT KEYS(time, EquipmentId, WorkCalendarEntryIid);
+    ```
 
 2. Modify the calendar YAML file as needed.
 
