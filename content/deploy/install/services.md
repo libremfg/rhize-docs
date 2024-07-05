@@ -353,6 +353,93 @@ supergraphCompose:
 $ helm upgrade --install router -f router.yaml {{< param application_name >}}/router -n {{< param application_name >}}
 ```
 
+## Optional: Calendar Service (Draft)
+
+The {{< param brand_name >}} calendar service monitors work calendar definitions and creates work calendar entries in real time, both in the [Graph](#db) and time-series databases.
+
+> **Requirements:** The calendar service requires the [GraphDB](#db), [Keycloak](#keycloak), and [NATS](#nats) services.
+
+{{% notice "note" %}}
+It is a prerequisite to have a time-series DB installed such as [InfluxDB](https://influxdata.com/), [QuestDB](https://questdb.io) or [TimescaleDB](https://www.timescale.com/). The following instructions are specific to QuestDB.
+{{% /notice %}}
+
+Install the calendar service with these steps:
+
+1. Create tables in the time series: 
+
+    ```sql
+    CREATE TABLE IF NOT EXISTS PSDT_POT(
+      EquipmentId SYMBOL,
+      EquipmentVersion STRING,
+      WorkCalendarId STRING,
+      WorkCalendarIid STRING,
+      WorkCalendarDefinitionId STRING,
+      WorkCalendarDefinitionEntryId STRING,
+      WorkCalendarDefinitionEntryIid STRING,
+      WorkCalendarEntryId STRING,
+      WorkCalendarEntryIid SYMBOL,
+      HierarchyScopeId STRING,
+      EntryType STRING,
+      ISO22400CalendarState STRING,
+      isDeleted boolean,
+      updatedAt TIMESTAMP,
+      time TIMESTAMP,
+      lockerCount INT,
+      lockers STRING
+    ) TIMESTAMP(time) PARTITION BY month
+    DEDUP UPSERT KEYS(time, EquipmentId, WorkCalendarEntryIid);
+
+    CREATE TABLE IF NOT EXISTS PDOT_PBT(
+      EquipmentId SYMBOL,
+      EquipmentVersion STRING,
+      WorkCalendarId STRING,
+      WorkCalendarIid STRING,
+      WorkCalendarDefinitionId STRING,
+      WorkCalendarDefinitionEntryId STRING,
+      WorkCalendarDefinitionEntryIid STRING,
+      WorkCalendarEntryId STRING,
+      WorkCalendarEntryIid SYMBOL,
+      HierarchyScopeId STRING,
+      EntryType STRING,
+      ISO22400CalendarState STRING,
+      isDeleted boolean,
+      updatedAt TIMESTAMP,
+      time TIMESTAMP,
+      lockerCount INT,
+      lockers STRING
+    ) TIMESTAMP(time) PARTITION BY month
+    DEDUP UPSERT KEYS(time, EquipmentId, WorkCalendarEntryIid);
+
+    CREATE TABLE IF NOT EXISTS Calendar_AdHoc(
+      EquipmentId SYMBOL,
+      EquipmentVersion STRING,
+      WorkCalendarId STRING,
+      WorkCalendarIid STRING,
+      WorkCalendarDefinitionId STRING,
+      WorkCalendarDefinitionEntryId STRING,
+      WorkCalendarDefinitionEntryIid STRING,
+      WorkCalendarEntryId STRING,
+      WorkCalendarEntryIid SYMBOL,
+      HierarchyScopeId STRING,
+      EntryType STRING,
+      ISO22400CalendarState STRING,
+      isDeleted boolean,
+      updatedAt TIMESTAMP,
+      time TIMESTAMP,
+      lockerCount INT,
+      lockers STRING
+    ) TIMESTAMP(time) PARTITION BY month
+    DEDUP UPSERT KEYS(time, EquipmentId, WorkCalendarEntryIid);
+    ```
+
+1. Modify the calendar YAML file as needed.
+
+1. Deploy with helm 
+
+    ```bash
+    helm install calendar-service -f calendar-service.yaml {{< param application_name >}}/calendar-service -n {{< param application_name >}}
+    ```
+
 ## Optional: change service configuration
 
 The services installed in the previous step have many parameters that you can configure for your performance and deployment requirements.
