@@ -9,9 +9,10 @@ menu:
     identifier: about-work-calendars
 ---
 
-Work calendars represent planned downtime in your operation.
-They provide helpful abstractions for activities such as scheduling and performance analysis.
+Work calendars represent planned periods of time in your operation,
+including shifts, planned shutdowns, or recurring stops for maintenance.
 The Rhize API represents calendars through a `workCalendar` entity and this calendar's associated definitions and entries.
+They provide helpful abstractions for activities such as scheduling and performance analysis.
 
 Rhize has an optional `calendar` service that periodically queries the Rhize DB for `workCalendarDefinitions`.
 If it finds active definitions and equipment for that period, the service creates work calendar entries and persists the data to a time-series database.
