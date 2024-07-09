@@ -83,6 +83,12 @@
 - term: Material class
   definition: A group of material with a shared purpose in the manufacturing process
   tags: "s95"
+- term: Material lot
+  definition: A uniquely identifiable amount of material, either countable or weighable
+  tags: "s95"
+- term: Material sublot
+  definition: Each separately identifiable unit of a <a href="#material-lot">material lot.</a>
+  tags: "s95"
 - term: Mutation
   definition: A GraphQL operation that modifies some data in the database, usually creating, updating, or deleting a resource
   tags: "gql"
