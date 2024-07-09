@@ -1,6 +1,6 @@
-# libremfg.github.io
+# Rhize documentation
 
-Documentation pages
+Website and content files for documentation at [docs.rhize.com](https://docs.rhize.com).
 
 ## Build locally
 
