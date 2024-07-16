@@ -19,6 +19,7 @@ Each page has the following frontmatter:
 - `weight`: The page's relative position in the menu. Heavier weights "sink" to lower on the page.
 - `categories`: (Optional) Meta-data about the topic
 - `aliases`: URIs from old pages. Configure redirects here.
+- `hidden`: If `true` page does not display in sidebar. Works only on leaf pages.
 - `menu.main`: An object that configures the sidebar main menu properties
   - `name`:  (Optional) The title of the page as it appears in the sidebar. Default is `title`
   - `identifier`: How to reference the page in menu configs, and relrefs and other shortcodes
