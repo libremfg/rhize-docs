@@ -169,7 +169,7 @@ The distinction between sub-lots and lots varies with process. The rest of this 
 
 {{< bigFigure
 src="/images/genealogy/diagram-rhize-genealogy-of-a-batch.png"
-width="70%"
+width="30%"
 alt="A simplified view of how a pallet of packaged goods is assembled from lots and sublots."
 caption="A simplified view of how a pallet of packaged goods is assembled from lots and sublots."
 >}}
