@@ -46,7 +46,7 @@ const option = {
       top: "10%",
       bottom: "2%",
       symbol: "emptySquares",
-      orient: "LR",
+      orient: "RL",
       expandAndCollapse: true,
       lineStyle:{
         color: "#006838",
