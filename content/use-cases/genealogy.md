@@ -168,7 +168,7 @@ The distinction between sub-lots and lots varies with process. The rest of this 
 {{< /notice >}}
 
 {{< bigFigure
-src="/images/diagram-genealogy-of-a-batch.png"
+src="/images/genealogy/diagram-genealogy-of-a-batch.png"
 width="70%"
 alt="A simplified view of how a pallet of packaged goods is assembled from lots and sublots."
 caption="A simplified view of how a pallet of packaged goods is assembled from lots and sublots."
@@ -440,6 +440,18 @@ query reverseGenealogy {
     }
   }
 ```
+
+The intro of this document provides an interactive example of an Echarts tree.
+We've also embedded Echarts in Grafana workspaces to make interactive dashboards for forward and backward genealogy.
+
+{{< bigFigure
+src="/images/screenshot-rhize-genealogy-in-grafana.png"
+alt="An interactive genealogy dashboard. Filter by material definition, then select specific material lots."
+caption="An interactive genealogy dashboard. Filter by material definition, then select specific material lots."
+width="90%"
+>}}
+
+
 
 ### Combine with granular tracing and performance analysis
 
