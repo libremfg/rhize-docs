@@ -41,8 +41,8 @@ const option = {
   series: [
     {
       type: "tree",
-      left: "25%",
-      right: "20%",
+      left: "15%",
+      right: "30%",
       top: "10%",
       bottom: "2%",
       symbol: "emptySquares",
@@ -169,7 +169,9 @@ The distinction between sub-lots and lots varies with process. The rest of this 
 
 {{< bigFigure
 src="/images/diagram-genealogy-of-a-batch.png"
-width="80%"
+width="70%"
+alt="A simplified view of how a pallet of packaged goods is assembled from lots and sublots."
+caption="A simplified view of how a pallet of packaged goods is assembled from lots and sublots."
 >}}
 
 ## Steps to use Rhize for genealogy
@@ -191,27 +193,27 @@ But the following guidelines generally are true:
 - The ID provides useful information about the material composition.
 - The level of granularity of the lots is realistic for your current processes.
 
-For some best practices of how to model, read blog [How much do I need to model](https://rhize.com/blog/how-much-do-i-need-to-model-when-applying-the-isa-95-standard/).
+For some best practices of how to model, read our blog [How much do I need to model?](https://rhize.com/blog/how-much-do-i-need-to-model-when-applying-the-isa-95-standard/)
 
 ### Model these lots into your knowledge graph
 
-After you have identified the material lots, model how the data fits with the other components of your manufacturing knowledge graph.
+After you have identified the material lots, you can model how the data fits with the other components of your manufacturing knowledge graph.
 At minimum, your material lots must have a {{< abbr "material definition" >}} with an active version.
 
 
-Beyond these requirements, the graph structure of the ISA-95 database provides many ways to create links to other manufacturing entities, including:
+Beyond these requirements, the graph structure of the ISA-95 database provides many ways to create links between lots and other manufacturing entities, including:
 - A work request or job response
-- The associated {{< abbr "resource actuals" >}}
-- As components of larger groups such as material classes, or the material specifications in a work masters.
+- The associated {{< abbr "resource actual" >}}
+- In aggregations such as part of a material class, or part of the material specifications in a {{< abbr "work master" >}}.
 
 ### Implement how to store your lots in the RhizeDB
 
-After you have planned the process and defined your models, implement how the process will upload material lot IDs to Rhize.
+After you have planned the process and defined your models, the next step is to implement how to add material lot IDs to Rhize in the course of your real manufacturing operation.
 
 Your manufacturing process determines where lot IDs are created.
 The broad patterns are as follows:
 - **Scheduled.** Assign lots at the time of creating the work request or schedule (while the job response might create a material actual that maps to the requested lot ID).
-- **Schedule and event-driven.** Generate lot IDs beforehand, then, use a GraphQL call to create records in the Rhize DB after some event. For example an event might be a button presses or an automated signal that indicates the lot has been physically created.
+- **Schedule and event-driven.** Generate lot IDs beforehand, then, use a GraphQL call to create records in the Rhize DB after some event. Example events might be a button press or an automated signal that indicates the lot has been physically created.
 - **Event-driven.** Assign lot IDs at the exact time of work performance. For example, you can write a [BPMN workflow]({{< relref "/how-to/bpmn/" >}}) to subscribe to a topic that receives information about lots, and then automatically forward the IDs to your knowledge graph.
 
 ### Query the data
@@ -399,8 +401,7 @@ For example, you might represent the genealogy lots in any of the following ways
 - In a summary report, providing a brief list of the material and all impacted upstream or downstream lots.
 - As an interactive list, which you can expand to view a lot's associated quantities, job order, personnel and so on.
 - As the input for a secondary query
-- In a graphical presentation
-- In any combination of the preceding
+- In a display using some data visualization library
 
 For a visual example, the interactive chart in the introduction takes the data from the preceding reverse-genealogy query,
 transforms it with a [JSONata expression]({{< relref "/how-to/bpmn/use-jsonata" >}}), and visualizes the relationship using 
