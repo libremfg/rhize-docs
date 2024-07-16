@@ -4,6 +4,7 @@ title: >-
 description: The Rhize guide to modelling and querying the forward and backward genealogy of a material lot
 categories: ["howto", "use-cases"]
 weight: 0100
+hidden: true
 menu:
   main:
     parent: use-cases
