@@ -1,0 +1,21 @@
+
+{{ $id := printf "echart-%03d" .Ordinal }}
+{{ $width := or .Attributes.width "100%" }}
+{{ $height := or .Attributes.height "600px" }}
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+<div id={{ $id }} style="width: {{ $width }};height: {{ $height }};"></div>
+
+<script type="text/javascript">
+  // Initialize the echarts instance based on the prepared dom
+  var chart = echarts.init(document.getElementById({{ $id }}));
+
+  // Specify the configuration items and data for the chart
+  {{ .Inner | safeJS }}
+
+  // Display the chart using the configuration items and data just specified.
+  chart.setOption(option);
+</script>
+
+
+{{ .Page.Store.Set "hasEchart" true }}
