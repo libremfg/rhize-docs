@@ -445,7 +445,7 @@ The intro of this document provides an interactive example of an Echarts tree.
 We've also embedded Echarts in Grafana workspaces to make interactive dashboards for forward and backward genealogy.
 
 {{< bigFigure
-src="/images/screenshot-rhize-genealogy-in-grafana.png"
+src="/images/genealogy/screenshot-rhize-genealogy-grafana.png"
 alt="An interactive genealogy dashboard. Filter by material definition, then select specific material lots."
 caption="An interactive genealogy dashboard. Filter by material definition, then select specific material lots."
 width="90%"
