@@ -23,10 +23,10 @@ This database has a GraphQL API, which can pull full genealogies from terse quer
 As such, Rhize makes an **ideal backend to use for genealogical use cases**.
 
 
-```echart width="80%" heigh="1000px"
+```echart width="80%" heigh="600px"
 const option = {
   title: {
-    subtext: "Click solid squares to expand.\nHover on ingredients for quantities",
+    subtext: "Click solid squares to expand.\nHover on ingredients for quantities in grams",
     fontSize: 13
   },
   tooltip: [
@@ -44,7 +44,7 @@ const option = {
       left: "25%",
       right: "20%",
       top: "10%",
-      bottom: "20%",
+      bottom: "2%",
       symbol: "emptySquares",
       orient: "LR",
       expandAndCollapse: true,
@@ -144,21 +144,26 @@ const option = {
   (option.title.text = `Example frontend:\nreverse genealogy of ${option.series[0].data[0].name}`);
  ```
 
+_Data from a Rhize query in an Apache Echart. Read the [Build frontend](#frontend) section for details._
 
-## Steps to use Rhize for genealogy
+## Background: manufacturing entities in Rhize
 
-In the terms of ISA-95, the lineage of each material is expressed through the following entities:
-- **Material lots.** Unique amounts of identifiable material. For example, this might be a piece of cut steel, or an camshaft in an engine.
-- **Material Sublots.** Uniquely identifiable parts of a material lot. For example a if a box of consumer-packaged goods represents a material lot, the individual serial numbers of the packages within might be the material sublot. Each sublot is unique, but multiple sublots may share properties from their parent material lot (for example, the expiry date).
+In ISA-95 terminology, the lineage of each material is expressed through the following entities:
+- **Material lots.** Unique amounts of identifiable material. For example, a material lot might be a camshaft in an engine or a package of sugar from a supplier.
+- **Material Sublots.** Uniquely identifiable parts of a material lot. For example, if a box of consumer-packaged goods represents a material lot, the individual serial numbers of the packages within might be the material sublots. Each sublot is unique, but multiple sublots may share properties from their parent material lot (for example, the expiry date).
 
-Finally, the relationships are expressed through the following properties:
-- `isAssembledFrom` expresses the material lots or sublots that went into another material.
-- `isComponentOf` represents the material lot or sublot that this material went into.
+The relationship between lots are expressed through the following properties :
+- `isAssembledFromMaterial[Sub]lot` and `isComponentOf[Sub]lot`. Define the material lots or sublots that went into another material.
+- `parentMaterialLot` and `childSubLot`. Define the relationships between a material lot and its sublots.
 
+Note that these properties are symmetrical. If lot `final-1` has the property `{isAssembledFromMaterialLot: "intermediate-1"`},
+then lot `intermediate-1` has the property `{isComponentOfMaterialLot: "final-1" }`.
+The graph structure of the RhizeDB builds these automatically.
+  
 
 {{< notice "note" >}}
 
-The disintiction between sub-lots and lots varies with process. The rest of this document simplifies the process by using only the word "lots".
+The distinction between sub-lots and lots varies with process. The rest of this document simplifies the process by using only the word "lots".
 
 {{< /notice >}}
 
@@ -167,96 +172,61 @@ src="/images/diagram-genealogy-of-a-batch.png"
 width="80%"
 >}}
 
+## Steps to use Rhize for genealogy
+
+The following sections describe how to use Rhize to build a Genealogy use case.
+In short:
+1. Identify the unique lots in your material flows.
+2. Add these lots to your model.
+3. Implement how to collect these lots.
+4. Query the database
 
 
 ### Identify lots to collect
 
 To use Rhize for genealogy, first identify the material lots that you want to identify.
-How you identify these depends on the reality of your process.
-But these guidelines generally are true:
-- The lot must be uniquely identifiable
-- The ID provides useful information about the material composition
-- The level of granularity of the lots is realistic for your current processes
+How you identify these depends on your processes and material flows.
+But the following guidelines generally are true:
+- The lot must be uniquely identifiable.
+- The ID provides useful information about the material composition.
+- The level of granularity of the lots is realistic for your current processes.
 
+For some best practices of how to model, read blog [How much do I need to model](https://rhize.com/blog/how-much-do-i-need-to-model-when-applying-the-isa-95-standard/).
 
 ### Model these lots into your knowledge graph
 
-After you have identified the material lots, you can plan how the data fits with the other components of your knowledge graph.
-At minimum, your material lots must have a _material definition_ and an active version.
+After you have identified the material lots, model how the data fits with the other components of your manufacturing knowledge graph.
+At minimum, your material lots must have a {{< abbr "material definition" >}} with an active version.
+
 
 Beyond these requirements, the graph structure of the ISA-95 database provides many ways to create links to other manufacturing entities, including:
 - A work request or job response
 - The associated {{< abbr "resource actuals" >}}
-- As components of larger groups such as material Classes, or the material specifications in a work masters.
+- As components of larger groups such as material classes, or the material specifications in a work masters.
 
 ### Implement how to store your lots in the RhizeDB
 
-After you have planned the process and defined your models, you can begin adding
+After you have planned the process and defined your models, implement how the process will upload material lot IDs to Rhize.
 
 Your manufacturing process determines where lot IDs are created.
 The broad patterns are as follows:
-- Assign lots at the time of creating the work request or schedule (while the job response might create a material actual that maps to the requested lot ID).
-- Generate lot IDs beforehand, then use a GraphQL call to create the records in the Rhize DB when events like button pressing or automated signals indicate the lots have been created
-- Assign lot IDs at the exact time of work performance. For example, you can write a [BPMN workflow]({{< relref "/how-to/bpmn/" >}}) to subscribe to a topic that receives information about lots, and then automatically forward the IDs to your knowledge graph
-
+- **Scheduled.** Assign lots at the time of creating the work request or schedule (while the job response might create a material actual that maps to the requested lot ID).
+- **Schedule and event-driven.** Generate lot IDs beforehand, then, use a GraphQL call to create records in the Rhize DB after some event. For example an event might be a button presses or an automated signal that indicates the lot has been physically created.
+- **Event-driven.** Assign lot IDs at the exact time of work performance. For example, you can write a [BPMN workflow]({{< relref "/how-to/bpmn/" >}}) to subscribe to a topic that receives information about lots, and then automatically forward the IDs to your knowledge graph.
 
 ### Query the data
 
 After you start collecting data, the next step is to query it.
+The following examples show how to query for forward and backward genealogies using the [`get`](https://docs.rhize.com/how-to/gql/query/#get) operation to query material lots.
 
-#### Forward genealogy
 
-A forward genealogy examines the history of how one lot becomes a component of another.
-For example, if a supplier informs a manufacturing about an issue with a specific raw material,
-the manufacturer can run a forward genealogy that looks at the downstream material that consumed these bad lots.
-
-In Rhize, you can query the forward genealogy through the `isComponentOfMaterialLot` property,
-using nesting to indicate the number of levels of forward generations.
-For example, this returns the full chain of material that contains (or contains material that contains)
-the material sublot `lt-fc-peanut-butter-Cq:
-
-```gql
-query GetMaterialLot($getMaterialLotId: String) {
-  getMaterialLot(id: "lt-fc-peanut-butter-Cq") {
-    id
-    isComponentOfMaterialLot {
-      id
-      isComponentOfMaterialLot {
-        id
-        isComponentOfMaterialLot {
-          id
-        }
-      }
-    }
-  }
-}
-
-```
-
-This query returns data in the following structure:
-
-```json
-{
-  "data": {
-    "getMaterialLot": {
-      "id": "lt-fc-peanut-butter-Cq",
-      "isComponentOfMaterialLot": {
-        "id": "lt-fc-cookie-frosting-9Q",
-        "isComponentOfMaterialLot": {
-          "id": "lt-fc-cookie-unit-dh",
-          "isComponentOfMaterialLot": {
-            "id": "lt-fc-cookie-box-2f"
-          }
-        }
-      }
-    }
-  }
-}
-```
+{{< notice "note" >}}
+You could also query for multiple genealogies&mdash;either through material lots or through aggregations such as material definitions and specifications&mdash; then apply [filters](https://docs.rhize.com/how-to/gql/filter/).
+{{< /notice >}}
 
 #### Backward genealogy
 
-A backward genealogy examines all material lots that go into an item of material.
+A backward genealogy examines all material lots that are part of the assembly of some later material lot.
 
 In Rhize, you can query this relationship through the `isAssembledFromMaterialLot` property,
 using nesting to indicate the level of material ancestry to return.
@@ -264,7 +234,7 @@ For example, this returns four levels of backward genealogy for the material lot
 `lt-fc-cookie-box-2f`.
 
 ```gql
-query GetMaterialLot($getMaterialLotId: String) {
+query reverseGenealogy($getMaterialLotId: String) {
   getMaterialLot(id: $getMaterialLotId) {
     id
     quantity
@@ -284,10 +254,9 @@ query GetMaterialLot($getMaterialLotId: String) {
 }
 ```
 
-This query looks back four levels.
 The returned genealogy looks something like the following:
 
-{{% expandable title="example-lot-genealogy.json" %}}
+{{% expandable title="example-backward-genealogy.json" %}}
 
 ```json
 {
@@ -367,12 +336,62 @@ The returned genealogy looks something like the following:
 
 
 
+#### Forward genealogy
+
+A forward genealogy examines the history of how one lot becomes a component of another.
+For example, if a supplier informs a manufacturer about an issue with a specific raw material,
+the manufacturer can run a forward genealogy that looks at the downstream material that consumed these bad lots.
+
+In Rhize, you can query the forward genealogy through the `isComponentOfMaterialLot` property,
+using nesting to indicate the number of levels of forward generations.
+For example, this query returns the full chain of material that contains (or contains material that contains)
+the material sublot `lt-fc-peanut-butter-Cq`:
+
+```gql
+query GetMaterialLot($getMaterialLotId: String) {
+  getMaterialLot(id: "lt-fc-peanut-butter-Cq") {
+    id
+    isComponentOfMaterialLot {
+      id
+      isComponentOfMaterialLot {
+        id
+        isComponentOfMaterialLot {
+          id
+        }
+      }
+    }
+  }
+}
+
+```
+
+This query returns data in the following structure:
+
+```json
+{
+  "data": {
+    "getMaterialLot": {
+      "id": "lt-fc-peanut-butter-Cq",
+      "isComponentOfMaterialLot": {
+        "id": "lt-fc-cookie-frosting-9Q",
+        "isComponentOfMaterialLot": {
+          "id": "lt-fc-cookie-unit-dh",
+          "isComponentOfMaterialLot": {
+            "id": "lt-fc-cookie-box-2f"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
 ## Next steps: display and analyze
 
-The preceding steps are all you need to create a data foundation to use Rhize for Genealogy.
+The preceding steps are all you need to create a data foundation to use Rhize for genealogy.
 After you've started collecting data, you can use the data hub genealogy queries to build frontends and isolate entities for more detailed tracing and performance analysis.
 
-### Build frontends
+### Build frontends {#frontend}
 
 All the data that you store in the Rhize DB is exposed through the GraphQL API.
 This provides a flexible way to create custom frontends to organize your genealogical analysis in the presentation that makes sense for your use case.
@@ -383,12 +402,12 @@ For example, you might represent the genealogy lots in any of the following ways
 - In a graphical presentation
 - In any combination of the preceding
 
-For a visual example, the preceding graphic takes the data from the preceding reverse-genealogy query,
-transforms it with a [JSONata expression]({{< relref "/how-to/bpmn/use-jsonata" >}}) and then visualizes the relationship using 
+For a visual example, the interactive chart in the introduction takes the data from the preceding reverse-genealogy query,
+transforms it with a [JSONata expression]({{< relref "/how-to/bpmn/use-jsonata" >}}), and visualizes the relationship using 
 [Apache echarts](https://echarts.apache.org/).
 
-The JSONata expression takes an array of material lots,
-thenrecursively renames all IDs and `isAssembledFrom` properties to `name` and `children`.
+The JSONata expression accepts an array of material lots,
+then recursively renames all IDs and `isAssembledFrom` properties to `name` and `children`.
 This is the data structure expected by the Echarts Tree chart.
 
 ```golang
@@ -406,8 +425,7 @@ $makeParent($.data.getMaterialLot)
 )
 ```
 
-Alternatively, if the query data is the input for only the Apache Echarts dataset,
-you could use GraphQL aliases to rename the object keys.
+Alternatively, you could use GraphQL aliases to rename the object keys:
 
 ```gql
 
