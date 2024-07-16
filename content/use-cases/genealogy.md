@@ -442,7 +442,7 @@ query reverseGenealogy {
 ```
 
 The intro of this document provides an interactive example of an Echarts tree.
-We've also embedded Echarts in Grafana workspaces to make interactive dashboards for forward and backward genealogy.
+We've also embedded Echarts in Grafana workspaces to make interactive dashboards for forward and reverse genealogies:
 
 {{< bigFigure
 src="/images/genealogy/screenshot-rhize-genealogy-grafana.png"
