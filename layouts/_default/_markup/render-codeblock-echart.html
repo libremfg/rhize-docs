@@ -3,9 +3,10 @@
 {{ $width := or .Attributes.width "100%" }}
 {{ $height := or .Attributes.height "600px" }}
 
-<div id={{ $id }} style="width: {{ $width }};height: {{ $height }};"></div>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
 
-<script type="text/javascript" defer>
+<div id={{ $id }} style="width: {{ $width }};height: {{ $height }};"></div>
+<script type="text/javascript">
   // Initialize the echarts instance based on the prepared dom
   var chart = echarts.init(document.getElementById({{ $id }}));
 
@@ -17,4 +18,4 @@
 </script>
 
 
-{{ .Page.Store.Set "hasEcharts" "true" }}
+{{ .Page.Store.Set "hasEchart" "true" }}
