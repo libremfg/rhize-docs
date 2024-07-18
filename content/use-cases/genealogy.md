@@ -11,14 +11,18 @@ menu:
     identifier:
 ---
 
-
 This document provides a high-level overview of how to use Rhize for use cases in material genealogy.
 
 In manufacturing, a _genealogy_ is the record of what a material contains or what it is now a part of.
 As its name implies, genealogy represents the family tree of the material.
+The reasons to enable a genealogy include to:
+- Prevent product recalls by isolating deviations early in the material flow
+- Decrease recall time by having a complete record of where material starts and ends
+- For reporting and performance analysis of material deviations
+- Compliance and documentation about tracking material
 
 Rhize provides a standards-based schema to represent material in at all levels of granularity.
-The ISA-95 schema of its DB automatically creates associations between material lots and other information about planned and performed work.
+The graph structure of its DB has built-in properties to associate material lots with other information about planned and performed work.
 This database has a GraphQL API, which can pull full genealogies from terse queries.
 As such, Rhize makes an **ideal backend to use for genealogical use cases**.
 
@@ -146,7 +150,7 @@ const option = {
 
 _Data from a Rhize query in an Apache Echart. Read the [Build frontend](#frontend) section for details._
 
-## Background: manufacturing entities in Rhize
+## Background: material entities in Rhize
 
 In ISA-95 terminology, the lineage of each material is expressed through the following entities:
 - **Material lots.** Unique amounts of identifiable material. For example, a material lot might be a camshaft in an engine or a package of sugar from a supplier.
@@ -183,7 +187,6 @@ In short:
 3. Implement how to collect these lots.
 4. Query the database
 
-
 ### Identify lots to collect
 
 To use Rhize for genealogy, first identify the material lots that you want to identify.
@@ -193,18 +196,32 @@ But the following guidelines generally are true:
 - The ID provides useful information about the material composition.
 - The level of granularity of the lots is realistic for your current processes.
 
+For example, in small baking operation, lots might come from the following areas:
+- The serial numbers of ingredients from suppliers
+- The batches of baked pastries
+- The wrappers consumed by the packing process
+- The pallets of packed goods (with individual packages being material sublots).
+
+{{< notice "note" >}}
 For some best practices of how to model, read our blog [How much do I need to model?](https://rhize.com/blog/how-much-do-i-need-to-model-when-applying-the-isa-95-standard/)
+{{< /notice "note" >}}
+
 
 ### Model these lots into your knowledge graph
 
 After you have identified the material lots, you can model how the data fits with the other components of your manufacturing knowledge graph.
 At minimum, your material lots must have a {{< abbr "material definition" >}} with an active version.
 
-
 Beyond these requirements, the graph structure of the ISA-95 database provides many ways to create links between lots and other manufacturing entities, including:
 - A work request or job response
 - The associated {{< abbr "resource actual" >}}
 - In aggregations such as part of a material class, or part of the material specifications in a {{< abbr "work master" >}}.
+
+In the aforementioned baking process, the lots may have:
+- Material classes (raw, intermediate, and final)
+- Associated equipment, such as mixers, ovens, and trays.
+- Have associated segments (such as "mixing" or "cooling"
+- Associated measurements and properties
 
 ### Implement how to store your lots in the RhizeDB
 
@@ -215,6 +232,11 @@ The broad patterns are as follows:
 - **Scheduled.** Assign lots at the time of creating the work request or schedule (while the job response might create a material actual that maps to the requested lot ID).
 - **Schedule and event-driven.** Generate lot IDs beforehand, then, use a GraphQL call to create records in the Rhize DB after some event. Example events might be a button press or an automated signal that indicates the lot has been physically created.
 - **Event-driven.** Assign lot IDs at the exact time of work performance. For example, you can write a [BPMN workflow]({{< relref "/how-to/bpmn/" >}}) to subscribe to a topic that receives information about lots, and then automatically forward the IDs to your knowledge graph.
+
+In the example baking process, lots maybe collected in the following ways:
+- Scanned from supplier bar code
+- Generated after the quality inspector indicates that a tray is finished
+- Planned in terms of final packaging and expiration date
 
 ### Query the data
 
@@ -335,8 +357,6 @@ The returned genealogy looks something like the following:
 ```
 
 {{% /expandable %}}
-
-
 
 #### Forward genealogy
 
