@@ -204,7 +204,7 @@ For example, in small baking operation, lots might come from the following areas
 
 {{< notice "note" >}}
 For some best practices of how to model, read our blog [How much do I need to model?](https://rhize.com/blog/how-much-do-i-need-to-model-when-applying-the-isa-95-standard/)
-{{< /notice "note" >}}
+{{< /notice >}}
 
 
 ### Model these lots into your knowledge graph
