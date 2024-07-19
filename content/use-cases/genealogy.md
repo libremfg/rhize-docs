@@ -31,7 +31,7 @@ As such, Rhize makes an **ideal backend to use for genealogical use cases**.
 const option = {
   title: {
     subtext:
-      "Click solid squares to expand.\nHover on ingredients for quantities in grams",
+      "Click solid squares to expand.\nHover for quantities and definitions",
     fontSize: 13,
   },
   tooltip: [
