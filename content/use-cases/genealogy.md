@@ -31,8 +31,9 @@ As such, Rhize makes an **ideal backend to use for genealogical use cases**.
 ```echart width="80%" heigh="600px"
 const option = {
   title: {
-    subtext: "Click solid squares to expand.\nHover on ingredients for quantities in grams",
-    fontSize: 13
+    subtext:
+      "Click solid squares to expand.\nHover on ingredients for quantities in grams",
+    fontSize: 13,
   },
   tooltip: [
     {
@@ -40,6 +41,11 @@ const option = {
       show: true,
       showContent: true,
       alwaysShowContent: true,
+      formatter: function (params) {
+        return `<b>Material definition</b>: ${params.data.definition}<br />
+                <b>ID</b>: ${params.data.name}<br />
+                <b>Value:</b> ${params.data.value}`;
+      },
     },
   ],
   initialTreeDepth: 3,
@@ -53,9 +59,9 @@ const option = {
       symbol: "emptySquares",
       orient: "RL",
       expandAndCollapse: true,
-      lineStyle:{
+      lineStyle: {
         color: "#006838",
-        },
+      },
       label: {
         position: "bottom",
         rotate: 0,
@@ -63,9 +69,9 @@ const option = {
         align: "right",
         fontSize: 11,
       },
-      itemStyle:{
-          color: "#006838",
-          },
+      itemStyle: {
+        color: "#006838",
+      },
       leaves: {
         label: {
           position: "bottom",
@@ -83,71 +89,81 @@ const option = {
   ],
 };
 
-(option.series[0].data[0] = 
-{
-  "name": "lt-fc-cookie-box-2f",
-  "value": 1,
-  "children": [
+(option.series[0].data[0] = {
+  name: "cookie-box-2f",
+  value: "1 cookie box",
+  definition: "cookie-box",
+  children: [
     {
-      "name": "lt-fc-cookie-unit-dh",
-      "value": 1000,
-      "children": [
+      name: "cookie-unit-dh",
+      value: "1000 cookie unit",
+      definition: "cookie-unit",
+      children: [
         {
-          "name": "lt-fc-cookie-frosting-9Q",
-          "value": 3500,
-          "children": [
+          name: "cookie-frosting-9Q",
+          value: "3500 g",
+          definition: "cookie-frosting",
+          children: [
             {
-              "name": "lt-fc-butter-67",
-              "value": 1125
+              name: "butter-67",
+              value: "1125 g",
+              definition: "butter",
             },
             {
-              "name": "lt-fc-confectioner-sugar-yN",
-              "value": 250
+              name: "confectioner-sugar-yN",
+              value: "250 g",
+              definition: "confectioner-sugar",
             },
             {
-              "name": "lt-fc-peanut-butter-Cq",
-              "value": 2250
-            }
-          ]
+              name: "peanut-butter-Cq",
+              value: "2250 g",
+              definition: "peanut-butter",
+            },
+          ],
         },
         {
-          "name": "lt-fc-cookie-dough-Vr",
-          "value": 15000,
-          "children": [
+          name: "cookie-dough-Vr",
+          value: "15000 g",
+          definition: "cookie-dough",
+          children: [
             {
-              "name": "lt-fc-egg-gY",
-              "value": 50
+              name: "egg-gY",
+              value: "50 large-egg",
+              definition: "egg",
             },
             {
-              "name": "lt-fc-flour-kO",
-              "value": 7500
+              name: "flour-kO",
+              value: "7500 g",
+              definition: "flour",
             },
             {
-              "name": "lt-fc-salt-Z3",
-              "value": 150
+              name: "saZ3",
+              value: "150 g",
+              definition: "salt",
             },
             {
-              "name": "lt-fc-sugar-32",
-              "value": 2500
+              name: "sugar-32",
+              value: "2500 g",
+              definition: "sugar",
             },
             {
-              "name": "lt-fc-vanilla-extract-px",
-              "value": 10
-            }
-          ]
-        }
-      ]
+              name: "vanilla-extract-px",
+              value: "10 g",
+              definition: "vanilla-extract",
+            },
+          ],
+        },
+      ],
     },
     {
-      "name": "lt-fc-cookie-wrapper-NR",
-      "value": 150
-    }
-  ]
-}
-
-),
+      name: "cookie-wrapper-NR",
+      value: "150 wrapper",
+      definition: "cookie-wrapper",
+    },
+  ],
+}),
   (option.title.text = `Example frontend:\nreverse genealogy of ${option.series[0].data[0].name}`);
- ```
+```
 
 _Data from a Rhize query in an Apache Echart. Read the [Build frontend](#frontend) section for details._
 
@@ -256,26 +272,32 @@ A backward genealogy examines all material lots that are part of the assembly of
 In Rhize, you can query this relationship through the `isAssembledFromMaterialLot` property,
 using nesting to indicate the level of material ancestry to return.
 For example, this returns four levels of backward genealogy for the material lot
-`lt-fc-cookie-box-2f`.
+`cookie-box-2f` (using a [fragment]({{< relref "/how-to/gql/call-the-graphql-api/#shortcuts-for-more-expressive-requests" >}}) to standardize the properties returned for each lot).
 
 ```gql
-query reverseGenealogy($getMaterialLotId: String) {
-  getMaterialLot(id: $getMaterialLotId) {
+query{
+  getMaterialLot (id:"cookie-box-2f") {
+   ...lotFields
+   isAssembledFromMaterialLot {
+     ...lotFields
+     isAssembledFromMaterialLot {
+       ...lotFields
+       isAssembledFromMaterialLot {
+         ...lotFields
+       }
+     }
+     }
+   }
+  }
+}
+
+## Common fields for all nested material
+
+fragment lotFields on MaterialLot{
     id
     quantity
-    isAssembledFromMaterialLot {
-      id
-      quantity
-      isAssembledFromMaterialLot {
-        id
-        quantity
-        isAssembledFromMaterialLot {
-          id
-          quantity
-        }
-      }
-    }
-  }
+    quantityUnitOfMeasure{id}
+    materialDefinition{id}
 }
 ```
 
@@ -287,67 +309,139 @@ The returned genealogy looks something like the following:
 {
   "data": {
     "getMaterialLot": {
-      "id": "lt-fc-cookie-box-2f",
+      "id": "cookie-box-2f",
       "quantity": 1,
+      "quantityUnitOfMeasure": {
+        "id": "cookie box"
+      },
+      "materialDefinition": {
+        "id": "cookie-box"
+      },
       "isAssembledFromMaterialLot": [
         {
-          "id": "lt-fc-cookie-unit-dh",
+          "id": "cookie-unit-dh",
           "quantity": 1000,
           "quantityUnitOfMeasure": {
             "id": "cookie unit"
           },
+          "materialDefinition": {
+            "id": "cookie-unit"
+          },
           "isAssembledFromMaterialLot": [
             {
-              "id": "lt-fc-cookie-frosting-9Q",
+              "id": "cookie-frosting-9Q",
               "quantity": 3500,
+              "quantityUnitOfMeasure": {
+                "id": "g"
+              },
+              "materialDefinition": {
+                "id": "cookie-frosting"
+              },
               "isAssembledFromMaterialLot": [
                 {
-                  "id": "lt-fc-butter-67",
-                  "quantity": 1125
+                  "id": "butter-67",
+                  "quantity": 1125,
+                  "quantityUnitOfMeasure": {
+                    "id": "g"
+                  },
+                  "materialDefinition": {
+                    "id": "butter"
+                  }
                 },
                 {
-                  "id": "lt-fc-confectioner-sugar-yN",
-                  "quantity": 250
+                  "id": "confectioner-sugar-yN",
+                  "quantity": 250,
+                  "quantityUnitOfMeasure": {
+                    "id": "g"
+                  },
+                  "materialDefinition": {
+                    "id": "confectioner-sugar"
+                  }
                 },
                 {
-                  "id": "lt-fc-peanut-butter-Cq",
-                  "quantity": 2250
+                  "id": "peanut-butter-Cq",
+                  "quantity": 2250,
+                  "quantityUnitOfMeasure": {
+                    "id": "g"
+                  },
+                  "materialDefinition": {
+                    "id": "peanut-butter"
+                  }
                 }
               ]
             },
             {
-              "id": "lt-fc-cookie-dough-Vr",
+              "id": "cookie-dough-Vr",
               "quantity": 15000,
+              "quantityUnitOfMeasure": {
+                "id": "g"
+              },
+              "materialDefinition": {
+                "id": "cookie-dough"
+              },
               "isAssembledFromMaterialLot": [
                 {
-                  "id": "lt-fc-egg-gY",
-                  "quantity": 50
+                  "id": "egg-gY",
+                  "quantity": 50,
+                  "quantityUnitOfMeasure": {
+                    "id": "large-egg"
+                  },
+                  "materialDefinition": {
+                    "id": "egg"
+                  }
                 },
                 {
-                  "id": "lt-fc-flour-kO",
-                  "quantity": 7500
+                  "id": "flour-kO",
+                  "quantity": 7500,
+                  "quantityUnitOfMeasure": {
+                    "id": "g"
+                  },
+                  "materialDefinition": {
+                    "id": "flour"
+                  }
                 },
                 {
-                  "id": "lt-fc-salt-Z3",
-                  "quantity": 150
+                  "id": "saZ3",
+                  "quantity": 150,
+                  "quantityUnitOfMeasure": {
+                    "id": "g"
+                  },
+                  "materialDefinition": {
+                    "id": "salt"
+                  }
                 },
                 {
-                  "id": "lt-fc-sugar-32",
-                  "quantity": 2500
+                  "id": "sugar-32",
+                  "quantity": 2500,
+                  "quantityUnitOfMeasure": {
+                    "id": "g"
+                  },
+                  "materialDefinition": {
+                    "id": "sugar"
+                  }
                 },
                 {
-                  "id": "lt-fc-vanilla-extract-px",
-                  "quantity": 10
+                  "id": "vanilla-extract-px",
+                  "quantity": 10,
+                  "quantityUnitOfMeasure": {
+                    "id": "g"
+                  },
+                  "materialDefinition": {
+                    "id": "vanilla-extract"
+                  }
                 }
               ]
             }
           ]
         },
         {
-          "id": "lt-fc-cookie-wrapper-NR",
+          "id": "cookie-wrapper-NR",
           "quantity": 150,
           "quantityUnitOfMeasure": {
             "id": "wrapper"
+          },
+          "materialDefinition": {
+            "id": "cookie-wrapper"
           },
           "isAssembledFromMaterialLot": []
         }
@@ -355,6 +449,7 @@ The returned genealogy looks something like the following:
     }
   }
 }
+
 ```
 
 {{% /expandable %}}
@@ -368,11 +463,11 @@ the manufacturer can run a forward genealogy that looks at the downstream materi
 In Rhize, you can query the forward genealogy through the `isComponentOfMaterialLot` property,
 using nesting to indicate the number of levels of forward generations.
 For example, this query returns the full chain of material that contains (or contains material that contains)
-the material sublot `lt-fc-peanut-butter-Cq`:
+the material sublot `peanut-butter-Cq`:
 
 ```gql
 query GetMaterialLot($getMaterialLotId: String) {
-  getMaterialLot(id: "lt-fc-peanut-butter-Cq") {
+  getMaterialLot(id: "peanut-butter-Cq") {
     id
     isComponentOfMaterialLot {
       id
@@ -394,13 +489,13 @@ This query returns data in the following structure:
 {
   "data": {
     "getMaterialLot": {
-      "id": "lt-fc-peanut-butter-Cq",
+      "id": "peanut-butter-Cq",
       "isComponentOfMaterialLot": {
-        "id": "lt-fc-cookie-frosting-9Q",
+        "id": "cookie-frosting-9Q",
         "isComponentOfMaterialLot": {
-          "id": "lt-fc-cookie-unit-dh",
+          "id": "cookie-unit-dh",
           "isComponentOfMaterialLot": {
-            "id": "lt-fc-cookie-box-2f"
+            "id": "cookie-box-2f"
           }
         }
       }
@@ -447,21 +542,6 @@ $makeParent($.data.getMaterialLot)
 )
 ```
 
-Alternatively, you could use GraphQL aliases to rename the object keys:
-
-```gql
-
-query reverseGenealogy {
-  queryMaterialLot(filter: {id{regexp: "/batch-a-/"}}) {
-    name: id
-    quantity
-    children: isAssembledFromMaterialLot {
-       ...
-       }
-    }
-  }
-```
-
 The intro of this document provides an interactive example of an Echarts tree.
 We've also embedded Echarts in Grafana workspaces to make interactive dashboards for forward and reverse genealogies:
 
@@ -482,3 +562,5 @@ So genealogy implementations are most effective if you can combine them with the
 For example, the genealogical record may provide the input for more granular _track and trace_ investigation, in which you use the Lot IDs to determine information such as who worked on the material, with what equipment, and performing what kind of work.
 
 You could also combine genealogy with performance analysis, using the genealogical record as the starting point to analyze and predict failures and deviations.
+
+
