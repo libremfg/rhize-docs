@@ -11,7 +11,7 @@ menu:
     identifier:
 ---
 
-This document provides a high-level overview of how to use Rhize for use cases in material genealogy.
+This document provides a high-level overview of how to use Rhize for material genealogy.
 
 In manufacturing, a _genealogy_ is the record of what a material contains or what it is now a part of.
 As its name implies, genealogy represents the family tree of the material.
