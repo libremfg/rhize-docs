@@ -18,8 +18,8 @@ As its name implies, genealogy represents the family tree of the material.
 A material genealogy can help manufacturers in multiple ways:
 - Prevent product recalls by isolating deviations early in the material flow
 - Decrease recall time by having a complete record of where material starts and ends
-- For reporting and performance analysis of material deviations
-- Compliance and documentation about tracking material
+- Help build reports and analysis of material deviations
+- To create documentation and compliance records for material tracking
 
 Rhize provides a standards-based schema to represent material in at all levels of granularity.
 The graph structure of its DB has built-in properties to associate material lots with other information about planned and performed work.
