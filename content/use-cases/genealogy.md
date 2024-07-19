@@ -19,7 +19,7 @@ A material genealogy can help manufacturers in multiple ways:
 - Prevent product recalls by isolating deviations early in the material flow
 - Decrease recall time by having a complete record of where material starts and ends
 - Help build reports and analysis of material deviations
-- To create documentation and compliance records for material tracking
+- Create documentation and compliance records for material tracking
 
 Rhize provides a standards-based schema to represent material in at all levels of granularity.
 The graph structure of its DB has built-in properties to associate material lots with other information about planned and performed work.
@@ -173,17 +173,18 @@ In ISA-95 terminology, the lineage of each material is expressed through the fol
 - **Material Sublots.** Uniquely identifiable parts of a material lot. For example, if a box of consumer-packaged goods represents a material lot, the individual serial numbers of the packages within might be the material sublots. Each sublot is unique, but multiple sublots may share properties from their parent material lot (for example, the expiry date).
 
 The relationship between lots are expressed through the following properties :
-- `isAssembledFromMaterial[Sub]lot` and `isComponentOf[Sub]lot`. Define the material lots or sublots that went into another material.
-- `parentMaterialLot` and `childSubLot`. Define the relationships between a material lot and its sublots.
+- `isAssembledFromMaterial[Sub]lot` and `isComponentOf[Sub]lot`. Rhe material lots or sublots that went into another material.
+- `parentMaterialLot` and `childSubLot`. The relationships between a material lot and its sublots.
 
 Note that these properties are symmetrical. If lot `final-1` has the property `{isAssembledFromMaterialLot: "intermediate-1"`},
 then lot `intermediate-1` has the property `{isComponentOfMaterialLot: "final-1" }`.
-The graph structure of the RhizeDB builds these automatically.
+The graph structure of the RhizeDB creates these links automatically.
   
 
 {{< notice "note" >}}
 
-The distinction between sub-lots and lots varies with process. The rest of this document simplifies the process by using only the word "lots".
+The distinction between sublots and material lots varies with processes.
+The rest of this document simplifies terminology by using only the word "lots".
 
 {{< /notice >}}
 
@@ -196,7 +197,7 @@ caption="A simplified view of how a pallet of packaged goods is assembled from l
 
 ## Steps to use Rhize for genealogy
 
-The following sections describe how to use Rhize to build a Genealogy use case.
+The following sections describe how to use Rhize to build a genealogy use case.
 In short:
 1. Identify the unique lots in your material flows.
 2. Add these lots to your model.
