@@ -202,7 +202,7 @@ In short:
 1. Identify the unique lots in your material flows.
 2. Add these lots to your model.
 3. Implement how to collect these lots.
-4. Query the database
+4. Query the database.
 
 ### Identify lots to collect
 
@@ -210,7 +210,6 @@ To use Rhize for genealogy, first identify the material lots that you want to id
 How you identify these depends on your processes and material flows.
 But the following guidelines generally are true:
 - The lot must be uniquely identifiable.
-- The ID provides useful information about the material composition.
 - The level of granularity of the lots is realistic for your current processes.
 
 For example, in small baking operation, lots might come from the following areas:
@@ -507,7 +506,7 @@ This query returns data in the following structure:
 ## Next steps: display and analyze
 
 The preceding steps are all you need to create a data foundation to use Rhize for genealogy.
-After you've started collecting data, you can use the data hub genealogy queries to build frontends and isolate entities for more detailed tracing and performance analysis.
+After you've started collecting data, you can use the genealogy queries to build frontends and isolate entities for more detailed tracing and performance analysis.
 
 ### Build frontends {#frontend}
 
@@ -524,15 +523,16 @@ transforms it with a [JSONata expression]({{< relref "/how-to/bpmn/use-jsonata" 
 [Apache echarts](https://echarts.apache.org/).
 
 The JSONata expression accepts an array of material lots,
-then recursively renames all IDs and `isAssembledFrom` properties to `name` and `children`.
-This is the data structure expected by the Echarts Tree chart.
+then recursively renames all IDs and `isAssembledFrom` properties to `name` and `children`, the data structure expected by the visualization.
+Additional properties remain to provide context in the chart's tooltips.
 
 ```golang
 (
 $makeParent := function($data){
     $data.{
         "name": id,
-        "value": quantity,
+        "value": quantity & " " & quantityUnitOfMeasure.id,
+        "definition": materialDefinition.id,
         "children": $makeParent(isAssembledFromMaterialLot)
     }
 };
@@ -542,7 +542,6 @@ $makeParent($.data.getMaterialLot)
 )
 ```
 
-The intro of this document provides an interactive example of an Echarts tree.
 We've also embedded Echarts in Grafana workspaces to make interactive dashboards for forward and reverse genealogies:
 
 {{< bigFigure
@@ -556,7 +555,7 @@ width="90%"
 
 ### Combine with granular tracing and performance analysis
 
-While a genealogy is an effective tool on its own, usefulness of the Rhize data hub compounds with each use case.
+While a genealogy is an effective tool on its own, the usefulness of the Rhize data hub compounds with each use case.
 So genealogy implementations are most effective if you can combine them with the other data stored in your manufacturing knowledge graph.
 
 For example, the genealogical record may provide the input for more granular _track and trace_ investigation, in which you use the Lot IDs to determine information such as who worked on the material, with what equipment, and performing what kind of work.
