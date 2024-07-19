@@ -16,7 +16,7 @@ This document provides a high-level overview of how to use Rhize for use cases i
 
 In manufacturing, a _genealogy_ is the record of what a material contains or what it is now a part of.
 As its name implies, genealogy represents the family tree of the material.
-The reasons to enable a genealogy include to:
+A material genealogy can help manufacturers in multiple ways:
 - Prevent product recalls by isolating deviations early in the material flow
 - Decrease recall time by having a complete record of where material starts and ends
 - For reporting and performance analysis of material deviations
