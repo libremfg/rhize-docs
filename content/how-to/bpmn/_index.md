@@ -3,7 +3,7 @@ title: 'Write BPMN workflows'
 date: '2023-09-22T14:50:39-03:00'
 draft: false
 categories: "how-to"
-description: Create BPMN workflows to handle inputs and listen for events, and throw triggers.
+description: Create BPMN workflows to handle inputs, listen for events, and throw triggers.
 weight: 200
 menu:
   main:
