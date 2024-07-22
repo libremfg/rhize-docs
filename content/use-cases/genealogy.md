@@ -173,7 +173,7 @@ In ISA-95 terminology, the lineage of each material is expressed through the fol
 - **Material Sublots.** Uniquely identifiable parts of a material lot. For example, if a box of consumer-packaged goods represents a material lot, the individual serial numbers of the packages within might be the material sublots. Each sublot is unique, but multiple sublots may share properties from their parent material lot (for example, the expiry date).
 
 The relationship between lots are expressed through the following properties :
-- `isAssembledFromMaterial[Sub]lot` and `isComponentOf[Sub]lot`. Rhe material lots or sublots that went into another material.
+- `isAssembledFromMaterial[Sub]lot` and `isComponentOf[Sub]lot`. The material lots or sublots that went into another material.
 - `parentMaterialLot` and `childSubLot`. The relationships between a material lot and its sublots.
 
 Note that these properties are symmetrical. If lot `final-1` has the property `{isAssembledFromMaterialLot: "intermediate-1"`},
@@ -208,11 +208,11 @@ In short:
 
 To use Rhize for genealogy, first identify the material lots that you want to identify.
 How you identify these depends on your processes and material flows.
-But the following guidelines generally are true:
+The following guidelines generally are true:
 - The lot must be uniquely identifiable.
 - The level of granularity of the lots is realistic for your current processes.
 
-For example, in small baking operation, lots might come from the following areas:
+For example, in a small baking operation, lots might come from the following areas:
 - The serial numbers of ingredients from suppliers
 - The batches of baked pastries
 - The wrappers consumed by the packing process
@@ -236,7 +236,7 @@ Beyond these requirements, the graph structure of the ISA-95 database provides m
 In the aforementioned baking process, the lots may have:
 - Material classes (raw, intermediate, and final)
 - Associated equipment, such as mixers, ovens, and trays.
-- Have associated segments (such as "mixing" or "cooling"
+- Associated segments (such as "mixing" or "cooling"
 - Associated measurements and properties
 
 ### Implement how to store your lots in the RhizeDB
@@ -252,7 +252,7 @@ The broad patterns are as follows:
 In the example baking process, lots maybe collected in the following ways:
 - Scanned from supplier bar code
 - Generated after the quality inspector indicates that a tray is finished
-- Planned in terms of final packaging and expiration date
+- Planned in terms of final package number and expiration date
 
 ### Query the data
 
@@ -266,7 +266,7 @@ You could also query for multiple genealogies&mdash;either through material lots
 
 #### Backward genealogy
 
-A backward genealogy examines all material lots that are part of the assembly of some later material lot.
+A backward genealogy examines all material lots that make the assembly of some later material lot.
 
 In Rhize, you can query this relationship through the `isAssembledFromMaterialLot` property,
 using nesting to indicate the level of material ancestry to return.
@@ -510,7 +510,7 @@ After you've started collecting data, you can use the genealogy queries to build
 
 ### Build frontends {#frontend}
 
-All the data that you store in the Rhize DB is exposed through the GraphQL API.
+All data that you store in the Rhize DB is exposed through the GraphQL API.
 This provides a flexible way to create custom frontends to organize your genealogical analysis in the presentation that makes sense for your use case.
 For example, you might represent the genealogy lots in any of the following ways:
 - In a summary report, providing a brief list of the material and all impacted upstream or downstream lots.
