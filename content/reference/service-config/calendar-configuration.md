@@ -1,5 +1,5 @@
 ---
-title: 'Calendar Service configuration'
+title: 'Calendar configuration'
 categories: ["reference"]
 description: Configuration for the Rhize Calendar Service
 weight: 900
