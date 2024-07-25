@@ -197,7 +197,7 @@ refer to the [official documentation](https://grafana.com/docs/tempo/latest/).
 
 Rhize creates a unique ID and trace for each workflow that runs.
 This ID is reported as the `traceID` in the `createAndRunBPMN` mutation operation.
-Within this trace, each node is _instrumented_, with spans emited at every input and output along each node of execution.
+Within this trace, each node is _instrumented_, with spans emitted at every input and output along each node of execution.
 With the trace ID, you can find the workflow run in Tempo and follow the behavior.
 
 To inspect a workflow in Tempo:
