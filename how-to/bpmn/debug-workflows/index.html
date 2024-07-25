@@ -69,7 +69,7 @@ For full-featured debugging, use the <code>traceID</code> to explore the workflo
 To discover the many ways you can filter your BPMN traces for debugging and analysis,
 refer to the <a href=https://grafana.com/docs/tempo/latest/>official documentation</a>.</div><p>Rhize creates a unique ID and trace for each workflow that runs.
 This ID is reported as the <code>traceID</code> in the <code>createAndRunBPMN</code> mutation operation.
-Within this trace, each node is <em>instrumented</em>, with spans emited at every input and output along each node of execution.
+Within this trace, each node is <em>instrumented</em>, with spans emitted at every input and output along each node of execution.
 With the trace ID, you can find the workflow run in Tempo and follow the behavior.</p><p>To inspect a workflow in Tempo:</p><ol><li>Go to your Grafana instance.</li><li>Select <strong>Explore</strong> and then Tempo.</li><li>From the <strong>TraceQL</strong> tab, enter the <code>traceID</code> and query.
 Alternatively, use the <strong>Search</strong> tab with the <code>bpmn-engine</code> to find traces for all workflows.</li></ol><figure class=big-figure><a href=https://docs.rhize.com/images/bpmn/screenshot-rhize-bpmn-spans-in-tempo-compact.png target=_blank><img src=https://docs.rhize.com/images/bpmn/screenshot-rhize-bpmn-spans-in-tempo-compact.png alt="Screenshot of a compact view of spans for a BPMN process in Tempo" width=55%></a><figcaption class=caption>Screenshot of a compact view of spans for a BPMN process in Tempo</figcaption></figure><p>Each workflow instance displays <em>spans</em> that trace the state of each node at its start, execution, and end states.
 When debugging, you are likely interested in the spans that result in <code>ABORTED</code>.
