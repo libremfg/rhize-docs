@@ -1,6 +1,6 @@
-# libremfg.github.io
+# Rhize documentation
 
-Documentation pages
+Website and content files for documentation at [docs.rhize.com](https://docs.rhize.com).
 
 ## Build locally
 
@@ -26,7 +26,7 @@ Refer to [Contributing](CONTRIBUTING.md).
 
 ### Page is not showing
 
-Checke whether the page has the `draft: true` property in its frontmatter.
+Check whether the page frontmatter has `draft: true`.
 To view a draft locally, use the `hugo server -D` command.
 To make it so the page appears on the published site, change the value to `false`.
 

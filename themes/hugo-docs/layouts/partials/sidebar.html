@@ -19,12 +19,16 @@
                     <ul class="sub-topics">
                       {{ range .Children }}
                         <li class="topic sub-topic{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}">
+                          {{ if not .Page.Params.Hidden }}
                           <a href="{{ .URL }}">{{ .Name }}</a>
+                          {{ end }}
                         </li>
                       {{ end }}
                     </ul>
                   {{ else }}
-                  <a href="{{ .URL }}">{{ .Name }}</a>
+                    {{ if not .Page.Params.Hidden }}
+                    <a href="{{ .URL }}">{{ .Name }}</a>
+                    {{ end }}
                   {{ end }}
                 </li>
               {{ end }}

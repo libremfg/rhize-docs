@@ -3,7 +3,7 @@ title: >-
   Use cases of Rhize
 description: >-
   Handle manufacturing events, access the knowledge graph of the operation, build custom MOM applications. 
-weight: 10
+weight: 1
 menu:
   main:
     identifier: use-case-overview
