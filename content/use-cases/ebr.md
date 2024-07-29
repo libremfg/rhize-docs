@@ -4,6 +4,7 @@ title: >-
 description: An example of how to use Rhize to create Electronic Batch Records for pharmaceutical manufacturing
 categories: ["howto", "use-cases"]
 weight: 0200
+og_image: /images/og/graphic-rhize-ebr.png
 menu:
   main:
     parent: use-cases
