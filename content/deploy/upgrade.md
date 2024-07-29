@@ -12,6 +12,8 @@ menu:
 
 This guide shows you how to upgrade Rhize.
 
+{{< reusable/backup >}}
+
 ## Prerequisites
 
 Before you start, ensure you have the following:
