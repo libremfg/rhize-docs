@@ -188,12 +188,6 @@ The rest of this document simplifies terminology by using only the word "lots".
 
 {{< /notice >}}
 
-{{< bigFigure
-src="/images/genealogy/diagram-rhize-genealogy-of-a-batch.png"
-width="30%"
-alt="A simplified view of how a pallet of packaged goods is assembled from lots and sublots."
-caption="A simplified view of how a pallet of packaged goods is assembled from lots and sublots."
->}}
 
 ## Steps to use Rhize for genealogy
 
@@ -203,6 +197,15 @@ In short:
 2. Add these lots to your model.
 3. Implement how to collect these lots.
 4. Query the database.
+
+The example uses a simple baking process to demonstrate the material flow.
+
+{{< bigFigure
+src="/images/genealogy/diagram-rhize-genealogy-of-a-batch.png"
+width="30%"
+alt="A simplified view of how a pallet of packaged goods is assembled from lots and sublots."
+caption="A simplified view of how a pallet of packaged goods is assembled from lots and sublots."
+>}}
 
 ### Identify lots to collect
 
@@ -225,7 +228,7 @@ For some best practices of how to model, read our blog [How much do I need to mo
 
 ### Model these lots into your knowledge graph
 
-After you have identified the material lots, you can model how the data fits with the other components of your manufacturing knowledge graph.
+After you have identified the material lots, model how the data fits with the other components of your manufacturing knowledge graph.
 At minimum, your material lots must have a {{< abbr "material definition" >}} with an active version.
 
 Beyond these requirements, the graph structure of the ISA-95 database provides many ways to create links between lots and other manufacturing entities, including:
@@ -235,28 +238,28 @@ Beyond these requirements, the graph structure of the ISA-95 database provides m
 
 In the aforementioned baking process, the lots may have:
 - Material classes (raw, intermediate, and final)
-- Associated equipment, such as mixers, ovens, and trays.
-- Associated segments (such as "mixing" or "cooling"
+- Associated equipment (such as `mixers`, `ovens`, and `trays`)
+- Associated segments (such as `mixing` or `cooling`)
 - Associated measurements and properties
 
 ### Implement how to store your lots in the RhizeDB
 
-After you have planned the process and defined your models, the next step is to implement how to add material lot IDs to Rhize in the course of your real manufacturing operation.
+After you have planned the process and defined your models, next implement how to add material lot IDs to Rhize in the course of your real manufacturing operation.
 
 Your manufacturing process determines where lot IDs are created.
 The broad patterns are as follows:
 - **Scheduled.** Assign lots at the time of creating the work request or schedule (while the job response might create a material actual that maps to the requested lot ID).
-- **Schedule and event-driven.** Generate lot IDs beforehand, then, use a GraphQL call to create records in the Rhize DB after some event. Example events might be a button press or an automated signal that indicates the lot has been physically created.
-- **Event-driven.** Assign lot IDs at the exact time of work performance. For example, you can write a [BPMN workflow]({{< relref "/how-to/bpmn/" >}}) to subscribe to a topic that receives information about lots, and then automatically forward the IDs to your knowledge graph.
+- **Scheduled and event-driven.** Generate lot IDs beforehand, and then use a GraphQL call to create records in the Rhize DB after some event. Example events might be a button press or an automated signal that indicates the lot has been physically created.
+- **Event-driven.** Assign lot IDs at the exact time of work performance. For example, you can write a [BPMN workflow]({{< relref "/how-to/bpmn/" >}}) to subscribe to a topic that receives information about lots and automatically forwards the IDs to your knowledge graph.
 
-In the example baking process, lots maybe collected in the following ways:
+In the example baking process, lots may be collected in the following ways:
 - Scanned from supplier bar code
 - Generated after the quality inspector indicates that a tray is finished
 - Planned in terms of final package number and expiration date
 
 ### Query the data
 
-After you start collecting data, the next step is to query it.
+After you start collecting data, you can also start querying it.
 The following examples show how to query for forward and backward genealogies using the [`get`](https://docs.rhize.com/how-to/gql/query/#get) operation to query material lots.
 
 
@@ -512,9 +515,9 @@ After you've started collecting data, you can use the genealogy queries to build
 
 All data that you store in the Rhize DB is exposed through the GraphQL API.
 This provides a flexible way to create custom frontends to organize your genealogical analysis in the presentation that makes sense for your use case.
-For example, you might represent the genealogy lots in any of the following ways:
-- In a summary report, providing a brief list of the material and all impacted upstream or downstream lots.
-- As an interactive list, which you can expand to view a lot's associated quantities, job order, personnel and so on.
+For example, you might represent the genealogy in any of the following ways:
+- In a summary report, providing a brief list of the material and all impacted upstream or downstream lots
+- As an interactive list, which you can expand to view a lot's associated quantities, job order, personnel and so on
 - As the input for a secondary query
 - In a display using some data visualization library
 
