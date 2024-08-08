@@ -114,7 +114,6 @@ If enabling the Audit Trail, also the include the configuration in [Enable chang
     ```bash
     curl --location --request POST 'http://localhost:<FORWARDED_PORT>/admin/schema' \
     --header 'Authorization: Bearer <TOKEN>' \
-    --data grant_type=urn:ietf:params:oauth:grant-type:uma-ticket" \
     --header 'Content-Type: application/octet-stream' \
     --data-binary '<SCHEMA_FILE>’
     ```
