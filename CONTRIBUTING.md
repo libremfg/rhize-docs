@@ -122,6 +122,9 @@ Puts a warning about breaking changes.
 {{< breaking >}}
 ```
 
+![image](https://github.com/user-attachments/assets/ce9c2947-79fb-4fec-97cb-32d84a288e1a)
+
+
 ### Compatibility
 
 List the compatible versions of a third party software for a specified version of Rhize.
