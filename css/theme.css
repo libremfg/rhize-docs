@@ -1036,3 +1036,7 @@ figure.big-figure .caption {
     font-size: 80%;
     font-style: italic;
 }
+
+.breaking-text {
+  color: crimson;
+}
