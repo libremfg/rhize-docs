@@ -114,6 +114,14 @@ caption="A simplified view of how information might exchange between level 3 and
 ```
 
 
+### Breaking
+
+Puts a warning about breaking changes.
+
+```html
+{{< breaking >}}
+```
+
 ### Compatibility
 
 List the compatible versions of a third party software for a specified version of Rhize.
