@@ -87,7 +87,7 @@ For example, this workflow returns `Workflow ran correctly` if the call variable
 {{< bigFigure
 src="/images/bpmn/screenshot-rhize-bpmn-error-handling-custom-response.png"
 alt="A BPMN workflow with customResponse in the output of the end node"
-caption="Download this workflow from [BPMN templates](https://github.com/libremfg/bpmn-templates/tree/main/custom-response-error-events)"
+caption="Download this workflow from [BPMN templates](https://github.com/libremfg/rhize-templates/tree/main/bpmn/custom-response-error-events)"
 width="80%"
 >}}
 <!-- vale on -->
@@ -133,7 +133,7 @@ If incorrect, it sends an alert back to the broker.
 alt="BPMN message start with conditional evaluation"
 src="/images/bpmn/rhize-bpmn-message-start-throw-conditional.png"
 width="65%"
-caption="Download this workflow as a [BPMN template](https://github.com/libremfg/bpmn-templates/tree/main/msg-start-and-throw)."
+caption="Download this workflow as a [BPMN template](https://github.com/libremfg/rhize-templates/tree/main/bpmn/msg-start-and-throw)."
  %}}
 <!-- vale on -->
 
