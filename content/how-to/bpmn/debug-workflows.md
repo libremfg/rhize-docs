@@ -35,7 +35,7 @@ If it makes sense, these error branches also might flow into an early end event.
 {{< bigFigure
 src="/images/bpmn/screenshot-rhize-bpmn-error-handling-custom-response.png"
 alt="A BPMN workflow with customResponse in the output of the end node"
-caption="Download this workflow from [BPMN templates](https://github.com/libremfg/bpmn-templates/tree/main/custom-response-error-events)"
+caption="Download this workflow from [BPMN templates](https://github.com/libremfg/rhize-templates/tree/main/bpmn/custom-response-error-events)"
 width="80%"
 >}}
 <!-- vale on -->
@@ -67,7 +67,7 @@ In a production workflow, you might use this exact schema to validate the input 
 {{< bigFigure
 src="/images/bpmn/screenshot-rhize-bpmn-json-schema.png"
 alt="Screenshot of a conditional that branches when the JSON schema task receives invalid input."
-caption="A conditional that branches when the JSON schema task receives invalid input. [Download the template](https://github.com/libremfg/bpmn-templates/tree/main/call-activity-calculate-stats)"
+caption="A conditional that branches when the JSON schema task receives invalid input. [Download the template](https://github.com/libremfg/rhize-templates/tree/main/bpmn/call-activity-calculate-stats)"
 width="35%"
 >}}
 
