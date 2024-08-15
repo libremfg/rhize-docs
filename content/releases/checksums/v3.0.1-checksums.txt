@@ -14,6 +14,10 @@ Libre Audit:
 registry.gitlab.com/libremfg/libre-audit:v3.0.1
 https://gitlab.com/libremfg/libre-audit/container_registry/5738085
 
+Libre Audit Postgres
+registry.gitlab.com/libremfg/libre-audit/postgres:v3.0.1
+sha256:7629dde995db6b22020ab85c68c25be478cf54c7d6d64e5a30aab72d336432f8
+
 Libre BaaS:
 registry.gitlab.com/libremfg/baas:v3.0.1
 sha256:605513936d88fb09babc7d1b38410c32674d14b6a38db1363fd0e6fbf27aaec3
