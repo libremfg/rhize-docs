@@ -9,7 +9,7 @@ menu:
 ---
 
 Rhize uses [Prometheus](https://prometheus.io/docs/introduction/overview/) to monitor metrics from many of its [microservices]({{< relref "/reference/service-config" >}}).
-For the Kubernetes cluster, Rhize runs the Prometheus operator and monitors the accumalated metrics in Grafana dashboards.
+For the Kubernetes cluster, Rhize runs the Prometheus operator and monitors the accumulated metrics in Grafana dashboards.
 Monitoring occurs granularly, on the levels of cluster, pod, and container.
 
 
@@ -146,7 +146,7 @@ Several common metrics appear between Rhize microservices:
 - `http`.
 
 
-| Service | [Instrumented Prometheus Go Application](https://prometheus.io/docs/guides/go-application/) | process metrics | http metrics* | Additional |
+| Service | [Instrumented Prometheus Go Application](https://prometheus.io/docs/guides/go-application/) | process metrics | HTTP metrics* | Additional |
 |---------|---------------------------------------------------|-----------------|---------------|------------|
 | Audit   | Y                                                 | Y               | Y             |            |
 | BAAS    | Y                                                 | Y               |               | Y          |
