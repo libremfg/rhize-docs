@@ -1,0 +1,169 @@
+<!doctype html><html lang=en class="js csstransforms3d"><head><script async src="https://www.googletagmanager.com/gtag/js?id=G-0PJKXDWQ4P"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-0PJKXDWQ4P")}</script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=referrer content="no-referrer-when-downgrade"><meta property="og:image" content="https://docs.rhize.com/images/rhize-logo.png"><meta property="og:image:secure_url" content="https://docs.rhize.com/images/rhize-logo.png"><meta property="og:description" content="Metrics from the Rhize microservices, collected by Prometheus."><meta property="og:type" content="website"><meta property="og:title" content="Observability metrics"><meta property="og:site_name" content="Rhize documentation"><meta property="og:url" content="https://docs.rhize.com/reference/observability-metrics/"><meta property="og:locale" content="en"><meta name=generator content="Hugo 0.132.1"><meta name=description content="Metrics from the Rhize microservices, collected by Prometheus."><link rel=canonical href=https://docs.rhize.com/reference/observability-metrics/><link rel=apple-touch-icon sizes=57x57 href=https://docs.rhize.com/images/favicons/apple-touch-icon-57x57.png><link rel=apple-touch-icon sizes=60x60 href=https://docs.rhize.com/images/favicons/apple-touch-icon-60x60.png><link rel=apple-touch-icon sizes=72x72 href=https://docs.rhize.com/images/favicons/apple-touch-icon-72x72.png><link rel=apple-touch-icon sizes=76x76 href=https://docs.rhize.com/images/favicons/apple-touch-icon-76x76.png><link rel=apple-touch-icon sizes=114x114 href=https://docs.rhize.com/images/favicons/apple-touch-icon-114x114.png><link rel=apple-touch-icon sizes=120x120 href=https://docs.rhize.com/images/favicons/apple-touch-icon-120x120.png><link rel=apple-touch-icon sizes=144x144 href=https://docs.rhize.com/images/favicons/apple-touch-icon-144x144.png><link rel=apple-touch-icon sizes=152x152 href=https://docs.rhize.com/images/favicons/apple-touch-icon-152x152.png><link rel=apple-touch-icon sizes=180x180 href=https://docs.rhize.com/images/favicons/apple-touch-icon-180x180.png><link rel=icon type=image/png href=https://docs.rhize.com/images/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=https://docs.rhize.com/images/favicons/android-chrome-192x192.png sizes=192x192><link rel=icon type=image/png href=https://docs.rhize.com/images/favicons/favicon-96x96.png sizes=96x96><link rel=icon type=image/png href=https://docs.rhize.com/images/favicons/favicon-16x16.png sizes=16x16><link rel=manifest href=https://docs.rhize.com/images/favicons/manifest.webmanifest><link rel=mask-icon href=https://docs.rhize.com/images/favicons/safari-pinned-tab.svg color=#fe2c06><link rel="shortcut icon" href=https://docs.rhize.com/images/favicons/favicon.ico><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js></script><script async src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/go.min.js></script><script async src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/java.min.js integrity="sha256-RyOs5MjQ+Ef9DQrPHp4QGr2tcNjxLh6mCkkW+sS4doU=" crossorigin=anonymous></script><script src=//code.jquery.com/jquery-3.2.1.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><title>Observability metrics
+|
+Reference
+</title><link href=https://docs.rhize.com/css/theme.css?55e52aec195a82e2ea2d860ffc75cf75 rel=stylesheet><link href=https://docs.rhize.com/css/runnable.css?46648956d99faa2e057d109b9f2a52e6 rel=stylesheet><link href=https://docs.rhize.com/css/tabs.css?035edc32762cb7973b740e3067101ced rel=stylesheet><link href=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css rel=stylesheet integrity=sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ crossorigin=anonymous><script src=//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js integrity=sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb crossorigin=anonymous></script><script src=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js integrity=sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn crossorigin=anonymous></script><link href="//fonts.googleapis.com/css?family=Lato:400,700" rel=stylesheet><link href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css rel=stylesheet integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN crossorigin=anonymous><link href=https://cdn.lineicons.com/2.0/LineIcons.css rel=stylesheet crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@docsearch/css@3></head><body><nav id=header><div class=header-left><div><a href=https://docs.rhize.com/ class=brand><img src=https://docs.rhize.com//images/rhize-logo.png alt=RHIZE class=logo></a><div class=logo-tagline><span>Documentation</span></div></div></div><div class=header-right><div id=docsearch><div class="menu-search align-middle"><div id=docsearch></div></div></div><div><ul class=menu><li><a href=https://rhize.com target=_blank>Home</a></li><li><a href=https://forum.rhize.com target=_blank>Community</a></li><li><a href=https://www.youtube.com/@rhizemanufacturingdatahub target=_blank>Youtube</a></li></ul></div></div><a href=# id=sidebar-toggle><i class="fa fa-bars"></i></a></nav><aside id=sidebar><ul class=topics><li class="topic main-topic children"><a id=get-started href=#>Get started</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/get-started/introduction/>What is Rhize?</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/get-started/how-rhize-works/>How Rhize works</a></li></ul></li><li class="topic main-topic children"><a id=deploy href=#>Deploy</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=#>Install</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/install/overview/>Overview</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/install/setup-kubernetes/>Set up Kubernetes</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/install/keycloak/>Configure Keycloak</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/install/services/>Install Rhize services</a></li></ul></li><li class="topic sub-topic"><a href=#>Back up</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/backup/graphdb/>Back up the Graph DB</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/backup/audit/>Back up Audit PostgreSQL</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/backup/grafana/>Back up Grafana</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/backup/keycloak/>Back up Keycloak</a></li></ul></li><li class="topic sub-topic"><a href=#>Restore</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/restore/graphdb/>Restore the GraphDB</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/restore/audit/>Restore Audit backup</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/restore/grafana/>Restore Grafana</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/restore/keycloak/>Restore Keycloak</a></li></ul></li><li class="topic sub-topic"><a href=#>Maintain</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/maintain/audit/>Archive the PostgreSQL Audit trail</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/maintain/bpmn-nodes/>BPMN execution recovery</a></li></ul></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/upgrade/>Upgrade</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/about-openidconnect/>About OpenID connect</a></li></ul></li><li class="topic main-topic children"><a id=user-guides href=#>User guides</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=#>Use GraphQL</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/gql/call-the-graphql-api/>Overview: the Rhize API</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/gql/query/>Query</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/gql/filter/>Filter</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/gql/mutate/>Mutate</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/gql/subscribe/>Subscribe</a></li></ul></li><li class="topic sub-topic"><a href=#>Write BPMN workflows</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/create-workflow/>Overview: orchestrate processes</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/trigger-workflows/>Trigger workflows</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/use-jsonata/>Use JSONata</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/debug-workflows/>Handle errors and debug</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/tune-performance/>Tune performance</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/variables/>Special variables</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/naming-conventions/>Naming conventions</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/learning-resources/>BPMN learning resources</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/bpmn-elements/>BMPN elements</a></li></ul></li><li class="topic sub-topic"><a href=#>Define production models</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/model/create-objects-ui/>Create objects from the UI</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/model/master-definitions/>Master definitions and fields</a></li></ul></li><li class="topic sub-topic"><a href=#>Connect event data</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/publish-subscribe/connect-datasource/>Connect data source</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/publish-subscribe/create-equipment-class-rule/>Tutorial: Trigger a workflow from a rule</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/publish-subscribe/track-changes/>Track changes (CDC)</a></li></ul></li><li class="topic sub-topic"><a href=#>Use work calendars</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/work-calendars/about-calendars-and-overrides/>About calendars and overrides</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/work-calendars/create-work-calendar/>Create work calendars</a></li></ul></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/audit/>Audit</a></li></ul></li><li class="topic main-topic children"><a id=use-cases href=#>Use cases</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/use-cases/overview/>Overview</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/use-cases/genealogy/>Genealogy</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/use-cases/ebr/>Electronic batch records</a></li></ul></li><li class="topic main-topic children active"><a id=reference href=#>Reference</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=#>Service configuration</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/service-config/agent-configuration/>Agent configuration</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/service-config/audit-configuration/>Audit configuration</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/service-config/bpmn-configuration/>BPMN configuration</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/service-config/calendar-configuration/>Calendar configuration</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/service-config/core-configuration/>Core configuration</a></li></ul></li><li class="topic sub-topic active"><a href=https://docs.rhize.com/reference/observability-metrics/>Observability metrics</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/default-ports/>Default URLs and local ports</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/gql-types/>GQL types and filters</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/glossary/>Glossary</a></li></ul></li><li class="topic main-topic children"><a id=explanations href=#>Explanations</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/explanations/manufacturing-data-hub/>Manufacturing Data Hub</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/explanations/isa-95-diagrams/>ISA-95 diagrams</a></li></ul></li><li class="topic main-topic children"><a id=releases href=#>Releases</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/3-0-1/>3.0.1</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/3-0/>3.0.0</a></li><li class="topic sub-topic"><a href=#>Changelog</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/changelog/3-0-0/>3.0.0 (general release)</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/changelog/3-0-0rc09/>3.0.0rc09</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/changelog/3-0-0rc08/>3.0.0rc08</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/changelog/3-0-0rc07/>3.0.0rc07</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/changelog/3-0-0rc06/>3.0.0rc06</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/changelog/3-0-0rc05/>3.0.0rc05</a></li></ul></li></ul></li><li class="topic main-topic"><a href=https://docs.rhize.com/></a></li></ul></aside><script src=https://cdn.jsdelivr.net/npm/@docsearch/js@3></script><script type=text/javascript>docsearch({appId:"70JLDGIDQA",apiKey:"2b4c57aa9d3d0386bf1a6df5b54eb3cf",indexName:"rhize",insights:!0,container:"#docsearch",debug:!1})</script></body></html><main class=content-wrapper><div class=content><div class=top-toc><nav id=TableOfContents><ul><li><a href=#metrics-endpoints>Metrics endpoints</a></li><li><a href=#metrics-configuration>Metrics configuration</a><ul><li><a href=#nats>NATS</a></li><li><a href=#router>Router</a></li></ul></li><li><a href=#available-rhize-microservice-metrics>Available Rhize microservice metrics</a><ul><li><a href=#baas>BAAS</a></li><li><a href=#bpmn>BPMN</a></li><li><a href=#nats-1>NATS</a></li><li><a href=#router-1>Router</a></li><li><a href=#tempo>Tempo</a></li></ul></li><li><a href=#dashboards>Dashboards</a></li></ul></nav></div><article><a class=edit-btn target=_blank href=https://github.com/libremfg/libremfg.github.io/edit/main/content/reference/observability-metrics.md><i class="fa fa-github-alt"></i> Edit Page</a><h1 class=post-title>Observability metrics</h1><p>Rhize uses <a href=https://prometheus.io/docs/introduction/overview/>Prometheus</a> to monitor metrics from many of its <a href=https://docs.rhize.com/reference/service-config/>microservices</a>.
+For the Kubernetes cluster, Rhize runs the Prometheus operator and monitors the accumulated metrics in Grafana dashboards.
+Monitoring occurs granularly, on the levels of cluster, pod, and container.</p><h2 id=metrics-endpoints>Metrics endpoints</h2><p>The service metrics have endpoints at the following ports:</p><table><thead><tr><th>Service</th><th>Available</th><th>Enabled</th><th>Port</th></tr></thead><tbody><tr><td>Audit</td><td>Y</td><td>Y</td><td>8084</td></tr><tr><td>BAAS</td><td>Y</td><td>Y</td><td>8080</td></tr><tr><td>BPMN</td><td>Y</td><td>Y</td><td>8081</td></tr><tr><td>Core</td><td>Y</td><td>Y</td><td>8080</td></tr><tr><td>NATS</td><td></td><td>Y</td><td>7777</td></tr><tr><td>Router</td><td>Y</td><td></td><td>9090</td></tr><tr><td>Tempo</td><td>Y</td><td>Y</td><td>3100</td></tr></tbody></table><p>NATS has an available endpoint through an exporter that is present on the cluster.
+Router has an available endpoint that is disabled by default.</p><h2 id=metrics-configuration>Metrics configuration</h2><p>For services where metrics are disabled by default, some configuration steps may be required.
+In case you are experimenting locally, this document includes for both the cluster and for Docker.</p><p>After you enable metrics, add them into the Prometheus configuration file by pointing to that service endpoint.
+For example:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>- job_name: <span style=color:#a31515>&#39;rhize-application-monitoring&#39;</span>
+</span></span><span style=display:flex><span>  honor_timestamps: <span style=color:#00f>true</span>
+</span></span><span style=display:flex><span>  scrape_interval: 15s
+</span></span><span style=display:flex><span>  scrape_timeout: 10s
+</span></span><span style=display:flex><span>  metrics_path: /metrics
+</span></span><span style=display:flex><span>  scheme: http
+</span></span><span style=display:flex><span>  static_configs:
+</span></span><span style=display:flex><span>    - targets: [<span style=color:#a31515>&#39;audit-demo.demo.svc.cluster.local:8084&#39;</span>, <span style=color:#a31515>&#39;baas-alpha.demo.svc.cluster.local:8080&#39;</span>, <span style=color:#a31515>&#39;bpmn-demo.demo.svc.cluster.local:8081&#39;</span>, <span style=color:#a31515>&#39;core-demo.demo.svc.cluster.local:8080&#39;</span>, <span style=color:#a31515>&#39;grafana-demo.demo.svc.cluster.local:3000&#39;</span>, <span style=color:#a31515>&#39;tempo.demo.svc.cluster.local:3100&#39;</span>, <span style=color:#a31515>&#39;nats-demo-headless.demo.svc.cluster.local:7777&#39;</span>, <span style=color:#a31515>&#39;router-demo.demo.svc.cluster.local:9090&#39;</span>]
+</span></span></code></pre></div><h3 id=nats>NATS</h3><p>While NATS has no available metrics endpoint, the cluster includes a <a href=https://github.com/nats-io/prometheus-nats-exporter>NATS Prometheus exporter</a>.
+NATS metrics are exposed through port <code>7777</code>.</p><h4 id=cluster>Cluster</h4><p>Since the cluster already includes the exporter, no further configuration is required.
+This endpoint should be connected through the NATS headless pod. For example:</p><p><code>nats-demo-headless.demo.svc.cluster.local:7777</code></p><h4 id=docker>Docker</h4><p>To get NATS metrics in Docker, use the exporter mentioned in the preceding section.
+The following is a sample docker-compose configuration for the exporter.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>services:
+</span></span><span style=display:flex><span>	<span style=color:green># -- Other services</span>
+</span></span><span style=display:flex><span>	nats-exporter:
+</span></span><span style=display:flex><span>    image: natsio/prometheus-nats-exporter:latest
+</span></span><span style=display:flex><span>    container_name: nats-exporter
+</span></span><span style=display:flex><span>    command: <span style=color:#a31515>&#34;-varz &#39;http://nats:5555&#39;&#34;</span>
+</span></span><span style=display:flex><span>    depends_on:
+</span></span><span style=display:flex><span>      - nats
+</span></span><span style=display:flex><span>    ports:
+</span></span><span style=display:flex><span>      - 7777:7777
+</span></span></code></pre></div><p>Access NATS metrics at <code>localhost:7777/metrics</code></p><h3 id=router>Router</h3><h4 id=cluster-1>Cluster</h4><p>To enable metrics, the Router Helm chart needs to have several options added or changed, as follows:
+For details, refer to the <a href=https://www.apollographql.com/docs/router/containerization/kubernetes/#deploy-with-metrics-endpoints>Official Apollo instructions</a>.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>router:
+</span></span><span style=display:flex><span>  configuration:
+</span></span><span style=display:flex><span>	  <span style=color:green># -- Other configuration prior</span>
+</span></span><span style=display:flex><span>    telemetry:
+</span></span><span style=display:flex><span>      metrics:
+</span></span><span style=display:flex><span>        prometheus:
+</span></span><span style=display:flex><span>          enabled: <span style=color:#00f>true</span>
+</span></span><span style=display:flex><span>          listen: 0.0.0.0:9090
+</span></span><span style=display:flex><span>          path: <span style=color:#a31515>&#34;/metrics&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:green># -- Open container ports</span>
+</span></span><span style=display:flex><span>containerPorts:
+</span></span><span style=display:flex><span>  metrics: 9090
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:green># -- Enable service monitor</span>
+</span></span><span style=display:flex><span>serviceMonitor:
+</span></span><span style=display:flex><span>  enabled: <span style=color:#00f>true</span>
+</span></span></code></pre></div><p>You can connect to this endpoint through the router pod.
+For example:</p><p><code>router-demo.demo.svc.cluster.local:9090</code></p><h4 id=docker-1>Docker</h4><p>To enable Router metrics, modify its configuration file.
+For details, refer to the <a href=https://www.apollographql.com/docs/router/configuration/telemetry/exporters/metrics/prometheus/>Official Apollo Instructions</a>.</p><p>The following is an example configuration:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:green># -- Other configuration prior</span>
+</span></span><span style=display:flex><span>telemetry:
+</span></span><span style=display:flex><span>  exporters:
+</span></span><span style=display:flex><span>     metrics:
+</span></span><span style=display:flex><span>       prometheus:
+</span></span><span style=display:flex><span>         enabled: <span style=color:#00f>true</span>
+</span></span><span style=display:flex><span>         listen: 0.0.0.0:9090
+</span></span><span style=display:flex><span>         path: /metrics
+</span></span></code></pre></div><p>This opens the metrics endpoint on port <code>9090</code>.
+To view it externally, you must expose the port in docker-compose.
+Once the port is exposed, view the metrics at <code>localhost:9090/metrics</code></p><h2 id=available-rhize-microservice-metrics>Available Rhize microservice metrics</h2><p>Several common metrics appear between Rhize microservices:</p><ul><li><code>go</code></li><li><code>process</code></li><li><code>http</code>.</li></ul><table><thead><tr><th>Service</th><th><a href=https://prometheus.io/docs/guides/go-application/>Instrumented Prometheus Go Application</a></th><th>process metrics</th><th>HTTP metrics*</th><th>Additional</th></tr></thead><tbody><tr><td>Audit</td><td>Y</td><td>Y</td><td>Y</td><td></td></tr><tr><td>BAAS</td><td>Y</td><td>Y</td><td></td><td>Y</td></tr><tr><td>BPMN</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr><tr><td>Core</td><td>Y</td><td></td><td>Y</td><td></td></tr><tr><td>NATS</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr><tr><td>Router</td><td></td><td></td><td></td><td>Y</td></tr><tr><td>Tempo</td><td>Y</td><td></td><td></td><td>Y</td></tr></tbody></table><div class="notices note"><span class=type>Note</span> HTTP metrics are noted as <code>promhttp</code>.</div><h3 id=baas>BAAS</h3><p>Additional metrics on BAAS are from <a href=https://dgraph.io/docs/deploy/admin/metrics/>dgraph</a>. These include two categories: Badger and Dgraph.</p><h4 id=sample>Sample</h4><pre tabindex=0><code># HELP badger_disk_reads_total Number of cumulative reads by Badger
+# TYPE badger_disk_reads_total untyped
+badger_disk_reads_total 0
+
+# HELP badger_disk_writes_total Number of cumulative writes by Badger
+# TYPE badger_disk_writes_total untyped
+badger_disk_writes_total 0
+
+# HELP badger_gets_total Total number of gets
+# TYPE badger_gets_total untyped
+badger_gets_total 0
+</code></pre><pre tabindex=0><code># HELP dgraph_alpha_health_status Status of the alphas
+# TYPE dgraph_alpha_health_status gauge
+dgraph_alpha_health_status 1
+
+# HELP dgraph_disk_free_bytes Total number of bytes free on disk
+# TYPE dgraph_disk_free_bytes gauge
+dgraph_disk_free_bytes{dir=&#34;postings_fs&#34;} 1.0153562112e+10
+
+# HELP dgraph_disk_total_bytes Total number of bytes on disk
+# TYPE dgraph_disk_total_bytes gauge
+dgraph_disk_total_bytes{dir=&#34;postings_fs&#34;} 1.0447245312e+10
+</code></pre><h3 id=bpmn>BPMN</h3><p>BPMN has four metrics unique to it, shown in full in the sample below.</p><h4 id=sample-1>Sample</h4><pre tabindex=0><code># HELP bpmn_execution_commands The number of BPMN commands that have started executing
+# TYPE bpmn_execution_commands counter
+bpmn_execution_commands 1162
+
+# HELP bpmn_instances_started BPMN Instances started but not necessarily completed
+# TYPE bpmn_instances_started counter
+bpmn_instances_started 166
+
+# HELP bpmn_queue_CommandConsumerQueue Number of BPMN Commands currently waiting to be executed
+# TYPE bpmn_queue_CommandConsumerQueue gauge
+bpmn_queue_CommandConsumerQueue 0
+
+# HELP bpmn_queue_StartOnNatsMessages Number of BPMN trigger messages received from NATS
+# TYPE bpmn_queue_StartOnNatsMessages gauge
+bpmn_queue_StartOnNatsMessages 0
+</code></pre><h3 id=nats-1>NATS</h3><p>NATS has two categories of metrics:</p><ul><li><code>gnatsd</code></li><li><code>jetstream</code></li></ul><h4 id=sample-2>Sample</h4><pre tabindex=0><code># HELP gnatsd_connz_in_bytes in_bytes
+# TYPE gnatsd_connz_in_bytes counter
+gnatsd_connz_in_bytes{server_id=&#34;nats-demo-0&#34;} 0
+
+# HELP gnatsd_connz_in_msgs in_msgs
+# TYPE gnatsd_connz_in_msgs counter
+gnatsd_connz_in_msgs{server_id=&#34;nats-demo-0&#34;} 0
+
+# HELP gnatsd_connz_limit limit
+# TYPE gnatsd_connz_limit gauge
+gnatsd_connz_limit{server_id=&#34;nats-demo-0&#34;} 1024
+</code></pre><pre tabindex=0><code># HELP jetstream_server_jetstream_disabled JetStream disabled or not
+# TYPE jetstream_server_jetstream_disabled gauge
+jetstream_server_jetstream_disabled{cluster=&#34;nats-demo&#34;,domain=&#34;&#34;,is_meta_leader=&#34;false&#34;,meta_leader=&#34;nats-demo-1&#34;,server_id=&#34;nats-demo-0&#34;,server_name=&#34;nats-demo-0&#34;} 0
+
+# HELP jetstream_server_max_memory JetStream Max Memory
+# TYPE jetstream_server_max_memory gauge
+jetstream_server_max_memory{cluster=&#34;nats-demo&#34;,domain=&#34;&#34;,is_meta_leader=&#34;false&#34;,meta_leader=&#34;nats-demo-1&#34;,server_id=&#34;nats-demo-0&#34;,server_name=&#34;nats-demo-0&#34;} 2.147483648e+09
+
+# HELP jetstream_server_max_storage JetStream Max Storage
+# TYPE jetstream_server_max_storage gauge
+jetstream_server_max_storage{cluster=&#34;nats-demo&#34;,domain=&#34;&#34;,is_meta_leader=&#34;false&#34;,meta_leader=&#34;nats-demo-1&#34;,server_id=&#34;nats-demo-0&#34;,server_name=&#34;nats-demo-0&#34;} 5.36870912e+10
+</code></pre><h3 id=router-1>Router</h3><p>All metrics provided by Router are unique to Apollo Router.</p><h4 id=sample-3>Sample</h4><pre tabindex=0><code># HELP apollo_router_cache_hit_count apollo_router_cache_hit_count
+# TYPE apollo_router_cache_hit_count counter
+apollo_router_cache_hit_count{kind=&#34;query planner&#34;,service_name=&#34;router-demo&#34;,storage=&#34;memory&#34;} 121802
+
+# HELP apollo_router_cache_hit_time apollo_router_cache_hit_time
+# TYPE apollo_router_cache_hit_time histogram
+apollo_router_cache_hit_time_bucket{kind=&#34;query planner&#34;,service_name=&#34;router-demo&#34;,storage=&#34;memory&#34;,le=&#34;0.001&#34;} 121802
+apollo_router_cache_hit_time_bucket{kind=&#34;query planner&#34;,service_name=&#34;router-demo&#34;,storage=&#34;memory&#34;,le=&#34;0.005&#34;} 121802
+apollo_router_cache_hit_time_bucket{kind=&#34;query planner&#34;,service_name=&#34;router-demo&#34;,storage=&#34;memory&#34;,le=&#34;0.015&#34;} 121802
+</code></pre><h3 id=tempo>Tempo</h3><p>Tempo has a few categories of metrics:</p><ul><li><code>jaeger</code></li><li><code>prometheus</code></li><li><code>tempo</code></li><li><code>tempodb</code>.</li></ul><p>The Tempo documentation <a href=https://grafana.com/docs/tempo/latest/metrics-generator/>details</a> what these metrics measure.</p><h4 id=sample-4>Sample</h4><pre tabindex=0><code># HELP jaeger_tracer_baggage_restrictions_updates_total Number of times baggage restrictions were successfully updated
+# TYPE jaeger_tracer_baggage_restrictions_updates_total counter
+jaeger_tracer_baggage_restrictions_updates_total{result=&#34;err&#34;} 0
+jaeger_tracer_baggage_restrictions_updates_total{result=&#34;ok&#34;} 0
+
+# HELP jaeger_tracer_baggage_truncations_total Number of times baggage was truncated as per baggage restrictions
+# TYPE jaeger_tracer_baggage_truncations_total counter
+jaeger_tracer_baggage_truncations_total 0
+</code></pre><pre tabindex=0><code># HELP prometheus_remote_storage_exemplars_in_total Exemplars in to remote storage, compare to exemplars out for queue managers.
+# TYPE prometheus_remote_storage_exemplars_in_total counter
+prometheus_remote_storage_exemplars_in_total 0
+
+# HELP prometheus_remote_storage_histograms_in_total HistogramSamples in to remote storage, compare to histograms out for queue managers.
+# TYPE prometheus_remote_storage_histograms_in_total counter
+prometheus_remote_storage_histograms_in_total 0
+
+# HELP prometheus_remote_storage_samples_in_total Samples in to remote storage, compare to samples out for queue managers.
+# TYPE prometheus_remote_storage_samples_in_total counter
+prometheus_remote_storage_samples_in_total 0
+</code></pre><pre tabindex=0><code># HELP tempo_distributor_ingester_clients The current number of ingester clients.
+# TYPE tempo_distributor_ingester_clients gauge
+tempo_distributor_ingester_clients 0
+
+# HELP tempo_distributor_metrics_generator_clients The current number of metrics-generator clients.
+# TYPE tempo_distributor_metrics_generator_clients gauge
+tempo_distributor_metrics_generator_clients 0
+
+# HELP tempo_distributor_push_duration_seconds Records the amount of time to push a batch to the ingester.
+# TYPE tempo_distributor_push_duration_seconds histogram
+tempo_distributor_push_duration_seconds_bucket{le=&#34;0.005&#34;} 0
+tempo_distributor_push_duration_seconds_bucket{le=&#34;0.01&#34;} 0
+</code></pre><pre tabindex=0><code># HELP tempodb_backend_hedged_roundtrips_total Total number of hedged backend requests. Registered as a gauge for code sanity. This is a counter.
+# TYPE tempodb_backend_hedged_roundtrips_total gauge
+tempodb_backend_hedged_roundtrips_total 0
+
+# HELP tempodb_blocklist_poll_duration_seconds Records the amount of time to poll and update the blocklist.
+# TYPE tempodb_blocklist_poll_duration_seconds histogram
+tempodb_blocklist_poll_duration_seconds_bucket{le=&#34;0&#34;} 0
+tempodb_blocklist_poll_duration_seconds_bucket{le=&#34;60&#34;} 2012
+tempodb_blocklist_poll_duration_seconds_bucket{le=&#34;120&#34;} 2012
+</code></pre><h2 id=dashboards>Dashboards</h2><p>A number of Grafana dashboards are pre-configured for use with Prometheus metrics.
+All dashboards in Grafana use Prometheus as a data source.</p></article><div class=right-toc><nav id=TableOfContents><ul><li><a href=#metrics-endpoints>Metrics endpoints</a></li><li><a href=#metrics-configuration>Metrics configuration</a><ul><li><a href=#nats>NATS</a></li><li><a href=#router>Router</a></li></ul></li><li><a href=#available-rhize-microservice-metrics>Available Rhize microservice metrics</a><ul><li><a href=#baas>BAAS</a></li><li><a href=#bpmn>BPMN</a></li><li><a href=#nats-1>NATS</a></li><li><a href=#router-1>Router</a></li><li><a href=#tempo>Tempo</a></li></ul></li><li><a href=#dashboards>Dashboards</a></li></ul></nav></div></div></main><script type=text/javascript src=https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js></script><script src=https://docs.rhize.com/js/clipboard.min.js></script><script src=https://docs.rhize.com/js/dgraph.js?a9873668f1334ff6c49d4edea0a4bc38></script><script>hljs.initHighlightingOnLoad()</script></body></html>
