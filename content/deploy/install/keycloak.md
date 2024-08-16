@@ -211,6 +211,12 @@ To create a scope for your Rhize services, follow these steps:
     - **Include Client Audience**: `{{< param application_name >}}UI`
     - **Add to ID Token**: `On`
     - **Add to access token**: `Off`
+1. Repeat the preceding step for a mapper for the BPMN client:
+    - **Mapper Type**: `Audience`
+    - **Name**: `{{< param application_name >}}BPMNAudienceMapper`
+    - **Include Client Audience**: `{{< param application_name >}}Bpmn`
+    - **Add to ID Token**: `On`
+    - **Add to access token**: `On`
 1. If using the Rhize Audit microservice, repeat the preceding step for an Audit scope and audience mapper:
     - **Mapper Type**: `Audience`
     - **Name**: `{{< param application_name >}}AuditAudienceMapper`
