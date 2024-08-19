@@ -307,7 +307,7 @@ Install Audit Service with these steps:
     helm install audit -f audit.yaml libre/audit -n {{< param application_name >}}
     ```
 
-3. Create partition tables in the PostgreSQL database.
+3. Create partition tables in the PostgreSQL database:
 
     ```sql
     create table public.audit_log_partition( like public.audit_log );
