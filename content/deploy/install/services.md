@@ -314,7 +314,7 @@ Install Audit Service with these steps:
     select partman.create_parent( p_parent_table := 'public.audit_log', p_control := 'time',  p_interval := '1 Month', p_template_table := 'public.audit_log_partition');
     ```
 
-For details about maintaining the Audit trail, read [Archive the PostgresQL Audit trail]({{< relref "/deploy/maintain/audit/" >}})
+For details about maintaining the Audit trail, read [Archive the PostgresQL Audit trail]({{< relref "/deploy/maintain/audit/" >}}).
 
 ### Enable change data capture
 
