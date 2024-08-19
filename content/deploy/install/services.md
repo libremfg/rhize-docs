@@ -307,6 +307,15 @@ Install Audit Service with these steps:
     helm install audit -f audit.yaml libre/audit -n {{< param application_name >}}
     ```
 
+3. Create partition tables in the PostgreSQL database.
+
+    ```sql
+    create table public.audit_log_partition( like public.audit_log );
+    select partman.create_parent( p_parent_table := 'public.audit_log', p_control := 'time',  p_interval := '1 Month', p_template_table := 'public.audit_log_partition');
+    ```
+
+For details about maintaining the Audit trail, read [Archive the PostgresQL Audit trail]({{< relref "/deploy/maintain/audit/" >}})
+
 ### Enable change data capture
 
 The Audit trail requires [change data capture (CDC)]({{< ref "track-changes" >}}) to function. To enable CDC in {{< param application_name >}} BAAS, include the following values for the Helm chart overrides:
