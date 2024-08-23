@@ -340,3 +340,5 @@ tempodb_blocklist_poll_duration_seconds_bucket{le="120"} 2012
 
 A number of Grafana dashboards are pre-configured for use with Prometheus metrics.
 All dashboards in Grafana use Prometheus as a data source.
+
+You can download them from [Rhize Dashboard templates](https://github.com/libremfg/rhize-templates/tree/main/dashboards).
