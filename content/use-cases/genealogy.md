@@ -21,7 +21,7 @@ A material genealogy can help manufacturers in multiple ways:
 - Help build reports and analysis of material deviations
 - Create documentation and compliance records for material tracking
 
-Rhize provides a standards-based schema to represent material in at all levels of granularity.
+Rhize provides a standards-based schema to represent material at all levels of granularity.
 The graph structure of its DB has built-in properties to associate material lots with other information about planned and performed work.
 This database has a GraphQL API, which can pull full genealogies from terse queries.
 As such, Rhize makes an **ideal backend to use for genealogical use cases**.
