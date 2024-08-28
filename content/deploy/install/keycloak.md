@@ -235,7 +235,7 @@ To create a scope for your Rhize services, follow these steps:
 
 Repeat this process for the `dashboard`, `{{< param application_name >}}UI`, `{{< param application_name >}}Bpmn`, `{{< param application_name >}}Core`, `{{< param application_name >}}Router`, `{{< param application_name >}}Audit` (if applicable). Based on your architecture repeat for any Libre Edge Agent clients.
 
-### Create roles and groups
+<!-- ### Create roles and groups
 
 In Keycloak, _roles_ identify a category or type of user.
 _Groups_ are a common set of attributes for a set of users.
@@ -248,7 +248,7 @@ Rhize creates an `ADMIN` role and group.
 1. Enter the following values:
      - Role name: `ADMIN`
      - Description: `ADMIN`
- 1. **Save**.
+ 1. **Save**. -->
 
 #### Add the Admin Group
 
@@ -261,7 +261,7 @@ Now map a role.
 1. From the group list, select the group you just created.
 1. Select the **Role mapping** tab.
 1. Select **Assign Role**
-1. Select `ADMIN`.
+1. Select `{{< param application_name >}}Baas admin`.
 1. **Assign.**
 
 #### Add the dashboard realm roles
