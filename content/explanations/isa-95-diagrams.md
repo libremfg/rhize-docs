@@ -13,6 +13,25 @@ menu:
 These diagrams provide some highly simplified visual explanations gleaned from parts of the thorough [ISA-95 standard](https://www.isa.org/store?query=isa95).
 To read about how the standard fits within the data architecture of Rhize, read our blog post [Rethinking perspectives on ISA-95](https://rhize.com/blog/reframing-perspective-on-isa95/).
 
+## Definition, demand, result
+
+At a high-level, manufacturing consists of:
+- Goods being demanded
+- Goods being produced
+
+Between these two points, the manufacturing operations performs this work according to its definitions
+of work and the resources that it has available.
+This diagram shows how ISA-95 defines these fundamental relationships from the perspective of the business (ERP) and manufacturing operation (MOM).
+
+
+{{< bigFigure
+src="/images/s95/diagram-rhize-definition-demand-result-l3-l4.png"
+alt="Models to define, demand, and produce work"
+caption="**Click to expand**"
+width="85%"
+>}}
+
+
 ## Information exchange between models and levels
 
 This diagram shows how information exchanges between resource models and systems.
