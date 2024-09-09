@@ -1,24 +1,124 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Changelog on Rhize documentation</title><link>https://docs.rhize.com/releases/changelog/</link><description>Recent content in Changelog on Rhize documentation</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 25 Mar 2024 11:09:55 -0500</lastBuildDate><atom:link href="https://docs.rhize.com/releases/changelog/index.xml" rel="self" type="application/rss+xml"/><item><title>3.0.0 (general release)</title><link>https://docs.rhize.com/releases/changelog/3-0-0/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0/</guid><description>Changelog for version 3.0.0 of the Rhize application.
-Release date: 25th March, 2024
-Breaking changes Changes by service Admin UI Features
-Add includesPropertiesOf input when creating a new version of OperationsEventClass Add IncludesPropertiesOf option to Equipment Class General tab Add momentjs for timezones as select in Equipment Version timezone field Add BPMN side panel for OPCUA Method Call Add clear option to WorkMaster disable modal Add edits for Static properties Add enable and disable functionality to work calendar definition Add EquipmentClass ISA-95 property type selection Add EquipmentLevel to Equipment Class Add inheritance of Operational Location Class properties into Operational Location Add inherited properties from linked Operations Event Class to Operations Event Class properties page Add manufacturer to Physical Asset Class general tab Add new modal to BPMN Add new Work Calendar Definition select on Equipment Version management Add Operational Location and Spatial Definition to Equipment General tab Add OperationsEventClass to OperationsEventDefinition Add option to disable Operations Definition Add option to disable previous work master version when create a new version Add option to disable Work Calendar Definition Property Add option to disable Work Calendar Entry Add option to enable a disabled Process Segment Add page to add manual Work Calendar Entries Add pagination to Work Calendar Entries Add properties to Work Calendar Definition Add Published date and Hierarchy Scope to WorkMaster Add relationship between Operations Event Definition and Work Master Add scrollbar to Work Calendar Definition Add Spatial Definition to Physical Location &amp;amp; Physical Asset Add start weekday selection to Work Calendar Definition Add static properties on Equipment Class Add timezone on Work Calendar Add timezone on Work Calendar Entry and Equipment Add user store to UserManager and set automatic silent renew Add Work Calendar Definition manage entries component Add Work Calendar Definition management Add Work Calendar Setup Change</description></item><item><title>3.0.0rc09</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc09/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc09/</guid><description>Changelog for version 3.0.0rc9 of the Rhize application.
-Release date: 27th February, 2024
-Breaking changes Changes by service Admin UI No changes since previous release.
-Agent Features
-Add check to validate OPC UA topics against server metadata Add hostname in message payload Add logic for MQTT connections to resubscribe on disconnect Add option to deconstruct complex JSON payloads to simple types Audit Features
-Add previous audit value relative to current BAAS Changes</description></item><item><title>3.0.0rc08</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc08/</link><pubDate>Tue, 19 Dec 2023 13:01:02 -0500</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc08/</guid><description>Changelog for version 3.0.0rc08 of the Rhize application.
-Release date: 19th December, 2023
-Breaking changes [ADMINUI] Change UI navigation bar design [SCHEMA] Change OperationsEventClass.IncludedIn to reference an OperationsEventClassVersion instead of OperationsEventClass [SCHEMA] Change OperationsEventClass.IncludesPropertiesOf to move to the version instance, OperationsEventClassVersion.IncludesPropertiesOf, instead of header [SCHEMA] Change OperationsEventDefinition.IncludedIn to reference an OperationsEventDefinitionVersion instead of OperationsEventDefinition [SCHEMA] Change OperationsEventDefinition.IncludesPropertiesOf to move to the version instance, OperationsEventDefinitionVersion.IncludesPropertiesOf, instead of header [SCHEMA] Change FromResourceReference and ToResourceReference to combine them into a single resourceReference Changes by service Admin UI Features</description></item><item><title>3.0.0rc07</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc07/</link><pubDate>Wed, 15 Nov 2023 09:32:12 -0500</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc07/</guid><description>Changelog for version 3.0.0rc07 of the Rhize application.
-Release date: 15th November, 2023
-Breaking changes [SCHEMA] Change types OperationalLocationClass, OperationalLocationClassVersion, OperationalLocationClassProperty, OperationalLocation, OperationalLocationVersion and OperationalLocationProperty to have: isPartOf (0..1), isMadeUpOf (0..*) [BPMN] Change CommandConsumer and Timers to use new JetStream library and durable consumers. This requires you to drop and re-create streams KV_JobResponses, KV_WorkflowSpecifications, libreBpmn_Command and libreTimerStart. Changes by service Admin UI Features
-Add ability to create Process Segment Version Add ability to edit linked process segment resource specification property Add ability to link a Hierarchy Scope to a Operational Location Class version Add check for renaming a linked property with an existing property name Add Homepage screen Add optional link from Operational Location Class to a Operational Location Class version Add Physical Asset Properties Add Physical Asset Resource Specifications Change</description></item><item><title>3.0.0rc06</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc06/</link><pubDate>Tue, 31 Oct 2023 21:07:43 -0300</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc06/</guid><description>Changelog for version 3.0.0rc06 of the Rhize application.
-Release date: October 31, 2023
-Breaking changes NATS streams libreBpmn_command and LibreTimerStart must be deleted prior to starting Changes by service Core Features
-Add mutation for dependency check for DataSource, Equipment, EquipmentClass, OperationalLocation, and OperationalLocationClass Changes
-Change to go-module for schema Change struct literal unkeyed fields to keyed BPMN Breaking Changes
-NATS streams libreBpmn_command and LibreTimerStart must be deleted prior to starting Features</description></item><item><title>3.0.0rc05</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc05/</link><pubDate>Tue, 31 Oct 2023 20:32:34 -0300</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc05/</guid><description>Changelog for version 3.0.0rc05 of the Rhize application.
-Release date: October 24, 2023
-Breaking changes Renamed UI environment variables and changed KEYCLOACK to KEYCLOAK Changes by service Core Features
-Add deleteSyncEquipmentsFromDBtoNATSStatus mutation Add NATS connection name Add fields to InformationObject Fixes
-Fix tracing typo Changes
-Change Core to purge keys that are not in the the database Change core to delete property value from KV when the equipment no longer have active version BPMN Features</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Changelog on Rhize documentation</title><link>https://docs.rhize.com/releases/changelog/</link><description>Recent content in Changelog on Rhize documentation</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 25 Mar 2024 11:09:55 -0500</lastBuildDate><atom:link href="https://docs.rhize.com/releases/changelog/index.xml" rel="self" type="application/rss+xml"/><item><title>3.0.0 (general release)</title><link>https://docs.rhize.com/releases/changelog/3-0-0/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0/</guid><description>&lt;p>Changelog for version 3.0.0 of the Rhize application.&lt;/p>
+&lt;p>&lt;em>Release date:&lt;/em> 25th March, 2024&lt;/p>
+&lt;h2 id="breaking-changes">Breaking changes&lt;/h2>
+&lt;h2 id="changes-by-service">Changes by service&lt;/h2>
+&lt;h3 id="admin-ui">Admin UI&lt;/h3>
+&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Add &lt;code>includesPropertiesOf&lt;/code> input when creating a new version of OperationsEventClass&lt;/li>
+&lt;li>Add &lt;code>IncludesPropertiesOf&lt;/code> option to Equipment Class General tab&lt;/li>
+&lt;li>Add &lt;code>momentjs&lt;/code> for timezones as select in Equipment Version &lt;code>timezone&lt;/code> field&lt;/li>
+&lt;li>Add BPMN side panel for OPCUA Method Call&lt;/li>
+&lt;li>Add clear option to WorkMaster disable modal&lt;/li>
+&lt;li>Add edits for Static properties&lt;/li>
+&lt;li>Add enable and disable functionality to work calendar definition&lt;/li>
+&lt;li>Add EquipmentClass ISA-95 property type selection&lt;/li>
+&lt;li>Add EquipmentLevel to Equipment Class&lt;/li>
+&lt;li>Add inheritance of Operational Location Class properties into Operational Location&lt;/li>
+&lt;li>Add inherited properties from linked Operations Event Class to Operations Event Class properties page&lt;/li>
+&lt;li>Add manufacturer to Physical Asset Class general tab&lt;/li>
+&lt;li>Add new modal to BPMN&lt;/li>
+&lt;li>Add new Work Calendar Definition select on Equipment Version management&lt;/li>
+&lt;li>Add Operational Location and Spatial Definition to Equipment General tab&lt;/li>
+&lt;li>Add OperationsEventClass to OperationsEventDefinition&lt;/li>
+&lt;li>Add option to disable Operations Definition&lt;/li>
+&lt;li>Add option to disable previous work master version when create a new version&lt;/li>
+&lt;li>Add option to disable Work Calendar Definition Property&lt;/li>
+&lt;li>Add option to disable Work Calendar Entry&lt;/li>
+&lt;li>Add option to enable a disabled Process Segment&lt;/li>
+&lt;li>Add page to add manual Work Calendar Entries&lt;/li>
+&lt;li>Add pagination to Work Calendar Entries&lt;/li>
+&lt;li>Add properties to Work Calendar Definition&lt;/li>
+&lt;li>Add Published date and Hierarchy Scope to WorkMaster&lt;/li>
+&lt;li>Add relationship between Operations Event Definition and Work Master&lt;/li>
+&lt;li>Add scrollbar to Work Calendar Definition&lt;/li>
+&lt;li>Add Spatial Definition to Physical Location &amp;amp; Physical Asset&lt;/li>
+&lt;li>Add start weekday selection to Work Calendar Definition&lt;/li>
+&lt;li>Add static properties on Equipment Class&lt;/li>
+&lt;li>Add timezone on Work Calendar&lt;/li>
+&lt;li>Add timezone on Work Calendar Entry and Equipment&lt;/li>
+&lt;li>Add user store to UserManager and set automatic silent renew&lt;/li>
+&lt;li>Add Work Calendar Definition manage entries component&lt;/li>
+&lt;li>Add Work Calendar Definition management&lt;/li>
+&lt;li>Add Work Calendar Setup&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Change&lt;/strong>&lt;/p></description></item><item><title>3.0.0rc09</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc09/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc09/</guid><description>&lt;p>Changelog for version 3.0.0rc9 of the Rhize application.&lt;/p>
+&lt;p>&lt;em>Release date:&lt;/em> 27th February, 2024&lt;/p>
+&lt;h2 id="breaking-changes">Breaking changes&lt;/h2>
+&lt;h2 id="changes-by-service">Changes by service&lt;/h2>
+&lt;h3 id="admin-ui">Admin UI&lt;/h3>
+&lt;p>No changes since previous release.&lt;/p>
+&lt;h3 id="agent">Agent&lt;/h3>
+&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Add check to validate OPC UA topics against server metadata&lt;/li>
+&lt;li>Add hostname in message payload&lt;/li>
+&lt;li>Add logic for MQTT connections to resubscribe on disconnect&lt;/li>
+&lt;li>Add option to deconstruct complex JSON payloads to simple types&lt;/li>
+&lt;/ul>
+&lt;h3 id="audit">Audit&lt;/h3>
+&lt;p>&lt;strong>Features&lt;/strong>&lt;/p></description></item><item><title>3.0.0rc08</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc08/</link><pubDate>Tue, 19 Dec 2023 13:01:02 -0500</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc08/</guid><description>&lt;p>Changelog for version 3.0.0rc08 of the Rhize application.&lt;/p>
+&lt;p>&lt;em>Release date:&lt;/em> 19th December, 2023&lt;/p>
+&lt;h2 id="breaking-changes">Breaking changes&lt;/h2>
+&lt;ul>
+&lt;li>[ADMINUI] Change UI navigation bar design&lt;/li>
+&lt;li>[SCHEMA] Change &lt;code>OperationsEventClass.IncludedIn&lt;/code> to reference an &lt;code>OperationsEventClassVersion&lt;/code> instead of &lt;code>OperationsEventClass&lt;/code>&lt;/li>
+&lt;li>[SCHEMA] Change &lt;code>OperationsEventClass.IncludesPropertiesOf&lt;/code> to move to the version instance, &lt;code>OperationsEventClassVersion.IncludesPropertiesOf&lt;/code>, instead of header&lt;/li>
+&lt;li>[SCHEMA] Change &lt;code>OperationsEventDefinition.IncludedIn&lt;/code> to reference an &lt;code>OperationsEventDefinitionVersion&lt;/code> instead of &lt;code>OperationsEventDefinition&lt;/code>&lt;/li>
+&lt;li>[SCHEMA] Change &lt;code>OperationsEventDefinition.IncludesPropertiesOf&lt;/code> to move to the version instance, &lt;code>OperationsEventDefinitionVersion.IncludesPropertiesOf&lt;/code>, instead of header&lt;/li>
+&lt;li>[SCHEMA] Change &lt;code>FromResourceReference&lt;/code> and &lt;code>ToResourceReference&lt;/code> to combine them into a single &lt;code>resourceReference&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="changes-by-service">Changes by service&lt;/h2>
+&lt;h3 id="admin-ui">Admin UI&lt;/h3>
+&lt;p>&lt;strong>Features&lt;/strong>&lt;/p></description></item><item><title>3.0.0rc07</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc07/</link><pubDate>Wed, 15 Nov 2023 09:32:12 -0500</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc07/</guid><description>&lt;p>Changelog for version 3.0.0rc07 of the Rhize application.&lt;/p>
+&lt;p>&lt;em>Release date:&lt;/em> 15th November, 2023&lt;/p>
+&lt;h2 id="breaking-changes">Breaking changes&lt;/h2>
+&lt;ul>
+&lt;li>[SCHEMA] Change types &lt;code>OperationalLocationClass&lt;/code>, &lt;code>OperationalLocationClassVersion&lt;/code>, &lt;code>OperationalLocationClassProperty&lt;/code>, &lt;code>OperationalLocation&lt;/code>, &lt;code>OperationalLocationVersion&lt;/code> and &lt;code>OperationalLocationProperty&lt;/code> to have: &lt;code>isPartOf (0..1)&lt;/code>, &lt;code>isMadeUpOf (0..*)&lt;/code>&lt;/li>
+&lt;li>[BPMN] Change CommandConsumer and Timers to use new JetStream library and durable consumers. This requires you to drop and re-create streams &lt;code>KV_JobResponses&lt;/code>, &lt;code>KV_WorkflowSpecifications&lt;/code>, &lt;code>libreBpmn_Command&lt;/code> and &lt;code>libreTimerStart&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="changes-by-service">Changes by service&lt;/h2>
+&lt;h2 id="admin-ui">Admin UI&lt;/h2>
+&lt;p>&lt;strong>Features&lt;/strong>&lt;/p></description></item><item><title>3.0.0rc06</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc06/</link><pubDate>Tue, 31 Oct 2023 21:07:43 -0300</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc06/</guid><description>&lt;p>Changelog for version 3.0.0rc06 of the Rhize application.&lt;/p>
+&lt;p>&lt;em>Release date:&lt;/em> October 31, 2023&lt;/p>
+&lt;h2 id="breaking-changes">Breaking changes&lt;/h2>
+&lt;ul>
+&lt;li>NATS streams &lt;code>libreBpmn_command&lt;/code> and &lt;code>LibreTimerStart&lt;/code> must be deleted prior to starting&lt;/li>
+&lt;/ul>
+&lt;h2 id="changes-by-service">Changes by service&lt;/h2>
+&lt;h3 id="core">Core&lt;/h3>
+&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Add mutation for dependency check for &lt;code>DataSource&lt;/code>, Equipment, &lt;code>EquipmentClass&lt;/code>, &lt;code>OperationalLocation&lt;/code>, and &lt;code>OperationalLocationClass&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Changes&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Change to go-module for schema&lt;/li>
+&lt;li>Change struct literal unkeyed fields to keyed&lt;/li>
+&lt;/ul>
+&lt;h3 id="bpmn">BPMN&lt;/h3>
+&lt;p>&lt;strong>Breaking Changes&lt;/strong>&lt;/p></description></item><item><title>3.0.0rc05</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc05/</link><pubDate>Tue, 31 Oct 2023 20:32:34 -0300</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc05/</guid><description>&lt;p>Changelog for version 3.0.0rc05 of the Rhize application.&lt;/p>
+&lt;p>&lt;em>Release date:&lt;/em> October 24, 2023&lt;/p>
+&lt;h2 id="breaking-changes">Breaking changes&lt;/h2>
+&lt;ul>
+&lt;li>Renamed UI environment variables and changed &lt;code>KEYCLOACK&lt;/code> to &lt;code>KEYCLOAK&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="changes-by-service">Changes by service&lt;/h2>
+&lt;h3 id="core">Core&lt;/h3>
+&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Add &lt;code>deleteSyncEquipmentsFromDBtoNATSStatus&lt;/code> mutation&lt;/li>
+&lt;li>Add NATS connection name&lt;/li>
+&lt;li>Add fields to &lt;code>InformationObject&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Fixes&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix tracing typo&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Changes&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Change Core to purge keys that are not in the the database&lt;/li>
+&lt;li>Change core to delete property value from KV when the equipment no longer have active version&lt;/li>
+&lt;/ul>
+&lt;h3 id="bpmn">BPMN&lt;/h3>
+&lt;p>&lt;strong>Features&lt;/strong>&lt;/p></description></item></channel></rss>

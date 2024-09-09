@@ -12,7 +12,7 @@ sha256:696a9e028ffbca5ca3820fde7223b018e88899719c7b4e784c2e86b921f61615
 
 Libre Audit:
 registry.gitlab.com/libremfg/libre-audit:v3.0.1
-https://gitlab.com/libremfg/libre-audit/container_registry/5738085
+sha256:718d57c7e7206450bca3337f682c4782cb5222b20ae24b47ed838b5f7f963db3
 
 Libre Audit Postgres
 registry.gitlab.com/libremfg/libre-audit/postgres:v3.0.1

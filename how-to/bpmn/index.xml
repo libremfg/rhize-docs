@@ -1,12 +1,117 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Write BPMN workflows on Rhize documentation</title><link>https://docs.rhize.com/how-to/bpmn/</link><description>Recent content in Write BPMN workflows on Rhize documentation</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 10 May 2024 16:20:35 -0300</lastBuildDate><atom:link href="https://docs.rhize.com/how-to/bpmn/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview: orchestrate processes</title><link>https://docs.rhize.com/how-to/bpmn/create-workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/bpmn/create-workflow/</guid><description>This guide provides a quick overview of the major features of the Rhize BPMN engine and interface, with links to detailed guides for specific topics. For a reference of all BPMN elements and their parameters, refer to BPMN elements.
-The Rhize BPMN UI provides a graphical interface to transform and standardize data flows across systems. Such process orchestration has many uses for manufacturing. For example, you can write a BPMN workflow to do any of the following:</description></item><item><title>Trigger workflows</title><link>https://docs.rhize.com/how-to/bpmn/trigger-workflows/</link><pubDate>Wed, 24 Apr 2024 19:35:09 +0300</pubDate><guid>https://docs.rhize.com/how-to/bpmn/trigger-workflows/</guid><description>You also have multiple ways to start, or trigger, a BPMN workflow. The best choice of trigger depends on the context of the event and the system that initiates the workflow.
-API triggers come from a GraphQL call to the Rhize DB. Message triggers subscribe to a topic on the Rhize broker and run whenever an event is published to that topic. Rule triggers subscribe to the topics on a remote data source, such as an edge OPC-UA server or MQTT broker.</description></item><item><title>Use JSONata</title><link>https://docs.rhize.com/how-to/bpmn/use-jsonata/</link><pubDate>Fri, 10 May 2024 16:20:35 -0300</pubDate><guid>https://docs.rhize.com/how-to/bpmn/use-jsonata/</guid><description>JSONata is a query language to filter, transform, and create JSON objects. Rhize BPMN workflows use JSONata expressions to transform JSON payloads as they pass through workflow nodes and across integrated systems. In BPMN workflows, JSONata expressions have some essential functions:
-Map data. Moving values from one data structure to another. Calculate data. Receiving values as input and create new data from them. Create logical conditions. Generate values to feed to gateways to direct the flow of the BPMN.</description></item><item><title>Handle errors and debug</title><link>https://docs.rhize.com/how-to/bpmn/debug-workflows/</link><pubDate>Wed, 24 Apr 2024 19:35:09 +0300</pubDate><guid>https://docs.rhize.com/how-to/bpmn/debug-workflows/</guid><description>Errors come in two categories: expected and unexpected. The Rhize BPMN engine has ways to handle both.
-A robust workflow should have built-in logic to anticipate errors. For unexpected issues, Rhize also creates a trace for each workflow, which you can use to observe the behavior and performance of the workflow at each element as it executes sequentially. You can also use debug flags and variables to trace variable context as it transforms across the workflow.</description></item><item><title>Tune BPMN performance</title><link>https://docs.rhize.com/how-to/bpmn/tune-performance/</link><pubDate>Fri, 09 Feb 2024 09:47:47 -0300</pubDate><guid>https://docs.rhize.com/how-to/bpmn/tune-performance/</guid><description>This page documents some tips to debug BPMN workflows and improve their performance.
-Manufacturing events can generate a vast amount of data. And a BPMN workflow can have any number of logical flows and data transformations. So an inefficient BPMN process can introduce performance degradations.
-Manage the process context size Note The max size of the process variable context comes from the default max payload size of NATS Jetstreams. To increase this size, change your NATS configuration.</description></item><item><title>Special variables</title><link>https://docs.rhize.com/how-to/bpmn/variables/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/bpmn/variables/</guid><description>Rhize designates some variable names for a special purpose in BPMN workflow. This list these special variables is as follows:
-Variable Purpose BODY The name of the variable as Input in Intermediate message throws. The value of this variable is the payload sent to the Rhize message broker. customResponse A value to report at the end of a synchronous API call to trigger a workflow. On completion, the call reports whatever the value was in the customResponse field of the GraphQL response.</description></item><item><title>Naming conventions</title><link>https://docs.rhize.com/how-to/bpmn/naming-conventions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/bpmn/naming-conventions/</guid><description>Note These are recommendations. Your organization may adapt the conventions to its needs. Each BPMN workflow has an ID, as does each node in the workflow. Rhize recommends adopting a set of conventions about how you name these elements. Standardizing BPMN names across an environment has multiple benefits:
-Consistent workflow naming conventions help you filter and find workflows in the process list. Well-named nodes make the workflow behavior easier to understand at a glance.</description></item><item><title>BPMN learning resources</title><link>https://docs.rhize.com/how-to/bpmn/learning-resources/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/bpmn/learning-resources/</guid><description>Here are some links to supplemental tools and material to help you build BPMN workflows in Rhize:
-BPMN templates. A repository of BPMN workflows that you can download and run yourself. bpmn.io. Open source rendering toolkits and editors for BPMN 2.0. You can use the bpmn-js for local offline building. Rhize Youtube channel. Includes demos of BPMN. 📝 OMG BPMN standard. The standard on which the Rhize BPMN engine and UI is based.</description></item><item><title>BMPN elements</title><link>https://docs.rhize.com/how-to/bpmn/bpmn-elements/</link><pubDate>Tue, 26 Sep 2023 11:10:37 -0300</pubDate><guid>https://docs.rhize.com/how-to/bpmn/bpmn-elements/</guid><description>This document describes the parameters available to each BPMN element in the Rhize UI. These parameters control how users set conditions, transform data, access variables, call services, and so on.
-Common parameters Every BPMN workflow and every element that the workflow contains have the following parameters:
-Parameter Description ID Mandatory unique ID. For guidance, follow the BPMN naming conventions. Name Optional human readable name. If empty, takes ID value. Documentation Optional freeform text for additional information Extension properties Optional metadata to add to workflow or node Events Events are something that happen in the course of a process.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Write BPMN workflows on Rhize documentation</title><link>https://docs.rhize.com/how-to/bpmn/</link><description>Recent content in Write BPMN workflows on Rhize documentation</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 10 May 2024 16:20:35 -0300</lastBuildDate><atom:link href="https://docs.rhize.com/how-to/bpmn/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview: orchestrate processes</title><link>https://docs.rhize.com/how-to/bpmn/create-workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/bpmn/create-workflow/</guid><description>&lt;p>This guide provides a quick overview of the major features of the Rhize &lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling">BPMN&lt;/abbr> engine and interface, with links to detailed guides for specific topics.
+For a reference of all BPMN elements and their parameters, refer to &lt;a href="https://docs.rhize.com/how-to/bpmn/bpmn-elements/">BPMN elements&lt;/a>.&lt;/p></description></item><item><title>Trigger workflows</title><link>https://docs.rhize.com/how-to/bpmn/trigger-workflows/</link><pubDate>Wed, 24 Apr 2024 19:35:09 +0300</pubDate><guid>https://docs.rhize.com/how-to/bpmn/trigger-workflows/</guid><description>&lt;p>You also have multiple ways to start, or &lt;em>trigger&lt;/em>, a BPMN workflow.
+The best choice of trigger depends on the context of the event and the system that initiates the workflow.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>API triggers&lt;/strong> come from a GraphQL call to the Rhize DB.&lt;/li>
+&lt;li>&lt;strong>Message triggers&lt;/strong> subscribe to a topic on the Rhize broker and run whenever an event is published to that topic.&lt;/li>
+&lt;li>&lt;strong>Rule triggers&lt;/strong> subscribe to the topics on a remote data source, such as an edge OPC-UA server or MQTT broker.&lt;/li>
+&lt;li>&lt;strong>Timer triggers&lt;/strong> start according to some schedule (once or repeating).&lt;/li>
+&lt;/ul>
+&lt;h2 id="start-a-workflow-from-an-api">Start a workflow from an API&lt;/h2>
+&lt;p>No matter the start event, &lt;strong>all workflows can be triggered by an API call&lt;/strong>.
+However, if the workflow uses the default blank start event, you must trigger it through API call.
+For example, an API trigger may originate from a custom frontend application or a developer&amp;rsquo;s local machine.&lt;/p></description></item><item><title>Use JSONata</title><link>https://docs.rhize.com/how-to/bpmn/use-jsonata/</link><pubDate>Fri, 10 May 2024 16:20:35 -0300</pubDate><guid>https://docs.rhize.com/how-to/bpmn/use-jsonata/</guid><description>&lt;p>&lt;a href="https://jsonata.org/">JSONata&lt;/a>
+is a query language to filter, transform, and create JSON objects.
+Rhize BPMN workflows use JSONata expressions to
+transform JSON payloads as they pass through workflow nodes and across integrated systems.
+In BPMN workflows, JSONata expressions have some essential functions:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Map data.&lt;/strong> Moving values from one data structure to another.&lt;/li>
+&lt;li>&lt;strong>Calculate data.&lt;/strong> Receiving values as input and create new data from them.&lt;/li>
+&lt;li>&lt;strong>Create logical conditions.&lt;/strong> Generate values to feed to gateways to direct the flow of the BPMN.&lt;/li>
+&lt;/ul>
+&lt;p>This guide details how to use JSONata in your Rhize environment and provides some examples relevant to manufacturing workflows.
+For the full details of the JSONata expression language, read the &lt;a href="https://docs.jsonata.org/overview.html">Official JSONata documentation&lt;/a>.&lt;/p></description></item><item><title>Handle errors and debug</title><link>https://docs.rhize.com/how-to/bpmn/debug-workflows/</link><pubDate>Wed, 24 Apr 2024 19:35:09 +0300</pubDate><guid>https://docs.rhize.com/how-to/bpmn/debug-workflows/</guid><description>&lt;p>Errors come in two categories: expected and unexpected.
+The Rhize BPMN engine has ways to handle both.&lt;/p>
+&lt;p>A robust workflow should have built-in logic to anticipate errors.
+For unexpected issues, Rhize also creates a &lt;em>trace&lt;/em> for each workflow,
+which you can use to observe the behavior and performance of the workflow at each element as it executes sequentially.
+You can also use debug flags and variables to trace variable context as it transforms across the workflow.&lt;/p></description></item><item><title>Tune BPMN performance</title><link>https://docs.rhize.com/how-to/bpmn/tune-performance/</link><pubDate>Fri, 09 Feb 2024 09:47:47 -0300</pubDate><guid>https://docs.rhize.com/how-to/bpmn/tune-performance/</guid><description>&lt;p>This page documents some tips to debug &lt;a href="https://docs.rhize.com/how-to/bpmn/create-workflow/">BPMN workflows&lt;/a> and improve their performance.&lt;/p>
+&lt;p>Manufacturing events can generate a vast amount of data.
+And a BPMN workflow can have any number of logical flows and data transformations.
+So an inefficient BPMN process can introduce performance degradations.&lt;/p>
+&lt;h2 id="manage-the-process-context-size">Manage the process context size&lt;/h2>
+
+
+&lt;div class="notices note" >
+ &lt;span class="type">Note&lt;/span> The max size of the process variable context comes from the default max payload size of NATS Jetstreams.
+To increase this size, change your NATS configuration.
+&lt;/div>
+
+&lt;p>By default, the size of the &lt;abbr title="The context and variables that are passed between tasks in a BPMN workflow">process variable context&lt;/abbr> is 1MB.
+If the sum size of all variables exceeds this limit, the BPMN process fails to execute.&lt;/p></description></item><item><title>Special variables</title><link>https://docs.rhize.com/how-to/bpmn/variables/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/bpmn/variables/</guid><description>&lt;p>Rhize designates some variable names for a special purpose in BPMN workflow.
+This list these special variables is as follows:&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Variable&lt;/th>
+ &lt;th style="text-align: left">Purpose&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>BODY&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">The name of the variable as &lt;strong>Input&lt;/strong> in &lt;a href="https://docs.rhize.com/how-to/bpmn/bpmn-elements/#intermediate-message-events">Intermediate message throws&lt;/a>. The value of this variable is the payload sent to the Rhize message broker.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>customResponse&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">A value to report at the end of a synchronous API call to trigger a workflow. On completion, the call reports whatever the value was in the &lt;code>customResponse&lt;/code> field of the GraphQL response. For details, read &lt;a href="https://docs.rhize.com/how-to/bpmn/trigger-workflows/">Trigger workflows&lt;/a>.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>__traceDebug&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">If &lt;code>true&lt;/code> at the start of the workflow, the BPMN workflow reports the variable context at each node as spans in Tempo.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title>Naming conventions</title><link>https://docs.rhize.com/how-to/bpmn/naming-conventions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/bpmn/naming-conventions/</guid><description>&lt;div class="notices note" >
+ &lt;span class="type">Note&lt;/span> These are recommendations. Your organization may adapt the conventions to its needs.
+&lt;/div>
+
+&lt;p>Each BPMN workflow has an ID, as does each node in the workflow.
+Rhize recommends adopting a set of conventions about how you name these elements.
+Standardizing BPMN names across an environment has multiple benefits:&lt;/p>
+&lt;ul>
+&lt;li>Consistent workflow naming conventions help you filter and find workflows in the process list.&lt;/li>
+&lt;li>Well-named nodes make the workflow behavior easier to understand at a glance.&lt;/li>
+&lt;li>These names provide discovery and context when debugging and tracing a workflow.&lt;/li>
+&lt;/ul>
+&lt;p>The following list describes our default naming conventions.&lt;/p></description></item><item><title>BPMN learning resources</title><link>https://docs.rhize.com/how-to/bpmn/learning-resources/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/bpmn/learning-resources/</guid><description>&lt;p>Here are some links to supplemental tools and material to help you build BPMN workflows in Rhize:&lt;/p>
+&lt;ul>
+&lt;li>&lt;i class="fa fa-github" aria-hidden="true">&lt;/i> &lt;a href="https://github.com/libremfg/bpmn-templates">BPMN templates&lt;/a>. A repository of BPMN workflows that you can download and run yourself.&lt;/li>
+&lt;li>&lt;i class="fa fa-github" aria-hidden="true">&lt;/i> &lt;a href="https://github.com/bpmn-io/bpmn-js"> bpmn.io&lt;/a>. Open source rendering toolkits and editors for BPMN 2.0. You can use the &lt;code>bpmn-js&lt;/code> for local offline building.&lt;/li>
+&lt;li>&lt;i class="fa fa-youtube" aria-hidden="true">&lt;/i> &lt;a href="https://www.youtube.com/@rhizemanufacturingdatahub">Rhize Youtube channel&lt;/a>. Includes demos of BPMN.&lt;/li>
+&lt;li>📝 &lt;a href="https://www.omg.org/spec/BPMN/2.0.2/">OMG BPMN standard&lt;/a>. The standard on which the Rhize BPMN engine and UI is based.&lt;/li>
+&lt;li>&lt;a href="https://marketplace.visualstudio.com/items?itemName=bigbug.vscode-language-jsonata">&lt;code>vscode-language-jsonata&lt;/code>&lt;/a>. A VS code extension to interactively pipe JSONata expressions together, in the literate-programming style of Jupyter notebooks.&lt;/li>
+&lt;/ul></description></item><item><title>BMPN elements</title><link>https://docs.rhize.com/how-to/bpmn/bpmn-elements/</link><pubDate>Tue, 26 Sep 2023 11:10:37 -0300</pubDate><guid>https://docs.rhize.com/how-to/bpmn/bpmn-elements/</guid><description>&lt;p>This document describes the parameters available to each BPMN element in the Rhize UI.
+These parameters control how users set conditions, transform data, access variables, call services, and so on.&lt;/p>
+&lt;h2 id="common-parameters">Common parameters&lt;/h2>
+&lt;p>Every BPMN workflow and every element that the workflow contains have the following parameters:&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Parameter&lt;/th>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">ID&lt;/td>
+ &lt;td style="text-align: left">Mandatory unique ID. For guidance, follow the &lt;a href="https://docs.rhize.com/how-to/bpmn/naming-conventions/">BPMN naming conventions&lt;/a>.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Name&lt;/td>
+ &lt;td style="text-align: left">Optional human readable name. If empty, takes ID value.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Documentation&lt;/td>
+ &lt;td style="text-align: left">Optional freeform text for additional information&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Extension properties&lt;/td>
+ &lt;td style="text-align: left">Optional metadata to add to workflow or node&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="events">Events&lt;/h2>
+&lt;p>&lt;em>Events&lt;/em> are something that happen in the course of a process.
+In BPMN, events are drawn with circles.
+Events have a &lt;em>type&lt;/em> and a &lt;em>dimension&lt;/em>.&lt;/p></description></item></channel></rss>

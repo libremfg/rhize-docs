@@ -1,14 +1,105 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Service configuration on Rhize documentation</title><link>https://docs.rhize.com/reference/service-config/</link><description>Recent content in Service configuration on Rhize documentation</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://docs.rhize.com/reference/service-config/index.xml" rel="self" type="application/rss+xml"/><item><title>Agent configuration</title><link>https://docs.rhize.com/reference/service-config/agent-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/agent-configuration/</guid><description>The Rhize agent collects data that is emitted in the manufacturing process and makes this data visible in the Rhize system. It works by connecting to equipment or groups of equipment that run over protocols such as OPC UA.
-As the communication bridge between the Rhize Data Hub and your plant, the agent has multiple functions:
-It subscribes to tags and republishes the changes in NATS. It creates an interface for the BPMN engine to send reads and writes to a data source and its associated equipment.</description></item><item><title>Audit configuration</title><link>https://docs.rhize.com/reference/service-config/audit-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/audit-configuration/</guid><description>Audit offers a secure and unchangeable record of all activities that happen within the Rhize system.
-logging Logs the configuration to the console.
-Attributes Description type Specifies the logging configuration type: json, multi, or console. (Default: console) Level Configures the level of logging: Trace, Debug, Info, Warn, Error, Fatal, and Panic. (Default: Trace) OIDC Configurations for Keycloak authentication and connection with OpenID Connect.
-Attributes Description serverUrl The URL of the OpenID Connect server.</description></item><item><title>BPMN configuration</title><link>https://docs.rhize.com/reference/service-config/bpmn-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/bpmn-configuration/</guid><description>The Rhize BPMN acts as the tailored engine for processing low-code workflows designed within the [BPMN UI]/how-to/bpmn/. The configurations manage the connection and data flow on the BPMN engine to the other Rhize microservices.
-http All HTTP configurations are measured in seconds.
-Attribute Description ReadHeaderTimeout Wait duration for the request header to be fully read before timing out. (Default: 10) ReadTimeout Wait duration for the entire request to be read before timing out.</description></item><item><title>Calendar configuration</title><link>https://docs.rhize.com/reference/service-config/calendar-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/calendar-configuration/</guid><description>The Calendar Service handles polling work calendar definitions and generating work calendar entries in the graph and time series databases.
-logging Logs the configuration to the console.
-Attributes Description type Specifies the logging configuration type: json, multi, or console. (Default: console) Level Configures the level of logging: Trace, Debug, Info, Warn, Error, Fatal, and Panic. (Default: Trace) NATS Message broker that drives Rhize&amp;rsquo;s event-based architecture.
-Attributes Description SERVER_URL The URL of the NATS server.</description></item><item><title>Core configuration</title><link>https://docs.rhize.com/reference/service-config/core-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/core-configuration/</guid><description>The Core service oversees data sources such as OPC-UA servers and manages the publication and subscription of topics within the NATS messaging system.
-logging Logs the configuration to the console.
-Attributes Description type Specifies the logging configuration type: json, multi, or console. (Default: console) Level Configures the level of logging: Trace, Debug, Info, Warn, Error, Fatal, and Panic. (Default: Trace) NATS Message broker that drives Rhize&amp;rsquo;s event-based architecture.
-Attributes Description serverUrl The URL of the NATS server.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Service configuration on Rhize documentation</title><link>https://docs.rhize.com/reference/service-config/</link><description>Recent content in Service configuration on Rhize documentation</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://docs.rhize.com/reference/service-config/index.xml" rel="self" type="application/rss+xml"/><item><title>Agent configuration</title><link>https://docs.rhize.com/reference/service-config/agent-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/agent-configuration/</guid><description>&lt;p>The Rhize agent collects data that is emitted in the manufacturing process and makes this data visible in the Rhize system.
+It works by connecting to equipment or groups of equipment that run over protocols such as OPC UA.&lt;/p>
+&lt;p>As the communication bridge between the Rhize Data Hub and your plant, the agent has multiple functions:&lt;/p>
+&lt;ul>
+&lt;li>It subscribes to tags and republishes the changes in NATS.&lt;/li>
+&lt;li>It creates an interface for the BPMN engine to send reads and writes to a data source and its associated equipment.&lt;/li>
+&lt;/ul>
+&lt;h2 id="opc-ua-authentication-types">OPC UA authentication types&lt;/h2>
+&lt;p>When authenticating over OPC UA, Rhize supports the following authentication types:&lt;/p></description></item><item><title>Audit configuration</title><link>https://docs.rhize.com/reference/service-config/audit-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/audit-configuration/</guid><description>&lt;p>Audit offers a secure and unchangeable record of all activities that happen within the Rhize system.&lt;/p>
+&lt;h2 id="logging">&lt;code>logging&lt;/code>&lt;/h2>
+&lt;p>Logs the configuration to the console.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Attributes&lt;/th>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>type&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>Level&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, and &lt;code>Panic&lt;/code>. &lt;br />(Default: &lt;code>Trace&lt;/code>)&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="oidc">&lt;code>OIDC&lt;/code>&lt;/h2>
+&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p></description></item><item><title>BPMN configuration</title><link>https://docs.rhize.com/reference/service-config/bpmn-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/bpmn-configuration/</guid><description>&lt;p>The Rhize BPMN acts as the tailored engine for processing low-code workflows designed within the [BPMN UI]/how-to/bpmn/. The configurations manage the connection and data flow on the BPMN engine to the other Rhize microservices.&lt;/p>
+&lt;h2 id="http">&lt;code>http&lt;/code>&lt;/h2>
+&lt;p>All HTTP configurations are measured in &lt;code>seconds&lt;/code>.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Attribute&lt;/th>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>ReadHeaderTimeout&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">Wait duration for the request header to be fully read before timing out. &lt;br />(Default: &lt;code>10&lt;/code>)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>ReadTimeout&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">Wait duration for the entire request to be read before timing out. &lt;br />(Default: &lt;code>15&lt;/code>)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>WriteTimeout&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">Wait duration for the entire response to be written before timing out. &lt;br />(Default: &lt;code>10&lt;/code>)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>IdleTimeout&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">Wait duration for the next request while the connection is idle before timing out. &lt;br />(Default: &lt;code>30&lt;/code>)&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="logging">&lt;code>logging&lt;/code>&lt;/h2>
+&lt;p>Logs the configurations to the console.&lt;/p></description></item><item><title>Calendar configuration</title><link>https://docs.rhize.com/reference/service-config/calendar-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/calendar-configuration/</guid><description>&lt;p>The Calendar Service handles polling work calendar definitions and generating work calendar entries in the graph and time series databases.&lt;/p>
+&lt;h2 id="logging">&lt;code>logging&lt;/code>&lt;/h2>
+&lt;p>Logs the configuration to the console.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Attributes&lt;/th>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>type&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>Level&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, and &lt;code>Panic&lt;/code>. &lt;br />(Default: &lt;code>Trace&lt;/code>)&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="nats">&lt;code>NATS&lt;/code>&lt;/h2>
+&lt;p>Message broker that drives Rhize&amp;rsquo;s event-based architecture.&lt;/p></description></item><item><title>Core configuration</title><link>https://docs.rhize.com/reference/service-config/core-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/core-configuration/</guid><description>&lt;p>The Core service oversees data sources such as OPC-UA servers and manages the publication and subscription of topics within the NATS messaging system.&lt;/p>
+&lt;h2 id="logging">&lt;code>logging&lt;/code>&lt;/h2>
+&lt;p>Logs the configuration to the console.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Attributes&lt;/th>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>type&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>Level&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, and &lt;code>Panic&lt;/code>. &lt;br />(Default: &lt;code>Trace&lt;/code>)&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="nats">&lt;code>NATS&lt;/code>&lt;/h2>
+&lt;p>Message broker that drives Rhize&amp;rsquo;s event-based architecture.&lt;/p></description></item></channel></rss>

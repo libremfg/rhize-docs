@@ -1,18 +1,59 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Restore on Rhize documentation</title><link>https://docs.rhize.com/deploy/restore/</link><description>Recent content in Restore on Rhize documentation</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 26 Mar 2024 11:20:56 -0300</lastBuildDate><atom:link href="https://docs.rhize.com/deploy/restore/index.xml" rel="self" type="application/rss+xml"/><item><title>Restore the GraphDB</title><link>https://docs.rhize.com/deploy/restore/graphdb/</link><pubDate>Thu, 19 Oct 2023 13:52:23 -0300</pubDate><guid>https://docs.rhize.com/deploy/restore/graphdb/</guid><description>This guide shows you how to restore the Graph database in your Rhize environment.
-Prerequisites Before you start, ensure you have the following:
-The GraphDB Helm chart kubectl A Database backup Steps Confirm the cluster and namespace are correct.
-## context kubectl config current-context ## namespace kubectl get namespace To change the namespace for all subsequent kubectl commands to libre, run this command:
-kubectl config set-context --current --namespace=libre For a reference of useful kubectl commands, refer to the official kubectl Cheat Sheet.</description></item><item><title>Restore Audit backup</title><link>https://docs.rhize.com/deploy/restore/audit/</link><pubDate>Tue, 26 Mar 2024 11:20:56 -0300</pubDate><guid>https://docs.rhize.com/deploy/restore/audit/</guid><description>This guide shows you the procedure to restore your Audit PostgreSQL database in your Rhize Kubernetes deployment.
-Prerequisites Before you start, ensure you have the following:
-kubectl An Audit PostgreSQL backup Also, before you start, confirm you are in the right context and namespace.
-## context kubectl config current-context ## namespace kubectl get namespace To change the namespace for all subsequent kubectl commands to libre, run this command:
-kubectl config set-context --current --namespace=libre For a reference of useful kubectl commands, refer to the official kubectl Cheat Sheet.</description></item><item><title>Restore Keycloak</title><link>https://docs.rhize.com/deploy/restore/keycloak/</link><pubDate>Mon, 08 Jan 2024 13:26:23 -0500</pubDate><guid>https://docs.rhize.com/deploy/restore/keycloak/</guid><description>This guide shows you how to restore Keycloak in your Rhize environment.
-Caution Restoring Keycloak to a running instance involves downtime.
-Typically, this downtime lasts less than a minute. The exact duration needed depends on network constraints, backup size, and the performance of the Kubernetes cluster.
-Prerequisites Before you start, ensure you have the following:
-kubectl A Keycloak backup Steps Confirm the cluster and namespace are correct:
-## context kubectl config current-context ## namespace kubectl get namespace To change the namespace for all subsequent kubectl commands to libre, run this command:</description></item><item><title>Restore Grafana</title><link>https://docs.rhize.com/deploy/restore/grafana/</link><pubDate>Thu, 19 Oct 2023 13:52:23 -0300</pubDate><guid>https://docs.rhize.com/deploy/restore/grafana/</guid><description>This guide shows you how to restore Grafana in your Rhize environment.
-Prerequisites Before you start, ensure you have the following:
-kubectl A Grafana backup Steps Confirm the cluster and namespace are correct:
-## context kubectl config current-context ## namespace kubectl get namespace To change the namespace for all subsequent kubectl commands to libre, run this command:
-kubectl config set-context --current --namespace=libre For a reference of useful kubectl commands, refer to the official kubectl Cheat Sheet.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Restore on Rhize documentation</title><link>https://docs.rhize.com/deploy/restore/</link><description>Recent content in Restore on Rhize documentation</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 26 Mar 2024 11:20:56 -0300</lastBuildDate><atom:link href="https://docs.rhize.com/deploy/restore/index.xml" rel="self" type="application/rss+xml"/><item><title>Restore the GraphDB</title><link>https://docs.rhize.com/deploy/restore/graphdb/</link><pubDate>Thu, 19 Oct 2023 13:52:23 -0300</pubDate><guid>https://docs.rhize.com/deploy/restore/graphdb/</guid><description>&lt;p>This guide shows you how to restore the Graph database in your Rhize environment.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>Before you start, ensure you have the following:&lt;/p>
+&lt;ul>
+&lt;li>The GraphDB Helm chart&lt;/li>
+&lt;li>&lt;a href="https://kubernetes.io/docs/tasks/tools/">&lt;code>kubectl&lt;/code>&lt;/a>&lt;/li>
+&lt;li>A &lt;a href="https://docs.rhize.com/deploy/backup/graphdb/">Database backup&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;!-- if procedure is very long, consider using h3s -->
+&lt;ol>
+&lt;li>
+&lt;p>Confirm the cluster and namespace are correct.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">## context&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl config current-context
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">## namespace&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl get namespace
+&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>Restore Audit backup</title><link>https://docs.rhize.com/deploy/restore/audit/</link><pubDate>Tue, 26 Mar 2024 11:20:56 -0300</pubDate><guid>https://docs.rhize.com/deploy/restore/audit/</guid><description>&lt;p>This guide shows you the procedure to restore your Audit PostgreSQL database in your Rhize Kubernetes deployment.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>Before you start, ensure you have the following:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://kubernetes.io/docs/tasks/tools/">&lt;code>kubectl&lt;/code>&lt;/a>&lt;/li>
+&lt;li>An &lt;a href="https://docs.rhize.com/deploy/backup/audit/">Audit PostgreSQL backup&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Also, before you start, confirm you are in the right context and namespace.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">## context&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl config current-context
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">## namespace&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl get namespace
+&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>Restore Keycloak</title><link>https://docs.rhize.com/deploy/restore/keycloak/</link><pubDate>Mon, 08 Jan 2024 13:26:23 -0500</pubDate><guid>https://docs.rhize.com/deploy/restore/keycloak/</guid><description>&lt;p>This guide shows you how to restore Keycloak in your Rhize environment.&lt;/p>
+&lt;div class="notices caution" >
+ &lt;span class="type">Caution&lt;/span> &lt;p>Restoring Keycloak to a running instance involves downtime.&lt;/p>
+&lt;p>Typically, this downtime lasts less than a minute. The exact duration needed depends on network constraints, backup size, and the performance of the Kubernetes cluster.&lt;/p>
+&lt;/div>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>Before you start, ensure you have the following:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://kubernetes.io/docs/tasks/tools/">&lt;code>kubectl&lt;/code>&lt;/a>&lt;/li>
+&lt;li>A &lt;a href="https://docs.rhize.com/deploy/backup/keycloak/">Keycloak backup&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Confirm the cluster and namespace are correct:&lt;/p></description></item><item><title>Restore Grafana</title><link>https://docs.rhize.com/deploy/restore/grafana/</link><pubDate>Thu, 19 Oct 2023 13:52:23 -0300</pubDate><guid>https://docs.rhize.com/deploy/restore/grafana/</guid><description>&lt;p>This guide shows you how to restore Grafana in your Rhize environment.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>Before you start, ensure you have the following:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://kubernetes.io/docs/tasks/tools/">&lt;code>kubectl&lt;/code>&lt;/a>&lt;/li>
+&lt;li>A &lt;a href="https://docs.rhize.com/deploy/backup/grafana/">Grafana backup&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Confirm the cluster and namespace are correct:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">## context&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl config current-context
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">## namespace&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl get namespace
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To change the namespace for all subsequent &lt;code>kubectl&lt;/code> commands to &lt;code>libre&lt;/code>, run this command:&lt;/p></description></item></channel></rss>
