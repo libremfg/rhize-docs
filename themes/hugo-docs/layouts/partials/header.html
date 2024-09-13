@@ -13,21 +13,18 @@
     <meta
       property="og:image"
       content="{{ .Site.BaseURL }}{{ .Params.og_image | relURL }}"
-      />
+    />
     <meta
       property="og:image:secure_url"
       content="{{ .Params.og_image | absURL }}"
-      />
+    />
     {{ else }}
     <meta
       property="og:image"
       content="{{ .Site.BaseURL }}images/rhize-logo.png"
     />
-    <meta
-      property="og:image:secure_url"
-      content="{{ "images/rhize-logo.png" | absURL }}"
-      />
-    {{ end }}
+    <meta property="og:image:secure_url" content="{{ "images/rhize-logo.png" |
+    absURL }}" /> {{ end }}
 
     <meta property="og:description" content="{{ .Description }}" />
     <meta property="og:type" content="website" />
@@ -136,17 +133,11 @@
       crossorigin="anonymous"
     ></script>
 
-
     <title>
-      {{ with .Params.seoTitle }}
-        {{ . }}
-        {{ else }}
-         {{ .Page.Title | default "Rhize Documentation" }}
-         {{ with .Section }} |
-          {{ $.Scratch.Set "sectionTitle" (. | humanize) }}
-         {{ $.Scratch.Get "sectionTitle" }}
-         {{ end }}
-      {{ end }}
+      {{ with .Params.seoTitle }} {{ . }} {{ else }} {{ .Page.Title | default
+      "Rhize Documentation" }} {{ with .Section }} | {{ $.Scratch.Set
+      "sectionTitle" (. | humanize) }} {{ $.Scratch.Get "sectionTitle" }} {{ end
+      }} {{ end }}
     </title>
 
     <link
@@ -192,9 +183,21 @@
       rel="stylesheet"
       crossorigin="anonymous"
     />
+    <!-- Start of HubSpot Embed Code -->
+    <script
+      type="text/javascript"
+      id="hs-script-loader"
+      async
+      defer
+      src="//js.hs-scripts.com/9290851.js"
+    ></script>
+    <!-- End of HubSpot Embed Code -->
 
     <!-- DocSearch -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"
+    />
   </head>
 
   <body>
@@ -210,8 +213,8 @@
         debug: false, // Set debug to true if you want to inspect the modal
       });
     </script>
-   {{ if .Store.Get "hasEcharts" }}
-   <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
-   {{ end }}
+    {{ if .Store.Get "hasEcharts" }}
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    {{ end }}
   </body>
 </html>
