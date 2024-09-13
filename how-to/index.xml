@@ -7,4 +7,9 @@ Users with appropriate permissions can access the audit log either through the U
 &lt;p>If accessing to your Rhize UI environment, a user account with appropriate permissions&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>If accessing through GraphQL, you also need:&lt;/p></description></item></channel></rss>
+&lt;p>If accessing through GraphQL, you also need:&lt;/p>
+&lt;ul>
+&lt;li>The ability to &lt;a href="https://docs.rhize.com/how-to/gql/">Use the Rhize GraphQL API&lt;/a>&lt;/li>
+&lt;li>A token configured so that &lt;code>audience&lt;/code> includes &lt;code>audit&lt;/code>, and the scopes contain &lt;code>audit:query&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;p>This scope should be created by BaaS, not manually. For details, refer to &lt;a href="https://docs.rhize.com/deploy/install/keycloak/">Set up Keycloak&lt;/a>.&lt;/p></description></item></channel></rss>

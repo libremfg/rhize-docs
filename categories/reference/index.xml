@@ -42,7 +42,37 @@ Additionally, most objects have the following fields:&lt;/p></description></item
  &lt;/tbody>
 &lt;/table>
 &lt;h2 id="urls">URLs&lt;/h2>
-&lt;p>When you create DNS records, Rhize recommends the following URLs:&lt;/p></description></item><item><title>Agent configuration</title><link>https://docs.rhize.com/reference/service-config/agent-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/agent-configuration/</guid><description>&lt;p>The Rhize agent collects data that is emitted in the manufacturing process and makes this data visible in the Rhize system.
+&lt;p>When you create DNS records, Rhize recommends the following URLs:&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Service&lt;/th>
+ &lt;th>Domain&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Admin UI&lt;/td>
+ &lt;td>&lt;code>rhize-ui.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Keycloak&lt;/td>
+ &lt;td>&lt;code>rhize-auth.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>GraphQL&lt;/td>
+ &lt;td>&lt;code>rhize-api.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>NATS&lt;/td>
+ &lt;td>&lt;code>rhize-mqtt.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Grafana&lt;/td>
+ &lt;td>&lt;code>rhize-grafana.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title>Agent configuration</title><link>https://docs.rhize.com/reference/service-config/agent-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/agent-configuration/</guid><description>&lt;p>The Rhize agent collects data that is emitted in the manufacturing process and makes this data visible in the Rhize system.
 It works by connecting to equipment or groups of equipment that run over protocols such as OPC UA.&lt;/p>
 &lt;p>As the communication bridge between the Rhize Data Hub and your plant, the agent has multiple functions:&lt;/p>
 &lt;ul>
@@ -72,7 +102,71 @@ It works by connecting to equipment or groups of equipment that run over protoco
  &lt;/tbody>
 &lt;/table>
 &lt;h2 id="oidc">&lt;code>OIDC&lt;/code>&lt;/h2>
-&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p></description></item><item><title>BPMN configuration</title><link>https://docs.rhize.com/reference/service-config/bpmn-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/bpmn-configuration/</guid><description>&lt;p>The Rhize BPMN acts as the tailored engine for processing low-code workflows designed within the [BPMN UI]/how-to/bpmn/. The configurations manage the connection and data flow on the BPMN engine to the other Rhize microservices.&lt;/p>
+&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Attributes&lt;/th>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>serverUrl&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">The URL of the OpenID Connect server. &lt;br />(Default: &lt;code>http://localhost:8090&lt;/code>)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>realm&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">Identifies the authentication domain for which the authentication request is being made.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>client_id&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">The unique identifier assigned to the client application by the OIDC server.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>client_secret&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">Used to authenticate the client when making confidential requests.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>username&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">The username credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>password&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">The password credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="opentelemetry">&lt;code>OpenTelemetry&lt;/code>&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Attributes&lt;/th>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>serverUrl&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">The URL of the OpenTelemetry server. &lt;br />(Default: &lt;code>localhost:4317&lt;/code>)&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="storage">&lt;code>storage&lt;/code>&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">Storage system for the configuration data. Value options include: &lt;code>influxdb&lt;/code> and &lt;code>pg&lt;/code>.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="influxdb">&lt;code>influxdb&lt;/code>&lt;/h2>
+&lt;p>A time-series database that is used in conjunction with Grafana designed for handling time-stamped data, such as metrics, events, and logs, that change over time.&lt;/p></description></item><item><title>BPMN configuration</title><link>https://docs.rhize.com/reference/service-config/bpmn-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/bpmn-configuration/</guid><description>&lt;p>The Rhize BPMN acts as the tailored engine for processing low-code workflows designed within the [BPMN UI]/how-to/bpmn/. The configurations manage the connection and data flow on the BPMN engine to the other Rhize microservices.&lt;/p>
 &lt;h2 id="http">&lt;code>http&lt;/code>&lt;/h2>
 &lt;p>All HTTP configurations are measured in &lt;code>seconds&lt;/code>.&lt;/p>
 &lt;table>
@@ -124,7 +218,23 @@ It works by connecting to equipment or groups of equipment that run over protoco
  &lt;/tbody>
 &lt;/table>
 &lt;h2 id="nats">&lt;code>NATS&lt;/code>&lt;/h2>
-&lt;p>Message broker that drives Rhize&amp;rsquo;s event-based architecture.&lt;/p></description></item><item><title>Core configuration</title><link>https://docs.rhize.com/reference/service-config/core-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/core-configuration/</guid><description>&lt;p>The Core service oversees data sources such as OPC-UA servers and manages the publication and subscription of topics within the NATS messaging system.&lt;/p>
+&lt;p>Message broker that drives Rhize&amp;rsquo;s event-based architecture.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Attributes&lt;/th>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>SERVER_URL&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">The URL of the NATS server. &lt;br />(Default: &lt;code>nats://system:system@localhost:4222&lt;/code>)&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="oidc">&lt;code>OIDC&lt;/code>&lt;/h2>
+&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p></description></item><item><title>Core configuration</title><link>https://docs.rhize.com/reference/service-config/core-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/core-configuration/</guid><description>&lt;p>The Core service oversees data sources such as OPC-UA servers and manages the publication and subscription of topics within the NATS messaging system.&lt;/p>
 &lt;h2 id="logging">&lt;code>logging&lt;/code>&lt;/h2>
 &lt;p>Logs the configuration to the console.&lt;/p>
 &lt;table>
@@ -146,7 +256,27 @@ It works by connecting to equipment or groups of equipment that run over protoco
  &lt;/tbody>
 &lt;/table>
 &lt;h2 id="nats">&lt;code>NATS&lt;/code>&lt;/h2>
-&lt;p>Message broker that drives Rhize&amp;rsquo;s event-based architecture.&lt;/p></description></item><item><title>Special variables</title><link>https://docs.rhize.com/how-to/bpmn/variables/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/bpmn/variables/</guid><description>&lt;p>Rhize designates some variable names for a special purpose in BPMN workflow.
+&lt;p>Message broker that drives Rhize&amp;rsquo;s event-based architecture.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Attributes&lt;/th>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>serverUrl&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">The URL of the NATS server. &lt;br />(Default: &lt;code>nats://system:system@localhost:4222&lt;/code>)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;code>replicas&lt;/code>&lt;/td>
+ &lt;td style="text-align: left">The number of replicas or instances of the NATS server to be deployed. &lt;br />(Default: &lt;code>1&lt;/code>)&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="oidc">&lt;code>OIDC&lt;/code>&lt;/h2>
+&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p></description></item><item><title>Special variables</title><link>https://docs.rhize.com/how-to/bpmn/variables/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/bpmn/variables/</guid><description>&lt;p>Rhize designates some variable names for a special purpose in BPMN workflow.
 This list these special variables is as follows:&lt;/p>
 &lt;table>
  &lt;thead>

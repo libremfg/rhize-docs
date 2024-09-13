@@ -90,7 +90,37 @@ Router has an available endpoint that is disabled by default.&lt;/p></descriptio
  &lt;/tbody>
 &lt;/table>
 &lt;h2 id="urls">URLs&lt;/h2>
-&lt;p>When you create DNS records, Rhize recommends the following URLs:&lt;/p></description></item><item><title>GraphQL types and filters</title><link>https://docs.rhize.com/reference/gql-types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/gql-types/</guid><description>&lt;p>This page provides a reference of the data types enforced by the Rhize database schema,
+&lt;p>When you create DNS records, Rhize recommends the following URLs:&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Service&lt;/th>
+ &lt;th>Domain&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Admin UI&lt;/td>
+ &lt;td>&lt;code>rhize-ui.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Keycloak&lt;/td>
+ &lt;td>&lt;code>rhize-auth.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>GraphQL&lt;/td>
+ &lt;td>&lt;code>rhize-api.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>NATS&lt;/td>
+ &lt;td>&lt;code>rhize-mqtt.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Grafana&lt;/td>
+ &lt;td>&lt;code>rhize-grafana.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title>GraphQL types and filters</title><link>https://docs.rhize.com/reference/gql-types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/gql-types/</guid><description>&lt;p>This page provides a reference of the data types enforced by the Rhize database schema,
 and of the filters that can apply to these types when you query, update, or delete a set of resources.
 For an extended guide, with examples, read &lt;a href="https://docs.rhize.com/how-to/gql/filter/">Use query filters&lt;/a>.&lt;/p>
 

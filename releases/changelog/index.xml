@@ -57,7 +57,12 @@
 &lt;li>Add option to deconstruct complex JSON payloads to simple types&lt;/li>
 &lt;/ul>
 &lt;h3 id="audit">Audit&lt;/h3>
-&lt;p>&lt;strong>Features&lt;/strong>&lt;/p></description></item><item><title>3.0.0rc08</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc08/</link><pubDate>Tue, 19 Dec 2023 13:01:02 -0500</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc08/</guid><description>&lt;p>Changelog for version 3.0.0rc08 of the Rhize application.&lt;/p>
+&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Add previous audit value relative to current&lt;/li>
+&lt;/ul>
+&lt;h3 id="baas">BAAS&lt;/h3>
+&lt;p>&lt;strong>Changes&lt;/strong>&lt;/p></description></item><item><title>3.0.0rc08</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc08/</link><pubDate>Tue, 19 Dec 2023 13:01:02 -0500</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc08/</guid><description>&lt;p>Changelog for version 3.0.0rc08 of the Rhize application.&lt;/p>
 &lt;p>&lt;em>Release date:&lt;/em> 19th December, 2023&lt;/p>
 &lt;h2 id="breaking-changes">Breaking changes&lt;/h2>
 &lt;ul>
@@ -79,7 +84,18 @@
 &lt;/ul>
 &lt;h2 id="changes-by-service">Changes by service&lt;/h2>
 &lt;h2 id="admin-ui">Admin UI&lt;/h2>
-&lt;p>&lt;strong>Features&lt;/strong>&lt;/p></description></item><item><title>3.0.0rc06</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc06/</link><pubDate>Tue, 31 Oct 2023 21:07:43 -0300</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc06/</guid><description>&lt;p>Changelog for version 3.0.0rc06 of the Rhize application.&lt;/p>
+&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Add ability to create Process Segment Version&lt;/li>
+&lt;li>Add ability to edit linked process segment resource specification property&lt;/li>
+&lt;li>Add ability to link a Hierarchy Scope to a Operational Location Class version&lt;/li>
+&lt;li>Add check for renaming a linked property with an existing property name&lt;/li>
+&lt;li>Add Homepage screen&lt;/li>
+&lt;li>Add optional link from Operational Location Class to a Operational Location Class version&lt;/li>
+&lt;li>Add Physical Asset Properties&lt;/li>
+&lt;li>Add Physical Asset Resource Specifications&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Change&lt;/strong>&lt;/p></description></item><item><title>3.0.0rc06</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc06/</link><pubDate>Tue, 31 Oct 2023 21:07:43 -0300</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc06/</guid><description>&lt;p>Changelog for version 3.0.0rc06 of the Rhize application.&lt;/p>
 &lt;p>&lt;em>Release date:&lt;/em> October 31, 2023&lt;/p>
 &lt;h2 id="breaking-changes">Breaking changes&lt;/h2>
 &lt;ul>
@@ -97,7 +113,11 @@
 &lt;li>Change struct literal unkeyed fields to keyed&lt;/li>
 &lt;/ul>
 &lt;h3 id="bpmn">BPMN&lt;/h3>
-&lt;p>&lt;strong>Breaking Changes&lt;/strong>&lt;/p></description></item><item><title>3.0.0rc05</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc05/</link><pubDate>Tue, 31 Oct 2023 20:32:34 -0300</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc05/</guid><description>&lt;p>Changelog for version 3.0.0rc05 of the Rhize application.&lt;/p>
+&lt;p>&lt;strong>Breaking Changes&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>NATS streams &lt;code>libreBpmn_command&lt;/code> and &lt;code>LibreTimerStart&lt;/code> must be deleted prior to starting&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Features&lt;/strong>&lt;/p></description></item><item><title>3.0.0rc05</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc05/</link><pubDate>Tue, 31 Oct 2023 20:32:34 -0300</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc05/</guid><description>&lt;p>Changelog for version 3.0.0rc05 of the Rhize application.&lt;/p>
 &lt;p>&lt;em>Release date:&lt;/em> October 24, 2023&lt;/p>
 &lt;h2 id="breaking-changes">Breaking changes&lt;/h2>
 &lt;ul>

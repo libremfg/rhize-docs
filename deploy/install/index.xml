@@ -27,7 +27,9 @@ In your cluster, the Keycloak server to authenticate users, services, and manage
 For a conceptual overview of the authentication flow, read &lt;a href="https://docs.rhize.com/deploy/about-openidconnect/">About OpenID Connect&lt;/a>&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>First, ensure that you have followed the instructions from &lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes">Set up Kubernetes&lt;/a>.
-All prerequisites for that step apply here.&lt;/p></description></item><item><title>Install Rhize services</title><link>https://docs.rhize.com/deploy/install/services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/deploy/install/services/</guid><description>&lt;p>The final installation step is to install the Rhize services in your Kubernetes cluster.&lt;/p>
+All prerequisites for that step apply here.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;p>Follow these steps to configure a Keycloak realm and associate Rhize services to Keycloak clients, groups, roles, and policies.&lt;/p></description></item><item><title>Install Rhize services</title><link>https://docs.rhize.com/deploy/install/services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/deploy/install/services/</guid><description>&lt;p>The final installation step is to install the Rhize services in your Kubernetes cluster.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>This topic assumes you have done the following:&lt;/p>
 &lt;ul>

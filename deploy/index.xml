@@ -22,4 +22,12 @@
 &lt;p>Open ID Connect is a security architecture that uses JSON Web Tokens (JWTs) to access secured resources.
 JWTs are issued by Keycloak. Users can also be managed in Keycloak.
 Or you can manage users in other services such as LDAP, Google, Azure AD, Facebook, etc.&lt;/p>
-&lt;p>The general authentication flow is as follows:&lt;/p></description></item></channel></rss>
+&lt;p>The general authentication flow is as follows:&lt;/p>
+&lt;ol>
+&lt;li>When a user accesses the user interface, the UI redirects to Keycloak.&lt;/li>
+&lt;li>Depending on how it is configured, Keycloak redirects to the authentication provider so that the user can log in.&lt;/li>
+&lt;li>If the user is successfully authenticated, Keycloak redirects back to the user interface with an authentication code in the URL parameters.&lt;/li>
+&lt;li>The UI calls a secure API to exchange the authentication code for a JWT.&lt;/li>
+&lt;li>The UI then uses that JWT to access secure APIs such as the Rhize GraphQL API.&lt;/li>
+&lt;/ol>
+&lt;p>The Rhize DB, libreBaas, has the public key from Keycloak, which can be used to verify the JWT.&lt;/p></description></item></channel></rss>

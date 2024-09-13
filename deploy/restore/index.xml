@@ -15,7 +15,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl config current-context
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">## namespace&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl get namespace
-&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>Restore Audit backup</title><link>https://docs.rhize.com/deploy/restore/audit/</link><pubDate>Tue, 26 Mar 2024 11:20:56 -0300</pubDate><guid>https://docs.rhize.com/deploy/restore/audit/</guid><description>&lt;p>This guide shows you the procedure to restore your Audit PostgreSQL database in your Rhize Kubernetes deployment.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To change the namespace for all subsequent &lt;code>kubectl&lt;/code> commands to &lt;code>libre&lt;/code>, run this command:&lt;/p></description></item><item><title>Restore Audit backup</title><link>https://docs.rhize.com/deploy/restore/audit/</link><pubDate>Tue, 26 Mar 2024 11:20:56 -0300</pubDate><guid>https://docs.rhize.com/deploy/restore/audit/</guid><description>&lt;p>This guide shows you the procedure to restore your Audit PostgreSQL database in your Rhize Kubernetes deployment.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>Before you start, ensure you have the following:&lt;/p>
 &lt;ul>
@@ -27,7 +27,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl config current-context
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">## namespace&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl get namespace
-&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>Restore Keycloak</title><link>https://docs.rhize.com/deploy/restore/keycloak/</link><pubDate>Mon, 08 Jan 2024 13:26:23 -0500</pubDate><guid>https://docs.rhize.com/deploy/restore/keycloak/</guid><description>&lt;p>This guide shows you how to restore Keycloak in your Rhize environment.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To change the namespace for all subsequent &lt;code>kubectl&lt;/code> commands to &lt;code>libre&lt;/code>, run this command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl config set-context --current --namespace=libre
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For a reference of useful &lt;code>kubectl&lt;/code> commands, refer to the official &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/">kubectl Cheat Sheet&lt;/a>.&lt;/p></description></item><item><title>Restore Keycloak</title><link>https://docs.rhize.com/deploy/restore/keycloak/</link><pubDate>Mon, 08 Jan 2024 13:26:23 -0500</pubDate><guid>https://docs.rhize.com/deploy/restore/keycloak/</guid><description>&lt;p>This guide shows you how to restore Keycloak in your Rhize environment.&lt;/p>
 &lt;div class="notices caution" >
  &lt;span class="type">Caution&lt;/span> &lt;p>Restoring Keycloak to a running instance involves downtime.&lt;/p>
 &lt;p>Typically, this downtime lasts less than a minute. The exact duration needed depends on network constraints, backup size, and the performance of the Kubernetes cluster.&lt;/p>
@@ -41,7 +43,12 @@
 &lt;h2 id="steps">Steps&lt;/h2>
 &lt;ol>
 &lt;li>
-&lt;p>Confirm the cluster and namespace are correct:&lt;/p></description></item><item><title>Restore Grafana</title><link>https://docs.rhize.com/deploy/restore/grafana/</link><pubDate>Thu, 19 Oct 2023 13:52:23 -0300</pubDate><guid>https://docs.rhize.com/deploy/restore/grafana/</guid><description>&lt;p>This guide shows you how to restore Grafana in your Rhize environment.&lt;/p>
+&lt;p>Confirm the cluster and namespace are correct:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">## context&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl config current-context
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">## namespace&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl get namespace
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To change the namespace for all subsequent &lt;code>kubectl&lt;/code> commands to &lt;code>libre&lt;/code>, run this command:&lt;/p></description></item><item><title>Restore Grafana</title><link>https://docs.rhize.com/deploy/restore/grafana/</link><pubDate>Thu, 19 Oct 2023 13:52:23 -0300</pubDate><guid>https://docs.rhize.com/deploy/restore/grafana/</guid><description>&lt;p>This guide shows you how to restore Grafana in your Rhize environment.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>Before you start, ensure you have the following:&lt;/p>
 &lt;ul>
@@ -56,4 +63,6 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl config current-context
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">## namespace&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl get namespace
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To change the namespace for all subsequent &lt;code>kubectl&lt;/code> commands to &lt;code>libre&lt;/code>, run this command:&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To change the namespace for all subsequent &lt;code>kubectl&lt;/code> commands to &lt;code>libre&lt;/code>, run this command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl config set-context --current --namespace=libre
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For a reference of useful &lt;code>kubectl&lt;/code> commands, refer to the official &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/">kubectl Cheat Sheet&lt;/a>.&lt;/p></description></item></channel></rss>
