@@ -672,7 +672,7 @@ $median := function($arr) {
  "std_population":$stdPop($.data.arr),
  "mean":$average($.data.arr),
  "median":$median($.data.arr),
- "mode": $max($.data.arr)
+ "max": $max($.data.arr)
  }
 )
 ```
