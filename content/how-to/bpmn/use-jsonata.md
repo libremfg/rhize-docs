@@ -476,18 +476,18 @@ $count(events[0]) > 0
 					"url": "https://volcano.si.edu/volcano.cfm?vn=354020"
 				}
 
-						
+
 			],
 					"geometry": [
 					{
 							"magnitudeValue": null,
 					"magnitudeUnit": null,
 					"date": "2024-05-06T00:00:00Z",
-					"type": "Point", 
+					"type": "Point",
 							"coordinates": [ -70.8972, -16.345 ]
 							}
 
-						
+
 			]
 		},
 
@@ -510,14 +510,14 @@ $count(events[0]) > 0
 					"url": "https://usicecenter.gov/pub/Iceberg_Tabular.csv"
 				}
 
-						
+
 			],
 					"geometry": [
 					{
 							"magnitudeValue": 208.00,
 					"magnitudeUnit": "NM^2",
 					"date": "2024-02-16T00:00:00Z",
-					"type": "Point", 
+					"type": "Point",
 							"coordinates": [ -33.27, -51.88 ]
 							},
 
@@ -525,7 +525,7 @@ $count(events[0]) > 0
 							"magnitudeValue": 208.00,
 					"magnitudeUnit": "NM^2",
 					"date": "2024-03-01T00:00:00Z",
-					"type": "Point", 
+					"type": "Point",
 							"coordinates": [ -32.82, -51.09 ]
 							},
 
@@ -533,7 +533,7 @@ $count(events[0]) > 0
 							"magnitudeValue": 208.00,
 					"magnitudeUnit": "NM^2",
 					"date": "2024-03-07T00:00:00Z",
-					"type": "Point", 
+					"type": "Point",
 							"coordinates": [ -30.95, -51.21 ]
 							}
           ]
@@ -558,18 +558,18 @@ $count(events[0]) > 0
 					"url": "https://volcano.si.edu/volcano.cfm?vn=300270"
 				}
 
-						
+
 			],
 					"geometry": [
 					{
 							"magnitudeValue": null,
 					"magnitudeUnit": null,
 					"date": "2024-04-28T00:00:00Z",
-					"type": "Point", 
+					"type": "Point",
 							"coordinates": [ 161.36, 56.653 ]
 							}
 
-						
+
 			]
 		}
 
@@ -649,48 +649,91 @@ You might use statistics such as these to calculate metrics and perform performa
 
 ```
 (
-$stdPop := function($arr) {
+  $mode := function($arr) {
     (
-        $variance := $map($arr, function($v, $i, $a) {
-            $power($v - $average($a),2)
-            });
-        $sum($variance) / $count($arr) ~> $sqrt()
-
-    )};
-
-$median := function($arr) {
+      $uniq := $distinct($arr);
+      $counted := $map($uniq, function($v){
+        { "value": $v, "count": $count($filter($arr, function($item) { $item = $v })) }
+        });
+      $modes := $filter($counted, function($item) {
+        $item.count = $max($counted.count)
+        });
+      $modes.value
+    )
+  };
+  $stdPop := function($arr) {
     (
-        $sorted := $sort($arr);
-        $length := $count($arr);
-        $mid := $floor($length/2);
-        $length % 2 = 0
-            ? $median := ($sorted[$mid-1] + $sorted[$mid]) /2
-            : $median := $sorted[$mid];
-    )};
-
- {
- "std_population":$stdPop($.data.arr),
- "mean":$average($.data.arr),
- "median":$median($.data.arr),
- "max": $max($.data.arr)
- }
+      $variance := $map($arr, function($v, $i, $a) { $power($v - $average($a), 2) });
+      $sum($variance) / $count($arr) ~> $sqrt()
+    )
+  };
+  $median := function($arr) {
+    (
+      $sorted := $sort($arr);
+      $length := $count($arr);
+      $mid := $floor($length / 2);
+      $length % 2 = 0 ? $median := ($sorted[$mid - 1] + $sorted[$mid]) / 2 : $median := $sorted[$mid]
+    )
+  };
+  {
+    "std_population": $stdPop($.data.arr),
+    "mean": $average($.data.arr),
+    "median": $median($.data.arr),
+    "mode": $mode($.data.arr),
+    "max": $max($.data.arr),
+    "min": $min($.data.arr)
+  }
 )
 ```
 {{% tabs %}}
 {{% tab "input" %}}
 ```json
 {
-  "data":{"arr":[1,3,5,7,9,11,50]}
+  "data": {
+    "arr": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      3,
+      32,
+      4,
+      5,
+      5,
+      6,
+      6,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      6,
+      6
+    ]
+  }
 }
 ```
 {{% /tab %}}
 {{% tab "output" %}}
 ```json
 {
-  "std_population": 15.71818133531,
-  "mean": 12.28571428571,
-  "median": 7,
-  "mode": 50
+  "std_population": 5.8436229339411385,
+  "mean": 4.076923076923077,
+  "median": 3,
+  "mode": [
+    1,
+    3
+  ],
+  "max": 32,
+  "min": 1
 }
 ```
 {{% /tab %}}
