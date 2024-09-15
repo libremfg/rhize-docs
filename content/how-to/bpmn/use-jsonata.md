@@ -645,7 +645,7 @@ Some of the output uses built-in JSONata functions, such as `$max()`.
 Others, such as the ones for median and standard deviation,
 are created in the expression.
 
-You might use statistics such as these to calculate metrics and perform performance analysis on historical or streamed data.
+You might use statistics such as these to calculate metrics on historical or streamed data.
 
 ```
 (
@@ -658,7 +658,7 @@ You might use statistics such as these to calculate metrics and perform performa
       $modes := $filter($counted, function($item) {
         $item.count = $max($counted.count)
         });
-      $modes.value
+      $sort($modes.value)
     )
   };
   $stdPop := function($arr) {
@@ -693,26 +693,13 @@ You might use statistics such as these to calculate metrics and perform performa
     "arr": [
       1,
       1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      2,
-      2,
-      2,
+      6,
       2,
       3,
       32,
       4,
       5,
       5,
-      6,
-      6,
-      3,
-      3,
-      3,
-      3,
       3,
       3,
       6,
@@ -725,12 +712,12 @@ You might use statistics such as these to calculate metrics and perform performa
 {{% tab "output" %}}
 ```json
 {
-  "std_population": 5.8436229339411385,
-  "mean": 4.076923076923077,
-  "median": 3,
+  "std_population": 7.72071677084591,
+  "mean": 5.923076923076923,
+  "median": 4,
   "mode": [
-    1,
-    3
+    3,
+    6
   ],
   "max": 32,
   "min": 1
