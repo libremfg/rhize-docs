@@ -8,4 +8,13 @@ Rhize needs to ensure that the workflow completes.&lt;/p>
 &lt;p>To achieve high availability and resiliency, Rhize services run in &lt;a href="https://kubernetes.io/docs/concepts/architecture/nodes/">Kubernetes nodes&lt;/a>, and the NATS message broker typically has &lt;a href="https://docs.nats.io/running-a-nats-service/nats_admin/jetstream_admin/replication">data replication&lt;/a>.
 As long as the remaining BPMN nodes are not already at full processing capacity,
 if a BPMN node fails while executing a process,
-the Rhize system recovers and finishes the workflow.&lt;/p></description></item></channel></rss>
+the Rhize system recovers and finishes the workflow.&lt;/p></description></item><item><title>Export keycloak events</title><link>https://docs.rhize.com/deploy/maintain/keycloak-events/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/deploy/maintain/keycloak-events/</guid><description>&lt;p>Keycloak stores User and Admin event data in its database. You can retrieve use this information for auditing.&lt;/p>
+&lt;p>To read Keycloak event data, use its Admin CLI. You can access the CLI from within the Keycloak&amp;rsquo;s container.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>Ensure you have the following:&lt;/p>
+&lt;ul>
+&lt;li>The ability to run commands in a Keycloak container or pod.&lt;/li>
+&lt;li>A Keycloak admin username and password.&lt;/li>
+&lt;/ul>
+&lt;h2 id="procedure">Procedure&lt;/h2>
+&lt;p>To export Keycloak events, first open a shell in your Keycloak container or pod. For example, in Kubernetes and Docker:&lt;/p></description></item></channel></rss>
