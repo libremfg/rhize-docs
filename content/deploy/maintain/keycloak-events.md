@@ -1,5 +1,5 @@
 ---
-title: Export keycloak events
+title: Export Keycloak events
 description: Guide to export events from Keycloak
 menu:
   main:
@@ -7,8 +7,9 @@ menu:
     identifier:
 ---
 
-Keycloak stores User and Admin event data in its database. You can retrieve use this information for auditing.
+Keycloak stores User and Admin event data in its database. This information can be valuable for your audits.
 
+This guide shows you how to export your Keycloak events to a file.
 To read Keycloak event data, use its Admin CLI. You can access the CLI from within the Keycloak's container.
 
 ## Prerequisites
