@@ -10,7 +10,7 @@ menu:
 Keycloak stores User and Admin event data in its database. This information can be valuable for your audits.
 
 This guide shows you how to export your Keycloak events to a file.
-To read Keycloak event data, use its Admin CLI. You can access the CLI from within the Keycloak's container.
+To read Keycloak event data, use its [Admin CLI](https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/22.0/html/server_administration_guide/admin_cli). You can access the CLI from within the Keycloak's container.
 
 ## Prerequisites
 
