@@ -47,12 +47,12 @@ Then follow these steps:
 4. When prompted, enter the Keycloak admin password.
 
 
-On success, event data **prints** to the console.
+On success, event data prints to the console.
 
-## Next Steps
+## Write event data to file
 
-The event output can be long, so consider writing it to a file.
-For example, you can try the following commands, replacing `<ADMIN_PW>` with the Keycloak admin password.
+The event output can be long.
+You can use the following commands write the data to a file (replacing `<ADMIN_PW>` with the Keycloak admin password).
 
 {{< tabs >}}
 {{% tab Kubernetes %}}
