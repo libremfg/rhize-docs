@@ -14,7 +14,11 @@ A material genealogy can help manufacturers in multiple ways:&lt;/p>
 &lt;p>Rhize provides a standards-based schema to represent material at all levels of granularity.
 The graph structure of its DB has built-in properties to associate material lots with other information about planned and performed work.
 This database has a GraphQL API, which can pull full genealogies from terse queries.
-As such, Rhize makes an &lt;strong>ideal backend to use for genealogical use cases&lt;/strong>.&lt;/p></description></item><item><title>Electronic batch records</title><link>https://docs.rhize.com/use-cases/ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/use-cases/ebr/</guid><description>&lt;p>In pharmaceutical manufacturing, an &lt;em>Electronic Batch Record (eBR)&lt;/em> is a detailed report about a specific batch.
+As such, Rhize makes an &lt;strong>ideal backend to use for genealogical use cases&lt;/strong>.&lt;/p></description></item><item><title>Electronic batch records</title><link>https://docs.rhize.com/use-cases/ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/use-cases/ebr/</guid><description>&lt;div class="notices note" >
+ &lt;span class="type">Note&lt;/span> Looking to implement Rhize for your Pharma operation?
+&lt;a href="https://rhize.com/contact-us/">Talk to an engineer&lt;/a>
+&lt;/div>
+&lt;p>In pharmaceutical manufacturing, an &lt;em>Electronic Batch Record (eBR)&lt;/em> is a detailed report about a specific batch.
 It includes information about items such as the process segments, material, personnel, and equipment.&lt;/p>
 &lt;p>As Rhize can ingest data from all levels of the manufacturing process, and do so in real-time, it is an ideal single source of truth to create eBRs.
 The process can be automated and highly efficient.
