@@ -15,7 +15,7 @@ To read Keycloak event data, use its Admin CLI. You can access the CLI from with
 
 Ensure you have the following:
 - The ability to run commands in a Keycloak container or pod.
-- A keycloak admin username and password.
+- A Keycloak admin username and password.
 
 ## Procedure
 
