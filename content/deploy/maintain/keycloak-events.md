@@ -61,9 +61,8 @@ You can use the following commands write the data to a file (replacing `<ADMIN_P
 kubectl exec -it keycloak_pod_name -n namespace_name -- \
     /bin/sh -c "cd /opt/bitnami/keycloak/bin && (echo "<ADMIN_PW>" \
     | ./kcadm.sh get realms/libre/events --server http://localhost:8080 \
-    --realm master --user admin)" \
-    | sed '1,2d' \
-    | jq '.' > output.json
+        --realm master --user admin)" \
+    | sed '1,2d' > output.json
 ```
 
 {{% /tab %}}
@@ -74,9 +73,8 @@ kubectl exec -it keycloak_pod_name -n namespace_name -- \
 docker exec -it keycloak_container_name \
     /bin/sh -c "cd /opt/bitnami/keycloak/bin && (echo "<ADMIN_PW>" \
     | ./kcadm.sh get realms/libre/events --server http://localhost:8080 \
-    --realm master --user admin)" \
-    | sed '1,2d' \
-    | jq '.' > output.json
+        --realm master --user admin)" \
+    | sed '1,2d'  > output.json
 ```
 
 {{% /tab %}}
