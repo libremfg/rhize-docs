@@ -25,10 +25,10 @@ This diagram shows how ISA-95 defines these fundamental relationships from the p
 
 
 {{< bigFigure
-src="/images/s95/diagram-rhize-definition-demand-result-l3-l4.png"
+src="/images/s95/diagram-rhize-isa-definition-demand-result-l3-l4.svg"
 alt="Models to define, demand, and produce work"
 caption="**Click to expand**"
-width="85%"
+width="95%"
 >}}
 
 ## Information exchange between models and levels
