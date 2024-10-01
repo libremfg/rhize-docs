@@ -30,12 +30,12 @@ width="80%"
 
 In this context, _level_ corresponds the degree of granularity necessary to discuss and exchange data for different purposes in the manufacturing operation.
 
-| Level | Operational Perspective             | Example responsibilities | Example system |
-|-------|-------------------------------------|--------------------------|----------------|
-| 4     | Business planning                   | {{< abbr "ERP" >}}       |                |
-| 3     | Manufacturing operations management | {{< abbr "MES" >}}/MOM   |                |
-| 2     | Monitoring and acquisition          | SCADA                    |                |
-| 1     | Sensors                             | PLCs                     |                |
+| Level | Operational Perspective             | Example system                                           |
+|-------|-------------------------------------|----------------------------------------------------------|
+| 4     | Business planning                   | {{< abbr "ERP" >}}                                       |
+| 3     | Manufacturing operations management | {{< abbr "MES" >}}, {{< abbr "CMMS" >}}, Quality control |
+| 2     | Monitoring and acquisition          | SCADA                                                    |
+| 1     | Sensors                             | PLCs                                                     |
 
 
 While **ISA-95 focuses on level 3 and the interaction between levels 3 and 4**, your models can incorporate data from level 2.
@@ -49,34 +49,14 @@ The scale may be as broad as the building where a plant makes items or as a gran
 
 {{< bigFigure 
 alt="Role-based equipment hierarchy"
-src="/images/s95/diagram-rhize-isa95-equipment-hierarchy.png"
-width="80%"
+src="/images/s95/diagram-rhize-isa95-equipment-hierarchy.svg"
+width="65%"
 >}}
 
 These equipment hierarchies often provide a naming convention to prefix addresses for plant data.
 For example, an MQTT topic might be named `site_1/bakery_2/kitchen/oven/temp_sensor`.
 In Rhize, the [Equipment UI]({{< relref "/how-to/model/master-definitions" >}}) provides an interface to model your plant according to this compositional hierarchy.
 
-
-### Definition, demand, result
-
-Almost all manufacturing processes share a common flow from definition to production to analysis:
-
-1. A business defines how a good is to be produced.
-2. The business then creates a schedule that demands that a number of these goods are produced according to its definition.
-3. The plant uses its available resources and references the existing definitions to execute the orders from the schedule.
-
-
-{{< bigFigure
-src="/images/s95/rhize-isa-definition-demand-result-l3-l4.svg"
-alt="Models to define, demand, and produce work"
-caption="**Click to expand**"
-width="85%"
->}}
-
-
-As long as a business continues to make things, its processes always include a definition of work, a demand for work, and the result of production.
-These categories frame not only the activities of manufacturing but also how we define the models that make each of these activities sensible.
 
 
 ### Relationships
@@ -114,12 +94,34 @@ width="85%"
 
 * **Product definition:** What goes into a product, and what resources does it require?
 * **Resource management:** What resources are available to produce goods? 
-* **Detailed production scheduling:** What does the business want to produce? After a business determines its demand, it can build a schedule using its available resources.
+* **Detailed production scheduling:** When does the business what it wants to produce? After a business determines its demand, it can build a schedule using its available resources.
 * **Production dispatching:** How will the plant assign the available resources to produce the schedule? Once the schedule is received, the level three system can assign resources to orders by referencing the definitions and capabilities.
 * **Production execution management:** How does the plant execute the order?
 * **Production data collection:** What data is emitted and stored during execution?
 * **Production tracking:** How can we analyze the components that went into production? For example, [EBR](https://docs.rhize.com/use-cases/ebr/), [Genealogy](https://docs.rhize.com/use-cases/genealogy/), and Track and Trace are all use-cases of production tracking..
 * **Production performance analysis:** How can we analyze how well the production went compared to its ideal? For example, measures of OEE, deviation analysis, and golden batches are all use-cases of data collection..
+
+To make sense of these activities, you also need to have a concept of the relationship between planned and performed work.
+
+### Definition, demand, result
+
+Almost all manufacturing processes share a common flow from definition to production to analysis:
+
+1. A business defines how a good is to be produced.
+2. The business then creates a schedule that demands that a number of these goods are produced according to its definition.
+3. The plant uses its available resources and references the existing definitions to execute the orders from the schedule.
+
+
+{{< bigFigure
+src="/images/s95/rhize-isa-definition-demand-result-l3-l4.svg"
+alt="Models to define, demand, and produce work"
+caption="**The relationships between requests, responses, segments, and resources across level 4 and level 3 systems.**"
+width="85%"
+>}}
+
+
+As long as a business continues to make things, its processes always include a definition of work, a demand for work, and the result of production.
+These categories frame not only the activities of manufacturing but also how we define the models that make each of these activities sensible.
 
 
 ## Frequently used models
@@ -167,7 +169,7 @@ Personnel are the people who execute a job. The personnel class is a group of pe
 Personnel properties might include things attributes such as `trained to operate heavy machinery`.
 
 
-### Hierarchy scope: when you need more equipment hierarchies
+### Hierarchy scope: multiple views of equipment hierarchies
 
 The hierarchy scope is a special grouping of equipment that does not necessarily follow the conventional role-based hierarchy. For example, Rhize uses hierarchy scope to [ define calendar rules and calculate metrics ](https://docs.rhize.com/how-to/work-calendars/about-calendars-and-overrides/#)for a set of machines whose shift rules don't necessarily correspond to the hierarchy. You might also set a hierarchy scope to calculate metrics or track production across an arbitrary grouping of equipment.
 
@@ -180,7 +182,7 @@ width="50%"
 >}}
 
 
-### Process segments: like steps, but not exactly
+### Segments: process steps to execute
 
 The process segment defines the unit of work as it is visible from the business.
 For example, a baking operation may have the segments `mixing`, `baking`, `cooling`, `testing`, and `storing`. A segment indicates that a unit of work is meaningful for the business to follow.
@@ -193,7 +195,12 @@ Process segments also serve as information containers to analyze and track the p
 
 ## Work done and requested 
 
-![Requests and responses being passed](/images/s95/diagram-rhize-isa-95-requests-responses.webp)
+{{< bigFigure 
+alt="Requests and responses being passed"
+src="/images/s95/diagram-rhize-isa-95-requests-responses.webp"
+caption="The flow of requests and performance across levels"
+width="50%"
+>}}
 
 
 Besides resources, manufacturers also need to track and describe how work is demanded and performed. 
@@ -232,7 +239,7 @@ The WorkMaster provides a set of resource specifications to do some work (it may
 
 {{< bigFigure
 alt="Schedules and requests"
-src="/images/s95/diagram-rhize-isa95-schedule-requests.png"
+src="/images/s95/diagram-rhize-isa95-schedule-requests.svg"
 caption="An operations schedule is associated with a work requests, which may be composed of child work requests"
 >}}
 
