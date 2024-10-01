@@ -84,10 +84,10 @@ you can use the Rhize [GraphQL]({{< relref "/how-to/gql">}}) API explorer.
 Much of the ISA-95 standard discusses operations at the view of level 3, that is the MES or Manufacturing Operations Management. But what activities are part of a MOM system? This is the subject of ISA-95 part 3. 
 
 {{< bigFigure
-src="/images/s95/diagram-rhize-isa95-activity-model.png"
+src="/images/s95/diagram-rhize-isa95-activity-model.svg"
 alt="The activities of a level-3 system"
-caption="**Click to expand**"
-width="85%"
+caption="Different activities of a level-3 system and their interactions with other levels. Broadly, activities can be categorized as reference, pre-execution, execution, and post-execution."
+width="75%"
 >}}
 
 
