@@ -6,7 +6,8 @@ menu:
         parent: "explanations"
 ---
 
-ISA-95 provides a common language to discuss manufacturing. When you speak with other manufacturing stakeholders, you can use the standard's precise vocabulary to ensure that everyone is speaking about the same thing. The standard also describes how different manufacturing entities relate to each other. You can use these relationships to create a full manufacturing data model. Thus learning how to speak the language of ISA-95 can help standardize both your human and machine communication.
+ISA-95 provides a common language to discuss manufacturing.
+When you speak with other manufacturing stakeholders, you can use the standard's precise vocabulary to ensure that everyone is speaking about the same thing. The standard also describes how different manufacturing entities relate to each other. You can use these relationships to create a full manufacturing data model. Thus learning how to speak the language of ISA-95 can help standardize both your human and machine communication.
 
 However, while ISA-95 is not as complex as a natural human language, it is lengthy. This document provides a brief introduction to some essential terminology.
 
