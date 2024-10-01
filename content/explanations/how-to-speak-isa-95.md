@@ -1,23 +1,28 @@
 ---
 title: How to speak ISA-95
 description: More than a standard, ISA-95 is a specialized vocabulary that describes all elements of manufacturing operation.
+hidden: true
 menu:
     main:
         parent: "explanations"
 ---
 
 ISA-95 provides a common language to discuss manufacturing.
-When you speak with other manufacturing stakeholders, you can use the standard's precise vocabulary to ensure that everyone is speaking about the same thing. The standard also describes how different manufacturing entities relate to each other. You can use these relationships to create a full manufacturing data model. Thus learning how to speak the language of ISA-95 can help standardize both your human and machine communication.
+When you speak with other manufacturing stakeholders, you can use the standard's precise vocabulary to ensure that everyone is speaking about the same thing. The standard also describes how different manufacturing entities relate to each other.
+You can use these relationships to create a full manufacturing data model.
+Thus learning how to speak the language of ISA-95 can help standardize communication between both humans and machines.
 
 However, while ISA-95 is not as complex as a natural human language, it is lengthy. This document provides a brief introduction to some essential terminology.
 
 ## Foundational concepts
 
-If you are a manufacturing veteran, these concepts might be familiar to you. But they are foundational to understanding the context that ISA-95 exists within.
+The following concepts frame all conversation that involves ISA-95.
+If you are a manufacturing veteran, they might be familiar to you.
+But a high-level review never hurt anyone.
 
 ### The levels of a manufacturing operation
 
-Discussions that involve ISA-95 frequently reference the "levels" of a system.
+Discussions that involve ISA-95 frequently reference the _levels_ of a system.
 You may hear phrases like "this workflow integrates level-4 data with level-3 activities,"
 or "the batch is a level-3 construct".
 
@@ -46,7 +51,7 @@ While **ISA-95 focuses on level 3 and the interaction between levels 3 and 4**, 
 The _equipment hierarchy_ represents how equipment can contain other equipment, as a production line might contain a conveyor belt and a pneumatic actuator.
 
 ISA-95 defines equipment across multiple scales.
-The scale may be as broad as the building where a plant makes items or as a granular as an individual unit that performs one small action across a very broad process.
+The scale may be as broad as the building where a plant makes items or as a granular as an individual unit that performs one small action within a complex process.
 
 {{< bigFigure 
 alt="Role-based equipment hierarchy"
@@ -55,7 +60,7 @@ width="65%"
 >}}
 
 These equipment hierarchies often provide a naming convention to prefix addresses for plant data.
-For example, an MQTT topic might be named `site_1/bakery_2/kitchen/oven/temp_sensor`.
+For example, an MQTT topic might be named `site1/bakery2/kitchenA/ovens/a_temp_sensor`.
 In Rhize, the [Equipment UI]({{< relref "/how-to/model/master-definitions" >}}) provides an interface to model your plant according to this compositional hierarchy.
 
 
@@ -64,11 +69,11 @@ In Rhize, the [Equipment UI]({{< relref "/how-to/model/master-definitions" >}}) 
 
 Take a look at the diagrams on this page.
 Notice how each entity has lines and arrows that connect it to other entities.
-These represent _relationships_.
+These lines and arrows represent _relationships_.
 
 Understanding how entities relate is fundamental to understanding how to the manufacturing process works as a complete system.
 Nothing in a manufacturing operation happens in a vacuum,
-and the ISA-95 describe these connections with a precise vocabulary of relation.
+and ISA-95 describes these connections with a precise vocabulary of relation.
 
 Some important relations include:
 - **Defined by**. As a member may be defined by a class.
@@ -82,7 +87,7 @@ you can use the Rhize [GraphQL]({{< relref "/how-to/gql">}}) API explorer.
 
 ## The activities of a MES
 
-Much of the ISA-95 standard discusses operations at the view of level 3, that is the MES or Manufacturing Operations Management. But what activities are part of a MOM system? This is the subject of ISA-95 part 3. 
+Much of the ISA-95 standard discusses operations at the view of level 3, that is the MES or _Manufacturing Operations Management (MOM)_ system. But what activities are part of a MOM system? This is the subject of ISA-95 part 3. 
 
 {{< bigFigure
 src="/images/s95/diagram-rhize-isa95-activity-model.svg"
@@ -91,22 +96,22 @@ caption="Different activities of a level-3 system and their interactions with ot
 width="75%"
 >}}
 
-
+The 8 major activities of a MOM are as follows:
 
 * **Product definition:** What goes into a product, and what resources does it require?
 * **Resource management:** What resources are available to produce goods? 
-* **Detailed production scheduling:** When does the business what it wants to produce? After a business determines its demand, it can build a schedule using its available resources.
-* **Production dispatching:** How will the plant assign the available resources to produce the schedule? Once the schedule is received, the level three system can assign resources to orders by referencing the definitions and capabilities.
+* **Detailed production scheduling:** When and what does the business want to produce? After a business determines its demand, it can build a schedule using its available resources.
+* **Production dispatching:** How will the plant assign the available resources to produce the schedule? Once the schedule is received, the level-3 system can assign resources to orders by referencing the definitions and capabilities.
 * **Production execution management:** How does the plant execute the order?
 * **Production data collection:** What data is emitted and stored during execution?
-* **Production tracking:** How can we analyze the components that went into production? For example, [EBR](https://docs.rhize.com/use-cases/ebr/), [Genealogy](https://docs.rhize.com/use-cases/genealogy/), and Track and Trace are all use-cases of production tracking..
-* **Production performance analysis:** How can we analyze how well the production went compared to its ideal? For example, measures of OEE, deviation analysis, and golden batches are all use-cases of data collection..
+* **Production tracking:** What components and actions went into production? For example, [EBR](https://docs.rhize.com/use-cases/ebr/), [Genealogy](https://docs.rhize.com/use-cases/genealogy/), and Track and Trace are all use-cases of production tracking.
+* **Production performance analysis:** How well did the actual production run go, as compared to its ideal? For example, measures of OEE, deviation analysis, and golden batches are all use-cases of data collection.
 
 To make sense of these activities, you also need to have a concept of the relationship between planned and performed work.
 
 ### Definition, demand, result
 
-Almost all manufacturing processes share a common flow from definition to production to analysis:
+Almost all manufacturing processes share a common flow, from _definition_ to _production_ to _analysis_:
 
 1. A business defines how a good is to be produced.
 2. The business then creates a schedule that demands that a number of these goods are produced according to its definition.
@@ -122,30 +127,30 @@ width="85%"
 
 
 As long as a business continues to make things, its processes always include a definition of work, a demand for work, and the result of production.
-These categories frame not only the activities of manufacturing but also how we define the models that make each of these activities sensible.
+These categories inform the activities of manufacturing but the models of production that make each of these activities sensible.
 
 
 ## Frequently used models
 
-ISA-95 also describes how production _entities_ relate to one another within and across the manufacturing activities. Entities are physical or abstract objects that make up the parts and composition of a manufacturing process. Here are some of the most common entities.
+ISA-95 describes how production _entities_ relate to one another within and across the manufacturing activities. Entities are physical or abstract objects that make up the parts and composition of a manufacturing process. Here are some of the most common entities.
 
 
 ### Resources
 
-All aspects of manufacturing involve resources. Without resources nothing can be done or made. ISA-95 Parts 1 and 2 provides a rich and extensive vocabulary for discussing resources. Generally the resource models have the following patterns: 
+All aspects of manufacturing involve resources. Without resources nothing can be done or made. ISA-95 Parts 1 and 2 provide a rich and extensive vocabulary for discussing resources. Generally the resource models have the following patterns: 
 
 
 * _Classes_ provide groupings and associations
-* The members of a class are objects that exist in the real world. These "instances" are represented with versions
-* As the work executes, the _actuals define what resource was really used for a specific job
-* These resources are part of specifications and requirements for definitions of work
+* The members of a class are objects that exist in the real world. These _instances_ are represented with versions.
+* As the work executes, the _actuals_ define what resource was really used for a specific job.
+* These resources are part of specifications and requirements for definitions of work:
 
-All of these levels can have properties.
+All of these resource models can be extended with _properties_.
 
 
 #### Equipment
 
-Examples of equipment classes might be "rotating widgets". An instance,  called _Equipment,_ of this class might be `compressor-5, version 2`. The equipment actual could be the ID of the compressor that really performed a specific job.
+Examples of equipment classes might be `rotating widgets`. An instance,  called _Equipment,_ of this class might be `compressor-5, version 2`. The equipment actual could be the ID of the compressor that really performed a specific job.
 
 
 Equipment has hierarchical organization according to the role-based hierarchy and, optionally, the hierarchy scope.
@@ -155,17 +160,26 @@ Properties of this equipment might be `rotation speed`.
 
 #### Material
 
-Material classes represent a broad group of associated materials. Material definitions provide a specific type of material to achieve standardized use across an operation. The material lot and material sublots comprise the identifiable units that go into a larger assembly. For example: a material lot might be a pallet of sugar from a supplier, and the sublot might be the individual units. A material actual is the quantity of material in a job that is used, consumed, and so on.
+Material classes represent a broad group of associated materials.
+_Material definitions_ provide a specific type of material to achieve standardized use across an operation.
+The _material lot_ and material _sublots_ comprise the identifiable units that go into a larger assembly.
+For example, a material lot might be a pallet of sugar from a supplier, and the sublot might be the individual sugar bags.
+A material actual is the quantity of material in a job that is used, consumed, and so on.
 
 Material properties might include `meltingPoint` or `containsLactose`.
 
-
-![Material class, definition, lot, and sublot](/images/s95/diagram-rhize-material-class-definition-lot.png)
+{{< bigFigure
+alt="Material class, definition, lot, and sublot"
+src="/images/s95/diagram-rhize-material-class-definition-lot.png"
+width="50%"
+>}}
 
 
 #### Personnel
 
-Personnel are the people who execute a job. The personnel class is a group of people with an associated function, the person is the "instance" of this class, where "version" may track properties like certifications, and the personnel actual are the people who really perform a certain job. 
+Personnel are the people who execute a job. The personnel class is a group of people with an associated function.
+The person is the "instance" of this class, where "version" may track properties like certifications.
+The personnel actual are the people who really perform a certain job. 
 
 Personnel properties might include things attributes such as `trained to operate heavy machinery`.
 
@@ -186,7 +200,9 @@ width="50%"
 ### Segments: process steps to execute
 
 The process segment defines the unit of work as it is visible from the business.
-For example, a baking operation may have the segments `mixing`, `baking`, `cooling`, `testing`, and `storing`. A segment indicates that a unit of work is meaningful for the business to follow.
+For example, a baking operation may have the segments `mixing`, `baking`, `cooling`, `testing`, and `storing`.
+
+A segment indicates that a unit of work is meaningful for the business to follow.
 While `mixing` might be example of a valid segment, an individual turn of the mixing motor would be a very unlikely segment, as the action is too granular to provide any useful context to the business.
 
 A segment may specify its necessary work definitions and resources.
@@ -206,32 +222,38 @@ width="50%"
 
 Besides resources, manufacturers also need to track and describe how work is demanded and performed. 
 
-ISA-95 offers vocabulary to describe the views of this work from both the level-4 (business) perspective and the level 3 (execution) perspective.If you're wondering whether a model refers to level three or four, keep this trick in mind:
+ISA-95 offers vocabulary to describe the views of this work from both the level-4 (business) perspective and the level 3 (execution) perspective.
+If you're wondering whether a model refers to level three or four, keep this trick in mind:
 
-**Models that start with "operation" refer to level 4; and models that start with "work" refer to level 3.**
+**Models that start with "operation" refer to level 4; models that start with "work" refer to level 3.**
 
 
 ### The operational view of work
 
-In all conventional manufacturing, demand originates from the "top," that is, from the business or level 4 system. And production results are compared against this original demand. Thus, all conventional models of manufacturing will include a model of demand, definitions, and results from the level 4 perspective.
+In all conventional manufacturing, demand originates from the "top," that is, from the business or level-4 system. And production results are compared against this original demand. Thus, all conventional models of manufacturing include a model of demand, definitions, and results from the level-4 perspective.
 
-This operational view of work is defined in a section of ISA-95 part 2. Here is a quick primer on the major models: 
+This operational view of work is defined in ISA-95 part 2.
+Here is a quick primer on the major models: 
 
 * **Operations definitions** define the resources required to perform a schedule.
-* **Operations schedules** include the _requests_ to produce goods.These requests typically demand that production occur at certain times or by certain deadlines.
+* **Operations schedules** include the _requests_ to produce goods.
+These requests typically demand that production occur at certain times or by certain deadlines.
 * **Operations performance** is the collection of _responses_ to a request. Performance models provide information about the _state_ of a request, such as `WAITING`, `READY`, `RUNNING`, and `COMPLETED`.
 * **Operations capability** provides information about the resources for past and future operations. These capability models provide a way to determine a plant's theoretical maximum capacity and a way to analyze how well past production operations performed against this capacity.
 
-### The level 3 view of work
+### The level-3 view of work
 
 ISA-95 part 4 defines the level-3 models of work. These models are more granular and detailed than their corresponding operational models.
 
-Typically, one operations request corresponds to one work request, where the difference being the degree of detail reported in the work request. For example, the operations request may ask for 1000 intermediate widgets, and the work request produces these intermediate widgets. Note, however, that a work request may also fulfill multiple or even fractional operations requests―for example, a work request may produce 1500 intermediate widgets, allocating 1000 to fulfill the operational request and sending the spare 500 to storage.
+Typically, one operations request corresponds to one work request, and they differ the degree of detail reported in the work request. For example, the operations request may ask for 1000 intermediate widgets, and the work request produces these intermediate widgets.
+
+However, a work request may also fulfill multiple or even fractional operations requests―for example, a work request may produce 1500 intermediate widgets, allocating 1000 to fulfill the operational request and sending the spare 500 to storage.
 
 
 #### Defined work
 
-The WorkMaster provides a set of resource specifications to do some work (it may be associated with segment).  When it is planned in a real job order, the workMaster is "cloned" as a _workDirective.-_
+The _Work Master_ provides a set of resource specifications to do some work. It may be associated with segment.
+When it is planned in a real job order, the work master is "cloned" as a _Work Directive._
 
 
 #### Planned work
@@ -250,6 +272,8 @@ Planned work broadly follows the following hierarchy
 * __Job Order__: An order to execute a specific part in a work request
 
 #### Performed work
+
+The performance of a production run is queried through the _job response_. This response exists in the following hierarchy:
 
 * __Work Performance__. A collection of work responses that detail the performance of the work done for some work schedule
 * __Work response:__ A collection of job responses that map to a work request
