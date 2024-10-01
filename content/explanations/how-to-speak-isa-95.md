@@ -33,7 +33,6 @@ src="/images/s95/diagram-rhize-isa95-levels.svg"
 width="80%"
 >}}
 
-
 In this context, _level_ corresponds the degree of granularity necessary to discuss and exchange data for different purposes in the manufacturing operation.
 
 | Level | Operational Perspective             | Example system                                           |
@@ -43,10 +42,9 @@ In this context, _level_ corresponds the degree of granularity necessary to disc
 | 2     | Monitoring and acquisition          | SCADA                                                    |
 | 1     | Sensors                             | PLCs                                                     |
 
-
 While **ISA-95 focuses on level 3 and the interaction between levels 3 and 4**, your models can incorporate data from level 2.
 
-### Role based equipment hierarchy: the view from up top
+### Role based equipment hierarchy: the view from up top {#rbeh}
 
 The _equipment hierarchy_ represents how equipment can contain other equipment, as a production line might contain a conveyor belt and a pneumatic actuator.
 
@@ -62,8 +60,6 @@ width="65%"
 These equipment hierarchies often provide a naming convention to prefix addresses for plant data.
 For example, an MQTT topic might be named `site1/bakery2/kitchenA/ovens/a_temp_sensor`.
 In Rhize, the [Equipment UI]({{< relref "/how-to/model/master-definitions" >}}) provides an interface to model your plant according to this compositional hierarchy.
-
-
 
 ### Relationships
 
@@ -85,7 +81,7 @@ For the full list of relationships, refer to ISA-95 Part 2.
 To explore the relationships in an interactive way,
 you can use the Rhize [GraphQL]({{< relref "/how-to/gql">}}) API explorer.
 
-## The activities of a MES
+## The activities of an MES
 
 Much of the ISA-95 standard discusses operations at the view of level 3, that is the MES or _Manufacturing Operations Management (MOM)_ system. But what activities are part of a MOM system? This is the subject of ISA-95 part 3. 
 
@@ -129,16 +125,13 @@ width="85%"
 As long as a business continues to make things, its processes always include a definition of work, a demand for work, and the result of production.
 These categories inform the activities of manufacturing but the models of production that make each of these activities sensible.
 
-
 ## Frequently used models
 
 ISA-95 describes how production _entities_ relate to one another within and across the manufacturing activities. Entities are physical or abstract objects that make up the parts and composition of a manufacturing process. Here are some of the most common entities.
 
-
 ### Resources
 
 All aspects of manufacturing involve resources. Without resources nothing can be done or made. ISA-95 Parts 1 and 2 provide a rich and extensive vocabulary for discussing resources. Generally the resource models have the following patterns: 
-
 
 * _Classes_ provide groupings and associations
 * The members of a class are objects that exist in the real world. These _instances_ are represented with versions.
@@ -147,16 +140,17 @@ All aspects of manufacturing involve resources. Without resources nothing can be
 
 All of these resource models can be extended with _properties_.
 
-
 #### Equipment
 
-Examples of equipment classes might be `rotating widgets`. An instance,  called _Equipment,_ of this class might be `compressor-5, version 2`. The equipment actual could be the ID of the compressor that really performed a specific job.
+{{< notice >}}
+:movie_camera: [Creating an equipment model in Rhize](https://www.youtube.com/watch?v=Wh6sYCuNYJI&list=PLeYowHxqJrUi5ojKBvYg3CnfYdvOqVMi5&index=1)
+{{< /notice >}}
 
+Examples of equipment classes might be `rotating widgets`. An instance,  called _Equipment,_ of this class might be `compressor-5, version 2`. The equipment actual could be the ID of the compressor that really performed a specific job.
 
 Equipment has hierarchical organization according to the role-based hierarchy and, optionally, the hierarchy scope.
 
 Properties of this equipment might be `rotation speed`.
-
 
 #### Material
 
@@ -176,19 +170,20 @@ src="/images/s95/diagram-rhize-material-class-definition-lot.png"
 width="50%"
 >}}
 
-
 #### Personnel
 
-Personnel are the people who execute a job. The personnel class is a group of people with an associated function.
-The person is the "instance" of this class, where "version" may track properties like certifications.
+Personnel are the people who execute a job.
+
+The personnel class is a group of people with an associated function, for example "coil operators."
+The person is the "instance" of this class, and the "version" of a person may track properties like certifications.
 The personnel actual are the people who really perform a certain job. 
 
 Personnel properties might include things attributes such as `trained to operate heavy machinery`.
 
-
 ### Hierarchy scope: multiple views of equipment hierarchies
 
-The hierarchy scope is a special grouping of equipment that does not necessarily follow the conventional role-based hierarchy. For example, Rhize uses hierarchy scope to [ define calendar rules and calculate metrics ](https://docs.rhize.com/how-to/work-calendars/about-calendars-and-overrides/#)for a set of machines whose shift rules don't necessarily correspond to the hierarchy. You might also set a hierarchy scope to calculate metrics or track production across an arbitrary grouping of equipment.
+The hierarchy scope is a special grouping of equipment that does not necessarily follow the conventional role-based hierarchy.
+For example, Rhize uses hierarchy scope to [ define calendar rules and calculate metrics ](https://docs.rhize.com/how-to/work-calendars/about-calendars-and-overrides/#)for a set of machines whose shift rules don't necessarily correspond to the hierarchy. You might also set a hierarchy scope to calculate metrics or track production across an arbitrary grouping of equipment.
 
 
 {{< bigFigure
@@ -244,6 +239,13 @@ These requests typically demand that production occur at certain times or by cer
 
 ### The level-3 view of work
 
+{{< bigFigure
+alt="Requests and responses being passed"
+src="/images/s95/diagram-rhize-isa-95-requests-responses.webp"
+caption="The flow of requests and performance from level 4 to level 3"
+width="50%"
+>}}
+
 ISA-95 part 4 defines the level-3 models of work. These models are more granular and detailed than their corresponding operational models.
 
 Typically, one operations request corresponds to one work request, and they differ the degree of detail reported in the work request. For example, the operations request may ask for 1000 intermediate widgets, and the work request produces these intermediate widgets.
@@ -256,14 +258,6 @@ The _Work Master_ provides a set of resource specifications to do some work. It 
 When it is planned in a real job order, the work master is "cloned" as a _Work Directive._
 
 #### Planned work
-
-{{< bigFigure
-alt="Requests and responses being passed"
-src="/images/s95/diagram-rhize-isa-95-requests-responses.webp"
-caption="The flow of requests and performance across levels"
-width="50%"
->}}
-
 Planned work broadly follows the following hierarchy
 
 * __Work Schedule__: A schedule to perform some batch, which contains one or more work requests
