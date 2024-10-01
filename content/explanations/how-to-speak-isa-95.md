@@ -1,14 +1,14 @@
 ---
 title: How to speak ISA-95
 description: More than a standard, ISA-95 is a specialized vocabulary that describes all elements of manufacturing operation.
-hidden: true
 menu:
     main:
         parent: "explanations"
 ---
 
-ISA-95 provides a common language to discuss manufacturing.
-When you speak with other manufacturing stakeholders, you can use the standard's precise vocabulary to ensure that everyone is speaking about the same thing. The standard also describes how different manufacturing entities relate to each other.
+[ISA-95](https://www.isa.org/store?query=isa95) provides a common language to discuss manufacturing.
+When you speak with other manufacturing stakeholders, you can use the standard's precise vocabulary to ensure that everyone is speaking about the same thing.
+The standard also describes how different manufacturing entities relate to each other.
 You can use these relationships to create a full manufacturing data model.
 Thus learning how to speak the language of ISA-95 can help standardize communication between both humans and machines.
 
@@ -214,13 +214,12 @@ Process segments also serve as information containers to analyze and track the p
 
 ## Work done and requested 
 
-{{< bigFigure 
-alt="Requests and responses being passed"
-src="/images/s95/diagram-rhize-isa-95-requests-responses.webp"
-caption="The flow of requests and performance across levels"
-width="50%"
+{{< bigFigure
+alt="Schedules and requests"
+src="/images/s95/diagram-rhize-isa95-schedule-requests.svg"
+caption="An operations schedule is associated with a work requests, which has associated job orders"
+width="60%"
 >}}
-
 
 Besides resources, manufacturers also need to track and describe how work is demanded and performed. 
 
@@ -251,20 +250,18 @@ Typically, one operations request corresponds to one work request, and they diff
 
 However, a work request may also fulfill multiple or even fractional operations requests―for example, a work request may produce 1500 intermediate widgets, allocating 1000 to fulfill the operational request and sending the spare 500 to storage.
 
-
 #### Defined work
 
 The _Work Master_ provides a set of resource specifications to do some work. It may be associated with segment.
 When it is planned in a real job order, the work master is "cloned" as a _Work Directive._
 
-
 #### Planned work
 
 {{< bigFigure
-alt="Schedules and requests"
-src="/images/s95/diagram-rhize-isa95-schedule-requests.svg"
-caption="An operations schedule is associated with a work requests, which has associated job orders"
-width="60%"
+alt="Requests and responses being passed"
+src="/images/s95/diagram-rhize-isa-95-requests-responses.webp"
+caption="The flow of requests and performance across levels"
+width="50%"
 >}}
 
 Planned work broadly follows the following hierarchy
@@ -274,7 +271,6 @@ Planned work broadly follows the following hierarchy
 * __Job Order__: An order to execute a specific part in a work request
 
 #### Performed work
-
 
 The performance of a production run is queried through the _job response_. This response exists in the following hierarchy:
 
@@ -286,6 +282,8 @@ The performance of a production run is queried through the _job response_. This 
 
 ## Now you're talking
 
-In this document, you've learned the basic vocabulary to discuss manufacturing according to a standardized model. However, this is still an extremely brief entry into ISA-95, whose full standard has 9 parts and thousands of words.
+In this document, you've learned the basic vocabulary to discuss manufacturing according to a standardized model.
+However, this is still an extremely brief entry into ISA-95, whose full standard has 9 parts and thousands of words.
  
-Nevertheless, the best way to acquire a language is to practice it. Can you think of how all the preceding terms apply to your manufacturing operation? Try to apply the terms with some colleagues!
+Nevertheless, the best way to acquire a language is to practice it.
+Can you think of how all the preceding terms apply to your manufacturing operation? Try to apply the terms with some colleagues!
