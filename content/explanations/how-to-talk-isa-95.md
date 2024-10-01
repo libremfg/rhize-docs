@@ -233,32 +233,26 @@ Typically, one operations request corresponds to one work request, where the dif
 The WorkMaster provides a set of resource specifications to do some work (it may be associated with segment).  When it is planned in a real job order, the workMaster is "cloned" as a _workDirective.-_
 
 
-#### __Planned work__
-
-
+#### Planned work
 
 {{< bigFigure
 alt="Schedules and requests"
 src="/images/s95/diagram-rhize-isa95-schedule-requests.svg"
-caption="An operations schedule is associated with a work requests, which may be composed of child work requests"
+caption="An operations schedule is associated with a work requests, which has associated job orders"
+width="60%"
 >}}
-
-
 
 Planned work broadly follows the following hierarchy
 
 * __Work Schedule__: A schedule to perform some batch, which contains one or more work requests
 * __Work Request__: A collection of job orders to make something
-* __Job Order__: An order to execute a specific part in a work requests
-
+* __Job Order__: An order to execute a specific part in a work request
 
 #### Performed work
-
 
 * __Work Performance__. A collection of work responses that detail the performance of the work done for some work schedule
 * __Work response:__ A collection of job responses that map to a work request
 * __Job response__: The data about the real performance of a job order, including its start and end times and resource actuals.
-
 
 ## Now you're talking
 
