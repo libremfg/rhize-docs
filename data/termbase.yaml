@@ -17,6 +17,9 @@
 - term: Catch event
   definition: >-
     In BPMN, a catch event reacts to a trigger (compared to a <a href="#throw-event">throw event</a>, which returns some result). Only start and intermediate events can catch.
+- term: Computerized maintenance management system
+  abbr: CMMS
+  definition: A Source of information about an organization's maintenance operations
 - term: Data source
   definition: A source of real-time data that is collected by the <a href="#agent">Rhize agent</a>, such as an MQTT or OPC UA device
 - term: Discrete manufacturing
