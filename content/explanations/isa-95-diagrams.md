@@ -28,7 +28,7 @@ This diagram shows how ISA-95 defines these fundamental relationships from the p
 src="/images/s95/diagram-rhize-isa-definition-demand-result-l3-l4.svg"
 alt="Models to define, demand, and produce work"
 caption="**Click to expand**"
-width="95%"
+width="9%"
 >}}
 
 ## Information exchange between models and levels
@@ -62,7 +62,7 @@ Though the focus of this model is on level-3 activities, the data that is exchan
 These activities are explained in thorough detail in [ISA-95 Part 3](https://webstore.ansi.org/preview-pages/ISA/preview_ANSI+ISA+95.00.03-2013.pdf).
 
 {{< bigFigure
-src="/images/s95/diagram-rhize-isa95-activity-model.png"
+src="/images/s95/diagram-rhize-isa95-activity-model.svg"
 alt="The activities of a level-3 system"
 caption="**Click to expand**"
 width="85%"
