@@ -119,7 +119,7 @@ Almost all manufacturing processes share a common flow, from _definition_ to _pr
 
 
 {{< bigFigure
-src="/images/s95/rhize-isa-definition-demand-result-l3-l4.svg"
+src="/images/s95/diagram-rhize-isa-definition-demand-result-l3-l4.svg"
 alt="Models to define, demand, and produce work"
 caption="**The relationships between requests, responses, segments, and resources across level 4 and level 3 systems.**"
 width="85%"
