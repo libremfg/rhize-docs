@@ -25,4 +25,7 @@ These to do this, these are our explicit design goals:&lt;/p>
 &lt;li>Expose this system through an interface that is accessible to the widest number of stakeholders in the manufacturing operation.&lt;/li>
 &lt;/ul>
 
-&lt;p>These following topics explain the concepts, architecture, and philosophy that underpin the Rhize application:&lt;/p></description></item></channel></rss>
+&lt;p>These following topics explain the concepts, architecture, and philosophy that underpin the Rhize application:&lt;/p></description></item><item><title>How to speak ISA-95</title><link>https://docs.rhize.com/explanations/how-to-speak-isa-95/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/explanations/how-to-speak-isa-95/</guid><description>&lt;p>ISA-95 provides a common language to discuss manufacturing.
+When you speak with other manufacturing stakeholders, you can use the standard&amp;rsquo;s precise vocabulary to ensure that everyone is speaking about the same thing. The standard also describes how different manufacturing entities relate to each other.
+You can use these relationships to create a full manufacturing data model.
+Thus learning how to speak the language of ISA-95 can help standardize communication between both humans and machines.&lt;/p></description></item></channel></rss>

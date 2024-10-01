@@ -14,4 +14,7 @@ To read about how the standard fits within the data architecture of Rhize, read 
 &lt;/ul>
 &lt;p>Between these two points, the manufacturing operations performs this work according to its definitions
 of work and the resources that it has available.
-This diagram shows how ISA-95 defines these fundamental relationships from the perspective of the business (ERP) and manufacturing operation (MOM).&lt;/p></description></item></channel></rss>
+This diagram shows how ISA-95 defines these fundamental relationships from the perspective of the business (ERP) and manufacturing operation (MOM).&lt;/p></description></item><item><title>How to speak ISA-95</title><link>https://docs.rhize.com/explanations/how-to-speak-isa-95/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/explanations/how-to-speak-isa-95/</guid><description>&lt;p>ISA-95 provides a common language to discuss manufacturing.
+When you speak with other manufacturing stakeholders, you can use the standard&amp;rsquo;s precise vocabulary to ensure that everyone is speaking about the same thing. The standard also describes how different manufacturing entities relate to each other.
+You can use these relationships to create a full manufacturing data model.
+Thus learning how to speak the language of ISA-95 can help standardize communication between both humans and machines.&lt;/p></description></item></channel></rss>
