@@ -160,6 +160,8 @@ Properties of this equipment might be `rotation speed`.
 
 #### Material
 
+:movie_camera: [Five ways to view material through ISA-95](https://www.youtube.com/watch?v=Xd5kj1TUQkY)
+
 Material classes represent a broad group of associated materials.
 _Material definitions_ provide a specific type of material to achieve standardized use across an operation.
 The _material lot_ and material _sublots_ comprise the identifiable units that go into a larger assembly.
@@ -273,11 +275,14 @@ Planned work broadly follows the following hierarchy
 
 #### Performed work
 
+
 The performance of a production run is queried through the _job response_. This response exists in the following hierarchy:
 
 * __Work Performance__. A collection of work responses that detail the performance of the work done for some work schedule
 * __Work response:__ A collection of job responses that map to a work request
 * __Job response__: The data about the real performance of a job order, including its start and end times and resource actuals.
+
+:movie_camera: [Query a job response and its linked data](https://www.youtube.com/watch?v=EkAbNbx6LQw&t=2s)
 
 ## Now you're talking
 
