@@ -4,8 +4,12 @@ All these models are based on the ISA-95 standard, mostly from &lt;a href="https
 
 
 &lt;div class="notices note" >
- &lt;span class="type">Note&lt;/span> For visual examples of how some of these models relate,
-look at our page of &lt;a href="https://docs.rhize.com/explanations/isa-95-diagrams/">ISA-95 Diagrams&lt;/a>.
+ &lt;span class="type">Note&lt;/span> &lt;ul>
+&lt;li>For an introduction to the language of ISA-95, read &lt;a href="https://docs.rhize.com/explanations/how-to-speak-isa-95/">How to speak ISA-95&lt;/a>&lt;/li>
+&lt;li>For visual examples of how some of these models relate,
+look at our page of &lt;a href="https://docs.rhize.com/explanations/isa-95-diagrams/">ISA-95 Diagrams&lt;/a>.&lt;/li>
+&lt;/ul>
+
 &lt;/div>
 
 &lt;h2 id="global-object-fields">Global object fields&lt;/h2>
