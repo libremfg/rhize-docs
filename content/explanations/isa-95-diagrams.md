@@ -40,11 +40,12 @@ Each entity in the diagram carries information in multiple dimensions, including
 - Its relationship to other entities
 - Its role in the integration between level-3 and level-4 systems.
 
-{{< notice "note" >}}
+{{< watch 
 
-:movie_camera: Watch two manufacturing experts explain this diagram on [episode 1 of the Rhize podcast](https://www.youtube.com/watch?v=qfUnX-_J-to).
+text="Watch two manufacturing experts explain this diagram"
+src="https://www.youtube.com/watch?v=qfUnX-_J-to"
 
-{{< /notice >}}
+ >}}
 
 {{< bigFigure
 src="/images/s95/rhize-s95-p2-p4-high-level-overview-ISA95_P2_P4.svg"
@@ -68,11 +69,12 @@ caption="**Click to expand**"
 width="85%"
 >}}
 
-{{< notice "note" >}}
+{{< watch
+text="Episode 2 of the Rhize podcast"
+src="https://www.youtube.com/watch?v=NeYVCdmQq-o&t=130s&themeRefresh=1"
+>}}
 
-:movie_camera: Watch two manufacturing experts explain this diagram on [episode 2 of the Rhize podcast](https://www.youtube.com/watch?v=NeYVCdmQq-o&t=130s&themeRefresh=1).
 
-{{< /notice >}}
 
 ## Overview of relations, levels, and stages
 
