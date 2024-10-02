@@ -24,10 +24,6 @@ But a high-level review never hurt anyone.
 
 ### The levels of a manufacturing operation
 
-Discussions that involve ISA-95 frequently reference the _levels_ of a system.
-You may hear phrases like "this workflow integrates level-4 data with level-3 activities,"
-or "the batch is a level-3 construct".
-
 
 {{< bigFigure 
 alt="Levels of a manufacturing operation"
@@ -35,7 +31,12 @@ src="/images/s95/diagram-rhize-isa95-levels.svg"
 width="80%"
 >}}
 
+Discussions that involve ISA-95 frequently reference the _levels_ of a system.
+You may hear phrases like "this workflow integrates level-4 data with level-3 activities,"
+or "the batch is a level-3 construct".
 In this context, _level_ corresponds the degree of granularity necessary to discuss and exchange data for different purposes in the manufacturing operation.
+
+
 
 | Level | Operational Perspective             | Example system                                           |
 |-------|-------------------------------------|----------------------------------------------------------|
