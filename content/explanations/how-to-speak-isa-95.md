@@ -8,8 +8,10 @@ menu:
 
 [ISA-95](https://www.isa.org/store?query=isa95) provides a common language to discuss manufacturing.
 When you speak with other manufacturing stakeholders, you can use the standard's precise vocabulary to ensure that everyone is speaking about the same thing.
+
 The standard also describes how different manufacturing entities relate to each other.
-You can use these relationships to create a full manufacturing data model.
+[With the right application architecture](https://rhize.com/blog/reframing-perspective-on-isa95/),
+these relationships can form a complete and coherent data model of a full manufacturing operation.
 Thus learning how to speak the language of ISA-95 can help standardize communication between both humans and machines.
 
 However, while ISA-95 is not as complex as a natural human language, it is lengthy. This document provides a brief introduction to some essential terminology.
@@ -123,11 +125,13 @@ width="85%"
 
 
 As long as a business continues to make things, its processes always include a definition of work, a demand for work, and the result of production.
-These categories inform the activities of manufacturing but the models of production that make each of these activities sensible.
+These categories inform not only the activities of manufacturing but also the models of production that make each of these activities sensible.
 
 ## Frequently used models
 
-ISA-95 describes how production _entities_ relate to one another within and across the manufacturing activities. Entities are physical or abstract objects that make up the parts and composition of a manufacturing process. Here are some of the most common entities.
+ISA-95 describes how production _entities_ relate to one another within and across the manufacturing activities.
+Entities are physical or abstract objects that make up the composition of a manufacturing process in its past, present, future, and ideal state.
+Here are some of the most common entities.
 
 ### Resources
 
