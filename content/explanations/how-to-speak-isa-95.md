@@ -66,8 +66,7 @@ In Rhize, the [Equipment UI]({{< relref "/how-to/model/master-definitions" >}}) 
 
 ### Relationships
 
-Take a look at the diagrams on this page.
-Notice how each entity has lines and arrows that connect it to other entities.
+Most diagrams about models in ISA-95 show a collection of objects that are connected by lines and arrows.
 These lines and arrows represent _relationships_.
 
 Understanding how entities relate is fundamental to understanding how to the manufacturing process works as a complete system.
