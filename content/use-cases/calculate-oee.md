@@ -10,13 +10,23 @@ menu:
     identifier: calculate-oee
 ---
 
-This document provides a high-level overview of how to use Rhize for calculating various KPIs including OEE. It will also detail one end-to-end solution.
+This guide provides a high-level overview of how to use Rhize to calculate various key performance indicators (KPIS), including Overall equipment effectiveness.
+As an example the implementation section walks through a full end-to-end solution.
 
 ## Outline
 
-OEE (Overall Equipment Effectiveness) is a key performance indicator (KPI) that measures how effectively a manufacturing process utilizes its equipment. As defined in ISO 22400, OEE evaluates three primary factors: availability, performance, and quality, helping to determine the ratio of actual output to maximum potential output. It is a standard method for assessing and improving production efficiency in industrial operations.
+OEE is a key performance indicator that measures how effectively a manufacturing process uses its equipment.
+As defined in [{{< abbr "ISO 22400" >}}](https://www.iso.org/standard/56847.html), OEE measures the ratio of actual output to the maximum potential output.
+To calculate this, the metric evaluates three primary factors:
+- Availability
+- Performance
+- Quality
 
-## ISA95 architecture
+This measure is a common method in manufacturing to assess and improve production efficiency in industrial operations.
+
+## Background: ISA95 architecture for OEE
+
+The following diagram shows the ISA-95 entities that are involved with OEE calculations.
 
 {{< bigFigure
 src="/images/oee/data-architecture.svg"
@@ -25,17 +35,18 @@ caption="A diagram showing the overall ISA95 architecture involved in making OEE
 width="90%"
 >}}
 
-## Specific implementation
-
-This implementation tutorial will include many high level concepts including:
-
-- [Using the rules engine to persist process values]({{< relref "how-to/publish-subscribe/create-equipment-class-rule" >}})
-- [Using messages to trigger BPMN workflows]({{< relref "how-to/bpmn/create-workflow" >}})
-- [Using user-triggered workflows]({{< relref "how-to/bpmn/create-workflow" >}})
+## Implement OEE in Rhize
 
 ### Pre Requisties
 
+Before you start, ensure you have the following:
 - Rhize installed and configured, including timeseries tools
+
+This implementation guide also involves doing the following actions in Rhize:
+
+- [Use the rules engine to persist process values]({{< relref "how-to/publish-subscribe/create-equipment-class-rule" >}})
+- [Use messages to trigger BPMN workflows]({{< relref "how-to/bpmn/create-workflow" >}})
+- [Use user-triggered workflows]({{< relref "how-to/bpmn/create-workflow" >}})
 
 ### Overall system architecture
 
@@ -66,11 +77,12 @@ B->>T:Data persisted
 end
 ```
 
-#### Handling real-time values
+## Handle real-time values
 
 For detailed information see: [How To: Create equipment class rule]({{< relref "how-to/publish-subscribe/create-equipment-class-rule" >}})
 
-Rhize provides the functionality to ingest telemetry values. The OEE calculation is particularly interested in machine state changes and produced quantities. libre-agent ingests values from an external broker using protocols such as OPCUA, MQTT, Kafka.
+The Rhize agent ingests values from an external broker using protocols such as OPCUA, MQTT, Kafka.
+The OEE calculation is particularly interested in machine state changes and produced quantities.
 
 Data Flow Diagram:
 
@@ -90,7 +102,7 @@ B->>T:{"Table":"EquipmentState",<br/>"EquipmentId":"Machine A",<br/>"State":"APT
 
 Rhize Architecture:
 
-From the diagrams above, a machine will publish telemetry values to an MQTT server in the form
+In the preceding diagram, a machine publishes telemetry values to an MQTT server in the following form:
 
 ```json
 {
@@ -99,65 +111,66 @@ From the diagrams above, a machine will publish telemetry values to an MQTT serv
 }
 ```
 
-These values are processed by libre-core and the rules engine which can be configured to:
+The Rhize rules engine processes these values to run actions when conditions are met.
+Including:
 
 - Trigger a BPMN workflow when the machine state changes to persist the value to timeseries
 
-```pseudocode
-Trigger Property: State
-Trigger Expression: State.current.value != State.previous.value
-BPMN Variables:
-  State: State.Current.value
-  Timestamp: SourceTimestamp
-  EquipmentId: EquipmentId
-Workflow: RULE_Handle_StateChange
-```
+    ```pseudocode
+    Trigger Property: State
+    Trigger Expression: State.current.value != State.previous.value
+    BPMN Variables:
+      State: State.Current.value
+      Timestamp: SourceTimestamp
+      EquipmentId: EquipmentId
+    Workflow: RULE_Handle_StateChange
+    ```
+
+    The `RULE_Handle_StateChange`workflow is as follows:
+
+    ```mermaid
+    flowchart LR
+    start((start))-->transform(Transform state
+    to ISO22400)
+    transform-->map(Map into correct
+     JSON Structure)
+    map-->throw(throw to NATS to be 
+    picked up by time series ingester service
+     and persisted to time series)
+    throw-->e((end))
+    ```
 
 - Trigger a BPMN workflow when the produced quantity value changes to perist the value to timeseries
 
-```pseudocode
-TriggerProperty: QuantityCounter
-TriggerExpression QuantityCounter.current.Value != QuantityCounter.previous.Value
-BPMN Variables:
-  QuantityDelta: State.current.value - State.previous.value
-  Timestamp: SourceTimestamp
-  EquipmentId: EquipmentId
-Workflow: RULE_Handle_QuantityChange
-```
+    ```pseudocode
+    TriggerProperty: QuantityCounter
+    TriggerExpression QuantityCounter.current.Value != QuantityCounter.previous.Value
+    BPMN Variables:
+      QuantityDelta: State.current.value - State.previous.value
+      Timestamp: SourceTimestamp
+      EquipmentId: EquipmentId
+    Workflow: RULE_Handle_QuantityChange
+    ```
 
-Workflows:
+    The `RULE_Handle_QuantityChange` workflow is as follows:
 
-RULE_Handle_StateChange
+    ```mermaid
+    flowchart LR
+    start((start))-->map(Map into correct
+     JSON Structure)
+    map-->throw(throw to NATS to be 
+    picked up by time series ingester service
+     and persisted to time series)
+    throw-->e((end))
+    ```
 
-```mermaid
-flowchart LR
-start((start))-->transform(Transform state
-to ISO22400)
-transform-->map(Map into correct
- JSON Structure)
-map-->throw(throw to NATS to be 
-picked up by time series ingester service
- and persisted to time series)
-throw-->e((end))
-```
+### Import orders
 
-RULE_Handle_QuantityChange
+In this scenario, a production order is published to the MQTT server. The Rhize agent bridges the message to the NATS broker.
 
-```mermaid
-flowchart LR
-start((start))-->map(Map into correct
- JSON Structure)
-map-->throw(throw to NATS to be 
-picked up by time series ingester service
- and persisted to time series)
-throw-->e((end))
-```
-
-#### Order import
-
-In this scenario a production order is published to the mqtt server and libre-agent is used to bridge the message into nats.
-
-The production order contains information such as operations, materials produced and consumed and any particular equipment requirements. It will also include the planned rate of production for each operation which will be added as a job order parameter. The import workflow will listen for the order to be published to nats, map the data into ISA95 entities and perist to the graph database.
+The production order contains information such as operations, materials produced, and consumed and any particular equipment requirements.
+It includes the planned rate of production for each operation, added as a job order parameter.
+The import workflow listens for the order to be published to NATS, then maps the data into ISA95 entities, and perists to the graph database.
 
 Workflow NATS_ImportOrder:
 
@@ -169,9 +182,11 @@ map-->mutate(Persist to graph database)
 mutate-->e((end))
 ```
 
-#### User orchestrated workflows
+### User orchestrated workflow
 
-An operator has the responsibility of starting/ending operations as well as recording the good/scrap produced quantities. These values need to be persisted to the time series database (see TODO:Link and TODO:Link). These workflows will be triggered by an API call from the operations front end.
+An operator has the responsibility to start and stop operations as well as record the quantities of good and scrap material.
+These values must be persisted to the time-series database (see TODO:Link and TODO:Link).
+These workflows will be triggered by an API call from the operations' front end.
 
 Workflows:
 
@@ -213,7 +228,7 @@ mutate2-->e((end))
 
 #### Dashboarding KPI Queries
 
-Using the KPI Queries we can create Grafana dashboards which may look as follows:
+Using the KPI Queries, we can create Grafana dashboards which may look as follows:
 
 {{< bigFigure
 src="/images/oee/oee-dashboard.png"
