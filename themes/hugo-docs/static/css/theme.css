@@ -78,6 +78,10 @@ td {
   border: 1px solid #e2e2e2;
 }
 
+.notices.watch{
+background-color: 	#F8F8F8;
+}
+
 .notices.outdated {
   border-color: #c16560;
   background-color: #ffefe3;

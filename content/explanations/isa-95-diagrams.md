@@ -25,12 +25,11 @@ This diagram shows how ISA-95 defines these fundamental relationships from the p
 
 
 {{< bigFigure
-src="/images/s95/diagram-rhize-definition-demand-result-l3-l4.png"
+src="/images/s95/diagram-rhize-isa-definition-demand-result-l3-l4.svg"
 alt="Models to define, demand, and produce work"
 caption="**Click to expand**"
-width="85%"
+width="90%"
 >}}
-
 
 ## Information exchange between models and levels
 
@@ -41,11 +40,12 @@ Each entity in the diagram carries information in multiple dimensions, including
 - Its relationship to other entities
 - Its role in the integration between level-3 and level-4 systems.
 
-{{< notice "note" >}}
+{{< watch 
 
-:movie_camera: Watch two manufacturing experts explain this diagram on [episode 1 of the Rhize podcast](https://www.youtube.com/watch?v=qfUnX-_J-to).
+text="Watch two manufacturing experts explain this diagram"
+src="https://www.youtube.com/watch?v=qfUnX-_J-to"
 
-{{< /notice >}}
+ >}}
 
 {{< bigFigure
 src="/images/s95/rhize-s95-p2-p4-high-level-overview-ISA95_P2_P4.svg"
@@ -53,6 +53,28 @@ alt="A large overview of the ISA-95 object model"
 caption="**Click to expand**"
 width="85%"
 >}}
+
+## The activity model
+
+This diagram shows that activities that a manufacturing-operations-management system might perform.
+Each activity provides information to or receives information from another activity, and all of these activities have their own necessary entities related to resources, planning, and performance.
+
+Though the focus of this model is on level-3 activities, the data that is exchanged may necessarily involve data from levels 2 and 3.
+These activities are explained in thorough detail in [ISA-95 Part 3](https://webstore.ansi.org/preview-pages/ISA/preview_ANSI+ISA+95.00.03-2013.pdf).
+
+{{< bigFigure
+src="/images/s95/diagram-rhize-isa95-activity-model.svg"
+alt="The activities of a level-3 system"
+caption="**Click to expand**"
+width="85%"
+>}}
+
+{{< watch
+text="Episode 2 of the Rhize podcast"
+src="https://www.youtube.com/watch?v=NeYVCdmQq-o&t=130s&themeRefresh=1"
+>}}
+
+
 
 ## Overview of relations, levels, and stages
 

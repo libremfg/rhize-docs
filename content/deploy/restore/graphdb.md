@@ -39,12 +39,13 @@ Before you start, ensure you have the following:
 
 1. In the Alpha 0 initialization container, create the backup directory.
 
-<!-- vale off -->
+    <!-- vale off -->
+
     ```bash
     kubectl exec -t {{< param application_name >}}-baas-alpha-0 -c {{< param application_name >}}-baas-alpha-init -- \
     mkdir -p /dgraph/backups
     ```
-<!-- vale on -->
+    <!-- vale on -->
 
 1. If the backup directory does not have a checksums file, create one.
 
@@ -75,19 +76,19 @@ Before you start, ensure you have the following:
     kubectl exec -t {{< param application_name >}}-baas-alpha-0 -c {{< param application_name >}}-baas-alpha-init --  \
     dgraph bulk -f /dgraph/backups/<PATH_TO_BACKUP>/g01.json.gz \
     -g /dgraph/backups/<PATH_TO_BACKUP>/g01.gql_schema.gz \
-    -s /dgraph/backups/<PATH_TO_BACKUP>/g01.schema.gz - \
+    -s /dgraph/backups/<PATH_TO_BACKUP>/g01.schema.gz \
     --zero={{< param application_name >}}-baas-zero-0.{{< param application_name >}}-baas-zero-headless.<NAMESPACE>.svc.cluster.local:5080 \
     --out /dgraph/restore --replace_out
     ```
 1. Copy the backup to the correct directory:
 
-<!-- vale off -->
+    <!-- vale off -->
 
     ```bash
     kubectl exec -t {{< param application_name >}}-baas-alpha-0 -c {{< param application_name >}}-baas-alpha-init -- \
     mv /dgraph/restore/0/p /dgraph/p
     ```
-<!-- vale on -->
+    <!-- vale on -->
 
 1. Complete the initialization container for alpha 0.
 

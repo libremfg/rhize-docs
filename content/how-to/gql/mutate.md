@@ -9,6 +9,11 @@ menu:
     identifier:
 ---
 
+{{< watch
+text="Add manufacturing data through GraphQL"
+src="https://www.youtube.com/watch?v=zQ5X0mg3i_w&t=217s"
+>}}
+
 _Mutations_ change the database in someway by creating, updating, or deleting a resource.
 You might use a mutation to update a personnel class, or in to a [{{< abbr "BPMN" >}}]({{< relref "/how-to/bpmn" >}}) workflow that automatically creates records of incoming material lots.
 

@@ -27,9 +27,9 @@ If the condition evaluates to `true`, the rule triggers a {{< abbr "BPMN" >}} wo
 title: Rules trigger workflows from data-source changes
 ---
 flowchart LR
-    A(Property\nchanged?) -->|yes| B{"rule evaluates\nto true?"}
+    A(Property changed?) -->|yes| B{"rule evaluates to true?"}
     B -->|no| C(do nothing)
-    B -->|"yes\n(optional: pass variables)"| D(Run BPMN workflow)
+    B -->|"yes (optional: pass variables)"| D(Run BPMN workflow)
 ```
 
 The broad procedure to create a rule is as follows:

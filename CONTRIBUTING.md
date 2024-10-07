@@ -212,6 +212,21 @@ Insert a text snippet to use in multiple places.
 To create a snippet, add it to an HTML or MD file in `layouts/shortcodes/reusable`.
 Call it with `{{% reusable/<FILE_NAME> %}}`.
 
+### Watch
+
+Add a banner that links to a video.
+
+Requires two params:
+- `text`: The link text
+- `src`: The video URL
+
+{{< watch
+text="Add manufacturing data through GraphQL"
+src="https://www.youtube.com/watch?v=zQ5X0mg3i_w&t=217s"
+>}}
+
+
+
 ## Use templates
 
 Each document should have a specific purpose:

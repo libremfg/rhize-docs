@@ -168,6 +168,11 @@ _Data from a Rhize query in an Apache Echart. Read the [Build frontend](#fronten
 
 ## Background: material entities in Rhize
 
+{{< notice >}}
+:memo: For a more complete introduction to ISA-95 and its terminology,
+read [How to speak ISA-95]({{< relref "/explanations/how-to-speak-isa-95" >}}).
+{{< /notice >}}
+
 In ISA-95 terminology, the lineage of each material is expressed through the following entities:
 - **Material lots.** Unique amounts of identifiable material. For example, a material lot might be a camshaft in an engine or a package of sugar from a supplier.
 - **Material Sublots.** Uniquely identifiable parts of a material lot. For example, if a box of consumer-packaged goods represents a material lot, the individual serial numbers of the packages within might be the material sublots. Each sublot is unique, but multiple sublots may share properties from their parent material lot (for example, the expiry date).

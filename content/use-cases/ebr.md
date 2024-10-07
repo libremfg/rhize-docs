@@ -11,6 +11,14 @@ menu:
     identifier:
 ---
 
+{{% notice note %}}
+
+Looking to implement Rhize for your Pharma operation?
+[Talk to an engineer](https://rhize.com/contact-us/)
+
+{{% /notice %}}
+
+
 In pharmaceutical manufacturing, an _Electronic Batch Record (eBR)_ is a detailed report about a specific batch.
 It includes information about items such as the process segments, material, personnel, and equipment.
 
