@@ -65,3 +65,9 @@ Rhize also has components to monitor and react to this data stream, ensuring tha
 Event orchestration is handled through {{< abbr "BPMN" >}}, a low-code interface that can listen for events and initiate conditional flows.
 
 Guide: [Handle events]({{< relref "../how-to/bpmn" >}})
+
+## Calculating OEE
+
+Rhize includes an optional KPI service which can calculate OEE. Using a combintion of Rhize Workflows and Real-time event handling. Data can be transformed and persisted to a time series database in a format that allows the KPI sercvice to calculate key metrics.
+
+Guide: [KPI Service]({{< relref "../how-to/kpi-service" >}})
