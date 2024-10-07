@@ -9,18 +9,22 @@ menu:
     parent: howto-kpi-service
     identifier: query-kpi-service
 ---
-The KPI service offers a graphql federated interface for querying KPI values. This guide provides information on the different querying interfaces.
+
+The KPI service offers a federated GraphQL interface to query KPI values.
+This guide provides information on the different querying interfaces.
 
 ## Root level queries
 
-The KPI service office 2 root level queries:
+The KPI service offers two root-level queries:
 
-- GetKPI()
-- GetKPIByShift()
+- `GetKPI()`
+- `GetKPIByShift()`
 
-### GetKPI()
+### `GetKPI()`
 
-The GetKPI() query is the base level KPI Query, it allows the user to input an equipment ID or hierarchy scope ID, a time range and a list of desired KPIs. The result is a single KPI object per requested KPI.
+The `GetKPI()` query is the base-level KPI Query.
+You can use it to input an equipment ID or hierarchy-scope ID, a time range, and a list of desired KPIs.
+The result is a single KPI object per requested KPI.
 
 #### GetKPI() - Definition
 
@@ -153,9 +157,12 @@ input:
 {{% /tab %}}
 {{< /tabs >}}
 
-#### Example 1
+#### Example 1.
 
-Imagine the scenario `Machine A` is producing parts at a planned cycle time of 10 seconds per part. The order starts at 09:00 and finishes at 12:00 with 30 minutes of unplanned downtime in between (this could be from loading materials, unplanned maintenance, switching tools etc.). After the operation has finished and the user has registered 800 Good parts and 200 scrap parts. The tables in time series would look as below:
+Imagine a scenario where `Machine A` produces parts at a planned cycle time of 10-seconds per part.
+The order starts at 09:00 and finishes at 12:00 with 30 minutes of unplanned downtime in between (this could be from loading materials, unplanned maintenance, switching tools, and so on).
+After the operation finishes, the user has registered 800 Good parts and 200 scrap parts.
+The tables in time series appear as follows:
 
 {{< tabs >}}
 {{% tab "EquipmentState" %}}
@@ -186,7 +193,8 @@ Imagine the scenario `Machine A` is producing parts at a planned cycle time of 1
 {{% /tab %}}
 {{< /tabs >}}
 
-Calling the above KPI Query would look as follows:
+Calling this KPI Query appears as follows:
+
 {{< tabs >}}
 {{% tab "query" %}}
 query:
@@ -321,9 +329,10 @@ input:
 {{% /tab %}}
 {{< /tabs >}}
 
-### GetKPIByShift()
+### `GetKPIByShift()`
 
-The GetKPIByShift() query is another base level KPI Query. It is similar to GetKPI() Except rather than returning a single result per KPI query it also accepts `WorkCalendarEntryProperty IDs` to filter against and return a result for each instance of a shift.
+The `GetKPIByShift()` query is another base-level KPI Query.
+It is similar to GetKPI(), but rather than returning a single result per KPI query, it also accepts `WorkCalendarEntryProperty IDs` to filter against and return a result for each instance of a shift.
 
 #### GetKPIByShift() - Definition
 
@@ -603,7 +612,7 @@ Which results in the following tables:
 {{% /tab %}}
 {{< /tabs >}}
 
-There are multiple ways to run the query:
+You can run this query in multiple ways:
 
 - **groupByEquipment = false and groupByShift = false -** returns a seperate result per shift instance per equipment
 
@@ -859,7 +868,8 @@ input:
 
 ## Federated Queries
 
-The KPI service extends the equipment, work schedule, work request, job order and job response types with a KPI object. This allows easier querying of KPIs.
+The KPI service extends the equipment, work schedule, work request, job order, and job response GraphQL entities with a KPI object.
+This makes KPIs easier to query.
 
 ### Query Equipment
 
@@ -1024,9 +1034,9 @@ input:
 {{% /tab %}}
 {{< /tabs >}}
 
-### Querying Job Order, Work Request and Work Schedule
+### Query Job Order, Work Request, and Work Schedule
 
-Extending the Job order, Work Request and Work Schedule types allows will recursively query all of the attached job responses as below
+Extending the Job order, Work Request, and Work Schedule entities makes it possible to recursively query all of the attached job responses: 
 
 ```mermaid
 flowchart TD
@@ -1035,7 +1045,7 @@ flowchart TD
     JobOrders --> JobResponses
 ```
 
-Imagine that from the data from example 2 has this hierarchy
+Imagine that from the data from example 2 has this hierarchy:
 
 ```mermaid
 flowchart TD
@@ -1047,7 +1057,7 @@ flowchart TD
     WorkRequestB --> OrderC1
 ```
 
-Querying KPI on `workSchedule A` would combine all of the results for order A1, A2, B1 and C1
+Querying KPI on `workSchedule A` combines all results for order A1, A2, B1 and C1:
 
 {{< tabs >}}
 {{% tab "query" %}}
@@ -1111,8 +1121,8 @@ input:
 
 ## Additional Filters
 
-Some KPI Queries allow additional filters not mentioned in the above examples, these are:
+Some KPI Queries provide additional filters that are not mentioned in the preceding examples:
 
-- ignorePlannedDownTime (default: false) - allows ignoring planned down time events. For example if a state change happens whilst in the planned downtime calendar state, by default it will be ignored. If `ignorePlannedDowntime = true`, the underlying state change will still be returned.
-- ignorePlannedShutdownTime (default: false) - similar to ignorePlannedDowntime except with planned shutdown calendar events.
-- onlyIncludeActiveJobResponses (default: false) - if set to true will adjust the time interval of the KPI query to only be whilst a job response is active. For example if a user queries a KPI between 00:00 - 23:59 but there are only active job responses from 08:00-19:00, the query time range would be adjusted to 08:00-19:00.
+- `ignorePlannedDownTime` (default: `false`) - Ignores planned down time events. For example if a state change happens while in the planned downtime calendar state, by default it is ignored. If `ignorePlannedDowntime = true`, the underlying state change is still returned.
+- `ignorePlannedShutdownTime` (default: `false`). Similar to `ignorePlannedDowntime` except with planned shutdown calendar events.
+- `onlyIncludeActiveJobResponses` (default: `false`) - if set to true will adjust the time interval of the KPI query to only be whilst a job response is active. For example if a user queries a KPI between 00:00 - 23:59 but there are only active job responses from 08:00-19:00, the query time range would be adjusted to 08:00-19:00.

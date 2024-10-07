@@ -42,32 +42,34 @@ sequenceDiagram
     K->U: Response: KPI Result
 ```
 
-The KPI service provides an interface in the graph database to allow the user to query from a list of pre-defined KPIs on a piece of equipment in the `equipmentHierarchy` within a certain time interval. The service then queries the time series database for all state changes, produced quantities and job response data, calculates the KPI value and returns it to the user.
+The KPI service provides an interface in the graph database for the user to query a list of pre-defined KPIs on a piece of equipment in the `equipmentHierarchy` within a certain time interval.
+The service then queries the time-series database for all state changes, produced quantities, and job response data.
+With the returned data, the service calculates the KPI value and returns it to the user.
 
 ## Supported KPIs
 
-The service currently support all KPIs as provided by the `ISO/TR 22400-10` specification as well as some other useful KPIs:
+The service currently supports all KPIs as provided by the `ISO/TR 22400-10` specification as well as some other useful KPIs:
 
-- ActualProductionTime
-- ActualUnitSetupTime
-- ActualSetupTime
-- ActualUnitDelayTime
-- ActualUnitDownTime
-- TimeToRepair
-- ActualUnitProcessingTime
-- PlannedShutdownTime
-- PlannedDownTime
-- PlannedBusyTime
-- Availability
-- GoodQuantity
-- ScrapQuantity
-- ReworkQuantity
-- ProducedQuantityMachineOrigin
-- ProducedQuantity
-- Effectiveness
-- EffectivenessMachineOrigin
-- QualityRatio
-- OverallEquipmentEffectiveness
-- ActualCycleTime
-- ActualCycleTimeMachineOrigin
+- `ActualProductionTime`
+- `ActualUnitSetupTime`
+- `ActualSetupTime`
+- `ActualUnitDelayTime`
+- `ActualUnitDownTime`
+- `TimeToRepair`
+- `ActualUnitProcessingTime`
+- `PlannedShutdownTime`
+- `PlannedDownTime`
+- `PlannedBusyTime`
+- `Availability`
+- `GoodQuantity`
+- `ScrapQuantity`
+- `ReworkQuantity`
+- `ProducedQuantityMachineOrigin`
+- `ProducedQuantity`
+- `Effectiveness`
+- `EffectivenessMachineOrigin`
+- `QualityRatio`
+- `OverallEquipmentEffectiveness`
+- `ActualCycleTime`
+- `ActualCycleTimeMachineOrigin`
 
