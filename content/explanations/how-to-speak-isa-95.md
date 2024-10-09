@@ -184,11 +184,14 @@ width="50%"
 - **Material definitions.** A standardized definition of some material, ensuring consistency in the operation.
 - **Material lots.** Material lots and sublots are the identifiable units that go into a larger assembly.
 For example, a material lot might be a pallet of sugar from a supplier, and the sublot might be the individual sugar bags.
-- **Material Actual.** A material actual is the quantity of material in a job that is used, consumed, and so on.
+
+   Lots can have parent/child relationships to express material compositions.
+   The composition could be reversible, as in a machine assembled from interchangeable parts, or permanent, as in the case of a processes that involve one-way chemical transformations.
+
+- **Material Actual.** A material actual is the quantity of material in a job that is used, consumed, marked as scrap, and so on.
 - **Material properties.** Properties of material that are relevant to the production process, for example, `meltingPoint` or `containsLactose`.
 
-An important material relationship is the `isAssembledFrom` property (and its converse, `isComponentOf`).
-This relationship expresses how material is composed of other material. The composition could be reversible, as in a machine assembled from interchangeable parts, or permanent, as in the case of a processes that involve one-way chemical transformations.
+This relationship expresses how material is composed of other material.
 
 #### Personnel
 
