@@ -104,7 +104,7 @@ The 8 major activities of a MOM are as follows:
 * **Production execution management:** How does the plant execute the order?
 * **Production data collection:** What data is emitted and stored during execution?
 * **Production tracking:** What components and actions went into production? For example, [EBR](https://docs.rhize.com/use-cases/ebr/), [Genealogy](https://docs.rhize.com/use-cases/genealogy/), and Track and Trace are all use-cases of production tracking.
-* **Production performance analysis:** How well did the actual production run go, as compared to its ideal? For example, measures of OEE, deviation analysis, and golden batches are all use-cases of data collection.
+* **Production performance analysis:** How well did the actual production run go, as compared to its ideal? For example, measures of OEE, deviation analysis, and golden batches are all use-cases of performance analysis.
 
 To make sense of these activities, you also need to have a concept of the relationship between planned and performed work.
 
