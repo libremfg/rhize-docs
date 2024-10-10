@@ -169,14 +169,14 @@ text="Five ways to view material through ISA-95"
 src="https://www.youtube.com/watch?v=Xd5kj1TUQkY"
 >}}
 
-_Material_ is all the input matter required to produce a finished good.
-Import material models include the following:
-
 {{< bigFigure
 alt="Material class, definition, lot, and sublot"
 src="/images/s95/diagram-rhize-material-class-definition-lot.png"
-width="50%"
+width="80%"
 >}}
+
+_Material_ is all the input matter required to produce a finished good.
+Import material models include the following:
 
 - **Material classes.** Material classes represent a broad group of associated materials. An example might be `raw_sugar`.
 
@@ -190,7 +190,6 @@ For example, a material lot might be a pallet of sugar from a supplier, and the 
 - **Material Actual.** A material actual is the quantity of material in a job that is used, consumed, marked as scrap, and so on.
 - **Material properties.** Properties of material that are relevant to the production process, for example, `meltingPoint` or `containsLactose`.
 
-This relationship expresses how material is composed of other material.
 
 #### Personnel
 
