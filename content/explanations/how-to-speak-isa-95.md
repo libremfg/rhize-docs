@@ -77,7 +77,7 @@ and ISA-95 describes these connections with a precise vocabulary of relation.
 Some important relations include:
 - **Defined by**. As a member may be defined by a class.
 - **References** As an operations definition references a bill of material
-- **Assembled from**. As a material lot may be assembled from a material.
+- **Assembled from**. As a final material lot may be assembled from various intermediate lots.
 - **Made up of**. As work schedules are made up of work requests, and work centers are made up of work units.
 
 For the full list of relationships, refer to ISA-95 Part 2.
