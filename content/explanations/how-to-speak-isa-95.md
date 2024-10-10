@@ -86,7 +86,7 @@ you can use the Rhize [GraphQL]({{< relref "/how-to/gql">}}) API explorer.
 
 ## The activities of an MES
 
-Much of the ISA-95 standard discusses operations at the view of level 3, that is the MES or _Manufacturing Operations Management (MOM)_ system. But what activities are part of a MOM system? This is the subject of ISA-95 part 3.
+Much of the ISA-95 standard discusses operations at the view of level 3, that is the MES or _Manufacturing Operations Management (MOM)_ system. But what activities are part of a MOM system? This is the subject of ISA-95 Part 3.
 
 {{< bigFigure
 src="/images/s95/diagram-rhize-isa95-activity-model.svg"
@@ -236,23 +236,23 @@ width="60%"
 Besides resources, manufacturers also need to track and describe how work is demanded and performed.
 
 ISA-95 offers vocabulary to describe the views of this work from both the level-4 (business) perspective and the level 3 (execution) perspective.
-If you're wondering whether a model refers to level three or four, keep this trick in mind:
+If you're wondering whether a model refers to level 3 or 4, keep this trick in mind:
 
 **Models that start with "operation" refer to level 4; models that start with "work" refer to level 3.**
 
 
 ### The operational view of work
 
-In all conventional manufacturing, demand originates from the "top," that is, from the business or level-4 system. And production results are compared against this original demand. Thus, all conventional models of manufacturing include a model of demand, definitions, and results from the level-4 perspective.
+In all conventional manufacturing, demand originates from the "top," that is, from the business or level-4 system. Production results are compared against this original demand. Thus, all conventional models of manufacturing include a model of demand, definitions, and results from the level-4 perspective.
 
-This operational view of work is defined in ISA-95 part 2.
+This operational view of work is defined in ISA-95 Part 2.
 Here is a quick primer on the major models:
 
 * **Operations definitions** define the resources required to perform a schedule.
 * **Operations schedules** include the _requests_ to produce goods.
 These requests typically demand that production occur at certain times or by certain deadlines.
 * **Operations performance** is the collection of _responses_ to a request. Performance models provide information about the _state_ of a request, such as `WAITING`, `READY`, `RUNNING`, and `COMPLETED`.
-* **Operations capability** provides information about the resources for past and future operations. These capability models provide a way to determine a plant's theoretical maximum capacity and a way to analyze how well past production operations performed against this capacity.
+* **Operations capability** provides information about the resources for past and future operations. These capability models provide a way to determine a plant's theoretical maximum capacity and a way to analyze how well previous runs performed against this capacity.
 
 ### The level-3 view of work
 
@@ -263,9 +263,9 @@ caption="The flow of requests and performance from level 4 to level 3"
 width="50%"
 >}}
 
-ISA-95 part 4 defines the level-3 models of work. These models are more granular and detailed than their corresponding operational models.
+ISA-95 Part 4 defines the level-3 models of work. These models are more granular and detailed than their corresponding operational models.
 
-Typically, one operations request corresponds to one work request, and they differ the degree of detail reported in the work request. For example, the operations request may ask for 1000 intermediate widgets, and the work request produces these intermediate widgets.
+Typically, one operations request corresponds to one work request, and they differ in the degree of detail reported in the work request. For example, the operations request may ask for 1000 intermediate widgets, and the work request produces these intermediate widgets.
 
 However, a work request may also fulfill multiple or even fractional operations requests―for example, a work request may produce 1500 intermediate widgets, allocating 1000 to fulfill the operational request and sending the spare 500 to storage.
 
@@ -275,9 +275,9 @@ The _Work Master_ provides a set of resource specifications to do some work. It 
 When it is planned in a real job order, the work master is "cloned" as a _Work Directive._
 
 #### Planned work
-Planned work broadly follows the following hierarchy
+Planned work broadly follows the following hierarchy:
 
-* **Work Schedule.** A schedule to perform some batch, which contains one or more work requests
+* **Work Schedule.** A schedule to perform some amount of work. The schedule contains one or more work requests.
 * **Work Request.** A collection of job orders to make something
 * **Job Order.** An order to execute a specific part in a work request
 
