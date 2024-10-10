@@ -141,9 +141,8 @@ All aspects of manufacturing involve resources. Without resources nothing can be
 * _Classes_ provide groupings and associations
 * The members of a class are objects that exist in the real world. These _instances_ are represented with versions.
 * As the work executes, the _actuals_ define what resource was really used for a specific job.
-* These resources are part of specifications and requirements for definitions of work:
-
-All of these resource models can be extended with _properties_.
+* These resources are part of specifications and requirements for definitions of work
+* All of these resource models can be extended with _properties_.
 
 #### Equipment
 
