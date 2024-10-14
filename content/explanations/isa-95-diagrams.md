@@ -60,7 +60,7 @@ This diagram shows that activities that a manufacturing-operations-management sy
 Each activity provides information to or receives information from another activity, and all of these activities have their own necessary entities related to resources, planning, and performance.
 
 Though the focus of this model is on level-3 activities, the data that is exchanged may necessarily involve data from levels 2 and 3.
-These activities are explained in thorough detail in [ISA-95 Part 3](https://webstore.ansi.org/preview-pages/ISA/preview_ANSI+ISA+95.00.03-2013.pdf).
+These activities are explained in thorough detail in [ISA-95 Part 3](https://webstore.ansi.org/standards/isa/ansiisa9500032013).
 
 {{< bigFigure
 src="/images/s95/diagram-rhize-isa95-activity-model.svg"

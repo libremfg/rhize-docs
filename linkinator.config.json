@@ -7,8 +7,7 @@
   "skip": [
     ".*(\\.js|\\.css)$",
     "http://localhost",
-    "https://github.com/libremfg/libremfg.github.io/edit/main/content/",
-    "https://webstore.ansi.org/preview-pages/ISA/preview_ANSI+ISA+95.00.03-2013.pdf"
+    "https://github.com/libremfg/libremfg.github.io/edit/main/content/"
   ],
   "verbosity": "error",
   "format": "json"
