@@ -4,16 +4,17 @@ title: >-
 description: The Rhize guide to modelling and querying OEE
 categories: ["howto", "use-cases"]
 weight: 0100
+draft: true
 menu:
   main:
     parent: use-cases
     identifier: calculate-oee
 ---
 
-This guide provides a high-level overview of how to use Rhize to calculate various key performance indicators (KPIS), including Overall equipment effectiveness.
-As an example the implementation section walks through a full end-to-end solution.
+This guide provides a high-level overview of how to use Rhize to calculate various _key performance indicators_ (KPIs), including _overall equipment effectiveness_ (OEE).
+As an example, the implementation section walks through a full end-to-end solution.
 
-## Outline
+## About OEE
 
 OEE is a key performance indicator that measures how effectively a manufacturing process uses its equipment.
 As defined in [{{< abbr "ISO 22400" >}}](https://www.iso.org/standard/56847.html), OEE measures the ratio of actual output to the maximum potential output.
@@ -24,7 +25,9 @@ To calculate this, the metric evaluates three primary factors:
 
 This measure is a common method in manufacturing to assess and improve production efficiency in industrial operations.
 
-## Background: ISA95 architecture for OEE
+## Background Architecture
+
+### ISA95 architecture for OEE
 
 The following diagram shows the ISA-95 entities that are involved with OEE calculations.
 
@@ -34,19 +37,6 @@ alt="A diagram showing the overall isa95 architecture required for OEE calculati
 caption="A diagram showing the overall ISA95 architecture involved in making OEE calculations."
 width="90%"
 >}}
-
-## Implement OEE in Rhize
-
-### Pre Requisties
-
-Before you start, ensure you have the following:
-- Rhize installed and configured, including timeseries tools
-
-This implementation guide also involves doing the following actions in Rhize:
-
-- [Use the rules engine to persist process values]({{< relref "how-to/publish-subscribe/create-equipment-class-rule" >}})
-- [Use messages to trigger BPMN workflows]({{< relref "how-to/bpmn/create-workflow" >}})
-- [Use user-triggered workflows]({{< relref "how-to/bpmn/create-workflow" >}})
 
 ### Overall system architecture
 
@@ -76,6 +66,20 @@ B->>G:Data Persisted
 B->>T:Data persisted
 end
 ```
+
+
+## Implement OEE in Rhize
+
+### Pre Requisties
+
+Before you start, ensure you have the following:
+- Rhize installed and configured, including timeseries tools
+
+This implementation guide also involves doing the following actions in Rhize:
+
+- [Use the rules engine to persist process values]({{< relref "how-to/publish-subscribe/create-equipment-class-rule" >}})
+- [Use messages to trigger BPMN workflows]({{< relref "how-to/bpmn/create-workflow" >}})
+- [Use user-triggered workflows]({{< relref "how-to/bpmn/create-workflow" >}})
 
 ## Handle real-time values
 
@@ -191,6 +195,11 @@ These workflows will be triggered by an API call from the operations' front end.
 Workflows:
 
 API_StartOperation
+
+{{< bigFigure
+alt="add job response"
+src="/images/oee/rhize-bpmn-oee-start-order.png"
+>}}
 
 ```mermaid
 flowchart LR
