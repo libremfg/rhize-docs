@@ -13,7 +13,7 @@ menu:
 
 Key Performance Indicators (KPIs) in manufacturing serve as measurable metrics that help monitor, assess, and optimize the performance of various aspects of your production process.
 
-Rhize has an optional `KPI` service that queries processs values persisted to a time series database and calculated various KPIs
+Rhize has an optional `KPI` service that queries process values persisted to a time series database and calculated various KPIs
 
 {{< notice "note" >}}
 Rhize's implementation of work calendars was inspired by ISO/TR
