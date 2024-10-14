@@ -615,7 +615,7 @@ Which results in the following tables:
 
 You can run this query in multiple ways:
 
-- **groupByEquipment = false and groupByShift = false -** returns a seperate result per shift instance per equipment
+- **`groupByEquipment = false and groupByShift = false` -** returns a separate result per shift instance per equipment
 
 {{< tabs >}}
 {{% tab "query" %}}
@@ -715,7 +715,7 @@ input:
 {{% /tab %}}
 {{< /tabs >}}
 
-- **groupByEquipment = true and groupByShift = false -** returns a seperate result per shift instance containing all equipment
+- **`groupByEquipment = true and groupByShift = false` -** returns a separate result per shift instance containing all equipment
 
 {{< tabs >}}
 {{% tab "query" %}}
@@ -953,9 +953,9 @@ input:
 
 Extending the job response type allows:
 
-- startDateTime to be inferred from `jobResponse.startDateTime`
-- endDateTime to be inferred from `jobResponse.endDateTime`
-- equipmentIds to be inferred from `jobResponse.equipmentActual.EquipmentVersion.id`
+- `startDateTime` to be inferred from `jobResponse.startDateTime`
+- `endDateTime` to be inferred from `jobResponse.endDateTime`
+- `equipmentIds` to be inferred from `jobResponse.equipmentActual.EquipmentVersion.id`
 
 {{< tabs >}}
 {{% tab "query" %}}
