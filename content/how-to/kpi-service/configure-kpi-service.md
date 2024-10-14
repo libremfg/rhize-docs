@@ -11,9 +11,10 @@ menu:
 
 This guide shows you how to configure the time-series you need for the KPI service.
 It does not suggest how to persist these values.
-For examples of a use case, refer to [Use cases: Calculate OEE]({{< relref "use-cases/calculate-oee" >}}).
 
 To learn how the KPI service works, read [About KPI service]({{< ref "about-kpi-service" >}}).
+Example use cases include {{< abbr "OEE" >}} and various performance metrics.
+
 
 ## Prerequisites
 
