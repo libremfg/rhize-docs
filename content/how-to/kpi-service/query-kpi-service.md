@@ -1,6 +1,5 @@
 ---
 title: Query the KPI service
-draft: true
 description: >-
   An explanation of how to query the KPI service to obtain OEE values
 weight: 200

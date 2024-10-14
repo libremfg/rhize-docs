@@ -1,6 +1,5 @@
 ---
 title: About KPI Service and overrides
-draft: true
 description: >-
   An explanation of how the Rhize KPI service works
 weight: 200

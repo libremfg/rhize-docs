@@ -1,6 +1,5 @@
 ---
 title: Configure the KPI service
-draft: true
 description: >-
   An explanation of how to configure the KPI service to feed it with process data
 weight: 200
