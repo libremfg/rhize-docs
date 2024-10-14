@@ -9,12 +9,13 @@ menu:
     identifier: configure-kpi-service
 ---
 
+{{< experimental-kpi >}}
+
 This guide shows you how to configure the time-series you need for the KPI service.
 It does not suggest how to persist these values.
 
 To learn how the KPI service works, read [About KPI service]({{< ref "about-kpi-service" >}}).
 Example use cases include {{< abbr "OEE" >}} and various performance metrics.
-
 
 ## Prerequisites
 
@@ -197,3 +198,4 @@ CREATE TABLE IF NOT EXISTS JobOrderState(
 
 {{% /tab %}}
 {{< /tabs >}}
+ 

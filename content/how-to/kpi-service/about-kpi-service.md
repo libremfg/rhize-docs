@@ -9,6 +9,8 @@ menu:
     identifier: about-kpi-service
 ---
 
+{{< experimental-kpi >}}
+
 Key Performance Indicators (KPIs) in manufacturing serve as measurable metrics that help monitor, assess, and optimize the performance of various aspects of your production process.
 
 Rhize has an optional `KPI` service that queries processs values persisted to a time series database and calculated various KPIs

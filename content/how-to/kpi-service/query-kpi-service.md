@@ -9,6 +9,8 @@ menu:
     identifier: query-kpi-service
 ---
 
+{{< experimental-kpi >}}
+
 The KPI service offers a federated GraphQL interface to query KPI values.
 This guide provides information on the different querying interfaces.
 
