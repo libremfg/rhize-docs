@@ -51,8 +51,9 @@ CREATE TABLE IF NOT EXISTS EquipmentState(
 
 {{< notice "note" >}}
 This table shows a QuestDB specific schema.
-The KPI service automatically creates the tables for your specific time series database on first load.
 You may also add additional columns as required.
+
+To use the service for another time-series DB, get in touch.
 {{< /notice >}}
 {{% /tab %}}
 {{% tab "example" %}}
