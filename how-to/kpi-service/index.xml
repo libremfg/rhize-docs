@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Use the KPI service on Rhize documentation</title><link>https://docs.rhize.com/how-to/kpi-service/</link><description>Recent content in Use the KPI service on Rhize documentation</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="https://docs.rhize.com/how-to/kpi-service/index.xml" rel="self" type="application/rss+xml"/><item><title>About KPI Service and overrides</title><link>https://docs.rhize.com/how-to/kpi-service/about-kpi-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/kpi-service/about-kpi-service/</guid><description>&lt;div class="notices note">
+ &lt;span class="type">📝&lt;/span>The KPI service is currently provided provided through a separate Helm chart. If you want to use for your Rhize installation, get in touch.&lt;/a>
+&lt;/div>
+
+
+
+
+&lt;p>Key Performance Indicators (KPIs) in manufacturing serve as measurable metrics that help monitor, assess, and optimize the performance of various aspects of your production process.&lt;/p>
+&lt;p>Rhize has an optional &lt;code>KPI&lt;/code> service that queries process values persisted to a time series database and calculated various KPIs&lt;/p>
+
+
+&lt;div class="notices note" >
+ &lt;span class="type">Note&lt;/span> Rhize&amp;rsquo;s implementation of work calendars was inspired by ISO/TR
+22400-10, a standard on KPIs in operations management.
+&lt;/div>
+
+&lt;h2 id="what-the-service-does">What the service does&lt;/h2>
+&lt;pre class="mermaid">sequenceDiagram
+ actor U as User
+ participant K as KPI Service
+ participant TSDB as Time Series Database
+
+ U->>K: Query KPI in certain interval
+ K->>TSDB: Query State Records
+ TSDB->>K: Response: State records
+ K->>TSDB: Query Quantity Records
+ TSDB->>K: Response: Quantity records
+ K->>TSDB: Query JobResponse Records
+ TSDB->>K: Response: JobResponse records
+ K-->>TSDB: (Optional:) Query Planned Downtime Records
+ TSDB-->>K: Response: Downtime Records
+ K-->>TSDB: (Optional:) Query Shift Records
+ TSDB-->>K: Response: Downtime Records
+ K->>K: Calculate KPIs
+ K->U: Response: KPI Result
+&lt;/pre>
+
+&lt;p>The KPI service provides an interface in the graph database for the user to query a list of pre-defined KPIs on a piece of equipment in the &lt;code>equipmentHierarchy&lt;/code> within a certain time interval.
+The service then queries the time-series database for all state changes, produced quantities, and job response data.
+With the returned data, the service calculates the KPI value and returns it to the user.&lt;/p></description></item><item><title>Configure the KPI service</title><link>https://docs.rhize.com/how-to/kpi-service/configure-kpi-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/kpi-service/configure-kpi-service/</guid><description>&lt;div class="notices note">
+ &lt;span class="type">📝&lt;/span>The KPI service is currently provided provided through a separate Helm chart. If you want to use for your Rhize installation, get in touch.&lt;/a>
+&lt;/div>
+
+
+
+
+&lt;p>This guide shows you how to configure the time-series you need for the KPI service.
+It does not suggest how to persist these values.&lt;/p>
+&lt;p>To learn how the KPI service works, read &lt;a href="https://docs.rhize.com/how-to/kpi-service/about-kpi-service/">About KPI service&lt;/a>.
+Example use cases include &lt;abbr title="Overall Equipment Effectiveness. A measure of manufacturing productivity. OEE is commonly calculated as the product of three critical factors: availability, performance, and quality.">OEE&lt;/abbr> and various performance metrics.&lt;/p></description></item><item><title>Query the KPI service</title><link>https://docs.rhize.com/how-to/kpi-service/query-kpi-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/kpi-service/query-kpi-service/</guid><description>&lt;div class="notices note">
+ &lt;span class="type">📝&lt;/span>The KPI service is currently provided provided through a separate Helm chart. If you want to use for your Rhize installation, get in touch.&lt;/a>
+&lt;/div>
+
+
+
+
+&lt;p>The KPI service offers a federated GraphQL interface to query KPI values.
+This guide provides information on the different querying interfaces.&lt;/p>
+&lt;h2 id="root-level-queries">Root level queries&lt;/h2>
+&lt;p>The KPI service offers two root-level queries:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>GetKPI()&lt;/code>&lt;/li>
+&lt;li>&lt;code>GetKPIByShift()&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="getkpi">&lt;code>GetKPI()&lt;/code>&lt;/h3>
+&lt;p>The &lt;code>GetKPI()&lt;/code> query is the base-level KPI Query.
+You can use it to input an equipment ID or hierarchy-scope ID, a time range, and a list of desired KPIs.
+The result is a single KPI object per requested KPI.&lt;/p></description></item></channel></rss>

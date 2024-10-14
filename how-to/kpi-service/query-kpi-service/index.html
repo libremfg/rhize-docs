@@ -1,0 +1,674 @@
+<!doctype html><html lang=en class="js csstransforms3d"><head><script async src="https://www.googletagmanager.com/gtag/js?id=G-0PJKXDWQ4P"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-0PJKXDWQ4P")}</script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=referrer content="no-referrer-when-downgrade"><meta property="og:image" content="https://docs.rhize.com/images/rhize-logo.png"><meta property="og:image:secure_url" content="https://docs.rhize.com/images/rhize-logo.png"><meta property="og:description" content="An explanation of how to query the KPI service to obtain OEE values"><meta property="og:type" content="website"><meta property="og:title" content="Query the KPI service"><meta property="og:site_name" content="Rhize documentation"><meta property="og:url" content="https://docs.rhize.com/how-to/kpi-service/query-kpi-service/"><meta property="og:locale" content="en"><meta name=generator content="Hugo 0.135.0"><meta name=description content="An explanation of how to query the KPI service to obtain OEE values"><link rel=canonical href=https://docs.rhize.com/how-to/kpi-service/query-kpi-service/><link rel=apple-touch-icon sizes=57x57 href=https://docs.rhize.com/images/favicons/apple-touch-icon-57x57.png><link rel=apple-touch-icon sizes=60x60 href=https://docs.rhize.com/images/favicons/apple-touch-icon-60x60.png><link rel=apple-touch-icon sizes=72x72 href=https://docs.rhize.com/images/favicons/apple-touch-icon-72x72.png><link rel=apple-touch-icon sizes=76x76 href=https://docs.rhize.com/images/favicons/apple-touch-icon-76x76.png><link rel=apple-touch-icon sizes=114x114 href=https://docs.rhize.com/images/favicons/apple-touch-icon-114x114.png><link rel=apple-touch-icon sizes=120x120 href=https://docs.rhize.com/images/favicons/apple-touch-icon-120x120.png><link rel=apple-touch-icon sizes=144x144 href=https://docs.rhize.com/images/favicons/apple-touch-icon-144x144.png><link rel=apple-touch-icon sizes=152x152 href=https://docs.rhize.com/images/favicons/apple-touch-icon-152x152.png><link rel=apple-touch-icon sizes=180x180 href=https://docs.rhize.com/images/favicons/apple-touch-icon-180x180.png><link rel=icon type=image/png href=https://docs.rhize.com/images/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=https://docs.rhize.com/images/favicons/android-chrome-192x192.png sizes=192x192><link rel=icon type=image/png href=https://docs.rhize.com/images/favicons/favicon-96x96.png sizes=96x96><link rel=icon type=image/png href=https://docs.rhize.com/images/favicons/favicon-16x16.png sizes=16x16><link rel=manifest href=https://docs.rhize.com/images/favicons/manifest.webmanifest><link rel=mask-icon href=https://docs.rhize.com/images/favicons/safari-pinned-tab.svg color=#fe2c06><link rel="shortcut icon" href=https://docs.rhize.com/images/favicons/favicon.ico><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js></script><script async src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/go.min.js></script><script async src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/java.min.js integrity="sha256-RyOs5MjQ+Ef9DQrPHp4QGr2tcNjxLh6mCkkW+sS4doU=" crossorigin=anonymous></script><script src=//code.jquery.com/jquery-3.2.1.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><title>Query the KPI service | How to
+</title><link href=https://docs.rhize.com/css/theme.css?fc809cfbda01c3e1c6f2ea2aa66ec2a4 rel=stylesheet><link href=https://docs.rhize.com/css/runnable.css?46648956d99faa2e057d109b9f2a52e6 rel=stylesheet><link href=https://docs.rhize.com/css/tabs.css?035edc32762cb7973b740e3067101ced rel=stylesheet><link href=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css rel=stylesheet integrity=sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ crossorigin=anonymous><script src=//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js integrity=sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb crossorigin=anonymous></script><script src=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js integrity=sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn crossorigin=anonymous></script><link href="//fonts.googleapis.com/css?family=Lato:400,700" rel=stylesheet><link href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css rel=stylesheet integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN crossorigin=anonymous><link href=https://cdn.lineicons.com/2.0/LineIcons.css rel=stylesheet crossorigin=anonymous><script type=text/javascript id=hs-script-loader async defer src=//js.hs-scripts.com/9290851.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@docsearch/css@3></head><body><nav id=header><div class=header-left><div><a href=https://docs.rhize.com/ class=brand><img src=https://docs.rhize.com//images/rhize-logo.png alt=RHIZE class=logo></a><div class=logo-tagline><span>Documentation</span></div></div></div><div class=header-right><div id=docsearch><div class="menu-search align-middle"><div id=docsearch></div></div></div><div><ul class=menu><li><a href=https://rhize.com target=_blank>Home</a></li><li><a href=https://discord.gg/ZRpUBXmrkV target=_blank>Community</a></li><li><a href=https://www.youtube.com/@rhizemanufacturingdatahub target=_blank>Youtube</a></li></ul></div></div><a href=# id=sidebar-toggle><i class="fa fa-bars"></i></a></nav><aside id=sidebar><ul class=topics><li class="topic main-topic children"><a id=get-started href=#>Get started</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/get-started/introduction/>What is Rhize?</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/get-started/how-rhize-works/>How Rhize works</a></li></ul></li><li class="topic main-topic children"><a id=deploy href=#>Deploy</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=#>Install</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/install/overview/>Overview</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/install/setup-kubernetes/>Set up Kubernetes</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/install/keycloak/>Configure Keycloak</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/install/services/>Install Rhize services</a></li></ul></li><li class="topic sub-topic"><a href=#>Back up</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/backup/graphdb/>Back up the Graph DB</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/backup/audit/>Back up Audit PostgreSQL</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/backup/grafana/>Back up Grafana</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/backup/keycloak/>Back up Keycloak</a></li></ul></li><li class="topic sub-topic"><a href=#>Restore</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/restore/graphdb/>Restore the GraphDB</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/restore/audit/>Restore Audit backup</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/restore/grafana/>Restore Grafana</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/restore/keycloak/>Restore Keycloak</a></li></ul></li><li class="topic sub-topic"><a href=#>Maintain</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/maintain/audit/>Archive the PostgreSQL Audit trail</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/maintain/bpmn-nodes/>BPMN execution recovery</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/maintain/keycloak-events/>Export Keycloak events</a></li></ul></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/upgrade/>Upgrade</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/deploy/about-openidconnect/>About OpenID connect</a></li></ul></li><li class="topic main-topic children active"><a id=user-guides href=#>User guides</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=#>Use GraphQL</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/gql/call-the-graphql-api/>Overview: the Rhize API</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/gql/query/>Query</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/gql/filter/>Filter</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/gql/mutate/>Mutate</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/gql/subscribe/>Subscribe</a></li></ul></li><li class="topic sub-topic"><a href=#>Write BPMN workflows</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/create-workflow/>Overview: orchestrate processes</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/trigger-workflows/>Trigger workflows</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/use-jsonata/>Use JSONata</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/debug-workflows/>Handle errors and debug</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/tune-performance/>Tune performance</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/variables/>Special variables</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/naming-conventions/>Naming conventions</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/learning-resources/>BPMN learning resources</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/bpmn/bpmn-elements/>BMPN elements</a></li></ul></li><li class="topic sub-topic"><a href=#>Define production models</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/model/create-objects-ui/>Create objects from the UI</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/model/master-definitions/>Master definitions and fields</a></li></ul></li><li class="topic sub-topic"><a href=#>Connect event data</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/publish-subscribe/connect-datasource/>Connect data source</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/publish-subscribe/create-equipment-class-rule/>Tutorial: Trigger a workflow from a rule</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/publish-subscribe/track-changes/>Track changes (CDC)</a></li></ul></li><li class="topic sub-topic active"><a href=#>Use the KPI service</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/kpi-service/about-kpi-service/>About KPI Service and overrides</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/kpi-service/configure-kpi-service/>Configure the KPI service</a></li><li class="topic sub-topic active"><a href=https://docs.rhize.com/how-to/kpi-service/query-kpi-service/>Query the KPI service</a></li></ul></li><li class="topic sub-topic"><a href=#>Use work calendars</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/work-calendars/about-calendars-and-overrides/>About calendars and overrides</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/work-calendars/create-work-calendar/>Create work calendars</a></li></ul></li><li class="topic sub-topic"><a href=https://docs.rhize.com/how-to/audit/>Audit</a></li></ul></li><li class="topic main-topic children"><a id=use-cases href=#>Use cases</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/use-cases/overview/>Overview</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/use-cases/genealogy/>Genealogy</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/use-cases/ebr/>Electronic batch records</a></li></ul></li><li class="topic main-topic children"><a id=reference href=#>Reference</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=#>Service configuration</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/service-config/agent-configuration/>Agent configuration</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/service-config/audit-configuration/>Audit configuration</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/service-config/bpmn-configuration/>BPMN configuration</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/service-config/calendar-configuration/>Calendar configuration</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/service-config/core-configuration/>Core configuration</a></li></ul></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/observability-metrics/>Observability metrics</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/default-ports/>Default URLs and local ports</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/gql-types/>GQL types and filters</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/reference/glossary/>Glossary</a></li></ul></li><li class="topic main-topic children"><a id=explanations href=#>Explanations</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/explanations/manufacturing-data-hub/>Manufacturing Data Hub</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/explanations/isa-95-diagrams/>ISA-95 diagrams</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/explanations/how-to-speak-isa-95/>How to speak ISA-95</a></li></ul></li><li class="topic main-topic children"><a id=releases href=#>Releases</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/3-0-1/>3.0.1</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/3-0/>3.0.0</a></li><li class="topic sub-topic"><a href=#>Changelog</a><div class=arrow-down></div><ul class=sub-topics><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/changelog/3-0-0/>3.0.0 (general release)</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/changelog/3-0-0rc09/>3.0.0rc09</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/changelog/3-0-0rc08/>3.0.0rc08</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/changelog/3-0-0rc07/>3.0.0rc07</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/changelog/3-0-0rc06/>3.0.0rc06</a></li><li class="topic sub-topic"><a href=https://docs.rhize.com/releases/changelog/3-0-0rc05/>3.0.0rc05</a></li></ul></li></ul></li><li class="topic main-topic"><a href=https://docs.rhize.com/></a></li></ul></aside><script src=https://cdn.jsdelivr.net/npm/@docsearch/js@3></script><script type=text/javascript>docsearch({appId:"70JLDGIDQA",apiKey:"2b4c57aa9d3d0386bf1a6df5b54eb3cf",indexName:"rhize",insights:!0,container:"#docsearch",debug:!1})</script></body></html><main class=content-wrapper><div class=content><div class=top-toc><nav id=TableOfContents><ul><li><a href=#root-level-queries>Root level queries</a><ul><li><a href=#getkpi><code>GetKPI()</code></a></li><li><a href=#getkpibyshift><code>GetKPIByShift()</code></a></li></ul></li><li><a href=#federated-queries>Federated Queries</a><ul><li><a href=#query-equipment>Query Equipment</a></li><li><a href=#query-jobresponse>Query JobResponse</a></li><li><a href=#query-job-order-work-request-and-work-schedule>Query Job Order, Work Request, and Work Schedule</a></li></ul></li><li><a href=#additional-filters>Additional Filters</a></li></ul></nav></div><article><a class=edit-btn target=_blank href=https://github.com/libremfg/libremfg.github.io/edit/main/content/how-to/kpi-service/query-kpi-service.md><i class="fa fa-github-alt"></i> Edit Page</a><h1 class=post-title>Query the KPI service</h1><div class="notices note"><span class=type>📝</span>The KPI service is currently provided provided through a separate Helm chart. If you want to use for your Rhize installation, get in touch.</a></div><p>The KPI service offers a federated GraphQL interface to query KPI values.
+This guide provides information on the different querying interfaces.</p><h2 id=root-level-queries>Root level queries</h2><p>The KPI service offers two root-level queries:</p><ul><li><code>GetKPI()</code></li><li><code>GetKPIByShift()</code></li></ul><h3 id=getkpi><code>GetKPI()</code></h3><p>The <code>GetKPI()</code> query is the base-level KPI Query.
+You can use it to input an equipment ID or hierarchy-scope ID, a time range, and a list of desired KPIs.
+The result is a single KPI object per requested KPI.</p><h4 id=getkpi---definition>GetKPI() - Definition</h4><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=QUERY><p>query:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#00f>query</span> <span style=color:#2b91af>GetKPI</span>($filterInput: <span style=color:#2b91af>KPIFilter</span>!, $startDateTime: <span style=color:#2b91af>DateTime</span>!, $endDateTime: <span style=color:#2b91af>DateTime</span>!, $kpi: [<span style=color:#2b91af>KPI</span>!], $ignorePlannedDownTime: <span style=color:#2b91af>Boolean</span>, $ignorePlannedShutdownTime: <span style=color:#2b91af>Boolean</span>) {
+</span></span><span style=display:flex><span>  GetKPI(filterInput: $filterInput, <span style=color:#2b91af>startDateTime</span>: $startDateTime, <span style=color:#2b91af>endDateTime</span>: $endDateTime, <span style=color:#2b91af>kpi</span>: $kpi, <span style=color:#2b91af>ignorePlannedDownTime</span>: $ignorePlannedDownTime, <span style=color:#2b91af>ignorePlannedShutdownTime</span>: $ignorePlannedShutdownTime) {
+</span></span><span style=display:flex><span>    <span style=color:#2b91af>name</span>
+</span></span><span style=display:flex><span>    to
+</span></span><span style=display:flex><span>    from
+</span></span><span style=display:flex><span>    error
+</span></span><span style=display:flex><span>    value
+</span></span><span style=display:flex><span>    units
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>input:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;filterInput&#34;: {
+</span></span><span style=display:flex><span>    &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;MachineA&#34;</span>, <span style=color:#a31515>&#34;MachineB&#34;</span>],
+</span></span><span style=display:flex><span>    &#34;hierarchyScopeId&#34;: <span style=color:#a31515>&#34;Enterprise1.SiteA.Line1&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  &#34;startDateTime&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>  &#34;endDateTime&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>  &#34;kpi&#34;: [<span style=color:#a31515>&#34;ActualProductionTime&#34;</span>,<span style=color:#a31515>&#34;Availability&#34;</span>, <span style=color:#a31515>&#34;GoodQuantity&#34;</span>, <span style=color:#a31515>&#34;ProducedQuantity&#34;</span>, <span style=color:#a31515>&#34;Effectiveness&#34;</span>, <span style=color:#a31515>&#34;QualityRatio&#34;</span>, <span style=color:#a31515>&#34;ActualCycleTime&#34;</span>, <span style=color:#a31515>&#34;OverallEquipmentEffectiveness&#34;</span>],
+</span></span><span style=display:flex><span>  &#34;ignorePlannedDownTime&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;ignorePlannedShutdownTime&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;onlyIncludeActiveJobResponses&#34;: <span style=color:#00f>false</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div><div class=tab-pane title=RESPONSE><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;data&#34;: {
+</span></span><span style=display:flex><span>    &#34;GetKPI&#34;: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;ActualProductionTime&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 0,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;ActualUnitDelayTime&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 0,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;PlannedDownTime&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 0,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;Availability&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 0,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;%&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;GoodQuantity&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 0,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;units&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;ProducedQuantity&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 0,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;units&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;Effectiveness&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 100,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;%&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;QualityRatio&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 100,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;%&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;ActualCycleTime&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 0,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;seconds per unit&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;OverallEquipmentEffectiveness&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 0,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;%&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></div></div><h4 id=example-1>Example 1.</h4><p>Imagine a scenario where <code>Machine A</code> produces parts at a planned cycle time of 10-seconds per part.
+The order starts at 09:00 and finishes at 12:00 with 30 minutes of unplanned downtime in between (this could be from loading materials, unplanned maintenance, switching tools, and so on).
+After the operation finishes, the user has registered 800 Good parts and 200 scrap parts.
+The tables in time series appear as follows:</p><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=EQUIPMENTSTATE><table><thead><tr><th style=text-align:left>EquipmentId</th><th style=text-align:left>ISO22400State</th><th style=text-align:left>time</th></tr></thead><tbody><tr><td style=text-align:left>Machine A</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-03T09:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ADET</td><td style=text-align:left>2024-09-03T10:30:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-03T11:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ADOT</td><td style=text-align:left>2024-09-03T12:00:00Z</td></tr></tbody></table></div><div class=tab-pane title=QUANTITYLOG><table><thead><tr><th style=text-align:left>EquipmentId</th><th style=text-align:left>Origin</th><th style=text-align:left>QtyType</th><th style=text-align:left>ProductionType</th><th style=text-align:left>Qty</th><th style=text-align:left>time</th></tr></thead><tbody><tr><td style=text-align:left>Machine A</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Good</td><td style=text-align:left>800</td><td style=text-align:left>2024-09-03T12:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Scrap</td><td style=text-align:left>200</td><td style=text-align:left>2024-09-03T12:00:00Z</td></tr></tbody></table></div><div class=tab-pane title=JOBORDERSTATE><table><thead><tr><th style=text-align:left>EquipmentId</th><th style=text-align:left>JobOrderId</th><th style=text-align:left>PlanningCyleTime</th><th style=text-align:left>time</th></tr></thead><tbody><tr><td style=text-align:left>Machine A</td><td style=text-align:left>Order A</td><td style=text-align:left>10</td><td style=text-align:left>2024-09-03T09:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>NONE</td><td style=text-align:left>0</td><td style=text-align:left>2024-09-03T12:00:00Z</td></tr></tbody></table></div></div></div><p>Calling this KPI Query appears as follows:</p><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=QUERY><p>query:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#00f>query</span> <span style=color:#2b91af>GetKPI</span>($filterInput: <span style=color:#2b91af>KPIFilter</span>!, $startDateTime: <span style=color:#2b91af>DateTime</span>!, $endDateTime: <span style=color:#2b91af>DateTime</span>!, $kpi: [<span style=color:#2b91af>KPI</span>!], $ignorePlannedDownTime: <span style=color:#2b91af>Boolean</span>, $ignorePlannedShutdownTime: <span style=color:#2b91af>Boolean</span>) {
+</span></span><span style=display:flex><span>  GetKPI(filterInput: $filterInput, <span style=color:#2b91af>startDateTime</span>: $startDateTime, <span style=color:#2b91af>endDateTime</span>: $endDateTime, <span style=color:#2b91af>kpi</span>: $kpi, <span style=color:#2b91af>ignorePlannedDownTime</span>: $ignorePlannedDownTime, <span style=color:#2b91af>ignorePlannedShutdownTime</span>: $ignorePlannedShutdownTime) {
+</span></span><span style=display:flex><span>    <span style=color:#2b91af>name</span>
+</span></span><span style=display:flex><span>    to
+</span></span><span style=display:flex><span>    from
+</span></span><span style=display:flex><span>    error
+</span></span><span style=display:flex><span>    value
+</span></span><span style=display:flex><span>    units
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>input:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;filterInput&#34;: {
+</span></span><span style=display:flex><span>    &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;MachineA&#34;</span>]
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  &#34;startDateTime&#34;: <span style=color:#a31515>&#34;2024-09-03T09:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>  &#34;endDateTime&#34;: <span style=color:#a31515>&#34;2024-09-03T12:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>  &#34;kpi&#34;: [<span style=color:#a31515>&#34;ActualProductionTime&#34;</span>,<span style=color:#a31515>&#34;Availability&#34;</span>, <span style=color:#a31515>&#34;GoodQuantity&#34;</span>, <span style=color:#a31515>&#34;ProducedQuantity&#34;</span>, <span style=color:#a31515>&#34;Effectiveness&#34;</span>, <span style=color:#a31515>&#34;QualityRatio&#34;</span>, <span style=color:#a31515>&#34;ActualCycleTime&#34;</span>, <span style=color:#a31515>&#34;OverallEquipmentEffectiveness&#34;</span>]
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div><div class=tab-pane title=RESPONSE><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;data&#34;: {
+</span></span><span style=display:flex><span>    &#34;GetKPI&#34;: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;_comment&#34;: <span style=color:#a31515>&#34;This is the total time spent in APT&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;ActualProductionTime&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 9000,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;_comment&#34;: <span style=color:#a31515>&#34;This is the total time spent in ADET&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;ActualUnitDelayTime&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 1800,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;_comment&#34;: <span style=color:#a31515>&#34;This is the total time spent in PDOT&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;PlannedDownTime&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 0,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;_comment&#34;: <span style=color:#a31515>&#34;This is APT/PBT&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;Availability&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 83.3333333,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;%&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;_comment&#34;: <span style=color:#a31515>&#34;This is the total recorded good quantity&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;GoodQuantity&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 800,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;units&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;_comment&#34;: <span style=color:#a31515>&#34;This is the total quantity produced in the order&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;ProducedQuantity&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 1000,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;units&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {&#34;_comment&#34;: <span style=color:#a31515>&#34;This is (ProducedQuantity * PlannedCycleTime)/APT&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;Effectiveness&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 111.111111,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;%&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;_comment&#34;: <span style=color:#a31515>&#34;This is GoodQuantity/ProducedQuantity&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;QualityRatio&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 80,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;%&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;_comment&#34;: <span style=color:#a31515>&#34;This is APT/ProducedQuantity&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;ActualCycleTime&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 10.8,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;seconds per unit&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;_comment&#34;: <span style=color:#a31515>&#34;This is Availability * Effectiveness * QualityRatio&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;OverallEquipmentEffectiveness&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 74.074,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;%&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></div></div><h3 id=getkpibyshift><code>GetKPIByShift()</code></h3><p>The <code>GetKPIByShift()</code> query is another base-level KPI Query.
+It is similar to GetKPI(), but rather than returning a single result per KPI query, it also accepts <code>WorkCalendarEntryProperty IDs</code> to filter against and return a result for each instance of a shift.</p><h4 id=getkpibyshift---definition>GetKPIByShift() - Definition</h4><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=QUERY><p>query:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#00f>query</span> <span style=color:#2b91af>GetKPIByShift</span>($filterInput: <span style=color:#2b91af>GetKPIByShiftFilter</span>!, $startDateTime: <span style=color:#2b91af>DateTime</span>!, $endDateTime: <span style=color:#2b91af>DateTime</span>!, $kpi: [<span style=color:#2b91af>KPI</span>!], $ignorePlannedDownTime: <span style=color:#2b91af>Boolean</span>, $ignorePlannedShutdownTime: <span style=color:#2b91af>Boolean</span>, $groupByShift: <span style=color:#2b91af>Boolean</span>, $groupByEquipment: <span style=color:#2b91af>Boolean</span>, $onlyIncludeActiveJobResponses: <span style=color:#2b91af>Boolean</span>) {
+</span></span><span style=display:flex><span>  GetKPIByShift(filterInput: $filterInput, <span style=color:#2b91af>startDateTime</span>: $startDateTime, <span style=color:#2b91af>endDateTime</span>: $endDateTime, <span style=color:#2b91af>kpi</span>: $kpi, <span style=color:#2b91af>ignorePlannedDownTime</span>: $ignorePlannedDownTime, <span style=color:#2b91af>ignorePlannedShutdownTime</span>: $ignorePlannedShutdownTime, <span style=color:#2b91af>groupByShift</span>: $groupByShift, <span style=color:#2b91af>groupByEquipment</span>: $groupByEquipment, <span style=color:#2b91af>OnlyIncludeActiveJobResponses</span>: $onlyIncludeActiveJobResponses) {
+</span></span><span style=display:flex><span>    <span style=color:#2b91af>name</span>
+</span></span><span style=display:flex><span>    equipmentIds
+</span></span><span style=display:flex><span>    shiftsContained
+</span></span><span style=display:flex><span>    from
+</span></span><span style=display:flex><span>    to
+</span></span><span style=display:flex><span>    error
+</span></span><span style=display:flex><span>    value
+</span></span><span style=display:flex><span>    units
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>input:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;filterInput&#34;: {
+</span></span><span style=display:flex><span>    &#34;shiftFilter&#34;: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;propertyName&#34;: <span style=color:#a31515>&#34;Shift Name&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;eq&#34;: <span style=color:#a31515>&#34;Morning&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;Machine A&#34;</span>, <span style=color:#a31515>&#34;Machine B&#34;</span>],
+</span></span><span style=display:flex><span>    &#34;hierarchyScopeId&#34;: <span style=color:#a31515>&#34;Enterprise1.SiteA.Line1&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  &#34;startDateTime&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>  &#34;endDateTime&#34;: <span style=color:#a31515>&#34;2024-09-03T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>  &#34;kpi&#34;: [<span style=color:#a31515>&#34;ActualProductionTime&#34;</span>, <span style=color:#a31515>&#34;OverallEquipmentEffectiveness&#34;</span>],
+</span></span><span style=display:flex><span>  &#34;ignorePlannedDownTime&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;ignorePlannedShutdownTime&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;onlyIncludeActiveJobResponses&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;groupByShift&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;groupByEquipment&#34;: <span style=color:#00f>true</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div><div class=tab-pane title=RESPONSE><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;data&#34;: {
+</span></span><span style=display:flex><span>    &#34;GetKPIByShift&#34;: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;ActualProductionTime&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;Machine A&#34;</span>, <span style=color:#a31515>&#34;Machine B&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;shiftsContained&#34;: [<span style=color:#a31515>&#34;Shift.Sunday.Morning&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T09:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T17:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 0,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;ActualProductionTime&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;Machine A&#34;</span>, <span style=color:#a31515>&#34;Machine B&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;shiftsContained&#34;: [<span style=color:#a31515>&#34;Shift.Monday.Morning&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-02T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-02T17:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 0,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;ActualProductionTime&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;Machine A&#34;</span>, <span style=color:#a31515>&#34;Machine B&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;shiftsContained&#34;: [<span style=color:#a31515>&#34;Shift.Tuesday.Morning&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-03T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-03T17:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 0,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>       {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;OverallEquipmentEffectiveness&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;Machine A&#34;</span>, <span style=color:#a31515>&#34;Machine B&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;shiftsContained&#34;: [<span style=color:#a31515>&#34;Shift.Sunday.Morning&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T09:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T17:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 0,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;%&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;OverallEquipmentEffectiveness&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;Machine A&#34;</span>, <span style=color:#a31515>&#34;Machine B&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;shiftsContained&#34;: [<span style=color:#a31515>&#34;Shift.Monday.Morning&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-02T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-02T17:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 0,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;%&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;OverallEquipmentEffectiveness&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;Machine A&#34;</span>, <span style=color:#a31515>&#34;Machine B&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;shiftsContained&#34;: [<span style=color:#a31515>&#34;Shift.Tuesday.Morning&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-03T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-03T17:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 0,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;%&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></div></div><h4 id=example-2>Example 2</h4><p>Following on from Example 1. <code>Machine A</code> exists on a production line alongside <code>Machine B</code>, they both produce parts with a planned cycle time of 10 seconds per part and runs on the same shift pattern. The <a href=https://docs.rhize.com/how-to/work-calendars/>work calendar service</a> is configured with 3 distinct daily shifts:</p><ul><li>Morning (06:00-14:00)</li><li>Afternoon (14:00 - 22:00)</li><li>Night (22:00-06:00)</li></ul><p>Which results in the following tables:</p><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=EQUIPMENTSTATE><table><thead><tr><th style=text-align:left>EquipmentId</th><th style=text-align:left>ISO22400State</th><th style=text-align:left>time</th></tr></thead><tbody><tr><td style=text-align:left>Machine A</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-01T06:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-01T06:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ADET</td><td style=text-align:left>2024-09-01T10:30:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ADET</td><td style=text-align:left>2024-09-01T10:30:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-01T11:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-01T11:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ADOT</td><td style=text-align:left>2024-09-01T14:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ADOT</td><td style=text-align:left>2024-09-01T14:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-01T14:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-01T14:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ADET</td><td style=text-align:left>2024-09-01T17:30:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ADET</td><td style=text-align:left>2024-09-01T17:30:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-01T18:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-01T18:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ADOT</td><td style=text-align:left>2024-09-01T22:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ADOT</td><td style=text-align:left>2024-09-01T22:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-01T22:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-01T22:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ADET</td><td style=text-align:left>2024-09-02T04:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ADET</td><td style=text-align:left>2024-09-02T04:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-02T04:30:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-02T04:30:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ADOT</td><td style=text-align:left>2024-09-02T06:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ADOT</td><td style=text-align:left>2024-09-02T06:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-02T06:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-02T06:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ADET</td><td style=text-align:left>2024-09-02T10:30:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ADET</td><td style=text-align:left>2024-09-02T10:30:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-02T11:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-02T11:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ADOT</td><td style=text-align:left>2024-09-02T14:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ADOT</td><td style=text-align:left>2024-09-02T14:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-02T14:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-02T14:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ADET</td><td style=text-align:left>2024-09-02T18:30:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ADET</td><td style=text-align:left>2024-09-02T18:30:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-02T19:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-02T19:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ADOT</td><td style=text-align:left>2024-09-02T22:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ADOT</td><td style=text-align:left>2024-09-02T22:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-02T22:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-02T22:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ADET</td><td style=text-align:left>2024-09-03T04:30:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ADET</td><td style=text-align:left>2024-09-03T04:30:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-03T05:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>APT</td><td style=text-align:left>2024-09-03T05:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ADOT</td><td style=text-align:left>2024-09-03T06:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ADOT</td><td style=text-align:left>2024-09-03T06:00:00Z</td></tr></tbody></table></div><div class=tab-pane title=QUANTITYLOG><table><thead><tr><th style=text-align:left>EquipmentId</th><th style=text-align:left>Origin</th><th style=text-align:left>QtyType</th><th style=text-align:left>ProductionType</th><th style=text-align:left>Qty</th><th style=text-align:left>time</th></tr></thead><tbody><tr><td style=text-align:left>Machine A</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Good</td><td style=text-align:left>800</td><td style=text-align:left>2024-09-01T14:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Scrap</td><td style=text-align:left>200</td><td style=text-align:left>2024-09-01T14:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Good</td><td style=text-align:left>700</td><td style=text-align:left>2024-09-01T14:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Scrap</td><td style=text-align:left>300</td><td style=text-align:left>2024-09-01T14:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Good</td><td style=text-align:left>900</td><td style=text-align:left>2024-09-01T22:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Scrap</td><td style=text-align:left>100</td><td style=text-align:left>2024-09-01T22:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Good</td><td style=text-align:left>950</td><td style=text-align:left>2024-09-01T22:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Scrap</td><td style=text-align:left>50</td><td style=text-align:left>2024-09-01T22:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Good</td><td style=text-align:left>999</td><td style=text-align:left>2024-09-01T06:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Scrap</td><td style=text-align:left>1</td><td style=text-align:left>2024-09-01T06:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Good</td><td style=text-align:left>900</td><td style=text-align:left>2024-09-01T06:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Scrap</td><td style=text-align:left>100</td><td style=text-align:left>2024-09-01T06:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Good</td><td style=text-align:left>850</td><td style=text-align:left>2024-09-02T14:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Scrap</td><td style=text-align:left>150</td><td style=text-align:left>2024-09-02T14:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Good</td><td style=text-align:left>800</td><td style=text-align:left>2024-09-02T14:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Scrap</td><td style=text-align:left>200</td><td style=text-align:left>2024-09-02T14:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Good</td><td style=text-align:left>700</td><td style=text-align:left>2024-09-02T22:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Scrap</td><td style=text-align:left>300</td><td style=text-align:left>2024-09-02T22:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Good</td><td style=text-align:left>750</td><td style=text-align:left>2024-09-02T22:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Scrap</td><td style=text-align:left>250</td><td style=text-align:left>2024-09-02T22:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Good</td><td style=text-align:left>600</td><td style=text-align:left>2024-09-02T06:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Scrap</td><td style=text-align:left>400</td><td style=text-align:left>2024-09-02T06:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Good</td><td style=text-align:left>750</td><td style=text-align:left>2024-09-02T06:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>User</td><td style=text-align:left>Delta</td><td style=text-align:left>Scrap</td><td style=text-align:left>250</td><td style=text-align:left>2024-09-02T06:00:00Z</td></tr></tbody></table></div><div class=tab-pane title=JOBORDERSTATE><table><thead><tr><th style=text-align:left>EquipmentId</th><th style=text-align:left>JobOrderId</th><th style=text-align:left>PlanningCyleTime</th><th style=text-align:left>time</th></tr></thead><tbody><tr><td style=text-align:left>Machine A</td><td style=text-align:left>Order A1</td><td style=text-align:left>10</td><td style=text-align:left>2024-09-01T06:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>Order A2</td><td style=text-align:left>10</td><td style=text-align:left>2024-09-01T06:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>NONE</td><td style=text-align:left>0</td><td style=text-align:left>2024-09-01T14:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>NONE</td><td style=text-align:left>0</td><td style=text-align:left>2024-09-01T14:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>Order B1</td><td style=text-align:left>10</td><td style=text-align:left>2024-09-01T14:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>Order B2</td><td style=text-align:left>10</td><td style=text-align:left>2024-09-01T14:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>NONE</td><td style=text-align:left>0</td><td style=text-align:left>2024-09-01T22:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>NONE</td><td style=text-align:left>0</td><td style=text-align:left>2024-09-01T22:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>Order C1</td><td style=text-align:left>10</td><td style=text-align:left>2024-09-01T22:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>Order C2</td><td style=text-align:left>10</td><td style=text-align:left>2024-09-01T22:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>NONE</td><td style=text-align:left>0</td><td style=text-align:left>2024-09-02T06:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>NONE</td><td style=text-align:left>0</td><td style=text-align:left>2024-09-02T06:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>Order D1</td><td style=text-align:left>10</td><td style=text-align:left>2024-09-02T06:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>Order D2</td><td style=text-align:left>10</td><td style=text-align:left>2024-09-02T06:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>NONE</td><td style=text-align:left>0</td><td style=text-align:left>2024-09-02T14:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>NONE</td><td style=text-align:left>0</td><td style=text-align:left>2024-09-02T14:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>Order E1</td><td style=text-align:left>10</td><td style=text-align:left>2024-09-02T14:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>Order E2</td><td style=text-align:left>10</td><td style=text-align:left>2024-09-02T14:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>NONE</td><td style=text-align:left>0</td><td style=text-align:left>2024-09-02T22:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>NONE</td><td style=text-align:left>0</td><td style=text-align:left>2024-09-02T22:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>Order F1</td><td style=text-align:left>10</td><td style=text-align:left>2024-09-02T22:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>Order F2</td><td style=text-align:left>10</td><td style=text-align:left>2024-09-02T22:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>NONE</td><td style=text-align:left>0</td><td style=text-align:left>2024-09-03T06:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>NONE</td><td style=text-align:left>0</td><td style=text-align:left>2024-09-03T06:00:00Z</td></tr></tbody></table></div><div class=tab-pane title=CALENDAR_ADHOC><table><thead><tr><th style=text-align:left>EquipmentId</th><th style=text-align:left>WorkCalendarDefinitionID</th><th style=text-align:left>WorkCalendarDefinitionEntryId</th><th style=text-align:left>EntryType</th><th style=text-align:left>time</th></tr></thead><tbody><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Sunday.Morning</td><td style=text-align:left>START</td><td style=text-align:left>2024-09-01T06:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Sunday.Morning</td><td style=text-align:left>START</td><td style=text-align:left>2024-09-01T06:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Sunday.Morning</td><td style=text-align:left>END</td><td style=text-align:left>2024-09-01T14:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Sunday.Morning</td><td style=text-align:left>END</td><td style=text-align:left>2024-09-01T14:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Sunday.Afternoon</td><td style=text-align:left>START</td><td style=text-align:left>2024-09-01T14:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Sunday.Afternoon</td><td style=text-align:left>START</td><td style=text-align:left>2024-09-01T14:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Sunday.Afternoon</td><td style=text-align:left>END</td><td style=text-align:left>2024-09-01T22:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Sunday.Afternoon</td><td style=text-align:left>END</td><td style=text-align:left>2024-09-01T22:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Sunday.Night</td><td style=text-align:left>START</td><td style=text-align:left>2024-09-01T22:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Sunday.Night</td><td style=text-align:left>START</td><td style=text-align:left>2024-09-01T22:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Sunday.Night</td><td style=text-align:left>END</td><td style=text-align:left>2024-09-02T06:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Sunday.Night</td><td style=text-align:left>END</td><td style=text-align:left>2024-09-02T06:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Monday.Morning</td><td style=text-align:left>START</td><td style=text-align:left>2024-09-02T06:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Monday.Morning</td><td style=text-align:left>START</td><td style=text-align:left>2024-09-02T06:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Monday.Morning</td><td style=text-align:left>END</td><td style=text-align:left>2024-09-02T14:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Monday.Morning</td><td style=text-align:left>END</td><td style=text-align:left>2024-09-02T14:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Monday.Afternoon</td><td style=text-align:left>START</td><td style=text-align:left>2024-09-02T14:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Monday.Afternoon</td><td style=text-align:left>START</td><td style=text-align:left>2024-09-02T14:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Monday.Afternoon</td><td style=text-align:left>END</td><td style=text-align:left>2024-09-02T22:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Monday.Afternoon</td><td style=text-align:left>END</td><td style=text-align:left>2024-09-02T22:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Monday.Night</td><td style=text-align:left>START</td><td style=text-align:left>2024-09-02T22:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Monday.Night</td><td style=text-align:left>START</td><td style=text-align:left>2024-09-02T22:00:00Z</td></tr><tr><td style=text-align:left>Machine A</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Monday.Night</td><td style=text-align:left>END</td><td style=text-align:left>2024-09-03T06:00:00Z</td></tr><tr><td style=text-align:left>Machine B</td><td style=text-align:left>ShiftCalendar</td><td style=text-align:left>ShiftCalendar.Monday.Night</td><td style=text-align:left>END</td><td style=text-align:left>2024-09-03T06:00:00Z</td></tr></tbody></table></div></div></div><p>You can run this query in multiple ways:</p><ul><li><strong><code>groupByEquipment = false and groupByShift = false</code> -</strong> returns a separate result per shift instance per equipment</li></ul><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=QUERY><p>query:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#00f>query</span> <span style=color:#2b91af>GetKPIByShift</span>($filterInput: <span style=color:#2b91af>GetKPIByShiftFilter</span>!, $startDateTime: <span style=color:#2b91af>DateTime</span>!, $endDateTime: <span style=color:#2b91af>DateTime</span>!, $kpi: [<span style=color:#2b91af>KPI</span>!], $ignorePlannedDownTime: <span style=color:#2b91af>Boolean</span>, $ignorePlannedShutdownTime: <span style=color:#2b91af>Boolean</span>, $groupByShift: <span style=color:#2b91af>Boolean</span>, $groupByEquipment: <span style=color:#2b91af>Boolean</span>, $onlyIncludeActiveJobResponses: <span style=color:#2b91af>Boolean</span>) {
+</span></span><span style=display:flex><span>  GetKPIByShift(filterInput: $filterInput, <span style=color:#2b91af>startDateTime</span>: $startDateTime, <span style=color:#2b91af>endDateTime</span>: $endDateTime, <span style=color:#2b91af>kpi</span>: $kpi, <span style=color:#2b91af>ignorePlannedDownTime</span>: $ignorePlannedDownTime, <span style=color:#2b91af>ignorePlannedShutdownTime</span>: $ignorePlannedShutdownTime, <span style=color:#2b91af>groupByShift</span>: $groupByShift, <span style=color:#2b91af>groupByEquipment</span>: $groupByEquipment, <span style=color:#2b91af>OnlyIncludeActiveJobResponses</span>: $onlyIncludeActiveJobResponses) {
+</span></span><span style=display:flex><span>    <span style=color:#2b91af>name</span>
+</span></span><span style=display:flex><span>    equipmentIds
+</span></span><span style=display:flex><span>    shiftsContained
+</span></span><span style=display:flex><span>    from
+</span></span><span style=display:flex><span>    to
+</span></span><span style=display:flex><span>    error
+</span></span><span style=display:flex><span>    value
+</span></span><span style=display:flex><span>    units
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>input:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;filterInput&#34;: {
+</span></span><span style=display:flex><span>    &#34;shiftFilter&#34;: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;propertyName&#34;: <span style=color:#a31515>&#34;Shift Name&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;eq&#34;: <span style=color:#a31515>&#34;Morning&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;Machine A&#34;</span>, <span style=color:#a31515>&#34;Machine B&#34;</span>],
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  &#34;startDateTime&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>  &#34;endDateTime&#34;: <span style=color:#a31515>&#34;2024-09-03T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>  &#34;kpi&#34;: [<span style=color:#a31515>&#34;ActualProductionTime&#34;</span>],
+</span></span><span style=display:flex><span>  &#34;ignorePlannedDownTime&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;ignorePlannedShutdownTime&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;onlyIncludeActiveJobResponses&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;groupByShift&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;groupByEquipment&#34;: <span style=color:#00f>false</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div><div class=tab-pane title=RESPONSE><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;data&#34;: {
+</span></span><span style=display:flex><span>    &#34;GetKPIByShift&#34;: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;ActualProductionTime&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;Machine A&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;shiftsContained&#34;: [<span style=color:#a31515>&#34;Shift.Sunday.Morning&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T06:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T14:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 27000,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;ActualProductionTime&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;Machine B&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;shiftsContained&#34;: [<span style=color:#a31515>&#34;Shift.Sunday.Morning&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T06:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T14:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 27000,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;ActualProductionTime&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;Machine A&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;shiftsContained&#34;: [<span style=color:#a31515>&#34;Shift.Monday.Morning&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-02T06:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-02T14:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 27000,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;ActualProductionTime&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;Machine B&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;shiftsContained&#34;: [<span style=color:#a31515>&#34;Shift.Monday.Morning&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-02T06:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-02T14:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 27000,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></div></div><ul><li><strong><code>groupByEquipment = true and groupByShift = false</code> -</strong> returns a separate result per shift instance containing all equipment</li></ul><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=QUERY><p>query:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#00f>query</span> <span style=color:#2b91af>GetKPIByShift</span>($filterInput: <span style=color:#2b91af>GetKPIByShiftFilter</span>!, $startDateTime: <span style=color:#2b91af>DateTime</span>!, $endDateTime: <span style=color:#2b91af>DateTime</span>!, $kpi: [<span style=color:#2b91af>KPI</span>!], $ignorePlannedDownTime: <span style=color:#2b91af>Boolean</span>, $ignorePlannedShutdownTime: <span style=color:#2b91af>Boolean</span>, $groupByShift: <span style=color:#2b91af>Boolean</span>, $groupByEquipment: <span style=color:#2b91af>Boolean</span>, $onlyIncludeActiveJobResponses: <span style=color:#2b91af>Boolean</span>) {
+</span></span><span style=display:flex><span>  GetKPIByShift(filterInput: $filterInput, <span style=color:#2b91af>startDateTime</span>: $startDateTime, <span style=color:#2b91af>endDateTime</span>: $endDateTime, <span style=color:#2b91af>kpi</span>: $kpi, <span style=color:#2b91af>ignorePlannedDownTime</span>: $ignorePlannedDownTime, <span style=color:#2b91af>ignorePlannedShutdownTime</span>: $ignorePlannedShutdownTime, <span style=color:#2b91af>groupByShift</span>: $groupByShift, <span style=color:#2b91af>groupByEquipment</span>: $groupByEquipment, <span style=color:#2b91af>OnlyIncludeActiveJobResponses</span>: $onlyIncludeActiveJobResponses) {
+</span></span><span style=display:flex><span>    <span style=color:#2b91af>name</span>
+</span></span><span style=display:flex><span>    equipmentIds
+</span></span><span style=display:flex><span>    shiftsContained
+</span></span><span style=display:flex><span>    from
+</span></span><span style=display:flex><span>    to
+</span></span><span style=display:flex><span>    error
+</span></span><span style=display:flex><span>    value
+</span></span><span style=display:flex><span>    units
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>input:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;filterInput&#34;: {
+</span></span><span style=display:flex><span>    &#34;shiftFilter&#34;: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;propertyName&#34;: <span style=color:#a31515>&#34;Shift Name&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;eq&#34;: <span style=color:#a31515>&#34;Morning&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;Machine A&#34;</span>, <span style=color:#a31515>&#34;Machine B&#34;</span>],
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  &#34;startDateTime&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>  &#34;endDateTime&#34;: <span style=color:#a31515>&#34;2024-09-03T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>  &#34;kpi&#34;: [<span style=color:#a31515>&#34;ActualProductionTime&#34;</span>],
+</span></span><span style=display:flex><span>  &#34;ignorePlannedDownTime&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;ignorePlannedShutdownTime&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;onlyIncludeActiveJobResponses&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;groupByShift&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;groupByEquipment&#34;: <span style=color:#00f>true</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div><div class=tab-pane title=RESPONSE><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;data&#34;: {
+</span></span><span style=display:flex><span>    &#34;GetKPIByShift&#34;: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;ActualProductionTime&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;Machine A&#34;</span>, <span style=color:#a31515>&#34;Machine B&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;shiftsContained&#34;: [<span style=color:#a31515>&#34;Shift.Sunday.Morning&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T06:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T14:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 54000,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;ActualProductionTime&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;Machine A&#34;</span>, <span style=color:#a31515>&#34;Machine B&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;shiftsContained&#34;: [<span style=color:#a31515>&#34;Shift.Monday.Morning&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-02T06:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-02T14:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 54000,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></div></div><ul><li><strong>groupByEquipment = true and groupByShift = true -</strong> groups shifts and equipment together</li></ul><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=QUERY><p>query:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#00f>query</span> <span style=color:#2b91af>GetKPIByShift</span>($filterInput: <span style=color:#2b91af>GetKPIByShiftFilter</span>!, $startDateTime: <span style=color:#2b91af>DateTime</span>!, $endDateTime: <span style=color:#2b91af>DateTime</span>!, $kpi: [<span style=color:#2b91af>KPI</span>!], $ignorePlannedDownTime: <span style=color:#2b91af>Boolean</span>, $ignorePlannedShutdownTime: <span style=color:#2b91af>Boolean</span>, $groupByShift: <span style=color:#2b91af>Boolean</span>, $groupByEquipment: <span style=color:#2b91af>Boolean</span>, $onlyIncludeActiveJobResponses: <span style=color:#2b91af>Boolean</span>) {
+</span></span><span style=display:flex><span>  GetKPIByShift(filterInput: $filterInput, <span style=color:#2b91af>startDateTime</span>: $startDateTime, <span style=color:#2b91af>endDateTime</span>: $endDateTime, <span style=color:#2b91af>kpi</span>: $kpi, <span style=color:#2b91af>ignorePlannedDownTime</span>: $ignorePlannedDownTime, <span style=color:#2b91af>ignorePlannedShutdownTime</span>: $ignorePlannedShutdownTime, <span style=color:#2b91af>groupByShift</span>: $groupByShift, <span style=color:#2b91af>groupByEquipment</span>: $groupByEquipment, <span style=color:#2b91af>OnlyIncludeActiveJobResponses</span>: $onlyIncludeActiveJobResponses) {
+</span></span><span style=display:flex><span>    <span style=color:#2b91af>name</span>
+</span></span><span style=display:flex><span>    equipmentIds
+</span></span><span style=display:flex><span>    shiftsContained
+</span></span><span style=display:flex><span>    from
+</span></span><span style=display:flex><span>    to
+</span></span><span style=display:flex><span>    error
+</span></span><span style=display:flex><span>    value
+</span></span><span style=display:flex><span>    units
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>input:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;filterInput&#34;: {
+</span></span><span style=display:flex><span>    &#34;shiftFilter&#34;: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;propertyName&#34;: <span style=color:#a31515>&#34;Shift Name&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;eq&#34;: <span style=color:#a31515>&#34;Morning&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;Machine A&#34;</span>, <span style=color:#a31515>&#34;Machine B&#34;</span>],
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  &#34;startDateTime&#34;: <span style=color:#a31515>&#34;2024-09-01T00:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>  &#34;endDateTime&#34;: <span style=color:#a31515>&#34;2024-09-03T18:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>  &#34;kpi&#34;: [<span style=color:#a31515>&#34;ActualProductionTime&#34;</span>],
+</span></span><span style=display:flex><span>  &#34;ignorePlannedDownTime&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;ignorePlannedShutdownTime&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;onlyIncludeActiveJobResponses&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;groupByShift&#34;: <span style=color:#00f>true</span>,
+</span></span><span style=display:flex><span>  &#34;groupByEquipment&#34;: <span style=color:#00f>true</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div><div class=tab-pane title=RESPONSE><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;data&#34;: {
+</span></span><span style=display:flex><span>    &#34;GetKPIByShift&#34;: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;name&#34;: <span style=color:#a31515>&#34;ActualProductionTime&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;equipmentIds&#34;: [<span style=color:#a31515>&#34;Machine A&#34;</span>, <span style=color:#a31515>&#34;Machine B&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;shiftsContained&#34;: [<span style=color:#a31515>&#34;Shift.Sunday.Morning&#34;</span>,<span style=color:#a31515>&#34;Shift.Monday.Morning&#34;</span>],
+</span></span><span style=display:flex><span>        &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T06:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T14:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>        &#34;value&#34;: 108000,
+</span></span><span style=display:flex><span>        &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></div></div><h2 id=federated-queries>Federated Queries</h2><p>The KPI service extends the equipment, work schedule, work request, job order, and job response GraphQL entities with a KPI object.
+This makes KPIs easier to query.</p><h3 id=query-equipment>Query Equipment</h3><p>Extending the equipment type allows the equipment ID to be inferred from parent equipment type</p><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=QUERY><p>query:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#00f>query</span> <span style=color:#2b91af>QueryEquipment</span>($startDateTime: <span style=color:#2b91af>DateTime</span>!, $endDateTime: <span style=color:#2b91af>DateTime</span>!, $kpi: [<span style=color:#2b91af>KPI</span>!], $ignorePlannedDownTime: <span style=color:#2b91af>Boolean</span>, $ignorePlannedShutdownTime: <span style=color:#2b91af>Boolean</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#00f>query</span><span style=color:#2b91af>Equipment</span> {
+</span></span><span style=display:flex><span>    id
+</span></span><span style=display:flex><span>    kpi(startDateTime: $startDateTime, <span style=color:#2b91af>endDateTime</span>: $endDateTime, <span style=color:#2b91af>kpi</span>: $kpi, <span style=color:#2b91af>ignorePlannedDownTime</span>: $ignorePlannedDownTime, <span style=color:#2b91af>ignorePlannedShutdownTime</span>: $ignorePlannedShutdownTime) {
+</span></span><span style=display:flex><span>      <span style=color:#2b91af>name</span>
+</span></span><span style=display:flex><span>      from
+</span></span><span style=display:flex><span>      to
+</span></span><span style=display:flex><span>      error
+</span></span><span style=display:flex><span>      value
+</span></span><span style=display:flex><span>      units
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>input:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;startDateTime&#34;: <span style=color:#a31515>&#34;2024-09-01T06:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>  &#34;endDateTime&#34;: <span style=color:#a31515>&#34;2024-09-01T14:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>  &#34;kpi&#34;: [<span style=color:#a31515>&#34;ActualProductionTime&#34;</span>],
+</span></span><span style=display:flex><span>  &#34;ignorePlannedDownTime&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;ignorePlannedShutdownTime&#34;: <span style=color:#00f>false</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div><div class=tab-pane title=RESPONSE><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;data&#34;: {
+</span></span><span style=display:flex><span>    &#34;queryEquipment&#34;: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;Machine A&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;kpi&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;name&#34;: <span style=color:#a31515>&#34;ActualProductionTime&#34;</span>,
+</span></span><span style=display:flex><span>            &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T06:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>            &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T14:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>            &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>            &#34;value&#34;: 27000,
+</span></span><span style=display:flex><span>            &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;Machine B&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;kpi&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;name&#34;: <span style=color:#a31515>&#34;ActualProductionTime&#34;</span>,
+</span></span><span style=display:flex><span>            &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T06:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>            &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T14:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>            &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>            &#34;value&#34;: 27000,
+</span></span><span style=display:flex><span>            &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></div></div><h3 id=query-jobresponse>Query JobResponse</h3><p>Extending the job response type allows:</p><ul><li><code>startDateTime</code> to be inferred from <code>jobResponse.startDateTime</code></li><li><code>endDateTime</code> to be inferred from <code>jobResponse.endDateTime</code></li><li><code>equipmentIds</code> to be inferred from <code>jobResponse.equipmentActual.EquipmentVersion.id</code></li></ul><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=QUERY><p>query:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#00f>query</span> <span style=color:#2b91af>QueryJobResponse</span>($kpi: [<span style=color:#2b91af>KPI</span>!], $ignorePlannedDownTime: <span style=color:#2b91af>Boolean</span>, $ignorePlannedShutdownTime: <span style=color:#2b91af>Boolean</span>, $filter: <span style=color:#2b91af>KPIFilter</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#00f>query</span><span style=color:#2b91af>JobResponse</span> {
+</span></span><span style=display:flex><span>    id
+</span></span><span style=display:flex><span>    startDateTime
+</span></span><span style=display:flex><span>    endDateTime
+</span></span><span style=display:flex><span>    equipmentActual {
+</span></span><span style=display:flex><span>      id
+</span></span><span style=display:flex><span>      equipmentVersion {
+</span></span><span style=display:flex><span>        id
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    kpi(kpi: $kpi, <span style=color:#2b91af>ignorePlannedDownTime</span>: $ignorePlannedDownTime, <span style=color:#2b91af>ignorePlannedShutdownTime</span>: $ignorePlannedShutdownTime, <span style=color:#2b91af>filter</span>: $filter) {
+</span></span><span style=display:flex><span>      <span style=color:#2b91af>name</span>
+</span></span><span style=display:flex><span>      from
+</span></span><span style=display:flex><span>      to
+</span></span><span style=display:flex><span>      error
+</span></span><span style=display:flex><span>      value
+</span></span><span style=display:flex><span>      units
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>input:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;kpi&#34;: [
+</span></span><span style=display:flex><span>    <span style=color:#a31515>&#34;ActualProductionTime&#34;</span>
+</span></span><span style=display:flex><span>  ],
+</span></span><span style=display:flex><span>  &#34;ignorePlannedDownTime&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;ignorePlannedShutdownTime&#34;: <span style=color:#00f>false</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div><div class=tab-pane title=RESPONSE><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;data&#34;: {
+</span></span><span style=display:flex><span>    &#34;queryJobResponse&#34;: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;Order A1.JobResponse 1&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;startDateTime&#34;: <span style=color:#a31515>&#34;2024-09-01T08:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;endDateTime&#34;: <span style=color:#a31515>&#34;2024-09-01T14:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;equipmentActual&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;id&#34;: <span style=color:#a31515>&#34;Machine A.2024-09-01T08:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>            &#34;equipmentVersion&#34;: {
+</span></span><span style=display:flex><span>              &#34;id&#34;: <span style=color:#a31515>&#34;Machine A&#34;</span>
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ],
+</span></span><span style=display:flex><span>        &#34;kpi&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;name&#34;: <span style=color:#a31515>&#34;ActualProductionTime&#34;</span>,
+</span></span><span style=display:flex><span>            &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T08:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>            &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-01T14:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>            &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>            &#34;value&#34;: 27000,
+</span></span><span style=display:flex><span>            &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></div></div><h3 id=query-job-order-work-request-and-work-schedule>Query Job Order, Work Request, and Work Schedule</h3><p>Extending the Job order, Work Request, and Work Schedule entities makes it possible to recursively query all of the attached job responses:</p><pre class=mermaid>flowchart TD
+    WorkSchedule --> WorkRequests
+    WorkRequests --> JobOrders
+    JobOrders --> JobResponses
+</pre><p>Imagine that from the data from example 2 has this hierarchy:</p><pre class=mermaid>flowchart TD
+    WorkScheduleA --> WorkRequestA
+    WorkScheduleA --> WorkRequestB
+    WorkRequestA --> OrderA1
+    WorkRequestA --> OrderA2
+    WorkRequestB --> OrderB1
+    WorkRequestB --> OrderC1
+</pre><p>Querying KPI on <code>workSchedule A</code> combines all results for order A1, A2, B1 and C1:</p><div class=tabs><ul class="nav nav-tabs"></ul><div class=tab-content><div class=tab-pane title=QUERY><p>query:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#00f>query</span> <span style=color:#2b91af>QueryWorkSchedule</span>($kpi: [<span style=color:#2b91af>KPI</span>!], $ignorePlannedDownTime: <span style=color:#2b91af>Boolean</span>, $ignorePlannedShutdownTime: <span style=color:#2b91af>Boolean</span>, $filter: <span style=color:#2b91af>KPIFilter</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#00f>query</span><span style=color:#2b91af>WorkSchedule</span> {
+</span></span><span style=display:flex><span>    id
+</span></span><span style=display:flex><span>    kpi(kpi: $kpi, <span style=color:#2b91af>ignorePlannedDownTime</span>: $ignorePlannedDownTime, <span style=color:#2b91af>ignorePlannedShutdownTime</span>: $ignorePlannedShutdownTime, <span style=color:#2b91af>filter</span>: $filter) {
+</span></span><span style=display:flex><span>      <span style=color:#2b91af>name</span>
+</span></span><span style=display:flex><span>      from
+</span></span><span style=display:flex><span>      to
+</span></span><span style=display:flex><span>      error
+</span></span><span style=display:flex><span>      value
+</span></span><span style=display:flex><span>      units
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>input:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;kpi&#34;: [
+</span></span><span style=display:flex><span>    <span style=color:#a31515>&#34;ActualProductionTime&#34;</span>
+</span></span><span style=display:flex><span>  ],
+</span></span><span style=display:flex><span>  &#34;ignorePlannedDownTime&#34;: <span style=color:#00f>false</span>,
+</span></span><span style=display:flex><span>  &#34;ignorePlannedShutdownTime&#34;: <span style=color:#00f>false</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div><div class=tab-pane title=RESPONSE><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  &#34;data&#34;: {
+</span></span><span style=display:flex><span>    &#34;queryWorkSchedule&#34;: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        &#34;id&#34;: <span style=color:#a31515>&#34;WorkScheduleA&#34;</span>,
+</span></span><span style=display:flex><span>        &#34;kpi&#34;: [
+</span></span><span style=display:flex><span>          {
+</span></span><span style=display:flex><span>            &#34;name&#34;: <span style=color:#a31515>&#34;ActualProductionTime&#34;</span>,
+</span></span><span style=display:flex><span>            &#34;from&#34;: <span style=color:#a31515>&#34;2024-09-01T08:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>            &#34;to&#34;: <span style=color:#a31515>&#34;2024-09-02T06:00:00Z&#34;</span>,
+</span></span><span style=display:flex><span>            &#34;error&#34;: <span style=color:#00f>null</span>,
+</span></span><span style=display:flex><span>            &#34;value&#34;: 108000,
+</span></span><span style=display:flex><span>            &#34;units&#34;: <span style=color:#a31515>&#34;seconds&#34;</span>
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></div></div><h2 id=additional-filters>Additional Filters</h2><p>Some KPI Queries provide additional filters that are not mentioned in the preceding examples:</p><ul><li><code>ignorePlannedDownTime</code> (default: <code>false</code>) - Ignores planned down time events. For example if a state change happens while in the planned downtime calendar state, by default it is ignored. If <code>ignorePlannedDowntime = true</code>, the underlying state change is still returned.</li><li><code>ignorePlannedShutdownTime</code> (default: <code>false</code>). Similar to <code>ignorePlannedDowntime</code> except with planned shutdown calendar events.</li><li><code>onlyIncludeActiveJobResponses</code> (default: <code>false</code>) - if set to true will adjust the time interval of the KPI query to only be whilst a job response is active. For example if a user queries a KPI between 00:00 - 23:59 but there are only active job responses from 08:00-19:00, the query time range would be adjusted to 08:00-19:00.</li></ul><script type=module>
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script></article><div class=right-toc><nav id=TableOfContents><ul><li><a href=#root-level-queries>Root level queries</a><ul><li><a href=#getkpi><code>GetKPI()</code></a></li><li><a href=#getkpibyshift><code>GetKPIByShift()</code></a></li></ul></li><li><a href=#federated-queries>Federated Queries</a><ul><li><a href=#query-equipment>Query Equipment</a></li><li><a href=#query-jobresponse>Query JobResponse</a></li><li><a href=#query-job-order-work-request-and-work-schedule>Query Job Order, Work Request, and Work Schedule</a></li></ul></li><li><a href=#additional-filters>Additional Filters</a></li></ul></nav></div></div></main><script type=text/javascript src=https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js></script><script src=https://docs.rhize.com/js/clipboard.min.js></script><script src=https://docs.rhize.com/js/dgraph.js?a9873668f1334ff6c49d4edea0a4bc38></script><script>hljs.initHighlightingOnLoad()</script></body></html>
