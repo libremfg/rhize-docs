@@ -18,30 +18,30 @@ Additionally, most objects have the following fields:&lt;/p></description></item
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Service&lt;/th>
- &lt;th style="text-align: left">Default Port&lt;/th>
+ &lt;th>Service&lt;/th>
+ &lt;th>Default Port&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">Admin UI&lt;/td>
- &lt;td style="text-align: left">&lt;a href="http://localhost:3030">&lt;code>localhost:3030&lt;/code>&lt;/a>&lt;/td>
+ &lt;td>Admin UI&lt;/td>
+ &lt;td>&lt;a href="http://localhost:3030">&lt;code>localhost:3030&lt;/code>&lt;/a>&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">Grafana&lt;/td>
- &lt;td style="text-align: left">&lt;a href="http://localhost:3001">&lt;code>localhost:3001&lt;/code>&lt;/a>&lt;/td>
+ &lt;td>Grafana&lt;/td>
+ &lt;td>&lt;a href="http://localhost:3001">&lt;code>localhost:3001&lt;/code>&lt;/a>&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">Router&lt;/td>
- &lt;td style="text-align: left">&lt;a href="http://localhost:4000">&lt;code>localhost:4000&lt;/code>&lt;/a>&lt;/td>
+ &lt;td>Router&lt;/td>
+ &lt;td>&lt;a href="http://localhost:4000">&lt;code>localhost:4000&lt;/code>&lt;/a>&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">Keycloak&lt;/td>
- &lt;td style="text-align: left">&lt;a href="http://localhost:8090">&lt;code>localhost:8090&lt;/code>&lt;/a>&lt;/td>
+ &lt;td>Keycloak&lt;/td>
+ &lt;td>&lt;a href="http://localhost:8090">&lt;code>localhost:8090&lt;/code>&lt;/a>&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>baas-alpha&lt;/code> command line&lt;/td>
- &lt;td style="text-align: left">&lt;a href="http://localhost:8080">&lt;code>localhost:8080&lt;/code>&lt;/a>&lt;/td>
+ &lt;td>&lt;code>baas-alpha&lt;/code> command line&lt;/td>
+ &lt;td>&lt;a href="http://localhost:8080">&lt;code>localhost:8080&lt;/code>&lt;/a>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -90,18 +90,18 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Attributes&lt;/th>
- &lt;th style="text-align: left">Description&lt;/th>
+ &lt;th>Attributes&lt;/th>
+ &lt;th>Description&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>type&lt;/code>&lt;/td>
- &lt;td style="text-align: left">Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
+ &lt;td>&lt;code>type&lt;/code>&lt;/td>
+ &lt;td>Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>Level&lt;/code>&lt;/td>
- &lt;td style="text-align: left">Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, and &lt;code>Panic&lt;/code>. &lt;br />(Default: &lt;code>Trace&lt;/code>)&lt;/td>
+ &lt;td>&lt;code>Level&lt;/code>&lt;/td>
+ &lt;td>Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, and &lt;code>Panic&lt;/code>. &lt;br />(Default: &lt;code>Trace&lt;/code>)&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -110,34 +110,34 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Attributes&lt;/th>
- &lt;th style="text-align: left">Description&lt;/th>
+ &lt;th>Attributes&lt;/th>
+ &lt;th>Description&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>serverUrl&lt;/code>&lt;/td>
- &lt;td style="text-align: left">The URL of the OpenID Connect server. &lt;br />(Default: &lt;code>http://localhost:8090&lt;/code>)&lt;/td>
+ &lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
+ &lt;td>The URL of the OpenID Connect server. &lt;br />(Default: &lt;code>http://localhost:8090&lt;/code>)&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>realm&lt;/code>&lt;/td>
- &lt;td style="text-align: left">Identifies the authentication domain for which the authentication request is being made.&lt;/td>
+ &lt;td>&lt;code>realm&lt;/code>&lt;/td>
+ &lt;td>Identifies the authentication domain for which the authentication request is being made.&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>client_id&lt;/code>&lt;/td>
- &lt;td style="text-align: left">The unique identifier assigned to the client application by the OIDC server.&lt;/td>
+ &lt;td>&lt;code>client_id&lt;/code>&lt;/td>
+ &lt;td>The unique identifier assigned to the client application by the OIDC server.&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>client_secret&lt;/code>&lt;/td>
- &lt;td style="text-align: left">Used to authenticate the client when making confidential requests.&lt;/td>
+ &lt;td>&lt;code>client_secret&lt;/code>&lt;/td>
+ &lt;td>Used to authenticate the client when making confidential requests.&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>username&lt;/code>&lt;/td>
- &lt;td style="text-align: left">The username credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td>
+ &lt;td>&lt;code>username&lt;/code>&lt;/td>
+ &lt;td>The username credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>password&lt;/code>&lt;/td>
- &lt;td style="text-align: left">The password credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td>
+ &lt;td>&lt;code>password&lt;/code>&lt;/td>
+ &lt;td>The password credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -145,14 +145,14 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Attributes&lt;/th>
- &lt;th style="text-align: left">Description&lt;/th>
+ &lt;th>Attributes&lt;/th>
+ &lt;th>Description&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>serverUrl&lt;/code>&lt;/td>
- &lt;td style="text-align: left">The URL of the OpenTelemetry server. &lt;br />(Default: &lt;code>localhost:4317&lt;/code>)&lt;/td>
+ &lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
+ &lt;td>The URL of the OpenTelemetry server. &lt;br />(Default: &lt;code>localhost:4317&lt;/code>)&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -160,12 +160,12 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Description&lt;/th>
+ &lt;th>Description&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">Storage system for the configuration data. Value options include: &lt;code>influxdb&lt;/code> and &lt;code>pg&lt;/code>.&lt;/td>
+ &lt;td>Storage system for the configuration data. Value options include: &lt;code>influxdb&lt;/code> and &lt;code>pg&lt;/code>.&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -176,26 +176,26 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Attribute&lt;/th>
- &lt;th style="text-align: left">Description&lt;/th>
+ &lt;th>Attribute&lt;/th>
+ &lt;th>Description&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>ReadHeaderTimeout&lt;/code>&lt;/td>
- &lt;td style="text-align: left">Wait duration for the request header to be fully read before timing out. &lt;br />(Default: &lt;code>10&lt;/code>)&lt;/td>
+ &lt;td>&lt;code>ReadHeaderTimeout&lt;/code>&lt;/td>
+ &lt;td>Wait duration for the request header to be fully read before timing out. &lt;br />(Default: &lt;code>10&lt;/code>)&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>ReadTimeout&lt;/code>&lt;/td>
- &lt;td style="text-align: left">Wait duration for the entire request to be read before timing out. &lt;br />(Default: &lt;code>15&lt;/code>)&lt;/td>
+ &lt;td>&lt;code>ReadTimeout&lt;/code>&lt;/td>
+ &lt;td>Wait duration for the entire request to be read before timing out. &lt;br />(Default: &lt;code>15&lt;/code>)&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>WriteTimeout&lt;/code>&lt;/td>
- &lt;td style="text-align: left">Wait duration for the entire response to be written before timing out. &lt;br />(Default: &lt;code>10&lt;/code>)&lt;/td>
+ &lt;td>&lt;code>WriteTimeout&lt;/code>&lt;/td>
+ &lt;td>Wait duration for the entire response to be written before timing out. &lt;br />(Default: &lt;code>10&lt;/code>)&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>IdleTimeout&lt;/code>&lt;/td>
- &lt;td style="text-align: left">Wait duration for the next request while the connection is idle before timing out. &lt;br />(Default: &lt;code>30&lt;/code>)&lt;/td>
+ &lt;td>&lt;code>IdleTimeout&lt;/code>&lt;/td>
+ &lt;td>Wait duration for the next request while the connection is idle before timing out. &lt;br />(Default: &lt;code>30&lt;/code>)&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -206,18 +206,18 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Attributes&lt;/th>
- &lt;th style="text-align: left">Description&lt;/th>
+ &lt;th>Attributes&lt;/th>
+ &lt;th>Description&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>type&lt;/code>&lt;/td>
- &lt;td style="text-align: left">Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
+ &lt;td>&lt;code>type&lt;/code>&lt;/td>
+ &lt;td>Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>Level&lt;/code>&lt;/td>
- &lt;td style="text-align: left">Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, and &lt;code>Panic&lt;/code>. &lt;br />(Default: &lt;code>Trace&lt;/code>)&lt;/td>
+ &lt;td>&lt;code>Level&lt;/code>&lt;/td>
+ &lt;td>Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, and &lt;code>Panic&lt;/code>. &lt;br />(Default: &lt;code>Trace&lt;/code>)&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -226,14 +226,14 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Attributes&lt;/th>
- &lt;th style="text-align: left">Description&lt;/th>
+ &lt;th>Attributes&lt;/th>
+ &lt;th>Description&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>SERVER_URL&lt;/code>&lt;/td>
- &lt;td style="text-align: left">The URL of the NATS server. &lt;br />(Default: &lt;code>nats://system:system@localhost:4222&lt;/code>)&lt;/td>
+ &lt;td>&lt;code>SERVER_URL&lt;/code>&lt;/td>
+ &lt;td>The URL of the NATS server. &lt;br />(Default: &lt;code>nats://system:system@localhost:4222&lt;/code>)&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -244,18 +244,18 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Attributes&lt;/th>
- &lt;th style="text-align: left">Description&lt;/th>
+ &lt;th>Attributes&lt;/th>
+ &lt;th>Description&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>type&lt;/code>&lt;/td>
- &lt;td style="text-align: left">Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
+ &lt;td>&lt;code>type&lt;/code>&lt;/td>
+ &lt;td>Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>Level&lt;/code>&lt;/td>
- &lt;td style="text-align: left">Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, and &lt;code>Panic&lt;/code>. &lt;br />(Default: &lt;code>Trace&lt;/code>)&lt;/td>
+ &lt;td>&lt;code>Level&lt;/code>&lt;/td>
+ &lt;td>Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, and &lt;code>Panic&lt;/code>. &lt;br />(Default: &lt;code>Trace&lt;/code>)&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -264,18 +264,18 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Attributes&lt;/th>
- &lt;th style="text-align: left">Description&lt;/th>
+ &lt;th>Attributes&lt;/th>
+ &lt;th>Description&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>serverUrl&lt;/code>&lt;/td>
- &lt;td style="text-align: left">The URL of the NATS server. &lt;br />(Default: &lt;code>nats://system:system@localhost:4222&lt;/code>)&lt;/td>
+ &lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
+ &lt;td>The URL of the NATS server. &lt;br />(Default: &lt;code>nats://system:system@localhost:4222&lt;/code>)&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>replicas&lt;/code>&lt;/td>
- &lt;td style="text-align: left">The number of replicas or instances of the NATS server to be deployed. &lt;br />(Default: &lt;code>1&lt;/code>)&lt;/td>
+ &lt;td>&lt;code>replicas&lt;/code>&lt;/td>
+ &lt;td>The number of replicas or instances of the NATS server to be deployed. &lt;br />(Default: &lt;code>1&lt;/code>)&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -285,22 +285,22 @@ This list these special variables is as follows:&lt;/p>
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Variable&lt;/th>
- &lt;th style="text-align: left">Purpose&lt;/th>
+ &lt;th>Variable&lt;/th>
+ &lt;th>Purpose&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>BODY&lt;/code>&lt;/td>
- &lt;td style="text-align: left">The name of the variable as &lt;strong>Input&lt;/strong> in &lt;a href="https://docs.rhize.com/how-to/bpmn/bpmn-elements/#intermediate-message-events">Intermediate message throws&lt;/a>. The value of this variable is the payload sent to the Rhize message broker.&lt;/td>
+ &lt;td>&lt;code>BODY&lt;/code>&lt;/td>
+ &lt;td>The name of the variable as &lt;strong>Input&lt;/strong> in &lt;a href="https://docs.rhize.com/how-to/bpmn/bpmn-elements/#intermediate-message-events">Intermediate message throws&lt;/a>. The value of this variable is the payload sent to the Rhize message broker.&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>customResponse&lt;/code>&lt;/td>
- &lt;td style="text-align: left">A value to report at the end of a synchronous API call to trigger a workflow. On completion, the call reports whatever the value was in the &lt;code>customResponse&lt;/code> field of the GraphQL response. For details, read &lt;a href="https://docs.rhize.com/how-to/bpmn/trigger-workflows/">Trigger workflows&lt;/a>.&lt;/td>
+ &lt;td>&lt;code>customResponse&lt;/code>&lt;/td>
+ &lt;td>A value to report at the end of a synchronous API call to trigger a workflow. On completion, the call reports whatever the value was in the &lt;code>customResponse&lt;/code> field of the GraphQL response. For details, read &lt;a href="https://docs.rhize.com/how-to/bpmn/trigger-workflows/">Trigger workflows&lt;/a>.&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>__traceDebug&lt;/code>&lt;/td>
- &lt;td style="text-align: left">If &lt;code>true&lt;/code> at the start of the workflow, the BPMN workflow reports the variable context at each node as spans in Tempo.&lt;/td>
+ &lt;td>&lt;code>__traceDebug&lt;/code>&lt;/td>
+ &lt;td>If &lt;code>true&lt;/code> at the start of the workflow, the BPMN workflow reports the variable context at each node as spans in Tempo.&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table></description></item><item><title>GraphQL types and filters</title><link>https://docs.rhize.com/reference/gql-types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/gql-types/</guid><description>&lt;p>This page provides a reference of the data types enforced by the Rhize database schema,
@@ -395,26 +395,26 @@ These parameters control how users set conditions, transform data, access variab
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Parameter&lt;/th>
- &lt;th style="text-align: left">Description&lt;/th>
+ &lt;th>Parameter&lt;/th>
+ &lt;th>Description&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">ID&lt;/td>
- &lt;td style="text-align: left">Mandatory unique ID. For guidance, follow the &lt;a href="https://docs.rhize.com/how-to/bpmn/naming-conventions/">BPMN naming conventions&lt;/a>.&lt;/td>
+ &lt;td>ID&lt;/td>
+ &lt;td>Mandatory unique ID. For guidance, follow the &lt;a href="https://docs.rhize.com/how-to/bpmn/naming-conventions/">BPMN naming conventions&lt;/a>.&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">Name&lt;/td>
- &lt;td style="text-align: left">Optional human readable name. If empty, takes ID value.&lt;/td>
+ &lt;td>Name&lt;/td>
+ &lt;td>Optional human readable name. If empty, takes ID value.&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">Documentation&lt;/td>
- &lt;td style="text-align: left">Optional freeform text for additional information&lt;/td>
+ &lt;td>Documentation&lt;/td>
+ &lt;td>Optional freeform text for additional information&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">Extension properties&lt;/td>
- &lt;td style="text-align: left">Optional metadata to add to workflow or node&lt;/td>
+ &lt;td>Extension properties&lt;/td>
+ &lt;td>Optional metadata to add to workflow or node&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>

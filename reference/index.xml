@@ -6,54 +6,54 @@ Monitoring occurs granularly, on the levels of cluster, pod, and container.&lt;/
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Service&lt;/th>
- &lt;th style="text-align: left">Available&lt;/th>
- &lt;th style="text-align: left">Enabled&lt;/th>
- &lt;th style="text-align: left">Port&lt;/th>
+ &lt;th>Service&lt;/th>
+ &lt;th>Available&lt;/th>
+ &lt;th>Enabled&lt;/th>
+ &lt;th>Port&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">Audit&lt;/td>
- &lt;td style="text-align: left">Y&lt;/td>
- &lt;td style="text-align: left">Y&lt;/td>
- &lt;td style="text-align: left">8084&lt;/td>
+ &lt;td>Audit&lt;/td>
+ &lt;td>Y&lt;/td>
+ &lt;td>Y&lt;/td>
+ &lt;td>8084&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">BAAS&lt;/td>
- &lt;td style="text-align: left">Y&lt;/td>
- &lt;td style="text-align: left">Y&lt;/td>
- &lt;td style="text-align: left">8080&lt;/td>
+ &lt;td>BAAS&lt;/td>
+ &lt;td>Y&lt;/td>
+ &lt;td>Y&lt;/td>
+ &lt;td>8080&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">BPMN&lt;/td>
- &lt;td style="text-align: left">Y&lt;/td>
- &lt;td style="text-align: left">Y&lt;/td>
- &lt;td style="text-align: left">8081&lt;/td>
+ &lt;td>BPMN&lt;/td>
+ &lt;td>Y&lt;/td>
+ &lt;td>Y&lt;/td>
+ &lt;td>8081&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">Core&lt;/td>
- &lt;td style="text-align: left">Y&lt;/td>
- &lt;td style="text-align: left">Y&lt;/td>
- &lt;td style="text-align: left">8080&lt;/td>
+ &lt;td>Core&lt;/td>
+ &lt;td>Y&lt;/td>
+ &lt;td>Y&lt;/td>
+ &lt;td>8080&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">NATS&lt;/td>
- &lt;td style="text-align: left">&lt;/td>
- &lt;td style="text-align: left">Y&lt;/td>
- &lt;td style="text-align: left">7777&lt;/td>
+ &lt;td>NATS&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>Y&lt;/td>
+ &lt;td>7777&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">Router&lt;/td>
- &lt;td style="text-align: left">Y&lt;/td>
- &lt;td style="text-align: left">&lt;/td>
- &lt;td style="text-align: left">9090&lt;/td>
+ &lt;td>Router&lt;/td>
+ &lt;td>Y&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>9090&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">Tempo&lt;/td>
- &lt;td style="text-align: left">Y&lt;/td>
- &lt;td style="text-align: left">Y&lt;/td>
- &lt;td style="text-align: left">3100&lt;/td>
+ &lt;td>Tempo&lt;/td>
+ &lt;td>Y&lt;/td>
+ &lt;td>Y&lt;/td>
+ &lt;td>3100&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -62,30 +62,30 @@ Router has an available endpoint that is disabled by default.&lt;/p></descriptio
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Service&lt;/th>
- &lt;th style="text-align: left">Default Port&lt;/th>
+ &lt;th>Service&lt;/th>
+ &lt;th>Default Port&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">Admin UI&lt;/td>
- &lt;td style="text-align: left">&lt;a href="http://localhost:3030">&lt;code>localhost:3030&lt;/code>&lt;/a>&lt;/td>
+ &lt;td>Admin UI&lt;/td>
+ &lt;td>&lt;a href="http://localhost:3030">&lt;code>localhost:3030&lt;/code>&lt;/a>&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">Grafana&lt;/td>
- &lt;td style="text-align: left">&lt;a href="http://localhost:3001">&lt;code>localhost:3001&lt;/code>&lt;/a>&lt;/td>
+ &lt;td>Grafana&lt;/td>
+ &lt;td>&lt;a href="http://localhost:3001">&lt;code>localhost:3001&lt;/code>&lt;/a>&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">Router&lt;/td>
- &lt;td style="text-align: left">&lt;a href="http://localhost:4000">&lt;code>localhost:4000&lt;/code>&lt;/a>&lt;/td>
+ &lt;td>Router&lt;/td>
+ &lt;td>&lt;a href="http://localhost:4000">&lt;code>localhost:4000&lt;/code>&lt;/a>&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">Keycloak&lt;/td>
- &lt;td style="text-align: left">&lt;a href="http://localhost:8090">&lt;code>localhost:8090&lt;/code>&lt;/a>&lt;/td>
+ &lt;td>Keycloak&lt;/td>
+ &lt;td>&lt;a href="http://localhost:8090">&lt;code>localhost:8090&lt;/code>&lt;/a>&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>baas-alpha&lt;/code> command line&lt;/td>
- &lt;td style="text-align: left">&lt;a href="http://localhost:8080">&lt;code>localhost:8080&lt;/code>&lt;/a>&lt;/td>
+ &lt;td>&lt;code>baas-alpha&lt;/code> command line&lt;/td>
+ &lt;td>&lt;a href="http://localhost:8080">&lt;code>localhost:8080&lt;/code>&lt;/a>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>

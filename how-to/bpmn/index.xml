@@ -47,22 +47,22 @@ This list these special variables is as follows:&lt;/p>
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Variable&lt;/th>
- &lt;th style="text-align: left">Purpose&lt;/th>
+ &lt;th>Variable&lt;/th>
+ &lt;th>Purpose&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>BODY&lt;/code>&lt;/td>
- &lt;td style="text-align: left">The name of the variable as &lt;strong>Input&lt;/strong> in &lt;a href="https://docs.rhize.com/how-to/bpmn/bpmn-elements/#intermediate-message-events">Intermediate message throws&lt;/a>. The value of this variable is the payload sent to the Rhize message broker.&lt;/td>
+ &lt;td>&lt;code>BODY&lt;/code>&lt;/td>
+ &lt;td>The name of the variable as &lt;strong>Input&lt;/strong> in &lt;a href="https://docs.rhize.com/how-to/bpmn/bpmn-elements/#intermediate-message-events">Intermediate message throws&lt;/a>. The value of this variable is the payload sent to the Rhize message broker.&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>customResponse&lt;/code>&lt;/td>
- &lt;td style="text-align: left">A value to report at the end of a synchronous API call to trigger a workflow. On completion, the call reports whatever the value was in the &lt;code>customResponse&lt;/code> field of the GraphQL response. For details, read &lt;a href="https://docs.rhize.com/how-to/bpmn/trigger-workflows/">Trigger workflows&lt;/a>.&lt;/td>
+ &lt;td>&lt;code>customResponse&lt;/code>&lt;/td>
+ &lt;td>A value to report at the end of a synchronous API call to trigger a workflow. On completion, the call reports whatever the value was in the &lt;code>customResponse&lt;/code> field of the GraphQL response. For details, read &lt;a href="https://docs.rhize.com/how-to/bpmn/trigger-workflows/">Trigger workflows&lt;/a>.&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;code>__traceDebug&lt;/code>&lt;/td>
- &lt;td style="text-align: left">If &lt;code>true&lt;/code> at the start of the workflow, the BPMN workflow reports the variable context at each node as spans in Tempo.&lt;/td>
+ &lt;td>&lt;code>__traceDebug&lt;/code>&lt;/td>
+ &lt;td>If &lt;code>true&lt;/code> at the start of the workflow, the BPMN workflow reports the variable context at each node as spans in Tempo.&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table></description></item><item><title>Naming conventions</title><link>https://docs.rhize.com/how-to/bpmn/naming-conventions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/bpmn/naming-conventions/</guid><description>&lt;div class="notices note" >
@@ -91,26 +91,26 @@ These parameters control how users set conditions, transform data, access variab
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Parameter&lt;/th>
- &lt;th style="text-align: left">Description&lt;/th>
+ &lt;th>Parameter&lt;/th>
+ &lt;th>Description&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">ID&lt;/td>
- &lt;td style="text-align: left">Mandatory unique ID. For guidance, follow the &lt;a href="https://docs.rhize.com/how-to/bpmn/naming-conventions/">BPMN naming conventions&lt;/a>.&lt;/td>
+ &lt;td>ID&lt;/td>
+ &lt;td>Mandatory unique ID. For guidance, follow the &lt;a href="https://docs.rhize.com/how-to/bpmn/naming-conventions/">BPMN naming conventions&lt;/a>.&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">Name&lt;/td>
- &lt;td style="text-align: left">Optional human readable name. If empty, takes ID value.&lt;/td>
+ &lt;td>Name&lt;/td>
+ &lt;td>Optional human readable name. If empty, takes ID value.&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">Documentation&lt;/td>
- &lt;td style="text-align: left">Optional freeform text for additional information&lt;/td>
+ &lt;td>Documentation&lt;/td>
+ &lt;td>Optional freeform text for additional information&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">Extension properties&lt;/td>
- &lt;td style="text-align: left">Optional metadata to add to workflow or node&lt;/td>
+ &lt;td>Extension properties&lt;/td>
+ &lt;td>Optional metadata to add to workflow or node&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>

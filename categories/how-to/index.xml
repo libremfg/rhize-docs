@@ -305,7 +305,7 @@ For general instructions, refer to the official &lt;a href="https://grafana.com/
 Adding an item over the UI requires no programming skill, but you can only add only one unit at a time.
 Creating a BPMN process to listen for an event and automatically map new units brings the highest automation, but it requires upfront investment to write and test the BPMN workflow.&lt;/p></description></item><item><title>Connect event data</title><link>https://docs.rhize.com/how-to/publish-subscribe/</link><pubDate>Fri, 22 Sep 2023 14:50:39 -0300</pubDate><guid>https://docs.rhize.com/how-to/publish-subscribe/</guid><description>&lt;p>For Rhize to listen to and &lt;a href="https://docs.rhize.com/how-to/bpmn/">handle&lt;/a> manufacturing events,
 you need to connect a &lt;abbr title="A source of real-time data that is collected by the Rhize agent, such as an MQTT or OPC UA device">data source&lt;/abbr>.&lt;/p></description></item><item><title>Use the KPI service</title><link>https://docs.rhize.com/how-to/kpi-service/</link><pubDate>Tue, 03 Sep 2024 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/kpi-service/</guid><description>&lt;div class="notices note">
- &lt;span class="type">📝&lt;/span>The KPI service is currently provided provided through a separate Helm chart. If you want to use for your Rhize installation, get in touch.&lt;/a>
+ &lt;span class="type">📝&lt;/span>The KPI service is currently provided through a separate Helm chart. If you want to use for your Rhize installation, get in touch.&lt;/a>
 &lt;/div>
 
 
