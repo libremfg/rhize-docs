@@ -45,7 +45,8 @@ With the returned data, the service calculates the KPI value and returns it to t
 
 ## Supported KPIs
 
-The service currently supports all KPIs as provided by the `ISO/TR 22400-10` specification as well as some other useful KPIs:
+The service supports all KPIs described by the ISO/TR 22400-10,
+along with some other useful KPIs:
 
 - `ActualProductionTime`
 - `ActualUnitSetupTime`
