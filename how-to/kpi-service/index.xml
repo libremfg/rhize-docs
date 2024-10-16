@@ -5,39 +5,9 @@
 
 
 
-&lt;p>Key Performance Indicators (KPIs) in manufacturing serve as measurable metrics that help monitor, assess, and optimize the performance of various aspects of your production process.&lt;/p>
-&lt;p>Rhize has an optional &lt;code>KPI&lt;/code> service that queries process values persisted to a time series database and calculated various KPIs&lt;/p>
-
-
-&lt;div class="notices note" >
- &lt;span class="type">Note&lt;/span> Rhize&amp;rsquo;s implementation of work calendars was inspired by ISO/TR
-22400-10, a standard on KPIs in operations management.
-&lt;/div>
-
-&lt;h2 id="what-the-service-does">What the service does&lt;/h2>
-&lt;pre class="mermaid">sequenceDiagram
- actor U as User
- participant K as KPI Service
- participant TSDB as Time Series Database
-
- U->>K: Query KPI in certain interval
- K->>TSDB: Query State Records
- TSDB->>K: Response: State records
- K->>TSDB: Query Quantity Records
- TSDB->>K: Response: Quantity records
- K->>TSDB: Query JobResponse Records
- TSDB->>K: Response: JobResponse records
- K-->>TSDB: (Optional:) Query Planned Downtime Records
- TSDB-->>K: Response: Downtime Records
- K-->>TSDB: (Optional:) Query Shift Records
- TSDB-->>K: Response: Downtime Records
- K->>K: Calculate KPIs
- K->U: Response: KPI Result
-&lt;/pre>
-
-&lt;p>The KPI service provides an interface in the graph database for the user to query a list of pre-defined KPIs on a piece of equipment in the &lt;code>equipmentHierarchy&lt;/code> within a certain time interval.
-The service then queries the time-series database for all state changes, produced quantities, and job response data.
-With the returned data, the service calculates the KPI value and returns it to the user.&lt;/p></description></item><item><title>Configure the KPI service</title><link>https://docs.rhize.com/how-to/kpi-service/configure-kpi-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/kpi-service/configure-kpi-service/</guid><description>&lt;div class="notices note">
+&lt;p>Key Performance Indicators (KPIs) in manufacturing are metrics to help monitor, assess, and optimize the performance of various aspects of your production process.&lt;/p>
+&lt;p>Rhize has an optional &lt;code>KPI&lt;/code> service that queries process values persisted to a time-series database and then calculates various KPIs.
+Rhize&amp;rsquo;s implementation of work calendars is inspired by ISO/TR &lt;a href="https://www.iso.org/obp/ui/?_escaped_fragment_=iso:std:71283:en">22400-10&lt;/a>, a standard on KPIs in operations management.&lt;/p></description></item><item><title>Configure the KPI service</title><link>https://docs.rhize.com/how-to/kpi-service/configure-kpi-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/kpi-service/configure-kpi-service/</guid><description>&lt;div class="notices note">
  &lt;span class="type">📝&lt;/span>The KPI service is currently provided through a separate Helm chart. If you want to use for your Rhize installation, get in touch.&lt;/a>
 &lt;/div>
 
