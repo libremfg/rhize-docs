@@ -11,14 +11,10 @@ menu:
 
 {{< experimental-kpi >}}
 
-Key Performance Indicators (KPIs) in manufacturing serve as measurable metrics that help monitor, assess, and optimize the performance of various aspects of your production process.
+Key Performance Indicators (KPIs) in manufacturing are metrics to help monitor, assess, and optimize the performance of various aspects of your production process.
 
-Rhize has an optional `KPI` service that queries process values persisted to a time series database and calculated various KPIs
-
-{{< notice "note" >}}
-Rhize's implementation of work calendars was inspired by ISO/TR
-22400-10, a standard on KPIs in operations management.
-{{< /notice >}}
+Rhize has an optional `KPI` service that queries process values persisted to a time-series database and then calculates various KPIs.
+Rhize's implementation of work calendars is inspired by ISO/TR [22400-10](https://www.iso.org/obp/ui/?_escaped_fragment_=iso:std:71283:en), a standard on KPIs in operations management.
 
 ## What the service does
 
