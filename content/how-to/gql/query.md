@@ -26,28 +26,6 @@ These operations correspond to the `Get` verb defined in [Part 5](https://www.is
 
 {{< /notice >}}
 
-## `get` single resource {#get}
-
-Queries that start with `get` return one object.
-A common use of `get` is to explore all data related to a particular object.
-For example, in a custom dashboard, you may use `getDataSource` to make a custom page that reports a specified data source.
-
-Typically, the argument specifies the resource by either its human-readable ID (`id`) or its unique address in the database (`iid`).
-
-For example, this query gets the `iid`, `_createdBy`, and `versions` for the equipment item `Kitchen_mixer_b_01`:
-
-```graphql
-query mixerCheck {
-  getEquipment(id: "Kitchen_mixer_b_01") {
-      iid
-      _createdBy
-      versions{
-        id
-      }
-  }
-}
-```
-
 ## `query` multiple resources {#query}
 
 Queries that start with `query` return an array of objects.
@@ -80,6 +58,29 @@ query ExampleQuery {
 ```
 
 If you don't have the precise `iid`, you can use one of the string [filters]({{< relref "filter" >}}).
+
+
+## `get` single resource {#get}
+
+Queries that start with `get` return one object.
+A common use of `get` is to explore all data related to a particular object.
+For example, in a custom dashboard, you may use `getDataSource` to make a custom page that reports a specified data source.
+
+Typically, the argument specifies the resource by either its human-readable ID (`id`) or its unique address in the database (`iid`).
+
+For example, this query gets the `iid`, `_createdBy`, and `versions` for the equipment item `Kitchen_mixer_b_01`:
+
+```graphql
+query mixerCheck {
+  getEquipment(id: "Kitchen_mixer_b_01") {
+      iid
+      _createdBy
+      versions{
+        id
+      }
+  }
+}
+```
 
 ## `Aggregate` data from multiple resources {#aggregate}
 
