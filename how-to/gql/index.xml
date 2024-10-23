@@ -17,10 +17,9 @@ a good query is likely the foundation of your workflow.&lt;/p>
  &lt;span class="type">Note&lt;/span> These operations correspond to the &lt;code>Get&lt;/code> verb defined in &lt;a href="https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i">Part 5&lt;/a> of the ISA-95 standard.
 &lt;/div>
 
-&lt;h2 id="get">&lt;code>get&lt;/code> single resource&lt;/h2>
-&lt;p>Queries that start with &lt;code>get&lt;/code> return one object.
-A common use of &lt;code>get&lt;/code> is to explore all data related to a particular object.
-For example, in a custom dashboard, you may use &lt;code>getDataSource&lt;/code> to make a custom page that reports a specified data source.&lt;/p></description></item><item><title>Filter</title><link>https://docs.rhize.com/how-to/gql/filter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/gql/filter/</guid><description>&lt;p>&lt;em>Filters&lt;/em> limit an operation to a subset of resources.
+&lt;h2 id="query">&lt;code>query&lt;/code> multiple resources&lt;/h2>
+&lt;p>Queries that start with &lt;code>query&lt;/code> return an array of objects.
+For example, a custom dashboard may use &lt;code>queryEquipmentVersion&lt;/code> to create a page that displays all active versions of equipment that are running in a certain &lt;abbr title="The scope of the exchanged information, such as a site or area, for which the information is relevant. The scope identifies associated instances of objects such as material, personnel, and equipment">hierarchy scope&lt;/abbr>.&lt;/p></description></item><item><title>Filter</title><link>https://docs.rhize.com/how-to/gql/filter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/gql/filter/</guid><description>&lt;p>&lt;em>Filters&lt;/em> limit an operation to a subset of resources.
 You can use filters to make operations more precise, remove unneeded items from a payload, and reduce the need for secondary processing.&lt;/p>
 &lt;p>To use a filter, specify it in the operation&amp;rsquo;s argument.
 Most fields in an object can serve as a filter.
