@@ -4,26 +4,83 @@ title: >-
 description: The Rhize guide to querying all the information that happened in a manufacturing job.
 categories: ["howto", "use-cases"]
 weight: 0100
+hidden: true
 menu:
   main:
     parent: use-cases
     identifier:
 ---
 
-This document details how to use Rhize to implement a _track and trace_
-to answer all the questions about what happened during a certain process or series of processes.
+This document details how to use Rhize to implement a _track and trace_ to answer all the questions about what happened during a certain process or series of processes.
 
-After you decide how to model and ingest your data for a track and trace use case,
-you can use a single Rhize query to identify answers to questions such as:
+Rhize can model events and resources at a high degree of granularity, and its ISA-95 schema creates built-in relationships between these entities.
+So it makes an ideal backend to build detailed track-and-trace reports.
+In a single query, 
+you can use Rhize to identify answers to questions such as:
 - What material was involved in this job?
-- What equipment used to perform this job?
+- What equipment was used to perform this job?
 - Who were the operators who performed the work?
 - What are the results of quality testing for this work?
 - When and where did the work happen? 
 - What order was this job a response to?
 
-In pharmaceutical manufacturing, an [_Electronic batch record_]({{< relref "/use-cases/ebr" >}}) is a special kind of track and trace to keep a record of all inputs of a pharmaceutical batch.
-Another related use case is the [Genealogy]({{< relref "/use-cases/genealogy" >}}), which keeps a record of a how a material flows through the manufacturing process.
+This document focuses on the ISA-95 /Rhize DB entities to create a generic, reusable model and set of queries for any track-and-trace use case.
+For a high-level overview of how track-and-trace data may enter the Rhize data hub, read the guide to [Electronic batch records]({{< relref "/use-cases/ebr" >}}).
+
+
+## Quick query
+
+If you just want to build out a [GraphQL query]({{< relref "/how-to/gql/query" >}}) for your reporting, use these templates to get started.
+The rest of this article describes the models and query fields in detail and provides a 
+[complete example query](#example-query).
+
+If you know IDs for the relevant job response, job order, and test results, you can structure each group as a top-level object.
+If you want to input only one ID, you can also use nested fields on a response, order, or test specification to pull all necessary information.
+The Rhize DB stores relationships, so the values are identical&mdash;only the structure of the response changes.
+
+
+{{< tabs >}}
+{{< tab "flat" >}}
+
+```gql
+query trackAndTrace {
+  performance: getJobResponse(id: "ds1d-119-as") {
+   # duration, actuals, and so on
+  }
+ planning: getJobOrder(id: "ds1d-119-jo-119-3") {
+  # requirements, work directive, and so on
+ }
+ testing: getTestResult(id: "ds1d-119-tr-3") {
+   # evaluation properties and tested objects
+}
+```
+{{< /tab >}}
+{{< tab "nested" >}}
+
+```gql
+query nestedTrackAndTrace {
+  jobResponse: getJobResponse(id: "ds1d-batch-119-jr-fc-make-frosting") {
+    id
+    ## more fields about performance
+    materialActual { ## repeat for other resources as needed
+      id
+      quantity
+      testResults { ## test results for material
+        id
+      }
+      ## More material fields
+    }
+    associated_order: jobOrder {
+      id
+      ## more planning fields
+    }
+  }
+}
+
+```
+{{< /tab >}} 
+{{</ tabs >}}
+
 
 
 ## Background: ISA-95 entities in a track-and-trace query
@@ -33,18 +90,16 @@ Another related use case is the [Genealogy]({{< relref "/use-cases/genealogy" >}
 read [How to speak ISA-95]({{< relref "/explanations/how-to-speak-isa-95" >}}).
 {{< /notice >}}
 
-The Rhize DB uses ISA-95 as an ontology to represent all components of planned and performed work.
-Once you have mapped the entities you want to track to a standard model, the Rhize DB provides a highly flexible backend to build track and trace reports.
-
 The following lists detail the ISA-95 entities that you might need when querying the Rhize database for a track and trace.
-Note that the exact data involved in a track and trace returns depends on your manufacturing needs and data-collection capabilities.
+Note that the exact data involved in a track and trace depends on your manufacturing needs and data-collection capabilities.
 It is likely that some of the following entities are irrelevant for your particular use case.
 
 ### Performance information
 
 A _job response_ represents a unit of performed work in a manufacturing operation.
-As a job response has relations to {{< abbr "resource actuals" >}}, times, measurements, and orders,
-the job response typically forms the core of your query.
+The job response typically forms the core of a track-and-trace query,
+as it has direct relations to run time and the {{< abbr "resource actual" >}}s.
+A job response also may contain child job responses, as displayed in the following diagram:
 
 
 
@@ -54,13 +109,13 @@ caption="An example of a job response with child job responses. The parent job h
 >}}
 
 
-The following table lists the properties and associations of a job response that may be important for a track and trace:
+For a track and trace, some important job response properties and associations include the following:
 
-- **Start and End times.** To track when work happened. The difference between start and ends is also how Rhize calculates job duration                          |
-- **Material Actuals.** To track quantities and uses of material that is consumed, produced, tested, scrapped, and so on. Material actuals may also have associated lots for unique identification.
-- **Equipment Actual.** To track the real equipment used in a job
-- **Personnel actual.** To track the people involved in a job.
-- **Process values**. To store associated data.
+- **Start and End times.** Track when work happened. The difference between start and ends is also how Rhize calculates job duration.
+- **Material Actuals.** Track quantities and uses of material that is consumed, produced, tested, scrapped, and so on. Material actuals may also have associated lots for unique identification, and test results on certain associated samples. 
+- **Equipment Actuals.** Track the real equipment used in a job, along with associated equipment properties and testing results.
+- **Personnel actuals.** Track the people involved in a job or test.
+- **Process values**. Store associated process data and calculations.
 - **Comments and Signatures.** Additional input from operators.
 
 ### Scheduling information
@@ -73,11 +128,11 @@ When adding order information, consider whether you need the following propertie
 * **Material requirements**. The material that corresponds to the material actuals in the performance. Requirements may include:
    - Material to be produced, along with their scheduled quantities and units of measure
    * Material to be consumed, along with their scheduled quantities and units of measure
-   * Any by products
+   * Any by-product material and scrap
 * **Planned equipment**. This can be compared to the real equipment used.
 * **WorkDirective**. The dispatched version of the planned work. The directive may include:
-   - Specifications or a BoM (if the requirements are not in the order itself).
-   - Any relevant work master configuration (routing, process parameters like temp, times, etc)
+   - Specifications or a BoM (if the requirements are not in the order itself)
+   - Any relevant work master configuration (routing, process parameters like temperature, durations, and so on)
 
 
 ### Quality information
@@ -87,10 +142,10 @@ These results provide context about the quality of the work produced in the job 
 
 Each {{< abbr "resource actual" >}} can have a corresponding test result.
 For example:
-- The material actual and lot may record the sample
-- The equipment actual may record test location
-- Physical asset actuals may record instruments used for the test
-- Personnel actual may record who performed the test.
+- The material actual and lot may record the sample.
+- The equipment actual may record test location.
+- Physical asset actuals may record instruments used for the test.
+- Personnel actuals may record who performed the test.
 
 ## Example query
 
@@ -111,11 +166,10 @@ query trackAndTrace {
 }
 ```
 
-
-{{< expandable title="Full query" >}}
+{{< tabs >}}
+{{% tab "Full query" %}}
 
 ```gql
-
 query trackAndTrace {
   performance: getJobResponse(id: "ds1d-batch-119-jr-fc-make-frosting") {
     startDateTime
@@ -212,16 +266,12 @@ query trackAndTrace {
 }
 
 ```
+{{< /tab >}}
+{{< tab "Response: performance track and trace" >}}
 
-{{< /expandable >}}
-
-
-The `performance`section of this query may return data that looks something like this.
-Note that every object does not every requested field.
-In this example, only some of the material actual have values for additional properties.
-
-
-{{< expandable title="Response: performance track and trace" >}}
+The `performance` section of this query may return data that looks something like this.
+Note that every object does not necesarrily have every requested field.
+In this example, only some of the material actuals have values for additional properties.
 
 ```json
 {
@@ -336,4 +386,5 @@ In this example, only some of the material actual have values for additional pro
 }
 ```
 
-{{< /expandable >}}
+{{< /tab >}}
+{{< /tabs >}}
