@@ -27,7 +27,7 @@ you can use Rhize to identify answers to questions such as:
 
 {{< notice >}}
 :memo:
-The focus here is modelling and querying. k
+The focus here is modelling and querying.
 For a high-level overview of how track-and-trace data may enter the Rhize data hub, read the guide to [Electronic batch records]({{< relref "/use-cases/ebr" >}}).
 {{< /notice >}}
 
