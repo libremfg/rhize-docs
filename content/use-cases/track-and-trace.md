@@ -103,7 +103,7 @@ It is likely that some of the following fields are irrelevant for your particula
 
 A _job response_ represents a unit of performed work in a manufacturing operation.
 The job response typically forms the core of a track-and-trace query,
-as it has direct relations to run time and the {{< abbr "resource actual" >}}s.
+as you can query it to obtain duration and all {{< abbr "resource actual" >}}s involved in the job.
 A job response also may contain child job responses, as displayed in the following diagram:
 
 
@@ -116,11 +116,11 @@ caption="An example of a job response with child job responses. The parent job h
 
 For a track and trace, some important job response properties and associations include the following:
 
-- **Start and End times.** Track when work happened. The difference between start and ends is also how Rhize calculates job duration.
-- **Material Actuals.** Track quantities and uses of material that is consumed, produced, tested, scrapped, and so on. Material actuals may also have associated lots for unique identification, and test results on certain associated samples. 
-- **Equipment Actuals.** Track the real equipment used in a job, along with associated equipment properties and testing results.
-- **Personnel actuals.** Track the people involved in a job or test.
-- **Process values**. Store associated process data and calculations.
+- **Start and End times.** When work started and how long it lasted.
+- **Material Actuals.** The quantities of material involved and how they are used: consumed, produced, tested, scrapped, and so on. Material actuals may also have associated lots for unique identification. Test results may be derived from samples of the actual. 
+- **Equipment Actuals.** The real equipment used in a job, along with associated equipment properties and testing results.
+- **Personnel actuals.** The people involved in a job or test.
+- **Process values**. Associated process data and calculations.
 - **Comments and Signatures.** Additional input from operators.
 
 ### Scheduling information
@@ -276,7 +276,7 @@ query trackAndTrace {
 
 The `performance` section of this query may return data that looks something like this.
 Note that every object does not necesarrily have every requested field.
-In this example, only some of the material actuals have values for additional properties.
+In this example, only some material actuals have additional properties.
 
 ```json
 {
