@@ -277,10 +277,41 @@ In this example, only some of the material actuals have values for additional pr
 {
   "data": {
     "performance": {
+      "id": "ds1d-batch-119-jr-fc-make-frosting",
       "startDateTime": "2024-09-23T23:22:25Z",
       "endDateTime": "2024-09-23T23:38:04.783Z",
       "duration": 939.783,
       "materialActual": [
+        {
+          "id": "ds1d-batch-fc-cookie-frosting-actual-119",
+          "materialUse": "Produced",
+          "quantity": 3499.46,
+          "quantityUoM": {
+            "id": "g"
+          },
+          "materialLot": [
+            {
+              "id": "ds1d-batch-fc-cookie-frosting-lot-119"
+            }
+          ],
+          "materialSubLot": [],
+          "properties": [
+            {
+              "id": "viscosity",
+              "value": "0.1",
+              "valueUnitOfMeasure": {
+                "id": "mm2/s"
+              }
+            },
+            {
+              "id": "temperature",
+              "value": "22",
+              "valueUnitOfMeasure": {
+                "id": "C"
+              }
+            }
+          ]
+        },
         {
           "id": "ds1d-batch-fc-butter-actual-119",
           "materialUse": "Consumed",
@@ -296,7 +327,9 @@ In this example, only some of the material actuals have values for additional pr
           "materialSubLot": [],
           "properties": [
             {
-              "id": "fat-percent"
+              "id": "fat-percent",
+              "value": "15",
+              "valueUnitOfMeasure": null
             }
           ]
         },
@@ -314,28 +347,6 @@ In this example, only some of the material actuals have values for additional pr
           ],
           "materialSubLot": [],
           "properties": []
-        },
-        {
-          "id": "ds1d-batch-fc-cookie-frosting-actual-119",
-          "materialUse": "Produced",
-          "quantity": 3499.46,
-          "quantityUoM": {
-            "id": "g"
-          },
-          "materialLot": [
-            {
-              "id": "ds1d-batch-fc-cookie-frosting-lot-119"
-            }
-          ],
-          "materialSubLot": [],
-          "properties": [
-            {
-              "id": "viscosity"
-            },
-            {
-              "id": "temperature"
-            }
-          ]
         },
         {
           "id": "ds1d-batch-fc-peanut-butter-actual-119",
@@ -356,18 +367,12 @@ In this example, only some of the material actuals have values for additional pr
       "equipmentActual": [
         {
           "id": "ds1d-batch-kitchen-mixer-actual-119",
-          "equipment": {
-            "id": "kitchen.line_1.mixer_1"
-          },
           "description": null,
           "children": [],
           "properties": []
         },
         {
           "id": "ds1d-batch-kitchen-actual-119",
-          "equipment": {
-            "id": "kitchen"
-          },
           "description": null,
           "children": [],
           "properties": []
