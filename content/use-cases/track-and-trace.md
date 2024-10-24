@@ -11,30 +11,33 @@ menu:
     identifier:
 ---
 
-This document details how to use Rhize to implement a _track and trace_ to answer all the questions about what happened during a certain process or series of processes.
+This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any track-and-trace use case.
+As long as the source data is properly mapped and ingested,
+the provided queries should work for any operation with minimal modification.
 
 Rhize can model events and resources at a high degree of granularity, and its ISA-95 schema creates built-in relationships between these entities.
-So it makes an ideal backend to build detailed track-and-trace reports.
+So it makes an ideal backend to build detailed track-and-trace reports with a high degree of detail and context.
 In a single query, 
 you can use Rhize to identify answers to questions such as:
-- What material was involved in this job?
-- What equipment was used to perform this job?
-- Who were the operators who performed the work?
+- What material, equipment, and personnel were involved in this job? And what was their function in performance?
+- When and this job happen? How long did it run for.
+- Why was this work performed? That is, what is the order that initiated the work?
 - What are the results of quality testing for this work?
-- When and where did the work happen? 
-- What order was this job a response to?
 
-This document focuses on the ISA-95 /Rhize DB entities to create a generic, reusable model and set of queries for any track-and-trace use case.
+
+{{< notice >}}
+:memo:
+The focus here is modelling and querying. k
 For a high-level overview of how track-and-trace data may enter the Rhize data hub, read the guide to [Electronic batch records]({{< relref "/use-cases/ebr" >}}).
+{{< /notice >}}
 
 
 ## Quick query
 
 If you just want to build out a [GraphQL query]({{< relref "/how-to/gql/query" >}}) for your reporting, use these templates to get started.
-The rest of this article describes the models and query fields in detail and provides a 
-[complete example query](#example-query).
 
-If you know IDs for the relevant job response, job order, and test results, you can structure each group as a top-level object.
+
+If you know the IDs for the relevant job response, job order, and test results, you can structure each group as a top-level object.
 If you want to input only one ID, you can also use nested fields on a response, order, or test specification to pull all necessary information.
 The Rhize DB stores relationships, so the values are identical&mdash;only the structure of the response changes.
 
@@ -81,18 +84,20 @@ query nestedTrackAndTrace {
 {{< /tab >}} 
 {{</ tabs >}}
 
+For more detail, refer to the
+[complete example query](#example-query).
 
 
 ## Background: ISA-95 entities in a track-and-trace query
 
 {{< notice >}}
-:memo: For a more complete introduction to ISA-95 and its terminology,
+:memo: For an introduction to ISA-95 and its terminology,
 read [How to speak ISA-95]({{< relref "/explanations/how-to-speak-isa-95" >}}).
 {{< /notice >}}
 
 The following lists detail the ISA-95 entities that you might need when querying the Rhize database for a track and trace.
-Note that the exact data involved in a track and trace depends on your manufacturing needs and data-collection capabilities.
-It is likely that some of the following entities are irrelevant for your particular use case.
+As always, your manufacturing needs and data-collection capabilities determine the exact data that is necessary.
+It is likely that some of the following fields are irrelevant for your particular use case.
 
 ### Performance information
 
