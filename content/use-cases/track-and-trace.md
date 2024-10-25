@@ -4,7 +4,6 @@ title: >-
 description: The Rhize guide to querying all the information that happened in a manufacturing job.
 categories: ["howto", "use-cases"]
 weight: 0100
-hidden: true
 menu:
   main:
     parent: use-cases
@@ -12,8 +11,8 @@ menu:
 ---
 
 This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any track-and-trace use case.
-As long as the source data is properly mapped and ingested,
-the provided queries should work for any operation with minimal modification.
+As long as you properly map and ingest the source data,
+the provided queries here should work for any operation with minimal modification.
 
 Rhize can model events and resources at a high degree of granularity, and its ISA-95 schema creates built-in relationships between these entities.
 So it makes an ideal backend to build detailed track-and-trace reports with a high degree of detail and context.
@@ -46,6 +45,7 @@ The Rhize DB stores relationships, so the values are identical&mdash;only the st
 {{< tab "flat" >}}
 
 ```gql
+
 query trackAndTrace {
   performance: getJobResponse(id: "ds1d-119-as") {
    # duration, actuals, and so on
@@ -174,12 +174,29 @@ query trackAndTrace {
 {{< tabs >}}
 {{% tab "Full query" %}}
 
+**Variables**
+```json
+{
+  "getJobResponseId": "ds1d-batch-119-jr-fc-make-frosting",
+  "getJobOrderId": "ds1d-batch-jo-119",
+  "getTestResultId": "ds1d-batch-tr-119"
+}
+```
+
+**Query**
+
 ```gql
-query trackAndTrace {
-  performance: getJobResponse(id: "ds1d-batch-119-jr-fc-make-frosting") {
+
+query trackAndTrace ($getJobResponseId: String $getJobOrderId: String $getTestResultId: String) {
+  performance: getJobResponse(id:$getJobResponseId) {
+    jobResponseId: id
     startDateTime
     endDateTime
     duration
+    jobState
+    workDirective {
+      id
+    }
     materialActual {
       id
       materialUse
@@ -187,8 +204,14 @@ query trackAndTrace {
       quantityUoM {
         id
       }
+      materialDefinition {
+        id
+      }
       materialLot {
         id
+        materialDefinition {
+          id
+        }
       }
       materialSubLot {
         id
@@ -219,43 +242,45 @@ query trackAndTrace {
       
     }
   }
- planning: getJobOrder(id: "ds1d-batch-jo-119") {
-     scheduledStartDateTime
-    scheduledEndDateTime
-    materialRequirements {
+  
+  planning: getJobOrder(id: $getJobOrderId) {
+    orderId: id
+    scheduledStartDateTime
+    scheduledEndDateTime 
+    materialRequirements { 
       id
       quantity
-      materialUse
       quantityUoM {
         id
       }
-      
     }
     equipmentRequirements {
       id
-    }
-    workDirective {
-      id
-      
-      workMaster {
+      equipment {
         id
-        parameterSpecifications {
-          id
-          description
-        }
+      }
+      
+    }
+    workMaster{
+      id
+      parameterSpecifications {
+        id
+        description
       }
     }
-
- }
- testing: getTestResult(id: "ds1d-batch-tr-119") {
-  id
-  evaluationDate
-  expiration
-  evaluationCriterionResult
-  equipmentActual {
+   
+    }
+ 
+ testing: getTestResult(id: $getTestResultId) {
+    resultsId: id
     id
-  }
-  materialActual {
+    evaluationDate
+    expiration
+    evaluationCriterionResult
+    equipmentActual {
+    id
+    }
+    materialActual {
     id
     materialUse  
     }
@@ -265,9 +290,11 @@ query trackAndTrace {
     equipmentActual {
       id
     }
-    
+   }
+
 
  }
+ 
 }
 
 ```
