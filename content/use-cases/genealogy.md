@@ -621,7 +621,7 @@ width="90%"
 While a genealogy is an effective tool on its own, the usefulness of the Rhize data hub compounds with each use case.
 So genealogy implementations are most effective if you can combine them with the other data stored in your manufacturing knowledge graph.
 
-For example, the genealogical record may provide the input for more granular _track and trace_ investigation, in which you use the Lot IDs to determine information such as who worked on the material, with what equipment, and performing what kind of work.
+For example, the genealogical record may provide the input for more granular [_track and trace_]({{< relref "track-and-trace" >}}) investigation, in which you use the Lot IDs to determine information such as who worked on the material, with what equipment, and performing what kind of work.
 
 You could also combine genealogy with performance analysis, using the genealogical record as the starting point to analyze and predict failures and deviations.
 

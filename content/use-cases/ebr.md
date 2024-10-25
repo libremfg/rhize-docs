@@ -20,8 +20,9 @@ Looking to implement Rhize for your Pharma operation?
 
 
 In pharmaceutical manufacturing, an _Electronic Batch Record (eBR)_ is a detailed report about a specific batch.
-It includes information about items such as the process segments, material, personnel, and equipment.
-
+It is a special class of the [track-and-trace]({{< relref "track-and-trace" >}}) use case,
+with particular specialization to the high degree of detail required in the pharmaceutical industry.
+j
 As Rhize can ingest data from all levels of the manufacturing process, and do so in real-time, it is an ideal single source of truth to create eBRs.
 The process can be automated and highly efficient.
 Our experience in production systems shows that Rhize can typically generate an eBR in less than 500 milliseconds. 
@@ -171,6 +172,8 @@ query makeEbr ($filter: JobOrderFilter) {
 
 Note how the query specifies exactly the fields to return: no further filtering of the response is required.
 The only further step to use the returned JSON object as the input for however you create your eBR documents.
+
+For an idea of how a more complete query looks, refer to the [Track and trace]({{< relref "track-and-trace" >}}) guide.
 
 ## Next steps
 
