@@ -22,7 +22,9 @@ you can use Rhize to identify answers to questions such as:&lt;/p></description>
 &lt;a href="https://rhize.com/contact-us/">Talk to an engineer&lt;/a>
 &lt;/div>
 &lt;p>In pharmaceutical manufacturing, an &lt;em>Electronic Batch Record (eBR)&lt;/em> is a detailed report about a specific batch.
-It includes information about items such as the process segments, material, personnel, and equipment.&lt;/p>
-&lt;p>As Rhize can ingest data from all levels of the manufacturing process, and do so in real-time, it is an ideal single source of truth to create eBRs.
+It is a special class of the &lt;a href="https://docs.rhize.com/use-cases/track-and-trace/">track-and-trace&lt;/a> use case,
+with particular specialization to the high degree of detail required in the pharmaceutical industry.
+j
+As Rhize can ingest data from all levels of the manufacturing process, and do so in real-time, it is an ideal single source of truth to create eBRs.
 The process can be automated and highly efficient.
 Our experience in production systems shows that Rhize can typically generate an eBR in less than 500 milliseconds.&lt;/p></description></item></channel></rss>
