@@ -47,14 +47,15 @@ The Rhize DB stores relationships, so the values are identical&mdash;only the st
 ```gql
 
 query trackAndTrace {
-  performance: getJobResponse(id: "ds1d-119-as") {
+  performance: getJobResponse(id: "<JOB_ID>") {
    # duration, actuals, and so on
   }
- planning: getJobOrder(id: "ds1d-119-jo-119-3") {
-  # requirements, work directive, and so on
- }
- testing: getTestResult(id: "ds1d-119-tr-3") {
+  planning: getJobOrder(id: "<ORDER_ID>") {
+  # requirements, work master, and so on
+  }
+  testing: getTestResult(id: "<TEST_ID>") {
    # evaluation properties and tested objects
+  }
 }
 ```
 {{< /tab >}}
