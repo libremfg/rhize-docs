@@ -166,6 +166,56 @@ const option = {
 
 _Data from a Rhize query in an Apache Echart. Read the [Build frontend](#frontend) section for details._
 
+
+## Quick query
+
+To get started with genealogy quickly, use these [query]({{< relref "/how-to/gql/query" >}}) templates.
+One template is for the reverse genealogy, and the other is for the forward genealogy.
+For each, you need to input the Lot ID.
+
+{{< tabs >}}
+{{< tab "Reverse" >}}
+
+```gql
+query reverseGenealogy{
+  getMaterialLot(id: "<LOT_ID>") {
+    parent_lots: isAssembledFromMaterialLot {
+      id
+      grandparent_lots: isAssembledFromMaterialLot {
+        id
+        great_grandparent_lots: isAssembledFromMaterialLot {
+          id
+        }
+      }
+    }
+  }
+}
+```
+{{< /tab >}}
+{{< tab "Forward" >}}
+
+```gql
+query forwardGenealogy{
+  getMaterialLot(id: "<LOT_ID>") {
+    child_lots: isAssembledFromMaterialLot {
+      id
+      grandchildren_lots: isAssembledFromMaterialLot {
+        id
+        great_grandgrandchildren_lots: isAssembledFromMaterialLot {
+          id
+        }
+      }
+    }
+  }
+}
+```
+{{< /tab >}} 
+{{</ tabs >}}
+
+You can also modify the query to include more fields, levels, or get the forward and backward genealogy.
+For an idea of how a more complete query would look, refer to the [Examples](#examples) section.
+
+
 ## Background: material entities in Rhize
 
 {{< notice >}}
@@ -264,7 +314,11 @@ In the example baking process, lots may be collected in the following ways:
 
 ### Query the data
 
-After you start collecting data, you can also start querying it.
+After you start collecting data, you can also start querying it through the `materialLot` query operations.
+The following section provides example genealogy queries.
+
+## Examples 
+
 The following examples show how to query for forward and backward genealogies using the [`get`](https://docs.rhize.com/how-to/gql/query/#get) operation to query material lots.
 
 
@@ -272,7 +326,8 @@ The following examples show how to query for forward and backward genealogies us
 You could also query for multiple genealogies&mdash;either through material lots or through aggregations such as material definitions and specifications&mdash; then apply [filters](https://docs.rhize.com/how-to/gql/filter/).
 {{< /notice >}}
 
-#### Backward genealogy
+### Backward genealogy
+
 
 A backward genealogy examines all material lots that make the assembly of some later material lot.
 
