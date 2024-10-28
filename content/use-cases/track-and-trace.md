@@ -126,8 +126,11 @@ For a track and trace, some important job response properties and associations i
 
 ### Scheduling information
 
-Every job response corresponds to an order, and a track and trace report might also include information
-about the work that was demanded. The top-level object for this demand is likely the _job order_.
+A track and trace report might also include information
+about the work that was demanded.
+The simplest relationship between performance and demand is the link between a job response and a _job order_.
+So your track and trace might include information about the order that initiated the response.
+Through this order you could also include higher-level scheduling information.
 
 When adding order information, consider whether you need the following properties:
 * **Scheduled start and end times.** These might be compared to the real start and ends.
