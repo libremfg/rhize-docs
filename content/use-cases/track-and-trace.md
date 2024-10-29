@@ -4,6 +4,7 @@ title: >-
 description: The Rhize guide to querying all the information that happened in a manufacturing job.
 categories: ["howto", "use-cases"]
 weight: 0100
+og_image: "/images/og/graphic-rhize-track-and-trace.png"
 menu:
   main:
     parent: use-cases
