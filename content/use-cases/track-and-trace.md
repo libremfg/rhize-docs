@@ -27,7 +27,7 @@ you can use Rhize to identify answers to questions such as:
 
 {{< notice >}}
 :memo:
-The focus here is modelling and querying.
+The focus here is modeling and querying.
 For a high-level overview of how track-and-trace data may enter the Rhize data hub, read the guide to [Electronic batch records]({{< relref "/use-cases/ebr" >}}).
 {{< /notice >}}
 
@@ -140,7 +140,7 @@ When adding order information, consider whether you need the following propertie
    * Material to be consumed, along with their scheduled quantities and units of measure
    * Any by-product material and scrap
 * **Planned equipment**. This can be compared to the real equipment used.
-* **WorkDirective**. The dispatched version of the planned work. The directive may include:
+* **Work Directive**. The dispatched version of the planned work. The directive may include:
    - Specifications or a BoM (if the requirements are not in the order itself)
    - Any relevant work master configuration (routing, process parameters like temperature, durations, and so on)
 
@@ -307,7 +307,7 @@ query trackAndTrace ($getJobResponseId: String $getJobOrderId: String $getTestRe
 {{< tab "Response: performance track and trace" >}}
 
 The `performance` section of this query may return data that looks something like this.
-Note that every object does not necesarrily have every requested field.
+Note that every object does not necessarily have every requested field.
 In this example, only some material actuals have additional properties.
 
 ```json
