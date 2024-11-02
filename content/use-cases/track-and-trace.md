@@ -20,7 +20,7 @@ So it makes an ideal backend to build detailed track-and-trace reports with a hi
 In a single query, 
 you can use Rhize to identify answers to questions such as:
 - What material, equipment, and personnel were involved in this job? And what was their function in performance?
-- When and this job happen? How long did it run for.
+- When and where did this job happen? How long did it run for?
 - Why was this work performed? That is, what is the order that initiated the work?
 - What are the results of quality testing for this work?
 
