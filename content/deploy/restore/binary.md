@@ -25,9 +25,9 @@ Before you start, ensure you have the following:
 <!-- if procedure is very long, consider using h3s -->
 
 1. Set the follow environmental variables:
-   - `AWS_ACCESS_KEY_ID` AWS access key with permissions to write to the destination bucket
-   - `AWS_SECRET_ACCESS_KEY` AWS access key with permissions to write to the destination bucket
-   - `AWS_SESSION_TOKEN` AWS session token (if required)
+   - `AWS_ACCESS_KEY_ID` your AWS access key with permissions to write to the destination bucket
+   - `AWS_SECRET_ACCESS_KEY` your AWS access key with permissions to write to the destination bucket
+   - `AWS_SESSION_TOKEN` your AWS session token (if required)
 
 1. Confirm the cluster and namespace are correct.
 
