@@ -96,6 +96,10 @@ If enabling the Audit Trail, also the include the configuration in [Enable chang
 
 1. Proxy the `http:8080` port on `{{< param application_name >}}-baas-dgraph-alpha`.
 
+   ```
+   kubectl port-forward -n libre pod/baas-baas-alpha-0 8080:8080
+   ```
+
 1. Get a token using the credentials. With `curl`, it looks like this:
 
     ```bash
@@ -115,7 +119,7 @@ If enabling the Audit Trail, also the include the configuration in [Enable chang
     curl --location --request POST 'http://localhost:<FORWARDED_PORT>/admin/schema' \
     --header 'Authorization: Bearer <TOKEN>' \
     --header 'Content-Type: application/octet-stream' \
-    --data-binary '@<SCHEMA_FILE>’
+    --data-binary '@<SCHEMA_FILE>'
     ```
 
     This creates more roles.
