@@ -52,10 +52,10 @@ Before you start, ensure you have the following:
       --request POST "${BAAS_OIDC_URL}/realms/libre/protocol/openid-connect/token" \
       --header 'Content-Type\ application/x-www-form-urlencoded' \
       --data-urlencode 'grant_type=password' \
-      --data-urlencode "username=${USERNAME}" \
-      --data-urlencode "password=${PASSWORD}"  \
-      --data-urlencode "client_id=${BAAS_OIDC_CLIENT_ID}" \
-      --data-urlencode "client_secret=${OIDC_SECRET}" | jq .access_token
+      --data-urlencode "username=<USERNAME>" \
+      --data-urlencode "password=<PASSWORD>"  \
+      --data-urlencode "client_id=<BASS_CLIENT_ID>" \
+      --data-urlencode "client_secret=<BASS_CLIENT_SECRET>" | jq .access_token
     ```
 
 1. Using the token from the previous step, send a POST to `<alpha pod>:8080/admin` to start the restore from the s3 bucket to the alpha node.
