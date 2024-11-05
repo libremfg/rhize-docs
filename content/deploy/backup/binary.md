@@ -10,7 +10,7 @@ menu:
     identifier:
 ---
 
-This guide shows you how to back up the Rhize Graph database to Amazon S3 storage.
+This guide shows you how to back up the Rhize Graph database to Amazon S3 and S3-compatible storage.
 
 ## Prerequisites
 
