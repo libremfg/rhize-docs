@@ -60,7 +60,7 @@ Before you start, ensure you have the following:
 
 1. Using the token from the previous step, send a POST to to `<alpha pod>:8080/admin` to retrieve a list of available backups from the s3 bucket.
 
- ```bash
+    ```bash
      curl --location 'http://alpha-0:8080/admin' \
     --header 'Content-Type: application/json' \
     --header 'Authorization: Bearer <TOKEN>' \
