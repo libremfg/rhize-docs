@@ -58,7 +58,7 @@ Before you start, ensure you have the following:
       --data-urlencode "client_secret=<BASS_CLIENT_SECRET>" | jq .access_token
     ```
 
-1. Using the token from the previous step, send a POST to `<alpha pod>:8080/admin` to start the restore from the s3 bucket to the alpha node.
+1. Using the token from the previous step, send a POST to `<alpha pod>:8080/admin` to  restore from the S3 bucket to the alpha node.
    For example, with `curl`:
 
     ```bash
