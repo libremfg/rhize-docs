@@ -37,9 +37,9 @@ To back up the database, follow these steps:
     kubectl logs {{< param application_name >}}-baas-baas-alpha-0 --tail=80
     ```
 1. Set the following environmental variables:
-   - `AWS_ACCESS_KEY_ID` your AWS access key with permissions to write to the destination bucket 
-   - `AWS_SECRET_ACCESS_KEY` your AWS access key with permissions to write to the destination bucket
-   - `AWS_SESSION_TOKEN` your AWS session token (if required)
+   - `AWS_ACCESS_KEY_ID`. Your AWS access key with permissions to write to the destination bucket 
+   - `AWS_SECRET_ACCESS_KEY`. Your AWS access key with permissions to write to the destination bucket
+   - `AWS_SESSION_TOKEN`. Your AWS session token (if required)
 
 1. Make a POST request to your Keycloak `/token` endpoint to get an `access_token` value.
 For example, with `curl` and `jq`:
