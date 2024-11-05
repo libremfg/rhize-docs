@@ -58,12 +58,21 @@ Before you start, ensure you have the following:
       --data-urlencode "client_secret=<BASS_CLIENT_SECRET>" | jq .access_token
     ```
 
-1. Using the token from the previous step, send a POST to `<alpha pod>:8080/admin` to start the restore from the s3 bucket to the alpha node.
+1. Using the token from the previous step, send a POST to to `<alpha pod>:8080/admin` to retrieve a list of available backups from the s3 bucket.
+
+ ```bash
+     curl --location 'http://alpha-0:8080/admin' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: Bearer <TOKEN>' \
+    --data '{"query":"query {\n\tlistBackups(input: {location: \"s3://s3.<AWS-REGION>.amazonaws.com/<AWS-BUCKET-NAME>\"}) {\n\t\tbackupId\n\t\tbackupNum\n\t\tencrypted\n\t\tpath\n\t\tsince\n\t\ttype\n        readTs\n\t}\n}","variables":{}}'
+    ```
+
+1. Using the backup id and token from the previous step, send a POST to `<alpha pod>:8080/admin` to start the restore from the s3 bucket to the alpha node.
    For example, with `curl`:
 
     ```bash
    curl --location 'http://alpha-0:8080/admin' \
    --header 'Content-Type: application/json' \
    --header 'Authorization: Bearer <TOKEN>' \
-   --data '{"query":"mutation{\n  restore(input:{\n    location: \"s3://s3.<AWS-REGION>.amazonaws.com/<AWS-BUCKET-NAME>\",\n    backupId: \"cocky_boyd5\"\n  }){\n    message\n    code\n  }\n}","variables":{}}'
+   --data '{"query":"mutation{\n  restore(input:{\n    location: \"s3://s3.<AWS-REGION>.amazonaws.com/<AWS-BUCKET-NAME>\",\n    backupId: \"<BACKUP_ID>\"\n  }){\n    message\n    code\n  }\n}","variables":{}}'
    ```

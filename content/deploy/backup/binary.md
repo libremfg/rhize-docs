@@ -74,7 +74,7 @@ For example, with `curl`:
     curl --location 'http://alpha:8080/admin' \
    --header 'Content-Type: application/json' \
    --header 'Authorization: Bearer <TOKEN>' \
-   --data '{"query":"query backup() {\n\tlistBackups(input: {location: \"s3://s3.<AWS-REGION>>.amazonaws.com/<AWS-BUCKET-NAME>\"}) {\n\t\tbackupId\n\t\tbackupNum\n\t\tpath\n\t\tsince\n\t\ttype\n\t}\n}","variables":{}}'
+   --data '{"query":"query backup {\n\tlistBackups(input: {location: \"s3://s3.<AWS-REGION>>.amazonaws.com/<AWS-BUCKET-NAME>\"}) {\n\t\tbackupId\n\t\tbackupNum\n\t\tpath\n\t\tsince\n\t\ttype\n\t}\n}","variables":{}}'
     ```
 
 ## Next Steps
