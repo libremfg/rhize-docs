@@ -58,7 +58,7 @@ Before you start, ensure you have the following:
       --data-urlencode "client_secret=<BASS_CLIENT_SECRET>" | jq .access_token
     ```
 
-1. Using the token from the previous step, send a POST to to `<alpha pod>:8080/admin` to retrieve a list of available backups from the s3 bucket.
+1. Using the token from the previous step, send a POST to `<alpha pod>:8080/admin` to retrieve a list of available backups from the s3 bucket.
 
     ```bash
      curl --location 'http://alpha-0:8080/admin' \
