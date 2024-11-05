@@ -1,5 +1,5 @@
 ---
-title: 'Back up the Graph DB to AWS'
+title: 'Back up the Graph DB to S3'
 date: '2024-11-04T11:01:46-03:00'
 categories: ["how-to"]
 description: How to back up the Rhize graph database to Amazon S3 storage.

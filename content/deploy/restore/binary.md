@@ -1,5 +1,5 @@
 ---
-title: 'Restore the GraphDB from AWS'
+title: 'Restore the GraphDB from S3'
 date: '2023-10-19T13:52:23-03:00'
 ategories: ["how-to"]
 description: How to restore a backup of the Rhize Graph DB from Amazon S3.
