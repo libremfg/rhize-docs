@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>How-To on Rhize documentation</title><link>https://docs.rhize.com/categories/how-to/</link><description>Recent content in How-To on Rhize documentation</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 03 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://docs.rhize.com/categories/how-to/index.xml" rel="self" type="application/rss+xml"/><item><title>Create objects from the UI</title><link>https://docs.rhize.com/how-to/model/create-objects-ui/</link><pubDate>Mon, 20 Nov 2023 15:36:03 -0300</pubDate><guid>https://docs.rhize.com/how-to/model/create-objects-ui/</guid><description>&lt;p>To make a production object visible to the Rhize data hub, you must define it as a data model.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>How-To on Rhize documentation</title><link>https://docs.rhize.com/categories/how-to/</link><description>Recent content in How-To on Rhize documentation</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 04 Nov 2024 11:01:46 -0300</lastBuildDate><atom:link href="https://docs.rhize.com/categories/how-to/index.xml" rel="self" type="application/rss+xml"/><item><title>Create objects from the UI</title><link>https://docs.rhize.com/how-to/model/create-objects-ui/</link><pubDate>Mon, 20 Nov 2023 15:36:03 -0300</pubDate><guid>https://docs.rhize.com/how-to/model/create-objects-ui/</guid><description>&lt;p>To make a production object visible to the Rhize data hub, you must define it as a data model.
 Along with its API, Rhize also has a graphical interface to create and update objects in your role-based equipment hierarchy.&lt;/p>
 &lt;p>Often, one object references another: for example, a piece of equipment may belong to an equipment class, have a unit of measure as a property, and be associated with process segment.
 These associations form nodes and edges in your knowledge graph, so the more information relationships that you accurately create, the better.&lt;/p></description></item><item><title>Overview</title><link>https://docs.rhize.com/deploy/install/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/deploy/install/overview/</guid><description>&lt;p>This guide walks you through how to Install Rhize and its services in a Kubernetes environment.
@@ -38,7 +38,21 @@ Rhize provides these to all customers.&lt;/li>
 &lt;/ul>
 &lt;p>&lt;strong>Optional utilities.&lt;/strong>
 For manual installs, the following auxiliary tools might make
-the experience a little more human friendly:&lt;/p></description></item><item><title>Archive the PostgreSQL Audit trail</title><link>https://docs.rhize.com/deploy/maintain/audit/</link><pubDate>Tue, 26 Mar 2024 11:20:56 -0300</pubDate><guid>https://docs.rhize.com/deploy/maintain/audit/</guid><description>&lt;p>The &lt;a href="https://docs.rhize.com/how-to/audit/">audit trial&lt;/a> can generate a high volume of data, so it is a good practice to periodically &lt;em>archive&lt;/em> portions of it.
+the experience a little more human friendly:&lt;/p></description></item><item><title>Back up the Graph DB to S3</title><link>https://docs.rhize.com/deploy/backup/binary/</link><pubDate>Mon, 04 Nov 2024 11:01:46 -0300</pubDate><guid>https://docs.rhize.com/deploy/backup/binary/</guid><description>&lt;p>This guide shows you how to back up the Rhize Graph database to Amazon S3 and S3-compatible storage.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>Before you start, ensure you have the following:&lt;/p>
+&lt;ul>
+&lt;li>A designated S3 backup location, for example &lt;code>s3://s3.&amp;lt;AWS-REGION&amp;gt;.amazonaws.com/&amp;lt;AWS-BUCKET-NAME&amp;gt;&lt;/code>.&lt;/li>
+&lt;li>Access to your &lt;a href="https://docs.rhize.com/deploy/install/">Rhize Kubernetes Environment&lt;/a>&lt;/li>
+&lt;li>Optional: &lt;a href="https://github.com/ahmetb/kubectx">kubectx&lt;/a> utilities
+&lt;ul>
+&lt;li>&lt;code>kubectx&lt;/code> to manage multiple clusters&lt;/li>
+&lt;li>&lt;code>kubens&lt;/code> to switch between and configure namespaces easily&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Optional: the &lt;a href="https://k8slens.dev">k8 Lens IDE&lt;/a>, if you prefer to use Kubernetes graphically.&lt;/li>
+&lt;/ul>
+&lt;p>Before you start, confirm you are in the right context and namespace:&lt;/p></description></item><item><title>Archive the PostgreSQL Audit trail</title><link>https://docs.rhize.com/deploy/maintain/audit/</link><pubDate>Tue, 26 Mar 2024 11:20:56 -0300</pubDate><guid>https://docs.rhize.com/deploy/maintain/audit/</guid><description>&lt;p>The &lt;a href="https://docs.rhize.com/how-to/audit/">audit trial&lt;/a> can generate a high volume of data, so it is a good practice to periodically &lt;em>archive&lt;/em> portions of it.
 An archive separates a portion of the data from the database and keeps it for long-term storage. This process involves the use of PostgreSQL &lt;a href="https://www.postgresql.org/docs/current/ddl-partitioning.html">Table Partitions&lt;/a>.&lt;/p>
 &lt;p>Archiving a partition improves query speed for current data, while providing a cost-effective way to store older.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>

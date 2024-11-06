@@ -15,7 +15,27 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl config current-context
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">## namespace&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl get namespace
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To change the namespace for all subsequent &lt;code>kubectl&lt;/code> commands to &lt;code>libre&lt;/code>, run this command:&lt;/p></description></item><item><title>Restore Audit backup</title><link>https://docs.rhize.com/deploy/restore/audit/</link><pubDate>Tue, 26 Mar 2024 11:20:56 -0300</pubDate><guid>https://docs.rhize.com/deploy/restore/audit/</guid><description>&lt;p>This guide shows you the procedure to restore your Audit PostgreSQL database in your Rhize Kubernetes deployment.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To change the namespace for all subsequent &lt;code>kubectl&lt;/code> commands to &lt;code>libre&lt;/code>, run this command:&lt;/p></description></item><item><title>Restore the GraphDB from S3</title><link>https://docs.rhize.com/deploy/restore/binary/</link><pubDate>Thu, 19 Oct 2023 13:52:23 -0300</pubDate><guid>https://docs.rhize.com/deploy/restore/binary/</guid><description>&lt;p>This guide shows you how to restore the Graph database from Amazon S3 to your Rhize environment.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>Before you start, ensure you have the following:&lt;/p>
+&lt;ul>
+&lt;li>The GraphDB Helm chart&lt;/li>
+&lt;li>&lt;a href="https://kubernetes.io/docs/tasks/tools/">&lt;code>kubectl&lt;/code>&lt;/a>&lt;/li>
+&lt;li>A &lt;a href="https://docs.rhize.com/deploy/backup/binary/">Database backup&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;!-- if procedure is very long, consider using h3s -->
+&lt;ol>
+&lt;li>
+&lt;p>Set the follow environmental variables:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>AWS_ACCESS_KEY_ID&lt;/code> your AWS access key with permissions to write to the destination bucket&lt;/li>
+&lt;li>&lt;code>AWS_SECRET_ACCESS_KEY&lt;/code> your AWS access key with permissions to write to the destination bucket&lt;/li>
+&lt;li>&lt;code>AWS_SESSION_TOKEN&lt;/code> your AWS session token (if required)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Confirm the cluster and namespace are correct.&lt;/p></description></item><item><title>Restore Audit backup</title><link>https://docs.rhize.com/deploy/restore/audit/</link><pubDate>Tue, 26 Mar 2024 11:20:56 -0300</pubDate><guid>https://docs.rhize.com/deploy/restore/audit/</guid><description>&lt;p>This guide shows you the procedure to restore your Audit PostgreSQL database in your Rhize Kubernetes deployment.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>Before you start, ensure you have the following:&lt;/p>
 &lt;ul>

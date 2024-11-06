@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Back up on Rhize documentation</title><link>https://docs.rhize.com/deploy/backup/</link><description>Recent content in Back up on Rhize documentation</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 26 Mar 2024 11:20:56 -0300</lastBuildDate><atom:link href="https://docs.rhize.com/deploy/backup/index.xml" rel="self" type="application/rss+xml"/><item><title>Back up the Graph DB</title><link>https://docs.rhize.com/deploy/backup/graphdb/</link><pubDate>Wed, 18 Oct 2023 11:01:46 -0300</pubDate><guid>https://docs.rhize.com/deploy/backup/graphdb/</guid><description>&lt;p>This guide shows you how to back up the Rhize Graph database.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Back up on Rhize documentation</title><link>https://docs.rhize.com/deploy/backup/</link><description>Recent content in Back up on Rhize documentation</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 04 Nov 2024 11:01:46 -0300</lastBuildDate><atom:link href="https://docs.rhize.com/deploy/backup/index.xml" rel="self" type="application/rss+xml"/><item><title>Back up the Graph DB to S3</title><link>https://docs.rhize.com/deploy/backup/binary/</link><pubDate>Mon, 04 Nov 2024 11:01:46 -0300</pubDate><guid>https://docs.rhize.com/deploy/backup/binary/</guid><description>&lt;p>This guide shows you how to back up the Rhize Graph database to Amazon S3 and S3-compatible storage.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>Before you start, ensure you have the following:&lt;/p>
+&lt;ul>
+&lt;li>A designated S3 backup location, for example &lt;code>s3://s3.&amp;lt;AWS-REGION&amp;gt;.amazonaws.com/&amp;lt;AWS-BUCKET-NAME&amp;gt;&lt;/code>.&lt;/li>
+&lt;li>Access to your &lt;a href="https://docs.rhize.com/deploy/install/">Rhize Kubernetes Environment&lt;/a>&lt;/li>
+&lt;li>Optional: &lt;a href="https://github.com/ahmetb/kubectx">kubectx&lt;/a> utilities
+&lt;ul>
+&lt;li>&lt;code>kubectx&lt;/code> to manage multiple clusters&lt;/li>
+&lt;li>&lt;code>kubens&lt;/code> to switch between and configure namespaces easily&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Optional: the &lt;a href="https://k8slens.dev">k8 Lens IDE&lt;/a>, if you prefer to use Kubernetes graphically.&lt;/li>
+&lt;/ul>
+&lt;p>Before you start, confirm you are in the right context and namespace:&lt;/p></description></item><item><title>Back up the Graph DB</title><link>https://docs.rhize.com/deploy/backup/graphdb/</link><pubDate>Wed, 18 Oct 2023 11:01:46 -0300</pubDate><guid>https://docs.rhize.com/deploy/backup/graphdb/</guid><description>&lt;p>This guide shows you how to back up the Rhize Graph database.
 You can also use it to model an automation workflow.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>Before you start, ensure you have the following:&lt;/p>
