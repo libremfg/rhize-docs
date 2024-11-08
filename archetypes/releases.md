@@ -14,9 +14,33 @@ Changelog for version {{ replace .File.ContentBaseName `-` `.` | title }} of the
 _Release date:_
 {{ $t := time.Now }}{{ time.Format "2 Jan 2006" $t }}
 
-## Breaking changes
-
 ## Changes by service
+
+### Admin
+
+### BPMN engine
+
+### Schema
+
+### BAAS
+
+### Core
+
+### Agent
+
+### Audit
+
+### Keycloak Theme
+
+### Router
+
+## Compatibility
+
+{{< compatible "{{ replace .File.ContentBaseName `-` `.` | title }}" >}}
+
+## Checksums
+
+{{% checksums "v{{ replace .File.ContentBaseName `-` `.` | title }}-checksums.txt"  %}}
 
 ## Upgrade
 
