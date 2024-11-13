@@ -9,12 +9,14 @@ menu:
     parent: changelog
 ---
 
-Changelog for version {{ replace .File.ContentBaseName `-` `.` | title }} of the Rhize application.
+Release notes for version {{ replace .File.ContentBaseName `-` `.` | title }} of the Rhize application.
 
 _Release date:_
 {{ $t := time.Now }}{{ time.Format "2 Jan 2006" $t }}
 
 ## Changes by service
+
+The following sections document the changes this release brings to each service.
 
 ### Admin
 
