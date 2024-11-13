@@ -2,6 +2,7 @@
 &lt;p>&lt;em>Release date:&lt;/em>
 13 Nov 2024&lt;/p>
 &lt;h2 id="changes-by-service">Changes by service&lt;/h2>
+&lt;p>This release brings changes to the following services.&lt;/p>
 &lt;h3 id="admin">Admin&lt;/h3>
 &lt;p>&lt;strong>Add&lt;/strong>&lt;/p>
 &lt;ul>
@@ -37,8 +38,8 @@ It also clears the way for the new, improved Work Calendar service (still in rel
  &lt;span class="type">Warning&lt;/span> This release includes a few minor breaking changes, review the &lt;a href="#upgrade">upgrade&lt;/a> instructions for details.
 &lt;/div>
 
-&lt;h3 id="service-changes">Service changes&lt;/h3>
-&lt;p>This release brings changes to the following services:&lt;/p></description></item><item><title>Rhize 3.0</title><link>https://docs.rhize.com/releases/3-0/</link><pubDate>Tue, 27 Feb 2024 09:17:43 -0300</pubDate><guid>https://docs.rhize.com/releases/3-0/</guid><description>&lt;p>Rhize version 3.0 is now in general release! &amp;#x1f973;
+&lt;h2 id="changes-by-service">Changes by service&lt;/h2>
+&lt;p>The following sections document the changes this release brings to each service.&lt;/p></description></item><item><title>Rhize 3.0</title><link>https://docs.rhize.com/releases/3-0/</link><pubDate>Tue, 27 Feb 2024 09:17:43 -0300</pubDate><guid>https://docs.rhize.com/releases/3-0/</guid><description>&lt;p>Rhize version 3.0 is now in general release! &amp;#x1f973;
 As a full rewrite of our earlier Libre 2.0 application, this release functionally announces a new product.&lt;/p>
 &lt;p>Read more to learn about the features available in the Rhize Manufacturing Data Hub.&lt;/p>
 &lt;h2 id="what-is-rhize">What is Rhize?&lt;/h2>
