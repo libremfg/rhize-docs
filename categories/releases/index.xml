@@ -10,7 +10,7 @@
 &lt;/ul>
 &lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
 &lt;ul>
-&lt;li>Change WorkMaster parameters input to textbox to support multi-line values better&lt;/li>
+&lt;li>Change &lt;code>WorkMaster&lt;/code> parameters input to textbox to support multi-line values better&lt;/li>
 &lt;li>Change BPMN Process instances modal default search and width&lt;/li>
 &lt;li>Refactor Material Class Properties table&lt;/li>
 &lt;li>Refactor Material Definition table&lt;/li>
