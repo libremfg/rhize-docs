@@ -110,7 +110,7 @@ Along with the [Global properties](#global-object-fields), an equipment class ca
 |-----------------|------------------------------------------|
 | Name            | Name of the property                     |
 | Description     | A freeform text to describe the property |
-| Unit of measure | The properties (unit of measure)[#uom]   |
+| Unit of measure | The property [unit of measure](#uom)   |
 <!--
 | Expression      |                                          | -->
 
