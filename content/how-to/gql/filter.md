@@ -306,6 +306,28 @@ query QueryJobResponse($filter: JobResponseFilter, $propertyLabel: String) {
 {{% /tab %}}
 {{< /tabs >}}
 
+**Avoid using @cascade with the [`order`]({{< relref "query#order" >}}) argument.**
+The `order` argument returns only the first 1000 records of the query.
+If a record matches the `@cascade` filter but comes after these first 1000 records, the API does not return it.
+
+For example, this query logic works as follows:
+1. Return the first 1000 records of equipment as ordered by `effectiveStart`.
+1. From these one 1000 records, return only the equipment items that are part of `parentEquipment1`.
+
+Such
+```graphql
+query($filter: EquipmentFilter){
+  queryEquipment (filter: { order: {desc:effectiveStart}) @cascade{
+    id
+    isPartOf (filter: {id:{eq:"parentEquipment1"}}) {
+      id
+    }
+  }
+}
+```
+
+This omission can be surprising, so avoid `@cascade` with the `order` argument.
+
 ### Include
 
 The `@include` directive returns a field only if its variable is `true`.

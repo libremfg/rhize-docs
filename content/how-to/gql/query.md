@@ -114,6 +114,13 @@ Without an `order` parameter, a query returns items without any default or guara
 
 ### Order
 
+{{< notice "caution" >}}
+
+Ordered queries **return only the first thousand records of the ordered field.**
+This cause surprising omissions, especially if you combine `order` with a [`@cascade`]({{< relref "filter#cascade" >}}) filter in a nested field.
+
+{{< /notice >}}
+
 The `order` argument works with any property whose type is `Int`, `Float`, `String`, or `DateTime`.
 For example, this query sorts Person objects by ID in ascending alphabetical order:
 
