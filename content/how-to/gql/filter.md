@@ -306,7 +306,8 @@ query QueryJobResponse($filter: JobResponseFilter, $propertyLabel: String) {
 {{% /tab %}}
 {{< /tabs >}}
 
-**Avoid using @cascade with the [`order`]({{< relref "query#order" >}}) argument.**
+#### Avoid using @cascade with the [`order`]({{< relref "query#order" >}}) argument
+
 The `order` argument returns only the first 1000 records of the query.
 If a record matches the `@cascade` filter but comes after these first 1000 records, the API does not return it.
 

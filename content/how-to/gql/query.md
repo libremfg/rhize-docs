@@ -116,7 +116,7 @@ Without an `order` parameter, a query returns items without any default or guara
 
 {{< notice "caution" >}}
 
-Ordered queries **return only the first thousand records of the ordered field.**
+Ordered queries **return only the first 1000 records of the ordered field.**
 This cause surprising omissions, especially if you combine `order` with a [`@cascade`]({{< relref "filter#cascade" >}}) filter in a nested field.
 
 {{< /notice >}}
