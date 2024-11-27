@@ -313,7 +313,7 @@ If a record matches the `@cascade` filter but comes after these first 1000 recor
 
 For example, this query logic works as follows:
 1. Return the first 1000 records of equipment as ordered by `effectiveStart`.
-1. From these one 1000 records, return only the equipment items that are part of `parentEquipment1`.
+1. From these 1000 records, return only the equipment items that are part of `parentEquipment1`.
 
 Such
 ```graphql
