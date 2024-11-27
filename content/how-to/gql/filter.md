@@ -315,7 +315,6 @@ For example, this query logic works as follows:
 1. Return the first 1000 records of equipment as ordered by `effectiveStart`.
 1. From these 1000 records, return only the equipment items that are part of `parentEquipment1`.
 
-Such
 ```graphql
 query($filter: EquipmentFilter){
   queryEquipment (filter: { order: {desc:effectiveStart}) @cascade{
@@ -327,7 +326,7 @@ query($filter: EquipmentFilter){
 }
 ```
 
-This omission can be surprising, so avoid `@cascade` with the `order` argument.
+This behavior can be surprising and undesirable, so avoid `@cascade` with the `order` argument.
 
 ### Include
 
