@@ -96,7 +96,7 @@ Create a client for the DB as follows:
 
    On success, this opens the **Client details** page for the newly created client.
 
-1. Select the **Roles** tab and add the following roles to the `{{< param db >}}` service account:
+1. Select the **Service accounts roles** tab and assign the following roles to the `{{< param db >}}` service account. To locate roles, change the filter to **Filter by clients**:
     - `manage-clients`
     - `manage-account`
     - `manage-users`
