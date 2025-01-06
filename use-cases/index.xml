@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Use cases on Rhize documentation</title><link>https://docs.rhize.com/use-cases/</link><description>Recent content in Use cases on Rhize documentation</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://docs.rhize.com/use-cases/index.xml" rel="self" type="application/rss+xml"/><item><title>Use cases of Rhize</title><link>https://docs.rhize.com/use-cases/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/use-cases/overview/</guid><description>&lt;p>Rhize&amp;rsquo;s flexible, event-centric architecture serves many functions.
 While Rhize has components that can replace an &lt;abbr title="Manufacturing execution system. A system in a manufacturing process that tracks and documents the transformation of raw materials to finished goods">MES&lt;/abbr>, historian, andon, and real-time monitoring solutions,
 it can complement them just as well.
-You can map data from an MES or &lt;abbr title="Enterprise resource planning. Software to manage business processes. In Rhize, ERP activities usually are named &amp;#34;operations&amp;#34;, where lower-level activities are prefixed with &amp;#34;Work&amp;#34;.">ERP&lt;/abbr> into the database, creating a coherent data model to unite your operations IT.&lt;/p></description></item><item><title>Genealogy</title><link>https://docs.rhize.com/use-cases/genealogy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/use-cases/genealogy/</guid><description>&lt;p>This document provides a high-level overview of how to use Rhize for material genealogy.&lt;/p>
+You can map data from an MES or &lt;abbr title="Enterprise resource planning. Software to manage business processes. In Rhize, ERP activities usually are named &amp;#34;operations&amp;#34;, where lower-level activities are prefixed with &amp;#34;Work&amp;#34;.">ERP&lt;/abbr> into the database, creating a coherent data model to unite your operations IT.&lt;/p></description></item><item><title>Data collection (eBR example)</title><link>https://docs.rhize.com/use-cases/data-collection-ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/use-cases/data-collection-ebr/</guid><description>&lt;div class="notices note" >
+ &lt;span class="type">Note&lt;/span> Looking to implement Rhize for your Pharma operation?
+&lt;a href="https://rhize.com/contact-us/">Talk to an engineer&lt;/a>
+&lt;/div>
+&lt;p>This document provides examples of how you can use Rhize to automatically ingest data from various sources and store it in a standardized ISA-95 schema.
+The examples here are to produce an Electronic Batch Record, an important use case in pharmaceutical manufacturing.
+However, the process described here is very similar to what data collection would like when integrating with any third-party system (such as an MRP, CMMS, and so on), no matter the type of manufacturing process.&lt;/p></description></item><item><title>Electronic Batch Records</title><link>https://docs.rhize.com/use-cases/ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/use-cases/ebr/</guid><description>&lt;p>This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use case that involves &lt;em>Electronic batch records&lt;/em>.
+As long as you properly &lt;a href="https://docs.rhize.com/use-cases/data-collection-ebr/">map and ingest&lt;/a> the source data,
+the provided queries here should work for any operation, though you&amp;rsquo;ll need to tweak them to fit the particular structure of your job response and reporting requirements.&lt;/p>
+&lt;p>An Electronic Batch Record (eBR) is a detailed report about a specific batch.
+Generating eBRs is an important component of pharmaceutical manufacturing, whose high standards of compliance and complexity of inputs demand a great deal of detail in each report.&lt;/p></description></item><item><title>Genealogy</title><link>https://docs.rhize.com/use-cases/genealogy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/use-cases/genealogy/</guid><description>&lt;p>This document provides a high-level overview of how to use Rhize for material genealogy.&lt;/p>
 &lt;p>In manufacturing, a &lt;em>genealogy&lt;/em> is the record of what a material contains or what it is now a part of.
 As its name implies, genealogy represents the family tree of the material.
 A material genealogy can help manufacturers in multiple ways:&lt;/p>
@@ -14,20 +24,4 @@ A material genealogy can help manufacturers in multiple ways:&lt;/p>
 &lt;p>Rhize provides a standards-based schema to represent material at all levels of granularity.
 The graph structure of its DB has built-in properties to associate material lots with other information about planned and performed work.
 This database has a GraphQL API, which can pull full genealogies from terse queries.
-As such, Rhize makes an &lt;strong>ideal backend to use for genealogical use cases&lt;/strong>.&lt;/p></description></item><item><title>Track and trace</title><link>https://docs.rhize.com/use-cases/track-and-trace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/use-cases/track-and-trace/</guid><description>&lt;p>This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any track-and-trace use case.
-As long as you properly map and ingest the source data,
-the provided queries here should work for any operation with minimal modification.&lt;/p>
-&lt;p>Rhize can model events and resources at a high degree of granularity, and its ISA-95 schema creates built-in relationships between these entities.
-So it makes an ideal backend to build detailed track-and-trace reports with a high degree of detail and context.
-In a single query,
-you can use Rhize to identify answers to questions such as:&lt;/p></description></item><item><title>Electronic batch records</title><link>https://docs.rhize.com/use-cases/ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/use-cases/ebr/</guid><description>&lt;div class="notices note" >
- &lt;span class="type">Note&lt;/span> Looking to implement Rhize for your Pharma operation?
-&lt;a href="https://rhize.com/contact-us/">Talk to an engineer&lt;/a>
-&lt;/div>
-&lt;p>In pharmaceutical manufacturing, an &lt;em>Electronic Batch Record (eBR)&lt;/em> is a detailed report about a specific batch.
-It is a special class of the &lt;a href="https://docs.rhize.com/use-cases/track-and-trace/">track-and-trace&lt;/a> use case,
-with particular specialization to the high degree of detail required in the pharmaceutical industry.
-j
-As Rhize can ingest data from all levels of the manufacturing process, and do so in real-time, it is an ideal single source of truth to create eBRs.
-The process can be automated and highly efficient.
-Our experience in production systems shows that Rhize can typically generate an eBR in less than 500 milliseconds.&lt;/p></description></item></channel></rss>
+As such, Rhize makes an &lt;strong>ideal backend to use for genealogical use cases&lt;/strong>.&lt;/p></description></item></channel></rss>
