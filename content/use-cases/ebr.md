@@ -1,185 +1,450 @@
 ---
 title: >-
-  Electronic batch records
-description: An example of how to use Rhize to create Electronic Batch Records for pharmaceutical manufacturing
+  Electronic Batch Records
+description: The Rhize guide to querying all the information that happened in a manufacturing job.
 categories: ["howto", "use-cases"]
-weight: 0200
-og_image: /images/og/graphic-rhize-ebr.png
+weight: 0100
+og_image:
+aliases:
+  - "/use-cases/track-and-trace/"
 menu:
   main:
     parent: use-cases
     identifier:
 ---
 
-{{% notice note %}}
+This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use case that involves _Electronic batch records_.
+As long as you properly [map and ingest]({{< relref "data-collection-ebr" >}}) the source data,
+the provided queries here should work for any operation, though you'll need to tweak them to fit the particular structure of your job response and reporting requirements.
 
-Looking to implement Rhize for your Pharma operation?
-[Talk to an engineer](https://rhize.com/contact-us/)
+An Electronic Batch Record (eBR) is a detailed report about a specific batch.
+Generating eBRs is an important component of pharmaceutical manufacturing, whose high standards of compliance and complexity of inputs demand a great deal of detail in each report.
 
-{{% /notice %}}
+Rhize can model events and resources at a high degree of granularity, and its ISA-95 schema creates built-in relationships between these entities.
+So it makes an ideal backend to generate eBRs with great detail and context.
+In a single query, 
+you can use Rhize to identify answers to questions such as:
+- What material, equipment, and personnel were involved in this job? And what was their function in performance?
+- When and where did this job happen? How long did it run for?
+- Why was this work performed? That is, what is the order that initiated the work?
+- What are the results of quality testing for this work?
 
 
-In pharmaceutical manufacturing, an _Electronic Batch Record (eBR)_ is a detailed report about a specific batch.
-It is a special class of the [track-and-trace]({{< relref "track-and-trace" >}}) use case,
-with particular specialization to the high degree of detail required in the pharmaceutical industry.
-j
-As Rhize can ingest data from all levels of the manufacturing process, and do so in real-time, it is an ideal single source of truth to create eBRs.
-The process can be automated and highly efficient.
-Our experience in production systems shows that Rhize can typically generate an eBR in less than 500 milliseconds. 
-
-The procedure has the following steps:
-
-1. Identify the sources of data.
-1. Map the fields for these data sources to Rhize's ISA-95 schema.
-1. Write {{< abbr "BPMN" >}} processes that listen to data sources, transform the incoming data to the schema, and then send a {{< abbr "mutation" >}} to update the Rhize database.
-1. After the batch finishes, query the database with the fields for your {{< abbr "ebr" >}}.
-
-The following sections describe this process in a bit more detail.
-
-## Prerequisites
-
-This procedure involves multiple data sources and different operations to transform the incoming data and store it in the graph database.
-Before you start, ensure that you have the following:
-- Awareness of the different sources of eBR data
-- If real-time data comes from equipment, [Connected data sources]({{< relref "how-to/publish-subscribe/connect-datasource" >}})
-- Sufficient knowledge of the ISA-95 standard to model the input data as ISA-95 schema
-- In the BPMN process, the ability to filter JSON and [call the GraphQL API]({{< relref "how-to/gql" >}})
-
-In larger operations, different teams may help with different parts of the eBR-creation process.
-For example, your integrators may help appropriately model the data, and the frontend team may render the outputted JSON into a final document.
-
-## Steps to automate eBR creation
-
-The following steps describe the broad procedure to automatically update the database for incoming batch data, then automatically create an eBR after the batch run.
-
-### Identify the sources of data
-
-The first step is to identify the sources of data for your eBR.
-
-{{< figure
-alt="Diagram showing some examples of eBR data sources"
-src="/images/ebr/diagram-rhize-example-ebr-sources.png"
-width="75%"
->}}
-
-Common data sources for an eBR might include:
-
-- **{{< abbr "ERP" >}} documents:** high-level operations documents
-- **{{< abbr "MES" >}} data:** granular process data, tracking objects such as the weight of individual material and the responses for different jobs.
-- **{{< abbr "LIMS" >}} documents:** information about the laboratory environment
-- **Real-time event data:** for example, data sent from OPC UA or MQTT servers
-
-### Model the fields as ISA-95 schema
-
-After you've identified the source data, the next step is to map this data into ISA-95 models.
-
-{{< figure
-alt="diagram showing some examples of ISA-95 modeling"
-src="/images/ebr/diagram-rhize-map-ebr-isa95.png"
-width="80%"
->}}
-
-Some common objects to map include raw and final material, equipment, personnel, operations schedule, segments, job responses, and the ERP batch number.
-
-Once ingested, all data is linked through common associations in the graph database, and is thus accessible through a single query.
-
-### Write a BPMN workflow to ingest the data in real-time
-
-{{< bigFigure
-alt="Example of a BPMN workflow"
-src="/images/ebr/diagram-rhize-bpmn-ebr.png"
-width="60%"
-caption="A simplified BPMN workflow. For an example of a real workflow with nodes for each logic step, refer to the next image."
->}}
-
-With the sources of data and their corresponding models, the next step
-is to write a [{{< abbr "BPMN" >}}]({{< relref "/how-to/bpmn" >}}) workflow to automatically transform the data and update the database.
-
-{{< notice "note" >}}
-You may want to break these steps into multiple parts.
-Or, for increased modularity, you can call another BPMN workflow with a [Call activity]({{< relref "how-to/bpmn/bpmn-elements">}}#call-activities).
+{{< notice >}}
+:memo:
+The focus here is modeling and querying.
+For a high-level overview of how eBR data may enter the Rhize data hub, read the guide to [Data collection]({{< relref "/use-cases/data-collection-ebr" >}}).
 {{< /notice >}}
 
-The procedure is as follows:
 
-1. Subscribe to the topic for the appropriate data (for example `/lims/lab1`). If the data comes from certain equipment, you first need to [Connect a data source]({{< relref "how-to/publish-subscribe/connect-datasource" >}}).
+## Quick query
 
-1. Transform with JSONata
+If you just want to build out a [GraphQL query]({{< relref "/how-to/gql/query" >}}) for your reporting, use these templates to get started.
 
-   Rhize has a built-in JSONata interpreter, which can filter and transform JSON.
-   Use a [JSONata service task]({{< relref "how-to/bpmn/bpmn-elements">}}#jsonata-transform) to map the data sources into the corresponding ISA-95 fields that you defined on the previous step.
-  
-   Use the output as a variable for the next step.
-   
 
-1. POST data with a graph mutation.
+If you know the IDs for the relevant job response, job order, and test results, you can structure each group as a top-level object.
+If you want to input only one ID, you can also use nested fields on a response, order, or test specification to pull all necessary information.
+The Rhize DB stores relationships, so the values are identical&mdash;only the structure of the response changes.
 
-   Use the variable returned by the JSONata step to send a mutation to update the Graph database with the new fields.
-   To learn more, read the [Guide to GraphQL with Rhize]({{< relref "how-to/gql" >}}).
 
-In real BPMN workflows, you can dynamically create and assign fields as they enter the system.
-For example, this workflow creates a new material definition and material-definition version based on whether this object already exists.
+{{< tabs >}}
+{{< tab "flat" >}}
 
-{{< bigFigure
-alt="Screenshot of a BPMN workflow that adds material only if it exists"
-src="/images/bpmn/screenshot-rhize-bpmn-add-material-definition.png"
->}}
+```gql
 
-This step can involve multiple BPMN processes subscribing to different topics.
-As long as the incoming event data has a common association, for example through the `id` of the batch data and associated `JobResponse`, you can return all eBR fields in one GraphQL query&mdash;no recursive SQL joins needed.
+query trackAndTrace {
+  performance: getJobResponse(id: "<JOB_ID>") {
+   # duration, actuals, and so on
+  }
+  planning: getJobOrder(id: "<ORDER_ID>") {
+  # requirements, work master, and so on
+  }
+  testing: getTestResult(id: "<TEST_ID>") {
+   # evaluation properties and tested objects
+  }
+}
+```
+{{< /tab >}}
+{{< tab "nested" >}}
 
-{{< figure
-alt="Multiple BPMN processes can be united in one batch"
-src="/images/ebr/diagram-rhize-inputs-for-ebr.png"
-width="75%"
->}}
-
-### Query the DB with the eBR fields
-
-After the batch finishes, use a [GraphQL query]({{< relref "how-to/gql/query" >}}) to receive all relevant batch data.
-You only need one precise request to return exactly the data you specify.
-
-{{< figure
-alt="Diagram showing how a query makes an ebr"
-src="/images/ebr/diagram-rhize-make-ebr-query.png"
-width="55%"
->}}
-
-Our experience has shown us that the query is about 300 lines. Here's a
-small, generic snippet of how it looks:
-
-{{< expandable title="Snippet of a makeEbr query" >}}
-```graphql
-query makeEbr ($filter: JobOrderFilter) {
-  queryJobResponse(filter: $filter) {
-    EXAMPLE_id: id
-    description
-    matActualProduced: materialActual(filter:{materialUse: { eq:Produced }}){
+```gql
+query nestedTrackAndTrace {
+  jobResponse: getJobResponse(id: "ds1d-batch-119-jr-fc-make-frosting") {
+    id
+    ## more fields about performance
+    materialActual { ## repeat for other resources as needed
       id
-      material: materialDefinitionVersion{
+      quantity
+      testResults { ## test results for material
         id
       }
+      ## More material fields
+    }
+    associated_order: jobOrder {
+      id
+      ## more planning fields
+    }
+  }
+}
+
+```
+{{< /tab >}} 
+{{</ tabs >}}
+
+For more detail, refer to the
+[complete example query](#example-query).
+
+
+## Background: ISA-95 entities in a track-and-trace query
+
+{{< notice >}}
+:memo: For an introduction to ISA-95 and its terminology,
+read [How to speak ISA-95]({{< relref "/explanations/how-to-speak-isa-95" >}}).
+{{< /notice >}}
+
+The following lists detail the ISA-95 entities that you might need when querying the Rhize database for a track and trace.
+As always, your manufacturing needs and data-collection capabilities determine the exact data that is necessary.
+It is likely that some of the following fields are irrelevant to your particular use case.
+
+### Performance information
+
+A _job response_ represents a unit of performed work in a manufacturing operation.
+The job response typically forms the core of a track-and-trace query,
+as you can query it to obtain duration and all {{< abbr "resource actual" >}}s involved in the job.
+A job response may also contain child job responses, as displayed in the following diagram:
+
+
+
+{{< bigFigure
+src="/images/s95/diagram-rhize-s95-job-response-with-children.svg"
+caption="An example of a job response with child job responses. The parent job has a material actual representing the final produced good. The child job responses also have their own properties that may be important to model. This is just one variation of many. **ISA-95 is flexible and the best model always depends on your use case**."
+>}}
+
+
+For a track and trace, some important job response properties and associations include the following:
+
+- **Start and End times.** When work started and how long it lasted.
+- **Material Actuals.** The quantities of material involved and how they are used: consumed, produced, tested, scrapped, and so on. Material actuals may also have associated lots for unique identification. Test results may be derived from samples of the material actual. 
+- **Equipment Actuals.** The real equipment used in a job, along with associated equipment properties and testing results.
+- **Personnel actuals.** The people involved in a job or test.
+- **Process values**. Associated process data and calculations.
+- **Comments and Signatures.** Additional input from operators.
+
+### Scheduling information
+
+A track and trace report might also include information
+about the work that was demanded.
+The simplest relationship between performance and demand is the link between a job response and a _job order_.
+So your track and trace might include information about the order that initiated the response.
+Through this order, you could also include higher-level scheduling information.
+
+When adding order information, consider whether you need the following properties:
+* **Scheduled start and end times.** These might be compared to the real start and end.
+* **Material requirements**. The material that corresponds to the material actuals in the performance. Requirements may include:
+   - Material to be produced, along with their scheduled quantities and units of measure
+   * Material to be consumed, along with their scheduled quantities and units of measure
+   * Any by-product material and scrap
+* **Planned equipment**. This can be compared to the real equipment used.
+* **Work Directive**. The dispatched version of the planned work. The directive may include:
+   - Specifications or a BoM (if the requirements are not in the order itself)
+   - Any relevant work master configuration (routing, process parameters like temperature, durations, and so on)
+
+
+### Quality information
+
+Your track and trace also may record test results.
+These results provide context about the quality of the work produced in the job response.
+
+Each {{< abbr "resource actual" >}} can have a corresponding test result.
+For example:
+- The material actual and lot may record the sample.
+- The equipment actual may record test locations.
+- Physical asset actuals may record instruments used for the test.
+- Personnel actuals may record who performed the test.
+
+## Example query
+
+The following snippet is an example of how to pull a full track and trace from a single [GraphQL query]({{< relref "/how-to/gql/query" >}}).
+Each top-level object has an [alias](https://graphql.org/learn/queries/#aliases), which serves as the key for the object in the JSON payload.
+
+```gql
+query trackAndTrace {
+  performance: getJobResponse(id: "ds1d-119-as") {
+   # duration, actuals, and so on
+  }
+ planning: getJobOrder(id: "ds1d-119-jo-119-3") {
+  # requirements, work directive, and so on
+ }
+ testing: getTestResult(id: "ds1d-119-tr-3") {
+   # evaluation properties and tested objects
+}
+```
+
+{{< tabs >}}
+{{% tab "Full query" %}}
+
+**Variables**
+```json
+{
+  "getJobResponseId": "ds1d-batch-119-jr-fc-make-frosting",
+  "getJobOrderId": "ds1d-batch-jo-119",
+  "getTestResultId": "ds1d-batch-tr-119"
+}
+```
+
+**Query**
+
+```gql
+
+query trackAndTrace ($getJobResponseId: String $getJobOrderId: String $getTestResultId: String) {
+  performance: getJobResponse(id:$getJobResponseId) {
+    jobResponseId: id
+    startDateTime
+    endDateTime
+    duration
+    jobState
+    workDirective {
+      id
+    }
+    materialActual {
+      id
+      materialUse
+      quantity
+      quantityUoM {
+        id
+      }
+      materialDefinition {
+        id
+      }
+      materialLot {
+        id
+        materialDefinition {
+          id
+        }
+      }
+      materialSubLot {
+        id
+      }
+      properties {
+        id
+      }
+    }
+    equipmentActual {
+      id
+      equipment {
+        id
+      }
+      description
+      children {
+        id
+      }
+      properties {
+        id
+        value
+        valueUnitOfMeasure {
+          id
+        }
+      }
+    }
+    personnelActual {
+      id
+      
+    }
+  }
+  
+  planning: getJobOrder(id: $getJobOrderId) {
+    orderId: id
+    scheduledStartDateTime
+    scheduledEndDateTime 
+    materialRequirements { 
+      id
       quantity
       quantityUoM {
         id
       }
     }
-  ## More EBR fields
+    equipmentRequirements {
+      id
+      equipment {
+        id
+      }
+      
+    }
+    workMaster{
+      id
+      parameterSpecifications {
+        id
+        description
+      }
+    }
+   
+    }
+ 
+ testing: getTestResult(id: $getTestResultId) {
+    resultsId: id
+    id
+    evaluationDate
+    expiration
+    evaluationCriterionResult
+    equipmentActual {
+    id
+    }
+    materialActual {
+    id
+    materialUse  
+    }
+    physicalAsset {
+    id 
+    }
+    equipmentActual {
+      id
+    }
+   }
+
+
+ }
+ 
+}
+
+```
+{{< /tab >}}
+{{< tab "Response: performance track and trace" >}}
+
+The `performance` section of this query may return data that looks something like this.
+Note that every object does not necessarily have every requested field.
+In this example, only some material actuals have additional properties.
+
+```json
+{
+  "data": {
+    "performance": {
+      "id": "ds1d-batch-119-jr-fc-make-frosting",
+      "startDateTime": "2024-09-23T23:22:25Z",
+      "endDateTime": "2024-09-23T23:38:04.783Z",
+      "duration": 939.783,
+      "materialActual": [
+        {
+          "id": "ds1d-batch-fc-cookie-frosting-actual-119",
+          "materialUse": "Produced",
+          "quantity": 3499.46,
+          "quantityUoM": {
+            "id": "g"
+          },
+          "materialLot": [
+            {
+              "id": "ds1d-batch-fc-cookie-frosting-lot-119"
+            }
+          ],
+          "materialSubLot": [],
+          "properties": [
+            {
+              "id": "viscosity",
+              "value": "0.1",
+              "valueUnitOfMeasure": {
+                "id": "mm2/s"
+              }
+            },
+            {
+              "id": "temperature",
+              "value": "22",
+              "valueUnitOfMeasure": {
+                "id": "C"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ds1d-batch-fc-butter-actual-119",
+          "materialUse": "Consumed",
+          "quantity": 1124.05,
+          "quantityUoM": {
+            "id": "g"
+          },
+          "materialLot": [
+            {
+              "id": "ds1d-batch-fc-butter-lot-119"
+            }
+          ],
+          "materialSubLot": [],
+          "properties": [
+            {
+              "id": "fat-percent",
+              "value": "15",
+              "valueUnitOfMeasure": null
+            }
+          ]
+        },
+        {
+          "id": "ds1d-batch-fc-confectioner-sugar-actual-119",
+          "materialUse": "Consumed",
+          "quantity": 249.08,
+          "quantityUoM": {
+            "id": "g"
+          },
+          "materialLot": [
+            {
+              "id": "ds1d-batch-fc-confectioner-sugar-lot-119"
+            }
+          ],
+          "materialSubLot": [],
+          "properties": []
+        },
+        {
+          "id": "ds1d-batch-fc-peanut-butter-actual-119",
+          "materialUse": "Consumed",
+          "quantity": 2249.63,
+          "quantityUoM": {
+            "id": "g"
+          },
+          "materialLot": [
+            {
+              "id": "ds1d-batch-fc-peanut-butter-lot-119"
+            }
+          ],
+          "materialSubLot": [],
+          "properties": []
+        }
+      ],
+      "equipmentActual": [
+        {
+          "id": "ds1d-batch-kitchen-mixer-actual-119",
+          "description": null,
+          "children": [],
+          "properties": []
+        },
+        {
+          "id": "ds1d-batch-kitchen-actual-119",
+          "description": null,
+          "children": [],
+          "properties": []
+        }
+      ],
+      "personnelActual": [
+        {
+          "id": "ds1d-batch-fc-supervisor-actual-119"
+        },
+        {
+          "id": "ds1d-batch-fc-handler-actual-119"
+        }
+      ]
+    }
   }
 }
 ```
-{{< /expandable >}}
 
-Note how the query specifies exactly the fields to return: no further filtering of the response is required.
-The only further step to use the returned JSON object as the input for however you create your eBR documents.
+{{< /tab >}}
+{{< /tabs >}}
 
-For an idea of how a more complete query looks, refer to the [Track and trace]({{< relref "track-and-trace" >}}) guide.
+## Build a reporting frontend
 
-## Next steps
+As a final step, you can also transform the JSON payload into a more human-readable presentation.
+As always, you have a few options. Here are a few, from least to most interactive:
+- Create a  PDF report, perhaps using specialized software such as InfoBatch
+- Create a static web report, using basic HTML and CSS
+- Build an interactive report explorer, which may include links to other reports and dynamic visualizations of alerts and performance
 
-Fast eBR automation is just one of many use cases of Rhize in the pharmaceutical industry.
-With the same event data that you automatically ingest and filter in this workflow, you can also:
-- Program reactive logic using BPMN for {{< abbr "event orchestration" >}}. For example, you might send an alert after detecting a threshold condition.
-- Analyze multiple batch runs for deviations. For example, you can query every instance of a failure mode across all laboratories.
-- Compare batches against some variable. For example, you can compare all runs for two versions of equipment.
+## Next steps: combine with other use cases
+
+You can reuse and combine the queries here for other use cases that involve tracking and performance analysis.
+For example, if you want a detailed report for the movement of material, you can combine the queries here with a query for a [material lot genealogy]({{< relref "genealogy" >}}). This would provide a detailed report for every job that involved an ancestor or descendent of the queried material.
 
