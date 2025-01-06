@@ -4,7 +4,7 @@ title: >-
 description: An example of how Rhize ingests data from various sources to create Electronic Batch Records for pharmaceutical manufacturing
 categories: ["howto", "use-cases"]
 weight: 0100
-og_image: /images/og/graphic-rhize-ebr.png
+og_image: /images/og/graphic-rhize-data-collection-ebr.png
 menu:
   main:
     parent: use-cases
