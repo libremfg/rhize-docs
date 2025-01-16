@@ -1,5 +1,5 @@
 ---
-title: 'BMPN elements'
+title: 'BPMN elements'
 date: '2023-09-26T11:10:37-03:00'
 draft: false
 categories: [reference]
