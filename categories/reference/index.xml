@@ -388,7 +388,7 @@ Standardizing BPMN names across an environment has multiple benefits:&lt;/p>
 &lt;li>&lt;i class="fa fa-youtube" aria-hidden="true">&lt;/i> &lt;a href="https://www.youtube.com/@rhizemanufacturingdatahub">Rhize Youtube channel&lt;/a>. Includes demos of BPMN.&lt;/li>
 &lt;li>📝 &lt;a href="https://www.omg.org/spec/BPMN/2.0.2/">OMG BPMN standard&lt;/a>. The standard on which the Rhize BPMN engine and UI is based.&lt;/li>
 &lt;li>&lt;a href="https://marketplace.visualstudio.com/items?itemName=bigbug.vscode-language-jsonata">&lt;code>vscode-language-jsonata&lt;/code>&lt;/a>. A VS code extension to interactively pipe JSONata expressions together, in the literate-programming style of Jupyter notebooks.&lt;/li>
-&lt;/ul></description></item><item><title>BMPN elements</title><link>https://docs.rhize.com/how-to/bpmn/bpmn-elements/</link><pubDate>Tue, 26 Sep 2023 11:10:37 -0300</pubDate><guid>https://docs.rhize.com/how-to/bpmn/bpmn-elements/</guid><description>&lt;p>This document describes the parameters available to each BPMN element in the Rhize UI.
+&lt;/ul></description></item><item><title>BPMN elements</title><link>https://docs.rhize.com/how-to/bpmn/bpmn-elements/</link><pubDate>Tue, 26 Sep 2023 11:10:37 -0300</pubDate><guid>https://docs.rhize.com/how-to/bpmn/bpmn-elements/</guid><description>&lt;p>This document describes the parameters available to each BPMN element in the Rhize UI.
 These parameters control how users set conditions, transform data, access variables, call services, and so on.&lt;/p>
 &lt;h2 id="common-parameters">Common parameters&lt;/h2>
 &lt;p>Every BPMN workflow and every element that the workflow contains have the following parameters:&lt;/p>
