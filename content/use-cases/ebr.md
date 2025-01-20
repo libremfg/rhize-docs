@@ -52,7 +52,7 @@ The Rhize DB stores relationships, so the values are identical&mdash;only the st
 
 ```gql
 
-query trackAndTrace {
+query eBR {
   performance: getJobResponse(id: "<JOB_ID>") {
    # duration, actuals, and so on
   }
@@ -68,7 +68,7 @@ query trackAndTrace {
 {{< tab "nested" >}}
 
 ```gql
-query nestedTrackAndTrace {
+query nestedBatchReport {
   jobResponse: getJobResponse(id: "ds1d-batch-119-jr-fc-make-frosting") {
     id
     ## more fields about performance
@@ -95,21 +95,21 @@ For more detail, refer to the
 [complete example query](#example-query).
 
 
-## Background: ISA-95 entities in a track-and-trace query
+## Background: ISA-95 entities in an eBR query
 
 {{< notice >}}
 :memo: For an introduction to ISA-95 and its terminology,
 read [How to speak ISA-95]({{< relref "/explanations/how-to-speak-isa-95" >}}).
 {{< /notice >}}
 
-The following lists detail the ISA-95 entities that you might need when querying the Rhize database for a track and trace.
+The following lists detail the ISA-95 entities that you might need when querying the Rhize database for an eBR.
 As always, your manufacturing needs and data-collection capabilities determine the exact data that is necessary.
 It is likely that some of the following fields are irrelevant to your particular use case.
 
 ### Performance information
 
 A _job response_ represents a unit of performed work in a manufacturing operation.
-The job response typically forms the core of a track-and-trace query,
+The job response typically forms the core of an eBR query,
 as you can query it to obtain duration and all {{< abbr "resource actual" >}}s involved in the job.
 A job response may also contain child job responses, as displayed in the following diagram:
 
@@ -121,7 +121,7 @@ caption="An example of a job response with child job responses. The parent job h
 >}}
 
 
-For a track and trace, some important job response properties and associations include the following:
+For an eBR, some important job response properties and associations include the following:
 
 - **Start and End times.** When work started and how long it lasted.
 - **Material Actuals.** The quantities of material involved and how they are used: consumed, produced, tested, scrapped, and so on. Material actuals may also have associated lots for unique identification. Test results may be derived from samples of the material actual. 
@@ -132,10 +132,10 @@ For a track and trace, some important job response properties and associations i
 
 ### Scheduling information
 
-A track and trace report might also include information
+An eBR report might also include information
 about the work that was demanded.
 The simplest relationship between performance and demand is the link between a job response and a _job order_.
-So your track and trace might include information about the order that initiated the response.
+So your eBR might include information about the order that initiated the response.
 Through this order, you could also include higher-level scheduling information.
 
 When adding order information, consider whether you need the following properties:
@@ -152,7 +152,7 @@ When adding order information, consider whether you need the following propertie
 
 ### Quality information
 
-Your track and trace also may record test results.
+Your eBR trace also may record test results.
 These results provide context about the quality of the work produced in the job response.
 
 Each {{< abbr "resource actual" >}} can have a corresponding test result.
@@ -164,11 +164,11 @@ For example:
 
 ## Example query
 
-The following snippet is an example of how to pull a full track and trace from a single [GraphQL query]({{< relref "/how-to/gql/query" >}}).
+The following snippet is an example of how to pull a full eBR from a single [GraphQL query]({{< relref "/how-to/gql/query" >}}).
 Each top-level object has an [alias](https://graphql.org/learn/queries/#aliases), which serves as the key for the object in the JSON payload.
 
 ```gql
-query trackAndTrace {
+query eBR {
   performance: getJobResponse(id: "ds1d-119-as") {
    # duration, actuals, and so on
   }
@@ -196,7 +196,7 @@ query trackAndTrace {
 
 ```gql
 
-query trackAndTrace ($getJobResponseId: String $getJobOrderId: String $getTestResultId: String) {
+query eBR ($getJobResponseId: String $getJobOrderId: String $getTestResultId: String) {
   performance: getJobResponse(id:$getJobResponseId) {
     jobResponseId: id
     startDateTime
@@ -308,7 +308,7 @@ query trackAndTrace ($getJobResponseId: String $getJobOrderId: String $getTestRe
 
 ```
 {{< /tab >}}
-{{< tab "Response: performance track and trace" >}}
+{{< tab "Response: performance eBR" >}}
 
 The `performance` section of this query may return data that looks something like this.
 Note that every object does not necessarily have every requested field.
