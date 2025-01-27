@@ -1,56 +1,70 @@
 canonifyURLs: true
 baseURL: "https://docs.rhize.com"
 languageCode: en-us
-theme: hugo-docs
-sectionPagesMenu: main
 title: Rhize documentation
 
+module:
+  imports:
+  - path: github.com/imfing/hextra
+
+
+menu:
+  main:
+    - name: Docs
+      pageRef: /docs
+      weight: 1
+    - name: ISA-95
+      weight: 2
+    - name: Search
+      weight: 4
+      params:
+        type: search
+    - name: GitHub
+      weight: 5
+      url: "https://github.com/libremfg/rhize-docs"
+      params:
+        icon: github
+    - name: Discord
+      weight: 6
+      url: "https://twitter.com/"
+      params:
+        icon: discord
+
+
+
 ignoreErrors:
+
 markup:
+  # allow raw html
   goldmark:
     renderer:
       unsafe: true
+
+  # enable hextra syntax highlight
   highlight:
-    codeFences: true
-    guessSyntax: false
-    hl_Lines: ""
-    lineNoStart: 1
-    lineNos: false
-    lineNumbersInTable: true
-    noClasses: true
-    style: vs
-    tabWidth: 4
-  tableOfContents:
-    endLevel: 3
-    ordered: false
-    startLevel: 2
-    title: Rhize Documentation
+    noClasses: false
 enableEmoji: true
+
 security:
   enableInlineShortcodes: true
-  exec:
-    allow:
-      - ^dart-sass-embedded$
-      - ^go$
-      - ^npx$
-      - ^postcss$
-    osEnv:
-      - (?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM)$
-  funcs:
-    getenv:
-      - ^HUGO_
-      - VERSION
-      - CURRENT_VERSION
-      - CANONICAL_PATH
-      - CURRENT_BRANCH
-      - DGRAPH_ENDPOINT
-  http:
-    methods:
-      - (?i)GET|POST
-    urls:
-      - .*
+
 params:
   site: rhize-docs
+  editURL:
+    base: "https://github.com/libremfg/rhize-docs/edit/main/content"
+    enable: true
+  navbar:
+    displayTitle: true
+    displayLogo: true
+  footer:
+    displayCopyright: false
+    displayPoweredBy: false
+    displayLogo: true
+    logo:
+      path: /images/logo.svg
+      dark: images/logo-dark.svg
+      width: 100
+      link: /
 
 outputs:
   home:
