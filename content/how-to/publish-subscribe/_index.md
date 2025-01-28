@@ -10,3 +10,5 @@ weight: 400
 For Rhize to listen to and [handle]({{< relref "../BPMN" >}}) manufacturing events,
 you need to connect a {{< abbr "data source" >}}. 
 
+
+{{< card-list >}}

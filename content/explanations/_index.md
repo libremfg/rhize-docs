@@ -18,3 +18,5 @@ These to do this, these are our explicit design goals:
 
 These following topics explain the concepts, architecture, and philosophy that underpin the Rhize application:
 
+
+{{< card-list >}}
