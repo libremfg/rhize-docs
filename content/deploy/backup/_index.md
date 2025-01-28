@@ -4,10 +4,6 @@ title: Back up
 description: Guides to back up your data on Rhize
 categories: ["how-to"]
 weight: 200
-menu:
-  main:
-    parent: deploy
-    identifier: backup
 ---
 
 Backup is critical to ensure reliability and recovery.

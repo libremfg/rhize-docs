@@ -4,10 +4,6 @@ date: '2023-10-18T11:01:56-03:00'
 categories: ["how-to"]
 description: How to backup Grafana on your Rhize deployment
 weight: 300
-menu:
-  main:
-    parent: backup
-    identifier:
 ---
 
 This guide shows you the procedure to back up Grafana on your Rhize Kubernetes deployment.

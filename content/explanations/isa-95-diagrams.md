@@ -5,9 +5,6 @@ description: >-
     for entities and information flows.
 weight: 200
 draft: false
-menu:
-  main:
-    parent: explanations
 ---
 
 These diagrams provide some highly simplified visual explanations gleaned from parts of the thorough [ISA-95 standard](https://www.isa.org/store?query=isa95).

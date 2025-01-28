@@ -4,10 +4,6 @@ date: '2023-10-18T11:01:46-03:00'
 categories: ["how-to"]
 description: How to back up the Rhize graph database
 weight: 100
-menu:
-  main:
-    parent: backup
-    identifier:
 ---
 
 This guide shows you how to back up the Rhize Graph database.

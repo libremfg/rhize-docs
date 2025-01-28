@@ -4,10 +4,6 @@ date: '2024-01-08T14:30:15-05:00'
 categories: ["how-to"]
 description: How to backup Keycloak on your Rhize deployment
 weight: 300
-menu:
-  main:
-    parent: backup
-    identifier:
 ---
 
 This guide shows you how to back up Keycloak on your Rhize Kubernetes deployment.

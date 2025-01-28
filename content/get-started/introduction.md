@@ -5,10 +5,6 @@ draft: false
 categories: "concepts"
 description:
 weight: 1
-menu:
-  main:
-    parent: get-started
-    identifier:
 ---
 
 Rhize is a real-time, event-driven [manufacturing data hub]({{< relref "/explanations/manufacturing-data-hub" >}}).

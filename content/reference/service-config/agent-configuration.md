@@ -5,10 +5,6 @@ description: Configuration parameters for the Rhize agent
 aliases:
   - "/reference/agent-configuration/"
 weight: 900
-menu:
-  main:
-    parent: reference-service-config
-    identifier:
 ---
 
 The Rhize agent collects data that is emitted in the manufacturing process and makes this data visible in the Rhize system.

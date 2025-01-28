@@ -5,10 +5,6 @@ draft: false
 categories: ["reference"]
 description: "A list of the default ports for the various Rhize services"
 weight: 900
-menu:
-  main:
-    parent: reference
-    identifier:
 ---
 
 After you [install Rhize services](/deploy/install/services), they are accessible, by default, on the following ports:

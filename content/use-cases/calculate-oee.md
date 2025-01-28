@@ -5,10 +5,6 @@ description: The Rhize guide to modelling and querying OEE
 categories: ["howto", "use-cases"]
 weight: 0100
 draft: true
-menu:
-  main:
-    parent: use-cases
-    identifier: calculate-oee
 ---
 
 This guide provides a high-level overview of how to use Rhize to calculate various _key performance indicators_ (KPIs), including _overall equipment effectiveness_ (OEE).

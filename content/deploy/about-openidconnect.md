@@ -5,10 +5,6 @@ description: The Rhize GraphQL implementation uses OpenIDConnect for
   set up Keycloak
 weight: 999
 categories: ["concepts"]
-menu:
-  main:
-    parent: deploy
-    identifier: about-openid-connect
 ---
 
 Rhize uses [OpenIDConnect](https://openid.net/developers/how-connect-works/) to connect to a [Keycloak](https://www.keycloak.org/) server to authenticate users and manage Role-based access controls.

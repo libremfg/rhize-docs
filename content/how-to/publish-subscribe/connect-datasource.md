@@ -4,10 +4,6 @@ date: '2023-09-22T14:50:39-03:00'
 categories: "how-to"
 description: Configure a data source to publish topics for the Rhize platform.
 weight: 10
-menu:
-  main:
-    parent: howto-pubsub
-    identifier: connect-data-source
 ---
 
 For Rhize to listen to and handle manufacturing events,

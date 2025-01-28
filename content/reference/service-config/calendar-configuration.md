@@ -3,10 +3,6 @@ title: 'Calendar configuration'
 categories: ["reference"]
 description: Configuration for the Rhize Calendar Service
 weight: 900
-menu:
-  main:
-    parent: reference-service-config
-    identifier:
 ---
 
  The Calendar Service handles polling work calendar definitions and generating work calendar entries in the graph and time series databases.

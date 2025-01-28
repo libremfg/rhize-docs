@@ -3,10 +3,6 @@ title: Query the KPI service
 description: >-
   An explanation of how to query the KPI service to obtain OEE values
 weight: 200
-menu:
-  main:
-    parent: howto-kpi-service
-    identifier: query-kpi-service
 ---
 
 {{< experimental-kpi >}}

@@ -4,10 +4,6 @@ date: '2024-01-08T13:26:23-05:00'
 categories: ["how-to"]
 description: How to restore a Keycloak backup on Rhize
 weight: 300
-menu:
-  main:
-    parent: restore
-    identifier:
 ---
 
 This guide shows you how to restore Keycloak in your Rhize environment.

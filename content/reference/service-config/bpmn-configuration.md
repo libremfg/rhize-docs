@@ -3,10 +3,6 @@ title: 'BPMN configuration'
 categories: ["reference"]
 description: Authentication types for the Rhize BPMN
 weight: 900
-menu:
-  main:
-    parent: reference-service-config
-    identifier:
 ---
 
 The Rhize BPMN acts as the tailored engine for processing low-code workflows designed within the [BPMN UI]{{< relref "/how-to/bpmn" >}}. The configurations manage the connection and data flow on the BPMN engine to the other Rhize microservices. 

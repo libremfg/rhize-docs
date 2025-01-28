@@ -5,10 +5,6 @@ categories: ["how-to"]
 description: How to backup InfluxDB on your Rhize deployment
 draft: true
 weight: 300
-menu:
-  main:
-    parent: backup
-    identifier:
 ---
 
 This guide shows you the procedure to back up the InfluxDB on your Rhize Kubernetes deployment.

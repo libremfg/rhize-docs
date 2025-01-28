@@ -5,10 +5,6 @@ categories: ["how-to"]
 description:
   How to install Rhize services on your Kubernetes cluster.
 weight: 050
-menu:
-  main:
-    parent: install
-    identifier:
 ---
 
 This guide shows you how to install Rhize services on your Kubernetes cluster.

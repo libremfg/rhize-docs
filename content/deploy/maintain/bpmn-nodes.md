@@ -4,9 +4,6 @@ weight: 200
 description: >-
   If a BPMN node suddenly fails, Rhize has a number of recovery methods to ensure that the workflow finishes executing.
 categories: ["concepts"]
-menu:
-  main:
-    parent: maintain
 ---
 
 [{{< abbr "BPMN" >}} processes]({{< relref "/how-to/bpmn" >}}) often have longer execution durations and many steps.

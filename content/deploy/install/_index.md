@@ -5,10 +5,6 @@ category: how-to
 description: >-
   A guide to install Rhize services on your Kubernetes cluster.
 weight: 100
-menu:
-  main:
-    parent: deploy
-    identifier: install
 cascade:
   domain_name: libremfg.ai
   brand_name: Libre

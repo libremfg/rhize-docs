@@ -6,10 +6,6 @@ description: How to configure KPI Service to record key ISO22400 OEE Metrics.
 weight: 500
 cascade: 
   experimental: true
-menu:
-  main:
-    parent: how-to
-    identifier: howto-kpi-service
 ---
 
 {{< experimental-kpi >}}

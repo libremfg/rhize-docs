@@ -3,6 +3,7 @@ title: User guides
 description: Topics about how to use Rhize to query data, build and run workflows, and build frontends.
 weight: 200
 identifier: how-to
+icon: clipboard-list
 cascade:
   domain_name: libremfg.ai
   brand_name: Libre

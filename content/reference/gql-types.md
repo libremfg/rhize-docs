@@ -5,11 +5,6 @@ description: >-
   A reference of the data types in the Rhize API and of the filters available for each type.
 categories: ["reference"]
 weight: 930
-menu:
-  main:
-    name: GQL types and filters
-    identifier: gql-filters
-    parent: reference
 ---
 
 This page provides a reference of the data types enforced by the Rhize database schema,

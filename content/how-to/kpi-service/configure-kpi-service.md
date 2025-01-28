@@ -3,10 +3,6 @@ title: Configure the KPI service
 description: >-
   An explanation of how to configure the KPI service to feed it with process data
 weight: 200
-menu:
-  main:
-    parent: howto-kpi-service
-    identifier: configure-kpi-service
 ---
 
 {{< experimental-kpi >}}

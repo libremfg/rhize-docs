@@ -5,10 +5,7 @@ description: The Rhize guide to modelling and querying the forward and backward 
 categories: ["howto", "use-cases"]
 weight: 0100
 og_image: "/images/og/graphic-rhize-genealogy.png"
-menu:
-  main:
-    parent: use-cases
-    identifier:
+icon: fingerprint
 ---
 
 This document provides a high-level overview of how to use Rhize for material genealogy.

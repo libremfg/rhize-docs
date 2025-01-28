@@ -4,10 +4,6 @@ title: Maintain
 description: Guides to maintain your data on Rhize
 categories: ["how-to"]
 weight: 250
-menu:
-  main:
-    parent: deploy
-    identifier: maintain
 ---
 
 Maintenance is critical to ensure reliability over time.

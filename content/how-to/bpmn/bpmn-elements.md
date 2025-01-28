@@ -6,9 +6,6 @@ categories: [reference]
 description: >-
   A reference of all BPMN elements used in the Rhize BPMN engine.
 weight: 1000
-menu:
-  main:
-    parent: howto-bpmn
 boilerplate:
   jsonata_response: >-
     Optional [JSONata](https://docs.jsonata.org/1.7.0/overview) expression to map to the [process variable context](#process-variable-context)

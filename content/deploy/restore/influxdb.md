@@ -5,10 +5,6 @@ categories: ["how-to"]
 description: How to restore an InfluxDB backup on Rhize
 draft: true
 weight: 400
-menu:
-  main:
-    parent: restore
-    identifier: restore-influx
 ---
 
 

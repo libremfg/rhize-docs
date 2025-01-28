@@ -6,10 +6,6 @@ draft: false
 categories: "how-to"
 description:
 weight: 300
-menu:
-  main:
-    parent: how-to
-    identifier: how-to-define
 ---
 
 You have multiple ways to update your production models:

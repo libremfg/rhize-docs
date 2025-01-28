@@ -7,10 +7,7 @@ weight: 0100
 og_image: /images/og/graphic-rhize-ebr.png
 aliases:
   - "/use-cases/track-and-trace/"
-menu:
-  main:
-    parent: use-cases
-    identifier:
+icon: document-report
 ---
 
 This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use case that involves _Electronic batch records_.

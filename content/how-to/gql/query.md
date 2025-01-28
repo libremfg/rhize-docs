@@ -3,10 +3,6 @@ title: 'Query'
 categories: ["how-to"]
 description: A guide to the three GraphQL operations in Rhize
 weight: 200
-menu:
-  main:
-    parent: how-to-query
-    identifier:
 ---
 
 A _query_ returns one or more resources from the database.
