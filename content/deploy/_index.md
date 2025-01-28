@@ -3,6 +3,9 @@ title: Deploy
 description: >-
   A collection of pages to administrate Rhize: install, upgrade, back up, and more.
 weight: 100
+icon: server
+cascade:
+  icon: server
 identifier: deploy
 cascade:
   domain_name: libremfg.ai
@@ -33,3 +36,6 @@ cascade:
 ---
 
 A collection of pages to administrate Rhize: install, upgrade, back up, and more.
+
+
+{{< card-list >}}

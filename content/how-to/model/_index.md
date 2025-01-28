@@ -3,8 +3,6 @@ title: 'Define production models'
 description: Create models for equipment, data sources, operations definitions, work definitions, and so on. 
 date: '2023-09-22T14:50:39-03:00'
 draft: false
-categories: "how-to"
-description:
 weight: 300
 ---
 
@@ -18,3 +16,5 @@ The trade offs are usually upfront configuration time, number of items to add, a
 Adding an item over the UI requires no programming skill, but you can only add only one unit at a time.
 Creating a BPMN process to listen for an event and automatically map new units brings the highest automation, but it requires upfront investment to write and test the BPMN workflow.
 
+
+{{< card-list >}}

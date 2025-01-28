@@ -2,8 +2,6 @@
 title: Use GraphQL
 description: Guides to use the GraphQL interface to query information, add records, and build custom UIs.
 weight: 100
-menu:
-  main:
-    parent: how-to
-    identifier: how-to-query
 ---
+
+{{< card-list >}}

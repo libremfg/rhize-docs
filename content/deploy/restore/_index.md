@@ -10,3 +10,6 @@ These guides show you how to restore data from [backup]({{< relref "../backup" >
 They also serve as blueprints for automation.
 
 Even if you don't need to restore data, it's a good practice to test restoration periodically.
+
+
+{{< card-list >}}

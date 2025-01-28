@@ -15,6 +15,7 @@ menu:
       weight: 1
     - name: ISA-95
       weight: 2
+      pageRef: /isa-95
     - name: Search
       weight: 4
       params:
@@ -69,3 +70,9 @@ params:
 outputs:
   home:
     - HTML
+
+permalinks:
+  page:
+    docs: /test/:slug/
+  section:
+    docs: /test

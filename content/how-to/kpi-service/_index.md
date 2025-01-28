@@ -1,6 +1,5 @@
 ---
 title: 'Use the KPI service'
-date: '2024-09-03T00:00:00Z'
 categories: "how-to"
 description: How to configure KPI Service to record key ISO22400 OEE Metrics.
 weight: 500

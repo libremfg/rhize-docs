@@ -1,0 +1,28 @@
+
+
+{{ .Scratch.Set "pages" .Page.Pages }}
+{{ $pages := (.Scratch.Get "pages") }}
+
+<div class="hextra-cards hx-mt-4 hx-gap-4 hx-grid not-prose"
+     style="--hextra-cards-grid-cols: 2;">
+
+{{template "childs" (dict "menu" $pages.ByWeight "pages" .Site.Pages) }}
+
+</div>
+
+{{ define "childs" }}
+    {{ range .menu }}
+    {{ $icon := .Page.Params.icon }}
+    {{ $tags := .Page.Params.tags }}
+    {{ $cardParams := dict
+        "link" .RelPermalink
+        "title" .Title
+        "subtitle" .Description
+        "tag" $tags
+    }}
+    {{ if $icon }}
+        {{ $cardParams = merge $cardParams (dict "icon" $icon) }}
+    {{ end }}
+    {{ partial "shortcodes/card.html" $cardParams }}
+    {{end}}
+{{end}}
