@@ -3,10 +3,6 @@ title: 'Core configuration'
 categories: ["reference"]
 description: Configuration for the Rhize core
 weight: 900
-menu:
-  main:
-    parent: reference-service-config
-    identifier:
 ---
 
  The Core service oversees data sources such as OPC-UA servers and manages the publication and subscription of topics within the NATS messaging system.

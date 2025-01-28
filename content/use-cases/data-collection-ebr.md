@@ -1,14 +1,11 @@
 ---
+icon: inbox-in
 title: >-
   Data collection (eBR example)
 description: An example of how Rhize ingests data from various sources to create Electronic Batch Records for pharmaceutical manufacturing
 categories: ["howto", "use-cases"]
 weight: 0100
 og_image: /images/og/graphic-rhize-data-collection-ebr.png
-menu:
-  main:
-    parent: use-cases
-    identifier:
 ---
 
 {{% notice note %}}

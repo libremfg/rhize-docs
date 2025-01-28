@@ -2,9 +2,6 @@
 title: How to speak ISA-95
 description: More than a standard, ISA-95 is a specialized vocabulary that describes all elements of manufacturing operation.
 og_image: /images/og/graphic-rhize-how-to-speak-isa95.png
-menu:
-    main:
-        parent: "explanations"
 ---
 
 [ISA-95](https://www.isa.org/store?query=isa95) provides a common language to discuss manufacturing.

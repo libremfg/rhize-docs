@@ -9,10 +9,6 @@ aliases:
   - "/how-to/publish-subscribe/tutorial-create-equipment-class-rule/"
   - "/how-to/publish-subscribe/turn-value-into-event/"
 weight: 10
-menu:
-  main:
-    parent: howto-pubsub
-    identifier:
 ---
 
 An equipment class rule [triggers a BPMN]({{< relref "/how-to/bpmn/trigger-workflows/" >}}) workflow whenever a data source publishes a value that meets a specified threshold.

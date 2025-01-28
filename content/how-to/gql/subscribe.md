@@ -3,10 +3,6 @@ title: 'Subscribe'
 categories: ["how-to"]
 description: A guide to using GraphQL to subscribe to changes in the database.
 weight: 280
-menu:
-  main:
-    parent: how-to-query
-    identifier:
 ---
 
 The operations for a `subscription` are similar to the operations for a [`query`]({{< relref "/how-to/gql/query" >}}).

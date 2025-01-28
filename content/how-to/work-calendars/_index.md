@@ -5,10 +5,6 @@ draft: false
 categories: "how-to"
 description: How to configure work calendars to account for planned and unplanned downtime in your operation.
 weight: 500
-menu:
-  main:
-    parent: how-to
-    identifier: howto-work-calendars
 ---
 
 Work calendars represent planned periods of time in your operation,

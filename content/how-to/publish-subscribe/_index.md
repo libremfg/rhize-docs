@@ -5,10 +5,6 @@ draft: false
 categories: "how-to"
 description: Set up event-driven messaging for Rhize
 weight: 400
-menu:
-  main:
-    parent: how-to
-    identifier: howto-pubsub
 ---
 
 For Rhize to listen to and [handle]({{< relref "../BPMN" >}}) manufacturing events,

@@ -4,10 +4,6 @@ date: '2023-10-19T13:52:23-03:00'
 categories: ["how-to"]
 description: How to restore a Grafana backup on Rhize
 weight: 300
-menu:
-  main:
-    parent: restore
-    identifier:
 ---
 
 This guide shows you how to restore Grafana in your Rhize environment.

@@ -4,10 +4,6 @@ date: '2023-12-20T12:47:09-03:00'
 categories: ["how-to"]
 description: How to use the Audit log to inspect all events in the Rhize system
 weight: 600
-menu:
-  main:
-    parent: how-to
-    identifier:
 ---
 
 The _Audit Log_ provides a tamper-proof and immutable audit trail of all events that occur in the Rhize system.

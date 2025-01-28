@@ -5,10 +5,6 @@ draft: false
 categories: "how-to"
 description: Create BPMN workflows to handle inputs, listen for events, and throw triggers.
 weight: 200
-menu:
-  main:
-    parent: how-to
-    identifier: howto-bpmn
 ---
 
 In the following topics, learn how to use Rhize's BPMN engine to orchestrate processes.

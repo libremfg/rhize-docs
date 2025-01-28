@@ -3,10 +3,6 @@ title: 'Filter'
 categories: ["how-to"]
 description: How to filter a GraphQL call to a subset of manufacturing items.
 weight: 210
-menu:
-  main:
-    parent: how-to-query
-    identifier:
 ---
 
 

@@ -6,10 +6,6 @@ categories: "concepts"
 description: >-
   A high-level overview of how Rhize collects, exchanges, and stores data, starting with data collection and ending with user interaction.
 weight: 200
-menu:
-  main:
-    parent: get-started
-    identifier:
 ---
 
 This article provides a high-level overview of how Rhize works, starting with data collection and ending with user interaction.

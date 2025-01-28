@@ -1,11 +1,6 @@
 ---
 title: Track changes (CDC)
 description: Streaming data in and out of RHIZE
-menu:
-  main:
-    identifier: stream-data
-    weight: 300
-    parent: howto-pubsub
 ---
 
 

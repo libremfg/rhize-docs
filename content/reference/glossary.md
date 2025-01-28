@@ -4,10 +4,6 @@ title: Glossary
 description: A list of terms relevant to Rhize, or that are frequently used in manufacturing contexts.
 categories: ["reference"]
 weight: 950
-menu:
-  main:
-    identifier: glossary
-    parent: reference
 ---
 
 The manufacturing industry has many specialized terms&mdash;and many abbreviations.

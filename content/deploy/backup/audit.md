@@ -4,10 +4,6 @@ date: '2024-03-26T11:20:56-03:00'
 categories: ["how-to"]
 description: How to backup Audit PostgreSQL on your Rhize deployment
 weight: 300
-menu:
-  main:
-    parent: backup
-    identifier:
 ---
 
 This guide shows you the procedure to backup your Audit PostgreSQL database on your Rhize Kubernetes deployment.

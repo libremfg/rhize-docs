@@ -5,10 +5,6 @@ description: Special variables used by Rhize BPMN workflows
 aliases:
   - "/how-to/bpmn/special-variables"
 weight: 900
-menu:
-  main:
-    parent: howto-bpmn
-    identifier:
 ---
 
 Rhize designates some variable names for a special purpose in BPMN workflow.

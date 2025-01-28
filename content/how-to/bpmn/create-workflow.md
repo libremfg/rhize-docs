@@ -6,9 +6,6 @@ description: >
 weight: 10
 aliases:
   - "/how-to/bpmn/orchestration-overview"
-menu:
-  main:
-    parent: howto-bpmn
 ---
 
 This guide provides a quick overview of the major features of the Rhize {{< abbr "BPMN">}} engine and interface, with links to detailed guides for specific topics.

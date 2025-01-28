@@ -4,11 +4,6 @@ title: >-
 description: >-
   Handle manufacturing events, access the knowledge graph of the operation, build custom MOM applications. 
 weight: 1
-menu:
-  main:
-    identifier: use-case-overview
-    parent: use-cases
-    name: Overview
 ---
 
 Rhize's flexible, event-centric architecture serves many functions.

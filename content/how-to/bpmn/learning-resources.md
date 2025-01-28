@@ -3,10 +3,6 @@ title: 'BPMN learning resources'
 categories: ["reference"]
 description: Links to supplemental tools and material to learn BPMN
 weight: 999
-menu:
-  main:
-    parent: howto-bpmn
-    identifier:
 ---
 
 

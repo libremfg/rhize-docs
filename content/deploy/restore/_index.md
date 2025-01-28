@@ -4,10 +4,6 @@ title: Restore
 description: Guides to restore your data on Rhize
 categories: ["how-to"]
 weight: 200
-menu:
-  main:
-    parent: deploy
-    identifier: restore
 ---
 
 These guides show you how to restore data from [backup]({{< relref "../backup" >}}).

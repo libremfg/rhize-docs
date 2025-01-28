@@ -3,10 +3,6 @@ title: About KPI Service and overrides
 description: >-
   An explanation of how the Rhize KPI service works
 weight: 200
-menu:
-  main:
-    parent: howto-kpi-service
-    identifier: about-kpi-service
 ---
 
 {{< experimental-kpi >}}

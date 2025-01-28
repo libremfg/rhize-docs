@@ -5,10 +5,6 @@ draft: false
 categories: ["how-to"]
 description: How to create manufacturing objects from the Rhize UI.
 weight: 010
-menu:
-  main:
-    parent: how-to-define
-    identifier: how-to-workmaster-ui
 ---
 
 To make a production object visible to the Rhize data hub, you must define it as a data model.

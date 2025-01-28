@@ -4,10 +4,6 @@ date: '2024-03-26T11:20:56-03:00'
 categories: ["how-to"]
 description: How to restore the backup of the Audit PostgreSQL on your Rhize deployment
 weight: 300
-menu:
-  main:
-    parent: restore
-    identifier:
 ---
 
 This guide shows you the procedure to restore your Audit PostgreSQL database in your Rhize Kubernetes deployment.
