@@ -382,7 +382,7 @@ width="50%"
 caption="<em>Parallel gateways run jobs in parallel.</em>"
 >}}
 
-{{% expandable title="Parallel joins" %}}
+{{% details title="Parallel joins" %}}
 
 You can join parallel tasks with another parallel gateway.
 This joins the variables from both branches to [process variable context](#process-variable-context).
@@ -396,7 +396,7 @@ width="50%"
 caption="<em>Parallel joins join variable context, but have performance costs.</em>"
 >}}
 
-{{% /expandable %}}
+{{% /details %}}
 
 ## Variables and expressions
 

@@ -142,7 +142,7 @@ Here is a small, generic snippet of how it looks:
 Note how the query specifies exactly the fields to return: no further response filtering is required.
 For an idea of how a more complete query looks, refer to the [Electronic Batch Records]({{< relref "ebr" >}}) guide.
 
-{{< expandable title="Snippet of a makeEbr query" >}}
+{{< details title="Snippet of a makeEbr query" >}}
 ```graphql
 query makeEbr ($filter: JobOrderFilter) {
   queryJobResponse(filter: $filter) {
@@ -162,7 +162,7 @@ query makeEbr ($filter: JobOrderFilter) {
   }
 }
 ```
-{{< /expandable >}}
+{{< /details >}}
 
 The only extra step is to use the returned JSON object as the input for however you create your eBR documents.
 

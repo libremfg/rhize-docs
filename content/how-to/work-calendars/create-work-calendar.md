@@ -53,7 +53,7 @@ Note that some items, such as `Equipment A`, `Equipment B`, and `Equipment C`,
 have links to child equipment, as expressed in the `isMadeUpOf` property.
 These relationships express the equipment hierarchy.
 
-{{< expandable title="mutation addEquipment" >}}
+{{< details title="mutation addEquipment" closed="true" >}}
 ```gql
 mutation AddEquipment($input: [AddEquipmentInput!]!, $upsert: Boolean) {
   addEquipment(input: $input, upsert: $upsert) {
@@ -156,7 +156,7 @@ mutation AddEquipment($input: [AddEquipmentInput!]!, $upsert: Boolean) {
   "upsert": true
 }
 ```
-{{< /expandable >}}
+{{< /details >}}
 
 
 ### Add Hierarchy scope
@@ -179,7 +179,7 @@ To create levels of calendar scope, add `children`, each of which can link to eq
 This example adds a work-calendar hierarchy, `WorkCalendar_PSDT`, with associated children scopes.
 The scope and its children link to equipment created in the previous step through `equipmentHierarchy`.
 
-{{< expandable title=" mutation addHierarchyScope" >}}
+{{< details title=" mutation addHierarchyScope" >}}
 
   
 ```gql
@@ -282,7 +282,7 @@ mutation AddHierarchyScope($input: [AddHierarchyScopeInput!]!) {
 }
 ```
 
-{{< /expandable >}}
+{{< /details >}}
 
 ### Create work calendar definition
 
@@ -309,7 +309,7 @@ You can optionally add `properties` to each entry to add additional context and 
 This `addWorkCalendarDefinition` mutation adds entries for planned downtime and shutdown time.
 Note that the calendar definitions link to a hierarchy scope defined in the previous step.
 
-{{< expandable title="mutation addWorkCalendarDefinition" >}}
+{{< details title="mutation addWorkCalendarDefinition" closed="true" >}}
 ```gql
 mutation AddWorkCalendarDefinition($input: [AddWorkCalendarDefinitionInput!]!, $upsert: Boolean) {
   addWorkCalendarDefinition(input: $input, upsert: $upsert) {
@@ -487,5 +487,5 @@ mutation AddWorkCalendarDefinition($input: [AddWorkCalendarDefinitionInput!]!, $
   "upsert": true
 }
 ```
-{{< /expandable >}}
+{{< /details >}}
 
