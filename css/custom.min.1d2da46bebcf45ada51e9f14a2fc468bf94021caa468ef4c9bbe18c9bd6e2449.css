@@ -1,1 +1,0 @@
-:root{--primary-hue:125deg;--primary-saturation:67%;--primary-lightness:30%}:is(html[class~=dark]){--primary-hue:100deg;--primary-saturation:100%;--primary-lightness:50%}
