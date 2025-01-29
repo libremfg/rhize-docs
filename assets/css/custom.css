@@ -1,5 +1,12 @@
 :root {
+  --primary-hue: 142deg;
+  --primary-saturation: 100%;
+  --primary-lightness: 25%;
+}
+
+
+:is(html[class~="dark"]) {
   --primary-hue: 100deg;
-  --primary-saturation: 90%;
+  --primary-saturation: 100%;
   --primary-lightness: 50%;
 }
