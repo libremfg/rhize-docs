@@ -4,7 +4,8 @@ title: >-
 description: The Rhize guide to modelling and querying the forward and backward genealogy of a material lot
 categories: ["howto", "use-cases"]
 weight: 0100
-og_image: "/images/og/graphic-rhize-genealogy.png"
+images:
+  - "/images/og/graphic-rhize-genealogy.png"
 icon: finger-print
 ---
 
