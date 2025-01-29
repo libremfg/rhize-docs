@@ -21,15 +21,6 @@ To stop Hugo, use `ctrl+c`.
 
 Refer to [Contributing](CONTRIBUTING.md).
 
+## Hugo theme
 
-## Troubleshooting
-
-### Page is not showing
-
-Check whether the page frontmatter has `draft: true`.
-To view a draft locally, use the `hugo server -D` command.
-To make it so the page appears on the published site, change the value to `false`.
-
-### Page is in the wrong place in the sidebar
-
-Each nested page has a `parent`. Make sure the value of the page's `menu.main.parent` property has the `identifier` of its parent directory `_index.md` file.
+This Hugo site is built using the [Hextra](https://github.com/imfing/hextra) documentation theme.
