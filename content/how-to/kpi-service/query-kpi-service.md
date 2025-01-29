@@ -161,7 +161,7 @@ The order starts at 09:00 and finishes at 12:00 with 30 minutes of unplanned dow
 After the operation finishes, the user has registered 800 Good parts and 200 scrap parts.
 The tables in time series appear as follows:
 
-{{< tabs items="Equipmentstate,QuantityLog" >}}
+{{< tabs items="Equipmentstate,QuantityLog,JobOrderState" >}}
 {{% tab "EquipmentState" %}}
 
 | EquipmentId | ISO22400State | time                 |
