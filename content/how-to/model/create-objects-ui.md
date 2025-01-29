@@ -44,9 +44,9 @@ This equipment item also has a data source that gives temperature readings, whic
 
 Here's how you could use the Rhize UI to model this.
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 If you are actively following to learn, make sure to use names that will easily identify the objects as example objects for testing.
-{{< /notice >}}
+{{< /callout >}}
 
 Model the equipment levels:
 

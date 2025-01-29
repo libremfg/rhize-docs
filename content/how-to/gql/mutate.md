@@ -17,9 +17,9 @@ Rhize supports the following ways to change the API.
 
 ## `add` {#add}
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 The `add` operation corresponds to the `Process` verb defined in [Part 5](https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i) of the ISA-95 standard.
-{{< /notice >}}
+{{< /callout >}}
 
 Mutations that start with `add` create a resource on the server.
 
@@ -91,9 +91,9 @@ addEquipment(input: $input, upsert: true)
 Mutations that start with `update` change something in an object that already exists.
 The `update` operations can use [filters]({{< relref "/how-to/gql/filter" >}}).
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 The `update` operation corresponds to the `Change` verb defined in [Part 5](https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i) of the ISA-95 standard.
-{{< /notice >}}
+{{< /callout >}}
 
 For example, this operation updates the description for a specific version of an equipment item.
 

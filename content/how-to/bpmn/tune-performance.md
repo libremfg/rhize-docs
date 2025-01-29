@@ -14,10 +14,10 @@ So an inefficient BPMN process can introduce performance degradations.
 
 ## Manage the process context size
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 The max size of the process variable context comes from the default max payload size of NATS Jetstreams.
 To increase this size, change your NATS configuration.
-{{< /notice >}}
+{{< /callout >}}
 
 By default, the size of the {{< abbr "process variable context" >}} is 1MB.
 If the sum size of all variables exceeds this limit, the BPMN process fails to execute.

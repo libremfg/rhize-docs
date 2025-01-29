@@ -9,13 +9,13 @@ weight: 300
 
 This guide shows you how to restore Keycloak in your Rhize environment.
 
-{{% notice "caution" %}}
+{{% callout type="caution" %}}
 
 Restoring Keycloak to a running instance involves downtime.
 
 Typically, this downtime lasts less than a minute. The exact duration needed depends on network constraints, backup size, and the performance of the Kubernetes cluster.
 
-{{% /notice %}}
+{{% /callout %}}
 
 ## Prerequisites
 

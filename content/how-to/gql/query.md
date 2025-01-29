@@ -16,11 +16,11 @@ Most queries start with these three verbs, each of which indicates the resources
 - `aggregate` for calculations on arrays
 
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 
 These operations correspond to the `Get` verb defined in [Part 5](https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i) of the ISA-95 standard.
 
-{{< /notice >}}
+{{< /callout >}}
 
 ## `query` multiple resources {#query}
 
@@ -104,18 +104,18 @@ query countItems($filter: EquipmentFilter) {
 
 A query can take arguments to order and paginate your results.
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 Without an `order` parameter, a query returns items without any default or guaranteed order.
-{{< /notice >}}
+{{< /callout >}}
 
 ### Order
 
-{{< notice "caution" >}}
+{{< callout type="caution" >}}
 
 Ordered queries **return only the first 1000 records of the ordered field.**
 This behavior might exclude records that you expect, especially if you [combine `order` with a `@cascade`]({{< relref "filter#avoid-using-cascade-with-the-orderhahahugoshortcode50s8hbhb-argument" >}}) filter in a nested field.
 
-{{< /notice >}}
+{{< /callout >}}
 
 The `order` argument works with any property whose type is `Int`, `Float`, `String`, or `DateTime`.
 For example, this query sorts Person objects by ID in ascending alphabetical order:

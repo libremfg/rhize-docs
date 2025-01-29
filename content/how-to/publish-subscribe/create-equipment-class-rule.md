@@ -36,11 +36,11 @@ The broad procedure to create a rule is as follows:
 The following sections describe how to do these steps in more detail.
 
 
-{{% notice note %}}
+{{% callout type="info" %}}
 
 This tutorial assumes a data source that exchanges messages over the MQTT protocol.
 
-{{% /notice %}}
+{{% /callout %}}
 
 ## Prerequisites
 
@@ -174,12 +174,12 @@ caption="A new equipment class property created in the UI."
 1. Add `orderNumber` as a trigger property.
 1. Add a trigger expression that evaluates to true or false.
 
-{{% notice note %}}
+{{% callout type="info" %}}
 
 The rule runs the preceding workflow only if the expression evaluates to `true`.
 It’s common to compare the new value with the previous.
 
-{{% /notice %}}
+{{% /callout %}}
 
 In this case, we can compare the new order number to the previous by adding `OrderNumber.current.value != OrderNumber.previous.value`.
 Note that the root of the object path must match the ID of the equipment class property we set up earlier and all evaluations are case-sensitive.
@@ -381,11 +381,11 @@ src="/images/equipment-class-rules/screenshot-rhize-New_orderNumber_in_the_Admin
 caption="The bound property assumes the last value published to the data source."
 >}}
 
-{{% notice note %}}
+{{% callout type="info" %}}
 
 If this is the first message published to the topic, the rule will not be triggered because Rhize has no previous value to compare it the message value to. However, if you publish another order number, a new topic called `Core` will show up containing a subtopic called `RuleTriggered` to indicate that the rule has indeed been triggered.
 
-{{% /notice %}}
+{{% /callout %}}
 
 {{< bigFigure
 width="65%"

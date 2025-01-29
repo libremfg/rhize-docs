@@ -45,12 +45,12 @@ CREATE TABLE IF NOT EXISTS EquipmentState(
 ) TIMESTAMP(time) PARTITION BY MONTH DEDUP UPSERT KEYS(time, EquipmentId);
 ```
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 This table shows a QuestDB specific schema.
 You may also add additional columns as required.
 
 To use the service for another time-series DB, get in touch.
-{{< /notice >}}
+{{< /callout >}}
 {{% /tab %}}
 {{% tab "example" %}}
 
@@ -65,9 +65,9 @@ To use the service for another time-series DB, get in touch.
 ]
 ```
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 This record includes an additional field, `PackMLState`, to show that additional data can also be recorded.
-{{< /notice >}}
+{{< /callout >}}
 {{% /tab %}}
 {{< /tabs >}}
 

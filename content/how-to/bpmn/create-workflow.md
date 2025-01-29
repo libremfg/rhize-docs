@@ -26,12 +26,12 @@ width="70%"
 >}}
 
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 Rhize BPMN workflows conform to the visual grammar described in the OMG standard for [Business Process Model and Notation](https://www.omg.org/spec/BPMN/2.0/).
 Each process is made of _events_ (circles), _activities_ (rectangles), _gateways_ (diamonds), and _flows_ (arrows).
 Some elements are extended for Rhize-specific features, such as service tasks that call the GraphQL API.
 Some elements from the standard are unused and thus do not appear in the UI.
-{{< /notice  >}}
+{{< /callout  >}}
 
 ## Request and send data
 
@@ -61,9 +61,9 @@ For details about how to use the Rhize API, read the [Guide to GraphQL]({{< relr
 To make HTTP requests to external systems, use the [REST task]({{< relref "/how-to/bpmn/bpmn-elements#call-rest-api" >}}).
 For example, you might send a `POST` with performance values to an ERP system, or use a `GET` operation to query test results.
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 Besides REST, you can use this template to interact with any HTTP API.
-{{< /notice >}}
+{{< /callout >}}
 
 ### Publish and subscribe
 

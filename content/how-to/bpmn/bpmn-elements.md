@@ -149,9 +149,9 @@ In BPMN, an _activity_ is work performed within a business process.
 On the Rhize platform, most activities are _tasks_, work that cannot be broken down into smaller levels of detail.
 Tasks are drawn with rectangles with rounded corners.
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 Besides tasks, you can also use [_call activities_](#call-activities), processes which call and invoke other processes.
-{{< /notice >}}
+{{< /callout >}}
 
 A service task uses some service.
 In Rhize workflows, service tasks include [Calls to the GraphQL API]({{< relref "../gql/call-the-graphql-api" >}}) (and REST APIs), data source reads and writes, and JSON manipulation.

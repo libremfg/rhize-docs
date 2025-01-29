@@ -216,10 +216,10 @@ For an idea of how a more complete query would look, refer to the [Examples](#ex
 
 ## Background: material entities in Rhize
 
-{{< notice >}}
+{{< callout >}}
 :memo: For a more complete introduction to ISA-95 and its terminology,
 read [How to speak ISA-95]({{< relref "/explanations/how-to-speak-isa-95" >}}).
-{{< /notice >}}
+{{< /callout >}}
 
 In ISA-95 terminology, the lineage of each material is expressed through the following entities:
 - **Material lots.** Unique amounts of identifiable material. For example, a material lot might be a camshaft in an engine or a package of sugar from a supplier.
@@ -234,12 +234,12 @@ then lot `intermediate-1` has the property `{isComponentOfMaterialLot: "final-1"
 The graph structure of the RhizeDB creates these links automatically.
   
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 
 The distinction between sublots and material lots varies with processes.
 The rest of this document simplifies terminology by using only the word "lots".
 
-{{< /notice >}}
+{{< /callout >}}
 
 
 ## Steps to use Rhize for genealogy
@@ -274,9 +274,9 @@ For example, in a small baking operation, lots might come from the following are
 - The wrappers consumed by the packing process
 - The pallets of packed goods (with individual packages being material sublots).
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 For some best practices of how to model, read our blog [How much do I need to model?](https://rhize.com/blog/how-much-do-i-need-to-model-when-applying-the-isa-95-standard/)
-{{< /notice >}}
+{{< /callout >}}
 
 
 ### Model these lots into your knowledge graph
@@ -320,9 +320,9 @@ The following section provides example genealogy queries.
 The following examples show how to query for forward and backward genealogies using the [`get`](https://docs.rhize.com/how-to/gql/query/#get) operation to query material lots.
 
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 You could also query for multiple genealogies&mdash;either through material lots or through aggregations such as material definitions and specifications&mdash; then apply [filters](https://docs.rhize.com/how-to/gql/filter/).
-{{< /notice >}}
+{{< /callout >}}
 
 ### Backward genealogy
 
