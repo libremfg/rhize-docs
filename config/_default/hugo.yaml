@@ -57,15 +57,15 @@ params:
   navbar:
     displayTitle: true
     displayLogo: true
+    logo:
+      path: images/logo.svg
+      dark: images/logo-dark.svg
+      width: 100
+      link: /
   footer:
     displayCopyright: false
     displayPoweredBy: false
     displayLogo: true
-    logo:
-      path: /images/logo.svg
-      dark: images/logo-dark.svg
-      width: 100
-      link: /
 
 outputs:
   home:
