@@ -5,7 +5,8 @@ description: >-
   How the design of Rhize meets the needs of modern manufacturing.
 weight: 100
 draft: false
-og_image: "/images/og/rhize-mdh-graphic.png"
+images:
+  - "/images/og/rhize-mdh-graphic.png"
 ---
 
 This article explains what the components of a _Manufacturing Data Hub_ (MDH) are and why the system must have these particular components to meet the needs of large, modern manufacturing environments.
