@@ -34,10 +34,10 @@ Common values that are changed include:
 1. Go to Keycloak and get the secrets for each client you've created.
 1. Create Kubernetes secrets for each service. You can either create a secret file, or pass raw data from the command line.
 
-   {{< notice "caution" >}}
+   {{< callout type="caution" >}}
    How you create Kubernetes secrets **depends on your implementation details and security procedures.**
    For guidance, refer to the official Kubernetes topic, [Managing Secrets using `kubectl`](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/).
-   {{< /notice >}}
+   {{< /callout >}}
 
    With raw data, the command might look something like this.
 
@@ -367,9 +367,9 @@ The [{{< param brand_name >}} calendar service]({{< relref "/how-to/work-calenda
 
 > **Requirements:** The calendar service requires the [GraphDB](#db), [Keycloak](#keycloak), and [NATS](#nats) services.
 
-{{% notice "note" %}}
+{{% callout type="info" %}}
 The work calendar requires a time-series DB installed such as [InfluxDB](https://influxdata.com/), [QuestDB](https://questdb.io) or [TimescaleDB](https://www.timescale.com/). The following instructions are specific to QuestDB.
-{{% /notice %}}
+{{% /callout %}}
 
 Install the calendar service with these steps:
 

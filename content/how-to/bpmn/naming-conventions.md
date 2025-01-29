@@ -5,9 +5,9 @@ description: Recommended naming conventions for BPMN processes and their nodes
 weight: 950
 ---
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 These are recommendations. Your organization may adapt the conventions to its needs.
-{{< /notice >}}
+{{< /callout >}}
 
 Each BPMN workflow has an ID, as does each node in the workflow.
 Rhize recommends adopting a set of conventions about how you name these elements.

@@ -15,9 +15,9 @@ which has close associations with the {{< abbr "equipment" >}} and {{< abbr "hie
 Rhize also has a `calendar` service that periodically queries the Rhize DB for workCalendarDefinitions.
 If it finds active definitions for that period, the service creates the work calendar entries and persists the data to a time-series database
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 Rhize's implementation of work calendars was inspired by ISO/TR
 22400-10, a standard on KPIs in operations management. 
-{{< /notice >}}
+{{< /callout >}}
 
 

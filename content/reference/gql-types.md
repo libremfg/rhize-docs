@@ -11,9 +11,9 @@ This page provides a reference of the data types enforced by the Rhize database 
 and of the filters that can apply to these types when you query, update, or delete a set of resources.
 For an extended guide, with examples, read [Use query filters]({{< relref "/how-to/gql/filter" >}}).
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 These filters are based on Rhize's implementation of the Dgraph [`@search` directives](https://dgraph.io/docs/graphql/schema/directives/search/).
-{{< /notice >}}
+{{< /callout >}}
 
 ## Data types
 
@@ -51,10 +51,10 @@ For example, its fields include
 the array of associated `MaterialLot` objects, the `MaterialDefinition` object, and so on.
 All objects in the database have relationships to other objects.
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 Metadata fields start with an underscore (`_`).
 For example, `_createdOn` reports the time when the object was created.
-{{< /notice >}}
+{{< /callout >}}
 
 ## Scalar filters
 
@@ -87,9 +87,9 @@ Properties that have a type of `Int`, `Float`, or `DateTime` can be filtered by 
  - `gt`
 
 Each keyword has the same behavior as described in [string filters](#string-filters), only they operate on numerical rather than lexicographic values.
-{{< notice "note" >}}
+{{< callout type="info" >}}
 While the `dateTime` type uses the RFC 3339 format, some string fields may use the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. This depends on the object and customer requirement. For these fields, the string filters work as chronological filters too.
-{{< /notice >}}
+{{< /callout >}}
 ### Enum filters
 
 Properties of the type `Enum` can be filtered by the following:

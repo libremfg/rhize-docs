@@ -9,12 +9,10 @@ images:
   - /images/og/graphic-rhize-data-collection-ebr.png
 ---
 
-{{% notice note %}}
 
-Looking to implement Rhize for your Pharma operation?
+> :memo: Looking to implement Rhize for your Pharma operation?
 [Talk to an engineer](https://rhize.com/contact-us/)
 
-{{% /notice %}}
 
 This document provides examples of how you can use Rhize to automatically ingest data from various sources and store it in a standardized ISA-95 schema.
 The examples here are to produce an Electronic Batch Record, an important use case in pharmaceutical manufacturing.
@@ -88,10 +86,10 @@ caption="A simplified BPMN workflow. For an example of a real workflow with node
 With the sources of data and their corresponding models, the next step
 is to write a [{{< abbr "BPMN" >}}]({{< relref "/how-to/bpmn" >}}) workflow to automatically transform the data and update the database.
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 You may want to break these steps into multiple parts.
 Or, for increased modularity, you can call another BPMN workflow with a [Call activity]({{< relref "how-to/bpmn/bpmn-elements">}}#call-activities).
-{{< /notice >}}
+{{< /callout >}}
 
 The procedure is as follows:
 

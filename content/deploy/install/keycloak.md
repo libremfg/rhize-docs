@@ -51,9 +51,9 @@ To create your Rhize realm, follow these steps.
 
 After you've created the realm, you can create clients.
 
-{{% notice "note" %}}
+{{% callout type="info" %}}
 If created with the Libre Theme `init` container, configure the **Login Theme** in **Realm settings** for `libre`.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Create clients
 
@@ -63,10 +63,10 @@ You need to create a client for each service.
 The DB client requires additional configuration of flows and grants.
 Other clients, such as the UI and Dashboard, use the standard flow to coordinate authorization between the browser and Keycloak to simplify security and improve user convenience.
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 Each standard-flow client has its own subdomain.
 Refer to [Default URLs and Ports]({{< relref "/reference/default-ports" >}}) for our recommended conventions.
-{{< /notice >}}
+{{< /callout >}}
 
 #### Create DB client
 

@@ -185,11 +185,11 @@ For full-featured debugging, use the `traceID` to explore the workflow through T
 
 ### Debug in Tempo
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 The instructions here provide the minimum about using Tempo as a tool.
 To discover the many ways you can filter your BPMN traces for debugging and analysis,
 refer to the [official documentation](https://grafana.com/docs/tempo/latest/).
-{{< /notice >}}
+{{< /callout >}}
 
 Rhize creates a unique ID and trace for each workflow that runs.
 This ID is reported as the `traceID` in the `createAndRunBPMN` mutation operation.

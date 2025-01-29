@@ -14,10 +14,10 @@ Rhize has an optional `calendar` service that periodically queries the Rhize DB 
 If it finds active definitions and equipment for that period, the service creates work calendar entries and persists the data to a time-series database.
 This topic explains how that calendar service works.
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 Rhize's implementation of work calendars was inspired by ISO/TR
 22400-10, a standard on KPIs in operations management. 
-{{< /notice >}}
+{{< /callout >}}
  
 ## What the service does
 

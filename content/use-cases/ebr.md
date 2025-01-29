@@ -28,11 +28,11 @@ you can use Rhize to identify answers to questions such as:
 - What are the results of quality testing for this work?
 
 
-{{< notice >}}
+{{< callout >}}
 :memo:
 The focus here is modeling and querying.
 For a high-level overview of how eBR data may enter the Rhize data hub, read the guide to [Data collection]({{< relref "/use-cases/data-collection-ebr" >}}).
-{{< /notice >}}
+{{< /callout >}}
 
 
 ## Quick query
@@ -95,10 +95,10 @@ For more detail, refer to the
 
 ## Background: ISA-95 entities in an eBR query
 
-{{< notice >}}
+{{< callout >}}
 :memo: For an introduction to ISA-95 and its terminology,
 read [How to speak ISA-95]({{< relref "/explanations/how-to-speak-isa-95" >}}).
-{{< /notice >}}
+{{< /callout >}}
 
 The following lists detail the ISA-95 entities that you might need when querying the Rhize database for an eBR.
 As always, your manufacturing needs and data-collection capabilities determine the exact data that is necessary.

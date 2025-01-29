@@ -9,11 +9,11 @@ The operations for a `subscription` are similar to the operations for a [`query`
 But rather than providing information about the entire item, the purpose of subscriptions is to notify about real-time changes to a manufacturing resource.
 
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 
 These operations correspond to the `SyncGet` verb defined in [Part 5](https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i) of the ISA-95 standard.
 
-{{< /notice >}}
+{{< /callout >}}
 
 
 This example query subscribes to changes in a specified set of `workResponses`, reporting only their `id` and effective end time.

@@ -13,11 +13,11 @@ To make a production object visible to the Rhize data hub, you must define it as
 These sections document all the objects that you can add through the UI, and the fields and properties that you can associate with them.
 All these models are based on the ISA-95 standard, mostly from [Part 2](https://www.isa.org/products/ansi-isa-95-00-02-2018-enterprise-control-system-i), which describes the role-based equipment hierarchy.
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 - For an introduction to the language of ISA-95, read [How to speak ISA-95]({{< relref "/explanations/how-to-speak-isa-95" >}})
 - For visual examples of how some of these models relate,
 look at our page of [ISA-95 Diagrams]({{< relref "/explanations/isa-95-diagrams" >}}).
-{{< /notice >}}
+{{< /callout >}}
 
 ## Global object fields
 
@@ -38,10 +38,10 @@ Each version of an object can have the following states:
 - `Deprecated`
 
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 When recording actual execution, what matters is version of the object, not its general definition.
 Thus, **to add a class to an object, you must give that object a version first.**
-{{< /notice >}}
+{{< /callout >}}
 
 
 ## Common models

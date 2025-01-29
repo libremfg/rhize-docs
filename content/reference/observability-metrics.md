@@ -153,9 +153,9 @@ Several common metrics appear between Rhize microservices:
 | Router  |                                                   |                 |               | Y          |
 | Tempo   | Y                                                 |                 |               | Y          |
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 HTTP metrics are noted as `promhttp`.
-{{< /notice >}}
+{{< /callout >}}
 
 ### BAAS
 

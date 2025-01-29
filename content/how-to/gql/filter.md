@@ -11,10 +11,10 @@ You can use filters to make operations more precise, remove unneeded items from 
 
 To use a filter, specify it in the operation's argument.
 Most fields in an object can serve as a filter.
-{{< notice "note" >}}
+{{< callout type="info" >}}
 This page provides a detailed guide of how to use the filters, with examples.
 For a bare reference of filters and data types, refer to the [GraphQL type reference]({{< relref "/reference/gql-types" >}}).
-{{< /notice >}}
+{{< /callout >}}
 
   
 ## Filter by property
@@ -145,7 +145,7 @@ The `regexp` filters can have performance costs.
 After you refine a query filter to return exactly what you need, consider ways to simplify the regular expression
 or, if possible, use a different filter.
 
-{{< /notice >}}
+{{< /callout >}}
 
 ## Combine filters with `and`, `or`, `not`
 
@@ -182,11 +182,11 @@ query{
 }
 ```
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 
 This preceding filter syntax is a shorter equivalent to `and: {has: nextVersion}`.
 
-{{< /notice >}}
+{{< /callout >}}
 
 ### One `or` more properties
 
@@ -256,12 +256,12 @@ All directives begin with the `@` sign.
 The `@cascade`  directive filters for certain nodes within a query.
 Use it to filter requested resources by a nested sub-property, similar to a `WHERE` clause in SQL.
 
-{{< notice "caution" >}}
+{{< callout type="caution" >}}
 
 `@cascade` is not as performant as flatter queries.
 Consider using it only after you've exhausted other query structures to return the data you want.
 
-{{< /notice >}}
+{{< /callout >}}
 
 For example, this query filters for job responses with an ID of `12341`, and then filters that set for only the items that have a `data.properyLabel` field with a value of `INSTANCE ID`.
 
