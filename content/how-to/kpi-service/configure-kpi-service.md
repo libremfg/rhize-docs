@@ -34,7 +34,7 @@ Every time an equipment changes state, it is persisted to the time-series table 
 
 ### `EquipmentState` table schema
 
-{{< tabs >}}
+{{< tabs items="Schema,Example">}}
 {{% tab "schema" %}}
 
 ```sql
@@ -80,7 +80,7 @@ You can persist two categories of quantity records:
 
 ### QuantityLog table schema
 
-{{< tabs >}}
+{{< tabs items="Schema, Machine example, User Example" >}}
 {{% tab "schema" %}}
 
 ```sql
@@ -153,7 +153,7 @@ When the operation is finished, another record is created to reset the planned c
 
 ### JobOrderState table schema
 
-{{< tabs >}}
+{{< tabs items="Schema,Start operation,End operation" >}}
 {{% tab "schema" %}}
 
 ```sql

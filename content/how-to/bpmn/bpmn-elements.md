@@ -48,7 +48,7 @@ _Events_ are something that happen in the course of a process.
 In BPMN, events are drawn with circles.
 Events have a _type_ and a _dimension_.
 
-{{< tabs >}}
+{{< tabs items="Events,Message type,Timer type" >}}
 {{% tab "Events" %}}
 ![A simplified model of events with no activities](/images/bpmn/rhize-bpmn-events.png)
 {{% /tab %}}
@@ -63,19 +63,17 @@ Timer events start according to some interval or date, or wait for some duration
 {{% /tab %}}
 {{< /tabs >}}
 
+
 In event-driven models, events can happen in one of three _dimensions_:
 
-- **Start.**
-  All processes begin with some trigger that starts an event. Start events are drawn with a single thin circle.
+Start
+: All processes begin with some trigger that starts an event. Start events are drawn with a single thin circle.
 
-- **Intermediate.**
-  Possible events between the start and end. Intermediate events might start from some trigger, or create some result. They are drawn with a double thin line.
+Intermediate.
+: Possible events between the start and end. Intermediate events might start from some trigger, or create some result. They are drawn with a double thin line.
 
-- **End.**
-  All processes end with some result. End events are drawn with a single thick line.
-
-
-
+End
+: All processes end with some result. End events are drawn with a single thick line.
 
 Besides these dimensions, BPMN also classifies events by whether they _catch_ a trigger or _throw_ a result.
 All start events are catch events; that is, they react to some trigger.

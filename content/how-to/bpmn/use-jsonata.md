@@ -6,6 +6,7 @@ description: The Rhize guide to JSONata, with example transformations and calcul
 weight: 200
 ---
 
+
 [JSONata](https://jsonata.org/)
 is a query language to filter, transform, and create JSON objects.
 Rhize BPMN workflows use  JSONata expressions to
@@ -32,9 +33,10 @@ In practice, creating an expression usually follows these steps:
 
 For example:
 
-{{% tabs %}}
-{{% tab "expression" %}}
-```JSON
+{{< tabs items="expression,output" >}}
+{{< tab >}}
+
+```js
 =(
   $logic := "Hello" & " " & "World";
 
@@ -42,17 +44,19 @@ For example:
     "output": $logic
   }
 )
+
 ```
-{{% /tab %}}
-{{% tab "Output" %}}
+{{< /tab >}}
+{{< tab >}}
+
 ```JSON
 {
   "output": "Hello World"
 }
 ```
 
-{{% /tab %}}
-{{% /tabs %}}
+{{< /tab >}}
+{{< /tabs >}}
 
 
 
@@ -67,19 +71,14 @@ To access the root of the entire BPMN variable space,
 use the dollar character followed by a dot, `$.`.
 For example, this expression accesses all IDs for an `equipmentClass` object from the root variable context, `$.`.
 
-{{% tabs %}}
+```js
+$.equipmentClass.id
+```
 
-{{% tab "expression" %}}
-**Expression:**
-`$.equipmentClass.id`
-{{% /tab%}}
+{{% tabs items="Input,Output" %}}
 
-{{% tab "Full transformation" %}}
-**Expression:**
-`$.equipmentClass.id`
+{{% tab %}}
 
-
-**Input:**
 ```json
 {
   "equipmentClass": [
@@ -102,8 +101,10 @@ For example, this expression accesses all IDs for an `equipmentClass` object fro
 }
 
 ```
+{{% /tab%}}
 
-**Output:**
+{{% tab  %}}
+
 ```
 [
   "Vessel-A012",
@@ -143,15 +144,16 @@ It outputs the IDs as an array of strings in a new custom object.
 
 This is a minimal example of how you can use JSONata to transform data into new representations.
 Such transformation is a common prerequisite step for post-processing and service interoperability.
-```
+
+```js
 $.data.queryJobResponse[`id`="JR-4"].(
     {"associatedEquipment": equipmentActual.id}
 )
 ```
 
-{{% tabs %}}
+{{% tabs items="Input,Output" %}}
 
-{{% tab "Input" %}}
+{{% tab %}}
 ```json
 {
   "data": {
@@ -195,7 +197,7 @@ $.data.queryJobResponse[`id`="JR-4"].(
 
 {{% /tab %}}
 
-{{% tab "Output " %}}
+{{% tab %}}
 
 ```json
 {
@@ -215,7 +217,7 @@ It outputs the matching job response IDs along with the associated equipment act
 
 In production, you may use a similar analysis to isolate all {{< abbr "resource actual" >}}s associated with an abnormal production outcome.
 
-```
+```js
 $map($.data.queryJobResponse, function($v){
     $number($v.data.value) > 102
         ?  {"jobResponseId": $v.id, "EquipmentActual": $v.equipmentActual}
@@ -224,7 +226,7 @@ $map($.data.queryJobResponse, function($v){
 
 ```
 
-{{% tabs %}}
+{{% tabs items="Input,Output" %}}
 {{% tab "input" %}}
 ```json
 {
@@ -365,7 +367,7 @@ $map($.data.queryJobResponse, function($v){
 ```
 
 {{% /tab %}}
-{{% tab "output" %}}
+{{% tab  %}}
 ```json
 [
   {
@@ -415,7 +417,7 @@ Although this example uses data that is unlikely to be a source of a real manufa
 In production, you may perform a similar operation to map an SAP schedule order to an `operationsSchedule`, or the results from a QA service to the `testResults` object.
 
 
-```
+```js
 (
 
 $count(events[0]) > 0
@@ -444,9 +446,10 @@ $count(events[0]) > 0
 )
 ```
 
-{{% tabs %}}
+{{% tabs items="Input,Output"%}}
 {{% tab "Input" %}}
 
+{{% details title="Long JSON" closed="false" %}}
 ```json
 {
 	"title": "EONET Events",
@@ -572,6 +575,7 @@ $count(events[0]) > 0
 		]
 }
 ```
+{{% /details %}}
 {{% /tab %}}
 
 {{% tab "Output" %}}
@@ -643,7 +647,7 @@ are created in the expression.
 
 You might use statistics such as these to calculate metrics on historical or streamed data.
 
-```
+```js
 (
   $mode := function($arr) {
     (
@@ -681,7 +685,7 @@ You might use statistics such as these to calculate metrics on historical or str
   }
 )
 ```
-{{% tabs %}}
+{{% tabs items="Input,Output" %}}
 {{% tab "input" %}}
 ```json
 {
@@ -728,7 +732,7 @@ This expression randomly selects an item from the plant's array of available equ
 
 You might use randomizing functions for scheduling, quality control, and simulation.
 
-```json
+```js
 (
 
 $randomChoice := function($a) {
@@ -749,7 +753,7 @@ $randomChoice := function($a) {
 
 )
 ```
-{{% tabs %}}
+{{% tabs items="Input,Output" %}}
 {{% tab "Input" %}}
 ```json
 {
@@ -804,7 +808,7 @@ Recursive functions such as the following provide a concise means of traversing 
 )
 ```
 
-{{% tabs %}}
+{{% tabs items="Input,Output" %}}
 {{% tab "Input" %}}
 ```json
 {

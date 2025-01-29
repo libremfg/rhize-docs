@@ -25,7 +25,7 @@ The result is a single KPI object per requested KPI.
 
 #### GetKPI() - Definition
 
-{{< tabs >}}
+{{< tabs items="query,response" >}}
 {{% tab "query" %}}
 query:
 
@@ -161,7 +161,7 @@ The order starts at 09:00 and finishes at 12:00 with 30 minutes of unplanned dow
 After the operation finishes, the user has registered 800 Good parts and 200 scrap parts.
 The tables in time series appear as follows:
 
-{{< tabs >}}
+{{< tabs items="Equipmentstate,QuantityLog" >}}
 {{% tab "EquipmentState" %}}
 
 | EquipmentId | ISO22400State | time                 |
@@ -192,7 +192,7 @@ The tables in time series appear as follows:
 
 Calling this KPI Query appears as follows:
 
-{{< tabs >}}
+{{< tabs items="Query,Response">}}
 {{% tab "query" %}}
 query:
 
@@ -333,7 +333,7 @@ It is similar to GetKPI(), but rather than returning a single result per KPI que
 
 #### GetKPIByShift() - Definition
 
-{{< tabs >}}
+{{< tabs items="Query,Response" >}}
 {{% tab "query" %}}
 query:
 
@@ -462,7 +462,7 @@ Following on from Example 1. `Machine A` exists on a production line alongside `
 
 Which results in the following tables:
 
-{{< tabs >}}
+{{< tabs  items="EquipmentState,QuantityLog,Calendar" >}}
 {{% tab "EquipmentState" %}}
 
 | EquipmentId | ISO22400State | time                 |
@@ -613,7 +613,7 @@ You can run this query in multiple ways:
 
 - **`groupByEquipment = false and groupByShift = false` -** returns a separate result per shift instance per equipment
 
-{{< tabs >}}
+{{< tabs items="Query,Response" >}}
 {{% tab "query" %}}
 query:
 
@@ -713,7 +713,7 @@ input:
 
 - **`groupByEquipment = true and groupByShift = false` -** returns a separate result per shift instance containing all equipment
 
-{{< tabs >}}
+{{< tabs items="Query,Response" >}}
 {{% tab "query" %}}
 query:
 
@@ -794,7 +794,7 @@ input:
 
 - **groupByEquipment = true and groupByShift = true -** groups shifts and equipment together
 
-{{< tabs >}}
+{{< tabs items="Query,Response" >}}
 {{% tab "query" %}}
 query:
 
@@ -872,7 +872,7 @@ This makes KPIs easier to query.
 
 Extending the equipment type allows the equipment ID to be inferred from parent equipment type
 
-{{< tabs >}}
+{{< tabs items="Query,Response" >}}
 {{% tab "query" %}}
 query:
 
@@ -953,7 +953,7 @@ Extending the job response type allows:
 - `endDateTime` to be inferred from `jobResponse.endDateTime`
 - `equipmentIds` to be inferred from `jobResponse.equipmentActual.EquipmentVersion.id`
 
-{{< tabs >}}
+{{< tabs items="Query,Response" >}}
 {{% tab "query" %}}
 query:
 
@@ -1056,7 +1056,7 @@ flowchart TD
 
 Querying KPI on `workSchedule A` combines all results for order A1, A2, B1 and C1:
 
-{{< tabs >}}
+{{< tabs  items="Query,Response">}}
 {{% tab "query" %}}
 query:
 

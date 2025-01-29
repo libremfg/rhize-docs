@@ -88,9 +88,9 @@ If a field has no value, JSONata outputs nothing.
 For example, the following expression outputs only `{"name": "Rhize"}`,
 because no `$err` field exists.
 
-{{< tabs >}}
+{{< tabs items="Expression,Output" >}}
 {{% tab  "Expression" %}}
-```json
+```js
 =( 
   $name := "Rhize";
 

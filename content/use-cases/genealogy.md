@@ -171,7 +171,7 @@ To get started with genealogy quickly, use these [query]({{< relref "/how-to/gql
 One template is for the reverse genealogy, and the other is for the forward genealogy.
 For each, you need to input the Lot ID.
 
-{{< tabs >}}
+{{< tabs items="Reverse genealogy query,Forward genealogy query" >}}
 {{< tab "Reverse" >}}
 
 ```gql
@@ -363,7 +363,7 @@ fragment lotFields on MaterialLot{
 
 The returned genealogy looks something like the following:
 
-{{% expandable title="example-backward-genealogy.json" %}}
+{{% details title="example-backward-genealogy.json" closed="true" %}}
 
 ```json
 {
@@ -511,8 +511,7 @@ The returned genealogy looks something like the following:
 }
 
 ```
-
-{{% /expandable %}}
+{{% /details %}}
 
 #### Forward genealogy
 

@@ -45,7 +45,7 @@ query {
 The `has` keyword returns results only if an item has the specified field.
 For example, this query returns only equipment items that have been modified at least once.
 
-{{< tabs >}}
+{{< tabs items="Query,Response" >}}
 {{% tab "query" %}}
 ```graphql
 query QueryEquipment {
@@ -83,7 +83,7 @@ query QueryEquipment {
 To filter for items that have multiple properties, include the fields in an array.
 This query returns equipment objects that both have been modified and have next versions:
 
-```graphql
+```gql
 query QueryEquipment {
   queryEquipment(filter: {has: [_modifiedOn, nextVersion]}) {
     nextVersion
@@ -116,8 +116,6 @@ The `regexp` keyword searches for matches using the [RE2](https://github.com/goo
 For example,
 this query uses a regular expression in its variables to filter for items that begin with either `Kitchen_` or `Cooling_` (case insensitive):
 
-{{< tabs >}}
-{{% tab "query" %}}
 ```graphql
 query getEquipment($filter: EquipmentFilter) {
   aggregateEquipment(filter: $filter) {
@@ -140,10 +138,8 @@ query getEquipment($filter: EquipmentFilter) {
   },
 }
 ```
-{{% /tab %}}
-{{< /tabs >}}
 
-{{< notice "caution" >}}
+{{< callout type="warning" >}}
 
 The `regexp` filters can have performance costs.
 After you refine a query filter to return exactly what you need, consider ways to simplify the regular expression
@@ -167,7 +163,7 @@ For example, this query returns equipment objects that match two properties:
 The `and` function is implicit unless you are searching on the same field.
 So this filter has an implied `and`:
 
-```
+```gql
 query{
   queryEquipment(filter: {
       effectiveStart: {
@@ -269,7 +265,7 @@ Consider using it only after you've exhausted other query structures to return t
 
 For example, this query filters for job responses with an ID of `12341`, and then filters that set for only the items that have a `data.properyLabel` field with a value of `INSTANCE ID`.
 
-{{< tabs >}}
+{{< tabs items="Query,Response" >}}
 
 {{% tab "Query" %}}
 
@@ -331,7 +327,7 @@ The `@include` directive returns a field only if its variable is `true`.
 For example, when `includeIf` is `true`, this query omits specified values for `versions`.
 
 
-{{< tabs >}}
+{{< tabs items="Query,Response"  >}}
 
 {{% tab "query" %}}
 

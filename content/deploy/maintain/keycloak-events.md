@@ -18,7 +18,7 @@ Ensure you have the following:
 
 To export Keycloak events, first open a shell in your Keycloak container or pod. For example, in Kubernetes and Docker:
 
-{{< tabs >}}
+{{< tabs items="Kubernetes,Docker" >}}
 
 {{% tab "kubernetes" %}}
 ```sh
@@ -50,7 +50,7 @@ On success, event data prints to the console.
 The event output can be long.
 You can use the following commands write the data to a file (replacing `<ADMIN_PW>` with the Keycloak admin password).
 
-{{< tabs >}}
+{{< tabs items="Kubernetes,Docker" >}}
 {{% tab Kubernetes %}}
 
 ```shell
