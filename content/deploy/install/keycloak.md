@@ -4,6 +4,7 @@ description: The Rhize GraphQL implementation uses OpenIDConnect for
   Authentication and role-based access control. This section describes how to
   set up Keycloak
 weight: 100
+icon: key
 categories: "how-to"
 ---
 
