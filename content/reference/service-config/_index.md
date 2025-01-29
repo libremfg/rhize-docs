@@ -8,3 +8,6 @@ The Rhize services have different configuration parameters, as documented in the
 
 {{% reusable/config-map "core" %}}
 
+
+{{< card-list >}}
+
