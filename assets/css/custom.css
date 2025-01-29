@@ -10,3 +10,8 @@
   --primary-saturation: 100%;
   --primary-lightness: 50%;
 }
+
+
+.hextra-cards .hextra-card .hextra-card-icon svg {
+  color: green;
+}
