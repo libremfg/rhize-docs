@@ -4,10 +4,9 @@ description: >-
   A collection of pages to administrate Rhize: install, upgrade, back up, and more.
 weight: 100
 icon: server
-cascade:
-  icon: server
 identifier: deploy
 cascade:
+  icon: server
   domain_name: libremfg.ai
   brand_name: Libre
   application_name: libre

@@ -3,6 +3,8 @@ date: "2023-09-12T19:35:35+11:00"
 title: Restore
 description: Guides to restore your data on Rhize
 categories: ["how-to"]
+cascade:
+  icon: database
 weight: 200
 ---
 

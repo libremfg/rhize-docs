@@ -4,6 +4,8 @@ title: Back up
 description: Guides to back up your data on Rhize
 categories: ["how-to"]
 weight: 200
+cascade:
+  icon: database
 ---
 
 Backup is critical to ensure reliability and recovery.
@@ -16,3 +18,4 @@ The correct practice here is highly contextual,
 depending on the size of the data, the importance of the data, and the general regulatory and governance demands of your industry.
 
 
+{{< card-list >}}
