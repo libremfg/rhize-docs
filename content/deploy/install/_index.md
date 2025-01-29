@@ -13,8 +13,13 @@ cascade:
 
 This guide shows you how to install Rhize services on your Kubernetes cluster.
 
+
+
+{{< callout type="info">}}
 This procedure aims to be as generic and vendor-neutral as possible.
 Some configuration depends on where and how you run your IT infrastructure&mdash;what cloud provider you use, preferred auxiliary tools, and so on---so your team must adapt the process for its particular use cases.
+{{< /callout >}}
+
 
   
 {{< card-list >}}

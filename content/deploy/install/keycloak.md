@@ -24,6 +24,8 @@ All prerequisites for that step apply here.
 
 Follow these steps to configure a Keycloak realm and associate Rhize services to Keycloak clients, groups, roles, and policies.
 
+{{% steps %}}
+
 ### Log in
 
 1. Go to `localhost` on the port where you forwarded the URL. If you used the example values from the last step, that's `localhost:5101`.
@@ -376,7 +378,7 @@ Repeat this process for the following accounts:
     - **Last name**: `{{< param brand_name >}}`
     - **Join Groups**: `{{< param application_name >}}AdminGroup`
 
-## Enable Keycloak Audit Trail
+### Enable Keycloak Audit Trail
 
 With the `libre` realm selected:
 1. Select **Realm Settings**, and then **Events**.
@@ -385,18 +387,20 @@ With the `libre` realm selected:
 1. **Save**.
 1. Repeat the process for the **Admin event settings** tab.
 
-## Configure password policy
+### Configure password policy
 
 With the `libre` realm selected:
 1. Select **Authentication** and then the **Policies** tab.
 1. Select the **Password policy** tab.
 1. Add your organisation's password policy.
 
-## Configure brute-force protections
+### Configure brute-force protections
 
 With the `libre` realm selected:
 1. Select **Realm settings**  and then the **Security defenses** tab.
 1. In **Brute force detection**, enable the feature and configure it to your requirements.
+
+{{% /steps %}}
 
 ## Next steps
 

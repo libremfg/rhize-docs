@@ -3,6 +3,7 @@ title: 'Restore Keycloak'
 date: '2024-01-08T13:26:23-05:00'
 categories: ["how-to"]
 description: How to restore a Keycloak backup on Rhize
+icon: key
 weight: 300
 ---
 
