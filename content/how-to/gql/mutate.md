@@ -27,7 +27,7 @@ For example, this mutation adds one more items of equipment.
 To add multiple, send the variable as an array of objects, rather than a single object.
 The `numUids` property reports how many new objects were created.
 
-{{% tabs %}}
+{{% tabs items="Mutation,create 1, Create many"%}}
 {{% tab "mutation" %}}
 
 ```graphql
@@ -97,8 +97,6 @@ The `update` operation corresponds to the `Change` verb defined in [Part 5](http
 
 For example, this operation updates the description for a specific version of an equipment item.
 
-{{< tabs >}}
-{{% tab "query" %}}
 
 ```graphql
 mutation updateMixerVersion( $updateEquipmentVersionInput2: UpdateEquipmentVersionInput!){
@@ -122,28 +120,24 @@ mutation updateMixerVersion( $updateEquipmentVersionInput2: UpdateEquipmentVersi
   }
 }
 ```
-{{% /tab %}}
-{{% /tabs %}}
 
 ## `delete` {#delete}
 
-{{< notice "warning" >}}
+{{< callout type="warning" >}}
 Be careful! Without a [Database backup]({{< relref "/deploy/backup/graphdb" >}}), deleted items cannot be recovered.
-{{< /notice >}}
+{{< /callout >}}
 
 
 Mutations that start with `delete` remove a resource from the database.
 The `delete` operations can use [filters]({{< relref "/how-to/gql/filter" >}}).
 
 
-{{< notice "note" >}}
+{{< callout type="info" >}}
 The `delete` operation corresponds to the `Cancel` verb defined in [Part 5](https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i) of the ISA-95 standard.
-{{< /notice >}}
+{{< /callout >}}
 
 For example, this operation deletes a unit of measure:
 
-{{< tabs >}}
-{{% tab "mutation" %}}
 
 ```graphql
 mutation deleteUoM($filter: UnitOfMeasureFilter!){
@@ -164,8 +158,6 @@ mutation deleteUoM($filter: UnitOfMeasureFilter!){
 }
 
 ```
-{{% /tab %}}
-{{% /tabs %}}
 
 ## Deep mutations
 
@@ -207,7 +199,7 @@ You can confirm that the record and its nested property exists with a `get` quer
 If the preceding operation succeeded, this query returns both the new `Widget Maker` and
 its corresponding version:
 
-{{< tabs >}}
+{{< tabs items="Query,Response" >}}
 {{% tab "query" %}}
 ```graphql
 query{

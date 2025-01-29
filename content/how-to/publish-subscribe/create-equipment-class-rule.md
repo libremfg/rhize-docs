@@ -186,7 +186,7 @@ Note that the root of the object path must match the ID of the equipment class p
 
 The entire information that becomes available to the rule engine looks like this:
 
-{{% tabs %}}
+{{% tabs items="JSON input,Expression,Output" %}}
 {{% tab "JSON input" %}}
 
 ```javascript

@@ -45,7 +45,7 @@ If you want to input only one ID, you can also use nested fields on a response, 
 The Rhize DB stores relationships, so the values are identical&mdash;only the structure of the response changes.
 
 
-{{< tabs >}}
+{{< tabs items="Flat,Nested">}}
 {{< tab "flat" >}}
 
 ```gql
@@ -178,7 +178,7 @@ query eBR {
 }
 ```
 
-{{< tabs >}}
+{{< tabs items="Full query,Example response: performance eBR">}}
 {{% tab "Full query" %}}
 
 **Variables**

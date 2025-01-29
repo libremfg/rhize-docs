@@ -36,7 +36,7 @@ On the other hand, the asynchronous operation frees up the call system to do mor
 Both operations have  similar call syntax.
 For example, compare the syntax for these calls:
 
-{{% tabs %}}
+{{% tabs items="Synchronous,Async" %}}
 {{% tab "Synchronous" %}}
 ```gql
 mutation sychronousCall{

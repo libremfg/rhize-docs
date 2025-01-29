@@ -108,7 +108,7 @@ Besides precision, this also brings performance benefits to minimize network cal
 For example, this expands the fields requested from the previous example.
 Besides `id` and `_createdBy`, it now returns the `description`, unique ID, and version information about the requested equipment item:
 
-{{< tabs >}}
+{{< tabs items="Request,Response" >}}
 {{% tab "request" %}}
 ```graphql
 
@@ -163,7 +163,7 @@ You can also add multiple operations to one call.
 For example, this query requests all data sources and all persons:
 
 
-{{< tabs >}}
+{{< tabs items="Request,Response" >}}
 {{% tab "request" %}}
 ```graphql
 query peopleAndDataSources {
@@ -265,7 +265,7 @@ In this example, add the variable as a value to the `id` key like this:
    ```
 
 
-{{< tabs >}}
+{{< tabs items="Query,Mutation" >}}
 {{% tab "Query" %}}
     
 ```graphql
@@ -333,7 +333,7 @@ To use a fragment:
     
 For example:
 
-{{< tabs >}}
+{{< tabs items="Query,Response">}}
 {{% tab "query" %}}
 ```graphql
 ## Define common fields
@@ -348,11 +348,13 @@ fragment CommonFields on Equipment{
 
 ## Use them in your query.
 query kitchenEquipment {
-  getEquipment(id: "Kitchen_mixer_b_01") {
+  getEquipment(id: "Kitchen_mixer_b_02") {
     ...CommonFields
   }
 }
 ```
+{{% /tab %}}
+{{% tab %}}
 **Variables:**
 ```json
 {
