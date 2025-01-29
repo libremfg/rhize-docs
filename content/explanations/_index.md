@@ -7,6 +7,7 @@ weight: 500
 draft: false
 cascade:
   categories: ["explanations"]
+  icon: question-mark-circle
 ---
 
 
