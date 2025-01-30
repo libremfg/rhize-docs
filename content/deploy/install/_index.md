@@ -9,6 +9,7 @@ cascade:
   domain_name: libremfg.ai
   brand_name: Libre
   application_name: libre
+  icon: terminal
 ---
 
 This guide shows you how to install Rhize services on your Kubernetes cluster.

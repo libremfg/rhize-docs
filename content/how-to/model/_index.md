@@ -4,6 +4,8 @@ description: Create models for equipment, data sources, operations definitions, 
 date: '2023-09-22T14:50:39-03:00'
 draft: false
 weight: 300
+cascade:
+    icon: model-cubes
 ---
 
 You have multiple ways to update your production models:

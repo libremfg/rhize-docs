@@ -5,6 +5,7 @@ description: How to configure KPI Service to record key ISO22400 OEE Metrics.
 weight: 500
 cascade: 
   experimental: true
+  icon: oui-stats
 ---
 
 {{< experimental-kpi >}}
