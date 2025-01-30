@@ -20,11 +20,7 @@ Each page has the following frontmatter:
 - `categories`: (Optional) Meta-data about the topic
 - `aliases`: URIs from old pages. Configure redirects here.
 - `hidden`: If `true` page does not display in sidebar. Works only on leaf pages.
-- `og_image` (Optional) path to [og:image](https://ogp.me/). Default is Rhize logo). Default is Rhize logo
-- `menu.main`: An object that configures the sidebar main menu properties
-  - `name`:  (Optional) The title of the page as it appears in the sidebar. Default is `title`
-  - `identifier`: How to reference the page in menu configs, and relrefs and other shortcodes
-  - `parent`: The parent page (use its `identifier`)
+- `images` (Optional) Array of images. First is [og:image](https://ogp.me/). Default og:image is Rhize logo
  
 
 
@@ -36,11 +32,8 @@ categories: ["reference"]
 weight: 930
 aliases:
   - "/old/page/" # use trailing slash
-menu:
-  main:
-    name: GQL types and filters
-    identifier: gql-filters
-    parent: reference
+images:
+  - "/images/og/image.png"
 ```
 
 
@@ -78,6 +71,9 @@ _Shortcodes_ are built in functions that you call in the markdown file.
 Hugo processes their instructions to render something on the page.
 
 Common use cases are for style, as with notices, and for templating.
+
+Some shortcodes are [built-in to Hextra theme](https://imfing.github.io/hextra/docs/guide/shortcodes/)
+
 
 ### Abbreviation
 
