@@ -37,7 +37,7 @@ For a high-level overview of how eBR data may enter the Rhize data hub, read the
 
 ## Quick query
 
-{{< watch src="https://www.youtube.com/watch?v=oXG5f3O9xjU&t=0s" txt="Full eBR in 1 query" >}}
+{{< watch src="https://www.youtube.com/watch?v=oXG5f3O9xjU&t=0s" text="Full eBR in 1 query" >}}
 
 If you just want to build out a [GraphQL query]({{< relref "/how-to/gql/query" >}}) for your reporting, use these templates to get started.
 
@@ -437,13 +437,14 @@ In this example, only some material actuals have additional properties.
 
 ## Build a reporting frontend
 
+{{< watch src="https://www.youtube.com/watch?v=gOs3185ACao" text="Prototyping two example eBR frontends" >}}
+
 As a final step, you can also transform the JSON payload into a more human-readable presentation.
 As always, you have a few options. Here are a few, from least to most interactive:
 - Create a  PDF report, perhaps using specialized software such as InfoBatch
 - Create a static web report, using basic HTML and CSS
 - Build an interactive report explorer, which may include links to other reports and dynamic visualizations of alerts and performance
 
-{{< watch src="https://www.youtube.com/watch?v=gOs3185ACao" txt="Prototyping two example eBR frontends" >}}
 
 
 ## Next steps: combine with other use cases
