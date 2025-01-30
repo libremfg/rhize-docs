@@ -5,8 +5,4 @@ description:
 draft: false
 categories: [""]
 weight:
-menu:
-  main:
-    parent:
-    identifier:
 ---

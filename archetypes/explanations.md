@@ -2,13 +2,9 @@
 title: '{{ replace .File.ContentBaseName `-` ` ` | title | humanize}}'
 date: '{{ .Date }}'
 draft: true
-categories: ["concepts"]
+categories: ["explanations"]
 description:
 weight:
-menu:
-  main:
-    parent: concepts #or subdirectory
-    identifier:
 ---
 
 <!---

@@ -5,10 +5,6 @@ draft: true
 categories: ["reference"]
 description:
 weight:
-menu:
-  main:
-    parent: reference
-    identifier:
 ---
 
 <!---

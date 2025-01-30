@@ -4,9 +4,6 @@ date: '{{ .Date }}'
 description: Release notes for v{{ replace .File.ContentBaseName `-` `.` | title }} of the Rhize application
 categories: ["releases"]
 weight: {{ $t := time.Now }}{{ sub 3418067418 $t.Unix }} ## auto-generated, don't change
-menu:
-  main:
-    parent: changelog
 ---
 
 Release notes for version {{ replace .File.ContentBaseName `-` `.` | title }} of the Rhize application.

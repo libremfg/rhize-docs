@@ -5,10 +5,6 @@ draft: true
 categories: ["how-to"]
 description: How to {{ replace .File.ContentBaseName `-` ` ` | title }}
 weight:
-menu:
-  main:
-    parent: how-to
-    identifier:
 ---
 
 <!-- Title must be a verb -->
