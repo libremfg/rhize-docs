@@ -290,11 +290,11 @@ material-class object has the following fields:&lt;/p>
 &lt;tbody>
 &lt;tr>
 &lt;td>Assembly type&lt;/td>
-&lt;td>Can be one of: &lt;ol type="a">&lt;li>&lt;code>Logical&lt;/code>: the components of the material are not necessarily physically connected&lt;/li>&lt;li>&lt;code>Physical&lt;/code>: the components of the material are physically connected or in the same location&lt;/li>&lt;ol>&lt;/td>
+&lt;td>Can be one of: &lt;ul type="a">&lt;li>&lt;code>Logical&lt;/code>: the components of the material are not necessarily physically connected&lt;/li>&lt;li>&lt;code>Physical&lt;/code>: the components of the material are physically connected or in the same location&lt;/li>&lt;ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Relationship&lt;/td>
-&lt;td>Can be one of: &lt;ol type="a">&lt;li>&lt;code>Permanent&lt;/code>, if a material that can&amp;rsquo;t be split from the production process&lt;/li>&lt;li> &lt;code>Transient&lt;/code>, for temporary material in assembly, such as a pallet&lt;/li>&lt;/ol>&lt;/td>
+&lt;td>Can be one of: &lt;ul type="a">&lt;li>&lt;code>Permanent&lt;/code>, if a material that can&amp;rsquo;t be split from the production process&lt;/li>&lt;li> &lt;code>Transient&lt;/code>, for temporary material in assembly, such as a pallet&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Hierarchy scope&lt;/td>
@@ -559,7 +559,7 @@ operations-event-definition object has the following fields:&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td>Event type&lt;/td>
-&lt;td>One of: &lt;ol type="a">&lt;li>&lt;code>Alert&lt;/code>, an potentially significant event, such as a workflow trigger, that does not require notification&lt;/li>&lt;li> &lt;code>Alarm&lt;/code>, an event that requires notification&lt;/li> &lt;li>&lt;code>Event&lt;/code>, any other event that is not at the level of alarm or alert&lt;/li>&lt;/ol>&lt;/td>
+&lt;td>One of: &lt;ul type="A">&lt;li>&lt;code>Alert&lt;/code>, an potentially significant event, such as a workflow trigger, that does not require notification&lt;/li>&lt;li> &lt;code>Alarm&lt;/code>, an event that requires notification&lt;/li> &lt;li>&lt;code>Event&lt;/code>, any other event that is not at the level of alarm or alert&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Operations event classes&lt;/td>
