@@ -150,7 +150,7 @@ text="Creating an equipment model in Rhize"
 src="https://www.youtube.com/watch?v=Wh6sYCuNYJI&list=PLeYowHxqJrUi5ojKBvYg3CnfYdvOqVMi5&index=1"
 >}}
 
-_Equipment_ is a tool used in the production process.
+Equipment is an object that has a defined role in the production process.
 Important equipment models include the following:
 
 - **Equipment classes.** Equipment that shares some purpose, such as `rotating widget makers`.

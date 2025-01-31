@@ -31,7 +31,7 @@
   definition: A detailed report for a batch in a pharmaceutical process, logging items such as the process segments, personnel, equipment, material substance and weight, and so on
   abbr: eBR
 - term: Equipment
-  definition: A tool used in the production process. Equipment has a role in a process segment to convert material into a final good
+  Definition: An object that has a defined role in the production process.
   tags: "s95"
 - term: Equipment actual
   definition: Refer to <a href="#resource-actual">resource actual</a>
