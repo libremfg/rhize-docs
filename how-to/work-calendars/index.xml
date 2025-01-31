@@ -39,7 +39,7 @@ hs --> |calendar structure maps to| e
 wc -->|create calendar entries for active|e
 &lt;/pre>
 &lt;p>As the behavior in the previous section describes, the work calendar service coordinates data between
-three entities in your knowledge graph: &lt;abbr title="The scope of the exchanged information, such as a site or area, for which the information is relevant. The scope identifies associated instances of objects such as material, personnel, and equipment">hierarchy scope&lt;/abbr>, &lt;abbr title="A tool used in the production process. Equipment has a role in a process segment to convert material into a final good">equipment&lt;/abbr>, and &lt;abbr title="A collection of work calendar entries">work calendar&lt;/abbr>.
+three entities in your knowledge graph: &lt;abbr title="The scope of the exchanged information, such as a site or area, for which the information is relevant. The scope identifies associated instances of objects such as material, personnel, and equipment">hierarchy scope&lt;/abbr>, &lt;abbr title="">equipment&lt;/abbr>, and &lt;abbr title="A collection of work calendar entries">work calendar&lt;/abbr>.
 These entities work together to configure work calendars and automate changes of equipment state.&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Equipment&lt;/strong> provides the physical hierarchy of the plant&amp;rsquo;s equipment, at levels that can be as small as a &lt;code>workUnit&lt;/code> or as broad as the entire enterprise.&lt;/li>

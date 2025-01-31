@@ -424,7 +424,7 @@ Here are some of the most common entities.&lt;/p>
 &lt;h4>Equipment&lt;span class="hx-absolute -hx-mt-20" id="equipment">&lt;/span>
 &lt;a href="#equipment" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>
 &lt;blockquote> 🎥Watch:&lt;/span>&lt;a href="https://www.youtube.com/watch?v=Wh6sYCuNYJI&amp;amp;list=PLeYowHxqJrUi5ojKBvYg3CnfYdvOqVMi5&amp;amp;index=1">Creating an equipment model in Rhize&lt;/a>&lt;/blockquote>
-&lt;p>&lt;em>Equipment&lt;/em> is a tool used in the production process.
+&lt;p>Equipment is an object that has a defined role in the production process.
 Important equipment models include the following:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Equipment classes.&lt;/strong> Equipment that shares some purpose, such as &lt;code>rotating widget makers&lt;/code>.&lt;/li>

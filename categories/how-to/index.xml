@@ -4726,8 +4726,8 @@ title="Copy code"
 &lt;/div>
 &lt;/div>&lt;/div>
 &lt;/div>
-&lt;h4>Avoid using @cascade with the &lt;a href="https://docs.rhize.com/how-to/gql/query/#order" >&lt;code>order&lt;/code>&lt;/a> argument&lt;span class="hx-absolute -hx-mt-20" id="avoid-using-cascade-with-the-orderhahahugoshortcode51s7hbhb-argument">&lt;/span>
-&lt;a href="#avoid-using-cascade-with-the-orderhahahugoshortcode51s7hbhb-argument" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;p>The &lt;code>order&lt;/code> argument returns only the first 1000 records of the query.
+&lt;h4>Avoid using @cascade with the &lt;a href="https://docs.rhize.com/how-to/gql/query/#order" >&lt;code>order&lt;/code>&lt;/a> argument&lt;span class="hx-absolute -hx-mt-20" id="avoid-using-cascade-with-the-orderhahahugoshortcode54s7hbhb-argument">&lt;/span>
+&lt;a href="#avoid-using-cascade-with-the-orderhahahugoshortcode54s7hbhb-argument" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;p>The &lt;code>order&lt;/code> argument returns only the first 1000 records of the query.
 If a record matches the &lt;code>@cascade&lt;/code> filter but comes after these first 1000 records, the API does not return it.&lt;/p>
 &lt;p>For example, this query logic works as follows:&lt;/p>
 &lt;ol>
@@ -6571,7 +6571,7 @@ title="Copy code"
 &lt;p>Work calendars represent planned periods of time in your operation,
 including shifts, planned shutdowns, or recurring stops for maintenance.
 The Rhize API represents calendars through the &lt;code>workCalendar&lt;/code> entity,
-which has close associations with the &lt;abbr title="A tool used in the production process. Equipment has a role in a process segment to convert material into a final good">equipment&lt;/abbr> and &lt;abbr title="The scope of the exchanged information, such as a site or area, for which the information is relevant. The scope identifies associated instances of objects such as material, personnel, and equipment">hierarchy scope&lt;/abbr> models.&lt;/p>
+which has close associations with the &lt;abbr title="">equipment&lt;/abbr> and &lt;abbr title="The scope of the exchanged information, such as a site or area, for which the information is relevant. The scope identifies associated instances of objects such as material, personnel, and equipment">hierarchy scope&lt;/abbr> models.&lt;/p>
 &lt;p>Rhize also has a &lt;code>calendar&lt;/code> service that periodically queries the Rhize DB for workCalendarDefinitions.
 If it finds active definitions for that period, the service creates the work calendar entries and persists the data to a time-series database&lt;/p>
 &lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
@@ -6584,7 +6584,7 @@ If it finds active definitions for that period, the service creates the work cal
 &lt;div class="notices note">
 &lt;span class="type">📝&lt;/span>The KPI service is currently provided through a separate Helm chart. If you want to use for your Rhize installation, get in touch.&lt;/a>
 &lt;/div>
-&lt;p>The KPI service records &lt;abbr title="A tool used in the production process. Equipment has a role in a process segment to convert material into a final good">equipment&lt;/abbr>-centric metrics related to the manufacturing operation.
+&lt;p>The KPI service records &lt;abbr title="">equipment&lt;/abbr>-centric metrics related to the manufacturing operation.
 To use it, you must:&lt;/p>
 &lt;ol>
 &lt;li>Record machine state data using the &lt;a href="https://docs.rhize.com/how-to/publish-subscribe/create-equipment-class-rule/" >rule pipeline&lt;/a>.&lt;/li>

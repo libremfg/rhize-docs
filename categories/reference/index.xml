@@ -1920,7 +1920,7 @@ This glossary is a reference of how Rhize defines terms used in this documentati
 &lt;dd>A form a manufacturing where items are made one at a item, as opposed to in batches or continuously&lt;/dd>&lt;dt id="electronic-batch-report">Electronic batch report (eBR)&lt;/dt>
 &lt;dd>A detailed report for a batch in a pharmaceutical process, logging items such as the process segments, personnel, equipment, material substance and weight, and so on&lt;/dd>&lt;dt id="enterprise-resource-planning">Enterprise resource planning (ERP)&lt;/dt>
 &lt;dd>Software to manage business processes. In Rhize, ERP activities usually are named "operations", where lower-level activities are prefixed with "Work".&lt;/dd>&lt;dt id="equipment">Equipment&lt;/dt>
-&lt;dd>A tool used in the production process. Equipment has a role in a process segment to convert material into a final good&lt;/dd>&lt;dt id="equipment-actual">Equipment actual&lt;/dt>
+&lt;dd>&lt;/dd>&lt;dt id="equipment-actual">Equipment actual&lt;/dt>
 &lt;dd>Refer to &lt;a href="#resource-actual">resource actual&lt;/a>&lt;/dd>&lt;dt id="equipment-class">Equipment class&lt;/dt>
 &lt;dd>An equipment class is a grouping of equipment with a definite purpose&lt;/dd>&lt;dt id="event">Event&lt;/dt>
 &lt;dd>Discrete occurrences or notifications that represent changes or actions within a system&lt;/dd>&lt;dt id="event-orchestration">Event orchestration&lt;/dt>
