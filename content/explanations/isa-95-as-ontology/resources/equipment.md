@@ -4,6 +4,7 @@ description: A guide to equipment entities and relationships in ISA-95
 icon: wrench
 images: 
   - "/images/s95/diagram-rhize-isa-equipment-relationships-packing.png"
+
 ---
 
 
@@ -105,11 +106,13 @@ Besides this, the `isMadeOf` relationship provides a way to do the following:
 - **Provide a view of the manufacturing operation that is intelligible from the business perspective.**
 The equipment model focuses on the production of new material, not individual controls.  
 
-### Example: Query all equipment through `isMadeOf`
+### Query example: full composition of The Juice Factory
+
 
 In the RhizeDB, the equipment `isMadeUpOf` relationship can be queried as follows.
 This response shows the entire equipment hierarchy for The Juice Factory enterprise.
 
+{{< details title="Query and response" closed="true" >}}
 {{% tabs items="Query,Response" %}}
 {{% tab %}}
 
@@ -153,6 +156,8 @@ fragment active on Equipment{
 {{% /tab %}}
 {{% /tabs %}}
 
+{{< /details >}}
+
 
 ## Equipment can have properties
 
@@ -171,6 +176,16 @@ The work units that store raw material all have `allowedMaterialClass` property,
 
 A property itself can have a composition of properties.
 For example, a unit might have the `dimension` property that contains subproperties of `width` and `height`.
+
+```mermaid
+classDiagram
+rectangularThing *--> `dimension (property)`  : "has values of"
+`dimension (property)` *-->  length : "contains"
+`dimension (property)` *-->  width : "contains"
+
+`dimension (property)` *-->  height : "contains"
+```
+
 
 This `contains` relationship creates a container to group granular properties by some commonality. 
 It also saves configuration time, since any equipment that has the parent property can logically have its child properties as well.
@@ -199,6 +214,63 @@ namespace Fillers {
   class `filler line 4`
 }
 ```
+
+### Query example: all members of `Packaging` class
+
+
+This example queries the Rhize DB for all members of the `Packaging` equipment class.
+
+{{< details title="Example: query class for members" >}}
+{{< tabs items="Query,Result" >}}
+{{< tab >}}
+
+```gql
+query equipmentClass{
+  getEquipmentClass(id:"Packaging") {
+    id
+    equipmentVersions {
+      id
+      description
+    }
+  }
+}
+
+```
+{{< /tab >}}
+{{< tab >}}
+```json
+{
+  "data": {
+    "getEquipmentClass": {
+      "id": "Packaging",
+      "equipmentVersions": [
+        {
+          "id": "JF.SF.PA.PackL1",
+          "description": "Packaging line 1"
+        },
+        {
+          "id": "JF.SF.PA.PackL2",
+          "description": "Packaging line 2"
+        },
+        {
+          "id": "JF.SF.PA.PackL3",
+          "description": "Packaging line 3"
+        },
+        {
+          "id": "JF.SF.PA.PackL4",
+          "description": "Packaging line 4"
+        }
+      ]
+    }
+  }
+}
+
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+
+{{< /details >}}
 
 ### Equipment properties map to class properties
 
