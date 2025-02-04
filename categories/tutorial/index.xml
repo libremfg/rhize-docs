@@ -3,15 +3,13 @@
 &lt;p>Imagine a scenario when an oven must be preheated every time a new order number is published to an MQTT edge device.
 You could automate this workflow with a rule that listens to messages published and evaluates a condition.
 If the condition evaluates to &lt;code>true&lt;/code>, the rule triggers a &lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling">BPMN&lt;/abbr> workflow to preheat the oven.&lt;/p>
-&lt;pre class="mermaid">---
+&lt;pre class="mermaid hx-mt-6">---
 title: Rules trigger workflows from data-source changes
 ---
 flowchart LR
 A(Property changed?) -->|yes| B{"rule evaluates to true?"}
 B -->|no| C(do nothing)
-B -->|"yes (optional: pass variables)"| D(Run BPMN workflow)
-&lt;/pre>
-&lt;p>The broad procedure to create a rule is as follows:&lt;/p>
+B -->|"yes (optional: pass variables)"| D(Run BPMN workflow)&lt;/pre>&lt;p>The broad procedure to create a rule is as follows:&lt;/p>
 &lt;ol>
 &lt;li>In the Rhize UI or through GraphQL, create models for the data source and its associated unit of measure, equipment, and equipment class.&lt;/li>
 &lt;li>In the Rhize UI, write a BPMN workflow that is triggered when this data source changes and executes some business logic.&lt;/li>

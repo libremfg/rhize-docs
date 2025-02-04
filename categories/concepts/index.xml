@@ -195,7 +195,7 @@ Or you can manage users in other services such as LDAP, Google, Azure AD, Facebo
 &lt;li>The UI then uses that JWT to access secure APIs such as the Rhize GraphQL API.&lt;/li>
 &lt;/ol>
 &lt;p>The Rhize DB, libreBaas, has the public key from Keycloak, which can be used to verify the JWT.&lt;/p>
-&lt;pre class="mermaid">sequenceDiagram
+&lt;pre class="mermaid hx-mt-6">sequenceDiagram
 actor User
 participant UI as Web UI
 participant Rhize as Rhize DB
@@ -211,5 +211,4 @@ KC-->>UI: Redirect with Code
 UI->>KC: Exchange Code for Token
 KC->>UI: Reply with id_token and access_token
 UI->>Rhize: Access API with Bearer Token
-Rhize->>Rhize: Verify Token with Public Key from Keycloak
-&lt;/pre></description></item></channel></rss>
+Rhize->>Rhize: Verify Token with Public Key from Keycloak&lt;/pre></description></item></channel></rss>
