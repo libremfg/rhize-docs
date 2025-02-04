@@ -48,7 +48,7 @@ The scope of a role varies widely, from the execution of an enterprise-level sch
 
 Equipment with broader scopes occupy higher _levels_,
 and they may be composed of lower-level equipment objects that perform more specialized roles.
-This composition of equipment containing equipment is called
+This composition of equipment is called
 the _role-based equipment hierarchy_.
 
 {{< figure
