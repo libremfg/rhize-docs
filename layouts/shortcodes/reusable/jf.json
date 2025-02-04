@@ -1,0 +1,595 @@
+{
+  "data": {
+    "getEquipment": {
+      "activeVersion": {
+        "description": "Springfield",
+        "equipmentLevel": "Site"
+      },
+      "isMadeUpOf": [
+        {
+          "activeVersion": {
+            "description": "Loading Docks",
+            "equipmentLevel": "Area"
+          },
+          "isMadeUpOf": [
+            {
+              "activeVersion": {
+                "description": "Material Receiving",
+                "equipmentLevel": "WorkCenter"
+              },
+              "isMadeUpOf": [
+                {
+                  "activeVersion": {
+                    "description": "Loading Dock 1",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Loading Dock 2",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Loading Dock",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "activeVersion": {
+            "description": "Raw Materials",
+            "equipmentLevel": "Area"
+          },
+          "isMadeUpOf": [
+            {
+              "activeVersion": {
+                "description": "Sweetners",
+                "equipmentLevel": "StorageZone"
+              },
+              "isMadeUpOf": [
+                {
+                  "activeVersion": {
+                    "description": "Sugar Silo",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                }
+              ]
+            },
+            {
+              "activeVersion": {
+                "description": "Colors",
+                "equipmentLevel": "StorageZone"
+              },
+              "isMadeUpOf": [
+                {
+                  "activeVersion": {
+                    "description": "Color Silo 1",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Color Silo 2",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Color Silo 3",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Color Silo 4",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Color Silo 5",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                }
+              ]
+            },
+            {
+              "activeVersion": {
+                "description": "Flavors",
+                "equipmentLevel": "StorageZone"
+              },
+              "isMadeUpOf": [
+                {
+                  "activeVersion": {
+                    "description": "Flavor Silo 1",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Flavor Silo 2",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Flavor Silo 3",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Flavor Silo 4",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Flavor Silo 5",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                }
+              ]
+            },
+            {
+              "activeVersion": {
+                "description": "Material Preparation",
+                "equipmentLevel": "WorkCenter"
+              },
+              "isMadeUpOf": []
+            },
+            {
+              "activeVersion": {
+                "description": "Product totes",
+                "equipmentLevel": "StorageZone"
+              },
+              "isMadeUpOf": [
+                {
+                  "activeVersion": {
+                    "description": "Color Tote 1",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Color Tote 2",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Color Tote 3",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Color Tote 4",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Color Tote 5",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Color Tote 6",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Color Tote 7",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Color Tote 8",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Color Tote 9",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Color Tote 10",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Flavor Tote 1",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Flavor Tote 2",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Flavor Tote 3",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Flavor Tote 4",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Flavor Tote 5",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Flavor Tote 6",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Flavor Tote 7",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Flavor Tote 8",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Flavor Tote 9",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Flavor Tote 10",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Sweetener Tote 1",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Sweetener Tote 2",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Sweetener Tote 3",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Sweetener Tote 4",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Sweetener Tote 5",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Sweetener Tote 6",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Sweetener Tote 7",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Sweetener Tote 8",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Sweetener Tote 9",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Sweetener Tote 10",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "activeVersion": {
+            "description": "Production",
+            "equipmentLevel": "Area"
+          },
+          "isMadeUpOf": [
+            {
+              "activeVersion": {
+                "description": "Mixing",
+                "equipmentLevel": "WorkCenter"
+              },
+              "isMadeUpOf": [
+                {
+                  "activeVersion": {
+                    "description": "Mixing Tank 1",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Mixing Tank 2",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "activeVersion": {
+            "description": "Bulk Juice",
+            "equipmentLevel": "Area"
+          },
+          "isMadeUpOf": [
+            {
+              "activeVersion": {
+                "description": "Juice Silos",
+                "equipmentLevel": "StorageZone"
+              },
+              "isMadeUpOf": [
+                {
+                  "activeVersion": {
+                    "description": "Juice Silo 1",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Juice Silo 2",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Juice Silo 3",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Juice Silo 4",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Juice Silo 5",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "activeVersion": {
+            "description": "Packaging",
+            "equipmentLevel": "Area"
+          },
+          "isMadeUpOf": [
+            {
+              "activeVersion": {
+                "description": "Packaging line 1",
+                "equipmentLevel": "WorkCenter"
+              },
+              "isMadeUpOf": [
+                {
+                  "activeVersion": {
+                    "description": "Filler Line 1",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Capper Line 1",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Case Packer Line 1",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Palletizer Line 1",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                }
+              ]
+            },
+            {
+              "activeVersion": {
+                "description": "Packaging line 2",
+                "equipmentLevel": "WorkCenter"
+              },
+              "isMadeUpOf": [
+                {
+                  "activeVersion": {
+                    "description": "Filler Line 2",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Capper Line 2",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Case Packer Line 2",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Palletizer Line 2",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                }
+              ]
+            },
+            {
+              "activeVersion": {
+                "description": "Packaging line 3",
+                "equipmentLevel": "WorkCenter"
+              },
+              "isMadeUpOf": [
+                {
+                  "activeVersion": {
+                    "description": "Filler Line 3",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Capper Line 3",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Case Packer Line 3",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Palletizer Line 3",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                }
+              ]
+            },
+            {
+              "activeVersion": {
+                "description": "Packaging line 4",
+                "equipmentLevel": "WorkCenter"
+              },
+              "isMadeUpOf": [
+                {
+                  "activeVersion": {
+                    "description": "Filler Line 4",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Capper Line 4",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Case Packer Line 4",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Palletizer Line 4",
+                    "equipmentLevel": "WorkUnit"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "activeVersion": {
+            "description": "Packed Juice",
+            "equipmentLevel": "Area"
+          },
+          "isMadeUpOf": [
+            {
+              "activeVersion": {
+                "description": "Packed Juice",
+                "equipmentLevel": "StorageZone"
+              },
+              "isMadeUpOf": [
+                {
+                  "activeVersion": {
+                    "description": "Juice Rack 1",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Juice Rack 2",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Juice Rack 3",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Juice Rack 4",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                },
+                {
+                  "activeVersion": {
+                    "description": "Juice Rack 5",
+                    "equipmentLevel": "StorageUnit"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
