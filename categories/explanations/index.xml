@@ -313,7 +313,7 @@ All equipment has a particular function in the wider operation.
 The scope of a role varies widely, from the execution of an enterprise-level schedule to the production of a single unit of material.&lt;/p>
 &lt;p>Equipment with broader scopes occupy higher &lt;em>levels&lt;/em>,
 and they may be composed of lower-level equipment objects that perform more specialized roles.
-This composition of equipment containing equipment is called
+This composition of equipment is called
 the &lt;em>role-based equipment hierarchy&lt;/em>.&lt;/p>
 &lt;figure>&lt;img src="https://docs.rhize.com/images/s95/diagram-rhize-isa95-equipment-hierarchy.svg"
 alt="Role-based equipment hierarchy" width="65%">
