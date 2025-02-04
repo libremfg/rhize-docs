@@ -4726,8 +4726,8 @@ title="Copy code"
 &lt;/div>
 &lt;/div>&lt;/div>
 &lt;/div>
-&lt;h4>Avoid using @cascade with the &lt;a href="https://docs.rhize.com/how-to/gql/query/#order" >&lt;code>order&lt;/code>&lt;/a> argument&lt;span class="hx-absolute -hx-mt-20" id="avoid-using-cascade-with-the-orderhahahugoshortcode51s7hbhb-argument">&lt;/span>
-&lt;a href="#avoid-using-cascade-with-the-orderhahahugoshortcode51s7hbhb-argument" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;p>The &lt;code>order&lt;/code> argument returns only the first 1000 records of the query.
+&lt;h4>Avoid using @cascade with the &lt;a href="https://docs.rhize.com/how-to/gql/query/#order" >&lt;code>order&lt;/code>&lt;/a> argument&lt;span class="hx-absolute -hx-mt-20" id="avoid-using-cascade-with-the-orderhahahugoshortcode54s7hbhb-argument">&lt;/span>
+&lt;a href="#avoid-using-cascade-with-the-orderhahahugoshortcode54s7hbhb-argument" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;p>The &lt;code>order&lt;/code> argument returns only the first 1000 records of the query.
 If a record matches the &lt;code>@cascade&lt;/code> filter but comes after these first 1000 records, the API does not return it.&lt;/p>
 &lt;p>For example, this query logic works as follows:&lt;/p>
 &lt;ol>
