@@ -47,7 +47,7 @@ For example, in our fictional juice factory, equipment roles include:&lt;/p>
 &lt;ul>
 &lt;li>The Springfield plant. A site-level equipment that organizes the production of all brands of juice.&lt;/li>
 &lt;li>The sugar storage zone. Where the Springfield site stores raw sugar in silos.&lt;/li>
-&lt;li>The mixing unit. a work unit that receives raw coloring, flavoring, and sugar as input and produces a bulk volume of &lt;code>Cosmic Blue juice&lt;/code> material as input as output.&lt;/li>
+&lt;li>The mixing unit. a work unit that receives raw coloring, flavoring, and sugar as input and produces a bulk volume of &lt;code>Cosmic Blue juice&lt;/code> material as output.&lt;/li>
 &lt;/ul>
 &lt;p>The role of work units, equipment on the lowest level, is typically to execute one order at a time.
 For that reason, PLCs and other controls-level equipment is typically below the scope of the ISA-95 equipment model
