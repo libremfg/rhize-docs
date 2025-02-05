@@ -75,7 +75,7 @@ When equipment has a production role, that role typically is scoped to the execu
 For example, in our fictional juice factory, equipment roles include:
 - The Springfield plant. A site-level equipment that organizes the production of all brands of juice.
 - The sugar storage zone. Where the Springfield site stores raw sugar in silos.
-- The mixing unit. a work unit that receives raw coloring, flavoring, and sugar as input and produces a bulk volume of `Cosmic Blue juice` material as input as output.
+- The mixing unit. a work unit that receives raw coloring, flavoring, and sugar as input and produces a bulk volume of `Cosmic Blue juice` material as output.
 
 
 The role of work units, equipment on the lowest level, is typically to execute one order at a time. 
