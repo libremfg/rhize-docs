@@ -284,6 +284,7 @@ So, equipment properties _map to_ the class properties.
 classDiagram
 
 equipment *--> `equipment \n property` :has values of
+equipment *--> `equipment \n class` :defined by
 `equipment \n class` *--> `equipment \n class \n property` :has properties of
 `equipment \n class \n property` <.. `equipment \n property` :maps to 
 ```
