@@ -859,6 +859,7 @@ When an equipment belongs to an equipment class, that equipment receives its pro
 So, equipment properties &lt;em>map to&lt;/em> the class properties.&lt;/p>
 &lt;pre class="mermaid hx-mt-6">classDiagram
 equipment *--> `equipment \n property` :has values of
+equipment *--> `equipment \n class` :defined by
 `equipment \n class` *--> `equipment \n class \n property` :has properties of
 `equipment \n class \n property` &lt;.. `equipment \n property` :maps to &lt;/pre>&lt;p>Classes are abstract, and so class properties are abstract keys.
 An Equipment is tangible, and thus has a property key and an actual value.&lt;/p>
@@ -872,4 +873,166 @@ An Equipment is tangible, and thus has a property key and an actual value.&lt;/p
 `packaging line 1` *-- filler 1
 `packaging line 1` *-- capper 1
 `packaging line 1` *-- packer 1
-`packaging line 1` *-- palletizer 1&lt;/pre></description></item></channel></rss>
+`packaging line 1` *-- palletizer 1&lt;/pre></description></item><item><title>Material models in ISA-95</title><link>https://docs.rhize.com/explanations/isa-95-as-ontology/resources/material/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/explanations/isa-95-as-ontology/resources/material/</guid><description>
+&lt;p>&lt;em>Material&lt;/em> can be a finished good or anything that goes into this good.
+Examples of material include:&lt;/p>
+&lt;ul>
+&lt;li>A final product, such as packaged watch&lt;/li>
+&lt;li>A part, such as a gear in this watch&lt;/li>
+&lt;li>An intermediate substance, such as a produced reactant that will be used in combination with another chemical&lt;/li>
+&lt;li>Raw materials, like the flour and water that make dough&lt;/li>
+&lt;/ul>
+&lt;p>Like &lt;a href="https://docs.rhize.com/explanations/isa-95-as-ontology/resources/equipment/" >equipment&lt;/a>, material can have classes and properties.
+However, ISA-95 also can model the existence and production of every unique material component, or lot.
+So, the material model has more entities than equipment.&lt;/p>
+&lt;details class="last-of-type:hx-mb-0 hx-rounded-lg hx-bg-neutral-50 dark:hx-bg-neutral-800 hx-p-2 hx-mt-4 hx-group" >
+&lt;summary class="hx-flex hx-items-center hx-cursor-pointer hx-select-none hx-list-none hx-p-1 hx-rounded hx-transition-colors hover:hx-bg-gray-100 dark:hover:hx-bg-neutral-800 before:hx-mr-1 before:hx-inline-block before:hx-transition-transform before:hx-content-[''] dark:before:hx-invert rtl:before:hx-rotate-180 group-open:before:hx-rotate-90">
+&lt;strong class="hx-text-lg">Full diagram of abstract relationships&lt;/strong>
+&lt;/summary>
+&lt;div class="hx-p-2 hx-overflow-hidden">
+&lt;pre class="mermaid hx-mt-6">---
+config:
+layout: elk
+---
+classDiagram
+`material sublot` o--> `material lot` :assembled from
+`material lot` o--> `material lot` :assembled from
+`material definition` o--> `material definition` :assembled from
+`material class` o--> `material class` :assembled from
+`material class` o--> `material class` :assembled from
+`material lot` -->`material definition` :defined by
+`material definition` -->`material class` :defined by
+`material lot` *--> `material lot properties` :has values of
+`material sublot` *--> `material lot properties` :has values of
+`material definition` *-->`material definition properties` :has properties of
+`material class` -->`material class properties` :has properties of
+`material lot properties` ..> `material definition properties` :maps to
+`material definition properties` ..> `material class properties` :maps to
+`material lot properties` *--> `material lot properties` :contains
+`material definition properties` *--> `material definition properties` :contains
+`material class properties` *--> `material class properties` :contains&lt;/pre>
+&lt;/div>
+&lt;/details>
+&lt;h2>Defined by&lt;span class="hx-absolute -hx-mt-20" id="defined-by">&lt;/span>
+&lt;a href="#defined-by" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The &lt;code>defined by&lt;/code> relationship associates material with common categories and definitions.&lt;/p>
+&lt;pre class="mermaid hx-mt-6">classDiagram
+`material lot` -->`material definition` :defined by
+`material definition` -->`material class` :defined by
+`Cosmic Blue Juice,\npallet 1` -->`Cosmic Blue Juice,\ndefinition` :defined by
+`Cosmic Blue Juice,\ndefinition` -->`Juices class` :defined by&lt;/pre>&lt;h3>Material lots are &lt;code>defined by&lt;/code> material definitions&lt;span class="hx-absolute -hx-mt-20" id="material-lots-are-defined-by-material-definitions">&lt;/span>
+&lt;a href="#material-lots-are-defined-by-material-definitions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;em>Material definitions&lt;/em> provide a way to ensure that one material name consistently refers to the same substance.
+&lt;em>Material lots&lt;/em> provide a way to uniquely identify each specific instance of that definition.&lt;/p>
+&lt;p>For example, the Springfield plant might produce 100 pallets of its flagship product, &lt;code>Cosmic Blue Juice&lt;/code>.
+Obviously, these pallets are not literally the same: otherwise they would just be one pallet.
+Rather, they are separate &lt;em>lots&lt;/em> that share the same material definition.&lt;/p>
+&lt;p>With this model, the Juice Factory can both:&lt;/p>
+&lt;ul>
+&lt;li>Create definitions to ensure consistent use and production of material&lt;/li>
+&lt;li>Track unique material as it flow across production.&lt;/li>
+&lt;/ul>
+&lt;h3>Definitions are defined by classes&lt;span class="hx-absolute -hx-mt-20" id="definitions-are-defined-by-classes">&lt;/span>
+&lt;a href="#definitions-are-defined-by-classes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>If you need another level of abstraction, you can also categorize your material definitions by &lt;em>material class&lt;/em>.
+For example, &lt;code>The Juice Factory&lt;/code> has five juice definitions, all part of the class &lt;code>Juices&lt;/code>.&lt;/p>
+&lt;pre class="mermaid hx-mt-6">classDiagram
+namespace juices{
+class `Nuclear Green Juice`
+class `Tropical Orange Juice`
+class `Cosmic blue juice`
+class `Royal Purple Juice`
+class `Berry Red Juice`
+}&lt;/pre>&lt;p>Material classes provide a way to categorize material by function or shared &lt;a href="%7b#material-properties%7d" >properties&lt;/a>.
+Note that material classes can contain material classes. For example, the &lt;code>raw_materials&lt;/code> class might contain all raw ingredients.&lt;/p>
+&lt;pre class="mermaid hx-mt-6">---
+subtitle: Material classes can contain material classes
+---
+classDiagram
+namespace raw_materials{
+class sweeteners
+class flavors
+class colors
+}
+namespace sweeteners{
+class sugar
+class aspertame
+}
+namespace flavors{
+class `blue flavoring`
+class `orange flavoring`
+}
+namespace colors{
+class `blue`
+class `orange`
+}&lt;/pre>&lt;h2>Assembled from&lt;span class="hx-absolute -hx-mt-20" id="assembled-from">&lt;/span>
+&lt;a href="#assembled-from" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>All manufacturing involves material transformation.
+Some material goes in; new material goes out; and this process repeats until the final good is produced.&lt;/p>
+&lt;p>To account for this material flow, ISA-95 uses the &lt;em>assembled from&lt;/em> relationship.
+This relationship exists across all material entities, where each entity can be assembled from entiteis of its same type&lt;/p>
+&lt;figure class="big-figure">
+&lt;a href="https://docs.rhize.com/images/s95/diagram-rhize-isa-material-assembly-relationships.png" target="_blank">
+&lt;img src="https://docs.rhize.com/images/s95/diagram-rhize-isa-material-assembly-relationships.png" alt="Classes assembled from classes, definitions from definitions, lots from lots"
+width="75%"
+>
+&lt;/a>
+&lt;/figure>
+&lt;h3>Material lots assembly&lt;span class="hx-absolute -hx-mt-20" id="material-lots-assembly">&lt;/span>
+&lt;a href="#material-lots-assembly" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;pre class="mermaid hx-mt-6">classDiagram
+`material lot` o--> `material lot` :is assembled from&lt;/pre>&lt;p>Material lots are assembled from material lots.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Use case.&lt;/strong> Show the &lt;a href="https://docs.rhize.com/use-cases/genealogy" >genealogy&lt;/a> of a product.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Example.&lt;/strong> The pallet &lt;code>PBJ.1000.1&lt;/code> is assembled from &lt;code>BJ.1324&lt;/code>, which is assembled from the lots &lt;code>sg.100&lt;/code>, &lt;code>bf.100&lt;/code>, and &lt;code>bc.100&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h4>Material sublots&lt;span class="hx-absolute -hx-mt-20" id="material-sublots">&lt;/span>
+&lt;a href="#material-sublots" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;pre class="mermaid hx-mt-6">classDiagram
+`material lot` o--> `material sublot` :is assembled from&lt;/pre>&lt;p>Material lots also might be assembled from sublots.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Use case.&lt;/strong> Detailed tracking of uniquely identifiable sub-components.&lt;/li>
+&lt;li>&lt;strong>Example.&lt;/strong> The pallet &lt;code>PBJ.1000.1&lt;/code> might have various cases that are modeled as sublots, such as &lt;code>PBJ.1000.1.1&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3>Material definition assembly&lt;span class="hx-absolute -hx-mt-20" id="material-definition-assembly">&lt;/span>
+&lt;a href="#material-definition-assembly" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;pre class="mermaid hx-mt-6">classDiagram
+`material definition` o--> `material definition` :is assembled from&lt;/pre>&lt;p>Material definitions are assembled from material definitions.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Use case.&lt;/strong> Show the specific material flow to assemble some particular product.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Example.&lt;/strong> The &lt;code>Cosmic Blue Juice&lt;/code> material definition is assembled from the &lt;code>Bulk Blue Juice&lt;/code> material definition, which is assembled from the definitions &lt;code>Sugar&lt;/code>, &lt;code>Blue flavor&lt;/code>, and &lt;code>Colors&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3>Material class assembly&lt;span class="hx-absolute -hx-mt-20" id="material-class-assembly">&lt;/span>
+&lt;a href="#material-class-assembly" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Material classes are assembled from material classes.&lt;/p>
+&lt;pre class="mermaid hx-mt-6">classDiagram
+`material class` o--> `material class` :is assembled from&lt;/pre>&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Use case&lt;/strong>. Show the general material flow to assemble some category of products.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Example.&lt;/strong> The &lt;code>Packed Juice&lt;/code> class is assembled from the &lt;code>Bulk Juice&lt;/code> class , which is assembled from the classes &lt;code>sweeteners&lt;/code>, &lt;code>flavoring&lt;/code>, and &lt;code>colors&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2>Has values and properties&lt;span class="hx-absolute -hx-mt-20" id="material-properties">&lt;/span>
+&lt;a href="#material-properties" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Material lots and sublots can have values.
+These values are stored in &lt;em>material lot properties&lt;/em>.&lt;/p>
+&lt;pre class="mermaid hx-mt-6">---
+title: Lot properties map to definition properties
+---
+classDiagram
+class lot {
+sugarContent=10g
+}
+class `juice definition` {
+sugarContent
+}
+lot ..> `juice definition` :maps to&lt;/pre>&lt;p>This property may map to a property set for its material definition. And material definition properties may themselves map to class properties.&lt;/p>
+&lt;p>Note that class and definition properties do not have values since they are abstract. The lot, on the other hand, is real, so it has a value.
+So the &lt;code>Sweeteners&lt;/code> class, the &lt;code>Cosmic blue juice&lt;/code> definition, and the &lt;code>PBJ.1000.1&lt;/code> lot all might have a &lt;code>sugarContent&lt;/code> property, but only the lot can have an actual value, such as &lt;code>100&lt;/code>.&lt;/p>
+&lt;h2>Properties contain properties&lt;span class="hx-absolute -hx-mt-20" id="properties-contain-properties">&lt;/span>
+&lt;a href="#properties-contain-properties" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;pre class="mermaid hx-mt-6">classDiagram
+flavor_profile *--> sweetness
+flavor_profile *--> umami
+flavor_profile *--> aciditiy&lt;/pre>&lt;p>As with equipment properties, all properties can contain properties.
+For example, the property &lt;code>flavor_profile&lt;/code> might contain properties for &lt;code>sweetness&lt;/code>, &lt;code>acidity&lt;/code> and &lt;code>umami&lt;/code>.&lt;/p></description></item></channel></rss>
