@@ -13,6 +13,9 @@ Examples of material include:
 - An intermediate substance, such as a produced reactant that will be used in combination with another chemical
 - Raw materials, like the flour and water that make dough
 
+All manufacturing involves material transformation.
+Some material goes in; new material goes out; and this process repeats until the final good is produced.
+
 Like [equipment]({{< relref "equipment" >}}), material can have classes and properties.
 However, ISA-95 also can model the existence and production of every unique material component, or lot.
 So, the material model has more entities than equipment.
@@ -118,75 +121,6 @@ namespace colors{
 
 
 ```
-
-
-## Assembled from
-
-
-All manufacturing involves material transformation.
-Some material goes in; new material goes out; and this process repeats until the final good is produced.
-
-To account for this material flow, ISA-95 uses the _assembled from_ relationship.
-This relationship exists across all material entities, where each entity can be assembled from entiteis of its same type
-
-
-{{< bigFigure
-src="/images/s95/diagram-rhize-isa-material-assembly-relationships.png"
-alt="Classes assembled from classes, definitions from definitions, lots from lots"
-width="75%"
->}}
-
-### Material lots assembly
-
-```mermaid
-classDiagram
-`material lot` o--> `material lot` :is assembled from
-```
-
-Material lots are assembled from material lots.
-
-- **Use case.** Show the [genealogy](/use-cases/genealogy) of a product.
-
-- **Example.** The pallet `PBJ.1000.1` is assembled from `BJ.1324`, which is assembled from the lots `sg.100`, `bf.100`, and `bc.100`.
-
-#### Material sublots
-
-```mermaid
-classDiagram
-`material lot` o--> `material sublot` :is assembled from
-```
-
-Material lots also might be assembled from sublots.
-
-* **Use case.**  Detailed tracking of uniquely identifiable sub-components.
-* **Example.** The pallet `PBJ.1000.1` might have various cases that are modeled as sublots, such as `PBJ.1000.1.1`
-
-### Material definition assembly 
-  
-```mermaid
-classDiagram
-`material definition` o--> `material definition` :is assembled from
-```
-
-Material definitions are assembled from material definitions. 
-
-- **Use case.** Show the specific material flow to assemble some particular product.
-
-- **Example.** The `Cosmic Blue Juice` material definition is assembled from the `Bulk Blue Juice` material definition, which is assembled from the definitions `Sugar`, `Blue flavor`, and `Colors`.
-
-
-### Material class assembly
-
-Material classes are assembled from material classes.
-
-```mermaid
-classDiagram
-`material class` o--> `material class` :is assembled from
-```
-
-- **Use case**. Show the general material flow to assemble some category of products.
-
-- **Example.** The `Packed Juice` class is assembled from the `Bulk Juice` class , which is assembled from the classes `sweeteners`, `flavoring`, and `colors`.
 
 ## Has values and properties {#material-properties}
 
