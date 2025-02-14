@@ -1452,6 +1452,8 @@ Examples of material include:&lt;/p>
 &lt;li>An intermediate substance, such as a produced reactant that will be used in combination with another chemical&lt;/li>
 &lt;li>Raw materials, like the flour and water that make dough&lt;/li>
 &lt;/ul>
+&lt;p>All manufacturing involves material transformation.
+Some material goes in; new material goes out; and this process repeats until the final good is produced.&lt;/p>
 &lt;p>Like &lt;a href="https://docs.rhize.com/explanations/isa-95-as-ontology/resources/equipment/" >equipment&lt;/a>, material can have classes and properties.
 However, ISA-95 also can model the existence and production of every unique material component, or lot.
 So, the material model has more entities than equipment.&lt;/p>
@@ -1532,59 +1534,7 @@ class `orange flavoring`
 namespace colors{
 class `blue`
 class `orange`
-}&lt;/pre>&lt;h2>Assembled from&lt;span class="hx-absolute -hx-mt-20" id="assembled-from">&lt;/span>
-&lt;a href="#assembled-from" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>All manufacturing involves material transformation.
-Some material goes in; new material goes out; and this process repeats until the final good is produced.&lt;/p>
-&lt;p>To account for this material flow, ISA-95 uses the &lt;em>assembled from&lt;/em> relationship.
-This relationship exists across all material entities, where each entity can be assembled from entiteis of its same type&lt;/p>
-&lt;figure class="big-figure">
-&lt;a href="https://docs.rhize.com/images/s95/diagram-rhize-isa-material-assembly-relationships.png" target="_blank">
-&lt;img src="https://docs.rhize.com/images/s95/diagram-rhize-isa-material-assembly-relationships.png" alt="Classes assembled from classes, definitions from definitions, lots from lots"
-width="75%"
->
-&lt;/a>
-&lt;/figure>
-&lt;h3>Material lots assembly&lt;span class="hx-absolute -hx-mt-20" id="material-lots-assembly">&lt;/span>
-&lt;a href="#material-lots-assembly" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;pre class="mermaid hx-mt-6">classDiagram
-`material lot` o--> `material lot` :is assembled from&lt;/pre>&lt;p>Material lots are assembled from material lots.&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;strong>Use case.&lt;/strong> Show the &lt;a href="https://docs.rhize.com/use-cases/genealogy" >genealogy&lt;/a> of a product.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Example.&lt;/strong> The pallet &lt;code>PBJ.1000.1&lt;/code> is assembled from &lt;code>BJ.1324&lt;/code>, which is assembled from the lots &lt;code>sg.100&lt;/code>, &lt;code>bf.100&lt;/code>, and &lt;code>bc.100&lt;/code>.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h4>Material sublots&lt;span class="hx-absolute -hx-mt-20" id="material-sublots">&lt;/span>
-&lt;a href="#material-sublots" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;pre class="mermaid hx-mt-6">classDiagram
-`material lot` o--> `material sublot` :is assembled from&lt;/pre>&lt;p>Material lots also might be assembled from sublots.&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Use case.&lt;/strong> Detailed tracking of uniquely identifiable sub-components.&lt;/li>
-&lt;li>&lt;strong>Example.&lt;/strong> The pallet &lt;code>PBJ.1000.1&lt;/code> might have various cases that are modeled as sublots, such as &lt;code>PBJ.1000.1.1&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h3>Material definition assembly&lt;span class="hx-absolute -hx-mt-20" id="material-definition-assembly">&lt;/span>
-&lt;a href="#material-definition-assembly" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;pre class="mermaid hx-mt-6">classDiagram
-`material definition` o--> `material definition` :is assembled from&lt;/pre>&lt;p>Material definitions are assembled from material definitions.&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;strong>Use case.&lt;/strong> Show the specific material flow to assemble some particular product.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Example.&lt;/strong> The &lt;code>Cosmic Blue Juice&lt;/code> material definition is assembled from the &lt;code>Bulk Blue Juice&lt;/code> material definition, which is assembled from the definitions &lt;code>Sugar&lt;/code>, &lt;code>Blue flavor&lt;/code>, and &lt;code>Colors&lt;/code>.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3>Material class assembly&lt;span class="hx-absolute -hx-mt-20" id="material-class-assembly">&lt;/span>
-&lt;a href="#material-class-assembly" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Material classes are assembled from material classes.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
-`material class` o--> `material class` :is assembled from&lt;/pre>&lt;ul>
-&lt;li>
-&lt;p>&lt;strong>Use case&lt;/strong>. Show the general material flow to assemble some category of products.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Example.&lt;/strong> The &lt;code>Packed Juice&lt;/code> class is assembled from the &lt;code>Bulk Juice&lt;/code> class , which is assembled from the classes &lt;code>sweeteners&lt;/code>, &lt;code>flavoring&lt;/code>, and &lt;code>colors&lt;/code>.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h2>Has values and properties&lt;span class="hx-absolute -hx-mt-20" id="material-properties">&lt;/span>
+}&lt;/pre>&lt;h2>Has values and properties&lt;span class="hx-absolute -hx-mt-20" id="material-properties">&lt;/span>
 &lt;a href="#material-properties" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Material lots and sublots can have values.
 These values are stored in &lt;em>material lot properties&lt;/em>.&lt;/p>
 &lt;pre class="mermaid hx-mt-6">---
