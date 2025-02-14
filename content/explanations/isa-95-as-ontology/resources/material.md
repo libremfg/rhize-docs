@@ -2,8 +2,6 @@
 title: Material models in ISA-95
 description: A guide to material entities and relationships in ISA-95
 icon: beaker
-images: 
-  - "/images/s95/diagram-rhize-isa-material-assembly-relationships.png"
 ---
 
 _Material_ can be a finished good or anything that goes into this good.
