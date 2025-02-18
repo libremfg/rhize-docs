@@ -212,7 +212,7 @@ title="Copy code"
 &lt;p>Rhize uses &lt;a href="https://keycloak.org" target="_blank" rel="noopener">Keycloak&lt;/a> as an OpenID provider.
 In your cluster, the Keycloak server to authenticate users, services, and manage Role-based access controls.&lt;/p>
 &lt;p>This topic describes how to set up Keycloak in your Rhize cluster.
-For a conceptual overview of the authentication flow, read &lt;a href="https://docs.rhize.com/deploy/about-openidconnect/" >About OpenID Connect&lt;/a>&lt;/p>
+For a conceptual overview of the authentication flow, read &lt;a href="https://docs.rhize.com/explanations/about-openidconnect/" >About OpenID Connect&lt;/a>&lt;/p>
 &lt;h2>Prerequisites&lt;span class="hx-absolute -hx-mt-20" id="prerequisites">&lt;/span>
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>First, ensure that you have followed the instructions from &lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes" >Set up Kubernetes&lt;/a>.
 All prerequisites for that step apply here.&lt;/p>

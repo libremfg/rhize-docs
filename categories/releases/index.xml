@@ -417,7 +417,7 @@ To learn more, read the &lt;a href="https://docs.rhize.com/how-to/audit/" >Audit
 As such, Rhize is designed to conform to your operation&amp;rsquo;s IT and manufacturing processes.&lt;/p>
 &lt;p>Rhize runs on your IT infrastructure.
 The data model itself is based on a widely recognized standard, ISA-95.
-Your teams control its security and access policies, with authentication provided through &lt;a href="https://docs.rhize.com/deploy/about-openidconnect/" >OpenID Connect&lt;/a>.&lt;/p>
+Your teams control its security and access policies, with authentication provided through &lt;a href="https://docs.rhize.com/explanations/about-openidconnect/" >OpenID Connect&lt;/a>.&lt;/p>
 &lt;h3>High availability and reliability&lt;span class="hx-absolute -hx-mt-20" id="high-availability-and-reliability">&lt;/span>
 &lt;a href="#high-availability-and-reliability" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Mission-critical systems, such as an MES, must be highly reliable and available.
 Information flows in manufacturing can also have very high demands for CPU, network throughput, and memory.&lt;/p>

@@ -862,7 +862,7 @@ Be sure to preface the value with the word &lt;code>Bearer &lt;/code>:&lt;/p>
 &lt;figure>&lt;img src="https://docs.rhize.com/images/screenshot-rhize-apollo-auth-headers.png"
 alt="Example of how it looks in Apollo explorer" width="50%">
 &lt;/figure>
-&lt;p>For an overview of how Rhize handles token exchange, read &lt;a href="https://docs.rhize.com/deploy/about-openidconnect/" >About OpenID connect&lt;/a>.&lt;/p>
+&lt;p>For an overview of how Rhize handles token exchange, read &lt;a href="https://docs.rhize.com/explanations/about-openidconnect/" >About OpenID connect&lt;/a>.&lt;/p>
 &lt;h3>Request body&lt;span class="hx-absolute -hx-mt-20" id="request-body">&lt;/span>
 &lt;a href="#request-body" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>By default, all GraphQL operations have the following structure:&lt;/p>
 &lt;ol>
@@ -1640,7 +1640,7 @@ title="Copy code"
 &lt;p>Rhize uses &lt;a href="https://keycloak.org" target="_blank" rel="noopener">Keycloak&lt;/a> as an OpenID provider.
 In your cluster, the Keycloak server to authenticate users, services, and manage Role-based access controls.&lt;/p>
 &lt;p>This topic describes how to set up Keycloak in your Rhize cluster.
-For a conceptual overview of the authentication flow, read &lt;a href="https://docs.rhize.com/deploy/about-openidconnect/" >About OpenID Connect&lt;/a>&lt;/p>
+For a conceptual overview of the authentication flow, read &lt;a href="https://docs.rhize.com/explanations/about-openidconnect/" >About OpenID Connect&lt;/a>&lt;/p>
 &lt;h2>Prerequisites&lt;span class="hx-absolute -hx-mt-20" id="prerequisites">&lt;/span>
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>First, ensure that you have followed the instructions from &lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes" >Set up Kubernetes&lt;/a>.
 All prerequisites for that step apply here.&lt;/p>
@@ -4726,8 +4726,8 @@ title="Copy code"
 &lt;/div>
 &lt;/div>&lt;/div>
 &lt;/div>
-&lt;h4>Avoid using @cascade with the &lt;a href="https://docs.rhize.com/how-to/gql/query/#order" >&lt;code>order&lt;/code>&lt;/a> argument&lt;span class="hx-absolute -hx-mt-20" id="avoid-using-cascade-with-the-orderhahahugoshortcode54s7hbhb-argument">&lt;/span>
-&lt;a href="#avoid-using-cascade-with-the-orderhahahugoshortcode54s7hbhb-argument" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;p>The &lt;code>order&lt;/code> argument returns only the first 1000 records of the query.
+&lt;h4>Avoid using @cascade with the &lt;a href="https://docs.rhize.com/how-to/gql/query/#order" >&lt;code>order&lt;/code>&lt;/a> argument&lt;span class="hx-absolute -hx-mt-20" id="avoid-using-cascade-with-the-order-argument">&lt;/span>
+&lt;a href="#avoid-using-cascade-with-the-order-argument" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;p>The &lt;code>order&lt;/code> argument returns only the first 1000 records of the query.
 If a record matches the &lt;code>@cascade&lt;/code> filter but comes after these first 1000 records, the API does not return it.&lt;/p>
 &lt;p>For example, this query logic works as follows:&lt;/p>
 &lt;ol>

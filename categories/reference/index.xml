@@ -6,9 +6,9 @@ All these models are based on the ISA-95 standard, mostly from &lt;a href="https
 &lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
 &lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
 &lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">&lt;ul>
-&lt;li>For an introduction to the language of ISA-95, read &lt;a href="https://docs.rhize.com/explanations/how-to-speak-isa-95/" >How to speak ISA-95&lt;/a>&lt;/li>
+&lt;li>For an introduction to the language of ISA-95, read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/" >How to speak ISA-95&lt;/a>&lt;/li>
 &lt;li>For visual examples of how some of these models relate,
-look at our page of &lt;a href="https://docs.rhize.com/explanations/isa-95-diagrams/" >ISA-95 Diagrams&lt;/a>.&lt;/li>
+look at our page of &lt;a href="https://docs.rhize.com/isa-95/isa-95-diagrams/" >ISA-95 Diagrams&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;/div>
 &lt;/div>
@@ -1906,62 +1906,7 @@ They return matches within the specified &lt;a href="https://datatracker.ietf.or
 &lt;a href="#read-more" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;a href="https://docs.rhize.com/how-to/gql" >Rhize guide to GraphQL&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://dgraph.io/docs/graphql/schema/directives/search/" target="_blank" rel="noopener">Dgraph &lt;code>@search&lt;/code> directive&lt;/a>.&lt;/li>
-&lt;/ul></description></item><item><title>Glossary</title><link>https://docs.rhize.com/reference/glossary/</link><pubDate>Tue, 12 Sep 2023 19:35:35 +1100</pubDate><guid>https://docs.rhize.com/reference/glossary/</guid><description>
-&lt;p>The manufacturing industry has many specialized terms—and many abbreviations.
-This glossary is a reference of how Rhize defines terms used in this documentation.&lt;/p>
-&lt;dl>&lt;dt id="agent">Agent&lt;/dt>
-&lt;dd>The Rhize agent bridges your plant processes with the Rhize data hub. It collects data that is emitted during the manufacturing process and publishes it to the NATS message broker.&lt;/dd>&lt;dt id="andon">Andon&lt;/dt>
-&lt;dd>A system that alerts manufacturing teams about problems in processes or quality.&lt;/dd>&lt;dt id="audit">Audit&lt;/dt>
-&lt;dd>The Libre Audit log server is a service that provides a tamper-proof and immutable audit trail of all events that occur in the Rhize system.&lt;/dd>&lt;dt id="business-process-model-and-notation">Business Process Model and Notation (BPMN)&lt;/dt>
-&lt;dd>A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize's BPMN UI and engine provides a low-code interface for complex event handling&lt;/dd>&lt;dt id="catch-event">Catch event&lt;/dt>
-&lt;dd>In BPMN, a catch event reacts to a trigger (compared to a &lt;a href="#throw-event">throw event&lt;/a>, which returns some result). Only start and intermediate events can catch.&lt;/dd>&lt;dt id="computerized-maintenance-management-system">Computerized maintenance management system (CMMS)&lt;/dt>
-&lt;dd>A Source of information about an organization's maintenance operations&lt;/dd>&lt;dt id="data-source">Data source&lt;/dt>
-&lt;dd>A source of real-time data that is collected by the &lt;a href="#agent">Rhize agent&lt;/a>, such as an MQTT or OPC UA device&lt;/dd>&lt;dt id="discrete-manufacturing">Discrete manufacturing&lt;/dt>
-&lt;dd>A form a manufacturing where items are made one at a item, as opposed to in batches or continuously&lt;/dd>&lt;dt id="electronic-batch-report">Electronic batch report (eBR)&lt;/dt>
-&lt;dd>A detailed report for a batch in a pharmaceutical process, logging items such as the process segments, personnel, equipment, material substance and weight, and so on&lt;/dd>&lt;dt id="enterprise-resource-planning">Enterprise resource planning (ERP)&lt;/dt>
-&lt;dd>Software to manage business processes. In Rhize, ERP activities usually are named "operations", where lower-level activities are prefixed with "Work".&lt;/dd>&lt;dt id="equipment">Equipment&lt;/dt>
-&lt;dd>&lt;/dd>&lt;dt id="equipment-actual">Equipment actual&lt;/dt>
-&lt;dd>Refer to &lt;a href="#resource-actual">resource actual&lt;/a>&lt;/dd>&lt;dt id="equipment-class">Equipment class&lt;/dt>
-&lt;dd>An equipment class is a grouping of equipment with a definite purpose&lt;/dd>&lt;dt id="event">Event&lt;/dt>
-&lt;dd>Discrete occurrences or notifications that represent changes or actions within a system&lt;/dd>&lt;dt id="event-orchestration">Event orchestration&lt;/dt>
-&lt;dd>A pattern in event-driven architecture where a central service, such as &lt;a href="#nats">NATS&lt;/a>, listens to events and decides how to handle them.&lt;/dd>&lt;dt id="event-driven-architecture">Event-driven architecture (EDA)&lt;/dt>
-&lt;dd>A software design pattern that revolves around the concept of events and event-driven messaging&lt;/dd>&lt;dt id="event-driven-data-updates">Event-driven data updates&lt;/dt>
-&lt;dd>When an event leads to an update in the real-time database&lt;/dd>&lt;dt id="finished-goods">Finished goods&lt;/dt>
-&lt;dd>The final product. Material becomes finished goods when it requires no more processing or production&lt;/dd>&lt;dt id="genealogy">Genealogy&lt;/dt>
-&lt;dd>The ability to trace the raw materials that were used across different levels of a manufacturing process&lt;/dd>&lt;dt id="hierarchy-scope">Hierarchy scope&lt;/dt>
-&lt;dd>The scope of the exchanged information, such as a site or area, for which the information is relevant. The scope identifies associated instances of objects such as material, personnel, and equipment&lt;/dd>&lt;dt id="instance">Instance&lt;/dt>
-&lt;dd>An identifiable member of a manufacturing class, like a material or process segment, that can be tracked and scheduled&lt;/dd>&lt;dt id="iso-22400">ISO 22400&lt;/dt>
-&lt;dd>A standard on KPIs in manufacturing operations management.&lt;/dd>&lt;dt id="laboratory-information-management-system">Laboratory information management system (LIMS)&lt;/dt>
-&lt;dd>Software that tracks laboratory data, including samples, experiments, and workflows&lt;/dd>&lt;dt id="manufacturing-data-hub">Manufacturing data hub (MDH)&lt;/dt>
-&lt;dd>A centralized platform or infrastructure that serves as a hub for collecting, integrating, storing, and processing manufacturing data from various sources within an organization.&lt;/dd>&lt;dt id="manufacturing-execution-system">Manufacturing execution system (MES)&lt;/dt>
-&lt;dd>A system in a manufacturing process that tracks and documents the transformation of raw materials to finished goods&lt;/dd>&lt;dt id="material">Material&lt;/dt>
-&lt;dd>Everything required to produce a finished good. They include raw materials, intermediate materials, and collections of parts&lt;/dd>&lt;dt id="material-class">Material class&lt;/dt>
-&lt;dd>A group of material with a shared purpose in the manufacturing process&lt;/dd>&lt;dt id="material-definition">Material definition&lt;/dt>
-&lt;dd>A representation of material with similar charecteristics. All material lots must have one associated material definition.&lt;/dd>&lt;dt id="material-lot">Material lot&lt;/dt>
-&lt;dd>A uniquely identifiable amount of material, either countable or weighable&lt;/dd>&lt;dt id="material-sublot">Material sublot&lt;/dt>
-&lt;dd>Each separately identifiable unit of a &lt;a href="#material-lot">material lot.&lt;/a>&lt;/dd>&lt;dt id="mutation">Mutation&lt;/dt>
-&lt;dd>A GraphQL operation that modifies some data in the database, usually creating, updating, or deleting a resource&lt;/dd>&lt;dt id="nats">NATS&lt;/dt>
-&lt;dd>Connective infrastructure to address, discover, and exchange messages in a distributed system. Rhize uses NATS as the broker to publish and subscribe to event data, decoupling communication between services and equipment.&lt;/dd>&lt;dt id="operational-location">Operational location&lt;/dt>
-&lt;dd>Where resources are expected to be located in a plant&lt;/dd>&lt;dt id="operations-definition">Operations definition&lt;/dt>
-&lt;dd>The resources required to perform an operation, including for production, quality, maintenance, and inventory, from the perspective of the level-4 enterprise control systems.&lt;/dd>&lt;dt id="operations-event-definition">Operations event definition&lt;/dt>
-&lt;dd>A definition of the properties that pertain to an &lt;em>event&lt;/em> from the perspective of the level-4 (ERP) systems.&lt;/dd>&lt;dt id="overall-equipment-effectiveness">Overall Equipment Effectiveness (OEE)&lt;/dt>
-&lt;dd>A measure of manufacturing productivity. OEE is commonly calculated as the product of three critical factors: availability, performance, and quality.&lt;/dd>&lt;dt id="pattern-process-segment">Pattern (process segment)&lt;/dt>
-&lt;dd>A &lt;a href="#process-segment">process segment&lt;/a> that creates a pattern or template for other patterns or process segments to follow&lt;/dd>&lt;dt id="personnel-class">Personnel class&lt;/dt>
-&lt;dd>A grouping of persons whose work shares a definite purpose in the manufacturing process&lt;/dd>&lt;dt id="physical-asset">Physical asset&lt;/dt>
-&lt;dd>A physical piece of equipment with an ID&lt;/dd>&lt;dt id="process-segment">Process segment&lt;/dt>
-&lt;dd>A step in a manufacturing activitity that is visible to a business process, grouping the necessary personnel, material, equipment, and physical assets&lt;/dd>&lt;dt id="process-variable-context">Process variable context&lt;/dt>
-&lt;dd>The context and variables that are passed between tasks in a &lt;a href="#business-process-model-and-notation">BPMN&lt;/a> workflow&lt;/dd>&lt;dt id="resource-actual">Resource actual&lt;/dt>
-&lt;dd>The specific resource used for a specific job. For example, an operations segment may require &lt;code>EquipmentA&lt;/code>, but if this equipment is in maintainance at the time of a job, the Equipment actual might be its temporary replacement, &lt;code>EquipmentB&lt;/code>&lt;/dd>&lt;dt id="role-based-equipment-model">Role-based equipment model&lt;/dt>
-&lt;dd>A definition of equipment based on the level-3 and level-4 functions and activities that it performs&lt;/dd>&lt;dt id="rules-engine">Rules engine&lt;/dt>
-&lt;dd>A program that evaluates incoming data from a data source and converts significant changes into &lt;em>events&lt;/em> to be processed by a BPMN workflow&lt;/dd>&lt;dt id="serial-discrete">Serial discrete&lt;/dt>
-&lt;dd>A type of &lt;a href="#discrete-manufacturing">discrete manufacturing&lt;/a> where each item produced has a serial number&lt;/dd>&lt;dt id="sink">Sink&lt;/dt>
-&lt;dd>The destination of a data flow.&lt;/dd>&lt;dt id="throw-event">Throw event&lt;/dt>
-&lt;dd>In BPMN, a throw event returns some response (compared to a &lt;a href="#catch-event">catch event&lt;/a>, which reacts to some trigger). Only intermediate and end events can throw.&lt;/dd>&lt;dt id="unit-of-measure">Unit of measure&lt;/dt>
-&lt;dd>A defined unit to consistently compare values, duration or quantities&lt;/dd>&lt;dt id="warehouse-management-system">Warehouse management system&lt;/dt>
-&lt;dd>A system to organize processes and policies of warehouses. It may include processes to manage and track inventory and exchange data.&lt;/dd>&lt;dt id="work-calendar">Work calendar&lt;/dt>
-&lt;dd>A collection of work calendar &lt;a href="#entry">entries&lt;/a>&lt;/dd>&lt;dt id="work-calendar-entry">Work calendar entry&lt;/dt>
-&lt;dd>Rules that define a work period, including its start date, duration, and interval.&lt;/dd>&lt;dt id="work-master">Work master&lt;/dt>
-&lt;dd>A template for a job order, corresponding to an operations and process segment, from the perspective of the level-3 (MES/MOM) systems.&lt;/dd>&lt;/dl></description></item><item><title>Naming conventions</title><link>https://docs.rhize.com/how-to/bpmn/naming-conventions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/bpmn/naming-conventions/</guid><description>
+&lt;/ul></description></item><item><title>Naming conventions</title><link>https://docs.rhize.com/how-to/bpmn/naming-conventions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/bpmn/naming-conventions/</guid><description>
 &lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
 &lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
 &lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
@@ -2931,4 +2876,59 @@ alt="A parallel gateway that branches and rejoins" width="50%">&lt;figcaption>
 &lt;/details>
 &lt;h2>Variables and expressions&lt;span class="hx-absolute -hx-mt-20" id="variables-and-expressions">&lt;/span>
 &lt;a href="#variables-and-expressions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>As data passes and transforms from one element to another, variables remain in the &lt;em>process variable context&lt;/em>.
-You can access these variables through JSONata expressions.&lt;/p></description></item></channel></rss>
+You can access these variables through JSONata expressions.&lt;/p></description></item><item><title>Glossary</title><link>https://docs.rhize.com/reference/glossary/</link><pubDate>Tue, 12 Sep 2023 19:35:35 +1100</pubDate><guid>https://docs.rhize.com/reference/glossary/</guid><description>
+&lt;p>The manufacturing industry has many specialized terms—and many abbreviations.
+This glossary is a reference of how Rhize defines terms used in this documentation.&lt;/p>
+&lt;dl>&lt;dt id="agent">Agent&lt;/dt>
+&lt;dd>The Rhize agent bridges your plant processes with the Rhize data hub. It collects data that is emitted during the manufacturing process and publishes it to the NATS message broker.&lt;/dd>&lt;dt id="andon">Andon&lt;/dt>
+&lt;dd>A system that alerts manufacturing teams about problems in processes or quality.&lt;/dd>&lt;dt id="audit">Audit&lt;/dt>
+&lt;dd>The Libre Audit log server is a service that provides a tamper-proof and immutable audit trail of all events that occur in the Rhize system.&lt;/dd>&lt;dt id="business-process-model-and-notation">Business Process Model and Notation (BPMN)&lt;/dt>
+&lt;dd>A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize's BPMN UI and engine provides a low-code interface for complex event handling&lt;/dd>&lt;dt id="catch-event">Catch event&lt;/dt>
+&lt;dd>In BPMN, a catch event reacts to a trigger (compared to a &lt;a href="#throw-event">throw event&lt;/a>, which returns some result). Only start and intermediate events can catch.&lt;/dd>&lt;dt id="computerized-maintenance-management-system">Computerized maintenance management system (CMMS)&lt;/dt>
+&lt;dd>A Source of information about an organization's maintenance operations&lt;/dd>&lt;dt id="data-source">Data source&lt;/dt>
+&lt;dd>A source of real-time data that is collected by the &lt;a href="#agent">Rhize agent&lt;/a>, such as an MQTT or OPC UA device&lt;/dd>&lt;dt id="discrete-manufacturing">Discrete manufacturing&lt;/dt>
+&lt;dd>A form a manufacturing where items are made one at a item, as opposed to in batches or continuously&lt;/dd>&lt;dt id="electronic-batch-report">Electronic batch report (eBR)&lt;/dt>
+&lt;dd>A detailed report for a batch in a pharmaceutical process, logging items such as the process segments, personnel, equipment, material substance and weight, and so on&lt;/dd>&lt;dt id="enterprise-resource-planning">Enterprise resource planning (ERP)&lt;/dt>
+&lt;dd>Software to manage business processes. In Rhize, ERP activities usually are named "operations", where lower-level activities are prefixed with "Work".&lt;/dd>&lt;dt id="equipment">Equipment&lt;/dt>
+&lt;dd>&lt;/dd>&lt;dt id="equipment-actual">Equipment actual&lt;/dt>
+&lt;dd>Refer to &lt;a href="#resource-actual">resource actual&lt;/a>&lt;/dd>&lt;dt id="equipment-class">Equipment class&lt;/dt>
+&lt;dd>An equipment class is a grouping of equipment with a definite purpose&lt;/dd>&lt;dt id="event">Event&lt;/dt>
+&lt;dd>Discrete occurrences or notifications that represent changes or actions within a system&lt;/dd>&lt;dt id="event-orchestration">Event orchestration&lt;/dt>
+&lt;dd>A pattern in event-driven architecture where a central service, such as &lt;a href="#nats">NATS&lt;/a>, listens to events and decides how to handle them.&lt;/dd>&lt;dt id="event-driven-architecture">Event-driven architecture (EDA)&lt;/dt>
+&lt;dd>A software design pattern that revolves around the concept of events and event-driven messaging&lt;/dd>&lt;dt id="event-driven-data-updates">Event-driven data updates&lt;/dt>
+&lt;dd>When an event leads to an update in the real-time database&lt;/dd>&lt;dt id="finished-goods">Finished goods&lt;/dt>
+&lt;dd>The final product. Material becomes finished goods when it requires no more processing or production&lt;/dd>&lt;dt id="genealogy">Genealogy&lt;/dt>
+&lt;dd>The ability to trace the raw materials that were used across different levels of a manufacturing process&lt;/dd>&lt;dt id="hierarchy-scope">Hierarchy scope&lt;/dt>
+&lt;dd>The scope of the exchanged information, such as a site or area, for which the information is relevant. The scope identifies associated instances of objects such as material, personnel, and equipment&lt;/dd>&lt;dt id="instance">Instance&lt;/dt>
+&lt;dd>An identifiable member of a manufacturing class, like a material or process segment, that can be tracked and scheduled&lt;/dd>&lt;dt id="iso-22400">ISO 22400&lt;/dt>
+&lt;dd>A standard on KPIs in manufacturing operations management.&lt;/dd>&lt;dt id="laboratory-information-management-system">Laboratory information management system (LIMS)&lt;/dt>
+&lt;dd>Software that tracks laboratory data, including samples, experiments, and workflows&lt;/dd>&lt;dt id="manufacturing-data-hub">Manufacturing data hub (MDH)&lt;/dt>
+&lt;dd>A centralized platform or infrastructure that serves as a hub for collecting, integrating, storing, and processing manufacturing data from various sources within an organization.&lt;/dd>&lt;dt id="manufacturing-execution-system">Manufacturing execution system (MES)&lt;/dt>
+&lt;dd>A system in a manufacturing process that tracks and documents the transformation of raw materials to finished goods&lt;/dd>&lt;dt id="material">Material&lt;/dt>
+&lt;dd>Everything required to produce a finished good. They include raw materials, intermediate materials, and collections of parts&lt;/dd>&lt;dt id="material-class">Material class&lt;/dt>
+&lt;dd>A group of material with a shared purpose in the manufacturing process&lt;/dd>&lt;dt id="material-definition">Material definition&lt;/dt>
+&lt;dd>A representation of material with similar charecteristics. All material lots must have one associated material definition.&lt;/dd>&lt;dt id="material-lot">Material lot&lt;/dt>
+&lt;dd>A uniquely identifiable amount of material, either countable or weighable&lt;/dd>&lt;dt id="material-sublot">Material sublot&lt;/dt>
+&lt;dd>Each separately identifiable unit of a &lt;a href="#material-lot">material lot.&lt;/a>&lt;/dd>&lt;dt id="mutation">Mutation&lt;/dt>
+&lt;dd>A GraphQL operation that modifies some data in the database, usually creating, updating, or deleting a resource&lt;/dd>&lt;dt id="nats">NATS&lt;/dt>
+&lt;dd>Connective infrastructure to address, discover, and exchange messages in a distributed system. Rhize uses NATS as the broker to publish and subscribe to event data, decoupling communication between services and equipment.&lt;/dd>&lt;dt id="operational-location">Operational location&lt;/dt>
+&lt;dd>Where resources are expected to be located in a plant&lt;/dd>&lt;dt id="operations-definition">Operations definition&lt;/dt>
+&lt;dd>The resources required to perform an operation, including for production, quality, maintenance, and inventory, from the perspective of the level-4 enterprise control systems.&lt;/dd>&lt;dt id="operations-event-definition">Operations event definition&lt;/dt>
+&lt;dd>A definition of the properties that pertain to an &lt;em>event&lt;/em> from the perspective of the level-4 (ERP) systems.&lt;/dd>&lt;dt id="overall-equipment-effectiveness">Overall Equipment Effectiveness (OEE)&lt;/dt>
+&lt;dd>A measure of manufacturing productivity. OEE is commonly calculated as the product of three critical factors: availability, performance, and quality.&lt;/dd>&lt;dt id="pattern-process-segment">Pattern (process segment)&lt;/dt>
+&lt;dd>A &lt;a href="#process-segment">process segment&lt;/a> that creates a pattern or template for other patterns or process segments to follow&lt;/dd>&lt;dt id="personnel-class">Personnel class&lt;/dt>
+&lt;dd>A grouping of persons whose work shares a definite purpose in the manufacturing process&lt;/dd>&lt;dt id="physical-asset">Physical asset&lt;/dt>
+&lt;dd>A physical piece of equipment with an ID&lt;/dd>&lt;dt id="process-segment">Process segment&lt;/dt>
+&lt;dd>A step in a manufacturing activitity that is visible to a business process, grouping the necessary personnel, material, equipment, and physical assets&lt;/dd>&lt;dt id="process-variable-context">Process variable context&lt;/dt>
+&lt;dd>The context and variables that are passed between tasks in a &lt;a href="#business-process-model-and-notation">BPMN&lt;/a> workflow&lt;/dd>&lt;dt id="resource-actual">Resource actual&lt;/dt>
+&lt;dd>The specific resource used for a specific job. For example, an operations segment may require &lt;code>EquipmentA&lt;/code>, but if this equipment is in maintainance at the time of a job, the Equipment actual might be its temporary replacement, &lt;code>EquipmentB&lt;/code>&lt;/dd>&lt;dt id="role-based-equipment-model">Role-based equipment model&lt;/dt>
+&lt;dd>A definition of equipment based on the level-3 and level-4 functions and activities that it performs&lt;/dd>&lt;dt id="rules-engine">Rules engine&lt;/dt>
+&lt;dd>A program that evaluates incoming data from a data source and converts significant changes into &lt;em>events&lt;/em> to be processed by a BPMN workflow&lt;/dd>&lt;dt id="serial-discrete">Serial discrete&lt;/dt>
+&lt;dd>A type of &lt;a href="#discrete-manufacturing">discrete manufacturing&lt;/a> where each item produced has a serial number&lt;/dd>&lt;dt id="sink">Sink&lt;/dt>
+&lt;dd>The destination of a data flow.&lt;/dd>&lt;dt id="throw-event">Throw event&lt;/dt>
+&lt;dd>In BPMN, a throw event returns some response (compared to a &lt;a href="#catch-event">catch event&lt;/a>, which reacts to some trigger). Only intermediate and end events can throw.&lt;/dd>&lt;dt id="unit-of-measure">Unit of measure&lt;/dt>
+&lt;dd>A defined unit to consistently compare values, duration or quantities&lt;/dd>&lt;dt id="warehouse-management-system">Warehouse management system&lt;/dt>
+&lt;dd>A system to organize processes and policies of warehouses. It may include processes to manage and track inventory and exchange data.&lt;/dd>&lt;dt id="work-calendar">Work calendar&lt;/dt>
+&lt;dd>A collection of work calendar &lt;a href="#entry">entries&lt;/a>&lt;/dd>&lt;dt id="work-calendar-entry">Work calendar entry&lt;/dt>
+&lt;dd>Rules that define a work period, including its start date, duration, and interval.&lt;/dd>&lt;dt id="work-master">Work master&lt;/dt>
+&lt;dd>A template for a job order, corresponding to an operations and process segment, from the perspective of the level-3 (MES/MOM) systems.&lt;/dd>&lt;/dl></description></item></channel></rss>
