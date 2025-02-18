@@ -99,7 +99,7 @@ For more detail, refer to the
 
 {{< callout >}}
 :memo: For an introduction to ISA-95 and its terminology,
-read [How to speak ISA-95]({{< relref "/explanations/how-to-speak-isa-95" >}}).
+read [How to speak ISA-95]({{< relref "/isa-95/how-to-speak-isa-95" >}}).
 {{< /callout >}}
 
 The following lists detail the ISA-95 entities that you might need when querying the Rhize database for an eBR.

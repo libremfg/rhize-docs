@@ -3,7 +3,7 @@ title: ISA-95 diagrams
 description: >-
     Helpful diagrams to present a high-level overview of the ISA-95 models
     for entities and information flows.
-weight: 200
+weight: 1000
 draft: false
 ---
 
