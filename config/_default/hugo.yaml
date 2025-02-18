@@ -10,6 +10,12 @@ module:
 
 menu:
   main:
+    - name: Docs
+      weight: 1
+      url: /introduction
+    - name: Learn ISA-95
+      weight: 5
+      url: /isa-95
     - name: Search
       weight: 10
       params:
