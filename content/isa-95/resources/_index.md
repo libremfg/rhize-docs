@@ -2,8 +2,6 @@
 title: Resources in ISA-95
 description: No matter what you make, your manufacturing operation needs resources
 cascade:
-  sidebar:
-    exclude: true
   icon: book-open
 ---
 
