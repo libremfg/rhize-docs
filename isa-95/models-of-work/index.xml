@@ -22,10 +22,10 @@ d[Dosing]&lt;/pre>&lt;h2>Reasons to use segments&lt;span class="hx-absolute -hx-
 &lt;a href="#segments-vs-equipment-hierarchies" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Process segments are not necessarily connected to the &lt;a href="https://docs.rhize.com/isa-95/resources/equipment/#the-role-based-hierarchy" >role-based equipment hierarchy&lt;/a>.
 Since a defining aspect of equipment in ISA-95 is that it plays a precise role,
 you might wonder whether a process segment is just a needless duplication:
-why add a &lt;code>mixing&lt;/code> segment when the &lt;code>mixers&lt;/code> equipment model serves same role?&lt;/p>
+why add a &lt;code>mixing&lt;/code> segment when the &lt;code>mixers&lt;/code> equipment model serves the same role?&lt;/p>
 &lt;p>However, the fact that process segments are decoupled from equipment can help you model a variety of conditions:&lt;/p>
 &lt;ul>
-&lt;li>Some steps have no equipment requirements. For example, the &lt;code>kitting&lt;/code> process segment in the juice factory requires no equipment, but it is a necessary part of the production process.&lt;/li>
+&lt;li>Some steps have no equipment requirements. For example, the &lt;code>kitting&lt;/code> process segment in the juice factory requires no equipment.&lt;/li>
 &lt;li>Some steps may be common to a number of processes, but each particular process may require a different set of equipment.&lt;/li>
 &lt;/ul>
 &lt;h2>Segment relationships&lt;span class="hx-absolute -hx-mt-20" id="segment-relationships">&lt;/span>
@@ -33,7 +33,7 @@ why add a &lt;code>mixing&lt;/code> segment when the &lt;code>mixers&lt;/code> e
 &lt;h3>Corresponds to&lt;span class="hx-absolute -hx-mt-20" id="corresponds-to">&lt;/span>
 &lt;a href="#corresponds-to" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Unlike process segments,
 operations segments and work masters might describe the steps to create a particular product.
-So, these models can &lt;em>correspond&lt;/em> to a process segment:&lt;/p>
+These models may &lt;em>correspond&lt;/em> to a process segment:&lt;/p>
 &lt;ul>
 &lt;li>From the business-perspective, product steps are modeled in &lt;em>operations segments&lt;/em>.&lt;/li>
 &lt;li>From the more granular MES perspective, product steps are modeled in &lt;em>work masters&lt;/em>.&lt;/li>
@@ -63,7 +63,7 @@ mixing *--> `material specification` :contains
 Process segment parameters store additional information about the step.
 For example, the &lt;code>mixing&lt;/code> process segment might have a &lt;code>mixing time&lt;/code> parameter.&lt;/p>
 &lt;p>The parameter also can have a value or range of values.
-This process segment parameter value may serve as a default for lower-level work models.&lt;/p>
+This process segment parameter value may serve as a default for lower-level work models that &lt;a href="#corresponds-to" >correspond to&lt;/a> this process segment.&lt;/p>
 &lt;pre class="mermaid hx-mt-6">classDiagram
 class `mixing time`{
 value: 20-30
@@ -75,7 +75,7 @@ UoM: RPM
 }
 `mixing` *--> `mixing time`
 `mixing` *--> `mixing speed`&lt;/pre>&lt;h3>Is made of&lt;span class="hx-absolute -hx-mt-20" id="is-made-of">&lt;/span>
-&lt;a href="#is-made-of" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A process segment can &lt;em>be made of&lt;/em> of other process segments.
+&lt;a href="#is-made-of" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A process segment can &lt;em>be made of&lt;/em> other process segments.
 You can use this relationship to model sub-steps.&lt;/p>
 &lt;p>For example, The Juice Factory might need to distinguish preparation steps from production steps.
 A parent segment provides a model to aggregate the production steps in one parent process segment.&lt;/p>
