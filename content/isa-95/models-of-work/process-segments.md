@@ -33,10 +33,10 @@ Process segments can serve operational and analytical functions.
 Process segments are not necessarily connected to the [role-based equipment hierarchy]({{< relref "../resources/equipment/#the-role-based-hierarchy" >}}).
 Since a defining aspect of equipment in ISA-95 is that it plays a precise role,
 you might wonder whether a process segment is just a needless duplication:
-why add a `mixing` segment when the `mixers` equipment model serves same role?
+why add a `mixing` segment when the `mixers` equipment model serves the same role?
 
 However, the fact that process segments are decoupled from equipment can help you model a variety of conditions:
-- Some steps have no equipment requirements. For example, the `kitting` process segment in the juice factory requires no equipment, but it is a necessary part of the production process.
+- Some steps have no equipment requirements. For example, the `kitting` process segment in the juice factory requires no equipment.
 - Some steps may be common to a number of processes, but each particular process may require a different set of equipment. 
 
 
@@ -48,7 +48,7 @@ Process segments have relationships to a number of other work and resource model
 
 Unlike process segments,
 operations segments and work masters might describe the steps to create a particular product.
-So, these models can _correspond_ to a process segment:
+These models may _correspond_ to a process segment:
 - From the business-perspective, product steps are modeled in _operations segments_.
 - From the more granular MES perspective, product steps are modeled in _work masters_.
 
@@ -90,7 +90,7 @@ Process segment parameters store additional information about the step.
 For example, the `mixing` process segment might have a `mixing time` parameter.
 
 The parameter also can have a value or range of values.
-This process segment parameter value may serve as a default for lower-level work models.
+This process segment parameter value may serve as a default for lower-level work models that [correspond to](#corresponds-to) this process segment.
 
 ```mermaid
 classDiagram
@@ -108,7 +108,7 @@ class `mixing speed`{
 
 ### Is made of
 
-A process segment can _be made of_ of other process segments.
+A process segment can _be made of_ other process segments.
 You can use this relationship to model sub-steps.
 
 For example, The Juice Factory might need to distinguish preparation steps from production steps.
