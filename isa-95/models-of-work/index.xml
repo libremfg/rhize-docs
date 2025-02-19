@@ -1,0 +1,99 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Models of work</title><link>https://docs.rhize.com/isa-95/models-of-work/</link><description>Recent content in Models of work on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.rhize.com/isa-95/models-of-work/index.xml" rel="self" type="application/rss+xml"/><item><title>Process segments</title><link>https://docs.rhize.com/isa-95/models-of-work/process-segments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/isa-95/models-of-work/process-segments/</guid><description>
+&lt;p>A &lt;em>process segment&lt;/em> is a step in a process.
+Process segments are high-level information objects,
+abstract enough to be shared by multiple procedures,
+and coarse-grained enough to be appropriate for the business perspective of the operation.&lt;/p>
+&lt;p>A process segment&amp;rsquo;s scope is generally broader than the production of a particular product or &lt;abbr title="A representation of material with similar charecteristics. All material lots must have one associated material definition.">material definition&lt;/abbr>.
+For example, The Juice Factory produces 5 brands of juice.
+While the particular material consumed and produced differs in the production of each brand,
+all brands still follow the steps of &lt;code>material receiving&lt;/code>, &lt;code>kitting&lt;/code>, &lt;code>mixing&lt;/code>, and &lt;code>packing&lt;/code>.
+These steps are process segments.&lt;/p>
+&lt;pre class="mermaid hx-mt-6">flowchart LR
+a[Material preparation]-->
+b[Kitting]-->
+c[Mixing]-->
+d[Dosing]&lt;/pre>&lt;h2>Reasons to use segments&lt;span class="hx-absolute -hx-mt-20" id="reasons-to-use-segments">&lt;/span>
+&lt;a href="#reasons-to-use-segments" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Process segments can serve operational and analytical functions.&lt;/p>
+&lt;ul>
+&lt;li>From the operational side, a segment provides a way to avoid repetition when modeling steps that are common to different processes.&lt;/li>
+&lt;li>From the analytical side, a process segment provides a way to compare different procedures that are all derived from a common procedure or to view similar steps in a single aggregation.&lt;/li>
+&lt;/ul>
+&lt;h2>Segments vs. equipment hierarchies&lt;span class="hx-absolute -hx-mt-20" id="segments-vs-equipment-hierarchies">&lt;/span>
+&lt;a href="#segments-vs-equipment-hierarchies" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Process segments are not necessarily connected to the &lt;a href="https://docs.rhize.com/isa-95/resources/equipment/#the-role-based-hierarchy" >role-based equipment hierarchy&lt;/a>.
+Since a defining aspect of equipment in ISA-95 is that it plays a precise role,
+you might wonder whether a process segment is just a needless duplication:
+why add a &lt;code>mixing&lt;/code> segment when the &lt;code>mixers&lt;/code> equipment model serves same role?&lt;/p>
+&lt;p>However, the fact that process segments are decoupled from equipment can help you model a variety of conditions:&lt;/p>
+&lt;ul>
+&lt;li>Some steps have no equipment requirements. For example, the &lt;code>kitting&lt;/code> process segment in the juice factory requires no equipment, but it is a necessary part of the production process.&lt;/li>
+&lt;li>Some steps may be common to a number of processes, but each particular process may require a different set of equipment.&lt;/li>
+&lt;/ul>
+&lt;h2>Segment relationships&lt;span class="hx-absolute -hx-mt-20" id="segment-relationships">&lt;/span>
+&lt;a href="#segment-relationships" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Process segments have relationships to a number of other work and resource models.&lt;/p>
+&lt;h3>Corresponds to&lt;span class="hx-absolute -hx-mt-20" id="corresponds-to">&lt;/span>
+&lt;a href="#corresponds-to" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Unlike process segments,
+operations segments and work masters might describe the steps to create a particular product.
+So, these models can &lt;em>correspond&lt;/em> to a process segment:&lt;/p>
+&lt;ul>
+&lt;li>From the business-perspective, product steps are modeled in &lt;em>operations segments&lt;/em>.&lt;/li>
+&lt;li>From the more granular MES perspective, product steps are modeled in &lt;em>work masters&lt;/em>.&lt;/li>
+&lt;/ul>
+&lt;p>For example, the Juice Factory has various work masters to produce material definitions for different bulk juices: &lt;code>Bulk blue juice&lt;/code>, &lt;code>Bulk orange juice&lt;/code>, and so on.
+Each of these work masters correspond to the same process segment, &lt;code>mixing&lt;/code>.&lt;/p>
+&lt;pre class="mermaid hx-mt-6">classDiagram
+namespace work_masters{
+class `Bulk blue juice`
+class `Bulk red juice`
+class `Bulk orange juice`
+}
+`Bulk blue juice` ..> `Process segment:&lt;br>mixing` :corresponds to
+`Bulk red juice` ..> `Process segment:&lt;br>mixing` :corresponds to
+`Bulk orange juice` ..> `Process segment:&lt;br>mixing` :corresponds to&lt;/pre>&lt;h3>Contains specifications&lt;span class="hx-absolute -hx-mt-20" id="contains-specifications">&lt;/span>
+&lt;a href="#contains-specifications" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A process segment may contain one or more resource &lt;em>specifications&lt;/em>.
+These specifications describe the necessary resources for the step.&lt;/p>
+&lt;pre class="mermaid hx-mt-6">classDiagram
+class `bulk juices`{use: produced}
+class `ingredient kits`{use: consumed}
+mixing *--> `equipment specification` :contains
+`equipment specification` ..> `mixers` :corresponds to
+mixing *--> `material specification` :contains
+`material specification` ..> `bulk juices` :corresponds to
+`material specification` ..> `ingredient kits` :corresponds to&lt;/pre>&lt;h3>Contains segment parameters&lt;span class="hx-absolute -hx-mt-20" id="contains-segment-parameters">&lt;/span>
+&lt;a href="#contains-segment-parameters" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A process segment can &lt;em>contain&lt;/em> process segment parameters.
+Process segment parameters store additional information about the step.
+For example, the &lt;code>mixing&lt;/code> process segment might have a &lt;code>mixing time&lt;/code> parameter.&lt;/p>
+&lt;p>The parameter also can have a value or range of values.
+This process segment parameter value may serve as a default for lower-level work models.&lt;/p>
+&lt;pre class="mermaid hx-mt-6">classDiagram
+class `mixing time`{
+value: 20-30
+UoM: minutes
+}
+class `mixing speed`{
+value: 50
+UoM: RPM
+}
+`mixing` *--> `mixing time`
+`mixing` *--> `mixing speed`&lt;/pre>&lt;h3>Is made of&lt;span class="hx-absolute -hx-mt-20" id="is-made-of">&lt;/span>
+&lt;a href="#is-made-of" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A process segment can &lt;em>be made of&lt;/em> of other process segments.
+You can use this relationship to model sub-steps.&lt;/p>
+&lt;p>For example, The Juice Factory might need to distinguish preparation steps from production steps.
+A parent segment provides a model to aggregate the production steps in one parent process segment.&lt;/p>
+&lt;pre class="mermaid hx-mt-6">flowchart LR
+subgraph m[Parent: Juice Production]
+direction LR
+K[Child:&lt;br>kitting] -->
+M[Child:&lt;br>mixing] -->
+P[Child:&lt;br>packing]
+end
+A[Material preparation] --> m
+classDef box fill:#fff,stroke:#000,stroke-width:1px,color:#000;
+classDef b fill:#fff,stroke:#000,stroke-width:1px,color:#000;
+class A,C,D,N,X,m,T,V box&lt;/pre>&lt;h3>Dependency&lt;span class="hx-absolute -hx-mt-20" id="dependency">&lt;/span>
+&lt;a href="#dependency" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>In some instances, you might need to strictly model the order in which some or all steps happen.
+For this, use &lt;em>segment dependancies&lt;/em>.&lt;/p>
+&lt;p>Segment dependencies become more important where steps might execute in parallel or dynamically.
+The dependency ensures nothing happens too early.&lt;/p>
+&lt;pre class="mermaid hx-mt-6">classDiagram
+baking ..> mixing : has execution dependency on
+baking ..> pre-heating : has execution dependency on&lt;/pre></description></item></channel></rss>
