@@ -38,9 +38,9 @@ alt="Role-based equipment hierarchy" width="65%">
 &lt;p>Your model can be explicit about the equipment&amp;rsquo;s position in the hierarchy through the &lt;code>equipmentLevel&lt;/code> attribute.&lt;/p>
 &lt;pre class="mermaid hx-mt-6">classDiagram
 class equipment {
-+ id = "JF.SF.PA.PackL4.Capper"
-+ description: "Capper line 4"
-+ equipmentLevel = "workUnit"
+id: "JF.SF.PA.PackL4.Capper"
+description: "Capper line 4"
+equipmentLevel: "workUnit"
 }&lt;/pre>&lt;p>Note that the lowest two levels distinguish equipment that has a storage role from equipment that has a production role.&lt;/p>
 &lt;p>When equipment has a production role, that role typically is scoped to the execution of an order or collection of orders.
 For example, in our fictional juice factory, equipment roles include:&lt;/p>
