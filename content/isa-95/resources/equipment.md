@@ -62,9 +62,9 @@ Your model can be explicit about the equipment's position in the hierarchy throu
 ```mermaid
 classDiagram
 class equipment {
-+ id = "JF.SF.PA.PackL4.Capper"
-+ description: "Capper line 4"
-+ equipmentLevel = "workUnit"
+id: "JF.SF.PA.PackL4.Capper"
+description: "Capper line 4"
+equipmentLevel: "workUnit"
 }
 
 ```
