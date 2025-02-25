@@ -129,37 +129,62 @@ the pallet `PBJ.1000.1` might be assembled from a set of packed juice cases.
 Each case might be modelled as a sublot with a unique ID, such as `PBJ.1000.1.1`.
 
 
-## Has values and properties {#material-properties}
+## Has material properties
 
-Material lots and sublots can have _properties_,
-and these properties may have values.
-If the property is common across the material definition that defines the lot,
-you can model your material properties so that they _map to_
-the corresponding _material definition properties_.
+Material can have _properties_, or characteristics that describe some aspect of its implementation. 
+You can set material definitions at the level of the class, definition, or lot.
+
+If a material class or definition has members, then all members _inherit_ the properties associated with its defining entity.
+If using class or definition properties, you can also set a default value to be inherited by its members.
+
+For example, the `juices` class has the property `sugarContent`.
+The material definition `Cosmic Blue Juice` is a member of this class, and thus it inherits the `sugarContent` property.
+The `Cosmic Blue Juice` product has a defined standard value for its `sugarContent`, `100 grams`.
+The material lot `CBJ.Pallet1` is a pallet of Cosmic Blue Juice.
+This lot inherits the `sugarContent` property from the definition that it belongs to, and its value might deviate from the default value of its definition.
 
 ```mermaid
----
-title: 
----
-
 classDiagram
-class lot {
-  sugarContent=10g
+class materialClass{
+  id: juices
 }
-class `juice definition` {
- sugarContent
- }
+class materialDefinition{
+  id: Cosmic blue juice
+}
 
-lot ..> `juice definition` :maps to
+class materialLot{
+  id: Cosmic blue juice, pallet 1
+}
+
+
+class materialLotProperty{
+   id: cbj.1.sugarContent,
+   UnitOfMeasure: g,
+   value: 99.5
+}
+class materialDefinitionProperty{
+   id: cbj.sugarContent,
+   value: 100
+   UnitOfMeasure: g,
+}
+class materialClassProperty{
+   id: sugarContent,
+   UnitOfMeasure: g,
+}
+
+materialClass *--> materialClassProperty :has property of
+materialDefinition *--> materialDefinitionProperty :has property of
+materialLot *--> materialLotProperty :has value of
+materialLot *--> materialDefinition :defined by
+materialDefinition *--> materialClass :defined by
+materialLotProperty *--> materialDefinitionProperty :maps to
+materialDefinitionProperty *--> materialClassProperty :maps to
+
+
 ```
-  
-
-Class and definition properties are abstract and therefore don't have values.
-The lot, on the other hand, is real, so it has a value.
-So the `Sweeteners` class, the `Cosmic Blue Juice` definition, and the `PBJ.1000.1` lot all might have a `sugarContent` property, but only the lot can have an actual value for this property, such as `100 grams`.
 
 
-## Properties contain properties
+### Properties contain properties
 
 ```mermaid
 classDiagram
