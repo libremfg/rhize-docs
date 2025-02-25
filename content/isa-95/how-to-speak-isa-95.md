@@ -163,6 +163,7 @@ Important equipment models include the following:
 - **Equipment Properties.** Attributes of an equipment or equipment class. For example, a property of an compressor might be `rotation_speed`.
 
 Relationships between equipment are organized according to the role-based equipment hierarchy and, optionally, the hierarchy scope.
+To learn more, read the Rhize guide to [Equipment relationships]{{< relref "resources/equipment" >}}.
 
 #### Material
 
@@ -187,7 +188,7 @@ Import material models include the following:
 For example, a material lot might be a pallet of sugar from a supplier, and the sublot might be the individual sugar bags.
 
    Lots can have parent/child relationships to express material compositions.
-   The composition could be reversible, as in a machine assembled from interchangeable parts, or permanent, as in the case of a processes that involve one-way chemical transformations.
+   To learn more, read the Rhize guide to [Material relationships]{{< relref "resources/material" >}}.
 
 - **Material Actual.** A material actual is the quantity of material in a job that is used, consumed, marked as scrap, and so on.
 - **Material properties.** Properties of material that are relevant to the production process, for example, `meltingPoint` or `containsLactose`.
