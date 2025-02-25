@@ -169,8 +169,12 @@ classDiagram
 equipment *--> `equipment property` :has values of
 ```
 
-For example, the `Packaging line` work center has properties for `State`, which reports whether the center is active or not.
-The work units that store raw material all have `allowedMaterialClass` property, which specifies what material can be stored.
+For example, the `Packaging line` work center has the properties:
+- `State`, which reports whether the center is active or not.
+- `infeed`, the number of empty containers at the beginning of the line
+- `outfeed`, the number of filled containers at the end of the line
+
+The value of these properties can used to calculate metrics or trigger workflows.
 
 ### Equipment properties can contain properties
 
