@@ -744,8 +744,13 @@ title="Copy code"
 &lt;a href="#equipment-can-have-properties" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Properties are &lt;em>key value&lt;/em> pairs that report some permanent or temporary condition of an object.
 Equipment can have 0 or many properties.&lt;/p>
 &lt;pre class="mermaid hx-mt-6">classDiagram
-equipment *--> `equipment property` :has values of&lt;/pre>&lt;p>For example, the &lt;code>Packaging line&lt;/code> work center has properties for &lt;code>State&lt;/code>, which reports whether the center is active or not.
-The work units that store raw material all have &lt;code>allowedMaterialClass&lt;/code> property, which specifies what material can be stored.&lt;/p>
+equipment *--> `equipment property` :has values of&lt;/pre>&lt;p>For example, the &lt;code>Packaging line&lt;/code> work center has the properties:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>State&lt;/code>, which reports whether the center is active or not.&lt;/li>
+&lt;li>&lt;code>infeed&lt;/code>, the number of empty containers at the beginning of the line&lt;/li>
+&lt;li>&lt;code>outfeed&lt;/code>, the number of filled containers at the end of the line&lt;/li>
+&lt;/ul>
+&lt;p>The value of these properties can used to calculate metrics or trigger workflows.&lt;/p>
 &lt;h3>Equipment properties can contain properties&lt;span class="hx-absolute -hx-mt-20" id="equipment-properties-can-contain-properties">&lt;/span>
 &lt;a href="#equipment-properties-can-contain-properties" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A property itself can have a composition of properties.
 For example, a unit might have the &lt;code>dimension&lt;/code> property that contains subproperties of &lt;code>width&lt;/code> and &lt;code>height&lt;/code>.&lt;/p>
