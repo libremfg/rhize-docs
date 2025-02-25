@@ -965,27 +965,48 @@ class `orange`
 For example,
 the pallet &lt;code>PBJ.1000.1&lt;/code> might be assembled from a set of packed juice cases.
 Each case might be modelled as a sublot with a unique ID, such as &lt;code>PBJ.1000.1.1&lt;/code>.&lt;/p>
-&lt;h2>Has values and properties&lt;span class="hx-absolute -hx-mt-20" id="material-properties">&lt;/span>
-&lt;a href="#material-properties" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Material lots and sublots can have &lt;em>properties&lt;/em>,
-and these properties may have values.
-If the property is common across the material definition that defines the lot,
-you can model your material properties so that they &lt;em>map to&lt;/em>
-the corresponding &lt;em>material definition properties&lt;/em>.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">---
-title:
----
-classDiagram
-class lot {
-sugarContent=10g
+&lt;h2>Has material properties&lt;span class="hx-absolute -hx-mt-20" id="has-material-properties">&lt;/span>
+&lt;a href="#has-material-properties" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Material can have &lt;em>properties&lt;/em>, or characteristics that describe some aspect of its implementation.
+You can set material definitions at the level of the class, definition, or lot.&lt;/p>
+&lt;p>If a material class or definition has members, then all members &lt;em>inherit&lt;/em> the properties associated with its defining entity.
+If using class or definition properties, you can also set a default value to be inherited by its members.&lt;/p>
+&lt;p>For example, the &lt;code>juices&lt;/code> class has the property &lt;code>sugarContent&lt;/code>.
+The material definition &lt;code>Cosmic Blue Juice&lt;/code> is a member of this class, and thus it inherits the &lt;code>sugarContent&lt;/code> property.
+The &lt;code>Cosmic Blue Juice&lt;/code> product has a defined standard value for its &lt;code>sugarContent&lt;/code>, &lt;code>100 grams&lt;/code>.
+The material lot &lt;code>CBJ.Pallet1&lt;/code> is a pallet of Cosmic Blue Juice.
+This lot inherits the &lt;code>sugarContent&lt;/code> property from the definition that it belongs to, and its value might deviate from the default value of its definition.&lt;/p>
+&lt;pre class="mermaid hx-mt-6">classDiagram
+class materialClass{
+id: juices
 }
-class `juice definition` {
-sugarContent
+class materialDefinition{
+id: Cosmic blue juice
 }
-lot ..> `juice definition` :maps to&lt;/pre>&lt;p>Class and definition properties are abstract and therefore don&amp;rsquo;t have values.
-The lot, on the other hand, is real, so it has a value.
-So the &lt;code>Sweeteners&lt;/code> class, the &lt;code>Cosmic Blue Juice&lt;/code> definition, and the &lt;code>PBJ.1000.1&lt;/code> lot all might have a &lt;code>sugarContent&lt;/code> property, but only the lot can have an actual value for this property, such as &lt;code>100 grams&lt;/code>.&lt;/p>
-&lt;h2>Properties contain properties&lt;span class="hx-absolute -hx-mt-20" id="properties-contain-properties">&lt;/span>
-&lt;a href="#properties-contain-properties" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;pre class="mermaid hx-mt-6">classDiagram
+class materialLot{
+id: Cosmic blue juice, pallet 1
+}
+class materialLotProperty{
+id: cbj.1.sugarContent,
+UnitOfMeasure: g,
+value: 99.5
+}
+class materialDefinitionProperty{
+id: cbj.sugarContent,
+value: 100
+UnitOfMeasure: g,
+}
+class materialClassProperty{
+id: sugarContent,
+UnitOfMeasure: g,
+}
+materialClass *--> materialClassProperty :has property of
+materialDefinition *--> materialDefinitionProperty :has property of
+materialLot *--> materialLotProperty :has value of
+materialLot *--> materialDefinition :defined by
+materialDefinition *--> materialClass :defined by
+materialLotProperty *--> materialDefinitionProperty :maps to
+materialDefinitionProperty *--> materialClassProperty :maps to&lt;/pre>&lt;h3>Properties contain properties&lt;span class="hx-absolute -hx-mt-20" id="properties-contain-properties">&lt;/span>
+&lt;a href="#properties-contain-properties" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;pre class="mermaid hx-mt-6">classDiagram
 flavor_profile *--> sweetness
 flavor_profile *--> umami
 flavor_profile *--> aciditiy&lt;/pre>&lt;p>As with equipment properties, all properties can contain properties.
