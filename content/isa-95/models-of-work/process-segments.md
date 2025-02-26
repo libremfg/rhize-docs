@@ -1,6 +1,8 @@
 ---
 title: Process segments
 description: Process segments represent shared steps in a process
+images:
+  - /images/og/graphic-rhize-process-segment-explanation.png
 ---
 
 A _process segment_ is a step in a process. 
