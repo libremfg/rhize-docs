@@ -2902,6 +2902,9 @@ This glossary is a reference of how Rhize defines terms used in this documentati
 &lt;dd>The scope of the exchanged information, such as a site or area, for which the information is relevant. The scope identifies associated instances of objects such as material, personnel, and equipment&lt;/dd>&lt;dt id="instance">Instance&lt;/dt>
 &lt;dd>An identifiable member of a manufacturing class, like a material or process segment, that can be tracked and scheduled&lt;/dd>&lt;dt id="iso-22400">ISO 22400&lt;/dt>
 &lt;dd>A standard on KPIs in manufacturing operations management.&lt;/dd>&lt;dt id="laboratory-information-management-system">Laboratory information management system (LIMS)&lt;/dt>
+&lt;dd>&lt;/dd>&lt;dt id="level-or-an-operation">Level (or an operation)&lt;/dt>
+&lt;dd>The degree of granularity necessary to discuss and exchange data for different purposes in the manufacturing operation.&lt;/dd>&lt;dt id="level-3">level 3&lt;/dt>
+&lt;dd>The perspective of the operation as viewed from the granularity of a manufacturing execution or operations management system. Above level 3 is business planning, and below level 3 is monitoring and acquisition.&lt;/dd>&lt;dt id="level-4">level 4&lt;/dt>
 &lt;dd>Software that tracks laboratory data, including samples, experiments, and workflows&lt;/dd>&lt;dt id="manufacturing-data-hub">Manufacturing data hub (MDH)&lt;/dt>
 &lt;dd>A centralized platform or infrastructure that serves as a hub for collecting, integrating, storing, and processing manufacturing data from various sources within an organization.&lt;/dd>&lt;dt id="manufacturing-execution-system">Manufacturing execution system (MES)&lt;/dt>
 &lt;dd>A system in a manufacturing process that tracks and documents the transformation of raw materials to finished goods&lt;/dd>&lt;dt id="material">Material&lt;/dt>

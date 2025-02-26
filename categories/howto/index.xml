@@ -36,7 +36,7 @@ alt="Diagram showing some examples of eBR data sources" width="75%">
 &lt;ul>
 &lt;li>&lt;strong>&lt;abbr title="Enterprise resource planning. Software to manage business processes. In Rhize, ERP activities usually are named &amp;#34;operations&amp;#34;, where lower-level activities are prefixed with &amp;#34;Work&amp;#34;.">ERP&lt;/abbr> documents:&lt;/strong> high-level operations documents. This might include information about planning and scheduling.&lt;/li>
 &lt;li>&lt;strong>&lt;abbr title="Manufacturing execution system. A system in a manufacturing process that tracks and documents the transformation of raw materials to finished goods">MES&lt;/abbr> data:&lt;/strong> granular process data, tracking objects such as the weight of individual material and the responses for different jobs.&lt;/li>
-&lt;li>&lt;strong>&lt;abbr title="Laboratory information management system. Software that tracks laboratory data, including samples, experiments, and workflows">LIMS&lt;/abbr> documents:&lt;/strong> information about the laboratory environment and testing samples&lt;/li>
+&lt;li>&lt;strong>&lt;abbr title="Laboratory information management system. ">LIMS&lt;/abbr> documents:&lt;/strong> information about the laboratory environment and testing samples&lt;/li>
 &lt;li>&lt;strong>Real-time event data:&lt;/strong> for example, data sent from OPC UA or MQTT servers&lt;/li>
 &lt;li>&lt;strong>Exceptions:&lt;/strong> Errors and alerts raised from the operator screen or automation system&lt;/li>
 &lt;/ul>
