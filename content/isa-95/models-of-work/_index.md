@@ -6,6 +6,6 @@ cascade:
   icon: clipboard-check
 ---
 
-ISA-95 provides ways to model work at different levels of granularity
+ISA-95 provides ways to model work at different levels of granularity.
 
 {{< card-list >}}
