@@ -4,8 +4,6 @@ description: ISA-95 provides ways to model work at different levels of granulari
 weight: 300
 cascade:
   icon: clipboard-check
-  sidebar:
-    exclude: true
 ---
 
 ISA-95 provides ways to model work at different levels of granularity
