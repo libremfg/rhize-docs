@@ -3,7 +3,7 @@
   grafana: "9.4.7"
   keycloak_postgres: "15.3.0"
   keycloak: "21.1.2"
-  loki: "3.4.2"
+  loki: "2.9.12"
   nats: "2.10.25"
   tempo: "2.7.1"
 - version: "3.0.3"
