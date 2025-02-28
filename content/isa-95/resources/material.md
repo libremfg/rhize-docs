@@ -19,10 +19,6 @@ the material model has more entities than equipment.
 {{< details title="Full diagram of abstract relationships" closed="true" >}}
 
 ```mermaid
----
-config:
-  layout: elk
----
 classDiagram
 `material sublot` o--> `material lot` :assembled from
 `material lot` o--> `material lot` :assembled from
