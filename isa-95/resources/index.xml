@@ -895,11 +895,7 @@ the material model has more entities than equipment.&lt;/p>
 &lt;strong class="hx-text-lg">Full diagram of abstract relationships&lt;/strong>
 &lt;/summary>
 &lt;div class="hx-p-2 hx-overflow-hidden">
-&lt;pre class="mermaid hx-mt-6">---
-config:
-layout: elk
----
-classDiagram
+&lt;pre class="mermaid hx-mt-6">classDiagram
 `material sublot` o--> `material lot` :assembled from
 `material lot` o--> `material lot` :assembled from
 `material definition` o--> `material definition` :assembled from
