@@ -1,0 +1,35 @@
+Admin:
+registry.gitlab.com/libremfg/frontend/libre-admin-ui:v3.1.0
+sha256:TBD
+
+BPMN Engine:
+registry.gitlab.com/libremfg/bpmn-engine:v3.1.0
+sha256:TBD
+
+BAAS:
+registry.gitlab.com/libremfg/baas:v3.1.0
+sha256:TBD
+
+Libre Core:
+registry.gitlab.com/libremfg/libre-core:v3.1.0
+sha256:TBD
+
+Libre Agent:
+registry.gitlab.com/libremfg/libre-agent:v3.1.0
+sha256:TBD
+
+Libre Audit:
+registry.gitlab.com/libremfg/libre-audit:v3.1.0
+sha256:TBD
+
+Libre Audit Postgres:
+registry.gitlab.com/libremfg/libre-audit/postgres:v3.1.0
+sha256:TBD
+
+Libre Keycloak Theme:
+registry.gitlab.com/libremfg/frontend/libre-keycloak-theme:v3.1.0
+sha256:a622c02be76e62059162c0c380b61066e4600a646067c3d4046d8a3fb358b5f1
+
+Libre Router Init:
+registry.gitlab.com/libremfg/libre-router-init:v3.1.0
+sha256:afaa3739d7753869bcf543467c096af9b7a53e4d648d180685027f0fc5210661
