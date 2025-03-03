@@ -12,7 +12,7 @@ menu:
   main:
     - name: Docs
       weight: 1
-      url: /introduction
+      url: /get-started/introduction
     - name: Learn ISA-95
       weight: 5
       url: /isa-95

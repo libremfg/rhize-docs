@@ -66,12 +66,12 @@ Rather, each pallet is a separate _lots_, and all these lots share the same mate
 ### Definitions are defined by classes
 
 If you need another level of abstraction, you can also categorize your material definitions by _material class_.
-Material classes provide a way to categorize material by function or shared [properties]({#material-properties}).
+Material classes provide a way to categorize material by function or shared [properties](#material-properties).
 For example, `The Juice Factory` has five juice definitions, all part of the class `Juices`.
 
 ```mermaid
 classDiagram
-namespace juices{
+namespace juices{jq '.links[] | select(.status == 404)' broken-links.json
 class `Nuclear Green Juice`
 class `Tropical Orange Juice`
 class `Cosmic blue juice`
