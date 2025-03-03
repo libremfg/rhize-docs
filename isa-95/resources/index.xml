@@ -929,10 +929,10 @@ Obviously, these pallets are not literally the same: otherwise they would just b
 Rather, each pallet is a separate &lt;em>lots&lt;/em>, and all these lots share the same material definition.&lt;/p>
 &lt;h3>Definitions are defined by classes&lt;span class="hx-absolute -hx-mt-20" id="definitions-are-defined-by-classes">&lt;/span>
 &lt;a href="#definitions-are-defined-by-classes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>If you need another level of abstraction, you can also categorize your material definitions by &lt;em>material class&lt;/em>.
-Material classes provide a way to categorize material by function or shared &lt;a href="%7b#material-properties%7d" >properties&lt;/a>.
+Material classes provide a way to categorize material by function or shared &lt;a href="#material-properties" >properties&lt;/a>.
 For example, &lt;code>The Juice Factory&lt;/code> has five juice definitions, all part of the class &lt;code>Juices&lt;/code>.&lt;/p>
 &lt;pre class="mermaid hx-mt-6">classDiagram
-namespace juices{
+namespace juices{jq '.links[] | select(.status == 404)' broken-links.json
 class `Nuclear Green Juice`
 class `Tropical Orange Juice`
 class `Cosmic blue juice`
