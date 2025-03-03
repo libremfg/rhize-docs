@@ -32,6 +32,7 @@ Common values that are changed include:
 ## Get client secrets.
 
 1. Go to Keycloak and get the secrets for each client you've created.
+
 1. Create Kubernetes secrets for each service. You can either create a secret file, or pass raw data from the command line.
 
    {{< callout type="caution" >}}
@@ -43,14 +44,12 @@ Common values that are changed include:
 
    ```bash
    kubectl create secret generic {{< param application_name >}}-client-secrets \
-   -n {{< param application_name >}} --from-literal=dashboard=<USER \
-   --from-literal={{< param application_name >}}Agent=123 \
-   --from-literal={{< param application_name >}}Audit=123 \
-   --from-literal={{< param application_name >}}Baas=KYbMHlRLhXwiDNFuDCl3qtPj1cNdeMSl \
-   --from-literal={{< param application_name >}}BPMN=123 \
-   --from-literal={{< param application_name >}}Core=123 \
-   --from-literal={{< param application_name >}}UI=123 \
-   --from-literal=router=123
+     -n {{< param application_name >}} \
+     --from-literal=dashboard=G4hoxIL37F5S9DQgeDYGQejcJ6oJhOPA \
+     --from-literal={{< param application_name >}}Workflow=GTy1x64U0IHAUTWizugEAnN47a9kWgX8 \
+     --from-literal={{< param application_name >}}ISA95=Yvtx1tZWCPFayvDCzHTTInEz9gnuLyLc \
+     --from-literal={{< param application_name >}}Baas=KYbMHlRLhXwiDNFuDCl3qtPj1cNdeMSl \
+     --from-literal={{< param application_name >}}UI=54yUQqmvgcxoKPaIbPZTQGlEs8Xu2qH0
    ```
 
    As you install services through Helm, their respective YAML files reference these secrets.
@@ -62,7 +61,7 @@ You must add the helm chart repository for Rhize.
 1. Add the Helm Chart Repository
 
     ```bash
-    helm repo add libre https://gitlab.com/api/v4/projects/42214456/packages/helm/stable
+    helm repo add {{< param application_name >}} https://gitlab.com/api/v4/projects/42214456/packages/helm/stable
     ```
 
 ## Install and add roles for the DB {#db}
@@ -87,13 +86,12 @@ If enabling the Audit Trail, also the include the configuration in [Enable chang
 
     All statuses should be `RUNNING`.
 
-
 1. Return to the Keycloak UI and add all `{{< param application_name >}}` roles to the admin group.
 
 1. Proxy the `http:8080` port on `{{< param application_name >}}-baas-dgraph-alpha`.
 
    ```
-   kubectl port-forward -n libre pod/baas-baas-alpha-0 8080:8080
+   kubectl port-forward -n {{< param application_name >}} pod/baas-baas-alpha-0 8080:8080
    ```
 
 1. Get a token using the credentials. With `curl`, it looks like this:
@@ -148,22 +146,26 @@ helm install <service_name> \
 For the full configuration options,
 read the official [Helm `install` reference](https://helm.sh/docs/helm/helm_install/).
 
-<!-- vale off -->
-### NATS {#nats}
-<!-- vale on -->
+### Redpanda
 
+Rhize uses Redpanda to buffer requests to Restate and connect to Agent.
 
-[NATS](https://nats.io) is the message broker that powers Rhize's event-driven architecture.
+Install Redpanda with these steps:
 
-Install NATS with these steps:
+1. If it doesn't exist, add the Redpanda repository:
 
-1. Modify the NATS Helm file with your code editor. Edit any necessary overrides.
+    ```bash
+    helm repo add redpanda https://charts.redpanda.com
+    helm repo update
+    ```
+
+1. Modify the Helm file as needed.
+
 1. Install with Helm:
 
+    ```bash
+    helm install redpanda -f redpanda.yaml redpanda/redpanda -n {{< param application_name >}}
     ```
-    helm install nats -f nats.yaml {{< param application_name >}}/nats -n {{< param application_name >}}
-    ```
-
 
 ### Tempo
 
@@ -178,61 +180,115 @@ Install Tempo with these steps:
     ```
 
 1. Modify the Helm file as needed.
+
 1. Install with Helm:
 
     ```bash
     helm install tempo -f tempo.yaml grafana/tempo -n {{< param application_name >}}
     ```
 
-### Core
+> Note: Depending on your configuration you may need to run Tempo in distributed mode. When installing with Helm instead of using `grafana/tempo` instead do `grafana/tempo-distributed`.
 
-The {{< param brand_name >}} Core service is the custom edge agent that monitors data sources, like OPC-UA servers, and publishes and subscribes topics to NATS.
+### Restate
 
-> **Requirements**: Core requires the [{{< param db >}}](#db) and [NATS](#nats) services.
+Install Restate with these steps:
 
-Install the Core agent with these steps:
+1. Modify the Helm file as needed.
 
-1. In the `core.yaml` Helm file, edit the `clientSecret` and `password` with settings from the Keycloak client.
-1. Override any other values, as needed.
 1. Install with Helm:
 
     ```bash
-    helm install core -f core.yaml {{< param application_name >}}/core -n {{< param application_name >}}
+    helm install restate -f restate.yaml oci://ghcr.io/restatedev/restate-helm -n {{< param application_name >}}
     ```
 
-### BPMN
+The port for Restate will need to be proxied in order to register certain services with it.
 
-The BPMN service is the custom engine Rhize uses to process low-code workflows modeled in the BPMN UI.
+   ```bash
+   kubectl port-forward -n {{< param application_name >}} pod/restate-0 9070:9070
+   ```
 
-> **Requirements**: The BPMN service requires the [{{< param db >}}](#db), [NATS](#nats), and [Tempo](#tempo) services.
+### Workflow
 
-Install the BPMN engine with these steps:
+The Workflow service is the custom engine Rhize uses to process low-code workflows modeled in the Workflow UI.
 
-1. Open `bpmn.yaml` Update the `clientSecret` and `password` for your BPMN Keycloak credentials.
-1. Modify any other values, as needed.
+> **Requirements**: The Workflow service requires the [{{< param db >}}](#db), [Restate](#restate), and [Tempo](#tempo) services.
+
+Install Workflow with these steps:
+
+1. Modify the Helm file as needed.
+
 1. Install with Helm:
 
    ```bash
-   helm install bpmn -f bpmn.yaml {{< param application_name >}}/bpmn -n {{< param application_name >}}
+   helm install workflow -f workflow.yaml {{< param application_name >}}/workflow -n {{< param application_name >}}
    ```
 
-### Router
+1. Workflow should register with Restate when it starts up. If it doesn't then it can be registered it by running the following:
 
-Rhize uses the [Apollo router](https://www.apollographql.com/docs/router) to unite queries for different services in a single endpoint.
+    ```bash
+    curl --location 'http://localhost:9070/deployments' \
+      --header 'Content-Type: application/json' \
+      --data '{"uri":"http://workflow.{{< param application_name >}}.svc.cluster.local:29080", "force":true}'
+    ```
 
-> **Requirements:** Router requires the [GraphDB](#db), [BPMN](#bpmn), and [Core](#core) services.
+### Typescript Host Service
 
-Install the router with these steps:
+Install Typescript Host Service with these steps:
 
-1. Modify the router Helm YAML file as needed.
+1. Modify the Helm file as needed.
+
+1. Install with Helm:
+
+   ```bash
+   helm install typescript-host-service -f typescript-host-service.yaml {{< param application_name >}}/typescript-host-service -n {{< param application_name >}}
+   ```
+
+1. Register with Restate
+
+    ```bash
+    curl --location 'http://localhost:9070/deployments' \
+      --header 'Content-Type: application/json' \
+      --data '{"uri":"http://typescript-host-service.{{< param application_name >}}.svc.cluster.local:9081", "force":true}'
+    ```
+
+### QuestDB
+
+Install QuestDB with these steps:
+
+1. If it doesn't exist, add the Redpanda repository:
+
+    ```bash
+    helm repo add questdb https://helm.questdb.io/
+    helm repo update
+    ```
+
+1. Modify the Helm file as needed.
+
 1. Install with Helm:
 
     ```bash
-    helm install router -f router.yaml {{< param application_name >}}/router -n {{< param application_name >}}
+    helm install questdb -f questdb.yaml questdb/questdb -n {{< param application_name >}}
     ```
 
-If the install is successful, the Router explorer is available on its
-[default port]({{< ref "default-ports" >}}).
+### ISA 95
+
+Install ISA 95 with these steps:
+
+1. Modify the Helm file as needed.
+
+1. Install with Helm:
+
+   ```bash
+   helm install isa95 -f isa95.yaml {{< param application_name >}}/isa95 -n {{< param application_name >}}
+   ```
+
+1. ISA 95 should register with Restate when it starts up. If it doesn't then it can be registered it by running the following:
+
+    ```bash
+    curl --location 'http://localhost:9070/deployments' \
+      --header 'Content-Type: application/json' \
+      --data '{"uri":"http://isa95.{{< param application_name >}}.svc.cluster.local:29082", "force":true}'
+    ```
 
 ### Grafana
 
@@ -240,12 +296,13 @@ Rhize uses [Grafana](https://grafana.com) for its dashboard to monitor real time
 
 Install Grafana with these steps:
 
-1. Modify the Grafana Helm YAML file as needed.
-
 1. Add the Helm repository
     ```bash
     helm repo add grafana https://grafana.github.io/helm-charts
+    helm repo update
     ```
+
+1. Modify the Grafana Helm YAML file as needed.
 
 1. Install with Helm:
 
@@ -256,44 +313,49 @@ Install Grafana with these steps:
 If the install is successful, the Grafana service is available on its
 [default port]({{< ref "default-ports" >}}).
 
-### Agent
+## Install Admin UI
 
 The Rhize agent bridges your plant processes with the Rhize data hub.
-It collects data emitted from the plant and publishes it to the NATS message broker.
 
-> **Requirements:** Agent requires the [Graph DB](#db), [Nats](#nats), and [Tempo](#tempo) services.
+The Admin UI is the graphical frontend to [handle events]({{< relref "/how-to/bpmn" >}}) and [define work masters]({{< relref "/how-to/model" >}}).
 
-Install the agent with these steps:
-
-1. Modify the Agent Helm file as needed.
-2. Install with Helm:
-
-    ```bash
-    helm install agent -f agent.yaml libre/agent -n {{< param application_name >}}
-    ```
-
-## Install UI
-
-The UI is the graphical frontend to [handle events]({{< relref "/how-to/bpmn" >}}) and [define work masters]({{< relref "/how-to/model" >}}).
-
-> **Requirements:** The UI requires the [GraphDB](#db), [BPMN](#bpmn), [Core](#core), and [Router](#router) services.
+> **Requirements:** The Admin UI requires the [Workflow](#workflow) services.
 
 After installing all other services, install the UI with these steps:
 
-1. Forward the port from the Router API.
-1. Open the UI Helm file. Update the `envVars` object with settings from the UI Keycloak client.
-1. Modify any other values, as needed.
+1. Modify the UI Helm file as needed.
+
 1. Install with Helm:
 
     ```bash
-    helm install ui -f ui-overrides.yaml {{< param application_name >}}/admin-ui -n {{< param application_name >}}
+    helm install admin-ui -f admin-ui.yaml {{< param application_name >}}/admin-ui -n {{< param application_name >}}
     ```
 
 If the install is successful, the UI is available on its
 [default port]({{< ref "default-ports" >}}).
 
-## Optional: Audit Trail service
+## Optional: Agent
 
+Install Agent Service with these steps:
+
+1. Modify the Agent Helm file as needed.
+
+1. In Rhize add in a Data Source for Agent to interact with:
+    - In the lefthand menu open `Master Data` > `Data Sources` > `+ Create Data Source`
+    - Input a name for the Data Source.
+    - Add a Connection String and Create.
+    - Add any relevant Topics.
+    - Activate the Data Source.
+
+1. Install with Helm:
+
+    ```bash
+    helm install agent -f agent.yaml {{< param application_name >}}/agent -n {{< param application_name >}}
+    ```
+
+Agent can be verified to be working by checking in Redpanda's UI.
+
+## Optional: Audit Trail service
 
 The Rhize [Audit]({{< relref "/how-to/audit" >}}) service provides an audit trail for database changes to install. The Audit service uses PostgreSQL for storage.
 
@@ -301,13 +363,13 @@ Install Audit Service with these steps:
 
 1. Modify the Audit trail Helm YAML file. It is *recommended* to change the PostgreSQL username and password values.
 
-2. Install with Helm:
+1. Install with Helm:
 
     ```bash
     helm install audit -f audit.yaml libre/audit -n {{< param application_name >}}
     ```
 
-3. Create partition tables in the PostgreSQL database:
+1. Create partition tables in the PostgreSQL database:
 
     ```sql
     create table public.audit_log_partition( like public.audit_log );
@@ -332,122 +394,17 @@ alpha:
     replicas: 1
 ```
 
-### Enable Audit subgraph
+## Optional: KPI
 
-To use the Audit trail in the UI, you must add the Audit trail subgraph into the router. To enable router to use and compose the subgraph:
+Install KPI with these steps:
 
-1. Update the Router Helm chart overrides, `router.yaml`, to include:
+1. Modify the Helm file as needed.
 
-```yaml
-# Add Audit to the router subgraph url override
-router:
-  configuration:
-    override_subgraph_url:
-      AUDIT: http://audit:8084/query
+1. Install with Helm:
 
-# If supergraph compose is enabled
-supergraphCompose:
-  supergraphConfig:
-    subgraphs:
-    AUDIT:
-      routing_url: http://audit:8084/query
-      schema:
-        subgraph_url: http://audit:8084/query
-```
-
-2. Update the Router deployment
-
-```shell
-$ helm upgrade --install router -f router.yaml {{< param application_name >}}/router -n {{< param application_name >}}
-```
-
-## Optional: calendar service
-
-The [{{< param brand_name >}} calendar service]({{< relref "/how-to/work-calendars">}}) monitors work calendar definitions and creates work calendar entries in real time, both in the [Graph](#db) and time-series databases.
-
-> **Requirements:** The calendar service requires the [GraphDB](#db), [Keycloak](#keycloak), and [NATS](#nats) services.
-
-{{% callout type="info" %}}
-The work calendar requires a time-series DB installed such as [InfluxDB](https://influxdata.com/), [QuestDB](https://questdb.io) or [TimescaleDB](https://www.timescale.com/). The following instructions are specific to QuestDB.
-{{% /callout %}}
-
-Install the calendar service with these steps:
-
-1. Create tables in the time series. For example:
-
-
-    ```sql
-    CREATE TABLE IF NOT EXISTS PSDT_POT(
-      EquipmentId SYMBOL,
-      EquipmentVersion STRING,
-      WorkCalendarId STRING,
-      WorkCalendarIid STRING,
-      WorkCalendarDefinitionId STRING,
-      WorkCalendarDefinitionEntryId STRING,
-      WorkCalendarDefinitionEntryIid STRING,
-      WorkCalendarEntryId STRING,
-      WorkCalendarEntryIid SYMBOL,
-      HierarchyScopeId STRING,
-      EntryType STRING,
-      ISO22400CalendarState STRING,
-      isDeleted boolean,
-      updatedAt TIMESTAMP,
-      time TIMESTAMP,
-      lockerCount INT,
-      lockers STRING
-    ) TIMESTAMP(time) PARTITION BY month
-    DEDUP UPSERT KEYS(time, EquipmentId, WorkCalendarEntryIid);
-
-    CREATE TABLE IF NOT EXISTS PDOT_PBT(
-      EquipmentId SYMBOL,
-      EquipmentVersion STRING,
-      WorkCalendarId STRING,
-      WorkCalendarIid STRING,
-      WorkCalendarDefinitionId STRING,
-      WorkCalendarDefinitionEntryId STRING,
-      WorkCalendarDefinitionEntryIid STRING,
-      WorkCalendarEntryId STRING,
-      WorkCalendarEntryIid SYMBOL,
-      HierarchyScopeId STRING,
-      EntryType STRING,
-      ISO22400CalendarState STRING,
-      isDeleted boolean,
-      updatedAt TIMESTAMP,
-      time TIMESTAMP,
-      lockerCount INT,
-      lockers STRING
-    ) TIMESTAMP(time) PARTITION BY month
-    DEDUP UPSERT KEYS(time, EquipmentId, WorkCalendarEntryIid);
-
-    CREATE TABLE IF NOT EXISTS Calendar_AdHoc(
-      EquipmentId SYMBOL,
-      EquipmentVersion STRING,
-      WorkCalendarId STRING,
-      WorkCalendarIid STRING,
-      WorkCalendarDefinitionId STRING,
-      WorkCalendarDefinitionEntryId STRING,
-      WorkCalendarDefinitionEntryIid STRING,
-      WorkCalendarEntryId STRING,
-      WorkCalendarEntryIid SYMBOL,
-      HierarchyScopeId STRING,
-      EntryType STRING,
-      ISO22400CalendarState STRING,
-      isDeleted boolean,
-      updatedAt TIMESTAMP,
-      time TIMESTAMP,
-      lockerCount INT,
-      lockers STRING
-    ) TIMESTAMP(time) PARTITION BY month
-    DEDUP UPSERT KEYS(time, EquipmentId, WorkCalendarEntryIid);
-    ```
-
-1. Modify the calendar YAML file as needed.
-
-1. Deploy with helm 
-
-    ```bash
-    helm install calendar-service -f calendar-service.yaml {{< param application_name >}}/calendar-service -n {{< param application_name >}}
-    ```
+   ```bash
+   helm install kpi -f kpi.yaml {{< param application_name >}}/kpi -n {{< param application_name >}}
+   ```
 
 ## Optional: change service configuration
 
