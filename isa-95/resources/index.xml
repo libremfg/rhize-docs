@@ -932,7 +932,7 @@ Rather, each pallet is a separate &lt;em>lots&lt;/em>, and all these lots share 
 Material classes provide a way to categorize material by function or shared &lt;a href="#material-properties" >properties&lt;/a>.
 For example, &lt;code>The Juice Factory&lt;/code> has five juice definitions, all part of the class &lt;code>Juices&lt;/code>.&lt;/p>
 &lt;pre class="mermaid hx-mt-6">classDiagram
-namespace juices
+namespace juices {
 class `Nuclear Green Juice`
 class `Tropical Orange Juice`
 class `Cosmic blue juice`
