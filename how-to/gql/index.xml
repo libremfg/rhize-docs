@@ -25,7 +25,7 @@ Be sure to preface the value with the word &lt;code>Bearer &lt;/code>:&lt;/p>
 &lt;figure>&lt;img src="https://docs.rhize.com/images/screenshot-rhize-apollo-auth-headers.png"
 alt="Example of how it looks in Apollo explorer" width="50%">
 &lt;/figure>
-&lt;p>For an overview of how Rhize handles token exchange, read &lt;a href="https://docs.rhize.com/explanations/about-openidconnect/" >About OpenID connect&lt;/a>.&lt;/p>
+&lt;p>For an overview of how Rhize handles token exchange, read &lt;a href="https://docs.rhize.com/explanations/about-openidconnect" >About OpenID connect&lt;/a>.&lt;/p>
 &lt;h3>Request body&lt;span class="hx-absolute -hx-mt-20" id="request-body">&lt;/span>
 &lt;a href="#request-body" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>By default, all GraphQL operations have the following structure:&lt;/p>
 &lt;ol>

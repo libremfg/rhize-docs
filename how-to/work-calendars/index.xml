@@ -89,7 +89,7 @@ The planned busy time is locked out, since another active entry type has already
 For a technical overview of how this locking and unlocking of states works, read about the &lt;a href="https://en.wikipedia.org/wiki/Semaphore_%28programming%29" target="_blank" rel="noopener">Semaphore pattern&lt;/a> in computer science.&lt;/p></description></item><item><title>Create work calendars</title><link>https://docs.rhize.com/how-to/work-calendars/create-work-calendar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/work-calendars/create-work-calendar/</guid><description>
 &lt;p>This guide shows you how to create a work calendar using the Rhize GraphQL API.
 As a calendar has associations with multiple other entities,
-the process involves a series of &lt;a href="https://docs.rhize.com/how-to/gql/mutate/" >mutations&lt;/a> to create
+he process involves a series of &lt;a href="https://docs.rhize.com/how-to/gql/mutate/" >mutations&lt;/a> to create
 associated data.&lt;/p>
 &lt;p>To learn how work calendars work,
 read &lt;a href="https://docs.rhize.com/how-to/work-calendars/about-calendars-and-overrides/" >About work calendars&lt;/a>.&lt;/p>

@@ -6,9 +6,9 @@ All these models are based on the ISA-95 standard, mostly from &lt;a href="https
 &lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
 &lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
 &lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">&lt;ul>
-&lt;li>For an introduction to the language of ISA-95, read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/" >How to speak ISA-95&lt;/a>&lt;/li>
+&lt;li>For an introduction to the language of ISA-95, read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95" >How to speak ISA-95&lt;/a>&lt;/li>
 &lt;li>For visual examples of how some of these models relate,
-look at our page of &lt;a href="https://docs.rhize.com/isa-95/isa-95-diagrams/" >ISA-95 Diagrams&lt;/a>.&lt;/li>
+look at our page of &lt;a href="isa-95/isa-95-diagrams" >ISA-95 Diagrams&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;/div>
 &lt;/div>

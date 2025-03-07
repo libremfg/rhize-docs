@@ -712,7 +712,7 @@ title="Copy code"
 &lt;li>Test the &lt;a href="https://docs.rhize.com/deploy/restore/binary/" >Restore Graph Database From S3&lt;/a> procedure to ensure you can recover data from Amazon S3 in case of an emergency.&lt;/li>
 &lt;li>To back up other Rhize services, read how to backup &lt;a href="https://docs.rhize.com/deploy/backup/grafana/" >Grafana&lt;/a>.&lt;/li>
 &lt;/ul></description></item><item><title>Archive the PostgreSQL Audit trail</title><link>https://docs.rhize.com/deploy/maintain/audit/</link><pubDate>Tue, 26 Mar 2024 11:20:56 -0300</pubDate><guid>https://docs.rhize.com/deploy/maintain/audit/</guid><description>
-&lt;p>The &lt;a href="https://docs.rhize.com/how-to/audit/" >audit trial&lt;/a> can generate a high volume of data, so it is a good practice to periodically &lt;em>archive&lt;/em> portions of it.
+&lt;p>The &lt;a href="../how-to/audit" >audit trail&lt;/a> can generate a high volume of data, so it is a good practice to periodically &lt;em>archive&lt;/em> portions of it.
 An archive separates a portion of the data from the database and keeps it for long-term storage. This process involves the use of PostgreSQL &lt;a href="https://www.postgresql.org/docs/current/ddl-partitioning.html" target="_blank" rel="noopener">Table Partitions&lt;/a>.&lt;/p>
 &lt;p>Archiving a partition improves query speed for current data, while providing a cost-effective way to store older.&lt;/p>
 &lt;h2>Prerequisites&lt;span class="hx-absolute -hx-mt-20" id="prerequisites">&lt;/span>
@@ -829,10 +829,10 @@ title="Copy code"
 &lt;a href="#next-steps" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>For full backups or Rhize services, read how to back up:
 &lt;ul>
-&lt;li>&lt;a href="https://docs.rhize.com/deploy/backup/keycloak/" >Keycloak&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://docs.rhize.com/deploy/backup/audit/" >The Audit trail&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://docs.rhize.com/deploy/backup/grafana/" >Grafana&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://docs.rhize.com/deploy/backup/graphdb/" >The Graph Database&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../backup/keycloak" >Keycloak&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../backup/audit" >The Audit trail&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../backup/grafana" >Grafana&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../backup/graphdb" >The Graph Database&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul></description></item><item><title>Overview: the Rhize API</title><link>https://docs.rhize.com/how-to/gql/call-the-graphql-api/</link><pubDate>Wed, 22 Nov 2023 09:43:30 -0300</pubDate><guid>https://docs.rhize.com/how-to/gql/call-the-graphql-api/</guid><description>
@@ -862,7 +862,7 @@ Be sure to preface the value with the word &lt;code>Bearer &lt;/code>:&lt;/p>
 &lt;figure>&lt;img src="https://docs.rhize.com/images/screenshot-rhize-apollo-auth-headers.png"
 alt="Example of how it looks in Apollo explorer" width="50%">
 &lt;/figure>
-&lt;p>For an overview of how Rhize handles token exchange, read &lt;a href="https://docs.rhize.com/explanations/about-openidconnect/" >About OpenID connect&lt;/a>.&lt;/p>
+&lt;p>For an overview of how Rhize handles token exchange, read &lt;a href="https://docs.rhize.com/explanations/about-openidconnect" >About OpenID connect&lt;/a>.&lt;/p>
 &lt;h3>Request body&lt;span class="hx-absolute -hx-mt-20" id="request-body">&lt;/span>
 &lt;a href="#request-body" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>By default, all GraphQL operations have the following structure:&lt;/p>
 &lt;ol>
@@ -1640,7 +1640,8 @@ title="Copy code"
 &lt;p>Rhize uses &lt;a href="https://keycloak.org" target="_blank" rel="noopener">Keycloak&lt;/a> as an OpenID provider.
 In your cluster, the Keycloak server to authenticate users, services, and manage Role-based access controls.&lt;/p>
 &lt;p>This topic describes how to set up Keycloak in your Rhize cluster.
-For a conceptual overview of the authentication flow, read &lt;a href="https://docs.rhize.com/explanations/about-openidconnect/" >About OpenID Connect&lt;/a>&lt;/p>
+For a conceptual overview of the authentication flow,
+read &lt;a href="https://docs.rhize.com/explanations/about-openidconnect" >About OpenID Connect&lt;/a>&lt;/p>
 &lt;h2>Prerequisites&lt;span class="hx-absolute -hx-mt-20" id="prerequisites">&lt;/span>
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>First, ensure that you have followed the instructions from &lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes" >Set up Kubernetes&lt;/a>.
 All prerequisites for that step apply here.&lt;/p>
@@ -2127,7 +2128,7 @@ Rhize requires authorization for the database service.&lt;/p>
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>This topic assumes you have done the following:&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>&lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes" >Set up Kubernetes&lt;/a> and &lt;a href="https://docs.rhize.com/deploy/install/keycloak/" >Configured Keycloak&lt;/a>. All the prerequisites for those topics apply here.&lt;/p>
+&lt;p>&lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes/" >Set up Kubernetes&lt;/a> and &lt;a href="https://docs.rhize.com/deploy/install/keycloak/" >Configured Keycloak&lt;/a>. All the prerequisites for those topics apply here.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Configured load balancing for the following DNS records:&lt;/p>
