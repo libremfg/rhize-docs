@@ -71,7 +71,7 @@ For example, `The Juice Factory` has five juice definitions, all part of the cla
 
 ```mermaid
 classDiagram
-namespace juices
+namespace juices {
 class `Nuclear Green Juice`
 class `Tropical Orange Juice`
 class `Cosmic blue juice`
