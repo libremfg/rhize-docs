@@ -6,7 +6,7 @@ description: How to archive a partition of the Audit trail on your Rhize deploym
 weight: 100
 ---
 
-The [audit trial]({{< relref "/how-to/audit" >}}) can generate a high volume of data, so it is a good practice to periodically _archive_ portions of it.
+The [audit trail](../how-to/audit) can generate a high volume of data, so it is a good practice to periodically _archive_ portions of it.
 An archive separates a portion of the data from the database and keeps it for long-term storage. This process involves the use of PostgreSQL [Table Partitions](https://www.postgresql.org/docs/current/ddl-partitioning.html).
 
 Archiving a partition improves query speed for current data, while providing a cost-effective way to store older.
@@ -66,7 +66,7 @@ To archive the PostgreSQL Audit trail, follow these steps:
 ## Next Steps
 
 - For full backups or Rhize services, read how to back up:
-  - [Keycloak]({{< relref "/deploy/backup/keycloak" >}})
-  - [The Audit trail]({{< relref "/deploy/backup/audit" >}})
-  - [Grafana]({{< relref "/deploy/backup/grafana" >}})
-  - [The Graph Database]({{< relref "/deploy/backup/graphdb" >}})
+  - [Keycloak](../backup/keycloak)
+  - [The Audit trail](../backup/audit)
+  - [Grafana](../backup/grafana)
+  - [The Graph Database](../backup/graphdb)

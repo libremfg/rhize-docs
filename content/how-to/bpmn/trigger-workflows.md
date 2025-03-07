@@ -20,7 +20,7 @@ However, if the workflow uses the default blank start event, you must trigger it
 For example, an API trigger may originate from a custom frontend application or a developer's local machine.
 
 The Rhize API has two mutations to start workflows.
-Both must specify the workflow ID as an [argument in the request body]({{< relref "/how-to/gql/call-the-graphql-api/#request-body" >}}).
+Both must specify the workflow ID as an [argument in the request body]({{< relref "../gql/call-the-graphql-api/#request-body" >}}).
 Each run for a workflow returns a unique `ID` that you can use for debugging. 
 
 
@@ -72,7 +72,7 @@ The responses for these calls have two differences:
 
 The `customResponse` is a special variable to return data in the response to clients that run `createAndRunBPMNSync` operations.
 
-You can set the `customResponse` in any [element]({{< relref "/how-to/bpmn/bpmn-elements" >}}) that has an `Output` or `Input response` parameter.
+You can set the `customResponse` in any [element]({{< relref "./bpmn-elements" >}}) that has an `Output` or `Input response` parameter.
 It can use any data from the {{< abbr "process variable context" >}}, including variables added on the fly.
 
 Functionally, only the last value of the `customResponse` is returned to the client that sent the response.
@@ -115,13 +115,13 @@ If the `version` property is empty, Rhize runs the active version of the workflo
 
 ## Start from a message
 
-The [message start event]({{< relref "/how-to/bpmn/bpmn-elements#message-start-event" >}}) subscribes to a topic on the Rhize broker.
+The [message start event]({{< relref "./bpmn-elements#message-start-event" >}}) subscribes to a topic on the Rhize broker.
 Whenever a message is published to this topic, the workflow is triggered.
 The Rhize broker can receive messages published over MQTT, NATS, and OPC UA.
 
 For example, this workflow subscribes to the topic `material/stuff`.
 Whenever a message is published to the topic, it evaluates whether the quantity is in the correct threshold.
-If the quantity is correct, it uses the [mutation service task]({{< relref "/how-to/bpmn/bpmn-elements#graphql-mutation/" >}}) to add a material lot.
+If the quantity is correct, it uses the [mutation service task]({{< relref "./bpmn-elements#graphql-mutation/" >}}) to add a material lot.
 If incorrect, it sends an alert back to the broker.
 
 <!-- vale off -->
@@ -140,12 +140,12 @@ Note that, for a workflow to run from a message start event, the workflow **must
 Rule-based triggers subscribe to tag changes from a data source and trigger when the rule change condition is met.
 Typically, users choose this workflow trigger when they want to orchestrate processes originating from level-1 and level-2 systems.
 
-To add a data source and create a rule based trigger, refer to [Turn values into events]({{< relref "how-to/publish-subscribe/create-equipment-class-rule" >}}).
+To add a data source and create a rule based trigger, refer to [Turn values into events]({{< relref "../publish-subscribe/create-equipment-class-rule" >}}).
 
 ## Timer triggers
 
 Timer triggers run according to a configured time or interval.
 For example, a timer trigger may start a workflow each day, or once at a certain time.
 
-To use timer triggers, use the [timer start event]({{< relref "/how-to/bpmn/bpmn-elements#timer-start-event" >}}). As with message start events, the workflow **must be enabled** for it to run.
+To use timer triggers, use the [timer start event]({{< relref "./bpmn-elements#timer-start-event" >}}). As with message start events, the workflow **must be enabled** for it to run.
 

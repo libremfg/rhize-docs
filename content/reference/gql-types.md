@@ -9,7 +9,7 @@ weight: 930
 
 This page provides a reference of the data types enforced by the Rhize database schema,
 and of the filters that can apply to these types when you query, update, or delete a set of resources.
-For an extended guide, with examples, read [Use query filters]({{< relref "/how-to/gql/filter" >}}).
+For an extended guide, with examples, read [Use query filters]({{< relref "../how-to/gql/filter" >}}).
 
 {{< callout type="info" >}}
 These filters are based on Rhize's implementation of the Dgraph [`@search` directives](https://dgraph.io/docs/graphql/schema/directives/search/).

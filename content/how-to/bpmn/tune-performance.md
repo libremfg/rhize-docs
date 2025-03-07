@@ -6,7 +6,7 @@ description: Tips to debug and improve the performance of your BPMN process
 weight: 300
 ---
 
-This page documents some tips to debug [BPMN workflows]({{< relref "/how-to/bpmn/create-workflow" >}}) and improve their performance.
+This page documents some tips to debug [BPMN workflows]({{< relref "./create-workflow" >}}) and improve their performance.
 
 Manufacturing events can generate a vast amount of data.
 And a BPMN workflow can have any number of logical flows and data transformations.
@@ -63,7 +63,7 @@ If a process seems slow, look for these places to refactor performance.
 
 ### Avoid parallel joins
 
-Running processes in [parallel]({{< relref "/how-to/bpmn/bpmn-elements#parallel-gateway" >}}) can increase the workflow's complexity.
+Running processes in [parallel]({{< relref "./bpmn-elements#parallel-gateway" >}}) can increase the workflow's complexity.
 Parallel joins in particular can also increase memory usage of the NATS service.
 
 Where possible, prefer exclusive branching and sequential execution.

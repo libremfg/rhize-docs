@@ -26,7 +26,7 @@ In short, to configure the KPI Service, the procedure works as follows:
 1. Persist machine state records to the `EquipmentState` table
 1. Persist quantity records to the `QuantityLog` table
 1. Persist job response data to the `JobOrderState` table
-1. (Optional) Configure the calendar service to record planned downtime events and shift records to time series. Refer to [Use work calendars]({{< relref "/how-to/work-calendars" >}})
+1. (Optional) Configure the calendar service to record planned downtime events and shift records to time series. Refer to [Use work calendars]({{< relref "../work-calendars" >}})
 
 ## Record machine states
 

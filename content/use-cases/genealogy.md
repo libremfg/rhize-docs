@@ -167,7 +167,7 @@ _Data from a Rhize query in an Apache Echart. Read the [Build frontend](#fronten
 
 ## Quick query
 
-To get started with genealogy quickly, use these [query]({{< relref "/how-to/gql/query" >}}) templates.
+To get started with genealogy quickly, use these [query]({{< relref "../how-to/gql/query" >}}) templates.
 One template is for the reverse genealogy, and the other is for the forward genealogy.
 For each, you need to input the Lot ID.
 
@@ -218,7 +218,7 @@ For an idea of how a more complete query would look, refer to the [Examples](#ex
 
 {{< callout >}}
 :memo: For a more complete introduction to ISA-95 and its terminology,
-read [How to speak ISA-95]({{< ref "how-to-speak-isa-95" >}}).
+read [How to speak ISA-95](/how-to-speak-isa-95).
 {{< /callout >}}
 
 In ISA-95 terminology, the lineage of each material is expressed through the following entities:
@@ -303,7 +303,7 @@ Your manufacturing process determines where lot IDs are created.
 The broad patterns are as follows:
 - **Scheduled.** Assign lots at the time of creating the work request or schedule (while the job response might create a material actual that maps to the requested lot ID).
 - **Scheduled and event-driven.** Generate lot IDs beforehand, and then use a GraphQL call to create records in the Rhize DB after some event. Example events might be a button press or an automated signal that indicates the lot has been physically created.
-- **Event-driven.** Assign lot IDs at the exact time of work performance. For example, you can write a [BPMN workflow]({{< relref "/how-to/bpmn/" >}}) to subscribe to a topic that receives information about lots and automatically forwards the IDs to your knowledge graph.
+- **Event-driven.** Assign lot IDs at the exact time of work performance. For example, you can write a [BPMN workflow]({{< relref "../how-to/bpmn/" >}}) to subscribe to a topic that receives information about lots and automatically forwards the IDs to your knowledge graph.
 
 In the example baking process, lots may be collected in the following ways:
 - Scanned from supplier bar code
@@ -332,7 +332,7 @@ A backward genealogy examines all material lots that make the assembly of some l
 In Rhize, you can query this relationship through the `isAssembledFromMaterialLot` property,
 using nesting to indicate the level of material ancestry to return.
 For example, this returns four levels of backward genealogy for the material lot
-`cookie-box-2f` (using a [fragment]({{< relref "/how-to/gql/call-the-graphql-api/#shortcuts-for-more-expressive-requests" >}}) to standardize the properties returned for each lot).
+`cookie-box-2f` (using a [fragment]({{< relref "../how-to/gql/call-the-graphql-api/#shortcuts-for-more-expressive-requests" >}}) to standardize the properties returned for each lot).
 
 ```gql
 query{
@@ -579,7 +579,7 @@ For example, you might represent the genealogy in any of the following ways:
 - In a display using some data visualization library
 
 For a visual example, the interactive chart in the introduction takes the data from the preceding reverse-genealogy query,
-transforms it with a [JSONata expression]({{< relref "/how-to/bpmn/use-jsonata" >}}), and visualizes the relationship using 
+transforms it with a [JSONata expression]({{< relref "../how-to/bpmn/use-jsonata" >}}), and visualizes the relationship using 
 [Apache echarts](https://echarts.apache.org/).
 
 The JSONata expression accepts an array of material lots,

@@ -5,7 +5,7 @@ description: A guide to using GraphQL to subscribe to changes in the database.
 weight: 280
 ---
 
-The operations for a `subscription` are similar to the operations for a [`query`]({{< relref "/how-to/gql/query" >}}).
+The operations for a `subscription` are similar to the operations for a [`query`]({{< relref "./query" >}}).
 But rather than providing information about the entire item, the purpose of subscriptions is to notify about real-time changes to a manufacturing resource.
 
 

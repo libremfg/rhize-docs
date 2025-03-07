@@ -14,9 +14,9 @@ These sections document all the objects that you can add through the UI, and the
 All these models are based on the ISA-95 standard, mostly from [Part 2](https://www.isa.org/products/ansi-isa-95-00-02-2018-enterprise-control-system-i), which describes the role-based equipment hierarchy.
 
 {{< callout type="info" >}}
-- For an introduction to the language of ISA-95, read [How to speak ISA-95]({{< relref "/isa-95/how-to-speak-isa-95" >}})
+- For an introduction to the language of ISA-95, read [How to speak ISA-95](/isa-95/how-to-speak-isa-95)
 - For visual examples of how some of these models relate,
-look at our page of [ISA-95 Diagrams]({{< relref "/isa-95/isa-95-diagrams" >}}).
+look at our page of [ISA-95 Diagrams](isa-95/isa-95-diagrams).
 {{< /callout >}}
 
 ## Global object fields

@@ -13,7 +13,7 @@ This article explains what the components of a _Manufacturing Data Hub_ (MDH) ar
 
 In another phrasing, this article explains why Rhize made the choices it did to become the world's first manufacturing data hub.
 For introductory explanations about Rhize in particular,
-read [What is Rhize?]({{< relref "/get-started/introduction" >}}) and [How Rhize works]({{< relref "/get-started/how-rhize-works" >}}).
+read [What is Rhize?]({{< relref "../get-started/introduction" >}}) and [How Rhize works]({{< relref "../get-started/how-rhize-works" >}}).
 
 ## What is an MDH?
 

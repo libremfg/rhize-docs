@@ -35,7 +35,7 @@ Where:
 |-----------------|------------------------------------------------------------------------------------------------|
 | `NATS`          | Invoked when a message is received in the Rhize NATS broker                                    |
 | `API`           | Expects to be called from the API using `createAndRunBPMNSync` or `createAndRunBPMN` mutations |
-| `RULE`          | Invocation is expected from the [rule engine]({{< relref "create-equipment-class-rule" >}})          |
+| `RULE`          | Invocation is expected from the [rule engine]({{< relref "../publish-subscribe/create-equipment-class-rule" >}})          |
 | `FUNC`          | Internal functions to be invoked as helpers                                                    |
 
 Examples:
@@ -58,7 +58,7 @@ Where:
 
 ### Start Events
 
-For [start events]({{< relref "/how-to/bpmn/bpmn-elements">}}),
+For [start events]({{< relref "./bpmn-elements">}}),
 use the name to describe each trigger according to the following convention:
 
 `START_<SUB_TYPE>_<DESCRIPTION>`
@@ -79,15 +79,15 @@ Examples:
 
 ### Query task
 
-Runs a GraphQL [{{< abbr "query" >}}]({{< relref "/how-to/gql/query/" >}}).
+Runs a GraphQL [{{< abbr "query" >}}]({{< relref "../gql/query/" >}}).
 
 Prefix: `Q`.
 
 | SubTypes | Description                                                                             |
 |----------|-----------------------------------------------------------------------------------------|
-| `GET`    | [Get query]({{< relref "/how-to/gql/query/#get" >}}). Expected to return one item       |
-| `QUERY`  | [Query operation]({{< relref "/how-to/gql/query/#query" >}}). May return multiple items |
-| `AGG`    | [Aggregate query]({{< relref "/how-to/gql/query/#aggregate" >}})                        |
+| `GET`    | [Get query]({{< relref "../gql/query/#get" >}}). Expected to return one item       |
+| `QUERY`  | [Query operation]({{< relref "../gql/query/#query" >}}). May return multiple items |
+| `AGG`    | [Aggregate query]({{< relref "../gql/query/#aggregate" >}})                        |
 
 Examples:
 
@@ -96,17 +96,17 @@ Examples:
 
 ### Mutation task
 
-Runs a GraphQL [{{< abbr "mutation" >}}]({{< relref "/how-to/gql/mutate/" >}}).
+Runs a GraphQL [{{< abbr "mutation" >}}]({{< relref "../gql/mutate/" >}}).
 
 
 Prefix: `M`
 
 | SubTypes | Description                                                                              |
 |----------|------------------------------------------------------------------------------------------|
-| `ADD`    | [Adds]({{< relref "/how-to/gql/mutate/#add" >}}) a new record                            |
-| `UPDATE` | [Updates]({{< relref "/how-to/gql/mutate/#update" >}}) existing                          |
-| `UPSERT` | Updates existing [or adds new]({{< relref "/how-to/gql/mutate/#upsert" >}}) if not found |
-| `DELETE` | [Deletes]({{< relref "/how-to/gql/mutate/#delete" >}}) a record                          |
+| `ADD`    | [Adds]({{< relref "../gql/mutate/#add" >}}) a new record                            |
+| `UPDATE` | [Updates]({{< relref "../gql/mutate/#update" >}}) existing                          |
+| `UPSERT` | Updates existing [or adds new]({{< relref "../gql/mutate/#upsert" >}}) if not found |
+| `DELETE` | [Deletes]({{< relref "../gql/mutate/#delete" >}}) a record                          |
 |          |                                                                                          |
 
 Examples:
