@@ -48,7 +48,9 @@ markup:
   goldmark:
     renderer:
       unsafe: true
-
+    renderHooks:
+      link:
+        enableDefault: true
   # enable hextra syntax highlight
   highlight:
     noClasses: false
