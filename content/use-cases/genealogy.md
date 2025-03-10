@@ -218,7 +218,7 @@ For an idea of how a more complete query would look, refer to the [Examples](#ex
 
 {{< callout >}}
 :memo: For a more complete introduction to ISA-95 and its terminology,
-read [How to speak ISA-95](/how-to-speak-isa-95).
+read [How to speak ISA-95]({{< relref "/isa-95/how-to-speak-isa-95" >}}).
 {{< /callout >}}
 
 In ISA-95 terminology, the lineage of each material is expressed through the following entities:
