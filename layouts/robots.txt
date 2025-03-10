@@ -1,4 +1,0 @@
-User-agent: *
-{{ range where .Site.Pages "Type" "versions" }}
-Disallow: {{ .RelPermalink }}
-{{ end }}
