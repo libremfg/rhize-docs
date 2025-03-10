@@ -64,7 +64,7 @@ This equipment item also has a data source that gives temperature readings, whic
 &lt;p>Create the associated data source:&lt;/p>
 &lt;ol>
 &lt;li>From &lt;strong>Master Data&lt;/strong>, select &lt;strong>Data Source&lt;/strong>.&lt;/li>
-&lt;li>Add the source&amp;rsquo;s connection string and protocol, along with any credentials (to configure authentication, refer to &lt;a href="https://docs.rhize.com/reference/service-config/agent-configuration/" >Agent configuration&lt;/a>).&lt;/li>
+&lt;li>Add the source&amp;rsquo;s connection string and protocol, along with any credentials (to configure authentication, refer to &lt;a href="../../reference/service-config/agent-configuration" >Agent configuration&lt;/a>.&lt;/li>
 &lt;li>Select the &lt;strong>Topics&lt;/strong> tab and add the label and data type.&lt;/li>
 &lt;li>&lt;strong>Create&lt;/strong> and make the version active.&lt;/li>
 &lt;/ol>

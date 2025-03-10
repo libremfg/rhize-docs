@@ -106,7 +106,7 @@ A simplified view of Rhize&amp;rsquo;s architecture
 &lt;/ul>
 &lt;h2>Data inputs&lt;span class="hx-absolute -hx-mt-20" id="data-inputs">&lt;/span>
 &lt;a href="#data-inputs" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>A manufacturing data hub is useless without manufacturing data.&lt;/p>
-&lt;p>The &lt;a href="https://docs.rhize.com/reference/service-config/agent-configuration/" >Rhize agent&lt;/a> collects data from MQTT brokers and devices, OPC-UA servers.
+&lt;p>The Rhize agent collects data from MQTT brokers and devices, OPC-UA servers.
 You can also send data and documents over HTTP through a &lt;a href="https://docs.rhize.com/how-to/gql/call-the-graphql-api/" >GraphQL call&lt;/a>.
 The Rhize UI also has a graphical interface to &lt;a href="https://docs.rhize.com/how-to/model/" >model production&lt;/a> objects.&lt;/p>
 &lt;p>All this data is mapped to Rhize&amp;rsquo;s ISA-95 schema, which creates a coherent model for all objects in the data hub.&lt;/p>
