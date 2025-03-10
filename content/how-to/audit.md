@@ -19,7 +19,7 @@ To use the audit log, ensure you have the following:
     - The ability to [Use the Rhize GraphQL API]({{< relref "gql" >}})
     - A token configured so that `audience` includes `audit`, and the scopes contain `audit:query`.
 
-    This scope should be created by BaaS, not manually. For details, refer to [Set up Keycloak](/deploy/install/keycloak/).
+    This scope should be created by BaaS, not manually. For details, refer to [Set up Keycloak]({{< relref "../../deploy/install/keycloak/" >}}).
 
 
 ## Audit through the UI
