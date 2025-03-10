@@ -14,7 +14,7 @@ Before you start, ensure you have the following:
 
 
 - A designated S3 backup location, for example `s3://s3.<AWS-REGION>.amazonaws.com/<AWS-BUCKET-NAME>`.
-- Access to your [Rhize Kubernetes Environment]({{< relref "install" >}})
+- Access to your [Rhize Kubernetes Environment]({{< relref "../install" >}})
 {{% param pre_reqs %}}.
 
 

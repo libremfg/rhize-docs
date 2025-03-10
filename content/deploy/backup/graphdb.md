@@ -15,7 +15,7 @@ Before you start, ensure you have the following:
 
 
 - A designated backup location, for example `~/rhize-backups/database`.
-- Access to your [Rhize Kubernetes Environment]({{< relref "install" >}})
+- Access to your [Rhize Kubernetes Environment]({{< relref "../install" >}})
 {{% param pre_reqs %}}.
 
 

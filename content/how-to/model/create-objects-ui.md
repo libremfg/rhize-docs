@@ -71,7 +71,7 @@ Model the `Oven` equipment class:
 
 Create the associated data source:
 1. From **Master Data**, select **Data Source**.
-1. Add the source's connection string and protocol, along with any credentials (to configure authentication, refer to [Agent configuration]({{< ref "agent-configuration" >}})).
+1. Add the source's connection string and protocol, along with any credentials (to configure authentication, refer to [Agent configuration](../../reference/service-config/agent-configuration).
 1. Select the **Topics** tab and add the label and data type.
 1. **Create** and make the version active.
 

@@ -67,9 +67,9 @@ The general fields for a data source are as follows:
 |--------------------------|-------------------------------------------------------------------------------------|
 | Connection string        | A string to specify information about the data source and the way to connect to it  |
 | The Data source protocol | Either `MQTT` or `OPCUA`                                                            |
-| username                 | If needed, username for [Agent authentication]({{< ref "agent-configuration" >}})    |
-| password                 | If needed, password for [Agent authentication]({{< ref "agent-configuration" >}})    |
-| certificate              | If needed, certificate for [Agent authentication]({{< ref "agent-configuration" >}}) |
+| username                 | If needed, username for [Agent authentication]({{< relref "../../reference/service-config/agent-configuration" >}})    |
+| password                 | If needed, password for [Agent authentication]({{< relref "../../reference/service-config/agent-configuration" >}})    |
+| certificate              | If needed, certificate for [Agent authentication]({{< relref "../../reference/service-config/agent-configuration" >}}) |
 
 Additionally, each data source can have _topics_ that Rhize should be able to subscribe to.
 Each topic has the following fields:

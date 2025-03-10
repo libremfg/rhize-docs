@@ -123,7 +123,7 @@ If enabling the Audit Trail, also the include the configuration in [Enable chang
 1. Go to Keycloak UI and add all new {{< param db >}} roles to the `ADMIN` group.
 
 If the install is successful, the Keycloak UI is available on its
-[default port]({{< ref "default-ports" >}}).
+[default port]({{< relref "../../reference/default-ports" >}}).
 
 
 ## Install services
@@ -232,7 +232,7 @@ Install the router with these steps:
     ```
 
 If the install is successful, the Router explorer is available on its
-[default port]({{< ref "default-ports" >}}).
+[default port]({{< relref "../../reference/default-ports" >}}).
 
 ### Grafana
 
@@ -254,7 +254,7 @@ Install Grafana with these steps:
     ```
 
 If the install is successful, the Grafana service is available on its
-[default port]({{< ref "default-ports" >}}).
+[default port]({{< relref "../../reference/default-ports" >}}).
 
 ### Agent
 
@@ -290,7 +290,7 @@ After installing all other services, install the UI with these steps:
     ```
 
 If the install is successful, the UI is available on its
-[default port]({{< ref "default-ports" >}}).
+[default port]({{< relref "../../reference/default-ports" >}}).
 
 ## Optional: Audit Trail service
 
@@ -318,7 +318,7 @@ For details about maintaining the Audit trail, read [Archive the PostgresQL Audi
 
 ### Enable change data capture
 
-The Audit trail requires [change data capture (CDC)]({{< ref "track-changes" >}}) to function. To enable CDC in {{< param application_name >}} BAAS, include the following values for the Helm chart overrides:
+The Audit trail requires [change data capture (CDC)]({{< relref "../../how-to/publish-subscribe/track-changes" >}}) to function. To enable CDC in {{< param application_name >}} BAAS, include the following values for the Helm chart overrides:
 
 ```yaml
 alpha:
@@ -473,7 +473,7 @@ For particular problems, try these commands:
 - **Access service through browser**
 
     Some services are accessible through the browser.
-    To access them, visit local host on the service's [default port]({{< ref "default-ports" >}}).
+    To access them, visit local host on the service's [default port]({{< relref "../../reference/default-ports" >}}).
 
 - **I installed a service too early**.
     If you installed a service too early, use Helm to uninstall:
