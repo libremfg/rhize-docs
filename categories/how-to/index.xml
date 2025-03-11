@@ -64,7 +64,7 @@ This equipment item also has a data source that gives temperature readings, whic
 &lt;p>Create the associated data source:&lt;/p>
 &lt;ol>
 &lt;li>From &lt;strong>Master Data&lt;/strong>, select &lt;strong>Data Source&lt;/strong>.&lt;/li>
-&lt;li>Add the source&amp;rsquo;s connection string and protocol, along with any credentials (to configure authentication, refer to &lt;a href="../../reference/service-config/agent-configuration" >Agent configuration&lt;/a>.&lt;/li>
+&lt;li>Add the source&amp;rsquo;s connection string and protocol, along with any credentials (to configure authentication, refer to &lt;a href="https://docs.rhize.com/reference/service-config/agent-configuration/" >Agent configuration&lt;/a>.&lt;/li>
 &lt;li>Select the &lt;strong>Topics&lt;/strong> tab and add the label and data type.&lt;/li>
 &lt;li>&lt;strong>Create&lt;/strong> and make the version active.&lt;/li>
 &lt;/ol>
@@ -91,7 +91,7 @@ This equipment item also has a data source that gives temperature readings, whic
 &lt;/li>
 &lt;/ol>
 &lt;p>On success, your UI should now have an item equipment that is associated with an equipment level, equipment class, and data source.
-For a complete reference of all objects and properties that you can add through the UI, refer to the &lt;a href="https://docs.rhize.com/how-to/model/master-definitions/" >Master definitions and Fields&lt;/a>.&lt;/p></description></item><item><title>Overview</title><link>https://docs.rhize.com/deploy/install/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/deploy/install/overview/</guid><description>
+For a complete reference of all objects and properties that you can add through the UI, refer to the Master definitions and Fields](/how-to/model/master-definitions/).&lt;/p></description></item><item><title>Overview</title><link>https://docs.rhize.com/deploy/install/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/deploy/install/overview/</guid><description>
 &lt;p>This guide walks you through how to Install Rhize and its services in a Kubernetes environment.
 You can also use these docs to model automation workflows in your CI.&lt;/p>
 &lt;blockquote>
@@ -712,14 +712,14 @@ title="Copy code"
 &lt;li>Test the &lt;a href="https://docs.rhize.com/deploy/restore/binary/" >Restore Graph Database From S3&lt;/a> procedure to ensure you can recover data from Amazon S3 in case of an emergency.&lt;/li>
 &lt;li>To back up other Rhize services, read how to backup &lt;a href="https://docs.rhize.com/deploy/backup/grafana/" >Grafana&lt;/a>.&lt;/li>
 &lt;/ul></description></item><item><title>Archive the PostgreSQL Audit trail</title><link>https://docs.rhize.com/deploy/maintain/audit/</link><pubDate>Tue, 26 Mar 2024 11:20:56 -0300</pubDate><guid>https://docs.rhize.com/deploy/maintain/audit/</guid><description>
-&lt;p>The &lt;a href="../how-to/audit" >audit trail&lt;/a> can generate a high volume of data, so it is a good practice to periodically &lt;em>archive&lt;/em> portions of it.
+&lt;p>The &lt;a href="https://docs.rhize.com/how-to/audit/" >audit trail&lt;/a> can generate a high volume of data, so it is a good practice to periodically &lt;em>archive&lt;/em> portions of it.
 An archive separates a portion of the data from the database and keeps it for long-term storage. This process involves the use of PostgreSQL &lt;a href="https://www.postgresql.org/docs/current/ddl-partitioning.html" target="_blank" rel="noopener">Table Partitions&lt;/a>.&lt;/p>
 &lt;p>Archiving a partition improves query speed for current data, while providing a cost-effective way to store older.&lt;/p>
 &lt;h2>Prerequisites&lt;span class="hx-absolute -hx-mt-20" id="prerequisites">&lt;/span>
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Before you start, ensure you have the following:&lt;/p>
 &lt;ul>
 &lt;li>A designated backup location, for example &lt;code>~/rhize-archives/libre-audit&lt;/code>.&lt;/li>
-&lt;li>Access to the &lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes" >Rhize Kubernetes Environment&lt;/a> - Optional: &lt;a href="https://github.com/ahmetb/kubectx" target="_blank" rel="noopener">kubectx&lt;/a> utilities
+&lt;li>Access to the &lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes/" >Rhize Kubernetes Environment&lt;/a> - Optional: &lt;a href="https://github.com/ahmetb/kubectx" target="_blank" rel="noopener">kubectx&lt;/a> utilities
 &lt;ul>
 &lt;li>&lt;code>kubectx&lt;/code> to manage multiple clusters&lt;/li>
 &lt;li>&lt;code>kubens&lt;/code> to switch between and configure namespaces easily&lt;/li>
@@ -829,10 +829,10 @@ title="Copy code"
 &lt;a href="#next-steps" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>For full backups or Rhize services, read how to back up:
 &lt;ul>
-&lt;li>&lt;a href="../backup/keycloak" >Keycloak&lt;/a>&lt;/li>
-&lt;li>&lt;a href="../backup/audit" >The Audit trail&lt;/a>&lt;/li>
-&lt;li>&lt;a href="../backup/grafana" >Grafana&lt;/a>&lt;/li>
-&lt;li>&lt;a href="../backup/graphdb" >The Graph Database&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.rhize.com/deploy/backup/keycloak/" >Keycloak&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.rhize.com/deploy/backup/audit/" >The Audit trail&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.rhize.com/deploy/backup/grafana/" >Grafana&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.rhize.com/deploy/backup/graphdb/" >The Graph Database&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul></description></item><item><title>Overview: the Rhize API</title><link>https://docs.rhize.com/how-to/gql/call-the-graphql-api/</link><pubDate>Wed, 22 Nov 2023 09:43:30 -0300</pubDate><guid>https://docs.rhize.com/how-to/gql/call-the-graphql-api/</guid><description>
