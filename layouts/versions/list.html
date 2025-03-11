@@ -8,10 +8,11 @@
       {{ partial "breadcrumb.html" . }}
 
       <div class="content">
-          {{ if .Params.version }}
+          {{ if .Params.v }}
         <div class="version warning">
-          {{ $message :=printf "This documentation is for Rhize **v%s**. If you don't need a specific version, switch to the [latest documentation](/latest)"
-          .Params.version }}
+          {{ $class := "defaultClass"}}
+             {{ $message :=printf "This documentation is for Rhize **v%s**. If you don't need a specific version, switch to the [latest documentation](/latest)"
+          .Params.v }}
           {{- $emoji := "⚠️" -}}
           {{- $warningClass := "hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200" -}}
 
