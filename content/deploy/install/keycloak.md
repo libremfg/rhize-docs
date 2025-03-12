@@ -44,7 +44,7 @@ To create your Rhize realm, follow these steps.
 1. In the side menu, select **Realm Settings**.
 1. Enter the following values:
   | Field        | value                 |
-  |--------------|-----------------------|
+  | ------------ | --------------------- |
   | Frontend URL | Keycloak frontend URL |
   | Require SSL  | External requests     |
 
@@ -122,9 +122,9 @@ Create a client for the UI as follows:
 
 1. Configure the **Access Settings**:
 
-   - **Root URL**: `<UI_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
-   - **Home URL**: `<UI_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
-   - **Web Origins**: `<UI_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
+   - **Root URL**: `<UI_URL>` without trailing slashes
+   - **Home URL**: `<UI_URL>` without trailing slashes
+   - **Web Origins**: `<UI_URL>` without trailing slashes
 
 1. Select **Next**, then **Save**.
 
@@ -149,11 +149,11 @@ Create a client for the UI as follows:
 
 1. Configure the **Access Settings**:
 
-   - **Root URL**: `<DASHBOARD_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
-   - **Home URL**: `<DASHBOARD_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
+   - **Root URL**: `<DASHBOARD_URL>` without trailing slashes
+   - **Home URL**: `<DASHBOARD_URL>` without trailing slashes
    - **Valid redirect URIs**: `<DASHBOARD_URL>/login/generic_oauth` without trailing slashes
    - **Valid post logout redirect URIs**: `+` without trailing slashes
-   - **Home URL**: `<DASHBOARD_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
+   - **Home URL**: `<DASHBOARD_URL>` without trailing slashes
 
 1. Select **Next**, then **Save**.
 
@@ -162,22 +162,20 @@ Create a client for the UI as follows:
 The other services do not need authorization but do need client authentication.
 By default you need to add only the client ID.
 
-For example, to create the BPMN engine client:
+For example, to create the Workflow client:
 1. In the side menu, select **Clients > create client**.
-1. For **Client ID**, enter `{{< param application_name >}}Bpmn`
+1. For **Client ID**, enter `{{< param application_name >}}Workflow`
 1. Configure the **Capability config**:
     - **Client Authentication**: On
 1. Select **Next**, then **Save**.
 
-**Repeat this process for each of the following services:**
+Repeat the process above for each of the following services with the given alterations:
 
-| Client ID                              | Description           |
-|----------------------------------------|-----------------------|
-| `{{< param application_name >}}Audit`  | The audit log service |
-| `{{< param application_name >}}Core`   | The edge agent        |
-| `{{< param application_name >}}Router` | API router            |
-
-Based on your architecture, repeat for any Libre Edge Agents, `{{< param application_name >}}Agent`.
+| Client ID                             | Description |
+| ------------------------------------- | ----------- |
+| `{{< param application_name >}}Agent` |             |
+| `{{< param application_name >}}ISA95` |             |
+| `{{< param application_name >}}KPI`   |             |
 
 ### Scope services
 
@@ -197,31 +195,24 @@ To create a scope for your Rhize services, follow these steps:
     - **Display on consent screen**: `On`
     - **Include in token scope**: `On`
 1. **Create**.
-1. Select the **Mappers** tab, then **Configure new mapper**. Add an audience mapper for the DB client:
-    - **Mapper Type**: `Audience`
-    - **Name**: `{{< param db >}}AudienceMapper`
-    - **Include Client Audience**: `{{< param db >}}`
-    - **Add to ID Token**: `On`
-    - **Add to access token**: `On`
-1. Repeat the preceding step for a mapper for the UI client:
-    - **Mapper Type**: `Audience`
-    - **Name**: `{{< param application_name >}}UIAudienceMapper`
-    - **Include Client Audience**: `{{< param application_name >}}UI`
-    - **Add to ID Token**: `On`
-    - **Add to access token**: `Off`
-1. Repeat the preceding step for a mapper for the BPMN client:
-    - **Mapper Type**: `Audience`
-    - **Name**: `{{< param application_name >}}BPMNAudienceMapper`
-    - **Include Client Audience**: `{{< param application_name >}}Bpmn`
-    - **Add to ID Token**: `On`
-    - **Add to access token**: `On`
-1. If using the Rhize Audit microservice, repeat the preceding step for an Audit scope and audience mapper:
-    - **Mapper Type**: `Audience`
-    - **Name**: `{{< param application_name >}}AuditAudienceMapper`
-    - **Include Client Audience**:
-    - **Included Custom Audience**: `audit`
-    - **Add to ID Token**: `On`
-    - **Add to access token**: `On`
+
+#### Create audience mappers
+Select the **Mappers** tab, then **Configure new mapper**. Add an audience mapper for the DB client:
+   - **Mapper Type**: `Audience`
+   - **Name**: `{{< param db >}}AudienceMapper`
+   - **Include Client Audience**: `{{< param db >}}`
+   - **Add to ID Token**: `On`
+   - **Add to access token**: `On`
+
+Repeat the process above for each of the following services with the given alterations:
+
+| Name                                                   | Include Client Audience                  | ID Token | Access Token |
+| ------------------------------------------------------ | ---------------------------------------- | :------: | :----------: |
+| `{{< param application_name >}}AgentAudienceMapper`    | `{{< param application_name >}}Agent`    |   `On`   |     `On`     |
+| `{{< param application_name >}}ISA95AudienceMapper`    | `{{< param application_name >}}ISA95`    |   `On`   |     `On`     |
+| `{{< param application_name >}}KPIAudienceMapper`      | `{{< param application_name >}}KPI`      |   `On`   |     `On`     |
+| `{{< param application_name >}}UIAudienceMapper`       | `{{< param application_name >}}UI`       |   `On`   |    `Off`     |
+| `{{< param application_name >}}WorkflowAudienceMapper` | `{{< param application_name >}}Workflow` |   `On`   |     `On`     |
 
 #### Add services to the scope
 
@@ -231,7 +222,16 @@ To create a scope for your Rhize services, follow these steps:
 1. Select `{{< param application_name >}}ClientScope` from the list.
 1. **Add > Default**.
 
-Repeat this process for the `dashboard`, `{{< param application_name >}}UI`, `{{< param application_name >}}Bpmn`, `{{< param application_name >}}Core`, `{{< param application_name >}}Router`, `{{< param application_name >}}Audit` (if applicable). Based on your architecture repeat for any Libre Edge Agent clients.
+Repeat the process above for each of the following services:
+
+|                   Name                   |
+| :--------------------------------------: |
+|               `dashboard`                |
+|  `{{< param application_name >}}Agent`   |
+|  `{{< param application_name >}}ISA95`   |
+|   `{{< param application_name >}}KPI`    |
+|    `{{< param application_name >}}UI`    |
+| `{{< param application_name >}}Workflow` |
 
 ### Create roles and groups
 
@@ -340,43 +340,14 @@ Now create a user password:
 1. For **Temporary**, choose `Off`.
 1. **Save**.
 
-Repeat this process for the following accounts:
+Repeat the process above for each of the following services with the given alterations:
 
-- Audit:
-    - **Username**: `{{< param application_name >}}Audit@{{< param domain_name >}}`
-    - **Email**: `{{< param application_name >}}Audit@{{< param domain_name >}}`
-    - **Email Verified**: `On`
-    - **First name**: `Audit`
-    - **Last name**: `{{< param brand_name >}}`
-    - **Join Groups**: `{{< param application_name >}}AdminGroup`
-- Core:
-    - **Username**: `{{< param application_name >}}Core@{{< param domain_name >}}`
-    - **Email**: `{{< param application_name >}}Core@{{< param domain_name >}}`
-    - **Email Verified**: `On`
-    - **First name**: `Core`
-    - **Last name**: `{{< param brand_name >}}`
-    - **Join Groups**: `{{< param application_name >}}AdminGroup`
--  BPMN
-     - **Username**: `{{< param application_name >}}Bpmn@{{< param domain_name >}}`
-     - **Email**: `{{< param application_name >}}Bpmn@{{< param domain_name >}}`
-     - **Email Verified**: `On`
-     - **First name**: `Bpmn`
-     - **Last name**: `{{< param brand_name >}}`
-     - **Join Groups**: `{{< param application_name >}}AdminGroup`
-- Router
-    - **Username**: `{{< param application_name >}}Router@{{< param domain_name >}}`
-    - **Email**: `{{< param application_name >}}Router@{{< param domain_name >}}`
-    - **Email Verified**: `On`
-    - **First name**: `Router`
-    - **Last name**: `{{< param brand_name >}}`
-    - **Join Groups**: `{{< param application_name >}}AdminGroup`
-- Agent
-    - **Username**: `{{< param application_name >}}Agent@{{< param domain_name >}}`
-    - **Email**: `{{< param application_name >}}Agent@{{< param domain_name >}}`
-    - **Email Verified**: `On`
-    - **First name**: `Agent`
-    - **Last name**: `{{< param brand_name >}}`
-    - **Join Groups**: `{{< param application_name >}}AdminGroup`
+| Username                                                           | First name |
+| ------------------------------------------------------------------ | ---------- |
+| `{{< param application_name >}}Agent@{{< param domain_name >}}`    | Agent      |
+| `{{< param application_name >}}ISA95@{{< param domain_name >}}`    | ISA95      |
+| `{{< param application_name >}}KPI@{{< param domain_name >}}`      | KPI        |
+| `{{< param application_name >}}Workflow@{{< param domain_name >}}` | Workflow   |
 
 ### Enable Keycloak Audit Trail
 
