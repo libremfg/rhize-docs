@@ -5,6 +5,6 @@ cascade:
   type: versions
   noindex: true
   excludeSearch: true
-  sidebar:
-    exclude: true
 ---
+
+{{< card-list >}}
