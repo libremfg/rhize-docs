@@ -1,0 +1,449 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Releases</title><link>https://docs.rhize.com/versions/3-0-3/releases/</link><description>Recent content in Releases on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 13 Nov 2024 00:41:53 -0300</lastBuildDate><atom:link href="https://docs.rhize.com/versions/3-0-3/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>3.0.3</title><link>https://docs.rhize.com/versions/3-0-3/releases/3-0-3/</link><pubDate>Wed, 13 Nov 2024 00:41:53 -0300</pubDate><guid>https://docs.rhize.com/versions/3-0-3/releases/3-0-3/</guid><description>
+&lt;p>Changelog for version 3.0.3 of the Rhize application.&lt;/p>
+&lt;p>&lt;em>Release date:&lt;/em>
+13 Nov 2024&lt;/p>
+&lt;h2>Changes by service&lt;span class="hx-absolute -hx-mt-20" id="changes-by-service">&lt;/span>
+&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The following sections document the changes this release brings to each service.&lt;/p>
+&lt;h3>Admin&lt;span class="hx-absolute -hx-mt-20" id="admin">&lt;/span>
+&lt;a href="#admin" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Add&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Add portal menu link&lt;/li>
+&lt;li>Add output container build to &lt;code>$CI_REGISTRY/libremfg/docker/admin-ui:$CI_COMMIT_TAG&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Change &lt;code>WorkMaster&lt;/code> parameters input to textbox to support multi-line values better&lt;/li>
+&lt;li>Change BPMN Process instances modal default search and width&lt;/li>
+&lt;li>Refactor Material Class Properties table&lt;/li>
+&lt;li>Refactor Material Definition table&lt;/li>
+&lt;li>Refactor Operational Location Class properties table&lt;/li>
+&lt;li>Refactor Operational Location properties table&lt;/li>
+&lt;li>Refactor Operations Event Class table&lt;/li>
+&lt;li>Refactor Operations Event Definition to use infinite scroll&lt;/li>
+&lt;li>Refactor Person Properties table&lt;/li>
+&lt;li>Refactor Personnel Class table&lt;/li>
+&lt;li>Refactor Physical Asset Class table&lt;/li>
+&lt;li>Refactor Physical Asset Classes to use infinite scroll&lt;/li>
+&lt;li>Refactor Physical Asset table&lt;/li>
+&lt;li>Refactor Physical assets to use infinite scroll&lt;/li>
+&lt;li>Refactor Work Masters to use infinite scroll&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix Person description allowing &lt;code>e&lt;/code> character&lt;/li>
+&lt;li>Fix Change material definition Version State prompt text&lt;/li>
+&lt;li>Fix Create or Select a material definition&lt;/li>
+&lt;li>Fix Personnel Class version containers text&lt;/li>
+&lt;li>Fix Personnel Class save as hierarchy scope not saving&lt;/li>
+&lt;li>Fix typos in person page referring to Physical Asset&lt;/li>
+&lt;li>Fix Material Class search&lt;/li>
+&lt;li>Fix Operational Location Class hierarchy scope edit&lt;/li>
+&lt;li>Fix search on large list of Operational Location Class property&lt;/li>
+&lt;li>Fix enable/disable equipment property&lt;/li>
+&lt;li>Fix equipment property edit&lt;/li>
+&lt;li>Fix equipment property edit query&lt;/li>
+&lt;li>Fix Material Class &lt;code>isAssembledFrom&lt;/code> relationship edits&lt;/li>
+&lt;li>Fix BPMN view sidebar title&lt;/li>
+&lt;li>Fix equipment nested tree items not showing active version&lt;/li>
+&lt;li>Fix user details and support typo&lt;/li>
+&lt;li>Fix large number of Person failing to display&lt;/li>
+&lt;li>Fix large number of Personnel Classes failing to display&lt;/li>
+&lt;li>Fix large number of Operational Location Classes failing to display&lt;/li>
+&lt;li>Fix Variable page logic to Create and Set as active&lt;/li>
+&lt;li>Fix Operations Definition Segment &lt;code>WorkType&lt;/code> selection&lt;/li>
+&lt;li>Fix invalid characters in Operations Definition Segment Component&lt;/li>
+&lt;li>Fix portal hang when not configured&lt;/li>
+&lt;li>Fix Equipment properties text&lt;/li>
+&lt;li>Fix numerical error in input fields on Person version for &lt;code>Name&lt;/code> and &lt;code>Details&lt;/code>&lt;/li>
+&lt;li>Fix Operational Location change not refreshing screen after edit&lt;/li>
+&lt;li>Fix validation of &lt;code>canCreateNewVersion&lt;/code> in Material Class page&lt;/li>
+&lt;li>Fix typos in Operational Location page referring to Operational Location Class&lt;/li>
+&lt;li>Fix audit trail PDF export header text overlap&lt;/li>
+&lt;li>Fix cache issue when enabling and disabling Operations Event Definition&lt;/li>
+&lt;li>Fix previous tag selection script in CI/CD&lt;/li>
+&lt;li>Fix typo in Create Operational Location&lt;/li>
+&lt;/ul>
+&lt;h3>BPMN engine&lt;span class="hx-absolute -hx-mt-20" id="bpmn-engine">&lt;/span>
+&lt;a href="#bpmn-engine" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix linting and container version issues from CI&lt;/li>
+&lt;/ul>
+&lt;h3>Schema&lt;span class="hx-absolute -hx-mt-20" id="schema">&lt;/span>
+&lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Add&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Add regex search to &lt;code>Event.messageText&lt;/code>&lt;/li>
+&lt;li>Add &lt;code>JobResponseData.valueLong&lt;/code> for large values without search&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Change baas version dependencies to v3.0.3 from v3.0.0&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix pipeline error by pinning version of &lt;code>gqlgen&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3>BAAS&lt;span class="hx-absolute -hx-mt-20" id="baas">&lt;/span>
+&lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix large strings breaking badger indexes by constraining string length to &lt;code>64000&lt;/code> when indexed and not by hash&lt;/li>
+&lt;/ul>
+&lt;h3>Core&lt;span class="hx-absolute -hx-mt-20" id="core">&lt;/span>
+&lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix supergraph compose warning on &lt;code>JobState&lt;/code> enum descriptions&lt;/li>
+&lt;/ul>
+&lt;h3>Agent&lt;span class="hx-absolute -hx-mt-20" id="agent">&lt;/span>
+&lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>No changes for this release&lt;/p>
+&lt;h3>Audit&lt;span class="hx-absolute -hx-mt-20" id="audit">&lt;/span>
+&lt;a href="#audit" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Add&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Add default partition size of 1 month to Postgres container&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix Postgres initialization of partition tables&lt;/li>
+&lt;/ul>
+&lt;h3>Keycloak Theme&lt;span class="hx-absolute -hx-mt-20" id="keycloak-theme">&lt;/span>
+&lt;a href="#keycloak-theme" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>No changes for this release.&lt;/p>
+&lt;h3>Router&lt;span class="hx-absolute -hx-mt-20" id="router">&lt;/span>
+&lt;a href="#router" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>No changes for this release.&lt;/p>
+&lt;h2>Compatibility&lt;span class="hx-absolute -hx-mt-20" id="compatibility">&lt;/span>
+&lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>
+&lt;div class="notices note">
+&lt;span class="type">v3.0.3 compatibility&lt;/span>
+Rhize v3.0.3 has been tested to work with the following third-party applications:
+&lt;ul>
+&lt;li>Apollo router 1.15.1&lt;/li>
+&lt;li> Grafana: 9.4.7&lt;/li>
+&lt;li> Keycloak: 21.1.1&lt;/li>
+&lt;li> Keycloak Postgres: 15.3.0&lt;/li>
+&lt;li> Loki: 2.9.3&lt;/li>
+&lt;li> NATS: 2.10.17&lt;/li>
+&lt;li> Tempo: 2.3.1&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;h2>Checksums&lt;span class="hx-absolute -hx-mt-20" id="checksums">&lt;/span>
+&lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>When you install, check the container images against these checksums:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;pre>&lt;code>&lt;/code>&lt;/pre>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>Download &lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/content/releases/checksums/v3.0.3-checksums.txt" target="_blank" rel="noopener">v3.0.3-checksums.txt&lt;/a>&lt;/p>
+&lt;h2>Upgrade&lt;span class="hx-absolute -hx-mt-20" id="upgrade">&lt;/span>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to v3.0.3, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade" >Upgrade instructions&lt;/a>.&lt;/p></description></item><item><title>3.0.1</title><link>https://docs.rhize.com/versions/3-0-3/releases/3-0-1/</link><pubDate>Tue, 23 Jul 2024 10:42:31 -0300</pubDate><guid>https://docs.rhize.com/versions/3-0-3/releases/3-0-1/</guid><description>
+&lt;p>Release notes for version 3.0.1 of the Rhize application.&lt;/p>
+&lt;p>This release includes bug fixes, improvements for developer experience, and new relationships between entities in the ISA-95 schema.
+It also clears the way for the new, improved Work Calendar service (still in release candidacy).&lt;/p>
+&lt;p>&lt;em>Release date:&lt;/em>
+23 Jul 2024&lt;/p>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">⚠️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">This release includes a few minor breaking changes, review the &lt;a href="#upgrade" >upgrade&lt;/a> instructions for details.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2>Changes by service&lt;span class="hx-absolute -hx-mt-20" id="changes-by-service">&lt;/span>
+&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The following sections document the changes this release brings to each service.&lt;/p>
+&lt;h3>Audit&lt;span class="hx-absolute -hx-mt-20" id="audit">&lt;/span>
+&lt;a href="#audit" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Fixes&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix Postgres user tag query to use column name &lt;code>user_id&lt;/code> instead of the &lt;code>user&lt;/code> reserved keyword&lt;/li>
+&lt;/ul>
+&lt;h3>BPMN&lt;span class="hx-absolute -hx-mt-20" id="bpmn">&lt;/span>
+&lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Error boundary events now support call-activity tasks. If a task in the called process aborts, the error boundary captures that event.&lt;/li>
+&lt;li>Support Custom &lt;a href="https://en.wikipedia.org/wiki/Certificate_authority" target="_blank" rel="noopener">Certificate authorities&lt;/a> so that the BPMN service can run in networks with internal certificates authorities.&lt;/li>
+&lt;li>&lt;a href="https://docs.rhize.com/versions/3-0-3/how-to/bpmn/bpmn-elements/#events" >Message events&lt;/a> now support topics that use the &lt;code>+&lt;/code> wildcard.&lt;/li>
+&lt;li>Add configuration option to set __traceDebug flag on all BPMN executions. For details, read &lt;a href="https://docs.rhize.com/versions/3-0-3/how-to/bpmn/debug-workflows/" >Debug workflows&lt;/a>.&lt;/li>
+&lt;li>Allow &lt;code>__traceDebug&lt;/code> to be set from &lt;a href="https://docs.rhize.com/versions/3-0-3/how-to/bpmn/create-workflow/#access-process-variable-context" >variable context&lt;/a>.&lt;/li>
+&lt;li>Add support for querying a range of &lt;a href="https://docs.rhize.com/versions/3-0-3/how-to/work-calendars/" >work calendar&lt;/a> entries for a Work Calendar Definition.
+&lt;ul>
+&lt;li>When configured, calendar data persists to a timeseries DB.&lt;/li>
+&lt;li>⚠️&lt;span class="breaking-text">Breaking&lt;/span>
+. Work calendars now query for &lt;code>WorkCalendarDefinitions&lt;/code> not &lt;code>workCalendars&lt;/code>.
+This makes it possible to configure calendars in the UI.&lt;/li>
+&lt;li>Work calendar execution is now based on Hierarchy Scope.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Reduce number of retries in &lt;a href="https://docs.rhize.com/versions/3-0-3/deploy/maintain/bpmn-nodes/" >BPMN recovery&lt;/a>, speeding up response times when node does not exist.
+From the user&amp;rsquo;s perspective, the delay was particularly notable on &lt;a href="https://docs.rhize.com/versions/3-0-3/how-to/bpmn/trigger-workflows/#start-a-workflow-from-an-api" >API BPMN triggers&lt;/a> when the specified workflow did not exist.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Fixes&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Capture panics in JSONata go for better recovery and discovery.&lt;/li>
+&lt;li>⚠️&lt;span class="breaking-text">Breaking&lt;/span>
+. Limit BPMN users to only tokens with specific audience and scope.&lt;/li>
+&lt;li>Workflow specifications not found in NATS now fall back to database lookups before failing.
+Fixes issue when spinning up new development containers.&lt;/li>
+&lt;li>Include metadata fields for &lt;code>jobResponse&lt;/code>. Fixes panic if node tried to access these fields.&lt;/li>
+&lt;li>Respect &lt;a href="https://docs.rhize.com/how-to/bpmn/debug-workflows/#adding-the-debug-flag" >&lt;code>debug&lt;/code>&lt;/a> flag for BPMNs triggered with &lt;code>createAndRunBpmn&lt;/code>.&lt;/li>
+&lt;li>Reuse expected Audience for clients to match documented client name.&lt;/li>
+&lt;li>Do not create calendar entry for end events.&lt;/li>
+&lt;li>Fix nil pointer error when aborting tasks without parents.&lt;/li>
+&lt;/ul>
+&lt;h3>Schema&lt;span class="hx-absolute -hx-mt-20" id="schema">&lt;/span>
+&lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>⚠️&lt;span class="breaking-text">Breaking&lt;/span>
+. Add &lt;code>id&lt;/code> and &lt;code>label&lt;/code> to &lt;code>stateTransitionInstance&lt;/code>.&lt;/li>
+&lt;li>Add menu URL for portal in UI (preparation for future work in UI).&lt;/li>
+&lt;li>Add filter to query material actual by a material requirement and vice-versa.&lt;/li>
+&lt;li>Link &lt;code>workCalendarEntries&lt;/code> to equipment versions.&lt;/li>
+&lt;li>Include Kafka in the enum values for data sources.&lt;/li>
+&lt;li>Added optional &lt;code>InformationObjectTypeEnum&lt;/code> to &lt;code>OperationsEventRecordEntry&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Fixes&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Add 0:N relationship from &lt;code>materialRequirements&lt;/code> to &lt;code>materialActual&lt;/code>.&lt;/li>
+&lt;li>The &lt;code>segmentResponse&lt;/code> entity can now have multiple &lt;code>jobResponses&lt;/code> attached.&lt;/li>
+&lt;li>Change &lt;code>segmentResponse&lt;/code> relationship to &lt;code>JobResponse&lt;/code> to be a 1:N relationship&lt;/li>
+&lt;li>⚠️&lt;span class="breaking-text">Breaking&lt;/span>
+. Change &lt;code>stateModelTransition&lt;/code> from &lt;code>state&lt;/code> to a relationship.&lt;/li>
+&lt;li>Fix inverse relationship between &lt;code>operationseventDefinitionProperty&lt;/code> and &lt;code>operationsEventProperty&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h2>Compatibility&lt;span class="hx-absolute -hx-mt-20" id="compatibility">&lt;/span>
+&lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>
+&lt;div class="notices note">
+&lt;span class="type">v3.0.1 compatibility&lt;/span>
+Rhize v3.0.1 has been tested to work with the following third-party applications:
+&lt;ul>
+&lt;li>Apollo router 1.15.1&lt;/li>
+&lt;li> Grafana: 9.4.7&lt;/li>
+&lt;li> Keycloak: 21.1.1&lt;/li>
+&lt;li> Keycloak Postgres: 15.3.0&lt;/li>
+&lt;li> Loki: 2.9.3&lt;/li>
+&lt;li> NATS: 2.10.17&lt;/li>
+&lt;li> Tempo: 2.3.1&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;h2>Checksums&lt;span class="hx-absolute -hx-mt-20" id="checksums">&lt;/span>
+&lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>When you install, check the container images against these checksums:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;pre>&lt;code>&lt;/code>&lt;/pre>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>Download &lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/content/releases/checksums/v3.0.1-checksums.txt" target="_blank" rel="noopener">v3.0.1-checksums.txt&lt;/a>&lt;/p>
+&lt;h2>Upgrade&lt;span class="hx-absolute -hx-mt-20" id="upgrade">&lt;/span>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;div class="notices warning">
+&lt;span class="type">Back up first&lt;/span>
+Before upgrading, consider backing up your Rhize services.
+To review the procedure, read our &lt;a href="https://docs.rhize.com/deploy/backup">Back up guides&lt;/a>.
+&lt;/div>
+&lt;p>To upgrade to v3.0.1, first ensure that you have made corrections for the aforementioned breaking changes.&lt;/p>
+&lt;p>Rhize now limits BPMN users to the &lt;code>libreBpmn&lt;/code> audience and &lt;code>bpmn:mutation&lt;/code> role.
+If users do not have this audience and role, they will unable to log in.
+To fix this:&lt;/p>
+&lt;ol>
+&lt;li>Log in to the Keycloak service in your Rhize environment.&lt;/li>
+&lt;li>Select the &lt;code>libre&lt;/code> realm.&lt;/li>
+&lt;li>Configure the audience and role for the Users or groups that should be able to run BPMN workflows. For details, read &lt;a href="https://docs.rhize.com/versions/3-0-3/deploy/install/keycloak/" >Install Keycloak&lt;/a>.&lt;/li>
+&lt;/ol>
+&lt;p>Work calendars now query for &lt;code>workCalendarDefinitions&lt;/code>, not &lt;code>workCalendars&lt;/code>.
+There is a chance this may break some calendars that already exist.
+To mitigate this, ensure you set active definitions for the calendars you want to query.
+Read &lt;a href="https://docs.rhize.com/versions/3-0-3/how-to/work-calendars/about-calendars-and-overrides/" >About calendars and overrides&lt;/a> for details about how the service and its relationships work.&lt;/p>
+&lt;p>After you&amp;rsquo;ve made the necessary mitigations, follow the upgrade the &lt;a href="https://docs.rhize.com/deploy/upgrade" >Upgrade instructions&lt;/a>.&lt;/p>
+&lt;h3>Post upgrade&lt;span class="hx-absolute -hx-mt-20" id="post-upgrade">&lt;/span>
+&lt;a href="#post-upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Two schema changes to the state model also might cause breaking changes after upgrade.
+You can correct these issues by re-uploading the data.&lt;/p>
+&lt;p>For the specific breaks:&lt;/p>
+&lt;p>The &lt;code>StateTransitionInstance&lt;/code> entity now has an &lt;code>id&lt;/code> and &lt;code>label&lt;/code> property.
+Any such entities that were created without an ID and label are now invalid.
+To mitigate this:&lt;/p>
+&lt;ol>
+&lt;li>Query for your &lt;code>StateTransitionInstance&lt;/code>:
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gql" data-lang="gql">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">query&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">QueryStateTransitionInstance&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">query&lt;/span>&lt;span class="nc">StateTransitionInstance&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">iid&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>Use a &lt;a href="https://docs.rhize.com/versions/3-0-3/how-to/gql/mutate/#update" >mutation&lt;/a> to update these to have an ID and label.&lt;/li>
+&lt;/ol>
+&lt;p>Any existing &lt;code>StateModelTransitions&lt;/code> using a &lt;code>from&lt;/code> or &lt;code>to&lt;/code> property will break. Change these to a relationship.&lt;/p></description></item><item><title>Rhize 3.0</title><link>https://docs.rhize.com/versions/3-0-3/releases/3-0/</link><pubDate>Tue, 27 Feb 2024 09:17:43 -0300</pubDate><guid>https://docs.rhize.com/versions/3-0-3/releases/3-0/</guid><description>
+&lt;p>Rhize version 3.0 is now in general release! &amp;#x1f973;
+As a full rewrite of our earlier Libre 2.0 application, this release functionally announces a new product.&lt;/p>
+&lt;p>Read more to learn about the features available in the Rhize Manufacturing Data Hub.&lt;/p>
+&lt;h2>What is Rhize?&lt;span class="hx-absolute -hx-mt-20" id="what-is-rhize">&lt;/span>
+&lt;a href="#what-is-rhize" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Rhize is the world&amp;rsquo;s first manufacturing data hub.
+It collects event data emitted from all levels of a manufacturing process,
+stores this data in a standardized schema,
+and exposes access to the event stream so users can orchestrate workflows in real-time.&lt;/p>
+&lt;p>Customers use Rhize to observe and react to past and present states of their manufacturing operation. Its use cases include:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>A single source of truth for manufacturing records&lt;/strong>. With manufacturing events represented as &lt;em>a knowledge graph&lt;/em>, Rhize provides access to any view of the system through a single query to a single endpoint. You can query detailed reports about a specific asset, such as a manufacturing batch, or compare production across broad categories, for example, between equipment items or production lines.&lt;/li>
+&lt;li>&lt;strong>A backend for custom MES and MOM applications&lt;/strong>. As the data hub has a message broker and real-time database, operators can program custom level-three applications for functions such as track and trace, material genealogy, electronic batch record creation, and KPI calculations.&lt;/li>
+&lt;li>&lt;strong>An integrator of legacy systems&lt;/strong>. Rhize accepts data from legacy systems and converts them to a standardized schema. Thus, it serves as a hub to communicate between legacy systems in ways that would otherwise be impossible or very difficult to maintain.&lt;/li>
+&lt;/ul>
+&lt;h2>Features&lt;span class="hx-absolute -hx-mt-20" id="features">&lt;/span>
+&lt;a href="#features" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Each of the following features supports Rhize&amp;rsquo;s key design goals:&lt;/p>
+&lt;ul>
+&lt;li>Provide a highly reliable means to collect manufacturing data from varied sources&lt;/li>
+&lt;li>Standardize this data in a way that accurately places it within an &lt;em>event&lt;/em> in the context of an entire manufacturing operation&lt;/li>
+&lt;li>Offer a programmable engine to write custom logic to process the data and send it between systems&lt;/li>
+&lt;li>Serve as a complete backend application and architecture for MES/MOM frontends&lt;/li>
+&lt;li>Expose this system through an interface that is accessible to the widest number of stakeholders in the manufacturing operation.&lt;/li>
+&lt;/ul>
+&lt;h3>Knowledge graph and GraphQL&lt;span class="hx-absolute -hx-mt-20" id="knowledge-graph-and-graphql">&lt;/span>
+&lt;a href="#knowledge-graph-and-graphql" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Data is stored in the Rhize DB, a graph database with a custom schema that uses the ISA-95 standard as a data model.
+This database provides several advantages over a relational database or data lake:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Standardization.&lt;/strong>
+The database schema enforces standardization using a data model that adequately represents an entire manufacturing operation.
+All data stored in Rhize has a common structure, unlike the heterogeneous data of a data lake.&lt;/li>
+&lt;li>&lt;strong>Graph Structures.&lt;/strong>
+The graph database represents the object model of ISA-95 exactly.
+Every event in a manufacturing process is connected to all other events.
+For example, a job response might have associated operations requests, personnel, equipment, and materials that are consumed and produced.
+All these objects have their associated classes, instances, and contexts (where context could be a time range, operations segment, or zone of information exchange).&lt;/li>
+&lt;li>&lt;strong>Intuitive, minimal queries&lt;/strong>. The Rhize DB is exposed through a GraphQL API, which provides a complete interface through a single endpoint.
+Users query exactly what they want without needing to handle the relational algebra of SQL or the over-fetching of a REST API.&lt;/li>
+&lt;/ul>
+&lt;p>With standardization, graph structure, and complete interfaces, the Rhize DB thus constitutes a knowledge graph that represents the entire state of a manufacturing operation.
+Users use this knowledge graph to run simulations, discover optimizations, and train machine-learning models for predictive analysis.&lt;/p>
+&lt;p>You can read and write to the knowledge graph through a GraphQL explorer, a BPMN workflow, a custom frontend, or through the Modeling UI.
+To learn how to use GraphQL for manufacturing analysis, read the &lt;a href="https://docs.rhize.com/versions/3-0-3/how-to/gql/" >Rhize guide to GraphQL&lt;/a>.&lt;/p>
+&lt;h3>Modeling UI&lt;span class="hx-absolute -hx-mt-20" id="modeling-ui">&lt;/span>
+&lt;a href="#modeling-ui" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>The Rhize UI is a graphical interface to model and store the objects in your manufacturing process. Without needing programming knowledge, your operators can use the Admin UI to define the items in your role-based equipment hierarchy. For example, you can create and associate equipment with equipment classes, hierarchy scopes, data sources, and segments―all the objects that change infrequently.&lt;/p>
+&lt;p>These models provide the foundational data objects to associate with the dynamic data that you collect, analyze, and handle during ongoing operations.
+To learn more, read the &lt;a href="https://docs.rhize.com/versions/3-0-3/how-to/model/create-objects-ui/" >Model objects&lt;/a> guide and its corresponding topic that describes the &lt;a href="https://docs.rhize.com/versions/3-0-3/how-to/model/master-definitions/" >Master definitions and fields&lt;/a>.&lt;/p>
+&lt;h3>Low-code workflow orchestration&lt;span class="hx-absolute -hx-mt-20" id="low-code-workflow-orchestration">&lt;/span>
+&lt;a href="#low-code-workflow-orchestration" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>While some aspects of manufacturing, such as the plant site, are constant, most manufacturing data is emitted dynamically during production.
+Rhize&amp;rsquo;s &lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling">BPMN&lt;/abbr> editor provides a graphical interface to listen to events, write logic based on event conditions, and process data to send to other devices or store in the knowledge graph.
+It has gateways to represent conditions, messaging to subscribe and publish to topics, and a JSON interpreter to transform variables and process manufacturing data in batches.&lt;/p>
+&lt;p>For example, you can write a BPMN workflow to do any combination of the following:&lt;/p>
+&lt;ul>
+&lt;li>Automatically write the values associated with a specific job to the database&lt;/li>
+&lt;li>Evaluate incoming data for conditions and write logic to transform this data and send it&lt;/li>
+&lt;li>Subscribe and publish to topics, coordinating communication between systems&lt;/li>
+&lt;li>Listen to events and read and write machine data through OPC-UA&lt;/li>
+&lt;/ul>
+&lt;p>To get started, read the Guides to &lt;a href="https://docs.rhize.com/versions/3-0-3/how-to/bpmn/" >Use BPMN&lt;/a> and &lt;a href="https://docs.rhize.com/versions/3-0-3/how-to/publish-subscribe/create-equipment-class-rule/" >Write rules&lt;/a> to trigger workflows from data source values.&lt;/p>
+&lt;h3>Agent and message broker&lt;span class="hx-absolute -hx-mt-20" id="agent-and-message-broker">&lt;/span>
+&lt;a href="#agent-and-message-broker" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Rhize collects data from multiple data sources and protocols.
+To bridge the Rhize system with your devices, Rhize has an agent to collect data from OPC UA and MQTT servers.
+The Rhize agent listens for your devices&amp;rsquo; messages and publishes them to the message broker.&lt;/p>
+&lt;p>Based on NATS, Rhize&amp;rsquo;s message broker decouples communication through a publish-and-subscribe pattern.
+Rhize BPMN workflows can subscribe to topics and publish topics back.
+On your side, your manufacturing devices can publish topics to Rhize and subscribe to topics that are published from some BPMN trigger or to changes in the database.
+You can also use Rhize workflows to publish and subscribe to topics on an external broker.&lt;/p>
+&lt;p>To learn more, read the guide to &lt;a href="https://docs.rhize.com/versions/3-0-3/how-to/publish-subscribe/" >Connect a data source&lt;/a> and the reference for &lt;a href="https://docs.rhize.com/versions/3-0-3/reference/service-config/agent-configuration/" >Agent Configuration&lt;/a>.&lt;/p>
+&lt;h3>Audit trails&lt;span class="hx-absolute -hx-mt-20" id="audit-trails">&lt;/span>
+&lt;a href="#audit-trails" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Manufacturing often happens in strict regulatory environments and in systems where security is critical.
+The Rhize audit log maintains a record of all changes that happen in the system.
+To learn more, read the &lt;a href="https://docs.rhize.com/versions/3-0-3/how-to/audit/" >Audit&lt;/a> guide.&lt;/p>
+&lt;h3>Secure, vendor-agnostic infrastructure&lt;span class="hx-absolute -hx-mt-20" id="secure-vendor-agnostic-infrastructure">&lt;/span>
+&lt;a href="#secure-vendor-agnostic-infrastructure" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Rhize is built on open standards and heavily uses open-source cloud infrastructure.
+As such, Rhize is designed to conform to your operation&amp;rsquo;s IT and manufacturing processes.&lt;/p>
+&lt;p>Rhize runs on your IT infrastructure.
+The data model itself is based on a widely recognized standard, ISA-95.
+Your teams control its security and access policies, with authentication provided through &lt;a href="https://docs.rhize.com/versions/3-0-3/explanations/about-openidconnect/" >OpenID Connect&lt;/a>.&lt;/p>
+&lt;h3>High availability and reliability&lt;span class="hx-absolute -hx-mt-20" id="high-availability-and-reliability">&lt;/span>
+&lt;a href="#high-availability-and-reliability" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Mission-critical systems, such as an MES, must be highly reliable and available.
+Information flows in manufacturing can also have very high demands for CPU, network throughput, and memory.&lt;/p>
+&lt;p>The design of Rhize accommodates horizontal scaling, where the application runs in clusters of multiple computers.
+This distributed execution ensures that the system continues functioning during upgrades, periods of high use, and momentary failures in single nodes.
+Specifically, Rhize uses Kubernetes for container orchestration, a distributed, ACID-compliant database, and a message broker that uses replication to harden against failure.&lt;/p>
+&lt;p>The reliance on open source also means that your operators do not need to learn a specialized skill to deploy Rhize.
+It uses the same cloud-native applications that power the modern web.&lt;/p>
+&lt;p>Read all about how to Deploy Rhize in the &lt;a href="https://docs.rhize.com/versions/3-0-3/deploy/" >Deploy&lt;/a> guides.&lt;/p>
+&lt;h3>A backend for MES applications&lt;span class="hx-absolute -hx-mt-20" id="a-backend-for-mes-applications">&lt;/span>
+&lt;a href="#a-backend-for-mes-applications" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>With the knowledge graph, message broker, and workflow executor, and secure infrastructure,
+Rhize also provides all the components necessary to write custom applications for Manufacturing Execution Systems.
+Rather than rely on a vendor to sell an MES system that prescribes exactly what data it can use and how it can use this data, use Rhize to build the custom MES frontend of your choice.&lt;/p>
+&lt;p>Combined with rapid prototyping and low-code tools, you can use Rhize to build MES applications quickly and iterate on them as your operators use them in production.&lt;/p>
+&lt;h2>Install&lt;span class="hx-absolute -hx-mt-20" id="install">&lt;/span>
+&lt;a href="#install" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To install, read the &lt;a href="https://docs.rhize.com/versions/3-0-3/deploy/install/" >Install guide&lt;/a>.
+Or, if upgrading from a release candidate, use the &lt;a href="https://docs.rhize.com/versions/3-0-3/deploy/upgrade/" >Upgrade guide&lt;/a>.
+If upgrading, be sure to review the changelog to be aware of any possible breaking changes.&lt;/p>
+&lt;div class="notices note">
+&lt;span class="type">v3.0.0 compatibility&lt;/span>
+Rhize v3.0.0 has been tested to work with the following third-party applications:
+&lt;ul>
+&lt;li>Apollo router 1.15.1&lt;/li>
+&lt;li> Grafana: 9.4.7&lt;/li>
+&lt;li> Keycloak: 21.1.1&lt;/li>
+&lt;li> Keycloak Postgres: 15.3.0&lt;/li>
+&lt;li> Loki: 2.3.9&lt;/li>
+&lt;li> NATS: 2.10.10&lt;/li>
+&lt;li> Tempo: 2.3.1&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;p>When you install, check the container images against these checksums:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;pre>&lt;code>&lt;/code>&lt;/pre>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>Download &lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/content/releases/checksums/v3.0.0-checksums.txt" target="_blank" rel="noopener">v3.0.0-checksums.txt&lt;/a>&lt;/p>
+&lt;h3>Changelogs&lt;span class="hx-absolute -hx-mt-20" id="changelogs">&lt;/span>
+&lt;a href="#changelogs" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>The following changelogs document the features, fixes, and refactoring that went into this release.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.rhize.com/versions/3-0-3/releases/changelog/3-0-0/" >3.0.0&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.rhize.com/versions/3-0-3/releases/changelog/3-0-0rc09/" >3.0.0rc09&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.rhize.com/versions/3-0-3/releases/changelog/3-0-0rc08/" >3.0.0rc08&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.rhize.com/versions/3-0-3/releases/changelog/3-0-0rc07/" >3.0.0rc07&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.rhize.com/versions/3-0-3/releases/changelog/3-0-0rc06/" >3.0.0rc06&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.rhize.com/versions/3-0-3/releases/changelog/3-0-0rc05/" >3.0.0rc05&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2>Read more&lt;span class="hx-absolute -hx-mt-20" id="read-more">&lt;/span>
+&lt;a href="#read-more" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;a href="https://docs.rhize.com/versions/3-0-3/get-started/" >Get started&lt;/a> introduces Rhize&amp;rsquo;s application and architecture.&lt;/li>
+&lt;li>&lt;a href="https://docs.rhize.com/versions/3-0-3/explanations/" >Manufacturing data hub&lt;/a> explains why Rhize chose its design.&lt;/li>
+&lt;li>&lt;a href="https://docs.rhize.com/versions/3-0-3/use-cases/" >Use cases&lt;/a> explains ways customers use Rhize.&lt;/li>
+&lt;/ul></description></item><item><title>Changelog</title><link>https://docs.rhize.com/versions/3-0-3/releases/changelog/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/3-0-3/releases/changelog/</guid><description>
+&lt;div class="hextra-cards hx-mt-4 hx-gap-4 hx-grid not-prose"
+style="--hextra-cards-grid-cols: 2;">
+&lt;a
+class="hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900"href="https://docs.rhize.com/versions/3-0-3/releases/changelog/3-0-0/"
+>&lt;span class="hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">&lt;path stroke-linecap="round" stroke-linejoin="round" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"/>&lt;/svg>3.0.0 (general release)&lt;/span>&lt;div class="hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2">Change Log for v3.0.0 of the Rhize application&lt;/div>&lt;/a>
+&lt;a
+class="hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900"href="https://docs.rhize.com/versions/3-0-3/releases/changelog/3-0-0rc09/"
+>&lt;span class="hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">&lt;path stroke-linecap="round" stroke-linejoin="round" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"/>&lt;/svg>3.0.0rc09&lt;/span>&lt;div class="hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2">Change Log for v3.0.0rc9 of the Rhize application&lt;/div>&lt;/a>
+&lt;a
+class="hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900"href="https://docs.rhize.com/versions/3-0-3/releases/changelog/3-0-0rc08/"
+>&lt;span class="hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">&lt;path stroke-linecap="round" stroke-linejoin="round" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"/>&lt;/svg>3.0.0rc08&lt;/span>&lt;div class="hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2">Release notes for v3.0.0rc08 of the Rhize application&lt;/div>&lt;/a>
+&lt;a
+class="hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900"href="https://docs.rhize.com/versions/3-0-3/releases/changelog/3-0-0rc07/"
+>&lt;span class="hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">&lt;path stroke-linecap="round" stroke-linejoin="round" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"/>&lt;/svg>3.0.0rc07&lt;/span>&lt;div class="hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2">Release notes for v3.0.0rc07 of the Rhize application&lt;/div>&lt;/a>
+&lt;a
+class="hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900"href="https://docs.rhize.com/versions/3-0-3/releases/changelog/3-0-0rc06/"
+>&lt;span class="hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">&lt;path stroke-linecap="round" stroke-linejoin="round" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"/>&lt;/svg>3.0.0rc06&lt;/span>&lt;div class="hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2">Release notes for v3.0.0rc06 of the Rhize application&lt;/div>&lt;/a>
+&lt;a
+class="hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900"href="https://docs.rhize.com/versions/3-0-3/releases/changelog/3-0-0rc05/"
+>&lt;span class="hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">&lt;path stroke-linecap="round" stroke-linejoin="round" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"/>&lt;/svg>3.0.0rc05&lt;/span>&lt;div class="hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2">Release notes for v3.0.0rc05 of the Rhize application&lt;/div>&lt;/a>
+&lt;/div></description></item></channel></rss>
