@@ -7,6 +7,7 @@ weight: 1000
 draft: false
 aliases:
   - /explanations/isa-95-diagrams
+icon: diagram
 ---
 
 These diagrams provide some highly simplified visual explanations gleaned from parts of the thorough [ISA-95 standard](https://www.isa.org/store?query=isa95).

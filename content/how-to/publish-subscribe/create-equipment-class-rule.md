@@ -11,7 +11,7 @@ aliases:
 weight: 10
 ---
 
-An equipment class rule [triggers a BPMN]({{< relref "/how-to/bpmn/trigger-workflows/" >}}) workflow whenever a data source publishes a value that meets a specified threshold.
+An equipment class rule [triggers a BPMN]({{< relref "../bpmn/trigger-workflows/" >}}) workflow whenever a data source publishes a value that meets a specified threshold.
 
 Imagine a scenario when an oven must be preheated every time a new order number is published to an MQTT edge device.
 You could automate this workflow with a rule that listens to messages published and evaluates a condition.
@@ -46,7 +46,7 @@ This tutorial assumes a data source that exchanges messages over the MQTT protoc
 
 Before you start, ensure you have the following:
 - Access your Rhize customer environment
-- The [Agent configured]({{< relref "/reference/service-config/agent-configuration" >}}) to listen for your data-source ID
+- The [Agent configured]({{< relref "../../reference/service-config/agent-configuration" >}}) to listen for your data-source ID
 
 ## Set up: configure equipment and workflows
 

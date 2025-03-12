@@ -119,7 +119,7 @@ $.equipmentClass.id
 ### JSONata in BPMN elements
 
 JSONata can be used in many Rhize BPMN elements
-Particularly, the [JSONata service task]({{< relref "/how-to/bpmn/bpmn-elements/#jsonata-transform" >}}) exists to receive input and pass it to another element or system.
+Particularly, the [JSONata service task]({{< relref "./bpmn-elements/#jsonata-transform" >}}) exists to receive input and pass it to another element or system.
 
 Though JSONata tasks are the most common use of JSONata,
 you can use the `=` prefix to declare an expression in many other fields.

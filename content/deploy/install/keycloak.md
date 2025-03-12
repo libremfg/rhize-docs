@@ -12,8 +12,8 @@ Rhize uses [Keycloak](https://keycloak.org) as an OpenID provider.
 In your cluster, the Keycloak server to authenticate users, services, and manage Role-based access controls.
 
 This topic describes how to set up Keycloak in your Rhize cluster.
-For a conceptual overview of the authentication flow, read [About OpenID Connect]({{< relref "../../explanations/about-openidconnect.md" >}})
-
+For a conceptual overview of the authentication flow,
+read [About OpenID Connect](/explanations/about-openidconnect)
 
 ## Prerequisites
 
@@ -65,7 +65,7 @@ Other clients, such as the UI and Dashboard, use the standard flow to coordinate
 
 {{< callout type="info" >}}
 Each standard-flow client has its own subdomain.
-Refer to [Default URLs and Ports]({{< relref "/reference/default-ports" >}}) for our recommended conventions.
+Refer to [Default URLs and Ports]({{< relref "../../reference/default-ports" >}}) for our recommended conventions.
 {{< /callout >}}
 
 #### Create DB client

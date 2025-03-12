@@ -23,7 +23,7 @@ This section describes some key strategies.
 
 ### Gateways
 
-Use [exclusive gateways]({{< relref "/how-to/bpmn/bpmn-elements#gateways" >}}) for any type of error handling.
+Use [exclusive gateways]({{< relref "./bpmn-elements#gateways" >}}) for any type of error handling.
 For example, you might define a normal range for a value, then send alerts for when the value falls outside of this range.
 If it makes sense, these error branches also might flow into an early end event.
 
@@ -39,7 +39,7 @@ width="80%"
 ### JSON schema validation
 
 Validation can greatly limit the scope of possible errors.
-To validate your JSON payloads, use the [JSON schema task]({{< relref "/how-to/bpmn/bpmn-elements#json-schema" >}}).
+To validate your JSON payloads, use the [JSON schema task]({{< relref "./bpmn-elements#json-schema" >}}).
 
 The JSON schema task outputs a boolean value that indicates whether the input conforms to the schema that you set.
 You can then set a condition based on whether this `valid` variable is true, and create logic to handle errors accordingly.
@@ -234,9 +234,9 @@ This is one of the reasons we recommend always following a set of [naming conven
 
 For granular debugging, it also helps to trace the variable context as it passes from node to node.
 To facilitate this, Rhize provides a debugging option that you can pass in multiple ways:
-- From an API call with the `debug:true` [argument]({{< relref "/how-to/gql/call-the-graphql-api/#request-body" >}}).
+- From an API call with the `debug:true` [argument]({{< relref "../gql/call-the-graphql-api/#request-body" >}}).
 - In the process variable context, by setting `__traceDebug: true`
-- In the [BPMN service configuration]({{< relref "/reference/service-config/bpmn-configuration/" >}}) by setting `OpenTelemetry.defaultDebug` to `true`
+- In the [BPMN service configuration]({{< relref "../../reference/service-config/bpmn-configuration/" >}}) by setting `OpenTelemetry.defaultDebug` to `true`
 
 When the debugging variable is set, Tempo reports the entire variable context in the **Span Attributes** at the end of each node.
 

@@ -13,13 +13,13 @@ To use a filter, specify it in the operation's argument.
 Most fields in an object can serve as a filter.
 {{< callout type="info" >}}
 This page provides a detailed guide of how to use the filters, with examples.
-For a bare reference of filters and data types, refer to the [GraphQL type reference]({{< relref "/reference/gql-types" >}}).
+For a bare reference of filters and data types, refer to the [GraphQL type reference]({{< relref "../../reference/gql-types" >}}).
 {{< /callout >}}
 
   
 ## Filter by property
 
-The following sections show some common [scalar filters]({{< relref "/reference/gql-types#scalar-filters" >}}), filters that work on `string`, `dateTime`, and numeric values.
+The following sections show some common [scalar filters]({{< relref "../../reference/gql-types#scalar-filters" >}}), filters that work on `string`, `dateTime`, and numeric values.
 These filters return only the resources that have some specified property or property range.
 
 ### `between` dates
@@ -298,7 +298,7 @@ query QueryJobResponse($filter: JobResponseFilter, $propertyLabel: String) {
 {{% /tab %}}
 {{< /tabs >}}
 
-#### Avoid using @cascade with the [`order`]({{< relref "query#order" >}}) argument
+#### Avoid using @cascade with the [`order`]({{< relref "./query#order" >}}) argument
 
 The `order` argument returns only the first 1000 records of the query.
 If a record matches the `@cascade` filter but comes after these first 1000 records, the API does not return it.

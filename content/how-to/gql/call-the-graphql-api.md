@@ -48,7 +48,7 @@ src="/images/screenshot-rhize-apollo-auth-headers.png"
 width="50%"
 >}}
 
-For an overview of how Rhize handles token exchange, read [About OpenID connect]({{< ref "about-openidconnect" >}}).
+For an overview of how Rhize handles token exchange, read [About OpenID connect](/explanations/about-openidconnect).
 
 ### Request body
 

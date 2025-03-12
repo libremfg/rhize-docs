@@ -29,7 +29,7 @@ width="80%"
 >}}
 
 
-The calendar service queries all active work calendar definitions at an interval designated in your [service configuration]({{< relref "/reference/service-config" >}}).
+The calendar service queries all active work calendar definitions at an interval designated in your [service configuration]({{< relref "../../reference/service-config" >}}).
 The service then checks for any active `workCalendarDefinitionEntry` items that start or end within that interval.
 If any exist, Rhize creates a `workCalendarEntry` with the start and end time.
 
