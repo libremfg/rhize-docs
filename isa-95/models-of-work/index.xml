@@ -135,20 +135,21 @@ description: Make Packaged Blue Juice
 workType: production
 duration: 45 minutes
 }
-&lt;/pre>&lt;p>Along with relationships described in the following sections, work masters have attributes to identify and qualify the type of work.
+&lt;/pre>&lt;p>Along with relationships described in the following sections, work masters have attributes to identify and qualify the type of work being defined.
 Important attributes include:&lt;/p>
 &lt;dl>
 &lt;dt>ID&lt;/dt>
-&lt;dd>Each work master should have a unique ID&lt;/dd>
+&lt;dd>A unique ID&lt;/dd>
 &lt;dt>Work type&lt;/dt>
 &lt;dd>The category of work―one of &lt;code>production&lt;/code>, &lt;code>maintenance&lt;/code>, &lt;code>quality&lt;/code>, or &lt;code>inventory&lt;/code>&lt;/dd>
 &lt;dt>Duration&lt;/dt>
-&lt;dd>How much time the work should take to perform&lt;/dd>
+&lt;dd>The expected time needed to perform the work&lt;/dd>
 &lt;/dl>
 &lt;h2>Contains resources and parameter specifications&lt;span class="hx-absolute -hx-mt-20" id="contains">&lt;/span>
 &lt;a href="#contains" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>A work master may have &lt;em>specifications&lt;/em> that link the work master to its required resources and instructions.
 In ISA-95 relations, the specification is an intermediary between the work master and the resource or parameter.
-The work master &lt;em>contains&lt;/em> the specifications, and the specifications describe the necessary quantities and uses of the resource object that it &lt;em>corresponds to&lt;/em>.&lt;/p>
+The work master &lt;em>contains&lt;/em> the specifications;
+the specifications describe the necessary quantities and uses of the resource object that it &lt;em>corresponds to&lt;/em>.&lt;/p>
 &lt;pre class="mermaid hx-mt-6">classDiagram
 class materialSpecification{
 what and how much?
@@ -168,9 +169,9 @@ workMaster *--> personnelSpecification :contains
 workMaster *--> equipmentSpecification :contains
 workMaster *--> parameterSpecification :contains&lt;/pre>&lt;h3>Example: material specifications&lt;span class="hx-absolute -hx-mt-20" id="example-material-specifications">&lt;/span>
 &lt;a href="#example-material-specifications" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Resource specifications may have attributes that describe information about the use, quantity, and location of the resource.
-Some specifications, such as material, have additional attributes that are specific to the resource that it corrsponds to.&lt;/p>
-&lt;p>To produce one pallet of &lt;code>Cosmic Blue Juice&lt;/code>, The Juice Factory requires 5 cases of Blue Juice and one pallet.
-The work master to produce this pallet contains three material specifications, all with different uses.&lt;/p>
+Some specifications, such as material, have additional attributes.&lt;/p>
+&lt;p>For example, to produce one pallet of &lt;code>Cosmic Blue Juice&lt;/code>, The Juice Factory requires 5 cases of Blue Juice and one pallet.
+The work master to produce this final product specifies three different materials, all of which are used in a different way:&lt;/p>
 &lt;ul>
 &lt;li>Consume 5 units of the &lt;code>blue juice case&lt;/code>, a &lt;abbr title="A representation of material with similar charecteristics. All material lots must have one associated material definition.">material definition&lt;/abbr>&lt;/li>
 &lt;li>Produce 1 unit of &lt;code>packed blue juice&lt;/code>, a &lt;abbr title="A representation of material with similar charecteristics. All material lots must have one associated material definition.">material definition&lt;/abbr>&lt;/li>
@@ -202,14 +203,24 @@ description: One pallet of cosmic blue juice
 `Work master: Make Cosmic Blue Juice` *--> `Specification: blue juice pallet`
 `Work master: Make Cosmic Blue Juice` *--> `Specification: pallet`
 `Specification: blue juice case` --> `Material definition: PBJ`
-`Specification: blue juice pallet` --> `Material definition: blue juice case`&lt;/pre>&lt;p>Note that the preceding diagram includes only the material specification.
-The full work master may also contain specifications about the equipment, personnel, parameter specifications, and so on.&lt;/p>
+`Specification: blue juice pallet` --> `Material definition: blue juice case`&lt;/pre>&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">Note that the preceding diagram includes only the material specification.
+The full work master may also contain specifications about the equipment, personnel, parameter specifications, and so on.&lt;/div>
+&lt;/div>
+&lt;/div>
 &lt;h3>Parameter specifications&lt;span class="hx-absolute -hx-mt-20" id="parameter-specifications">&lt;/span>
 &lt;a href="#parameter-specifications" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Parameter specifications detail information that is specific to a work master but not specific to any particular resource.
 For example, the production of bulk juice might have a parameter specification called &lt;code>pre-mix checklist&lt;/code> that details a set of steps that the operator must perform before starting the equipment.&lt;/p>
 &lt;h2>Relationships to planning models&lt;span class="hx-absolute -hx-mt-20" id="relationships-to-planning-models">&lt;/span>
 &lt;a href="#relationships-to-planning-models" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>As work masters &lt;a href="#contains" >contain&lt;/a> resource requirements and instructions, they also provide a source document for detailed scheduling and dispatching.
-As the work master is the most granular definition of work, its closest associated planning entity is the job order, the most granular scheduling entity.&lt;/p>
+Conventionally, work masters are related to job orders through a work directive entity:&lt;/p>
+&lt;ul>
+&lt;li>The job order says what to make&lt;/li>
+&lt;li>The work master provides a canonical definition of how to make it&lt;/li>
+&lt;li>The work directive provides a version of the work master, recording how work was performed at the time of execution&lt;/li>
+&lt;/ul>
 &lt;pre class="mermaid hx-mt-6">classDiagram
 class jobOrder{
 make bulk blue juice
@@ -221,14 +232,7 @@ class workDirective{
 id: WD.Bulk_blue_juice
 }
 jobOrder --> workDirective :corresponds to
-workDirective --> workMaster :derived from &lt;/pre>&lt;p>Conventionally, the final execution of the job order &lt;em>corresponds to&lt;/em> a work directive that is &lt;em>derived from&lt;/em> the work master.
-The functions of the work master, work directive, and job order are as follows:&lt;/p>
-&lt;ul>
-&lt;li>The job order says what to make&lt;/li>
-&lt;li>The work master provides a canonical definition of how to make it&lt;/li>
-&lt;li>The work directive provides a version of the work master, recording how work was performed at the time of execution&lt;/li>
-&lt;/ul>
-&lt;h3>Corresponds to work directive&lt;span class="hx-absolute -hx-mt-20" id="corresponds-to-work-directive">&lt;/span>
+workDirective --> workMaster :derived from &lt;/pre>&lt;h3>Corresponds to work directive&lt;span class="hx-absolute -hx-mt-20" id="corresponds-to-work-directive">&lt;/span>
 &lt;a href="#corresponds-to-work-directive" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A work directive is a clone of the work master that is made at the time of dispatching.
 If the actual work performed needs to deviate from the work defined in the work master,
 the work directive provides a way to record the changes in a new definition.&lt;/p>
@@ -237,7 +241,7 @@ At the time of production, however, the plant might have only sugar from a diffe
 In this case, the work directive would override the material specification to reflect the substitute material definition.
 that&lt;/p>
 &lt;h2>Relationships to other work masters&lt;span class="hx-absolute -hx-mt-20" id="relationships-to-other-work-masters">&lt;/span>
-&lt;a href="#relationships-to-other-work-masters" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>A work master might have relationships to other work masters.&lt;/p>
+&lt;a href="#relationships-to-other-work-masters" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>A work master might have relationships to other work masters:&lt;/p>
 &lt;ul>
 &lt;li>A work master may &lt;em>contain&lt;/em> children work master&lt;/li>
 &lt;li>An instance work master may &lt;em>be defined by&lt;/em> other work masters&lt;/li>
@@ -259,7 +263,7 @@ equipment_specifcation: palletizer
 `WM:make blue juice bottle` *--> `WM: bottle` :contains
 `WM:make blue juice bottle` *--> `WM: pack in case` :contains
 `WM:make blue juice bottle` *--> `WM: palletize` :contains&lt;/pre>&lt;h3>Defined by patterns&lt;span class="hx-absolute -hx-mt-20" id="pattern">&lt;/span>
-&lt;a href="#pattern" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A &lt;em>pattern&lt;/em> work master provides a template work master for similar production processes.&lt;/p>
+&lt;a href="#pattern" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A &lt;em>pattern&lt;/em> work master provides a template to build &lt;em>instance&lt;/em> work masters for similar production processes.&lt;/p>
 &lt;p>For example, to produce bulk juice for all five of its juice lines,
 The Juice Factory requires exactly the same equipment and quantity of sugar.
 The only item that changes is the material definition for the kits that are dumped into the mixer.&lt;/p>
@@ -286,7 +290,12 @@ patternWorkMaster --> instanceWorkMaster_blue :defines
 patternWorkMaster --> instanceWorkMaster_red :defines&lt;/pre>&lt;h3>Corresponds to a process segment&lt;span class="hx-absolute -hx-mt-20" id="corresponds-to-a-process-segment">&lt;/span>
 &lt;a href="#corresponds-to-a-process-segment" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Work masters &lt;em>correspond to&lt;/em> &lt;a href="https://docs.rhize.com/isa-95/models-of-work/process-segments/" >process segments&lt;/a>, which are less granular, business-level definitions of work.
 For example, the &lt;code>make juice&lt;/code> process segment might have five corresponding work masters that describe how to produce each line of juice at the level of detail necessary for a manufacturing execution system.&lt;/p>
-&lt;h2>Workflow specifications&lt;span class="hx-absolute -hx-mt-20" id="workflow-specifications">&lt;/span>
+&lt;pre class="mermaid hx-mt-6">classDiagram
+namespace process_segment_kitting{
+class `WM: make blue juice kit`
+class `WM: make red juice kit`
+class `WM: make green juice kit`
+}&lt;/pre>&lt;h2>Workflow specifications&lt;span class="hx-absolute -hx-mt-20" id="workflow-specifications">&lt;/span>
 &lt;a href="#workflow-specifications" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The work master may be linked to other work masters in a sequence through a &lt;em>workflow specification&lt;/em>.
 The workflow specification provides an overview of the steps to execute masters in sequence.&lt;/p>
 &lt;p>Each master can &lt;em>have&lt;/em> a node that exists in the workflow specification.
