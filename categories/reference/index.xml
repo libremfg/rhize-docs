@@ -2914,7 +2914,8 @@ This glossary is a reference of how Rhize defines terms used in this documentati
 &lt;dd>A uniquely identifiable amount of material, either countable or weighable&lt;/dd>&lt;dt id="material-sublot">Material sublot&lt;/dt>
 &lt;dd>Each separately identifiable unit of a &lt;a href="#material-lot">material lot.&lt;/a>&lt;/dd>&lt;dt id="mutation">Mutation&lt;/dt>
 &lt;dd>A GraphQL operation that modifies some data in the database, usually creating, updating, or deleting a resource&lt;/dd>&lt;dt id="nats">NATS&lt;/dt>
-&lt;dd>Connective infrastructure to address, discover, and exchange messages in a distributed system. Rhize uses NATS as the broker to publish and subscribe to event data, decoupling communication between services and equipment.&lt;/dd>&lt;dt id="operational-location">Operational location&lt;/dt>
+&lt;dd>Connective infrastructure to address, discover, and exchange messages in a distributed system. Rhize uses NATS as the broker to publish and subscribe to event data, decoupling communication between services and equipment.&lt;/dd>&lt;dt id="ontology">Ontology&lt;/dt>
+&lt;dd>The entities and relationships that represent all knowledge in the domain of manufacturing operations&lt;/dd>&lt;dt id="operational-location">Operational location&lt;/dt>
 &lt;dd>Where resources are expected to be located in a plant&lt;/dd>&lt;dt id="operations-definition">Operations definition&lt;/dt>
 &lt;dd>The resources required to perform an operation, including for production, quality, maintenance, and inventory, from the perspective of the level-4 enterprise control systems.&lt;/dd>&lt;dt id="operations-event-definition">Operations event definition&lt;/dt>
 &lt;dd>A definition of the properties that pertain to an &lt;em>event&lt;/em> from the perspective of the level-4 (ERP) systems.&lt;/dd>&lt;dt id="overall-equipment-effectiveness">Overall Equipment Effectiveness (OEE)&lt;/dt>
