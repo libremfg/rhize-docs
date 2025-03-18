@@ -111,6 +111,8 @@
     - text: Official NATS documentation
       uri: https://docs.nats.io/nats-concepts/overview
 
+- term: Ontology
+  definition: The entities and relationships that represent all knowledge in the domain of manufacturing operations
 - term: Operational location
   definition: Where resources are expected to be located in a plant
   tags: "s95"
