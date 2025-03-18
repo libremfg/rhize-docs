@@ -27,25 +27,26 @@ duration: 45 minutes
 }
     
 ```
-Along with relationships described in the following sections, work masters have attributes to identify and qualify the type of work.
+Along with relationships described in the following sections, work masters have attributes to identify and qualify the type of work being defined.
 Important attributes include:
 
 
 ID
-: Each work master should have a unique ID
+: A unique ID
 
 Work type
 : The category of work―one of `production`, `maintenance`, `quality`, or `inventory`
 
 Duration
-: How much time the work should take to perform
+: The expected time needed to perform the work
  
 
 ## Contains resources and parameter specifications {#contains}
 
 A work master may have _specifications_ that link the work master to its required resources and instructions. 
 In ISA-95 relations, the specification is an intermediary between the work master and the resource or parameter.
-The work master _contains_ the specifications, and the specifications describe the necessary quantities and uses of the resource object that it _corresponds to_.
+The work master _contains_ the specifications;
+the specifications describe the necessary quantities and uses of the resource object that it _corresponds to_.
 
 
 ```mermaid
@@ -77,11 +78,11 @@ workMaster *--> parameterSpecification :contains
 ### Example: material specifications
 
 Resource specifications may have attributes that describe information about the use, quantity, and location of the resource.
-Some specifications, such as material, have additional attributes that are specific to the resource that it corrsponds to.
+Some specifications, such as material, have additional attributes.
 
 
-To produce one pallet of `Cosmic Blue Juice`, The Juice Factory requires 5 cases of Blue Juice and one pallet.
-The work master to produce this pallet contains three material specifications, all with different uses.
+For example, to produce one pallet of `Cosmic Blue Juice`, The Juice Factory requires 5 cases of Blue Juice and one pallet.
+The work master to produce this final product specifies three different materials, all of which are used in a different way:
 - Consume 5 units of the `blue juice case`, a {{< abbr "material definition" >}}
 - Produce 1 unit of `packed blue juice`, a {{< abbr "material definition" >}}
 - Use one pallet, a consumable (material that has no {{< abbr "material lot">}})
@@ -121,8 +122,10 @@ description: One pallet of cosmic blue juice
 
 ```
 
+{{< callout type="info" >}}
 Note that the preceding diagram includes only the material specification.
 The full work master may also contain specifications about the equipment, personnel, parameter specifications, and so on.
+{{< /callout >}}
 
 ### Parameter specifications
 
@@ -132,7 +135,10 @@ For example, the production of bulk juice might have a parameter specification c
 ## Relationships to planning models
 
 As work masters [contain](#contains) resource requirements and instructions, they also provide a source document for detailed scheduling and dispatching.
-As the work master is the most granular definition of work, its closest associated planning entity is the job order, the most granular scheduling entity.
+Conventionally, work masters are related to job orders through a work directive entity:
+- The job order says what to make
+- The work master provides a canonical definition of how to make it
+- The work directive provides a version of the work master, recording how work was performed at the time of execution
 
 
 ```mermaid
@@ -153,11 +159,8 @@ workDirective --> workMaster :derived from
 
 ```
 
-Conventionally, the final execution of the job order _corresponds to_ a work directive that is _derived from_ the work master.
-The functions of the work master, work directive, and job order are as follows:
-- The job order says what to make
-- The work master provides a canonical definition of how to make it
-- The work directive provides a version of the work master, recording how work was performed at the time of execution
+
+
 
 
 ### Corresponds to work directive
@@ -174,7 +177,7 @@ that
 
 ## Relationships to other work masters
 
-A work master might have relationships to other work masters.
+A work master might have relationships to other work masters:
 - A work master may _contain_ children work master
 - An instance work master may _be defined by_ other work masters
 
@@ -207,7 +210,7 @@ equipment_specifcation: palletizer
 
 ### Defined by patterns {#pattern}
 
-A _pattern_ work master provides a template work master for similar production processes.
+A _pattern_ work master provides a template to build _instance_ work masters for similar production processes.
 
 For example, to produce bulk juice for all five of its juice lines,
 The Juice Factory requires exactly the same equipment and quantity of sugar.
@@ -247,6 +250,17 @@ patternWorkMaster --> instanceWorkMaster_red :defines
 
 Work masters _correspond to_ [process segments]({{< relref "process-segments" >}}), which are less granular, business-level definitions of work.
 For example, the `make juice` process segment might have five corresponding work masters that describe how to produce each line of juice at the level of detail necessary for a manufacturing execution system.
+
+```mermaid
+classDiagram
+namespace process_segment_kitting{
+class `WM: make blue juice kit`
+class `WM: make red juice kit`
+class `WM: make green juice kit`
+
+}
+
+```
 
 
 ## Workflow specifications
