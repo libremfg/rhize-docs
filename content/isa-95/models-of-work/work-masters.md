@@ -1,6 +1,6 @@
 ---
 title: Work masters
-description: The most granular work definitions in ISA-95
+description: The most granular work definition in ISA-95, defining the resources and instructions necessary to do a unit of work.
 sidebar:
   exclude: true
 ---
@@ -12,7 +12,7 @@ As the most granular work definition in ISA-95, the work master can serve a vari
 - Store recipes and parameters to be downloaded by the PLC
 - Contain parameters to derive metrics for KPI calculations
 
-In the manufacturing {{< abbr "ontology" >}}, the work master has relationships to resources, other work definitions, and planning entities.
+In the manufacturing {{< abbr "ontology" >}}, the work master has relationships to resources, other work definitions, and planning entities. Like other work definitions, a work master can be either a {{< abbr "pattern" >}}, defining a template for work, or an {{< abbr "instance" >}}, defining a unit of actual work.
 
 ## Work master attributes
 
@@ -178,8 +178,8 @@ that
 ## Relationships to other work masters
 
 A work master might have relationships to other work masters:
-- A work master may _contain_ children work master
-- An instance work master may _be defined by_ other work masters
+- A work master may _contain_ children work master.
+- An {{< abbr "instance" >}} work master may _be defined by_ a _{{< abbr "pattern" >}}_ work master.
 
 ### Parent child-work masters {#parent}
 
