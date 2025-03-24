@@ -126,7 +126,7 @@ As the most granular work definition in ISA-95, the work master can serve a vari
 &lt;li>Store recipes and parameters to be downloaded by the PLC&lt;/li>
 &lt;li>Contain parameters to derive metrics for KPI calculations&lt;/li>
 &lt;/ul>
-&lt;p>In the manufacturing &lt;abbr title="The entities and relationships that represent all knowledge in the domain of manufacturing operations">ontology&lt;/abbr>, the work master has relationships to resources, other work definitions, and planning entities.&lt;/p>
+&lt;p>In the manufacturing &lt;abbr title="The entities and relationships that represent all knowledge in the domain of manufacturing operations">ontology&lt;/abbr>, the work master has relationships to resources, other work definitions, and planning entities. Like other work definitions, a work master can be either a &lt;abbr title="Pattern (work definition). A work definition that creates a pattern or template for other patterns or work definitions to follow">pattern&lt;/abbr>, defining a template for work, or an &lt;abbr title="An identifiable member of a manufacturing class, like a material or process segment, that can be tracked and scheduled">instance&lt;/abbr>, defining a unit of actual work.&lt;/p>
 &lt;h2>Work master attributes&lt;span class="hx-absolute -hx-mt-20" id="work-master-attributes">&lt;/span>
 &lt;a href="#work-master-attributes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;pre class="mermaid hx-mt-6">classDiagram
 class workMaster{
@@ -243,8 +243,8 @@ that&lt;/p>
 &lt;h2>Relationships to other work masters&lt;span class="hx-absolute -hx-mt-20" id="relationships-to-other-work-masters">&lt;/span>
 &lt;a href="#relationships-to-other-work-masters" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>A work master might have relationships to other work masters:&lt;/p>
 &lt;ul>
-&lt;li>A work master may &lt;em>contain&lt;/em> children work master&lt;/li>
-&lt;li>An instance work master may &lt;em>be defined by&lt;/em> other work masters&lt;/li>
+&lt;li>A work master may &lt;em>contain&lt;/em> children work master.&lt;/li>
+&lt;li>An &lt;abbr title="An identifiable member of a manufacturing class, like a material or process segment, that can be tracked and scheduled">instance&lt;/abbr> work master may &lt;em>be defined by&lt;/em> a &lt;em>&lt;abbr title="Pattern (work definition). A work definition that creates a pattern or template for other patterns or work definitions to follow">pattern&lt;/abbr>&lt;/em> work master.&lt;/li>
 &lt;/ul>
 &lt;h3>Parent child-work masters&lt;span class="hx-absolute -hx-mt-20" id="parent">&lt;/span>
 &lt;a href="#parent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>You can group sub-processes of a work master using a parent-child relationship.

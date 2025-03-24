@@ -2919,8 +2919,8 @@ This glossary is a reference of how Rhize defines terms used in this documentati
 &lt;dd>Where resources are expected to be located in a plant&lt;/dd>&lt;dt id="operations-definition">Operations definition&lt;/dt>
 &lt;dd>The resources required to perform an operation, including for production, quality, maintenance, and inventory, from the perspective of the level-4 enterprise control systems.&lt;/dd>&lt;dt id="operations-event-definition">Operations event definition&lt;/dt>
 &lt;dd>A definition of the properties that pertain to an &lt;em>event&lt;/em> from the perspective of the level-4 (ERP) systems.&lt;/dd>&lt;dt id="overall-equipment-effectiveness">Overall Equipment Effectiveness (OEE)&lt;/dt>
-&lt;dd>A measure of manufacturing productivity. OEE is commonly calculated as the product of three critical factors: availability, performance, and quality.&lt;/dd>&lt;dt id="pattern-process-segment">Pattern (process segment)&lt;/dt>
-&lt;dd>A &lt;a href="#process-segment">process segment&lt;/a> that creates a pattern or template for other patterns or process segments to follow&lt;/dd>&lt;dt id="personnel-class">Personnel class&lt;/dt>
+&lt;dd>A measure of manufacturing productivity. OEE is commonly calculated as the product of three critical factors: availability, performance, and quality.&lt;/dd>&lt;dt id="pattern-work-definition">Pattern (work definition) (pattern)&lt;/dt>
+&lt;dd>A work definition that creates a pattern or template for other patterns or work definitions to follow&lt;/dd>&lt;dt id="personnel-class">Personnel class&lt;/dt>
 &lt;dd>A grouping of persons whose work shares a definite purpose in the manufacturing process&lt;/dd>&lt;dt id="physical-asset">Physical asset&lt;/dt>
 &lt;dd>A physical piece of equipment with an ID&lt;/dd>&lt;dt id="process-segment">Process segment&lt;/dt>
 &lt;dd>A step in a manufacturing activitity that is visible to a business process, grouping the necessary personnel, material, equipment, and physical assets&lt;/dd>&lt;dt id="process-variable-context">Process variable context&lt;/dt>
