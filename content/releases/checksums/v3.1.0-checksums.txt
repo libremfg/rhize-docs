@@ -8,7 +8,7 @@ sha256:TBD
 
 BAAS:
 registry.gitlab.com/libremfg/baas:v3.1.0
-sha256:TBD
+sha256:632226e86a8ca6175287ab2a597b6a31325118fb125daa499bcf4916cafb90f1
 
 Libre Core:
 registry.gitlab.com/libremfg/libre-core:v3.1.0
@@ -20,11 +20,11 @@ sha256:TBD
 
 Libre Audit:
 registry.gitlab.com/libremfg/libre-audit:v3.1.0
-sha256:TBD
+sha256:ede2deec9847ccac1fe60935c7ac26b58d1a9ffd9fa6cfc6303b0d4c34ef0a7a
 
 Libre Audit Postgres:
 registry.gitlab.com/libremfg/libre-audit/postgres:v3.1.0
-sha256:TBD
+sha256:09f211dd968482894850218f0db9f65ad080d22b6939ec4e11e1e078dbb54f52
 
 Libre Keycloak Theme:
 registry.gitlab.com/libremfg/frontend/libre-keycloak-theme:v3.1.0
