@@ -248,6 +248,15 @@ Rhize creates an `ADMIN` role and group.
      - Description: `ADMIN`
  1. **Save**.
 
+#### Add `LibreAdminRole`
+
+1. Select **Realm Roles**. Then **Create role**.
+1. Enter the following values:
+    - Role name: `LibreAdminRole`
+    - Description: `LibreAdminRole`
+3. **Save**.
+
+
 #### Add the Admin Group
 
 1. In the left hand menu, select **Groups > Create group**.
