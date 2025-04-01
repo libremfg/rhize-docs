@@ -29,7 +29,7 @@ Common values that are changed include:
 - The number of replicas running for each pod
 - Ingress values for services exposed on the internet
 
-## Get client secrets.
+## Get client secrets
 
 1. Go to Keycloak and get the secrets for each client you've created.
 1. Create Kubernetes secrets for each service. You can either create a secret file, or pass raw data from the command line.
@@ -42,8 +42,8 @@ Common values that are changed include:
    With raw data, the command might look something like this.
 
    ```bash
-   kubectl create secret generic {{< param application_name >}}-client-secrets \
-   -n {{< param application_name >}} --from-literal=dashboard=<USER \
+   kubectl create secret generic {{< param application_name >}}-client-secrets -n {{< param application_name >}} \
+   --from-literal=dashboard=123 \
    --from-literal={{< param application_name >}}Agent=123 \
    --from-literal={{< param application_name >}}Audit=123 \
    --from-literal={{< param application_name >}}Baas=KYbMHlRLhXwiDNFuDCl3qtPj1cNdeMSl \
@@ -54,16 +54,6 @@ Common values that are changed include:
    ```
 
    As you install services through Helm, their respective YAML files reference these secrets.
-
-## Add the Rhize Helm Chart Repository
-
-You must add the helm chart repository for Rhize.
-
-1. Add the Helm Chart Repository
-
-    ```bash
-    helm repo add libre https://gitlab.com/api/v4/projects/42214456/packages/helm/stable
-    ```
 
 ## Install and add roles for the DB {#db}
 

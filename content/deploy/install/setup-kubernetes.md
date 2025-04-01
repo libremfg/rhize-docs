@@ -58,24 +58,23 @@ Then, follow these steps.
 
     Alternatively, you can modify the kube `config` file or use the `kubens` tool.
 
-1. Add the Helm repository:
+1. Add the Rhize Helm Chart Repository:
 
     ```bash
     helm repo add \
-         --username <EMAIL_ADDRESS> \
-         --password <ACCESS_TOKEN> \
-         {{< param application_name >}} \
-   <REPO>
+      --username <EMAIL_ADDRESS> \
+      --password <ACCESS_TOKEN> \
+      {{< param application_name >}} \
+      https://gitlab.com/api/v4/projects/42214456/packages/helm/stable
     ```
-
 
 1. Create the container image pull secret:
 
     ```bash
     kubectl create secret docker-registry {{< param application_name >}}-registry-credential \
-     --docker-server=<DOCKER_SERVER> \ ## the repository
-     --docker-password= <ACCESS_TOKEN> \
-     --docker-email= <EMAIL_ADDRESS>
+      --docker-server=<HELM_REPOSITORY> \
+      --docker-password=<ACCESS_TOKEN> \
+      --docker-email=<EMAIL_ADDRESS>
     ```
 
     Confirm the secrets with this command:
@@ -84,11 +83,16 @@ Then, follow these steps.
     kubectl get secrets
     ```
 
-
 1. Add the Bitnami Helm repository:
 
      ```bash
      helm repo add bitnami https://charts.bitnami.com/bitnami
+     ```
+
+     And update repositories with:
+
+     ```bash
+     helm repo update
      ```
 
 1. Pull the build template repository (we will supply this).
@@ -99,11 +103,25 @@ Then, follow these steps.
      helm install keycloak -f ./keycloak.yaml bitnami/keycloak -n libre
      ```
 
-1. Set up port forwarding from Keycloak. For example, this forwards traffic to port `5101` on `localhost`
+> Note: Version may have to be specified by appending on `--version` and the desired chart version.
+
+1. Set up port forwarding from Keycloak. For example, this forwards traffic to port `8080` on `localhost`
 
      ```bash
-     kubectl port-forward  svc/keycloak 5101:80
+     kubectl port-forward svc/keycloak 8080:80 -n libre
      ```
+
+### Keycloak Wrapper (Optional)
+Alternatively to setting up Keycloak manually, we provide a wrapper for Keycloak that will:
+- Include the {{< param application_name >}} login theme.
+- A default realm configuration.
+- Automatically populate kube with client secrets.
+
+To use this wrapper, instead run:
+
+  ```bash
+  helm install keycloak -f keycloak-wrapper.yaml libre/keycloak-wrapper -n libre
+  ```
 
 ## Next steps
 

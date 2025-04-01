@@ -41,6 +41,11 @@ To create your Rhize realm, follow these steps.
 
 1. In the side menu, select **Master** then **Create Realm**.
 1. For the **Realm Name**, enter `{{< param application_name >}}`. **Create.**
+
+### Configure realm settings
+
+#### Configure frontend URL and SSL
+
 1. In the side menu, select **Realm Settings**.
 1. Enter the following values:
   | Field        | value                 |
@@ -48,12 +53,27 @@ To create your Rhize realm, follow these steps.
   | Frontend URL | Keycloak frontend URL |
   | Require SSL  | External requests     |
 
+#### Enable Keycloak Audit Trail
 
-After you've created the realm, you can create clients.
+1. Select **Realm Settings**, and then **Events**.
+1. Select the tab **User event settings**.
+1. Enable **Save Events** and set an expiration.
+1. **Save**.
+1. Repeat the process for the **Admin event settings** tab.
 
-{{% callout type="info" %}}
+#### Configure password policy
+
+1. Select **Authentication** and then the **Policies** tab.
+1. Select the **Password policy** tab.
+1. Add your organisation's password policy.
+
+#### Configure brute-force protections
+
+1. Select **Realm settings**  and then the **Security defenses** tab.
+1. In **Brute force detection**, enable the feature and configure it to your requirements.
+
+#### Configure theme (Optional)
 If created with the Libre Theme `init` container, configure the **Login Theme** in **Realm settings** for `libre`.
-{{% /callout %}}
 
 ### Create clients
 
@@ -69,7 +89,6 @@ Refer to [Default URLs and Ports]({{< relref "../../reference/default-ports" >}}
 {{< /callout >}}
 
 #### Create DB client
-
 
 Create a client for the DB as follows:
 1. In the side menu, select **Clients > create client**.
@@ -153,7 +172,7 @@ Create a client for the UI as follows:
    - **Home URL**: `<DASHBOARD_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
    - **Valid redirect URIs**: `<DASHBOARD_URL>/login/generic_oauth` without trailing slashes
    - **Valid post logout redirect URIs**: `+` without trailing slashes
-   - **Home URL**: `<DASHBOARD_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
+   - **Web origins**: `<DASHBOARD_SUBDOMAIN>.<YOUR_DOMAIN>` without trailing slashes
 
 1. Select **Next**, then **Save**.
 
@@ -211,7 +230,7 @@ To create a scope for your Rhize services, follow these steps:
     - **Add to access token**: `Off`
 1. Repeat the preceding step for a mapper for the BPMN client:
     - **Mapper Type**: `Audience`
-    - **Name**: `{{< param application_name >}}BPMNAudienceMapper`
+    - **Name**: `{{< param application_name >}}BpmnAudienceMapper`
     - **Include Client Audience**: `{{< param application_name >}}Bpmn`
     - **Add to ID Token**: `On`
     - **Add to access token**: `On`
@@ -302,8 +321,8 @@ Now map the scope:
 1. In the left hand menu, select **Clients**, and then `dashboard`.
 1. Select the **Client scopes** tab.
 1. **Add client scope**.
-1. Select `groups` and `{{< param application_name >}}ClientScope`.
-1. **Add Default**.
+1. Select `groups`.
+1. **Add > Default**.
 
 ### Add Client Policy
 
@@ -312,8 +331,8 @@ Rhize requires authorization for the database service.
 
 1. In the left hand menu, select **Clients**, and then `{{< param db >}}`.
 1. Select the **Authorization** tab.
-1. Select **Policies > Create Policy**
-1. Select **Group > Create Policy**.
+1. Select the **Policies** sub-tab.
+1. Select **Create Policy > Group**.
 1. Name the policy `{{< param application_name >}}AdminGroupPolicy`.
 1. Select **Add Groups**.
 1. Select `{{< param application_name >}}AdminGroup`.
@@ -377,28 +396,6 @@ Repeat this process for the following accounts:
     - **First name**: `Agent`
     - **Last name**: `{{< param brand_name >}}`
     - **Join Groups**: `{{< param application_name >}}AdminGroup`
-
-### Enable Keycloak Audit Trail
-
-With the `libre` realm selected:
-1. Select **Realm Settings**, and then **Events**.
-1. Select the tab **User event settings**.
-1. Enable **Save Events** and set an expiration.
-1. **Save**.
-1. Repeat the process for the **Admin event settings** tab.
-
-### Configure password policy
-
-With the `libre` realm selected:
-1. Select **Authentication** and then the **Policies** tab.
-1. Select the **Password policy** tab.
-1. Add your organisation's password policy.
-
-### Configure brute-force protections
-
-With the `libre` realm selected:
-1. Select **Realm settings**  and then the **Security defenses** tab.
-1. In **Brute force detection**, enable the feature and configure it to your requirements.
 
 {{% /steps %}}
 
