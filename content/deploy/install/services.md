@@ -152,7 +152,7 @@ Rhize uses Redpanda to buffer requests to Restate and connect to Agent.
 
 Install Redpanda with these steps:
 
-1. If it doesn't exist, add the Redpanda repository:
+1. If the Redpanda repository doesn't exist, add it:
 
     ```bash
     helm repo add redpanda https://charts.redpanda.com
@@ -187,7 +187,8 @@ Install Tempo with these steps:
     helm install tempo -f tempo.yaml grafana/tempo -n {{< param application_name >}}
     ```
 
-> Note: Depending on your configuration you may need to run Tempo in distributed mode. When installing with Helm instead of using `grafana/tempo` instead do `grafana/tempo-distributed`.
+> [!Note] 
+> Depending on your configuration you may need to run Tempo in distributed mode. When installing with Helm instead of using `grafana/tempo` instead do `grafana/tempo-distributed`.
 
 ### Restate
 
@@ -201,7 +202,7 @@ Install Restate with these steps:
     helm install restate -f restate.yaml oci://ghcr.io/restatedev/restate-helm -n {{< param application_name >}}
     ```
 
-The port for Restate will need to be proxied in order to register certain services with it.
+So that you can register certain services with Restate, proxy the Restate port:
 
    ```bash
    kubectl port-forward -n {{< param application_name >}} pod/restate-0 9070:9070
@@ -223,7 +224,13 @@ Install Workflow with these steps:
    helm install workflow -f workflow.yaml {{< param application_name >}}/workflow -n {{< param application_name >}}
    ```
 
-1. Workflow should register with Restate when it starts up. If it doesn't then it can be registered it by running the following:
+1. When the Workflow service starts, it should register with Restate. Verify this by running:
+
+    ```bash
+    curl localhost:9070/deployments | jq '.deployments[].uri'
+    ```
+
+    This will show the URL of each registered service. If Workflow's URL is not present, register it by running:
 
     ```bash
     curl --location 'http://localhost:9070/deployments' \
@@ -270,9 +277,9 @@ Install QuestDB with these steps:
     helm install questdb -f questdb.yaml questdb/questdb -n {{< param application_name >}}
     ```
 
-### ISA 95
+### ISA-95
 
-Install ISA 95 with these steps:
+Install ISA-95 with these steps:
 
 1. Modify the Helm file as needed.
 
@@ -282,12 +289,18 @@ Install ISA 95 with these steps:
    helm install isa95 -f isa95.yaml {{< param application_name >}}/isa95 -n {{< param application_name >}}
    ```
 
-1. ISA 95 should register with Restate when it starts up. If it doesn't then it can be registered it by running the following:
+1. When the ISA-95 service starts, it should register with Restate. Verify this by running:
+
+    ```bash
+    curl localhost:9070/deployments | jq '.deployments[].uri'
+    ```
+
+    This will show the URL of each registered service. If ISA-95's URL is not present, register it by running:
 
     ```bash
     curl --location 'http://localhost:9070/deployments' \
       --header 'Content-Type: application/json' \
-      --data '{"uri":"http://isa95.{{< param application_name >}}.svc.cluster.local:29082", "force":true}'
+      --data '{"uri":"http://isa95.{{< param application_name >}}.svc.cluster.local:29080", "force":true}'
     ```
 
 
@@ -342,8 +355,8 @@ Install Agent Service with these steps:
 
 1. Modify the Agent Helm file as needed.
 
-1. In Rhize add in a Data Source for Agent to interact with:
-    - In the lefthand menu open `Master Data` > `Data Sources` > `+ Create Data Source`
+1. In the Rhize UI, add a Data Source for Agent to interact with:
+    - In the lefthand menu, open **Master Data > Data Sources > + Create Data Source**.
     - Input a name for the Data Source.
     - Add a Connection String and Create.
     - Add any relevant Topics.
@@ -355,11 +368,11 @@ Install Agent Service with these steps:
     helm install agent -f agent.yaml {{< param application_name >}}/agent -n {{< param application_name >}}
     ```
 
-Agent can be verified to be working by checking in Redpanda's UI.
+To verify that Agent is working, check the Redpanda UI.
 
 ## Optional: Audit Trail service
 
-The Rhize [Audit]({{< relref "/how-to/audit" >}}) service provides an audit trail for database changes to install. The Audit service uses PostgreSQL for storage.
+The Rhize [Audit]({{< relref "/how-to/audit" >}}) service provides an audit trail for database changes. The Audit service uses PostgreSQL for storage.
 
 Install Audit Service with these steps:
 

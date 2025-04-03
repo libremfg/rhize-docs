@@ -169,7 +169,7 @@ For example, to create the Workflow client:
     - **Client Authentication**: On
 1. Select **Next**, then **Save**.
 
-Repeat the process above for each of the following services with the given alterations:
+Repeat the preceding process for each of the following services with the given alterations:
 
 | Client ID                             | Description |
 | ------------------------------------- | ----------- |
@@ -204,7 +204,7 @@ Select the **Mappers** tab, then **Configure new mapper**. Add an audience mappe
    - **Add to ID Token**: `On`
    - **Add to access token**: `On`
 
-Repeat the process above for each of the following services with the given alterations:
+Repeat the preceding process for each of the following services with the corresponding values in the table.
 
 | Name                                                   | Include Client Audience                  | ID Token | Access Token |
 | ------------------------------------------------------ | ---------------------------------------- | :------: | :----------: |
@@ -222,16 +222,14 @@ Repeat the process above for each of the following services with the given alter
 1. Select `{{< param application_name >}}ClientScope` from the list.
 1. **Add > Default**.
 
-Repeat the process above for each of the following services:
+Repeat the preceding process above for each of the following services:
 
-|                   Name                   |
-| :--------------------------------------: |
-|               `dashboard`                |
-|  `{{< param application_name >}}Agent`   |
-|  `{{< param application_name >}}ISA95`   |
-|   `{{< param application_name >}}KPI`    |
-|    `{{< param application_name >}}UI`    |
-| `{{< param application_name >}}Workflow` |
+- `dashboard`                
+- `{{< param application_name >}}Agent`   
+- `{{< param application_name >}}ISA95`   
+- `{{< param application_name >}}KPI`    
+- `{{< param application_name >}}UI`    
+- `{{< param application_name >}}Workflow` 
 
 ### Create roles and groups
 
@@ -340,7 +338,7 @@ Now create a user password:
 1. For **Temporary**, choose `Off`.
 1. **Save**.
 
-Repeat the process above for each of the following services with the given alterations:
+Repeat the preceding process for each of the following services with the corresponding values in the table.
 
 | Username                                                           | First name |
 | ------------------------------------------------------------------ | ---------- |
