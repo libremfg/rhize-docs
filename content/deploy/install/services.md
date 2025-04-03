@@ -31,6 +31,8 @@ Common values that are changed include:
 
 ## Get client secrets
 
+Client secrets are necessary for Rhize services to authenticate with Keycloak. These secrets are stored with Kubernetes secrets.
+
 1. Go to Keycloak and get the secrets for each client you've created.
 1. Create Kubernetes secrets for each service. You can either create a secret file, or pass raw data from the command line.
 
@@ -39,19 +41,20 @@ Common values that are changed include:
    For guidance, refer to the official Kubernetes topic, [Managing Secrets using `kubectl`](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/).
    {{< /callout >}}
 
-   With raw data, the command might look something like this.
+   With raw data, the command might look something like this:
 
    ```bash
    kubectl create secret generic {{< param application_name >}}-client-secrets -n {{< param application_name >}} \
-   --from-literal=dashboard=123 \
-   --from-literal={{< param application_name >}}Agent=123 \
-   --from-literal={{< param application_name >}}Audit=123 \
+   --from-literal=dashboard=VKIZ6zkQYyPutDzWqIZ9uIEnQRviyqsS \
+   --from-literal={{< param application_name >}}Audit=q8JBjuEefWTmhv9IX4KKYxNtXXnYtDPD \
    --from-literal={{< param application_name >}}Baas=KYbMHlRLhXwiDNFuDCl3qtPj1cNdeMSl \
-   --from-literal={{< param application_name >}}BPMN=123 \
-   --from-literal={{< param application_name >}}Core=123 \
-   --from-literal={{< param application_name >}}UI=123 \
-   --from-literal=router=123
+   --from-literal={{< param application_name >}}Bpmn=7OrjB7FhOdsNeb819xzEDBbMyVb6kNdr \
+   --from-literal={{< param application_name >}}Core=SH28Wlx2uEXcgf1NffStbmSuruxvrpi6 \
+   --from-literal={{< param application_name >}}UI=0qQ7c1EtOKvwsAcpd0xYIvle4zsMcGRq \
+   --from-literal={{< param application_name >}}Router=0qQ7c1EtOKvwsAcpd0xYIvle4zsMcGRq
    ```
+
+1. Create secrets for login passwords. Each service with its own user in Keycloak can have its password supplied through Kubernetes secrets.
 
    As you install services through Helm, their respective YAML files reference these secrets.
 
@@ -62,6 +65,7 @@ You also need to configure the {{< param db >}} service to have roles in Keycloa
 
 If enabling the Audit Trail, also the include the configuration in [Enable change data capture](#enable-change-data-capture).
 
+1. Modify the DB Helm file with your code editor. Edit any necessary overrides.
 
 1. Use Helm to install the database:
 
@@ -83,7 +87,7 @@ If enabling the Audit Trail, also the include the configuration in [Enable chang
 1. Proxy the `http:8080` port on `{{< param application_name >}}-baas-dgraph-alpha`.
 
    ```
-   kubectl port-forward -n libre pod/baas-baas-alpha-0 8080:8080
+   kubectl port-forward -n {{< param application_name >}} pod/baas-baas-alpha-0 8080:8080
    ```
 
 1. Get a token using the credentials. With `curl`, it looks like this:
@@ -256,30 +260,51 @@ It collects data emitted from the plant and publishes it to the NATS message bro
 Install the agent with these steps:
 
 1. Modify the Agent Helm file as needed.
-2. Install with Helm:
+
+1. In the Rhize UI, add a Data Source for Agent to interact with:
+    - In the lefthand menu, open **Master Data > Data Sources > + Create Data Source**.
+    - Input a name for the Data Source.
+    - Add a Connection String and Create.
+    - Add any relevant Topics.
+    - Activate the Data Source.
+
+1. Install with Helm:
 
     ```bash
-    helm install agent -f agent.yaml libre/agent -n {{< param application_name >}}
+    helm install agent -f agent.yaml {{< param application_name >}}/agent -n {{< param application_name >}}
     ```
 
-## Install UI
+## Install Admin UI
 
-The UI is the graphical frontend to [handle events]({{< relref "../../how-to/bpmn" >}}) and [define work masters]({{< relref "../../how-to/model" >}}).
+The Admin UI is the graphical frontend to [handle events]({{< relref "../../how-to/bpmn" >}}) and [define work masters]({{< relref "../../how-to/model" >}}).
 
 > **Requirements:** The UI requires the [GraphDB](#db), [BPMN](#bpmn), [Core](#core), and [Router](#router) services.
 
 After installing all other services, install the UI with these steps:
 
-1. Forward the port from the Router API.
-1. Open the UI Helm file. Update the `envVars` object with settings from the UI Keycloak client.
+1. Forward the port from the Router API. In the example, this forwards Router traffic to port `4000` on `localhost`.
+
+    ```bash
+    kubectl port-forward svc/router 4000:4000 -n {{< param application_name >}}
+    ```
+
+1. Open the Admin UI Helm file. Update the `envVars` object to reflect the URL for Router and Keycloak. If following the prior examples for port-forwarding, it will look something like this:
+
+    ```yaml
+    envVars:
+        APP_APOLLO_CLIENT: "http://localhost:4000"
+        APP_APOLLO_CLIENT_ADMIN: "http://localhost:4000"
+        APP_AUTH_KEYCLOAK_SERVER_URL: "http://localhost:8080"
+    ```
+
 1. Modify any other values, as needed.
 1. Install with Helm:
 
     ```bash
-    helm install ui -f ui-overrides.yaml {{< param application_name >}}/admin-ui -n {{< param application_name >}}
+    helm install admin-ui -f admin-ui.yaml {{< param application_name >}}/admin-ui -n {{< param application_name >}}
     ```
 
-If the install is successful, the UI is available on its
+If the install is successful, Admin UI is available on its
 [default port]({{< relref "../../reference/default-ports" >}}).
 
 ## Optional: Audit Trail service
@@ -294,7 +319,7 @@ Install Audit Service with these steps:
 2. Install with Helm:
 
     ```bash
-    helm install audit -f audit.yaml libre/audit -n {{< param application_name >}}
+    helm install audit -f audit.yaml {{< param application_name >}}/audit -n {{< param application_name >}}
     ```
 
 3. Create partition tables in the PostgreSQL database:
@@ -328,22 +353,22 @@ To use the Audit trail in the UI, you must add the Audit trail subgraph into the
 
 1. Update the Router Helm chart overrides, `router.yaml`, to include:
 
-```yaml
-# Add Audit to the router subgraph url override
-router:
-  configuration:
-    override_subgraph_url:
-      AUDIT: http://audit:8084/query
+    ```yaml
+    # Add Audit to the router subgraph url override
+    router:
+    configuration:
+        override_subgraph_url:
+        AUDIT: http://audit.{{< param application_name >}}.svc.cluster.local:8084/query
 
-# If supergraph compose is enabled
-supergraphCompose:
-  supergraphConfig:
-    subgraphs:
-    AUDIT:
-      routing_url: http://audit:8084/query
-      schema:
-        subgraph_url: http://audit:8084/query
-```
+    # If supergraph compose is enabled
+    supergraphCompose:
+    supergraphConfig:
+        subgraphs:
+        AUDIT:
+        routing_url: http://audit.{{< param application_name >}}.svc.cluster.local:8084/query
+        schema:
+            subgraph_url: http://audit.{{< param application_name >}}.svc.cluster.local:8084/query
+    ```
 
 2. Update the Router deployment
 

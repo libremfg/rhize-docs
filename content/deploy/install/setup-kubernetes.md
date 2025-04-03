@@ -105,7 +105,7 @@ Then, follow these steps.
 
 > Note: Version may have to be specified by appending on `--version` and the desired chart version.
 
-1. Set up port forwarding from Keycloak. For example, this forwards traffic to port `8080` on `localhost`
+1. Set up port forwarding from Keycloak. For example, this forwards traffic to port `8080` on `localhost`.
 
      ```bash
      kubectl port-forward svc/keycloak 8080:80 -n libre
