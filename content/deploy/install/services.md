@@ -65,6 +65,8 @@ You also need to configure the {{< param db >}} service to have roles in Keycloa
 
 If enabling the Audit Trail, also the include the configuration in [Enable change data capture](#enable-change-data-capture).
 
+If you need Row Level Access Control, [configure your scope map]({{< relref "row-level-access-control.md" >}}). 
+
 1. Modify the DB Helm file with your code editor. Edit any necessary overrides.
 
 
