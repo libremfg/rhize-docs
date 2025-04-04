@@ -16,7 +16,7 @@ sha256:eae5c2cbebf0cbc84b4ce543beae8d474a794cb2138e512daf0d11c4b54b93bb
 
 Libre Agent:
 registry.gitlab.com/libremfg/libre-agent:v3.1.0
-sha256:TBD
+sha256:90d6cfce491002d2bf7cfb1042ca97cafc70c5b4987a6f9c79d143ef1b69dd3d
 
 Libre Audit:
 registry.gitlab.com/libremfg/libre-audit:v3.1.0
