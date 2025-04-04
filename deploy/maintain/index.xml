@@ -1,18 +1,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Maintain</title><link>https://docs.rhize.com/deploy/maintain/</link><description>Recent content in Maintain on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 26 Mar 2024 19:35:35 +1100</lastBuildDate><atom:link href="https://docs.rhize.com/deploy/maintain/index.xml" rel="self" type="application/rss+xml"/><item><title>Archive the PostgreSQL Audit trail</title><link>https://docs.rhize.com/deploy/maintain/audit/</link><pubDate>Tue, 26 Mar 2024 11:20:56 -0300</pubDate><guid>https://docs.rhize.com/deploy/maintain/audit/</guid><description>
 &lt;p>The &lt;a href="https://docs.rhize.com/how-to/audit/" >audit trail&lt;/a> can generate a high volume of data, so it is a good practice to periodically &lt;em>archive&lt;/em> portions of it.
 An archive separates a portion of the data from the database and keeps it for long-term storage. This process involves the use of PostgreSQL &lt;a href="https://www.postgresql.org/docs/current/ddl-partitioning.html" target="_blank" rel="noopener">Table Partitions&lt;/a>.&lt;/p>
-&lt;p>Archiving a partition improves query speed for current data, while providing a cost-effective way to store older.&lt;/p>
+&lt;p>Archiving a partition improves query speed for current data, while providing a cost-effective way to store older data.&lt;/p>
 &lt;h2>Prerequisites&lt;span class="hx-absolute -hx-mt-20" id="prerequisites">&lt;/span>
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Before you start, ensure you have the following:&lt;/p>
 &lt;ul>
-&lt;li>A designated backup location, for example &lt;code>~/rhize-archives/libre-audit&lt;/code>.&lt;/li>
-&lt;li>Access to the &lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes/" >Rhize Kubernetes Environment&lt;/a> - Optional: &lt;a href="https://github.com/ahmetb/kubectx" target="_blank" rel="noopener">kubectx&lt;/a> utilities
+&lt;li>
+&lt;p>A designated backup location, for example &lt;code>~/rhize-archives/libre-audit&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Access to the &lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes/" >Rhize Kubernetes Environment&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Optional: &lt;a href="https://github.com/ahmetb/kubectx" target="_blank" rel="noopener">kubectx&lt;/a> utilities&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>kubectx&lt;/code> to manage multiple clusters&lt;/li>
 &lt;li>&lt;code>kubens&lt;/code> to switch between and configure namespaces easily&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Optional: the &lt;a href="https://k8slens.dev" target="_blank" rel="noopener">k8 Lens IDE&lt;/a>, if you prefer to use Kubernetes graphically&lt;/li>
+&lt;li>
+&lt;p>Optional: the &lt;a href="https://k8slens.dev" target="_blank" rel="noopener">k8 Lens IDE&lt;/a>, if you prefer to use Kubernetes graphically&lt;/p>
+&lt;/li>
 &lt;/ul>
 &lt;p>Also, before you start, confirm you are in the right context and namespace.&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
@@ -29,7 +37,7 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;p>To change the namespace for all subsequent &lt;code>kubectl&lt;/code> commands to &lt;code>libre&lt;/code>, run this command:&lt;/p>
+&lt;p>To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener">&lt;code>kubectl&lt;/code> commands&lt;/a> to &lt;code>libre&lt;/code>, run this command:&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 &lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">kubectl config set-context --current --namespace&lt;span class="o">=&lt;/span>libre&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
 &lt;button
@@ -41,7 +49,6 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;p>For a reference of useful &lt;code>kubectl&lt;/code> commands, refer to the official &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener">kubectl Cheat Sheet&lt;/a>.&lt;/p>
 &lt;h2>Steps&lt;span class="hx-absolute -hx-mt-20" id="steps">&lt;/span>
 &lt;a href="#steps" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To archive the PostgreSQL Audit trail, follow these steps:&lt;/p>
 &lt;ol>

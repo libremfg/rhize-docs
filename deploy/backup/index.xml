@@ -28,7 +28,7 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;p>To change the namespace for all subsequent &lt;code>kubectl&lt;/code> commands to &lt;code>libre&lt;/code>, run this command:&lt;/p>
+&lt;p>To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener">&lt;code>kubectl&lt;/code> commands&lt;/a> to &lt;code>libre&lt;/code>, run this command:&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 &lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">kubectl config set-context --current --namespace&lt;span class="o">=&lt;/span>libre&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
 &lt;button
@@ -40,7 +40,6 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;p>For a reference of useful &lt;code>kubectl&lt;/code> commands, refer to the official &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener">kubectl Cheat Sheet&lt;/a>.&lt;/p>
 &lt;h2>Steps&lt;span class="hx-absolute -hx-mt-20" id="steps">&lt;/span>
 &lt;a href="#steps" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To back up the database, follow these steps:&lt;/p>
 &lt;ol>
@@ -163,7 +162,7 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;p>To change the namespace for all subsequent &lt;code>kubectl&lt;/code> commands to &lt;code>libre&lt;/code>, run this command:&lt;/p>
+&lt;p>To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener">&lt;code>kubectl&lt;/code> commands&lt;/a> to &lt;code>libre&lt;/code>, run this command:&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 &lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">kubectl config set-context --current --namespace&lt;span class="o">=&lt;/span>libre&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
 &lt;button
@@ -175,7 +174,6 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;p>For a reference of useful &lt;code>kubectl&lt;/code> commands, refer to the official &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener">kubectl Cheat Sheet&lt;/a>.&lt;/p>
 &lt;h2>Steps&lt;span class="hx-absolute -hx-mt-20" id="steps">&lt;/span>
 &lt;a href="#steps" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To back up the database, follow these steps:&lt;/p>
 &lt;ol>
@@ -407,7 +405,7 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;p>To change the namespace for all subsequent &lt;code>kubectl&lt;/code> commands to &lt;code>libre&lt;/code>, run this command:&lt;/p>
+&lt;p>To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener">&lt;code>kubectl&lt;/code> commands&lt;/a> to &lt;code>libre&lt;/code>, run this command:&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 &lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">kubectl config set-context --current --namespace&lt;span class="o">=&lt;/span>libre&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
 &lt;button
@@ -419,7 +417,6 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;p>For a reference of useful &lt;code>kubectl&lt;/code> commands, refer to the official &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener">kubectl Cheat Sheet&lt;/a>.&lt;/p>
 &lt;h2>Steps&lt;span class="hx-absolute -hx-mt-20" id="steps">&lt;/span>
 &lt;a href="#steps" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To back up Audit PostgreSQL, follow these steps:&lt;/p>
 &lt;ol>
@@ -497,7 +494,7 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;p>To change the namespace for all subsequent &lt;code>kubectl&lt;/code> commands to &lt;code>libre&lt;/code>, run this command:&lt;/p>
+&lt;p>To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener">&lt;code>kubectl&lt;/code> commands&lt;/a> to &lt;code>libre&lt;/code>, run this command:&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 &lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">kubectl config set-context --current --namespace&lt;span class="o">=&lt;/span>libre&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
 &lt;button
@@ -509,7 +506,6 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;p>For a reference of useful &lt;code>kubectl&lt;/code> commands, refer to the official &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener">kubectl Cheat Sheet&lt;/a>.&lt;/p>
 &lt;h2>Steps&lt;span class="hx-absolute -hx-mt-20" id="steps">&lt;/span>
 &lt;a href="#steps" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To back up Keycloak, follow these steps:&lt;/p>
 &lt;ol>
@@ -596,7 +592,7 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;p>To change the namespace for all subsequent &lt;code>kubectl&lt;/code> commands to &lt;code>libre&lt;/code>, run this command:&lt;/p>
+&lt;p>To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener">&lt;code>kubectl&lt;/code> commands&lt;/a> to &lt;code>libre&lt;/code>, run this command:&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 &lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">kubectl config set-context --current --namespace&lt;span class="o">=&lt;/span>libre&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
 &lt;button
@@ -608,7 +604,6 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;p>For a reference of useful &lt;code>kubectl&lt;/code> commands, refer to the official &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener">kubectl Cheat Sheet&lt;/a>.&lt;/p>
 &lt;h2>Steps&lt;span class="hx-absolute -hx-mt-20" id="steps">&lt;/span>
 &lt;a href="#steps" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To back up the Grafana, follow these steps:&lt;/p>
 &lt;ol>
