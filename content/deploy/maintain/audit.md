@@ -9,7 +9,7 @@ weight: 100
 The [audit trail]({{< relref "../../how-to/audit" >}}) can generate a high volume of data, so it is a good practice to periodically _archive_ portions of it.
 An archive separates a portion of the data from the database and keeps it for long-term storage. This process involves the use of PostgreSQL [Table Partitions](https://www.postgresql.org/docs/current/ddl-partitioning.html).
 
-Archiving a partition improves query speed for current data, while providing a cost-effective way to store older.
+Archiving a partition improves query speed for current data, while providing a cost-effective way to store older data.
 
 
 ## Prerequisites
@@ -17,7 +17,9 @@ Archiving a partition improves query speed for current data, while providing a c
 Before you start, ensure you have the following:
 
 - A designated backup location, for example `~/rhize-archives/libre-audit`.
-- Access to the [Rhize Kubernetes Environment]({{< relref "../install/setup-kubernetes" >}}) {{% param pre_reqs %}}
+- Access to the [Rhize Kubernetes Environment]({{< relref "../install/setup-kubernetes" >}})
+
+{{% param pre_reqs %}}
 
 Also, before you start, confirm you are in the right context and namespace.
 
