@@ -110,19 +110,7 @@ Then, follow these steps.
      ```bash
      kubectl port-forward svc/keycloak 8080:80 -n libre
      ```
-
-### Keycloak Wrapper (Optional)
-Alternatively to setting up Keycloak manually, we provide a wrapper for Keycloak that will:
-- Include the {{< param application_name >}} login theme.
-- A default realm configuration.
-- Automatically populate kube with client secrets.
-
-To use this wrapper, instead run:
-
-  ```bash
-  helm install keycloak -f keycloak-wrapper.yaml libre/keycloak-wrapper -n libre
-  ```
-
+     
 ## Next steps
 
 1. [Configure Keycloak]({{< relref "keycloak.md" >}})
