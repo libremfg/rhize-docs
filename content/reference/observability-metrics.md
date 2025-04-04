@@ -5,7 +5,7 @@ weight: 350
 category: "reference"
 ---
 
-Rhize uses [Prometheus](https://prometheus.io/docs/introduction/overview/) to monitor metrics from many of its [microservices]({{< relref "/reference/service-config" >}}).
+Rhize uses [Prometheus](https://prometheus.io/docs/introduction/overview/) to monitor metrics from many of its [microservices]({{< relref "service-config" >}}).
 For the Kubernetes cluster, Rhize runs the Prometheus operator and monitors the accumulated metrics in Grafana dashboards.
 Monitoring occurs granularly, on the levels of cluster, pod, and container.
 

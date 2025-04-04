@@ -49,9 +49,9 @@ To make the next sections less abstract, consider these examples of how Rhize cr
 
 A manufacturing data hub is useless without manufacturing data.
 
-The [Rhize agent]({{< relref "agent-configuration" >}}) collects data from MQTT brokers and devices, OPC-UA servers.
-You can also send data and documents over HTTP through a [GraphQL call]({{< ref "call-the-graphql-api" >}}).
-The Rhize UI also has a graphical interface to [model production]({{< ref "model" >}}) objects.
+The Rhize agent collects data from MQTT brokers and devices, OPC-UA servers.
+You can also send data and documents over HTTP through a [GraphQL call]({{< relref "../how-to/gql/call-the-graphql-api" >}}).
+The Rhize UI also has a graphical interface to [model production]({{< relref "../how-to/model" >}}) objects.
 
 All this data is mapped to Rhize's ISA-95 schema, which creates a coherent model for all objects in the data hub.
 

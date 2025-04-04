@@ -111,6 +111,8 @@
     - text: Official NATS documentation
       uri: https://docs.nats.io/nats-concepts/overview
 
+- term: Ontology
+  definition: The entities and relationships that represent all knowledge in the domain of manufacturing operations
 - term: Operational location
   definition: Where resources are expected to be located in a plant
   tags: "s95"
@@ -129,8 +131,9 @@
       - text: An understanding of OEE
         uri: https://blog.isa.org/an-understanding-of-overall-equipment-effectiveness-oee
 
-- term: Pattern (process segment)
-  definition: A <a href="#process-segment">process segment</a> that creates a pattern or template for other patterns or process segments to follow
+- term: Pattern (work definition)
+  definition: A work definition that creates a pattern or template for other patterns or work definitions to follow
+  abbr: pattern
   tags: "s95"
 - term: Personnel class
   definition: A grouping of persons whose work shares a definite purpose in the manufacturing process

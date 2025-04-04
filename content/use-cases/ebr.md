@@ -31,7 +31,7 @@ you can use Rhize to identify answers to questions such as:
 {{< callout >}}
 :memo:
 The focus here is modeling and querying.
-For a high-level overview of how eBR data may enter the Rhize data hub, read the guide to [Data collection]({{< relref "/use-cases/data-collection-ebr" >}}).
+For a high-level overview of how eBR data may enter the Rhize data hub, read the guide to [Data collection]({{< relref "../use-cases/data-collection-ebr" >}}).
 {{< /callout >}}
 
 
@@ -39,7 +39,7 @@ For a high-level overview of how eBR data may enter the Rhize data hub, read the
 
 {{< watch src="https://www.youtube.com/watch?v=oXG5f3O9xjU&t=0s" text="Full eBR in 1 query" >}}
 
-If you just want to build out a [GraphQL query]({{< relref "/how-to/gql/query" >}}) for your reporting, use these templates to get started.
+If you just want to build out a [GraphQL query]({{< relref "../how-to/gql/query" >}}) for your reporting, use these templates to get started.
 
 
 If you know the IDs for the relevant job response, job order, and test results, you can structure each group as a top-level object.
@@ -99,7 +99,7 @@ For more detail, refer to the
 
 {{< callout >}}
 :memo: For an introduction to ISA-95 and its terminology,
-read [How to speak ISA-95]({{< relref "/isa-95/how-to-speak-isa-95" >}}).
+read [How to speak ISA-95](/isa-95/how-to-speak-isa-95).
 {{< /callout >}}
 
 The following lists detail the ISA-95 entities that you might need when querying the Rhize database for an eBR.
@@ -164,7 +164,7 @@ For example:
 
 ## Example query
 
-The following snippet is an example of how to pull a full eBR from a single [GraphQL query]({{< relref "/how-to/gql/query" >}}).
+The following snippet is an example of how to pull a full eBR from a single [GraphQL query]({{< relref "../how-to/gql/query" >}}).
 Each top-level object has an [alias](https://graphql.org/learn/queries/#aliases), which serves as the key for the object in the JSON payload.
 
 ```gql

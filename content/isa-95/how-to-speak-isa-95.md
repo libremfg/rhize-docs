@@ -65,7 +65,7 @@ width="65%"
 
 These equipment hierarchies often provide a naming convention to prefix addresses for plant data.
 For example, an MQTT topic might be named `site1/bakery2/kitchenA/ovens/a_temp_sensor`.
-In Rhize, the [Equipment UI]({{< relref "/how-to/model/master-definitions" >}}) provides an interface to model your plant according to this compositional hierarchy.
+In Rhize, the [Equipment UI]({{< relref "../how-to/model/master-definitions" >}}) provides an interface to model your plant according to this compositional hierarchy.
 
 ### Relationships
 
@@ -84,7 +84,7 @@ Some important relations include:
 
 For the full list of relationships, refer to ISA-95 Part 2.
 To explore the relationships in an interactive way,
-you can use the Rhize [GraphQL]({{< relref "/how-to/gql">}}) API explorer.
+you can use the Rhize [GraphQL]({{< relref "../how-to/gql" >}}) API explorer.
 
 ## The activities of an MES
 
@@ -163,7 +163,7 @@ Important equipment models include the following:
 - **Equipment Properties.** Attributes of an equipment or equipment class. For example, a property of an compressor might be `rotation_speed`.
 
 Relationships between equipment are organized according to the role-based equipment hierarchy and, optionally, the hierarchy scope.
-To learn more, read the Rhize guide to [Equipment relationships]{{< relref "resources/equipment" >}}.
+To learn more, read the Rhize guide to [Equipment relationships]({{< relref "resources/equipment" >}}).
 
 #### Material
 
@@ -188,7 +188,7 @@ Import material models include the following:
 For example, a material lot might be a pallet of sugar from a supplier, and the sublot might be the individual sugar bags.
 
    Lots can have parent/child relationships to express material compositions.
-   To learn more, read the Rhize guide to [Material relationships]{{< relref "resources/material" >}}.
+   To learn more, read the Rhize guide to [Material relationships]({{< relref "resources/material" >}}).
 
 - **Material Actual.** A material actual is the quantity of material in a job that is used, consumed, marked as scrap, and so on.
 - **Material properties.** Properties of material that are relevant to the production process, for example, `meltingPoint` or `containsLactose`.
@@ -207,7 +207,7 @@ Important personnel models include:
 ### Hierarchy scope: multiple views of equipment hierarchies
 
 The hierarchy scope is a special grouping of equipment that does not necessarily follow the conventional role-based hierarchy.
-For example, Rhize uses hierarchy scope to [ define calendar rules and calculate metrics ](https://docs.rhize.com/how-to/work-calendars/about-calendars-and-overrides/#)for a set of machines whose shift rules don't necessarily correspond to the hierarchy. You might also set a hierarchy scope to calculate metrics or track production across an arbitrary grouping of equipment.
+For example, Rhize uses hierarchy scope to [ define calendar rules and calculate metrics ]({{< relref "../how-to/work-calendars/about-calendars-and-overrides/" >}})for a set of machines whose shift rules don't necessarily correspond to the hierarchy. You might also set a hierarchy scope to calculate metrics or track production across an arbitrary grouping of equipment.
 
 {{< bigFigure
 src="/images/work-calendars/diagram-rhize-work-calendar-relationships.png"

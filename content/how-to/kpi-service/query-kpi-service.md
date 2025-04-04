@@ -454,7 +454,7 @@ input:
 
 #### Example 2
 
-Following on from Example 1. `Machine A` exists on a production line alongside `Machine B`, they both produce parts with a planned cycle time of 10 seconds per part and runs on the same shift pattern. The [work calendar service]({{< relref "/how-to/work-calendars" >}}) is configured with 3 distinct daily shifts:
+Following on from Example 1. `Machine A` exists on a production line alongside `Machine B`, they both produce parts with a planned cycle time of 10 seconds per part and runs on the same shift pattern. The [work calendar service]({{< relref "../work-calendars" >}}) is configured with 3 distinct daily shifts:
 
 - Morning (06:00-14:00)
 - Afternoon (14:00 - 22:00)

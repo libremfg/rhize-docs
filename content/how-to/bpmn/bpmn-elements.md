@@ -36,7 +36,7 @@ Every BPMN workflow and every element that the workflow contains have the follow
 
 | Parameter            | Description                                                                                                               |
 |----------------------|---------------------------------------------------------------------------------------------------------------------------|
-| ID                   | Mandatory unique ID. For guidance, follow the [BPMN naming conventions]({{< relref "/how-to/bpmn/naming-conventions" >}}). |
+| ID                   | Mandatory unique ID. For guidance, follow the [BPMN naming conventions]({{< relref "./naming-conventions" >}}). |
 | Name                 | Optional human readable name. If empty, takes ID value.                                                                              |
 | Documentation        | Optional freeform text for additional information                                                                                  |
 | Extension properties | Optional metadata to add to workflow or node                                                                              |
@@ -127,7 +127,7 @@ The parameters for an intermediate message event are as follows:
 | Parameter | Description                                                                                                                                                                      |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Message   | The topic the message publishes to on the Rhize Broker. The topic structure follows MQTT syntax                                                                                  |
-| Inputs    | Variables to send in the body. For messages to the Rhize broker, use the [special variable]({{< relref "/how-to/bpmn/variables">}}) `BODY`. Value can be JSON or JSONata. |
+| Inputs    | Variables to send in the body. For messages to the Rhize broker, use the [special variable]({{< relref "./variables">}}) `BODY`. Value can be JSON or JSONata. |
 | Headers   | {{< param boilerplate.headers >}}                                                                                                                                                |
 | Outputs   | JSON or JSONata. Optional variables to add to the {{< abbr "process variable context" >}}.                                                                                       |
 
@@ -209,7 +209,7 @@ Besides the call parameters, the Query task has following additional fields:
 
 | Parameter      | Description                                                                                                                                                                       |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Input response | {{% param boilerplate.jsonata_response %}}. For GraphQL operations, use this only to map values. Rely on [GQL filters]({{< relref "/how-to/gql/filter" >}}) to limit the payload. |
+| Input response | {{% param boilerplate.jsonata_response %}}. For GraphQL operations, use this only to map values. Rely on [GQL filters]({{< relref "../gql/filter" >}}) to limit the payload. |
 | Headers        | {{< param boilerplate.headers >}}                                                                                                                                                 |
 
 ### GraphQL Mutation
@@ -332,7 +332,7 @@ The outputs have the following parameters:
 |Local variable name | What to name the incoming data,  as it will be accessed in the parent process (that is, the key name) |
 | assignment value    | The value to pass from the child variable context                                                     |
 
-For a guide to reusing functions, read the [Reuse workflows section]({{< relref "/how-to/bpmn/create-workflow/#reuse-workflows" >}}) in the "Create workflow" guide.
+For a guide to reusing functions, read the [Reuse workflows section]({{< relref "./create-workflow/#reuse-workflows" >}}) in the "Create workflow" guide.
 
 ## Gateways
 

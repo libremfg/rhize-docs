@@ -71,7 +71,7 @@ Model the `Oven` equipment class:
 
 Create the associated data source:
 1. From **Master Data**, select **Data Source**.
-1. Add the source's connection string and protocol, along with any credentials (to configure authentication, refer to [Agent configuration]({{< ref "agent-configuration" >}})).
+1. Add the source's connection string and protocol, along with any credentials (to configure authentication, refer to [Agent configuration]({{< relref "../../reference/service-config/agent-configuration" >}}).
 1. Select the **Topics** tab and add the label and data type.
 1. **Create** and make the version active.
 
@@ -87,4 +87,4 @@ Now, create an instance of the Oven.
 1. From the **Data Sources** tab, select **Link Data Sources**. Select the data source you just created.
 
 On success, your UI should now have an item equipment that is associated with an equipment level, equipment class, and data source.
-For a complete reference of all objects and properties that you can add through the UI, refer to the [Master definitions and Fields]({{< relref "master-definitions" >}}).
+For a complete reference of all objects and properties that you can add through the UI, refer to the Master definitions and Fields]({{< relref "master-definitions" >}}).

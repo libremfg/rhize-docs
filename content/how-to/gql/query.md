@@ -162,4 +162,4 @@ query{
 ## Filter queries
 
 Rhize also has many queries to filter or return subsets of items.
-To learn how to filter, read [Use query filters]({{< relref "/how-to/gql/filter" >}}).
+To learn how to filter, read [Use query filters]({{< relref "./filter" >}}).

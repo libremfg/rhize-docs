@@ -7,7 +7,7 @@ weight: 200
 
 This guide shows you how to create a work calendar using the Rhize GraphQL API.
 As a calendar has associations with multiple other entities,
-the process involves a series of [mutations]({{< relref "how-to/gql/mutate" >}}) to create
+he process involves a series of [mutations]({{< relref "../gql/mutate" >}}) to create
 associated data.
 
 To learn how work calendars work,
@@ -17,7 +17,7 @@ read [About work calendars]({{< ref "about-calendars-and-overrides" >}}).
 
 
 To use the work calendar service, ensure you have the following:
-- The [calendar service installed]({{< relref "/deploy/install/services" >}})
+- The [calendar service installed]({{< relref "../../deploy/install/services" >}})
 - A plan for how to organize and name your calendars according to equipment.
 
 ## Procedure

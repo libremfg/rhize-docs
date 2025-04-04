@@ -11,7 +11,7 @@ src="https://www.youtube.com/watch?v=zQ5X0mg3i_w&t=217s"
 >}}
 
 _Mutations_ change the database in someway by creating, updating, or deleting a resource.
-You might use a mutation to update a personnel class, or in to a [{{< abbr "BPMN" >}}]({{< relref "/how-to/bpmn" >}}) workflow that automatically creates records of incoming material lots.
+You might use a mutation to update a personnel class, or in to a [{{< abbr "BPMN" >}}]({{< relref "../bpmn" >}}) workflow that automatically creates records of incoming material lots.
 
 Rhize supports the following ways to change the API.
 
@@ -89,7 +89,7 @@ addEquipment(input: $input, upsert: true)
 ## `update` {#update}
 
 Mutations that start with `update` change something in an object that already exists.
-The `update` operations can use [filters]({{< relref "/how-to/gql/filter" >}}).
+The `update` operations can use [filters]({{< relref "./filter" >}}).
 
 {{< callout type="info" >}}
 The `update` operation corresponds to the `Change` verb defined in [Part 5](https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i) of the ISA-95 standard.
@@ -124,12 +124,12 @@ mutation updateMixerVersion( $updateEquipmentVersionInput2: UpdateEquipmentVersi
 ## `delete` {#delete}
 
 {{< callout type="warning" >}}
-Be careful! Without a [Database backup]({{< relref "/deploy/backup/graphdb" >}}), deleted items cannot be recovered.
+Be careful! Without a [Database backup]({{< relref "../../deploy/backup/graphdb" >}}), deleted items cannot be recovered.
 {{< /callout >}}
 
 
 Mutations that start with `delete` remove a resource from the database.
-The `delete` operations can use [filters]({{< relref "/how-to/gql/filter" >}}).
+The `delete` operations can use [filters]({{< relref "./filter" >}}).
 
 
 {{< callout type="info" >}}
