@@ -1,4 +1,511 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Releases</title><link>https://docs.rhize.com/categories/releases/</link><description>Recent content in Releases on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 13 Nov 2024 00:41:53 -0300</lastBuildDate><atom:link href="https://docs.rhize.com/categories/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>3.0.3</title><link>https://docs.rhize.com/releases/3-0-3/</link><pubDate>Wed, 13 Nov 2024 00:41:53 -0300</pubDate><guid>https://docs.rhize.com/releases/3-0-3/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Releases</title><link>https://docs.rhize.com/categories/releases/</link><description>Recent content in Releases on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 28 Feb 2025 12:38:30 -0500</lastBuildDate><atom:link href="https://docs.rhize.com/categories/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>3.1.0</title><link>https://docs.rhize.com/releases/3-1-0/</link><pubDate>Fri, 28 Feb 2025 12:38:30 -0500</pubDate><guid>https://docs.rhize.com/releases/3-1-0/</guid><description>
+&lt;p>Release notes for version 3.1.0 of the Rhize application.&lt;/p>
+&lt;p>&lt;em>Release date:&lt;/em>
+7 Mar 2025&lt;/p>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">⚠️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">This release includes a breaking change to permissions, review the &lt;a href="#upgrade" >upgrade&lt;/a> instructions for details.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2>Changes by service&lt;span class="hx-absolute -hx-mt-20" id="changes-by-service">&lt;/span>
+&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The following sections document the changes this release brings to each service.&lt;/p>
+&lt;h3>Admin&lt;span class="hx-absolute -hx-mt-20" id="admin">&lt;/span>
+&lt;a href="#admin" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Add&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Add REST Playground.&lt;/li>
+&lt;li>Add expand input JSON to BPMN editor Viewer mode.&lt;/li>
+&lt;li>Add includes properties of to material class.&lt;/li>
+&lt;li>Add SSO for Appsmith Portal.&lt;/li>
+&lt;li>Add pagination to Operations Event Definition sidebar.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Change schema to accommodate inherited properties with custom resolver.&lt;/li>
+&lt;li>Change GraphQL Playground to use Apollo Sandbox.&lt;/li>
+&lt;li>Change to use &lt;code>libre-schema&lt;/code> v3.1.0.&lt;/li>
+&lt;li>Change GraphQL types to match &lt;code>libre-schema&lt;/code> v3.1.0.&lt;/li>
+&lt;li>Change scripts to force line endings LF for compatibility with Windows.&lt;/li>
+&lt;li>Change tree library with &lt;code>react-arborist&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix disabled Material Definition properties not showing as yellow.&lt;/li>
+&lt;li>Fix disabling inheritance of Material Definition Property that are inherited through classes.&lt;/li>
+&lt;li>Fix disabling property edits on approved entities.&lt;/li>
+&lt;li>Fix duplicate personnel class draft being created on start.&lt;/li>
+&lt;li>Fix equipment save not working under all scenarios.&lt;/li>
+&lt;li>Fix Operations Event Class search bar not showing results.&lt;/li>
+&lt;li>Fix sidebar menu to hide disabled not showing for all entities.&lt;/li>
+&lt;li>Fix work calendar entry not showing after being created and requiring refresh.&lt;/li>
+&lt;li>Fix lazy loading of MaterialDefinition, MaterialClass and WorkMaster when none exist.&lt;/li>
+&lt;li>Fix multiple HTML5 backend errors by adding DndManager to ArboristTree usage.&lt;/li>
+&lt;li>Fix incorrect error toast when Equipment Class Rule expression results in false.&lt;/li>
+&lt;li>Fix issue where certain errors would post to console and not show in Response field.&lt;/li>
+&lt;li>Fix REST Playground request headers and body not being both sent in POST and PUT requests.&lt;/li>
+&lt;li>Fix issue causing newly created Equipment to appear at bottom of list.&lt;/li>
+&lt;/ul>
+&lt;h3>BPMN engine&lt;span class="hx-absolute -hx-mt-20" id="bpmn-engine">&lt;/span>
+&lt;a href="#bpmn-engine" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Add&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Add config logging to the terminal on start-up.&lt;/li>
+&lt;li>Add config validation checks, specifically nil checks and URL formatting+response checks.&lt;/li>
+&lt;li>Add generation of config file when prompted with flag and file path in terminal start-up.&lt;/li>
+&lt;li>Add obfuscation for sensitive information in config on publish.&lt;/li>
+&lt;li>Add JSONata expression evaluation query handler, for calling BPMN service tasks outside of a process.&lt;/li>
+&lt;li>Add synchronous message wait to allow BPMN to block execution and wait for a message.&lt;/li>
+&lt;li>Add span end to Call Activity error log.&lt;/li>
+&lt;li>Add dot support to MQTT topics&lt;/li>
+&lt;li>Add responseHeaders to RestAPI service task output variables&lt;/li>
+&lt;li>Add check for &lt;code>jobState&lt;/code> in &lt;code>getInstance&lt;/code>.&lt;/li>
+&lt;li>Add detection for when NATS deletes KV stores and to resync them.&lt;/li>
+&lt;li>Add domain object &lt;code>bpmn.Task&lt;/code> for BPMN tasks that uses a &lt;code>domain.JobResponse&lt;/code> as base type.&lt;/li>
+&lt;li>Add domain object for BPMN tasks.&lt;/li>
+&lt;li>Add &lt;code>EffectiveEnd&lt;/code> to &lt;code>WorkCalendarEntry&lt;/code>.&lt;/li>
+&lt;li>Add &lt;code>EvaluateJsonata&lt;/code> domain function.&lt;/li>
+&lt;li>Add facades for service tasks with NATS Adapter &amp;amp; service tasks with Database Query Adapter.&lt;/li>
+&lt;li>Add &lt;code>gotemplate&lt;/code> wrapper for &lt;code>ExpandEnvAndSecrets&lt;/code>.&lt;/li>
+&lt;li>Add interface for service tasks.&lt;/li>
+&lt;li>Add internal variable to ExpandEnvAndSecrets for GraphQL URL.&lt;/li>
+&lt;li>Add &lt;code>TaskDefinition&lt;/code> type to domain.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Change to use YAML instead of JSON for configuration.&lt;/li>
+&lt;li>Change &lt;code>HandleCallActivity&lt;/code> to use &lt;code>getWorkflowSpecification&lt;/code> helper function.&lt;/li>
+&lt;li>Change go version from &lt;code>1.22&lt;/code> to &lt;code>1.23&lt;/code>.&lt;/li>
+&lt;li>Change &amp;ldquo;ABORTED&amp;rdquo; Job State check in &lt;code>getInstance&lt;/code> to reference &lt;code>jobState&lt;/code>.&lt;/li>
+&lt;li>Change &amp;ldquo;ABORTED&amp;rdquo; Job State check in &lt;code>getInstance&lt;/code> to be in final workflow span check.&lt;/li>
+&lt;li>Change configManager to accept a config file name argument.&lt;/li>
+&lt;li>Change &lt;code>domain.JobResponse&lt;/code> functions to &lt;code>bpmn.Task&lt;/code> functions.&lt;/li>
+&lt;li>Change Get/Set &lt;code>TaskVariable&lt;/code> to be &lt;code>jobResponse&lt;/code> domain functions.&lt;/li>
+&lt;li>Change individual service task functions to individual files and modified to adhere to interfaces.&lt;/li>
+&lt;li>Change &lt;code>job *domain.JobResponse&lt;/code> to &lt;code>task *bpmn.Task&lt;/code> &amp;amp; update symbol in functions.&lt;/li>
+&lt;li>Change JSONata compile and evaluation to be in a separate function.&lt;/li>
+&lt;li>Change &lt;code>pickServiceTaskDefinition&lt;/code> to domain function on &lt;code>bpmn.Task&lt;/code> &lt;code>GetServiceTaskDefinition&lt;/code>.&lt;/li>
+&lt;li>Change pipelines to use &lt;code>CI_JOB_TOKEN&lt;/code> in place of personal access tokens.&lt;/li>
+&lt;li>Change pipelines to use go version &lt;code>1.23&lt;/code> and docker &lt;code>27.4.1&lt;/code>.&lt;/li>
+&lt;li>Change &lt;code>TaskDefinition&lt;/code>s in domain to use base &lt;code>TaskDefinition&lt;/code> type, for stricter type checking.&lt;/li>
+&lt;li>Change to check and log if &lt;code>workflowSpec&lt;/code> is empty in &lt;code>HandleTaskAborted&lt;/code>.&lt;/li>
+&lt;li>Change to importing libre-schema for types.&lt;/li>
+&lt;li>Change to separate &amp;lsquo;.&amp;rsquo; and &amp;rsquo; &amp;rsquo; cases in &lt;code>MQTTToNATSSubjectConversion&lt;/code>, adding new conversion for &amp;lsquo;.&amp;rsquo; case to &amp;lsquo;//&amp;rsquo;.&lt;/li>
+&lt;li>Change to use globally configured CA for all GraphQL and REST requests.&lt;/li>
+&lt;li>Change &lt;code>WorkCalendar&lt;/code> trigger to filter for only active equipment.&lt;/li>
+&lt;li>Change BPMN &lt;code>IntermediateThrowEvent&lt;/code> to allow unconfigured &lt;code>IntermediateThrowEvents&lt;/code> to complete successfully.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix BPMN SQL Task errors causing nil pointer exception for nil job.&lt;/li>
+&lt;li>Fix nil dereferences in &lt;code>bpmnEngine.go&lt;/code>.&lt;/li>
+&lt;li>Fix &lt;code>getInstance&lt;/code> not returning an &lt;code>endTime&lt;/code> for a running BPMN.&lt;/li>
+&lt;li>Fix issue that would cause &lt;code>Task&lt;/code> &lt;code>DataJSON&lt;/code> to grow exponentially.&lt;/li>
+&lt;li>Fix issue where &lt;code>oidc.bypass&lt;/code> was not being handled.&lt;/li>
+&lt;li>Fix issue with some NATS Connect instances not referencing username and password.&lt;/li>
+&lt;li>Fix &lt;code>WorkCalendarDefinition&lt;/code> label field not aligning.&lt;/li>
+&lt;li>Fix Tempo search query parameter encoding for Instance searching.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Remove&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Remove impossible error condition handling.&lt;/li>
+&lt;li>Remove repeated Call Activity error logging.&lt;/li>
+&lt;li>Remove unused config fields from configuration.&lt;/li>
+&lt;li>Remove OTEL URL validation.&lt;/li>
+&lt;/ul>
+&lt;h3>Schema&lt;span class="hx-absolute -hx-mt-20" id="schema">&lt;/span>
+&lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Add&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Add deprecation warning to incorrect JobOrder dispatch status&amp;rsquo;&lt;/li>
+&lt;li>Add deprecation warning to quantityUnitOfMeasure on MaterialLot, MaterialSubLot, PersonnelCapabilityProperty, MaterialCapabilityProperty, EquipmentCapabilityProperty and PhysicalAssetCapabilityProperty&lt;/li>
+&lt;li>Add migration directive for OperationsEventDefinitionVersion.workMasters&lt;/li>
+&lt;li>Add missing JobOrder dispatch status&amp;rsquo; from the standard ISA-95 2019 standard&lt;/li>
+&lt;li>Add Operations Capability schema model&lt;/li>
+&lt;li>Add quantityUoM attribute to MaterialLot, MaterialSubLot, PersonnelCapabilityProperty, MaterialCapabilityProperty, EquipmentCapabilityProperty and PhysicalAssetCapabilityProperty&lt;/li>
+&lt;li>Add regex search to event message text&lt;/li>
+&lt;li>Add signature to InformationObjectTypeEnum&lt;/li>
+&lt;li>Add a alternative permission group for just Materials (MaterialLot &amp;amp; MaterialSublot) and their properties&lt;/li>
+&lt;li>Add continuous deployment for tagged versions to staging environments&lt;/li>
+&lt;li>Add continuous deployment for v3.x.x branch to Libre 3 (L3) staging environment&lt;/li>
+&lt;li>Add relationship between Workflow Specification Nodes and Work Master&lt;/li>
+&lt;li>Add migration directives for Work Calendar information model&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Change &lt;code>_createdDateTime&lt;/code> to &lt;code>_createdOn&lt;/code> for consistency&lt;/li>
+&lt;li>Change federation version from 2.7.0 to 2.9.0&lt;/li>
+&lt;li>Change migration method to &lt;code>parent&lt;/code> for Hierarchy Scope&amp;rsquo;s inverse relationships&lt;/li>
+&lt;li>Change Operations Event Definition Record Specification ID to be unique (&lt;code>@id&lt;/code>)&lt;/li>
+&lt;li>Change scripts to use &lt;code>docker compose&lt;/code> instead of &lt;code>docker-compose&lt;/code>&lt;/li>
+&lt;li>Change unicode characters to ascii&lt;/li>
+&lt;li>Change libre &lt;code>baas&lt;/code> version from v3.0.1 to v3.0.3 in container builds and CI/CD&lt;/li>
+&lt;li>Change golang version to &lt;code>1.23&lt;/code> from &lt;code>1.21&lt;/code>&lt;/li>
+&lt;li>Change build containers to use v3.1.0 of BAAS&lt;/li>
+&lt;li>Change comment signoff to allow 0..n, was 0..1&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix circular dependency on migration of Hierarchy Scope&lt;/li>
+&lt;li>Fix &lt;code>ImportJSON&lt;/code> mutation not checking for conflicts in data for versioned entities&lt;/li>
+&lt;li>Fix &lt;code>isAssembledFrom&lt;/code> migration for MaterialClass&lt;/li>
+&lt;li>Fix migration to include &lt;code>equipmentVersions&lt;/code> in HierarchyScope migration&lt;/li>
+&lt;li>Fix order of operations so both models are complete when generating entities and schemas&lt;/li>
+&lt;li>Fix diff check on commit&lt;/li>
+&lt;li>Fix incorrect merge that duplicated JobOrder Dispatch Status &lt;code>CANCELLED&lt;/code>&lt;/li>
+&lt;li>Fix permission file format for Row Level Access Control&lt;/li>
+&lt;li>Fix BAAS permission file generation to align with existing installation instructions&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Remove&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Remove &lt;code>fulltext&lt;/code> search on &lt;code>_createdBy&lt;/code> and &lt;code>_modifiedBy&lt;/code>&lt;/li>
+&lt;li>Remove &lt;code>gqlparse&lt;/code> library version pinning in CI/CD&lt;/li>
+&lt;li>Remove generation of scopemap update in CI/CD&lt;/li>
+&lt;li>Remove publish of tagged subgraph to Apollo&lt;/li>
+&lt;li>Remove repeated word in resource Specifications descriptions&lt;/li>
+&lt;li>Remove &lt;code>@deprecation&lt;/code> from JobOrder dispatch status&amp;rsquo; Cancelled&lt;/li>
+&lt;/ul>
+&lt;h3>BAAS&lt;span class="hx-absolute -hx-mt-20" id="baas">&lt;/span>
+&lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Add&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Add authorization error messages when authorization fails on GraphQL queries&lt;/li>
+&lt;li>Add arguments to lambda execution&lt;/li>
+&lt;li>Add check for claims in token for Row Level Access Control&lt;/li>
+&lt;li>Add cli flag &lt;code>--graphql runtime-url&lt;/code> to configure to override the base url of the custom url handler&lt;/li>
+&lt;li>Add command line argument to synchronize roles with OIDC Server&lt;/li>
+&lt;li>Add support for &lt;code>_Any&lt;/code> type in &lt;code>@custom&lt;/code> queries and mutations&lt;/li>
+&lt;li>Add &lt;code>@constraint&lt;/code> directive handling to limit field values&lt;/li>
+&lt;li>Add Apollo Sandbox user interface as default handler&lt;/li>
+&lt;li>Add GraphQL documentation&lt;/li>
+&lt;li>Add nullability checks when adding nested objects to only nested objects&lt;/li>
+&lt;li>Add tags and Continuous Delivery (CD) for docker repository&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Change Apache thrift library to v0.13.0 from v0.12.0&lt;/li>
+&lt;li>Change CI/CD &lt;code>docker&lt;/code> version to bump 27.4.1 from 20.10.16&lt;/li>
+&lt;li>Change golang.org/x/crypto to v0.31.0 from v0.27.0&lt;/li>
+&lt;li>Change golang.org/x/sync to v0.8.0 v0.10.0 from&lt;/li>
+&lt;li>Change golang.org/x/sys to v0.25.0 v0.28.0 from&lt;/li>
+&lt;li>Change golang.org/x/text to v0.18.0 v0.21.0 from&lt;/li>
+&lt;li>⚠️&lt;span class="breaking-text">Breaking&lt;/span>
+Change permissions file structure from &lt;code>map[string][]interface{}&lt;/code> to a known structure for resource authorization rules&lt;/li>
+&lt;li>Change string indexed fields to limit size to 64000 characters to prevent key overflow&lt;/li>
+&lt;li>Change SyncOIDCGraphQLResource to respective new cil flag for &lt;code>syncRoles&lt;/code>&lt;/li>
+&lt;li>Change &lt;code>golang&lt;/code> version from v1.21 to v1.23&lt;/li>
+&lt;li>Change alpha&amp;rsquo;s Cross Origin Resource Sharing (CORS) policy to allow all&lt;/li>
+&lt;li>Change Change Data Capture (CDC) payload to include all entity attributes changes in the transaction as a single object, instead of individual attribute changes.&lt;/li>
+&lt;li>Change regex to backticks from double quotes to avoid double escaping slashes&lt;/li>
+&lt;li>Change the GraphQL parser to gqlgen&amp;rsquo;s from dgraph-io&amp;rsquo;s&lt;/li>
+&lt;li>Change to &lt;code>chi&lt;/code> as default http multiplexer from http.ServeMux&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix authorization rewriter handling &lt;code>not:{has:acl}&lt;/code> as type handling of &lt;code>[]interface{}&lt;/code> instead of &lt;code>interface{}&lt;/code>&lt;/li>
+&lt;li>Fix error with custom http error responses not propagating&lt;/li>
+&lt;li>Fix security issue CVE-2024-41110 by upgrading docker library to 27.3.1 from 1.13.1&lt;/li>
+&lt;li>Fix security issue with possible sql injection attack&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Remove&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Remove authorization check on mutation&lt;/li>
+&lt;li>Remove commented out code as our SCM provides this history already&lt;/li>
+&lt;li>Remove unused code or superfluous comparisons&lt;/li>
+&lt;/ul>
+&lt;h3>Core&lt;span class="hx-absolute -hx-mt-20" id="core">&lt;/span>
+&lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Add&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Add check for migration directives in &lt;code>schema.sdl&lt;/code> for &lt;code>checkMigrationDependencies&lt;/code>&lt;/li>
+&lt;li>Add check to prevent infinite loop when disabling Equipment&lt;/li>
+&lt;li>Add deprecation warning for changes to existing configuration keys&lt;/li>
+&lt;li>Add data exporter and importer&lt;/li>
+&lt;li>Add equipmentActualRollup as a query and accompanying resolvers.&lt;/li>
+&lt;li>Add &lt;code>exportJSON&lt;/code> as mutation&lt;/li>
+&lt;li>Add handler for equipmentActualRollup to JobResponse handlers.&lt;/li>
+&lt;li>Add migration event as &lt;code>PENDING&lt;/code> before execution&lt;/li>
+&lt;li>Add override of data when existing data in target DB is invalid&lt;/li>
+&lt;li>Add support for exporting multiple objects&lt;/li>
+&lt;li>Add support for YAML configuration files&lt;/li>
+&lt;li>Add tests for migration functionalities&lt;/li>
+&lt;li>Add timestamp in import event id so the same JSON can be imported again&lt;/li>
+&lt;li>Add update to migration event to &lt;code>COMPLETE&lt;/code> after execution&lt;/li>
+&lt;li>Add update to migration event to update &lt;code>effectiveEnd&lt;/code> when execution finished&lt;/li>
+&lt;li>Add validation check before executing to migration plan strategy&lt;/li>
+&lt;li>Add support for separating NATS username and password from connection string&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Change configuration keys names (backward compatible with deprecation warning)&lt;/li>
+&lt;li>Change import to allow empty &lt;code>effectiveStart&lt;/code> while importing&lt;/li>
+&lt;li>Change import to use &lt;code>effectiveStart&lt;/code> if set from DB when import data is empty&lt;/li>
+&lt;li>Change GetJobResponse query adapter to also get child JobResponses and EquipmentActuals.&lt;/li>
+&lt;li>Change github.com/99designs/gqlgen to v0.17.54 from v0.17.47&lt;/li>
+&lt;li>Change golang to v1.23.4 from 1.21&lt;/li>
+&lt;li>Change golang.org/x/crypto to v0.31.0 from v0.30.0&lt;/li>
+&lt;li>Change golangci-lint to v1.60.2 from v1.54.0&lt;/li>
+&lt;li>Change migrated entity versions to be imported with status &lt;code>DRAFT&lt;/code>&lt;/li>
+&lt;li>Change CI/CD docker container build path to &lt;code>registry.gitlab.com/libremfg/docker/core&lt;/code> from &lt;code>registry.gitlab.com/libremfg/libre-core&lt;/code>&lt;/li>
+&lt;li>Change CI/CD docker version from 20.10.16 to 27.4.1&lt;/li>
+&lt;li>Change libre-schema to v3.1.0 from v3.0.3&lt;/li>
+&lt;li>Change GraphQL resolution of equipmentActualRollup to exist on Job Response instead of top level query&lt;/li>
+&lt;li>Change log to write as soon as possible after receiving message from NATS&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix data source update when migrating an active version over the top of a draft version&lt;/li>
+&lt;li>Fix &lt;code>includesPropertiesOf&lt;/code> cloning&lt;/li>
+&lt;li>Fix migration of circular HierarchyScope&lt;/li>
+&lt;li>Fix JIRA testcase upload pipeline CI/CD step&lt;/li>
+&lt;/ul>
+&lt;h3>Agent&lt;span class="hx-absolute -hx-mt-20" id="agent">&lt;/span>
+&lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Add&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Add adapter for MQTT v3.1.1.&lt;/li>
+&lt;li>Add field in config to choose MQTT Version.&lt;/li>
+&lt;li>Add field in config to choose timestamp field for JSON messages.&lt;/li>
+&lt;li>Add &lt;code>MaxMixedUpdates&lt;/code>, allowing agent to run for a configurable number of failed config checks without access to Keycloak or BAAS.&lt;/li>
+&lt;li>Add configuration validation checks.&lt;/li>
+&lt;li>Add configuration logging on startup.&lt;/li>
+&lt;li>Add generation of config file when prompted with flag and file path in terminal start-up.&lt;/li>
+&lt;li>Add obfuscation for sensitive config fields on publish.&lt;/li>
+&lt;li>Add support for MQTT and NATS bridge mode.&lt;/li>
+&lt;li>Add Kafka egress handler using CloudEvents structured mode.&lt;/li>
+&lt;li>Add an adapter for Kafka event streams that implements &lt;code>DataSourceConnector&lt;/code>, &lt;code>DataSourceWriter&lt;/code> and &lt;code>DataSourceSubscriber&lt;/code>.&lt;/li>
+&lt;li>Add configuration field for specifying which field to use as timestamp field using &lt;code>MQTT.timestampField&lt;/code> and it&amp;rsquo;s format with &lt;code>MQTT.timestampFormat&lt;/code>.&lt;/li>
+&lt;li>Add NATS KV support for message deduplication to the MQTT adapters.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Change OCUPA version to newer version to take advantage of bug fixes.&lt;/li>
+&lt;li>Change config to use YAML instead of JSON, and certain configuration variables.&lt;/li>
+&lt;li>Change egress to be abstracted behind an interface, add configuration to select egress, inject egress providers into &lt;code>messageHandler&lt;/code>.&lt;/li>
+&lt;li>Change &lt;code>messageHandler&lt;/code> to support sending a message to multiple egress sources.&lt;/li>
+&lt;li>Change to allow Agent to trigger OPCUA commands without NATS.&lt;/li>
+&lt;li>Change Kafka adapter to use SegmentIO instead of Confluent library.&lt;/li>
+&lt;li>Change NATS reporting topics to native NATS topics.&lt;/li>
+&lt;li>Change stats reporting topic to a native NATS topic.&lt;/li>
+&lt;li>Change to update topic properties for &lt;code>dataType&lt;/code> and &lt;code>messageKeyDeterminedBy&lt;/code> when polling BAAS.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix issue where Agent would panic if DataSourceTopic DataType is missing.&lt;/li>
+&lt;li>Fix issue where &lt;code>OidcPEP.GetAccessToken&lt;/code> was calling &lt;code>jwt.ParseWithClaims&lt;/code>, resulting in a failed parse even with a valid Keycloak token.&lt;/li>
+&lt;li>Fix issue where Agent would panic if its config didn&amp;rsquo;t have an active version.&lt;/li>
+&lt;li>Fixed bug where unable to unmarshal raw string messages received through MQTT.&lt;/li>
+&lt;li>Fix issue with BaaS configuration change not updating existing topics.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Remove&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Remove unused configuration fields: &lt;code>RESTAPI&lt;/code>, &lt;code>BUFFERS.DataChannelCapacity&lt;/code>, and &lt;code>AZURE&lt;/code>.&lt;/li>
+&lt;li>Remove an extra config file.&lt;/li>
+&lt;/ul>
+&lt;h3>Audit&lt;span class="hx-absolute -hx-mt-20" id="audit">&lt;/span>
+&lt;a href="#audit" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Add&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Add &lt;code>Previous&lt;/code> field to &lt;code>ValueChange&lt;/code> type, allowing querying of Audit history with Influx.&lt;/li>
+&lt;li>Add an HTTP endpoint &amp;ldquo;/config&amp;rdquo; that returns the active configuration with passwords, tokens, and client_secrets redacted. Endpoint is disabled by default and can be enabled by setting &lt;code>CONFIGLISTEN&lt;/code> to any value.&lt;/li>
+&lt;li>Add custom postgres container with pg-partman and jobmon to optionally allow automated partition management.&lt;/li>
+&lt;li>Add logging of configuration options.&lt;/li>
+&lt;li>Add obfuscation for sensitive config fields.&lt;/li>
+&lt;li>Add pg_partman defaults to postgres init.&lt;/li>
+&lt;li>Add publishing the configuration to NATS &lt;code>\_libre.audit..status&lt;/code> subject.&lt;/li>
+&lt;li>Add test cases for configuration.&lt;/li>
+&lt;li>Add validation to existing configuration with &lt;code>ConfigManager&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Change CDC payload to accept multiple events per message, by updating &lt;code>ValueChange&lt;/code> adapter to output an array of &lt;code>ValueChange&lt;/code>s.&lt;/li>
+&lt;li>Change configuration to use YAML instead of JSON.&lt;/li>
+&lt;li>Change drivers to use rhize-go &lt;code>v3.0.0-3&lt;/code>.&lt;/li>
+&lt;li>Change env prefix from &lt;code>LIBRE_AUDIT&lt;/code> to &lt;code>RHIZE_AUDIT&lt;/code>.&lt;/li>
+&lt;li>Change existing configuration options for consistency: &lt;code>pg&lt;/code> to &lt;code>postgres&lt;/code>, &lt;code>pg.user&lt;/code> to &lt;code>postgres.user&lt;/code>, and other options changed to camel casing.&lt;/li>
+&lt;li>Change go to &lt;code>1.23&lt;/code> from &lt;code>1.21&lt;/code>&lt;/li>
+&lt;li>Change queries to use parameterized versions to avoid injection attacks.&lt;/li>
+&lt;li>Change &lt;code>influxdb.token&lt;/code> to be optional.&lt;/li>
+&lt;li>Change NATS URL configuration to be split between &lt;code>serverUrl&lt;/code>, &lt;code>username&lt;/code>, and &lt;code>password&lt;/code>.&lt;/li>
+&lt;li>Change postgres container to have 1 month default partition size.&lt;/li>
+&lt;li>Change to use the DTO to Domain conversion to create individual objects for the &lt;code>delete&lt;/code> and &lt;code>set&lt;/code> operations for &lt;code>Event&lt;/code> objects.&lt;/li>
+&lt;li>Change value change logging from Trace to Debug.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix &lt;code>libreAudit&lt;/code> not accepting &lt;client-name> audience in access token, now accepts both audit and &lt;client-name>.&lt;/li>
+&lt;li>Fix bug preventing messages from being ACK/NAKed when the Audit record was written to Influx.&lt;/li>
+&lt;li>Fix handling for user tag in filter and output.&lt;/li>
+&lt;li>Fix error where &lt;code>commit_ts&lt;/code> and &lt;code>uid&lt;/code> in postgres init were &lt;code>integer&lt;/code> instead of &lt;code>bigint&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Remove&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Removed unused configuration options: &lt;code>libreDataStoreGraphQL&lt;/code>, &lt;code>logging.type&lt;/code>, &lt;code>OpenTelemetry&lt;/code>, and &lt;code>influxdb&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h3>Keycloak Theme&lt;span class="hx-absolute -hx-mt-20" id="keycloak-theme">&lt;/span>
+&lt;a href="#keycloak-theme" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>No changes for this release.&lt;/p>
+&lt;h3>Router Initilazation&lt;span class="hx-absolute -hx-mt-20" id="router-initilazation">&lt;/span>
+&lt;a href="#router-initilazation" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>No changes for this release.&lt;/p>
+&lt;h2>Compatibility&lt;span class="hx-absolute -hx-mt-20" id="compatibility">&lt;/span>
+&lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>
+&lt;div class="notices note">
+&lt;span class="type">v3.1.0 compatibility&lt;/span>
+Rhize v3.1.0 has been tested to work with the following third-party applications:
+&lt;ul>
+&lt;li>Apollo router 1.61.0&lt;/li>
+&lt;li> Grafana: 9.4.7&lt;/li>
+&lt;li> Keycloak: 21.1.2&lt;/li>
+&lt;li> Keycloak Postgres: 15.3.0&lt;/li>
+&lt;li> Loki: 2.9.12&lt;/li>
+&lt;li> NATS: 2.10.25&lt;/li>
+&lt;li> Tempo: 2.7.1&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;h2>Checksums&lt;span class="hx-absolute -hx-mt-20" id="checksums">&lt;/span>
+&lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>When you install, check the container images against these checksums:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;pre>&lt;code>Admin:
+registry.gitlab.com/libremfg/frontend/libre-admin-ui:v3.1.0
+sha256:7e885915dd7d91e22172235187b90bbee0b72fcc89bbd964fab86819f05da930
+BPMN Engine:
+registry.gitlab.com/libremfg/bpmn-engine:v3.1.0
+sha256:ca13da0d99aa8de4a16a7b1eee6b2d1e1c70a883797beda41a26e0df4453791b
+BAAS:
+registry.gitlab.com/libremfg/baas:v3.1.0
+sha256:632226e86a8ca6175287ab2a597b6a31325118fb125daa499bcf4916cafb90f1
+Libre Core:
+registry.gitlab.com/libremfg/libre-core:v3.1.0
+sha256:eae5c2cbebf0cbc84b4ce543beae8d474a794cb2138e512daf0d11c4b54b93bb
+Libre Agent:
+registry.gitlab.com/libremfg/libre-agent:v3.1.0
+sha256:90d6cfce491002d2bf7cfb1042ca97cafc70c5b4987a6f9c79d143ef1b69dd3d
+Libre Audit:
+registry.gitlab.com/libremfg/libre-audit:v3.1.0
+sha256:5e8d5a45d8d4b5a72382922a32f6b8574b6b70b26a0298964e75e1c40e84d4ec
+Libre Audit Postgres:
+registry.gitlab.com/libremfg/libre-audit/postgres:v3.1.0
+sha256:81b22e9a15fca26778693e546fa772fa579b68a993b5eadec22103dacf96e56d
+Libre Keycloak Theme:
+registry.gitlab.com/libremfg/frontend/libre-keycloak-theme:v3.1.0
+sha256:a622c02be76e62059162c0c380b61066e4600a646067c3d4046d8a3fb358b5f1
+Libre Router Init:
+registry.gitlab.com/libremfg/libre-router-init:v3.1.0
+sha256:afaa3739d7753869bcf543467c096af9b7a53e4d648d180685027f0fc5210661&lt;/code>&lt;/pre>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.1.0-checksums.txt" target="_blank" rel="noopener">Download &lt;code>v3.1.0-checksums.txt&lt;/code>&lt;/a>&lt;/p>
+&lt;h2>Upgrade&lt;span class="hx-absolute -hx-mt-20" id="upgrade">&lt;/span>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;div class="notices warning">
+&lt;span class="type">Back up first&lt;/span>
+Before upgrading, consider backing up your Rhize services.
+To review the procedure, read our &lt;a href="https://docs.rhize.com/deploy/backup">Back up guides&lt;/a>.
+&lt;/div>
+&lt;p>To upgrade to v3.1.0 from v3.0.3, first ensure that you have made corrections for the following breaking changes.&lt;/p>
+&lt;h3>Row Level Access Control&lt;span class="hx-absolute -hx-mt-20" id="row-level-access-control">&lt;/span>
+&lt;a href="#row-level-access-control" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Rhize now features row level access control. It also requires a different scopemap than previous versions of BAAS. This is a breaking change.&lt;/p>
+&lt;p>The new scope map features rules and jurisdictions. Jurisdictions can be used to create a group of permissions for certain entities within a hierarchy scope. This is useful for allowing contract manufacturing organizations to read and write to the data hub without being able to access the entire manufacturing knowledge graph.&lt;/p>
+&lt;p>If you are updating to v3.1.0 from 3.0.3 or lower, update your BAAS scopemap to add a rule with the &lt;code>admin&lt;/code> role.&lt;/p>
+&lt;p>Your scopemap should have the following rule in some form. Note that &lt;code>admin&lt;/code> is case-sensitive:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;rule-001&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;description&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;Admins can do everything&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;roles&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;admin&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;resources&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;*&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;actions&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;*&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;jurisdictions&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;*&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>Read how to &lt;a href="https://docs.rhize.com/deploy/install/row-level-access-control/" >Configure your scopemap&lt;/a>.&lt;/p>
+&lt;h3>YAML config files&lt;span class="hx-absolute -hx-mt-20" id="yaml-config-files">&lt;/span>
+&lt;a href="#yaml-config-files" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Rhize services now use YAML instead of JSON for their configuration files. This is represented in Helm overrides by the object &lt;code>rhize&amp;lt;SERVICE&amp;gt;Config&lt;/code> (i.e. &lt;code>rhizeAuditConfig&lt;/code>). Charts for v3.1.0 should create only YAML config files, though there may be differences in the keys for certain configuration options. Consult the values file for each Helm chart and the changelog for specific changes as necessary.&lt;/p>
+&lt;h3>Notable schema changes&lt;span class="hx-absolute -hx-mt-20" id="notable-schema-changes">&lt;/span>
+&lt;a href="#notable-schema-changes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;h4>Material Lot &amp;amp; Sublot Quantity Unit of Measure&lt;span class="hx-absolute -hx-mt-20" id="material-lot--sublot-quantity-unit-of-measure">&lt;/span>
+&lt;a href="#material-lot--sublot-quantity-unit-of-measure" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>&lt;code>quantityUnitOfMeasure&lt;/code> has been deprecated in favor of &lt;code>quantityUoM&lt;/code> for MaterialLot and MaterialSubLot in order to standardize variable names across the schema.
+While &lt;code>quantityUnitOfMeasure&lt;/code> is deprecated, it will continue to work until it is removed in a future releaase. To migrate before the &lt;code>quantityUnitOfMeasure&lt;/code> is completely removed, ensure all clients are now using &lt;code>quantityUoM&lt;/code>:&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>Query all &lt;code>quantityUnitOfMeasure&lt;/code> for &lt;code>MaterialLot&lt;/code> and &lt;code>MaterialSubLot&lt;/code>, and store information to disk.&lt;/li>
+&lt;li>Delete all relationships for &lt;code>quantityUnitOfMeasure&lt;/code> from &lt;code>MaterialLot&lt;/code> and &lt;code>MaterialSubLot&lt;/code>.&lt;/li>
+&lt;li>Upgrade schema.&lt;/li>
+&lt;li>Patch in stored &lt;code>quantityUnitOfMeasure&lt;/code> as &lt;code>quantityUoM&lt;/code> for &lt;code>MaterialLot&lt;/code> and &lt;code>MaterialSubLot&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;h4>Job Order Dispatch Status&lt;span class="hx-absolute -hx-mt-20" id="job-order-dispatch-status">&lt;/span>
+&lt;a href="#job-order-dispatch-status" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>&lt;code>DispatchStatus&lt;/code> has been changed to match the ISA-95 standard. Existing statuses that didn&amp;rsquo;t align are now deprecated. They will continue to work until removed in a future release. It is recommended to migrate clients to the new set.&lt;/li>
+&lt;/ul>
+&lt;h4>Operations Event Definition Record Specification Uniqueness&lt;span class="hx-absolute -hx-mt-20" id="operations-event-definition-record-specification-uniqueness">&lt;/span>
+&lt;a href="#operations-event-definition-record-specification-uniqueness" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>
+&lt;p>The &lt;code>id&lt;/code> field for &lt;code>OperationsEventDefinitionRecordSpecification&lt;/code> has been changed to use the &lt;code>@id&lt;/code> directive. Each &lt;code>id&lt;/code> must now be unique, thereby any duplicate ids will cause issues. To fix:&lt;/p>
+&lt;ol>
+&lt;li>Query all &lt;code>id&lt;/code> on &lt;code>OperationsEventDefinitionRecordSpecification&lt;/code>, and store information to disk.&lt;/li>
+&lt;li>Determine any duplicate values.&lt;/li>
+&lt;li>For any duplicate values, assign a unique &lt;code>id&lt;/code>.&lt;/li>
+&lt;li>Patch in any &lt;code>id&lt;/code> changes.&lt;/li>
+&lt;li>Upgrade schema.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ul>
+&lt;h4>WorkMaster defines &amp;amp; definedBy&lt;span class="hx-absolute -hx-mt-20" id="workmaster-defines--definedby">&lt;/span>
+&lt;a href="#workmaster-defines--definedby" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>
+&lt;p>WorkMaster has been changed to invert &lt;code>defines&lt;/code> and &lt;code>definedBy&lt;/code>, such that &lt;code>defines&lt;/code> is now a list and &lt;code>definedBy&lt;/code> is now scalar. Depending on what version you are upgrading from you may come across this error when upgrading:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="o">{&lt;/span>&lt;span class="s2">&amp;#34;errors&amp;#34;&lt;/span>:&lt;span class="o">[{&lt;/span>&lt;span class="s2">&amp;#34;message&amp;#34;&lt;/span>:&lt;span class="s2">&amp;#34;input: rpc error: code = Unknown desc = succeeded in saving GraphQL schema but failed to alter Dgraph schema - GraphQL layer may exhibit unexpected behaviour, reapplying the old GraphQL schema may prevent any issues: Type can&amp;#39;t be changed from list to scalar for attr: [WorkMaster.definedBy] without dropping it first.\ninput:3: resolving updateGQLSchema failed\n&amp;#34;&lt;/span>,&lt;span class="s2">&amp;#34;extensions&amp;#34;&lt;/span>:&lt;span class="o">{&lt;/span>&lt;span class="s2">&amp;#34;code&amp;#34;&lt;/span>:&lt;span class="s2">&amp;#34;Error&amp;#34;&lt;/span>&lt;span class="o">}}]}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>To fix:&lt;/p>
+&lt;ol>
+&lt;li>Query all &lt;code>id&lt;/code> for &lt;code>definedBy&lt;/code> and &lt;code>defines&lt;/code> on &lt;code>WorkMaster&lt;/code>, and store information to disk.&lt;/li>
+&lt;li>Determine any relationship changes.&lt;/li>
+&lt;li>Acquire a token with BAAS&amp;rsquo;s credentials from Keycloak.&lt;/li>
+&lt;li>Drop &lt;code>definedBy&lt;/code> attribute with this command:&lt;/li>
+&lt;/ol>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">curl -X POST &amp;lt;BAAS_URL&amp;gt;/alter -d &lt;span class="s1">&amp;#39;{&amp;#34;drop_attr&amp;#34;: &amp;#34;WorkMaster.definedBy&amp;#34;}&amp;#39;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -H &lt;span class="s2">&amp;#34;Authorization: Bearer &amp;lt;TOKEN&amp;gt;&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;ol start="5">
+&lt;li>Upgrade schema.&lt;/li>
+&lt;li>Patch in any &lt;code>defines&lt;/code> and &lt;code>definedBy&lt;/code> relationships as needed.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>After you&amp;rsquo;ve made the necessary mitigations, follow the upgrade the &lt;a href="https://docs.rhize.com/deploy/upgrade" >Upgrade instructions&lt;/a>.&lt;/p></description></item><item><title>3.0.3</title><link>https://docs.rhize.com/releases/3-0-3/</link><pubDate>Wed, 13 Nov 2024 00:41:53 -0300</pubDate><guid>https://docs.rhize.com/releases/3-0-3/</guid><description>
 &lt;p>Changelog for version 3.0.3 of the Rhize application.&lt;/p>
 &lt;p>&lt;em>Release date:&lt;/em>
 13 Nov 2024&lt;/p>
