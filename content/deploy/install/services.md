@@ -67,6 +67,7 @@ If enabling the Audit Trail, also the include the configuration in [Enable chang
 
 1. Modify the DB Helm file with your code editor. Edit any necessary overrides.
 
+
 1. Use Helm to install the database:
 
     ```bash
