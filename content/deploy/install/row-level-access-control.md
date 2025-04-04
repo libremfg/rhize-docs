@@ -35,7 +35,7 @@ Consider the following scenario: Acme Inc. contracts part of its supply chain to
      "rules": [
         {
             "id": "cmo-data-access",
-            "description": "CMO data access to CMO hierarhcy scoped resources and entitites",
+            "description": "CMO data access to CMO hierarchy scoped resources and entities",
             "roles": ["cmoAccess"],
             "actions": ["query", "mutation"],
             "jurisdictions": ["CMO"]
