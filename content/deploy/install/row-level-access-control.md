@@ -6,7 +6,6 @@ weight: 200
 categories: "how-to"
 ---
 
-## What is Row Level Access Control?
 
 Row Level Access Control (RLAC) is a security mechanism that restricts access to specific rows of data based on user roles and permissions. This provides a way to enforce fine-grained access policies and ensure that users can access only the data they are authorized to see.
 For example, in a contract manufacturing organization (CMO), RLAC enables the CMO to access and manage their specific data while allowing the parent company to view all data across the organization.
