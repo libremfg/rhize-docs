@@ -62,20 +62,20 @@ Then, follow these steps.
 
     ```bash
     helm repo add \
-         --username <EMAIL_ADDRESS> \
-         --password <ACCESS_TOKEN> \
-         {{< param application_name >}} \
-   <REPO>
+      --username <EMAIL_ADDRESS> \
+      --password <ACCESS_TOKEN> \
+      {{< param application_name >}} \
+      https://gitlab.com/api/v4/projects/42214456/packages/helm/stable
     ```
-
 
 1. Create the container image pull secret:
 
     ```bash
-    kubectl create secret docker-registry {{< param application_name >}}-registry-credential \
+    kubectl create secret docker-registry {{< param application_name >}}
+     --registry-credential \
      --docker-server=<DOCKER_SERVER> \ ## the repository
-     --docker-password= <ACCESS_TOKEN> \
-     --docker-email= <EMAIL_ADDRESS>
+     --docker-password=<ACCESS_TOKEN> \
+     --docker-email=<EMAIL_ADDRESS>
     ```
 
     Confirm the secrets with this command:
@@ -83,7 +83,6 @@ Then, follow these steps.
     ```bash
     kubectl get secrets
     ```
-
 
 1. Add the Bitnami Helm repository:
 
@@ -96,13 +95,13 @@ Then, follow these steps.
 1. Update overrides to `keycloak.yaml`. Then install with this command:
 
      ```bash
-     helm install keycloak -f ./keycloak.yaml bitnami/keycloak -n libre
+     helm install keycloak -f ./keycloak.yaml bitnami/keycloak -n {{< param application_name >}}
      ```
 
-1. Set up port forwarding from Keycloak. For example, this forwards traffic to port `5101` on `localhost`
+1. Set up port forwarding from Keycloak. For example, this forwards traffic to port `5101` on `localhost`:
 
      ```bash
-     kubectl port-forward  svc/keycloak 5101:80
+     kubectl port-forward svc/keycloak 5101:80
      ```
 
 ## Next steps
