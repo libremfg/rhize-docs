@@ -33,6 +33,12 @@ First, record the old and new versions, their context, and namespaces.
 
     {{% param k8s_cluster_ns %}}
 
+1. Update Helm repositories with the following command:
+
+    ```bash
+    helm repo update
+    ```
+
 1. Use the `helm list` command to check for {{< param application_name >}} services.
 1. Upgrade with the following command:
 
