@@ -195,20 +195,22 @@ Or you can manage users in other services such as LDAP, Google, Azure AD, Facebo
 &lt;li>The UI then uses that JWT to access secure APIs such as the Rhize GraphQL API.&lt;/li>
 &lt;/ol>
 &lt;p>The Rhize DB, libreBaas, has the public key from Keycloak, which can be used to verify the JWT.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">sequenceDiagram
+&lt;pre class="mermaid hx-mt-6">
+sequenceDiagram
 actor User
 participant UI as Web UI
 participant Rhize as Rhize DB
 participant KC as Keycloak
 participant AP as AuthProvider
-Rhize->>KC: Get Public Key
-User->>UI: Log In
-UI-->>KC: Redirect
-KC-->>AP: Redirect
-AP->>User: Credentials
-AP-->>KC: Auth Result
-KC-->>UI: Redirect with Code
-UI->>KC: Exchange Code for Token
-KC->>UI: Reply with id_token and access_token
-UI->>Rhize: Access API with Bearer Token
-Rhize->>Rhize: Verify Token with Public Key from Keycloak&lt;/pre></description></item></channel></rss>
+Rhize-&amp;gt;&amp;gt;KC: Get Public Key
+User-&amp;gt;&amp;gt;UI: Log In
+UI--&amp;gt;&amp;gt;KC: Redirect
+KC--&amp;gt;&amp;gt;AP: Redirect
+AP-&amp;gt;&amp;gt;User: Credentials
+AP--&amp;gt;&amp;gt;KC: Auth Result
+KC--&amp;gt;&amp;gt;UI: Redirect with Code
+UI-&amp;gt;&amp;gt;KC: Exchange Code for Token
+KC-&amp;gt;&amp;gt;UI: Reply with id_token and access_token
+UI-&amp;gt;&amp;gt;Rhize: Access API with Bearer Token
+Rhize-&amp;gt;&amp;gt;Rhize: Verify Token with Public Key from Keycloak
+&lt;/pre></description></item></channel></rss>

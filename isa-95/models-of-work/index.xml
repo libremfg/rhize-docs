@@ -18,11 +18,13 @@ At higher levels of this hierarchy, the scope of a process segment is often broa
 While the particular material consumed and produced differs in the production of each brand,
 all brands still follow the steps of &lt;code>material receiving&lt;/code>, &lt;code>kitting&lt;/code>, &lt;code>mixing&lt;/code>, and &lt;code>packing&lt;/code>.
 These steps are process segments.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">flowchart LR
-a[Material receiving]-->
-b[Kitting]-->
-c[Mixing]-->
-d[packing]&lt;/pre>&lt;h2>Reasons to use segments&lt;span class="hx-absolute -hx-mt-20" id="reasons-to-use-segments">&lt;/span>
+&lt;pre class="mermaid hx-mt-6">
+flowchart LR
+a[Material receiving]--&amp;gt;
+b[Kitting]--&amp;gt;
+c[Mixing]--&amp;gt;
+d[packing]
+&lt;/pre>&lt;h2>Reasons to use segments&lt;span class="hx-absolute -hx-mt-20" id="reasons-to-use-segments">&lt;/span>
 &lt;a href="#reasons-to-use-segments" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Process segments can serve operational and analytical functions.
 Operational functions include:&lt;/p>
 &lt;ul>
@@ -57,31 +59,36 @@ These models may &lt;em>correspond&lt;/em> to a process segment:&lt;/p>
 &lt;/ul>
 &lt;p>For example, the Juice Factory has various work masters to produce material definitions for different bulk juices: &lt;code>Bulk blue juice&lt;/code>, &lt;code>Bulk orange juice&lt;/code>, and so on.
 Each of these work masters correspond to the same process segment, &lt;code>mixing&lt;/code>.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
 namespace work_masters{
 class `Bulk blue juice`
 class `Bulk red juice`
 class `Bulk orange juice`
 }
-`Bulk blue juice` ..> `Process segment:&lt;br>mixing` :corresponds to
-`Bulk red juice` ..> `Process segment:&lt;br>mixing` :corresponds to
-`Bulk orange juice` ..> `Process segment:&lt;br>mixing` :corresponds to&lt;/pre>&lt;h3>Contains specifications&lt;span class="hx-absolute -hx-mt-20" id="contains-specifications">&lt;/span>
+`Bulk blue juice` ..&amp;gt; `Process segment:&amp;lt;br&amp;gt;mixing` :corresponds to
+`Bulk red juice` ..&amp;gt; `Process segment:&amp;lt;br&amp;gt;mixing` :corresponds to
+`Bulk orange juice` ..&amp;gt; `Process segment:&amp;lt;br&amp;gt;mixing` :corresponds to
+&lt;/pre>&lt;h3>Contains specifications&lt;span class="hx-absolute -hx-mt-20" id="contains-specifications">&lt;/span>
 &lt;a href="#contains-specifications" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A process segment may contain one or more resource &lt;em>specifications&lt;/em>.
 These specifications describe the necessary resources for the step.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
 class `bulk juices`{use: produced}
 class `ingredient kits`{use: consumed}
-mixing *--> `equipment specification` :contains
-`equipment specification` ..> `mixers` :corresponds to
-mixing *--> `material specification` :contains
-`material specification` ..> `bulk juices` :corresponds to
-`material specification` ..> `ingredient kits` :corresponds to&lt;/pre>&lt;h3>Contains segment parameters&lt;span class="hx-absolute -hx-mt-20" id="contains-segment-parameters">&lt;/span>
+mixing *--&amp;gt; `equipment specification` :contains
+`equipment specification` ..&amp;gt; `mixers` :corresponds to
+mixing *--&amp;gt; `material specification` :contains
+`material specification` ..&amp;gt; `bulk juices` :corresponds to
+`material specification` ..&amp;gt; `ingredient kits` :corresponds to
+&lt;/pre>&lt;h3>Contains segment parameters&lt;span class="hx-absolute -hx-mt-20" id="contains-segment-parameters">&lt;/span>
 &lt;a href="#contains-segment-parameters" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A process segment can &lt;em>contain&lt;/em> process segment parameters.
 Process segment parameters store additional information about the step.
 For example, the &lt;code>mixing&lt;/code> process segment might have a &lt;code>mixing time&lt;/code> parameter.&lt;/p>
 &lt;p>The parameter also can have a value or range of values.
 This process segment parameter value may serve as a default for lower-level work models that &lt;a href="#corresponds-to" >correspond to&lt;/a> this process segment.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
 class `mixing time`{
 value: 20-30
 UoM: minutes
@@ -90,23 +97,26 @@ class `mixing speed`{
 value: 50
 UoM: RPM
 }
-`mixing` *--> `mixing time`
-`mixing` *--> `mixing speed`&lt;/pre>&lt;h3>Is made of&lt;span class="hx-absolute -hx-mt-20" id="is-made-of">&lt;/span>
+`mixing` *--&amp;gt; `mixing time`
+`mixing` *--&amp;gt; `mixing speed`
+&lt;/pre>&lt;h3>Is made of&lt;span class="hx-absolute -hx-mt-20" id="is-made-of">&lt;/span>
 &lt;a href="#is-made-of" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A process segment can &lt;em>be made of&lt;/em> other process segments.
 You can use this relationship to model sub-steps.&lt;/p>
 &lt;p>For example, The Juice Factory might need to distinguish preparation steps from production steps.
 A parent segment provides a model to aggregate the production steps in one parent process segment.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">flowchart LR
+&lt;pre class="mermaid hx-mt-6">
+flowchart LR
 subgraph m[Parent: Juice Production]
 direction LR
-K[Child:&lt;br>kitting] -->
-M[Child:&lt;br>mixing] -->
-P[Child:&lt;!-- &lt;br> -->packing]
+K[Child:&amp;lt;br&amp;gt;kitting] --&amp;gt;
+M[Child:&amp;lt;br&amp;gt;mixing] --&amp;gt;
+P[Child:&amp;lt;!-- &amp;lt;br&amp;gt; --&amp;gt;packing]
 end
-A[Material receiving] --> m
+A[Material receiving] --&amp;gt; m
 classDef box fill:#fff,stroke:#000,stroke-width:1px,color:#000;
 classDef b fill:#fff,stroke:#000,stroke-width:1px,color:#000;
-class A,C,D,N,X,m,T,V box&lt;/pre>&lt;h3>Dependency&lt;span class="hx-absolute -hx-mt-20" id="dependency">&lt;/span>
+class A,C,D,N,X,m,T,V box
+&lt;/pre>&lt;h3>Dependency&lt;span class="hx-absolute -hx-mt-20" id="dependency">&lt;/span>
 &lt;a href="#dependency" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>In some instances, you might need to strictly model the order in which some or all steps happen.
 For this, use &lt;em>segment dependancies&lt;/em>.&lt;/p>
 &lt;p>Segment dependencies become more important when steps might be executed in parallel or dynamically.
@@ -115,9 +125,11 @@ The dependency ensures nothing happens too early.&lt;/p>
 ensure that all entities that &lt;a href="#correspond-to" >correspond to&lt;/a> that segment also have that dependency.
 For example, in a pastry production, the &lt;code>baking&lt;/code> segment might have a dependency on &lt;code>mixing&lt;/code> and &lt;code>preheating&lt;/code>.
 This implies that all products that correspond to this &lt;code>baking&lt;/code>—such as a &lt;code>chocolate chip cookies&lt;/code> or &lt;code>brownies&lt;/code>—must also require &lt;code>mixing&lt;/code> and &lt;code>preheating&lt;/code> as dependencies.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
-baking ..> mixing : has execution dependency on
-baking ..> pre-heating : has execution dependency on&lt;/pre>&lt;p>If a dependency is product-dependent, define it on the level of the &lt;abbr title="A template for a job order, corresponding to an operations and process segment, from the perspective of the level-3 (MES/MOM) systems.">work master&lt;/abbr> or operation definition instead.&lt;/p></description></item><item><title>Work masters</title><link>https://docs.rhize.com/isa-95/models-of-work/work-masters/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/isa-95/models-of-work/work-masters/</guid><description>
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
+baking ..&amp;gt; mixing : has execution dependency on
+baking ..&amp;gt; pre-heating : has execution dependency on
+&lt;/pre>&lt;p>If a dependency is product-dependent, define it on the level of the &lt;abbr title="A template for a job order, corresponding to an operations and process segment, from the perspective of the level-3 (MES/MOM) systems.">work master&lt;/abbr> or operation definition instead.&lt;/p></description></item><item><title>Work masters</title><link>https://docs.rhize.com/isa-95/models-of-work/work-masters/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/isa-95/models-of-work/work-masters/</guid><description>
 &lt;p>A &lt;em>work master&lt;/em> defines the resources and instructions necessary to do a unit of work.
 As the most granular work definition in ISA-95, the work master can serve a variety of operational purposes:&lt;/p>
 &lt;ul>
@@ -128,7 +140,8 @@ As the most granular work definition in ISA-95, the work master can serve a vari
 &lt;/ul>
 &lt;p>In the manufacturing &lt;abbr title="The entities and relationships that represent all knowledge in the domain of manufacturing operations">ontology&lt;/abbr>, the work master has relationships to resources, other work definitions, and planning entities. Like other work definitions, a work master can be either a &lt;abbr title="Pattern (work definition). A work definition that creates a pattern or template for other patterns or work definitions to follow">pattern&lt;/abbr>, defining a template for work, or an &lt;abbr title="An identifiable member of a manufacturing class, like a material or process segment, that can be tracked and scheduled">instance&lt;/abbr>, defining a unit of actual work.&lt;/p>
 &lt;h2>Work master attributes&lt;span class="hx-absolute -hx-mt-20" id="work-master-attributes">&lt;/span>
-&lt;a href="#work-master-attributes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;pre class="mermaid hx-mt-6">classDiagram
+&lt;a href="#work-master-attributes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;pre class="mermaid hx-mt-6">
+classDiagram
 class workMaster{
 id: make.PBJ1000
 description: Make Packaged Blue Juice
@@ -150,7 +163,8 @@ Important attributes include:&lt;/p>
 In ISA-95 relations, the specification is an intermediary between the work master and the resource or parameter.
 The work master &lt;em>contains&lt;/em> the specifications;
 the specifications describe the necessary quantities and uses of the resource object that it &lt;em>corresponds to&lt;/em>.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
 class materialSpecification{
 what and how much?
 }
@@ -164,10 +178,11 @@ class parameterSpecification{
 instructions, checklists,
 and so on
 }
-workMaster *--> materialSpecification :contains
-workMaster *--> personnelSpecification :contains
-workMaster *--> equipmentSpecification :contains
-workMaster *--> parameterSpecification :contains&lt;/pre>&lt;h3>Example: material specifications&lt;span class="hx-absolute -hx-mt-20" id="example-material-specifications">&lt;/span>
+workMaster *--&amp;gt; materialSpecification :contains
+workMaster *--&amp;gt; personnelSpecification :contains
+workMaster *--&amp;gt; equipmentSpecification :contains
+workMaster *--&amp;gt; parameterSpecification :contains
+&lt;/pre>&lt;h3>Example: material specifications&lt;span class="hx-absolute -hx-mt-20" id="example-material-specifications">&lt;/span>
 &lt;a href="#example-material-specifications" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Resource specifications may have attributes that describe information about the use, quantity, and location of the resource.
 Some specifications, such as material, have additional attributes.&lt;/p>
 &lt;p>For example, to produce one pallet of &lt;code>Cosmic Blue Juice&lt;/code>, The Juice Factory requires 5 cases of Blue Juice and one pallet.
@@ -177,7 +192,8 @@ The work master to produce this final product specifies three different material
 &lt;li>Produce 1 unit of &lt;code>packed blue juice&lt;/code>, a &lt;abbr title="A representation of material with similar charecteristics. All material lots must have one associated material definition.">material definition&lt;/abbr>&lt;/li>
 &lt;li>Use one pallet, a consumable (material that has no &lt;abbr title="A uniquely identifiable amount of material, either countable or weighable">material lot&lt;/abbr>)&lt;/li>
 &lt;/ul>
-&lt;pre class="mermaid hx-mt-6">classDiagram
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
 class `Work master: Make Cosmic Blue Juice`{
 description: procedure to produce pallet of Cosmic Blue Juice
 }
@@ -199,11 +215,12 @@ quantity_unit_of_measure: pallet
 class `Material definition: PBJ`{
 description: One pallet of cosmic blue juice
 }
-`Work master: Make Cosmic Blue Juice` *--> `Specification: blue juice case`
-`Work master: Make Cosmic Blue Juice` *--> `Specification: blue juice pallet`
-`Work master: Make Cosmic Blue Juice` *--> `Specification: pallet`
-`Specification: blue juice case` --> `Material definition: PBJ`
-`Specification: blue juice pallet` --> `Material definition: blue juice case`&lt;/pre>&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+`Work master: Make Cosmic Blue Juice` *--&amp;gt; `Specification: blue juice case`
+`Work master: Make Cosmic Blue Juice` *--&amp;gt; `Specification: blue juice pallet`
+`Work master: Make Cosmic Blue Juice` *--&amp;gt; `Specification: pallet`
+`Specification: blue juice case` --&amp;gt; `Material definition: PBJ`
+`Specification: blue juice pallet` --&amp;gt; `Material definition: blue juice case`
+&lt;/pre>&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
 &lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
 &lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
 &lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">Note that the preceding diagram includes only the material specification.
@@ -221,7 +238,8 @@ Conventionally, work masters are related to job orders through a work directive 
 &lt;li>The work master provides a canonical definition of how to make it&lt;/li>
 &lt;li>The work directive provides a version of the work master, recording how work was performed at the time of execution&lt;/li>
 &lt;/ul>
-&lt;pre class="mermaid hx-mt-6">classDiagram
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
 class jobOrder{
 make bulk blue juice
 }
@@ -231,8 +249,9 @@ id: WM.Bulk_Blue_Juice
 class workDirective{
 id: WD.Bulk_blue_juice
 }
-jobOrder --> workDirective :corresponds to
-workDirective --> workMaster :derived from &lt;/pre>&lt;h3>Corresponds to work directive&lt;span class="hx-absolute -hx-mt-20" id="corresponds-to-work-directive">&lt;/span>
+jobOrder --&amp;gt; workDirective :corresponds to
+workDirective --&amp;gt; workMaster :derived from
+&lt;/pre>&lt;h3>Corresponds to work directive&lt;span class="hx-absolute -hx-mt-20" id="corresponds-to-work-directive">&lt;/span>
 &lt;a href="#corresponds-to-work-directive" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A work directive is a clone of the work master that is made at the time of dispatching.
 If the actual work performed needs to deviate from the work defined in the work master,
 the work directive provides a way to record the changes in a new definition.&lt;/p>
@@ -249,7 +268,8 @@ that&lt;/p>
 &lt;h3>Parent child-work masters&lt;span class="hx-absolute -hx-mt-20" id="parent">&lt;/span>
 &lt;a href="#parent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>You can group sub-processes of a work master using a parent-child relationship.
 For example, the work master to make &lt;code>packed blue juice&lt;/code> might have child work masters to bottle, case, and palletize the individual material sublots.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
 class `WM: bottle`{
 equipment_specifcation: bottler
 equipment_specifcation: capper
@@ -260,16 +280,18 @@ equipment_specifcation: casepacker
 class `WM: palletize`{
 equipment_specifcation: palletizer
 }
-`WM:make blue juice bottle` *--> `WM: bottle` :contains
-`WM:make blue juice bottle` *--> `WM: pack in case` :contains
-`WM:make blue juice bottle` *--> `WM: palletize` :contains&lt;/pre>&lt;h3>Defined by patterns&lt;span class="hx-absolute -hx-mt-20" id="pattern">&lt;/span>
+`WM:make blue juice bottle` *--&amp;gt; `WM: bottle` :contains
+`WM:make blue juice bottle` *--&amp;gt; `WM: pack in case` :contains
+`WM:make blue juice bottle` *--&amp;gt; `WM: palletize` :contains
+&lt;/pre>&lt;h3>Defined by patterns&lt;span class="hx-absolute -hx-mt-20" id="pattern">&lt;/span>
 &lt;a href="#pattern" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A &lt;em>pattern&lt;/em> work master provides a template to build &lt;em>instance&lt;/em> work masters for similar production processes.&lt;/p>
 &lt;p>For example, to produce bulk juice for all five of its juice lines,
 The Juice Factory requires exactly the same equipment and quantity of sugar.
 The only item that changes is the material definition for the kits that are dumped into the mixer.&lt;/p>
 &lt;p>To minimize configuration, The Juice Factory might use a pattern work master that specifies the equipment, sugar, and kit class.
 Then each brand of juice may have an instance work master that overrides the &lt;code>kits&lt;/code> class with its specific kit definition.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
 class patternWorkMaster{
 description: make bulk juice
 equipment specifications:
@@ -286,16 +308,19 @@ class instanceWorkMaster_red{
 - make bulk red juice
 - requires 1 red kit
 }
-patternWorkMaster --> instanceWorkMaster_blue :defines
-patternWorkMaster --> instanceWorkMaster_red :defines&lt;/pre>&lt;h3>Corresponds to a process segment&lt;span class="hx-absolute -hx-mt-20" id="corresponds-to-a-process-segment">&lt;/span>
+patternWorkMaster --&amp;gt; instanceWorkMaster_blue :defines
+patternWorkMaster --&amp;gt; instanceWorkMaster_red :defines
+&lt;/pre>&lt;h3>Corresponds to a process segment&lt;span class="hx-absolute -hx-mt-20" id="corresponds-to-a-process-segment">&lt;/span>
 &lt;a href="#corresponds-to-a-process-segment" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Work masters &lt;em>correspond to&lt;/em> &lt;a href="https://docs.rhize.com/isa-95/models-of-work/process-segments/" >process segments&lt;/a>, which are less granular, business-level definitions of work.
 For example, the &lt;code>make juice&lt;/code> process segment might have five corresponding work masters that describe how to produce each line of juice at the level of detail necessary for a manufacturing execution system.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
 namespace process_segment_kitting{
 class `WM: make blue juice kit`
 class `WM: make red juice kit`
 class `WM: make green juice kit`
-}&lt;/pre>&lt;h2>Workflow specifications&lt;span class="hx-absolute -hx-mt-20" id="workflow-specifications">&lt;/span>
+}
+&lt;/pre>&lt;h2>Workflow specifications&lt;span class="hx-absolute -hx-mt-20" id="workflow-specifications">&lt;/span>
 &lt;a href="#workflow-specifications" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The work master may be linked to other work masters in a sequence through a &lt;em>workflow specification&lt;/em>.
 The workflow specification provides an overview of the steps to execute masters in sequence.&lt;/p>
 &lt;p>Each master can &lt;em>have&lt;/em> a node that exists in the workflow specification.

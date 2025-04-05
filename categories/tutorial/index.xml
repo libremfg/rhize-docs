@@ -3,13 +3,15 @@
 &lt;p>Imagine a scenario when an oven must be preheated every time a new order number is published to an MQTT edge device.
 You could automate this workflow with a rule that listens to messages published and evaluates a condition.
 If the condition evaluates to &lt;code>true&lt;/code>, the rule triggers a &lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling">BPMN&lt;/abbr> workflow to preheat the oven.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">---
+&lt;pre class="mermaid hx-mt-6">
+---
 title: Rules trigger workflows from data-source changes
 ---
 flowchart LR
-A(Property changed?) -->|yes| B{"rule evaluates to true?"}
-B -->|no| C(do nothing)
-B -->|"yes (optional: pass variables)"| D(Run BPMN workflow)&lt;/pre>&lt;p>The broad procedure to create a rule is as follows:&lt;/p>
+A(Property changed?) --&amp;gt;|yes| B{&amp;#34;rule evaluates to true?&amp;#34;}
+B --&amp;gt;|no| C(do nothing)
+B --&amp;gt;|&amp;#34;yes (optional: pass variables)&amp;#34;| D(Run BPMN workflow)
+&lt;/pre>&lt;p>The broad procedure to create a rule is as follows:&lt;/p>
 &lt;ol>
 &lt;li>In the Rhize UI or through GraphQL, create models for the data source and its associated unit of measure, equipment, and equipment class.&lt;/li>
 &lt;li>In the Rhize UI, write a BPMN workflow that is triggered when this data source changes and executes some business logic.&lt;/li>
@@ -302,20 +304,17 @@ title="Copy code"
 class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
 id="tabs-panel-2"
 role="tabpanel">&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;pre>&lt;code>True&lt;/code>&lt;/pre>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-&lt;p>&amp;lt;button
-class=&amp;ldquo;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&amp;rdquo;
-title=&amp;ldquo;Copy code&amp;rdquo;&lt;/p>
-&lt;blockquote>
-&lt;/blockquote>
-&lt;pre>&lt;code>&amp;lt;div class=&amp;quot;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&amp;quot;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-&lt;/code>&lt;/pre>
+&lt;div>&lt;pre>&lt;code>True&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;p>The expression evaluates to &lt;code>false&lt;/code>, because the &lt;code>current&lt;/code> and &lt;code>previous&lt;/code> values differ.&lt;/p>
-&lt;/div>
+&lt;p>The expression evaluates to &lt;code>false&lt;/code>, because the &lt;code>current&lt;/code> and &lt;code>previous&lt;/code> values differ.&lt;/p>&lt;/div>
 &lt;/div>
 &lt;p>Optionally, pass information to the BPMN by adding a payload message. The message is an object with multiple keys.&lt;/p>
 &lt;ol>

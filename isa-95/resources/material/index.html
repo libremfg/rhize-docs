@@ -1,5 +1,5 @@
 <!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="index, follow"><link rel="icon shortcut" href=https://docs.rhize.com/favicon.ico sizes=32x32><link rel=icon href=https://docs.rhize.com/favicon.svg type=image/svg+xml><link rel=icon href=https://docs.rhize.com/favicon-dark.svg type=image/svg+xml media="(prefers-color-scheme: dark)"><link rel=icon href=https://docs.rhize.com/favicon-16x16.png type=image/png sizes=16x16><link rel=icon href=https://docs.rhize.com/favicon-32x32.png type=image/png sizes=32x32><link rel=apple-touch-icon href=https://docs.rhize.com/apple-touch-icon.png sizes=180x180><link fetchpriority=low href=https://docs.rhize.com/site.webmanifest rel=manifest><title>Material models in ISA-95 – Rhize documentation</title>
-<meta name=description content="A guide to material entities and relationships in ISA-95"><link rel=canonical href=https://docs.rhize.com/isa-95/resources/material/ itemprop=url><meta property="og:title" content="Material models in ISA-95"><meta property="og:description" content="A guide to material entities and relationships in ISA-95"><meta property="og:type" content="article"><meta property="og:url" content="https://docs.rhize.com/isa-95/resources/material/"><meta property="article:section" content="isa-95"><meta itemprop=name content="Material models in ISA-95"><meta itemprop=description content="A guide to material entities and relationships in ISA-95"><meta itemprop=wordCount content="802"><meta name=twitter:card content="summary"><meta name=twitter:title content="Material models in ISA-95"><meta name=twitter:description content="A guide to material entities and relationships in ISA-95"><link rel=preload href=https://docs.rhize.com/css/compiled/main.min.9a2a4c6e602ce30f10fa86afbb1ce624db853742eeccc2e954764594ee62c18f.css as=style integrity="sha256-mipMbmAs4w8Q+oavuxzmJNuFN0LuzMLpVHZFlO5iwY8="><link href=https://docs.rhize.com/css/compiled/main.min.9a2a4c6e602ce30f10fa86afbb1ce624db853742eeccc2e954764594ee62c18f.css rel=stylesheet integrity="sha256-mipMbmAs4w8Q+oavuxzmJNuFN0LuzMLpVHZFlO5iwY8="><link href=https://docs.rhize.com/css/custom.min.ce1aa5ffdf233e0e32925d4889a97d62be0fe2cd05b68b6b74be87e6f9eef365.css rel=stylesheet integrity="sha256-zhql/98jPg4ykl1Iial9Yr4P4s0FtotrdL6H5vnu82U="><link rel=preconnect href=https://www.googletagmanager.com crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-0PJKXDWQ4P"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-0PJKXDWQ4P")</script><script>const defaultTheme="system",setDarkTheme=()=>{document.documentElement.classList.add("dark"),document.documentElement.style.colorScheme="dark"},setLightTheme=()=>{document.documentElement.classList.remove("dark"),document.documentElement.style.colorScheme="light"};"color-theme"in localStorage?localStorage.getItem("color-theme")==="dark"?setDarkTheme():setLightTheme():(defaultTheme==="dark"?setDarkTheme():setLightTheme(),defaultTheme==="system"&&(window.matchMedia("(prefers-color-scheme: dark)").matches?setDarkTheme():setLightTheme()))</script></head><body dir=ltr><div class="nav-container hx-sticky hx-top-0 hx-z-20 hx-w-full hx-bg-transparent print:hx-hidden"><div class="nav-container-blur hx-pointer-events-none hx-absolute hx-z-[-1] hx-h-full hx-w-full hx-bg-white dark:hx-bg-dark hx-shadow-[0_2px_4px_rgba(0,0,0,.02),0_1px_0_rgba(0,0,0,.06)] contrast-more:hx-shadow-[0_0_0_1px_#000] dark:hx-shadow-[0_-1px_0_rgba(255,255,255,.1)_inset] contrast-more:dark:hx-shadow-[0_0_0_1px_#fff]"></div><nav class="hx-mx-auto hx-flex hx-items-center hx-justify-end hx-gap-2 hx-h-16 hx-px-6 hx-max-w-[90rem]"><a class="hx-flex hx-items-center hover:hx-opacity-75 ltr:hx-mr-auto rtl:hx-ml-auto" href=https://docs.rhize.com/><img class="hx-mr-2 hx-block dark:hx-hidden" src=https://docs.rhize.com/images/logo.svg alt="Rhize documentation" height=20 width=100>
+<meta name=description content="A guide to material entities and relationships in ISA-95"><link rel=canonical href=https://docs.rhize.com/isa-95/resources/material/ itemprop=url><meta property="og:title" content="Material models in ISA-95"><meta property="og:description" content="A guide to material entities and relationships in ISA-95"><meta property="og:type" content="article"><meta property="og:url" content="https://docs.rhize.com/isa-95/resources/material/"><meta property="article:section" content="isa-95"><meta itemprop=name content="Material models in ISA-95"><meta itemprop=description content="A guide to material entities and relationships in ISA-95"><meta itemprop=wordCount content="808"><meta name=twitter:card content="summary"><meta name=twitter:title content="Material models in ISA-95"><meta name=twitter:description content="A guide to material entities and relationships in ISA-95"><link rel=preload href=https://docs.rhize.com/css/compiled/main.min.9a2a4c6e602ce30f10fa86afbb1ce624db853742eeccc2e954764594ee62c18f.css as=style integrity="sha256-mipMbmAs4w8Q+oavuxzmJNuFN0LuzMLpVHZFlO5iwY8="><link href=https://docs.rhize.com/css/compiled/main.min.9a2a4c6e602ce30f10fa86afbb1ce624db853742eeccc2e954764594ee62c18f.css rel=stylesheet integrity="sha256-mipMbmAs4w8Q+oavuxzmJNuFN0LuzMLpVHZFlO5iwY8="><link href=https://docs.rhize.com/css/custom.min.ce1aa5ffdf233e0e32925d4889a97d62be0fe2cd05b68b6b74be87e6f9eef365.css rel=stylesheet integrity="sha256-zhql/98jPg4ykl1Iial9Yr4P4s0FtotrdL6H5vnu82U="><link rel=preconnect href=https://www.googletagmanager.com crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-0PJKXDWQ4P"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-0PJKXDWQ4P")</script><script>const defaultTheme="system",setDarkTheme=()=>{document.documentElement.classList.add("dark"),document.documentElement.style.colorScheme="dark"},setLightTheme=()=>{document.documentElement.classList.remove("dark"),document.documentElement.style.colorScheme="light"};"color-theme"in localStorage?localStorage.getItem("color-theme")==="dark"?setDarkTheme():setLightTheme():(defaultTheme==="dark"?setDarkTheme():setLightTheme(),defaultTheme==="system"&&(window.matchMedia("(prefers-color-scheme: dark)").matches?setDarkTheme():setLightTheme()))</script></head><body dir=ltr><div class="nav-container hx-sticky hx-top-0 hx-z-20 hx-w-full hx-bg-transparent print:hx-hidden"><div class="nav-container-blur hx-pointer-events-none hx-absolute hx-z-[-1] hx-h-full hx-w-full hx-bg-white dark:hx-bg-dark hx-shadow-[0_2px_4px_rgba(0,0,0,.02),0_1px_0_rgba(0,0,0,.06)] contrast-more:hx-shadow-[0_0_0_1px_#000] dark:hx-shadow-[0_-1px_0_rgba(255,255,255,.1)_inset] contrast-more:dark:hx-shadow-[0_0_0_1px_#fff]"></div><nav class="hx-mx-auto hx-flex hx-items-center hx-justify-end hx-gap-2 hx-h-16 hx-px-6 hx-max-w-[90rem]"><a class="hx-flex hx-items-center hover:hx-opacity-75 ltr:hx-mr-auto rtl:hx-ml-auto" href=https://docs.rhize.com/><img class="hx-mr-2 hx-block dark:hx-hidden" src=https://docs.rhize.com/images/logo.svg alt="Rhize documentation" height=20 width=100>
 <img class="hx-mr-2 hx-hidden dark:hx-block" src=https://docs.rhize.com/images/logo-dark.svg alt="Rhize documentation" height=20 width=100>
 <span class="hx-mr-2 hx-font-extrabold hx-inline hx-select-none" title="Rhize documentation">Rhize documentation</span>
 </a><a title=Docs href=https://docs.rhize.com/get-started/introduction class="hx-text-sm contrast-more:hx-text-gray-700 contrast-more:dark:hx-text-gray-100 hx-relative -hx-ml-2 hx-hidden hx-whitespace-nowrap hx-p-2 md:hx-inline-block hx-text-gray-600 hover:hx-text-gray-800 dark:hx-text-gray-400 dark:hover:hx-text-gray-200"><span class=hx-text-center>Docs</span>
@@ -254,28 +254,32 @@ hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-bo
 <span>Scroll to top</span><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentcolor" class="hx-inline ltr:hx-ml-1 rtl:hx-mr-1 hx-h-3.5 hx-w-3.5 hx-border hx-rounded-full hx-border-gray-500 hover:hx-border-gray-900 dark:hx-border-gray-400 dark:hover:hx-border-gray-100 contrast-more:hx-border-gray-800 contrast-more:dark:hx-border-gray-50"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/></svg></button></div></div></nav><article class="hx-w-full hx-break-words hx-flex hx-min-h-[calc(100vh-var(--navbar-height))] hx-min-w-0 hx-justify-center hx-pb-8 hx-pr-[calc(env(safe-area-inset-right)-1.5rem)]"><main class="hx-w-full hx-min-w-0 hx-max-w-6xl hx-px-6 hx-pt-4 md:hx-px-12"><div class="hx-mt-1.5 hx-flex hx-items-center hx-gap-1 hx-overflow-hidden hx-text-sm hx-text-gray-500 dark:hx-text-gray-400 contrast-more:hx-text-current"><div class="hx-whitespace-nowrap hx-transition-colors hx-min-w-[24px] hx-overflow-hidden hx-text-ellipsis hover:hx-text-gray-900 dark:hover:hx-text-gray-100"><a href=https://docs.rhize.com/isa-95/>Learn ISA-95</a></div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-min-w-[24px] hx-overflow-hidden hx-text-ellipsis hover:hx-text-gray-900 dark:hover:hx-text-gray-100"><a href=https://docs.rhize.com/isa-95/resources/>Resources in ISA-95</a></div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Material models in ISA-95</div></div><div class=content><h1>Material models in ISA-95</h1><p>In ISA-95, <em>material</em> can be a finished good or anything that goes into this good.
 Examples of material include:</p><ul><li>A final product, such as packaged watch</li><li>A part, such as a gear in this watch</li><li>An intermediate substance, such as a produced reactant to be used in combination with another chemical</li><li>Raw materials, like the flour and water that make dough</li></ul><p>Like <a href=https://docs.rhize.com/isa-95/resources/equipment/>equipment</a>, material can have classes and properties.
 However, to account for detailed tracking of unique material units,
-the material model has more entities than equipment.</p><details class="last-of-type:hx-mb-0 hx-rounded-lg hx-bg-neutral-50 dark:hx-bg-neutral-800 hx-p-2 hx-mt-4 hx-group"><summary class="hx-flex hx-items-center hx-cursor-pointer hx-select-none hx-list-none hx-p-1 hx-rounded hx-transition-colors hover:hx-bg-gray-100 dark:hover:hx-bg-neutral-800 before:hx-mr-1 before:hx-inline-block before:hx-transition-transform before:hx-content-[''] dark:before:hx-invert rtl:before:hx-rotate-180 group-open:before:hx-rotate-90"><strong class=hx-text-lg>Full diagram of abstract relationships</strong></summary><div class="hx-p-2 hx-overflow-hidden"><pre class="mermaid hx-mt-6">classDiagram
-`material sublot` o--> `material lot` :assembled from
-`material lot` o--> `material lot` :assembled from
-`material definition` o--> `material definition` :assembled from
-`material class` o--> `material class` :assembled from
-`material class` o--> `material class` :assembled from
-`material lot` -->`material definition` :defined by
-`material definition` -->`material class` :defined by
-`material lot` *--> `material lot properties` :has values of
-`material sublot` *--> `material lot properties` :has values of
-`material definition` *-->`material definition properties` :has properties of
-`material class` -->`material class properties` :has properties of
-`material lot properties` ..> `material definition properties` :maps to
-`material definition properties` ..> `material class properties` :maps to
-`material lot properties` *--> `material lot properties` :contains
-`material definition properties` *--> `material definition properties` :contains
-`material class properties` *--> `material class properties` :contains</pre></div></details><h2>Defined by<span class="hx-absolute -hx-mt-20" id=defined-by></span>
-<a href=#defined-by class=subheading-anchor aria-label="Permalink for this section"></a></h2><p>The <code>defined by</code> relationship associates material with common categories and definitions.</p><pre class="mermaid hx-mt-6">classDiagram
-`material lot` -->`material definition` :defined by
-`material definition` -->`material class` :defined by
-`Cosmic Blue Juice,\npallet 1` -->`Cosmic Blue Juice,\ndefinition` :defined by
-`Cosmic Blue Juice,\ndefinition` -->`Juices class` :defined by</pre><h3>Material lots are <code>defined by</code> material definitions<span class="hx-absolute -hx-mt-20" id=material-lots-are-defined-by-material-definitions></span>
+the material model has more entities than equipment.</p><details class="last-of-type:hx-mb-0 hx-rounded-lg hx-bg-neutral-50 dark:hx-bg-neutral-800 hx-p-2 hx-mt-4 hx-group"><summary class="hx-flex hx-items-center hx-cursor-pointer hx-select-none hx-list-none hx-p-1 hx-rounded hx-transition-colors hover:hx-bg-gray-100 dark:hover:hx-bg-neutral-800 before:hx-mr-1 before:hx-inline-block before:hx-transition-transform before:hx-content-[''] dark:before:hx-invert rtl:before:hx-rotate-180 group-open:before:hx-rotate-90"><strong class=hx-text-lg>Full diagram of abstract relationships</strong></summary><div class="hx-p-2 hx-overflow-hidden"><pre class="mermaid hx-mt-6">
+  classDiagram
+`material sublot` o--&gt; `material lot` :assembled from
+`material lot` o--&gt; `material lot` :assembled from
+`material definition` o--&gt; `material definition` :assembled from
+`material class` o--&gt; `material class` :assembled from
+`material class` o--&gt; `material class` :assembled from
+`material lot` --&gt;`material definition` :defined by
+`material definition` --&gt;`material class` :defined by
+`material lot` *--&gt; `material lot properties` :has values of
+`material sublot` *--&gt; `material lot properties` :has values of
+`material definition` *--&gt;`material definition properties` :has properties of
+`material class` --&gt;`material class properties` :has properties of
+`material lot properties` ..&gt; `material definition properties` :maps to
+`material definition properties` ..&gt; `material class properties` :maps to
+`material lot properties` *--&gt; `material lot properties` :contains
+`material definition properties` *--&gt; `material definition properties` :contains
+`material class properties` *--&gt; `material class properties` :contains
+</pre></div></details><h2>Defined by<span class="hx-absolute -hx-mt-20" id=defined-by></span>
+<a href=#defined-by class=subheading-anchor aria-label="Permalink for this section"></a></h2><p>The <code>defined by</code> relationship associates material with common categories and definitions.</p><pre class="mermaid hx-mt-6">
+  classDiagram
+`material lot` --&gt;`material definition` :defined by
+`material definition` --&gt;`material class` :defined by
+`Cosmic Blue Juice,\npallet 1` --&gt;`Cosmic Blue Juice,\ndefinition` :defined by
+`Cosmic Blue Juice,\ndefinition` --&gt;`Juices class` :defined by
+</pre><h3>Material lots are <code>defined by</code> material definitions<span class="hx-absolute -hx-mt-20" id=material-lots-are-defined-by-material-definitions></span>
 <a href=#material-lots-are-defined-by-material-definitions class=subheading-anchor aria-label="Permalink for this section"></a></h3><p><em>Material definitions</em> provide a way to ensure units of the same substance
 have a consistent name and set of properties.
 <em>Material lots</em> provide a way to uniquely identify each specific instance of that definition.</p><p>For example, the Springfield plant might produce 100 pallets of its flagship product, <code>Cosmic Blue Juice</code>.
@@ -283,14 +287,17 @@ Obviously, these pallets are not literally the same: otherwise they would just b
 Rather, each pallet is a separate <em>lots</em>, and all these lots share the same material definition.</p><h3>Definitions are defined by classes<span class="hx-absolute -hx-mt-20" id=definitions-are-defined-by-classes></span>
 <a href=#definitions-are-defined-by-classes class=subheading-anchor aria-label="Permalink for this section"></a></h3><p>If you need another level of abstraction, you can also categorize your material definitions by <em>material class</em>.
 Material classes provide a way to categorize material by function or shared <a href=#material-properties>properties</a>.
-For example, <code>The Juice Factory</code> has five juice definitions, all part of the class <code>Juices</code>.</p><pre class="mermaid hx-mt-6">classDiagram
+For example, <code>The Juice Factory</code> has five juice definitions, all part of the class <code>Juices</code>.</p><pre class="mermaid hx-mt-6">
+  classDiagram
 namespace juices {
 class `Nuclear Green Juice`
 class `Tropical Orange Juice`
 class `Cosmic blue juice`
 class `Royal Purple Juice`
 class `Berry Red Juice`
-}</pre><p>Note that material classes can contain material classes. For example, the <code>raw_materials</code> class might contain all raw ingredients.</p><pre class="mermaid hx-mt-6">---
+}
+</pre><p>Note that material classes can contain material classes. For example, the <code>raw_materials</code> class might contain all raw ingredients.</p><pre class="mermaid hx-mt-6">
+  ---
 subtitle: Material classes can contain material classes
 ---
 classDiagram
@@ -310,9 +317,12 @@ namespace flavors{
 namespace colors{
   class `blue`
   class `orange`
-}</pre><h2>Is assembled from<span class="hx-absolute -hx-mt-20" id=is-assembled-from></span>
-<a href=#is-assembled-from class=subheading-anchor aria-label="Permalink for this section"></a></h2><p>Material lots also might be <em>assembled from</em> material <em>sublots</em>.</p><pre class="mermaid hx-mt-6">classDiagram
-`material lot` o--> `material sublot` :is assembled from</pre><p>Sublots are uniquely identifiable components of a material lot.
+}
+</pre><h2>Is assembled from<span class="hx-absolute -hx-mt-20" id=is-assembled-from></span>
+<a href=#is-assembled-from class=subheading-anchor aria-label="Permalink for this section"></a></h2><p>Material lots also might be <em>assembled from</em> material <em>sublots</em>.</p><pre class="mermaid hx-mt-6">
+  classDiagram
+`material lot` o--&gt; `material sublot` :is assembled from
+</pre><p>Sublots are uniquely identifiable components of a material lot.
 For example,
 the pallet <code>PBJ.1000.1</code> might be assembled from a set of packed juice cases.
 Each case might be modelled as a sublot with a unique ID, such as <code>PBJ.1000.1.1</code>.</p><h2>Has material properties<span class="hx-absolute -hx-mt-20" id=has-material-properties></span>
@@ -322,7 +332,8 @@ If using class or definition properties, you can also set a default value to be 
 The material definition <code>Cosmic Blue Juice</code> is a member of this class, and thus it inherits the <code>sugarContent</code> property.
 The <code>Cosmic Blue Juice</code> product has a defined standard value for its <code>sugarContent</code>, <code>100 grams</code>.
 The material lot <code>CBJ.Pallet1</code> is a pallet of Cosmic Blue Juice.
-This lot inherits the <code>sugarContent</code> property from the definition that it belongs to, and its value might deviate from the default value of its definition.</p><pre class="mermaid hx-mt-6">classDiagram
+This lot inherits the <code>sugarContent</code> property from the definition that it belongs to, and its value might deviate from the default value of its definition.</p><pre class="mermaid hx-mt-6">
+  classDiagram
 class materialClass{
   id: juices
 }
@@ -350,15 +361,18 @@ class materialClassProperty{
    UnitOfMeasure: g,
 }
 
-materialClass *--> materialClassProperty :has property of
-materialDefinition *--> materialDefinitionProperty :has property of
-materialLot *--> materialLotProperty :has value of
-materialLot *--> materialDefinition :defined by
-materialDefinition *--> materialClass :defined by
-materialLotProperty *--> materialDefinitionProperty :maps to
-materialDefinitionProperty *--> materialClassProperty :maps to</pre><h3>Properties contain properties<span class="hx-absolute -hx-mt-20" id=properties-contain-properties></span>
-<a href=#properties-contain-properties class=subheading-anchor aria-label="Permalink for this section"></a></h3><pre class="mermaid hx-mt-6">classDiagram
-flavor_profile *--> sweetness
-flavor_profile *--> umami
-flavor_profile *--> aciditiy</pre><p>As with equipment properties, all properties can contain properties.
+materialClass *--&gt; materialClassProperty :has property of
+materialDefinition *--&gt; materialDefinitionProperty :has property of
+materialLot *--&gt; materialLotProperty :has value of
+materialLot *--&gt; materialDefinition :defined by
+materialDefinition *--&gt; materialClass :defined by
+materialLotProperty *--&gt; materialDefinitionProperty :maps to
+materialDefinitionProperty *--&gt; materialClassProperty :maps to
+</pre><h3>Properties contain properties<span class="hx-absolute -hx-mt-20" id=properties-contain-properties></span>
+<a href=#properties-contain-properties class=subheading-anchor aria-label="Permalink for this section"></a></h3><pre class="mermaid hx-mt-6">
+  classDiagram
+flavor_profile *--&gt; sweetness
+flavor_profile *--&gt; umami
+flavor_profile *--&gt; aciditiy
+</pre><p>As with equipment properties, all properties can contain properties.
 For example, the property <code>flavor_profile</code> might contain properties for <code>sweetness</code>, <code>acidity</code> and <code>umami</code>.</p></div><div class=hx-mt-16></div><div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a href=https://docs.rhize.com/isa-95/resources/equipment/ title="Equipment models in ISA-95" class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-pr-4 rtl:hx-pl-4"><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Equipment models in ISA-95</a></div></main></article></div><footer class="hextra-footer hx-bg-gray-100 hx-pb-[env(safe-area-inset-bottom)] dark:hx-bg-neutral-900 print:hx-bg-transparent"><div class="hextra-custom-footer hx-max-w-screen-xl hx-pl-[max(env(safe-area-inset-left),1.5rem)] hx-pr-[max(env(safe-area-inset-right),1.5rem)] hx-text-gray-600 dark:hx-text-gray-400"></div></footer><script defer src=https://docs.rhize.com/js/main.min.0942239592f0795dc7213dd1057fd229d7edc19c0ef1a285396eb292d9ca9842.js integrity="sha256-CUIjlZLweV3HIT3RBX/SKdftwZwO8aKFOW6yktnKmEI="></script><script defer src=https://docs.rhize.com/lib/flexsearch/flexsearch.bundle.min.0425860527cc9968f9f049421c7a56b39327d475e2e3a8f550416be3a9134327.js integrity="sha256-BCWGBSfMmWj58ElCHHpWs5Mn1HXi46j1UEFr46kTQyc="></script><script defer src=https://docs.rhize.com/en.search.min.0b444174a2d66936193755eccfb66af827ce3d9e3aa2223167ea9490ce97ace4.js integrity="sha256-C0RBdKLWaTYZN1Xsz7Zq+CfOPZ46oiIxZ+qUkM6XrOQ="></script><script defer src=https://docs.rhize.com/lib/mermaid/mermaid.min.0d2b6f2361e7e0ce466a6ed458e03daa5584b42ef6926c3beb62eb64670ca261.js integrity="sha256-DStvI2Hn4M5Gam7UWOA9qlWEtC72kmw762LrZGcMomE="></script><script>document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".mermaid").forEach(e=>{e.dataset.original=e.innerHTML});const t=document.documentElement.classList.contains("dark")?"dark":"default";mermaid.initialize({startOnLoad:!0,theme:t});let e;new MutationObserver(()=>{clearTimeout(e),e=setTimeout(()=>{const e=document.documentElement.classList.contains("dark")?"dark":"default";document.querySelectorAll(".mermaid").forEach(e=>{e.innerHTML=e.dataset.original,e.removeAttribute("data-processed")}),mermaid.initialize({startOnLoad:!0,theme:e}),mermaid.init()},150)}).observe(document.documentElement,{attributes:!0,attributeFilter:["class"]})})</script></body></html>

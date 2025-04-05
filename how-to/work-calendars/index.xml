@@ -32,11 +32,13 @@ If any exist, Rhize creates a &lt;code>workCalendarEntry&lt;/code> with the star
 Rhize checks each equipment item for any &lt;code>workCalendarEntries&lt;/code>.
 If the scope includes active equipment, Rhize persists the entry to a time-series database.&lt;/p>
 &lt;h3>The relationship between hierarchy scope, equipment, and calendars&lt;span class="hx-absolute -hx-mt-20" id="the-relationship-between-hierarchy-scope-equipment-and-calendars">&lt;/span>
-&lt;a href="#the-relationship-between-hierarchy-scope-equipment-and-calendars" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;pre class="mermaid hx-mt-6">flowchart TD
-hs(Hierarchy scope) -->|provides scope for| wc(Work calendar)
-e(Equipment) -->|physical structure maps to| hs
-hs --> |calendar structure maps to| e
-wc -->|create calendar entries for active|e&lt;/pre>&lt;p>As the behavior in the previous section describes, the work calendar service coordinates data between
+&lt;a href="#the-relationship-between-hierarchy-scope-equipment-and-calendars" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;pre class="mermaid hx-mt-6">
+flowchart TD
+hs(Hierarchy scope) --&amp;gt;|provides scope for| wc(Work calendar)
+e(Equipment) --&amp;gt;|physical structure maps to| hs
+hs --&amp;gt; |calendar structure maps to| e
+wc --&amp;gt;|create calendar entries for active|e
+&lt;/pre>&lt;p>As the behavior in the previous section describes, the work calendar service coordinates data between
 three entities in your knowledge graph: &lt;abbr title="The scope of the exchanged information, such as a site or area, for which the information is relevant. The scope identifies associated instances of objects such as material, personnel, and equipment">hierarchy scope&lt;/abbr>, &lt;abbr title="">equipment&lt;/abbr>, and &lt;abbr title="A collection of work calendar entries">work calendar&lt;/abbr>.
 These entities work together to configure work calendars and automate changes of equipment state.&lt;/p>
 &lt;ul>

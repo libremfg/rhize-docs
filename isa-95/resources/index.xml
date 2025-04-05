@@ -12,16 +12,18 @@ This page describes what these relationships are and when to use them.&lt;/p>
 &lt;strong class="hx-text-lg">Abstract diagram of equipment entity-relationships&lt;/strong>
 &lt;/summary>
 &lt;div class="hx-p-2 hx-overflow-hidden">
-&lt;pre class="mermaid hx-mt-6">classDiagram
-equipment --> `equipment class` : defined by
-`equipment class` o--> `equipment class` :made up of
-`equipment class` --> `equipment class` :includes properties of
-equipment *--> `equipment property` :has values of
-`equipment class` *--> `equipment class property` :has properties of
-`equipment class property` &lt;.. `equipment property` :maps to
-equipment o--> equipment : made up of
-`equipment property` o--> `equipment property` : contains
-`equipment class property` o--> `equipment class property` : contains&lt;/pre>
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
+equipment --&amp;gt; `equipment class` : defined by
+`equipment class` o--&amp;gt; `equipment class` :made up of
+`equipment class` --&amp;gt; `equipment class` :includes properties of
+equipment *--&amp;gt; `equipment property` :has values of
+`equipment class` *--&amp;gt; `equipment class property` :has properties of
+`equipment class property` &amp;lt;.. `equipment property` :maps to
+equipment o--&amp;gt; equipment : made up of
+`equipment property` o--&amp;gt; `equipment property` : contains
+`equipment class property` o--&amp;gt; `equipment class property` : contains
+&lt;/pre>
 &lt;/div>
 &lt;/details>
 &lt;h2>The role-based hierarchy&lt;span class="hx-absolute -hx-mt-20" id="the-role-based-hierarchy">&lt;/span>
@@ -36,12 +38,14 @@ the &lt;em>role-based equipment hierarchy&lt;/em>.&lt;/p>
 alt="Role-based equipment hierarchy" width="65%">
 &lt;/figure>
 &lt;p>Your model can be explicit about the equipment&amp;rsquo;s position in the hierarchy through the &lt;code>equipmentLevel&lt;/code> attribute.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
 class equipment {
-id: "JF.SF.PA.PackL4.Capper"
-description: "Capper line 4"
-equipmentLevel: "workUnit"
-}&lt;/pre>&lt;p>Note that the lowest two levels distinguish equipment that has a storage role from equipment that has a production role.&lt;/p>
+id: &amp;#34;JF.SF.PA.PackL4.Capper&amp;#34;
+description: &amp;#34;Capper line 4&amp;#34;
+equipmentLevel: &amp;#34;workUnit&amp;#34;
+}
+&lt;/pre>&lt;p>Note that the lowest two levels distinguish equipment that has a storage role from equipment that has a production role.&lt;/p>
 &lt;p>When equipment has a production role, that role typically is scoped to the execution of an order or collection of orders.
 For example, in our fictional juice factory, equipment roles include:&lt;/p>
 &lt;ul>
@@ -56,8 +60,10 @@ For that reason, PLCs and other controls-level equipment is typically below the 
 &lt;a href="#equipment-is-made-up-of-equipment" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Equipment is made up of other equipment.
 High-level equipment items are composed of equipment items with more granular functions.
 For example, the juice factory has a work center, &lt;code>packaging line 1&lt;/code>, that is composed of 4 lower level units that perform specific packaging functions.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
-equipment o--> equipment : made up of&lt;/pre>&lt;h3>Reasons to use &lt;code>isMadeOf&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="reasons-to-use-ismadeof">&lt;/span>
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
+equipment o--&amp;gt; equipment : made up of
+&lt;/pre>&lt;h3>Reasons to use &lt;code>isMadeOf&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="reasons-to-use-ismadeof">&lt;/span>
 &lt;a href="#reasons-to-use-ismadeof" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>The &lt;code>isMadeOf&lt;/code> relationship provides a way to organize equipment in its hierarchical structure.
 This structure often mimics the spatial hierarchy of the plant or the social hierarchy of the organization.&lt;/p>
 &lt;p>Besides this, the &lt;code>isMadeOf&lt;/code> relationship provides a way to do the following:&lt;/p>
@@ -743,8 +749,10 @@ title="Copy code"
 &lt;h2>Equipment can have properties&lt;span class="hx-absolute -hx-mt-20" id="equipment-can-have-properties">&lt;/span>
 &lt;a href="#equipment-can-have-properties" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Properties are &lt;em>key value&lt;/em> pairs that report some permanent or temporary condition of an object.
 Equipment can have 0 or many properties.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
-equipment *--> `equipment property` :has values of&lt;/pre>&lt;p>For example, the &lt;code>Packaging line&lt;/code> work center has the properties:&lt;/p>
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
+equipment *--&amp;gt; `equipment property` :has values of
+&lt;/pre>&lt;p>For example, the &lt;code>Packaging line&lt;/code> work center has the properties:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>State&lt;/code>, which reports whether the center is active or not.&lt;/li>
 &lt;li>&lt;code>infeed&lt;/code>, the number of empty containers at the beginning of the line&lt;/li>
@@ -754,26 +762,32 @@ equipment *--> `equipment property` :has values of&lt;/pre>&lt;p>For example, th
 &lt;h3>Equipment properties can contain properties&lt;span class="hx-absolute -hx-mt-20" id="equipment-properties-can-contain-properties">&lt;/span>
 &lt;a href="#equipment-properties-can-contain-properties" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A property itself can have a composition of properties.
 For example, a unit might have the &lt;code>dimension&lt;/code> property that contains subproperties of &lt;code>width&lt;/code> and &lt;code>height&lt;/code>.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
-rectangularThing *--> `dimension (property)` : "has values of"
-`dimension (property)` *--> length : "contains"
-`dimension (property)` *--> width : "contains"
-`dimension (property)` *--> height : "contains"&lt;/pre>&lt;p>This &lt;code>contains&lt;/code> relationship creates a container to group granular properties by some commonality.
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
+rectangularThing *--&amp;gt; `dimension (property)` : &amp;#34;has values of&amp;#34;
+`dimension (property)` *--&amp;gt; length : &amp;#34;contains&amp;#34;
+`dimension (property)` *--&amp;gt; width : &amp;#34;contains&amp;#34;
+`dimension (property)` *--&amp;gt; height : &amp;#34;contains&amp;#34;
+&lt;/pre>&lt;p>This &lt;code>contains&lt;/code> relationship creates a container to group granular properties by some commonality.
 It also saves configuration time, since any equipment that has the parent property can logically have its child properties as well.&lt;/p>
 &lt;h2>Equipment classes define equipment&lt;span class="hx-absolute -hx-mt-20" id="equipment-classes-define-equipment">&lt;/span>
 &lt;a href="#equipment-classes-define-equipment" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Similar equipment might be &lt;em>defined&lt;/em> by its equipment class.
 Classes minimize repetitive modelling of equal equipment and properties.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
-equipment --> `equipment class` : defined by&lt;/pre>&lt;p>For example, the &lt;code>packing line&lt;/code> work center always has a &lt;code>filler&lt;/code> work unit as part of its composition.
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
+equipment --&amp;gt; `equipment class` : defined by
+&lt;/pre>&lt;p>For example, the &lt;code>packing line&lt;/code> work center always has a &lt;code>filler&lt;/code> work unit as part of its composition.
 So, when there are 4 &lt;code>packing lines&lt;/code>, there logically must be 4 fillers.
 To avoid individually tracking each filler and its configuration, you can create a &lt;code>fillers&lt;/code> class that defines each member.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
 namespace Fillers {
 class `filler line 1`
 class `filler line 2`
 class `filler line 3`
 class `filler line 4`
-}&lt;/pre>&lt;h3>Query example: all members of &lt;code>Packaging&lt;/code> class&lt;span class="hx-absolute -hx-mt-20" id="query-example-all-members-of-packaging-class">&lt;/span>
+}
+&lt;/pre>&lt;h3>Query example: all members of &lt;code>Packaging&lt;/code> class&lt;span class="hx-absolute -hx-mt-20" id="query-example-all-members-of-packaging-class">&lt;/span>
 &lt;a href="#query-example-all-members-of-packaging-class" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>This example queries the Rhize DB for all members of the &lt;code>Packaging&lt;/code> equipment class.&lt;/p>
 &lt;details class="last-of-type:hx-mb-0 hx-rounded-lg hx-bg-neutral-50 dark:hx-bg-neutral-800 hx-p-2 hx-mt-4 hx-group" open>
 &lt;summary class="hx-flex hx-items-center hx-cursor-pointer hx-select-none hx-list-none hx-p-1 hx-rounded hx-transition-colors hover:hx-bg-gray-100 dark:hover:hx-bg-neutral-800 before:hx-mr-1 before:hx-inline-block before:hx-transition-transform before:hx-content-[''] dark:before:hx-invert rtl:before:hx-rotate-180 group-open:before:hx-rotate-90">
@@ -862,15 +876,18 @@ title="Copy code"
 However, an equipment class property is only a key, not a value.
 When an equipment belongs to an equipment class, that equipment receives its properties.
 So, equipment properties &lt;em>map to&lt;/em> the class properties.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
-equipment *--> `equipment \n property` :has values of
-equipment *--> `equipment \n class` :defined by
-`equipment \n class` *--> `equipment \n class \n property` :has properties of
-`equipment \n class \n property` &lt;.. `equipment \n property` :maps to &lt;/pre>&lt;p>Classes are abstract, and so class properties are abstract keys.
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
+equipment *--&amp;gt; `equipment \n property` :has values of
+equipment *--&amp;gt; `equipment \n class` :defined by
+`equipment \n class` *--&amp;gt; `equipment \n class \n property` :has properties of
+`equipment \n class \n property` &amp;lt;.. `equipment \n property` :maps to
+&lt;/pre>&lt;p>Classes are abstract, and so class properties are abstract keys.
 An Equipment is tangible, and thus has a property key and an actual value.&lt;/p>
 &lt;h3>Equipment classes can be made of other classes&lt;span class="hx-absolute -hx-mt-20" id="equipment-classes-can-be-made-of-other-classes">&lt;/span>
 &lt;a href="#equipment-classes-can-be-made-of-other-classes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>As equipment can be &lt;em>made of&lt;/em> equipment, so equipment classes can be made of equipment classes.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
 `packaging (class)` *-- fillers
 `packaging (class)` *-- cappers
 `packaging (class)` *-- packers
@@ -878,7 +895,8 @@ An Equipment is tangible, and thus has a property key and an actual value.&lt;/p
 `packaging line 1` *-- filler 1
 `packaging line 1` *-- capper 1
 `packaging line 1` *-- packer 1
-`packaging line 1` *-- palletizer 1&lt;/pre></description></item><item><title>Material models in ISA-95</title><link>https://docs.rhize.com/isa-95/resources/material/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/isa-95/resources/material/</guid><description>
+`packaging line 1` *-- palletizer 1
+&lt;/pre></description></item><item><title>Material models in ISA-95</title><link>https://docs.rhize.com/isa-95/resources/material/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/isa-95/resources/material/</guid><description>
 &lt;p>In ISA-95, &lt;em>material&lt;/em> can be a finished good or anything that goes into this good.
 Examples of material include:&lt;/p>
 &lt;ul>
@@ -895,32 +913,36 @@ the material model has more entities than equipment.&lt;/p>
 &lt;strong class="hx-text-lg">Full diagram of abstract relationships&lt;/strong>
 &lt;/summary>
 &lt;div class="hx-p-2 hx-overflow-hidden">
-&lt;pre class="mermaid hx-mt-6">classDiagram
-`material sublot` o--> `material lot` :assembled from
-`material lot` o--> `material lot` :assembled from
-`material definition` o--> `material definition` :assembled from
-`material class` o--> `material class` :assembled from
-`material class` o--> `material class` :assembled from
-`material lot` -->`material definition` :defined by
-`material definition` -->`material class` :defined by
-`material lot` *--> `material lot properties` :has values of
-`material sublot` *--> `material lot properties` :has values of
-`material definition` *-->`material definition properties` :has properties of
-`material class` -->`material class properties` :has properties of
-`material lot properties` ..> `material definition properties` :maps to
-`material definition properties` ..> `material class properties` :maps to
-`material lot properties` *--> `material lot properties` :contains
-`material definition properties` *--> `material definition properties` :contains
-`material class properties` *--> `material class properties` :contains&lt;/pre>
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
+`material sublot` o--&amp;gt; `material lot` :assembled from
+`material lot` o--&amp;gt; `material lot` :assembled from
+`material definition` o--&amp;gt; `material definition` :assembled from
+`material class` o--&amp;gt; `material class` :assembled from
+`material class` o--&amp;gt; `material class` :assembled from
+`material lot` --&amp;gt;`material definition` :defined by
+`material definition` --&amp;gt;`material class` :defined by
+`material lot` *--&amp;gt; `material lot properties` :has values of
+`material sublot` *--&amp;gt; `material lot properties` :has values of
+`material definition` *--&amp;gt;`material definition properties` :has properties of
+`material class` --&amp;gt;`material class properties` :has properties of
+`material lot properties` ..&amp;gt; `material definition properties` :maps to
+`material definition properties` ..&amp;gt; `material class properties` :maps to
+`material lot properties` *--&amp;gt; `material lot properties` :contains
+`material definition properties` *--&amp;gt; `material definition properties` :contains
+`material class properties` *--&amp;gt; `material class properties` :contains
+&lt;/pre>
 &lt;/div>
 &lt;/details>
 &lt;h2>Defined by&lt;span class="hx-absolute -hx-mt-20" id="defined-by">&lt;/span>
 &lt;a href="#defined-by" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The &lt;code>defined by&lt;/code> relationship associates material with common categories and definitions.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
-`material lot` -->`material definition` :defined by
-`material definition` -->`material class` :defined by
-`Cosmic Blue Juice,\npallet 1` -->`Cosmic Blue Juice,\ndefinition` :defined by
-`Cosmic Blue Juice,\ndefinition` -->`Juices class` :defined by&lt;/pre>&lt;h3>Material lots are &lt;code>defined by&lt;/code> material definitions&lt;span class="hx-absolute -hx-mt-20" id="material-lots-are-defined-by-material-definitions">&lt;/span>
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
+`material lot` --&amp;gt;`material definition` :defined by
+`material definition` --&amp;gt;`material class` :defined by
+`Cosmic Blue Juice,\npallet 1` --&amp;gt;`Cosmic Blue Juice,\ndefinition` :defined by
+`Cosmic Blue Juice,\ndefinition` --&amp;gt;`Juices class` :defined by
+&lt;/pre>&lt;h3>Material lots are &lt;code>defined by&lt;/code> material definitions&lt;span class="hx-absolute -hx-mt-20" id="material-lots-are-defined-by-material-definitions">&lt;/span>
 &lt;a href="#material-lots-are-defined-by-material-definitions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;em>Material definitions&lt;/em> provide a way to ensure units of the same substance
 have a consistent name and set of properties.
 &lt;em>Material lots&lt;/em> provide a way to uniquely identify each specific instance of that definition.&lt;/p>
@@ -931,15 +953,18 @@ Rather, each pallet is a separate &lt;em>lots&lt;/em>, and all these lots share 
 &lt;a href="#definitions-are-defined-by-classes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>If you need another level of abstraction, you can also categorize your material definitions by &lt;em>material class&lt;/em>.
 Material classes provide a way to categorize material by function or shared &lt;a href="#material-properties" >properties&lt;/a>.
 For example, &lt;code>The Juice Factory&lt;/code> has five juice definitions, all part of the class &lt;code>Juices&lt;/code>.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
 namespace juices {
 class `Nuclear Green Juice`
 class `Tropical Orange Juice`
 class `Cosmic blue juice`
 class `Royal Purple Juice`
 class `Berry Red Juice`
-}&lt;/pre>&lt;p>Note that material classes can contain material classes. For example, the &lt;code>raw_materials&lt;/code> class might contain all raw ingredients.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">---
+}
+&lt;/pre>&lt;p>Note that material classes can contain material classes. For example, the &lt;code>raw_materials&lt;/code> class might contain all raw ingredients.&lt;/p>
+&lt;pre class="mermaid hx-mt-6">
+---
 subtitle: Material classes can contain material classes
 ---
 classDiagram
@@ -959,10 +984,13 @@ class `orange flavoring`
 namespace colors{
 class `blue`
 class `orange`
-}&lt;/pre>&lt;h2>Is assembled from&lt;span class="hx-absolute -hx-mt-20" id="is-assembled-from">&lt;/span>
+}
+&lt;/pre>&lt;h2>Is assembled from&lt;span class="hx-absolute -hx-mt-20" id="is-assembled-from">&lt;/span>
 &lt;a href="#is-assembled-from" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Material lots also might be &lt;em>assembled from&lt;/em> material &lt;em>sublots&lt;/em>.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
-`material lot` o--> `material sublot` :is assembled from&lt;/pre>&lt;p>Sublots are uniquely identifiable components of a material lot.
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
+`material lot` o--&amp;gt; `material sublot` :is assembled from
+&lt;/pre>&lt;p>Sublots are uniquely identifiable components of a material lot.
 For example,
 the pallet &lt;code>PBJ.1000.1&lt;/code> might be assembled from a set of packed juice cases.
 Each case might be modelled as a sublot with a unique ID, such as &lt;code>PBJ.1000.1.1&lt;/code>.&lt;/p>
@@ -976,7 +1004,8 @@ The material definition &lt;code>Cosmic Blue Juice&lt;/code> is a member of this
 The &lt;code>Cosmic Blue Juice&lt;/code> product has a defined standard value for its &lt;code>sugarContent&lt;/code>, &lt;code>100 grams&lt;/code>.
 The material lot &lt;code>CBJ.Pallet1&lt;/code> is a pallet of Cosmic Blue Juice.
 This lot inherits the &lt;code>sugarContent&lt;/code> property from the definition that it belongs to, and its value might deviate from the default value of its definition.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">classDiagram
+&lt;pre class="mermaid hx-mt-6">
+classDiagram
 class materialClass{
 id: juices
 }
@@ -1000,15 +1029,18 @@ class materialClassProperty{
 id: sugarContent,
 UnitOfMeasure: g,
 }
-materialClass *--> materialClassProperty :has property of
-materialDefinition *--> materialDefinitionProperty :has property of
-materialLot *--> materialLotProperty :has value of
-materialLot *--> materialDefinition :defined by
-materialDefinition *--> materialClass :defined by
-materialLotProperty *--> materialDefinitionProperty :maps to
-materialDefinitionProperty *--> materialClassProperty :maps to&lt;/pre>&lt;h3>Properties contain properties&lt;span class="hx-absolute -hx-mt-20" id="properties-contain-properties">&lt;/span>
-&lt;a href="#properties-contain-properties" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;pre class="mermaid hx-mt-6">classDiagram
-flavor_profile *--> sweetness
-flavor_profile *--> umami
-flavor_profile *--> aciditiy&lt;/pre>&lt;p>As with equipment properties, all properties can contain properties.
+materialClass *--&amp;gt; materialClassProperty :has property of
+materialDefinition *--&amp;gt; materialDefinitionProperty :has property of
+materialLot *--&amp;gt; materialLotProperty :has value of
+materialLot *--&amp;gt; materialDefinition :defined by
+materialDefinition *--&amp;gt; materialClass :defined by
+materialLotProperty *--&amp;gt; materialDefinitionProperty :maps to
+materialDefinitionProperty *--&amp;gt; materialClassProperty :maps to
+&lt;/pre>&lt;h3>Properties contain properties&lt;span class="hx-absolute -hx-mt-20" id="properties-contain-properties">&lt;/span>
+&lt;a href="#properties-contain-properties" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;pre class="mermaid hx-mt-6">
+classDiagram
+flavor_profile *--&amp;gt; sweetness
+flavor_profile *--&amp;gt; umami
+flavor_profile *--&amp;gt; aciditiy
+&lt;/pre>&lt;p>As with equipment properties, all properties can contain properties.
 For example, the property &lt;code>flavor_profile&lt;/code> might contain properties for &lt;code>sweetness&lt;/code>, &lt;code>acidity&lt;/code> and &lt;code>umami&lt;/code>.&lt;/p></description></item></channel></rss>

@@ -6,23 +6,25 @@
 &lt;p>Rhize has an optional &lt;code>KPI&lt;/code> service that queries process values persisted to a time-series database and then calculates various KPIs.
 Rhize&amp;rsquo;s implementation of work calendars is inspired by ISO/TR &lt;a href="https://www.iso.org/obp/ui/?_escaped_fragment_=iso:std:71283:en" target="_blank" rel="noopener">22400-10&lt;/a>, a standard on KPIs in operations management.&lt;/p>
 &lt;h2>What the service does&lt;span class="hx-absolute -hx-mt-20" id="what-the-service-does">&lt;/span>
-&lt;a href="#what-the-service-does" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;pre class="mermaid hx-mt-6">sequenceDiagram
+&lt;a href="#what-the-service-does" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;pre class="mermaid hx-mt-6">
+sequenceDiagram
 actor U as User
 participant K as KPI Service
 participant TSDB as Time Series Database
-U->>K: Query KPI in certain interval
-K->>TSDB: Query State Records
-TSDB->>K: Response: State records
-K->>TSDB: Query Quantity Records
-TSDB->>K: Response: Quantity records
-K->>TSDB: Query JobResponse Records
-TSDB->>K: Response: JobResponse records
-K-->>TSDB: (Optional:) Query Planned Downtime Records
-TSDB-->>K: Response: Downtime Records
-K-->>TSDB: (Optional:) Query Shift Records
-TSDB-->>K: Response: Downtime Records
-K->>K: Calculate KPIs
-K->U: Response: KPI Result&lt;/pre>&lt;p>The KPI service provides an interface in the graph database for the user to query a list of pre-defined KPIs on a piece of equipment in the &lt;code>equipmentHierarchy&lt;/code> within a certain time interval.
+U-&amp;gt;&amp;gt;K: Query KPI in certain interval
+K-&amp;gt;&amp;gt;TSDB: Query State Records
+TSDB-&amp;gt;&amp;gt;K: Response: State records
+K-&amp;gt;&amp;gt;TSDB: Query Quantity Records
+TSDB-&amp;gt;&amp;gt;K: Response: Quantity records
+K-&amp;gt;&amp;gt;TSDB: Query JobResponse Records
+TSDB-&amp;gt;&amp;gt;K: Response: JobResponse records
+K--&amp;gt;&amp;gt;TSDB: (Optional:) Query Planned Downtime Records
+TSDB--&amp;gt;&amp;gt;K: Response: Downtime Records
+K--&amp;gt;&amp;gt;TSDB: (Optional:) Query Shift Records
+TSDB--&amp;gt;&amp;gt;K: Response: Downtime Records
+K-&amp;gt;&amp;gt;K: Calculate KPIs
+K-&amp;gt;U: Response: KPI Result
+&lt;/pre>&lt;p>The KPI service provides an interface in the graph database for the user to query a list of pre-defined KPIs on a piece of equipment in the &lt;code>equipmentHierarchy&lt;/code> within a certain time interval.
 The service then queries the time-series database for all state changes, produced quantities, and job response data.
 With the returned data, the service calculates the KPI value and returns it to the user.&lt;/p>
 &lt;h2>Supported KPIs&lt;span class="hx-absolute -hx-mt-20" id="supported-kpis">&lt;/span>
@@ -2375,17 +2377,21 @@ title="Copy code"
 &lt;/div>
 &lt;h3>Query Job Order, Work Request, and Work Schedule&lt;span class="hx-absolute -hx-mt-20" id="query-job-order-work-request-and-work-schedule">&lt;/span>
 &lt;a href="#query-job-order-work-request-and-work-schedule" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Extending the Job order, Work Request, and Work Schedule entities makes it possible to recursively query all of the attached job responses:&lt;/p>
-&lt;pre class="mermaid hx-mt-6">flowchart TD
-WorkSchedule --> WorkRequests
-WorkRequests --> JobOrders
-JobOrders --> JobResponses&lt;/pre>&lt;p>Imagine that from the data from example 2 has this hierarchy:&lt;/p>
-&lt;pre class="mermaid hx-mt-6">flowchart TD
-WorkScheduleA --> WorkRequestA
-WorkScheduleA --> WorkRequestB
-WorkRequestA --> OrderA1
-WorkRequestA --> OrderA2
-WorkRequestB --> OrderB1
-WorkRequestB --> OrderC1&lt;/pre>&lt;p>Querying KPI on &lt;code>workSchedule A&lt;/code> combines all results for order A1, A2, B1 and C1:&lt;/p>
+&lt;pre class="mermaid hx-mt-6">
+flowchart TD
+WorkSchedule --&amp;gt; WorkRequests
+WorkRequests --&amp;gt; JobOrders
+JobOrders --&amp;gt; JobResponses
+&lt;/pre>&lt;p>Imagine that from the data from example 2 has this hierarchy:&lt;/p>
+&lt;pre class="mermaid hx-mt-6">
+flowchart TD
+WorkScheduleA --&amp;gt; WorkRequestA
+WorkScheduleA --&amp;gt; WorkRequestB
+WorkRequestA --&amp;gt; OrderA1
+WorkRequestA --&amp;gt; OrderA2
+WorkRequestB --&amp;gt; OrderB1
+WorkRequestB --&amp;gt; OrderC1
+&lt;/pre>&lt;p>Querying KPI on &lt;code>workSchedule A&lt;/code> combines all results for order A1, A2, B1 and C1:&lt;/p>
 &lt;div class="hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain">
 &lt;div class="hx-mt-4 hx-flex hx-w-max hx-min-w-full hx-border-b hx-border-gray-200 hx-pb-px dark:hx-border-neutral-800">&lt;button
 class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"

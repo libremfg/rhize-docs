@@ -196,7 +196,7 @@ For details and examples, read &lt;a href="https://docs.rhize.com/how-to/bpmn/us
 &lt;p>&lt;strong>Access nested properties with dot notation.&lt;/strong>&lt;/p>
 &lt;p>For example, the following is a reference to the first item in the &lt;code>orders&lt;/code> object in the variable context:&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;pre>&lt;code>$.orders[]&lt;/code>&lt;/pre>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;div>&lt;pre>&lt;code>$.orders[]&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
 &lt;button
 class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
 title="Copy code"
@@ -545,21 +545,20 @@ title="Copy code"
 class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
 id="tabs-panel-1"
 role="tabpanel">&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;pre>&lt;code>[
+&lt;div>&lt;pre>&lt;code>[
 &amp;#34;Vessel-A012&amp;#34;,
 &amp;#34;Vessel-A013&amp;#34;
-]&lt;/code>&lt;/pre>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-&lt;p>&amp;lt;button
-class=&amp;ldquo;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&amp;rdquo;
-title=&amp;ldquo;Copy code&amp;rdquo;&lt;/p>
-&lt;blockquote>
-&lt;/blockquote>
-&lt;pre>&lt;code>&amp;lt;div class=&amp;quot;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&amp;quot;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-&lt;/code>&lt;/pre>
+]&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
-&lt;/div>&lt;/div>
+&lt;/div>
+&lt;/div>
 &lt;/div>
 &lt;h3>JSONata in BPMN elements&lt;span class="hx-absolute -hx-mt-20" id="jsonata-in-bpmn-elements">&lt;/span>
 &lt;a href="#jsonata-in-bpmn-elements" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>JSONata can be used in many Rhize BPMN elements
@@ -1386,7 +1385,7 @@ The &lt;code>n&lt;/code> value determines how many times it&amp;rsquo;s called.&
 &lt;p>Many payloads in manufacturing have nested data.
 Recursive functions such as the following provide a concise means of traversing a set of subproperties.&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;pre>&lt;code>(
+&lt;div>&lt;pre>&lt;code>(
 $next := function($x, $y) {$x &amp;gt; 1 ?
 (
 $namingRules := &amp;#34;123456789ABCDFGHJKLMNOPQRSTUVWXYZ&amp;#34;;
@@ -1401,7 +1400,7 @@ $substring($y[-1],0,$length($y[-1])-1) &amp;amp; $substring($substringAfter($nam
 {
 &amp;#34;children&amp;#34;: $next(n, [nextId])
 }
-)&lt;/code>&lt;/pre>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+)&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
 &lt;button
 class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
 title="Copy code"
@@ -1592,20 +1591,19 @@ title="Copy code"
 class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
 id="tabs-panel-1"
 role="tabpanel">&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;pre>&lt;code>{
+&lt;div>&lt;pre>&lt;code>{
 &amp;#34;name&amp;#34;: &amp;#34;Rhize&amp;#34;
-}&lt;/code>&lt;/pre>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-&lt;p>&amp;lt;button
-class=&amp;ldquo;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&amp;rdquo;
-title=&amp;ldquo;Copy code&amp;rdquo;&lt;/p>
-&lt;blockquote>
-&lt;/blockquote>
-&lt;pre>&lt;code>&amp;lt;div class=&amp;quot;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&amp;quot;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-&lt;/code>&lt;/pre>
+}&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
-&lt;/div>&lt;/div>
+&lt;/div>
+&lt;/div>
 &lt;/div>
 &lt;p>You can use this behavior to direct flows.
 For example, an exclusive gateway may have a condition such as &lt;code>$exists(err)&lt;/code> that flows into an error-handling condition.&lt;/p>
@@ -1653,7 +1651,7 @@ For details of how this works, read the guide to &lt;a href="https://docs.rhize.
 You can also request the &lt;code>dataJSON&lt;/code> field, which reports the entire variable context at the last node.
 Now imagine that the user has started the workflow from the API and receives this response:&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;pre>&lt;code>{
+&lt;div>&lt;pre>&lt;code>{
 &amp;#34;data&amp;#34;: {
 &amp;#34;createAndRunBpmnSync&amp;#34;: {
 &amp;#34;jobState&amp;#34;: &amp;#34;ABORTED&amp;#34;,
@@ -1661,7 +1659,7 @@ Now imagine that the user has started the workflow from the API and receives thi
 &amp;#34;traceID&amp;#34;: &amp;#34;993ee32af9522f5b35b4ec80f4ff58a8&amp;#34;
 }
 }
-}&lt;/code>&lt;/pre>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+}&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
 &lt;button
 class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
 title="Copy code"
