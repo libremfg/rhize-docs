@@ -13,11 +13,23 @@ jobs:
       - name: Clone tag
         uses: actions/checkout@v4
 
+      # Check logs with main to prevent issues when pushing
+      - name: Ensure tag is current with main
+        run: |
+          git fetch origin
+          if [[ -n $(git log HEAD..origin/main --oneline) ]]; then
+            echo "❌ Your tag is missing commits from origin/main."
+            echo -e "\u2014 Pull from main before pushing tag."
+            exit 1
+          else
+            echo "✅ Your tag has all commits from origin/main!"
+          fi
+
       # Get the tag for the prior version
       - name: Get prior version
         id: get_tag
         run: |
-          PRIOR_VERSION=$(git tag -l --sort=-v:refname | head -n 1 | sed "s/v//g" | sed "s/\./-/g")
+          PRIOR_VERSION=$(git tag -l --sort=-v:refname | grep -E "v?[0-9]+\.[0-9]+\.[0-9]+$" | head -n 1 | sed "s/v//g" | sed "s/\./-/g")
           echo "PRIOR_VERSION=$PRIOR_VERSION" >> $GITHUB_ENV
           echo "Prior version tag: $PRIOR_VERSION"
 
