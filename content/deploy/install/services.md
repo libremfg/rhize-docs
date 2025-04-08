@@ -90,7 +90,7 @@ If enabling the Audit Trail, also the include the configuration in [Enable chang
 
 1. Proxy the `http:8080` port on `{{< param application_name >}}-baas-dgraph-alpha`.
 
-   ```
+   ```bash
    kubectl port-forward -n {{< param application_name >}} pod/baas-baas-alpha-0 8080:8080
    ```
 
@@ -187,7 +187,7 @@ Install Tempo with these steps:
     helm install tempo -f tempo.yaml grafana/tempo -n {{< param application_name >}}
     ```
 
-> [!Note] 
+> [!NOTE] 
 > Depending on your configuration you may need to run Tempo in distributed mode. When installing with Helm instead of using `grafana/tempo` instead do `grafana/tempo-distributed`.
 
 ### Restate
@@ -224,13 +224,13 @@ Install Workflow with these steps:
    helm install workflow -f workflow.yaml {{< param application_name >}}/workflow -n {{< param application_name >}}
    ```
 
-1. When the Workflow service starts, it should register with Restate. Verify this by running:
+1. When the Workflow service starts, it should register with Restate. Verify this with:
 
     ```bash
     curl localhost:9070/deployments | jq '.deployments[].uri'
     ```
 
-    This will show the URL of each registered service. If Workflow's URL is not present, register it by running:
+    This will show the URL of each registered service. If Workflow's URL is not present, register it with:
 
     ```bash
     curl --location 'http://localhost:9070/deployments' \
@@ -250,7 +250,7 @@ Install Typescript Host Service with these steps:
    helm install typescript-host-service -f typescript-host-service.yaml {{< param application_name >}}/typescript-host-service -n {{< param application_name >}}
    ```
 
-1. Register with Restate
+1. Register with Restate:
 
     ```bash
     curl --location 'http://localhost:9070/deployments' \
@@ -289,13 +289,13 @@ Install ISA-95 with these steps:
    helm install isa95 -f isa95.yaml {{< param application_name >}}/isa95 -n {{< param application_name >}}
    ```
 
-1. When the ISA-95 service starts, it should register with Restate. Verify this by running:
+1. When the ISA-95 service starts, it should register with Restate. Verify this with:
 
     ```bash
     curl localhost:9070/deployments | jq '.deployments[].uri'
     ```
 
-    This will show the URL of each registered service. If ISA-95's URL is not present, register it by running:
+    This will show the URL of each registered service. If ISA-95's URL is not present, register it with:
 
     ```bash
     curl --location 'http://localhost:9070/deployments' \
@@ -348,8 +348,7 @@ After installing all other services, install the UI with these steps:
 If the install is successful, the UI is available on its
 [default port]({{< ref "default-ports" >}}).
 
-## Optional: Agent
-
+## Agent
 
 Install Agent Service with these steps:
 

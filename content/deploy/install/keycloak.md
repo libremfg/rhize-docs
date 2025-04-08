@@ -169,7 +169,7 @@ For example, to create the Workflow client:
     - **Client Authentication**: On
 1. Select **Next**, then **Save**.
 
-Repeat the preceding process for each of the following services with the given alterations:
+Repeat the preceding process for each of the following services with the corresponding values in the table.
 
 | Client ID                             | Description |
 | ------------------------------------- | ----------- |
