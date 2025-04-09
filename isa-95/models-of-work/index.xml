@@ -265,7 +265,7 @@ In this case, the work directive would override the material specification to re
 &lt;li>An &lt;abbr title="An identifiable member of a manufacturing class, like a material or process segment, that can be tracked and scheduled">instance&lt;/abbr> work master may &lt;em>be defined by&lt;/em> a &lt;em>&lt;abbr title="Pattern (work definition). A work definition that creates a pattern or template for other patterns or work definitions to follow">pattern&lt;/abbr>&lt;/em> work master.&lt;/li>
 &lt;/ul>
 &lt;h3>Parent child-work masters&lt;span class="hx-absolute -hx-mt-20" id="parent">&lt;/span>
-&lt;a href="#parent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>You can group sub-processes of a work master using a parent-child relationship.
+&lt;a href="#parent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>You can group sub-definitions of a work master using a parent-child relationship.
 For example, the work master to &lt;code>make juice&lt;/code> might have child work masters for the production recipe from the quality testing procedure.&lt;/p>
 &lt;pre class="mermaid hx-mt-6">
 classDiagram

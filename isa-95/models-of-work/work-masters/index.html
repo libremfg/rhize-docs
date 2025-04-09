@@ -352,7 +352,7 @@ the work directive provides a way to record the changes in a new definition.</p>
 At the time of production, however, the plant might have only sugar from a different supplier.
 In this case, the work directive would override the material specification to reflect the substitute material definition.</p><h2>Relationships to other work masters<span class="hx-absolute -hx-mt-20" id=relationships-to-other-work-masters></span>
 <a href=#relationships-to-other-work-masters class=subheading-anchor aria-label="Permalink for this section"></a></h2><p>A work master might have relationships to other work masters:</p><ul><li>A work master may <em>contain</em> children work master.</li><li>An <abbr title="An identifiable member of a manufacturing class, like a material or process segment, that can be tracked and scheduled">instance</abbr> work master may <em>be defined by</em> a <em><abbr title="Pattern (work definition). A work definition that creates a pattern or template for other patterns or work definitions to follow">pattern</abbr></em> work master.</li></ul><h3>Parent child-work masters<span class="hx-absolute -hx-mt-20" id=parent></span>
-<a href=#parent class=subheading-anchor aria-label="Permalink for this section"></a></h3><p>You can group sub-processes of a work master using a parent-child relationship.
+<a href=#parent class=subheading-anchor aria-label="Permalink for this section"></a></h3><p>You can group sub-definitions of a work master using a parent-child relationship.
 For example, the work master to <code>make juice</code> might have child work masters for the production recipe from the quality testing procedure.</p><pre class="mermaid hx-mt-6">
   classDiagram
 class `WM: bottle`{
