@@ -231,12 +231,12 @@ The full work master may also contain specifications about the equipment, person
 &lt;a href="#parameter-specifications" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Parameter specifications detail information that is specific to a work master but not specific to any particular resource.
 For example, the production of bulk juice might have a parameter specification called &lt;code>pre-mix checklist&lt;/code> that details a set of steps that the operator must perform before starting the equipment.&lt;/p>
 &lt;h2>Relationships to planning models&lt;span class="hx-absolute -hx-mt-20" id="relationships-to-planning-models">&lt;/span>
-&lt;a href="#relationships-to-planning-models" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>As work masters &lt;a href="#contains" >contain&lt;/a> resource requirements and instructions, they also provide a source document for detailed scheduling and dispatching.
+&lt;a href="#relationships-to-planning-models" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>As work masters &lt;a href="#contains" >contain&lt;/a> resource requirements and instructions, they also act as a source document for detailed scheduling and dispatching.
 Conventionally, work masters are related to job orders through a work directive entity:&lt;/p>
 &lt;ul>
 &lt;li>The job order says what to make&lt;/li>
 &lt;li>The work master provides a canonical definition of how to make it&lt;/li>
-&lt;li>The work directive provides a version of the work master, recording how work was performed at the time of execution&lt;/li>
+&lt;li>The work directive provides a copy of the work master, specific to the particular order&lt;/li>
 &lt;/ul>
 &lt;pre class="mermaid hx-mt-6">
 classDiagram
@@ -257,8 +257,7 @@ If the actual work performed needs to deviate from the work defined in the work 
 the work directive provides a way to record the changes in a new definition.&lt;/p>
 &lt;p>For example, the work master to &lt;code>make bulk blue juice&lt;/code> might specify sugar from a specific provider.
 At the time of production, however, the plant might have only sugar from a different supplier.
-In this case, the work directive would override the material specification to reflect the substitute material definition.
-that&lt;/p>
+In this case, the work directive would override the material specification to reflect the substitute material definition.&lt;/p>
 &lt;h2>Relationships to other work masters&lt;span class="hx-absolute -hx-mt-20" id="relationships-to-other-work-masters">&lt;/span>
 &lt;a href="#relationships-to-other-work-masters" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>A work master might have relationships to other work masters:&lt;/p>
 &lt;ul>
@@ -267,22 +266,18 @@ that&lt;/p>
 &lt;/ul>
 &lt;h3>Parent child-work masters&lt;span class="hx-absolute -hx-mt-20" id="parent">&lt;/span>
 &lt;a href="#parent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>You can group sub-processes of a work master using a parent-child relationship.
-For example, the work master to make &lt;code>packed blue juice&lt;/code> might have child work masters to bottle, case, and palletize the individual material sublots.&lt;/p>
+For example, the work master to &lt;code>make juice&lt;/code> might have child work masters for the production recipe from the quality testing procedure.&lt;/p>
 &lt;pre class="mermaid hx-mt-6">
 classDiagram
 class `WM: bottle`{
 equipment_specifcation: bottler
 equipment_specifcation: capper
 }
-class `WM: pack in case`{
-equipment_specifcation: casepacker
+class `WM: quality inspection`{
+personnel_specifcation: tester
 }
-class `WM: palletize`{
-equipment_specifcation: palletizer
-}
-`WM:make blue juice bottle` *--&amp;gt; `WM: bottle` :contains
-`WM:make blue juice bottle` *--&amp;gt; `WM: pack in case` :contains
-`WM:make blue juice bottle` *--&amp;gt; `WM: palletize` :contains
+`WM:make juice` *--&amp;gt; `WM: bottle` :contains
+`WM:make juice` *--&amp;gt; `WM: quality inspection` :contains
 &lt;/pre>&lt;h3>Defined by patterns&lt;span class="hx-absolute -hx-mt-20" id="pattern">&lt;/span>
 &lt;a href="#pattern" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A &lt;em>pattern&lt;/em> work master provides a template to build &lt;em>instance&lt;/em> work masters for similar production processes.&lt;/p>
 &lt;p>For example, to produce bulk juice for all five of its juice lines,
