@@ -175,7 +175,7 @@ A work master might have relationships to other work masters:
 
 ### Parent child-work masters {#parent}
 
-You can group sub-processes of a work master using a parent-child relationship.
+You can group sub-definitions of a work master using a parent-child relationship.
 For example, the work master to `make juice` might have child work masters for the production recipe from the quality testing procedure.
 
 
