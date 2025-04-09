@@ -134,11 +134,11 @@ For example, the production of bulk juice might have a parameter specification c
 
 ## Relationships to planning models
 
-As work masters [contain](#contains) resource requirements and instructions, they also provide a source document for detailed scheduling and dispatching.
+As work masters [contain](#contains) resource requirements and instructions, they also act as a source document for detailed scheduling and dispatching.
 Conventionally, work masters are related to job orders through a work directive entity:
 - The job order says what to make
 - The work master provides a canonical definition of how to make it
-- The work directive provides a version of the work master, recording how work was performed at the time of execution
+- The work directive provides a copy of the work master, specific to the particular order
 
 
 ```mermaid
@@ -159,12 +159,7 @@ workDirective --> workMaster :derived from
 
 ```
 
-
-
-
-
 ### Corresponds to work directive
-
 
 A work directive is a clone of the work master that is made at the time of dispatching.
 If the actual work performed needs to deviate from the work defined in the work master,
@@ -173,7 +168,6 @@ the work directive provides a way to record the changes in a new definition.
 For example, the work master to `make bulk blue juice` might specify sugar from a specific provider.
 At the time of production, however, the plant might have only sugar from a different supplier.
 In this case, the work directive would override the material specification to reflect the substitute material definition.
-that
 
 ## Relationships to other work masters
 
@@ -184,7 +178,7 @@ A work master might have relationships to other work masters:
 ### Parent child-work masters {#parent}
 
 You can group sub-processes of a work master using a parent-child relationship.
-For example, the work master to make `packed blue juice` might have child work masters to bottle, case, and palletize the individual material sublots.
+For example, the work master to `make juice` might have child work masters for the production recipe from the quality testing procedure.
 
 
 ```mermaid
@@ -193,16 +187,12 @@ class `WM: bottle`{
 equipment_specifcation: bottler
 equipment_specifcation: capper
 }
-class `WM: pack in case`{
-equipment_specifcation: casepacker
-}
-class `WM: palletize`{
-equipment_specifcation: palletizer
+class `WM: quality inspection`{
+personnel_specifcation: tester
 }
 
-`WM:make blue juice bottle` *--> `WM: bottle` :contains
-`WM:make blue juice bottle` *--> `WM: pack in case` :contains
-`WM:make blue juice bottle` *--> `WM: palletize` :contains
+`WM:make juice` *--> `WM: bottle` :contains
+`WM:make juice` *--> `WM: quality inspection` :contains
 
 
 ```
