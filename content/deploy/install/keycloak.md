@@ -165,17 +165,23 @@ By default you need to add only the client ID.
 For example, to create the Workflow client:
 1. In the side menu, select **Clients > create client**.
 1. For **Client ID**, enter `{{< param application_name >}}Workflow`
+1. **Name**: `{{< param brand_name >}} Workflow Engine`
+1. **Description**: `{{< param brand_name >}} Workflow Engine`
 1. Configure the **Capability config**:
     - **Client Authentication**: On
 1. Select **Next**, then **Save**.
 
 Repeat the preceding process for each of the following services with the corresponding values in the table.
 
-| Client ID                             | Description |
-| ------------------------------------- | ----------- |
-| `{{< param application_name >}}Agent` |             |
-| `{{< param application_name >}}ISA95` |             |
-| `{{< param application_name >}}KPI`   |             |
+| Client ID                               | Name                                    | Description                 |
+| --------------------------------------- | --------------------------------------- | --------------------------- |
+| `{{< param application_name >}}Agent`   | {{< param brand_name >}} Agent          | The agent data service      |
+| `{{< param application_name >}}Audit`*  | {{< param brand_name >}} Audit Log      | The audit log service       |
+| `{{< param application_name >}}ISA95`   | {{< param brand_name >}} ISA-95 Model   | The ISA-95 model service    |
+| `{{< param application_name >}}KPI`*    | {{< param brand_name >}} KPI Calculator | The ISO22400 KPI calculator |
+| `{{< param application_name >}}Router`* | {{< param brand_name >}} API Router     | The API router              |
+
+*- Optional based on your architecture.
 
 ### Scope services
 
@@ -208,11 +214,15 @@ Repeat the preceding process for each of the following services with the corresp
 
 | Name                                                   | Include Client Audience                  | ID Token | Access Token |
 | ------------------------------------------------------ | ---------------------------------------- | :------: | :----------: |
+| `{{< param application_name >}}AuditAudienceMapper`*   | `audit`**                                |   `On`   |     `On`     |
 | `{{< param application_name >}}AgentAudienceMapper`    | `{{< param application_name >}}Agent`    |   `On`   |     `On`     |
 | `{{< param application_name >}}ISA95AudienceMapper`    | `{{< param application_name >}}ISA95`    |   `On`   |     `On`     |
-| `{{< param application_name >}}KPIAudienceMapper`      | `{{< param application_name >}}KPI`      |   `On`   |     `On`     |
+| `{{< param application_name >}}KPIAudienceMapper`*     | `{{< param application_name >}}KPI`      |   `On`   |     `On`     |
 | `{{< param application_name >}}UIAudienceMapper`       | `{{< param application_name >}}UI`       |   `On`   |    `Off`     |
 | `{{< param application_name >}}WorkflowAudienceMapper` | `{{< param application_name >}}Workflow` |   `On`   |     `On`     |
+
+*- Optional based on your architecture.
+**- Included as a Custom Audience.
 
 #### Add services to the scope
 
@@ -224,12 +234,16 @@ Repeat the preceding process for each of the following services with the corresp
 
 Repeat the preceding process above for each of the following services:
 
-- `dashboard`                
-- `{{< param application_name >}}Agent`   
-- `{{< param application_name >}}ISA95`   
-- `{{< param application_name >}}KPI`    
-- `{{< param application_name >}}UI`    
-- `{{< param application_name >}}Workflow` 
+- `dashboard`
+- `{{< param application_name >}}Audit`*
+- `{{< param application_name >}}Agent`
+- `{{< param application_name >}}ISA95`
+- `{{< param application_name >}}KPI`*
+- `{{< param application_name >}}Router`*
+- `{{< param application_name >}}UI`
+- `{{< param application_name >}}Workflow`
+
+*- Optional based on your architecture.
 
 ### Create roles and groups
 
@@ -324,10 +338,14 @@ Repeat the preceding process for each of the following services with the corresp
 
 | Username                                                           | First name |
 | ------------------------------------------------------------------ | ---------- |
+| `{{< param application_name >}}Audit@{{< param domain_name >}}`*   | Audit      |
 | `{{< param application_name >}}Agent@{{< param domain_name >}}`    | Agent      |
 | `{{< param application_name >}}ISA95@{{< param domain_name >}}`    | ISA95      |
-| `{{< param application_name >}}KPI@{{< param domain_name >}}`      | KPI        |
+| `{{< param application_name >}}KPI@{{< param domain_name >}}`*     | KPI        |
+| `{{< param application_name >}}Router@{{< param domain_name >}}`*  | Router     |
 | `{{< param application_name >}}Workflow@{{< param domain_name >}}` | Workflow   |
+
+*- Optional based on your architecture.
 
 ### Enable Keycloak Audit Trail
 

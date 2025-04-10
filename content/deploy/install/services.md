@@ -348,7 +348,7 @@ After installing all other services, install the UI with these steps:
 If the install is successful, the UI is available on its
 [default port]({{< ref "default-ports" >}}).
 
-## Agent
+### Agent
 
 Install Agent Service with these steps:
 
@@ -391,6 +391,18 @@ Install Audit Service with these steps:
     ```
 
 For details about maintaining the Audit trail, read [Archive the PostgresQL Audit trail]({{< relref "../maintain/audit/" >}}).
+
+## Optional: Apollo Router integration
+
+1. Modify overrides as needed.
+
+1. Install with Helm:
+
+    ```bash
+    helm install router -f router.yaml libre/router -n {{< param application_name >}}
+    ```
+
+If the install is successful, the Router explorer is available on its [default port]({{< relref "../../reference/default-ports" >}}).
 
 ### Enable change data capture
 
