@@ -380,7 +380,7 @@ Install Audit Service with these steps:
 1. Install with Helm:
 
     ```bash
-    helm install audit -f audit.yaml libre/audit -n {{< param application_name >}}
+    helm install audit -f audit.yaml {{< param application_name >}}/audit -n {{< param application_name >}}
     ```
 
 1. Create partition tables in the PostgreSQL database:
@@ -410,12 +410,18 @@ alpha:
 
 ## Optional: Apollo Router integration
 
-1. Modify overrides as needed.
+While Rhize provides a built in GraphQL Playground using Apollo's Sandobx, [Apollo Router](https://www.apollographql.com/docs/router) can be installed to unite queries for different services in a single endpoint outside of Rhize's interface.
+
+> **Requirements:** Router requires the [GraphDB](#db) service.
+
+Install Router with these steps:
+
+1. Modify the Router overrides as needed.
 
 1. Install with Helm:
 
     ```bash
-    helm install router -f router.yaml libre/router -n {{< param application_name >}}
+    helm install router -f router.yaml {{< param application_name >}}/router -n {{< param application_name >}}
     ```
 
 If the install is successful, the Router explorer is available on its [default port]({{< relref "../../reference/default-ports" >}}).
