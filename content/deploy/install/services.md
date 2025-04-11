@@ -159,7 +159,7 @@ Install Redpanda with these steps:
     helm repo update
     ```
 
-1. Modify the Helm file as needed.
+1. Modify the Redpanda Helm overrides as needed.
 
 1. Install with Helm:
 
@@ -179,7 +179,7 @@ Install Tempo with these steps:
     helm repo add grafana https://grafana.github.io/helm-charts
     ```
 
-1. Modify the Helm file as needed.
+1. Modify the Tempo Helm overrides as needed.
 
 1. Install with Helm:
 
@@ -192,9 +192,11 @@ Install Tempo with these steps:
 
 ### Restate
 
+Rhize uses Restate as a platform for orchestrating other services.
+
 Install Restate with these steps:
 
-1. Modify the Helm file as needed.
+1. Modify the Restate Helm overrides as needed.
 
 1. Install with Helm:
 
@@ -216,7 +218,7 @@ The Workflow service is the custom engine Rhize uses to process low-code workflo
 
 Install Workflow with these steps:
 
-1. Modify the Helm file as needed.
+1. Modify the Workflow Helm overrides as needed.
 
 1. Install with Helm:
 
@@ -242,7 +244,7 @@ Install Workflow with these steps:
 
 Install Typescript Host Service with these steps:
 
-1. Modify the Helm file as needed.
+1. Modify the Typescript Host Service Helm overrides as needed.
 
 1. Install with Helm:
 
@@ -260,16 +262,18 @@ Install Typescript Host Service with these steps:
 
 ### QuestDB
 
+QuestDB is used by Rhize to store timeseries data, however it can be substitude for another historian.
+
 Install QuestDB with these steps:
 
-1. If it doesn't exist, add the Redpanda repository:
+1. If it doesn't exist, add the QuestDB repository:
 
     ```bash
     helm repo add questdb https://helm.questdb.io/
     helm repo update
     ```
 
-1. Modify the Helm file as needed.
+1. Modify the QuestDB Helm overrides as needed.
 
 1. Install with Helm:
 
@@ -281,7 +285,7 @@ Install QuestDB with these steps:
 
 Install ISA-95 with these steps:
 
-1. Modify the Helm file as needed.
+1. Modify the ISA-95 Helm overrides as needed.
 
 1. Install with Helm:
 
@@ -316,7 +320,7 @@ Install Grafana with these steps:
     helm repo update
     ```
 
-1. Modify the Grafana Helm YAML file as needed.
+1. Modify the Grafana Helm overrides as needed.
 
 1. Install with Helm:
 
@@ -337,7 +341,7 @@ The Admin UI is the graphical frontend to [handle events]({{< relref "/how-to/bp
 
 After installing all other services, install the UI with these steps:
 
-1. Modify the UI Helm file as needed.
+1. Modify the UI Helm overrides as needed.
 
 1. Install with Helm:
 
@@ -350,9 +354,14 @@ If the install is successful, the UI is available on its
 
 ### Agent
 
-Install Agent Service with these steps:
+The Rhize agent bridges your plant processes with the Rhize data hub.
+It collects data emitted from the plant and publishes it to the NATS message broker.
 
-1. Modify the Agent Helm file as needed.
+> **Requirements:** Agent requires the [Graph DB](#db), [Tempo](#tempo), Redpanda, and an event broker service to communicate with.
+
+Install Agent with these steps:
+
+1. Modify the Agent Helm overrides as needed.
 
 1. In the Rhize UI, add a Data Source for Agent to interact with:
     - In the lefthand menu, open **Master Data > Data Sources > + Create Data Source**.
@@ -416,7 +425,7 @@ The Rhize KPI service is a GraphQL service which calcualtes ISO22400 KPIs using 
 
 Install KPI with these steps:
 
-1. Modify the Helm file as needed.
+1. Modify the KPI Helm overrides as needed.
 
 1. Install with Helm:
 
@@ -426,7 +435,7 @@ Install KPI with these steps:
 
 ### Solace
 
-Solace is an event broker that can be used alongside Agent.
+Solace is an event broker that can be used alongside Agent, though it can be substituted for any other event broker.
 
 1. Add the Solace Charts Helm repo.
 
@@ -434,7 +443,7 @@ Solace is an event broker that can be used alongside Agent.
     helm repo add solacecharts https://solaceproducts.github.io/pubsubplus-kubernetes-helm-quickstart/helm-charts
     ```
 
-1. Modify the Helm overrides as needed.
+1. Modify the Solace Helm overrides as needed.
 
 1. Install with Helm:
 
@@ -454,7 +463,7 @@ While Rhize provides a built in GraphQL Playground using Apollo's Sandobx, [Apol
 
 Install Router with these steps:
 
-1. Modify the Router overrides as needed.
+1. Modify the Router Helm overrides as needed.
 
 1. Install with Helm:
 
