@@ -369,11 +369,13 @@ Install Agent Service with these steps:
 
 To verify that Agent is working, check the Redpanda UI.
 
-## Optional: Audit Trail service
+## Optional Services
+
+### Audit Trail
 
 The Rhize [Audit]({{< relref "/how-to/audit" >}}) service provides an audit trail for database changes. The Audit service uses PostgreSQL for storage.
 
-Install Audit Service with these steps:
+Install Audit with these steps:
 
 1. Modify the Audit trail Helm YAML file. It is *recommended* to change the PostgreSQL username and password values.
 
@@ -392,7 +394,7 @@ Install Audit Service with these steps:
 
 For details about maintaining the Audit trail, read [Archive the PostgresQL Audit trail]({{< relref "../maintain/audit/" >}}).
 
-### Enable change data capture
+#### Enable change data capture
 
 The Audit trail requires [change data capture (CDC)]({{< relref "../../how-to/publish-subscribe/track-changes" >}}) to function. To enable CDC in {{< param application_name >}} BAAS, include the following values for the Helm chart overrides:
 
@@ -408,7 +410,43 @@ alpha:
     replicas: 1
 ```
 
-## Optional: Apollo Router integration
+### KPI
+
+The Rhize KPI service is a GraphQL service which calcualtes ISO22400 KPIs using timseries tables.
+
+Install KPI with these steps:
+
+1. Modify the Helm file as needed.
+
+1. Install with Helm:
+
+   ```bash
+   helm install kpi -f kpi.yaml {{< param application_name >}}/kpi -n {{< param application_name >}}
+   ```
+
+### Solace
+
+Solace is an event broker that can be used alongside Agent.
+
+1. Add the Solace Charts Helm repo.
+
+    ```bash
+    helm repo add solacecharts https://solaceproducts.github.io/pubsubplus-kubernetes-helm-quickstart/helm-charts
+    ```
+
+1. Modify the Helm overrides as needed.
+
+1. Install with Helm:
+
+    ```bash
+    helm install solace -f solace.yaml solacecharts/pubsubplus -n {{< param application_name >}}
+    ```
+
+> [!NOTE]
+> Solace can be installed in high availability by using `pubsubplus-ha` instead of `pubsubplus`.
+> See detailed instructions on [github](https://github.com/SolaceProducts/pubsubplus-kubernetes-helm-quickstart).
+
+### Apollo Router
 
 While Rhize provides a built in GraphQL Playground using Apollo's Sandobx, [Apollo Router](https://www.apollographql.com/docs/router) can be installed to unite queries for different services in a single endpoint outside of Rhize's interface.
 
@@ -425,18 +463,6 @@ Install Router with these steps:
     ```
 
 If the install is successful, the Router explorer is available on its [default port]({{< relref "../../reference/default-ports" >}}).
-
-## Optional: KPI
-
-Install KPI with these steps:
-
-1. Modify the Helm file as needed.
-
-1. Install with Helm:
-
-   ```bash
-   helm install kpi -f kpi.yaml {{< param application_name >}}/kpi -n {{< param application_name >}}
-   ```
 
 ## Optional: change service configuration
 
