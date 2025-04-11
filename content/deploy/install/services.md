@@ -392,18 +392,6 @@ Install Audit Service with these steps:
 
 For details about maintaining the Audit trail, read [Archive the PostgresQL Audit trail]({{< relref "../maintain/audit/" >}}).
 
-## Optional: Apollo Router integration
-
-1. Modify overrides as needed.
-
-1. Install with Helm:
-
-    ```bash
-    helm install router -f router.yaml libre/router -n {{< param application_name >}}
-    ```
-
-If the install is successful, the Router explorer is available on its [default port]({{< relref "../../reference/default-ports" >}}).
-
 ### Enable change data capture
 
 The Audit trail requires [change data capture (CDC)]({{< relref "../../how-to/publish-subscribe/track-changes" >}}) to function. To enable CDC in {{< param application_name >}} BAAS, include the following values for the Helm chart overrides:
@@ -419,6 +407,18 @@ alpha:
     # Adjust based on high-availability requirements and cluster size.
     replicas: 1
 ```
+
+## Optional: Apollo Router integration
+
+1. Modify overrides as needed.
+
+1. Install with Helm:
+
+    ```bash
+    helm install router -f router.yaml libre/router -n {{< param application_name >}}
+    ```
+
+If the install is successful, the Router explorer is available on its [default port]({{< relref "../../reference/default-ports" >}}).
 
 ## Optional: KPI
 
