@@ -1,0 +1,1349 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Use cases</title><link>https://docs.rhize.com/versions/v3.0.3/use-cases/</link><description>Recent content in Use cases on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.rhize.com/versions/v3.0.3/use-cases/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview of use cases</title><link>https://docs.rhize.com/versions/v3.0.3/use-cases/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/use-cases/overview/</guid><description>
+&lt;p>Rhize&amp;rsquo;s flexible, event-centric architecture serves many functions.
+While Rhize has components that can replace an &lt;abbr title="Manufacturing execution system. A system in a manufacturing process that tracks and documents the transformation of raw materials to finished goods">MES&lt;/abbr>, historian, andon, and real-time monitoring solutions,
+it can complement them just as well.
+You can map data from an MES or &lt;abbr title="Enterprise resource planning. Software to manage business processes. In Rhize, ERP activities usually are named &amp;#34;operations&amp;#34;, where lower-level activities are prefixed with &amp;#34;Work&amp;#34;.">ERP&lt;/abbr> into the database, creating a coherent data model to unite your operations IT.&lt;/p>
+&lt;p>Besides better performance and flexibility, Rhize has far tighter integration of plant and system data.
+Yet, its data model is generic enough to conform to may use cases, chiefly:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>A manufacturing knowledge graph&lt;/strong>. Query the entire context and history of the operation.&lt;/li>
+&lt;li>&lt;strong>Headless MES or MOM&lt;/strong>. Use the API to build custom applications for a variety of MES and MOM activities.&lt;/li>
+&lt;li>&lt;strong>An event handler&lt;/strong>. Receive manufacturing message streams and react to them.&lt;/li>
+&lt;/ul>
+&lt;p>Of course, each of these use cases has many uses cases.
+These use cases of Rhize are already implemented in discrete, continuous, and batch manufacturing operations.&lt;/p>
+&lt;h2>Manufacturing knowledge graph&lt;span class="hx-absolute -hx-mt-20" id="manufacturing-knowledge-graph">&lt;/span>
+&lt;a href="#manufacturing-knowledge-graph" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>All data that Rhize collects, whether from sensors or an ERP, is contextual and interconnected. Rather than a relational database, Rhize uses a graph database, where any node can link to any other, and users can query any data combination, without requiring complex joins.&lt;/p>
+&lt;p>The graph database unlocks new possibilities for manufacturing analysis and data science.
+For example:&lt;/p>
+&lt;ul>
+&lt;li>Run queries to find anomalies in an operation&amp;mdash;which may trace to a specific site, segment, equipment, material lot, personnel, and so on.&lt;/li>
+&lt;li>Discover places to optimize the system, whether they are bottlenecks to remove or highly productive areas to replicate&lt;/li>
+&lt;li>Train deep-learning models to detect conditions that lead to batch failures.&lt;/li>
+&lt;li>Use the historical record as a model to run simulations of new events&lt;/li>
+&lt;/ul>
+&lt;p>Guide: &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/" >Use the knowledge graph&lt;/a>&lt;/p>
+&lt;h2>Headless MES or MOM&lt;span class="hx-absolute -hx-mt-20" id="headless-mes-or-mom">&lt;/span>
+&lt;a href="#headless-mes-or-mom" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Rhize serves as a backend to create custom applications to replace traditional MES or MOM systems.
+Rather than force its opinion of what an MES interface should look like, Rhize provides the only data model, API, and BPMN engine.
+Your frontend teams can then use the tools of their choice to make the MES designed for your use case, with all the backend work delegated to Rhize&amp;rsquo;s normal operation features.&lt;/p>
+&lt;p>With the combination of its event-driven architecture and unified data model, Rhize can:&lt;/p>
+&lt;ul>
+&lt;li>calculate OEE, or far more granular metrics&lt;/li>
+&lt;li>Handle schedules and maintenance orders&lt;/li>
+&lt;li>Track and trace material&lt;/li>
+&lt;li>Execute dynamic workflows.&lt;/li>
+&lt;/ul>
+&lt;p>Besides building bespoke frontends, many operators choose to integrate Rhize with low-code systems like Appsmith.
+For some problems, lowcode models can reduce the time to create applications dramatically, making it easier to create and test prototypes, involve more stakeholders in the application design process, iterate on working models, and generally do useful things more quickly.&lt;/p>
+&lt;p>Guides: &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/" >Model production&lt;/a>, &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/" >Connect process data&lt;/a>.&lt;/p>
+&lt;h2>Real-time event handling&lt;span class="hx-absolute -hx-mt-20" id="real-time-event-handling">&lt;/span>
+&lt;a href="#real-time-event-handling" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The fundamental design of Rhize is low-latency and event-driven.
+Rhize can collect and monitor data from protocols like MQTT and OPC-UA.&lt;/p>
+&lt;p>Rhize also has components to monitor and react to this data stream, ensuring that you can stop problems early—and program corrective measures to execute automatically.
+Event orchestration is handled through &lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling">BPMN&lt;/abbr>, a low-code interface that can listen for events and initiate conditional flows.&lt;/p>
+&lt;p>Guide: &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/" >Handle events&lt;/a>&lt;/p>
+&lt;h2>Calculating OEE&lt;span class="hx-absolute -hx-mt-20" id="calculating-oee">&lt;/span>
+&lt;a href="#calculating-oee" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Rhize includes an optional KPI service which can calculate OEE. Using a combintion of Rhize Workflows and Real-time event handling. Data can be transformed and persisted to a time series database in a format that allows the KPI sercvice to calculate key metrics.&lt;/p>
+&lt;p>Guide: &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/kpi-service/" >KPI Service&lt;/a>&lt;/p></description></item><item><title>Data collection (eBR example)</title><link>https://docs.rhize.com/versions/v3.0.3/use-cases/data-collection-ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/use-cases/data-collection-ebr/</guid><description>
+&lt;blockquote>
+&lt;p>&amp;#x1f4dd; Looking to implement Rhize for your Pharma operation?
+&lt;a href="https://rhize.com/contact-us/" target="_blank" rel="noopener">Talk to an engineer&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>This document provides examples of how you can use Rhize to automatically ingest data from various sources and store it in a standardized ISA-95 schema.
+The examples here are to produce an Electronic Batch Record, an important use case in pharmaceutical manufacturing.
+However, the process described here is very similar to what data collection would like when integrating with any third-party system (such as an MRP, CMMS, and so on), no matter the type of manufacturing process.&lt;/p>
+&lt;p>The procedure has the following steps:&lt;/p>
+&lt;ol>
+&lt;li>Identify the sources of data.&lt;/li>
+&lt;li>Map the fields for these data sources to Rhize&amp;rsquo;s ISA-95 schema.&lt;/li>
+&lt;li>Write &lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling">BPMN&lt;/abbr> processes that listen for relevant eBR events and transform the incoming data to the ISA-95 schema.&lt;/li>
+&lt;li>After the batch finishes, query the database with the fields for your &lt;abbr title="Electronic batch report. A detailed report for a batch in a pharmaceutical process, logging items such as the process segments, personnel, equipment, material substance and weight, and so on">eBR&lt;/abbr>.&lt;/li>
+&lt;/ol>
+&lt;p>The following sections describe this process in a bit more detail.&lt;/p>
+&lt;h2>Prerequisites&lt;span class="hx-absolute -hx-mt-20" id="prerequisites">&lt;/span>
+&lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>This procedure involves multiple data sources and different operations to transform the incoming data and store it in the graph database.
+Before you start, ensure that you have the following:&lt;/p>
+&lt;ul>
+&lt;li>Awareness of the different sources of eBR data&lt;/li>
+&lt;li>If real-time data comes from equipment, &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/connect-datasource/" >Connected data sources&lt;/a>&lt;/li>
+&lt;li>Sufficient knowledge of the ISA-95 standard to model the input data as ISA-95 schema&lt;/li>
+&lt;li>In the BPMN process, the ability to filter JSON and &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/" >call the GraphQL API&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>In larger operations, different teams may help with different parts of the eBR-creation process.
+For example, your integrators may help appropriately model the data, and the frontend team may render the outputted JSON into a final document.&lt;/p>
+&lt;h2>Steps to automate eBR creation&lt;span class="hx-absolute -hx-mt-20" id="steps-to-automate-ebr-creation">&lt;/span>
+&lt;a href="#steps-to-automate-ebr-creation" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The following steps describe the broad procedure to automatically update the database for incoming batch data, then automatically create an eBR after the batch run.&lt;/p>
+&lt;h3>Identify the sources of data&lt;span class="hx-absolute -hx-mt-20" id="identify-the-sources-of-data">&lt;/span>
+&lt;a href="#identify-the-sources-of-data" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>The first step is to identify the sources of data for your eBR.&lt;/p>
+&lt;figure>&lt;img src="https://docs.rhize.com/images/ebr/diagram-rhize-example-ebr-sources.png"
+alt="Diagram showing some examples of eBR data sources" width="75%">
+&lt;/figure>
+&lt;p>Common data sources for an eBR include:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>&lt;abbr title="Enterprise resource planning. Software to manage business processes. In Rhize, ERP activities usually are named &amp;#34;operations&amp;#34;, where lower-level activities are prefixed with &amp;#34;Work&amp;#34;.">ERP&lt;/abbr> documents:&lt;/strong> high-level operations documents. This might include information about planning and scheduling.&lt;/li>
+&lt;li>&lt;strong>&lt;abbr title="Manufacturing execution system. A system in a manufacturing process that tracks and documents the transformation of raw materials to finished goods">MES&lt;/abbr> data:&lt;/strong> granular process data, tracking objects such as the weight of individual material and the responses for different jobs.&lt;/li>
+&lt;li>&lt;strong>&lt;abbr title="Laboratory information management system. ">LIMS&lt;/abbr> documents:&lt;/strong> information about the laboratory environment and testing samples&lt;/li>
+&lt;li>&lt;strong>Real-time event data:&lt;/strong> for example, data sent from OPC UA or MQTT servers&lt;/li>
+&lt;li>&lt;strong>Exceptions:&lt;/strong> Errors and alerts raised from the operator screen or automation system&lt;/li>
+&lt;/ul>
+&lt;h3>Model the fields as ISA-95 schema&lt;span class="hx-absolute -hx-mt-20" id="model-the-fields-as-isa-95-schema">&lt;/span>
+&lt;a href="#model-the-fields-as-isa-95-schema" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>After you&amp;rsquo;ve identified the source data, the next step is to map this data into ISA-95 models.&lt;/p>
+&lt;figure>&lt;img src="https://docs.rhize.com/images/ebr/diagram-rhize-map-ebr-isa95.png"
+alt="diagram showing some examples of ISA-95 modeling" width="80%">
+&lt;/figure>
+&lt;p>Some common objects to map include raw and final material, equipment, personnel, operations schedule, segments, job responses, exceptions, and the ERP batch number.
+Once ingested, all data is linked through common associations in the graph database and is thus accessible through a single query.&lt;/p>
+&lt;h3>Write a BPMN workflow to ingest the data in real-time&lt;span class="hx-absolute -hx-mt-20" id="write-a-bpmn-workflow-to-ingest-the-data-in-real-time">&lt;/span>
+&lt;a href="#write-a-bpmn-workflow-to-ingest-the-data-in-real-time" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>
+&lt;figure class="big-figure">
+&lt;a href="https://docs.rhize.com/images/ebr/diagram-rhize-bpmn-ebr.png" target="_blank">
+&lt;img src="https://docs.rhize.com/images/ebr/diagram-rhize-bpmn-ebr.png" alt="Example of a BPMN workflow"
+width="60%"
+>
+&lt;/a>
+&lt;figcaption class="caption">
+A simplified BPMN workflow. For an example of a real workflow with nodes for each logic step, refer to the next image.
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>With the sources of data and their corresponding models, the next step
+is to write a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/" >&lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling">BPMN&lt;/abbr>&lt;/a> workflow to automatically transform the data and update the database.&lt;/p>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">You may want to break these steps into multiple parts.
+Or, for increased modularity, you can call another BPMN workflow with a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/bpmn-elements/#call-activities" >Call activity&lt;/a>.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>The procedure is as follows:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Create a BPMN that is &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/trigger-workflows/" >triggered&lt;/a> by a relevant eBR event. For example, the workflow might subscribe to a &lt;code>/lims/lab1&lt;/code>, or be triggered by a call to the Rhize API. If the data comes from certain equipment, you first need to &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/connect-datasource/" >Connect a data source&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Transform with JSONata&lt;/p>
+&lt;p>Rhize has a built-in &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/use-jsonata/" >JSONata&lt;/a> interpreter, which can filter and transform JSON.
+Use a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/bpmn-elements/#jsonata-transform" >JSONata service task&lt;/a> to map the data sources into the corresponding ISA-95 fields that you defined on the previous step.&lt;/p>
+&lt;p>Use the output as a variable for the next step.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>POST data with a graph mutation.&lt;/p>
+&lt;p>Use the variable returned by the JSONata step to send a mutation to update the Graph database with the new fields.
+To learn more, read the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/" >Guide to GraphQL with Rhize&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>In real BPMN workflows, you can dynamically create and assign fields as they enter the system.
+For example, this workflow creates a new material definition and material-definition version based on whether this object already exists.&lt;/p>
+&lt;figure class="big-figure">
+&lt;a href="https://docs.rhize.com/images/bpmn/screenshot-rhize-bpmn-add-material-definition.png" target="_blank">
+&lt;img src="https://docs.rhize.com/images/bpmn/screenshot-rhize-bpmn-add-material-definition.png" alt="Screenshot of a BPMN workflow that adds material only if it exists"
+>
+&lt;/a>
+&lt;/figure>
+&lt;p>This step can involve multiple BPMN processes subscribing to different topics.
+As long as the incoming event data has a common association, for example, through the &lt;code>id&lt;/code> of the batch data and associated &lt;code>JobResponse&lt;/code>, you can return all eBR fields in one GraphQL query—no recursive SQL joins needed.&lt;/p>
+&lt;figure>&lt;img src="https://docs.rhize.com/images/ebr/diagram-rhize-inputs-for-ebr.png"
+alt="Multiple BPMN processes can be united in one batch" width="75%">
+&lt;/figure>
+&lt;h3>Query the DB with the eBR fields&lt;span class="hx-absolute -hx-mt-20" id="query-the-db-with-the-ebr-fields">&lt;/span>
+&lt;a href="#query-the-db-with-the-ebr-fields" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>After the batch finishes, use a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/query/" >GraphQL query&lt;/a> to receive all relevant batch data.
+You only need one precise request to return exactly the data you specify.&lt;/p>
+&lt;figure>&lt;img src="https://docs.rhize.com/images/ebr/diagram-rhize-make-ebr-query.png"
+alt="Diagram showing how a query makes an ebr" width="55%">
+&lt;/figure>
+&lt;p>Here is a small, generic snippet of how it looks:
+Note how the query specifies exactly the fields to return: no further response filtering is required.
+For an idea of how a more complete query looks, refer to the &lt;a href="https://docs.rhize.com/versions/v3.0.3/use-cases/ebr/" >Electronic Batch Records&lt;/a> guide.&lt;/p>
+&lt;details class="last-of-type:hx-mb-0 hx-rounded-lg hx-bg-neutral-50 dark:hx-bg-neutral-800 hx-p-2 hx-mt-4 hx-group" open>
+&lt;summary class="hx-flex hx-items-center hx-cursor-pointer hx-select-none hx-list-none hx-p-1 hx-rounded hx-transition-colors hover:hx-bg-gray-100 dark:hover:hx-bg-neutral-800 before:hx-mr-1 before:hx-inline-block before:hx-transition-transform before:hx-content-[''] dark:before:hx-invert rtl:before:hx-rotate-180 group-open:before:hx-rotate-90">
+&lt;strong class="hx-text-lg">Snippet of a makeEbr query&lt;/strong>
+&lt;/summary>
+&lt;div class="hx-p-2 hx-overflow-hidden">
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-graphql" data-lang="graphql">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">query&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">makeEbr&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$filter&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">JobOrderFilter&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">query&lt;/span>&lt;span class="nc">JobResponse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="py">filter&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nv">$filter&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nc">EXAMPLE_id&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">description&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">matActualProduced&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">materialActual&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="py">filter&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nc">materialUse&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">eq&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nc">Produced&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">}}){&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">material&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">materialDefinitionVersion&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">quantity&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">quantityUoM&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c">## More eBR fields&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/details>
+&lt;p>The only extra step is to use the returned JSON object as the input for however you create your eBR documents.&lt;/p>
+&lt;h2>Next steps&lt;span class="hx-absolute -hx-mt-20" id="next-steps">&lt;/span>
+&lt;a href="#next-steps" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Fast eBR automation is just one of many use cases of Rhize in the pharmaceutical industry.
+With the same event data that you automatically ingest and filter in this workflow, you can also:&lt;/p>
+&lt;ul>
+&lt;li>Program reactive logic using BPMN for &lt;abbr title="A pattern in event-driven architecture where a central service, such as NATS, listens to events and decides how to handle them.">event orchestration&lt;/abbr>. For example, you might send an alert after detecting a threshold condition.&lt;/li>
+&lt;li>Analyze multiple batch runs for deviations. For example, you can query every instance of a failure mode across all laboratories.&lt;/li>
+&lt;li>Compare batches against some variable. For example, you can compare all runs for two versions of equipment.&lt;/li>
+&lt;/ul></description></item><item><title>Electronic Batch Records</title><link>https://docs.rhize.com/versions/v3.0.3/use-cases/ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/use-cases/ebr/</guid><description>
+&lt;p>This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use case that involves &lt;em>Electronic batch records&lt;/em>.
+As long as you properly &lt;a href="https://docs.rhize.com/versions/v3.0.3/use-cases/data-collection-ebr/" >map and ingest&lt;/a> the source data,
+the provided queries here should work for any operation, though you&amp;rsquo;ll need to tweak them to fit the particular structure of your job response and reporting requirements.&lt;/p>
+&lt;p>An Electronic Batch Record (eBR) is a detailed report about a specific batch.
+Generating eBRs is an important component of pharmaceutical manufacturing, whose high standards of compliance and complexity of inputs demand a great deal of detail in each report.&lt;/p>
+&lt;p>Rhize can model events and resources at a high degree of granularity, and its ISA-95 schema creates built-in relationships between these entities.
+So it makes an ideal backend to generate eBRs with great detail and context.
+In a single query,
+you can use Rhize to identify answers to questions such as:&lt;/p>
+&lt;ul>
+&lt;li>What material, equipment, and personnel were involved in this job? And what was their function in performance?&lt;/li>
+&lt;li>When and where did this job happen? How long did it run for?&lt;/li>
+&lt;li>Why was this work performed? That is, what is the order that initiated the work?&lt;/li>
+&lt;li>What are the results of quality testing for this work?&lt;/li>
+&lt;/ul>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-orange-100 hx-bg-orange-50 hx-text-orange-800 dark:hx-border-orange-400/30 dark:hx-bg-orange-400/20 dark:hx-text-orange-300">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">&amp;#x1f4dd;
+The focus here is modeling and querying.
+For a high-level overview of how eBR data may enter the Rhize data hub, read the guide to &lt;a href="https://docs.rhize.com/versions/v3.0.3/use-cases/data-collection-ebr/" >Data collection&lt;/a>.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2>Quick query&lt;span class="hx-absolute -hx-mt-20" id="quick-query">&lt;/span>
+&lt;a href="#quick-query" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>
+&lt;blockquote> 🎥Watch:&lt;/span>&lt;a href="https://www.youtube.com/watch?v=oXG5f3O9xjU&amp;amp;t=0s">Full eBR in 1 query&lt;/a>&lt;/blockquote>
+&lt;p>If you just want to build out a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/query/" >GraphQL query&lt;/a> for your reporting, use these templates to get started.&lt;/p>
+&lt;p>If you know the IDs for the relevant job response, job order, and test results, you can structure each group as a top-level object.
+If you want to input only one ID, you can also use nested fields on a response, order, or test specification to pull all necessary information.
+The Rhize DB stores relationships, so the values are identical—only the structure of the response changes.&lt;/p>
+&lt;div class="hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain">
+&lt;div class="hx-mt-4 hx-flex hx-w-max hx-min-w-full hx-border-b hx-border-gray-200 hx-pb-px dark:hx-border-neutral-800">&lt;button
+class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+role="tab"
+type="button"
+aria-controls="tabs-panel-0" aria-selected="true" tabindex="0" data-state="selected">Flat&lt;/button>&lt;button
+class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+role="tab"
+type="button"
+aria-controls="tabs-panel-1">Nested&lt;/button>&lt;/div>
+&lt;/div>
+&lt;div>
+&lt;div
+class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+id="tabs-panel-0"
+role="tabpanel" tabindex="0" data-state="selected" >&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gql" data-lang="gql">&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">query&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">eBR&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">performance&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">getJobResponse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s">&amp;#34;&amp;lt;JOB_ID&amp;gt;&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># duration, actuals, and so on&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nc">planning&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">getJobOrder&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s">&amp;#34;&amp;lt;ORDER_ID&amp;gt;&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># requirements, work master, and so on&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nc">testing&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">getTestResult&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s">&amp;#34;&amp;lt;TEST_ID&amp;gt;&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># evaluation properties and tested objects&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div
+class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+id="tabs-panel-1"
+role="tabpanel">&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gql" data-lang="gql">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">query&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">nestedBatchReport&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">jobResponse&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">getJobResponse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s">&amp;#34;ds1d-batch-119-jr-fc-make-frosting&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nc">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c">## more fields about performance&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">materialActual&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c">## repeat for other resources as needed&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">quantity&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">testResults&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c">## test results for material&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c">## More material fields&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">associated_order&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">jobOrder&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c">## more planning fields&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>For more detail, refer to the
+&lt;a href="#example-query" >complete example query&lt;/a>.&lt;/p>
+&lt;h2>Background: ISA-95 entities in an eBR query&lt;span class="hx-absolute -hx-mt-20" id="background-isa-95-entities-in-an-ebr-query">&lt;/span>
+&lt;a href="#background-isa-95-entities-in-an-ebr-query" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-orange-100 hx-bg-orange-50 hx-text-orange-800 dark:hx-border-orange-400/30 dark:hx-bg-orange-400/20 dark:hx-text-orange-300">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">&amp;#x1f4dd; For an introduction to ISA-95 and its terminology,
+read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95" >How to speak ISA-95&lt;/a>.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>The following lists detail the ISA-95 entities that you might need when querying the Rhize database for an eBR.
+As always, your manufacturing needs and data-collection capabilities determine the exact data that is necessary.
+It is likely that some of the following fields are irrelevant to your particular use case.&lt;/p>
+&lt;h3>Performance information&lt;span class="hx-absolute -hx-mt-20" id="performance-information">&lt;/span>
+&lt;a href="#performance-information" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A &lt;em>job response&lt;/em> represents a unit of performed work in a manufacturing operation.
+The job response typically forms the core of an eBR query,
+as you can query it to obtain duration and all &lt;abbr title="The specific resource used for a specific job. For example, an operations segment may require EquipmentA, but if this equipment is in maintainance at the time of a job, the Equipment actual might be its temporary replacement, EquipmentB">resource actual&lt;/abbr>s involved in the job.
+A job response may also contain child job responses, as displayed in the following diagram:&lt;/p>
+&lt;figure class="big-figure">
+&lt;a href="https://docs.rhize.com/images/s95/diagram-rhize-s95-job-response-with-children.svg" target="_blank">
+&lt;img src="https://docs.rhize.com/images/s95/diagram-rhize-s95-job-response-with-children.svg" alt=""
+>
+&lt;/a>
+&lt;figcaption class="caption">
+An example of a job response with child job responses. The parent job has a material actual representing the final produced good. The child job responses also have their own properties that may be important to model. This is just one variation of many. &lt;strong>ISA-95 is flexible and the best model always depends on your use case&lt;/strong>.
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>For an eBR, some important job response properties and associations include the following:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Start and End times.&lt;/strong> When work started and how long it lasted.&lt;/li>
+&lt;li>&lt;strong>Material Actuals.&lt;/strong> The quantities of material involved and how they are used: consumed, produced, tested, scrapped, and so on. Material actuals may also have associated lots for unique identification. Test results may be derived from samples of the material actual.&lt;/li>
+&lt;li>&lt;strong>Equipment Actuals.&lt;/strong> The real equipment used in a job, along with associated equipment properties and testing results.&lt;/li>
+&lt;li>&lt;strong>Personnel actuals.&lt;/strong> The people involved in a job or test.&lt;/li>
+&lt;li>&lt;strong>Process values&lt;/strong>. Associated process data and calculations.&lt;/li>
+&lt;li>&lt;strong>Comments and Signatures.&lt;/strong> Additional input from operators.&lt;/li>
+&lt;/ul>
+&lt;h3>Scheduling information&lt;span class="hx-absolute -hx-mt-20" id="scheduling-information">&lt;/span>
+&lt;a href="#scheduling-information" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>An eBR report might also include information
+about the work that was demanded.
+The simplest relationship between performance and demand is the link between a job response and a &lt;em>job order&lt;/em>.
+So your eBR might include information about the order that initiated the response.
+Through this order, you could also include higher-level scheduling information.&lt;/p>
+&lt;p>When adding order information, consider whether you need the following properties:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Scheduled start and end times.&lt;/strong> These might be compared to the real start and end.&lt;/li>
+&lt;li>&lt;strong>Material requirements&lt;/strong>. The material that corresponds to the material actuals in the performance. Requirements may include:
+&lt;ul>
+&lt;li>Material to be produced, along with their scheduled quantities and units of measure&lt;/li>
+&lt;/ul>
+&lt;ul>
+&lt;li>Material to be consumed, along with their scheduled quantities and units of measure&lt;/li>
+&lt;li>Any by-product material and scrap&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Planned equipment&lt;/strong>. This can be compared to the real equipment used.&lt;/li>
+&lt;li>&lt;strong>Work Directive&lt;/strong>. The dispatched version of the planned work. The directive may include:
+&lt;ul>
+&lt;li>Specifications or a BoM (if the requirements are not in the order itself)&lt;/li>
+&lt;li>Any relevant work master configuration (routing, process parameters like temperature, durations, and so on)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3>Quality information&lt;span class="hx-absolute -hx-mt-20" id="quality-information">&lt;/span>
+&lt;a href="#quality-information" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Your eBR trace also may record test results.
+These results provide context about the quality of the work produced in the job response.&lt;/p>
+&lt;p>Each &lt;abbr title="The specific resource used for a specific job. For example, an operations segment may require EquipmentA, but if this equipment is in maintainance at the time of a job, the Equipment actual might be its temporary replacement, EquipmentB">resource actual&lt;/abbr> can have a corresponding test result.
+For example:&lt;/p>
+&lt;ul>
+&lt;li>The material actual and lot may record the sample.&lt;/li>
+&lt;li>The equipment actual may record test locations.&lt;/li>
+&lt;li>Physical asset actuals may record instruments used for the test.&lt;/li>
+&lt;li>Personnel actuals may record who performed the test.&lt;/li>
+&lt;/ul>
+&lt;h2>Example query&lt;span class="hx-absolute -hx-mt-20" id="example-query">&lt;/span>
+&lt;a href="#example-query" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The following snippet is an example of how to pull a full eBR from a single &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/query/" >GraphQL query&lt;/a>.
+Each top-level object has an &lt;a href="https://graphql.org/learn/queries/#aliases" target="_blank" rel="noopener">alias&lt;/a>, which serves as the key for the object in the JSON payload.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gql" data-lang="gql">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">query&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">eBR&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">performance&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">getJobResponse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s">&amp;#34;ds1d-119-as&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># duration, actuals, and so on&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nc">planning&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">getJobOrder&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s">&amp;#34;ds1d-119-jo-119-3&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># requirements, work directive, and so on&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nc">testing&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">getTestResult&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s">&amp;#34;ds1d-119-tr-3&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># evaluation properties and tested objects&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain">
+&lt;div class="hx-mt-4 hx-flex hx-w-max hx-min-w-full hx-border-b hx-border-gray-200 hx-pb-px dark:hx-border-neutral-800">&lt;button
+class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+role="tab"
+type="button"
+aria-controls="tabs-panel-0" aria-selected="true" tabindex="0" data-state="selected">Full query&lt;/button>&lt;button
+class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+role="tab"
+type="button"
+aria-controls="tabs-panel-1">Example response: performance eBR&lt;/button>&lt;/div>
+&lt;/div>
+&lt;div>
+&lt;div
+class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+id="tabs-panel-0"
+role="tabpanel" tabindex="0" data-state="selected" >&lt;p>&lt;strong>Variables&lt;/strong>&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;getJobResponseId&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;ds1d-batch-119-jr-fc-make-frosting&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;getJobOrderId&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;ds1d-batch-jo-119&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;getTestResultId&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;ds1d-batch-tr-119&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>&lt;strong>Query&lt;/strong>&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gql" data-lang="gql">&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">query&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">eBR&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$getJobResponseId&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nv">$getJobOrderId&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nv">$getTestResultId&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">String&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">performance&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">getJobResponse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nv">$getJobResponseId&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nc">jobResponseId&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">startDateTime&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">endDateTime&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">duration&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">jobState&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">workDirective&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">materialActual&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">materialUse&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">quantity&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">quantityUoM&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">materialDefinition&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">materialLot&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">materialDefinition&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">materialSubLot&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">properties&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">equipmentActual&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">equipment&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">description&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">children&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">properties&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">value&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">valueUnitOfMeasure&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">personnelActual&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">planning&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">getJobOrder&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nv">$getJobOrderId&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nc">orderId&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">scheduledStartDateTime&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">scheduledEndDateTime&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">materialRequirements&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">quantity&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">quantityUoM&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">equipmentRequirements&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">equipment&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">workMaster&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">parameterSpecifications&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">description&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">testing&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">getTestResult&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nv">$getTestResultId&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nc">resultsId&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">evaluationDate&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">expiration&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">evaluationCriterionResult&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">equipmentActual&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">materialActual&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">materialUse&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">physicalAsset&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">equipmentActual&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div
+class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+id="tabs-panel-1"
+role="tabpanel">&lt;p>The &lt;code>performance&lt;/code> section of this query may return data that looks something like this.
+Note that every object does not necessarily have every requested field.
+In this example, only some material actuals have additional properties.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;data&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;performance&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;ds1d-batch-119-jr-fc-make-frosting&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;startDateTime&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;2024-09-23T23:22:25Z&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;endDateTime&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;2024-09-23T23:38:04.783Z&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;duration&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">939.783&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialActual&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;ds1d-batch-fc-cookie-frosting-actual-119&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialUse&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;Produced&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantity&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">3499.46&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantityUoM&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;g&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialLot&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;ds1d-batch-fc-cookie-frosting-lot-119&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialSubLot&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;properties&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;viscosity&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;value&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;0.1&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;valueUnitOfMeasure&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;mm2/s&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;temperature&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;value&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;22&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;valueUnitOfMeasure&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;C&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;ds1d-batch-fc-butter-actual-119&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialUse&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;Consumed&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantity&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">1124.05&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantityUoM&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;g&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialLot&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;ds1d-batch-fc-butter-lot-119&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialSubLot&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;properties&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;fat-percent&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;value&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;15&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;valueUnitOfMeasure&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;ds1d-batch-fc-confectioner-sugar-actual-119&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialUse&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;Consumed&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantity&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">249.08&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantityUoM&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;g&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialLot&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;ds1d-batch-fc-confectioner-sugar-lot-119&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialSubLot&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;properties&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;ds1d-batch-fc-peanut-butter-actual-119&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialUse&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;Consumed&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantity&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">2249.63&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantityUoM&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;g&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialLot&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;ds1d-batch-fc-peanut-butter-lot-119&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialSubLot&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;properties&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;equipmentActual&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;ds1d-batch-kitchen-mixer-actual-119&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;description&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;children&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;properties&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;ds1d-batch-kitchen-actual-119&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;description&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;children&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;properties&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;personnelActual&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;ds1d-batch-fc-supervisor-actual-119&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;ds1d-batch-fc-handler-actual-119&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>&lt;/div>
+&lt;/div>
+&lt;h2>Build a reporting frontend&lt;span class="hx-absolute -hx-mt-20" id="build-a-reporting-frontend">&lt;/span>
+&lt;a href="#build-a-reporting-frontend" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>
+&lt;blockquote> 🎥Watch:&lt;/span>&lt;a href="https://www.youtube.com/watch?v=gOs3185ACao">Prototyping two example eBR frontends&lt;/a>&lt;/blockquote>
+&lt;p>As a final step, you can also transform the JSON payload into a more human-readable presentation.
+As always, you have a few options. Here are a few, from least to most interactive:&lt;/p>
+&lt;ul>
+&lt;li>Create a PDF report, perhaps using specialized software such as InfoBatch&lt;/li>
+&lt;li>Create a static web report, using basic HTML and CSS&lt;/li>
+&lt;li>Build an interactive report explorer, which may include links to other reports and dynamic visualizations of alerts and performance&lt;/li>
+&lt;/ul>
+&lt;h2>Next steps: combine with other use cases&lt;span class="hx-absolute -hx-mt-20" id="next-steps-combine-with-other-use-cases">&lt;/span>
+&lt;a href="#next-steps-combine-with-other-use-cases" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>You can reuse and combine the queries here for other use cases that involve tracking and performance analysis.
+For example, if you want a detailed report for the movement of material, you can combine the queries here with a query for a &lt;a href="https://docs.rhize.com/versions/v3.0.3/use-cases/genealogy/" >material lot genealogy&lt;/a>. This would provide a detailed report for every job that involved an ancestor or descendent of the queried material.&lt;/p></description></item><item><title>Genealogy</title><link>https://docs.rhize.com/versions/v3.0.3/use-cases/genealogy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/use-cases/genealogy/</guid><description>
+&lt;p>This document provides a high-level overview of how to use Rhize for material genealogy.&lt;/p>
+&lt;p>In manufacturing, a &lt;em>genealogy&lt;/em> is the record of what a material contains or what it is now a part of.
+As its name implies, genealogy represents the family tree of the material.
+A material genealogy can help manufacturers in multiple ways:&lt;/p>
+&lt;ul>
+&lt;li>Prevent product recalls by isolating deviations early in the material flow&lt;/li>
+&lt;li>Decrease recall time by having a complete record of where material starts and ends&lt;/li>
+&lt;li>Help build reports and analysis of material deviations&lt;/li>
+&lt;li>Create documentation and compliance records for material tracking&lt;/li>
+&lt;/ul>
+&lt;p>Rhize provides a standards-based schema to represent material at all levels of granularity.
+The graph structure of its DB has built-in properties to associate material lots with other information about planned and performed work.
+This database has a GraphQL API, which can pull full genealogies from terse queries.
+As such, Rhize makes an &lt;strong>ideal backend to use for genealogical use cases&lt;/strong>.&lt;/p>
+&lt;script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js">&lt;/script>
+&lt;div id=echart-000 style="width: 100%;height: 600px;">&lt;/div>
+&lt;script type="text/javascript">
+var chart = echarts.init(document.getElementById("echart-000"));
+const option = {
+title: {
+subtext:
+"Click solid squares to expand.\nHover for quantities and definitions",
+fontSize: 13,
+},
+tooltip: [
+{
+z: 60,
+show: true,
+showContent: true,
+alwaysShowContent: true,
+formatter: function (params) {
+return `&lt;b>Material definition&lt;/b>: ${params.data.definition}&lt;br />
+&lt;b>ID&lt;/b>: ${params.data.name}&lt;br />
+&lt;b>Value:&lt;/b> ${params.data.value}`;
+},
+},
+],
+initialTreeDepth: 3,
+series: [
+{
+type: "tree",
+left: "15%",
+right: "30%",
+top: "10%",
+bottom: "2%",
+symbol: "emptySquares",
+orient: "RL",
+expandAndCollapse: true,
+lineStyle: {
+color: "#006838",
+},
+label: {
+position: "bottom",
+rotate: 0,
+verticalAlign: "middle",
+align: "right",
+fontSize: 11,
+},
+itemStyle: {
+color: "#006838",
+},
+leaves: {
+label: {
+position: "bottom",
+backgroundColor: "#FFFFFF",
+rotate: 10,
+verticalAlign: "middle",
+align: "left",
+fontSize: 13,
+},
+},
+animationDurationUpdate: 650,
+data: [],
+},
+],
+};
+(option.series[0].data[0] = {
+name: "cookie-box-2f",
+value: "1 cookie box",
+definition: "cookie-box",
+children: [
+{
+name: "cookie-unit-dh",
+value: "1000 cookie unit",
+definition: "cookie-unit",
+children: [
+{
+name: "cookie-frosting-9Q",
+value: "3500 g",
+definition: "cookie-frosting",
+children: [
+{
+name: "butter-67",
+value: "1125 g",
+definition: "butter",
+},
+{
+name: "confectioner-sugar-yN",
+value: "250 g",
+definition: "confectioner-sugar",
+},
+{
+name: "peanut-butter-Cq",
+value: "2250 g",
+definition: "peanut-butter",
+},
+],
+},
+{
+name: "cookie-dough-Vr",
+value: "15000 g",
+definition: "cookie-dough",
+children: [
+{
+name: "egg-gY",
+value: "50 large-egg",
+definition: "egg",
+},
+{
+name: "flour-kO",
+value: "7500 g",
+definition: "flour",
+},
+{
+name: "saZ3",
+value: "150 g",
+definition: "salt",
+},
+{
+name: "sugar-32",
+value: "2500 g",
+definition: "sugar",
+},
+{
+name: "vanilla-extract-px",
+value: "10 g",
+definition: "vanilla-extract",
+},
+],
+},
+],
+},
+{
+name: "cookie-wrapper-NR",
+value: "150 wrapper",
+definition: "cookie-wrapper",
+},
+],
+}),
+(option.title.text = `Example frontend:\nreverse genealogy of ${option.series[0].data[0].name}`);
+chart.setOption(option);
+&lt;/script>
+&lt;p>&lt;em>Data from a Rhize query in an Apache Echart. Read the &lt;a href="#frontend" >Build frontend&lt;/a> section for details.&lt;/em>&lt;/p>
+&lt;h2>Quick query&lt;span class="hx-absolute -hx-mt-20" id="quick-query">&lt;/span>
+&lt;a href="#quick-query" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To get started with genealogy quickly, use these &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/query/" >query&lt;/a> templates.
+One template is for the reverse genealogy, and the other is for the forward genealogy.
+For each, you need to input the Lot ID.&lt;/p>
+&lt;div class="hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain">
+&lt;div class="hx-mt-4 hx-flex hx-w-max hx-min-w-full hx-border-b hx-border-gray-200 hx-pb-px dark:hx-border-neutral-800">&lt;button
+class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+role="tab"
+type="button"
+aria-controls="tabs-panel-0" aria-selected="true" tabindex="0" data-state="selected">Reverse genealogy query&lt;/button>&lt;button
+class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+role="tab"
+type="button"
+aria-controls="tabs-panel-1">Forward genealogy query&lt;/button>&lt;/div>
+&lt;/div>
+&lt;div>
+&lt;div
+class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+id="tabs-panel-0"
+role="tabpanel" tabindex="0" data-state="selected" >&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gql" data-lang="gql">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">query&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">reverseGenealogy&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">getMaterialLot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s">&amp;#34;&amp;lt;LOT_ID&amp;gt;&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nc">parent_lots&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">isAssembledFromMaterialLot&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">grandparent_lots&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">isAssembledFromMaterialLot&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">great_grandparent_lots&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">isAssembledFromMaterialLot&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div
+class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+id="tabs-panel-1"
+role="tabpanel">&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gql" data-lang="gql">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">query&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">forwardGenealogy&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">getMaterialLot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s">&amp;#34;&amp;lt;LOT_ID&amp;gt;&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nc">child_lots&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">isAssembledFromMaterialLot&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">grandchildren_lots&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">isAssembledFromMaterialLot&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">great_grandgrandchildren_lots&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">isAssembledFromMaterialLot&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>You can also modify the query to include more fields, levels, or get the forward and backward genealogy.
+For an idea of how a more complete query would look, refer to the &lt;a href="#examples" >Examples&lt;/a> section.&lt;/p>
+&lt;h2>Background: material entities in Rhize&lt;span class="hx-absolute -hx-mt-20" id="background-material-entities-in-rhize">&lt;/span>
+&lt;a href="#background-material-entities-in-rhize" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-orange-100 hx-bg-orange-50 hx-text-orange-800 dark:hx-border-orange-400/30 dark:hx-bg-orange-400/20 dark:hx-text-orange-300">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">&amp;#x1f4dd; For a more complete introduction to ISA-95 and its terminology,
+read &lt;a href="https://docs.rhize.com/versions/v3.0.3/isa-95/how-to-speak-isa-95/" >How to speak ISA-95&lt;/a>.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>In ISA-95 terminology, the lineage of each material is expressed through the following entities:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Material lots.&lt;/strong> Unique amounts of identifiable material. For example, a material lot might be a camshaft in an engine or a package of sugar from a supplier.&lt;/li>
+&lt;li>&lt;strong>Material Sublots.&lt;/strong> Uniquely identifiable parts of a material lot. For example, if a box of consumer-packaged goods represents a material lot, the individual serial numbers of the packages within might be the material sublots. Each sublot is unique, but multiple sublots may share properties from their parent material lot (for example, the expiry date).&lt;/li>
+&lt;/ul>
+&lt;p>The relationship between lots are expressed through the following properties :&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>isAssembledFromMaterial[Sub]lot&lt;/code> and &lt;code>isComponentOf[Sub]lot&lt;/code>. The material lots or sublots that went into another material.&lt;/li>
+&lt;li>&lt;code>parentMaterialLot&lt;/code> and &lt;code>childSubLot&lt;/code>. The relationships between a material lot and its sublots.&lt;/li>
+&lt;/ul>
+&lt;p>Note that these properties are symmetrical. If lot &lt;code>final-1&lt;/code> has the property &lt;code>{isAssembledFromMaterialLot: &amp;quot;intermediate-1&amp;quot;&lt;/code>},
+then lot &lt;code>intermediate-1&lt;/code> has the property &lt;code>{isComponentOfMaterialLot: &amp;quot;final-1&amp;quot; }&lt;/code>.
+The graph structure of the RhizeDB creates these links automatically.&lt;/p>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">The distinction between sublots and material lots varies with processes.
+The rest of this document simplifies terminology by using only the word &amp;ldquo;lots&amp;rdquo;.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2>Steps to use Rhize for genealogy&lt;span class="hx-absolute -hx-mt-20" id="steps-to-use-rhize-for-genealogy">&lt;/span>
+&lt;a href="#steps-to-use-rhize-for-genealogy" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The following sections describe how to use Rhize to build a genealogy use case.
+In short:&lt;/p>
+&lt;ol>
+&lt;li>Identify the unique lots in your material flows.&lt;/li>
+&lt;li>Add these lots to your model.&lt;/li>
+&lt;li>Implement how to collect these lots.&lt;/li>
+&lt;li>Query the database.&lt;/li>
+&lt;/ol>
+&lt;p>The example uses a simple baking process to demonstrate the material flow.&lt;/p>
+&lt;figure class="big-figure">
+&lt;a href="https://docs.rhize.com/images/genealogy/diagram-rhize-genealogy-of-a-batch.png" target="_blank">
+&lt;img src="https://docs.rhize.com/images/genealogy/diagram-rhize-genealogy-of-a-batch.png" alt="A simplified view of how a pallet of packaged goods is assembled from lots and sublots."
+width="30%"
+>
+&lt;/a>
+&lt;figcaption class="caption">
+A simplified view of how a pallet of packaged goods is assembled from lots and sublots.
+&lt;/figcaption>
+&lt;/figure>
+&lt;h3>Identify lots to collect&lt;span class="hx-absolute -hx-mt-20" id="identify-lots-to-collect">&lt;/span>
+&lt;a href="#identify-lots-to-collect" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>To use Rhize for genealogy, first identify the material lots that you want to identify.
+How you identify these depends on your processes and material flows.
+The following guidelines generally are true:&lt;/p>
+&lt;ul>
+&lt;li>The lot must be uniquely identifiable.&lt;/li>
+&lt;li>The level of granularity of the lots is realistic for your current processes.&lt;/li>
+&lt;/ul>
+&lt;p>For example, in a small baking operation, lots might come from the following areas:&lt;/p>
+&lt;ul>
+&lt;li>The serial numbers of ingredients from suppliers&lt;/li>
+&lt;li>The batches of baked pastries&lt;/li>
+&lt;li>The wrappers consumed by the packing process&lt;/li>
+&lt;li>The pallets of packed goods (with individual packages being material sublots).&lt;/li>
+&lt;/ul>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">For some best practices of how to model, read our blog &lt;a href="https://rhize.com/blog/how-much-do-i-need-to-model-when-applying-the-isa-95-standard/" target="_blank" rel="noopener">How much do I need to model?&lt;/a>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3>Model these lots into your knowledge graph&lt;span class="hx-absolute -hx-mt-20" id="model-these-lots-into-your-knowledge-graph">&lt;/span>
+&lt;a href="#model-these-lots-into-your-knowledge-graph" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>After you have identified the material lots, model how the data fits with the other components of your manufacturing knowledge graph.
+At minimum, your material lots must have a &lt;abbr title="A representation of material with similar charecteristics. All material lots must have one associated material definition.">material definition&lt;/abbr> with an active version.&lt;/p>
+&lt;p>Beyond these requirements, the graph structure of the ISA-95 database provides many ways to create links between lots and other manufacturing entities, including:&lt;/p>
+&lt;ul>
+&lt;li>A work request or job response&lt;/li>
+&lt;li>The associated &lt;abbr title="The specific resource used for a specific job. For example, an operations segment may require EquipmentA, but if this equipment is in maintainance at the time of a job, the Equipment actual might be its temporary replacement, EquipmentB">resource actual&lt;/abbr>&lt;/li>
+&lt;li>In aggregations such as part of a material class, or part of the material specifications in a &lt;abbr title="A template for a job order, corresponding to an operations and process segment, from the perspective of the level-3 (MES/MOM) systems.">work master&lt;/abbr>.&lt;/li>
+&lt;/ul>
+&lt;p>In the aforementioned baking process, the lots may have:&lt;/p>
+&lt;ul>
+&lt;li>Material classes (raw, intermediate, and final)&lt;/li>
+&lt;li>Associated equipment (such as &lt;code>mixers&lt;/code>, &lt;code>ovens&lt;/code>, and &lt;code>trays&lt;/code>)&lt;/li>
+&lt;li>Associated segments (such as &lt;code>mixing&lt;/code> or &lt;code>cooling&lt;/code>)&lt;/li>
+&lt;li>Associated measurements and properties&lt;/li>
+&lt;/ul>
+&lt;h3>Implement how to store your lots in the RhizeDB&lt;span class="hx-absolute -hx-mt-20" id="implement-how-to-store-your-lots-in-the-rhizedb">&lt;/span>
+&lt;a href="#implement-how-to-store-your-lots-in-the-rhizedb" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>After you have planned the process and defined your models, next implement how to add material lot IDs to Rhize in the course of your real manufacturing operation.&lt;/p>
+&lt;p>Your manufacturing process determines where lot IDs are created.
+The broad patterns are as follows:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Scheduled.&lt;/strong> Assign lots at the time of creating the work request or schedule (while the job response might create a material actual that maps to the requested lot ID).&lt;/li>
+&lt;li>&lt;strong>Scheduled and event-driven.&lt;/strong> Generate lot IDs beforehand, and then use a GraphQL call to create records in the Rhize DB after some event. Example events might be a button press or an automated signal that indicates the lot has been physically created.&lt;/li>
+&lt;li>&lt;strong>Event-driven.&lt;/strong> Assign lot IDs at the exact time of work performance. For example, you can write a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/" >BPMN workflow&lt;/a> to subscribe to a topic that receives information about lots and automatically forwards the IDs to your knowledge graph.&lt;/li>
+&lt;/ul>
+&lt;p>In the example baking process, lots may be collected in the following ways:&lt;/p>
+&lt;ul>
+&lt;li>Scanned from supplier bar code&lt;/li>
+&lt;li>Generated after the quality inspector indicates that a tray is finished&lt;/li>
+&lt;li>Planned in terms of final package number and expiration date&lt;/li>
+&lt;/ul>
+&lt;h3>Query the data&lt;span class="hx-absolute -hx-mt-20" id="query-the-data">&lt;/span>
+&lt;a href="#query-the-data" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>After you start collecting data, you can also start querying it through the &lt;code>materialLot&lt;/code> query operations.
+The following section provides example genealogy queries.&lt;/p>
+&lt;h2>Examples&lt;span class="hx-absolute -hx-mt-20" id="examples">&lt;/span>
+&lt;a href="#examples" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The following examples show how to query for forward and backward genealogies using the &lt;a href="https://docs.rhize.com/how-to/gql/query/#get" target="_blank" rel="noopener">&lt;code>get&lt;/code>&lt;/a> operation to query material lots.&lt;/p>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">You could also query for multiple genealogies—either through material lots or through aggregations such as material definitions and specifications— then apply &lt;a href="https://docs.rhize.com/how-to/gql/filter/" target="_blank" rel="noopener">filters&lt;/a>.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3>Backward genealogy&lt;span class="hx-absolute -hx-mt-20" id="backward-genealogy">&lt;/span>
+&lt;a href="#backward-genealogy" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A backward genealogy examines all material lots that make the assembly of some later material lot.&lt;/p>
+&lt;p>In Rhize, you can query this relationship through the &lt;code>isAssembledFromMaterialLot&lt;/code> property,
+using nesting to indicate the level of material ancestry to return.
+For example, this returns four levels of backward genealogy for the material lot
+&lt;code>cookie-box-2f&lt;/code> (using a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/call-the-graphql-api/#shortcuts-for-more-expressive-requests" >fragment&lt;/a> to standardize the properties returned for each lot).&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gql" data-lang="gql">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">query&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nc">getMaterialLot&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s">&amp;#34;cookie-box-2f&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">...&lt;/span>&lt;span class="nc">lotFields&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">isAssembledFromMaterialLot&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">...&lt;/span>&lt;span class="py">lotFields&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">isAssembledFromMaterialLot&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">...&lt;/span>&lt;span class="py">lotFields&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">isAssembledFromMaterialLot&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">...&lt;/span>&lt;span class="py">lotFields&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c">## Common fields for all nested material&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">fragment&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">lotFields&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">on&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="py">MaterialLot&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">quantity&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">quantityUnitOfMeasure&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">materialDefinition&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>The returned genealogy looks something like the following:&lt;/p>
+&lt;details class="last-of-type:hx-mb-0 hx-rounded-lg hx-bg-neutral-50 dark:hx-bg-neutral-800 hx-p-2 hx-mt-4 hx-group" >
+&lt;summary class="hx-flex hx-items-center hx-cursor-pointer hx-select-none hx-list-none hx-p-1 hx-rounded hx-transition-colors hover:hx-bg-gray-100 dark:hover:hx-bg-neutral-800 before:hx-mr-1 before:hx-inline-block before:hx-transition-transform before:hx-content-[''] dark:before:hx-invert rtl:before:hx-rotate-180 group-open:before:hx-rotate-90">
+&lt;strong class="hx-text-lg">example-backward-genealogy.json&lt;/strong>
+&lt;/summary>
+&lt;div class="hx-p-2 hx-overflow-hidden">
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;data&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;getMaterialLot&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;cookie-box-2f&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantity&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantityUnitOfMeasure&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;cookie box&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialDefinition&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;cookie-box&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;isAssembledFromMaterialLot&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;cookie-unit-dh&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantity&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">1000&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantityUnitOfMeasure&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;cookie unit&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialDefinition&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;cookie-unit&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;isAssembledFromMaterialLot&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;cookie-frosting-9Q&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantity&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">3500&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantityUnitOfMeasure&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;g&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialDefinition&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;cookie-frosting&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;isAssembledFromMaterialLot&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;butter-67&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantity&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">1125&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantityUnitOfMeasure&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;g&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialDefinition&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;butter&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;confectioner-sugar-yN&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantity&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">250&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantityUnitOfMeasure&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;g&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialDefinition&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;confectioner-sugar&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;peanut-butter-Cq&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantity&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">2250&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantityUnitOfMeasure&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;g&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialDefinition&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;peanut-butter&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;cookie-dough-Vr&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantity&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">15000&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantityUnitOfMeasure&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;g&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialDefinition&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;cookie-dough&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;isAssembledFromMaterialLot&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;egg-gY&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantity&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">50&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantityUnitOfMeasure&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;large-egg&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialDefinition&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;egg&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;flour-kO&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantity&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">7500&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantityUnitOfMeasure&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;g&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialDefinition&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;flour&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;saZ3&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantity&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">150&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantityUnitOfMeasure&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;g&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialDefinition&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;salt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;sugar-32&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantity&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">2500&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantityUnitOfMeasure&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;g&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialDefinition&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;sugar&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;vanilla-extract-px&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantity&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantityUnitOfMeasure&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;g&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialDefinition&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;vanilla-extract&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;cookie-wrapper-NR&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantity&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">150&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;quantityUnitOfMeasure&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;wrapper&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;materialDefinition&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;cookie-wrapper&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;isAssembledFromMaterialLot&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/details>
+&lt;h4>Forward genealogy&lt;span class="hx-absolute -hx-mt-20" id="forward-genealogy">&lt;/span>
+&lt;a href="#forward-genealogy" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;p>A forward genealogy examines the history of how one lot becomes a component of another.
+For example, if a supplier informs a manufacturer about an issue with a specific raw material,
+the manufacturer can run a forward genealogy that looks at the downstream material that consumed these bad lots.&lt;/p>
+&lt;p>In Rhize, you can query the forward genealogy through the &lt;code>isComponentOfMaterialLot&lt;/code> property,
+using nesting to indicate the number of levels of forward generations.
+For example, this query returns the full chain of material that contains (or contains material that contains)
+the material sublot &lt;code>peanut-butter-Cq&lt;/code>:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gql" data-lang="gql">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">query&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">GetMaterialLot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$getMaterialLotId&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">String&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">getMaterialLot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s">&amp;#34;peanut-butter-Cq&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nc">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">isComponentOfMaterialLot&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">isComponentOfMaterialLot&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">isComponentOfMaterialLot&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="py">id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>This query returns data in the following structure:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;data&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;getMaterialLot&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;peanut-butter-Cq&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;isComponentOfMaterialLot&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;cookie-frosting-9Q&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;isComponentOfMaterialLot&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;cookie-unit-dh&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;isComponentOfMaterialLot&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;cookie-box-2f&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;h2>Next steps: display and analyze&lt;span class="hx-absolute -hx-mt-20" id="next-steps-display-and-analyze">&lt;/span>
+&lt;a href="#next-steps-display-and-analyze" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The preceding steps are all you need to create a data foundation to use Rhize for genealogy.
+After you&amp;rsquo;ve started collecting data, you can use the genealogy queries to build frontends and isolate entities for more detailed tracing and performance analysis.&lt;/p>
+&lt;h3>Build frontends&lt;span class="hx-absolute -hx-mt-20" id="frontend">&lt;/span>
+&lt;a href="#frontend" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>All data that you store in the Rhize DB is exposed through the GraphQL API.
+This provides a flexible way to create custom frontends to organize your genealogical analysis in the presentation that makes sense for your use case.
+For example, you might represent the genealogy in any of the following ways:&lt;/p>
+&lt;ul>
+&lt;li>In a summary report, providing a brief list of the material and all impacted upstream or downstream lots&lt;/li>
+&lt;li>As an interactive list, which you can expand to view a lot&amp;rsquo;s associated quantities, job order, personnel and so on&lt;/li>
+&lt;li>As the input for a secondary query&lt;/li>
+&lt;li>In a display using some data visualization library&lt;/li>
+&lt;/ul>
+&lt;p>For a visual example, the interactive chart in the introduction takes the data from the preceding reverse-genealogy query,
+transforms it with a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/use-jsonata/" >JSONata expression&lt;/a>, and visualizes the relationship using
+&lt;a href="https://echarts.apache.org/" target="_blank" rel="noopener">Apache echarts&lt;/a>.&lt;/p>
+&lt;p>The JSONata expression accepts an array of material lots,
+then recursively renames all IDs and &lt;code>isAssembledFrom&lt;/code> properties to &lt;code>name&lt;/code> and &lt;code>children&lt;/code>, the data structure expected by the visualization.
+Additional properties remain to provide context in the chart&amp;rsquo;s tooltips.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-golang" data-lang="golang">&lt;span class="line">&lt;span class="cl">&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">$&lt;/span>&lt;span class="nx">makeParent&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nf">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="err">$&lt;/span>&lt;span class="nx">data&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="err">$&lt;/span>&lt;span class="nx">data&lt;/span>&lt;span class="p">.{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nx">id&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;value&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nx">quantity&lt;/span> &lt;span class="o">&amp;amp;&lt;/span> &lt;span class="s">&amp;#34; &amp;#34;&lt;/span> &lt;span class="o">&amp;amp;&lt;/span> &lt;span class="nx">quantityUnitOfMeasure&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">id&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;definition&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nx">materialDefinition&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">id&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;children&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="err">$&lt;/span>&lt;span class="nf">makeParent&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">isAssembledFromMaterialLot&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">$&lt;/span>&lt;span class="nf">makeParent&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="err">$&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">data&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">getMaterialLot&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>We&amp;rsquo;ve also embedded Echarts in Grafana workspaces to make interactive dashboards for forward and reverse genealogies:&lt;/p>
+&lt;figure class="big-figure">
+&lt;a href="https://docs.rhize.com/images/genealogy/screenshot-rhize-genealogy-grafana.png" target="_blank">
+&lt;img src="https://docs.rhize.com/images/genealogy/screenshot-rhize-genealogy-grafana.png" alt="An interactive genealogy dashboard. Filter by material definition, then select specific material lots."
+width="90%"
+>
+&lt;/a>
+&lt;figcaption class="caption">
+An interactive genealogy dashboard. Filter by material definition, then select specific material lots.
+&lt;/figcaption>
+&lt;/figure>
+&lt;h3>Combine with granular tracing and performance analysis&lt;span class="hx-absolute -hx-mt-20" id="combine-with-granular-tracing-and-performance-analysis">&lt;/span>
+&lt;a href="#combine-with-granular-tracing-and-performance-analysis" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>While a genealogy is an effective tool on its own, the usefulness of the Rhize data hub compounds with each use case.
+So genealogy implementations are most effective if you can combine them with the other data stored in your manufacturing knowledge graph.&lt;/p>
+&lt;p>For example, the genealogical record may provide the input for more granular &lt;em>track and trace&lt;/em> , in which you use the Lot IDs to determine track material movement across equipment and storage, associated personnel, and so on.&lt;/p>
+&lt;p>You could also combine genealogy with performance analysis, using the genealogical record as the starting point to analyze and predict failures and deviations.&lt;/p></description></item></channel></rss>
