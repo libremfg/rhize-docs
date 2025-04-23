@@ -4,7 +4,7 @@ description: User guides, deploy docs, references, and deep dives about the
   Rhize manufacturing data hub.
 cascade:
   type: docs
-  v: "latest"
+  v: "3.1.0"
 ---
 
 <!-- define h1 for all other pages in Title in frontmatter -->
