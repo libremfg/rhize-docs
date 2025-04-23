@@ -14,7 +14,7 @@ This guide shows you how to upgrade Rhize.
 
 Before you start, ensure you have the following:
 
-- Access to the [Rhize Kubernetes Environment]({{< relref ".." >}})
+- Access to the [Rhize Kubernetes Environment]({{< relref "install" >}})
 - [helm](https://helm.sh/docs/helm/helm_install/)
 {{% param pre_reqs %}}
 
