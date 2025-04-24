@@ -154,11 +154,17 @@ read the official [Helm `install` reference](https://helm.sh/docs/helm/helm_inst
 
 Install NATS with these steps:
 
+1. If it doesn't exist, add the NATS repository:
+
+    ```bash
+    helm repo add nats https://nats-io.github.io/k8s/helm/charts/
+    ```
+
 1. Modify the NATS Helm file with your code editor. Edit any necessary overrides.
 1. Install with Helm:
 
     ```
-    helm install nats -f nats.yaml {{< param application_name >}}/nats -n {{< param application_name >}}
+    helm install nats -f nats.yaml nats/nats -n {{< param application_name >}}
     ```
 
 
