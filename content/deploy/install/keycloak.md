@@ -221,7 +221,7 @@ Repeat the preceding process for each of the following services with the corresp
 | `{{< param application_name >}}UIAudienceMapper`       | `{{< param application_name >}}UI`       |   `On`   |    `Off`     |
 | `{{< param application_name >}}WorkflowAudienceMapper` | `{{< param application_name >}}Workflow` |   `On`   |     `On`     |
 
-*- Optional based on your architecture.
+*- Optional based on your architecture.<br />
 **- Included as a Custom Audience.
 
 #### Add services to the scope

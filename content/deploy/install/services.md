@@ -355,7 +355,7 @@ If the install is successful, the UI is available on its
 ### Agent
 
 The Rhize agent bridges your plant processes with the Rhize data hub.
-It collects data emitted from the plant and publishes it to the NATS message broker.
+It collects data emitted from the plant and publishes it to the message broker.
 
 > **Requirements:** Agent requires the [Graph DB](#db), [Tempo](#tempo), Redpanda, and an event broker service to communicate with.
 
