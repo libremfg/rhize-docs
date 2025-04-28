@@ -62,6 +62,7 @@ You must add the helm chart repository for Rhize.
 
     ```bash
     helm repo add {{< param application_name >}} https://gitlab.com/api/v4/projects/42214456/packages/helm/stable
+    helm repo update
     ```
 
 ## Install and add roles for the DB {#db}
@@ -97,11 +98,10 @@ If enabling the Audit Trail, also the include the configuration in [Enable chang
 1. Get a token using the credentials. With `curl`, it looks like this:
 
     ```bash
-    curl --location --request POST 'https://<customer>-
-    auth.{{< param application_name >}}/realms/{{< param application_name >}}/protocol/openid-connect/token' \
+    curl --location --request POST '<KEYCLOAK_URL>/realms/{{< param application_name >}}/protocol/openid-connect/token' \
     --header 'Content-Type: application/x-www-form-urlencoded' \
     --data-urlencode 'grant_type=password' \
-    --data-urlencode 'username=system@{{< param application_name >}}.com' \
+    --data-urlencode 'username=<USERNAME>' \
     --data-urlencode 'password=<PASSWORD>' \
     --data-urlencode 'client_id={{< param application_name >}}Baas' \
     --data-urlencode 'client_secret=<CLIENT_SECRET>'
@@ -110,7 +110,7 @@ If enabling the Audit Trail, also the include the configuration in [Enable chang
 1. Post the schema:
 
     ```bash
-    curl --location --request POST 'http://localhost:<FORWARDED_PORT>/admin/schema' \
+    curl --location --request POST '<BAAS_URL>/admin/schema' \
     --header 'Authorization: Bearer <TOKEN>' \
     --header 'Content-Type: application/octet-stream' \
     --data-binary '@<SCHEMA_FILE>'
@@ -118,7 +118,7 @@ If enabling the Audit Trail, also the include the configuration in [Enable chang
 
     This creates more roles.
 
-1. Go to Keycloak UI and add all new {{< param db >}} roles to the `ADMIN` group.
+1. Go to Keycloak UI and add all new {{< param db >}} roles to the `libreAdminGroup`.
 
 If the install is successful, the Keycloak UI is available on its
 [default port]({{< relref "../../reference/default-ports" >}}).
@@ -167,28 +167,41 @@ Install Redpanda with these steps:
     helm install redpanda -f redpanda.yaml redpanda/redpanda -n {{< param application_name >}}
     ```
 
-### Tempo
+### Alloy
 
-Rhize uses [Tempo](https://grafana.com/oss/tempo/) to trace BPMN processes.
+Install Alloy with these steps:
 
-Install Tempo with these steps:
-
-1. If it doesn't exist, add the Tempo repository:
+1. If the Grafana repository doesn't exist, add it:
 
     ```bash
     helm repo add grafana https://grafana.github.io/helm-charts
+    helm repo update
     ```
 
-1. Modify the Tempo Helm overrides as needed.
+1. Modify the Alloy Helm overrides as needed.
 
 1. Install with Helm:
 
     ```bash
-    helm install tempo -f tempo.yaml grafana/tempo -n {{< param application_name >}}
+    helm install alloy -f alloy.yaml grafana/alloy -n {{< param application_name >}}
     ```
 
-> [!NOTE] 
-> Depending on your configuration you may need to run Tempo in distributed mode. When installing with Helm instead of using `grafana/tempo` instead do `grafana/tempo-distributed`.
+### Grafana LGTM
+
+Grafana LGTM includes Tempo and Grafana. Rhize uses [Tempo](https://grafana.com/oss/tempo/) to trace BPMN processes.
+
+Install Grafana LGTM with these steps:
+
+1. Modify the Grafana LGTM Helm overrides as needed.
+
+1. Install with Helm:
+
+    ```bash
+    helm install lgtm-distributed -f lgtm-distributed.yaml grafana/lgtm-distributed -n {{< param application_name >}}
+    ```
+
+If the install is successful, the Grafana service is available on its
+[default port]({{< relref "../../reference/default-ports" >}}).
 
 ### Restate
 
@@ -252,7 +265,13 @@ Install Typescript Host Service with these steps:
    helm install typescript-host-service -f typescript-host-service.yaml {{< param application_name >}}/typescript-host-service -n {{< param application_name >}}
    ```
 
-1. Register with Restate:
+1. When the Typescript Host Service starts, it should register with Restate. Verify this with:
+
+    ```bash
+    curl localhost:9070/deployments | jq '.deployments[].uri'
+    ```
+
+    This will show the URL of each registered service. If Typescript Host Service's URL is not present, register it with:
 
     ```bash
     curl --location 'http://localhost:9070/deployments' \
@@ -306,30 +325,6 @@ Install ISA-95 with these steps:
       --header 'Content-Type: application/json' \
       --data '{"uri":"http://isa95.{{< param application_name >}}.svc.cluster.local:29080", "force":true}'
     ```
-
-
-### Grafana
-
-Rhize uses [Grafana](https://grafana.com) for its dashboard to monitor real time data.
-
-Install Grafana with these steps:
-
-1. Add the Helm repository
-    ```bash
-    helm repo add grafana https://grafana.github.io/helm-charts
-    helm repo update
-    ```
-
-1. Modify the Grafana Helm overrides as needed.
-
-1. Install with Helm:
-
-    ```bash
-    helm install grafana -f grafana.yaml grafana/grafana -n {{< param application_name >}}
-    ```
-
-If the install is successful, the Grafana service is available on its
-[default port]({{< relref "../../reference/default-ports" >}}).
 
 ## Install Admin UI
 
@@ -441,6 +436,7 @@ Solace is an event broker that can be used alongside Agent, though it can be sub
 
     ```bash
     helm repo add solacecharts https://solaceproducts.github.io/pubsubplus-kubernetes-helm-quickstart/helm-charts
+    helm repo update
     ```
 
 1. Modify the Solace Helm overrides as needed.

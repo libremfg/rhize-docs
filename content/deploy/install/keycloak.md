@@ -306,8 +306,8 @@ Rhize requires authorization for the database service.
 
 1. In the left hand menu, select **Clients**, and then `{{< param db >}}`.
 1. Select the **Authorization** tab.
-1. Select **Policies > Create Policy**
-1. Select **Group > Create Policy**.
+1. Select the **Policies** subtab.
+1. Select **Create Policy > Group**.
 1. Name the policy `{{< param application_name >}}AdminGroupPolicy`.
 1. Select **Add Groups**.
 1. Select `{{< param application_name >}}AdminGroup`.
