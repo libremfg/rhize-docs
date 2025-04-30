@@ -7,15 +7,10 @@ categories: "how-to"
 ---
 
 
-Row Level Access Control (RLAC) is a security mechanism that restricts access to specific rows of data based on user roles and permissions. This provides a way to enforce fine-grained access policies and ensure that users can access only the data they are authorized to see.
+Row Level Access Control (RLAC) restricts access to specific rows of data based on user roles and permissions. This provides a way to enforce fine-grained access policies and ensure that users can access only the data they are authorized to see.
+
 For example, in a contract manufacturing organization (CMO), RLAC enables the CMO to access and manage their specific data while allowing the parent company to view all data across the organization.
 
-The benefits of enabling row level access control include:
-
-- **Data Segmentation**. Partition data based on roles, ensuring that sensitive information is accessible to only authorized users.
-- **Enhanced Security**. Reduce the risk of unauthorized access by enforcing strict access policies.
-- **Operational specialization**: Allow CMOs access to their specific data while maintaining oversight of the entire system.
-- **Compliance**: Meet regulatory requirements by controlling access to sensitive data.
 
 ## Configure Row Level Access Control in Rhize BAAS
 
