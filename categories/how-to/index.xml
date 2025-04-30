@@ -8723,15 +8723,8 @@ title="Copy code"
 &lt;h2>Filter queries&lt;span class="hx-absolute -hx-mt-20" id="filter-queries">&lt;/span>
 &lt;a href="#filter-queries" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Rhize also has many queries to filter or return subsets of items.
 To learn how to filter, read &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/filter/" >Use query filters&lt;/a>.&lt;/p></description></item><item><title>Row Level Access Control</title><link>https://docs.rhize.com/deploy/install/row-level-access-control/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/deploy/install/row-level-access-control/</guid><description>
-&lt;p>Row Level Access Control (RLAC) is a security mechanism that restricts access to specific rows of data based on user roles and permissions. This provides a way to enforce fine-grained access policies and ensure that users can access only the data they are authorized to see.
-For example, in a contract manufacturing organization (CMO), RLAC enables the CMO to access and manage their specific data while allowing the parent company to view all data across the organization.&lt;/p>
-&lt;p>The benefits of enabling row level access control include:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Data Segmentation&lt;/strong>. Partition data based on roles, ensuring that sensitive information is accessible to only authorized users.&lt;/li>
-&lt;li>&lt;strong>Enhanced Security&lt;/strong>. Reduce the risk of unauthorized access by enforcing strict access policies.&lt;/li>
-&lt;li>&lt;strong>Operational specialization&lt;/strong>: Allow CMOs access to their specific data while maintaining oversight of the entire system.&lt;/li>
-&lt;li>&lt;strong>Compliance&lt;/strong>: Meet regulatory requirements by controlling access to sensitive data.&lt;/li>
-&lt;/ul>
+&lt;p>Row Level Access Control (RLAC) restricts access to specific rows of data based on user roles and permissions. This provides a way to enforce fine-grained access policies and ensure that users can access only the data they are authorized to see.&lt;/p>
+&lt;p>For example, in a contract manufacturing organization (CMO), RLAC enables the CMO to access and manage their specific data while allowing the parent company to view all data across the organization.&lt;/p>
 &lt;h2>Configure Row Level Access Control in Rhize BAAS&lt;span class="hx-absolute -hx-mt-20" id="configure-row-level-access-control-in-rhize-baas">&lt;/span>
 &lt;a href="#configure-row-level-access-control-in-rhize-baas" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configure RLAC in Rhize BAAS through the &lt;code>alpha.scopemap.scopemap.json&lt;/code> property in the &lt;code>values.yaml&lt;/code> file of the BAAS Helm chart.
 The scope map is a JSON file that defines rules, actions, jurisdictions, and resources. These rules combine OpenID Connect (OIDC) roles with resources and actions across jurisdictions (modeled as &lt;abbr title="The scope of the exchanged information, such as a site or area, for which the information is relevant. The scope identifies associated instances of objects such as material, personnel, and equipment">hierarchy scope&lt;/abbr>s in ISA-95).&lt;/p>
