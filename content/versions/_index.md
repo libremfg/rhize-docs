@@ -1,11 +1,12 @@
 ---
 Title: Documentation archive
 description: An archive of documentation for old Rhize versions.
-cascade:
-  noindex: true
-  excludeSearch: true
-  sidebar:
-    exclude: true
+sidebar:
+  exclude: true
+params:
+  cascade:
+    noindex: true
+    excludeSearch: true
 ---
 
 {{< card-list >}}
