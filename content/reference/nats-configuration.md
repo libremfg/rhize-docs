@@ -11,7 +11,7 @@ Rhize uses the [NATS message broker](https://nats.io/) for its publish-subscribe
 Through NATS, Rhize can decouple services, exchange messages in real-time,
 and receive event data from all levels of the operation.
 
-These sections describe NATS parameters that are particularly relevant to Rhize's configuration.
+These sections describe NATS parameters that are particularly relevant to Rhize configuration.
 For general use, refer to the [NATS official documentation](https://docs.nats.io/nats-concepts/overview).
 
 ## Reserved topics

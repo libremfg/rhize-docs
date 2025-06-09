@@ -10,7 +10,7 @@ weight: 200
 ---
 
 In the following topics, learn how to use Rhize's BPMN engine to orchestrate processes.
-Coordinate tasks between different systems, transform and calculate data, set triggers to run workflows automatically.
+Coordinate tasks between different systems, transform and calculate data, and set triggers to run workflows automatically.
 
 
 {{< card-list >}}

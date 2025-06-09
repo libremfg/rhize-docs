@@ -16,13 +16,13 @@ images:
 
 This document provides examples of how you can use Rhize to automatically ingest data from various sources and store it in a standardized ISA-95 schema.
 The examples here are to produce an Electronic Batch Record, an important use case in pharmaceutical manufacturing.
-However, the process described here is very similar to what data collection would like when integrating with any third-party system (such as an MRP, CMMS, and so on), no matter the type of manufacturing process.
+However, the process described here is very similar to what data collection would look like when integrating with any third-party system (such as an MRP, CMMS, and so on), regardless of the type of manufacturing process.
 
 The procedure has the following steps:
 
 1. Identify the sources of data.
 1. Map the fields for these data sources to Rhize's ISA-95 schema.
-1. Write {{< abbr "BPMN" >}} processes that listen for relevant eBR events and transform the incoming data to the ISA-95 schema.
+1. Write {{< abbr "BPMN" >}} processes that listen for relevant eBR events and transform incoming data to the ISA-95 schema.
 1. After the batch finishes, query the database with the fields for your {{< abbr "ebr" >}}.
 
 The following sections describe this process in a bit more detail.

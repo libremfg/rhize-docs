@@ -9,16 +9,16 @@ images:
   - "/images/og/rhize-mdh-graphic.png"
 ---
 
-This article explains what the components of a _Manufacturing Data Hub_ (MDH) are and why the system must have these particular components to meet the needs of large, modern manufacturing environments.
+This article explains the components of a _Manufacturing Data Hub_ (MDH) and why the system must have these particular components to meet the needs of large, modern manufacturing environments.
 
-In another phrasing, this article explains why Rhize made the choices it did to become the world's first manufacturing data hub.
+In other words, this article explains why Rhize made the choices it did to become the world's first manufacturing data hub.
 For introductory explanations about Rhize in particular,
 read [What is Rhize?]({{< relref "../get-started/introduction" >}}) and [How Rhize works]({{< relref "../get-started/how-rhize-works" >}}).
 
 ## What is an MDH?
 
-A manufacturing data hub is a system that collects all manufacturing events, stores them in a standard model, and has a programmable engine that can run user logic to receive, transform, and send messages across different devices in a manufacturing operation.
-As it comes with all the necessary backend components&mdash;message handling, logic, and storage&mdash;an MDH also serves as a backend for manufacturers to build custom MES and MOM applications.
+A manufacturing data hub is a system that collects all manufacturing events, stores them in a standard model, and has a programmable engine that runs user logic to receive, transform, and send messages across different devices in a manufacturing operation.
+Since it comes with all the necessary backend components—message handling, logic, and storage—an MDH also serves as a backend for manufacturers to build custom MES and MOM applications.
 
 
 {{< bigFigure
@@ -29,8 +29,8 @@ src="/images/arch/diagram-rhize-simplified-mdh.png"
 
 ### Components
 
-An MDH is not only a storage or message system.
-It is a coherent system of interrelated parts and interfaces whose components include the following:
+An MDH is not just a storage or message system.
+It is a coherent system of interrelated parts and interfaces with the following components:
 
 - A high-performance graph database with a standardized schema
 - A data model based on manufacturing standards
@@ -43,7 +43,7 @@ It is a coherent system of interrelated parts and interfaces whose components in
 
 ### Technical requirements
 
-Besides its components and features, Rhize is also explicitly designed to meet the needs of a manufacturing operation of any scale.
+Besides its components and features, Rhize is explicitly designed to meet the needs of manufacturing operations of any scale.
 This goal requires a high standard of operational performance, robustness, and extensibility:
 
 - **Zero Downtime Architecture.** A data hub such as Rhize is used in mission-critical environments that run every hour of every day. Outages are unacceptable. Operators must be able to update every component of the system without taking it offline.
