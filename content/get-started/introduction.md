@@ -3,46 +3,46 @@ title: 'What is Rhize?'
 date: '2023-09-26T12:25:46-03:00'
 draft: false
 categories: "concepts"
-description: A Hub to join all manufacturing data in place. Build manufacturing execution systems do deep analysis.
+description: A hub to join all manufacturing data in place. Build manufacturing execution systems and do deep analysis.
 weight: 1
 ---
 
 Rhize is a real-time, event-driven [manufacturing data hub]({{< relref "../explanations/manufacturing-data-hub" >}}).
 It unites data analysis, event monitoring, and process execution in one platform.
-Its interface and architecture is designed to conform to your processes.
-We assume nothing about what your manufacturing workflows look like.
+Its interface and architecture are designed to conform to your processes.
+We assume nothing about what your operations looks like.
 
 Rhize has only one strong opinion: all manufacturing objects and data must be modeled on the [ISA-95 standard](https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa95).
 This standards-based schema is how Rhize connects every data event across an entire operation.
-If you aren't an ISA-95 fan, we're happy to convert you, but adoption is a requirement to use the platform.
+If you aren't an ISA-95 fan, we're happy to convert you, but you must adopt it to use the platform.
 
 And if you do adopt ISA-95, you open your organization to Rhize's far-reaching transformations.
 
 ## A data hub for manufacturing
 
 Rhize is a data hub that collects, stores, integrates, and processes data from your manufacturing system.
-Rhize accepts the _event_ as the driver of change in manufacturing state.
+Rhize accepts the _event_ as the driver of change in a manufacturing operation.
 Its architecture is designed to receive and process message events emitted from the operation in real time.
 
-To make each event coherent in the context of all others, it must conform to a standard.
+To make each event coherent in the context of all others, the event object must conform to a standard.
 Rhize uses the ISA-95 standard as its data model, and the database schema is the most complete digital representation of ISA-95 in the world.
 The flexibility of ISA-95 scales to an entire enterprise operation, and future changes in processes require no ad-hoc changes of the schema.
 
-The database represents data as a single graph, a structure ideally suited for the association of nodes and edges inherent in ISA-95.
+The database represents data as a single graph, a structure ideally suited for the node and edge associations inherent in ISA-95.
 The database is exposed through a single GraphQL endpoint.
-Besides keeping the interface small, the GraphQL query language coheres exactly with the underlying graph model.
+Besides keeping the interface small, the GraphQL query language aligns exactly with the underlying graph model.
 
-The API is totally open, meaning that your operators can use it as a backend to build any MES, MOM, and data-science applications that they want.
-Rhize also has a built-in low-code BPMN workflow creator, so operators can write logic to handle event data with only API calls and JSON transformation.
+The API is completely open. Your operators can use it as a backend to build any MES, MOM, and data-science applications they want.
+Rhize also has a built-in low-code BPMN workflow creator, so operators can write logic to handle event data using only API calls and JSON transformation.
 
-Finally, Rhize's architecture supports distributed deployment, and its components are loosely coupled microservices.
+Rhize's architecture supports distributed deployment, and its components are loosely coupled microservices.
 This clustered approach is necessary for organizations to scale horizontally and maintain high reliability.
 
 ## A tool that fits to your processes
 
 The development of Rhize is the culmination of decades of experience from real practitioners.
-We know that manufacturing is messy, and each process has thousands of particulars.
-Even within the same company and segment, processes frequently differ from site to site.
+We know manufacturing is messy, and each process has thousands of particulars.
+Even within the same company and segment, processes often differ from site to site.
 
 Our design philosophy empowers manufacturing operators to shape their tool for their work demands.
 Some examples of the flexibility include:

@@ -15,7 +15,7 @@ The Rhize API represents calendars through the `workCalendar` entity,
 which has close associations with the {{< abbr "equipment" >}} and {{< abbr "hierarchy scope" >}} models.
 
 Rhize also has a `calendar` service that periodically queries the Rhize DB for workCalendarDefinitions.
-If it finds active definitions for that period, the service creates the work calendar entries and persists the data to a time-series database
+If it finds active definitions for that period, the service creates work calendar entries and persists the data to a time-series database.
 
 {{< callout type="info" >}}
 Rhize's implementation of work calendars was inspired by ISO/TR

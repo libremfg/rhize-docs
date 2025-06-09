@@ -1,7 +1,7 @@
 ---
 title: >-
   Genealogy
-description: The Rhize guide to modelling and querying the forward and backward genealogy of a material lot
+description: The Rhize guide to modeling and querying the forward and backward genealogy of a material lot
 categories: ["howto", "use-cases"]
 weight: 0100
 images:
@@ -12,20 +12,20 @@ icon: finger-print
 This document provides a high-level overview of how to use Rhize for material genealogy.
 
 In manufacturing, a _genealogy_ is the record of what a material contains or what it is now a part of.
-As its name implies, genealogy represents the family tree of the material.
-A material genealogy can help manufacturers in multiple ways:
-- Prevent product recalls by isolating deviations early in the material flow
-- Decrease recall time by having a complete record of where material starts and ends
-- Help build reports and analysis of material deviations
+As its name implies, genealogy represents the family tree of material.
+A material genealogy helps manufacturers in multiple ways:
+- Prevent product recalls by isolating deviations early in material flow
+- Decrease recall time by maintaining a complete record of where material starts and ends
+- Build reports and analysis of material deviations
 - Create documentation and compliance records for material tracking
 
 Rhize provides a standards-based schema to represent material at all levels of granularity.
 The graph structure of its DB has built-in properties to associate material lots with other information about planned and performed work.
-This database has a GraphQL API, which can pull full genealogies from terse queries.
-As such, Rhize makes an **ideal backend to use for genealogical use cases**.
+This database has a GraphQL API that can pull full genealogies from terse queries.
+Rhize makes an **ideal backend for genealogical use cases**.
 
 
-```echart width="80%" heigh="600px"
+```echart width="80%" height="600px"
 const option = {
   title: {
     subtext:
@@ -210,7 +210,7 @@ query forwardGenealogy{
 {{< /tab >}} 
 {{</ tabs >}}
 
-You can also modify the query to include more fields, levels, or get the forward and backward genealogy.
+You can modify the query to include more fields, levels, or get the forward and backward genealogy.
 For an idea of how a more complete query would look, refer to the [Examples](#examples) section.
 
 
@@ -225,7 +225,7 @@ In ISA-95 terminology, the lineage of each material is expressed through the fol
 - **Material lots.** Unique amounts of identifiable material. For example, a material lot might be a camshaft in an engine or a package of sugar from a supplier.
 - **Material Sublots.** Uniquely identifiable parts of a material lot. For example, if a box of consumer-packaged goods represents a material lot, the individual serial numbers of the packages within might be the material sublots. Each sublot is unique, but multiple sublots may share properties from their parent material lot (for example, the expiry date).
 
-The relationship between lots are expressed through the following properties :
+The relationship between lots is expressed through the following properties:
 - `isAssembledFromMaterial[Sub]lot` and `isComponentOf[Sub]lot`. The material lots or sublots that went into another material.
 - `parentMaterialLot` and `childSubLot`. The relationships between a material lot and its sublots.
 

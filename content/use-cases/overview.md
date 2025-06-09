@@ -2,27 +2,25 @@
 title: >-
   Overview of use cases
 description: >-
-  Handle manufacturing events, access the knowledge graph of the operation, build custom MOM applications. 
+  Handle manufacturing events, access the knowledge graph of the operation, and build custom MOM applications. 
 weight: 1
 ---
 
 Rhize's flexible, event-centric architecture serves many functions.
 While Rhize has components that can replace an {{< abbr "MES" >}}, historian, andon, and real-time monitoring solutions,
-it can complement them just as well.
-You can map data from an MES or {{< abbr "ERP" >}} into the database, creating a coherent data model to unite your operations IT.
+it can complement them equally well.
+You can map data from an MES or {{< abbr "ERP" >}} into the database to create a coherent data model that unites your operations IT.
 
-Besides better performance and flexibility, Rhize has far tighter integration of plant and system data.
-Yet, its data model is generic enough to conform to may use cases, chiefly:
+Besides better performance and flexibility, Rhize provides tighter integration of plant and system data.
+Its data model is generic enough to conform to many use cases, chiefly:
 - **A manufacturing knowledge graph**. Query the entire context and history of the operation.
 - **Headless MES or MOM**. Use the API to build custom applications for a variety of MES and MOM activities.
 - **An event handler**. Receive manufacturing message streams and react to them.
 
-Of course, each of these use cases has many uses cases.
-These use cases of Rhize are already implemented in discrete, continuous, and batch manufacturing operations.
 
 ## Manufacturing knowledge graph
 
-All data that Rhize collects, whether from sensors or an ERP, is contextual and interconnected. Rather than a relational database, Rhize uses a graph database, where any node can link to any other, and users can query any data combination, without requiring complex joins.
+All data that Rhize collects, whether from sensors or an ERP, is contextual and interconnected. Rather than a relational database, Rhize uses a graph database where any node can link to any other. Users can query any data combination without requiring complex joins.
 
 The graph database unlocks new possibilities for manufacturing analysis and data science.
 For example:

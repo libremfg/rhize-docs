@@ -1,6 +1,6 @@
 ---
 title: How to speak ISA-95
-description: More than a standard, ISA-95 is a specialized vocabulary that describes all elements of manufacturing operation.
+description: More than a standard, ISA-95 is a specialized vocabulary that describes all elements of a manufacturing operation.
 icon: chat-alt-2
 weight: 100
 images:
@@ -15,15 +15,15 @@ When you speak with other manufacturing stakeholders, you can use the standard's
 The standard also describes how different manufacturing entities relate to each other.
 [With the right application architecture](https://rhize.com/blog/reframing-perspective-on-isa95/),
 these relationships can form a complete and coherent data model of a full manufacturing operation.
-Thus learning how to speak the language of ISA-95 can help standardize communication between both humans and machines.
+Learning how to speak the language of ISA-95 can help standardize communication between humans and machines.
 
-However, while ISA-95 is not as complex as a natural human language, it is lengthy. This document provides a brief introduction to some essential terminology.
+While ISA-95 is not as complex as a natural human language, it is lengthy. This document provides a brief introduction to essential terminology.
 
 ## Foundational concepts
 
 The following concepts frame all conversation that involves ISA-95.
-If you are a manufacturing veteran, they might be familiar to you.
-But a high-level review never hurt anyone.
+If you are a manufacturing veteran, these might be familiar to you.
+But a high-level review never hurts.
 
 ### The levels of a manufacturing operation
 
@@ -37,7 +37,7 @@ width="80%"
 Discussions that involve ISA-95 frequently reference the _levels_ of a system.
 You may hear phrases like "this workflow integrates level-4 data with level-3 activities,"
 or "the batch is a level-3 construct".
-In this context, _level_ corresponds the degree of granularity necessary to discuss and exchange data for different purposes in the manufacturing operation.
+In this context, _level_ corresponds to the degree of granularity necessary to discuss and exchange data for different purposes in the manufacturing operation.
 
 
 
