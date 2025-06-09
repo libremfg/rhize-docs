@@ -17,8 +17,6 @@ Its data model is generic enough to conform to many use cases, chiefly:
 - **Headless MES or MOM**. Use the API to build custom applications for a variety of MES and MOM activities.
 - **An event handler**. Receive manufacturing message streams and react to them.
 
-Each of these use cases has many sub-use cases.
-These Rhize use cases are already implemented in discrete, continuous, and batch manufacturing operations.
 
 ## Manufacturing knowledge graph
 

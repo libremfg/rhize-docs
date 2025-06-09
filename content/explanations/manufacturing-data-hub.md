@@ -30,7 +30,7 @@ src="/images/arch/diagram-rhize-simplified-mdh.png"
 ### Components
 
 An MDH is not just a storage or message system.
-It is a coherent system of interrelated parts and interfaces with the following components:
+It is a coherent system of interrelated parts and interfaces, whose components include:
 
 - A high-performance graph database with a standardized schema
 - A data model based on manufacturing standards

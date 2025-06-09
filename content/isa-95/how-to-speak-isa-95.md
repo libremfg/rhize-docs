@@ -10,7 +10,7 @@ aliases:
 ---
 
 [ISA-95](https://www.isa.org/store?query=isa95) provides a common language to discuss manufacturing.
-When you speak with other manufacturing stakeholders, you can use the standard's precise vocabulary to ensure everyone speaks about the same thing.
+When you speak with other manufacturing stakeholders, you can use the standard's precise vocabulary to ensure that everyone is speaking about the same thing.
 
 The standard also describes how different manufacturing entities relate to each other.
 [With the right application architecture](https://rhize.com/blog/reframing-perspective-on-isa95/),
@@ -23,7 +23,7 @@ While ISA-95 is not as complex as a natural human language, it is lengthy. This 
 
 The following concepts frame all conversation that involves ISA-95.
 If you are a manufacturing veteran, these might be familiar to you.
-A high-level review never hurts.
+But a high-level review never hurts.
 
 ### The levels of a manufacturing operation
 

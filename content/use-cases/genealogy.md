@@ -9,7 +9,7 @@ images:
 icon: finger-print
 ---
 
-This document provides a high-level overview of how you can use Rhize for material genealogy.
+This document provides a high-level overview of how to use Rhize for material genealogy.
 
 In manufacturing, a _genealogy_ is the record of what a material contains or what it is now a part of.
 As its name implies, genealogy represents the family tree of material.
@@ -231,7 +231,7 @@ The relationship between lots is expressed through the following properties:
 
 Note that these properties are symmetrical. If lot `final-1` has the property `{isAssembledFromMaterialLot: "intermediate-1"`},
 then lot `intermediate-1` has the property `{isComponentOfMaterialLot: "final-1" }`.
-The graph structure of RhizeDB creates these links automatically.
+The graph structure of the RhizeDB creates these links automatically.
   
 
 {{< callout type="info" >}}
