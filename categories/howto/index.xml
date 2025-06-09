@@ -5,12 +5,12 @@
 &lt;/blockquote>
 &lt;p>This document provides examples of how you can use Rhize to automatically ingest data from various sources and store it in a standardized ISA-95 schema.
 The examples here are to produce an Electronic Batch Record, an important use case in pharmaceutical manufacturing.
-However, the process described here is very similar to what data collection would like when integrating with any third-party system (such as an MRP, CMMS, and so on), no matter the type of manufacturing process.&lt;/p>
+However, the process described here is very similar to what data collection would look like when integrating with any third-party system (such as an MRP, CMMS, and so on), regardless of the type of manufacturing process.&lt;/p>
 &lt;p>The procedure has the following steps:&lt;/p>
 &lt;ol>
 &lt;li>Identify the sources of data.&lt;/li>
 &lt;li>Map the fields for these data sources to Rhize&amp;rsquo;s ISA-95 schema.&lt;/li>
-&lt;li>Write &lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling">BPMN&lt;/abbr> processes that listen for relevant eBR events and transform the incoming data to the ISA-95 schema.&lt;/li>
+&lt;li>Write &lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling">BPMN&lt;/abbr> processes that listen for relevant eBR events and transform incoming data to the ISA-95 schema.&lt;/li>
 &lt;li>After the batch finishes, query the database with the fields for your &lt;abbr title="Electronic batch report. A detailed report for a batch in a pharmaceutical process, logging items such as the process segments, personnel, equipment, material substance and weight, and so on">eBR&lt;/abbr>.&lt;/li>
 &lt;/ol>
 &lt;p>The following sections describe this process in a bit more detail.&lt;/p>
@@ -1293,18 +1293,18 @@ As always, you have a few options. Here are a few, from least to most interactiv
 For example, if you want a detailed report for the movement of material, you can combine the queries here with a query for a &lt;a href="https://docs.rhize.com/versions/v3.0.3/use-cases/genealogy/" >material lot genealogy&lt;/a>. This would provide a detailed report for every job that involved an ancestor or descendent of the queried material.&lt;/p></description></item><item><title>Genealogy</title><link>https://docs.rhize.com/use-cases/genealogy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/use-cases/genealogy/</guid><description>
 &lt;p>This document provides a high-level overview of how to use Rhize for material genealogy.&lt;/p>
 &lt;p>In manufacturing, a &lt;em>genealogy&lt;/em> is the record of what a material contains or what it is now a part of.
-As its name implies, genealogy represents the family tree of the material.
-A material genealogy can help manufacturers in multiple ways:&lt;/p>
+As its name implies, genealogy represents the family tree of material.
+A material genealogy helps manufacturers in multiple ways:&lt;/p>
 &lt;ul>
-&lt;li>Prevent product recalls by isolating deviations early in the material flow&lt;/li>
-&lt;li>Decrease recall time by having a complete record of where material starts and ends&lt;/li>
-&lt;li>Help build reports and analysis of material deviations&lt;/li>
+&lt;li>Prevent product recalls by isolating deviations early in material flow&lt;/li>
+&lt;li>Decrease recall time by maintaining a complete record of where material starts and ends&lt;/li>
+&lt;li>Build reports and analysis of material deviations&lt;/li>
 &lt;li>Create documentation and compliance records for material tracking&lt;/li>
 &lt;/ul>
 &lt;p>Rhize provides a standards-based schema to represent material at all levels of granularity.
 The graph structure of its DB has built-in properties to associate material lots with other information about planned and performed work.
-This database has a GraphQL API, which can pull full genealogies from terse queries.
-As such, Rhize makes an &lt;strong>ideal backend to use for genealogical use cases&lt;/strong>.&lt;/p>
+This database has a GraphQL API that can pull full genealogies from terse queries.
+Rhize makes an &lt;strong>ideal backend for genealogical use cases&lt;/strong>.&lt;/p>
 &lt;script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js">&lt;/script>
 &lt;div id=echart-000 style="width: 100%;height: 600px;">&lt;/div>
 &lt;script type="text/javascript">
@@ -1515,7 +1515,7 @@ title="Copy code"
 &lt;/div>
 &lt;/div>
 &lt;/div>
-&lt;p>You can also modify the query to include more fields, levels, or get the forward and backward genealogy.
+&lt;p>You can modify the query to include more fields, levels, or get the forward and backward genealogy.
 For an idea of how a more complete query would look, refer to the &lt;a href="#examples" >Examples&lt;/a> section.&lt;/p>
 &lt;h2>Background: material entities in Rhize&lt;span class="hx-absolute -hx-mt-20" id="background-material-entities-in-rhize">&lt;/span>
 &lt;a href="#background-material-entities-in-rhize" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-orange-100 hx-bg-orange-50 hx-text-orange-800 dark:hx-border-orange-400/30 dark:hx-bg-orange-400/20 dark:hx-text-orange-300">
@@ -1530,7 +1530,7 @@ read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/" >How to spe
 &lt;li>&lt;strong>Material lots.&lt;/strong> Unique amounts of identifiable material. For example, a material lot might be a camshaft in an engine or a package of sugar from a supplier.&lt;/li>
 &lt;li>&lt;strong>Material Sublots.&lt;/strong> Uniquely identifiable parts of a material lot. For example, if a box of consumer-packaged goods represents a material lot, the individual serial numbers of the packages within might be the material sublots. Each sublot is unique, but multiple sublots may share properties from their parent material lot (for example, the expiry date).&lt;/li>
 &lt;/ul>
-&lt;p>The relationship between lots are expressed through the following properties :&lt;/p>
+&lt;p>The relationship between lots is expressed through the following properties:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>isAssembledFromMaterial[Sub]lot&lt;/code> and &lt;code>isComponentOf[Sub]lot&lt;/code>. The material lots or sublots that went into another material.&lt;/li>
 &lt;li>&lt;code>parentMaterialLot&lt;/code> and &lt;code>childSubLot&lt;/code>. The relationships between a material lot and its sublots.&lt;/li>

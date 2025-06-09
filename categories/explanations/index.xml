@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Explanations</title><link>https://docs.rhize.com/categories/explanations/</link><description>Recent content in Explanations on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.rhize.com/categories/explanations/index.xml" rel="self" type="application/rss+xml"/><item><title>Manufacturing Data Hub</title><link>https://docs.rhize.com/explanations/manufacturing-data-hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/explanations/manufacturing-data-hub/</guid><description>
-&lt;p>This article explains what the components of a &lt;em>Manufacturing Data Hub&lt;/em> (MDH) are and why the system must have these particular components to meet the needs of large, modern manufacturing environments.&lt;/p>
-&lt;p>In another phrasing, this article explains why Rhize made the choices it did to become the world&amp;rsquo;s first manufacturing data hub.
+&lt;p>This article explains the components of a &lt;em>Manufacturing Data Hub&lt;/em> (MDH) and why the system must have these particular components to meet the needs of large, modern manufacturing environments.&lt;/p>
+&lt;p>In other words, this article explains why Rhize made the choices it did to become the world&amp;rsquo;s first manufacturing data hub.
 For introductory explanations about Rhize in particular,
 read &lt;a href="https://docs.rhize.com/get-started/introduction/" >What is Rhize?&lt;/a> and &lt;a href="https://docs.rhize.com/get-started/how-rhize-works/" >How Rhize works&lt;/a>.&lt;/p>
 &lt;h2>What is an MDH?&lt;span class="hx-absolute -hx-mt-20" id="what-is-an-mdh">&lt;/span>
-&lt;a href="#what-is-an-mdh" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>A manufacturing data hub is a system that collects all manufacturing events, stores them in a standard model, and has a programmable engine that can run user logic to receive, transform, and send messages across different devices in a manufacturing operation.
-As it comes with all the necessary backend components—message handling, logic, and storage—an MDH also serves as a backend for manufacturers to build custom MES and MOM applications.&lt;/p>
+&lt;a href="#what-is-an-mdh" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>A manufacturing data hub is a system that collects all manufacturing events, stores them in a standard model, and has a programmable engine that runs user logic to receive, transform, and send messages across different devices in a manufacturing operation.
+Since it comes with all the necessary backend components—message handling, logic, and storage—an MDH also serves as a backend for manufacturers to build custom MES and MOM applications.&lt;/p>
 &lt;figure class="big-figure">
 &lt;a href="https://docs.rhize.com/images/arch/diagram-rhize-simplified-mdh.png" target="_blank">
 &lt;img src="https://docs.rhize.com/images/arch/diagram-rhize-simplified-mdh.png" alt="simplified mdh"
@@ -14,8 +14,8 @@ width="75%"
 &lt;/a>
 &lt;/figure>
 &lt;h3>Components&lt;span class="hx-absolute -hx-mt-20" id="components">&lt;/span>
-&lt;a href="#components" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>An MDH is not only a storage or message system.
-It is a coherent system of interrelated parts and interfaces whose components include the following:&lt;/p>
+&lt;a href="#components" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>An MDH is not just a storage or message system.
+It is a coherent system of interrelated parts and interfaces, whose components include:&lt;/p>
 &lt;ul>
 &lt;li>A high-performance graph database with a standardized schema&lt;/li>
 &lt;li>A data model based on manufacturing standards&lt;/li>
@@ -27,7 +27,7 @@ It is a coherent system of interrelated parts and interfaces whose components in
 &lt;li>The IT infrastructure that this all runs on, which at a certain scale must be clustered.&lt;/li>
 &lt;/ul>
 &lt;h3>Technical requirements&lt;span class="hx-absolute -hx-mt-20" id="technical-requirements">&lt;/span>
-&lt;a href="#technical-requirements" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Besides its components and features, Rhize is also explicitly designed to meet the needs of a manufacturing operation of any scale.
+&lt;a href="#technical-requirements" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Besides its components and features, Rhize is explicitly designed to meet the needs of manufacturing operations of any scale.
 This goal requires a high standard of operational performance, robustness, and extensibility:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Zero Downtime Architecture.&lt;/strong> A data hub such as Rhize is used in mission-critical environments that run every hour of every day. Outages are unacceptable. Operators must be able to update every component of the system without taking it offline.&lt;/li>

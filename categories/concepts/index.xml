@@ -1,30 +1,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Concepts</title><link>https://docs.rhize.com/categories/concepts/</link><description>Recent content in Concepts on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 03 Oct 2023 19:39:39 -0300</lastBuildDate><atom:link href="https://docs.rhize.com/categories/concepts/index.xml" rel="self" type="application/rss+xml"/><item><title>What is Rhize?</title><link>https://docs.rhize.com/get-started/introduction/</link><pubDate>Tue, 26 Sep 2023 12:25:46 -0300</pubDate><guid>https://docs.rhize.com/get-started/introduction/</guid><description>
 &lt;p>Rhize is a real-time, event-driven &lt;a href="https://docs.rhize.com/explanations/manufacturing-data-hub/" >manufacturing data hub&lt;/a>.
 It unites data analysis, event monitoring, and process execution in one platform.
-Its interface and architecture is designed to conform to your processes.
-We assume nothing about what your manufacturing workflows look like.&lt;/p>
+Its interface and architecture are designed to conform to your processes.
+We assume nothing about what your operations looks like.&lt;/p>
 &lt;p>Rhize has only one strong opinion: all manufacturing objects and data must be modeled on the &lt;a href="https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa95" target="_blank" rel="noopener">ISA-95 standard&lt;/a>.
 This standards-based schema is how Rhize connects every data event across an entire operation.
-If you aren&amp;rsquo;t an ISA-95 fan, we&amp;rsquo;re happy to convert you, but adoption is a requirement to use the platform.&lt;/p>
+If you aren&amp;rsquo;t an ISA-95 fan, we&amp;rsquo;re happy to convert you, but you must adopt it to use the platform.&lt;/p>
 &lt;p>And if you do adopt ISA-95, you open your organization to Rhize&amp;rsquo;s far-reaching transformations.&lt;/p>
 &lt;h2>A data hub for manufacturing&lt;span class="hx-absolute -hx-mt-20" id="a-data-hub-for-manufacturing">&lt;/span>
 &lt;a href="#a-data-hub-for-manufacturing" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Rhize is a data hub that collects, stores, integrates, and processes data from your manufacturing system.
-Rhize accepts the &lt;em>event&lt;/em> as the driver of change in manufacturing state.
+Rhize accepts the &lt;em>event&lt;/em> as the driver of change in a manufacturing operation.
 Its architecture is designed to receive and process message events emitted from the operation in real time.&lt;/p>
-&lt;p>To make each event coherent in the context of all others, it must conform to a standard.
+&lt;p>To make each event coherent in the context of all others, the event object must conform to a standard.
 Rhize uses the ISA-95 standard as its data model, and the database schema is the most complete digital representation of ISA-95 in the world.
 The flexibility of ISA-95 scales to an entire enterprise operation, and future changes in processes require no ad-hoc changes of the schema.&lt;/p>
-&lt;p>The database represents data as a single graph, a structure ideally suited for the association of nodes and edges inherent in ISA-95.
+&lt;p>The database represents data as a single graph, a structure ideally suited for the node and edge associations inherent in ISA-95.
 The database is exposed through a single GraphQL endpoint.
-Besides keeping the interface small, the GraphQL query language coheres exactly with the underlying graph model.&lt;/p>
-&lt;p>The API is totally open, meaning that your operators can use it as a backend to build any MES, MOM, and data-science applications that they want.
-Rhize also has a built-in low-code BPMN workflow creator, so operators can write logic to handle event data with only API calls and JSON transformation.&lt;/p>
-&lt;p>Finally, Rhize&amp;rsquo;s architecture supports distributed deployment, and its components are loosely coupled microservices.
+Besides keeping the interface small, the GraphQL query language aligns exactly with the underlying graph model.&lt;/p>
+&lt;p>The API is completely open. Your operators can use it as a backend to build any MES, MOM, and data-science applications they want.
+Rhize also has a built-in low-code BPMN workflow creator, so operators can write logic to handle event data using only API calls and JSON transformation.&lt;/p>
+&lt;p>Rhize&amp;rsquo;s architecture supports distributed deployment, and its components are loosely coupled microservices.
 This clustered approach is necessary for organizations to scale horizontally and maintain high reliability.&lt;/p>
 &lt;h2>A tool that fits to your processes&lt;span class="hx-absolute -hx-mt-20" id="a-tool-that-fits-to-your-processes">&lt;/span>
 &lt;a href="#a-tool-that-fits-to-your-processes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The development of Rhize is the culmination of decades of experience from real practitioners.
-We know that manufacturing is messy, and each process has thousands of particulars.
-Even within the same company and segment, processes frequently differ from site to site.&lt;/p>
+We know manufacturing is messy, and each process has thousands of particulars.
+Even within the same company and segment, processes often differ from site to site.&lt;/p>
 &lt;p>Our design philosophy empowers manufacturing operators to shape their tool for their work demands.
 Some examples of the flexibility include:&lt;/p>
 &lt;ul>

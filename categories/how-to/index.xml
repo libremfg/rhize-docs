@@ -8188,7 +8188,7 @@ title="Copy code"
 &lt;/div>
 &lt;/div></description></item><item><title>Write BPMN workflows</title><link>https://docs.rhize.com/how-to/bpmn/</link><pubDate>Fri, 22 Sep 2023 14:50:39 -0300</pubDate><guid>https://docs.rhize.com/how-to/bpmn/</guid><description>
 &lt;p>In the following topics, learn how to use Rhize&amp;rsquo;s BPMN engine to orchestrate processes.
-Coordinate tasks between different systems, transform and calculate data, set triggers to run workflows automatically.&lt;/p>
+Coordinate tasks between different systems, transform and calculate data, and set triggers to run workflows automatically.&lt;/p>
 &lt;div class="hextra-cards hx-mt-4 hx-gap-4 hx-grid not-prose"
 style="--hextra-cards-grid-cols: 2;">
 &lt;a
