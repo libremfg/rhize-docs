@@ -1,11 +1,11 @@
 ---
 title: Process segments
-description: Process segments represent shared steps in a process
+description: Process segments represent shared steps across processes 
 images:
   - /images/og/graphic-rhize-process-segment-explanation.png
 ---
 
-A _process segment_ is a step in a process. 
+A _process segment_ is a step that can be shared across processes.
 Process segments are flexible information objects,
 abstract enough to be shared by multiple procedures,
 and coarse-grained enough to be appropriate for business planning and analytics.
@@ -47,10 +47,10 @@ Operational functions include:
 - To define work from a business-process perspective. More granular entities might define a route of segments to follow in specific situations. For details, read the example in the [corresponds to](#section).
 
 
-Analytical uses of process segments include:
-- To provide a way to compare different product processes that are all derived from a common procedure.
+You can also use process segments in various analytical functions, such as:
+- Comparing different product processes that are all derived from a common procedure.
   For example, the mixing segment might [correspond to](#correspond-) to the production of `mixed red juice` and `mixed blue juice`.
-- To view data and parameters for similar steps in a single aggregation.
+- Viewing data and parameters for similar steps in a single aggregation.
   For example, you might compare the average time of all jobs associated with `mixing` against the other segments to find a general process bottleneck.
 
 ## Segments vs. equipment hierarchies
