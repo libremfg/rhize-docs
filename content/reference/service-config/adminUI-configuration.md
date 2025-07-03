@@ -22,14 +22,14 @@ The Rhize Admin UI Environmental variables used for configuration.
 | `PREACT_APP_AUTH_KEYCLOAK_CLIENT_ID`        | The Keycloak Realms Client ID. <br />(Default: none, libreUI when running locally)  |
 | `PREACT_APP_AUTH_KEYCLOAK_LOGOUT_URI`       | The Keycloaks logout URL. <br />(Default: None, libre when running locally)  |
 | `PREACT_APP_AUTH_KEYCLOAK_REALM`            | The Keycloak Realm. <br />(Default: None)  |
-| `PREACT_APP_AUTH_KEYCLOAK_SECRET`           | The Keycloak Realms Client IDs Secret Key. <br />(Default: None)  |
+| `PREACT_APP_AUTH_KEYCLOAK_SECRET`           | The Keycloak Realm's Client IDs Secret Key. <br />(Default: None)  |
 | `PREACT_APP_AUTH_KEYCLOAK_SERVER_URL`       | The Keycloak Server URL. <br />(None, http://localhost:8080 when running)  |
 | `PREACT_APP_DEBUG`                          | Will put admin UI page in debug mode if true. <br />(Default: false)  |
-| `PREACT_APP_GRAPHIQL_ENABLED`               | Uses graphiql playground if true else uses apollo sandbox. <br />(Default: false)  |
+| `PREACT_APP_GRAPHIQL_ENABLED`               | Uses GraphiQL playground if true else uses apollo sandbox. <br />(Default: false)  |
 | `PREACT_APP_LIBRE_DATA_MIGRATION_URI`       | The migration URI. This one is not being used currently in the admin UI but is commented out  |
 | `PREACT_APP_LIBRE_PAGE_LIMIT`               | The libre table page size. <br />(Default: 15)  |
 | `PREACT_APP_LIBRE_VERSION`                  | The libre version. <br />(Default: none)  |
-| `PREACT_APP_MAPBOX_API_KEY`                 | The mapbox access token api key. <br />(Default: none)  |
+| `PREACT_APP_MAPBOX_API_KEY`                 | The Mapbox access token API key. <br />(Default: none)  |
 | `PREACT_APP_VERSION`                        | The schema version. <br />(Default: none)  |
 | `PREACT_APP_WORK_MASTER_UI_ENABLED`         | Uses the new work master page if true, else uses old work master page.  |
 
@@ -39,7 +39,7 @@ The Rhize Admin UI Environmental variables used for configuration.
 
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `CYPRESS_FRONTEND_TESTING_DOMAIN`    | The Cypress Frontend Testing Domain url <br />            |
+| `CYPRESS_FRONTEND_TESTING_DOMAIN`    | The Cypress Frontend Testing Domain URL <br />            |
 | `CYPRESS_LOGIN_ADMIN_EMAIL`          | The Cypress Testing Email. <br />                  |
 | `CYPRESS_LOGIN_ADMIN_PASSWORD`       | The Cypress Testing Password. <br />              |
 
