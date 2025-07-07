@@ -4,6 +4,7 @@
 APIs
 Appsmith
 Bitnami
+Dockerfile
 Grafana
 JSONata
 JWT
@@ -12,7 +13,9 @@ JetStream
 KPI
 KPIs
 Keycloak
+Mapbox
 NATS
+Preact
 URI
 URIs
 [Aa]ctuals
