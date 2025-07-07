@@ -20,9 +20,9 @@ The Rhize Admin UI Environmental variables used for configuration.
 | `PREACT_APP_APOLLO_JSONATA_CLIENT`          | The JSONata Client URL used for running the JSONata playground. <br />(Default: none)  |
 | `PREACT_APP_APPSMITH_PORTAL`                | Shows the Appsmith portal page in the admin UI if true. <br />(Default: false)  |
 | `PREACT_APP_AUTH_KEYCLOAK_CLIENT_ID`        | The Keycloak Realms Client ID. <br />(Default: none, libreUI when running locally)  |
-| `PREACT_APP_AUTH_KEYCLOAK_LOGOUT_URI`       | The Keycloaks logout URL. <br />(Default: None, libre when running locally)  |
+| `PREACT_APP_AUTH_KEYCLOAK_LOGOUT_URI`       | The Keycloak logout URL. <br />(Default: None, libre when running locally)  |
 | `PREACT_APP_AUTH_KEYCLOAK_REALM`            | The Keycloak Realm. <br />(Default: None)  |
-| `PREACT_APP_AUTH_KEYCLOAK_SECRET`           | The Keycloak Realm's Client IDs Secret Key. <br />(Default: None)  |
+| `PREACT_APP_AUTH_KEYCLOAK_SECRET`           | The Keycloak Realms Client IDs Secret Key. <br />(Default: None)  |
 | `PREACT_APP_AUTH_KEYCLOAK_SERVER_URL`       | The Keycloak Server URL. <br />(None, http://localhost:8080 when running)  |
 | `PREACT_APP_DEBUG`                          | Will put admin UI page in debug mode if true. <br />(Default: false)  |
 | `PREACT_APP_GRAPHIQL_ENABLED`               | Uses GraphiQL playground if true else uses apollo sandbox. <br />(Default: false)  |
@@ -50,4 +50,4 @@ The Rhize Admin UI Environmental variables used for configuration.
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `PREACT_APP_NAME`                    | This one is not being used anywhere in the admin UI, just shows up in .env.example and Dockerfile.  Probably Deprecated                  |
-| `PREACT_APP_PRODUCTION`              | This one is not being used anywhere in the admin UI, just shows up in Dockefile. Probably Deprecated                   |
+| `PREACT_APP_PRODUCTION`              | This one is not being used anywhere in the admin UI, just shows up in Dockerfile. Probably Deprecated                   |
