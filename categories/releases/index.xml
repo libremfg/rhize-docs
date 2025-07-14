@@ -1,4 +1,156 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Releases</title><link>https://docs.rhize.com/categories/releases/</link><description>Recent content in Releases on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 28 Feb 2025 12:38:30 -0500</lastBuildDate><atom:link href="https://docs.rhize.com/categories/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>3.1.0</title><link>https://docs.rhize.com/releases/3-1-0/</link><pubDate>Fri, 28 Feb 2025 12:38:30 -0500</pubDate><guid>https://docs.rhize.com/releases/3-1-0/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Releases</title><link>https://docs.rhize.com/categories/releases/</link><description>Recent content in Releases on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 01 Jul 2025 15:13:10 -0400</lastBuildDate><atom:link href="https://docs.rhize.com/categories/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>3.2.0</title><link>https://docs.rhize.com/releases/3-2-0/</link><pubDate>Tue, 01 Jul 2025 15:13:10 -0400</pubDate><guid>https://docs.rhize.com/releases/3-2-0/</guid><description>
+&lt;p>Release notes for version 3.2.0 of the Rhize application.&lt;/p>
+&lt;p>&lt;em>Release date:&lt;/em>
+1 Jul 2025&lt;/p>
+&lt;h2>Changes by service&lt;span class="hx-absolute -hx-mt-20" id="changes-by-service">&lt;/span>
+&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The following sections document the changes this release brings to each service.&lt;/p>
+&lt;h3>Admin&lt;span class="hx-absolute -hx-mt-20" id="admin">&lt;/span>
+&lt;a href="#admin" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;h4>Fix&lt;span class="hx-absolute -hx-mt-20" id="fix">&lt;/span>
+&lt;a href="#fix" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>Fix character set in Personnel Class form&amp;rsquo;s include properties of search to allow for capitalized characters&lt;/li>
+&lt;li>Fix label on personnel class change version change to align with entity name&lt;/li>
+&lt;li>Fix personnel class change version state disable condition to allow for draft&lt;/li>
+&lt;li>Fix segment editor dependency save&lt;/li>
+&lt;/ul>
+&lt;h3>BPMN engine&lt;span class="hx-absolute -hx-mt-20" id="bpmn-engine">&lt;/span>
+&lt;a href="#bpmn-engine" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;h4>Fix&lt;span class="hx-absolute -hx-mt-20" id="fix-1">&lt;/span>
+&lt;a href="#fix-1" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>Fix getInstance race condition&lt;/li>
+&lt;li>Fix repeated call activity error logging &amp;amp; add span end to error return&lt;/li>
+&lt;/ul>
+&lt;h3>Schema&lt;span class="hx-absolute -hx-mt-20" id="schema">&lt;/span>
+&lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>No changes, releasing in step with other software repositories.&lt;/p>
+&lt;h3>BAAS&lt;span class="hx-absolute -hx-mt-20" id="baas">&lt;/span>
+&lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;h4>Add&lt;span class="hx-absolute -hx-mt-20" id="add">&lt;/span>
+&lt;a href="#add" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>Add kafka producer maximum message size&lt;/li>
+&lt;li>Add @custom directive&lt;/li>
+&lt;li>Add websocket transport to allow for to GraphQL Subscriptions&lt;/li>
+&lt;li>Add http change-data-capture sink&lt;/li>
+&lt;li>Add admin resolver for query:lookup, mutation:rollup, mutation:recoverSplitList &amp;amp; mutation:indexRebuild&lt;/li>
+&lt;li>Add logging to badger ErrTooBig&lt;/li>
+&lt;/ul>
+&lt;h4>Change&lt;span class="hx-absolute -hx-mt-20" id="change">&lt;/span>
+&lt;a href="#change" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>Change NATS Sink handler to support new CDC Format&lt;/li>
+&lt;li>Change badger to v4 from v3&lt;/li>
+&lt;li>Change ristretto to v2 from v1&lt;/li>
+&lt;li>Change protobuf for badger and regenerate&lt;/li>
+&lt;li>Change postings cache to align with generic declaration in ristretto v2&lt;/li>
+&lt;li>Change postinglistCountAndLength function to improve performance&lt;/li>
+&lt;li>Change ioutil.ReadAll to io.ReadAll and ioutil.TempDir to os.MkdirTemp&lt;/li>
+&lt;/ul>
+&lt;h4>Fix&lt;span class="hx-absolute -hx-mt-20" id="fix-2">&lt;/span>
+&lt;a href="#fix-2" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>Fix cascade directive field arguments not being coerced to lists&lt;/li>
+&lt;li>Fix deleteBelowTs rollup issue&lt;/li>
+&lt;li>Fix incrRollupi Process ensure to consistent use of time units to prevent erroneous cleanup&lt;/li>
+&lt;li>Fix performance issue in type filter&lt;/li>
+&lt;li>Fix resolution of _Any scalar type by moving from apolloSchemaExtras to schemaInputs&lt;/li>
+&lt;li>Fix RLAC resources not evaluated correctly&lt;/li>
+&lt;li>Fix the conflict in accessing split parts during a rollUp&lt;/li>
+&lt;li>Fix validation panic on type check&lt;/li>
+&lt;li>Fix wal replay issue during rollup&lt;/li>
+&lt;li>Fix wget urls for large datasets in testing pipeline&lt;/li>
+&lt;/ul>
+&lt;h4>Remove&lt;span class="hx-absolute -hx-mt-20" id="remove">&lt;/span>
+&lt;a href="#remove" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>Remove Ludicrous mode from postings&lt;/li>
+&lt;/ul>
+&lt;h3>Core&lt;span class="hx-absolute -hx-mt-20" id="core">&lt;/span>
+&lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;h4>Add&lt;span class="hx-absolute -hx-mt-20" id="add-1">&lt;/span>
+&lt;a href="#add-1" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>Add sort on inherited properties&lt;/li>
+&lt;/ul>
+&lt;h4>Change&lt;span class="hx-absolute -hx-mt-20" id="change-1">&lt;/span>
+&lt;a href="#change-1" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>Change golangci-lint to v2.0.1&lt;/li>
+&lt;/ul>
+&lt;h4>Fix&lt;span class="hx-absolute -hx-mt-20" id="fix-3">&lt;/span>
+&lt;a href="#fix-3" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>[CI] Fix resolution of app-config-local to use git instead of package for end-to-end test stage mock environment&lt;/li>
+&lt;li>Fix lints errors&lt;/li>
+&lt;/ul>
+&lt;h3>Agent&lt;span class="hx-absolute -hx-mt-20" id="agent">&lt;/span>
+&lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Releasing in step with other components.&lt;/p>
+&lt;h3>Audit&lt;span class="hx-absolute -hx-mt-20" id="audit">&lt;/span>
+&lt;a href="#audit" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;h4>Add&lt;span class="hx-absolute -hx-mt-20" id="add-2">&lt;/span>
+&lt;a href="#add-2" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>[CI] Add vulnerability check to CI&lt;/li>
+&lt;/ul>
+&lt;h4>Change&lt;span class="hx-absolute -hx-mt-20" id="change-2">&lt;/span>
+&lt;a href="#change-2" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>Change to use v4 rhize-go drivers to allow a https keycloak connection&lt;/li>
+&lt;li>Change &lt;code>rhize-go&lt;/code> library to v4.0.0-rc4 to allow usage of username and password in NATS configuration&lt;/li>
+&lt;/ul>
+&lt;h4>Fix&lt;span class="hx-absolute -hx-mt-20" id="fix-4">&lt;/span>
+&lt;a href="#fix-4" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>Fix relevant &lt;a href="https://pkg.go.dev/vuln/" target="_blank" rel="noopener">Go vulns&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3>Keycloak Theme&lt;span class="hx-absolute -hx-mt-20" id="keycloak-theme">&lt;/span>
+&lt;a href="#keycloak-theme" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;h4>Change&lt;span class="hx-absolute -hx-mt-20" id="change-3">&lt;/span>
+&lt;a href="#change-3" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>Change application name to Rhize&lt;/li>
+&lt;/ul>
+&lt;h3>Router&lt;span class="hx-absolute -hx-mt-20" id="router">&lt;/span>
+&lt;a href="#router" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Releasing in step with other components&lt;/p>
+&lt;h2>Compatibility&lt;span class="hx-absolute -hx-mt-20" id="compatibility">&lt;/span>
+&lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>
+&lt;div class="notices note">
+&lt;span class="type">v3.2.0 compatibility&lt;/span>
+Rhize v3.2.0 has been tested to work with the following third-party applications:
+&lt;ul>
+&lt;li>Apollo router 1.61.0&lt;/li>
+&lt;li> Grafana: 9.4.7&lt;/li>
+&lt;li> Keycloak: 21.1.2&lt;/li>
+&lt;li> Keycloak Postgres: 15.3.0&lt;/li>
+&lt;li> Loki: 2.9.12&lt;/li>
+&lt;li> NATS: 2.10.25&lt;/li>
+&lt;li> Tempo: 2.7.1&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;h2>Checksums&lt;span class="hx-absolute -hx-mt-20" id="checksums">&lt;/span>
+&lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>When you install, check the container images against these checksums:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;pre>&lt;code>Admin:
+registry.gitlab.com/libremfg/frontend/libre-admin-ui:v3.2.0
+sha256:864941865776d4edd86a88fd8c99fd72775a785afa91a8d661f386b5fcc6e4c8
+BPMN Engine:
+registry.gitlab.com/libremfg/bpmn-engine:v3.2.0
+sha256:896936bd21d938a5a61c4401733d5a82366a0a4d438ae0fd4e7bd77791fc911d
+BAAS:
+registry.gitlab.com/libremfg/baas:v3.2.0
+sha256:37abc0a2d7ee896b73c1ba930b12c30463b1caa7a12ac7734b3b7da2219c9e74
+Libre Core:
+registry.gitlab.com/libremfg/libre-core:v3.2.0
+sha256:f1cb9361e4e8a7830199a11ed07c644424863ac57915f1af894bb73944ce0d48
+Libre Agent:
+registry.gitlab.com/libremfg/libre-agent:v3.2.0
+sha256:c8fecd5dd3e215d0fe5ea894af0134e7a13ac8f72b7dc9dc85f00d9c0f2ea7fa
+Libre Audit:
+registry.gitlab.com/libremfg/libre-audit:v3.2.0
+sha256:05ade47d870cda7f3a31f0f8f18666e753ebf09442f615b4019422ce1dc9db45
+Libre Audit Postgres:
+registry.gitlab.com/libremfg/libre-audit/postgres:v3.2.0
+sha256:ac892c46b830cf2fafc053f169c39903bd8c59686e01b694bdee71036de2e3be
+Libre Keycloak Theme:
+registry.gitlab.com/libremfg/frontend/libre-keycloak-theme:v3.2.0
+sha256:5b18a80556b3bcf2a5d74a2596927e5609ec11fd14916b4b84b77b9aa9957747
+Libre Router Init:
+registry.gitlab.com/libremfg/libre-router-init:v3.2.0
+sha256:1e54635f05785cbe34b397399768555216387fddaf30227db992e6019513953a&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.2.0-checksums.txt" target="_blank" rel="noopener">Download &lt;code>v3.2.0-checksums.txt&lt;/code>&lt;/a>&lt;/p>
+&lt;h2>Upgrade&lt;span class="hx-absolute -hx-mt-20" id="upgrade">&lt;/span>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to v3.2.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade" >Upgrade instructions&lt;/a>.&lt;/p></description></item><item><title>3.1.0</title><link>https://docs.rhize.com/releases/3-1-0/</link><pubDate>Fri, 28 Feb 2025 12:38:30 -0500</pubDate><guid>https://docs.rhize.com/releases/3-1-0/</guid><description>
 &lt;p>Release notes for version 3.1.0 of the Rhize application.&lt;/p>
 &lt;p>&lt;em>Release date:&lt;/em>
 7 Mar 2025&lt;/p>

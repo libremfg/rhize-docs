@@ -1124,6 +1124,569 @@ The attributes for an entry are as follows:&lt;/p>
 &lt;td>How long the work calendar lasts, according to the &lt;a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank" rel="noopener">Duration representation&lt;/a> of IS0 8601.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
+&lt;/table></description></item><item><title>Master definitions and fields</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/model/master-definitions/</link><pubDate>Wed, 15 Nov 2023 16:29:21 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/model/master-definitions/</guid><description>
+&lt;p>To make a production object visible to the Rhize data hub, you must define it as a data model.&lt;/p>
+&lt;p>These sections document all the objects that you can add through the UI, and the fields and properties that you can associate with them.
+All these models are based on the ISA-95 standard, mostly from &lt;a href="https://www.isa.org/products/ansi-isa-95-00-02-2018-enterprise-control-system-i" target="_blank" rel="noopener">Part 2&lt;/a>, which describes the role-based equipment hierarchy.&lt;/p>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">&lt;ul>
+&lt;li>For an introduction to the language of ISA-95, read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95" >How to speak ISA-95&lt;/a>&lt;/li>
+&lt;li>For visual examples of how some of these models relate,
+look at our page of &lt;a href="https://docs.rhize.com/versions/v3.1.0/isa-95/isa-95-diagrams/" >ISA-95 Diagrams&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2>Global object fields&lt;span class="hx-absolute -hx-mt-20" id="global-object-fields">&lt;/span>
+&lt;a href="#global-object-fields" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>All objects that you define must have a unique name.
+Additionally, most objects have the following fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Global field&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Version&lt;/td>
+&lt;td>The version of the object (and each version has a &lt;a href="#version-states" >state&lt;/a>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Description&lt;/td>
+&lt;td>Freeform text to describe what the object does and help colleagues understand its role&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Version states&lt;span class="hx-absolute -hx-mt-20" id="version-states">&lt;/span>
+&lt;a href="#version-states" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Each version of an object can have the following states:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Draft&lt;/code>&lt;/li>
+&lt;li>&lt;code>Active&lt;/code>&lt;/li>
+&lt;li>&lt;code>For review&lt;/code>&lt;/li>
+&lt;li>&lt;code>Deprecated&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">When recording actual execution, what matters is version of the object, not its general definition.
+Thus, &lt;strong>to add a class to an object, you must give that object a version first.&lt;/strong>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2>Common models&lt;span class="hx-absolute -hx-mt-20" id="common-models">&lt;/span>
+&lt;a href="#common-models" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>&lt;em>Common models&lt;/em> are data objects that can apply to different resources in your manufacturing process&lt;/p>
+&lt;h3>Units of Measure&lt;span class="hx-absolute -hx-mt-20" id="uom">&lt;/span>
+&lt;a href="#uom" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A &lt;em>Unit of measure&lt;/em> is a defined unit to consistently compare values, duration or quantities.&lt;/p>
+&lt;p>You can create units of measure in the UI and give them the following parameters:&lt;/p>
+&lt;ul>
+&lt;li>Name&lt;/li>
+&lt;li>Data type&lt;/li>
+&lt;/ul>
+&lt;h3>Data Sources&lt;span class="hx-absolute -hx-mt-20" id="data-sources">&lt;/span>
+&lt;a href="#data-sources" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A &lt;em>data source&lt;/em> is a source of real-time data that is collected by the Rhize agent.
+For example, in a baking process, a data source might be an OPC UA server that sends readings from an oven thermometer.&lt;/p>
+&lt;p>The general fields for a data source are as follows:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>General fields&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Connection string&lt;/td>
+&lt;td>A string to specify information about the data source and the way to connect to it&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>The Data source protocol&lt;/td>
+&lt;td>Either &lt;code>MQTT&lt;/code> or &lt;code>OPCUA&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>username&lt;/td>
+&lt;td>If needed, username for &lt;a href="https://docs.rhize.com/versions/v3.1.0/reference/service-config/agent-configuration/" >Agent authentication&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>password&lt;/td>
+&lt;td>If needed, password for &lt;a href="https://docs.rhize.com/versions/v3.1.0/reference/service-config/agent-configuration/" >Agent authentication&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>certificate&lt;/td>
+&lt;td>If needed, certificate for &lt;a href="https://docs.rhize.com/versions/v3.1.0/reference/service-config/agent-configuration/" >Agent authentication&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Additionally, each data source can have &lt;em>topics&lt;/em> that Rhize should be able to subscribe to.
+Each topic has the following fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Topic field&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Data type&lt;/td>
+&lt;td>The data type Rhize expects to find when it receives data from that topic&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Deduplication key&lt;/td>
+&lt;td>The field that NATS uses to de-duplicate messages from multiple data sources.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Label&lt;/td>
+&lt;td>The name of the topic on the side of the data source&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Description&lt;/td>
+&lt;td>A freeform text field to add context&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Some data sources, such as OPC UA, have methods for RPC calls.&lt;/p>
+&lt;h3>Hierarchy Scope&lt;span class="hx-absolute -hx-mt-20" id="hierarchy-scope">&lt;/span>
+&lt;a href="#hierarchy-scope" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>The &lt;em>hierarchy scope&lt;/em> represents the scope within which data information is exchanged.
+It provides a flexible way to group entities and data outside of the scope defined by the role-based equipment hierarchy.&lt;/p>
+&lt;h2>Resource models&lt;span class="hx-absolute -hx-mt-20" id="resource-models">&lt;/span>
+&lt;a href="#resource-models" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>&lt;em>Resource models&lt;/em> are data objects that have a specific role in your role-based equipment hierarchy.&lt;/p>
+&lt;h3>Equipment class&lt;span class="hx-absolute -hx-mt-20" id="equipment-class">&lt;/span>
+&lt;a href="#equipment-class" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>An &lt;em>equipment class&lt;/em> is a grouping of &lt;a href="#equipment" >equipment&lt;/a> for a definite purpose.
+For example, in a baking process, an equipment class might be the category of all ovens, with properties such as &lt;code>maximum temperature&lt;/code> and &lt;code>number of shelves&lt;/code>.&lt;/p>
+&lt;!---
+Equipment has **Rules**, which... -->
+&lt;p>Along with the &lt;a href="#global-object-fields" >Global properties&lt;/a>, an equipment class can include an indefinite number of properties with the following fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Properties&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Name&lt;/td>
+&lt;td>Name of the property&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Description&lt;/td>
+&lt;td>A freeform text to describe the property&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Unit of measure&lt;/td>
+&lt;td>The property &lt;a href="#uom" >unit of measure&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!--
+| Expression | | -->
+&lt;h3>Equipment&lt;span class="hx-absolute -hx-mt-20" id="equipment">&lt;/span>
+&lt;a href="#equipment" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A piece of &lt;em>equipment&lt;/em> is a tool with a defined role in a &lt;a href="#process-segment" >process segment&lt;/a>.
+For example, in a baking process, equipment might be a specific brownie oven.&lt;/p>
+&lt;p>Equipment also might be part of hierarchy of levels, starting with Enterprise and ending with granular levels such as &lt;code>WorkUnit&lt;/code>.&lt;/p>
+&lt;p>Along with the following fields, you can also connect an equipment item to a &lt;a href="#data-source" >data source&lt;/a>, add additional properties, and toggle it to be active or inactive.&lt;/p>
+&lt;p>Along with the &lt;a href="#global-object-fields" >global object fields&lt;/a>,
+an
+equipment object has the following fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>General equipment fields&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Equipment class&lt;/td>
+&lt;td>The &lt;a href="#equipment-class" >class of equipment&lt;/a> that it belongs to.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Equipment level&lt;/td>
+&lt;td>Associated level for the equipment. One of: &lt;code>Enterprise&lt;/code>, &lt;code>Site&lt;/code>, &lt;code>Area&lt;/code>, &lt;code>ProcessCell&lt;/code>, &lt;code>Unit&lt;/code>, &lt;code>ProductionLine&lt;/code>, &lt;code>WorkCell&lt;/code>, &lt;code>ProductionUnit&lt;/code>, &lt;code>Warehouse&lt;/code>, &lt;code>StorageZone&lt;/code>, &lt;code>StorageUnit&lt;/code>, &lt;code>WorkCenter&lt;/code>, &lt;code>WorkUnit&lt;/code>, &lt;code>EquipmentModule&lt;/code>, &lt;code>ControlModule&lt;/code>, &lt;code>Other&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Material Class&lt;span class="hx-absolute -hx-mt-20" id="material-class">&lt;/span>
+&lt;a href="#material-class" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A &lt;em>material class&lt;/em> is a group of material with a shared purpose in the manufacturing process.&lt;/p>
+&lt;p>Along with the &lt;a href="#global-object-fields" >global object fields&lt;/a>,
+a
+material-class object has the following fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>General fields&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Assembly type&lt;/td>
+&lt;td>Can be one of: &lt;ul type="a">&lt;li>&lt;code>Logical&lt;/code>: the components of the material are not necessarily physically connected&lt;/li>&lt;li>&lt;code>Physical&lt;/code>: the components of the material are physically connected or in the same location&lt;/li>&lt;ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Relationship&lt;/td>
+&lt;td>Can be one of: &lt;ul type="a">&lt;li>&lt;code>Permanent&lt;/code>, if a material that can&amp;rsquo;t be split from the production process&lt;/li>&lt;li> &lt;code>Transient&lt;/code>, for temporary material in assembly, such as a pallet&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Hierarchy scope&lt;/td>
+&lt;td>The &lt;a href="#hierarchy-scope" >hierarchy scope&lt;/a> that material class belongs to&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Includes properties of&lt;/td>
+&lt;td>One or more material classes that a version inherits properties from&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Is assembled from&lt;/td>
+&lt;td>Material classes that make this material&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Material classes may have an indefinite number of properties with parameters for the following fields:&lt;/p>
+&lt;ul>
+&lt;li>Value&lt;/li>
+&lt;li>&lt;a href="#uom" >Unit of measure&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3>Material definition&lt;span class="hx-absolute -hx-mt-20" id="material-definition">&lt;/span>
+&lt;a href="#material-definition" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;em>Materials&lt;/em> are everything required to produce a finished good.
+They include raw materials, intermediate materials, and collections of parts.&lt;/p>
+&lt;p>Along with the &lt;a href="#global-object-fields" >global object fields&lt;/a>,
+a
+material object has the following fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>General&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Material class&lt;/td>
+&lt;td>One or more &lt;a href="#material-class" >material classes&lt;/a> that a version inherits properties from&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Materials may have an indefinite number of properties with parameters for the following fields:&lt;/p>
+&lt;ul>
+&lt;li>Value&lt;/li>
+&lt;li>&lt;a href="#uom" >Unit of measure&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3>Personnel Class&lt;span class="hx-absolute -hx-mt-20" id="personnel-class">&lt;/span>
+&lt;a href="#personnel-class" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A &lt;em>personnel class&lt;/em> is a grouping of persons whose work shares a definite purpose in the manufacturing process.
+In a baking process, an example of a personnel class may be &lt;code>oven_operators&lt;/code>.&lt;/p>
+&lt;p>Along with the &lt;a href="#global-object-fields" >global object fields&lt;/a>,
+a
+personnel-class object has the following fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>General fields&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Hierarchy scope&lt;/td>
+&lt;td>The &lt;a href="#hierarchy-scope" >hierarchy scope&lt;/a> within which this personnel exchanges data&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Person&lt;span class="hx-absolute -hx-mt-20" id="person">&lt;/span>
+&lt;a href="#person" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A &lt;em>person&lt;/em> is a unique member of &lt;a href="#personnel-class" >personnel class&lt;/a>.&lt;/p>
+&lt;p>Along with the &lt;a href="#global-object-fields" >global object fields&lt;/a>,
+a
+person object has the following fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>General fields&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Name&lt;/td>
+&lt;td>The name of the person&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Hierarchy scope&lt;/td>
+&lt;td>The &lt;a href="#hierarchy-scope" >hierarchy scope&lt;/a> that the person belongs to&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Inherit personnel classes&lt;/td>
+&lt;td>One or more personnel classes that a version inherits properties from&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Operational location&lt;/td>
+&lt;td>The associated &lt;a href="#operational-location" >Operational location&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Physical asset class&lt;span class="hx-absolute -hx-mt-20" id="physical-asset-class">&lt;/span>
+&lt;a href="#physical-asset-class" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A &lt;em>physical asset class&lt;/em> is a class of &lt;a href="#physical-assets" >physical assets&lt;/a>.&lt;/p>
+&lt;p>The physical asset class has properties for:&lt;/p>
+&lt;ul>
+&lt;li>ClassType&lt;/li>
+&lt;li>Value&lt;/li>
+&lt;li>Unit of measure&lt;/li>
+&lt;/ul>
+&lt;h3>Physical Asset&lt;span class="hx-absolute -hx-mt-20" id="physical-asset">&lt;/span>
+&lt;a href="#physical-asset" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A &lt;em>physical asset&lt;/em> is portable or swappable equipment.
+In a baking process, a physical asset might be the laser jet printer which adds labels to the boxes (and could be used in many segments across the plant).&lt;/p>
+&lt;p>In many cases, your process may need to model only &lt;a href="#equipment" >equipment&lt;/a>, not physical assets.&lt;/p>
+&lt;h3>Operational Location Class&lt;span class="hx-absolute -hx-mt-20" id="operational-location-class">&lt;/span>
+&lt;a href="#operational-location-class" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>An &lt;em>operational location&lt;/em> class is a grouping of &lt;a href="#operational-location" >operational locations&lt;/a> for a defined purpose.
+For example, in a baking process, an operational location class may be &lt;code>Kitchens&lt;/code>&lt;/p>
+&lt;p>Along with the &lt;a href="#global-object-fields" >global object fields&lt;/a>,
+an
+operational-location-class object has the following fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>General fields&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Hierarchy scope&lt;/td>
+&lt;td>The &lt;a href="#hierarchy-scope" >hierarchy scope&lt;/a> within which this location exchanges data&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Inherit Operational location class&lt;/td>
+&lt;td>One or more Operational location classes that a version inherits properties from&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Operational Location&lt;span class="hx-absolute -hx-mt-20" id="operational-location">&lt;/span>
+&lt;a href="#operational-location" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>An &lt;em>operational location&lt;/em> is where resources are expected to be located in a plant.
+For example, in a baking process, an operational location class may be &lt;code>northwing_kitchen_A&lt;/code>&lt;/p>
+&lt;p>Along with the &lt;a href="#global-object-fields" >global object fields&lt;/a>,
+an
+operational-location object has the following fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>General fields&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Hierarchy scope&lt;/td>
+&lt;td>The &lt;a href="#hierarchy-scope" >hierarchy scope&lt;/a> within which this location exchanges data&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Operational location classes&lt;/td>
+&lt;td>Zero or more &lt;a href="#operational-location-class" >operational location classes&lt;/a> that a version inherits properties from&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Map view&lt;/td>
+&lt;td>Where the location is on the map&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>Operation models&lt;span class="hx-absolute -hx-mt-20" id="operation-models">&lt;/span>
+&lt;a href="#operation-models" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>&lt;em>Operation models&lt;/em> are data objects that describe manufacturing processes from the perspective of the level-4 (ERP) systems.&lt;/p>
+&lt;h3>Process segment&lt;span class="hx-absolute -hx-mt-20" id="process-segment">&lt;/span>
+&lt;a href="#process-segment" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A &lt;em>process segment&lt;/em> is a step in a manufacturing activity that is visible to a business process, grouping the necessary personnel, material, equipment, and physical assets.
+In a baking process, an example segment might be &lt;code>mixing&lt;/code>.&lt;/p>
+&lt;p>You can associate specifications for:&lt;/p>
+&lt;ul>
+&lt;li>Equipment, Material, Personnel, and Physical Assets&lt;/li>
+&lt;/ul>
+&lt;p>Along with the &lt;a href="#global-object-fields" >global object fields&lt;/a>,
+a
+process-segment object has the following fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>General fields&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Operations type&lt;/td>
+&lt;td>One of: &lt;code> Inventory&lt;/code>, &lt;code>maintenance&lt;/code>, &lt;code>mixed&lt;/code>, &lt;code>production&lt;/code>, &lt;code>quality&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Definition type&lt;/td>
+&lt;td>One of: &lt;code>Instance&lt;/code>, &lt;code>Pattern&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Duration&lt;/td>
+&lt;td>The expected duration&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Duration unit of measure&lt;/td>
+&lt;td>The time &lt;a href="#uom" >unit of measure&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Hierarchy scope&lt;/td>
+&lt;td>The &lt;a href="#hierarchy-scope" >hierarchy scope&lt;/a> within which data is exchanged for this process segment&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>You can add additional parameters for:&lt;/p>
+&lt;ul>
+&lt;li>Name&lt;/li>
+&lt;li>Value&lt;/li>
+&lt;li>Unit of measure&lt;/li>
+&lt;/ul>
+&lt;h3>Operations Definition&lt;span class="hx-absolute -hx-mt-20" id="operations-definition">&lt;/span>
+&lt;a href="#operations-definition" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;em>Operations Definitions&lt;/em> describe how resources come together to manufacture product from the perspective of
+the level-4 (ERP) systems.&lt;/p>
+&lt;p>The operation model carries enough detail to plan the work at resolutions of hours and days. For more granularity, refer to &lt;a href="#work-models" >work models&lt;/a>.&lt;/p>
+&lt;p>Along with the &lt;a href="#global-object-fields" >global object fields&lt;/a>,
+an
+operations-definition object has the following fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>General fields&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Operation type&lt;/td>
+&lt;td>One of: &lt;code> Inventory&lt;/code>, &lt;code>maintenance&lt;/code>, &lt;code>mixed&lt;/code>, &lt;code>production&lt;/code>, &lt;code>quality&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Hierarchy scope&lt;/td>
+&lt;td>The &lt;a href="#hierarchy-scope" >hierarchy scope&lt;/a> within which data is exchanged for this operations definition&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Operations event class&lt;span class="hx-absolute -hx-mt-20" id="operations-event-class">&lt;/span>
+&lt;a href="#operations-event-class" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>An &lt;em>operations event class&lt;/em> defines a class of operations events within some hierarchy.&lt;/p>
+&lt;p>The class has the following properties:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Version&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Operations event classes,&lt;/strong> defining one or more operations event classes that a version inherits properties from&lt;/li>
+&lt;/ul>
+&lt;h3>Operations event definition&lt;span class="hx-absolute -hx-mt-20" id="operations-event-definition">&lt;/span>
+&lt;a href="#operations-event-definition" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>An &lt;em>operations event definition&lt;/em> defines the properties that pertain to an &lt;em>event&lt;/em> from the perspective of the level-4 (ERP) systems.
+Along with the event itself, it may have associated resources, such as material lots or physical assets received.&lt;/p>
+&lt;p>Along with the &lt;a href="#global-object-fields" >global object fields&lt;/a>,
+an
+operations-event-definition object has the following fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Field&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Category&lt;/td>
+&lt;td>A string that can be used to group the event&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Source&lt;/td>
+&lt;td>The activity, function, task or phase that generated the event.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Event type&lt;/td>
+&lt;td>One of: &lt;ul type="A">&lt;li>&lt;code>Alert&lt;/code>, an potentially significant event, such as a workflow trigger, that does not require notification&lt;/li>&lt;li> &lt;code>Alarm&lt;/code>, an event that requires notification&lt;/li> &lt;li>&lt;code>Event&lt;/code>, any other event that is not at the level of alarm or alert&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Operations event classes&lt;/td>
+&lt;td>One or more &lt;a href="#operations-event-class" >operations event classes&lt;/a> that a version definition inherits properties from.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>Work models&lt;span class="hx-absolute -hx-mt-20" id="work-models">&lt;/span>
+&lt;a href="#work-models" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>&lt;em>Work models&lt;/em> describe how the resources come together to manufacture product from the perspective of level-3 (MES) systems.
+As with &lt;a href="#operations-models" >Operations models&lt;/a>,
+the steps in the process are called &lt;em>segments&lt;/em>.&lt;/p>
+&lt;p>The work model carries enough detail to plan the work at resolutions of hours and minutes. For less granularity, refer to &lt;a href="#operations-definitions" >operations definitions&lt;/a>.&lt;/p>
+&lt;h3>Work Master&lt;span class="hx-absolute -hx-mt-20" id="work-master">&lt;/span>
+&lt;a href="#work-master" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A &lt;em>work master&lt;/em> is a template for a job order from the perspective of the level-3 (MES/MOM) systems.
+In a baking process, an example work master might be &lt;code>Brownie Recipe&lt;/code>.&lt;/p>
+&lt;p>Along with the &lt;a href="#global-object-fields" >global object fields&lt;/a>,
+a
+work-master object has the following fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>General fields&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Workflow type&lt;/td>
+&lt;td>One of: &lt;code> Inventory&lt;/code>, &lt;code>maintenance&lt;/code>, &lt;code>mixed&lt;/code>, &lt;code>production&lt;/code>, &lt;code>quality&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Workflow specification&lt;/td>
+&lt;td>An associated BPMN workflow&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Work calendar&lt;span class="hx-absolute -hx-mt-20" id="work-calendar">&lt;/span>
+&lt;a href="#work-calendar" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;em>Work calendars&lt;/em> describe a set of rules for specific calendar entries, including duration, start and end dates, and times.&lt;/p>
+&lt;p>The general fields for a calendar duration are as follows:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>General fields&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Description&lt;/td>
+&lt;td>A description of the work calendar&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Hierarchy scope&lt;/td>
+&lt;td>The &lt;a href="#hierarchy-scope" >hierarchy scope&lt;/a> that defines scope of data exchanged for the calendar entries&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>The work calendar can have properties with a &lt;code>description&lt;/code>, &lt;code>value&lt;/code>, and &lt;a href="#uom" >&lt;code>unit of measure&lt;/code>&lt;/a>.&lt;/p>
+&lt;p>The work calendar object can have one or more &lt;em>entries&lt;/em>, which define the start, end, duration, and recurrence of a rule.
+The duration and recurrence attributes for a time-based rule are represented by the &lt;a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank" rel="noopener">ISO 8601&lt;/a> standard.
+The attributes for an entry are as follows:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Entry fields&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Description&lt;/td>
+&lt;td>Freeform text that describes the entry&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Type&lt;/td>
+&lt;td>One of: &lt;code>PlannedBusyTime&lt;/code>, &lt;code>PlannedDownTime&lt;/code>, and &lt;code>PlannedShutdown&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Start date and time&lt;/td>
+&lt;td>When the entry starts&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>End date and time&lt;/td>
+&lt;td>When the entry finishes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Recurrence time interval&lt;/td>
+&lt;td>How often the entry repeats according to the &lt;a href="https://en.wikipedia.org/wiki/ISO_8601#Repeating_intervals" target="_blank" rel="noopener">repeating interval representation&lt;/a> of IS0 8601&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Duration rule&lt;/td>
+&lt;td>How long the work calendar lasts, according to the &lt;a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank" rel="noopener">Duration representation&lt;/a> of IS0 8601.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table></description></item><item><title>Default URLs and local ports</title><link>https://docs.rhize.com/reference/default-ports/</link><pubDate>Thu, 02 Nov 2023 16:49:42 -0300</pubDate><guid>https://docs.rhize.com/reference/default-ports/</guid><description>
 &lt;p>After you &lt;a href="https://docs.rhize.com/deploy/install/services" >install Rhize services&lt;/a>, they are accessible, by default, on the following ports:&lt;/p>
 &lt;table>
@@ -1188,6 +1751,69 @@ The attributes for an entry are as follows:&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Default URLs and local ports</title><link>https://docs.rhize.com/versions/v3.0.3/reference/default-ports/</link><pubDate>Thu, 02 Nov 2023 16:49:42 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/reference/default-ports/</guid><description>
+&lt;p>After you &lt;a href="https://docs.rhize.com/deploy/install/services" >install Rhize services&lt;/a>, they are accessible, by default, on the following ports:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Service&lt;/th>
+&lt;th>Default Port&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Admin UI&lt;/td>
+&lt;td>&lt;a href="http://localhost:3030" target="_blank" rel="noopener">&lt;code>localhost:3030&lt;/code>&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Grafana&lt;/td>
+&lt;td>&lt;a href="http://localhost:3001" target="_blank" rel="noopener">&lt;code>localhost:3001&lt;/code>&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Router&lt;/td>
+&lt;td>&lt;a href="http://localhost:4000" target="_blank" rel="noopener">&lt;code>localhost:4000&lt;/code>&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Keycloak&lt;/td>
+&lt;td>&lt;a href="http://localhost:8090" target="_blank" rel="noopener">&lt;code>localhost:8090&lt;/code>&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>baas-alpha&lt;/code> command line&lt;/td>
+&lt;td>&lt;a href="http://localhost:8080" target="_blank" rel="noopener">&lt;code>localhost:8080&lt;/code>&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>URLs&lt;span class="hx-absolute -hx-mt-20" id="urls">&lt;/span>
+&lt;a href="#urls" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>When you create DNS records, Rhize recommends the following URLs:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Service&lt;/th>
+&lt;th>Domain&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Admin UI&lt;/td>
+&lt;td>&lt;code>rhize-ui.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Keycloak&lt;/td>
+&lt;td>&lt;code>rhize-auth.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GraphQL&lt;/td>
+&lt;td>&lt;code>rhize-api.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NATS&lt;/td>
+&lt;td>&lt;code>rhize-mqtt.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Grafana&lt;/td>
+&lt;td>&lt;code>rhize-grafana.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Default URLs and local ports</title><link>https://docs.rhize.com/versions/v3.1.0/reference/default-ports/</link><pubDate>Thu, 02 Nov 2023 16:49:42 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/reference/default-ports/</guid><description>
 &lt;p>After you &lt;a href="https://docs.rhize.com/deploy/install/services" >install Rhize services&lt;/a>, they are accessible, by default, on the following ports:&lt;/p>
 &lt;table>
 &lt;thead>
@@ -1846,6 +2472,304 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;td>The URL of the Azure Service Bus namespace used for Azure ecosystem communication. &lt;br />(Default: &lt;code>bsl-dev.servicebus.windows.net&lt;/code>)&lt;/td>
 &lt;/tr>
 &lt;/tbody>
+&lt;/table></description></item><item><title>Agent configuration</title><link>https://docs.rhize.com/versions/v3.1.0/reference/service-config/agent-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/reference/service-config/agent-configuration/</guid><description>
+&lt;p>The Rhize agent collects data that is emitted in the manufacturing process and makes this data visible in the Rhize system.
+It works by connecting to equipment or groups of equipment that run over protocols such as OPC UA.&lt;/p>
+&lt;p>As the communication bridge between the Rhize Data Hub and your plant, the agent has multiple functions:&lt;/p>
+&lt;ul>
+&lt;li>It subscribes to tags and republishes the changes in NATS.&lt;/li>
+&lt;li>It creates an interface for the BPMN engine to send reads and writes to a data source and its associated equipment.&lt;/li>
+&lt;/ul>
+&lt;h2>OPC UA authentication types&lt;span class="hx-absolute -hx-mt-20" id="opc-ua-authentication-types">&lt;/span>
+&lt;a href="#opc-ua-authentication-types" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>When authenticating over OPC UA, Rhize supports the following authentication types:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Authentication type&lt;/th>
+&lt;th>Behavior&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Anonymous&lt;/td>
+&lt;td>Connects without any necessary credential.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Username&lt;/td>
+&lt;td>Authenticates through a &lt;code>username&lt;/code> and &lt;code>password&lt;/code> in the config file, or through a Kubernetes secret.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Certificate&lt;/td>
+&lt;td>Uses the certificate on disk specified in the &lt;code>OPCUA.CertFile&lt;/code> and &lt;code>OPCUA.KeyFile&lt;/code> configs. If no certificate exists and the config specifies the &lt;code>OPCUA.GenCert&lt;/code> property as &lt;code>true&lt;/code>, automatically generates one.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="logging">&lt;/span>
+&lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Logs the configurations to the console.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>type&lt;/code>&lt;/td>
+&lt;td>Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Level&lt;/code>&lt;/td>
+&lt;td>Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, &lt;code>Panic&lt;/code>. Defaults to &lt;code>Trace&lt;/code>. &lt;br />(Default: &lt;code>trace&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>libreDataStoreGraphQL&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="libredatastoregraphql">&lt;/span>
+&lt;a href="#libredatastoregraphql" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>GRAPHQL_URL&lt;/code>&lt;/td>
+&lt;td>The URL of the GraphQL endpoint to use for interacting with Rhize services. &lt;br />(Default: &lt;code>http://localhost:8080/graphql&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>NATS&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="nats">&lt;/span>
+&lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>SERVER_URL&lt;/code>&lt;/td>
+&lt;td>The URL for connecting to the NATS server. &lt;br />(Default: &lt;code>nats://system:system@localhost:4222&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="oidc">&lt;/span>
+&lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
+&lt;td>The URL of the OpenID Connect server. &lt;br />(Default: &lt;code>http://localhost:8090&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>realm&lt;/code>&lt;/td>
+&lt;td>Identifies the authentication domain for which the authentication request is being made.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>client_id&lt;/code>&lt;/td>
+&lt;td>The unique identifier assigned to the client application by the OIDC server.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>client_secret&lt;/code>&lt;/td>
+&lt;td>Used to authenticate the client alongside the client ID when making confidential requests.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>username&lt;/code>&lt;/td>
+&lt;td>The username credentials to authenticate with the OIDC server.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>password&lt;/code>&lt;/td>
+&lt;td>The password credentials to authenticate with the OIDC server.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="opentelemetry">&lt;/span>
+&lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
+&lt;td>The URL of the OpenTelemetry server. &lt;br />(Default: &lt;code>localhost:4317&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>OPCUA&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="opcua">&lt;/span>
+&lt;a href="#opcua" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>DiscoveryUrl&lt;/code>&lt;/td>
+&lt;td>The URL to locate and connect to OPC UA servers on a network. &lt;br />(Default: &lt;code>opc.tcp://localhost:4840&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Endpoint&lt;/code>&lt;/td>
+&lt;td>The URL of the OPC UA service server. &lt;br />(Default: &lt;code>opc.tcp://localhost:4840&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Username&lt;/code>&lt;/td>
+&lt;td>The username credentials to authenticate with the OPC UA server.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Password&lt;/code>&lt;/td>
+&lt;td>The password credentials to authenticate with the OPC UA server.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Mode&lt;/code>&lt;/td>
+&lt;td>The operational mode of the OPC UA server/client. &lt;br />(Default: &lt;code>None&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Policy&lt;/code>&lt;/td>
+&lt;td>The security measures for OPC UA server communication. &lt;br />(Default: &lt;code>None&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Auth&lt;/code>&lt;/td>
+&lt;td>The authentication mechanisms and user access control. &lt;br />(Default: &lt;code>Anonymous&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>AppUri&lt;/code>&lt;/td>
+&lt;td>The application&amp;rsquo;s unique URI within the OPC UA system. &lt;br />(Default: &lt;code>opc.tcp://localhost:4840&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>BUFFERS&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="buffers">&lt;/span>
+&lt;a href="#buffers" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>ProtocolQueueType&lt;/code>&lt;/td>
+&lt;td>The type of queue used for buffering communication protocol data. &lt;br />(Default: &lt;code>0&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>HEALTH&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="health">&lt;/span>
+&lt;a href="#health" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>PollInterval&lt;/code>&lt;/td>
+&lt;td>The frequency of scans for component status and health. &lt;br />(Default: &lt;code>1000&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>SubscriptionTimeout&lt;/code>&lt;/td>
+&lt;td>The maximum duration to wait to receive updates from subscribed data sources. &lt;br />(Default: &lt;code>60000&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>SubscriptionMaxCount&lt;/code>&lt;/td>
+&lt;td>The maximum number of concurrent subscriptions for monitoring. &lt;br />(Default: &lt;code>5&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>MQTT&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="mqtt">&lt;/span>
+&lt;a href="#mqtt" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>Version&lt;/code>&lt;/td>
+&lt;td>The version of MQTT used: &lt;code>5.0&lt;/code> or &lt;code>3.1.1&lt;/code>. &lt;br />(Default: &lt;code>3.1.1&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>ClientId&lt;/code>&lt;/td>
+&lt;td>The ID used in the MQTT broker. &lt;br />(Default: &lt;code>mqtt-client&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Endpoint&lt;/code>&lt;/td>
+&lt;td>The URL of the MQTT broker. &lt;br />(Default: &lt;code>mqtt://localhost:1883&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Username&lt;/code>&lt;/td>
+&lt;td>The username credentials to authenticate with the MQTT broker.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Password&lt;/code>&lt;/td>
+&lt;td>The password credentials to authenticate with the MQTT broker.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>DecomposeJSON&lt;/code>&lt;/td>
+&lt;td>Enables or disables JSON payload decomposition into individual data fields. &lt;br />(Default: &lt;code>false&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>TimestampField&lt;/code>&lt;/td>
+&lt;td>The field to search to return timestamp information. &lt;br />(Default: &lt;code>timestamp&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>RequestTimeout&lt;/code>&lt;/td>
+&lt;td>The maximum duration to wait to receive a response to an MQTT request from the broker. &lt;br />(Default: &lt;code>10&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>DATASOURCE&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="datasource">&lt;/span>
+&lt;a href="#datasource" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>ID&lt;/code>&lt;/td>
+&lt;td>The source ID to retrieve payload data from. &lt;br />(Default: &lt;code>DS_0806&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>AZURE&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="azure">&lt;/span>
+&lt;a href="#azure" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>CLIENT_ID&lt;/code>&lt;/td>
+&lt;td>The ID used to securely authenticate Azure service access.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>CLIENT_SECRET&lt;/code>&lt;/td>
+&lt;td>The secret key associated with the client ID for authentication.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>TENANT_ID&lt;/code>&lt;/td>
+&lt;td>The ID of the Azure Active Directory tenant where the service is registered.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>SERVICEBUS_HOSTNAME&lt;/code>&lt;/td>
+&lt;td>The URL of the Azure Service Bus namespace used for Azure ecosystem communication. &lt;br />(Default: &lt;code>bsl-dev.servicebus.windows.net&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table></description></item><item><title>Audit configuration</title><link>https://docs.rhize.com/reference/service-config/audit-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/audit-configuration/</guid><description>
 &lt;p>Audit offers a secure and unchangeable record of all activities that happen within the Rhize system.&lt;/p>
 &lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="logging">&lt;/span>
@@ -1980,6 +2904,139 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Audit configuration</title><link>https://docs.rhize.com/versions/v3.0.3/reference/service-config/audit-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/reference/service-config/audit-configuration/</guid><description>
+&lt;p>Audit offers a secure and unchangeable record of all activities that happen within the Rhize system.&lt;/p>
+&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="logging">&lt;/span>
+&lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Logs the configuration to the console.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>type&lt;/code>&lt;/td>
+&lt;td>Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Level&lt;/code>&lt;/td>
+&lt;td>Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, and &lt;code>Panic&lt;/code>. &lt;br />(Default: &lt;code>Trace&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="oidc">&lt;/span>
+&lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
+&lt;td>The URL of the OpenID Connect server. &lt;br />(Default: &lt;code>http://localhost:8090&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>realm&lt;/code>&lt;/td>
+&lt;td>Identifies the authentication domain for which the authentication request is being made.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>client_id&lt;/code>&lt;/td>
+&lt;td>The unique identifier assigned to the client application by the OIDC server.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>client_secret&lt;/code>&lt;/td>
+&lt;td>Used to authenticate the client when making confidential requests.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>username&lt;/code>&lt;/td>
+&lt;td>The username credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>password&lt;/code>&lt;/td>
+&lt;td>The password credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="opentelemetry">&lt;/span>
+&lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
+&lt;td>The URL of the OpenTelemetry server. &lt;br />(Default: &lt;code>localhost:4317&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>storage&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="storage">&lt;/span>
+&lt;a href="#storage" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Storage system for the configuration data. Value options include: &lt;code>influxdb&lt;/code> and &lt;code>pg&lt;/code>.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>influxdb&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="influxdb">&lt;/span>
+&lt;a href="#influxdb" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>A time-series database that is used in conjunction with Grafana designed for handling time-stamped data, such as metrics, events, and logs, that change over time.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
+&lt;td>The URL of the InfluxDB server. &lt;br />(Default: &lt;code>http://localhost:8086&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>token&lt;/code>&lt;/td>
+&lt;td>The authentication token to authenticate requests to the InfluxDB server. &lt;br />(Default: &lt;code>my-token&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>pg&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="pg">&lt;/span>
+&lt;a href="#pg" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>PostgreSQL is a general-purpose relational database management system that supports a wide range of features and data types.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>host&lt;/code>&lt;/td>
+&lt;td>The host name of the PostgreSQL database server to which the client application connects. &lt;br />(Default: &lt;code>dbname&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>user&lt;/code>&lt;/td>
+&lt;td>The username to authenticate with the PostgreSQL database server.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>password&lt;/code>&lt;/td>
+&lt;td>The password associated with the specified PostgreSQL user account.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>port&lt;/code>&lt;/td>
+&lt;td>The port number on which the PostgreSQL database server is listening for incoming connections. &lt;br />(Default: &lt;code>5432&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Audit configuration</title><link>https://docs.rhize.com/versions/v3.1.0/reference/service-config/audit-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/reference/service-config/audit-configuration/</guid><description>
 &lt;p>Audit offers a secure and unchangeable record of all activities that happen within the Rhize system.&lt;/p>
 &lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="logging">&lt;/span>
 &lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Logs the configuration to the console.&lt;/p>
@@ -2356,6 +3413,248 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tbody>
 &lt;/table></description></item><item><title>BPMN configuration</title><link>https://docs.rhize.com/versions/v3.0.3/reference/service-config/bpmn-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/reference/service-config/bpmn-configuration/</guid><description>
 &lt;p>The Rhize BPMN acts as the tailored engine for processing low-code workflows designed within the [BPMN UI]/versions/v3.0.3/how-to/bpmn/. The configurations manage the connection and data flow on the BPMN engine to the other Rhize microservices.&lt;/p>
+&lt;h2>&lt;code>http&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="http">&lt;/span>
+&lt;a href="#http" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>All HTTP configurations are measured in &lt;code>seconds&lt;/code>.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>ReadHeaderTimeout&lt;/code>&lt;/td>
+&lt;td>Wait duration for the request header to be fully read before timing out. &lt;br />(Default: &lt;code>10&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>ReadTimeout&lt;/code>&lt;/td>
+&lt;td>Wait duration for the entire request to be read before timing out. &lt;br />(Default: &lt;code>15&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>WriteTimeout&lt;/code>&lt;/td>
+&lt;td>Wait duration for the entire response to be written before timing out. &lt;br />(Default: &lt;code>10&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>IdleTimeout&lt;/code>&lt;/td>
+&lt;td>Wait duration for the next request while the connection is idle before timing out. &lt;br />(Default: &lt;code>30&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="logging">&lt;/span>
+&lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Logs the configurations to the console.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>type&lt;/code>&lt;/td>
+&lt;td>Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Level&lt;/code>&lt;/td>
+&lt;td>Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, or &lt;code>Panic&lt;/code>. &lt;br />(Default: &lt;code>Debug&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>libreDataStoreGraphQL&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="libredatastoregraphql">&lt;/span>
+&lt;a href="#libredatastoregraphql" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>GRAPHQL_URL&lt;/code>&lt;/td>
+&lt;td>The URL of the GraphQL endpoint to use for interacting with Rhize services. &lt;br />(Default: &lt;code>http://localhost:4000/&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>GRAPHQL_CA_FILE&lt;/code>&lt;/td>
+&lt;td>The file path of the CA certificate used for secure communication with the GraphQL endpoint. &lt;br />(Default: &lt;code>''&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>viewInstance&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="viewinstance">&lt;/span>
+&lt;a href="#viewinstance" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configuration for service viewing instances.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>grafana&lt;/code>&lt;/td>
+&lt;td>&lt;code>org&lt;/code>: The organization ID for the Grafana instance (Default: &lt;code>1&lt;/code>). &lt;br /> &lt;code>tempoUid&lt;/code>: The UID for Tempo integration in Grafana (Default: &lt;code>libre-tempo&lt;/code>). &lt;br /> &lt;code>url&lt;/code>: The URL of the Grafana instance (Default: &lt;code>http://localhost:3000&lt;/code>).&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>loki&lt;/code>&lt;/td>
+&lt;td>&lt;code>accessToken&lt;/code>: The access token for authentication with Loki (Default: &lt;code>''&lt;/code>). &lt;br /> &lt;code>url&lt;/code>: The URL of the Loki instance (Default: &lt;code>http://localhost:3100&lt;/code>).&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>tempo&lt;/code>&lt;/td>
+&lt;td>&lt;code>accessToken&lt;/code>: The access token for authentication with Tempo (Default: &lt;code>''&lt;/code>). &lt;br /> &lt;code>url&lt;/code>: The URL of the Tempo instance (Default: &lt;code>http://localhost:3200&lt;/code>).&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>commandConsumer&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="commandconsumer">&lt;/span>
+&lt;a href="#commandconsumer" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>threads&lt;/code>&lt;/td>
+&lt;td>The number of threads for command consumption. &lt;br />(Default: &lt;code>3&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>GraphQLSubscriber&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="graphqlsubscriber">&lt;/span>
+&lt;a href="#graphqlsubscriber" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>GRAPHQL_URL&lt;/code>&lt;/td>
+&lt;td>The URL of the GraphQL endpoint for the GraphQLSubscriber. &lt;br />(Default: &lt;code>http://localhost:4000/&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>NATS&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="nats">&lt;/span>
+&lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>CommandStreamReplicas&lt;/code>&lt;/td>
+&lt;td>The number of replicas for the command stream. &lt;br />(Default: &lt;code>1&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>JobResponseKVMaxGB&lt;/code>&lt;/td>
+&lt;td>The maximum size (in gigabytes) for the job response key-value store. &lt;br />(Default: &lt;code>2&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>JobResponseKVReplicas&lt;/code>&lt;/td>
+&lt;td>The number of replicas for the job response key-value store. &lt;br />(Default: &lt;code>1&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>JobResponseKVTTLMinutes&lt;/code>&lt;/td>
+&lt;td>the &amp;ldquo;time-to-live&amp;rdquo; (in minutes) for job response key-values. &lt;br />(Default: &lt;code>7&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>WorkflowSpecificationKVReplicas&lt;/code>&lt;/td>
+&lt;td>The number of replicas for the workflow specification key-value store. &lt;br />(Default: &lt;code>1&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
+&lt;td>The URL for connecting to the NATS server. &lt;br />(Default: &lt;code>nats://system:system@localhost:4222&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="oidc">&lt;/span>
+&lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
+&lt;td>The URL of the OpenID Connect server. &lt;br />(Default: &lt;code>http://localhost:8090&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>realm&lt;/code>&lt;/td>
+&lt;td>Identifies the authentication domain for which the authentication request is being made.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>client_id&lt;/code>&lt;/td>
+&lt;td>The unique identifier assigned to the client application by the OIDC server.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>client_secret&lt;/code>&lt;/td>
+&lt;td>Used to authenticate the client alongside the client ID when making confidential requests.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>username&lt;/code>&lt;/td>
+&lt;td>The username credentials to authenticate with the OIDC server.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>password&lt;/code>&lt;/td>
+&lt;td>The password credentials to authenticate with the OIDC server.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="opentelemetry">&lt;/span>
+&lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
+&lt;td>The URL of the OpenTelemetry server. &lt;br />(Default: &lt;code>localhost:4317&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>defaultDebug&lt;/code>&lt;/td>
+&lt;td>Enables or disables default debug mode. &lt;br />(Default: &lt;code>false&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>RESTAPI&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="restapi">&lt;/span>
+&lt;a href="#restapi" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>PORT&lt;/code>&lt;/td>
+&lt;td>The port number for RestAPI connection. &lt;br />(Default: &lt;code>8080&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>SECRET&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="secret">&lt;/span>
+&lt;a href="#secret" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>KEY&lt;/code>&lt;/td>
+&lt;td>The secret key used to connect to the BPMN client.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>BPMN configuration</title><link>https://docs.rhize.com/versions/v3.1.0/reference/service-config/bpmn-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/reference/service-config/bpmn-configuration/</guid><description>
+&lt;p>The Rhize BPMN acts as the tailored engine for processing low-code workflows designed within the [BPMN UI]/versions/v3.1.0/how-to/bpmn/. The configurations manage the connection and data flow on the BPMN engine to the other Rhize microservices.&lt;/p>
 &lt;h2>&lt;code>http&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="http">&lt;/span>
 &lt;a href="#http" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>All HTTP configurations are measured in &lt;code>seconds&lt;/code>.&lt;/p>
 &lt;table>
@@ -3074,6 +4373,245 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tbody>
 &lt;/table>
 &lt;h2>&lt;code>Database&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="database">&lt;/span>
+&lt;a href="#database" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Which database instance to use, either &lt;code>Postgres&lt;/code> or &lt;code>Influx3&lt;/code> &lt;br />(Default: &lt;code>Influx3&lt;/code>)&lt;/p></description></item><item><title>Calendar configuration</title><link>https://docs.rhize.com/versions/v3.1.0/reference/service-config/calendar-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/reference/service-config/calendar-configuration/</guid><description>
+&lt;p>The Calendar Service handles polling work calendar definitions and generating work calendar entries in the graph and time series databases.&lt;/p>
+&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="logging">&lt;/span>
+&lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Logs the configuration to the console.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>type&lt;/code>&lt;/td>
+&lt;td>Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Level&lt;/code>&lt;/td>
+&lt;td>Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, and &lt;code>Panic&lt;/code>. &lt;br />(Default: &lt;code>Trace&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>NATS&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="nats">&lt;/span>
+&lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Message broker that drives Rhize&amp;rsquo;s event-based architecture.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>SERVER_URL&lt;/code>&lt;/td>
+&lt;td>The URL of the NATS server. &lt;br />(Default: &lt;code>nats://system:system@localhost:4222&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="oidc">&lt;/span>
+&lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
+&lt;td>The URL of the OpenID Connect server. &lt;br />(Default: &lt;code>http://localhost:8090&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>realm&lt;/code>&lt;/td>
+&lt;td>Identifies the authentication domain for which the authentication request is being made.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>client_id&lt;/code>&lt;/td>
+&lt;td>The unique identifier assigned to the client application by the OIDC server.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>client_secret&lt;/code>&lt;/td>
+&lt;td>Used to authenticate the client when making confidential requests.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>username&lt;/code>&lt;/td>
+&lt;td>The username credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>password&lt;/code>&lt;/td>
+&lt;td>The password credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="opentelemetry">&lt;/span>
+&lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
+&lt;td>The URL of the OpenTelemetry server. &lt;br />(Default: &lt;code>localhost:4317&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>samplingRate&lt;/code>&lt;/td>
+&lt;td>The sampling rate for traces. &lt;br />(Default: &lt;code>1&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>libreDataStoreGraphQL&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="libredatastoregraphql">&lt;/span>
+&lt;a href="#libredatastoregraphql" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>GRAPHQL_URL&lt;/code>&lt;/td>
+&lt;td>The URL of the GraphQL endpoint to use for interacting with Rhize services. &lt;br />(Default: &lt;code>http://localhost:8080/graphql&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>GraphQLSubscriber&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="graphqlsubscriber">&lt;/span>
+&lt;a href="#graphqlsubscriber" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>GRAPHQL_URL&lt;/code>&lt;/td>
+&lt;td>The URL of the GraphQL endpoint for the GraphQLSubscriber. &lt;br />(Default: &lt;code>http://localhost:4000/&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>RESTAPI&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="restapi">&lt;/span>
+&lt;a href="#restapi" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>PORT&lt;/code>&lt;/td>
+&lt;td>The port number for RestAPI connection. &lt;br />(Default: &lt;code>8080&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>Calendar&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="calendar">&lt;/span>
+&lt;a href="#calendar" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Specific configuration options for the calendar service.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>QueryIntervalMinutes&lt;/code>&lt;/td>
+&lt;td>How often to poll the work calendar definitions &lt;br />(Default: &lt;code>10&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>QUERY&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="query">&lt;/span>
+&lt;a href="#query" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Query options specific to the calendar service&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>hierarchyScopeRecursionDepth&lt;/code>&lt;/td>
+&lt;td>How deep to recurse through the hierarchy scope hierarchy &lt;br />(Default: &lt;code>3&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>equipmentRecursionDepth&lt;/code>&lt;/td>
+&lt;td>How deep to recurse through the equipment hierarchy &lt;br />(Default: &lt;code>3&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>Influx3&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="influx3">&lt;/span>
+&lt;a href="#influx3" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>InfluxDB3 server options&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>Database&lt;/code>&lt;/td>
+&lt;td>The name of the database to connect to &lt;br />(Default: &lt;code>Libre_calendar-service&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Host&lt;/code>&lt;/td>
+&lt;td>The host of the Influx3 database &lt;br />(Default: &lt;code>http://localhost:8096&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Organization&lt;/code>&lt;/td>
+&lt;td>The Influx3 Organization (Influx3 Cloud) &lt;br />(Default: &lt;code>Libre&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>TokenPrefix&lt;/code>&lt;/td>
+&lt;td>The prefix used in the authorization token (&lt;code>Token&lt;/code> for Influx 3 cloud, &lt;code>Bearer&lt;/code> for Influx3 Edge) &lt;br />(Default: &lt;code>Token&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Token&lt;/code>&lt;/td>
+&lt;td>The authorization token to attach to any Influx3 requests&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>Postgres&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="postgres">&lt;/span>
+&lt;a href="#postgres" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Postgres server options&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>Host&lt;/code>&lt;/td>
+&lt;td>The hostname of the Postgres database &lt;br />(Default: &lt;code>localhost&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Port&lt;/code>&lt;/td>
+&lt;td>Those port of the Postgres database &lt;br />(Default: &lt;code>5432&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>User&lt;/code>&lt;/td>
+&lt;td>The Postgres user name &lt;br />(Default: &lt;code>postgres&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Password&lt;/code>&lt;/td>
+&lt;td>The Postgres instance password &lt;br />(Default: &lt;code>postgres&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Database&lt;/code>&lt;/td>
+&lt;td>The database name for the Postgres instance &lt;br />(Default: &lt;code>Libre&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>Database&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="database">&lt;/span>
 &lt;a href="#database" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Which database instance to use, either &lt;code>Postgres&lt;/code> or &lt;code>Influx3&lt;/code> &lt;br />(Default: &lt;code>Influx3&lt;/code>)&lt;/p></description></item><item><title>Core configuration</title><link>https://docs.rhize.com/reference/service-config/core-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/core-configuration/</guid><description>
 &lt;p>The Core service oversees data sources such as OPC-UA servers and manages the publication and subscription of topics within the NATS messaging system.&lt;/p>
 &lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="logging">&lt;/span>
@@ -3418,6 +4956,178 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;td>Enables the use of TimeSeries. &lt;br />(Default: &lt;code>false&lt;/code>)&lt;/td>
 &lt;/tr>
 &lt;/tbody>
+&lt;/table></description></item><item><title>Core configuration</title><link>https://docs.rhize.com/versions/v3.1.0/reference/service-config/core-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/reference/service-config/core-configuration/</guid><description>
+&lt;p>The Core service oversees data sources such as OPC-UA servers and manages the publication and subscription of topics within the NATS messaging system.&lt;/p>
+&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="logging">&lt;/span>
+&lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Logs the configuration to the console.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>type&lt;/code>&lt;/td>
+&lt;td>Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Level&lt;/code>&lt;/td>
+&lt;td>Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, and &lt;code>Panic&lt;/code>. &lt;br />(Default: &lt;code>Trace&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>NATS&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="nats">&lt;/span>
+&lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Message broker that drives Rhize&amp;rsquo;s event-based architecture.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
+&lt;td>The URL of the NATS server. &lt;br />(Default: &lt;code>nats://system:system@localhost:4222&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>replicas&lt;/code>&lt;/td>
+&lt;td>The number of replicas or instances of the NATS server to be deployed. &lt;br />(Default: &lt;code>1&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="oidc">&lt;/span>
+&lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
+&lt;td>The URL of the OpenID Connect server. &lt;br />(Default: &lt;code>http://localhost:8090&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>realm&lt;/code>&lt;/td>
+&lt;td>Identifies the authentication domain for which the authentication request is being made.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>client_id&lt;/code>&lt;/td>
+&lt;td>The unique identifier assigned to the client application by the OIDC server.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>client_secret&lt;/code>&lt;/td>
+&lt;td>Used to authenticate the client when making confidential requests.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>username&lt;/code>&lt;/td>
+&lt;td>The username credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>password&lt;/code>&lt;/td>
+&lt;td>The password credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="opentelemetry">&lt;/span>
+&lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
+&lt;td>The URL of the OpenTelemetry server. &lt;br />(Default: &lt;code>localhost:4317&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>samplingRate&lt;/code>&lt;/td>
+&lt;td>The sampling rate for traces. &lt;br />(Default: &lt;code>1&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>SECRET&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="secret">&lt;/span>
+&lt;a href="#secret" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>KEY&lt;/code>&lt;/td>
+&lt;td>The SECRET KEY used for authorization within Core.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>graphQLServer&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="graphqlserver">&lt;/span>
+&lt;a href="#graphqlserver" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The server used to connect to the GraphQL playground.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>Port&lt;/code>&lt;/td>
+&lt;td>The port used within the URL that connects to the graphQLServer. &lt;br />(Default: &lt;code>4001&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>libreDataStoreGraphQL&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="libredatastoregraphql">&lt;/span>
+&lt;a href="#libredatastoregraphql" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>GraphQLUrl&lt;/code>&lt;/td>
+&lt;td>The URL of the GraphQL endpoint to use for interacting with Rhize services. &lt;br />(Default: &lt;code>http://localhost:8080/graphql&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>BPMN&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="bpmn">&lt;/span>
+&lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>GraphQLUrl&lt;/code>&lt;/td>
+&lt;td>The URL of the BPMN endpoint to use for interacting with Rhize services. &lt;br />(Default: &lt;code>http://localhost:8081&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>TimeSeries&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="timeseries">&lt;/span>
+&lt;a href="#timeseries" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attributes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>Enabled&lt;/code>&lt;/td>
+&lt;td>Enables the use of TimeSeries. &lt;br />(Default: &lt;code>false&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table></description></item><item><title>Special variables</title><link>https://docs.rhize.com/how-to/bpmn/variables/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/bpmn/variables/</guid><description>
 &lt;p>Rhize designates some variable names for a special purpose in BPMN workflow.
 This list these special variables is as follows:&lt;/p>
@@ -3460,6 +5170,30 @@ This list these special variables is as follows:&lt;/p>
 &lt;tr>
 &lt;td>&lt;code>customResponse&lt;/code>&lt;/td>
 &lt;td>A value to report at the end of a synchronous API call to trigger a workflow. On completion, the call reports whatever the value was in the &lt;code>customResponse&lt;/code> field of the GraphQL response. For details, read &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/trigger-workflows/" >Trigger workflows&lt;/a>.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>__traceDebug&lt;/code>&lt;/td>
+&lt;td>If &lt;code>true&lt;/code> at the start of the workflow, the BPMN workflow reports the variable context at each node as spans in Tempo.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Special variables</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/variables/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/variables/</guid><description>
+&lt;p>Rhize designates some variable names for a special purpose in BPMN workflow.
+This list these special variables is as follows:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Variable&lt;/th>
+&lt;th>Purpose&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>BODY&lt;/code>&lt;/td>
+&lt;td>The name of the variable as &lt;strong>Input&lt;/strong> in &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#intermediate-message-events" >Intermediate message throws&lt;/a>. The value of this variable is the payload sent to the Rhize message broker.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>customResponse&lt;/code>&lt;/td>
+&lt;td>A value to report at the end of a synchronous API call to trigger a workflow. On completion, the call reports whatever the value was in the &lt;code>customResponse&lt;/code> field of the GraphQL response. For details, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/trigger-workflows/" >Trigger workflows&lt;/a>.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;code>__traceDebug&lt;/code>&lt;/td>
@@ -3644,6 +5378,180 @@ They return matches within the specified &lt;a href="https://datatracker.ietf.or
 &lt;p>This page provides a reference of the data types enforced by the Rhize database schema,
 and of the filters that can apply to these types when you query, update, or delete a set of resources.
 For an extended guide, with examples, read &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/filter/" >Use query filters&lt;/a>.&lt;/p>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">These filters are based on Rhize&amp;rsquo;s implementation of the Dgraph &lt;a href="https://dgraph.io/docs/graphql/schema/directives/search/" target="_blank" rel="noopener">&lt;code>@search&lt;/code> directives&lt;/a>.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2>Data types&lt;span class="hx-absolute -hx-mt-20" id="data-types">&lt;/span>
+&lt;a href="#data-types" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Every object in the Rhize schema has fields that are of one of the basic data types.
+From the other perspective, these data types define fields that compose manufacturing objects,
+objects defined precisely by ISA-95 and enforced by Rhize&amp;rsquo;s database schema.&lt;/p>
+&lt;h3>Basic types&lt;span class="hx-absolute -hx-mt-20" id="basic-types">&lt;/span>
+&lt;a href="#basic-types" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Every manufacturing object in the Rhize database is made of fields that are of one the following basic types.
+In official GraphQL terminology, these types are called &lt;a href="https://graphql.org/learn/schema/#scalar-types" target="_blank" rel="noopener">&lt;em>scalar types&lt;/em>&lt;/a>.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>String&lt;/code>: A sequence of characters. For example, &lt;code>machine_2&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Int&lt;/code>: An integer number. For example, &lt;code>2&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Float&lt;/code>: A number that includes a fraction. For example, &lt;code>2.25&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Boolean&lt;/code>: A field whose value is either &lt;code>true&lt;/code> or &lt;code>false&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Enum&lt;/code>: A field whose values are restricted to a defined set. For example, &lt;code>versionState&lt;/code> might be one of &lt;code>ACTIVE&lt;/code>, &lt;code>APPROVED&lt;/code>, &lt;code>FOR_REVIEW&lt;/code>, &lt;code>DRAFT&lt;/code>, or &lt;code>DEPRECATED&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>id&lt;/code>: A string representing a unique object within a defined &lt;a href="#object-type" >object type&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>iid&lt;/code>: The object&amp;rsquo;s unique address in the database. For example, &lt;code>0xf9b49&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>DateTime&lt;/code>: A timestamp in &lt;a href="https://datatracker.ietf.org/doc/html/rfc3339" target="_blank" rel="noopener">RFC 3339&lt;/a> format.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Geo&lt;/code>: Geometry types for geo-spatial coordinates&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3>Object type&lt;span class="hx-absolute -hx-mt-20" id="object-type">&lt;/span>
+&lt;a href="#object-type" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>The preceding basic types form the building blocks for Rhize&amp;rsquo;s manufacturing object schema, with data models corresponding to ISA-95.&lt;/p>
+&lt;p>Each object is made of manufacturing-specific fields of one of the basic types.
+For example, the &lt;code>materialActual&lt;/code> object has basic fields, including:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>description&lt;/code>, a &lt;code>String&lt;/code>.&lt;/li>
+&lt;li>&lt;code>effectiveEnd&lt;/code>, a &lt;code>DateTime&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>The &lt;code>materialActual&lt;/code> also has complex fields describing associated manufacturing objects.
+For example, its fields include
+the array of associated &lt;code>MaterialLot&lt;/code> objects, the &lt;code>MaterialDefinition&lt;/code> object, and so on.
+All objects in the database have relationships to other objects.&lt;/p>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">Metadata fields start with an underscore (&lt;code>_&lt;/code>).
+For example, &lt;code>_createdOn&lt;/code> reports the time when the object was created.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2>Scalar filters&lt;span class="hx-absolute -hx-mt-20" id="scalar-filters">&lt;/span>
+&lt;a href="#scalar-filters" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Most objects have some fields that can be filters for a query or mutation.
+The filters that are available depend on the data type, but the behavior of the &lt;code>String&lt;/code> filters corresponds closely to &lt;code>DateTime&lt;/code> and &lt;code>Int&lt;/code> filters.&lt;/p>
+&lt;h3>String filters&lt;span class="hx-absolute -hx-mt-20" id="string-filters">&lt;/span>
+&lt;a href="#string-filters" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>String properties have the following filters:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Filter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Example argument&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>eq&lt;/code>&lt;/td>
+&lt;td>Equals (exact match)&lt;/td>
+&lt;td>&lt;code>(filter: {id: {eq: &amp;quot;match&amp;quot;}})&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>in&lt;/code>&lt;/td>
+&lt;td>From this match of arrays&lt;/td>
+&lt;td>&lt;code>(filter: {id: {in: [&amp;quot;dough&amp;quot;, &amp;quot;cookie_unit&amp;quot;]}})&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lt&lt;/code>,&lt;code>gt&lt;/code>,&lt;code>le&lt;/code>, &lt;code>ge&lt;/code> &lt;code>between&lt;/code>&lt;/td>
+&lt;td>Less than, greater than, or between a lexicographic range&lt;/td>
+&lt;td>&lt;code>(filter: {id: {lt: &amp;quot;M&amp;quot;}&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>regexp&lt;/code>&lt;/td>
+&lt;td>A regular expression match using &lt;a href="https://github.com/google/re2/wiki/Syntax/" target="_blank" rel="noopener">&lt;code>RE2&lt;/code> syntax&lt;/a>&lt;/td>
+&lt;td>&lt;code>(filter: {id: {regexp: &amp;quot;/hello/i&amp;quot;}})&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>anyoftext&lt;/code>&lt;/td>
+&lt;td>A match for any entered strings, separated by spaces&lt;/td>
+&lt;td>&lt;code>(filter: {id: {anyoftext: &amp;quot;100 MD&amp;quot;}})&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>alloftext&lt;/code>&lt;/td>
+&lt;td>A match for all entered strings&lt;/td>
+&lt;td>&lt;code>(filter: {id {alloftext: &amp;quot;MD&amp;quot;}})&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Integers, floats, DateTimes&lt;span class="hx-absolute -hx-mt-20" id="integers-floats-datetimes">&lt;/span>
+&lt;a href="#integers-floats-datetimes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Properties that have a type of &lt;code>Int&lt;/code>, &lt;code>Float&lt;/code>, or &lt;code>DateTime&lt;/code> can be filtered by the following keywords.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>lt&lt;/code>&lt;/li>
+&lt;li>&lt;code>le&lt;/code>&lt;/li>
+&lt;li>&lt;code>eq&lt;/code>&lt;/li>
+&lt;li>&lt;code>in&lt;/code>&lt;/li>
+&lt;li>&lt;code>between&lt;/code>&lt;/li>
+&lt;li>&lt;code>ge&lt;/code>&lt;/li>
+&lt;li>&lt;code>gt&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Each keyword has the same behavior as described in &lt;a href="#string-filters" >string filters&lt;/a>, only they operate on numerical rather than lexicographic values.
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">While the &lt;code>dateTime&lt;/code> type uses the RFC 3339 format, some string fields may use the &lt;a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank" rel="noopener">ISO 8601&lt;/a> format. This depends on the object and customer requirement. For these fields, the string filters work as chronological filters too.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/p>
+&lt;h3>Enum filters&lt;span class="hx-absolute -hx-mt-20" id="enum-filters">&lt;/span>
+&lt;a href="#enum-filters" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Properties of the type &lt;code>Enum&lt;/code> can be filtered by the following:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>lt&lt;/code>&lt;/li>
+&lt;li>&lt;code>le&lt;/code>&lt;/li>
+&lt;li>&lt;code>eq&lt;/code>&lt;/li>
+&lt;li>&lt;code>in&lt;/code>&lt;/li>
+&lt;li>&lt;code>between&lt;/code>&lt;/li>
+&lt;li>&lt;code>ge&lt;/code>&lt;/li>
+&lt;li>&lt;code>gt&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Each keyword has the same behavior as described in &lt;a href="#string-filters" >string filters&lt;/a>.&lt;/p>
+&lt;h3>Boolean filters&lt;span class="hx-absolute -hx-mt-20" id="boolean-filters">&lt;/span>
+&lt;a href="#boolean-filters" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Boolean filters can be either &lt;code>true&lt;/code> or &lt;code>false&lt;/code>.&lt;/p>
+&lt;h3>Geolocation filters&lt;span class="hx-absolute -hx-mt-20" id="geolocation-filters">&lt;/span>
+&lt;a href="#geolocation-filters" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Geolocation filters return objects within specified geographic coordinates.
+They return matches within the specified &lt;a href="https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.6" target="_blank" rel="noopener">GeoJSON polygon&lt;/a>.&lt;/p>
+&lt;p>If a geolocation field can act as a filter, then the filter can work in one of the following behaviors:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Filter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>near&lt;/td>
+&lt;td>Within the specified &lt;code>distance&lt;/code> from the polygon&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>within&lt;/td>
+&lt;td>In the polygon coordinates&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Intersects&lt;/td>
+&lt;td>In the intersection of two polygons&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>Read more&lt;span class="hx-absolute -hx-mt-20" id="read-more">&lt;/span>
+&lt;a href="#read-more" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;a href="https://docs.rhize.com/how-to/gql" >Rhize guide to GraphQL&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://dgraph.io/docs/graphql/schema/directives/search/" target="_blank" rel="noopener">Dgraph &lt;code>@search&lt;/code> directive&lt;/a>.&lt;/li>
+&lt;/ul></description></item><item><title>GraphQL types and filters</title><link>https://docs.rhize.com/versions/v3.1.0/reference/gql-types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/reference/gql-types/</guid><description>
+&lt;p>This page provides a reference of the data types enforced by the Rhize database schema,
+and of the filters that can apply to these types when you query, update, or delete a set of resources.
+For an extended guide, with examples, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/filter/" >Use query filters&lt;/a>.&lt;/p>
 &lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
 &lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
 &lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
@@ -4456,6 +6364,327 @@ If a sequence flow carries a condition, indicate the condition in the naming as 
 &lt;li>&lt;code>END_02&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;h2>Response Field Naming&lt;span class="hx-absolute -hx-mt-20" id="response-field-naming">&lt;/span>
+&lt;a href="#response-field-naming" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>When nodes generate a response, give the response field the same name as its node.&lt;/p></description></item><item><title>Naming conventions</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/naming-conventions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/naming-conventions/</guid><description>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">These are recommendations. Your organization may adapt the conventions to its needs.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>Each BPMN workflow has an ID, as does each node in the workflow.
+Rhize recommends adopting a set of conventions about how you name these elements.
+Standardizing BPMN names across an environment has multiple benefits:&lt;/p>
+&lt;ul>
+&lt;li>Consistent workflow naming conventions help you filter and find workflows in the process list.&lt;/li>
+&lt;li>Well-named nodes make the workflow behavior easier to understand at a glance.&lt;/li>
+&lt;li>These names provide discovery and context when debugging and tracing a workflow.&lt;/li>
+&lt;/ul>
+&lt;p>The following list describes our default naming conventions.&lt;/p>
+&lt;h2>BPMN processes&lt;span class="hx-absolute -hx-mt-20" id="bpmn-processes">&lt;/span>
+&lt;a href="#bpmn-processes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Name BPMN Processes according to the following convention:&lt;/p>
+&lt;p>&lt;code>&amp;lt;INVOCATION_TYPE&amp;gt;_&amp;lt;CONTRACT_ID&amp;gt;_&amp;lt;PURPOSE&amp;gt;&lt;/code>&lt;/p>
+&lt;p>Where:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>&amp;lt;INVOCATION_TYPE&amp;gt;&lt;/code> describes how the BPMN is expected to be triggered&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>&amp;lt;CONTRACT_ID&amp;gt;&lt;/code> Links to the ID supplied in the sequence diagram (if applicable)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>&amp;lt;PURPOSE&amp;gt;&lt;/code> describes what the workflow does&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>InvocationTypes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>NATS&lt;/code>&lt;/td>
+&lt;td>Invoked when a message is received in the Rhize NATS broker&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>API&lt;/code>&lt;/td>
+&lt;td>Expects to be called from the API using &lt;code>createAndRunBPMNSync&lt;/code> or &lt;code>createAndRunBPMN&lt;/code> mutations&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>RULE&lt;/code>&lt;/td>
+&lt;td>Invocation is expected from the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/publish-subscribe/create-equipment-class-rule/" >rule engine&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>FUNC&lt;/code>&lt;/td>
+&lt;td>Internal functions to be invoked as helpers&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>NATS_ProcessOrderV1TransformAndPersist&lt;/code>&lt;/li>
+&lt;li>&lt;code>NATS_PLMMaterialMasterV2TransformPersistAndPublish&lt;/code>&lt;/li>
+&lt;li>&lt;code>RULE_ChangeOEEStatusOfCNCEquipment&lt;/code>&lt;/li>
+&lt;li>&lt;code>API_WST04_GetNextLibreBatchNumber&lt;/code>&lt;/li>
+&lt;li>&lt;code>API_WAT01_CloseOpenJobOrders&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2>BPMN Nodes&lt;span class="hx-absolute -hx-mt-20" id="bpmn-nodes">&lt;/span>
+&lt;a href="#bpmn-nodes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Name nodes in a workflow according to the following convention:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>&amp;lt;TYPE&amp;gt;_&amp;lt;SUB_TYPE&amp;gt;_&amp;lt;DETAIL&amp;gt;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Where:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>&amp;lt;TYPE&amp;gt;&lt;/code>
+is the type of node&lt;/li>
+&lt;li>&lt;code>&amp;lt;SUB_TYPE&amp;gt;&lt;/code> further categorizes the node&lt;/li>
+&lt;li>&lt;code>&amp;lt;DETAIL&amp;gt;&lt;/code> describes the node behavior.&lt;/li>
+&lt;/ul>
+&lt;h3>Start Events&lt;span class="hx-absolute -hx-mt-20" id="start-events">&lt;/span>
+&lt;a href="#start-events" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>For &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/" >start events&lt;/a>,
+use the name to describe each trigger according to the following convention:&lt;/p>
+&lt;p>&lt;code>START_&amp;lt;SUB_TYPE&amp;gt;_&amp;lt;DESCRIPTION&amp;gt;&lt;/code>&lt;/p>
+&lt;p>For message starts, include the topics.
+For timers, indicate the frequency.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>SubType&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>API&lt;/code>&lt;/td>
+&lt;td>Manual start via API&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>MSG&lt;/code>&lt;/td>
+&lt;td>Message Start&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>TIMER&lt;/code>&lt;/td>
+&lt;td>Timer start&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>START_MSG_InboundOrders&lt;/code>&lt;/li>
+&lt;li>&lt;code>START_API&lt;/code>&lt;/li>
+&lt;li>&lt;code>START_TIMER_EveryTenMinutes&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3>Query task&lt;span class="hx-absolute -hx-mt-20" id="query-task">&lt;/span>
+&lt;a href="#query-task" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Runs a GraphQL &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/" >&lt;/a>.&lt;/p>
+&lt;p>Prefix: &lt;code>Q&lt;/code>.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>SubTypes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>GET&lt;/code>&lt;/td>
+&lt;td>&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/#get" >Get query&lt;/a>. Expected to return one item&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>QUERY&lt;/code>&lt;/td>
+&lt;td>&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/#query" >Query operation&lt;/a>. May return multiple items&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>AGG&lt;/code>&lt;/td>
+&lt;td>&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/#aggregate" >Aggregate query&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Q_GET_OperationsScheduleByOperationId&lt;/code>&lt;/li>
+&lt;li>&lt;code>Q_QUERY_JobOrdersByOperationsRequestId&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3>Mutation task&lt;span class="hx-absolute -hx-mt-20" id="mutation-task">&lt;/span>
+&lt;a href="#mutation-task" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Runs a GraphQL &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/" >&lt;abbr title="A GraphQL operation that modifies some data in the database, usually creating, updating, or deleting a resource">mutation&lt;/abbr>&lt;/a>.&lt;/p>
+&lt;p>Prefix: &lt;code>M&lt;/code>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>SubTypes&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>ADD&lt;/code>&lt;/td>
+&lt;td>&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/#add" >Adds&lt;/a> a new record&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>UPDATE&lt;/code>&lt;/td>
+&lt;td>&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/#update" >Updates&lt;/a> existing&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>UPSERT&lt;/code>&lt;/td>
+&lt;td>Updates existing &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/#upsert" >or adds new&lt;/a> if not found&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>DELETE&lt;/code>&lt;/td>
+&lt;td>&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/#delete" >Deletes&lt;/a> a record&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>M_UPSERT_ProcessOrder&lt;/code>&lt;/li>
+&lt;li>&lt;code>M_ADD_UnitOfMeasure&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3>JSONata transform task&lt;span class="hx-absolute -hx-mt-20" id="jsonata-transform-task">&lt;/span>
+&lt;a href="#jsonata-transform-task" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Prefix: &lt;code>J&lt;/code>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>SubType&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>INIT&lt;/code>&lt;/td>
+&lt;td>Initialising some new variables&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>INDEX&lt;/code>&lt;/td>
+&lt;td>Updating an index variable&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>MAP&lt;/code>&lt;/td>
+&lt;td>Mapping one entity to another&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>TRANSFORM&lt;/code>&lt;/td>
+&lt;td>Updates existing or adds new if not found&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>DIFF&lt;/code>&lt;/td>
+&lt;td>Calculating the difference between entities&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>CLEANUP&lt;/code>&lt;/td>
+&lt;td>Deletes the record&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>CALC&lt;/code>&lt;/td>
+&lt;td>Performing some calculation&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>J_INDEX_CreateLoop1&lt;/code>&lt;/li>
+&lt;li>&lt;code>J_TRANSFORM_PO_to_JO&lt;/code>&lt;/li>
+&lt;li>&lt;code>J_INIT_ProcessingLimits&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3>REST task&lt;span class="hx-absolute -hx-mt-20" id="rest-task">&lt;/span>
+&lt;a href="#rest-task" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>REST nodes should also indicate the target system and endpoints,
+according to the following naming convention:&lt;/p>
+&lt;p>&lt;code>REST_&amp;lt;SYSTEM&amp;gt;_&amp;lt;SUB_TYPE&amp;gt;_&amp;lt;ENDPOINT&amp;gt;_&amp;lt;DETAIL&amp;gt;&lt;/code>&lt;/p>
+&lt;p>Where:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>SYSTEM&lt;/code> abbreviates the system being called, for example &lt;code>SAP&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>SubType&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>GET&lt;/code>&lt;/td>
+&lt;td>Initialising some new variables&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>POST&lt;/code>&lt;/td>
+&lt;td>Updating an index variable&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PUT&lt;/code>&lt;/td>
+&lt;td>Mapping one entity to another&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PATCH&lt;/code>&lt;/td>
+&lt;td>Updates existing or adds new if not found&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>DELETE&lt;/code>&lt;/td>
+&lt;td>Calculating the difference between entities&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>REST_SAP_POST_bill-material-bom&lt;/code>&lt;/li>
+&lt;li>&lt;code>REST_EWM_GET_serial-number-by-object-v1_RingSerialNumbers&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3>Gateway&lt;span class="hx-absolute -hx-mt-20" id="gateway">&lt;/span>
+&lt;a href="#gateway" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Prefix = &lt;code>GW&lt;/code>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>SubType&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>X_SPLIT&lt;/code>&lt;/td>
+&lt;td>Exclusive gateway split&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>X_JOIN&lt;/code>&lt;/td>
+&lt;td>Parallel gateway join&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>P_SPLIT&lt;/code>&lt;/td>
+&lt;td>Parallel gateway split&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>P_JOIN&lt;/code>&lt;/td>
+&lt;td>Parallel gateway join&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>GW_X_SPLIT_DifferenceLoop01&lt;/code>&lt;/li>
+&lt;li>&lt;code>GW_P_JOIN_DifferenceLoop01&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3>Sequence Flows&lt;span class="hx-absolute -hx-mt-20" id="sequence-flows">&lt;/span>
+&lt;a href="#sequence-flows" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Only name sequence flows that have conditions.
+If a sequence flow carries a condition, indicate the condition in the naming as follows:&lt;/p>
+&lt;p>&lt;code>F_&amp;lt;CONDITION_DESCRIPTION&amp;gt;&lt;/code>&lt;/p>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>F_NoNewEquipment&lt;/code>&lt;/li>
+&lt;li>&lt;code>F_AbandonFlagTrue&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3>End Events&lt;span class="hx-absolute -hx-mt-20" id="end-events">&lt;/span>
+&lt;a href="#end-events" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>If a workflow has multiple end events, indicate their number according to this convention:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>END_&amp;lt;NUMBER&amp;gt;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>END_01&lt;/code>&lt;/li>
+&lt;li>&lt;code>END_02&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2>Response Field Naming&lt;span class="hx-absolute -hx-mt-20" id="response-field-naming">&lt;/span>
 &lt;a href="#response-field-naming" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>When nodes generate a response, give the response field the same name as its node.&lt;/p></description></item><item><title>BPMN learning resources</title><link>https://docs.rhize.com/how-to/bpmn/learning-resources/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/how-to/bpmn/learning-resources/</guid><description>
 &lt;p>Here are some links to supplemental tools and material to help you build BPMN workflows in Rhize:&lt;/p>
 &lt;ul>
@@ -4465,6 +6694,14 @@ If a sequence flow carries a condition, indicate the condition in the naming as 
 &lt;li>📝 &lt;a href="https://www.omg.org/spec/BPMN/2.0.2/" target="_blank" rel="noopener">OMG BPMN standard&lt;/a>. The standard on which the Rhize BPMN engine and UI is based.&lt;/li>
 &lt;li>&lt;a href="https://marketplace.visualstudio.com/items?itemName=bigbug.vscode-language-jsonata" target="_blank" rel="noopener">&lt;code>vscode-language-jsonata&lt;/code>&lt;/a>. A VS code extension to interactively pipe JSONata expressions together, in the literate-programming style of Jupyter notebooks.&lt;/li>
 &lt;/ul></description></item><item><title>BPMN learning resources</title><link>https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/learning-resources/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/learning-resources/</guid><description>
+&lt;p>Here are some links to supplemental tools and material to help you build BPMN workflows in Rhize:&lt;/p>
+&lt;ul>
+&lt;li>&lt;i class="fa fa-github" aria-hidden="true">&lt;/i> &lt;a href="https://github.com/libremfg/bpmn-templates" target="_blank" rel="noopener">BPMN templates&lt;/a>. A repository of BPMN workflows that you can download and run yourself.&lt;/li>
+&lt;li>&lt;i class="fa fa-github" aria-hidden="true">&lt;/i> &lt;a href="https://github.com/bpmn-io/bpmn-js" target="_blank" rel="noopener"> bpmn.io&lt;/a>. Open source rendering toolkits and editors for BPMN 2.0. You can use the &lt;code>bpmn-js&lt;/code> for local offline building.&lt;/li>
+&lt;li>&lt;i class="fa fa-youtube" aria-hidden="true">&lt;/i> &lt;a href="https://www.youtube.com/@rhizemanufacturingdatahub" target="_blank" rel="noopener">Rhize Youtube channel&lt;/a>. Includes demos of BPMN.&lt;/li>
+&lt;li>📝 &lt;a href="https://www.omg.org/spec/BPMN/2.0.2/" target="_blank" rel="noopener">OMG BPMN standard&lt;/a>. The standard on which the Rhize BPMN engine and UI is based.&lt;/li>
+&lt;li>&lt;a href="https://marketplace.visualstudio.com/items?itemName=bigbug.vscode-language-jsonata" target="_blank" rel="noopener">&lt;code>vscode-language-jsonata&lt;/code>&lt;/a>. A VS code extension to interactively pipe JSONata expressions together, in the literate-programming style of Jupyter notebooks.&lt;/li>
+&lt;/ul></description></item><item><title>BPMN learning resources</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/learning-resources/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/learning-resources/</guid><description>
 &lt;p>Here are some links to supplemental tools and material to help you build BPMN workflows in Rhize:&lt;/p>
 &lt;ul>
 &lt;li>&lt;i class="fa fa-github" aria-hidden="true">&lt;/i> &lt;a href="https://github.com/libremfg/bpmn-templates" target="_blank" rel="noopener">BPMN templates&lt;/a>. A repository of BPMN workflows that you can download and run yourself.&lt;/li>
@@ -5754,6 +7991,647 @@ alt="A parallel gateway that branches and rejoins" width="50%">&lt;figcaption>
 &lt;/details>
 &lt;h2>Variables and expressions&lt;span class="hx-absolute -hx-mt-20" id="variables-and-expressions">&lt;/span>
 &lt;a href="#variables-and-expressions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>As data passes and transforms from one element to another, variables remain in the &lt;em>process variable context&lt;/em>.
+You can access these variables through JSONata expressions.&lt;/p></description></item><item><title>BPMN elements</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/</link><pubDate>Tue, 26 Sep 2023 11:10:37 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/</guid><description>
+&lt;p>This document describes the parameters available to each BPMN element in the Rhize UI.
+These parameters control how users set conditions, transform data, access variables, call services, and so on.&lt;/p>
+&lt;h2>Common parameters&lt;span class="hx-absolute -hx-mt-20" id="common-parameters">&lt;/span>
+&lt;a href="#common-parameters" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Every BPMN workflow and every element that the workflow contains have the following parameters:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>ID&lt;/td>
+&lt;td>Mandatory unique ID. For guidance, follow the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/naming-conventions/" >BPMN naming conventions&lt;/a>.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Name&lt;/td>
+&lt;td>Optional human readable name. If empty, takes ID value.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Documentation&lt;/td>
+&lt;td>Optional freeform text for additional information&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Extension properties&lt;/td>
+&lt;td>Optional metadata to add to workflow or node&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>Events&lt;span class="hx-absolute -hx-mt-20" id="events">&lt;/span>
+&lt;a href="#events" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>&lt;em>Events&lt;/em> are something that happen in the course of a process.
+In BPMN, events are drawn with circles.
+Events have a &lt;em>type&lt;/em> and a &lt;em>dimension&lt;/em>.&lt;/p>
+&lt;div class="hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain">
+&lt;div class="hx-mt-4 hx-flex hx-w-max hx-min-w-full hx-border-b hx-border-gray-200 hx-pb-px dark:hx-border-neutral-800">&lt;button
+class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+role="tab"
+type="button"
+aria-controls="tabs-panel-0" aria-selected="true" tabindex="0" data-state="selected">Events&lt;/button>&lt;button
+class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+role="tab"
+type="button"
+aria-controls="tabs-panel-1">Message type&lt;/button>&lt;button
+class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+role="tab"
+type="button"
+aria-controls="tabs-panel-2">Timer type&lt;/button>&lt;/div>
+&lt;/div>
+&lt;div>
+&lt;div
+class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+id="tabs-panel-0"
+role="tabpanel" tabindex="0" data-state="selected" >&lt;img src="https://docs.rhize.com/images/bpmn/rhize-bpmn-events.png" alt="A simplified model of events with no activities" loading="lazy" />&lt;/div>
+&lt;div
+class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+id="tabs-panel-1"
+role="tabpanel">Message events subscribe or publish to the Rhize broker. &lt;br/>
+&lt;img src="https://docs.rhize.com/images/bpmn/bpmn-message-event.svg" alt="A message event" loading="lazy" />&lt;/div>
+&lt;div
+class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+id="tabs-panel-2"
+role="tabpanel">Timer events start according to some interval or date, or wait for some duration. &lt;br/>
+&lt;img src="https://docs.rhize.com/images/bpmn/bpmn-timer-event.svg" alt="Timer event" loading="lazy" />&lt;/div>
+&lt;/div>
+&lt;p>In event-driven models, events can happen in one of three &lt;em>dimensions&lt;/em>:&lt;/p>
+&lt;dl>
+&lt;dt>Start&lt;/dt>
+&lt;dd>All processes begin with some trigger that starts an event. Start events are drawn with a single thin circle.&lt;/dd>
+&lt;dt>Intermediate.&lt;/dt>
+&lt;dd>Possible events between the start and end. Intermediate events might start from some trigger, or create some result. They are drawn with a double thin line.&lt;/dd>
+&lt;dt>End&lt;/dt>
+&lt;dd>All processes end with some result. End events are drawn with a single thick line.&lt;/dd>
+&lt;/dl>
+&lt;p>Besides these dimensions, BPMN also classifies events by whether they &lt;em>catch&lt;/em> a trigger or &lt;em>throw&lt;/em> a result.
+All start events are catch events; that is, they react to some trigger.
+All end events are throw events; that is, they terminate with some output—even an error.
+Intermediate events may throw or catch.&lt;/p>
+&lt;p>Rhize supports various event types to categorize an event, as described in the following sections.
+As with &lt;a href="#gateways" >Gateways&lt;/a> and &lt;a href="#activities" >Activities&lt;/a>, event types are marked by their icons.
+Throwing events are represented with icons that are filled in.&lt;/p>
+&lt;h3>Start events&lt;span class="hx-absolute -hx-mt-20" id="start-events">&lt;/span>
+&lt;a href="#start-events" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Start events are triggered by the &lt;code>CreateAndRunBPMN&lt;/code> and &lt;code>CreateAndRunBPMNSync&lt;/code> &lt;abbr title="A GraphQL operation that modifies some data in the database, usually creating, updating, or deleting a resource">mutation&lt;/abbr> operations.
+The parameters for a start event are as follows:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Outputs&lt;/td>
+&lt;td>Optional variables to add to the &lt;abbr title="The context and variables that are passed between tasks in a BPMN workflow">process variable context&lt;/abbr>. JSON or JSONata.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Message start events&lt;span class="hx-absolute -hx-mt-20" id="message-start-events">&lt;/span>
+&lt;a href="#message-start-events" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Message events are triggered from a message published to the Rhize broker.
+The parameters for a message event are as follows:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Message&lt;/td>
+&lt;td>The topic the message subscribes to on the Rhize Broker. The topic structure follows MQTT syntax.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Outputs&lt;/td>
+&lt;td>Optional variables to add to the &lt;abbr title="The context and variables that are passed between tasks in a BPMN workflow">process variable context&lt;/abbr>. JSON or JSONata.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Timer start events&lt;span class="hx-absolute -hx-mt-20" id="timer-start-events">&lt;/span>
+&lt;a href="#timer-start-events" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Timer start events are triggered either at a specific date or recurring intervals.
+The parameters for a timer start event are as follows:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Timer&lt;/td>
+&lt;td>One of &lt;ul>&lt;li>&lt;code>Cycle&lt;/code>, to begin at recurring intervals. For example,&lt;code>R5/2024-05-09T08:12:55/PT10S&lt;/code> starts on &lt;code>2024-05-09&lt;/code> and executes every 10 seconds for 5 repetitions. If &lt;code>&amp;lt;START_DATE&amp;gt;&lt;/code> is not set, Rhize uses &lt;code>2023-01-01T00:00:00Z&lt;/code>.&lt;/li> &lt;li> &lt;code>Date&lt;/code>, to happen at a certain time, for example, &lt;code>2024-05-09T08:12:55&lt;/code>&lt;/li>&lt;/ul> Enter values in &lt;a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank" rel="noopener">ISO 8601&lt;/a> format.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Outputs&lt;/td>
+&lt;td>Optional variables to add to the &lt;abbr title="The context and variables that are passed between tasks in a BPMN workflow">process variable context&lt;/abbr>. JSON or JSONata.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Intermediate message events&lt;span class="hx-absolute -hx-mt-20" id="intermediate-message-events">&lt;/span>
+&lt;a href="#intermediate-message-events" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Intermediate message events throw a message to the Rhize NATS broker.
+This may provide info for a subscribing third-party client, or initiate another BPMN workflow.&lt;/p>
+&lt;p>The parameters for an intermediate message event are as follows:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Message&lt;/td>
+&lt;td>The topic the message publishes to on the Rhize Broker. The topic structure follows MQTT syntax&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Inputs&lt;/td>
+&lt;td>Variables to send in the body. For messages to the Rhize broker, use the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/variables/" >special variable&lt;/a> &lt;code>BODY&lt;/code>. Value can be JSON or JSONata.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Headers&lt;/td>
+&lt;td>Additional headers to send in the request&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Outputs&lt;/td>
+&lt;td>JSON or JSONata. Optional variables to add to the &lt;abbr title="The context and variables that are passed between tasks in a BPMN workflow">process variable context&lt;/abbr>.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Intermediate timer events&lt;span class="hx-absolute -hx-mt-20" id="intermediate-timer-events">&lt;/span>
+&lt;a href="#intermediate-timer-events" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>An intermediate message pauses for some duration.
+The parameters for an intermediate timer event are as follows:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Timer&lt;/td>
+&lt;td>A duration to pause. Enter values in &lt;a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank" rel="noopener">ISO 8601&lt;/a> format.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Outputs&lt;/td>
+&lt;td>Optional variables to add to the &lt;abbr title="The context and variables that are passed between tasks in a BPMN workflow">process variable context&lt;/abbr>. The assignment value can be JSON or JSONata.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>Service tasks&lt;span class="hx-absolute -hx-mt-20" id="service-tasks">&lt;/span>
+&lt;a href="#service-tasks" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>In BPMN, an &lt;em>activity&lt;/em> is work performed within a business process.&lt;/p>
+&lt;p>On the Rhize platform, most activities are &lt;em>tasks&lt;/em>, work that cannot be broken down into smaller levels of detail.
+Tasks are drawn with rectangles with rounded corners.&lt;/p>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">Besides tasks, you can also use &lt;a href="#call-activities" >&lt;em>call activities&lt;/em>&lt;/a>, processes which call and invoke other processes.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>A service task uses some service.
+In Rhize workflows, service tasks include &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/call-the-graphql-api/" >Calls to the GraphQL API&lt;/a> (and REST APIs), data source reads and writes, and JSON manipulation.
+These service tasks come with templates.&lt;/p>
+&lt;p>As with &lt;a href="#gateways" >Gateways&lt;/a> and &lt;a href="#events" >events&lt;/a>, service task are marked by their icons.&lt;/p>
+&lt;figure>&lt;img src="https://docs.rhize.com/images/bpmn/bpmn-service-task.svg"
+alt="An empty service task" width="100">&lt;figcaption>
+&lt;p>&lt;small>&lt;em>Service tasks have a gear icon marker&lt;/em>&lt;/small>&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>To add a service task, select the change icon (&amp;ldquo;wrench&amp;rdquo;), then select &lt;strong>Service Task&lt;/strong>.
+Use &lt;strong>Templates&lt;/strong> to structure the service task call and response.&lt;/p>
+&lt;p>The service task templates are as follows&lt;/p>
+&lt;h3>JSONata transform&lt;span class="hx-absolute -hx-mt-20" id="jsonata-transform">&lt;/span>
+&lt;a href="#jsonata-transform" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Transform JSON data with a JSONata expression.
+For detailed examples, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/use-jsonata/" >The Rhize Guide to JSONata&lt;/a>.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Call parameters&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Input&lt;/td>
+&lt;td>Input data for the transform&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Transform&lt;/td>
+&lt;td>The transform expression&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Max Payload size&lt;/td>
+&lt;td>Number. If the response length exceeds this number of characters, Rhize throws an error.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Besides the call parameters, the JSONata task has following additional fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Input response&lt;/td>
+&lt;td>The name of the variable to add to the &lt;abbr title="The context and variables that are passed between tasks in a BPMN workflow">process variable context&lt;/abbr>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>GraphQL Query&lt;span class="hx-absolute -hx-mt-20" id="graphql-query">&lt;/span>
+&lt;a href="#graphql-query" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Run a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/" >GraphQL query&lt;/a>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Call parameters&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Query body&lt;/td>
+&lt;td>GraphQL query expression&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Variables&lt;/td>
+&lt;td>JSON. Variables for the GraphQL query.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Connection Timeout&lt;/td>
+&lt;td>Number. Time in milliseconds to establish a connection.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Max Payload size&lt;/td>
+&lt;td>Number. If the response length exceeds this number of characters, Rhize throws an error.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Besides the call parameters, the Query task has following additional fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Input response&lt;/td>
+&lt;td>Optional &lt;a href="https://docs.jsonata.org/1.7.0/overview" target="_blank" rel="noopener">JSONata&lt;/a> expression to map to the &lt;a href="#process-variable-context" >process variable context&lt;/a>. For GraphQL operations, use this only to map values. Rely on &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/filter/" >GQL filters&lt;/a> to limit the payload.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Headers&lt;/td>
+&lt;td>Additional headers to send in the request&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>GraphQL Mutation&lt;span class="hx-absolute -hx-mt-20" id="graphql-mutation">&lt;/span>
+&lt;a href="#graphql-mutation" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Run a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/" >GraphQL mutation&lt;/a>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Call parameters&lt;/th>
+&lt;th>description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Mutation body&lt;/td>
+&lt;td>GraphQL Mutation expression&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Variables&lt;/td>
+&lt;td>JSON. Variables for the GraphQL query.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Connection Timeout&lt;/td>
+&lt;td>Number. Time in milliseconds to establish a connection.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Max Payload size&lt;/td>
+&lt;td>Number. If the response length exceeds this number of characters, Rhize throws an error.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Besides the call parameters, the mutation task has following additional fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Input response&lt;/td>
+&lt;td>Optional &lt;a href="https://docs.jsonata.org/1.7.0/overview" target="_blank" rel="noopener">JSONata&lt;/a> expression to map to the &lt;a href="#process-variable-context" >process variable context&lt;/a>. For mutations, use this only to map values. Use the mutation call to limit the payload.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Headers&lt;/td>
+&lt;td>Additional headers to send in the request&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Call REST API&lt;span class="hx-absolute -hx-mt-20" id="call-rest-api">&lt;/span>
+&lt;a href="#call-rest-api" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>HTTP call to a REST API service.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Call parameters&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Method Type&lt;/td>
+&lt;td>One of &lt;code>GET&lt;/code>, &lt;code>POST&lt;/code>, &lt;code>PATCH&lt;/code>, &lt;code>PUT&lt;/code>, &lt;code>DELETE&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Verification&lt;/td>
+&lt;td>Boolean. Whether verify the Certificate Authority provided in the TLS certificate.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>URL&lt;/td>
+&lt;td>The target URL&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>URL Parameters&lt;/td>
+&lt;td>JSON. The key-value pairs to be used as query parameters in the URL&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>HTTP Headers&lt;/td>
+&lt;td>JSON. The key-value pairs to be used as request headers&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Connection Timeout&lt;/td>
+&lt;td>Number. Time in milliseconds to establish a connection.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Max Payload size&lt;/td>
+&lt;td>Number. If the response length exceeds this number of characters, Rhize throws an error.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Besides the call parameters, the REST task has following additional fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Input response&lt;/td>
+&lt;td>Optional &lt;a href="https://docs.jsonata.org/1.7.0/overview" target="_blank" rel="noopener">JSONata&lt;/a> expression to map to the &lt;a href="#process-variable-context" >process variable context&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Headers&lt;/td>
+&lt;td>Additional headers to send in the request&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>JSON schema&lt;span class="hx-absolute -hx-mt-20" id="json-schema">&lt;/span>
+&lt;a href="#json-schema" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Validate that a payload conforms to a configured &lt;a href="https://json-schema.org/" target="_blank" rel="noopener">JSON schema&lt;/a>.
+For example, you can validate that &lt;code>data.arr&lt;/code> contains an array of numbers
+and that &lt;code>userID&lt;/code> contains a string of certain length.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Call Parameters&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Schema&lt;/td>
+&lt;td>A JSON schema. You can also create one from a JSON file with a tool such as &lt;a href="https://transform.tools/json-to-json-schema" target="_blank" rel="noopener">JSON to JSON schema&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Variable&lt;/td>
+&lt;td>Optional. Key of specific variable to validate (default checks all variables in &lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>The Schema task has the following output that you can define as a variable:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Response mapping&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Valid&lt;/td>
+&lt;td>The boolean output of the schema evaluation. &lt;code>True&lt;/code> if schema is valid.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Validation error&lt;/td>
+&lt;td>A string that reports the validation errors if the schema is invalid.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Read Datasource&lt;span class="hx-absolute -hx-mt-20" id="read-datasource">&lt;/span>
+&lt;a href="#read-datasource" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Read values from topics of a datasource (for example, an OPC-UA server)&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Call parameters&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Data source&lt;/td>
+&lt;td>The ID of the datasource&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Data&lt;/td>
+&lt;td>JSON or JSONata expression. Topics and values to write to&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Max Payload size&lt;/td>
+&lt;td>Number. If the response length exceeds this number of characters, Rhize throws an error.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Besides the call parameters, the data source task has following additional fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Input response&lt;/td>
+&lt;td>The variable name to store the response in &lt;abbr title="The context and variables that are passed between tasks in a BPMN workflow">process variable context&lt;/abbr>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Headers&lt;/td>
+&lt;td>Additional headers to send in the request&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Write Datasource&lt;span class="hx-absolute -hx-mt-20" id="write-datasource">&lt;/span>
+&lt;a href="#write-datasource" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Write values to topics of a datasource.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Call parameters&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Data source&lt;/td>
+&lt;td>The ID of the datasource&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Data&lt;/td>
+&lt;td>JSON or JSONata expression. Topics and values to write to&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Max Payload size&lt;/td>
+&lt;td>Number. If the response length exceeds this number of characters, Rhize throws an error.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Besides the call parameters, the data source task has following additional fields:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Input response&lt;/td>
+&lt;td>The variable name to store the response in &lt;abbr title="The context and variables that are passed between tasks in a BPMN workflow">process variable context&lt;/abbr>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Headers&lt;/td>
+&lt;td>Additional headers to send in the request&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>Call activities&lt;span class="hx-absolute -hx-mt-20" id="call-activities">&lt;/span>
+&lt;a href="#call-activities" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>&lt;img src="https://docs.rhize.com/images/bpmn/bpmn-call-activity.svg" alt="Call activities have a task with an icon to expand" loading="lazy" />&lt;/p>
+&lt;p>A &lt;em>call activity&lt;/em> invokes another workflow.
+In this flow, the process that contains the call is the &lt;em>parent&lt;/em>, and the process that is called is the &lt;em>child&lt;/em>.&lt;/p>
+&lt;p>Call activities have the following parameters:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameters&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Called element&lt;/td>
+&lt;td>The ID of the called process&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>The inputs have the following parameters:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameters&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Local variable name&lt;/td>
+&lt;td>The name of the variable as it will be accessed in the child process (that is, the key name)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>assignment value&lt;/td>
+&lt;td>The value to pass from the parent variable context&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>The outputs have the following parameters:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameters&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Local variable name&lt;/td>
+&lt;td>What to name the incoming data, as it will be accessed in the parent process (that is, the key name)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>assignment value&lt;/td>
+&lt;td>The value to pass from the child variable context&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>For a guide to reusing functions, read the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/create-workflow/#reuse-workflows" >Reuse workflows section&lt;/a> in the &amp;ldquo;Create workflow&amp;rdquo; guide.&lt;/p>
+&lt;h2>Gateways&lt;span class="hx-absolute -hx-mt-20" id="gateways">&lt;/span>
+&lt;a href="#gateways" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>&lt;em>Gateways&lt;/em> control how sequence flows interact as they converge and diverge within a process.
+They represent mechanisms that either allow or disallow a passage.&lt;/p>
+&lt;p>BPMN notation represents gateways as diamonds with single thin lines, as is common in many diagrams with decision flows.
+Besides decisions, however, Rhize&amp;rsquo;s BPMN notation also includes parallel gateways.&lt;/p>
+&lt;p>As with &lt;a href="#events" >Events&lt;/a> and &lt;a href="#activities" >Activities&lt;/a>, gateway types are marked by their icons.&lt;/p>
+&lt;figure>&lt;img src="https://docs.rhize.com/images/bpmn/bpmn-gateway-overview.svg"
+alt="Gateway with two branches">&lt;figcaption>
+&lt;p>&lt;small>&lt;em>Drawn as diamonds, gateways represent branches in a sequence flow.&lt;/em>&lt;/small>&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;h3>Exclusive gateway&lt;span class="hx-absolute -hx-mt-20" id="exclusive-gateway">&lt;/span>
+&lt;a href="#exclusive-gateway" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;img src="https://docs.rhize.com/images/bpmn/bpmn-gateway-exclusive.svg" alt="exclusive gateways are marked by an “x” icon" loading="lazy" />&lt;/p>
+&lt;p>Marked by an &amp;ldquo;X&amp;rdquo; icon, an &lt;em>exclusive gateway&lt;/em> represents a point in a process where only one path is followed.
+In some conversations, an exclusive gateway is also called an &lt;em>XOR&lt;/em>.&lt;/p>
+&lt;p>If a gateway has multiple sequence flows, all flows except one must have a conditional &lt;a href="https://docs.jsonata.org/1.7.0/overview" target="_blank" rel="noopener">JSONata expression&lt;/a> that the engine can evaluate.
+To designate a default, leave one flow without an expression.&lt;/p>
+&lt;figure>&lt;img src="https://docs.rhize.com/images/bpmn/screenshot-rhize-bpmn-exclusive-gateway.png"
+alt="An exclusive gateway that has a condition and a default" width="50%">&lt;figcaption>
+&lt;p>&lt;em>An exclusive gateway with a condition and default. Configure conditions as JSONata expressions&lt;/em>&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Exclusive gateways can only branch. That is, they cannot join multiple flows.&lt;/p>
+&lt;h3>Parallel gateway&lt;span class="hx-absolute -hx-mt-20" id="parallel-gateway">&lt;/span>
+&lt;a href="#parallel-gateway" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;img src="https://docs.rhize.com/images/bpmn/bpmn-gateway-parallel.svg" alt="Parallel gateways are marked by a “&amp;#43;” icon" loading="lazy" />&lt;/p>
+&lt;p>Marked by a &amp;ldquo;+&amp;rdquo; icon, &lt;em>parallel gateways&lt;/em> indicate a point where parallel tasks are run.&lt;/p>
+&lt;figure>&lt;img src="https://docs.rhize.com/images/bpmn/screenshot-rhize-bpmn-parallel-gateway.png"
+alt="A parallel gateway that branches and rejoins" width="50%">&lt;figcaption>
+&lt;p>&lt;em>Parallel gateways run jobs in parallel.&lt;/em>&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;details class="last-of-type:hx-mb-0 hx-rounded-lg hx-bg-neutral-50 dark:hx-bg-neutral-800 hx-p-2 hx-mt-4 hx-group" open>
+&lt;summary class="hx-flex hx-items-center hx-cursor-pointer hx-select-none hx-list-none hx-p-1 hx-rounded hx-transition-colors hover:hx-bg-gray-100 dark:hover:hx-bg-neutral-800 before:hx-mr-1 before:hx-inline-block before:hx-transition-transform before:hx-content-[''] dark:before:hx-invert rtl:before:hx-rotate-180 group-open:before:hx-rotate-90">
+&lt;strong class="hx-text-lg">Parallel joins&lt;/strong>
+&lt;/summary>
+&lt;div class="hx-p-2 hx-overflow-hidden">
+&lt;p>You can join parallel tasks with another parallel gateway.
+This joins the variables from both branches to &lt;a href="#process-variable-context" >process variable context&lt;/a>.
+Note that parallel joins have performance costs, so be mindful of using them, especially in large tasks.
+To learn more, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/tune-performance/" >Tune BPMN performance&lt;/a>.&lt;/p>
+&lt;figure>&lt;img src="https://docs.rhize.com/images/bpmn/screenshot-rhize-bpmn-parallel-join.png"
+alt="A parallel gateway that branches and rejoins" width="50%">&lt;figcaption>
+&lt;p>&lt;em>Parallel joins join variable context, but have performance costs.&lt;/em>&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div>
+&lt;/details>
+&lt;h2>Variables and expressions&lt;span class="hx-absolute -hx-mt-20" id="variables-and-expressions">&lt;/span>
+&lt;a href="#variables-and-expressions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>As data passes and transforms from one element to another, variables remain in the &lt;em>process variable context&lt;/em>.
 You can access these variables through JSONata expressions.&lt;/p></description></item><item><title>Glossary</title><link>https://docs.rhize.com/reference/glossary/</link><pubDate>Tue, 12 Sep 2023 19:35:35 +1100</pubDate><guid>https://docs.rhize.com/reference/glossary/</guid><description>
 &lt;p>The manufacturing industry has many specialized terms—and many abbreviations.
 This glossary is a reference of how Rhize defines terms used in this documentation.&lt;/p>
@@ -5814,6 +8692,65 @@ This glossary is a reference of how Rhize defines terms used in this documentati
 &lt;dd>A collection of work calendar &lt;a href="#entry">entries&lt;/a>&lt;/dd>&lt;dt id="work-calendar-entry">Work calendar entry&lt;/dt>
 &lt;dd>Rules that define a work period, including its start date, duration, and interval.&lt;/dd>&lt;dt id="work-master">Work master&lt;/dt>
 &lt;dd>A template for a job order, corresponding to an operations and process segment, from the perspective of the level-3 (MES/MOM) systems.&lt;/dd>&lt;/dl></description></item><item><title>Glossary</title><link>https://docs.rhize.com/versions/v3.0.3/reference/glossary/</link><pubDate>Tue, 12 Sep 2023 19:35:35 +1100</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/reference/glossary/</guid><description>
+&lt;p>The manufacturing industry has many specialized terms—and many abbreviations.
+This glossary is a reference of how Rhize defines terms used in this documentation.&lt;/p>
+&lt;dl>&lt;dt id="agent">Agent&lt;/dt>
+&lt;dd>The Rhize agent bridges your plant processes with the Rhize data hub. It collects data that is emitted during the manufacturing process and publishes it to the NATS message broker.&lt;/dd>&lt;dt id="andon">Andon&lt;/dt>
+&lt;dd>A system that alerts manufacturing teams about problems in processes or quality.&lt;/dd>&lt;dt id="audit">Audit&lt;/dt>
+&lt;dd>The Libre Audit log server is a service that provides a tamper-proof and immutable audit trail of all events that occur in the Rhize system.&lt;/dd>&lt;dt id="business-process-model-and-notation">Business Process Model and Notation (BPMN)&lt;/dt>
+&lt;dd>A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize's BPMN UI and engine provides a low-code interface for complex event handling&lt;/dd>&lt;dt id="catch-event">Catch event&lt;/dt>
+&lt;dd>In BPMN, a catch event reacts to a trigger (compared to a &lt;a href="#throw-event">throw event&lt;/a>, which returns some result). Only start and intermediate events can catch.&lt;/dd>&lt;dt id="computerized-maintenance-management-system">Computerized maintenance management system (CMMS)&lt;/dt>
+&lt;dd>A Source of information about an organization's maintenance operations&lt;/dd>&lt;dt id="data-source">Data source&lt;/dt>
+&lt;dd>A source of real-time data that is collected by the &lt;a href="#agent">Rhize agent&lt;/a>, such as an MQTT or OPC UA device&lt;/dd>&lt;dt id="discrete-manufacturing">Discrete manufacturing&lt;/dt>
+&lt;dd>A form a manufacturing where items are made one at a item, as opposed to in batches or continuously&lt;/dd>&lt;dt id="electronic-batch-report">Electronic batch report (eBR)&lt;/dt>
+&lt;dd>A detailed report for a batch in a pharmaceutical process, logging items such as the process segments, personnel, equipment, material substance and weight, and so on&lt;/dd>&lt;dt id="enterprise-resource-planning">Enterprise resource planning (ERP)&lt;/dt>
+&lt;dd>Software to manage business processes. In Rhize, ERP activities usually are named "operations", where lower-level activities are prefixed with "Work".&lt;/dd>&lt;dt id="equipment">Equipment&lt;/dt>
+&lt;dd>&lt;/dd>&lt;dt id="equipment-actual">Equipment actual&lt;/dt>
+&lt;dd>Refer to &lt;a href="#resource-actual">resource actual&lt;/a>&lt;/dd>&lt;dt id="equipment-class">Equipment class&lt;/dt>
+&lt;dd>An equipment class is a grouping of equipment with a definite purpose&lt;/dd>&lt;dt id="event">Event&lt;/dt>
+&lt;dd>Discrete occurrences or notifications that represent changes or actions within a system&lt;/dd>&lt;dt id="event-orchestration">Event orchestration&lt;/dt>
+&lt;dd>A pattern in event-driven architecture where a central service, such as &lt;a href="#nats">NATS&lt;/a>, listens to events and decides how to handle them.&lt;/dd>&lt;dt id="event-driven-architecture">Event-driven architecture (EDA)&lt;/dt>
+&lt;dd>A software design pattern that revolves around the concept of events and event-driven messaging&lt;/dd>&lt;dt id="event-driven-data-updates">Event-driven data updates&lt;/dt>
+&lt;dd>When an event leads to an update in the real-time database&lt;/dd>&lt;dt id="finished-goods">Finished goods&lt;/dt>
+&lt;dd>The final product. Material becomes finished goods when it requires no more processing or production&lt;/dd>&lt;dt id="genealogy">Genealogy&lt;/dt>
+&lt;dd>The ability to trace the raw materials that were used across different levels of a manufacturing process&lt;/dd>&lt;dt id="hierarchy-scope">Hierarchy scope&lt;/dt>
+&lt;dd>The scope of the exchanged information, such as a site or area, for which the information is relevant. The scope identifies associated instances of objects such as material, personnel, and equipment&lt;/dd>&lt;dt id="instance">Instance&lt;/dt>
+&lt;dd>An identifiable member of a manufacturing class, like a material or process segment, that can be tracked and scheduled&lt;/dd>&lt;dt id="iso-22400">ISO 22400&lt;/dt>
+&lt;dd>A standard on KPIs in manufacturing operations management.&lt;/dd>&lt;dt id="laboratory-information-management-system">Laboratory information management system (LIMS)&lt;/dt>
+&lt;dd>&lt;/dd>&lt;dt id="level-or-an-operation">Level (or an operation)&lt;/dt>
+&lt;dd>The degree of granularity necessary to discuss and exchange data for different purposes in the manufacturing operation.&lt;/dd>&lt;dt id="level-3">level 3&lt;/dt>
+&lt;dd>The perspective of the operation as viewed from the granularity of a manufacturing execution or operations management system. Above level 3 is business planning, and below level 3 is monitoring and acquisition.&lt;/dd>&lt;dt id="level-4">level 4&lt;/dt>
+&lt;dd>Software that tracks laboratory data, including samples, experiments, and workflows&lt;/dd>&lt;dt id="manufacturing-data-hub">Manufacturing data hub (MDH)&lt;/dt>
+&lt;dd>A centralized platform or infrastructure that serves as a hub for collecting, integrating, storing, and processing manufacturing data from various sources within an organization.&lt;/dd>&lt;dt id="manufacturing-execution-system">Manufacturing execution system (MES)&lt;/dt>
+&lt;dd>A system in a manufacturing process that tracks and documents the transformation of raw materials to finished goods&lt;/dd>&lt;dt id="material">Material&lt;/dt>
+&lt;dd>Everything required to produce a finished good. They include raw materials, intermediate materials, and collections of parts&lt;/dd>&lt;dt id="material-class">Material class&lt;/dt>
+&lt;dd>A group of material with a shared purpose in the manufacturing process&lt;/dd>&lt;dt id="material-definition">Material definition&lt;/dt>
+&lt;dd>A representation of material with similar charecteristics. All material lots must have one associated material definition.&lt;/dd>&lt;dt id="material-lot">Material lot&lt;/dt>
+&lt;dd>A uniquely identifiable amount of material, either countable or weighable&lt;/dd>&lt;dt id="material-sublot">Material sublot&lt;/dt>
+&lt;dd>Each separately identifiable unit of a &lt;a href="#material-lot">material lot.&lt;/a>&lt;/dd>&lt;dt id="mutation">Mutation&lt;/dt>
+&lt;dd>A GraphQL operation that modifies some data in the database, usually creating, updating, or deleting a resource&lt;/dd>&lt;dt id="nats">NATS&lt;/dt>
+&lt;dd>Connective infrastructure to address, discover, and exchange messages in a distributed system. Rhize uses NATS as the broker to publish and subscribe to event data, decoupling communication between services and equipment.&lt;/dd>&lt;dt id="ontology">Ontology&lt;/dt>
+&lt;dd>The entities and relationships that represent all knowledge in the domain of manufacturing operations&lt;/dd>&lt;dt id="operational-location">Operational location&lt;/dt>
+&lt;dd>Where resources are expected to be located in a plant&lt;/dd>&lt;dt id="operations-definition">Operations definition&lt;/dt>
+&lt;dd>The resources required to perform an operation, including for production, quality, maintenance, and inventory, from the perspective of the level-4 enterprise control systems.&lt;/dd>&lt;dt id="operations-event-definition">Operations event definition&lt;/dt>
+&lt;dd>A definition of the properties that pertain to an &lt;em>event&lt;/em> from the perspective of the level-4 (ERP) systems.&lt;/dd>&lt;dt id="overall-equipment-effectiveness">Overall Equipment Effectiveness (OEE)&lt;/dt>
+&lt;dd>A measure of manufacturing productivity. OEE is commonly calculated as the product of three critical factors: availability, performance, and quality.&lt;/dd>&lt;dt id="pattern-work-definition">Pattern (work definition) (pattern)&lt;/dt>
+&lt;dd>A work definition that creates a pattern or template for other patterns or work definitions to follow&lt;/dd>&lt;dt id="personnel-class">Personnel class&lt;/dt>
+&lt;dd>A grouping of persons whose work shares a definite purpose in the manufacturing process&lt;/dd>&lt;dt id="physical-asset">Physical asset&lt;/dt>
+&lt;dd>A physical piece of equipment with an ID&lt;/dd>&lt;dt id="process-segment">Process segment&lt;/dt>
+&lt;dd>A step in a manufacturing activitity that is visible to a business process, grouping the necessary personnel, material, equipment, and physical assets&lt;/dd>&lt;dt id="process-variable-context">Process variable context&lt;/dt>
+&lt;dd>The context and variables that are passed between tasks in a &lt;a href="#business-process-model-and-notation">BPMN&lt;/a> workflow&lt;/dd>&lt;dt id="resource-actual">Resource actual&lt;/dt>
+&lt;dd>The specific resource used for a specific job. For example, an operations segment may require &lt;code>EquipmentA&lt;/code>, but if this equipment is in maintainance at the time of a job, the Equipment actual might be its temporary replacement, &lt;code>EquipmentB&lt;/code>&lt;/dd>&lt;dt id="role-based-equipment-model">Role-based equipment model&lt;/dt>
+&lt;dd>A definition of equipment based on the level-3 and level-4 functions and activities that it performs&lt;/dd>&lt;dt id="rules-engine">Rules engine&lt;/dt>
+&lt;dd>A program that evaluates incoming data from a data source and converts significant changes into &lt;em>events&lt;/em> to be processed by a BPMN workflow&lt;/dd>&lt;dt id="serial-discrete">Serial discrete&lt;/dt>
+&lt;dd>A type of &lt;a href="#discrete-manufacturing">discrete manufacturing&lt;/a> where each item produced has a serial number&lt;/dd>&lt;dt id="sink">Sink&lt;/dt>
+&lt;dd>The destination of a data flow.&lt;/dd>&lt;dt id="throw-event">Throw event&lt;/dt>
+&lt;dd>In BPMN, a throw event returns some response (compared to a &lt;a href="#catch-event">catch event&lt;/a>, which reacts to some trigger). Only intermediate and end events can throw.&lt;/dd>&lt;dt id="unit-of-measure">Unit of measure&lt;/dt>
+&lt;dd>A defined unit to consistently compare values, duration or quantities&lt;/dd>&lt;dt id="warehouse-management-system">Warehouse management system&lt;/dt>
+&lt;dd>A system to organize processes and policies of warehouses. It may include processes to manage and track inventory and exchange data.&lt;/dd>&lt;dt id="work-calendar">Work calendar&lt;/dt>
+&lt;dd>A collection of work calendar &lt;a href="#entry">entries&lt;/a>&lt;/dd>&lt;dt id="work-calendar-entry">Work calendar entry&lt;/dt>
+&lt;dd>Rules that define a work period, including its start date, duration, and interval.&lt;/dd>&lt;dt id="work-master">Work master&lt;/dt>
+&lt;dd>A template for a job order, corresponding to an operations and process segment, from the perspective of the level-3 (MES/MOM) systems.&lt;/dd>&lt;/dl></description></item><item><title>Glossary</title><link>https://docs.rhize.com/versions/v3.1.0/reference/glossary/</link><pubDate>Tue, 12 Sep 2023 19:35:35 +1100</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/reference/glossary/</guid><description>
 &lt;p>The manufacturing industry has many specialized terms—and many abbreviations.
 This glossary is a reference of how Rhize defines terms used in this documentation.&lt;/p>
 &lt;dl>&lt;dt id="agent">Agent&lt;/dt>
