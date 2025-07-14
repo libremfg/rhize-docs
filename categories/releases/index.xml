@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Releases</title><link>https://docs.rhize.com/categories/releases/</link><description>Recent content in Releases on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 01 Jul 2025 15:13:10 -0400</lastBuildDate><atom:link href="https://docs.rhize.com/categories/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>3.2.0</title><link>https://docs.rhize.com/releases/3-2-0/</link><pubDate>Tue, 01 Jul 2025 15:13:10 -0400</pubDate><guid>https://docs.rhize.com/releases/3-2-0/</guid><description>
 &lt;p>Release notes for version 3.2.0 of the Rhize application.&lt;/p>
 &lt;p>&lt;em>Release date:&lt;/em>
-1 Jul 2025&lt;/p>
+14 Jul 2025&lt;/p>
 &lt;h2>Changes by service&lt;span class="hx-absolute -hx-mt-20" id="changes-by-service">&lt;/span>
 &lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The following sections document the changes this release brings to each service.&lt;/p>
 &lt;h3>Admin&lt;span class="hx-absolute -hx-mt-20" id="admin">&lt;/span>
