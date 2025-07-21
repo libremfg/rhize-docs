@@ -3,6 +3,8 @@ title: Work masters
 description: The most granular work definition in ISA-95, defining the resources and instructions necessary to do a unit of work.
 ---
 
+{{% reusable/isa-95-course %}}
+
 A _work master_ defines the resources and instructions necessary to do a unit of work.
 As the most granular work definition in ISA-95, the work master can serve a variety of operational purposes:
 - Define how to create a product from the perspective of a level-3 system

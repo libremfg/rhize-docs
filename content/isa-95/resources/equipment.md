@@ -7,6 +7,7 @@ images:
 
 ---
 
+{{% reusable/isa-95-course %}}
 
 Equipment is an object that has a defined role in the production process. 
 Equipment can have _properties_, which define some temporary or permanent value,

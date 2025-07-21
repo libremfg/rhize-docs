@@ -6,6 +6,7 @@ cascade:
   icon: cube
 ---
 
+{{% reusable/isa-95-course %}}
 
 No matter what you make, your manufacturing operation is going to use resources: 
 

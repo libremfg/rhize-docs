@@ -4,6 +4,8 @@ description: A guide to material entities and relationships in ISA-95
 icon: beaker
 ---
 
+{{% reusable/isa-95-course %}}
+
 In ISA-95, _material_ can be a finished good or anything that goes into this good.
 Examples of material include:
 - A final product, such as packaged watch

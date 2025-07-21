@@ -5,6 +5,8 @@ images:
   - /images/og/graphic-rhize-process-segment-explanation.png
 ---
 
+{{% reusable/isa-95-course %}}
+
 A _process segment_ is a step that can be shared across processes.
 Process segments are flexible information objects,
 abstract enough to be shared by multiple procedures,

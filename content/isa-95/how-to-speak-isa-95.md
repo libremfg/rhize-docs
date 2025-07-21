@@ -9,6 +9,8 @@ aliases:
   - /explanations/how-to-speak-isa-95
 ---
 
+{{% reusable/isa-95-course %}}
+
 [ISA-95](https://www.isa.org/store?query=isa95) provides a common language to discuss manufacturing.
 When you speak with other manufacturing stakeholders, you can use the standard's precise vocabulary to ensure that everyone is speaking about the same thing.
 

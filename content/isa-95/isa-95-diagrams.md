@@ -10,6 +10,8 @@ aliases:
 icon: diagram
 ---
 
+{{% reusable/isa-95-course %}}
+
 These diagrams provide some highly simplified visual explanations gleaned from parts of the thorough [ISA-95 standard](https://www.isa.org/store?query=isa95).
 To read about how the standard fits within the data architecture of Rhize, read our blog post [Rethinking perspectives on ISA-95](https://rhize.com/blog/reframing-perspective-on-isa95/).
 
