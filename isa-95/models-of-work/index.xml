@@ -1,4 +1,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Models of work</title><link>https://docs.rhize.com/isa-95/models-of-work/</link><description>Recent content in Models of work on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.rhize.com/isa-95/models-of-work/index.xml" rel="self" type="application/rss+xml"/><item><title>Process segments</title><link>https://docs.rhize.com/isa-95/models-of-work/process-segments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/isa-95/models-of-work/process-segments/</guid><description>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-flex-col hx-rounded-lg hx-border hx-py-4 hx-px-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-green-200 hx-bg-green-100 hx-text-green-900 dark:hx-border-green-200/30 dark:hx-bg-green-900/30 dark:hx-text-green-200">
+&lt;p class="hx-flex hx-items-center hx-font-bold">
+&lt;svg height="16" class="hx-inline-block hx-align-middle hx-mr-2" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">&lt;/path>
+&lt;/svg>
+&lt;b>Want to Learn ISA-95?&lt;/b>
+&lt;/p>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">
+&lt;p>Take our &lt;a href="https://university.rhize.com/certifications/" class="hx-underline">ISA-95 fundamentals course&lt;/a>! Lots of practice on real data sets.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
 &lt;p>A &lt;em>process segment&lt;/em> is a step that can be shared across processes.
 Process segments are flexible information objects,
 abstract enough to be shared by multiple procedures,
@@ -130,6 +143,19 @@ classDiagram
 baking ..&amp;gt; mixing : has execution dependency on
 baking ..&amp;gt; pre-heating : has execution dependency on
 &lt;/pre>&lt;p>If a dependency is product-dependent, define it on the level of the &lt;abbr title="A template for a job order, corresponding to an operations and process segment, from the perspective of the level-3 (MES/MOM) systems.">work master&lt;/abbr> or operation definition instead.&lt;/p></description></item><item><title>Work masters</title><link>https://docs.rhize.com/isa-95/models-of-work/work-masters/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/isa-95/models-of-work/work-masters/</guid><description>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-flex-col hx-rounded-lg hx-border hx-py-4 hx-px-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-green-200 hx-bg-green-100 hx-text-green-900 dark:hx-border-green-200/30 dark:hx-bg-green-900/30 dark:hx-text-green-200">
+&lt;p class="hx-flex hx-items-center hx-font-bold">
+&lt;svg height="16" class="hx-inline-block hx-align-middle hx-mr-2" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">&lt;/path>
+&lt;/svg>
+&lt;b>Want to Learn ISA-95?&lt;/b>
+&lt;/p>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">
+&lt;p>Take our &lt;a href="https://university.rhize.com/certifications/" class="hx-underline">ISA-95 fundamentals course&lt;/a>! Lots of practice on real data sets.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
 &lt;p>A &lt;em>work master&lt;/em> defines the resources and instructions necessary to do a unit of work.
 As the most granular work definition in ISA-95, the work master can serve a variety of operational purposes:&lt;/p>
 &lt;ul>
