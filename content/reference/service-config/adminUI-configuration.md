@@ -42,12 +42,3 @@ The Rhize Admin UI Environmental variables used for configuration.
 | `CYPRESS_FRONTEND_TESTING_DOMAIN`    | The Cypress Frontend Testing Domain URL <br />            |
 | `CYPRESS_LOGIN_ADMIN_EMAIL`          | The Cypress Testing Email. <br />                  |
 | `CYPRESS_LOGIN_ADMIN_PASSWORD`       | The Cypress Testing Password. <br />              |
-
-## `Deprecated ENV Variables`
-
- All Deprecated Environmental Variables, what they do and what there default value is.
-
-| Attribute | Description |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `PREACT_APP_NAME`                    | This one is not being used anywhere in the admin UI, just shows up in .env.example and Dockerfile.  Probably Deprecated                  |
-| `PREACT_APP_PRODUCTION`              | This one is not being used anywhere in the admin UI, just shows up in Dockerfile. Probably Deprecated                   |
