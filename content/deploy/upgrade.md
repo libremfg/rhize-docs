@@ -61,8 +61,6 @@ First, record the old and new versions, their context, and namespaces.
     --data-urlencode 'client_secret=<CLIENT_SECRET>'
     ```
 
-
-
 1. Redeploy the schema. To do so, you need to interact with the `alpha` service on port `8080`. You can do this in multiple ways. Either enter the alpha shell with a command such as `kubectl exec --stdin baas-alpha-0 -- sh`, or forward the port to your local instance using a command such as `kubectl port-forward baas-alpha-0 8080:8080`.
 
    For example, using port forwarding, a `curl` command to deploy the schema looks like this:
@@ -76,7 +74,8 @@ First, record the old and new versions, their context, and namespaces.
 
     The schema file is likely called something like `schema.sdl`.
 
-1. Restart the deployment.
+
+1. Restart the Apollo Router Statefulset so that the Supergraph is composed with all the latest changes.
 
 ## Verify success
 
