@@ -75,7 +75,10 @@ First, record the old and new versions, their context, and namespaces.
     The schema file is likely called something like `schema.sdl`.
 
 
-1. Restart the Apollo Router Statefulset so that the Supergraph is composed with all the latest changes.
+1. Restart the Apollo Router Statefulset so that the Supergraph is composed with all the latest changes. For example:
+
+```bash
+kubectl rollout restart statefulset router
 
 ## Verify success
 
