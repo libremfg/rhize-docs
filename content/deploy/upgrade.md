@@ -79,6 +79,7 @@ First, record the old and new versions, their context, and namespaces.
 
 ```bash
 kubectl rollout restart statefulset router
+```
 
 ## Verify success
 
