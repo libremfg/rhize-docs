@@ -1,4 +1,113 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Service configuration</title><link>https://docs.rhize.com/reference/service-config/</link><description>Recent content in Service configuration on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.rhize.com/reference/service-config/index.xml" rel="self" type="application/rss+xml"/><item><title>Agent configuration</title><link>https://docs.rhize.com/reference/service-config/agent-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/agent-configuration/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Service configuration</title><link>https://docs.rhize.com/reference/service-config/</link><description>Recent content in Service configuration on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.rhize.com/reference/service-config/index.xml" rel="self" type="application/rss+xml"/><item><title>Admin UI configuration</title><link>https://docs.rhize.com/reference/service-config/adminui-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/adminui-configuration/</guid><description>
+&lt;p>The Rhize Admin UI offers a graphical interface to configure master data and users.&lt;/p>
+&lt;h2>Preact environment variables&lt;span class="hx-absolute -hx-mt-20" id="preact-environment-variables">&lt;/span>
+&lt;a href="#preact-environment-variables" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The following table lists all Preact environment variables.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>NODE_ENV&lt;/code>&lt;/td>
+&lt;td>If true will also put admin UI into debug mode. This and PREACT_APP_DEBUG. &lt;br />(Default: false)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PREACT_APP_AMPLITUDE_API_KEY&lt;/code>&lt;/td>
+&lt;td>The Amplitude API Key. &lt;br />(Default: None)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PREACT_APP_APOLLO_CLIENT&lt;/code>&lt;/td>
+&lt;td>The Apollo Client URL. &lt;br />(Default: None, http://localhost:4000 when running locally)  &lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PREACT_APP_APOLLO_CLIENT_ADMIN&lt;/code>&lt;/td>
+&lt;td>The Apollo Client Admin URL. &lt;br />(Default: None, http://localhost:4000 when running locally)  &lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PREACT_APP_APOLLO_JSONATA_CLIENT&lt;/code>&lt;/td>
+&lt;td>The JSONata Client URL used for running the JSONata playground. &lt;br />(Default: none)  &lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PREACT_APP_APPSMITH_PORTAL&lt;/code>&lt;/td>
+&lt;td>Shows the Appsmith portal page in the admin UI if true. &lt;br />(Default: false)  &lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PREACT_APP_AUTH_KEYCLOAK_CLIENT_ID&lt;/code>&lt;/td>
+&lt;td>The Keycloak Realms Client ID. &lt;br />(Default: none, libreUI when running locally)  &lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PREACT_APP_AUTH_KEYCLOAK_LOGOUT_URI&lt;/code>&lt;/td>
+&lt;td>The Keycloak logout URL. &lt;br />(Default: None, libre when running locally)  &lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PREACT_APP_AUTH_KEYCLOAK_REALM&lt;/code>&lt;/td>
+&lt;td>The Keycloak Realm. &lt;br />(Default: None)  &lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PREACT_APP_AUTH_KEYCLOAK_SECRET&lt;/code>&lt;/td>
+&lt;td>The Keycloak Realms Client IDs Secret Key. &lt;br />(Default: None)  &lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PREACT_APP_AUTH_KEYCLOAK_SERVER_URL&lt;/code>&lt;/td>
+&lt;td>The Keycloak Server URL. &lt;br />(None, http://localhost:8080 when running)  &lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PREACT_APP_DEBUG&lt;/code>&lt;/td>
+&lt;td>Will put admin UI page in debug mode if true. &lt;br />(Default: false)  &lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PREACT_APP_GRAPHIQL_ENABLED&lt;/code>&lt;/td>
+&lt;td>Uses GraphiQL playground if true else uses apollo sandbox. &lt;br />(Default: false)  &lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PREACT_APP_LIBRE_PAGE_LIMIT&lt;/code>&lt;/td>
+&lt;td>The libre table page size. &lt;br />(Default: 15)  &lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PREACT_APP_LIBRE_VERSION&lt;/code>&lt;/td>
+&lt;td>The libre version. &lt;br />(Default: none)  &lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PREACT_APP_MAPBOX_API_KEY&lt;/code>&lt;/td>
+&lt;td>The Mapbox access token API key. &lt;br />(Default: none)  &lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PREACT_APP_VERSION&lt;/code>&lt;/td>
+&lt;td>The schema version. &lt;br />(Default: none)  &lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PREACT_APP_WORK_MASTER_UI_ENABLED&lt;/code>&lt;/td>
+&lt;td>Uses the new work master page if true, else uses old work master page.  &lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>&lt;code>Cypress ENV Variables&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="cypress-env-variables">&lt;/span>
+&lt;a href="#cypress-env-variables" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>All Cypress Environmental Variables, what they do and what there default value is.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>CYPRESS_FRONTEND_TESTING_DOMAIN&lt;/code>&lt;/td>
+&lt;td>The Cypress Frontend Testing Domain URL &lt;br />&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>CYPRESS_LOGIN_ADMIN_EMAIL&lt;/code>&lt;/td>
+&lt;td>The Cypress Testing Email. &lt;br />&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>CYPRESS_LOGIN_ADMIN_PASSWORD&lt;/code>&lt;/td>
+&lt;td>The Cypress Testing Password. &lt;br />&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Agent configuration</title><link>https://docs.rhize.com/reference/service-config/agent-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/reference/service-config/agent-configuration/</guid><description>
 &lt;p>The Rhize agent collects data that is emitted in the manufacturing process and makes this data visible in the Rhize system.
 It works by connecting to equipment or groups of equipment that run over protocols such as OPC UA.&lt;/p>
 &lt;p>As the communication bridge between the Rhize Data Hub and your plant, the agent has multiple functions:&lt;/p>
