@@ -5,12 +5,11 @@ description: List of Environmental Variables and their description
 weight: 900
 ---
 
-The Rhize Admin UI Environmental variables used for configuration.
+The Rhize Admin UI offers a graphical interface to configure master data and users.
 
-## `Preact ENV Variables`
+## Preact environment variables
 
- All Preact Environmental Variables, what they do and what there default value is.
-
+The following table lists all Preact environment variables.
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `NODE_ENV`                                  | If true will also put admin UI into debug mode. This and PREACT_APP_DEBUG. <br />(Default: false) |
@@ -26,7 +25,6 @@ The Rhize Admin UI Environmental variables used for configuration.
 | `PREACT_APP_AUTH_KEYCLOAK_SERVER_URL`       | The Keycloak Server URL. <br />(None, http://localhost:8080 when running)  |
 | `PREACT_APP_DEBUG`                          | Will put admin UI page in debug mode if true. <br />(Default: false)  |
 | `PREACT_APP_GRAPHIQL_ENABLED`               | Uses GraphiQL playground if true else uses apollo sandbox. <br />(Default: false)  |
-| `PREACT_APP_LIBRE_DATA_MIGRATION_URI`       | The migration URI. This one is not being used currently in the admin UI but is commented out  |
 | `PREACT_APP_LIBRE_PAGE_LIMIT`               | The libre table page size. <br />(Default: 15)  |
 | `PREACT_APP_LIBRE_VERSION`                  | The libre version. <br />(Default: none)  |
 | `PREACT_APP_MAPBOX_API_KEY`                 | The Mapbox access token API key. <br />(Default: none)  |
