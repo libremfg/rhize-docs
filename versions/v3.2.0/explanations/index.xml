@@ -1,0 +1,220 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Explanations</title><link>https://docs.rhize.com/versions/v3.2.0/explanations/</link><description>Recent content in Explanations on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.rhize.com/versions/v3.2.0/explanations/index.xml" rel="self" type="application/rss+xml"/><item><title>Manufacturing Data Hub</title><link>https://docs.rhize.com/versions/v3.2.0/explanations/manufacturing-data-hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/explanations/manufacturing-data-hub/</guid><description>
+&lt;p>This article explains the components of a &lt;em>Manufacturing Data Hub&lt;/em> (MDH) and why the system must have these particular components to meet the needs of large, modern manufacturing environments.&lt;/p>
+&lt;p>In other words, this article explains why Rhize made the choices it did to become the world&amp;rsquo;s first manufacturing data hub.
+For introductory explanations about Rhize in particular,
+read &lt;a href="https://docs.rhize.com/versions/v3.2.0/get-started/introduction/" >What is Rhize?&lt;/a> and &lt;a href="https://docs.rhize.com/versions/v3.2.0/get-started/how-rhize-works/" >How Rhize works&lt;/a>.&lt;/p>
+&lt;h2>What is an MDH?&lt;span class="hx-absolute -hx-mt-20" id="what-is-an-mdh">&lt;/span>
+&lt;a href="#what-is-an-mdh" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>A manufacturing data hub is a system that collects all manufacturing events, stores them in a standard model, and has a programmable engine that runs user logic to receive, transform, and send messages across different devices in a manufacturing operation.
+Since it comes with all the necessary backend components—message handling, logic, and storage—an MDH also serves as a backend for manufacturers to build custom MES and MOM applications.&lt;/p>
+&lt;figure class="big-figure">
+&lt;a href="https://docs.rhize.com/images/arch/diagram-rhize-simplified-mdh.png" target="_blank">
+&lt;img src="https://docs.rhize.com/images/arch/diagram-rhize-simplified-mdh.png" alt="simplified mdh"
+width="75%"
+>
+&lt;/a>
+&lt;/figure>
+&lt;h3>Components&lt;span class="hx-absolute -hx-mt-20" id="components">&lt;/span>
+&lt;a href="#components" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>An MDH is not just a storage or message system.
+It is a coherent system of interrelated parts and interfaces, whose components include:&lt;/p>
+&lt;ul>
+&lt;li>A high-performance graph database with a standardized schema&lt;/li>
+&lt;li>A data model based on manufacturing standards&lt;/li>
+&lt;li>An API to interact with the data&lt;/li>
+&lt;li>An agent that listens for tag changes from data sources&lt;/li>
+&lt;li>A rules engine that monitors tag changes and triggers user workflows when conditions are met&lt;/li>
+&lt;li>A message broker that communicates events to and from various systems&lt;/li>
+&lt;li>A workflow engine that processes, transforms, and contextualizes tag and event data&lt;/li>
+&lt;li>The IT infrastructure that this all runs on, which at a certain scale must be clustered.&lt;/li>
+&lt;/ul>
+&lt;h3>Technical requirements&lt;span class="hx-absolute -hx-mt-20" id="technical-requirements">&lt;/span>
+&lt;a href="#technical-requirements" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Besides its components and features, Rhize is explicitly designed to meet the needs of manufacturing operations of any scale.
+This goal requires a high standard of operational performance, robustness, and extensibility:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Zero Downtime Architecture.&lt;/strong> A data hub such as Rhize is used in mission-critical environments that run every hour of every day. Outages are unacceptable. Operators must be able to update every component of the system without taking it offline.&lt;/li>
+&lt;li>&lt;strong>Secure.&lt;/strong> Users must be able to securely access and integrate with the hub across applications in the enterprise. So the database requires native &lt;a href="https://datatracker.ietf.org/doc/html/rfc6749" target="_blank" rel="noopener">OAuth2&lt;/a> security integration for seamless single-sign-on.&lt;/li>
+&lt;li>&lt;strong>ACID-compliant.&lt;/strong> The critical features of an MES require the guarantee of an &lt;a href="https://en.wikipedia.org/wiki/ACID" target="_blank" rel="noopener">ACID&lt;/a> database. Consistency and availability must be maintained even as the system scales horizontally.&lt;/li>
+&lt;li>&lt;strong>Headless operation.&lt;/strong> Users must be able to use the data hub as a backend to run MES functions, using frameworks or low-code tools to build any frontend on top of these functions. This flexibility is how the MDH can adapt to any manufacturing process: Rhize provides the means to store, standardize, and handle information flows; users build on top of this backend to create the applications, workflows, and interfaces that make sense for their use cases.&lt;/li>
+&lt;li>&lt;strong>Type-safe.&lt;/strong> Uncontrolled schemas in messages become brittle at scale. Unlike a pure MQTT architecture, which does not check the schema of message payloads, the MDH must enforce that data has a standard structure at the moment that the data is written to the database.&lt;/li>
+&lt;li>&lt;strong>Extensible but Standardized.&lt;/strong> While the data hub is built on the ISA-95 standard, it must be able to extend to include customer-specific schemas.&lt;/li>
+&lt;li>&lt;strong>Process orchestration.&lt;/strong> The hub must be able to coordinate tasks handled by multiple systems concurrently and provide a way for users to automate and combine workflows.&lt;/li>
+&lt;/ul>
+&lt;h2>Why an MDH needs this design&lt;span class="hx-absolute -hx-mt-20" id="why-an-mdh-needs-this-design">&lt;/span>
+&lt;a href="#why-an-mdh-needs-this-design" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Rhize chose its components deliberately, after careful consideration and years of real-world experience.
+The following sections describe how these components work together and how this design arose from the landscape of manufacturing automation.&lt;/p>
+&lt;h3>Point-to-point reaches scaling issues&lt;span class="hx-absolute -hx-mt-20" id="point-to-point-reaches-scaling-issues">&lt;/span>
+&lt;a href="#point-to-point-reaches-scaling-issues" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>In early efforts to digitize manufacturing, information often flows from &lt;em>point to point&lt;/em>.
+Each node in the system communicates directly with the other nodes that it sends data to or receives data from.
+While this form of communication is initially simple to implement, it also tightly couples services.
+As the system scales, the complexity of point-to-point communication increases non-linearly. With each node, the system becomes increasingly fragile and unobservable.&lt;/p>
+&lt;p>For example, notice how many channels of communication are maintained in this stylized diagram of information
+exchange between level-three and level-four systems in a point-to-point topology:&lt;/p>
+&lt;figure class="big-figure">
+&lt;a href="https://docs.rhize.com/images/arch/diagram-rhize-l3-l4-information-flows.png" target="_blank">
+&lt;img src="https://docs.rhize.com/images/arch/diagram-rhize-l3-l4-information-flows.png" alt="Diagram simplifying flows depicted in part 1 of ISA-95"
+width="65%"
+>
+&lt;/a>
+&lt;figcaption class="caption">
+A simplified view of how information might exchange between level 3 and 4 systems in a point-to-point topology.
+&lt;/figcaption>
+&lt;/figure>
+&lt;h3>Pub/sub messaging decouples devices&lt;span class="hx-absolute -hx-mt-20" id="pubsub-messaging-decouples-devices">&lt;/span>
+&lt;a href="#pubsub-messaging-decouples-devices" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>When point-to-point communication becomes too difficult to maintain, the &lt;em>hub-and-spoke&lt;/em> approach presents the logical next step.
+In this topology, a central hub coordinates communication between nodes.&lt;/p>
+&lt;p>Some systems achieve a hub and spoke through &lt;em>polling&lt;/em>,
+where each device sends a request to the hub at some interval to check whether resources changed.
+However, considering the number of devices and volume of exchange in manufacturing,
+polling can create a massive amount of unnecessary traffic.&lt;/p>
+&lt;p>Instead of polling, &lt;em>the publish-subscribe pattern&lt;/em> can be a more efficient way to decouple communication.
+Event producers &lt;em>publish&lt;/em> topics to a message broker, and the message broker sends the event to consumers that &lt;em>subscribe&lt;/em> to the particular topic.
+With the proliferation of IoT devices and the popularity of the MQTT protocol, publish-subscribe messaging has gained widespread adoption in manufacturing.&lt;/p>
+&lt;figure class="big-figure">
+&lt;a href="https://docs.rhize.com/images/arch/diagram-rhize-pubsub-hubspoke.png" target="_blank">
+&lt;img src="https://docs.rhize.com/images/arch/diagram-rhize-pubsub-hubspoke.png" alt="Diagram showing event producers and subscribers in decoupled pub-sub communication"
+width="65%"
+>
+&lt;/a>
+&lt;figcaption class="caption">
+Diagram showing event producers and subscribers in decoupled pub-sub communication
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>While publish-subscribe patterns resolve issues of coupled communication and data accessibility,
+they don&amp;rsquo;t address how to make this data useful:&lt;/p>
+&lt;ul>
+&lt;li>How can users collect and organize the data for analysis?&lt;/li>
+&lt;li>How can this data drive further automation?&lt;/li>
+&lt;/ul>
+&lt;p>An operation with many data sources likely also has many different structures of its in-flight messages.
+The MQTT format, for example, has no prescribed payload format: structured JSON and binary blobs are equally valid.
+While such flexibility provides excellent convenience for producers, the lack of uniformity can make wider integration efforts convoluted and unmaintainable.&lt;/p>
+&lt;p>The philosophy of a data hub is to address these problems without comprising flexibility.
+So its central components, the database, schema, and message and event handlers,
+can integrate disparate systems while providing a common, standardized storage for the data exchanged between these systems.&lt;/p>
+&lt;h3>A standard graph model provides context&lt;span class="hx-absolute -hx-mt-20" id="a-standard-graph-model-provides-context">&lt;/span>
+&lt;a href="#a-standard-graph-model-provides-context" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Every event, person, and object in a manufacturing system is inter-connected.
+To adequately process incoming event data, manufacturers need to &lt;em>contextualize&lt;/em> it, where each event carries additional information about its context within the larger system.
+This context is framed by the information &lt;em>model&lt;/em> that represents the system.&lt;/p>
+&lt;p>For a coherent model of the system, manufacturers need to be able to store assets and event data according to a standardized schema.
+To scale, this model needs to be suitably thorough and generic.
+For any organization, it would be an enormous undertaking to write a bespoke model.
+Fortunately, decades of collaboration have already generated a suitable standard: ISA-95.&lt;/p>
+&lt;figure class="big-figure">
+&lt;a href="https://docs.rhize.com/images/arch/diagram-rhize-isa95-schema.png" target="_blank">
+&lt;img src="https://docs.rhize.com/images/arch/diagram-rhize-isa95-schema.png" alt="Diagram showing ISA-95 data model"
+width="65%"
+>
+&lt;/a>
+&lt;/figure>
+&lt;p>The ISA-95 standard provides a comprehensive data model for manufacturing.
+As it happens, its object-oriented system of attributes and relations has an inherent graph structure.
+This harmony of ISA-95 and graph structures makes a graph database a perfect foundation for the manufacturing data hub:&lt;/p>
+&lt;ul>
+&lt;li>The schema provides the complete model, suitable to any scale&lt;/li>
+&lt;li>The graph database provides the structure that coheres with the inter-related reality of manufacturing&lt;/li>
+&lt;/ul>
+&lt;p>However, while publish-subscribe messaging decouples communication, and the ISA-95 database provides a sensible way to contextualize the messages of this data,
+the system still needs a bridge between the message stream and the long-term, standardized storage.
+This gap reveals missing components:&lt;/p>
+&lt;ul>
+&lt;li>The system needs to structure raw message data in its ISA-95 representation.&lt;/li>
+&lt;li>Users need a way to access the database and message flow to program their own applications.&lt;/li>
+&lt;/ul>
+&lt;figure class="big-figure">
+&lt;a href="https://docs.rhize.com/images/arch/diagram-rhize-incomplete-mdh.png" target="_blank">
+&lt;img src="https://docs.rhize.com/images/arch/diagram-rhize-incomplete-mdh.png" alt="Diagram showing how an MDH is incomplete without a bridge between messages and storage"
+width="65%"
+>
+&lt;/a>
+&lt;figcaption class="caption">
+Without a bridge between messages and storage, an MDH is incomplete
+&lt;/figcaption>
+&lt;/figure>
+&lt;h3>The rules engine creates events&lt;span class="hx-absolute -hx-mt-20" id="the-rules-engine-creates-events">&lt;/span>
+&lt;a href="#the-rules-engine-creates-events" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>After the hub receives a message, it must evaluate whether the data is significant enough to constitute an event.
+This is the function of the &lt;em>rules engine&lt;/em>: it assesses message values for changes and then evaluates whether these values should be classified as significant &lt;em>events&lt;/em>.&lt;/p>
+&lt;figure class="big-figure">
+&lt;a href="https://docs.rhize.com/images/arch/diagram-rhize-rule-engine.png" target="_blank">
+&lt;img src="https://docs.rhize.com/images/arch/diagram-rhize-rule-engine.png" alt="Diagram showing how the rules engine turns topics into events."
+width="65%"
+>
+&lt;/a>
+&lt;figcaption class="caption">
+The rules converts significant values into manufacturing events.
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Once the system receives an event, users then need a way to be able to process it.&lt;/p>
+&lt;h3>A workflow engine makes the system responsive&lt;span class="hx-absolute -hx-mt-20" id="a-workflow-engine-makes-the-system-responsive">&lt;/span>
+&lt;a href="#a-workflow-engine-makes-the-system-responsive" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>For true &amp;ldquo;ubiquitous automation&amp;rdquo; of manufacturing processes, an MDH must provide a way for users to write their own logic to handle events as they happen.
+Thus, the hub needs a &lt;em>workflow engine&lt;/em> that can send messages, process data, and interact with the database in real-time.&lt;/p>
+&lt;figure class="big-figure">
+&lt;a href="https://docs.rhize.com/images/arch/diagram-rhize-bpmn-eda.png" target="_blank">
+&lt;img src="https://docs.rhize.com/images/arch/diagram-rhize-bpmn-eda.png" alt="An example BPMN workflow that receives a job order, evaluates whether maintenance is needed, then stores the data in a standardized database"
+width="70%"
+>
+&lt;/a>
+&lt;figcaption class="caption">
+An example BPMN workflow that receives a job order, evaluates whether maintenance is needed, then stores the data in a standardized database
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>The data hub also must be agnostic about the information it receives, so the event handler must have a way to transform incoming events and represent them in the database schema.
+Without such transformation, the burden of ISA-95 standardization falls on the event producer.
+This is both inconvenient for the user and more architecturally fragile:
+a second place where transformation can happen is also a second point of failure.
+As long as the producer and consumer can accept and receive the same encoding (for example, JSON), the data hub should be responsible for enforcing standardization.&lt;/p>
+&lt;p>With components for data ingestion, processing, and standardized storage, the MDH has all the necessary functionality to serve as a knowledge graph, MES backend, and integrator of legacy systems.
+However, this capability cannot be realized unless the system is usable for the widest range of people.&lt;/p>
+&lt;h3>Sensible interfaces make it accessible&lt;span class="hx-absolute -hx-mt-20" id="sensible-interfaces-make-it-accessible">&lt;/span>
+&lt;a href="#sensible-interfaces-make-it-accessible" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>For many who work in industrial automation, IT is part of a job, not a job in itself.
+So, a well-designed manufacturing data hub should provide high-quality abstractions
+and interfaces that minimize the need for thinking about IT systems (instead of manufacturing ones).&lt;/p>
+&lt;p>GraphQL, with its single endpoint and precise controls, makes an ideal API interface for the MDH graph database.
+Queries resemble the structure of the data itself, requiring no recursive joins or intermediary object-relation models.
+GraphQL also pairs perfectly with a data model based on ISA-95, whose object model has a graph structure, itself a model of the interconnected reality of actual manufacturing.&lt;/p>
+&lt;p>While GraphQL provides the API to query and transform the data, it cannot execute logic.
+So, the rules engine should also provide a graphical interface to make event handling as accessible as possible.&lt;/p>
+&lt;p>However, one final piece is missing: the system must be robust enough for the data-intensive world of manufacturing IT.&lt;/p>
+&lt;h3>Distributed execution provides robustness&lt;span class="hx-absolute -hx-mt-20" id="distributed-execution-provides-robustness">&lt;/span>
+&lt;a href="#distributed-execution-provides-robustness" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>The final factor is that the components of an MDH must run on distributed systems.
+Large manufacturing operations can generate enormous volumes of data.
+At some point, scaling vertically (with better hardware on single devices) is impossible.
+Besides size constraints, single devices also create single points of failure.&lt;/p>
+&lt;p>So, an MDH must scale horizontally, where different nodes share computation responsibilities,
+and extra volumes add data replication.&lt;/p>
+&lt;h2>Read more&lt;span class="hx-absolute -hx-mt-20" id="read-more">&lt;/span>
+&lt;a href="#read-more" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Our blog has some articles that define what a data hub is:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://rhize.com/blog/what-is-a-manufacturing-data-hub/" target="_blank" rel="noopener">What is a Manufacturing Data Hub?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://rhize.com/blog/manufacturing-data-hub-vs-data-lake/" target="_blank" rel="noopener">Data hub vs. Data lake: the difference for manufacturers&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>About OpenID connect</title><link>https://docs.rhize.com/versions/v3.2.0/explanations/about-openidconnect/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/explanations/about-openidconnect/</guid><description>
+&lt;p>Rhize uses &lt;a href="https://openid.net/developers/how-connect-works/" target="_blank" rel="noopener">OpenIDConnect&lt;/a> to connect to a &lt;a href="https://www.keycloak.org/" target="_blank" rel="noopener">Keycloak&lt;/a> server to authenticate users and manage Role-based access controls.&lt;/p>
+&lt;p>Open ID Connect is a security architecture that uses JSON Web Tokens (JWTs) to access secured resources.
+JWTs are issued by Keycloak. Users can also be managed in Keycloak.
+Or you can manage users in other services such as LDAP, Google, Azure AD, Facebook, etc.&lt;/p>
+&lt;p>The general authentication flow is as follows:&lt;/p>
+&lt;ol>
+&lt;li>When a user accesses the user interface, the UI redirects to Keycloak.&lt;/li>
+&lt;li>Depending on how it is configured, Keycloak redirects to the authentication provider so that the user can log in.&lt;/li>
+&lt;li>If the user is successfully authenticated, Keycloak redirects back to the user interface with an authentication code in the URL parameters.&lt;/li>
+&lt;li>The UI calls a secure API to exchange the authentication code for a JWT.&lt;/li>
+&lt;li>The UI then uses that JWT to access secure APIs such as the Rhize GraphQL API.&lt;/li>
+&lt;/ol>
+&lt;p>The Rhize DB, libreBaas, has the public key from Keycloak, which can be used to verify the JWT.&lt;/p>
+&lt;pre class="mermaid hx-mt-6">
+sequenceDiagram
+actor User
+participant UI as Web UI
+participant Rhize as Rhize DB
+participant KC as Keycloak
+participant AP as AuthProvider
+Rhize-&amp;gt;&amp;gt;KC: Get Public Key
+User-&amp;gt;&amp;gt;UI: Log In
+UI--&amp;gt;&amp;gt;KC: Redirect
+KC--&amp;gt;&amp;gt;AP: Redirect
+AP-&amp;gt;&amp;gt;User: Credentials
+AP--&amp;gt;&amp;gt;KC: Auth Result
+KC--&amp;gt;&amp;gt;UI: Redirect with Code
+UI-&amp;gt;&amp;gt;KC: Exchange Code for Token
+KC-&amp;gt;&amp;gt;UI: Reply with id_token and access_token
+UI-&amp;gt;&amp;gt;Rhize: Access API with Bearer Token
+Rhize-&amp;gt;&amp;gt;Rhize: Verify Token with Public Key from Keycloak
+&lt;/pre></description></item></channel></rss>

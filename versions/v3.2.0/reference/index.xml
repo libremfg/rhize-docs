@@ -1,0 +1,802 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Reference</title><link>https://docs.rhize.com/versions/v3.2.0/reference/</link><description>Recent content in Reference on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 02 Nov 2023 16:49:42 -0300</lastBuildDate><atom:link href="https://docs.rhize.com/versions/v3.2.0/reference/index.xml" rel="self" type="application/rss+xml"/><item><title>Service configuration</title><link>https://docs.rhize.com/versions/v3.2.0/reference/service-config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/reference/service-config/</guid><description>
+&lt;p>The Rhize services have different configuration parameters, as documented in the following pages.&lt;/p>
+&lt;p>To configure services in Kubernetes, add your configs to an overrides file.
+For example, you might add your configuration to the core service through a command like this:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">helm upgrade --install &amp;lt;MY_CORE_INSTANCE&amp;gt; -f ./&amp;lt;CORE_OVERRIDES&amp;gt;.yaml libremfg/core -n &amp;lt;MY_RHIZE_NAMESPACE&amp;gt;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>On successful deployment, this configuration is added to the Kubernetes &lt;a href="https://kubernetes.io/docs/concepts/configuration/configmap/" target="_blank" rel="noopener">ConfigMap&lt;/a>.&lt;/p>
+&lt;div class="hextra-cards hx-mt-4 hx-gap-4 hx-grid not-prose"
+style="--hextra-cards-grid-cols: 2;">
+&lt;a
+class="hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900"href="https://docs.rhize.com/versions/v3.2.0/reference/service-config/adminui-configuration/"
+>&lt;span class="hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>&lt;/svg>Admin UI configuration&lt;/span>&lt;div class="hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2">List of Environmental Variables and their description&lt;/div>&lt;/a>
+&lt;a
+class="hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900"href="https://docs.rhize.com/versions/v3.2.0/reference/service-config/agent-configuration/"
+>&lt;span class="hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>&lt;/svg>Agent configuration&lt;/span>&lt;div class="hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2">Configuration parameters for the Rhize agent&lt;/div>&lt;/a>
+&lt;a
+class="hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900"href="https://docs.rhize.com/versions/v3.2.0/reference/service-config/audit-configuration/"
+>&lt;span class="hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>&lt;/svg>Audit configuration&lt;/span>&lt;div class="hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2">Configuration for the Rhize audit&lt;/div>&lt;/a>
+&lt;a
+class="hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900"href="https://docs.rhize.com/versions/v3.2.0/reference/service-config/bpmn-configuration/"
+>&lt;span class="hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>&lt;/svg>BPMN configuration&lt;/span>&lt;div class="hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2">Authentication types for the Rhize BPMN&lt;/div>&lt;/a>
+&lt;a
+class="hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900"href="https://docs.rhize.com/versions/v3.2.0/reference/service-config/calendar-configuration/"
+>&lt;span class="hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>&lt;/svg>Calendar configuration&lt;/span>&lt;div class="hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2">Configuration for the Rhize Calendar Service&lt;/div>&lt;/a>
+&lt;a
+class="hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900"href="https://docs.rhize.com/versions/v3.2.0/reference/service-config/core-configuration/"
+>&lt;span class="hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>&lt;/svg>Core configuration&lt;/span>&lt;div class="hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2">Configuration for the Rhize core&lt;/div>&lt;/a>
+&lt;/div></description></item><item><title>Observability metrics</title><link>https://docs.rhize.com/versions/v3.2.0/reference/observability-metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/reference/observability-metrics/</guid><description>
+&lt;p>Rhize uses &lt;a href="https://prometheus.io/docs/introduction/overview/" target="_blank" rel="noopener">Prometheus&lt;/a> to monitor metrics from many of its &lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/service-config/" >microservices&lt;/a>.
+For the Kubernetes cluster, Rhize runs the Prometheus operator and monitors the accumulated metrics in Grafana dashboards.
+Monitoring occurs granularly, on the levels of cluster, pod, and container.&lt;/p>
+&lt;h2>Metrics endpoints&lt;span class="hx-absolute -hx-mt-20" id="metrics-endpoints">&lt;/span>
+&lt;a href="#metrics-endpoints" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The service metrics have endpoints at the following ports:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Service&lt;/th>
+&lt;th>Available&lt;/th>
+&lt;th>Enabled&lt;/th>
+&lt;th>Port&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Audit&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>8084&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>BAAS&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>8080&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>BPMN&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>8081&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Core&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>8080&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NATS&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>7777&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Router&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>9090&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Tempo&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>3100&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>NATS has an available endpoint through an exporter that is present on the cluster.
+Router has an available endpoint that is disabled by default.&lt;/p>
+&lt;h2>Metrics configuration&lt;span class="hx-absolute -hx-mt-20" id="metrics-configuration">&lt;/span>
+&lt;a href="#metrics-configuration" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>For services where metrics are disabled by default, some configuration steps may be required.
+In case you are experimenting locally, this document includes for both the cluster and for Docker.&lt;/p>
+&lt;p>After you enable metrics, add them into the Prometheus configuration file by pointing to that service endpoint.
+For example:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">- &lt;span class="nt">job_name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;rhize-application-monitoring&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">honor_timestamps&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">scrape_interval&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">15s&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">scrape_timeout&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">10s&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">metrics_path&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">/metrics&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">scheme&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">http&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">static_configs&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">targets&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;audit-demo.demo.svc.cluster.local:8084&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;baas-alpha.demo.svc.cluster.local:8080&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;bpmn-demo.demo.svc.cluster.local:8081&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;core-demo.demo.svc.cluster.local:8080&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;grafana-demo.demo.svc.cluster.local:3000&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;tempo.demo.svc.cluster.local:3100&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;nats-demo-headless.demo.svc.cluster.local:7777&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;router-demo.demo.svc.cluster.local:9090&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;h3>NATS&lt;span class="hx-absolute -hx-mt-20" id="nats">&lt;/span>
+&lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>While NATS has no available metrics endpoint, the cluster includes a &lt;a href="https://github.com/nats-io/prometheus-nats-exporter" target="_blank" rel="noopener">NATS Prometheus exporter&lt;/a>.
+NATS metrics are exposed through port &lt;code>7777&lt;/code>.&lt;/p>
+&lt;h4>Cluster&lt;span class="hx-absolute -hx-mt-20" id="cluster">&lt;/span>
+&lt;a href="#cluster" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;p>Since the cluster already includes the exporter, no further configuration is required.
+This endpoint should be connected through the NATS headless pod. For example:&lt;/p>
+&lt;p>&lt;code>nats-demo-headless.demo.svc.cluster.local:7777&lt;/code>&lt;/p>
+&lt;h4>Docker&lt;span class="hx-absolute -hx-mt-20" id="docker">&lt;/span>
+&lt;a href="#docker" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;p>To get NATS metrics in Docker, use the exporter mentioned in the preceding section.
+The following is a sample docker-compose configuration for the exporter.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">services&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># -- Other services&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">nats-exporter&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">natsio/prometheus-nats-exporter:latest&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">container_name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">nats-exporter&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">command&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;-varz &amp;#39;http://nats:5555&amp;#39;&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">depends_on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">nats&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">ports&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="m">7777&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="m">7777&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>Access NATS metrics at &lt;code>localhost:7777/metrics&lt;/code>&lt;/p>
+&lt;h3>Router&lt;span class="hx-absolute -hx-mt-20" id="router">&lt;/span>
+&lt;a href="#router" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;h4>Cluster&lt;span class="hx-absolute -hx-mt-20" id="cluster-1">&lt;/span>
+&lt;a href="#cluster-1" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;p>To enable metrics, the Router Helm chart needs to have several options added or changed, as follows:
+For details, refer to the &lt;a href="https://www.apollographql.com/docs/router/containerization/kubernetes/#deploy-with-metrics-endpoints" target="_blank" rel="noopener">Official Apollo instructions&lt;/a>.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">router&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">configuration&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># -- Other configuration prior&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">telemetry&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">metrics&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">prometheus&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">enabled&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">listen&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="m">0.0.0.0&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="m">9090&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">path&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;/metrics&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># -- Open container ports&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">containerPorts&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">metrics&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="m">9090&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># -- Enable service monitor&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">serviceMonitor&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">enabled&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>You can connect to this endpoint through the router pod.
+For example:&lt;/p>
+&lt;p>&lt;code>router-demo.demo.svc.cluster.local:9090&lt;/code>&lt;/p>
+&lt;h4>Docker&lt;span class="hx-absolute -hx-mt-20" id="docker-1">&lt;/span>
+&lt;a href="#docker-1" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;p>To enable Router metrics, modify its configuration file.
+For details, refer to the &lt;a href="https://www.apollographql.com/docs/router/configuration/telemetry/exporters/metrics/prometheus/" target="_blank" rel="noopener">Official Apollo Instructions&lt;/a>.&lt;/p>
+&lt;p>The following is an example configuration:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># -- Other configuration prior&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">telemetry&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">exporters&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">metrics&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">prometheus&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">enabled&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">listen&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="m">0.0.0.0&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="m">9090&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">path&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">/metrics&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>This opens the metrics endpoint on port &lt;code>9090&lt;/code>.
+To view it externally, you must expose the port in docker-compose.
+Once the port is exposed, view the metrics at &lt;code>localhost:9090/metrics&lt;/code>&lt;/p>
+&lt;h2>Available Rhize microservice metrics&lt;span class="hx-absolute -hx-mt-20" id="available-rhize-microservice-metrics">&lt;/span>
+&lt;a href="#available-rhize-microservice-metrics" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Several common metrics appear between Rhize microservices:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>go&lt;/code>&lt;/li>
+&lt;li>&lt;code>process&lt;/code>&lt;/li>
+&lt;li>&lt;code>http&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Service&lt;/th>
+&lt;th>&lt;a href="https://prometheus.io/docs/guides/go-application/" target="_blank" rel="noopener">Instrumented Prometheus Go Application&lt;/a>&lt;/th>
+&lt;th>process metrics&lt;/th>
+&lt;th>HTTP metrics*&lt;/th>
+&lt;th>Additional&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Audit&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>BAAS&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>BPMN&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Core&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NATS&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Router&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Tempo&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">HTTP metrics are noted as &lt;code>promhttp&lt;/code>.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3>BAAS&lt;span class="hx-absolute -hx-mt-20" id="baas">&lt;/span>
+&lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Additional metrics on BAAS are from &lt;a href="https://dgraph.io/docs/deploy/admin/metrics/" target="_blank" rel="noopener">dgraph&lt;/a>. These include two categories: Badger and Dgraph.&lt;/p>
+&lt;h4>Sample&lt;span class="hx-absolute -hx-mt-20" id="sample">&lt;/span>
+&lt;a href="#sample" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;pre>&lt;code># HELP badger_disk_reads_total Number of cumulative reads by Badger
+# TYPE badger_disk_reads_total untyped
+badger_disk_reads_total 0
+# HELP badger_disk_writes_total Number of cumulative writes by Badger
+# TYPE badger_disk_writes_total untyped
+badger_disk_writes_total 0
+# HELP badger_gets_total Total number of gets
+# TYPE badger_gets_total untyped
+badger_gets_total 0&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;pre>&lt;code># HELP dgraph_alpha_health_status Status of the alphas
+# TYPE dgraph_alpha_health_status gauge
+dgraph_alpha_health_status 1
+# HELP dgraph_disk_free_bytes Total number of bytes free on disk
+# TYPE dgraph_disk_free_bytes gauge
+dgraph_disk_free_bytes{dir=&amp;#34;postings_fs&amp;#34;} 1.0153562112e&amp;#43;10
+# HELP dgraph_disk_total_bytes Total number of bytes on disk
+# TYPE dgraph_disk_total_bytes gauge
+dgraph_disk_total_bytes{dir=&amp;#34;postings_fs&amp;#34;} 1.0447245312e&amp;#43;10&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;h3>BPMN&lt;span class="hx-absolute -hx-mt-20" id="bpmn">&lt;/span>
+&lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>BPMN has four metrics unique to it, shown in full in the sample below.&lt;/p>
+&lt;h4>Sample&lt;span class="hx-absolute -hx-mt-20" id="sample-1">&lt;/span>
+&lt;a href="#sample-1" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;pre>&lt;code># HELP bpmn_execution_commands The number of BPMN commands that have started executing
+# TYPE bpmn_execution_commands counter
+bpmn_execution_commands 1162
+# HELP bpmn_instances_started BPMN Instances started but not necessarily completed
+# TYPE bpmn_instances_started counter
+bpmn_instances_started 166
+# HELP bpmn_queue_CommandConsumerQueue Number of BPMN Commands currently waiting to be executed
+# TYPE bpmn_queue_CommandConsumerQueue gauge
+bpmn_queue_CommandConsumerQueue 0
+# HELP bpmn_queue_StartOnNatsMessages Number of BPMN trigger messages received from NATS
+# TYPE bpmn_queue_StartOnNatsMessages gauge
+bpmn_queue_StartOnNatsMessages 0&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;h3>NATS&lt;span class="hx-absolute -hx-mt-20" id="nats-1">&lt;/span>
+&lt;a href="#nats-1" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>NATS has two categories of metrics:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>gnatsd&lt;/code>&lt;/li>
+&lt;li>&lt;code>jetstream&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h4>Sample&lt;span class="hx-absolute -hx-mt-20" id="sample-2">&lt;/span>
+&lt;a href="#sample-2" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;pre>&lt;code># HELP gnatsd_connz_in_bytes in_bytes
+# TYPE gnatsd_connz_in_bytes counter
+gnatsd_connz_in_bytes{server_id=&amp;#34;nats-demo-0&amp;#34;} 0
+# HELP gnatsd_connz_in_msgs in_msgs
+# TYPE gnatsd_connz_in_msgs counter
+gnatsd_connz_in_msgs{server_id=&amp;#34;nats-demo-0&amp;#34;} 0
+# HELP gnatsd_connz_limit limit
+# TYPE gnatsd_connz_limit gauge
+gnatsd_connz_limit{server_id=&amp;#34;nats-demo-0&amp;#34;} 1024&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;pre>&lt;code># HELP jetstream_server_jetstream_disabled JetStream disabled or not
+# TYPE jetstream_server_jetstream_disabled gauge
+jetstream_server_jetstream_disabled{cluster=&amp;#34;nats-demo&amp;#34;,domain=&amp;#34;&amp;#34;,is_meta_leader=&amp;#34;false&amp;#34;,meta_leader=&amp;#34;nats-demo-1&amp;#34;,server_id=&amp;#34;nats-demo-0&amp;#34;,server_name=&amp;#34;nats-demo-0&amp;#34;} 0
+# HELP jetstream_server_max_memory JetStream Max Memory
+# TYPE jetstream_server_max_memory gauge
+jetstream_server_max_memory{cluster=&amp;#34;nats-demo&amp;#34;,domain=&amp;#34;&amp;#34;,is_meta_leader=&amp;#34;false&amp;#34;,meta_leader=&amp;#34;nats-demo-1&amp;#34;,server_id=&amp;#34;nats-demo-0&amp;#34;,server_name=&amp;#34;nats-demo-0&amp;#34;} 2.147483648e&amp;#43;09
+# HELP jetstream_server_max_storage JetStream Max Storage
+# TYPE jetstream_server_max_storage gauge
+jetstream_server_max_storage{cluster=&amp;#34;nats-demo&amp;#34;,domain=&amp;#34;&amp;#34;,is_meta_leader=&amp;#34;false&amp;#34;,meta_leader=&amp;#34;nats-demo-1&amp;#34;,server_id=&amp;#34;nats-demo-0&amp;#34;,server_name=&amp;#34;nats-demo-0&amp;#34;} 5.36870912e&amp;#43;10&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;h3>Router&lt;span class="hx-absolute -hx-mt-20" id="router-1">&lt;/span>
+&lt;a href="#router-1" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>All metrics provided by Router are unique to Apollo Router.&lt;/p>
+&lt;h4>Sample&lt;span class="hx-absolute -hx-mt-20" id="sample-3">&lt;/span>
+&lt;a href="#sample-3" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;pre>&lt;code># HELP apollo_router_cache_hit_count apollo_router_cache_hit_count
+# TYPE apollo_router_cache_hit_count counter
+apollo_router_cache_hit_count{kind=&amp;#34;query planner&amp;#34;,service_name=&amp;#34;router-demo&amp;#34;,storage=&amp;#34;memory&amp;#34;} 121802
+# HELP apollo_router_cache_hit_time apollo_router_cache_hit_time
+# TYPE apollo_router_cache_hit_time histogram
+apollo_router_cache_hit_time_bucket{kind=&amp;#34;query planner&amp;#34;,service_name=&amp;#34;router-demo&amp;#34;,storage=&amp;#34;memory&amp;#34;,le=&amp;#34;0.001&amp;#34;} 121802
+apollo_router_cache_hit_time_bucket{kind=&amp;#34;query planner&amp;#34;,service_name=&amp;#34;router-demo&amp;#34;,storage=&amp;#34;memory&amp;#34;,le=&amp;#34;0.005&amp;#34;} 121802
+apollo_router_cache_hit_time_bucket{kind=&amp;#34;query planner&amp;#34;,service_name=&amp;#34;router-demo&amp;#34;,storage=&amp;#34;memory&amp;#34;,le=&amp;#34;0.015&amp;#34;} 121802&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;h3>Tempo&lt;span class="hx-absolute -hx-mt-20" id="tempo">&lt;/span>
+&lt;a href="#tempo" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Tempo has a few categories of metrics:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>jaeger&lt;/code>&lt;/li>
+&lt;li>&lt;code>prometheus&lt;/code>&lt;/li>
+&lt;li>&lt;code>tempo&lt;/code>&lt;/li>
+&lt;li>&lt;code>tempodb&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;p>The Tempo documentation &lt;a href="https://grafana.com/docs/tempo/latest/metrics-generator/" target="_blank" rel="noopener">details&lt;/a> what these metrics measure.&lt;/p>
+&lt;h4>Sample&lt;span class="hx-absolute -hx-mt-20" id="sample-4">&lt;/span>
+&lt;a href="#sample-4" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;pre>&lt;code># HELP jaeger_tracer_baggage_restrictions_updates_total Number of times baggage restrictions were successfully updated
+# TYPE jaeger_tracer_baggage_restrictions_updates_total counter
+jaeger_tracer_baggage_restrictions_updates_total{result=&amp;#34;err&amp;#34;} 0
+jaeger_tracer_baggage_restrictions_updates_total{result=&amp;#34;ok&amp;#34;} 0
+# HELP jaeger_tracer_baggage_truncations_total Number of times baggage was truncated as per baggage restrictions
+# TYPE jaeger_tracer_baggage_truncations_total counter
+jaeger_tracer_baggage_truncations_total 0&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;pre>&lt;code># HELP prometheus_remote_storage_exemplars_in_total Exemplars in to remote storage, compare to exemplars out for queue managers.
+# TYPE prometheus_remote_storage_exemplars_in_total counter
+prometheus_remote_storage_exemplars_in_total 0
+# HELP prometheus_remote_storage_histograms_in_total HistogramSamples in to remote storage, compare to histograms out for queue managers.
+# TYPE prometheus_remote_storage_histograms_in_total counter
+prometheus_remote_storage_histograms_in_total 0
+# HELP prometheus_remote_storage_samples_in_total Samples in to remote storage, compare to samples out for queue managers.
+# TYPE prometheus_remote_storage_samples_in_total counter
+prometheus_remote_storage_samples_in_total 0&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;pre>&lt;code># HELP tempo_distributor_ingester_clients The current number of ingester clients.
+# TYPE tempo_distributor_ingester_clients gauge
+tempo_distributor_ingester_clients 0
+# HELP tempo_distributor_metrics_generator_clients The current number of metrics-generator clients.
+# TYPE tempo_distributor_metrics_generator_clients gauge
+tempo_distributor_metrics_generator_clients 0
+# HELP tempo_distributor_push_duration_seconds Records the amount of time to push a batch to the ingester.
+# TYPE tempo_distributor_push_duration_seconds histogram
+tempo_distributor_push_duration_seconds_bucket{le=&amp;#34;0.005&amp;#34;} 0
+tempo_distributor_push_duration_seconds_bucket{le=&amp;#34;0.01&amp;#34;} 0&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;pre>&lt;code># HELP tempodb_backend_hedged_roundtrips_total Total number of hedged backend requests. Registered as a gauge for code sanity. This is a counter.
+# TYPE tempodb_backend_hedged_roundtrips_total gauge
+tempodb_backend_hedged_roundtrips_total 0
+# HELP tempodb_blocklist_poll_duration_seconds Records the amount of time to poll and update the blocklist.
+# TYPE tempodb_blocklist_poll_duration_seconds histogram
+tempodb_blocklist_poll_duration_seconds_bucket{le=&amp;#34;0&amp;#34;} 0
+tempodb_blocklist_poll_duration_seconds_bucket{le=&amp;#34;60&amp;#34;} 2012
+tempodb_blocklist_poll_duration_seconds_bucket{le=&amp;#34;120&amp;#34;} 2012&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;h2>Dashboards&lt;span class="hx-absolute -hx-mt-20" id="dashboards">&lt;/span>
+&lt;a href="#dashboards" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>A number of Grafana dashboards are pre-configured for use with Prometheus metrics.
+All dashboards in Grafana use Prometheus as a data source.&lt;/p>
+&lt;p>You can download them from &lt;a href="https://github.com/libremfg/rhize-templates/tree/main/dashboards" target="_blank" rel="noopener">Rhize Dashboard templates&lt;/a>.&lt;/p></description></item><item><title>Default URLs and local ports</title><link>https://docs.rhize.com/versions/v3.2.0/reference/default-ports/</link><pubDate>Thu, 02 Nov 2023 16:49:42 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/reference/default-ports/</guid><description>
+&lt;p>After you &lt;a href="https://docs.rhize.com/deploy/install/services" >install Rhize services&lt;/a>, they are accessible, by default, on the following ports:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Service&lt;/th>
+&lt;th>Default Port&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Admin UI&lt;/td>
+&lt;td>&lt;a href="http://localhost:3030" target="_blank" rel="noopener">&lt;code>localhost:3030&lt;/code>&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Grafana&lt;/td>
+&lt;td>&lt;a href="http://localhost:3001" target="_blank" rel="noopener">&lt;code>localhost:3001&lt;/code>&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Router&lt;/td>
+&lt;td>&lt;a href="http://localhost:4000" target="_blank" rel="noopener">&lt;code>localhost:4000&lt;/code>&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Keycloak&lt;/td>
+&lt;td>&lt;a href="http://localhost:8090" target="_blank" rel="noopener">&lt;code>localhost:8090&lt;/code>&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>baas-alpha&lt;/code> command line&lt;/td>
+&lt;td>&lt;a href="http://localhost:8080" target="_blank" rel="noopener">&lt;code>localhost:8080&lt;/code>&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>URLs&lt;span class="hx-absolute -hx-mt-20" id="urls">&lt;/span>
+&lt;a href="#urls" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>When you create DNS records, Rhize recommends the following URLs:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Service&lt;/th>
+&lt;th>Domain&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Admin UI&lt;/td>
+&lt;td>&lt;code>rhize-ui.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Keycloak&lt;/td>
+&lt;td>&lt;code>rhize-auth.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GraphQL&lt;/td>
+&lt;td>&lt;code>rhize-api.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NATS&lt;/td>
+&lt;td>&lt;code>rhize-mqtt.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Grafana&lt;/td>
+&lt;td>&lt;code>rhize-grafana.&amp;lt;YOUR_DOMAIN&amp;gt;&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>GraphQL types and filters</title><link>https://docs.rhize.com/versions/v3.2.0/reference/gql-types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/reference/gql-types/</guid><description>
+&lt;p>This page provides a reference of the data types enforced by the Rhize database schema,
+and of the filters that can apply to these types when you query, update, or delete a set of resources.
+For an extended guide, with examples, read &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/filter/" >Use query filters&lt;/a>.&lt;/p>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">These filters are based on Rhize&amp;rsquo;s implementation of the Dgraph &lt;a href="https://dgraph.io/docs/graphql/schema/directives/search/" target="_blank" rel="noopener">&lt;code>@search&lt;/code> directives&lt;/a>.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2>Data types&lt;span class="hx-absolute -hx-mt-20" id="data-types">&lt;/span>
+&lt;a href="#data-types" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Every object in the Rhize schema has fields that are of one of the basic data types.
+From the other perspective, these data types define fields that compose manufacturing objects,
+objects defined precisely by ISA-95 and enforced by Rhize&amp;rsquo;s database schema.&lt;/p>
+&lt;h3>Basic types&lt;span class="hx-absolute -hx-mt-20" id="basic-types">&lt;/span>
+&lt;a href="#basic-types" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Every manufacturing object in the Rhize database is made of fields that are of one the following basic types.
+In official GraphQL terminology, these types are called &lt;a href="https://graphql.org/learn/schema/#scalar-types" target="_blank" rel="noopener">&lt;em>scalar types&lt;/em>&lt;/a>.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>String&lt;/code>: A sequence of characters. For example, &lt;code>machine_2&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Int&lt;/code>: An integer number. For example, &lt;code>2&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Float&lt;/code>: A number that includes a fraction. For example, &lt;code>2.25&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Boolean&lt;/code>: A field whose value is either &lt;code>true&lt;/code> or &lt;code>false&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Enum&lt;/code>: A field whose values are restricted to a defined set. For example, &lt;code>versionState&lt;/code> might be one of &lt;code>ACTIVE&lt;/code>, &lt;code>APPROVED&lt;/code>, &lt;code>FOR_REVIEW&lt;/code>, &lt;code>DRAFT&lt;/code>, or &lt;code>DEPRECATED&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>id&lt;/code>: A string representing a unique object within a defined &lt;a href="#object-type" >object type&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>iid&lt;/code>: The object&amp;rsquo;s unique address in the database. For example, &lt;code>0xf9b49&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>DateTime&lt;/code>: A timestamp in &lt;a href="https://datatracker.ietf.org/doc/html/rfc3339" target="_blank" rel="noopener">RFC 3339&lt;/a> format.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Geo&lt;/code>: Geometry types for geo-spatial coordinates&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3>Object type&lt;span class="hx-absolute -hx-mt-20" id="object-type">&lt;/span>
+&lt;a href="#object-type" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>The preceding basic types form the building blocks for Rhize&amp;rsquo;s manufacturing object schema, with data models corresponding to ISA-95.&lt;/p>
+&lt;p>Each object is made of manufacturing-specific fields of one of the basic types.
+For example, the &lt;code>materialActual&lt;/code> object has basic fields, including:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>description&lt;/code>, a &lt;code>String&lt;/code>.&lt;/li>
+&lt;li>&lt;code>effectiveEnd&lt;/code>, a &lt;code>DateTime&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>The &lt;code>materialActual&lt;/code> also has complex fields describing associated manufacturing objects.
+For example, its fields include
+the array of associated &lt;code>MaterialLot&lt;/code> objects, the &lt;code>MaterialDefinition&lt;/code> object, and so on.
+All objects in the database have relationships to other objects.&lt;/p>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">Metadata fields start with an underscore (&lt;code>_&lt;/code>).
+For example, &lt;code>_createdOn&lt;/code> reports the time when the object was created.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2>Scalar filters&lt;span class="hx-absolute -hx-mt-20" id="scalar-filters">&lt;/span>
+&lt;a href="#scalar-filters" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Most objects have some fields that can be filters for a query or mutation.
+The filters that are available depend on the data type, but the behavior of the &lt;code>String&lt;/code> filters corresponds closely to &lt;code>DateTime&lt;/code> and &lt;code>Int&lt;/code> filters.&lt;/p>
+&lt;h3>String filters&lt;span class="hx-absolute -hx-mt-20" id="string-filters">&lt;/span>
+&lt;a href="#string-filters" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>String properties have the following filters:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Filter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Example argument&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>eq&lt;/code>&lt;/td>
+&lt;td>Equals (exact match)&lt;/td>
+&lt;td>&lt;code>(filter: {id: {eq: &amp;quot;match&amp;quot;}})&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>in&lt;/code>&lt;/td>
+&lt;td>From this match of arrays&lt;/td>
+&lt;td>&lt;code>(filter: {id: {in: [&amp;quot;dough&amp;quot;, &amp;quot;cookie_unit&amp;quot;]}})&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lt&lt;/code>,&lt;code>gt&lt;/code>,&lt;code>le&lt;/code>, &lt;code>ge&lt;/code> &lt;code>between&lt;/code>&lt;/td>
+&lt;td>Less than, greater than, or between a lexicographic range&lt;/td>
+&lt;td>&lt;code>(filter: {id: {lt: &amp;quot;M&amp;quot;}&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>regexp&lt;/code>&lt;/td>
+&lt;td>A regular expression match using &lt;a href="https://github.com/google/re2/wiki/Syntax/" target="_blank" rel="noopener">&lt;code>RE2&lt;/code> syntax&lt;/a>&lt;/td>
+&lt;td>&lt;code>(filter: {id: {regexp: &amp;quot;/hello/i&amp;quot;}})&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>anyoftext&lt;/code>&lt;/td>
+&lt;td>A match for any entered strings, separated by spaces&lt;/td>
+&lt;td>&lt;code>(filter: {id: {anyoftext: &amp;quot;100 MD&amp;quot;}})&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>alloftext&lt;/code>&lt;/td>
+&lt;td>A match for all entered strings&lt;/td>
+&lt;td>&lt;code>(filter: {id {alloftext: &amp;quot;MD&amp;quot;}})&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Integers, floats, DateTimes&lt;span class="hx-absolute -hx-mt-20" id="integers-floats-datetimes">&lt;/span>
+&lt;a href="#integers-floats-datetimes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Properties that have a type of &lt;code>Int&lt;/code>, &lt;code>Float&lt;/code>, or &lt;code>DateTime&lt;/code> can be filtered by the following keywords.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>lt&lt;/code>&lt;/li>
+&lt;li>&lt;code>le&lt;/code>&lt;/li>
+&lt;li>&lt;code>eq&lt;/code>&lt;/li>
+&lt;li>&lt;code>in&lt;/code>&lt;/li>
+&lt;li>&lt;code>between&lt;/code>&lt;/li>
+&lt;li>&lt;code>ge&lt;/code>&lt;/li>
+&lt;li>&lt;code>gt&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Each keyword has the same behavior as described in &lt;a href="#string-filters" >string filters&lt;/a>, only they operate on numerical rather than lexicographic values.
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">While the &lt;code>dateTime&lt;/code> type uses the RFC 3339 format, some string fields may use the &lt;a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank" rel="noopener">ISO 8601&lt;/a> format. This depends on the object and customer requirement. For these fields, the string filters work as chronological filters too.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/p>
+&lt;h3>Enum filters&lt;span class="hx-absolute -hx-mt-20" id="enum-filters">&lt;/span>
+&lt;a href="#enum-filters" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Properties of the type &lt;code>Enum&lt;/code> can be filtered by the following:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>lt&lt;/code>&lt;/li>
+&lt;li>&lt;code>le&lt;/code>&lt;/li>
+&lt;li>&lt;code>eq&lt;/code>&lt;/li>
+&lt;li>&lt;code>in&lt;/code>&lt;/li>
+&lt;li>&lt;code>between&lt;/code>&lt;/li>
+&lt;li>&lt;code>ge&lt;/code>&lt;/li>
+&lt;li>&lt;code>gt&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Each keyword has the same behavior as described in &lt;a href="#string-filters" >string filters&lt;/a>.&lt;/p>
+&lt;h3>Boolean filters&lt;span class="hx-absolute -hx-mt-20" id="boolean-filters">&lt;/span>
+&lt;a href="#boolean-filters" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Boolean filters can be either &lt;code>true&lt;/code> or &lt;code>false&lt;/code>.&lt;/p>
+&lt;h3>Geolocation filters&lt;span class="hx-absolute -hx-mt-20" id="geolocation-filters">&lt;/span>
+&lt;a href="#geolocation-filters" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Geolocation filters return objects within specified geographic coordinates.
+They return matches within the specified &lt;a href="https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.6" target="_blank" rel="noopener">GeoJSON polygon&lt;/a>.&lt;/p>
+&lt;p>If a geolocation field can act as a filter, then the filter can work in one of the following behaviors:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Filter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>near&lt;/td>
+&lt;td>Within the specified &lt;code>distance&lt;/code> from the polygon&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>within&lt;/td>
+&lt;td>In the polygon coordinates&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Intersects&lt;/td>
+&lt;td>In the intersection of two polygons&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>Read more&lt;span class="hx-absolute -hx-mt-20" id="read-more">&lt;/span>
+&lt;a href="#read-more" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;a href="https://docs.rhize.com/how-to/gql" >Rhize guide to GraphQL&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://dgraph.io/docs/graphql/schema/directives/search/" target="_blank" rel="noopener">Dgraph &lt;code>@search&lt;/code> directive&lt;/a>.&lt;/li>
+&lt;/ul></description></item><item><title>Glossary</title><link>https://docs.rhize.com/versions/v3.2.0/reference/glossary/</link><pubDate>Tue, 12 Sep 2023 19:35:35 +1100</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/reference/glossary/</guid><description>
+&lt;p>The manufacturing industry has many specialized terms—and many abbreviations.
+This glossary is a reference of how Rhize defines terms used in this documentation.&lt;/p>
+&lt;dl>&lt;dt id="agent">Agent&lt;/dt>
+&lt;dd>The Rhize agent bridges your plant processes with the Rhize data hub. It collects data that is emitted during the manufacturing process and publishes it to the NATS message broker.&lt;/dd>&lt;dt id="andon">Andon&lt;/dt>
+&lt;dd>A system that alerts manufacturing teams about problems in processes or quality.&lt;/dd>&lt;dt id="audit">Audit&lt;/dt>
+&lt;dd>The Libre Audit log server is a service that provides a tamper-proof and immutable audit trail of all events that occur in the Rhize system.&lt;/dd>&lt;dt id="business-process-model-and-notation">Business Process Model and Notation (BPMN)&lt;/dt>
+&lt;dd>A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize's BPMN UI and engine provides a low-code interface for complex event handling&lt;/dd>&lt;dt id="catch-event">Catch event&lt;/dt>
+&lt;dd>In BPMN, a catch event reacts to a trigger (compared to a &lt;a href="#throw-event">throw event&lt;/a>, which returns some result). Only start and intermediate events can catch.&lt;/dd>&lt;dt id="computerized-maintenance-management-system">Computerized maintenance management system (CMMS)&lt;/dt>
+&lt;dd>A Source of information about an organization's maintenance operations&lt;/dd>&lt;dt id="data-source">Data source&lt;/dt>
+&lt;dd>A source of real-time data that is collected by the &lt;a href="#agent">Rhize agent&lt;/a>, such as an MQTT or OPC UA device&lt;/dd>&lt;dt id="discrete-manufacturing">Discrete manufacturing&lt;/dt>
+&lt;dd>A form a manufacturing where items are made one at a item, as opposed to in batches or continuously&lt;/dd>&lt;dt id="electronic-batch-report">Electronic batch report (eBR)&lt;/dt>
+&lt;dd>A detailed report for a batch in a pharmaceutical process, logging items such as the process segments, personnel, equipment, material substance and weight, and so on&lt;/dd>&lt;dt id="enterprise-resource-planning">Enterprise resource planning (ERP)&lt;/dt>
+&lt;dd>Software to manage business processes. In Rhize, ERP activities usually are named "operations", where lower-level activities are prefixed with "Work".&lt;/dd>&lt;dt id="equipment">Equipment&lt;/dt>
+&lt;dd>&lt;/dd>&lt;dt id="equipment-actual">Equipment actual&lt;/dt>
+&lt;dd>Refer to &lt;a href="#resource-actual">resource actual&lt;/a>&lt;/dd>&lt;dt id="equipment-class">Equipment class&lt;/dt>
+&lt;dd>An equipment class is a grouping of equipment with a definite purpose&lt;/dd>&lt;dt id="event">Event&lt;/dt>
+&lt;dd>Discrete occurrences or notifications that represent changes or actions within a system&lt;/dd>&lt;dt id="event-orchestration">Event orchestration&lt;/dt>
+&lt;dd>A pattern in event-driven architecture where a central service, such as &lt;a href="#nats">NATS&lt;/a>, listens to events and decides how to handle them.&lt;/dd>&lt;dt id="event-driven-architecture">Event-driven architecture (EDA)&lt;/dt>
+&lt;dd>A software design pattern that revolves around the concept of events and event-driven messaging&lt;/dd>&lt;dt id="event-driven-data-updates">Event-driven data updates&lt;/dt>
+&lt;dd>When an event leads to an update in the real-time database&lt;/dd>&lt;dt id="finished-goods">Finished goods&lt;/dt>
+&lt;dd>The final product. Material becomes finished goods when it requires no more processing or production&lt;/dd>&lt;dt id="genealogy">Genealogy&lt;/dt>
+&lt;dd>The ability to trace the raw materials that were used across different levels of a manufacturing process&lt;/dd>&lt;dt id="hierarchy-scope">Hierarchy scope&lt;/dt>
+&lt;dd>The scope of the exchanged information, such as a site or area, for which the information is relevant. The scope identifies associated instances of objects such as material, personnel, and equipment&lt;/dd>&lt;dt id="instance">Instance&lt;/dt>
+&lt;dd>An identifiable member of a manufacturing class, like a material or process segment, that can be tracked and scheduled&lt;/dd>&lt;dt id="iso-22400">ISO 22400&lt;/dt>
+&lt;dd>A standard on KPIs in manufacturing operations management.&lt;/dd>&lt;dt id="laboratory-information-management-system">Laboratory information management system (LIMS)&lt;/dt>
+&lt;dd>&lt;/dd>&lt;dt id="level-or-an-operation">Level (or an operation)&lt;/dt>
+&lt;dd>The degree of granularity necessary to discuss and exchange data for different purposes in the manufacturing operation.&lt;/dd>&lt;dt id="level-3">level 3&lt;/dt>
+&lt;dd>The perspective of the operation as viewed from the granularity of a manufacturing execution or operations management system. Above level 3 is business planning, and below level 3 is monitoring and acquisition.&lt;/dd>&lt;dt id="level-4">level 4&lt;/dt>
+&lt;dd>Software that tracks laboratory data, including samples, experiments, and workflows&lt;/dd>&lt;dt id="manufacturing-data-hub">Manufacturing data hub (MDH)&lt;/dt>
+&lt;dd>A centralized platform or infrastructure that serves as a hub for collecting, integrating, storing, and processing manufacturing data from various sources within an organization.&lt;/dd>&lt;dt id="manufacturing-execution-system">Manufacturing execution system (MES)&lt;/dt>
+&lt;dd>A system in a manufacturing process that tracks and documents the transformation of raw materials to finished goods&lt;/dd>&lt;dt id="material">Material&lt;/dt>
+&lt;dd>Everything required to produce a finished good. They include raw materials, intermediate materials, and collections of parts&lt;/dd>&lt;dt id="material-class">Material class&lt;/dt>
+&lt;dd>A group of material with a shared purpose in the manufacturing process&lt;/dd>&lt;dt id="material-definition">Material definition&lt;/dt>
+&lt;dd>A representation of material with similar charecteristics. All material lots must have one associated material definition.&lt;/dd>&lt;dt id="material-lot">Material lot&lt;/dt>
+&lt;dd>A uniquely identifiable amount of material, either countable or weighable&lt;/dd>&lt;dt id="material-sublot">Material sublot&lt;/dt>
+&lt;dd>Each separately identifiable unit of a &lt;a href="#material-lot">material lot.&lt;/a>&lt;/dd>&lt;dt id="mutation">Mutation&lt;/dt>
+&lt;dd>A GraphQL operation that modifies some data in the database, usually creating, updating, or deleting a resource&lt;/dd>&lt;dt id="nats">NATS&lt;/dt>
+&lt;dd>Connective infrastructure to address, discover, and exchange messages in a distributed system. Rhize uses NATS as the broker to publish and subscribe to event data, decoupling communication between services and equipment.&lt;/dd>&lt;dt id="ontology">Ontology&lt;/dt>
+&lt;dd>The entities and relationships that represent all knowledge in the domain of manufacturing operations&lt;/dd>&lt;dt id="operational-location">Operational location&lt;/dt>
+&lt;dd>Where resources are expected to be located in a plant&lt;/dd>&lt;dt id="operations-definition">Operations definition&lt;/dt>
+&lt;dd>The resources required to perform an operation, including for production, quality, maintenance, and inventory, from the perspective of the level-4 enterprise control systems.&lt;/dd>&lt;dt id="operations-event-definition">Operations event definition&lt;/dt>
+&lt;dd>A definition of the properties that pertain to an &lt;em>event&lt;/em> from the perspective of the level-4 (ERP) systems.&lt;/dd>&lt;dt id="overall-equipment-effectiveness">Overall Equipment Effectiveness (OEE)&lt;/dt>
+&lt;dd>A measure of manufacturing productivity. OEE is commonly calculated as the product of three critical factors: availability, performance, and quality.&lt;/dd>&lt;dt id="pattern-work-definition">Pattern (work definition) (pattern)&lt;/dt>
+&lt;dd>A work definition that creates a pattern or template for other patterns or work definitions to follow&lt;/dd>&lt;dt id="personnel-class">Personnel class&lt;/dt>
+&lt;dd>A grouping of persons whose work shares a definite purpose in the manufacturing process&lt;/dd>&lt;dt id="physical-asset">Physical asset&lt;/dt>
+&lt;dd>A physical piece of equipment with an ID&lt;/dd>&lt;dt id="process-segment">Process segment&lt;/dt>
+&lt;dd>A step in a manufacturing activitity that is visible to a business process, grouping the necessary personnel, material, equipment, and physical assets&lt;/dd>&lt;dt id="process-variable-context">Process variable context&lt;/dt>
+&lt;dd>The context and variables that are passed between tasks in a &lt;a href="#business-process-model-and-notation">BPMN&lt;/a> workflow&lt;/dd>&lt;dt id="resource-actual">Resource actual&lt;/dt>
+&lt;dd>The specific resource used for a specific job. For example, an operations segment may require &lt;code>EquipmentA&lt;/code>, but if this equipment is in maintainance at the time of a job, the Equipment actual might be its temporary replacement, &lt;code>EquipmentB&lt;/code>&lt;/dd>&lt;dt id="role-based-equipment-model">Role-based equipment model&lt;/dt>
+&lt;dd>A definition of equipment based on the level-3 and level-4 functions and activities that it performs&lt;/dd>&lt;dt id="rules-engine">Rules engine&lt;/dt>
+&lt;dd>A program that evaluates incoming data from a data source and converts significant changes into &lt;em>events&lt;/em> to be processed by a BPMN workflow&lt;/dd>&lt;dt id="serial-discrete">Serial discrete&lt;/dt>
+&lt;dd>A type of &lt;a href="#discrete-manufacturing">discrete manufacturing&lt;/a> where each item produced has a serial number&lt;/dd>&lt;dt id="sink">Sink&lt;/dt>
+&lt;dd>The destination of a data flow.&lt;/dd>&lt;dt id="throw-event">Throw event&lt;/dt>
+&lt;dd>In BPMN, a throw event returns some response (compared to a &lt;a href="#catch-event">catch event&lt;/a>, which reacts to some trigger). Only intermediate and end events can throw.&lt;/dd>&lt;dt id="unit-of-measure">Unit of measure&lt;/dt>
+&lt;dd>A defined unit to consistently compare values, duration or quantities&lt;/dd>&lt;dt id="warehouse-management-system">Warehouse management system&lt;/dt>
+&lt;dd>A system to organize processes and policies of warehouses. It may include processes to manage and track inventory and exchange data.&lt;/dd>&lt;dt id="work-calendar">Work calendar&lt;/dt>
+&lt;dd>A collection of work calendar &lt;a href="#entry">entries&lt;/a>&lt;/dd>&lt;dt id="work-calendar-entry">Work calendar entry&lt;/dt>
+&lt;dd>Rules that define a work period, including its start date, duration, and interval.&lt;/dd>&lt;dt id="work-master">Work master&lt;/dt>
+&lt;dd>A template for a job order, corresponding to an operations and process segment, from the perspective of the level-3 (MES/MOM) systems.&lt;/dd>&lt;/dl></description></item></channel></rss>
