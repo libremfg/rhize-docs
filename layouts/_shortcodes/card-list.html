@@ -12,17 +12,19 @@
 
 {{ define "childs" }}
     {{ range .menu }}
-    {{ $icon := .Page.Params.icon }}
-    {{ $tags := .Page.Params.tags }}
-    {{ $cardParams := dict
-        "link" .RelPermalink
-        "title" .Title
-        "subtitle" .Description
-        "tag" $tags
-    }}
-    {{ if $icon }}
-        {{ $cardParams = merge $cardParams (dict "icon" $icon) }}
-    {{ end }}
-    {{ partial "shortcodes/card.html" $cardParams }}
+        {{ if not .Page.Params.noindex }}
+            {{ $icon := .Page.Params.icon }}
+            {{ $tags := .Page.Params.tags }}
+            {{ $cardParams := dict
+                "link" .RelPermalink
+                "title" .Title
+                "subtitle" .Description
+                "tag" $tags
+            }}
+            {{ if $icon }}
+                {{ $cardParams = merge $cardParams (dict "icon" $icon) }}
+            {{ end }}
+            {{ partial "shortcodes/card.html" $cardParams }}
+        {{ end }}
     {{end}}
 {{end}}
