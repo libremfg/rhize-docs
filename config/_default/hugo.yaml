@@ -80,6 +80,7 @@ params:
 outputs:
   home:
     - HTML
+    - llms
 
 permalinks:
   page:
