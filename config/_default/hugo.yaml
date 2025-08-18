@@ -2,6 +2,8 @@ canonifyURLs: true
 baseURL: "https://docs.rhize.com"
 languageCode: en-us
 title: Rhize documentation
+description: Documentation for an event-driven, headless, fully-ISA-95 compliant database and MES platform. Also includes guides to implementing ISA-95.
+
 
 module:
   imports:
