@@ -3,8 +3,8 @@
 {{ .Scratch.Set "pages" .Page.Pages }}
 {{ $pages := (.Scratch.Get "pages") }}
 
-<div class="hextra-cards hx-mt-4 hx-gap-4 hx-grid not-prose"
-     style="--hextra-cards-grid-cols: 2;">
+<div class="hextra-cards hx:mt-4 hx:gap-4 hx:grid not-prose"
+     style="--hextra-cards-grid-cols: 4;">
 
 {{template "childs" (dict "menu" $pages.ByWeight "pages" .Site.Pages) }}
 

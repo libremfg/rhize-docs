@@ -88,8 +88,6 @@ For example, you might use an `aggregate` query to create a summary report about
 
 This request returns the count of all Equipment items that match a certain filter:
 
-{{< tabs >}}
-{{% tab "query" %}}
 ```graphql
 query countItems($filter: EquipmentFilter) {
   aggregateEquipment(filter: $filter) {
@@ -97,8 +95,6 @@ query countItems($filter: EquipmentFilter) {
   }
 }
 ```
-{{% /tab %}}
-{{< /tabs >}}
 
 ## Sort and paginate
 

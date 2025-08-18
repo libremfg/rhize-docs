@@ -1,33 +1,18 @@
 {{ define "main" }}
-<div class='hx-mx-auto hx-flex {{ partial "utils/page-width" . }}'>
-  {{ partial "toc.html" . }}
-  <article
-    class="hx-w-full hx-break-words hx-flex hx-min-h-[calc(100vh-var(--navbar-height))] hx-min-w-0 hx-justify-center hx-pb-8 hx-pr-[calc(env(safe-area-inset-right)-1.5rem)]"
-  >
-    <main class="hx-w-full hx-min-w-0 hx-max-w-6xl hx-px-6 hx-pt-4 md:hx-px-12">
-      {{ partial "breadcrumb.html" . }}
-
-      <div class="content">
-          {{ if .Params.v }}
-        <div class="version warning">
-          {{ $class := "defaultClass"}}
-             {{ $message :=printf "This documentation is for older versions of Rhize. If you don't need a specific version, switch to the [latest documentation](/)"
-          }}
-          {{- $emoji := "⚠️" -}}
-          {{- $warningClass := "hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200" -}}
-
-          {{- partial
-          "shortcodes/callout.html" (dict "content" ($message | .RenderString)
-          "emoji" $emoji "class" $warningClass) -}}
+  <div class='hx:mx-auto hx:flex hextra-max-page-width'>
+    {{ partial "sidebar.html" (dict "context" .) }}
+    {{ partial "toc.html" . }}
+    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="hx:w-full hx:min-w-0 hx:max-w-6xl hx:px-6 hx:pt-4 hx:md:px-12">
+        {{ partial "breadcrumb.html" . }}
+        <div class="content">
+          {{ if .Title }}<h1>{{ .Title }}</h1>{{ end }}
+          {{ .Content }}
         </div>
-        {{end}}
-        {{ if .Title }}
-        <h1>{{ .Title }}</h1>
-        {{ end }} {{ .Content }}
-      </div>
-      {{ partial "components/last-updated.html" . }} {{ partial
-      "components/pager.html" . }} {{ partial "components/comments.html" . }}
-    </main>
-  </article>
-</div>
+        {{ partial "components/last-updated.html" . }}
+        {{ partial "components/pager.html" . }}
+        {{ partial "components/comments.html" . }}
+      </main>
+    </article>
+  </div>
 {{ end }}

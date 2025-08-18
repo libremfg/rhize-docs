@@ -287,8 +287,6 @@ query GetEquipment($getEquipmentId: String) {
 The preceding example is minimal, but the use of variables to _parameterize_ arguments also applies to complex object creation and filtering.
 For example, this _mutation_ uses variables to create an array of Persons:
 
-{{< tabs >}}
-  {{% tab "Mutation" %}}
 ```graphql
 mutation AddPerson($input: [AddPersonInput!]!) {
   addPerson(input: $input) {
@@ -298,7 +296,9 @@ mutation AddPerson($input: [AddPersonInput!]!) {
   }
 }
 ```
+
 **Variables**:
+
 ```json
 {
   "input": [
@@ -307,8 +307,6 @@ mutation AddPerson($input: [AddPersonInput!]!) {
   ]
 }
 ```
-{{% /tab %}}
-{{< /tabs >}}
 
 To learn more, read the official GraphQL documentation on [Variables](https://graphql.org/learn/queries/#variables).
 
