@@ -12,7 +12,7 @@
 
 {{ define "childs" }}
     {{ range .menu }}
-        {{ if not .Page.Params.noindex }}
+        {{ if not .Page.Params.sidebar.exclude }}
             {{ $icon := .Page.Params.icon }}
             {{ $tags := .Page.Params.tags }}
             {{ $cardParams := dict
