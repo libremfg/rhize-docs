@@ -1,6 +1,6 @@
 # Rhize documentation
 
-> <no value>
+> Documentation for an event-driven, headless, fully-ISA-95 compliant database and MES platform. Also includes guides to implementing ISA-95.
 
 
 ## Get started
@@ -585,5 +585,5 @@ Service … - Published 2023-11-02
 
 
 ---
-Generated on 2025-08-18 21:32:56 UTC
+Generated on 2025-08-18 21:35:24 UTC
 Site: https://docs.rhize.com/
