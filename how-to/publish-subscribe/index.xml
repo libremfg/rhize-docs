@@ -3,7 +3,7 @@
 &lt;p>Imagine a scenario when an oven must be preheated every time a new order number is published to an MQTT edge device.
 You could automate this workflow with a rule that listens to messages published and evaluates a condition.
 If the condition evaluates to &lt;code>true&lt;/code>, the rule triggers a &lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling">BPMN&lt;/abbr> workflow to preheat the oven.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">
+&lt;pre class="mermaid hx:mt-6">
 ---
 title: Rules trigger workflows from data-source changes
 ---
@@ -18,19 +18,19 @@ B --&amp;gt;|&amp;#34;yes (optional: pass variables)&amp;#34;| D(Run BPMN workfl
 &lt;li>In the equipment class, create a rule that triggers the workflow.&lt;/li>
 &lt;/ol>
 &lt;p>The following sections describe how to do these steps in more detail.&lt;/p>
-&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
-&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
-&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
-&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">This tutorial assumes a data source that exchanges messages over the MQTT protocol.&lt;/div>
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200">
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2">&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx:w-full hx:min-w-0 hx:leading-7">
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0">This tutorial assumes a data source that exchanges messages over the MQTT protocol.&lt;/div>
 &lt;/div>
 &lt;/div>
-&lt;h2>Prerequisites&lt;span class="hx-absolute -hx-mt-20" id="prerequisites">&lt;/span>
+&lt;h2>Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites">&lt;/span>
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Before you start, ensure you have the following:&lt;/p>
 &lt;ul>
 &lt;li>Access your Rhize customer environment&lt;/li>
 &lt;li>The &lt;a href="https://docs.rhize.com/reference/service-config/agent-configuration/" >Agent configured&lt;/a> to listen for your data-source ID&lt;/li>
 &lt;/ul>
-&lt;h2>Set up: configure equipment and workflows&lt;span class="hx-absolute -hx-mt-20" id="set-up-configure-equipment-and-workflows">&lt;/span>
+&lt;h2>Set up: configure equipment and workflows&lt;span class="hx:absolute hx:-mt-20" id="set-up-configure-equipment-and-workflows">&lt;/span>
 &lt;a href="#set-up-configure-equipment-and-workflows" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The setup involves modeling the objects associated with the rule.&lt;/p>
 &lt;ul>
 &lt;li>Data source&lt;/li>
@@ -40,7 +40,7 @@ B --&amp;gt;|&amp;#34;yes (optional: pass variables)&amp;#34;| D(Run BPMN workfl
 &lt;li>Equipment class with bound properties&lt;/li>
 &lt;/ul>
 &lt;p>Once you have these, you can create a rule and associate it with an actual equipment item.&lt;/p>
-&lt;h3>Create a data source&lt;span class="hx-absolute -hx-mt-20" id="create-a-data-source">&lt;/span>
+&lt;h3>Create a data source&lt;span class="hx:absolute hx:-mt-20" id="create-a-data-source">&lt;/span>
 &lt;a href="#create-a-data-source" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ol>
 &lt;li>From the main menu, navigate to &lt;strong>Master Data &amp;gt; Data Sources&lt;/strong>.&lt;/li>
 &lt;li>Create a new data source. The label (ID) must match the one specified in the configuration file for the &lt;code>libre-agent&lt;/code> microservice.&lt;/li>
@@ -59,7 +59,7 @@ width="100%"
 A new data source and version created in the UI.
 &lt;/figcaption>
 &lt;/figure>
-&lt;h3>Create a data source topic&lt;span class="hx-absolute -hx-mt-20" id="create-a-data-source-topic">&lt;/span>
+&lt;h3>Create a data source topic&lt;span class="hx:absolute hx:-mt-20" id="create-a-data-source-topic">&lt;/span>
 &lt;a href="#create-a-data-source-topic" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ol>
 &lt;li>Navigate to the &lt;strong>Topics&lt;/strong> tab.&lt;/li>
 &lt;li>Add a new property (that is, a topic).&lt;/li>
@@ -79,7 +79,7 @@ width="100%"
 A new data source topic created in the UI.
 &lt;/figcaption>
 &lt;/figure>
-&lt;h3>Create a unit of measure&lt;span class="hx-absolute -hx-mt-20" id="create-a-unit-of-measure">&lt;/span>
+&lt;h3>Create a unit of measure&lt;span class="hx:absolute hx:-mt-20" id="create-a-unit-of-measure">&lt;/span>
 &lt;a href="#create-a-unit-of-measure" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ol>
 &lt;li>From the Main Menu, navigate to &lt;strong>Master Data &amp;gt; Units of Measure&lt;/strong>.&lt;/li>
 &lt;li>Add a new unit of measure.&lt;/li>
@@ -96,7 +96,7 @@ width="100%"
 A new unit of measure created in the UI.
 &lt;/figcaption>
 &lt;/figure>
-&lt;h3>Creating a BPMN workflow&lt;span class="hx-absolute -hx-mt-20" id="creating-a-bpmn-workflow">&lt;/span>
+&lt;h3>Creating a BPMN workflow&lt;span class="hx:absolute hx:-mt-20" id="creating-a-bpmn-workflow">&lt;/span>
 &lt;a href="#creating-a-bpmn-workflow" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A rule must trigger a BPMN workflow.
 Before setting up a rule, create its workflow.
 For this example, this 3-node BPMN is enough:&lt;/p>
@@ -118,21 +118,21 @@ A BPMN created in the UI.
 &lt;/figure>
 &lt;p>The BPMN has a &lt;code>Libre Jsonata Transform&lt;/code> task that contains an expression &lt;code>&amp;quot;Preheating oven for order number &amp;quot; &amp;amp; $.orderNumber&amp;quot;&lt;/code> .
 The rule engine triggers this BPMN with a payload that includes the order number value, as follows:&lt;/p>
-&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 &lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;orderNumber&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;Order1&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
 &lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
 >
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;h3>Create an equipment class with bound properties&lt;span class="hx-absolute -hx-mt-20" id="create-an-equipment-class-with-bound-properties">&lt;/span>
-&lt;a href="#create-an-equipment-class-with-bound-properties" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;h4>Equipment class and version&lt;span class="hx-absolute -hx-mt-20" id="equipment-class-and-version">&lt;/span>
+&lt;h3>Create an equipment class with bound properties&lt;span class="hx:absolute hx:-mt-20" id="create-an-equipment-class-with-bound-properties">&lt;/span>
+&lt;a href="#create-an-equipment-class-with-bound-properties" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;h4>Equipment class and version&lt;span class="hx:absolute hx:-mt-20" id="equipment-class-and-version">&lt;/span>
 &lt;a href="#equipment-class-and-version" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ol>
 &lt;li>Navigate to &lt;strong>Master Data &amp;gt; Equipment Class&lt;/strong>.&lt;/li>
 &lt;li>Create a new equipment class from the sidebar. The label might be &lt;code>Pizza Line&lt;/code>, for example.&lt;/li>
@@ -148,7 +148,7 @@ width="100%"
 A new equipment class and version created in the UI.
 &lt;/figcaption>
 &lt;/figure>
-&lt;h4>Equipment class property&lt;span class="hx-absolute -hx-mt-20" id="equipment-class-property">&lt;/span>
+&lt;h4>Equipment class property&lt;span class="hx:absolute hx:-mt-20" id="equipment-class-property">&lt;/span>
 &lt;a href="#equipment-class-property" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ol>
 &lt;li>From the properties tab, create a new property.&lt;/li>
 &lt;li>For type, select &lt;code>BOUND&lt;/code>.&lt;/li>
@@ -166,8 +166,8 @@ width="100%"
 A new equipment class property created in the UI.
 &lt;/figcaption>
 &lt;/figure>
-&lt;h2>Create a rule&lt;span class="hx-absolute -hx-mt-20" id="create-a-rule">&lt;/span>
-&lt;a href="#create-a-rule" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Add a rule to an existing equipment class&lt;span class="hx-absolute -hx-mt-20" id="add-a-rule-to-an-existing-equipment-class">&lt;/span>
+&lt;h2>Create a rule&lt;span class="hx:absolute hx:-mt-20" id="create-a-rule">&lt;/span>
+&lt;a href="#create-a-rule" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Add a rule to an existing equipment class&lt;span class="hx:absolute hx:-mt-20" id="add-a-rule-to-an-existing-equipment-class">&lt;/span>
 &lt;a href="#add-a-rule-to-an-existing-equipment-class" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ol>
 &lt;li>From the Rules tab of an equipment class version, create a new rule.&lt;/li>
 &lt;li>Enter &lt;code>Run BPMN on Order Number&lt;/code> for the name and confirm.&lt;/li>
@@ -175,36 +175,36 @@ A new equipment class property created in the UI.
 &lt;li>Add &lt;code>orderNumber&lt;/code> as a trigger property.&lt;/li>
 &lt;li>Add a trigger expression that evaluates to true or false.&lt;/li>
 &lt;/ol>
-&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
-&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
-&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
-&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">The rule runs the preceding workflow only if the expression evaluates to &lt;code>true&lt;/code>.
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200">
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2">&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx:w-full hx:min-w-0 hx:leading-7">
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0">The rule runs the preceding workflow only if the expression evaluates to &lt;code>true&lt;/code>.
 It’s common to compare the new value with the previous.&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;p>In this case, we can compare the new order number to the previous by adding &lt;code>OrderNumber.current.value != OrderNumber.previous.value&lt;/code>.
 Note that the root of the object path must match the ID of the equipment class property we set up earlier and all evaluations are case-sensitive.&lt;/p>
 &lt;p>The entire information that becomes available to the rule engine looks like this:&lt;/p>
-&lt;div class="hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain">
-&lt;div class="hx-mt-4 hx-flex hx-w-max hx-min-w-full hx-border-b hx-border-gray-200 hx-pb-px dark:hx-border-neutral-800">&lt;button
-class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+&lt;div class="hextra-scrollbar hx:overflow-x-auto hx:overflow-y-hidden hx:overscroll-x-contain">
+&lt;div class="hx:mt-4 hx:flex hx:w-max hx:min-w-full hx:border-b hx:border-gray-200 hx:pb-px hx:dark:border-neutral-800">&lt;button
+class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white"
 role="tab"
 type="button"
 aria-controls="tabs-panel-0" aria-selected="true" tabindex="0" data-state="selected">JSON input&lt;/button>&lt;button
-class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white"
 role="tab"
 type="button"
 aria-controls="tabs-panel-1">Expression&lt;/button>&lt;button
-class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white"
 role="tab"
 type="button"
 aria-controls="tabs-panel-2">Output&lt;/button>&lt;/div>
 &lt;/div>
 &lt;div>
 &lt;div
-class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block"
 id="tabs-panel-0"
-role="tabpanel" tabindex="0" data-state="selected" >&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+role="tabpanel" tabindex="0" data-state="selected" >&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 &lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">orderNumber&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">current&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
@@ -274,43 +274,43 @@ role="tabpanel" tabindex="0" data-state="selected" >&lt;div class="hextra-code-b
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
 &lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
 >
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;div
-class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block"
 id="tabs-panel-1"
-role="tabpanel">&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="sb">`OrderNumber.current.value != OrderNumber.previous.value`&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+role="tabpanel">&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="sb">`OrderNumber.current.value != OrderNumber.previous.value`&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
 &lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
 >
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;div
-class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block"
 id="tabs-panel-2"
-role="tabpanel">&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;pre>&lt;code>True&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+role="tabpanel">&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+&lt;div>&lt;pre>&lt;code>True&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
 &lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
 >
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
 &lt;/div>
@@ -334,14 +334,14 @@ width="100%"
 Creating an equipment class rule in the UI.
 &lt;/figcaption>
 &lt;/figure>
-&lt;h3>Associate an equipment with a bound property&lt;span class="hx-absolute -hx-mt-20" id="associate-an-equipment-with-a-bound-property">&lt;/span>
+&lt;h3>Associate an equipment with a bound property&lt;span class="hx:absolute hx:-mt-20" id="associate-an-equipment-with-a-bound-property">&lt;/span>
 &lt;a href="#associate-an-equipment-with-a-bound-property" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>The final steps to setting up a rule are to:&lt;/p>
 &lt;ol>
 &lt;li>Create a new equipment version.&lt;/li>
 &lt;li>Link it to a data source.&lt;/li>
 &lt;li>Set up bound properties.&lt;/li>
 &lt;/ol>
-&lt;h4>Create an equipment and version&lt;span class="hx-absolute -hx-mt-20" id="create-an-equipment-and-version">&lt;/span>
+&lt;h4>Create an equipment and version&lt;span class="hx:absolute hx:-mt-20" id="create-an-equipment-and-version">&lt;/span>
 &lt;a href="#create-an-equipment-and-version" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ol>
 &lt;li>From the Main Menu, navigate to &lt;strong>Master Data &amp;gt; Equipment&lt;/strong>.&lt;/li>
 &lt;li>Select a piece of equipment. If none, create one called &lt;code>Line 1&lt;/code>.&lt;/li>
@@ -359,7 +359,7 @@ width="100%"
 A new equipment class and version created in the UI.
 &lt;/figcaption>
 &lt;/figure>
-&lt;h4>Link a data source&lt;span class="hx-absolute -hx-mt-20" id="link-a-data-source">&lt;/span>
+&lt;h4>Link a data source&lt;span class="hx:absolute hx:-mt-20" id="link-a-data-source">&lt;/span>
 &lt;a href="#link-a-data-source" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ol>
 &lt;li>From the &lt;strong>Data Sources&lt;/strong> tab, link the equipment version to the data source you created in the previous section.&lt;/li>
 &lt;/ol>
@@ -373,7 +373,7 @@ width="100%"
 An equipment linked to a data source in the UI.
 &lt;/figcaption>
 &lt;/figure>
-&lt;h4>Set up the bound property&lt;span class="hx-absolute -hx-mt-20" id="set-up-the-bound-property">&lt;/span>
+&lt;h4>Set up the bound property&lt;span class="hx:absolute hx:-mt-20" id="set-up-the-bound-property">&lt;/span>
 &lt;a href="#set-up-the-bound-property" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ol>
 &lt;li>From the &lt;strong>Properties&lt;/strong> tab, find a property that you want this equipment to inherit and select the binding icon.&lt;/li>
 &lt;li>If you chose the property &lt;code>orderNumber&lt;/code>, add the topic &lt;code>Oven/OrderNumber&lt;/code> you added previously.&lt;/li>
@@ -388,9 +388,9 @@ width="100%"
 An equipment property bound to a data source topic in the UI.
 &lt;/figcaption>
 &lt;/figure>
-&lt;h2>Test the binding and the rule&lt;span class="hx-absolute -hx-mt-20" id="test-the-binding-and-the-rule">&lt;/span>
+&lt;h2>Test the binding and the rule&lt;span class="hx:absolute hx:-mt-20" id="test-the-binding-and-the-rule">&lt;/span>
 &lt;a href="#test-the-binding-and-the-rule" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Send a message to test that the value of the property &lt;code>orderNumber&lt;/code> of the equipment &lt;code>Line 1&lt;/code> is bound to the topic &lt;code>Oven/OrderNumber&lt;/code>.&lt;/p>
-&lt;h3>Test using an MQTT client&lt;span class="hx-absolute -hx-mt-20" id="test-using-an-mqtt-client">&lt;/span>
+&lt;h3>Test using an MQTT client&lt;span class="hx:absolute hx:-mt-20" id="test-using-an-mqtt-client">&lt;/span>
 &lt;a href="#test-using-an-mqtt-client" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>For example, using MQTT Explorer:&lt;/p>
 &lt;ol>
 &lt;li>Open MQTT Explorer and connect to the broker.&lt;/li>
@@ -434,10 +434,10 @@ width="100%"
 The bound property assumes the last value published to the data source.
 &lt;/figcaption>
 &lt;/figure>
-&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
-&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
-&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
-&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">If this is the first message published to the topic, the rule will not be triggered because Rhize has no previous value to compare it the message value to. However, if you publish another order number, a new topic called &lt;code>Core&lt;/code> will show up containing a subtopic called &lt;code>RuleTriggered&lt;/code> to indicate that the rule has indeed been triggered.&lt;/div>
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200">
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2">&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx:w-full hx:min-w-0 hx:leading-7">
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0">If this is the first message published to the topic, the rule will not be triggered because Rhize has no previous value to compare it the message value to. However, if you publish another order number, a new topic called &lt;code>Core&lt;/code> will show up containing a subtopic called &lt;code>RuleTriggered&lt;/code> to indicate that the rule has indeed been triggered.&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;figure class="big-figure">
@@ -450,7 +450,7 @@ width="65%"
 The rule engine has published a message to indicate that the equipment class rule has indeed been triggered.
 &lt;/figcaption>
 &lt;/figure>
-&lt;h3>Confirm in execution in Tempo&lt;span class="hx-absolute -hx-mt-20" id="confirm-in-execution-in-tempo">&lt;/span>
+&lt;h3>Confirm in execution in Tempo&lt;span class="hx:absolute hx:-mt-20" id="confirm-in-execution-in-tempo">&lt;/span>
 &lt;a href="#confirm-in-execution-in-tempo" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>To confirm the intended BPMN was executed, navigate to Grafana (Tempo) and look for a trace containing the expected BPMN ID.&lt;/p>
 &lt;figure class="big-figure">
 &lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Executed_BPMNs_in_Grafana.png" target="_blank">
@@ -462,20 +462,20 @@ width="100%"
 Grafana shows a recent trace with the id of the target BPMN.
 &lt;/figcaption>
 &lt;/figure>
-&lt;h2>Video example&lt;span class="hx-absolute -hx-mt-20" id="video-example">&lt;/span>
+&lt;h2>Video example&lt;span class="hx:absolute hx:-mt-20" id="video-example">&lt;/span>
 &lt;a href="#video-example" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&amp;#x1f3a5; &lt;a href="https://www.youtube.com/watch?v=y5lr9JRmxDA" target="_blank" rel="noopener">Trigger BPMN&lt;/a>. This video provides an example of creating a rule based on values for an OPC UA server in a baking process.&lt;/li>
 &lt;/ul></description></item><item><title>Connect data source</title><link>https://docs.rhize.com/how-to/publish-subscribe/connect-datasource/</link><pubDate>Fri, 22 Sep 2023 14:50:39 -0300</pubDate><guid>https://docs.rhize.com/how-to/publish-subscribe/connect-datasource/</guid><description>
 &lt;p>For Rhize to listen to and handle manufacturing events,
 you need to connect a &lt;abbr title="A source of real-time data that is collected by the Rhize agent, such as an MQTT or OPC UA device">data source&lt;/abbr>.&lt;/p>
-&lt;h2>Prerequisites&lt;span class="hx-absolute -hx-mt-20" id="prerequisites">&lt;/span>
+&lt;h2>Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites">&lt;/span>
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To add a data source, you need the following:&lt;/p>
 &lt;ul>
 &lt;li>Access to an MQTT or OPC UA server&lt;/li>
 &lt;li>Credentials for this server, if necessary&lt;/li>
 &lt;li>The URL and connection string for this server (Rhize will point to this)&lt;/li>
 &lt;/ul>
-&lt;h2>Steps to connect&lt;span class="hx-absolute -hx-mt-20" id="steps-to-connect">&lt;/span>
+&lt;h2>Steps to connect&lt;span class="hx:absolute hx:-mt-20" id="steps-to-connect">&lt;/span>
 &lt;a href="#steps-to-connect" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The process has two sides:&lt;/p>
 &lt;ul>
 &lt;li>
@@ -486,7 +486,7 @@ you need to connect a &lt;abbr title="A source of real-time data that is collect
 &lt;p>To do this, you can create entities in the Rhize UI or through its &lt;a href="https://docs.rhize.com/how-to/gql/" >GraphQL API&lt;/a>.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;h3>Model the data source in the Rhize UI&lt;span class="hx-absolute -hx-mt-20" id="model-the-data-source-in-the-rhize-ui">&lt;/span>
+&lt;h3>Model the data source in the Rhize UI&lt;span class="hx:absolute hx:-mt-20" id="model-the-data-source-in-the-rhize-ui">&lt;/span>
 &lt;a href="#model-the-data-source-in-the-rhize-ui" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ol>
 &lt;li>Enter the Rhize UI and go to &lt;strong>Master Data &amp;gt; Data sources&lt;/strong>.&lt;/li>
 &lt;li>Add the connection string, topics, and other necessary parameters. For details of what these fields mean, review the &lt;a href="https://docs.rhize.com/how-to/model/master-definitions/#data-sources" >Data source object reference&lt;/a>.&lt;/li>
@@ -498,7 +498,7 @@ you need to connect a &lt;abbr title="A source of real-time data that is collect
 &lt;li>If the equipment has properties bound to this data source, create the properties, then configure them as &lt;code>BOUND&lt;/code> to the data source.&lt;/li>
 &lt;/ol>
 &lt;p>Once active, Rhize reaches out to this data source and synchronizes the equipment properties to the bound topics.&lt;/p>
-&lt;h2>Next steps&lt;span class="hx-absolute -hx-mt-20" id="next-steps">&lt;/span>
+&lt;h2>Next steps&lt;span class="hx:absolute hx:-mt-20" id="next-steps">&lt;/span>
 &lt;a href="#next-steps" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Now that you have the data source sending data you can:&lt;/p>
 &lt;ul>
 &lt;li>Write a rule to &lt;a href="https://docs.rhize.com/how-to/publish-subscribe/create-equipment-class-rule/" >Turn data into events&lt;/a> that trigger workflows.&lt;/li>
@@ -521,65 +521,65 @@ by the Alpha leader node, then Raft logs expand as events are collected on
 that node until the sink is available again.&lt;/p>
 &lt;p>You should enable CDC on all Rhize
 Alpha nodes to avoid interruptions in the stream of CDC events.&lt;/p>
-&lt;h2>Enable CDC with Kafka sink&lt;span class="hx-absolute -hx-mt-20" id="enable-cdc-with-kafka-sink">&lt;/span>
+&lt;h2>Enable CDC with Kafka sink&lt;span class="hx:absolute hx:-mt-20" id="enable-cdc-with-kafka-sink">&lt;/span>
 &lt;a href="#enable-cdc-with-kafka-sink" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Kafka records CDC events under the &lt;code>libre-cdc&lt;/code> topic. The topic must be created before events
 are sent to the broker. To enable CDC and sink events to Kafka, start Dgraph Alpha with the &lt;code>--cdc&lt;/code>
 command and the sub-options shown below, as follows:&lt;/p>
-&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">dgraph alpha --cdc &lt;span class="s2">&amp;#34;kafka=kafka-hostname:port; sasl-user=tstark; sasl-password=m3Ta11ic&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">dgraph alpha --cdc &lt;span class="s2">&amp;#34;kafka=kafka-hostname:port; sasl-user=tstark; sasl-password=m3Ta11ic&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
 &lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
 >
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
 &lt;/div>
 &lt;p>If you use Kafka on the localhost without SASL authentication, you can just
 specify the hostname and port used by Kafka, as follows:&lt;/p>
-&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">dgraph alpha --cdc &lt;span class="s2">&amp;#34;localhost:9092&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">dgraph alpha --cdc &lt;span class="s2">&amp;#34;localhost:9092&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
 &lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
 >
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
 &lt;/div>
 &lt;p>If the Kafka cluster to which you are connecting requires TLS, the &lt;code>ca-cert&lt;/code> option is required.
 Note that this certificate can be self-signed.&lt;/p>
-&lt;h2>Enable CDC with file sink&lt;span class="hx-absolute -hx-mt-20" id="enable-cdc-with-file-sink">&lt;/span>
+&lt;h2>Enable CDC with file sink&lt;span class="hx:absolute hx:-mt-20" id="enable-cdc-with-file-sink">&lt;/span>
 &lt;a href="#enable-cdc-with-file-sink" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To enable CDC and sink results to a local unencrypted file, start Dgraph Alpha
 with the &lt;code>--cdc&lt;/code> command and the sub-option shown below, as follows:&lt;/p>
-&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">dgraph alpha --cdc &lt;span class="s2">&amp;#34;file=local-file-path&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">dgraph alpha --cdc &lt;span class="s2">&amp;#34;file=local-file-path&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
 &lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
 >
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;h2>Enable CDC with NATS JetStream KV store sink&lt;span class="hx-absolute -hx-mt-20" id="enable-cdc-with-nats-jetstream-kv-store-sink">&lt;/span>
+&lt;h2>Enable CDC with NATS JetStream KV store sink&lt;span class="hx:absolute hx:-mt-20" id="enable-cdc-with-nats-jetstream-kv-store-sink">&lt;/span>
 &lt;a href="#enable-cdc-with-nats-jetstream-kv-store-sink" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To enable CDC and sink results to a NATS JetStream KV store, start Dgraph Alpha
 with the &lt;code>--cdc&lt;/code> command and the sub-option shown below, as follows:&lt;/p>
-&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">dgraph alpha --cdc &lt;span class="s2">&amp;#34;nats=nats://system:system@localhost:4222&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">dgraph alpha --cdc &lt;span class="s2">&amp;#34;nats=nats://system:system@localhost:4222&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
 &lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
 >
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;h2>CDC command reference&lt;span class="hx-absolute -hx-mt-20" id="cdc-command-reference">&lt;/span>
+&lt;h2>CDC command reference&lt;span class="hx:absolute hx:-mt-20" id="cdc-command-reference">&lt;/span>
 &lt;a href="#cdc-command-reference" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The &lt;code>--cdc&lt;/code> option includes several sub-options that you can use to configure
 CDC when running the &lt;code>dgraph alpha&lt;/code> command:&lt;/p>
 &lt;!-- vale off -->
@@ -640,64 +640,64 @@ CDC when running the &lt;code>dgraph alpha&lt;/code> command:&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;!-- vale on -->
-&lt;h2>CDC data format&lt;span class="hx-absolute -hx-mt-20" id="cdc-data-format">&lt;/span>
+&lt;h2>CDC data format&lt;span class="hx:absolute hx:-mt-20" id="cdc-data-format">&lt;/span>
 &lt;a href="#cdc-data-format" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>CDC events are in JSON format. Most CDC events look like the following example:&lt;/p>
-&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span> &lt;span class="nt">&amp;#34;key&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;0&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nt">&amp;#34;value&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="nt">&amp;#34;meta&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;commit_ts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="p">},&lt;/span>&lt;span class="nt">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;mutation&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;event&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;operation&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;set&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;uid&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;attr&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;counter.val&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;value&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;value_type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;int&amp;#34;&lt;/span>&lt;span class="p">}}}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span> &lt;span class="nt">&amp;#34;key&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;0&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nt">&amp;#34;value&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="nt">&amp;#34;meta&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;commit_ts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="p">},&lt;/span>&lt;span class="nt">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;mutation&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;event&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;operation&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;set&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;uid&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;attr&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;counter.val&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;value&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;value_type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;int&amp;#34;&lt;/span>&lt;span class="p">}}}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
 &lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
 >
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
 &lt;/div>
 &lt;p>The &lt;code>Meta.Commit_Ts&lt;/code> value (shown above as &lt;code>&amp;quot;meta&amp;quot;:{&amp;quot;commit_ts&amp;quot;:5}&lt;/code>) will increase
 with each CDC event, so you can use this value to find duplicate events if those
 occur due to Raft leadership changes in your Dgraph Alpha group.&lt;/p>
-&lt;h3>Mutation event examples&lt;span class="hx-absolute -hx-mt-20" id="mutation-event-examples">&lt;/span>
+&lt;h3>Mutation event examples&lt;span class="hx:absolute hx:-mt-20" id="mutation-event-examples">&lt;/span>
 &lt;a href="#mutation-event-examples" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A set mutation event updating &lt;code>counter.val&lt;/code> to 10 would look like the following:&lt;/p>
-&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>&lt;span class="nt">&amp;#34;meta&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;commit_ts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">29&lt;/span>&lt;span class="p">},&lt;/span>&lt;span class="nt">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;mutation&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;event&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;operation&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;set&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;uid&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;attr&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;counter.val&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;value&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;value_type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;int&amp;#34;&lt;/span>&lt;span class="p">}}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>&lt;span class="nt">&amp;#34;meta&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;commit_ts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">29&lt;/span>&lt;span class="p">},&lt;/span>&lt;span class="nt">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;mutation&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;event&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;operation&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;set&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;uid&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;attr&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;counter.val&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;value&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;value_type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;int&amp;#34;&lt;/span>&lt;span class="p">}}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
 &lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
 >
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
 &lt;/div>
 &lt;p>Similarly, a delete mutation event that removes all values for the &lt;code>Author.name&lt;/code>
 field for a specified node would look like the following:&lt;/p>
-&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>&lt;span class="nt">&amp;#34;meta&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;commit_ts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">44&lt;/span>&lt;span class="p">},&lt;/span>&lt;span class="nt">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;mutation&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;event&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;operation&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;del&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;uid&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">7&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;attr&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;Author.name&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;value&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;_STAR_ALL&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;value_type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;default&amp;#34;&lt;/span>&lt;span class="p">}}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>&lt;span class="nt">&amp;#34;meta&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;commit_ts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">44&lt;/span>&lt;span class="p">},&lt;/span>&lt;span class="nt">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;mutation&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;event&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;operation&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;del&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;uid&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">7&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;attr&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;Author.name&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;value&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;_STAR_ALL&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;value_type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;default&amp;#34;&lt;/span>&lt;span class="p">}}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
 &lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
 >
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;h3>Drop event examples&lt;span class="hx-absolute -hx-mt-20" id="drop-event-examples">&lt;/span>
+&lt;h3>Drop event examples&lt;span class="hx:absolute hx:-mt-20" id="drop-event-examples">&lt;/span>
 &lt;a href="#drop-event-examples" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>CDC drop events look like the following example event for &amp;ldquo;drop all&amp;rdquo;:&lt;/p>
-&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>&lt;span class="nt">&amp;#34;meta&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;commit_ts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">13&lt;/span>&lt;span class="p">},&lt;/span>&lt;span class="nt">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;drop&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;event&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;operation&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;all&amp;#34;&lt;/span>&lt;span class="p">}}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>&lt;span class="nt">&amp;#34;meta&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;commit_ts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">13&lt;/span>&lt;span class="p">},&lt;/span>&lt;span class="nt">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;drop&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;event&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;operation&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;all&amp;#34;&lt;/span>&lt;span class="p">}}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
 &lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
 >
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
 &lt;/div>
 &lt;p>The &lt;code>operation&lt;/code> field specifies which drop operation (&lt;code>attribute&lt;/code>, &lt;code>type&lt;/code>,
 specified &lt;code>data&lt;/code>, or &lt;code>all&lt;/code> data) is tracked by the CDC event.&lt;/p>
-&lt;h2>Known limitations&lt;span class="hx-absolute -hx-mt-20" id="known-limitations">&lt;/span>
+&lt;h2>Known limitations&lt;span class="hx:absolute hx:-mt-20" id="known-limitations">&lt;/span>
 &lt;a href="#known-limitations" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>CDC has the following known limitations:&lt;/p>
 &lt;ul>
 &lt;li>CDC events do not track old values that are updated or removed by mutation or

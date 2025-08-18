@@ -6,7 +6,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;li>It subscribes to tags and republishes the changes in NATS.&lt;/li>
 &lt;li>It creates an interface for the BPMN engine to send reads and writes to a data source and its associated equipment.&lt;/li>
 &lt;/ul>
-&lt;h2>OPC UA authentication types&lt;span class="hx-absolute -hx-mt-20" id="opc-ua-authentication-types">&lt;/span>
+&lt;h2>OPC UA authentication types&lt;span class="hx:absolute hx:-mt-20" id="opc-ua-authentication-types">&lt;/span>
 &lt;a href="#opc-ua-authentication-types" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>When authenticating over OPC UA, Rhize supports the following authentication types:&lt;/p>
 &lt;table>
 &lt;thead>
@@ -30,7 +30,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="logging">&lt;/span>
+&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="logging">&lt;/span>
 &lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Logs the configurations to the console.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -50,7 +50,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>libreDataStoreGraphQL&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="libredatastoregraphql">&lt;/span>
+&lt;h2>&lt;code>libreDataStoreGraphQL&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="libredatastoregraphql">&lt;/span>
 &lt;a href="#libredatastoregraphql" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -65,7 +65,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>NATS&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="nats">&lt;/span>
+&lt;h2>&lt;code>NATS&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="nats">&lt;/span>
 &lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -80,7 +80,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="oidc">&lt;/span>
+&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="oidc">&lt;/span>
 &lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -116,7 +116,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="opentelemetry">&lt;/span>
+&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="opentelemetry">&lt;/span>
 &lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -131,7 +131,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>OPCUA&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="opcua">&lt;/span>
+&lt;h2>&lt;code>OPCUA&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="opcua">&lt;/span>
 &lt;a href="#opcua" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -174,7 +174,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>BUFFERS&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="buffers">&lt;/span>
+&lt;h2>&lt;code>BUFFERS&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="buffers">&lt;/span>
 &lt;a href="#buffers" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -189,7 +189,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>HEALTH&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="health">&lt;/span>
+&lt;h2>&lt;code>HEALTH&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="health">&lt;/span>
 &lt;a href="#health" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -212,7 +212,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>MQTT&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="mqtt">&lt;/span>
+&lt;h2>&lt;code>MQTT&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="mqtt">&lt;/span>
 &lt;a href="#mqtt" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -255,7 +255,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>DATASOURCE&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="datasource">&lt;/span>
+&lt;h2>&lt;code>DATASOURCE&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="datasource">&lt;/span>
 &lt;a href="#datasource" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -270,7 +270,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>AZURE&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="azure">&lt;/span>
+&lt;h2>&lt;code>AZURE&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="azure">&lt;/span>
 &lt;a href="#azure" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -298,7 +298,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tbody>
 &lt;/table></description></item><item><title>Audit configuration</title><link>https://docs.rhize.com/versions/v3.1.0/reference/service-config/audit-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/reference/service-config/audit-configuration/</guid><description>
 &lt;p>Audit offers a secure and unchangeable record of all activities that happen within the Rhize system.&lt;/p>
-&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="logging">&lt;/span>
+&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="logging">&lt;/span>
 &lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Logs the configuration to the console.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -318,7 +318,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="oidc">&lt;/span>
+&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="oidc">&lt;/span>
 &lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -354,7 +354,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="opentelemetry">&lt;/span>
+&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="opentelemetry">&lt;/span>
 &lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -369,7 +369,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>storage&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="storage">&lt;/span>
+&lt;h2>&lt;code>storage&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="storage">&lt;/span>
 &lt;a href="#storage" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -382,7 +382,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>influxdb&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="influxdb">&lt;/span>
+&lt;h2>&lt;code>influxdb&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="influxdb">&lt;/span>
 &lt;a href="#influxdb" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>A time-series database that is used in conjunction with Grafana designed for handling time-stamped data, such as metrics, events, and logs, that change over time.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -402,7 +402,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>pg&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="pg">&lt;/span>
+&lt;h2>&lt;code>pg&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="pg">&lt;/span>
 &lt;a href="#pg" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>PostgreSQL is a general-purpose relational database management system that supports a wide range of features and data types.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -431,7 +431,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tbody>
 &lt;/table></description></item><item><title>BPMN configuration</title><link>https://docs.rhize.com/versions/v3.1.0/reference/service-config/bpmn-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/reference/service-config/bpmn-configuration/</guid><description>
 &lt;p>The Rhize BPMN acts as the tailored engine for processing low-code workflows designed within the [BPMN UI]/versions/v3.1.0/how-to/bpmn/. The configurations manage the connection and data flow on the BPMN engine to the other Rhize microservices.&lt;/p>
-&lt;h2>&lt;code>http&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="http">&lt;/span>
+&lt;h2>&lt;code>http&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="http">&lt;/span>
 &lt;a href="#http" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>All HTTP configurations are measured in &lt;code>seconds&lt;/code>.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -459,7 +459,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="logging">&lt;/span>
+&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="logging">&lt;/span>
 &lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Logs the configurations to the console.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -479,7 +479,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>libreDataStoreGraphQL&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="libredatastoregraphql">&lt;/span>
+&lt;h2>&lt;code>libreDataStoreGraphQL&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="libredatastoregraphql">&lt;/span>
 &lt;a href="#libredatastoregraphql" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -498,7 +498,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>viewInstance&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="viewinstance">&lt;/span>
+&lt;h2>&lt;code>viewInstance&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="viewinstance">&lt;/span>
 &lt;a href="#viewinstance" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configuration for service viewing instances.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -522,7 +522,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>commandConsumer&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="commandconsumer">&lt;/span>
+&lt;h2>&lt;code>commandConsumer&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="commandconsumer">&lt;/span>
 &lt;a href="#commandconsumer" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -537,7 +537,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>GraphQLSubscriber&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="graphqlsubscriber">&lt;/span>
+&lt;h2>&lt;code>GraphQLSubscriber&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="graphqlsubscriber">&lt;/span>
 &lt;a href="#graphqlsubscriber" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -552,7 +552,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>NATS&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="nats">&lt;/span>
+&lt;h2>&lt;code>NATS&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="nats">&lt;/span>
 &lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -587,7 +587,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="oidc">&lt;/span>
+&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="oidc">&lt;/span>
 &lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -623,7 +623,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="opentelemetry">&lt;/span>
+&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="opentelemetry">&lt;/span>
 &lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -642,7 +642,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>RESTAPI&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="restapi">&lt;/span>
+&lt;h2>&lt;code>RESTAPI&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="restapi">&lt;/span>
 &lt;a href="#restapi" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -657,7 +657,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>SECRET&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="secret">&lt;/span>
+&lt;h2>&lt;code>SECRET&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="secret">&lt;/span>
 &lt;a href="#secret" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -673,7 +673,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tbody>
 &lt;/table></description></item><item><title>Calendar configuration</title><link>https://docs.rhize.com/versions/v3.1.0/reference/service-config/calendar-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/reference/service-config/calendar-configuration/</guid><description>
 &lt;p>The Calendar Service handles polling work calendar definitions and generating work calendar entries in the graph and time series databases.&lt;/p>
-&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="logging">&lt;/span>
+&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="logging">&lt;/span>
 &lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Logs the configuration to the console.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -693,7 +693,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>NATS&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="nats">&lt;/span>
+&lt;h2>&lt;code>NATS&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="nats">&lt;/span>
 &lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Message broker that drives Rhize&amp;rsquo;s event-based architecture.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -709,7 +709,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="oidc">&lt;/span>
+&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="oidc">&lt;/span>
 &lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -745,7 +745,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="opentelemetry">&lt;/span>
+&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="opentelemetry">&lt;/span>
 &lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -764,7 +764,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>libreDataStoreGraphQL&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="libredatastoregraphql">&lt;/span>
+&lt;h2>&lt;code>libreDataStoreGraphQL&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="libredatastoregraphql">&lt;/span>
 &lt;a href="#libredatastoregraphql" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -779,7 +779,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>GraphQLSubscriber&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="graphqlsubscriber">&lt;/span>
+&lt;h2>&lt;code>GraphQLSubscriber&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="graphqlsubscriber">&lt;/span>
 &lt;a href="#graphqlsubscriber" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -794,7 +794,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>RESTAPI&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="restapi">&lt;/span>
+&lt;h2>&lt;code>RESTAPI&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="restapi">&lt;/span>
 &lt;a href="#restapi" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -809,7 +809,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>Calendar&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="calendar">&lt;/span>
+&lt;h2>&lt;code>Calendar&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="calendar">&lt;/span>
 &lt;a href="#calendar" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Specific configuration options for the calendar service.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -825,7 +825,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>QUERY&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="query">&lt;/span>
+&lt;h2>&lt;code>QUERY&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="query">&lt;/span>
 &lt;a href="#query" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Query options specific to the calendar service&lt;/p>
 &lt;table>
 &lt;thead>
@@ -845,7 +845,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>Influx3&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="influx3">&lt;/span>
+&lt;h2>&lt;code>Influx3&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="influx3">&lt;/span>
 &lt;a href="#influx3" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>InfluxDB3 server options&lt;/p>
 &lt;table>
 &lt;thead>
@@ -877,7 +877,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>Postgres&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="postgres">&lt;/span>
+&lt;h2>&lt;code>Postgres&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="postgres">&lt;/span>
 &lt;a href="#postgres" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Postgres server options&lt;/p>
 &lt;table>
 &lt;thead>
@@ -909,10 +909,10 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>Database&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="database">&lt;/span>
+&lt;h2>&lt;code>Database&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="database">&lt;/span>
 &lt;a href="#database" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Which database instance to use, either &lt;code>Postgres&lt;/code> or &lt;code>Influx3&lt;/code> &lt;br />(Default: &lt;code>Influx3&lt;/code>)&lt;/p></description></item><item><title>Core configuration</title><link>https://docs.rhize.com/versions/v3.1.0/reference/service-config/core-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/reference/service-config/core-configuration/</guid><description>
 &lt;p>The Core service oversees data sources such as OPC-UA servers and manages the publication and subscription of topics within the NATS messaging system.&lt;/p>
-&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="logging">&lt;/span>
+&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="logging">&lt;/span>
 &lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Logs the configuration to the console.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -932,7 +932,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>NATS&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="nats">&lt;/span>
+&lt;h2>&lt;code>NATS&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="nats">&lt;/span>
 &lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Message broker that drives Rhize&amp;rsquo;s event-based architecture.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -952,7 +952,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="oidc">&lt;/span>
+&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="oidc">&lt;/span>
 &lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -988,7 +988,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="opentelemetry">&lt;/span>
+&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="opentelemetry">&lt;/span>
 &lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -1007,7 +1007,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>SECRET&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="secret">&lt;/span>
+&lt;h2>&lt;code>SECRET&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="secret">&lt;/span>
 &lt;a href="#secret" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -1022,7 +1022,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>graphQLServer&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="graphqlserver">&lt;/span>
+&lt;h2>&lt;code>graphQLServer&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="graphqlserver">&lt;/span>
 &lt;a href="#graphqlserver" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The server used to connect to the GraphQL playground.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -1038,7 +1038,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>libreDataStoreGraphQL&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="libredatastoregraphql">&lt;/span>
+&lt;h2>&lt;code>libreDataStoreGraphQL&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="libredatastoregraphql">&lt;/span>
 &lt;a href="#libredatastoregraphql" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -1053,7 +1053,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>BPMN&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="bpmn">&lt;/span>
+&lt;h2>&lt;code>BPMN&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="bpmn">&lt;/span>
 &lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>
@@ -1068,7 +1068,7 @@ It works by connecting to equipment or groups of equipment that run over protoco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2>&lt;code>TimeSeries&lt;/code>&lt;span class="hx-absolute -hx-mt-20" id="timeseries">&lt;/span>
+&lt;h2>&lt;code>TimeSeries&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="timeseries">&lt;/span>
 &lt;a href="#timeseries" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
 &lt;thead>
 &lt;tr>

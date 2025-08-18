@@ -3,7 +3,7 @@
 &lt;p>In other words, this article explains why Rhize made the choices it did to become the world&amp;rsquo;s first manufacturing data hub.
 For introductory explanations about Rhize in particular,
 read &lt;a href="https://docs.rhize.com/versions/v3.2.0/get-started/introduction/" >What is Rhize?&lt;/a> and &lt;a href="https://docs.rhize.com/versions/v3.2.0/get-started/how-rhize-works/" >How Rhize works&lt;/a>.&lt;/p>
-&lt;h2>What is an MDH?&lt;span class="hx-absolute -hx-mt-20" id="what-is-an-mdh">&lt;/span>
+&lt;h2>What is an MDH?&lt;span class="hx:absolute hx:-mt-20" id="what-is-an-mdh">&lt;/span>
 &lt;a href="#what-is-an-mdh" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>A manufacturing data hub is a system that collects all manufacturing events, stores them in a standard model, and has a programmable engine that runs user logic to receive, transform, and send messages across different devices in a manufacturing operation.
 Since it comes with all the necessary backend components—message handling, logic, and storage—an MDH also serves as a backend for manufacturers to build custom MES and MOM applications.&lt;/p>
 &lt;figure class="big-figure">
@@ -13,7 +13,7 @@ width="75%"
 >
 &lt;/a>
 &lt;/figure>
-&lt;h3>Components&lt;span class="hx-absolute -hx-mt-20" id="components">&lt;/span>
+&lt;h3>Components&lt;span class="hx:absolute hx:-mt-20" id="components">&lt;/span>
 &lt;a href="#components" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>An MDH is not just a storage or message system.
 It is a coherent system of interrelated parts and interfaces, whose components include:&lt;/p>
 &lt;ul>
@@ -26,7 +26,7 @@ It is a coherent system of interrelated parts and interfaces, whose components i
 &lt;li>A workflow engine that processes, transforms, and contextualizes tag and event data&lt;/li>
 &lt;li>The IT infrastructure that this all runs on, which at a certain scale must be clustered.&lt;/li>
 &lt;/ul>
-&lt;h3>Technical requirements&lt;span class="hx-absolute -hx-mt-20" id="technical-requirements">&lt;/span>
+&lt;h3>Technical requirements&lt;span class="hx:absolute hx:-mt-20" id="technical-requirements">&lt;/span>
 &lt;a href="#technical-requirements" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Besides its components and features, Rhize is explicitly designed to meet the needs of manufacturing operations of any scale.
 This goal requires a high standard of operational performance, robustness, and extensibility:&lt;/p>
 &lt;ul>
@@ -38,10 +38,10 @@ This goal requires a high standard of operational performance, robustness, and e
 &lt;li>&lt;strong>Extensible but Standardized.&lt;/strong> While the data hub is built on the ISA-95 standard, it must be able to extend to include customer-specific schemas.&lt;/li>
 &lt;li>&lt;strong>Process orchestration.&lt;/strong> The hub must be able to coordinate tasks handled by multiple systems concurrently and provide a way for users to automate and combine workflows.&lt;/li>
 &lt;/ul>
-&lt;h2>Why an MDH needs this design&lt;span class="hx-absolute -hx-mt-20" id="why-an-mdh-needs-this-design">&lt;/span>
+&lt;h2>Why an MDH needs this design&lt;span class="hx:absolute hx:-mt-20" id="why-an-mdh-needs-this-design">&lt;/span>
 &lt;a href="#why-an-mdh-needs-this-design" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Rhize chose its components deliberately, after careful consideration and years of real-world experience.
 The following sections describe how these components work together and how this design arose from the landscape of manufacturing automation.&lt;/p>
-&lt;h3>Point-to-point reaches scaling issues&lt;span class="hx-absolute -hx-mt-20" id="point-to-point-reaches-scaling-issues">&lt;/span>
+&lt;h3>Point-to-point reaches scaling issues&lt;span class="hx:absolute hx:-mt-20" id="point-to-point-reaches-scaling-issues">&lt;/span>
 &lt;a href="#point-to-point-reaches-scaling-issues" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>In early efforts to digitize manufacturing, information often flows from &lt;em>point to point&lt;/em>.
 Each node in the system communicates directly with the other nodes that it sends data to or receives data from.
 While this form of communication is initially simple to implement, it also tightly couples services.
@@ -58,7 +58,7 @@ width="65%"
 A simplified view of how information might exchange between level 3 and 4 systems in a point-to-point topology.
 &lt;/figcaption>
 &lt;/figure>
-&lt;h3>Pub/sub messaging decouples devices&lt;span class="hx-absolute -hx-mt-20" id="pubsub-messaging-decouples-devices">&lt;/span>
+&lt;h3>Pub/sub messaging decouples devices&lt;span class="hx:absolute hx:-mt-20" id="pubsub-messaging-decouples-devices">&lt;/span>
 &lt;a href="#pubsub-messaging-decouples-devices" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>When point-to-point communication becomes too difficult to maintain, the &lt;em>hub-and-spoke&lt;/em> approach presents the logical next step.
 In this topology, a central hub coordinates communication between nodes.&lt;/p>
 &lt;p>Some systems achieve a hub and spoke through &lt;em>polling&lt;/em>,
@@ -90,7 +90,7 @@ While such flexibility provides excellent convenience for producers, the lack of
 &lt;p>The philosophy of a data hub is to address these problems without comprising flexibility.
 So its central components, the database, schema, and message and event handlers,
 can integrate disparate systems while providing a common, standardized storage for the data exchanged between these systems.&lt;/p>
-&lt;h3>A standard graph model provides context&lt;span class="hx-absolute -hx-mt-20" id="a-standard-graph-model-provides-context">&lt;/span>
+&lt;h3>A standard graph model provides context&lt;span class="hx:absolute hx:-mt-20" id="a-standard-graph-model-provides-context">&lt;/span>
 &lt;a href="#a-standard-graph-model-provides-context" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Every event, person, and object in a manufacturing system is inter-connected.
 To adequately process incoming event data, manufacturers need to &lt;em>contextualize&lt;/em> it, where each event carries additional information about its context within the larger system.
 This context is framed by the information &lt;em>model&lt;/em> that represents the system.&lt;/p>
@@ -129,7 +129,7 @@ width="65%"
 Without a bridge between messages and storage, an MDH is incomplete
 &lt;/figcaption>
 &lt;/figure>
-&lt;h3>The rules engine creates events&lt;span class="hx-absolute -hx-mt-20" id="the-rules-engine-creates-events">&lt;/span>
+&lt;h3>The rules engine creates events&lt;span class="hx:absolute hx:-mt-20" id="the-rules-engine-creates-events">&lt;/span>
 &lt;a href="#the-rules-engine-creates-events" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>After the hub receives a message, it must evaluate whether the data is significant enough to constitute an event.
 This is the function of the &lt;em>rules engine&lt;/em>: it assesses message values for changes and then evaluates whether these values should be classified as significant &lt;em>events&lt;/em>.&lt;/p>
 &lt;figure class="big-figure">
@@ -143,7 +143,7 @@ The rules converts significant values into manufacturing events.
 &lt;/figcaption>
 &lt;/figure>
 &lt;p>Once the system receives an event, users then need a way to be able to process it.&lt;/p>
-&lt;h3>A workflow engine makes the system responsive&lt;span class="hx-absolute -hx-mt-20" id="a-workflow-engine-makes-the-system-responsive">&lt;/span>
+&lt;h3>A workflow engine makes the system responsive&lt;span class="hx:absolute hx:-mt-20" id="a-workflow-engine-makes-the-system-responsive">&lt;/span>
 &lt;a href="#a-workflow-engine-makes-the-system-responsive" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>For true &amp;ldquo;ubiquitous automation&amp;rdquo; of manufacturing processes, an MDH must provide a way for users to write their own logic to handle events as they happen.
 Thus, the hub needs a &lt;em>workflow engine&lt;/em> that can send messages, process data, and interact with the database in real-time.&lt;/p>
 &lt;figure class="big-figure">
@@ -163,7 +163,7 @@ a second place where transformation can happen is also a second point of failure
 As long as the producer and consumer can accept and receive the same encoding (for example, JSON), the data hub should be responsible for enforcing standardization.&lt;/p>
 &lt;p>With components for data ingestion, processing, and standardized storage, the MDH has all the necessary functionality to serve as a knowledge graph, MES backend, and integrator of legacy systems.
 However, this capability cannot be realized unless the system is usable for the widest range of people.&lt;/p>
-&lt;h3>Sensible interfaces make it accessible&lt;span class="hx-absolute -hx-mt-20" id="sensible-interfaces-make-it-accessible">&lt;/span>
+&lt;h3>Sensible interfaces make it accessible&lt;span class="hx:absolute hx:-mt-20" id="sensible-interfaces-make-it-accessible">&lt;/span>
 &lt;a href="#sensible-interfaces-make-it-accessible" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>For many who work in industrial automation, IT is part of a job, not a job in itself.
 So, a well-designed manufacturing data hub should provide high-quality abstractions
 and interfaces that minimize the need for thinking about IT systems (instead of manufacturing ones).&lt;/p>
@@ -173,14 +173,14 @@ GraphQL also pairs perfectly with a data model based on ISA-95, whose object mod
 &lt;p>While GraphQL provides the API to query and transform the data, it cannot execute logic.
 So, the rules engine should also provide a graphical interface to make event handling as accessible as possible.&lt;/p>
 &lt;p>However, one final piece is missing: the system must be robust enough for the data-intensive world of manufacturing IT.&lt;/p>
-&lt;h3>Distributed execution provides robustness&lt;span class="hx-absolute -hx-mt-20" id="distributed-execution-provides-robustness">&lt;/span>
+&lt;h3>Distributed execution provides robustness&lt;span class="hx:absolute hx:-mt-20" id="distributed-execution-provides-robustness">&lt;/span>
 &lt;a href="#distributed-execution-provides-robustness" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>The final factor is that the components of an MDH must run on distributed systems.
 Large manufacturing operations can generate enormous volumes of data.
 At some point, scaling vertically (with better hardware on single devices) is impossible.
 Besides size constraints, single devices also create single points of failure.&lt;/p>
 &lt;p>So, an MDH must scale horizontally, where different nodes share computation responsibilities,
 and extra volumes add data replication.&lt;/p>
-&lt;h2>Read more&lt;span class="hx-absolute -hx-mt-20" id="read-more">&lt;/span>
+&lt;h2>Read more&lt;span class="hx:absolute hx:-mt-20" id="read-more">&lt;/span>
 &lt;a href="#read-more" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Our blog has some articles that define what a data hub is:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://rhize.com/blog/what-is-a-manufacturing-data-hub/" target="_blank" rel="noopener">What is a Manufacturing Data Hub?&lt;/a>&lt;/li>
@@ -199,7 +199,7 @@ Or you can manage users in other services such as LDAP, Google, Azure AD, Facebo
 &lt;li>The UI then uses that JWT to access secure APIs such as the Rhize GraphQL API.&lt;/li>
 &lt;/ol>
 &lt;p>The Rhize DB, libreBaas, has the public key from Keycloak, which can be used to verify the JWT.&lt;/p>
-&lt;pre class="mermaid hx-mt-6">
+&lt;pre class="mermaid hx:mt-6">
 sequenceDiagram
 actor User
 participant UI as Web UI

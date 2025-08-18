@@ -1,9 +1,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Changelog</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/</link><description>Recent content in Changelog on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 25 Mar 2024 11:09:55 -0500</lastBuildDate><atom:link href="https://docs.rhize.com/versions/v3.0.3/releases/changelog/index.xml" rel="self" type="application/rss+xml"/><item><title>3.0.0 (general release)</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0/</guid><description>
 &lt;p>Changelog for version 3.0.0 of the Rhize application.&lt;/p>
 &lt;p>&lt;em>Release date:&lt;/em> 25th March, 2024&lt;/p>
-&lt;h2>Breaking changes&lt;span class="hx-absolute -hx-mt-20" id="breaking-changes">&lt;/span>
-&lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h2>Changes by service&lt;span class="hx-absolute -hx-mt-20" id="changes-by-service">&lt;/span>
-&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Admin UI&lt;span class="hx-absolute -hx-mt-20" id="admin-ui">&lt;/span>
+&lt;h2>Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes">&lt;/span>
+&lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h2>Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service">&lt;/span>
+&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Admin UI&lt;span class="hx:absolute hx:-mt-20" id="admin-ui">&lt;/span>
 &lt;a href="#admin-ui" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add &lt;code>includesPropertiesOf&lt;/code> input when creating a new version of OperationsEventClass&lt;/li>
@@ -128,9 +128,9 @@
 &lt;li>Fix Work Calendar Definition Properties search box placeholder text&lt;/li>
 &lt;li>Fix WorkMaster search&lt;/li>
 &lt;/ul>
-&lt;h3>Agent&lt;span class="hx-absolute -hx-mt-20" id="agent">&lt;/span>
+&lt;h3>Agent&lt;span class="hx:absolute hx:-mt-20" id="agent">&lt;/span>
 &lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>No changes since previous release.&lt;/p>
-&lt;h3>Audit&lt;span class="hx-absolute -hx-mt-20" id="audit">&lt;/span>
+&lt;h3>Audit&lt;span class="hx:absolute hx:-mt-20" id="audit">&lt;/span>
 &lt;a href="#audit" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add storage option for postgres&lt;/li>
@@ -139,9 +139,9 @@
 &lt;ul>
 &lt;li>Fix environmental variable conflict&lt;/li>
 &lt;/ul>
-&lt;h3>BAAS&lt;span class="hx-absolute -hx-mt-20" id="baas">&lt;/span>
+&lt;h3>BAAS&lt;span class="hx:absolute hx:-mt-20" id="baas">&lt;/span>
 &lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>No changes since previous release.&lt;/p>
-&lt;h3>BPMN&lt;span class="hx-absolute -hx-mt-20" id="bpmn">&lt;/span>
+&lt;h3>BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn">&lt;/span>
 &lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add viper configuration for http timeout values&lt;/li>
@@ -155,7 +155,7 @@
 &lt;ul>
 &lt;li>Change JSONata-go library to v1.8.4 from v1.6.6&lt;/li>
 &lt;/ul>
-&lt;h3>Core&lt;span class="hx-absolute -hx-mt-20" id="core">&lt;/span>
+&lt;h3>Core&lt;span class="hx:absolute hx:-mt-20" id="core">&lt;/span>
 &lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add &lt;code>hierarchyScope&lt;/code> to &lt;code>CreateEquipmentClassVersionInput&lt;/code>&lt;/li>
@@ -184,7 +184,7 @@
 &lt;li>Fix &lt;code>operationsEventClasses&lt;/code> to &lt;code>CreateOperationsEventDefinitionVersionInput&lt;/code>&lt;/li>
 &lt;li>Fix rule trigger evaluating on stale data&lt;/li>
 &lt;/ul>
-&lt;h3>Schema&lt;span class="hx-absolute -hx-mt-20" id="schema">&lt;/span>
+&lt;h3>Schema&lt;span class="hx:absolute hx:-mt-20" id="schema">&lt;/span>
 &lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add &lt;code>@id&lt;/code> to &lt;code>WorkCalendarDefinitionEntry&lt;/code>&lt;/li>
@@ -207,15 +207,15 @@
 &lt;li>Change &lt;code>OperationsRequest&lt;/code> relationship to &lt;code>OperationsSchedule&lt;/code> to optional&lt;/li>
 &lt;li>Change &lt;code>startRule&lt;/code> to required on &lt;code>WorkCalendarDefinitionEntry&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2>Upgrade&lt;span class="hx-absolute -hx-mt-20" id="upgrade">&lt;/span>
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to v3.0.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade" >Upgrade instructions&lt;/a>.&lt;/p></description></item><item><title>3.0.0rc09</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc09/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc09/</guid><description>
+&lt;h2>Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade">&lt;/span>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to v3.0.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" >Upgrade instructions&lt;/a>.&lt;/p></description></item><item><title>3.0.0rc09</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc09/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc09/</guid><description>
 &lt;p>Changelog for version 3.0.0rc9 of the Rhize application.&lt;/p>
 &lt;p>&lt;em>Release date:&lt;/em> 27th February, 2024&lt;/p>
-&lt;h2>Breaking changes&lt;span class="hx-absolute -hx-mt-20" id="breaking-changes">&lt;/span>
-&lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h2>Changes by service&lt;span class="hx-absolute -hx-mt-20" id="changes-by-service">&lt;/span>
-&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Admin UI&lt;span class="hx-absolute -hx-mt-20" id="admin-ui">&lt;/span>
+&lt;h2>Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes">&lt;/span>
+&lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h2>Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service">&lt;/span>
+&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Admin UI&lt;span class="hx:absolute hx:-mt-20" id="admin-ui">&lt;/span>
 &lt;a href="#admin-ui" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>No changes since previous release.&lt;/p>
-&lt;h3>Agent&lt;span class="hx-absolute -hx-mt-20" id="agent">&lt;/span>
+&lt;h3>Agent&lt;span class="hx:absolute hx:-mt-20" id="agent">&lt;/span>
 &lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add check to validate OPC UA topics against server metadata&lt;/li>
@@ -223,17 +223,17 @@
 &lt;li>Add logic for MQTT connections to resubscribe on disconnect&lt;/li>
 &lt;li>Add option to deconstruct complex JSON payloads to simple types&lt;/li>
 &lt;/ul>
-&lt;h3>Audit&lt;span class="hx-absolute -hx-mt-20" id="audit">&lt;/span>
+&lt;h3>Audit&lt;span class="hx:absolute hx:-mt-20" id="audit">&lt;/span>
 &lt;a href="#audit" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add previous audit value relative to current&lt;/li>
 &lt;/ul>
-&lt;h3>BAAS&lt;span class="hx-absolute -hx-mt-20" id="baas">&lt;/span>
+&lt;h3>BAAS&lt;span class="hx:absolute hx:-mt-20" id="baas">&lt;/span>
 &lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Changes&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Change server aborts due to a conflict to report the error and block transaction that was aborted&lt;/li>
 &lt;/ul>
-&lt;h3>BPMN&lt;span class="hx-absolute -hx-mt-20" id="bpmn">&lt;/span>
+&lt;h3>BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn">&lt;/span>
 &lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add a trigger for a NATS message on end of a Work Calendar Entry&lt;/li>
@@ -282,15 +282,15 @@
 &lt;li>Remove superfluous parsing from string -&amp;gt; time.Time only to run time.Format() in UnixToRFC3339&lt;/li>
 &lt;li>Remove vestigial config argument for &lt;code>CommandConsumer&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h3>Core&lt;span class="hx-absolute -hx-mt-20" id="core">&lt;/span>
+&lt;h3>Core&lt;span class="hx:absolute hx:-mt-20" id="core">&lt;/span>
 &lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>No changes since previous release.&lt;/p>
-&lt;h3>Schema&lt;span class="hx-absolute -hx-mt-20" id="schema">&lt;/span>
+&lt;h3>Schema&lt;span class="hx:absolute hx:-mt-20" id="schema">&lt;/span>
 &lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>No changes since previous release.&lt;/p>
-&lt;h2>Upgrade&lt;span class="hx-absolute -hx-mt-20" id="upgrade">&lt;/span>
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to v3.0.0rc09, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade" >Upgrade instructions&lt;/a>.&lt;/p></description></item><item><title>3.0.0rc08</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc08/</link><pubDate>Tue, 19 Dec 2023 13:01:02 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc08/</guid><description>
+&lt;h2>Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade">&lt;/span>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to v3.0.0rc09, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" >Upgrade instructions&lt;/a>.&lt;/p></description></item><item><title>3.0.0rc08</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc08/</link><pubDate>Tue, 19 Dec 2023 13:01:02 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc08/</guid><description>
 &lt;p>Changelog for version 3.0.0rc08 of the Rhize application.&lt;/p>
 &lt;p>&lt;em>Release date:&lt;/em> 19th December, 2023&lt;/p>
-&lt;h2>Breaking changes&lt;span class="hx-absolute -hx-mt-20" id="breaking-changes">&lt;/span>
+&lt;h2>Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes">&lt;/span>
 &lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>[ADMINUI] Change UI navigation bar design&lt;/li>
 &lt;li>[SCHEMA] Change &lt;code>OperationsEventClass.IncludedIn&lt;/code> to reference an &lt;code>OperationsEventClassVersion&lt;/code> instead of &lt;code>OperationsEventClass&lt;/code>&lt;/li>
@@ -299,8 +299,8 @@
 &lt;li>[SCHEMA] Change &lt;code>OperationsEventDefinition.IncludesPropertiesOf&lt;/code> to move to the version instance, &lt;code>OperationsEventDefinitionVersion.IncludesPropertiesOf&lt;/code>, instead of header&lt;/li>
 &lt;li>[SCHEMA] Change &lt;code>FromResourceReference&lt;/code> and &lt;code>ToResourceReference&lt;/code> to combine them into a single &lt;code>resourceReference&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2>Changes by service&lt;span class="hx-absolute -hx-mt-20" id="changes-by-service">&lt;/span>
-&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Admin UI&lt;span class="hx-absolute -hx-mt-20" id="admin-ui">&lt;/span>
+&lt;h2>Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service">&lt;/span>
+&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Admin UI&lt;span class="hx:absolute hx:-mt-20" id="admin-ui">&lt;/span>
 &lt;a href="#admin-ui" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add Audit Trail View in UI&lt;/li>
@@ -333,7 +333,7 @@
 &lt;ul>
 &lt;li>Remove ability to edit active version Data Source general properties&lt;/li>
 &lt;/ul>
-&lt;h3>Agent&lt;span class="hx-absolute -hx-mt-20" id="agent">&lt;/span>
+&lt;h3>Agent&lt;span class="hx:absolute hx:-mt-20" id="agent">&lt;/span>
 &lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add check to avoid continuous resubscription to bad OPCUA topics&lt;/li>
@@ -353,7 +353,7 @@
 &lt;ul>
 &lt;li>Fix issue with &lt;code>gopcua&lt;/code> client that resulted in OPC UA Session not being recreated after a loss of Secure Channel on reconnect&lt;/li>
 &lt;/ul>
-&lt;h3>Audit&lt;span class="hx-absolute -hx-mt-20" id="audit">&lt;/span>
+&lt;h3>Audit&lt;span class="hx:absolute hx:-mt-20" id="audit">&lt;/span>
 &lt;a href="#audit" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add GraphQL Subgraph to query audit log and query audit log tags&lt;/li>
@@ -364,7 +364,7 @@
 &lt;li>Add subscription of audit events&lt;/li>
 &lt;li>Add write to data sink&lt;/li>
 &lt;/ul>
-&lt;h3>BAAS&lt;span class="hx-absolute -hx-mt-20" id="baas">&lt;/span>
+&lt;h3>BAAS&lt;span class="hx:absolute hx:-mt-20" id="baas">&lt;/span>
 &lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add &lt;code>_modifiedBy&lt;/code> user to Audit Event&lt;/li>
@@ -380,7 +380,7 @@
 &lt;li>Remove wait groups for Enterprise Dgraph ACL functionality&lt;/li>
 &lt;li>Remove license scanning CI/CD job&lt;/li>
 &lt;/ul>
-&lt;h3>BPMN&lt;span class="hx-absolute -hx-mt-20" id="bpmn">&lt;/span>
+&lt;h3>BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn">&lt;/span>
 &lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Add&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add Async Publish Error logging to NATS KVs&lt;/li>
@@ -407,7 +407,7 @@
 &lt;li>Fix memory leak in OIDC context value recursively growing&lt;/li>
 &lt;li>Fix panic on nil &lt;code>workflowspec&lt;/code> in &lt;code>HandleTaskComplete&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h3>Core&lt;span class="hx-absolute -hx-mt-20" id="core">&lt;/span>
+&lt;h3>Core&lt;span class="hx:absolute hx:-mt-20" id="core">&lt;/span>
 &lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add &lt;code>hierarchyScope&lt;/code>, &lt;code>materialAlternate&lt;/code>, &lt;code>spatialDefinition&lt;/code> and &lt;code>unitOfMeasure&lt;/code> as information objects to &lt;code>GetOperationsEvent&lt;/code> &lt;code>operationsEventRecords&lt;/code>&lt;/li>
@@ -439,7 +439,7 @@
 &lt;ul>
 &lt;li>Remove obsolete comments&lt;/li>
 &lt;/ul>
-&lt;h3>Schema&lt;span class="hx-absolute -hx-mt-20" id="schema">&lt;/span>
+&lt;h3>Schema&lt;span class="hx:absolute hx:-mt-20" id="schema">&lt;/span>
 &lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add @id for OperationsEventDefinitionProperty&lt;/li>
@@ -459,17 +459,17 @@
 &lt;ul>
 &lt;li>Change mermaid diagrams to include recent changes&lt;/li>
 &lt;/ul>
-&lt;h2>Upgrade&lt;span class="hx-absolute -hx-mt-20" id="upgrade">&lt;/span>
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to v3.0.0rc08, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade" >Upgrade instructions&lt;/a>.&lt;/p></description></item><item><title>3.0.0rc07</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc07/</link><pubDate>Wed, 15 Nov 2023 09:32:12 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc07/</guid><description>
+&lt;h2>Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade">&lt;/span>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to v3.0.0rc08, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" >Upgrade instructions&lt;/a>.&lt;/p></description></item><item><title>3.0.0rc07</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc07/</link><pubDate>Wed, 15 Nov 2023 09:32:12 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc07/</guid><description>
 &lt;p>Changelog for version 3.0.0rc07 of the Rhize application.&lt;/p>
 &lt;p>&lt;em>Release date:&lt;/em> 15th November, 2023&lt;/p>
-&lt;h2>Breaking changes&lt;span class="hx-absolute -hx-mt-20" id="breaking-changes">&lt;/span>
+&lt;h2>Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes">&lt;/span>
 &lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>[SCHEMA] Change types &lt;code>OperationalLocationClass&lt;/code>, &lt;code>OperationalLocationClassVersion&lt;/code>, &lt;code>OperationalLocationClassProperty&lt;/code>, &lt;code>OperationalLocation&lt;/code>, &lt;code>OperationalLocationVersion&lt;/code> and &lt;code>OperationalLocationProperty&lt;/code> to have: &lt;code>isPartOf (0..1)&lt;/code>, &lt;code>isMadeUpOf (0..*)&lt;/code>&lt;/li>
 &lt;li>[BPMN] Change CommandConsumer and Timers to use new JetStream library and durable consumers. This requires you to drop and re-create streams &lt;code>KV_JobResponses&lt;/code>, &lt;code>KV_WorkflowSpecifications&lt;/code>, &lt;code>libreBpmn_Command&lt;/code> and &lt;code>libreTimerStart&lt;/code>.&lt;/li>
 &lt;/ul>
-&lt;h2>Changes by service&lt;span class="hx-absolute -hx-mt-20" id="changes-by-service">&lt;/span>
-&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h2>Admin UI&lt;span class="hx-absolute -hx-mt-20" id="admin-ui">&lt;/span>
+&lt;h2>Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service">&lt;/span>
+&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h2>Admin UI&lt;span class="hx:absolute hx:-mt-20" id="admin-ui">&lt;/span>
 &lt;a href="#admin-ui" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add ability to create Process Segment Version&lt;/li>
@@ -496,7 +496,7 @@
 &lt;ul>
 &lt;li>Remove the unused or unsupported BPMN elements from the BPMN UI&lt;/li>
 &lt;/ul>
-&lt;h3>Agent&lt;span class="hx-absolute -hx-mt-20" id="agent">&lt;/span>
+&lt;h3>Agent&lt;span class="hx:absolute hx:-mt-20" id="agent">&lt;/span>
 &lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add hostname as service instance to otel span&lt;/li>
@@ -505,7 +505,7 @@
 &lt;ul>
 &lt;li>Fix invalid errors reported to OTEL&lt;/li>
 &lt;/ul>
-&lt;h3>BAAS&lt;span class="hx-absolute -hx-mt-20" id="baas">&lt;/span>
+&lt;h3>BAAS&lt;span class="hx:absolute hx:-mt-20" id="baas">&lt;/span>
 &lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Changes&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Change CDC to use a JetStream from KV Store&lt;/li>
@@ -514,7 +514,7 @@
 &lt;ul>
 &lt;li>Fix getting user from authorization token for setting &lt;code>_modifiedBy&lt;/code> and &lt;code>_createdBy&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h3>BPMN&lt;span class="hx-absolute -hx-mt-20" id="bpmn">&lt;/span>
+&lt;h3>BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn">&lt;/span>
 &lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add a flag to bypass any OIDC requirements so that we can run BPMN without security enabled&lt;/li>
@@ -542,7 +542,7 @@
 &lt;ul>
 &lt;li>Fix goroutine leak on ack pending&lt;/li>
 &lt;/ul>
-&lt;h3>Core&lt;span class="hx-absolute -hx-mt-20" id="core">&lt;/span>
+&lt;h3>Core&lt;span class="hx:absolute hx:-mt-20" id="core">&lt;/span>
 &lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add dependency check to operations definition &amp;amp; work master&lt;/li>
@@ -562,7 +562,7 @@
 &lt;ul>
 &lt;li>Remove IntelliJ IDE workspace directory and files &lt;code>./.idea/*&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h3>Schema&lt;span class="hx-absolute -hx-mt-20" id="schema">&lt;/span>
+&lt;h3>Schema&lt;span class="hx:absolute hx:-mt-20" id="schema">&lt;/span>
 &lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add Comments to &lt;code>OperationsEvent&lt;/code>&lt;/li>
@@ -584,16 +584,16 @@
 &lt;li>Fix missing defaults on &lt;code>_createdBy&lt;/code> and &lt;code>_modifiedBy&lt;/code>&lt;/li>
 &lt;li>Fix test for Signature relationship to &lt;code>recordEntries&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2>Upgrade&lt;span class="hx-absolute -hx-mt-20" id="upgrade">&lt;/span>
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to v3.0.0rc07, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade" >Upgrade instructions&lt;/a>.&lt;/p></description></item><item><title>3.0.0rc06</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc06/</link><pubDate>Tue, 31 Oct 2023 21:07:43 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc06/</guid><description>
+&lt;h2>Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade">&lt;/span>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to v3.0.0rc07, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" >Upgrade instructions&lt;/a>.&lt;/p></description></item><item><title>3.0.0rc06</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc06/</link><pubDate>Tue, 31 Oct 2023 21:07:43 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc06/</guid><description>
 &lt;p>Changelog for version 3.0.0rc06 of the Rhize application.&lt;/p>
 &lt;p>&lt;em>Release date:&lt;/em> October 31, 2023&lt;/p>
-&lt;h2>Breaking changes&lt;span class="hx-absolute -hx-mt-20" id="breaking-changes">&lt;/span>
+&lt;h2>Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes">&lt;/span>
 &lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>NATS streams &lt;code>libreBpmn_command&lt;/code> and &lt;code>LibreTimerStart&lt;/code> must be deleted prior to starting&lt;/li>
 &lt;/ul>
-&lt;h2>Changes by service&lt;span class="hx-absolute -hx-mt-20" id="changes-by-service">&lt;/span>
-&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Core&lt;span class="hx-absolute -hx-mt-20" id="core">&lt;/span>
+&lt;h2>Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service">&lt;/span>
+&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Core&lt;span class="hx:absolute hx:-mt-20" id="core">&lt;/span>
 &lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add mutation for dependency check for &lt;code>DataSource&lt;/code>, Equipment, &lt;code>EquipmentClass&lt;/code>, &lt;code>OperationalLocation&lt;/code>, and &lt;code>OperationalLocationClass&lt;/code>&lt;/li>
@@ -603,7 +603,7 @@
 &lt;li>Change to go-module for schema&lt;/li>
 &lt;li>Change struct literal unkeyed fields to keyed&lt;/li>
 &lt;/ul>
-&lt;h3>BPMN&lt;span class="hx-absolute -hx-mt-20" id="bpmn">&lt;/span>
+&lt;h3>BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn">&lt;/span>
 &lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Breaking Changes&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>NATS streams &lt;code>libreBpmn_command&lt;/code> and &lt;code>LibreTimerStart&lt;/code> must be deleted prior to starting&lt;/li>
@@ -631,7 +631,7 @@
 &lt;li>Fix multi-instance requiring sequential for parallel execution&lt;/li>
 &lt;li>Fix govulncheck identified issues&lt;/li>
 &lt;/ul>
-&lt;h3>Agent&lt;span class="hx-absolute -hx-mt-20" id="agent">&lt;/span>
+&lt;h3>Agent&lt;span class="hx:absolute hx:-mt-20" id="agent">&lt;/span>
 &lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Changes&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Change to libre-schema go module import&lt;/li>
@@ -640,7 +640,7 @@
 &lt;ul>
 &lt;li>Remove empty GraphQL API endpoint&lt;/li>
 &lt;/ul>
-&lt;h3>Admin UI&lt;span class="hx-absolute -hx-mt-20" id="admin-ui">&lt;/span>
+&lt;h3>Admin UI&lt;span class="hx:absolute hx:-mt-20" id="admin-ui">&lt;/span>
 &lt;a href="#admin-ui" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add Physical Asset to Sidebar&lt;/li>
@@ -651,7 +651,7 @@
 &lt;li>Fix large memory usage in production&lt;/li>
 &lt;li>Fix Work Master UI Issues&lt;/li>
 &lt;/ul>
-&lt;h3>Schema&lt;span class="hx-absolute -hx-mt-20" id="schema">&lt;/span>
+&lt;h3>Schema&lt;span class="hx:absolute hx:-mt-20" id="schema">&lt;/span>
 &lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add search by hash to material use&lt;/li>
@@ -670,16 +670,16 @@
 &lt;ul>
 &lt;li>Remove entity interface from generated code&lt;/li>
 &lt;/ul>
-&lt;h2>Upgrade&lt;span class="hx-absolute -hx-mt-20" id="upgrade">&lt;/span>
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to v3.0.0rc06, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade" >Upgrade instructions&lt;/a>.&lt;/p></description></item><item><title>3.0.0rc05</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc05/</link><pubDate>Tue, 31 Oct 2023 20:32:34 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc05/</guid><description>
+&lt;h2>Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade">&lt;/span>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to v3.0.0rc06, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" >Upgrade instructions&lt;/a>.&lt;/p></description></item><item><title>3.0.0rc05</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc05/</link><pubDate>Tue, 31 Oct 2023 20:32:34 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc05/</guid><description>
 &lt;p>Changelog for version 3.0.0rc05 of the Rhize application.&lt;/p>
 &lt;p>&lt;em>Release date:&lt;/em> October 24, 2023&lt;/p>
-&lt;h2>Breaking changes&lt;span class="hx-absolute -hx-mt-20" id="breaking-changes">&lt;/span>
+&lt;h2>Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes">&lt;/span>
 &lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>Renamed UI environment variables and changed &lt;code>KEYCLOACK&lt;/code> to &lt;code>KEYCLOAK&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2>Changes by service&lt;span class="hx-absolute -hx-mt-20" id="changes-by-service">&lt;/span>
-&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Core&lt;span class="hx-absolute -hx-mt-20" id="core">&lt;/span>
+&lt;h2>Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service">&lt;/span>
+&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Core&lt;span class="hx:absolute hx:-mt-20" id="core">&lt;/span>
 &lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add &lt;code>deleteSyncEquipmentsFromDBtoNATSStatus&lt;/code> mutation&lt;/li>
@@ -695,7 +695,7 @@
 &lt;li>Change Core to purge keys that are not in the the database&lt;/li>
 &lt;li>Change core to delete property value from KV when the equipment no longer have active version&lt;/li>
 &lt;/ul>
-&lt;h3>BPMN&lt;span class="hx-absolute -hx-mt-20" id="bpmn">&lt;/span>
+&lt;h3>BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn">&lt;/span>
 &lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add DQL Query Service Task Handling&lt;/li>
@@ -730,7 +730,7 @@
 &lt;li>Remove license scanning from CI&lt;/li>
 &lt;li>Remove slow execution debugging spans&lt;/li>
 &lt;/ul>
-&lt;h3>Agent&lt;span class="hx-absolute -hx-mt-20" id="agent">&lt;/span>
+&lt;h3>Agent&lt;span class="hx:absolute hx:-mt-20" id="agent">&lt;/span>
 &lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add value to OPC-UA Value span&lt;/li>
@@ -745,7 +745,7 @@
 &lt;ul>
 &lt;li>Fix OPC-UA Subscription Statistics panic in test suite&lt;/li>
 &lt;/ul>
-&lt;h3>Admin UI&lt;span class="hx-absolute -hx-mt-20" id="admin-ui">&lt;/span>
+&lt;h3>Admin UI&lt;span class="hx:absolute hx:-mt-20" id="admin-ui">&lt;/span>
 &lt;a href="#admin-ui" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Breaking changes&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Renamed environment variables and change &lt;code>KEYCLOACK&lt;/code> to &lt;code>KEYCLOAK&lt;/code>&lt;/li>
@@ -766,7 +766,7 @@
 &lt;li>Fix no download option for properties on Person&lt;/li>
 &lt;li>Fix no download option for properties on Personnel Class&lt;/li>
 &lt;/ul>
-&lt;h3>Schema&lt;span class="hx-absolute -hx-mt-20" id="schema">&lt;/span>
+&lt;h3>Schema&lt;span class="hx:absolute hx:-mt-20" id="schema">&lt;/span>
 &lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Add search to &lt;code>MaterialUse&lt;/code> on &lt;code>OperationsDefinition&lt;/code>, &lt;code>OperationsSchedule&lt;/code> and &lt;code>OperationsPerformance&lt;/code> Models&lt;/li>
@@ -778,5 +778,5 @@
 &lt;li>Add missing &lt;code>@id&lt;/code>&lt;/li>
 &lt;li>Fix omitting &lt;code>omitempty&lt;/code> for non-pointer Boolean types&lt;/li>
 &lt;/ul>
-&lt;h2>Upgrade&lt;span class="hx-absolute -hx-mt-20" id="upgrade">&lt;/span>
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to `v3.0.0rc05, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade" >Upgrade instructions&lt;/a>.&lt;/p></description></item></channel></rss>
+&lt;h2>Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade">&lt;/span>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to `v3.0.0rc05, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" >Upgrade instructions&lt;/a>.&lt;/p></description></item></channel></rss>
