@@ -6,6 +6,18 @@
       <main class="hx:w-full hx:min-w-0 hx:max-w-6xl hx:px-6 hx:pt-4 hx:md:px-12">
         {{ partial "breadcrumb.html" . }}
         <div class="content">
+          {{ if .Params.v }}
+              <div class="version warning">
+             {{ $message :=printf "This documentation is for Rhize **v%s**. If you don't need a specific version, switch to the [latest documentation](/)"
+              .Params.v }}
+              {{- $emoji := "⚠️" -}}
+              {{- $warningClass := "hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200" -}}
+
+              {{- partial
+              "shortcodes/callout.html" (dict "content" ($message | .RenderString)
+              "emoji" $emoji "class" $warningClass) -}}
+              </div>
+          {{ end }}
           {{ if .Title }}<h1>{{ .Title }}</h1>{{ end }}
           {{ .Content }}
         </div>
