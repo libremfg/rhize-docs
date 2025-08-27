@@ -1456,7 +1456,7 @@ The scope map is a JSON file that defines rules, actions, jurisdictions, and res
 &lt;ol>
 &lt;li>Create an OIDC Role: Define a role called &lt;code>cmoAccess&lt;/code> in your OIDC provider (e.g., Keycloak).&lt;/li>
 &lt;li>Define a Hierarchy Scope. Create a hierarchy scope in Rhize called &lt;code>CMO&lt;/code>. This scope is applied to objects or nodes in the graph that relate to the CMO.&lt;/li>
-&lt;li>Add a Rule to the Scope Map: Define a rule in the &lt;code>scopemap.scopemap.json&lt;/code> file as follows:&lt;/li>
+&lt;li>Add a Rule to the Scope Map: Define a rule in the &lt;code>scopemap.json&lt;/code> file as follows:&lt;/li>
 &lt;/ol>
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 &lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
