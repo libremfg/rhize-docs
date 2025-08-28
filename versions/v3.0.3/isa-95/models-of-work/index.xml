@@ -1,65 +1,65 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Models of work</title><link>https://docs.rhize.com/versions/v3.0.3/isa-95/models-of-work/</link><description>Recent content in Models of work on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.rhize.com/versions/v3.0.3/isa-95/models-of-work/index.xml" rel="self" type="application/rss+xml"/><item><title>Process segments</title><link>https://docs.rhize.com/versions/v3.0.3/isa-95/models-of-work/process-segments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/isa-95/models-of-work/process-segments/</guid><description>
-&lt;p>A &lt;em>process segment&lt;/em> is a step in a process.
+&lt;p&gt;A &lt;em&gt;process segment&lt;/em&gt; is a step in a process.
 Process segments are flexible information objects,
 abstract enough to be shared by multiple procedures,
-and coarse-grained enough to be appropriate for business planning and analytics.&lt;/p>
-&lt;p>Process segments provide information that is relevant to both &lt;a href="https://docs.rhize.com/versions/v3.0.3/isa-95/how-to-speak-isa-95/#the-levels-of-a-manufacturing-operation" >levels 3 and 4&lt;/a>.
+and coarse-grained enough to be appropriate for business planning and analytics.&lt;/p&gt;
+&lt;p&gt;Process segments provide information that is relevant to both &lt;a href="https://docs.rhize.com/versions/v3.0.3/isa-95/how-to-speak-isa-95/#the-levels-of-a-manufacturing-operation" &gt;levels 3 and 4&lt;/a&gt;.
 In the manufacturing ontology, the process segment has relationships to diverse other entities, including objects for scheduling, definitions, and work performance.
-As such, the proper use of process segments provides much flexibility in how you implement an MOM system for both operational and analytical use cases.&lt;/p>
-&lt;figure>&lt;img src="https://docs.rhize.com/images/s95/rhize-s95-p2-p4-high-level-overview-ISA95_P2_P4.svg"
-alt="A large overview of the ISA-95 object model">&lt;figcaption>
-&lt;p>A process segment exists in the middle of levels 3 and 4&lt;/p>
-&lt;/figcaption>
-&lt;/figure>
-&lt;h2>The scope of a process segment&lt;span class="hx:absolute hx:-mt-20" id="the-scope-of-a-process-segment">&lt;/span>
-&lt;a href="#the-scope-of-a-process-segment" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Process segments can have a &lt;a href="#is-made-up-of" >parent-child hierarchy&lt;/a>.
-At higher levels of this hierarchy, the scope of a process segment is often broader than that of a particular product.&lt;/p>
-&lt;p>For example, The Juice Factory produces five brands of juice.
+As such, the proper use of process segments provides much flexibility in how you implement an MOM system for both operational and analytical use cases.&lt;/p&gt;
+&lt;figure&gt;&lt;img src="https://docs.rhize.com/images/s95/rhize-s95-p2-p4-high-level-overview-ISA95_P2_P4.svg"
+alt="A large overview of the ISA-95 object model"&gt;&lt;figcaption&gt;
+&lt;p&gt;A process segment exists in the middle of levels 3 and 4&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2&gt;The scope of a process segment&lt;span class="hx:absolute hx:-mt-20" id="the-scope-of-a-process-segment"&gt;&lt;/span&gt;
+&lt;a href="#the-scope-of-a-process-segment" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Process segments can have a &lt;a href="#is-made-up-of" &gt;parent-child hierarchy&lt;/a&gt;.
+At higher levels of this hierarchy, the scope of a process segment is often broader than that of a particular product.&lt;/p&gt;
+&lt;p&gt;For example, The Juice Factory produces five brands of juice.
 While the particular material consumed and produced differs in the production of each brand,
-all brands still follow the steps of &lt;code>material receiving&lt;/code>, &lt;code>kitting&lt;/code>, &lt;code>mixing&lt;/code>, and &lt;code>packing&lt;/code>.
-These steps are process segments.&lt;/p>
-&lt;pre class="mermaid hx:mt-6">
+all brands still follow the steps of &lt;code&gt;material receiving&lt;/code&gt;, &lt;code&gt;kitting&lt;/code&gt;, &lt;code&gt;mixing&lt;/code&gt;, and &lt;code&gt;packing&lt;/code&gt;.
+These steps are process segments.&lt;/p&gt;
+&lt;pre class="mermaid hx:mt-6"&gt;
 flowchart LR
 a[Material receiving]--&amp;gt;
 b[Kitting]--&amp;gt;
 c[Mixing]--&amp;gt;
 d[packing]
-&lt;/pre>&lt;h2>Reasons to use segments&lt;span class="hx:absolute hx:-mt-20" id="reasons-to-use-segments">&lt;/span>
-&lt;a href="#reasons-to-use-segments" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Process segments can serve operational and analytical functions.
-Operational functions include:&lt;/p>
-&lt;ul>
-&lt;li>To avoid repetition when modeling steps that are common to different processes.&lt;/li>
-&lt;li>To define work from a business-process perspective. More granular entities might define a route of segments to follow in specific situations. For details, read the example in the &lt;a href="#section" >corresponds to&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;p>Analytical uses of process segments include:&lt;/p>
-&lt;ul>
-&lt;li>To provide a way to compare different product processes that are all derived from a common procedure.
-For example, the mixing segment might &lt;a href="#correspond-" >correspond to&lt;/a> to the production of &lt;code>mixed red juice&lt;/code> and &lt;code>mixed blue juice&lt;/code>.&lt;/li>
-&lt;li>To view data and parameters for similar steps in a single aggregation.
-For example, you might compare the average time of all jobs associated with &lt;code>mixing&lt;/code> against the other segments to find a general process bottleneck.&lt;/li>
-&lt;/ul>
-&lt;h2>Segments vs. equipment hierarchies&lt;span class="hx:absolute hx:-mt-20" id="segments-vs-equipment-hierarchies">&lt;/span>
-&lt;a href="#segments-vs-equipment-hierarchies" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Process segments are not necessarily connected to the &lt;a href="https://docs.rhize.com/versions/v3.0.3/isa-95/resources/equipment/#the-role-based-hierarchy" >role-based equipment hierarchy&lt;/a>.
+&lt;/pre&gt;&lt;h2&gt;Reasons to use segments&lt;span class="hx:absolute hx:-mt-20" id="reasons-to-use-segments"&gt;&lt;/span&gt;
+&lt;a href="#reasons-to-use-segments" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Process segments can serve operational and analytical functions.
+Operational functions include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;To avoid repetition when modeling steps that are common to different processes.&lt;/li&gt;
+&lt;li&gt;To define work from a business-process perspective. More granular entities might define a route of segments to follow in specific situations. For details, read the example in the &lt;a href="#section" &gt;corresponds to&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Analytical uses of process segments include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;To provide a way to compare different product processes that are all derived from a common procedure.
+For example, the mixing segment might &lt;a href="#correspond-" &gt;correspond to&lt;/a&gt; to the production of &lt;code&gt;mixed red juice&lt;/code&gt; and &lt;code&gt;mixed blue juice&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;To view data and parameters for similar steps in a single aggregation.
+For example, you might compare the average time of all jobs associated with &lt;code&gt;mixing&lt;/code&gt; against the other segments to find a general process bottleneck.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Segments vs. equipment hierarchies&lt;span class="hx:absolute hx:-mt-20" id="segments-vs-equipment-hierarchies"&gt;&lt;/span&gt;
+&lt;a href="#segments-vs-equipment-hierarchies" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Process segments are not necessarily connected to the &lt;a href="https://docs.rhize.com/versions/v3.0.3/isa-95/resources/equipment/#the-role-based-hierarchy" &gt;role-based equipment hierarchy&lt;/a&gt;.
 Since a defining aspect of equipment in ISA-95 is that it plays a precise role,
 you might wonder whether a process segment is just a needless duplication:
-why add a &lt;code>mixing&lt;/code> segment when the &lt;code>mixers&lt;/code> equipment model serves the same role?&lt;/p>
-&lt;p>However, the fact that process segments are decoupled from equipment can help you model a variety of conditions:&lt;/p>
-&lt;ul>
-&lt;li>Some steps have no equipment requirements. For example, in The Juice Factory, the &lt;code>kitting&lt;/code> process segment requires no equipment.&lt;/li>
-&lt;li>Some steps may be common to a number of processes, but each particular process may require a different set of equipment.&lt;/li>
-&lt;/ul>
-&lt;h2>Segment relationships&lt;span class="hx:absolute hx:-mt-20" id="segment-relationships">&lt;/span>
-&lt;a href="#segment-relationships" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Process segments have relationships to a number of other work and resource models.&lt;/p>
-&lt;h3>Corresponds to&lt;span class="hx:absolute hx:-mt-20" id="corresponds-to">&lt;/span>
-&lt;a href="#corresponds-to" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Operations segments and work masters usually describe a step to create a particular product.
-These models may &lt;em>correspond&lt;/em> to a process segment:&lt;/p>
-&lt;ul>
-&lt;li>From the business perspective, product steps are modeled in &lt;em>operations segments&lt;/em>.&lt;/li>
-&lt;li>From the more granular MES perspective, product steps are modeled in &lt;em>work masters&lt;/em>.&lt;/li>
-&lt;/ul>
-&lt;p>For example, the Juice Factory has various work masters to produce material definitions for different bulk juices: &lt;code>Bulk blue juice&lt;/code>, &lt;code>Bulk orange juice&lt;/code>, and so on.
-Each of these work masters correspond to the same process segment, &lt;code>mixing&lt;/code>.&lt;/p>
-&lt;pre class="mermaid hx:mt-6">
+why add a &lt;code&gt;mixing&lt;/code&gt; segment when the &lt;code&gt;mixers&lt;/code&gt; equipment model serves the same role?&lt;/p&gt;
+&lt;p&gt;However, the fact that process segments are decoupled from equipment can help you model a variety of conditions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Some steps have no equipment requirements. For example, in The Juice Factory, the &lt;code&gt;kitting&lt;/code&gt; process segment requires no equipment.&lt;/li&gt;
+&lt;li&gt;Some steps may be common to a number of processes, but each particular process may require a different set of equipment.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Segment relationships&lt;span class="hx:absolute hx:-mt-20" id="segment-relationships"&gt;&lt;/span&gt;
+&lt;a href="#segment-relationships" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Process segments have relationships to a number of other work and resource models.&lt;/p&gt;
+&lt;h3&gt;Corresponds to&lt;span class="hx:absolute hx:-mt-20" id="corresponds-to"&gt;&lt;/span&gt;
+&lt;a href="#corresponds-to" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Operations segments and work masters usually describe a step to create a particular product.
+These models may &lt;em&gt;correspond&lt;/em&gt; to a process segment:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;From the business perspective, product steps are modeled in &lt;em&gt;operations segments&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;From the more granular MES perspective, product steps are modeled in &lt;em&gt;work masters&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For example, the Juice Factory has various work masters to produce material definitions for different bulk juices: &lt;code&gt;Bulk blue juice&lt;/code&gt;, &lt;code&gt;Bulk orange juice&lt;/code&gt;, and so on.
+Each of these work masters correspond to the same process segment, &lt;code&gt;mixing&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class="mermaid hx:mt-6"&gt;
 classDiagram
 namespace work_masters{
 class `Bulk blue juice`
@@ -69,10 +69,10 @@ class `Bulk orange juice`
 `Bulk blue juice` ..&amp;gt; `Process segment:&amp;lt;br&amp;gt;mixing` :corresponds to
 `Bulk red juice` ..&amp;gt; `Process segment:&amp;lt;br&amp;gt;mixing` :corresponds to
 `Bulk orange juice` ..&amp;gt; `Process segment:&amp;lt;br&amp;gt;mixing` :corresponds to
-&lt;/pre>&lt;h3>Contains specifications&lt;span class="hx:absolute hx:-mt-20" id="contains-specifications">&lt;/span>
-&lt;a href="#contains-specifications" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A process segment may contain one or more resource &lt;em>specifications&lt;/em>.
-These specifications describe the necessary resources for the step.&lt;/p>
-&lt;pre class="mermaid hx:mt-6">
+&lt;/pre&gt;&lt;h3&gt;Contains specifications&lt;span class="hx:absolute hx:-mt-20" id="contains-specifications"&gt;&lt;/span&gt;
+&lt;a href="#contains-specifications" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A process segment may contain one or more resource &lt;em&gt;specifications&lt;/em&gt;.
+These specifications describe the necessary resources for the step.&lt;/p&gt;
+&lt;pre class="mermaid hx:mt-6"&gt;
 classDiagram
 class `bulk juices`{use: produced}
 class `ingredient kits`{use: consumed}
@@ -81,13 +81,13 @@ mixing *--&amp;gt; `equipment specification` :contains
 mixing *--&amp;gt; `material specification` :contains
 `material specification` ..&amp;gt; `bulk juices` :corresponds to
 `material specification` ..&amp;gt; `ingredient kits` :corresponds to
-&lt;/pre>&lt;h3>Contains segment parameters&lt;span class="hx:absolute hx:-mt-20" id="contains-segment-parameters">&lt;/span>
-&lt;a href="#contains-segment-parameters" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A process segment can &lt;em>contain&lt;/em> process segment parameters.
+&lt;/pre&gt;&lt;h3&gt;Contains segment parameters&lt;span class="hx:absolute hx:-mt-20" id="contains-segment-parameters"&gt;&lt;/span&gt;
+&lt;a href="#contains-segment-parameters" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A process segment can &lt;em&gt;contain&lt;/em&gt; process segment parameters.
 Process segment parameters store additional information about the step.
-For example, the &lt;code>mixing&lt;/code> process segment might have a &lt;code>mixing time&lt;/code> parameter.&lt;/p>
-&lt;p>The parameter also can have a value or range of values.
-This process segment parameter value may serve as a default for lower-level work models that &lt;a href="#corresponds-to" >correspond to&lt;/a> this process segment.&lt;/p>
-&lt;pre class="mermaid hx:mt-6">
+For example, the &lt;code&gt;mixing&lt;/code&gt; process segment might have a &lt;code&gt;mixing time&lt;/code&gt; parameter.&lt;/p&gt;
+&lt;p&gt;The parameter also can have a value or range of values.
+This process segment parameter value may serve as a default for lower-level work models that &lt;a href="#corresponds-to" &gt;correspond to&lt;/a&gt; this process segment.&lt;/p&gt;
+&lt;pre class="mermaid hx:mt-6"&gt;
 classDiagram
 class `mixing time`{
 value: 20-30
@@ -99,12 +99,12 @@ UoM: RPM
 }
 `mixing` *--&amp;gt; `mixing time`
 `mixing` *--&amp;gt; `mixing speed`
-&lt;/pre>&lt;h3>Is made of&lt;span class="hx:absolute hx:-mt-20" id="is-made-of">&lt;/span>
-&lt;a href="#is-made-of" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A process segment can &lt;em>be made of&lt;/em> other process segments.
-You can use this relationship to model sub-steps.&lt;/p>
-&lt;p>For example, The Juice Factory might need to distinguish preparation steps from production steps.
-A parent segment provides a model to aggregate the production steps in one parent process segment.&lt;/p>
-&lt;pre class="mermaid hx:mt-6">
+&lt;/pre&gt;&lt;h3&gt;Is made of&lt;span class="hx:absolute hx:-mt-20" id="is-made-of"&gt;&lt;/span&gt;
+&lt;a href="#is-made-of" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A process segment can &lt;em&gt;be made of&lt;/em&gt; other process segments.
+You can use this relationship to model sub-steps.&lt;/p&gt;
+&lt;p&gt;For example, The Juice Factory might need to distinguish preparation steps from production steps.
+A parent segment provides a model to aggregate the production steps in one parent process segment.&lt;/p&gt;
+&lt;pre class="mermaid hx:mt-6"&gt;
 flowchart LR
 subgraph m[Parent: Juice Production]
 direction LR
@@ -116,17 +116,17 @@ A[Material receiving] --&amp;gt; m
 classDef box fill:#fff,stroke:#000,stroke-width:1px,color:#000;
 classDef b fill:#fff,stroke:#000,stroke-width:1px,color:#000;
 class A,C,D,N,X,m,T,V box
-&lt;/pre>&lt;h3>Dependency&lt;span class="hx:absolute hx:-mt-20" id="dependency">&lt;/span>
-&lt;a href="#dependency" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>In some instances, you might need to strictly model the order in which some or all steps happen.
-For this, use &lt;em>segment dependancies&lt;/em>.&lt;/p>
-&lt;p>Segment dependencies become more important when steps might be executed in parallel or dynamically.
-The dependency ensures nothing happens too early.&lt;/p>
-&lt;p>If your process segment is independent of a particular product,
-ensure that all entities that &lt;a href="#correspond-to" >correspond to&lt;/a> that segment also have that dependency.
-For example, in a pastry production, the &lt;code>baking&lt;/code> segment might have a dependency on &lt;code>mixing&lt;/code> and &lt;code>preheating&lt;/code>.
-This implies that all products that correspond to this &lt;code>baking&lt;/code>—such as a &lt;code>chocolate chip cookies&lt;/code> or &lt;code>brownies&lt;/code>—must also require &lt;code>mixing&lt;/code> and &lt;code>preheating&lt;/code> as dependencies.&lt;/p>
-&lt;pre class="mermaid hx:mt-6">
+&lt;/pre&gt;&lt;h3&gt;Dependency&lt;span class="hx:absolute hx:-mt-20" id="dependency"&gt;&lt;/span&gt;
+&lt;a href="#dependency" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In some instances, you might need to strictly model the order in which some or all steps happen.
+For this, use &lt;em&gt;segment dependancies&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Segment dependencies become more important when steps might be executed in parallel or dynamically.
+The dependency ensures nothing happens too early.&lt;/p&gt;
+&lt;p&gt;If your process segment is independent of a particular product,
+ensure that all entities that &lt;a href="#correspond-to" &gt;correspond to&lt;/a&gt; that segment also have that dependency.
+For example, in a pastry production, the &lt;code&gt;baking&lt;/code&gt; segment might have a dependency on &lt;code&gt;mixing&lt;/code&gt; and &lt;code&gt;preheating&lt;/code&gt;.
+This implies that all products that correspond to this &lt;code&gt;baking&lt;/code&gt;—such as a &lt;code&gt;chocolate chip cookies&lt;/code&gt; or &lt;code&gt;brownies&lt;/code&gt;—must also require &lt;code&gt;mixing&lt;/code&gt; and &lt;code&gt;preheating&lt;/code&gt; as dependencies.&lt;/p&gt;
+&lt;pre class="mermaid hx:mt-6"&gt;
 classDiagram
 baking ..&amp;gt; mixing : has execution dependency on
 baking ..&amp;gt; pre-heating : has execution dependency on
-&lt;/pre>&lt;p>If a dependency is product-dependent, define it on the level of the &lt;abbr title="A template for a job order, corresponding to an operations and process segment, from the perspective of the level-3 (MES/MOM) systems.">work master&lt;/abbr> or operation definition instead.&lt;/p></description></item></channel></rss>
+&lt;/pre&gt;&lt;p&gt;If a dependency is product-dependent, define it on the level of the &lt;abbr title="A template for a job order, corresponding to an operations and process segment, from the perspective of the level-3 (MES/MOM) systems."&gt;work master&lt;/abbr&gt; or operation definition instead.&lt;/p&gt;</description></item></channel></rss>

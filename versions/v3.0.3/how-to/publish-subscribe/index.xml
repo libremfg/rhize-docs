@@ -1,9 +1,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Connect event data</title><link>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/</link><description>Recent content in Connect event data on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 22 Sep 2023 14:50:39 -0300</lastBuildDate><atom:link href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/index.xml" rel="self" type="application/rss+xml"/><item><title>Tutorial: Trigger a workflow from a rule</title><link>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/create-equipment-class-rule/</link><pubDate>Mon, 29 Apr 2024 11:39:29 +0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/create-equipment-class-rule/</guid><description>
-&lt;p>An equipment class rule &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/" >triggers a BPMN&lt;/a> workflow whenever a data source publishes a value that meets a specified threshold.&lt;/p>
-&lt;p>Imagine a scenario when an oven must be preheated every time a new order number is published to an MQTT edge device.
+&lt;p&gt;An equipment class rule &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/" &gt;triggers a BPMN&lt;/a&gt; workflow whenever a data source publishes a value that meets a specified threshold.&lt;/p&gt;
+&lt;p&gt;Imagine a scenario when an oven must be preheated every time a new order number is published to an MQTT edge device.
 You could automate this workflow with a rule that listens to messages published and evaluates a condition.
-If the condition evaluates to &lt;code>true&lt;/code>, the rule triggers a &lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling">BPMN&lt;/abbr> workflow to preheat the oven.&lt;/p>
-&lt;pre class="mermaid hx:mt-6">
+If the condition evaluates to &lt;code&gt;true&lt;/code&gt;, the rule triggers a &lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt; workflow to preheat the oven.&lt;/p&gt;
+&lt;pre class="mermaid hx:mt-6"&gt;
 ---
 title: Rules trigger workflows from data-source changes
 ---
@@ -11,700 +11,700 @@ flowchart LR
 A(Property changed?) --&amp;gt;|yes| B{&amp;#34;rule evaluates to true?&amp;#34;}
 B --&amp;gt;|no| C(do nothing)
 B --&amp;gt;|&amp;#34;yes (optional: pass variables)&amp;#34;| D(Run BPMN workflow)
-&lt;/pre>&lt;p>The broad procedure to create a rule is as follows:&lt;/p>
-&lt;ol>
-&lt;li>In the Rhize UI or through GraphQL, create models for the data source and its associated unit of measure, equipment, and equipment class.&lt;/li>
-&lt;li>In the Rhize UI, write a BPMN workflow that is triggered when this data source changes and executes some business logic.&lt;/li>
-&lt;li>In the equipment class, create a rule that triggers the workflow.&lt;/li>
-&lt;/ol>
-&lt;p>The following sections describe how to do these steps in more detail.&lt;/p>
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200">
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2">&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
-&lt;div class="hx:w-full hx:min-w-0 hx:leading-7">
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0">This tutorial assumes a data source that exchanges messages over the MQTT protocol.&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;h2>Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites">&lt;/span>
-&lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Before you start, ensure you have the following:&lt;/p>
-&lt;ul>
-&lt;li>Access your Rhize customer environment&lt;/li>
-&lt;li>The &lt;a href="https://docs.rhize.com/versions/v3.0.3/reference/service-config/" >Agent configured&lt;/a> to listen for your data-source ID&lt;/li>
-&lt;/ul>
-&lt;h2>Set up: configure equipment and workflows&lt;span class="hx:absolute hx:-mt-20" id="set-up-configure-equipment-and-workflows">&lt;/span>
-&lt;a href="#set-up-configure-equipment-and-workflows" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The setup involves modeling the objects associated with the rule.&lt;/p>
-&lt;ul>
-&lt;li>Data source&lt;/li>
-&lt;li>Data source topic&lt;/li>
-&lt;li>Unit of measure&lt;/li>
-&lt;li>BPMN&lt;/li>
-&lt;li>Equipment class with bound properties&lt;/li>
-&lt;/ul>
-&lt;p>Once you have these, you can create a rule and associate it with an actual equipment item.&lt;/p>
-&lt;h3>Create a data source&lt;span class="hx:absolute hx:-mt-20" id="create-a-data-source">&lt;/span>
-&lt;a href="#create-a-data-source" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ol>
-&lt;li>From the main menu, navigate to &lt;strong>Master Data &amp;gt; Data Sources&lt;/strong>.&lt;/li>
-&lt;li>Create a new data source. The label (ID) must match the one specified in the configuration file for the &lt;code>libre-agent&lt;/code> microservice.&lt;/li>
-&lt;li>From the &lt;strong>General&lt;/strong> tab, add a draft data source version.&lt;/li>
-&lt;li>Select &lt;code>MQTT&lt;/code> as the data-source protocol.&lt;/li>
-&lt;li>Optionally, enter a connection string, such as &lt;code>mqtt://&amp;lt;REMOTE_HOST&amp;gt;:1883&lt;/code>, that matches the one specified in the configuration file for the &lt;code>libre-agent&lt;/code> microservice.&lt;/li>
-&lt;li>Save the data source version to create it.&lt;/li>
-&lt;/ol>
-&lt;figure class="big-figure">
-&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_a_Data_Source_and_Version.png" target="_blank">
+&lt;/pre&gt;&lt;p&gt;The broad procedure to create a rule is as follows:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In the Rhize UI or through GraphQL, create models for the data source and its associated unit of measure, equipment, and equipment class.&lt;/li&gt;
+&lt;li&gt;In the Rhize UI, write a BPMN workflow that is triggered when this data source changes and executes some business logic.&lt;/li&gt;
+&lt;li&gt;In the equipment class, create a rule that triggers the workflow.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The following sections describe how to do these steps in more detail.&lt;/p&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This tutorial assumes a data source that exchanges messages over the MQTT protocol.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
+&lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before you start, ensure you have the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Access your Rhize customer environment&lt;/li&gt;
+&lt;li&gt;The &lt;a href="https://docs.rhize.com/versions/v3.0.3/reference/service-config/" &gt;Agent configured&lt;/a&gt; to listen for your data-source ID&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Set up: configure equipment and workflows&lt;span class="hx:absolute hx:-mt-20" id="set-up-configure-equipment-and-workflows"&gt;&lt;/span&gt;
+&lt;a href="#set-up-configure-equipment-and-workflows" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The setup involves modeling the objects associated with the rule.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data source&lt;/li&gt;
+&lt;li&gt;Data source topic&lt;/li&gt;
+&lt;li&gt;Unit of measure&lt;/li&gt;
+&lt;li&gt;BPMN&lt;/li&gt;
+&lt;li&gt;Equipment class with bound properties&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once you have these, you can create a rule and associate it with an actual equipment item.&lt;/p&gt;
+&lt;h3&gt;Create a data source&lt;span class="hx:absolute hx:-mt-20" id="create-a-data-source"&gt;&lt;/span&gt;
+&lt;a href="#create-a-data-source" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;From the main menu, navigate to &lt;strong&gt;Master Data &amp;gt; Data Sources&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Create a new data source. The label (ID) must match the one specified in the configuration file for the &lt;code&gt;libre-agent&lt;/code&gt; microservice.&lt;/li&gt;
+&lt;li&gt;From the &lt;strong&gt;General&lt;/strong&gt; tab, add a draft data source version.&lt;/li&gt;
+&lt;li&gt;Select &lt;code&gt;MQTT&lt;/code&gt; as the data-source protocol.&lt;/li&gt;
+&lt;li&gt;Optionally, enter a connection string, such as &lt;code&gt;mqtt://&amp;lt;REMOTE_HOST&amp;gt;:1883&lt;/code&gt;, that matches the one specified in the configuration file for the &lt;code&gt;libre-agent&lt;/code&gt; microservice.&lt;/li&gt;
+&lt;li&gt;Save the data source version to create it.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class="big-figure"&gt;
+&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_a_Data_Source_and_Version.png" target="_blank"&gt;
 &lt;img src="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_a_Data_Source_and_Version.png" alt="A new data source and version created in the UI."
 width="100%"
->
-&lt;/a>
-&lt;figcaption class="caption">
+&gt;
+&lt;/a&gt;
+&lt;figcaption class="caption"&gt;
 A new data source and version created in the UI.
-&lt;/figcaption>
-&lt;/figure>
-&lt;h3>Create a data source topic&lt;span class="hx:absolute hx:-mt-20" id="create-a-data-source-topic">&lt;/span>
-&lt;a href="#create-a-data-source-topic" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ol>
-&lt;li>Navigate to the &lt;strong>Topics&lt;/strong> tab.&lt;/li>
-&lt;li>Add a new property (that is, a topic).&lt;/li>
-&lt;li>Select &lt;code>STRING&lt;/code> for the property data type (this assumes an order number is a string such as &lt;code>Order1&lt;/code>).&lt;/li>
-&lt;li>Select your preferred deduplication key. The default option, &lt;code>Message Value&lt;/code>, is most appropriate for this scenario.&lt;/li>
-&lt;li>For label, enter the exact topic name as it appears in the data source. Use a slash to access nested topics. For this example, all new order numbers are published to &lt;code>Oven/OrderNumber&lt;/code>.&lt;/li>
-&lt;li>Confirm by clicking the green tick icon.&lt;/li>
-&lt;li>Navigate to the &lt;strong>General&lt;/strong> tab and change the version state to active.&lt;/li>
-&lt;/ol>
-&lt;figure class="big-figure">
-&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_a_Data_Source_Topic.png" target="_blank">
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h3&gt;Create a data source topic&lt;span class="hx:absolute hx:-mt-20" id="create-a-data-source-topic"&gt;&lt;/span&gt;
+&lt;a href="#create-a-data-source-topic" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Navigate to the &lt;strong&gt;Topics&lt;/strong&gt; tab.&lt;/li&gt;
+&lt;li&gt;Add a new property (that is, a topic).&lt;/li&gt;
+&lt;li&gt;Select &lt;code&gt;STRING&lt;/code&gt; for the property data type (this assumes an order number is a string such as &lt;code&gt;Order1&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Select your preferred deduplication key. The default option, &lt;code&gt;Message Value&lt;/code&gt;, is most appropriate for this scenario.&lt;/li&gt;
+&lt;li&gt;For label, enter the exact topic name as it appears in the data source. Use a slash to access nested topics. For this example, all new order numbers are published to &lt;code&gt;Oven/OrderNumber&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Confirm by clicking the green tick icon.&lt;/li&gt;
+&lt;li&gt;Navigate to the &lt;strong&gt;General&lt;/strong&gt; tab and change the version state to active.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class="big-figure"&gt;
+&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_a_Data_Source_Topic.png" target="_blank"&gt;
 &lt;img src="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_a_Data_Source_Topic.png" alt="A new data source topic created in the UI."
 width="100%"
->
-&lt;/a>
-&lt;figcaption class="caption">
+&gt;
+&lt;/a&gt;
+&lt;figcaption class="caption"&gt;
 A new data source topic created in the UI.
-&lt;/figcaption>
-&lt;/figure>
-&lt;h3>Create a unit of measure&lt;span class="hx:absolute hx:-mt-20" id="create-a-unit-of-measure">&lt;/span>
-&lt;a href="#create-a-unit-of-measure" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ol>
-&lt;li>From the Main Menu, navigate to &lt;strong>Master Data &amp;gt; Units of Measure&lt;/strong>.&lt;/li>
-&lt;li>Add a new unit of measure.&lt;/li>
-&lt;li>Enter &lt;code>Order Number&lt;/code> for the unit name.&lt;/li>
-&lt;li>Select &lt;code>STRING&lt;/code> for the data type.&lt;/li>
-&lt;/ol>
-&lt;figure class="big-figure">
-&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_a_Unit_of_Measure.png" target="_blank">
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h3&gt;Create a unit of measure&lt;span class="hx:absolute hx:-mt-20" id="create-a-unit-of-measure"&gt;&lt;/span&gt;
+&lt;a href="#create-a-unit-of-measure" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;From the Main Menu, navigate to &lt;strong&gt;Master Data &amp;gt; Units of Measure&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Add a new unit of measure.&lt;/li&gt;
+&lt;li&gt;Enter &lt;code&gt;Order Number&lt;/code&gt; for the unit name.&lt;/li&gt;
+&lt;li&gt;Select &lt;code&gt;STRING&lt;/code&gt; for the data type.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class="big-figure"&gt;
+&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_a_Unit_of_Measure.png" target="_blank"&gt;
 &lt;img src="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_a_Unit_of_Measure.png" alt="A new unit of measure created in the UI."
 width="100%"
->
-&lt;/a>
-&lt;figcaption class="caption">
+&gt;
+&lt;/a&gt;
+&lt;figcaption class="caption"&gt;
 A new unit of measure created in the UI.
-&lt;/figcaption>
-&lt;/figure>
-&lt;h3>Creating a BPMN workflow&lt;span class="hx:absolute hx:-mt-20" id="creating-a-bpmn-workflow">&lt;/span>
-&lt;a href="#creating-a-bpmn-workflow" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A rule must trigger a BPMN workflow.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h3&gt;Creating a BPMN workflow&lt;span class="hx:absolute hx:-mt-20" id="creating-a-bpmn-workflow"&gt;&lt;/span&gt;
+&lt;a href="#creating-a-bpmn-workflow" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A rule must trigger a BPMN workflow.
 Before setting up a rule, create its workflow.
-For this example, this 3-node BPMN is enough:&lt;/p>
-&lt;ol>
-&lt;li>Navigate to &lt;strong>Workflows &amp;gt; Process List&lt;/strong>.&lt;/li>
-&lt;li>Import the BPMN.&lt;/li>
-&lt;li>Save it.&lt;/li>
-&lt;li>Set the version as active.&lt;/li>
-&lt;/ol>
-&lt;figure class="big-figure">
-&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_a_BPMN.png" target="_blank">
+For this example, this 3-node BPMN is enough:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Navigate to &lt;strong&gt;Workflows &amp;gt; Process List&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Import the BPMN.&lt;/li&gt;
+&lt;li&gt;Save it.&lt;/li&gt;
+&lt;li&gt;Set the version as active.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class="big-figure"&gt;
+&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_a_BPMN.png" target="_blank"&gt;
 &lt;img src="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_a_BPMN.png" alt="A BPMN created in the UI."
 width="100%"
->
-&lt;/a>
-&lt;figcaption class="caption">
+&gt;
+&lt;/a&gt;
+&lt;figcaption class="caption"&gt;
 A BPMN created in the UI.
-&lt;/figcaption>
-&lt;/figure>
-&lt;p>The BPMN has a &lt;code>Libre Jsonata Transform&lt;/code> task that contains an expression &lt;code>&amp;quot;Preheating oven for order number &amp;quot; &amp;amp; $.orderNumber&amp;quot;&lt;/code> .
-The rule engine triggers this BPMN with a payload that includes the order number value, as follows:&lt;/p>
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;orderNumber&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;Order1&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;The BPMN has a &lt;code&gt;Libre Jsonata Transform&lt;/code&gt; task that contains an expression &lt;code&gt;&amp;quot;Preheating oven for order number &amp;quot; &amp;amp; $.orderNumber&amp;quot;&lt;/code&gt; .
+The rule engine triggers this BPMN with a payload that includes the order number value, as follows:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;orderNumber&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Order1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
 class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
->
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;h3>Create an equipment class with bound properties&lt;span class="hx:absolute hx:-mt-20" id="create-an-equipment-class-with-bound-properties">&lt;/span>
-&lt;a href="#create-an-equipment-class-with-bound-properties" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;h4>Equipment class and version&lt;span class="hx:absolute hx:-mt-20" id="equipment-class-and-version">&lt;/span>
-&lt;a href="#equipment-class-and-version" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ol>
-&lt;li>Navigate to &lt;strong>Master Data &amp;gt; Equipment Class&lt;/strong>.&lt;/li>
-&lt;li>Create a new equipment class from the sidebar. The label might be &lt;code>Pizza Line&lt;/code>, for example.&lt;/li>
-&lt;li>From the &lt;strong>General&lt;/strong> tab, &lt;strong>Create&lt;/strong> a new Draft version.&lt;/li>
-&lt;/ol>
-&lt;figure class="big-figure">
-&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_an_Equipment_Class_and_Version.png" target="_blank">
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Create an equipment class with bound properties&lt;span class="hx:absolute hx:-mt-20" id="create-an-equipment-class-with-bound-properties"&gt;&lt;/span&gt;
+&lt;a href="#create-an-equipment-class-with-bound-properties" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Equipment class and version&lt;span class="hx:absolute hx:-mt-20" id="equipment-class-and-version"&gt;&lt;/span&gt;
+&lt;a href="#equipment-class-and-version" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;Navigate to &lt;strong&gt;Master Data &amp;gt; Equipment Class&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Create a new equipment class from the sidebar. The label might be &lt;code&gt;Pizza Line&lt;/code&gt;, for example.&lt;/li&gt;
+&lt;li&gt;From the &lt;strong&gt;General&lt;/strong&gt; tab, &lt;strong&gt;Create&lt;/strong&gt; a new Draft version.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class="big-figure"&gt;
+&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_an_Equipment_Class_and_Version.png" target="_blank"&gt;
 &lt;img src="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_an_Equipment_Class_and_Version.png" alt="A new equipment class and version created in the UI."
 width="100%"
->
-&lt;/a>
-&lt;figcaption class="caption">
+&gt;
+&lt;/a&gt;
+&lt;figcaption class="caption"&gt;
 A new equipment class and version created in the UI.
-&lt;/figcaption>
-&lt;/figure>
-&lt;h4>Equipment class property&lt;span class="hx:absolute hx:-mt-20" id="equipment-class-property">&lt;/span>
-&lt;a href="#equipment-class-property" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ol>
-&lt;li>From the properties tab, create a new property.&lt;/li>
-&lt;li>For type, select &lt;code>BOUND&lt;/code>.&lt;/li>
-&lt;li>For name, enter &lt;code>orderNumber&lt;/code>.&lt;/li>
-&lt;li>For UoM, select the unit of measure created earlier (&lt;code>Order Number&lt;/code>).&lt;/li>
-&lt;li>Confirm by clicking the green tick icon.&lt;/li>
-&lt;/ol>
-&lt;figure class="big-figure">
-&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_an_Equipment_Class_Property.png" target="_blank">
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h4&gt;Equipment class property&lt;span class="hx:absolute hx:-mt-20" id="equipment-class-property"&gt;&lt;/span&gt;
+&lt;a href="#equipment-class-property" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;From the properties tab, create a new property.&lt;/li&gt;
+&lt;li&gt;For type, select &lt;code&gt;BOUND&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;For name, enter &lt;code&gt;orderNumber&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;For UoM, select the unit of measure created earlier (&lt;code&gt;Order Number&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Confirm by clicking the green tick icon.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class="big-figure"&gt;
+&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_an_Equipment_Class_Property.png" target="_blank"&gt;
 &lt;img src="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_an_Equipment_Class_Property.png" alt="A new equipment class property created in the UI."
 width="100%"
->
-&lt;/a>
-&lt;figcaption class="caption">
+&gt;
+&lt;/a&gt;
+&lt;figcaption class="caption"&gt;
 A new equipment class property created in the UI.
-&lt;/figcaption>
-&lt;/figure>
-&lt;h2>Create a rule&lt;span class="hx:absolute hx:-mt-20" id="create-a-rule">&lt;/span>
-&lt;a href="#create-a-rule" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Add a rule to an existing equipment class&lt;span class="hx:absolute hx:-mt-20" id="add-a-rule-to-an-existing-equipment-class">&lt;/span>
-&lt;a href="#add-a-rule-to-an-existing-equipment-class" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ol>
-&lt;li>From the Rules tab of an equipment class version, create a new rule.&lt;/li>
-&lt;li>Enter &lt;code>Run BPMN on Order Number&lt;/code> for the name and confirm.&lt;/li>
-&lt;li>Select &lt;code>rules_example_bpmn&lt;/code> for the workflow specification.&lt;/li>
-&lt;li>Add &lt;code>orderNumber&lt;/code> as a trigger property.&lt;/li>
-&lt;li>Add a trigger expression that evaluates to true or false.&lt;/li>
-&lt;/ol>
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200">
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2">&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
-&lt;div class="hx:w-full hx:min-w-0 hx:leading-7">
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0">The rule runs the preceding workflow only if the expression evaluates to &lt;code>true&lt;/code>.
-It’s common to compare the new value with the previous.&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;p>In this case, we can compare the new order number to the previous by adding &lt;code>OrderNumber.current.value != OrderNumber.previous.value&lt;/code>.
-Note that the root of the object path must match the ID of the equipment class property we set up earlier and all evaluations are case-sensitive.&lt;/p>
-&lt;p>The entire information that becomes available to the rule engine looks like this:&lt;/p>
-&lt;div class="hextra-scrollbar hx:overflow-x-auto hx:overflow-y-hidden hx:overscroll-x-contain">
-&lt;div class="hx:mt-4 hx:flex hx:w-max hx:min-w-full hx:border-b hx:border-gray-200 hx:pb-px hx:dark:border-neutral-800">&lt;button
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2&gt;Create a rule&lt;span class="hx:absolute hx:-mt-20" id="create-a-rule"&gt;&lt;/span&gt;
+&lt;a href="#create-a-rule" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Add a rule to an existing equipment class&lt;span class="hx:absolute hx:-mt-20" id="add-a-rule-to-an-existing-equipment-class"&gt;&lt;/span&gt;
+&lt;a href="#add-a-rule-to-an-existing-equipment-class" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;From the Rules tab of an equipment class version, create a new rule.&lt;/li&gt;
+&lt;li&gt;Enter &lt;code&gt;Run BPMN on Order Number&lt;/code&gt; for the name and confirm.&lt;/li&gt;
+&lt;li&gt;Select &lt;code&gt;rules_example_bpmn&lt;/code&gt; for the workflow specification.&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;orderNumber&lt;/code&gt; as a trigger property.&lt;/li&gt;
+&lt;li&gt;Add a trigger expression that evaluates to true or false.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;The rule runs the preceding workflow only if the expression evaluates to &lt;code&gt;true&lt;/code&gt;.
+It’s common to compare the new value with the previous.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;In this case, we can compare the new order number to the previous by adding &lt;code&gt;OrderNumber.current.value != OrderNumber.previous.value&lt;/code&gt;.
+Note that the root of the object path must match the ID of the equipment class property we set up earlier and all evaluations are case-sensitive.&lt;/p&gt;
+&lt;p&gt;The entire information that becomes available to the rule engine looks like this:&lt;/p&gt;
+&lt;div class="hextra-scrollbar hx:overflow-x-auto hx:overflow-y-hidden hx:overscroll-x-contain"&gt;
+&lt;div class="hx:mt-4 hx:flex hx:w-max hx:min-w-full hx:border-b hx:border-gray-200 hx:pb-px hx:dark:border-neutral-800"&gt;&lt;button
 class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white"
 role="tab"
 type="button"
-aria-controls="tabs-panel-0" aria-selected="true" tabindex="0" data-state="selected">JSON input&lt;/button>&lt;button
+aria-controls="tabs-panel-0" aria-selected="true" tabindex="0" data-state="selected"&gt;JSON input&lt;/button&gt;&lt;button
 class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white"
 role="tab"
 type="button"
-aria-controls="tabs-panel-1">Expression&lt;/button>&lt;button
+aria-controls="tabs-panel-1"&gt;Expression&lt;/button&gt;&lt;button
 class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white"
 role="tab"
 type="button"
-aria-controls="tabs-panel-2">Output&lt;/button>&lt;/div>
-&lt;/div>
-&lt;div>
+aria-controls="tabs-panel-2"&gt;Output&lt;/button&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
 &lt;div
 class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block"
 id="tabs-panel-0"
-role="tabpanel" tabindex="0" data-state="selected" >&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">orderNumber&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">current&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">bindingType&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;BOUND&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">description&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;bound prop&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">equipmentClassProperty&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">id&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;EQCLASS1.10.orderNumber&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">iid&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;0x2a78&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">label&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;orderNumber&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">equipmentVersion&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">equipment&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">id&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;EQ1&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">iid&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;0x1b&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">label&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;EQ1&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">id&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;EQ1&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">iid&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;0x22&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">version&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;2&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">id&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;EQCLASS1.10.orderNumber&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">label&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;orderNumber&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">messageKey&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;ns=3;i=1003.1695170450000000000&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">propertyType&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;DefaultType&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">serverPicoseconds&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">serverTimestamp&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;2023-09-20T00:40:50.028Z&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">sourcePicoseconds&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">sourceTimestamp&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;2023-09-20T00:40:50Z&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">value&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;Order2&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">valueUnitOfMeasure&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">dataType&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;FLOAT&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">id&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;FLOAT&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">iid&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;0x28&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">previous&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">bindingType&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;BOUND&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">description&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;bound prop&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">equipmentClassProperty&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">id&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;EQCLASS1.10.orderNumber&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">iid&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;0x2a78&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">label&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;orderNumber&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">equipmentVersion&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">equipment&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">id&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;EQ1&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">iid&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;0x1b&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">label&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;EQ1&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">id&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;EQ1&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">iid&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;0x22&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">version&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;2&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">id&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;EQCLASS1.10.orderNumber&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">label&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;orderNumber&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">messageKey&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;ns=3;i=1003.1695170440000000000&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">propertyType&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;DefaultType&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">serverPicoseconds&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">serverTimestamp&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;2023-09-20T00:40:40.003Z&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">sourcePicoseconds&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">sourceTimestamp&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;2023-09-20T00:40:40Z&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">value&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;Order1&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">valueUnitOfMeasure&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">dataType&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;FLOAT&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">id&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;FLOAT&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">iid&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;0x28&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+role="tabpanel" tabindex="0" data-state="selected" &gt;&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;orderNumber&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;current&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;bindingType&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;BOUND&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;description&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;bound prop&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;equipmentClassProperty&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;EQCLASS1.10.orderNumber&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;iid&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;0x2a78&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;label&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;orderNumber&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;equipmentVersion&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;equipment&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;EQ1&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;iid&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;0x1b&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;label&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;EQ1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;EQ1&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;iid&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;0x22&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;version&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;2&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;EQCLASS1.10.orderNumber&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;label&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;orderNumber&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;messageKey&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;ns=3;i=1003.1695170450000000000&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;propertyType&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;DefaultType&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;serverPicoseconds&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;serverTimestamp&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;2023-09-20T00:40:50.028Z&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;sourcePicoseconds&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;sourceTimestamp&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;2023-09-20T00:40:50Z&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;value&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Order2&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;valueUnitOfMeasure&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;dataType&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;FLOAT&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;FLOAT&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;iid&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;0x28&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;previous&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;bindingType&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;BOUND&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;description&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;bound prop&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;equipmentClassProperty&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;EQCLASS1.10.orderNumber&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;iid&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;0x2a78&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;label&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;orderNumber&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;equipmentVersion&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;equipment&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;EQ1&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;iid&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;0x1b&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;label&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;EQ1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;EQ1&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;iid&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;0x22&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;version&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;2&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;EQCLASS1.10.orderNumber&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;label&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;orderNumber&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;messageKey&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;ns=3;i=1003.1695170440000000000&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;propertyType&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;DefaultType&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;serverPicoseconds&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;serverTimestamp&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;2023-09-20T00:40:40.003Z&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;sourcePicoseconds&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;sourceTimestamp&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;2023-09-20T00:40:40Z&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;value&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Order1&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;valueUnitOfMeasure&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;dataType&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;FLOAT&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;FLOAT&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;iid&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;0x28&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
 class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
->
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;/div>
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;div
 class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block"
 id="tabs-panel-1"
-role="tabpanel">&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="sb">`OrderNumber.current.value != OrderNumber.previous.value`&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+role="tabpanel"&gt;&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sb"&gt;`OrderNumber.current.value != OrderNumber.previous.value`&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
 class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
->
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;/div>
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;div
 class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block"
 id="tabs-panel-2"
-role="tabpanel">&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
-&lt;div>&lt;pre>&lt;code>True&lt;/code>&lt;/pre>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+role="tabpanel"&gt;&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;True&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
 class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
->
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;p>The expression evaluates to &lt;code>false&lt;/code>, because the &lt;code>current&lt;/code> and &lt;code>previous&lt;/code> values differ.&lt;/p>&lt;/div>
-&lt;/div>
-&lt;p>Optionally, pass information to the BPMN by adding a payload message. The message is an object with multiple keys.&lt;/p>
-&lt;ol>
-&lt;li>Enter &lt;code>orderNumber&lt;/code> for the field name.&lt;/li>
-&lt;li>Enter &lt;code>orderNumber.current.value&lt;/code> for the JSON expression.&lt;/li>
-&lt;li>Confirm by clicking the green tick icon.&lt;/li>
-&lt;li>&lt;strong>Create&lt;/strong>.&lt;/li>
-&lt;li>From the &lt;strong>General&lt;/strong> tab, change the equipment class version state to active.&lt;/li>
-&lt;/ol>
-&lt;figure class="big-figure">
-&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_a_Rule.png" target="_blank">
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The expression evaluates to &lt;code&gt;false&lt;/code&gt;, because the &lt;code&gt;current&lt;/code&gt; and &lt;code&gt;previous&lt;/code&gt; values differ.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Optionally, pass information to the BPMN by adding a payload message. The message is an object with multiple keys.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Enter &lt;code&gt;orderNumber&lt;/code&gt; for the field name.&lt;/li&gt;
+&lt;li&gt;Enter &lt;code&gt;orderNumber.current.value&lt;/code&gt; for the JSON expression.&lt;/li&gt;
+&lt;li&gt;Confirm by clicking the green tick icon.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;From the &lt;strong&gt;General&lt;/strong&gt; tab, change the equipment class version state to active.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class="big-figure"&gt;
+&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_a_Rule.png" target="_blank"&gt;
 &lt;img src="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_a_Rule.png" alt="Creating an equipment class rule in the UI."
 width="100%"
->
-&lt;/a>
-&lt;figcaption class="caption">
+&gt;
+&lt;/a&gt;
+&lt;figcaption class="caption"&gt;
 Creating an equipment class rule in the UI.
-&lt;/figcaption>
-&lt;/figure>
-&lt;h3>Associate an equipment with a bound property&lt;span class="hx:absolute hx:-mt-20" id="associate-an-equipment-with-a-bound-property">&lt;/span>
-&lt;a href="#associate-an-equipment-with-a-bound-property" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>The final steps to setting up a rule are to:&lt;/p>
-&lt;ol>
-&lt;li>Create a new equipment version.&lt;/li>
-&lt;li>Link it to a data source.&lt;/li>
-&lt;li>Set up bound properties.&lt;/li>
-&lt;/ol>
-&lt;h4>Create an equipment and version&lt;span class="hx:absolute hx:-mt-20" id="create-an-equipment-and-version">&lt;/span>
-&lt;a href="#create-an-equipment-and-version" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ol>
-&lt;li>From the Main Menu, navigate to &lt;strong>Master Data &amp;gt; Equipment&lt;/strong>.&lt;/li>
-&lt;li>Select a piece of equipment. If none, create one called &lt;code>Line 1&lt;/code>.&lt;/li>
-&lt;li>From the &lt;strong>General&lt;/strong> tab, &lt;strong>Create&lt;/strong>.&lt;/li>
-&lt;li>Link the version to the equipment class you created earlier (&lt;code>Pizza Line&lt;/code>).&lt;/li>
-&lt;li>Save the version to create it.&lt;/li>
-&lt;/ol>
-&lt;figure class="big-figure">
-&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_an_Equipment_and_Version.png" target="_blank">
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h3&gt;Associate an equipment with a bound property&lt;span class="hx:absolute hx:-mt-20" id="associate-an-equipment-with-a-bound-property"&gt;&lt;/span&gt;
+&lt;a href="#associate-an-equipment-with-a-bound-property" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The final steps to setting up a rule are to:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a new equipment version.&lt;/li&gt;
+&lt;li&gt;Link it to a data source.&lt;/li&gt;
+&lt;li&gt;Set up bound properties.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Create an equipment and version&lt;span class="hx:absolute hx:-mt-20" id="create-an-equipment-and-version"&gt;&lt;/span&gt;
+&lt;a href="#create-an-equipment-and-version" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;From the Main Menu, navigate to &lt;strong&gt;Master Data &amp;gt; Equipment&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Select a piece of equipment. If none, create one called &lt;code&gt;Line 1&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;From the &lt;strong&gt;General&lt;/strong&gt; tab, &lt;strong&gt;Create&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Link the version to the equipment class you created earlier (&lt;code&gt;Pizza Line&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Save the version to create it.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class="big-figure"&gt;
+&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_an_Equipment_and_Version.png" target="_blank"&gt;
 &lt;img src="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Creating_an_Equipment_and_Version.png" alt="A new equipment class and version created in the UI."
 width="100%"
->
-&lt;/a>
-&lt;figcaption class="caption">
+&gt;
+&lt;/a&gt;
+&lt;figcaption class="caption"&gt;
 A new equipment class and version created in the UI.
-&lt;/figcaption>
-&lt;/figure>
-&lt;h4>Link a data source&lt;span class="hx:absolute hx:-mt-20" id="link-a-data-source">&lt;/span>
-&lt;a href="#link-a-data-source" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ol>
-&lt;li>From the &lt;strong>Data Sources&lt;/strong> tab, link the equipment version to the data source you created in the previous section.&lt;/li>
-&lt;/ol>
-&lt;figure class="big-figure">
-&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Link_Equipment_to_Data_Source.png" target="_blank">
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h4&gt;Link a data source&lt;span class="hx:absolute hx:-mt-20" id="link-a-data-source"&gt;&lt;/span&gt;
+&lt;a href="#link-a-data-source" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;From the &lt;strong&gt;Data Sources&lt;/strong&gt; tab, link the equipment version to the data source you created in the previous section.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class="big-figure"&gt;
+&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Link_Equipment_to_Data_Source.png" target="_blank"&gt;
 &lt;img src="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Link_Equipment_to_Data_Source.png" alt="An equipment linked to a data source in the UI."
 width="100%"
->
-&lt;/a>
-&lt;figcaption class="caption">
+&gt;
+&lt;/a&gt;
+&lt;figcaption class="caption"&gt;
 An equipment linked to a data source in the UI.
-&lt;/figcaption>
-&lt;/figure>
-&lt;h4>Set up the bound property&lt;span class="hx:absolute hx:-mt-20" id="set-up-the-bound-property">&lt;/span>
-&lt;a href="#set-up-the-bound-property" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ol>
-&lt;li>From the &lt;strong>Properties&lt;/strong> tab, find a property that you want this equipment to inherit and select the binding icon.&lt;/li>
-&lt;li>If you chose the property &lt;code>orderNumber&lt;/code>, add the topic &lt;code>Oven/OrderNumber&lt;/code> you added previously.&lt;/li>
-&lt;/ol>
-&lt;figure class="big-figure">
-&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Binding_an_Equipment_Property_to_a_Topic.png" target="_blank">
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h4&gt;Set up the bound property&lt;span class="hx:absolute hx:-mt-20" id="set-up-the-bound-property"&gt;&lt;/span&gt;
+&lt;a href="#set-up-the-bound-property" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;From the &lt;strong&gt;Properties&lt;/strong&gt; tab, find a property that you want this equipment to inherit and select the binding icon.&lt;/li&gt;
+&lt;li&gt;If you chose the property &lt;code&gt;orderNumber&lt;/code&gt;, add the topic &lt;code&gt;Oven/OrderNumber&lt;/code&gt; you added previously.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class="big-figure"&gt;
+&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Binding_an_Equipment_Property_to_a_Topic.png" target="_blank"&gt;
 &lt;img src="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Binding_an_Equipment_Property_to_a_Topic.png" alt="An equipment property bound to a data source topic in the UI."
 width="100%"
->
-&lt;/a>
-&lt;figcaption class="caption">
+&gt;
+&lt;/a&gt;
+&lt;figcaption class="caption"&gt;
 An equipment property bound to a data source topic in the UI.
-&lt;/figcaption>
-&lt;/figure>
-&lt;h2>Test the binding and the rule&lt;span class="hx:absolute hx:-mt-20" id="test-the-binding-and-the-rule">&lt;/span>
-&lt;a href="#test-the-binding-and-the-rule" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Send a message to test that the value of the property &lt;code>orderNumber&lt;/code> of the equipment &lt;code>Line 1&lt;/code> is bound to the topic &lt;code>Oven/OrderNumber&lt;/code>.&lt;/p>
-&lt;h3>Test using an MQTT client&lt;span class="hx:absolute hx:-mt-20" id="test-using-an-mqtt-client">&lt;/span>
-&lt;a href="#test-using-an-mqtt-client" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>For example, using MQTT Explorer:&lt;/p>
-&lt;ol>
-&lt;li>Open MQTT Explorer and connect to the broker.&lt;/li>
-&lt;/ol>
-&lt;p>The microservice Libre Agent (&lt;code>libre-agent&lt;/code>) should immediately publish a message to indicate the data source topic &lt;code>Oven/OrderNumber&lt;/code> has been set up successfully.&lt;/p>
-&lt;figure class="big-figure">
-&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Libre_Agent_has_Connected_to_the_Data_Source.png" target="_blank">
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2&gt;Test the binding and the rule&lt;span class="hx:absolute hx:-mt-20" id="test-the-binding-and-the-rule"&gt;&lt;/span&gt;
+&lt;a href="#test-the-binding-and-the-rule" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Send a message to test that the value of the property &lt;code&gt;orderNumber&lt;/code&gt; of the equipment &lt;code&gt;Line 1&lt;/code&gt; is bound to the topic &lt;code&gt;Oven/OrderNumber&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Test using an MQTT client&lt;span class="hx:absolute hx:-mt-20" id="test-using-an-mqtt-client"&gt;&lt;/span&gt;
+&lt;a href="#test-using-an-mqtt-client" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;For example, using MQTT Explorer:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open MQTT Explorer and connect to the broker.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The microservice Libre Agent (&lt;code&gt;libre-agent&lt;/code&gt;) should immediately publish a message to indicate the data source topic &lt;code&gt;Oven/OrderNumber&lt;/code&gt; has been set up successfully.&lt;/p&gt;
+&lt;figure class="big-figure"&gt;
+&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Libre_Agent_has_Connected_to_the_Data_Source.png" target="_blank"&gt;
 &lt;img src="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Libre_Agent_has_Connected_to_the_Data_Source.png" alt="The Libre Agent has connected to the data source."
 width="65%"
->
-&lt;/a>
-&lt;figcaption class="caption">
+&gt;
+&lt;/a&gt;
+&lt;figcaption class="caption"&gt;
 The Libre Agent has connected to the data source.
-&lt;/figcaption>
-&lt;/figure>
-&lt;ol start="2">
-&lt;li>Publish the string &lt;code>Order1&lt;/code> to the topic &lt;code>Oven/OrderNumber&lt;/code>.&lt;/li>
-&lt;/ol>
-&lt;figure class="big-figure">
-&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Publish_Order_Number_to_NATS.png" target="_blank">
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;Publish the string &lt;code&gt;Order1&lt;/code&gt; to the topic &lt;code&gt;Oven/OrderNumber&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class="big-figure"&gt;
+&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Publish_Order_Number_to_NATS.png" target="_blank"&gt;
 &lt;img src="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Publish_Order_Number_to_NATS.png" alt="A new order number was published to the data source."
 width="65%"
->
-&lt;/a>
-&lt;figcaption class="caption">
+&gt;
+&lt;/a&gt;
+&lt;figcaption class="caption"&gt;
 A new order number was published to the data source.
-&lt;/figcaption>
-&lt;/figure>
-&lt;p>If the message has been received,
-a new topic, &lt;code>Oven&lt;/code>, appears with its subtopic &lt;code>OrderNumber&lt;/code>.&lt;/p>
-&lt;p>If there is an equipment property bound to this topic,
-a topic called &lt;code>MQTT/&amp;lt;DATA_SOURCE_NAME&amp;gt;/ValueChanged&lt;/code> also appears.
-In addition, the published value should show in the column &lt;code>Expression&lt;/code> of the equipment property &lt;code>orderNumber&lt;/code>.&lt;/p>
-&lt;figure class="big-figure">
-&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-New_orderNumber_in_the_Admin_UI.png" target="_blank">
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;If the message has been received,
+a new topic, &lt;code&gt;Oven&lt;/code&gt;, appears with its subtopic &lt;code&gt;OrderNumber&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If there is an equipment property bound to this topic,
+a topic called &lt;code&gt;MQTT/&amp;lt;DATA_SOURCE_NAME&amp;gt;/ValueChanged&lt;/code&gt; also appears.
+In addition, the published value should show in the column &lt;code&gt;Expression&lt;/code&gt; of the equipment property &lt;code&gt;orderNumber&lt;/code&gt;.&lt;/p&gt;
+&lt;figure class="big-figure"&gt;
+&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-New_orderNumber_in_the_Admin_UI.png" target="_blank"&gt;
 &lt;img src="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-New_orderNumber_in_the_Admin_UI.png" alt="The bound property assumes the last value published to the data source."
 width="100%"
->
-&lt;/a>
-&lt;figcaption class="caption">
+&gt;
+&lt;/a&gt;
+&lt;figcaption class="caption"&gt;
 The bound property assumes the last value published to the data source.
-&lt;/figcaption>
-&lt;/figure>
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200">
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2">&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
-&lt;div class="hx:w-full hx:min-w-0 hx:leading-7">
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0">If this is the first message published to the topic, the rule will not be triggered because Rhize has no previous value to compare it the message value to. However, if you publish another order number, a new topic called &lt;code>Core&lt;/code> will show up containing a subtopic called &lt;code>RuleTriggered&lt;/code> to indicate that the rule has indeed been triggered.&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;figure class="big-figure">
-&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Rule_Triggered_in_broker.png" target="_blank">
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;If this is the first message published to the topic, the rule will not be triggered because Rhize has no previous value to compare it the message value to. However, if you publish another order number, a new topic called &lt;code&gt;Core&lt;/code&gt; will show up containing a subtopic called &lt;code&gt;RuleTriggered&lt;/code&gt; to indicate that the rule has indeed been triggered.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;figure class="big-figure"&gt;
+&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Rule_Triggered_in_broker.png" target="_blank"&gt;
 &lt;img src="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Rule_Triggered_in_broker.png" alt="The rule engine has published a message to indicate that the equipment class rule has indeed been triggered."
 width="65%"
->
-&lt;/a>
-&lt;figcaption class="caption">
+&gt;
+&lt;/a&gt;
+&lt;figcaption class="caption"&gt;
 The rule engine has published a message to indicate that the equipment class rule has indeed been triggered.
-&lt;/figcaption>
-&lt;/figure>
-&lt;h3>Confirm in execution in Tempo&lt;span class="hx:absolute hx:-mt-20" id="confirm-in-execution-in-tempo">&lt;/span>
-&lt;a href="#confirm-in-execution-in-tempo" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>To confirm the intended BPMN was executed, navigate to Grafana (Tempo) and look for a trace containing the expected BPMN ID.&lt;/p>
-&lt;figure class="big-figure">
-&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Executed_BPMNs_in_Grafana.png" target="_blank">
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h3&gt;Confirm in execution in Tempo&lt;span class="hx:absolute hx:-mt-20" id="confirm-in-execution-in-tempo"&gt;&lt;/span&gt;
+&lt;a href="#confirm-in-execution-in-tempo" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To confirm the intended BPMN was executed, navigate to Grafana (Tempo) and look for a trace containing the expected BPMN ID.&lt;/p&gt;
+&lt;figure class="big-figure"&gt;
+&lt;a href="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Executed_BPMNs_in_Grafana.png" target="_blank"&gt;
 &lt;img src="https://docs.rhize.com/images/equipment-class-rules/screenshot-rhize-Executed_BPMNs_in_Grafana.png" alt="Grafana shows a recent trace with the id of the target BPMN."
 width="100%"
->
-&lt;/a>
-&lt;figcaption class="caption">
+&gt;
+&lt;/a&gt;
+&lt;figcaption class="caption"&gt;
 Grafana shows a recent trace with the id of the target BPMN.
-&lt;/figcaption>
-&lt;/figure>
-&lt;h2>Video example&lt;span class="hx:absolute hx:-mt-20" id="video-example">&lt;/span>
-&lt;a href="#video-example" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&amp;#x1f3a5; &lt;a href="https://www.youtube.com/watch?v=y5lr9JRmxDA" target="_blank" rel="noopener">Trigger BPMN&lt;/a>. This video provides an example of creating a rule based on values for an OPC UA server in a baking process.&lt;/li>
-&lt;/ul></description></item><item><title>Connect data source</title><link>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/connect-datasource/</link><pubDate>Fri, 22 Sep 2023 14:50:39 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/connect-datasource/</guid><description>
-&lt;p>For Rhize to listen to and handle manufacturing events,
-you need to connect a &lt;abbr title="A source of real-time data that is collected by the Rhize agent, such as an MQTT or OPC UA device">data source&lt;/abbr>.&lt;/p>
-&lt;h2>Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites">&lt;/span>
-&lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To add a data source, you need the following:&lt;/p>
-&lt;ul>
-&lt;li>Access to an MQTT or OPC UA server&lt;/li>
-&lt;li>Credentials for this server, if necessary&lt;/li>
-&lt;li>The URL and connection string for this server (Rhize will point to this)&lt;/li>
-&lt;/ul>
-&lt;h2>Steps to connect&lt;span class="hx:absolute hx:-mt-20" id="steps-to-connect">&lt;/span>
-&lt;a href="#steps-to-connect" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The process has two sides:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>Sending topics from your MQTT, OPCUA, or NATS server to Rhize.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>In Rhize, &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/create-objects-ui/" >defining the data source&lt;/a> and its associated objects.&lt;/p>
-&lt;p>To do this, you can create entities in the Rhize UI or through its &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/" >GraphQL API&lt;/a>.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3>Model the data source in the Rhize UI&lt;span class="hx:absolute hx:-mt-20" id="model-the-data-source-in-the-rhize-ui">&lt;/span>
-&lt;a href="#model-the-data-source-in-the-rhize-ui" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ol>
-&lt;li>Enter the Rhize UI and go to &lt;strong>Master Data &amp;gt; Data sources&lt;/strong>.&lt;/li>
-&lt;li>Add the connection string, topics, and other necessary parameters. For details of what these fields mean, review the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/master-definitions/#data-sources" >Data source object reference&lt;/a>.&lt;/li>
-&lt;li>&lt;strong>Create&lt;/strong> and then change version state to &lt;code>Active&lt;/code>.&lt;/li>
-&lt;/ol>
-&lt;p>Now add the data source to its equipment (or, if it doesn&amp;rsquo;t exist &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/master-definitions/#equipment" >model new equipment&lt;/a>):&lt;/p>
-&lt;ol>
-&lt;li>Select the equipment, then &lt;strong>Data sources&lt;/strong>.&lt;/li>
-&lt;li>If the equipment has properties bound to this data source, create the properties, then configure them as &lt;code>BOUND&lt;/code> to the data source.&lt;/li>
-&lt;/ol>
-&lt;p>Once active, Rhize reaches out to this data source and synchronizes the equipment properties to the bound topics.&lt;/p>
-&lt;h2>Next steps&lt;span class="hx:absolute hx:-mt-20" id="next-steps">&lt;/span>
-&lt;a href="#next-steps" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Now that you have the data source sending data you can:&lt;/p>
-&lt;ul>
-&lt;li>Write a rule to &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/create-equipment-class-rule/" >Turn data into events&lt;/a> that trigger workflows.&lt;/li>
-&lt;li>&lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/" >Create a BPMN workflow&lt;/a> to run on this trigger.
-You can also write a workflow that subscribes to data source directly through a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/bpmn-elements/#message" >message start event&lt;/a>.&lt;/li>
-&lt;/ul></description></item><item><title>Track changes (CDC)</title><link>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/track-changes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/track-changes/</guid><description>
-&lt;p>You can use &lt;em>change data capture&lt;/em> (CDC) to track data changes over time, including
-a &lt;abbr title="A GraphQL operation that modifies some data in the database, usually creating, updating, or deleting a resource">mutation&lt;/abbr> or drop in your database.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2&gt;Video example&lt;span class="hx:absolute hx:-mt-20" id="video-example"&gt;&lt;/span&gt;
+&lt;a href="#video-example" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&amp;#x1f3a5; &lt;a href="https://www.youtube.com/watch?v=y5lr9JRmxDA" target="_blank" rel="noopener"&gt;Trigger BPMN&lt;/a&gt;. This video provides an example of creating a rule based on values for an OPC UA server in a baking process.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Connect data source</title><link>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/connect-datasource/</link><pubDate>Fri, 22 Sep 2023 14:50:39 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/connect-datasource/</guid><description>
+&lt;p&gt;For Rhize to listen to and handle manufacturing events,
+you need to connect a &lt;abbr title="A source of real-time data that is collected by the Rhize agent, such as an MQTT or OPC UA device"&gt;data source&lt;/abbr&gt;.&lt;/p&gt;
+&lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
+&lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To add a data source, you need the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Access to an MQTT or OPC UA server&lt;/li&gt;
+&lt;li&gt;Credentials for this server, if necessary&lt;/li&gt;
+&lt;li&gt;The URL and connection string for this server (Rhize will point to this)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Steps to connect&lt;span class="hx:absolute hx:-mt-20" id="steps-to-connect"&gt;&lt;/span&gt;
+&lt;a href="#steps-to-connect" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The process has two sides:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Sending topics from your MQTT, OPCUA, or NATS server to Rhize.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In Rhize, &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/create-objects-ui/" &gt;defining the data source&lt;/a&gt; and its associated objects.&lt;/p&gt;
+&lt;p&gt;To do this, you can create entities in the Rhize UI or through its &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/" &gt;GraphQL API&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Model the data source in the Rhize UI&lt;span class="hx:absolute hx:-mt-20" id="model-the-data-source-in-the-rhize-ui"&gt;&lt;/span&gt;
+&lt;a href="#model-the-data-source-in-the-rhize-ui" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Enter the Rhize UI and go to &lt;strong&gt;Master Data &amp;gt; Data sources&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Add the connection string, topics, and other necessary parameters. For details of what these fields mean, review the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/master-definitions/#data-sources" &gt;Data source object reference&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; and then change version state to &lt;code&gt;Active&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now add the data source to its equipment (or, if it doesn&amp;rsquo;t exist &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/master-definitions/#equipment" &gt;model new equipment&lt;/a&gt;):&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Select the equipment, then &lt;strong&gt;Data sources&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;If the equipment has properties bound to this data source, create the properties, then configure them as &lt;code&gt;BOUND&lt;/code&gt; to the data source.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Once active, Rhize reaches out to this data source and synchronizes the equipment properties to the bound topics.&lt;/p&gt;
+&lt;h2&gt;Next steps&lt;span class="hx:absolute hx:-mt-20" id="next-steps"&gt;&lt;/span&gt;
+&lt;a href="#next-steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Now that you have the data source sending data you can:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Write a rule to &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/create-equipment-class-rule/" &gt;Turn data into events&lt;/a&gt; that trigger workflows.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/" &gt;Create a BPMN workflow&lt;/a&gt; to run on this trigger.
+You can also write a workflow that subscribes to data source directly through a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/bpmn-elements/#message" &gt;message start event&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Track changes (CDC)</title><link>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/track-changes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/track-changes/</guid><description>
+&lt;p&gt;You can use &lt;em&gt;change data capture&lt;/em&gt; (CDC) to track data changes over time, including
+a &lt;abbr title="A GraphQL operation that modifies some data in the database, usually creating, updating, or deleting a resource"&gt;mutation&lt;/abbr&gt; or drop in your database.
 Rhize&amp;rsquo;s CDC implementation can use
-Kafka, NATS, or a local file as a &lt;em>&lt;abbr title="The destination of a data flow.">sink&lt;/abbr>&lt;/em> to store CDC updates streamed by Rhize&amp;rsquo;s Alpha
-leader nodes.&lt;/p>
-&lt;p>When CDC is enabled, Rhize streams events for:&lt;/p>
-&lt;ul>
-&lt;li>All &lt;code>set&lt;/code> and &lt;code>delete&lt;/code> mutations, except those that affect password fields&lt;/li>
-&lt;li>Drop events.&lt;/li>
-&lt;/ul>
-&lt;p>Live Loader events are recorded by CDC, but Bulk Loader events aren&amp;rsquo;t.&lt;/p>
-&lt;p>CDC events are based on changes to Raft logs. So, if the sink is unreachable
+Kafka, NATS, or a local file as a &lt;em&gt;&lt;abbr title="The destination of a data flow."&gt;sink&lt;/abbr&gt;&lt;/em&gt; to store CDC updates streamed by Rhize&amp;rsquo;s Alpha
+leader nodes.&lt;/p&gt;
+&lt;p&gt;When CDC is enabled, Rhize streams events for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;All &lt;code&gt;set&lt;/code&gt; and &lt;code&gt;delete&lt;/code&gt; mutations, except those that affect password fields&lt;/li&gt;
+&lt;li&gt;Drop events.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Live Loader events are recorded by CDC, but Bulk Loader events aren&amp;rsquo;t.&lt;/p&gt;
+&lt;p&gt;CDC events are based on changes to Raft logs. So, if the sink is unreachable
 by the Alpha leader node, then Raft logs expand as events are collected on
-that node until the sink is available again.&lt;/p>
-&lt;p>You should enable CDC on all Rhize
-Alpha nodes to avoid interruptions in the stream of CDC events.&lt;/p>
-&lt;h2>Enable CDC with Kafka sink&lt;span class="hx:absolute hx:-mt-20" id="enable-cdc-with-kafka-sink">&lt;/span>
-&lt;a href="#enable-cdc-with-kafka-sink" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Kafka records CDC events under the &lt;code>libre-cdc&lt;/code> topic. The topic must be created before events
-are sent to the broker. To enable CDC and sink events to Kafka, start Dgraph Alpha with the &lt;code>--cdc&lt;/code>
-command and the sub-options shown below, as follows:&lt;/p>
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">dgraph alpha --cdc &lt;span class="s2">&amp;#34;kafka=kafka-hostname:port; sasl-user=tstark; sasl-password=m3Ta11ic&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+that node until the sink is available again.&lt;/p&gt;
+&lt;p&gt;You should enable CDC on all Rhize
+Alpha nodes to avoid interruptions in the stream of CDC events.&lt;/p&gt;
+&lt;h2&gt;Enable CDC with Kafka sink&lt;span class="hx:absolute hx:-mt-20" id="enable-cdc-with-kafka-sink"&gt;&lt;/span&gt;
+&lt;a href="#enable-cdc-with-kafka-sink" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Kafka records CDC events under the &lt;code&gt;libre-cdc&lt;/code&gt; topic. The topic must be created before events
+are sent to the broker. To enable CDC and sink events to Kafka, start Dgraph Alpha with the &lt;code&gt;--cdc&lt;/code&gt;
+command and the sub-options shown below, as follows:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;dgraph alpha --cdc &lt;span class="s2"&gt;&amp;#34;kafka=kafka-hostname:port; sasl-user=tstark; sasl-password=m3Ta11ic&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
 class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
->
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;p>If you use Kafka on the localhost without SASL authentication, you can just
-specify the hostname and port used by Kafka, as follows:&lt;/p>
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">dgraph alpha --cdc &lt;span class="s2">&amp;#34;localhost:9092&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;If you use Kafka on the localhost without SASL authentication, you can just
+specify the hostname and port used by Kafka, as follows:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;dgraph alpha --cdc &lt;span class="s2"&gt;&amp;#34;localhost:9092&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
 class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
->
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;p>If the Kafka cluster to which you are connecting requires TLS, the &lt;code>ca-cert&lt;/code> option is required.
-Note that this certificate can be self-signed.&lt;/p>
-&lt;h2>Enable CDC with file sink&lt;span class="hx:absolute hx:-mt-20" id="enable-cdc-with-file-sink">&lt;/span>
-&lt;a href="#enable-cdc-with-file-sink" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To enable CDC and sink results to a local unencrypted file, start Dgraph Alpha
-with the &lt;code>--cdc&lt;/code> command and the sub-option shown below, as follows:&lt;/p>
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">dgraph alpha --cdc &lt;span class="s2">&amp;#34;file=local-file-path&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;If the Kafka cluster to which you are connecting requires TLS, the &lt;code&gt;ca-cert&lt;/code&gt; option is required.
+Note that this certificate can be self-signed.&lt;/p&gt;
+&lt;h2&gt;Enable CDC with file sink&lt;span class="hx:absolute hx:-mt-20" id="enable-cdc-with-file-sink"&gt;&lt;/span&gt;
+&lt;a href="#enable-cdc-with-file-sink" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To enable CDC and sink results to a local unencrypted file, start Dgraph Alpha
+with the &lt;code&gt;--cdc&lt;/code&gt; command and the sub-option shown below, as follows:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;dgraph alpha --cdc &lt;span class="s2"&gt;&amp;#34;file=local-file-path&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
 class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
->
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;h2>Enable CDC with NATS JetStream KV store sink&lt;span class="hx:absolute hx:-mt-20" id="enable-cdc-with-nats-jetstream-kv-store-sink">&lt;/span>
-&lt;a href="#enable-cdc-with-nats-jetstream-kv-store-sink" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To enable CDC and sink results to a NATS JetStream KV store, start Dgraph Alpha
-with the &lt;code>--cdc&lt;/code> command and the sub-option shown below, as follows:&lt;/p>
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">dgraph alpha --cdc &lt;span class="s2">&amp;#34;nats=nats://system:system@localhost:4222&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Enable CDC with NATS JetStream KV store sink&lt;span class="hx:absolute hx:-mt-20" id="enable-cdc-with-nats-jetstream-kv-store-sink"&gt;&lt;/span&gt;
+&lt;a href="#enable-cdc-with-nats-jetstream-kv-store-sink" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To enable CDC and sink results to a NATS JetStream KV store, start Dgraph Alpha
+with the &lt;code&gt;--cdc&lt;/code&gt; command and the sub-option shown below, as follows:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;dgraph alpha --cdc &lt;span class="s2"&gt;&amp;#34;nats=nats://system:system@localhost:4222&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
 class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
->
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;h2>CDC command reference&lt;span class="hx:absolute hx:-mt-20" id="cdc-command-reference">&lt;/span>
-&lt;a href="#cdc-command-reference" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The &lt;code>--cdc&lt;/code> option includes several sub-options that you can use to configure
-CDC when running the &lt;code>dgraph alpha&lt;/code> command:&lt;/p>
-&lt;!-- vale off -->
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Sub-option&lt;/th>
-&lt;th>Example &lt;code>dgraph alpha&lt;/code> command option&lt;/th>
-&lt;th>Notes&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>ca-cert&lt;/code>&lt;/td>
-&lt;td>&lt;code>--cdc &amp;quot;ca-cert=/cert-dir/ca.crt&amp;quot;&lt;/code>&lt;/td>
-&lt;td>Path and filename of the CA root certificate used for TLS encryption, required if Kafka endpoint requires TLS&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>client-cert&lt;/code>&lt;/td>
-&lt;td>&lt;code>--cdc &amp;quot;client-cert=/c-certs/client.crt&amp;quot;&lt;/code>&lt;/td>
-&lt;td>Path and filename of the client certificate used for TLS encryption&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>client-key&lt;/code>&lt;/td>
-&lt;td>&lt;code>--cdc &amp;quot;client-cert=/c-certs/client.key&amp;quot;&lt;/code>&lt;/td>
-&lt;td>Path and filename of the client certificate private key&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>file&lt;/code>&lt;/td>
-&lt;td>&lt;code>--cdc &amp;quot;file=/sink-dir/cdc-file&amp;quot;&lt;/code>&lt;/td>
-&lt;td>Path and filename of a local file sink (alternative to Kafka sink)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>nats&lt;/code>&lt;/td>
-&lt;td>&lt;code>--cdc &amp;quot;nats=nats://user:password@localhost:4222&amp;quot;&lt;/code>&lt;/td>
-&lt;td>URL connection string to nats sink (alternative to Kafka sink)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>kafka&lt;/code>&lt;/td>
-&lt;td>&lt;code>--cdc &amp;quot;kafka=kafka-hostname; sasl-user=tstark; sasl-password=m3Ta11ic&amp;quot;&lt;/code>&lt;/td>
-&lt;td>Hostname(s) of the Kafka hosts. May require authentication using the &lt;code>sasl-user&lt;/code> and &lt;code>sasl-password&lt;/code> sub-options&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>sasl-user&lt;/code>&lt;/td>
-&lt;td>&lt;code>--cdc &amp;quot;kafka=kafka-hostname; sasl-user=tstark; sasl-password=m3Ta11ic&amp;quot;&lt;/code>&lt;/td>
-&lt;td>SASL username for Kafka. Requires the &lt;code>kafka&lt;/code> and &lt;code>sasl-password&lt;/code> sub-options&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>sasl-password&lt;/code>&lt;/td>
-&lt;td>&lt;code>--cdc &amp;quot;kafka=kafka-hostname; sasl-user=tstark; sasl-password=m3Ta11ic&amp;quot;&lt;/code>&lt;/td>
-&lt;td>SASL password for Kafka. Requires the &lt;code>kafka&lt;/code> and &lt;code>sasl-username&lt;/code> sub-options&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>sasl-mechanism&lt;/code>&lt;/td>
-&lt;td>&lt;code>--cdc &amp;quot;kafka=kafka-hostname; sasl-mechanism=PLAIN&amp;quot;&lt;/code>&lt;/td>
-&lt;td>The SASL mechanism for Kafka (PLAIN, SCRAM-SHA-256 or SCRAM-SHA-512). The default is PLAIN&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;!-- vale on -->
-&lt;h2>CDC data format&lt;span class="hx:absolute hx:-mt-20" id="cdc-data-format">&lt;/span>
-&lt;a href="#cdc-data-format" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>CDC events are in JSON format. Most CDC events look like the following example:&lt;/p>
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span> &lt;span class="nt">&amp;#34;key&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;0&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nt">&amp;#34;value&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="nt">&amp;#34;meta&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;commit_ts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="p">},&lt;/span>&lt;span class="nt">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;mutation&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;event&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;operation&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;set&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;uid&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;attr&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;counter.val&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;value&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;value_type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;int&amp;#34;&lt;/span>&lt;span class="p">}}}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;CDC command reference&lt;span class="hx:absolute hx:-mt-20" id="cdc-command-reference"&gt;&lt;/span&gt;
+&lt;a href="#cdc-command-reference" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;code&gt;--cdc&lt;/code&gt; option includes several sub-options that you can use to configure
+CDC when running the &lt;code&gt;dgraph alpha&lt;/code&gt; command:&lt;/p&gt;
+&lt;!-- vale off --&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Sub-option&lt;/th&gt;
+&lt;th&gt;Example &lt;code&gt;dgraph alpha&lt;/code&gt; command option&lt;/th&gt;
+&lt;th&gt;Notes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ca-cert&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;--cdc &amp;quot;ca-cert=/cert-dir/ca.crt&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Path and filename of the CA root certificate used for TLS encryption, required if Kafka endpoint requires TLS&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;client-cert&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;--cdc &amp;quot;client-cert=/c-certs/client.crt&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Path and filename of the client certificate used for TLS encryption&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;client-key&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;--cdc &amp;quot;client-cert=/c-certs/client.key&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Path and filename of the client certificate private key&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;file&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;--cdc &amp;quot;file=/sink-dir/cdc-file&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Path and filename of a local file sink (alternative to Kafka sink)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;nats&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;--cdc &amp;quot;nats=nats://user:password@localhost:4222&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;URL connection string to nats sink (alternative to Kafka sink)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;kafka&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;--cdc &amp;quot;kafka=kafka-hostname; sasl-user=tstark; sasl-password=m3Ta11ic&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Hostname(s) of the Kafka hosts. May require authentication using the &lt;code&gt;sasl-user&lt;/code&gt; and &lt;code&gt;sasl-password&lt;/code&gt; sub-options&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sasl-user&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;--cdc &amp;quot;kafka=kafka-hostname; sasl-user=tstark; sasl-password=m3Ta11ic&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;SASL username for Kafka. Requires the &lt;code&gt;kafka&lt;/code&gt; and &lt;code&gt;sasl-password&lt;/code&gt; sub-options&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sasl-password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;--cdc &amp;quot;kafka=kafka-hostname; sasl-user=tstark; sasl-password=m3Ta11ic&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;SASL password for Kafka. Requires the &lt;code&gt;kafka&lt;/code&gt; and &lt;code&gt;sasl-username&lt;/code&gt; sub-options&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sasl-mechanism&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;--cdc &amp;quot;kafka=kafka-hostname; sasl-mechanism=PLAIN&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The SASL mechanism for Kafka (PLAIN, SCRAM-SHA-256 or SCRAM-SHA-512). The default is PLAIN&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;!-- vale on --&gt;
+&lt;h2&gt;CDC data format&lt;span class="hx:absolute hx:-mt-20" id="cdc-data-format"&gt;&lt;/span&gt;
+&lt;a href="#cdc-data-format" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;CDC events are in JSON format. Most CDC events look like the following example:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nt"&gt;&amp;#34;key&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;0&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nt"&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;meta&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:{&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;commit_ts&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;mutation&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;event&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:{&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;operation&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;set&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;uid&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;attr&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;counter.val&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;value_type&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;int&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;}}}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
 class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
->
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;p>The &lt;code>Meta.Commit_Ts&lt;/code> value (shown above as &lt;code>&amp;quot;meta&amp;quot;:{&amp;quot;commit_ts&amp;quot;:5}&lt;/code>) will increase
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The &lt;code&gt;Meta.Commit_Ts&lt;/code&gt; value (shown above as &lt;code&gt;&amp;quot;meta&amp;quot;:{&amp;quot;commit_ts&amp;quot;:5}&lt;/code&gt;) will increase
 with each CDC event, so you can use this value to find duplicate events if those
-occur due to Raft leadership changes in your Dgraph Alpha group.&lt;/p>
-&lt;h3>Mutation event examples&lt;span class="hx:absolute hx:-mt-20" id="mutation-event-examples">&lt;/span>
-&lt;a href="#mutation-event-examples" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A set mutation event updating &lt;code>counter.val&lt;/code> to 10 would look like the following:&lt;/p>
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>&lt;span class="nt">&amp;#34;meta&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;commit_ts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">29&lt;/span>&lt;span class="p">},&lt;/span>&lt;span class="nt">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;mutation&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;event&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;operation&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;set&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;uid&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;attr&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;counter.val&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;value&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;value_type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;int&amp;#34;&lt;/span>&lt;span class="p">}}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+occur due to Raft leadership changes in your Dgraph Alpha group.&lt;/p&gt;
+&lt;h3&gt;Mutation event examples&lt;span class="hx:absolute hx:-mt-20" id="mutation-event-examples"&gt;&lt;/span&gt;
+&lt;a href="#mutation-event-examples" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A set mutation event updating &lt;code&gt;counter.val&lt;/code&gt; to 10 would look like the following:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;meta&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:{&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;commit_ts&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;29&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;mutation&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;event&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:{&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;operation&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;set&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;uid&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;attr&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;counter.val&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;value_type&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;int&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;}}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
 class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
->
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;p>Similarly, a delete mutation event that removes all values for the &lt;code>Author.name&lt;/code>
-field for a specified node would look like the following:&lt;/p>
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>&lt;span class="nt">&amp;#34;meta&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;commit_ts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">44&lt;/span>&lt;span class="p">},&lt;/span>&lt;span class="nt">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;mutation&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;event&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;operation&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;del&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;uid&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">7&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;attr&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;Author.name&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;value&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;_STAR_ALL&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;value_type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;default&amp;#34;&lt;/span>&lt;span class="p">}}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Similarly, a delete mutation event that removes all values for the &lt;code&gt;Author.name&lt;/code&gt;
+field for a specified node would look like the following:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;meta&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:{&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;commit_ts&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;44&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;mutation&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;event&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:{&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;operation&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;del&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;uid&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;attr&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;Author.name&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;_STAR_ALL&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;value_type&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;default&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;}}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
 class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
->
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;h3>Drop event examples&lt;span class="hx:absolute hx:-mt-20" id="drop-event-examples">&lt;/span>
-&lt;a href="#drop-event-examples" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>CDC drop events look like the following example event for &amp;ldquo;drop all&amp;rdquo;:&lt;/p>
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>&lt;span class="nt">&amp;#34;meta&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;commit_ts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">13&lt;/span>&lt;span class="p">},&lt;/span>&lt;span class="nt">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;drop&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;event&amp;#34;&lt;/span>&lt;span class="p">:{&lt;/span>&lt;span class="nt">&amp;#34;operation&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;all&amp;#34;&lt;/span>&lt;span class="p">}}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Drop event examples&lt;span class="hx:absolute hx:-mt-20" id="drop-event-examples"&gt;&lt;/span&gt;
+&lt;a href="#drop-event-examples" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;CDC drop events look like the following example event for &amp;ldquo;drop all&amp;rdquo;:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;meta&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:{&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;commit_ts&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;drop&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;event&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:{&lt;/span&gt;&lt;span class="nt"&gt;&amp;#34;operation&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;all&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;}}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
 class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
->
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;p>The &lt;code>operation&lt;/code> field specifies which drop operation (&lt;code>attribute&lt;/code>, &lt;code>type&lt;/code>,
-specified &lt;code>data&lt;/code>, or &lt;code>all&lt;/code> data) is tracked by the CDC event.&lt;/p>
-&lt;h2>Known limitations&lt;span class="hx:absolute hx:-mt-20" id="known-limitations">&lt;/span>
-&lt;a href="#known-limitations" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>CDC has the following known limitations:&lt;/p>
-&lt;ul>
-&lt;li>CDC events do not track old values that are updated or removed by mutation or
-drop operations; only new values are tracked&lt;/li>
-&lt;li>CDC does not currently track schema updates&lt;/li>
-&lt;li>You can only configure or enable CDC when starting Alpha nodes using the
-&lt;code>dgraph alpha&lt;/code> command&lt;/li>
-&lt;li>If a node crashes or the leadership of a Raft group changes, CDC might have
-duplicate events, but no data loss&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The &lt;code&gt;operation&lt;/code&gt; field specifies which drop operation (&lt;code&gt;attribute&lt;/code&gt;, &lt;code&gt;type&lt;/code&gt;,
+specified &lt;code&gt;data&lt;/code&gt;, or &lt;code&gt;all&lt;/code&gt; data) is tracked by the CDC event.&lt;/p&gt;
+&lt;h2&gt;Known limitations&lt;span class="hx:absolute hx:-mt-20" id="known-limitations"&gt;&lt;/span&gt;
+&lt;a href="#known-limitations" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;CDC has the following known limitations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CDC events do not track old values that are updated or removed by mutation or
+drop operations; only new values are tracked&lt;/li&gt;
+&lt;li&gt;CDC does not currently track schema updates&lt;/li&gt;
+&lt;li&gt;You can only configure or enable CDC when starting Alpha nodes using the
+&lt;code&gt;dgraph alpha&lt;/code&gt; command&lt;/li&gt;
+&lt;li&gt;If a node crashes or the leadership of a Raft group changes, CDC might have
+duplicate events, but no data loss&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

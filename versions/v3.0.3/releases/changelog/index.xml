@@ -1,782 +1,782 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Changelog</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/</link><description>Recent content in Changelog on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 25 Mar 2024 11:09:55 -0500</lastBuildDate><atom:link href="https://docs.rhize.com/versions/v3.0.3/releases/changelog/index.xml" rel="self" type="application/rss+xml"/><item><title>3.0.0 (general release)</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0/</guid><description>
-&lt;p>Changelog for version 3.0.0 of the Rhize application.&lt;/p>
-&lt;p>&lt;em>Release date:&lt;/em> 25th March, 2024&lt;/p>
-&lt;h2>Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes">&lt;/span>
-&lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h2>Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service">&lt;/span>
-&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Admin UI&lt;span class="hx:absolute hx:-mt-20" id="admin-ui">&lt;/span>
-&lt;a href="#admin-ui" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add &lt;code>includesPropertiesOf&lt;/code> input when creating a new version of OperationsEventClass&lt;/li>
-&lt;li>Add &lt;code>IncludesPropertiesOf&lt;/code> option to Equipment Class General tab&lt;/li>
-&lt;li>Add &lt;code>momentjs&lt;/code> for timezones as select in Equipment Version &lt;code>timezone&lt;/code> field&lt;/li>
-&lt;li>Add BPMN side panel for OPCUA Method Call&lt;/li>
-&lt;li>Add clear option to WorkMaster disable modal&lt;/li>
-&lt;li>Add edits for Static properties&lt;/li>
-&lt;li>Add enable and disable functionality to work calendar definition&lt;/li>
-&lt;li>Add EquipmentClass ISA-95 property type selection&lt;/li>
-&lt;li>Add EquipmentLevel to Equipment Class&lt;/li>
-&lt;li>Add inheritance of Operational Location Class properties into Operational Location&lt;/li>
-&lt;li>Add inherited properties from linked Operations Event Class to Operations Event Class properties page&lt;/li>
-&lt;li>Add manufacturer to Physical Asset Class general tab&lt;/li>
-&lt;li>Add new modal to BPMN&lt;/li>
-&lt;li>Add new Work Calendar Definition select on Equipment Version management&lt;/li>
-&lt;li>Add Operational Location and Spatial Definition to Equipment General tab&lt;/li>
-&lt;li>Add OperationsEventClass to OperationsEventDefinition&lt;/li>
-&lt;li>Add option to disable Operations Definition&lt;/li>
-&lt;li>Add option to disable previous work master version when create a new version&lt;/li>
-&lt;li>Add option to disable Work Calendar Definition Property&lt;/li>
-&lt;li>Add option to disable Work Calendar Entry&lt;/li>
-&lt;li>Add option to enable a disabled Process Segment&lt;/li>
-&lt;li>Add page to add manual Work Calendar Entries&lt;/li>
-&lt;li>Add pagination to Work Calendar Entries&lt;/li>
-&lt;li>Add properties to Work Calendar Definition&lt;/li>
-&lt;li>Add Published date and Hierarchy Scope to WorkMaster&lt;/li>
-&lt;li>Add relationship between Operations Event Definition and Work Master&lt;/li>
-&lt;li>Add scrollbar to Work Calendar Definition&lt;/li>
-&lt;li>Add Spatial Definition to Physical Location &amp;amp; Physical Asset&lt;/li>
-&lt;li>Add start weekday selection to Work Calendar Definition&lt;/li>
-&lt;li>Add static properties on Equipment Class&lt;/li>
-&lt;li>Add timezone on Work Calendar&lt;/li>
-&lt;li>Add timezone on Work Calendar Entry and Equipment&lt;/li>
-&lt;li>Add user store to UserManager and set automatic silent renew&lt;/li>
-&lt;li>Add Work Calendar Definition manage entries component&lt;/li>
-&lt;li>Add Work Calendar Definition management&lt;/li>
-&lt;li>Add Work Calendar Setup&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change ability to edit approved version of an Operations Event Class&lt;/li>
-&lt;li>Change ability to edit for review version of a Material Class&lt;/li>
-&lt;li>Change data source topic to prevent usage of &lt;code>.&lt;/code> in the name&lt;/li>
-&lt;li>Change input validation on Work Calendar Definitions to prevent use of dots &lt;code>.&lt;/code>&lt;/li>
-&lt;li>Change input validation on Work Calendars to prevent spaces&lt;/li>
-&lt;li>Change Material Definition Properties table sort order&lt;/li>
-&lt;li>Change the Work Calendar Definition Entry card design to use ne card props&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix &lt;code>Get Started&lt;/code> action trigger&lt;/li>
-&lt;li>Fix ability to create an Operational Location Class Version&lt;/li>
-&lt;li>Fix ability to create duplicate property labels for the same Physical Asset Class&lt;/li>
-&lt;li>Fix ability to edit an Active Process Segment&lt;/li>
-&lt;li>Fix ability to edit an Active Work Calendar&lt;/li>
-&lt;li>Fix ability to edit Operations Definition Segment Parameter&lt;/li>
-&lt;li>Fix ability to edit Person Versions when in Draft or For Review State&lt;/li>
-&lt;li>Fix adding new Material Definition Property&lt;/li>
-&lt;li>Fix adding Personnel Class property by adding safe operator to prevent table from breaking under certain pre-conditions&lt;/li>
-&lt;li>Fix allowing edit of an approved Physical Asset&lt;/li>
-&lt;li>Fix Audit Log date format&lt;/li>
-&lt;li>Fix auto-increment of Person Version, when creating a new one&lt;/li>
-&lt;li>Fix BPMN Viewer Get Instance invalid syntax error&lt;/li>
-&lt;li>Fix changing Process Segment version status from Draft to Active&lt;/li>
-&lt;li>Fix disable of Material Definition&lt;/li>
-&lt;li>Fix disabled nature of Hierarchy Scope when the selected Physical Asset Class version is in Draft or For Review&lt;/li>
-&lt;li>Fix disabled state of buttons when creating new Equipment&lt;/li>
-&lt;li>Fix display of BPMN instances that were created with the active version&lt;/li>
-&lt;li>Fix display of Equipment Property metadata&lt;/li>
-&lt;li>Fix display of inherited properties in Personnel Class&lt;/li>
-&lt;li>Fix display of linked Material Class properties&lt;/li>
-&lt;li>Fix display of more than 1000 Equipment Class in the left sidebar&lt;/li>
-&lt;li>Fix display of more than 1000 Equipment in the left sidebar&lt;/li>
-&lt;li>Fix display of more than 1000 Data Source in the left sidebar&lt;/li>
-&lt;li>Fix display of more than 1000 Hierarchy Scope in the left sidebar&lt;/li>
-&lt;li>Fix display of more than 1000 Material Class in the left sidebar&lt;/li>
-&lt;li>Fix display of more than 1000 Material Definitions in left sidebar&lt;/li>
-&lt;li>Fix display of more than 1000 Operational Definition in the left sidebar&lt;/li>
-&lt;li>Fix display of more than 1000 Operational Location Class in the left sidebar&lt;/li>
-&lt;li>Fix display of more than 1000 Operational Location in the left sidebar&lt;/li>
-&lt;li>Fix display of more than 1000 Person in the left sidebar&lt;/li>
-&lt;li>Fix display of more than 1000 Personnel Class in the left sidebar&lt;/li>
-&lt;li>Fix display of more than 1000 Work Calendar in the left sidebar&lt;/li>
-&lt;li>Fix display of Person Property metadata&lt;/li>
-&lt;li>Fix display of value field in linked properties from Resource Specifications&lt;/li>
-&lt;li>Fix duplicated column name on Operational Location Class Property and Property Type&lt;/li>
-&lt;li>Fix edit of linked property on resource specifications&lt;/li>
-&lt;li>Fix environmental variable styling and navigation&lt;/li>
-&lt;li>Fix Equipment Class version save-as with properties&lt;/li>
-&lt;li>Fix Equipment general tab input boxes to be disabled when ACTIVE or APPROVED&lt;/li>
-&lt;li>Fix Equipment Property error when Work Calendar Definition query failed&lt;/li>
-&lt;li>Fix error message when creating a Work Calendar Definition Entry with a duplicate ID&lt;/li>
-&lt;li>Fix error message when creating a Work Calendar Definition with a duplicate ID&lt;/li>
-&lt;li>Fix heading of Data Source modal when changing to For Review&lt;/li>
-&lt;li>Fix heading of disable modal for Material Class to remove version&lt;/li>
-&lt;li>Fix heading on BPMN Editor modal for marking current BPMN as Active&lt;/li>
-&lt;li>Fix heading on changing Data Source Version from Draft to Active&lt;/li>
-&lt;li>Fix hierarchy scope persisting after creating a new Work Calendar Definition&lt;/li>
-&lt;li>Fix hierarchy scope selection on Physical Asset general tab&lt;/li>
-&lt;li>Fix inconsistent display of inputs when editing draft Data Source&lt;/li>
-&lt;li>Fix instance list repeat queries using start/end times&lt;/li>
-&lt;li>Fix manual page refresh to display added Operations Definition&lt;/li>
-&lt;li>Fix Material Definition inherited properties filter on Draft versions&lt;/li>
-&lt;li>Fix Material Definition property enable/disable&lt;/li>
-&lt;li>Fix missing display of inherited properties in Person from Personnel Class&lt;/li>
-&lt;li>Fix mount localStorage data as moment object to prevent errors and add a mount the table on load the page&lt;/li>
-&lt;li>Fix silenced error message when using createSecret&lt;/li>
-&lt;li>Fix Process Segment Parameter search&lt;/li>
-&lt;li>Fix Operations Segment Parameter search&lt;/li>
-&lt;li>Fix query to support Custom Query without broke the entire response&lt;/li>
-&lt;li>Fix re-enable of disabled Work Calendar Definition Entry&lt;/li>
-&lt;li>Fix references to Physical Asset in Operations Event pages&lt;/li>
-&lt;li>Fix refresh of Equipment when adding using the &lt;code>+&lt;/code> symbol&lt;/li>
-&lt;li>Fix refresh when adding a new Operations Definition version&lt;/li>
-&lt;li>Fix required validation for Hierarchy Scope on Equipment Class Version&lt;/li>
-&lt;li>Fix required validation for Hierarchy Scope on Physical Asset Version&lt;/li>
-&lt;li>Fix search for Equipment Class Property by type and UoM&lt;/li>
-&lt;li>Fix See Active toggle functionality on Material Definition Properties&lt;/li>
-&lt;li>Fix sidebar order for Work Calendar Entries&lt;/li>
-&lt;li>Fix Work Calendar Definition enable and disable code review fixes&lt;/li>
-&lt;li>Fix Work Calendar Definition Properties search box placeholder text&lt;/li>
-&lt;li>Fix WorkMaster search&lt;/li>
-&lt;/ul>
-&lt;h3>Agent&lt;span class="hx:absolute hx:-mt-20" id="agent">&lt;/span>
-&lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>No changes since previous release.&lt;/p>
-&lt;h3>Audit&lt;span class="hx:absolute hx:-mt-20" id="audit">&lt;/span>
-&lt;a href="#audit" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add storage option for postgres&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix environmental variable conflict&lt;/li>
-&lt;/ul>
-&lt;h3>BAAS&lt;span class="hx:absolute hx:-mt-20" id="baas">&lt;/span>
-&lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>No changes since previous release.&lt;/p>
-&lt;h3>BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn">&lt;/span>
-&lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add viper configuration for http timeout values&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix one workflow deprecating when two subscribe to message start&lt;/li>
-&lt;li>Fix execution of nested call activity when depth greater than 2&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change JSONata-go library to v1.8.4 from v1.6.6&lt;/li>
-&lt;/ul>
-&lt;h3>Core&lt;span class="hx:absolute hx:-mt-20" id="core">&lt;/span>
-&lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add &lt;code>hierarchyScope&lt;/code> to &lt;code>CreateEquipmentClassVersionInput&lt;/code>&lt;/li>
-&lt;li>Add &lt;code>includesPropertiesOf&lt;/code> to &lt;code>CreateEquipmentClassVersionInput&lt;/code>&lt;/li>
-&lt;li>Add &lt;code>includesPropertiesOf&lt;/code> to &lt;code>CreateOperationsEventClassVersionInput&lt;/code>&lt;/li>
-&lt;li>Add &lt;code>inheritedProperties&lt;/code> to &lt;code>OperationalLocationClassVersion&lt;/code>&lt;/li>
-&lt;li>Add &lt;code>inheritedProperties&lt;/code> to &lt;code>OperationsEventClassVersion&lt;/code>&lt;/li>
-&lt;li>Add &lt;code>inheritedProperties&lt;/code> to &lt;code>PersonnelClassVersion&lt;/code>&lt;/li>
-&lt;li>Add &lt;code>samplingRate&lt;/code> configuration option to OpenTelemetry&lt;/li>
-&lt;li>Add data source methods when cloning a &lt;code>DataSourceVersion&lt;/code>&lt;/li>
-&lt;li>Add hostname to data source payload&lt;/li>
-&lt;li>Add service hostname to trace spans&lt;/li>
-&lt;li>Add specific error message for binding path that evaluates to an empty string&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change core&amp;rsquo;s GraphQL schema to extend &lt;code>MOMFunctionEnum&lt;/code>, &lt;code>OperationsEventLevelEnum&lt;/code> and &lt;code>OperationsEventTypeEnum&lt;/code>&lt;/li>
-&lt;li>Change domain logger to respect &lt;code>logging.level&lt;/code> configuration option&lt;/li>
-&lt;li>Change GraphQL query to include option to retrieve disabled properties and include by default&lt;/li>
-&lt;li>Change schema to use &lt;code>v3.0.0x&lt;/code>&lt;/li>
-&lt;li>Change to use a version&amp;rsquo;s &lt;code>iid&lt;/code> when getting operational location class inherited properties&lt;/li>
-&lt;li>Change to use a version&amp;rsquo;s &lt;code>iid&lt;/code> when getting personnel class inherited properties&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix &lt;code>operationsEventClasses&lt;/code> to &lt;code>CreateOperationsEventDefinitionVersionInput&lt;/code>&lt;/li>
-&lt;li>Fix rule trigger evaluating on stale data&lt;/li>
-&lt;/ul>
-&lt;h3>Schema&lt;span class="hx:absolute hx:-mt-20" id="schema">&lt;/span>
-&lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add &lt;code>@id&lt;/code> to &lt;code>WorkCalendarDefinitionEntry&lt;/code>&lt;/li>
-&lt;li>Add &lt;code>@search&lt;/code> to &lt;code>requestState&lt;/code> on &lt;code>OperationsRequest&lt;/code>&lt;/li>
-&lt;li>Add &lt;code>@search&lt;/code> to &lt;code>segmentState&lt;/code> on &lt;code>SegmentRequirement&lt;/code>&lt;/li>
-&lt;li>Add &lt;code>comments&lt;/code> to &lt;code>MaterialLot&lt;/code> and &lt;code>MaterialSublot&lt;/code>&lt;/li>
-&lt;li>Add &lt;code>comments&lt;/code> to &lt;code>SegmentRequirement&lt;/code>&lt;/li>
-&lt;li>Add &lt;code>effectiveStart&lt;/code> and &lt;code>effectiveEnd&lt;/code> to &lt;code>WorkCalendarDefinition&lt;/code>&lt;/li>
-&lt;li>Add &lt;code>effectiveStart&lt;/code> and &lt;code>effectiveEnd&lt;/code> to &lt;code>WorkCalendarDefinitionEntry&lt;/code>&lt;/li>
-&lt;li>Add inverse relationships for &lt;code>HiearchyScope&lt;/code>&lt;/li>
-&lt;li>Add inverse relationships for &lt;code>OperationalLocation&lt;/code>&lt;/li>
-&lt;li>Add relationship between &lt;code>MaterialSublot&lt;/code> and &lt;code>MaterialDefinition&lt;/code>&lt;/li>
-&lt;li>Add resource actual links to &lt;code>InformationObject&lt;/code>&lt;/li>
-&lt;li>Add Work Calendar Information models&lt;/li>
-&lt;li>Add Work Calendar Information models to &lt;code>permissions.json&lt;/code>&lt;/li>
-&lt;li>Add fields &lt;code>@cascade&lt;/code> directive to subgraph&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Changes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change &lt;code>OperationsRequest&lt;/code> relationship to &lt;code>OperationsSchedule&lt;/code> to optional&lt;/li>
-&lt;li>Change &lt;code>startRule&lt;/code> to required on &lt;code>WorkCalendarDefinitionEntry&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h2>Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade">&lt;/span>
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to v3.0.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" >Upgrade instructions&lt;/a>.&lt;/p></description></item><item><title>3.0.0rc09</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc09/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc09/</guid><description>
-&lt;p>Changelog for version 3.0.0rc9 of the Rhize application.&lt;/p>
-&lt;p>&lt;em>Release date:&lt;/em> 27th February, 2024&lt;/p>
-&lt;h2>Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes">&lt;/span>
-&lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h2>Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service">&lt;/span>
-&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Admin UI&lt;span class="hx:absolute hx:-mt-20" id="admin-ui">&lt;/span>
-&lt;a href="#admin-ui" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>No changes since previous release.&lt;/p>
-&lt;h3>Agent&lt;span class="hx:absolute hx:-mt-20" id="agent">&lt;/span>
-&lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add check to validate OPC UA topics against server metadata&lt;/li>
-&lt;li>Add hostname in message payload&lt;/li>
-&lt;li>Add logic for MQTT connections to resubscribe on disconnect&lt;/li>
-&lt;li>Add option to deconstruct complex JSON payloads to simple types&lt;/li>
-&lt;/ul>
-&lt;h3>Audit&lt;span class="hx:absolute hx:-mt-20" id="audit">&lt;/span>
-&lt;a href="#audit" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add previous audit value relative to current&lt;/li>
-&lt;/ul>
-&lt;h3>BAAS&lt;span class="hx:absolute hx:-mt-20" id="baas">&lt;/span>
-&lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Changes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change server aborts due to a conflict to report the error and block transaction that was aborted&lt;/li>
-&lt;/ul>
-&lt;h3>BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn">&lt;/span>
-&lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add a trigger for a NATS message on end of a Work Calendar Entry&lt;/li>
-&lt;li>Add BPMN Run Instance flag to log variables on every task&lt;/li>
-&lt;li>Add check for 0 duration when calculating next entry&lt;/li>
-&lt;li>Add domain entities for tempo/loki queries and generalize them&lt;/li>
-&lt;li>Add go profile guided optimisation&lt;/li>
-&lt;li>Add improved error logging to view instance&lt;/li>
-&lt;li>Add named constants for constant strings&lt;/li>
-&lt;li>Add test case for call activities in high availability&lt;/li>
-&lt;li>Add timeouts to &lt;code>http.Server&lt;/code>&lt;/li>
-&lt;li>Add type type assertion checks&lt;/li>
-&lt;li>Add warn when not enough data is returned to process nodes to spans&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change application to refresh token before fetching work calendar&lt;/li>
-&lt;li>Change BPMN Datasource Method Call Method arguments to allow map[string]any, map[int]any, or string&lt;/li>
-&lt;li>Change BPMN engine execution to use JetStream errors for parallel gateway check&lt;/li>
-&lt;li>Change BPMN engine to expand variables and secrets before sanitizing NATS subject&lt;/li>
-&lt;li>Change BPMN Instances to use a unique consumer name&lt;/li>
-&lt;li>Change BPMN to error if Router unavailable on startup&lt;/li>
-&lt;li>Change CSM to include child job to avoid relying on NATS to synchronize&lt;/li>
-&lt;li>Change NATS KV Get timeout to 34 attempts from 7&lt;/li>
-&lt;li>Change stream expiry to 10 minutes for CommanStreamReplicas&lt;/li>
-&lt;li>Change stringified ints into non-stringy types (e.g. durations as time.Duration)&lt;/li>
-&lt;li>Change tempo/loki facing code into separate driver&lt;/li>
-&lt;li>Change timers to start calculating from the closest year&lt;/li>
-&lt;li>Change to only log task variables on Complete or Error&lt;/li>
-&lt;li>Change VersionState to use GraphQL Enums&lt;/li>
-&lt;li>Change View Instance to pull the latest version when unspecified&lt;/li>
-&lt;li>Change Work Calendar invocations to use natsClient.Publish instead of natsClient.StreamPublishMsg&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix issue where timers are being called inconsistently&lt;/li>
-&lt;li>Fix test cases for view instance&lt;/li>
-&lt;li>Fix unstable high-availability test&lt;/li>
-&lt;li>Fix variable and secret expansion permissions by including OIDC context&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Remove&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Remove additional calls to NATS to avoid retrieval issues due to eventual consistency&lt;/li>
-&lt;li>Remove overuse of of arbitrary pointers to strings&lt;/li>
-&lt;li>Remove superfluous marshals/unmarshals of Job Responses during execution&lt;/li>
-&lt;li>Remove superfluous parsing from string -&amp;gt; time.Time only to run time.Format() in UnixToRFC3339&lt;/li>
-&lt;li>Remove vestigial config argument for &lt;code>CommandConsumer&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h3>Core&lt;span class="hx:absolute hx:-mt-20" id="core">&lt;/span>
-&lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>No changes since previous release.&lt;/p>
-&lt;h3>Schema&lt;span class="hx:absolute hx:-mt-20" id="schema">&lt;/span>
-&lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>No changes since previous release.&lt;/p>
-&lt;h2>Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade">&lt;/span>
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to v3.0.0rc09, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" >Upgrade instructions&lt;/a>.&lt;/p></description></item><item><title>3.0.0rc08</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc08/</link><pubDate>Tue, 19 Dec 2023 13:01:02 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc08/</guid><description>
-&lt;p>Changelog for version 3.0.0rc08 of the Rhize application.&lt;/p>
-&lt;p>&lt;em>Release date:&lt;/em> 19th December, 2023&lt;/p>
-&lt;h2>Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes">&lt;/span>
-&lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>[ADMINUI] Change UI navigation bar design&lt;/li>
-&lt;li>[SCHEMA] Change &lt;code>OperationsEventClass.IncludedIn&lt;/code> to reference an &lt;code>OperationsEventClassVersion&lt;/code> instead of &lt;code>OperationsEventClass&lt;/code>&lt;/li>
-&lt;li>[SCHEMA] Change &lt;code>OperationsEventClass.IncludesPropertiesOf&lt;/code> to move to the version instance, &lt;code>OperationsEventClassVersion.IncludesPropertiesOf&lt;/code>, instead of header&lt;/li>
-&lt;li>[SCHEMA] Change &lt;code>OperationsEventDefinition.IncludedIn&lt;/code> to reference an &lt;code>OperationsEventDefinitionVersion&lt;/code> instead of &lt;code>OperationsEventDefinition&lt;/code>&lt;/li>
-&lt;li>[SCHEMA] Change &lt;code>OperationsEventDefinition.IncludesPropertiesOf&lt;/code> to move to the version instance, &lt;code>OperationsEventDefinitionVersion.IncludesPropertiesOf&lt;/code>, instead of header&lt;/li>
-&lt;li>[SCHEMA] Change &lt;code>FromResourceReference&lt;/code> and &lt;code>ToResourceReference&lt;/code> to combine them into a single &lt;code>resourceReference&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h2>Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service">&lt;/span>
-&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Admin UI&lt;span class="hx:absolute hx:-mt-20" id="admin-ui">&lt;/span>
-&lt;a href="#admin-ui" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add Audit Trail View in UI&lt;/li>
-&lt;li>Add BPMN Instance Viewer&lt;/li>
-&lt;li>Add Operations Definition Segment Specifications&lt;/li>
-&lt;li>Add Operations Event Class Page&lt;/li>
-&lt;li>Add Operations Event Definition Page&lt;/li>
-&lt;li>Add option to change Personnel Class version status from &lt;code>DRAFT&lt;/code> to &lt;code>ACTIVE&lt;/code>&lt;/li>
-&lt;li>Add property metadata to Material Definition Properties page&lt;/li>
-&lt;li>Add the table for parameters and physical assets&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change Audit Log to GraphQL Playground&lt;/li>
-&lt;li>Change Picker implementation&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>Fix person with two &lt;code>ACTIVE&lt;/code> versions&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Fix parameter tab&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Fix selection of &lt;code>WorkMaster&lt;/code> parameter selection&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Remove&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Remove ability to edit active version Data Source general properties&lt;/li>
-&lt;/ul>
-&lt;h3>Agent&lt;span class="hx:absolute hx:-mt-20" id="agent">&lt;/span>
-&lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add check to avoid continuous resubscription to bad OPCUA topics&lt;/li>
-&lt;li>Add interactive OPC UA server for end-to-end testing&lt;/li>
-&lt;li>Add support for Azure Service Bus&lt;/li>
-&lt;li>Add support for MQTT&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change OPC-UA subscription item reference strategy to use ClientHandles, MonitoredItems, and Node Ids in order&lt;/li>
-&lt;li>Change agent to buffer protocol messages to disk if NATS is offline to avoid message loss&lt;/li>
-&lt;li>Change data source interfaces into smaller pieces for readability and cognitive complexity&lt;/li>
-&lt;li>Change from &lt;code>scratch&lt;/code> to &lt;code>alpine&lt;/code> base image&lt;/li>
-&lt;li>Change monitored Items with bad status behavior to moved to a new subscription after a configurable timeout to encourage the OPC UA server to start providing value changes again&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix issue with &lt;code>gopcua&lt;/code> client that resulted in OPC UA Session not being recreated after a loss of Secure Channel on reconnect&lt;/li>
-&lt;/ul>
-&lt;h3>Audit&lt;span class="hx:absolute hx:-mt-20" id="audit">&lt;/span>
-&lt;a href="#audit" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add GraphQL Subgraph to query audit log and query audit log tags&lt;/li>
-&lt;li>Add Influx setup if buckets not available&lt;/li>
-&lt;li>Add InfluxDB as data sink&lt;/li>
-&lt;li>Add configuration option scanning via configuration file, environment, and command line arguments&lt;/li>
-&lt;li>Add restart of consumer on NATS reconnect&lt;/li>
-&lt;li>Add subscription of audit events&lt;/li>
-&lt;li>Add write to data sink&lt;/li>
-&lt;/ul>
-&lt;h3>BAAS&lt;span class="hx:absolute hx:-mt-20" id="baas">&lt;/span>
-&lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add &lt;code>_modifiedBy&lt;/code> user to Audit Event&lt;/li>
-&lt;li>Add check for required OIDC Roles&lt;/li>
-&lt;li>Add warning for missing &lt;code>ScopeMap&lt;/code> parameter when using OIDC Bypass&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix dgraph hanging on shutdown request&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Remove&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Remove wait groups for Enterprise Dgraph ACL functionality&lt;/li>
-&lt;li>Remove license scanning CI/CD job&lt;/li>
-&lt;/ul>
-&lt;h3>BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn">&lt;/span>
-&lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Add&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add Async Publish Error logging to NATS KVs&lt;/li>
-&lt;li>Add environmental variable expansion to json-schema service task&lt;/li>
-&lt;li>Add graceful shutdown to command consumer port&lt;/li>
-&lt;li>Add log message and time delay to &lt;code>CallActivity&lt;/code> watcher&lt;/li>
-&lt;li>Add multi-file JSON schema validation&lt;/li>
-&lt;li>Add profile labels to go-routine launches&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change &lt;code>CallActivity&lt;/code> to event driven as opposed to a blocking go-routine to wait for complete of a sync call&lt;/li>
-&lt;li>Change &lt;code>InProgess&lt;/code> message to &lt;code>20s&lt;/code> on &lt;code>CommandConsumer&lt;/code> from &lt;code>29s&lt;/code>&lt;/li>
-&lt;li>Change &lt;code>libreBpmn.command.&lt;/code> strings to use domain constant&lt;/li>
-&lt;li>Change debug level log messages for timer checks and active workflows to trace level&lt;/li>
-&lt;li>Change log level of gateways without inputs to trace level from error&lt;/li>
-&lt;li>Change to git commits to use LN on *.go files&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix BPMN long save times by only updating the touched Workflow Specification&lt;/li>
-&lt;li>Fix NATS reconnect re-subscribing to startOnNATS Topics&lt;/li>
-&lt;li>Fix docker permissions in end-to-end CI/CD test case&lt;/li>
-&lt;li>Fix memory leak in OIDC context value recursively growing&lt;/li>
-&lt;li>Fix panic on nil &lt;code>workflowspec&lt;/code> in &lt;code>HandleTaskComplete&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h3>Core&lt;span class="hx:absolute hx:-mt-20" id="core">&lt;/span>
-&lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add &lt;code>hierarchyScope&lt;/code>, &lt;code>materialAlternate&lt;/code>, &lt;code>spatialDefinition&lt;/code> and &lt;code>unitOfMeasure&lt;/code> as information objects to &lt;code>GetOperationsEvent&lt;/code> &lt;code>operationsEventRecords&lt;/code>&lt;/li>
-&lt;li>Add agent MQTT message handling&lt;/li>
-&lt;li>Add binding path test cases&lt;/li>
-&lt;li>Add check for empty migration records&lt;/li>
-&lt;li>Add check for migration dependencies on Operations Event Record Entry&lt;/li>
-&lt;li>Add debug logging to &lt;code>updateOperationsEventRecordEntry&lt;/code>&lt;/li>
-&lt;li>Add entity path to migration dependency checks&lt;/li>
-&lt;li>Add initialization for Azure stream&lt;/li>
-&lt;li>Add label to &lt;code>OperationsEventClassProperty&lt;/code>, &lt;code>OperationsEventDefinitionProperty&lt;/code>, &lt;code>OperationsEventProperty&lt;/code>&lt;/li>
-&lt;li>Add operations event definition versioning mutations&lt;/li>
-&lt;li>Add option for Azure data source type&lt;/li>
-&lt;li>Add option to activate newly created version if requested&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change Equipment Class rule triggered event to immediately publish to NATS and then be picked up by Core instead of waiting an triggering to prevent libre-core shutdowns missing the event fire&lt;/li>
-&lt;li>Change Operations Event Record Entry migration to remove existing children before checking for migration dependencies&lt;/li>
-&lt;li>Change &lt;code>IncludesPropertiesOf&lt;/code> to be on the version not the header of &lt;code>OperationsEventDefinition&lt;/code> &amp;amp; &lt;code>OperationsEventClass&lt;/code>&lt;/li>
-&lt;li>Change async &lt;code>SaveVersionAs&lt;/code> because other cases have been tested in sync tests&lt;/li>
-&lt;li>Change consumer creation to delete/add consumer if it fails to update consumer&lt;/li>
-&lt;li>Change database ping to allow &lt;code>no access token provided&lt;/code> and &lt;code>context cancelled&lt;/code> when pinging database&lt;/li>
-&lt;li>Change default logger to use &lt;code>hostname&lt;/code> instead of PID&lt;/li>
-&lt;li>Change logging messages to reflect data source type&lt;/li>
-&lt;li>Change migrations to remove existing children before checking for migration dependencies&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Remove&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Remove obsolete comments&lt;/li>
-&lt;/ul>
-&lt;h3>Schema&lt;span class="hx:absolute hx:-mt-20" id="schema">&lt;/span>
-&lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add @id for OperationsEventDefinitionProperty&lt;/li>
-&lt;li>Add &lt;code>JobOrder&lt;/code> parent/children relationship&lt;/li>
-&lt;li>Add &lt;code>stateTransitionInstance.previous&lt;/code>, &lt;code>.next&lt;/code>, and &lt;code>.comments&lt;/code>&lt;/li>
-&lt;li>Add automatic scopemap update step&lt;/li>
-&lt;li>Add azure for datasource protocol&lt;/li>
-&lt;li>Add comments to &lt;code>operationsSegment&lt;/code>&lt;/li>
-&lt;li>Add event subtype to event&lt;/li>
-&lt;li>Add label to &lt;code>OperationsEventClassProperty&lt;/code>&lt;/li>
-&lt;li>Add label to &lt;code>OperationsEventDefinitionProperty&lt;/code>&lt;/li>
-&lt;li>Add label to &lt;code>OperationsEventProperty&lt;/code>&lt;/li>
-&lt;li>Add permission holder for Audit&lt;/li>
-&lt;li>Add reason and status to operations event&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Changes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change mermaid diagrams to include recent changes&lt;/li>
-&lt;/ul>
-&lt;h2>Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade">&lt;/span>
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to v3.0.0rc08, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" >Upgrade instructions&lt;/a>.&lt;/p></description></item><item><title>3.0.0rc07</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc07/</link><pubDate>Wed, 15 Nov 2023 09:32:12 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc07/</guid><description>
-&lt;p>Changelog for version 3.0.0rc07 of the Rhize application.&lt;/p>
-&lt;p>&lt;em>Release date:&lt;/em> 15th November, 2023&lt;/p>
-&lt;h2>Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes">&lt;/span>
-&lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>[SCHEMA] Change types &lt;code>OperationalLocationClass&lt;/code>, &lt;code>OperationalLocationClassVersion&lt;/code>, &lt;code>OperationalLocationClassProperty&lt;/code>, &lt;code>OperationalLocation&lt;/code>, &lt;code>OperationalLocationVersion&lt;/code> and &lt;code>OperationalLocationProperty&lt;/code> to have: &lt;code>isPartOf (0..1)&lt;/code>, &lt;code>isMadeUpOf (0..*)&lt;/code>&lt;/li>
-&lt;li>[BPMN] Change CommandConsumer and Timers to use new JetStream library and durable consumers. This requires you to drop and re-create streams &lt;code>KV_JobResponses&lt;/code>, &lt;code>KV_WorkflowSpecifications&lt;/code>, &lt;code>libreBpmn_Command&lt;/code> and &lt;code>libreTimerStart&lt;/code>.&lt;/li>
-&lt;/ul>
-&lt;h2>Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service">&lt;/span>
-&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h2>Admin UI&lt;span class="hx:absolute hx:-mt-20" id="admin-ui">&lt;/span>
-&lt;a href="#admin-ui" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add ability to create Process Segment Version&lt;/li>
-&lt;li>Add ability to edit linked process segment resource specification property&lt;/li>
-&lt;li>Add ability to link a Hierarchy Scope to a Operational Location Class version&lt;/li>
-&lt;li>Add check for renaming a linked property with an existing property name&lt;/li>
-&lt;li>Add Homepage screen&lt;/li>
-&lt;li>Add optional link from Operational Location Class to a Operational Location Class version&lt;/li>
-&lt;li>Add Physical Asset Properties&lt;/li>
-&lt;li>Add Physical Asset Resource Specifications&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change available BPMN UI palette options to supported objects only&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix incorrect version indicators in Data Source sidebar&lt;/li>
-&lt;li>Fix Process Segment Version Bug&lt;/li>
-&lt;li>Fix sidebar typo in Work Masters&lt;/li>
-&lt;li>Fix template service task hiding multi-instance properties&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Remove&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Remove the unused or unsupported BPMN elements from the BPMN UI&lt;/li>
-&lt;/ul>
-&lt;h3>Agent&lt;span class="hx:absolute hx:-mt-20" id="agent">&lt;/span>
-&lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add hostname as service instance to otel span&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix invalid errors reported to OTEL&lt;/li>
-&lt;/ul>
-&lt;h3>BAAS&lt;span class="hx:absolute hx:-mt-20" id="baas">&lt;/span>
-&lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Changes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change CDC to use a JetStream from KV Store&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fixes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix getting user from authorization token for setting &lt;code>_modifiedBy&lt;/code> and &lt;code>_createdBy&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h3>BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn">&lt;/span>
-&lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add a flag to bypass any OIDC requirements so that we can run BPMN without security enabled&lt;/li>
-&lt;li>Add fallback to BAAS when NATS fails in &lt;code>HandleTaskComplete&lt;/code>&lt;/li>
-&lt;li>Add input validation on process id to check for dots in the name&lt;/li>
-&lt;li>Add option for custom BPMN complete variable context&lt;/li>
-&lt;li>Add OS hostname to service instance in otel spans&lt;/li>
-&lt;li>Add port for adapter debugger so that adapter runtime configuration and information can be queried&lt;/li>
-&lt;li>Add process ID to log when starting a new instance&lt;/li>
-&lt;li>Add retry backoff to NATS KV Get&lt;/li>
-&lt;li>Add string trim logic to all inputs/outputs on BPMN upload&lt;/li>
-&lt;li>Add test case for High Availability&lt;/li>
-&lt;li>Add token argument to &lt;code>bpmnctl&lt;/code> to allow users to pass a token directly&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change BPMN to NAK messages for unknown timers/streams to avoid dropping messages on startup&lt;/li>
-&lt;li>Change CI/CD to use a minimal docker compose &lt;code>docker-compose.ci.yml&lt;/code> from app-config-local&lt;/li>
-&lt;li>Change logging message type based on error type when CreateAndRunInstance is called&lt;/li>
-&lt;li>Change NATS client library to v1.31.0 from v1.30.2&lt;/li>
-&lt;li>Change NATS KV watchers to immediately defer stop to ensure lifecycle handling&lt;/li>
-&lt;li>Change Parallel gateway join to use a GetOnce KV Get&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix goroutine leak on ack pending&lt;/li>
-&lt;/ul>
-&lt;h3>Core&lt;span class="hx:absolute hx:-mt-20" id="core">&lt;/span>
-&lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add dependency check to operations definition &amp;amp; work master&lt;/li>
-&lt;li>Add docker login for CI/CD&lt;/li>
-&lt;li>Add Equipment KV sync on startup&lt;/li>
-&lt;li>Add OIDC bypass functionality when running in test pipelines&lt;/li>
-&lt;li>Add &lt;code>OperationsEventClass&lt;/code> Version Handlers&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change CI/CD to use docker-compose.ci from &lt;code>app-config-local&lt;/code>&lt;/li>
-&lt;li>Change to Libre Schema &lt;code>v3.0.0rc7&lt;/code>&lt;/li>
-&lt;li>Change subscriptions and watchers to wait until ready before starting synchronization&lt;/li>
-&lt;li>Change to use libre-schema as a golang module instead of copying&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Remove&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Remove IntelliJ IDE workspace directory and files &lt;code>./.idea/*&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h3>Schema&lt;span class="hx:absolute hx:-mt-20" id="schema">&lt;/span>
-&lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add Comments to &lt;code>OperationsEvent&lt;/code>&lt;/li>
-&lt;li>Add example &lt;code>docker-compose.yaml&lt;/code> usage&lt;/li>
-&lt;li>Add missing types for &lt;code>_createdBy&lt;/code> and &lt;code>_modifiedBy&lt;/code>&lt;/li>
-&lt;li>Add Relationships to Class and Definition Versions&lt;/li>
-&lt;li>Add Resource Relationship Network Model&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Change&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change dockerfile to use baas v3.0.0rc7&lt;/li>
-&lt;li>Change library &lt;a href="https://golang.org/x/crypto" target="_blank" rel="noopener">&lt;code>golang.org/x/crypto&lt;/code>&lt;/a> to v0.15.0 from v0.14.0&lt;/li>
-&lt;li>Change library &lt;a href="https://golang.org/x/net" target="_blank" rel="noopener">&lt;code>golang.org/x/net&lt;/code>&lt;/a> v0.18.0 from v0.16.0&lt;/li>
-&lt;li>Change library &lt;a href="https://golang.org/x/sync" target="_blank" rel="noopener">&lt;code>golang.org/x/sync&lt;/code>&lt;/a> v0.5.0 from v0.4.0&lt;/li>
-&lt;li>Change library &lt;a href="https://golang.org/x/tools" target="_blank" rel="noopener">&lt;code>golang.org/x/tools&lt;/code>&lt;/a> v0.15.0 from v0.14.0&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fix&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix missing defaults on &lt;code>_createdBy&lt;/code> and &lt;code>_modifiedBy&lt;/code>&lt;/li>
-&lt;li>Fix test for Signature relationship to &lt;code>recordEntries&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h2>Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade">&lt;/span>
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to v3.0.0rc07, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" >Upgrade instructions&lt;/a>.&lt;/p></description></item><item><title>3.0.0rc06</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc06/</link><pubDate>Tue, 31 Oct 2023 21:07:43 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc06/</guid><description>
-&lt;p>Changelog for version 3.0.0rc06 of the Rhize application.&lt;/p>
-&lt;p>&lt;em>Release date:&lt;/em> October 31, 2023&lt;/p>
-&lt;h2>Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes">&lt;/span>
-&lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>NATS streams &lt;code>libreBpmn_command&lt;/code> and &lt;code>LibreTimerStart&lt;/code> must be deleted prior to starting&lt;/li>
-&lt;/ul>
-&lt;h2>Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service">&lt;/span>
-&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Core&lt;span class="hx:absolute hx:-mt-20" id="core">&lt;/span>
-&lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add mutation for dependency check for &lt;code>DataSource&lt;/code>, Equipment, &lt;code>EquipmentClass&lt;/code>, &lt;code>OperationalLocation&lt;/code>, and &lt;code>OperationalLocationClass&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Changes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change to go-module for schema&lt;/li>
-&lt;li>Change struct literal unkeyed fields to keyed&lt;/li>
-&lt;/ul>
-&lt;h3>BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn">&lt;/span>
-&lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Breaking Changes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>NATS streams &lt;code>libreBpmn_command&lt;/code> and &lt;code>LibreTimerStart&lt;/code> must be deleted prior to starting&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add incoming &lt;code>libreBPMN_command&lt;/code> data to traces for debugging on trace level logging&lt;/li>
-&lt;li>Add notification to NATS of command progress&lt;/li>
-&lt;li>Add JSONata processing of output-element in multi-instance execution&lt;/li>
-&lt;li>Add JSONata processing of intermediate timer catch duration&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Changes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change DQL mutation node to use &lt;code>application/rdf&lt;/code>&lt;/li>
-&lt;li>Change the BPMN process ID to match the trace ID&lt;/li>
-&lt;li>Change to zero-based loop counter for multi-instance execution&lt;/li>
-&lt;li>Change multi-instance nodes error early on sequential parallel execution (not implemented)&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Remove&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Remove legacy domain code&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fixes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix multi-instance requiring sequential for parallel execution&lt;/li>
-&lt;li>Fix govulncheck identified issues&lt;/li>
-&lt;/ul>
-&lt;h3>Agent&lt;span class="hx:absolute hx:-mt-20" id="agent">&lt;/span>
-&lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Changes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change to libre-schema go module import&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Remove&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Remove empty GraphQL API endpoint&lt;/li>
-&lt;/ul>
-&lt;h3>Admin UI&lt;span class="hx:absolute hx:-mt-20" id="admin-ui">&lt;/span>
-&lt;a href="#admin-ui" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add Physical Asset to Sidebar&lt;/li>
-&lt;li>Add Certificate Authority input option to Rest Service Task&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fixes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix large memory usage in production&lt;/li>
-&lt;li>Fix Work Master UI Issues&lt;/li>
-&lt;/ul>
-&lt;h3>Schema&lt;span class="hx:absolute hx:-mt-20" id="schema">&lt;/span>
-&lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add search by hash to material use&lt;/li>
-&lt;li>Add signature to record entries&lt;/li>
-&lt;li>Add requirements for for dependency changes&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Changes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change domain to be a go-module for import&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fixes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix permissions generation with new gqlgen&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Remove&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Remove entity interface from generated code&lt;/li>
-&lt;/ul>
-&lt;h2>Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade">&lt;/span>
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to v3.0.0rc06, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" >Upgrade instructions&lt;/a>.&lt;/p></description></item><item><title>3.0.0rc05</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc05/</link><pubDate>Tue, 31 Oct 2023 20:32:34 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc05/</guid><description>
-&lt;p>Changelog for version 3.0.0rc05 of the Rhize application.&lt;/p>
-&lt;p>&lt;em>Release date:&lt;/em> October 24, 2023&lt;/p>
-&lt;h2>Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes">&lt;/span>
-&lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>Renamed UI environment variables and changed &lt;code>KEYCLOACK&lt;/code> to &lt;code>KEYCLOAK&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h2>Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service">&lt;/span>
-&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Core&lt;span class="hx:absolute hx:-mt-20" id="core">&lt;/span>
-&lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add &lt;code>deleteSyncEquipmentsFromDBtoNATSStatus&lt;/code> mutation&lt;/li>
-&lt;li>Add NATS connection name&lt;/li>
-&lt;li>Add fields to &lt;code>InformationObject&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fixes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix tracing typo&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Changes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change Core to purge keys that are not in the the database&lt;/li>
-&lt;li>Change core to delete property value from KV when the equipment no longer have active version&lt;/li>
-&lt;/ul>
-&lt;h3>BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn">&lt;/span>
-&lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add DQL Query Service Task Handling&lt;/li>
-&lt;li>Add DQL Mutate Service Task Handling&lt;/li>
-&lt;li>Add verbose log to &lt;code>HandleTaskComplete&lt;/code>&lt;/li>
-&lt;li>Add default log level to &lt;code>config.json&lt;/code>&lt;/li>
-&lt;li>Add GraphQL resolvers to get by key from known KV Stores&lt;/li>
-&lt;li>Add Errors to &lt;code>GetWorkflowSpecification&lt;/code> query&lt;/li>
-&lt;li>Add shutdown handling to drain &lt;code>commandConsumer&lt;/code> before shutting down&lt;/li>
-&lt;li>Add a basic Intermediate Timer Event&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Changes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change NATS connection to include a client Name including hostname&lt;/li>
-&lt;li>Change NATS server library to &lt;code>v2.10.2&lt;/code> from &lt;code>v2.9.9&lt;/code>&lt;/li>
-&lt;li>Change NATS client library to &lt;code>v1.30.2&lt;/code> from &lt;code>v1.21.0&lt;/code>&lt;/li>
-&lt;li>Change NATS GET/PUT error messages to be more verbose&lt;/li>
-&lt;li>Change to synchronize &lt;code>WorkflowSpecifications&lt;/code> to NATS once, instead of every possible update&lt;/li>
-&lt;li>Change &lt;code>CallActivity&lt;/code> to enforce variable context mapping&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fixes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix linking Workflow Specifications by IID&lt;/li>
-&lt;li>Fix &lt;code>NextVersion&lt;/code> datatype in &lt;code>GetWorkflowSpecificationNextVersion&lt;/code> query&lt;/li>
-&lt;li>Fix referencing duplicate nodes in &lt;code>LoadBpmnFromXml&lt;/code>&lt;/li>
-&lt;li>Fix duplicate &lt;code>WorkflowMessage&lt;/code> Error on Import&lt;/li>
-&lt;li>Fix interpretation of escape characters on Linux&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Remove&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Remove &lt;code>printf&lt;/code> statements from &lt;code>GraphQLQueryAdapter&lt;/code>&lt;/li>
-&lt;li>Remove license scanning from CI&lt;/li>
-&lt;li>Remove slow execution debugging spans&lt;/li>
-&lt;/ul>
-&lt;h3>Agent&lt;span class="hx:absolute hx:-mt-20" id="agent">&lt;/span>
-&lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add value to OPC-UA Value span&lt;/li>
-&lt;li>Add Edge-Agent heartbeat details&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Changes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change OPC-UA Value span to log error if status isn&amp;rsquo;t &lt;code> OK (0x0)&lt;/code>&lt;/li>
-&lt;li>Change agent to filter out disabled topics&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fixes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix OPC-UA Subscription Statistics panic in test suite&lt;/li>
-&lt;/ul>
-&lt;h3>Admin UI&lt;span class="hx:absolute hx:-mt-20" id="admin-ui">&lt;/span>
-&lt;a href="#admin-ui" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Breaking changes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Renamed environment variables and change &lt;code>KEYCLOACK&lt;/code> to &lt;code>KEYCLOAK&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add parameter specification in &lt;code>WorkMaster&lt;/code>&lt;/li>
-&lt;li>Add Equipment Property Test&lt;/li>
-&lt;li>Add data migration popup auth&lt;/li>
-&lt;li>Add BPMN Node Template for Schema Validation&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Changes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Change Libre to Rhize&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fixes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Fix no download option for properties on Person&lt;/li>
-&lt;li>Fix no download option for properties on Personnel Class&lt;/li>
-&lt;/ul>
-&lt;h3>Schema&lt;span class="hx:absolute hx:-mt-20" id="schema">&lt;/span>
-&lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>&lt;strong>Features&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add search to &lt;code>MaterialUse&lt;/code> on &lt;code>OperationsDefinition&lt;/code>, &lt;code>OperationsSchedule&lt;/code> and &lt;code>OperationsPerformance&lt;/code> Models&lt;/li>
-&lt;li>Add search to &lt;code>EquipmentUse&lt;/code>, &lt;code>Personneluse&lt;/code> &amp;amp; &lt;code>PhsicalAssetUse&lt;/code> on &lt;code>OperationsDefinition&lt;/code>&lt;/li>
-&lt;li>Add fields to &lt;code>InformationObject&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Fixes&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Add missing &lt;code>@id&lt;/code>&lt;/li>
-&lt;li>Fix omitting &lt;code>omitempty&lt;/code> for non-pointer Boolean types&lt;/li>
-&lt;/ul>
-&lt;h2>Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade">&lt;/span>
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To upgrade to `v3.0.0rc05, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" >Upgrade instructions&lt;/a>.&lt;/p></description></item></channel></rss>
+&lt;p&gt;Changelog for version 3.0.0 of the Rhize application.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 25th March, 2024&lt;/p&gt;
+&lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
+&lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service"&gt;&lt;/span&gt;
+&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Admin UI&lt;span class="hx:absolute hx:-mt-20" id="admin-ui"&gt;&lt;/span&gt;
+&lt;a href="#admin-ui" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add &lt;code&gt;includesPropertiesOf&lt;/code&gt; input when creating a new version of OperationsEventClass&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;IncludesPropertiesOf&lt;/code&gt; option to Equipment Class General tab&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;momentjs&lt;/code&gt; for timezones as select in Equipment Version &lt;code&gt;timezone&lt;/code&gt; field&lt;/li&gt;
+&lt;li&gt;Add BPMN side panel for OPCUA Method Call&lt;/li&gt;
+&lt;li&gt;Add clear option to WorkMaster disable modal&lt;/li&gt;
+&lt;li&gt;Add edits for Static properties&lt;/li&gt;
+&lt;li&gt;Add enable and disable functionality to work calendar definition&lt;/li&gt;
+&lt;li&gt;Add EquipmentClass ISA-95 property type selection&lt;/li&gt;
+&lt;li&gt;Add EquipmentLevel to Equipment Class&lt;/li&gt;
+&lt;li&gt;Add inheritance of Operational Location Class properties into Operational Location&lt;/li&gt;
+&lt;li&gt;Add inherited properties from linked Operations Event Class to Operations Event Class properties page&lt;/li&gt;
+&lt;li&gt;Add manufacturer to Physical Asset Class general tab&lt;/li&gt;
+&lt;li&gt;Add new modal to BPMN&lt;/li&gt;
+&lt;li&gt;Add new Work Calendar Definition select on Equipment Version management&lt;/li&gt;
+&lt;li&gt;Add Operational Location and Spatial Definition to Equipment General tab&lt;/li&gt;
+&lt;li&gt;Add OperationsEventClass to OperationsEventDefinition&lt;/li&gt;
+&lt;li&gt;Add option to disable Operations Definition&lt;/li&gt;
+&lt;li&gt;Add option to disable previous work master version when create a new version&lt;/li&gt;
+&lt;li&gt;Add option to disable Work Calendar Definition Property&lt;/li&gt;
+&lt;li&gt;Add option to disable Work Calendar Entry&lt;/li&gt;
+&lt;li&gt;Add option to enable a disabled Process Segment&lt;/li&gt;
+&lt;li&gt;Add page to add manual Work Calendar Entries&lt;/li&gt;
+&lt;li&gt;Add pagination to Work Calendar Entries&lt;/li&gt;
+&lt;li&gt;Add properties to Work Calendar Definition&lt;/li&gt;
+&lt;li&gt;Add Published date and Hierarchy Scope to WorkMaster&lt;/li&gt;
+&lt;li&gt;Add relationship between Operations Event Definition and Work Master&lt;/li&gt;
+&lt;li&gt;Add scrollbar to Work Calendar Definition&lt;/li&gt;
+&lt;li&gt;Add Spatial Definition to Physical Location &amp;amp; Physical Asset&lt;/li&gt;
+&lt;li&gt;Add start weekday selection to Work Calendar Definition&lt;/li&gt;
+&lt;li&gt;Add static properties on Equipment Class&lt;/li&gt;
+&lt;li&gt;Add timezone on Work Calendar&lt;/li&gt;
+&lt;li&gt;Add timezone on Work Calendar Entry and Equipment&lt;/li&gt;
+&lt;li&gt;Add user store to UserManager and set automatic silent renew&lt;/li&gt;
+&lt;li&gt;Add Work Calendar Definition manage entries component&lt;/li&gt;
+&lt;li&gt;Add Work Calendar Definition management&lt;/li&gt;
+&lt;li&gt;Add Work Calendar Setup&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change ability to edit approved version of an Operations Event Class&lt;/li&gt;
+&lt;li&gt;Change ability to edit for review version of a Material Class&lt;/li&gt;
+&lt;li&gt;Change data source topic to prevent usage of &lt;code&gt;.&lt;/code&gt; in the name&lt;/li&gt;
+&lt;li&gt;Change input validation on Work Calendar Definitions to prevent use of dots &lt;code&gt;.&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Change input validation on Work Calendars to prevent spaces&lt;/li&gt;
+&lt;li&gt;Change Material Definition Properties table sort order&lt;/li&gt;
+&lt;li&gt;Change the Work Calendar Definition Entry card design to use ne card props&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fix&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix &lt;code&gt;Get Started&lt;/code&gt; action trigger&lt;/li&gt;
+&lt;li&gt;Fix ability to create an Operational Location Class Version&lt;/li&gt;
+&lt;li&gt;Fix ability to create duplicate property labels for the same Physical Asset Class&lt;/li&gt;
+&lt;li&gt;Fix ability to edit an Active Process Segment&lt;/li&gt;
+&lt;li&gt;Fix ability to edit an Active Work Calendar&lt;/li&gt;
+&lt;li&gt;Fix ability to edit Operations Definition Segment Parameter&lt;/li&gt;
+&lt;li&gt;Fix ability to edit Person Versions when in Draft or For Review State&lt;/li&gt;
+&lt;li&gt;Fix adding new Material Definition Property&lt;/li&gt;
+&lt;li&gt;Fix adding Personnel Class property by adding safe operator to prevent table from breaking under certain pre-conditions&lt;/li&gt;
+&lt;li&gt;Fix allowing edit of an approved Physical Asset&lt;/li&gt;
+&lt;li&gt;Fix Audit Log date format&lt;/li&gt;
+&lt;li&gt;Fix auto-increment of Person Version, when creating a new one&lt;/li&gt;
+&lt;li&gt;Fix BPMN Viewer Get Instance invalid syntax error&lt;/li&gt;
+&lt;li&gt;Fix changing Process Segment version status from Draft to Active&lt;/li&gt;
+&lt;li&gt;Fix disable of Material Definition&lt;/li&gt;
+&lt;li&gt;Fix disabled nature of Hierarchy Scope when the selected Physical Asset Class version is in Draft or For Review&lt;/li&gt;
+&lt;li&gt;Fix disabled state of buttons when creating new Equipment&lt;/li&gt;
+&lt;li&gt;Fix display of BPMN instances that were created with the active version&lt;/li&gt;
+&lt;li&gt;Fix display of Equipment Property metadata&lt;/li&gt;
+&lt;li&gt;Fix display of inherited properties in Personnel Class&lt;/li&gt;
+&lt;li&gt;Fix display of linked Material Class properties&lt;/li&gt;
+&lt;li&gt;Fix display of more than 1000 Equipment Class in the left sidebar&lt;/li&gt;
+&lt;li&gt;Fix display of more than 1000 Equipment in the left sidebar&lt;/li&gt;
+&lt;li&gt;Fix display of more than 1000 Data Source in the left sidebar&lt;/li&gt;
+&lt;li&gt;Fix display of more than 1000 Hierarchy Scope in the left sidebar&lt;/li&gt;
+&lt;li&gt;Fix display of more than 1000 Material Class in the left sidebar&lt;/li&gt;
+&lt;li&gt;Fix display of more than 1000 Material Definitions in left sidebar&lt;/li&gt;
+&lt;li&gt;Fix display of more than 1000 Operational Definition in the left sidebar&lt;/li&gt;
+&lt;li&gt;Fix display of more than 1000 Operational Location Class in the left sidebar&lt;/li&gt;
+&lt;li&gt;Fix display of more than 1000 Operational Location in the left sidebar&lt;/li&gt;
+&lt;li&gt;Fix display of more than 1000 Person in the left sidebar&lt;/li&gt;
+&lt;li&gt;Fix display of more than 1000 Personnel Class in the left sidebar&lt;/li&gt;
+&lt;li&gt;Fix display of more than 1000 Work Calendar in the left sidebar&lt;/li&gt;
+&lt;li&gt;Fix display of Person Property metadata&lt;/li&gt;
+&lt;li&gt;Fix display of value field in linked properties from Resource Specifications&lt;/li&gt;
+&lt;li&gt;Fix duplicated column name on Operational Location Class Property and Property Type&lt;/li&gt;
+&lt;li&gt;Fix edit of linked property on resource specifications&lt;/li&gt;
+&lt;li&gt;Fix environmental variable styling and navigation&lt;/li&gt;
+&lt;li&gt;Fix Equipment Class version save-as with properties&lt;/li&gt;
+&lt;li&gt;Fix Equipment general tab input boxes to be disabled when ACTIVE or APPROVED&lt;/li&gt;
+&lt;li&gt;Fix Equipment Property error when Work Calendar Definition query failed&lt;/li&gt;
+&lt;li&gt;Fix error message when creating a Work Calendar Definition Entry with a duplicate ID&lt;/li&gt;
+&lt;li&gt;Fix error message when creating a Work Calendar Definition with a duplicate ID&lt;/li&gt;
+&lt;li&gt;Fix heading of Data Source modal when changing to For Review&lt;/li&gt;
+&lt;li&gt;Fix heading of disable modal for Material Class to remove version&lt;/li&gt;
+&lt;li&gt;Fix heading on BPMN Editor modal for marking current BPMN as Active&lt;/li&gt;
+&lt;li&gt;Fix heading on changing Data Source Version from Draft to Active&lt;/li&gt;
+&lt;li&gt;Fix hierarchy scope persisting after creating a new Work Calendar Definition&lt;/li&gt;
+&lt;li&gt;Fix hierarchy scope selection on Physical Asset general tab&lt;/li&gt;
+&lt;li&gt;Fix inconsistent display of inputs when editing draft Data Source&lt;/li&gt;
+&lt;li&gt;Fix instance list repeat queries using start/end times&lt;/li&gt;
+&lt;li&gt;Fix manual page refresh to display added Operations Definition&lt;/li&gt;
+&lt;li&gt;Fix Material Definition inherited properties filter on Draft versions&lt;/li&gt;
+&lt;li&gt;Fix Material Definition property enable/disable&lt;/li&gt;
+&lt;li&gt;Fix missing display of inherited properties in Person from Personnel Class&lt;/li&gt;
+&lt;li&gt;Fix mount localStorage data as moment object to prevent errors and add a mount the table on load the page&lt;/li&gt;
+&lt;li&gt;Fix silenced error message when using createSecret&lt;/li&gt;
+&lt;li&gt;Fix Process Segment Parameter search&lt;/li&gt;
+&lt;li&gt;Fix Operations Segment Parameter search&lt;/li&gt;
+&lt;li&gt;Fix query to support Custom Query without broke the entire response&lt;/li&gt;
+&lt;li&gt;Fix re-enable of disabled Work Calendar Definition Entry&lt;/li&gt;
+&lt;li&gt;Fix references to Physical Asset in Operations Event pages&lt;/li&gt;
+&lt;li&gt;Fix refresh of Equipment when adding using the &lt;code&gt;+&lt;/code&gt; symbol&lt;/li&gt;
+&lt;li&gt;Fix refresh when adding a new Operations Definition version&lt;/li&gt;
+&lt;li&gt;Fix required validation for Hierarchy Scope on Equipment Class Version&lt;/li&gt;
+&lt;li&gt;Fix required validation for Hierarchy Scope on Physical Asset Version&lt;/li&gt;
+&lt;li&gt;Fix search for Equipment Class Property by type and UoM&lt;/li&gt;
+&lt;li&gt;Fix See Active toggle functionality on Material Definition Properties&lt;/li&gt;
+&lt;li&gt;Fix sidebar order for Work Calendar Entries&lt;/li&gt;
+&lt;li&gt;Fix Work Calendar Definition enable and disable code review fixes&lt;/li&gt;
+&lt;li&gt;Fix Work Calendar Definition Properties search box placeholder text&lt;/li&gt;
+&lt;li&gt;Fix WorkMaster search&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Agent&lt;span class="hx:absolute hx:-mt-20" id="agent"&gt;&lt;/span&gt;
+&lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;No changes since previous release.&lt;/p&gt;
+&lt;h3&gt;Audit&lt;span class="hx:absolute hx:-mt-20" id="audit"&gt;&lt;/span&gt;
+&lt;a href="#audit" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add storage option for postgres&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fix&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix environmental variable conflict&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;BAAS&lt;span class="hx:absolute hx:-mt-20" id="baas"&gt;&lt;/span&gt;
+&lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;No changes since previous release.&lt;/p&gt;
+&lt;h3&gt;BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn"&gt;&lt;/span&gt;
+&lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add viper configuration for http timeout values&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fix&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix one workflow deprecating when two subscribe to message start&lt;/li&gt;
+&lt;li&gt;Fix execution of nested call activity when depth greater than 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change JSONata-go library to v1.8.4 from v1.6.6&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Core&lt;span class="hx:absolute hx:-mt-20" id="core"&gt;&lt;/span&gt;
+&lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add &lt;code&gt;hierarchyScope&lt;/code&gt; to &lt;code&gt;CreateEquipmentClassVersionInput&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;includesPropertiesOf&lt;/code&gt; to &lt;code&gt;CreateEquipmentClassVersionInput&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;includesPropertiesOf&lt;/code&gt; to &lt;code&gt;CreateOperationsEventClassVersionInput&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;inheritedProperties&lt;/code&gt; to &lt;code&gt;OperationalLocationClassVersion&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;inheritedProperties&lt;/code&gt; to &lt;code&gt;OperationsEventClassVersion&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;inheritedProperties&lt;/code&gt; to &lt;code&gt;PersonnelClassVersion&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;samplingRate&lt;/code&gt; configuration option to OpenTelemetry&lt;/li&gt;
+&lt;li&gt;Add data source methods when cloning a &lt;code&gt;DataSourceVersion&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add hostname to data source payload&lt;/li&gt;
+&lt;li&gt;Add service hostname to trace spans&lt;/li&gt;
+&lt;li&gt;Add specific error message for binding path that evaluates to an empty string&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change core&amp;rsquo;s GraphQL schema to extend &lt;code&gt;MOMFunctionEnum&lt;/code&gt;, &lt;code&gt;OperationsEventLevelEnum&lt;/code&gt; and &lt;code&gt;OperationsEventTypeEnum&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Change domain logger to respect &lt;code&gt;logging.level&lt;/code&gt; configuration option&lt;/li&gt;
+&lt;li&gt;Change GraphQL query to include option to retrieve disabled properties and include by default&lt;/li&gt;
+&lt;li&gt;Change schema to use &lt;code&gt;v3.0.0x&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Change to use a version&amp;rsquo;s &lt;code&gt;iid&lt;/code&gt; when getting operational location class inherited properties&lt;/li&gt;
+&lt;li&gt;Change to use a version&amp;rsquo;s &lt;code&gt;iid&lt;/code&gt; when getting personnel class inherited properties&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fix&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix &lt;code&gt;operationsEventClasses&lt;/code&gt; to &lt;code&gt;CreateOperationsEventDefinitionVersionInput&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fix rule trigger evaluating on stale data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Schema&lt;span class="hx:absolute hx:-mt-20" id="schema"&gt;&lt;/span&gt;
+&lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add &lt;code&gt;@id&lt;/code&gt; to &lt;code&gt;WorkCalendarDefinitionEntry&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;@search&lt;/code&gt; to &lt;code&gt;requestState&lt;/code&gt; on &lt;code&gt;OperationsRequest&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;@search&lt;/code&gt; to &lt;code&gt;segmentState&lt;/code&gt; on &lt;code&gt;SegmentRequirement&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;comments&lt;/code&gt; to &lt;code&gt;MaterialLot&lt;/code&gt; and &lt;code&gt;MaterialSublot&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;comments&lt;/code&gt; to &lt;code&gt;SegmentRequirement&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;effectiveStart&lt;/code&gt; and &lt;code&gt;effectiveEnd&lt;/code&gt; to &lt;code&gt;WorkCalendarDefinition&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;effectiveStart&lt;/code&gt; and &lt;code&gt;effectiveEnd&lt;/code&gt; to &lt;code&gt;WorkCalendarDefinitionEntry&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add inverse relationships for &lt;code&gt;HiearchyScope&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add inverse relationships for &lt;code&gt;OperationalLocation&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add relationship between &lt;code&gt;MaterialSublot&lt;/code&gt; and &lt;code&gt;MaterialDefinition&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add resource actual links to &lt;code&gt;InformationObject&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add Work Calendar Information models&lt;/li&gt;
+&lt;li&gt;Add Work Calendar Information models to &lt;code&gt;permissions.json&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add fields &lt;code&gt;@cascade&lt;/code&gt; directive to subgraph&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change &lt;code&gt;OperationsRequest&lt;/code&gt; relationship to &lt;code&gt;OperationsSchedule&lt;/code&gt; to optional&lt;/li&gt;
+&lt;li&gt;Change &lt;code&gt;startRule&lt;/code&gt; to required on &lt;code&gt;WorkCalendarDefinitionEntry&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc09</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc09/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc09/</guid><description>
+&lt;p&gt;Changelog for version 3.0.0rc9 of the Rhize application.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 27th February, 2024&lt;/p&gt;
+&lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
+&lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service"&gt;&lt;/span&gt;
+&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Admin UI&lt;span class="hx:absolute hx:-mt-20" id="admin-ui"&gt;&lt;/span&gt;
+&lt;a href="#admin-ui" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;No changes since previous release.&lt;/p&gt;
+&lt;h3&gt;Agent&lt;span class="hx:absolute hx:-mt-20" id="agent"&gt;&lt;/span&gt;
+&lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add check to validate OPC UA topics against server metadata&lt;/li&gt;
+&lt;li&gt;Add hostname in message payload&lt;/li&gt;
+&lt;li&gt;Add logic for MQTT connections to resubscribe on disconnect&lt;/li&gt;
+&lt;li&gt;Add option to deconstruct complex JSON payloads to simple types&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Audit&lt;span class="hx:absolute hx:-mt-20" id="audit"&gt;&lt;/span&gt;
+&lt;a href="#audit" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add previous audit value relative to current&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;BAAS&lt;span class="hx:absolute hx:-mt-20" id="baas"&gt;&lt;/span&gt;
+&lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change server aborts due to a conflict to report the error and block transaction that was aborted&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn"&gt;&lt;/span&gt;
+&lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add a trigger for a NATS message on end of a Work Calendar Entry&lt;/li&gt;
+&lt;li&gt;Add BPMN Run Instance flag to log variables on every task&lt;/li&gt;
+&lt;li&gt;Add check for 0 duration when calculating next entry&lt;/li&gt;
+&lt;li&gt;Add domain entities for tempo/loki queries and generalize them&lt;/li&gt;
+&lt;li&gt;Add go profile guided optimisation&lt;/li&gt;
+&lt;li&gt;Add improved error logging to view instance&lt;/li&gt;
+&lt;li&gt;Add named constants for constant strings&lt;/li&gt;
+&lt;li&gt;Add test case for call activities in high availability&lt;/li&gt;
+&lt;li&gt;Add timeouts to &lt;code&gt;http.Server&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add type type assertion checks&lt;/li&gt;
+&lt;li&gt;Add warn when not enough data is returned to process nodes to spans&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change application to refresh token before fetching work calendar&lt;/li&gt;
+&lt;li&gt;Change BPMN Datasource Method Call Method arguments to allow map[string]any, map[int]any, or string&lt;/li&gt;
+&lt;li&gt;Change BPMN engine execution to use JetStream errors for parallel gateway check&lt;/li&gt;
+&lt;li&gt;Change BPMN engine to expand variables and secrets before sanitizing NATS subject&lt;/li&gt;
+&lt;li&gt;Change BPMN Instances to use a unique consumer name&lt;/li&gt;
+&lt;li&gt;Change BPMN to error if Router unavailable on startup&lt;/li&gt;
+&lt;li&gt;Change CSM to include child job to avoid relying on NATS to synchronize&lt;/li&gt;
+&lt;li&gt;Change NATS KV Get timeout to 34 attempts from 7&lt;/li&gt;
+&lt;li&gt;Change stream expiry to 10 minutes for CommanStreamReplicas&lt;/li&gt;
+&lt;li&gt;Change stringified ints into non-stringy types (e.g. durations as time.Duration)&lt;/li&gt;
+&lt;li&gt;Change tempo/loki facing code into separate driver&lt;/li&gt;
+&lt;li&gt;Change timers to start calculating from the closest year&lt;/li&gt;
+&lt;li&gt;Change to only log task variables on Complete or Error&lt;/li&gt;
+&lt;li&gt;Change VersionState to use GraphQL Enums&lt;/li&gt;
+&lt;li&gt;Change View Instance to pull the latest version when unspecified&lt;/li&gt;
+&lt;li&gt;Change Work Calendar invocations to use natsClient.Publish instead of natsClient.StreamPublishMsg&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fix&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix issue where timers are being called inconsistently&lt;/li&gt;
+&lt;li&gt;Fix test cases for view instance&lt;/li&gt;
+&lt;li&gt;Fix unstable high-availability test&lt;/li&gt;
+&lt;li&gt;Fix variable and secret expansion permissions by including OIDC context&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Remove&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove additional calls to NATS to avoid retrieval issues due to eventual consistency&lt;/li&gt;
+&lt;li&gt;Remove overuse of of arbitrary pointers to strings&lt;/li&gt;
+&lt;li&gt;Remove superfluous marshals/unmarshals of Job Responses during execution&lt;/li&gt;
+&lt;li&gt;Remove superfluous parsing from string -&amp;gt; time.Time only to run time.Format() in UnixToRFC3339&lt;/li&gt;
+&lt;li&gt;Remove vestigial config argument for &lt;code&gt;CommandConsumer&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Core&lt;span class="hx:absolute hx:-mt-20" id="core"&gt;&lt;/span&gt;
+&lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;No changes since previous release.&lt;/p&gt;
+&lt;h3&gt;Schema&lt;span class="hx:absolute hx:-mt-20" id="schema"&gt;&lt;/span&gt;
+&lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;No changes since previous release.&lt;/p&gt;
+&lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc09, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc08</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc08/</link><pubDate>Tue, 19 Dec 2023 13:01:02 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc08/</guid><description>
+&lt;p&gt;Changelog for version 3.0.0rc08 of the Rhize application.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 19th December, 2023&lt;/p&gt;
+&lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
+&lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;[ADMINUI] Change UI navigation bar design&lt;/li&gt;
+&lt;li&gt;[SCHEMA] Change &lt;code&gt;OperationsEventClass.IncludedIn&lt;/code&gt; to reference an &lt;code&gt;OperationsEventClassVersion&lt;/code&gt; instead of &lt;code&gt;OperationsEventClass&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;[SCHEMA] Change &lt;code&gt;OperationsEventClass.IncludesPropertiesOf&lt;/code&gt; to move to the version instance, &lt;code&gt;OperationsEventClassVersion.IncludesPropertiesOf&lt;/code&gt;, instead of header&lt;/li&gt;
+&lt;li&gt;[SCHEMA] Change &lt;code&gt;OperationsEventDefinition.IncludedIn&lt;/code&gt; to reference an &lt;code&gt;OperationsEventDefinitionVersion&lt;/code&gt; instead of &lt;code&gt;OperationsEventDefinition&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;[SCHEMA] Change &lt;code&gt;OperationsEventDefinition.IncludesPropertiesOf&lt;/code&gt; to move to the version instance, &lt;code&gt;OperationsEventDefinitionVersion.IncludesPropertiesOf&lt;/code&gt;, instead of header&lt;/li&gt;
+&lt;li&gt;[SCHEMA] Change &lt;code&gt;FromResourceReference&lt;/code&gt; and &lt;code&gt;ToResourceReference&lt;/code&gt; to combine them into a single &lt;code&gt;resourceReference&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service"&gt;&lt;/span&gt;
+&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Admin UI&lt;span class="hx:absolute hx:-mt-20" id="admin-ui"&gt;&lt;/span&gt;
+&lt;a href="#admin-ui" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add Audit Trail View in UI&lt;/li&gt;
+&lt;li&gt;Add BPMN Instance Viewer&lt;/li&gt;
+&lt;li&gt;Add Operations Definition Segment Specifications&lt;/li&gt;
+&lt;li&gt;Add Operations Event Class Page&lt;/li&gt;
+&lt;li&gt;Add Operations Event Definition Page&lt;/li&gt;
+&lt;li&gt;Add option to change Personnel Class version status from &lt;code&gt;DRAFT&lt;/code&gt; to &lt;code&gt;ACTIVE&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add property metadata to Material Definition Properties page&lt;/li&gt;
+&lt;li&gt;Add the table for parameters and physical assets&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change Audit Log to GraphQL Playground&lt;/li&gt;
+&lt;li&gt;Change Picker implementation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fix&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Fix person with two &lt;code&gt;ACTIVE&lt;/code&gt; versions&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fix parameter tab&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fix selection of &lt;code&gt;WorkMaster&lt;/code&gt; parameter selection&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Remove&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove ability to edit active version Data Source general properties&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Agent&lt;span class="hx:absolute hx:-mt-20" id="agent"&gt;&lt;/span&gt;
+&lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add check to avoid continuous resubscription to bad OPCUA topics&lt;/li&gt;
+&lt;li&gt;Add interactive OPC UA server for end-to-end testing&lt;/li&gt;
+&lt;li&gt;Add support for Azure Service Bus&lt;/li&gt;
+&lt;li&gt;Add support for MQTT&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change OPC-UA subscription item reference strategy to use ClientHandles, MonitoredItems, and Node Ids in order&lt;/li&gt;
+&lt;li&gt;Change agent to buffer protocol messages to disk if NATS is offline to avoid message loss&lt;/li&gt;
+&lt;li&gt;Change data source interfaces into smaller pieces for readability and cognitive complexity&lt;/li&gt;
+&lt;li&gt;Change from &lt;code&gt;scratch&lt;/code&gt; to &lt;code&gt;alpine&lt;/code&gt; base image&lt;/li&gt;
+&lt;li&gt;Change monitored Items with bad status behavior to moved to a new subscription after a configurable timeout to encourage the OPC UA server to start providing value changes again&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fix&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix issue with &lt;code&gt;gopcua&lt;/code&gt; client that resulted in OPC UA Session not being recreated after a loss of Secure Channel on reconnect&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Audit&lt;span class="hx:absolute hx:-mt-20" id="audit"&gt;&lt;/span&gt;
+&lt;a href="#audit" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add GraphQL Subgraph to query audit log and query audit log tags&lt;/li&gt;
+&lt;li&gt;Add Influx setup if buckets not available&lt;/li&gt;
+&lt;li&gt;Add InfluxDB as data sink&lt;/li&gt;
+&lt;li&gt;Add configuration option scanning via configuration file, environment, and command line arguments&lt;/li&gt;
+&lt;li&gt;Add restart of consumer on NATS reconnect&lt;/li&gt;
+&lt;li&gt;Add subscription of audit events&lt;/li&gt;
+&lt;li&gt;Add write to data sink&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;BAAS&lt;span class="hx:absolute hx:-mt-20" id="baas"&gt;&lt;/span&gt;
+&lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add &lt;code&gt;_modifiedBy&lt;/code&gt; user to Audit Event&lt;/li&gt;
+&lt;li&gt;Add check for required OIDC Roles&lt;/li&gt;
+&lt;li&gt;Add warning for missing &lt;code&gt;ScopeMap&lt;/code&gt; parameter when using OIDC Bypass&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fix&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix dgraph hanging on shutdown request&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Remove&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove wait groups for Enterprise Dgraph ACL functionality&lt;/li&gt;
+&lt;li&gt;Remove license scanning CI/CD job&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn"&gt;&lt;/span&gt;
+&lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Add&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add Async Publish Error logging to NATS KVs&lt;/li&gt;
+&lt;li&gt;Add environmental variable expansion to json-schema service task&lt;/li&gt;
+&lt;li&gt;Add graceful shutdown to command consumer port&lt;/li&gt;
+&lt;li&gt;Add log message and time delay to &lt;code&gt;CallActivity&lt;/code&gt; watcher&lt;/li&gt;
+&lt;li&gt;Add multi-file JSON schema validation&lt;/li&gt;
+&lt;li&gt;Add profile labels to go-routine launches&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change &lt;code&gt;CallActivity&lt;/code&gt; to event driven as opposed to a blocking go-routine to wait for complete of a sync call&lt;/li&gt;
+&lt;li&gt;Change &lt;code&gt;InProgess&lt;/code&gt; message to &lt;code&gt;20s&lt;/code&gt; on &lt;code&gt;CommandConsumer&lt;/code&gt; from &lt;code&gt;29s&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Change &lt;code&gt;libreBpmn.command.&lt;/code&gt; strings to use domain constant&lt;/li&gt;
+&lt;li&gt;Change debug level log messages for timer checks and active workflows to trace level&lt;/li&gt;
+&lt;li&gt;Change log level of gateways without inputs to trace level from error&lt;/li&gt;
+&lt;li&gt;Change to git commits to use LN on *.go files&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fix&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix BPMN long save times by only updating the touched Workflow Specification&lt;/li&gt;
+&lt;li&gt;Fix NATS reconnect re-subscribing to startOnNATS Topics&lt;/li&gt;
+&lt;li&gt;Fix docker permissions in end-to-end CI/CD test case&lt;/li&gt;
+&lt;li&gt;Fix memory leak in OIDC context value recursively growing&lt;/li&gt;
+&lt;li&gt;Fix panic on nil &lt;code&gt;workflowspec&lt;/code&gt; in &lt;code&gt;HandleTaskComplete&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Core&lt;span class="hx:absolute hx:-mt-20" id="core"&gt;&lt;/span&gt;
+&lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add &lt;code&gt;hierarchyScope&lt;/code&gt;, &lt;code&gt;materialAlternate&lt;/code&gt;, &lt;code&gt;spatialDefinition&lt;/code&gt; and &lt;code&gt;unitOfMeasure&lt;/code&gt; as information objects to &lt;code&gt;GetOperationsEvent&lt;/code&gt; &lt;code&gt;operationsEventRecords&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add agent MQTT message handling&lt;/li&gt;
+&lt;li&gt;Add binding path test cases&lt;/li&gt;
+&lt;li&gt;Add check for empty migration records&lt;/li&gt;
+&lt;li&gt;Add check for migration dependencies on Operations Event Record Entry&lt;/li&gt;
+&lt;li&gt;Add debug logging to &lt;code&gt;updateOperationsEventRecordEntry&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add entity path to migration dependency checks&lt;/li&gt;
+&lt;li&gt;Add initialization for Azure stream&lt;/li&gt;
+&lt;li&gt;Add label to &lt;code&gt;OperationsEventClassProperty&lt;/code&gt;, &lt;code&gt;OperationsEventDefinitionProperty&lt;/code&gt;, &lt;code&gt;OperationsEventProperty&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add operations event definition versioning mutations&lt;/li&gt;
+&lt;li&gt;Add option for Azure data source type&lt;/li&gt;
+&lt;li&gt;Add option to activate newly created version if requested&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change Equipment Class rule triggered event to immediately publish to NATS and then be picked up by Core instead of waiting an triggering to prevent libre-core shutdowns missing the event fire&lt;/li&gt;
+&lt;li&gt;Change Operations Event Record Entry migration to remove existing children before checking for migration dependencies&lt;/li&gt;
+&lt;li&gt;Change &lt;code&gt;IncludesPropertiesOf&lt;/code&gt; to be on the version not the header of &lt;code&gt;OperationsEventDefinition&lt;/code&gt; &amp;amp; &lt;code&gt;OperationsEventClass&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Change async &lt;code&gt;SaveVersionAs&lt;/code&gt; because other cases have been tested in sync tests&lt;/li&gt;
+&lt;li&gt;Change consumer creation to delete/add consumer if it fails to update consumer&lt;/li&gt;
+&lt;li&gt;Change database ping to allow &lt;code&gt;no access token provided&lt;/code&gt; and &lt;code&gt;context cancelled&lt;/code&gt; when pinging database&lt;/li&gt;
+&lt;li&gt;Change default logger to use &lt;code&gt;hostname&lt;/code&gt; instead of PID&lt;/li&gt;
+&lt;li&gt;Change logging messages to reflect data source type&lt;/li&gt;
+&lt;li&gt;Change migrations to remove existing children before checking for migration dependencies&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Remove&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove obsolete comments&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Schema&lt;span class="hx:absolute hx:-mt-20" id="schema"&gt;&lt;/span&gt;
+&lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add @id for OperationsEventDefinitionProperty&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;JobOrder&lt;/code&gt; parent/children relationship&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;stateTransitionInstance.previous&lt;/code&gt;, &lt;code&gt;.next&lt;/code&gt;, and &lt;code&gt;.comments&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add automatic scopemap update step&lt;/li&gt;
+&lt;li&gt;Add azure for datasource protocol&lt;/li&gt;
+&lt;li&gt;Add comments to &lt;code&gt;operationsSegment&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add event subtype to event&lt;/li&gt;
+&lt;li&gt;Add label to &lt;code&gt;OperationsEventClassProperty&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add label to &lt;code&gt;OperationsEventDefinitionProperty&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add label to &lt;code&gt;OperationsEventProperty&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add permission holder for Audit&lt;/li&gt;
+&lt;li&gt;Add reason and status to operations event&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change mermaid diagrams to include recent changes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc08, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc07</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc07/</link><pubDate>Wed, 15 Nov 2023 09:32:12 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc07/</guid><description>
+&lt;p&gt;Changelog for version 3.0.0rc07 of the Rhize application.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 15th November, 2023&lt;/p&gt;
+&lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
+&lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;[SCHEMA] Change types &lt;code&gt;OperationalLocationClass&lt;/code&gt;, &lt;code&gt;OperationalLocationClassVersion&lt;/code&gt;, &lt;code&gt;OperationalLocationClassProperty&lt;/code&gt;, &lt;code&gt;OperationalLocation&lt;/code&gt;, &lt;code&gt;OperationalLocationVersion&lt;/code&gt; and &lt;code&gt;OperationalLocationProperty&lt;/code&gt; to have: &lt;code&gt;isPartOf (0..1)&lt;/code&gt;, &lt;code&gt;isMadeUpOf (0..*)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;[BPMN] Change CommandConsumer and Timers to use new JetStream library and durable consumers. This requires you to drop and re-create streams &lt;code&gt;KV_JobResponses&lt;/code&gt;, &lt;code&gt;KV_WorkflowSpecifications&lt;/code&gt;, &lt;code&gt;libreBpmn_Command&lt;/code&gt; and &lt;code&gt;libreTimerStart&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service"&gt;&lt;/span&gt;
+&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;Admin UI&lt;span class="hx:absolute hx:-mt-20" id="admin-ui"&gt;&lt;/span&gt;
+&lt;a href="#admin-ui" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add ability to create Process Segment Version&lt;/li&gt;
+&lt;li&gt;Add ability to edit linked process segment resource specification property&lt;/li&gt;
+&lt;li&gt;Add ability to link a Hierarchy Scope to a Operational Location Class version&lt;/li&gt;
+&lt;li&gt;Add check for renaming a linked property with an existing property name&lt;/li&gt;
+&lt;li&gt;Add Homepage screen&lt;/li&gt;
+&lt;li&gt;Add optional link from Operational Location Class to a Operational Location Class version&lt;/li&gt;
+&lt;li&gt;Add Physical Asset Properties&lt;/li&gt;
+&lt;li&gt;Add Physical Asset Resource Specifications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change available BPMN UI palette options to supported objects only&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fix&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix incorrect version indicators in Data Source sidebar&lt;/li&gt;
+&lt;li&gt;Fix Process Segment Version Bug&lt;/li&gt;
+&lt;li&gt;Fix sidebar typo in Work Masters&lt;/li&gt;
+&lt;li&gt;Fix template service task hiding multi-instance properties&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Remove&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove the unused or unsupported BPMN elements from the BPMN UI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Agent&lt;span class="hx:absolute hx:-mt-20" id="agent"&gt;&lt;/span&gt;
+&lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add hostname as service instance to otel span&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fix&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix invalid errors reported to OTEL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;BAAS&lt;span class="hx:absolute hx:-mt-20" id="baas"&gt;&lt;/span&gt;
+&lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change CDC to use a JetStream from KV Store&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fixes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix getting user from authorization token for setting &lt;code&gt;_modifiedBy&lt;/code&gt; and &lt;code&gt;_createdBy&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn"&gt;&lt;/span&gt;
+&lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add a flag to bypass any OIDC requirements so that we can run BPMN without security enabled&lt;/li&gt;
+&lt;li&gt;Add fallback to BAAS when NATS fails in &lt;code&gt;HandleTaskComplete&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add input validation on process id to check for dots in the name&lt;/li&gt;
+&lt;li&gt;Add option for custom BPMN complete variable context&lt;/li&gt;
+&lt;li&gt;Add OS hostname to service instance in otel spans&lt;/li&gt;
+&lt;li&gt;Add port for adapter debugger so that adapter runtime configuration and information can be queried&lt;/li&gt;
+&lt;li&gt;Add process ID to log when starting a new instance&lt;/li&gt;
+&lt;li&gt;Add retry backoff to NATS KV Get&lt;/li&gt;
+&lt;li&gt;Add string trim logic to all inputs/outputs on BPMN upload&lt;/li&gt;
+&lt;li&gt;Add test case for High Availability&lt;/li&gt;
+&lt;li&gt;Add token argument to &lt;code&gt;bpmnctl&lt;/code&gt; to allow users to pass a token directly&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change BPMN to NAK messages for unknown timers/streams to avoid dropping messages on startup&lt;/li&gt;
+&lt;li&gt;Change CI/CD to use a minimal docker compose &lt;code&gt;docker-compose.ci.yml&lt;/code&gt; from app-config-local&lt;/li&gt;
+&lt;li&gt;Change logging message type based on error type when CreateAndRunInstance is called&lt;/li&gt;
+&lt;li&gt;Change NATS client library to v1.31.0 from v1.30.2&lt;/li&gt;
+&lt;li&gt;Change NATS KV watchers to immediately defer stop to ensure lifecycle handling&lt;/li&gt;
+&lt;li&gt;Change Parallel gateway join to use a GetOnce KV Get&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fix&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix goroutine leak on ack pending&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Core&lt;span class="hx:absolute hx:-mt-20" id="core"&gt;&lt;/span&gt;
+&lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add dependency check to operations definition &amp;amp; work master&lt;/li&gt;
+&lt;li&gt;Add docker login for CI/CD&lt;/li&gt;
+&lt;li&gt;Add Equipment KV sync on startup&lt;/li&gt;
+&lt;li&gt;Add OIDC bypass functionality when running in test pipelines&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;OperationsEventClass&lt;/code&gt; Version Handlers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change CI/CD to use docker-compose.ci from &lt;code&gt;app-config-local&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Change to Libre Schema &lt;code&gt;v3.0.0rc7&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Change subscriptions and watchers to wait until ready before starting synchronization&lt;/li&gt;
+&lt;li&gt;Change to use libre-schema as a golang module instead of copying&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Remove&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove IntelliJ IDE workspace directory and files &lt;code&gt;./.idea/*&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Schema&lt;span class="hx:absolute hx:-mt-20" id="schema"&gt;&lt;/span&gt;
+&lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add Comments to &lt;code&gt;OperationsEvent&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add example &lt;code&gt;docker-compose.yaml&lt;/code&gt; usage&lt;/li&gt;
+&lt;li&gt;Add missing types for &lt;code&gt;_createdBy&lt;/code&gt; and &lt;code&gt;_modifiedBy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add Relationships to Class and Definition Versions&lt;/li&gt;
+&lt;li&gt;Add Resource Relationship Network Model&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change dockerfile to use baas v3.0.0rc7&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/crypto" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/crypto&lt;/code&gt;&lt;/a&gt; to v0.15.0 from v0.14.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/net" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/net&lt;/code&gt;&lt;/a&gt; v0.18.0 from v0.16.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/sync" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/sync&lt;/code&gt;&lt;/a&gt; v0.5.0 from v0.4.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/tools" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/tools&lt;/code&gt;&lt;/a&gt; v0.15.0 from v0.14.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fix&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix missing defaults on &lt;code&gt;_createdBy&lt;/code&gt; and &lt;code&gt;_modifiedBy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fix test for Signature relationship to &lt;code&gt;recordEntries&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc07, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc06</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc06/</link><pubDate>Tue, 31 Oct 2023 21:07:43 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc06/</guid><description>
+&lt;p&gt;Changelog for version 3.0.0rc06 of the Rhize application.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; October 31, 2023&lt;/p&gt;
+&lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
+&lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;NATS streams &lt;code&gt;libreBpmn_command&lt;/code&gt; and &lt;code&gt;LibreTimerStart&lt;/code&gt; must be deleted prior to starting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service"&gt;&lt;/span&gt;
+&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Core&lt;span class="hx:absolute hx:-mt-20" id="core"&gt;&lt;/span&gt;
+&lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add mutation for dependency check for &lt;code&gt;DataSource&lt;/code&gt;, Equipment, &lt;code&gt;EquipmentClass&lt;/code&gt;, &lt;code&gt;OperationalLocation&lt;/code&gt;, and &lt;code&gt;OperationalLocationClass&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change to go-module for schema&lt;/li&gt;
+&lt;li&gt;Change struct literal unkeyed fields to keyed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn"&gt;&lt;/span&gt;
+&lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Breaking Changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;NATS streams &lt;code&gt;libreBpmn_command&lt;/code&gt; and &lt;code&gt;LibreTimerStart&lt;/code&gt; must be deleted prior to starting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add incoming &lt;code&gt;libreBPMN_command&lt;/code&gt; data to traces for debugging on trace level logging&lt;/li&gt;
+&lt;li&gt;Add notification to NATS of command progress&lt;/li&gt;
+&lt;li&gt;Add JSONata processing of output-element in multi-instance execution&lt;/li&gt;
+&lt;li&gt;Add JSONata processing of intermediate timer catch duration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change DQL mutation node to use &lt;code&gt;application/rdf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Change the BPMN process ID to match the trace ID&lt;/li&gt;
+&lt;li&gt;Change to zero-based loop counter for multi-instance execution&lt;/li&gt;
+&lt;li&gt;Change multi-instance nodes error early on sequential parallel execution (not implemented)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Remove&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove legacy domain code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fixes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix multi-instance requiring sequential for parallel execution&lt;/li&gt;
+&lt;li&gt;Fix govulncheck identified issues&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Agent&lt;span class="hx:absolute hx:-mt-20" id="agent"&gt;&lt;/span&gt;
+&lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change to libre-schema go module import&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Remove&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove empty GraphQL API endpoint&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Admin UI&lt;span class="hx:absolute hx:-mt-20" id="admin-ui"&gt;&lt;/span&gt;
+&lt;a href="#admin-ui" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add Physical Asset to Sidebar&lt;/li&gt;
+&lt;li&gt;Add Certificate Authority input option to Rest Service Task&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fixes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix large memory usage in production&lt;/li&gt;
+&lt;li&gt;Fix Work Master UI Issues&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Schema&lt;span class="hx:absolute hx:-mt-20" id="schema"&gt;&lt;/span&gt;
+&lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add search by hash to material use&lt;/li&gt;
+&lt;li&gt;Add signature to record entries&lt;/li&gt;
+&lt;li&gt;Add requirements for for dependency changes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change domain to be a go-module for import&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fixes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix permissions generation with new gqlgen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Remove&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove entity interface from generated code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc06, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc05</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc05/</link><pubDate>Tue, 31 Oct 2023 20:32:34 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc05/</guid><description>
+&lt;p&gt;Changelog for version 3.0.0rc05 of the Rhize application.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; October 24, 2023&lt;/p&gt;
+&lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
+&lt;a href="#breaking-changes" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Renamed UI environment variables and changed &lt;code&gt;KEYCLOACK&lt;/code&gt; to &lt;code&gt;KEYCLOAK&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service"&gt;&lt;/span&gt;
+&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Core&lt;span class="hx:absolute hx:-mt-20" id="core"&gt;&lt;/span&gt;
+&lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add &lt;code&gt;deleteSyncEquipmentsFromDBtoNATSStatus&lt;/code&gt; mutation&lt;/li&gt;
+&lt;li&gt;Add NATS connection name&lt;/li&gt;
+&lt;li&gt;Add fields to &lt;code&gt;InformationObject&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fixes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix tracing typo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change Core to purge keys that are not in the the database&lt;/li&gt;
+&lt;li&gt;Change core to delete property value from KV when the equipment no longer have active version&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn"&gt;&lt;/span&gt;
+&lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add DQL Query Service Task Handling&lt;/li&gt;
+&lt;li&gt;Add DQL Mutate Service Task Handling&lt;/li&gt;
+&lt;li&gt;Add verbose log to &lt;code&gt;HandleTaskComplete&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add default log level to &lt;code&gt;config.json&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add GraphQL resolvers to get by key from known KV Stores&lt;/li&gt;
+&lt;li&gt;Add Errors to &lt;code&gt;GetWorkflowSpecification&lt;/code&gt; query&lt;/li&gt;
+&lt;li&gt;Add shutdown handling to drain &lt;code&gt;commandConsumer&lt;/code&gt; before shutting down&lt;/li&gt;
+&lt;li&gt;Add a basic Intermediate Timer Event&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change NATS connection to include a client Name including hostname&lt;/li&gt;
+&lt;li&gt;Change NATS server library to &lt;code&gt;v2.10.2&lt;/code&gt; from &lt;code&gt;v2.9.9&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Change NATS client library to &lt;code&gt;v1.30.2&lt;/code&gt; from &lt;code&gt;v1.21.0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Change NATS GET/PUT error messages to be more verbose&lt;/li&gt;
+&lt;li&gt;Change to synchronize &lt;code&gt;WorkflowSpecifications&lt;/code&gt; to NATS once, instead of every possible update&lt;/li&gt;
+&lt;li&gt;Change &lt;code&gt;CallActivity&lt;/code&gt; to enforce variable context mapping&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fixes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix linking Workflow Specifications by IID&lt;/li&gt;
+&lt;li&gt;Fix &lt;code&gt;NextVersion&lt;/code&gt; datatype in &lt;code&gt;GetWorkflowSpecificationNextVersion&lt;/code&gt; query&lt;/li&gt;
+&lt;li&gt;Fix referencing duplicate nodes in &lt;code&gt;LoadBpmnFromXml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fix duplicate &lt;code&gt;WorkflowMessage&lt;/code&gt; Error on Import&lt;/li&gt;
+&lt;li&gt;Fix interpretation of escape characters on Linux&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Remove&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove &lt;code&gt;printf&lt;/code&gt; statements from &lt;code&gt;GraphQLQueryAdapter&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Remove license scanning from CI&lt;/li&gt;
+&lt;li&gt;Remove slow execution debugging spans&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Agent&lt;span class="hx:absolute hx:-mt-20" id="agent"&gt;&lt;/span&gt;
+&lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add value to OPC-UA Value span&lt;/li&gt;
+&lt;li&gt;Add Edge-Agent heartbeat details&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change OPC-UA Value span to log error if status isn&amp;rsquo;t &lt;code&gt; OK (0x0)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Change agent to filter out disabled topics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fixes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix OPC-UA Subscription Statistics panic in test suite&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Admin UI&lt;span class="hx:absolute hx:-mt-20" id="admin-ui"&gt;&lt;/span&gt;
+&lt;a href="#admin-ui" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Breaking changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Renamed environment variables and change &lt;code&gt;KEYCLOACK&lt;/code&gt; to &lt;code&gt;KEYCLOAK&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add parameter specification in &lt;code&gt;WorkMaster&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add Equipment Property Test&lt;/li&gt;
+&lt;li&gt;Add data migration popup auth&lt;/li&gt;
+&lt;li&gt;Add BPMN Node Template for Schema Validation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change Libre to Rhize&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fixes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix no download option for properties on Person&lt;/li&gt;
+&lt;li&gt;Fix no download option for properties on Personnel Class&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Schema&lt;span class="hx:absolute hx:-mt-20" id="schema"&gt;&lt;/span&gt;
+&lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add search to &lt;code&gt;MaterialUse&lt;/code&gt; on &lt;code&gt;OperationsDefinition&lt;/code&gt;, &lt;code&gt;OperationsSchedule&lt;/code&gt; and &lt;code&gt;OperationsPerformance&lt;/code&gt; Models&lt;/li&gt;
+&lt;li&gt;Add search to &lt;code&gt;EquipmentUse&lt;/code&gt;, &lt;code&gt;Personneluse&lt;/code&gt; &amp;amp; &lt;code&gt;PhsicalAssetUse&lt;/code&gt; on &lt;code&gt;OperationsDefinition&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add fields to &lt;code&gt;InformationObject&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fixes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add missing &lt;code&gt;@id&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fix omitting &lt;code&gt;omitempty&lt;/code&gt; for non-pointer Boolean types&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to `v3.0.0rc05, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>

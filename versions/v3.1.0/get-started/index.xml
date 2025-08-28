@@ -1,155 +1,155 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Get started</title><link>https://docs.rhize.com/versions/v3.1.0/get-started/</link><description>Recent content in Get started on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 03 Oct 2023 19:39:39 -0300</lastBuildDate><atom:link href="https://docs.rhize.com/versions/v3.1.0/get-started/index.xml" rel="self" type="application/rss+xml"/><item><title>What is Rhize?</title><link>https://docs.rhize.com/versions/v3.1.0/get-started/introduction/</link><pubDate>Tue, 26 Sep 2023 12:25:46 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/get-started/introduction/</guid><description>
-&lt;p>Rhize is a real-time, event-driven &lt;a href="https://docs.rhize.com/versions/v3.1.0/explanations/manufacturing-data-hub/" >manufacturing data hub&lt;/a>.
+&lt;p&gt;Rhize is a real-time, event-driven &lt;a href="https://docs.rhize.com/versions/v3.1.0/explanations/manufacturing-data-hub/" &gt;manufacturing data hub&lt;/a&gt;.
 It unites data analysis, event monitoring, and process execution in one platform.
 Its interface and architecture are designed to conform to your processes.
-We assume nothing about what your operations looks like.&lt;/p>
-&lt;p>Rhize has only one strong opinion: all manufacturing objects and data must be modeled on the &lt;a href="https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa95" target="_blank" rel="noopener">ISA-95 standard&lt;/a>.
+We assume nothing about what your operations looks like.&lt;/p&gt;
+&lt;p&gt;Rhize has only one strong opinion: all manufacturing objects and data must be modeled on the &lt;a href="https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa95" target="_blank" rel="noopener"&gt;ISA-95 standard&lt;/a&gt;.
 This standards-based schema is how Rhize connects every data event across an entire operation.
-If you aren&amp;rsquo;t an ISA-95 fan, we&amp;rsquo;re happy to convert you, but you must adopt it to use the platform.&lt;/p>
-&lt;p>And if you do adopt ISA-95, you open your organization to Rhize&amp;rsquo;s far-reaching transformations.&lt;/p>
-&lt;h2>A data hub for manufacturing&lt;span class="hx:absolute hx:-mt-20" id="a-data-hub-for-manufacturing">&lt;/span>
-&lt;a href="#a-data-hub-for-manufacturing" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Rhize is a data hub that collects, stores, integrates, and processes data from your manufacturing system.
-Rhize accepts the &lt;em>event&lt;/em> as the driver of change in a manufacturing operation.
-Its architecture is designed to receive and process message events emitted from the operation in real time.&lt;/p>
-&lt;p>To make each event coherent in the context of all others, the event object must conform to a standard.
+If you aren&amp;rsquo;t an ISA-95 fan, we&amp;rsquo;re happy to convert you, but you must adopt it to use the platform.&lt;/p&gt;
+&lt;p&gt;And if you do adopt ISA-95, you open your organization to Rhize&amp;rsquo;s far-reaching transformations.&lt;/p&gt;
+&lt;h2&gt;A data hub for manufacturing&lt;span class="hx:absolute hx:-mt-20" id="a-data-hub-for-manufacturing"&gt;&lt;/span&gt;
+&lt;a href="#a-data-hub-for-manufacturing" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Rhize is a data hub that collects, stores, integrates, and processes data from your manufacturing system.
+Rhize accepts the &lt;em&gt;event&lt;/em&gt; as the driver of change in a manufacturing operation.
+Its architecture is designed to receive and process message events emitted from the operation in real time.&lt;/p&gt;
+&lt;p&gt;To make each event coherent in the context of all others, the event object must conform to a standard.
 Rhize uses the ISA-95 standard as its data model, and the database schema is the most complete digital representation of ISA-95 in the world.
-The flexibility of ISA-95 scales to an entire enterprise operation, and future changes in processes require no ad-hoc changes of the schema.&lt;/p>
-&lt;p>The database represents data as a single graph, a structure ideally suited for the node and edge associations inherent in ISA-95.
+The flexibility of ISA-95 scales to an entire enterprise operation, and future changes in processes require no ad-hoc changes of the schema.&lt;/p&gt;
+&lt;p&gt;The database represents data as a single graph, a structure ideally suited for the node and edge associations inherent in ISA-95.
 The database is exposed through a single GraphQL endpoint.
-Besides keeping the interface small, the GraphQL query language aligns exactly with the underlying graph model.&lt;/p>
-&lt;p>The API is completely open. Your operators can use it as a backend to build any MES, MOM, and data-science applications they want.
-Rhize also has a built-in low-code BPMN workflow creator, so operators can write logic to handle event data using only API calls and JSON transformation.&lt;/p>
-&lt;p>Rhize&amp;rsquo;s architecture supports distributed deployment, and its components are loosely coupled microservices.
-This clustered approach is necessary for organizations to scale horizontally and maintain high reliability.&lt;/p>
-&lt;h2>A tool that fits to your processes&lt;span class="hx:absolute hx:-mt-20" id="a-tool-that-fits-to-your-processes">&lt;/span>
-&lt;a href="#a-tool-that-fits-to-your-processes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The development of Rhize is the culmination of decades of experience from real practitioners.
+Besides keeping the interface small, the GraphQL query language aligns exactly with the underlying graph model.&lt;/p&gt;
+&lt;p&gt;The API is completely open. Your operators can use it as a backend to build any MES, MOM, and data-science applications they want.
+Rhize also has a built-in low-code BPMN workflow creator, so operators can write logic to handle event data using only API calls and JSON transformation.&lt;/p&gt;
+&lt;p&gt;Rhize&amp;rsquo;s architecture supports distributed deployment, and its components are loosely coupled microservices.
+This clustered approach is necessary for organizations to scale horizontally and maintain high reliability.&lt;/p&gt;
+&lt;h2&gt;A tool that fits to your processes&lt;span class="hx:absolute hx:-mt-20" id="a-tool-that-fits-to-your-processes"&gt;&lt;/span&gt;
+&lt;a href="#a-tool-that-fits-to-your-processes" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The development of Rhize is the culmination of decades of experience from real practitioners.
 We know manufacturing is messy, and each process has thousands of particulars.
-Even within the same company and segment, processes often differ from site to site.&lt;/p>
-&lt;p>Our design philosophy empowers manufacturing operators to shape their tool for their work demands.
-Some examples of the flexibility include:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>A headless MES&lt;/strong>. While Rhize has a graphical interface, all data is reachable through a single API endpoint. This means your teams can rapidly build custom frontends―and do it with the most comfortable API for frontend development, GraphQL.&lt;/li>
-&lt;li>&lt;strong>Low-code interface&lt;/strong>. Model your schema and execute processes using BPMN, a visual programming language. The visual interface makes Rhize and your manufacturing automation accessible to the widest possible audience.&lt;/li>
-&lt;li>&lt;strong>Generic data collection&lt;/strong>. Rhize receives data from all levels of the manufacturing process. The &lt;a href="https://nats.io" target="_blank" rel="noopener">NATS&lt;/a> broker publishes and subscribes to low-level data from &lt;a href="https://mqtt.org/" target="_blank" rel="noopener">MQTT&lt;/a> and &lt;a href="https://opcfoundation.org/about/opc-technologies/opc-ua/" target="_blank" rel="noopener">OPC-UA&lt;/a>, but the database can also receive ERP inventories and documents sent over HTTP.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;a href="https://docs.rhize.com/versions/v3.1.0/use-cases/" >Read about use cases&lt;/a>.&lt;/p>
-&lt;h2>Modern IT for manufacturing&lt;span class="hx:absolute hx:-mt-20" id="modern-it-for-manufacturing">&lt;/span>
-&lt;a href="#modern-it-for-manufacturing" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Rhize&amp;rsquo;s system design is flexible, practical, and built on modern tools and practices:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;strong>All data is accessible through a single endpoint.&lt;/strong>
-While the data collected and processed may span multiple segments, events, units, areas, and even plants, all data is stored in a graph database and exposed through a &lt;a href="https://graphql.org" target="_blank" rel="noopener">GraphQL&lt;/a> interface.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Automated and containerized deployment.&lt;/strong>
+Even within the same company and segment, processes often differ from site to site.&lt;/p&gt;
+&lt;p&gt;Our design philosophy empowers manufacturing operators to shape their tool for their work demands.
+Some examples of the flexibility include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A headless MES&lt;/strong&gt;. While Rhize has a graphical interface, all data is reachable through a single API endpoint. This means your teams can rapidly build custom frontends―and do it with the most comfortable API for frontend development, GraphQL.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Low-code interface&lt;/strong&gt;. Model your schema and execute processes using BPMN, a visual programming language. The visual interface makes Rhize and your manufacturing automation accessible to the widest possible audience.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Generic data collection&lt;/strong&gt;. Rhize receives data from all levels of the manufacturing process. The &lt;a href="https://nats.io" target="_blank" rel="noopener"&gt;NATS&lt;/a&gt; broker publishes and subscribes to low-level data from &lt;a href="https://mqtt.org/" target="_blank" rel="noopener"&gt;MQTT&lt;/a&gt; and &lt;a href="https://opcfoundation.org/about/opc-technologies/opc-ua/" target="_blank" rel="noopener"&gt;OPC-UA&lt;/a&gt;, but the database can also receive ERP inventories and documents sent over HTTP.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/use-cases/" &gt;Read about use cases&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Modern IT for manufacturing&lt;span class="hx:absolute hx:-mt-20" id="modern-it-for-manufacturing"&gt;&lt;/span&gt;
+&lt;a href="#modern-it-for-manufacturing" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Rhize&amp;rsquo;s system design is flexible, practical, and built on modern tools and practices:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;All data is accessible through a single endpoint.&lt;/strong&gt;
+While the data collected and processed may span multiple segments, events, units, areas, and even plants, all data is stored in a graph database and exposed through a &lt;a href="https://graphql.org" target="_blank" rel="noopener"&gt;GraphQL&lt;/a&gt; interface.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Automated and containerized deployment.&lt;/strong&gt;
 Rhize brings innovations from DevOps to manufacturing.
 In practice, this means that Rhize is interoperable with whatever system the manufacturer uses,
-deployment is version-controlled, and your system can use rolling upgrades with zero downtime.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Built on open standards.&lt;/strong>
+deployment is version-controlled, and your system can use rolling upgrades with zero downtime.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Built on open standards.&lt;/strong&gt;
 Rhize is based on open standards, like ISA-95, and open protocols, like MQTT.
 Open industry standards and protocols ensure that the application and your manufacturing processes speak a common language.
-Rhize heavily uses open-source software, which brings interoperability, reduced vendor lock, and robust tooling ecosystems.&lt;/p>
-&lt;/li>
-&lt;/ul></description></item><item><title>How Rhize works</title><link>https://docs.rhize.com/versions/v3.1.0/get-started/how-rhize-works/</link><pubDate>Tue, 03 Oct 2023 19:39:39 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/get-started/how-rhize-works/</guid><description>
-&lt;p>This article provides a high-level overview of how Rhize works, starting with data collection and ending with user interaction.
-To make these concepts more concrete, the next section provides examples of each process.&lt;/p>
-&lt;p>The heart of the Rhize platform is its manufacturing knowledge graph, which stores data from all levels of the operation and exposes this data through a single endpoint.
+Rhize heavily uses open-source software, which brings interoperability, reduced vendor lock, and robust tooling ecosystems.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>How Rhize works</title><link>https://docs.rhize.com/versions/v3.1.0/get-started/how-rhize-works/</link><pubDate>Tue, 03 Oct 2023 19:39:39 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/get-started/how-rhize-works/</guid><description>
+&lt;p&gt;This article provides a high-level overview of how Rhize works, starting with data collection and ending with user interaction.
+To make these concepts more concrete, the next section provides examples of each process.&lt;/p&gt;
+&lt;p&gt;The heart of the Rhize platform is its manufacturing knowledge graph, which stores data from all levels of the operation and exposes this data through a single endpoint.
 Around the database are services that exchange messages and process events in real-time.
-The system runs on distributed, containerized systems, ensuring horizontal scalability and high availability.&lt;/p>
-&lt;p>Finally, outside of the Rhize deployment are the two most important components: the manufacturing operation, which sends event data to Rhize, and the Rhize users, who interact with Rhize data through a number of special-purpose interfaces.&lt;/p>
-&lt;figure class="big-figure">
-&lt;a href="https://docs.rhize.com/get-started/diagram-rhize-arch-overview.png" target="_blank">
+The system runs on distributed, containerized systems, ensuring horizontal scalability and high availability.&lt;/p&gt;
+&lt;p&gt;Finally, outside of the Rhize deployment are the two most important components: the manufacturing operation, which sends event data to Rhize, and the Rhize users, who interact with Rhize data through a number of special-purpose interfaces.&lt;/p&gt;
+&lt;figure class="big-figure"&gt;
+&lt;a href="https://docs.rhize.com/get-started/diagram-rhize-arch-overview.png" target="_blank"&gt;
 &lt;img src="https://docs.rhize.com/get-started/diagram-rhize-arch-overview.png" alt="A simplified diagram of Rhize&amp;#39;s architecture"
 width="70%"
->
-&lt;/a>
-&lt;figcaption class="caption">
+&gt;
+&lt;/a&gt;
+&lt;figcaption class="caption"&gt;
 A simplified view of Rhize&amp;rsquo;s architecture
-&lt;/figcaption>
-&lt;/figure>
-&lt;h2>Examples in practice&lt;span class="hx:absolute hx:-mt-20" id="examples-in-practice">&lt;/span>
-&lt;a href="#examples-in-practice" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To make the next sections less abstract, consider these examples of how Rhize creates a common data hub for diverse human and system interaction.&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>&lt;a href="#data-inputs" >Data inputs&lt;/a>&lt;/strong>
-&lt;ul>
-&lt;li>An instrument fitter configures an MQTT-compatible device to send sensor data to Rhize.&lt;/li>
-&lt;li>A business analyst sends an ERP order through an integration with the GraphQL API.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;strong>&lt;a href="#message-exchange" >Message exchange&lt;/a>&lt;/strong>
-&lt;ol>
-&lt;li>A piece of equipment publishes information about its status over MQTT.&lt;/li>
-&lt;li>A BPMN process subscribes to the equipment&amp;rsquo;s &lt;code>TestResult&lt;/code> subtopic. When the &lt;code>TestResult&lt;/code> status changes to &lt;code>fail&lt;/code>, the BPMN process publishes a maintenance order to the broker.&lt;/li>
-&lt;li>The ERP system, which subscribes to the &lt;code>maintenance&lt;/code> topic, prepares a document for maintenance personnel.&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;li>&lt;strong>&lt;a href="#storage" >Data storage&lt;/a>&lt;/strong>
-&lt;ul>
-&lt;li>A data scientist writes a Python script that discovers production outliers for a specific segment class across all production sites.&lt;/li>
-&lt;li>A procurer uses an Excel-Rhize integration to call the API and receive a production order that the BPMN process wrote to the database one month earlier.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;strong>&lt;a href="#interfaces" >User-data interaction&lt;/a>&lt;/strong>
-&lt;ul>
-&lt;li>An operator queries sensor values from a custom-built mobile interface.&lt;/li>
-&lt;li>A quality-engineer observes real-time data in a custom dashboard built for statistical process control.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;strong>&lt;a href="#deployment" >Deployment&lt;/a>&lt;/strong>
-&lt;ul>
-&lt;li>A DevOps engineer pushes an upgrade that handles message-streams more efficiently. This upgrade rolls out node-by-node across each instance.&lt;/li>
-&lt;li>A plant process causes a heavy inflow of data. The system autoscales to meet the temporary computation demand.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2>Data inputs&lt;span class="hx:absolute hx:-mt-20" id="data-inputs">&lt;/span>
-&lt;a href="#data-inputs" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>A manufacturing data hub is useless without manufacturing data.&lt;/p>
-&lt;p>The Rhize agent collects data from MQTT brokers and devices, OPC-UA servers.
-You can also send data and documents over HTTP through a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/call-the-graphql-api/" >GraphQL call&lt;/a>.
-The Rhize UI also has a graphical interface to &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/model/" >model production&lt;/a> objects.&lt;/p>
-&lt;p>All this data is mapped to Rhize&amp;rsquo;s ISA-95 schema, which creates a coherent model for all objects in the data hub.&lt;/p>
-&lt;h2>Message exchange&lt;span class="hx:absolute hx:-mt-20" id="message-exchange">&lt;/span>
-&lt;a href="#message-exchange" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>
-&lt;figure class="big-figure">
-&lt;a href="https://docs.rhize.com/get-started/rhize-diagram-data-sources.png" target="_blank">
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2&gt;Examples in practice&lt;span class="hx:absolute hx:-mt-20" id="examples-in-practice"&gt;&lt;/span&gt;
+&lt;a href="#examples-in-practice" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To make the next sections less abstract, consider these examples of how Rhize creates a common data hub for diverse human and system interaction.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="#data-inputs" &gt;Data inputs&lt;/a&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;An instrument fitter configures an MQTT-compatible device to send sensor data to Rhize.&lt;/li&gt;
+&lt;li&gt;A business analyst sends an ERP order through an integration with the GraphQL API.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="#message-exchange" &gt;Message exchange&lt;/a&gt;&lt;/strong&gt;
+&lt;ol&gt;
+&lt;li&gt;A piece of equipment publishes information about its status over MQTT.&lt;/li&gt;
+&lt;li&gt;A BPMN process subscribes to the equipment&amp;rsquo;s &lt;code&gt;TestResult&lt;/code&gt; subtopic. When the &lt;code&gt;TestResult&lt;/code&gt; status changes to &lt;code&gt;fail&lt;/code&gt;, the BPMN process publishes a maintenance order to the broker.&lt;/li&gt;
+&lt;li&gt;The ERP system, which subscribes to the &lt;code&gt;maintenance&lt;/code&gt; topic, prepares a document for maintenance personnel.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="#storage" &gt;Data storage&lt;/a&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;A data scientist writes a Python script that discovers production outliers for a specific segment class across all production sites.&lt;/li&gt;
+&lt;li&gt;A procurer uses an Excel-Rhize integration to call the API and receive a production order that the BPMN process wrote to the database one month earlier.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="#interfaces" &gt;User-data interaction&lt;/a&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;An operator queries sensor values from a custom-built mobile interface.&lt;/li&gt;
+&lt;li&gt;A quality-engineer observes real-time data in a custom dashboard built for statistical process control.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="#deployment" &gt;Deployment&lt;/a&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;A DevOps engineer pushes an upgrade that handles message-streams more efficiently. This upgrade rolls out node-by-node across each instance.&lt;/li&gt;
+&lt;li&gt;A plant process causes a heavy inflow of data. The system autoscales to meet the temporary computation demand.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Data inputs&lt;span class="hx:absolute hx:-mt-20" id="data-inputs"&gt;&lt;/span&gt;
+&lt;a href="#data-inputs" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A manufacturing data hub is useless without manufacturing data.&lt;/p&gt;
+&lt;p&gt;The Rhize agent collects data from MQTT brokers and devices, OPC-UA servers.
+You can also send data and documents over HTTP through a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/call-the-graphql-api/" &gt;GraphQL call&lt;/a&gt;.
+The Rhize UI also has a graphical interface to &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/model/" &gt;model production&lt;/a&gt; objects.&lt;/p&gt;
+&lt;p&gt;All this data is mapped to Rhize&amp;rsquo;s ISA-95 schema, which creates a coherent model for all objects in the data hub.&lt;/p&gt;
+&lt;h2&gt;Message exchange&lt;span class="hx:absolute hx:-mt-20" id="message-exchange"&gt;&lt;/span&gt;
+&lt;a href="#message-exchange" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;figure class="big-figure"&gt;
+&lt;a href="https://docs.rhize.com/get-started/rhize-diagram-data-sources.png" target="_blank"&gt;
 &lt;img src="https://docs.rhize.com/get-started/rhize-diagram-data-sources.png" alt="More granular view of Rhize-Customer messaging"
 width="90%"
->
-&lt;/a>
-&lt;figcaption class="caption">
+&gt;
+&lt;/a&gt;
+&lt;figcaption class="caption"&gt;
 More granular view of Rhize-Customer messaging
-&lt;/figcaption>
-&lt;/figure>
-&lt;p>Rhize&amp;rsquo;s architecture is event-driven, low-latency, and scalable.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Rhize&amp;rsquo;s architecture is event-driven, low-latency, and scalable.
 To communicate events in real-time and across services, Rhize uses a publish-subscribe model through the NATS message broker.
-The message infrastructure enables complex interaction between services without creating dependencies between them.&lt;/p>
-&lt;p>Services in the Rhize application subscribe to their relevant topics and handle events as they come in.
+The message infrastructure enables complex interaction between services without creating dependencies between them.&lt;/p&gt;
+&lt;p&gt;Services in the Rhize application subscribe to their relevant topics and handle events as they come in.
 Services also publish events to the event broker.
-Thus, Rhize services can communicate with each other and with customer systems in a completely decoupled manner.&lt;/p>
-&lt;h2>Data storage&lt;span class="hx:absolute hx:-mt-20" id="database">&lt;/span>
-&lt;a href="#database" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>With a schema defined by the ISA-95 standard,
+Thus, Rhize services can communicate with each other and with customer systems in a completely decoupled manner.&lt;/p&gt;
+&lt;h2&gt;Data storage&lt;span class="hx:absolute hx:-mt-20" id="database"&gt;&lt;/span&gt;
+&lt;a href="#database" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;With a schema defined by the ISA-95 standard,
 the graph database creates contextual relationships that link all data stored in the system.
-This graph data, accessible through a single endpoint, provides a single source to perform vast combinations of analysis.&lt;/p>
-&lt;p>Along with event data from disparate places and decoupled services,
-the database also stores declarative configuration data to instruct different services on how to respond to events.&lt;/p>
-&lt;p>Finally, the time-series component of the database accepts real-time data streams.&lt;/p>
-&lt;h2>The interfaces&lt;span class="hx:absolute hx:-mt-20" id="interfaces">&lt;/span>
-&lt;a href="#interfaces" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The Rhize application comes with a graphical interface.
-Some uses include:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/" >&lt;strong>Configure BPMN rules.&lt;/strong>&lt;/a> A low-code tool for analysts and operators to create programmable events.&lt;/li>
-&lt;li>&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/model/" >&lt;strong>Upload master data.&lt;/strong>&lt;/a> Based on the ISA-95 object models.&lt;/li>
-&lt;li>&lt;a href="https://docs.rhize.com/versions/v3.1.0/deploy/" >&lt;strong>Administrate.&lt;/strong>&lt;/a> Authenticate and scope access to systems and personnel.&lt;/li>
-&lt;/ul>
-&lt;p>These interfaces sit on top of the GraphQL API gateway, which serves as a programming interface for data analysis.
-Rhize customers also use the GraphQL interface to build their own applications, either with dedicated frontend developers or through low-code tools like Appsmith.&lt;/p>
-&lt;p>Last but not least, the time-series data is observable through monitoring tools like Grafana.&lt;/p>
-&lt;h2>Deployment&lt;span class="hx:absolute hx:-mt-20" id="deployment">&lt;/span>
-&lt;a href="#deployment" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Rhize runs on Kubernetes and is configured through CI/CD servers.&lt;/p>
-&lt;p>Using Kubernetes, Rhize can deploy to multiple instances using a common configuration.
+This graph data, accessible through a single endpoint, provides a single source to perform vast combinations of analysis.&lt;/p&gt;
+&lt;p&gt;Along with event data from disparate places and decoupled services,
+the database also stores declarative configuration data to instruct different services on how to respond to events.&lt;/p&gt;
+&lt;p&gt;Finally, the time-series component of the database accepts real-time data streams.&lt;/p&gt;
+&lt;h2&gt;The interfaces&lt;span class="hx:absolute hx:-mt-20" id="interfaces"&gt;&lt;/span&gt;
+&lt;a href="#interfaces" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The Rhize application comes with a graphical interface.
+Some uses include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/" &gt;&lt;strong&gt;Configure BPMN rules.&lt;/strong&gt;&lt;/a&gt; A low-code tool for analysts and operators to create programmable events.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/model/" &gt;&lt;strong&gt;Upload master data.&lt;/strong&gt;&lt;/a&gt; Based on the ISA-95 object models.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/deploy/" &gt;&lt;strong&gt;Administrate.&lt;/strong&gt;&lt;/a&gt; Authenticate and scope access to systems and personnel.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These interfaces sit on top of the GraphQL API gateway, which serves as a programming interface for data analysis.
+Rhize customers also use the GraphQL interface to build their own applications, either with dedicated frontend developers or through low-code tools like Appsmith.&lt;/p&gt;
+&lt;p&gt;Last but not least, the time-series data is observable through monitoring tools like Grafana.&lt;/p&gt;
+&lt;h2&gt;Deployment&lt;span class="hx:absolute hx:-mt-20" id="deployment"&gt;&lt;/span&gt;
+&lt;a href="#deployment" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Rhize runs on Kubernetes and is configured through CI/CD servers.&lt;/p&gt;
+&lt;p&gt;Using Kubernetes, Rhize can deploy to multiple instances using a common configuration.
 Such distribution removes single points of failure, and system upgrades can happen on a rolling basis, with zero downtime.
-All deployment is version controlled, which makes regressions easier to recover from.&lt;/p>
-&lt;p>Deployment is vendor neutral, giving organizations complete control to run the system on their local networks or preferred cloud host.
-The modern tools of DevOps also makes the system easier to maintain, as they come with vast tooling ecosystems and training material.&lt;/p></description></item></channel></rss>
+All deployment is version controlled, which makes regressions easier to recover from.&lt;/p&gt;
+&lt;p&gt;Deployment is vendor neutral, giving organizations complete control to run the system on their local networks or preferred cloud host.
+The modern tools of DevOps also makes the system easier to maintain, as they come with vast tooling ecosystems and training material.&lt;/p&gt;</description></item></channel></rss>

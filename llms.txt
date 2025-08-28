@@ -298,16 +298,19 @@ Release date: October 24, 2023
 Breaking … - Published 2023-10-31
 
 #### Learn ISA-95
-- [How to speak ISA-95](https://docs.rhize.com/versions/v3.2.0/isa-95/how-to-speak-isa-95/): More than a standard, ISA-95 is a specialized vocabulary that describes all elements of a manufacturing operation. | Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
-- [ISA-95 diagrams](https://docs.rhize.com/versions/v3.2.0/isa-95/isa-95-diagrams/): Helpful diagrams to present a high-level overview of the ISA-95 models for entities and information flows. | Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+- [How to speak ISA-95](https://docs.rhize.com/versions/v3.2.0/isa-95/how-to-speak-isa-95/): More than a standard, ISA-95 is a specialized vocabulary that describes all elements of a manufacturing operation. | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets. …
+- [ISA-95 diagrams](https://docs.rhize.com/versions/v3.2.0/isa-95/isa-95-diagrams/): Helpful diagrams to present a high-level overview of the ISA-95 models for entities and information flows. | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets. …
 
 ##### Resources in ISA-95
-- [Equipment models in ISA-95](https://docs.rhize.com/versions/v3.2.0/isa-95/resources/equipment/): A guide to equipment entities and relationships in ISA-95 | Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
-- [Material models in ISA-95](https://docs.rhize.com/versions/v3.2.0/isa-95/resources/material/): A guide to material entities and relationships in ISA-95 | Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+- [Equipment models in ISA-95](https://docs.rhize.com/versions/v3.2.0/isa-95/resources/equipment/): A guide to equipment entities and relationships in ISA-95 | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets. …
+- [Material models in ISA-95](https://docs.rhize.com/versions/v3.2.0/isa-95/resources/material/): A guide to material entities and relationships in ISA-95 | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+In …
 
 ##### Models of work
-- [Process segments](https://docs.rhize.com/versions/v3.2.0/isa-95/models-of-work/process-segments/): Process segments represent shared steps across processes | Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
-- [Work masters](https://docs.rhize.com/versions/v3.2.0/isa-95/models-of-work/work-masters/): The most granular work definition in ISA-95, defining the resources and instructions necessary to do a unit of work. | Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+- [Process segments](https://docs.rhize.com/versions/v3.2.0/isa-95/models-of-work/process-segments/): Process segments represent shared steps across processes | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+A …
+- [Work masters](https://docs.rhize.com/versions/v3.2.0/isa-95/models-of-work/work-masters/): The most granular work definition in ISA-95, defining the resources and instructions necessary to do a unit of work. | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+A …
 
 ### v3.0.3
 
@@ -576,18 +579,21 @@ Service … - Published 2023-11-02
 - [Work masters](https://docs.rhize.com/versions/v3.1.0/isa-95/models-of-work/work-masters/): The most granular work definition in ISA-95, defining the resources and instructions necessary to do a unit of work. | A work master defines the resources and instructions necessary to do a unit of work. As the most …
 
 ## Learn ISA-95
-- [How to speak ISA-95](https://docs.rhize.com/isa-95/how-to-speak-isa-95/): More than a standard, ISA-95 is a specialized vocabulary that describes all elements of a manufacturing operation. | Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
-- [ISA-95 diagrams](https://docs.rhize.com/isa-95/isa-95-diagrams/): Helpful diagrams to present a high-level overview of the ISA-95 models for entities and information flows. | Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+- [How to speak ISA-95](https://docs.rhize.com/isa-95/how-to-speak-isa-95/): More than a standard, ISA-95 is a specialized vocabulary that describes all elements of a manufacturing operation. | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets. …
+- [ISA-95 diagrams](https://docs.rhize.com/isa-95/isa-95-diagrams/): Helpful diagrams to present a high-level overview of the ISA-95 models for entities and information flows. | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets. …
 
 ### Resources in ISA-95
-- [Equipment models in ISA-95](https://docs.rhize.com/isa-95/resources/equipment/): A guide to equipment entities and relationships in ISA-95 | Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
-- [Material models in ISA-95](https://docs.rhize.com/isa-95/resources/material/): A guide to material entities and relationships in ISA-95 | Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+- [Equipment models in ISA-95](https://docs.rhize.com/isa-95/resources/equipment/): A guide to equipment entities and relationships in ISA-95 | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets. …
+- [Material models in ISA-95](https://docs.rhize.com/isa-95/resources/material/): A guide to material entities and relationships in ISA-95 | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+In …
 
 ### Models of work
-- [Process segments](https://docs.rhize.com/isa-95/models-of-work/process-segments/): Process segments represent shared steps across processes | Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
-- [Work masters](https://docs.rhize.com/isa-95/models-of-work/work-masters/): The most granular work definition in ISA-95, defining the resources and instructions necessary to do a unit of work. | Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+- [Process segments](https://docs.rhize.com/isa-95/models-of-work/process-segments/): Process segments represent shared steps across processes | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+A …
+- [Work masters](https://docs.rhize.com/isa-95/models-of-work/work-masters/): The most granular work definition in ISA-95, defining the resources and instructions necessary to do a unit of work. | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+A …
 
 
 ---
-Generated on 2025-08-27 17:24:15 UTC
+Generated on 2025-08-28 01:40:43 UTC
 Site: https://docs.rhize.com/

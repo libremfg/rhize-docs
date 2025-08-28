@@ -1,1085 +1,1085 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Service configuration</title><link>https://docs.rhize.com/versions/v3.0.3/reference/service-config/</link><description>Recent content in Service configuration on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.rhize.com/versions/v3.0.3/reference/service-config/index.xml" rel="self" type="application/rss+xml"/><item><title>Agent configuration</title><link>https://docs.rhize.com/versions/v3.0.3/reference/service-config/agent-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/reference/service-config/agent-configuration/</guid><description>
-&lt;p>The Rhize agent collects data that is emitted in the manufacturing process and makes this data visible in the Rhize system.
-It works by connecting to equipment or groups of equipment that run over protocols such as OPC UA.&lt;/p>
-&lt;p>As the communication bridge between the Rhize Data Hub and your plant, the agent has multiple functions:&lt;/p>
-&lt;ul>
-&lt;li>It subscribes to tags and republishes the changes in NATS.&lt;/li>
-&lt;li>It creates an interface for the BPMN engine to send reads and writes to a data source and its associated equipment.&lt;/li>
-&lt;/ul>
-&lt;h2>OPC UA authentication types&lt;span class="hx:absolute hx:-mt-20" id="opc-ua-authentication-types">&lt;/span>
-&lt;a href="#opc-ua-authentication-types" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>When authenticating over OPC UA, Rhize supports the following authentication types:&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Authentication type&lt;/th>
-&lt;th>Behavior&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Anonymous&lt;/td>
-&lt;td>Connects without any necessary credential.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Username&lt;/td>
-&lt;td>Authenticates through a &lt;code>username&lt;/code> and &lt;code>password&lt;/code> in the config file, or through a Kubernetes secret.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Certificate&lt;/td>
-&lt;td>Uses the certificate on disk specified in the &lt;code>OPCUA.CertFile&lt;/code> and &lt;code>OPCUA.KeyFile&lt;/code> configs. If no certificate exists and the config specifies the &lt;code>OPCUA.GenCert&lt;/code> property as &lt;code>true&lt;/code>, automatically generates one.&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="logging">&lt;/span>
-&lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Logs the configurations to the console.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>type&lt;/code>&lt;/td>
-&lt;td>Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Level&lt;/code>&lt;/td>
-&lt;td>Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, &lt;code>Panic&lt;/code>. Defaults to &lt;code>Trace&lt;/code>. &lt;br />(Default: &lt;code>trace&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>libreDataStoreGraphQL&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="libredatastoregraphql">&lt;/span>
-&lt;a href="#libredatastoregraphql" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>GRAPHQL_URL&lt;/code>&lt;/td>
-&lt;td>The URL of the GraphQL endpoint to use for interacting with Rhize services. &lt;br />(Default: &lt;code>http://localhost:8080/graphql&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>NATS&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="nats">&lt;/span>
-&lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>SERVER_URL&lt;/code>&lt;/td>
-&lt;td>The URL for connecting to the NATS server. &lt;br />(Default: &lt;code>nats://system:system@localhost:4222&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="oidc">&lt;/span>
-&lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
-&lt;td>The URL of the OpenID Connect server. &lt;br />(Default: &lt;code>http://localhost:8090&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>realm&lt;/code>&lt;/td>
-&lt;td>Identifies the authentication domain for which the authentication request is being made.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>client_id&lt;/code>&lt;/td>
-&lt;td>The unique identifier assigned to the client application by the OIDC server.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>client_secret&lt;/code>&lt;/td>
-&lt;td>Used to authenticate the client alongside the client ID when making confidential requests.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>username&lt;/code>&lt;/td>
-&lt;td>The username credentials to authenticate with the OIDC server.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>password&lt;/code>&lt;/td>
-&lt;td>The password credentials to authenticate with the OIDC server.&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="opentelemetry">&lt;/span>
-&lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
-&lt;td>The URL of the OpenTelemetry server. &lt;br />(Default: &lt;code>localhost:4317&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>OPCUA&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="opcua">&lt;/span>
-&lt;a href="#opcua" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>DiscoveryUrl&lt;/code>&lt;/td>
-&lt;td>The URL to locate and connect to OPC UA servers on a network. &lt;br />(Default: &lt;code>opc.tcp://localhost:4840&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Endpoint&lt;/code>&lt;/td>
-&lt;td>The URL of the OPC UA service server. &lt;br />(Default: &lt;code>opc.tcp://localhost:4840&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Username&lt;/code>&lt;/td>
-&lt;td>The username credentials to authenticate with the OPC UA server.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Password&lt;/code>&lt;/td>
-&lt;td>The password credentials to authenticate with the OPC UA server.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Mode&lt;/code>&lt;/td>
-&lt;td>The operational mode of the OPC UA server/client. &lt;br />(Default: &lt;code>None&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Policy&lt;/code>&lt;/td>
-&lt;td>The security measures for OPC UA server communication. &lt;br />(Default: &lt;code>None&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Auth&lt;/code>&lt;/td>
-&lt;td>The authentication mechanisms and user access control. &lt;br />(Default: &lt;code>Anonymous&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>AppUri&lt;/code>&lt;/td>
-&lt;td>The application&amp;rsquo;s unique URI within the OPC UA system. &lt;br />(Default: &lt;code>opc.tcp://localhost:4840&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>BUFFERS&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="buffers">&lt;/span>
-&lt;a href="#buffers" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>ProtocolQueueType&lt;/code>&lt;/td>
-&lt;td>The type of queue used for buffering communication protocol data. &lt;br />(Default: &lt;code>0&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>HEALTH&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="health">&lt;/span>
-&lt;a href="#health" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>PollInterval&lt;/code>&lt;/td>
-&lt;td>The frequency of scans for component status and health. &lt;br />(Default: &lt;code>1000&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>SubscriptionTimeout&lt;/code>&lt;/td>
-&lt;td>The maximum duration to wait to receive updates from subscribed data sources. &lt;br />(Default: &lt;code>60000&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>SubscriptionMaxCount&lt;/code>&lt;/td>
-&lt;td>The maximum number of concurrent subscriptions for monitoring. &lt;br />(Default: &lt;code>5&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>MQTT&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="mqtt">&lt;/span>
-&lt;a href="#mqtt" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>Version&lt;/code>&lt;/td>
-&lt;td>The version of MQTT used: &lt;code>5.0&lt;/code> or &lt;code>3.1.1&lt;/code>. &lt;br />(Default: &lt;code>3.1.1&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>ClientId&lt;/code>&lt;/td>
-&lt;td>The ID used in the MQTT broker. &lt;br />(Default: &lt;code>mqtt-client&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Endpoint&lt;/code>&lt;/td>
-&lt;td>The URL of the MQTT broker. &lt;br />(Default: &lt;code>mqtt://localhost:1883&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Username&lt;/code>&lt;/td>
-&lt;td>The username credentials to authenticate with the MQTT broker.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Password&lt;/code>&lt;/td>
-&lt;td>The password credentials to authenticate with the MQTT broker.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>DecomposeJSON&lt;/code>&lt;/td>
-&lt;td>Enables or disables JSON payload decomposition into individual data fields. &lt;br />(Default: &lt;code>false&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>TimestampField&lt;/code>&lt;/td>
-&lt;td>The field to search to return timestamp information. &lt;br />(Default: &lt;code>timestamp&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>RequestTimeout&lt;/code>&lt;/td>
-&lt;td>The maximum duration to wait to receive a response to an MQTT request from the broker. &lt;br />(Default: &lt;code>10&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>DATASOURCE&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="datasource">&lt;/span>
-&lt;a href="#datasource" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>ID&lt;/code>&lt;/td>
-&lt;td>The source ID to retrieve payload data from. &lt;br />(Default: &lt;code>DS_0806&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>AZURE&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="azure">&lt;/span>
-&lt;a href="#azure" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>CLIENT_ID&lt;/code>&lt;/td>
-&lt;td>The ID used to securely authenticate Azure service access.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>CLIENT_SECRET&lt;/code>&lt;/td>
-&lt;td>The secret key associated with the client ID for authentication.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>TENANT_ID&lt;/code>&lt;/td>
-&lt;td>The ID of the Azure Active Directory tenant where the service is registered.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>SERVICEBUS_HOSTNAME&lt;/code>&lt;/td>
-&lt;td>The URL of the Azure Service Bus namespace used for Azure ecosystem communication. &lt;br />(Default: &lt;code>bsl-dev.servicebus.windows.net&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table></description></item><item><title>Audit configuration</title><link>https://docs.rhize.com/versions/v3.0.3/reference/service-config/audit-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/reference/service-config/audit-configuration/</guid><description>
-&lt;p>Audit offers a secure and unchangeable record of all activities that happen within the Rhize system.&lt;/p>
-&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="logging">&lt;/span>
-&lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Logs the configuration to the console.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>type&lt;/code>&lt;/td>
-&lt;td>Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Level&lt;/code>&lt;/td>
-&lt;td>Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, and &lt;code>Panic&lt;/code>. &lt;br />(Default: &lt;code>Trace&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="oidc">&lt;/span>
-&lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
-&lt;td>The URL of the OpenID Connect server. &lt;br />(Default: &lt;code>http://localhost:8090&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>realm&lt;/code>&lt;/td>
-&lt;td>Identifies the authentication domain for which the authentication request is being made.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>client_id&lt;/code>&lt;/td>
-&lt;td>The unique identifier assigned to the client application by the OIDC server.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>client_secret&lt;/code>&lt;/td>
-&lt;td>Used to authenticate the client when making confidential requests.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>username&lt;/code>&lt;/td>
-&lt;td>The username credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>password&lt;/code>&lt;/td>
-&lt;td>The password credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="opentelemetry">&lt;/span>
-&lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
-&lt;td>The URL of the OpenTelemetry server. &lt;br />(Default: &lt;code>localhost:4317&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>storage&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="storage">&lt;/span>
-&lt;a href="#storage" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Storage system for the configuration data. Value options include: &lt;code>influxdb&lt;/code> and &lt;code>pg&lt;/code>.&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>influxdb&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="influxdb">&lt;/span>
-&lt;a href="#influxdb" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>A time-series database that is used in conjunction with Grafana designed for handling time-stamped data, such as metrics, events, and logs, that change over time.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
-&lt;td>The URL of the InfluxDB server. &lt;br />(Default: &lt;code>http://localhost:8086&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>token&lt;/code>&lt;/td>
-&lt;td>The authentication token to authenticate requests to the InfluxDB server. &lt;br />(Default: &lt;code>my-token&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>pg&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="pg">&lt;/span>
-&lt;a href="#pg" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>PostgreSQL is a general-purpose relational database management system that supports a wide range of features and data types.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>host&lt;/code>&lt;/td>
-&lt;td>The host name of the PostgreSQL database server to which the client application connects. &lt;br />(Default: &lt;code>dbname&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>user&lt;/code>&lt;/td>
-&lt;td>The username to authenticate with the PostgreSQL database server.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>password&lt;/code>&lt;/td>
-&lt;td>The password associated with the specified PostgreSQL user account.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>port&lt;/code>&lt;/td>
-&lt;td>The port number on which the PostgreSQL database server is listening for incoming connections. &lt;br />(Default: &lt;code>5432&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table></description></item><item><title>BPMN configuration</title><link>https://docs.rhize.com/versions/v3.0.3/reference/service-config/bpmn-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/reference/service-config/bpmn-configuration/</guid><description>
-&lt;p>The Rhize BPMN acts as the tailored engine for processing low-code workflows designed within the [BPMN UI]/versions/v3.0.3/how-to/bpmn/. The configurations manage the connection and data flow on the BPMN engine to the other Rhize microservices.&lt;/p>
-&lt;h2>&lt;code>http&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="http">&lt;/span>
-&lt;a href="#http" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>All HTTP configurations are measured in &lt;code>seconds&lt;/code>.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>ReadHeaderTimeout&lt;/code>&lt;/td>
-&lt;td>Wait duration for the request header to be fully read before timing out. &lt;br />(Default: &lt;code>10&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>ReadTimeout&lt;/code>&lt;/td>
-&lt;td>Wait duration for the entire request to be read before timing out. &lt;br />(Default: &lt;code>15&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>WriteTimeout&lt;/code>&lt;/td>
-&lt;td>Wait duration for the entire response to be written before timing out. &lt;br />(Default: &lt;code>10&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>IdleTimeout&lt;/code>&lt;/td>
-&lt;td>Wait duration for the next request while the connection is idle before timing out. &lt;br />(Default: &lt;code>30&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="logging">&lt;/span>
-&lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Logs the configurations to the console.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>type&lt;/code>&lt;/td>
-&lt;td>Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Level&lt;/code>&lt;/td>
-&lt;td>Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, or &lt;code>Panic&lt;/code>. &lt;br />(Default: &lt;code>Debug&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>libreDataStoreGraphQL&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="libredatastoregraphql">&lt;/span>
-&lt;a href="#libredatastoregraphql" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>GRAPHQL_URL&lt;/code>&lt;/td>
-&lt;td>The URL of the GraphQL endpoint to use for interacting with Rhize services. &lt;br />(Default: &lt;code>http://localhost:4000/&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>GRAPHQL_CA_FILE&lt;/code>&lt;/td>
-&lt;td>The file path of the CA certificate used for secure communication with the GraphQL endpoint. &lt;br />(Default: &lt;code>''&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>viewInstance&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="viewinstance">&lt;/span>
-&lt;a href="#viewinstance" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configuration for service viewing instances.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>grafana&lt;/code>&lt;/td>
-&lt;td>&lt;code>org&lt;/code>: The organization ID for the Grafana instance (Default: &lt;code>1&lt;/code>). &lt;br /> &lt;code>tempoUid&lt;/code>: The UID for Tempo integration in Grafana (Default: &lt;code>libre-tempo&lt;/code>). &lt;br /> &lt;code>url&lt;/code>: The URL of the Grafana instance (Default: &lt;code>http://localhost:3000&lt;/code>).&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>loki&lt;/code>&lt;/td>
-&lt;td>&lt;code>accessToken&lt;/code>: The access token for authentication with Loki (Default: &lt;code>''&lt;/code>). &lt;br /> &lt;code>url&lt;/code>: The URL of the Loki instance (Default: &lt;code>http://localhost:3100&lt;/code>).&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>tempo&lt;/code>&lt;/td>
-&lt;td>&lt;code>accessToken&lt;/code>: The access token for authentication with Tempo (Default: &lt;code>''&lt;/code>). &lt;br /> &lt;code>url&lt;/code>: The URL of the Tempo instance (Default: &lt;code>http://localhost:3200&lt;/code>).&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>commandConsumer&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="commandconsumer">&lt;/span>
-&lt;a href="#commandconsumer" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>threads&lt;/code>&lt;/td>
-&lt;td>The number of threads for command consumption. &lt;br />(Default: &lt;code>3&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>GraphQLSubscriber&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="graphqlsubscriber">&lt;/span>
-&lt;a href="#graphqlsubscriber" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>GRAPHQL_URL&lt;/code>&lt;/td>
-&lt;td>The URL of the GraphQL endpoint for the GraphQLSubscriber. &lt;br />(Default: &lt;code>http://localhost:4000/&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>NATS&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="nats">&lt;/span>
-&lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>CommandStreamReplicas&lt;/code>&lt;/td>
-&lt;td>The number of replicas for the command stream. &lt;br />(Default: &lt;code>1&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>JobResponseKVMaxGB&lt;/code>&lt;/td>
-&lt;td>The maximum size (in gigabytes) for the job response key-value store. &lt;br />(Default: &lt;code>2&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>JobResponseKVReplicas&lt;/code>&lt;/td>
-&lt;td>The number of replicas for the job response key-value store. &lt;br />(Default: &lt;code>1&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>JobResponseKVTTLMinutes&lt;/code>&lt;/td>
-&lt;td>the &amp;ldquo;time-to-live&amp;rdquo; (in minutes) for job response key-values. &lt;br />(Default: &lt;code>7&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>WorkflowSpecificationKVReplicas&lt;/code>&lt;/td>
-&lt;td>The number of replicas for the workflow specification key-value store. &lt;br />(Default: &lt;code>1&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
-&lt;td>The URL for connecting to the NATS server. &lt;br />(Default: &lt;code>nats://system:system@localhost:4222&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="oidc">&lt;/span>
-&lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
-&lt;td>The URL of the OpenID Connect server. &lt;br />(Default: &lt;code>http://localhost:8090&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>realm&lt;/code>&lt;/td>
-&lt;td>Identifies the authentication domain for which the authentication request is being made.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>client_id&lt;/code>&lt;/td>
-&lt;td>The unique identifier assigned to the client application by the OIDC server.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>client_secret&lt;/code>&lt;/td>
-&lt;td>Used to authenticate the client alongside the client ID when making confidential requests.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>username&lt;/code>&lt;/td>
-&lt;td>The username credentials to authenticate with the OIDC server.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>password&lt;/code>&lt;/td>
-&lt;td>The password credentials to authenticate with the OIDC server.&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="opentelemetry">&lt;/span>
-&lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
-&lt;td>The URL of the OpenTelemetry server. &lt;br />(Default: &lt;code>localhost:4317&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>defaultDebug&lt;/code>&lt;/td>
-&lt;td>Enables or disables default debug mode. &lt;br />(Default: &lt;code>false&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>RESTAPI&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="restapi">&lt;/span>
-&lt;a href="#restapi" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>PORT&lt;/code>&lt;/td>
-&lt;td>The port number for RestAPI connection. &lt;br />(Default: &lt;code>8080&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>SECRET&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="secret">&lt;/span>
-&lt;a href="#secret" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>KEY&lt;/code>&lt;/td>
-&lt;td>The secret key used to connect to the BPMN client.&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table></description></item><item><title>Calendar configuration</title><link>https://docs.rhize.com/versions/v3.0.3/reference/service-config/calendar-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/reference/service-config/calendar-configuration/</guid><description>
-&lt;p>The Calendar Service handles polling work calendar definitions and generating work calendar entries in the graph and time series databases.&lt;/p>
-&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="logging">&lt;/span>
-&lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Logs the configuration to the console.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>type&lt;/code>&lt;/td>
-&lt;td>Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Level&lt;/code>&lt;/td>
-&lt;td>Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, and &lt;code>Panic&lt;/code>. &lt;br />(Default: &lt;code>Trace&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>NATS&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="nats">&lt;/span>
-&lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Message broker that drives Rhize&amp;rsquo;s event-based architecture.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>SERVER_URL&lt;/code>&lt;/td>
-&lt;td>The URL of the NATS server. &lt;br />(Default: &lt;code>nats://system:system@localhost:4222&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="oidc">&lt;/span>
-&lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
-&lt;td>The URL of the OpenID Connect server. &lt;br />(Default: &lt;code>http://localhost:8090&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>realm&lt;/code>&lt;/td>
-&lt;td>Identifies the authentication domain for which the authentication request is being made.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>client_id&lt;/code>&lt;/td>
-&lt;td>The unique identifier assigned to the client application by the OIDC server.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>client_secret&lt;/code>&lt;/td>
-&lt;td>Used to authenticate the client when making confidential requests.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>username&lt;/code>&lt;/td>
-&lt;td>The username credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>password&lt;/code>&lt;/td>
-&lt;td>The password credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="opentelemetry">&lt;/span>
-&lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
-&lt;td>The URL of the OpenTelemetry server. &lt;br />(Default: &lt;code>localhost:4317&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>samplingRate&lt;/code>&lt;/td>
-&lt;td>The sampling rate for traces. &lt;br />(Default: &lt;code>1&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>libreDataStoreGraphQL&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="libredatastoregraphql">&lt;/span>
-&lt;a href="#libredatastoregraphql" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>GRAPHQL_URL&lt;/code>&lt;/td>
-&lt;td>The URL of the GraphQL endpoint to use for interacting with Rhize services. &lt;br />(Default: &lt;code>http://localhost:8080/graphql&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>GraphQLSubscriber&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="graphqlsubscriber">&lt;/span>
-&lt;a href="#graphqlsubscriber" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>GRAPHQL_URL&lt;/code>&lt;/td>
-&lt;td>The URL of the GraphQL endpoint for the GraphQLSubscriber. &lt;br />(Default: &lt;code>http://localhost:4000/&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>RESTAPI&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="restapi">&lt;/span>
-&lt;a href="#restapi" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>PORT&lt;/code>&lt;/td>
-&lt;td>The port number for RestAPI connection. &lt;br />(Default: &lt;code>8080&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>Calendar&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="calendar">&lt;/span>
-&lt;a href="#calendar" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Specific configuration options for the calendar service.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>QueryIntervalMinutes&lt;/code>&lt;/td>
-&lt;td>How often to poll the work calendar definitions &lt;br />(Default: &lt;code>10&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>QUERY&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="query">&lt;/span>
-&lt;a href="#query" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Query options specific to the calendar service&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>hierarchyScopeRecursionDepth&lt;/code>&lt;/td>
-&lt;td>How deep to recurse through the hierarchy scope hierarchy &lt;br />(Default: &lt;code>3&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>equipmentRecursionDepth&lt;/code>&lt;/td>
-&lt;td>How deep to recurse through the equipment hierarchy &lt;br />(Default: &lt;code>3&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>Influx3&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="influx3">&lt;/span>
-&lt;a href="#influx3" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>InfluxDB3 server options&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>Database&lt;/code>&lt;/td>
-&lt;td>The name of the database to connect to &lt;br />(Default: &lt;code>Libre_calendar-service&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Host&lt;/code>&lt;/td>
-&lt;td>The host of the Influx3 database &lt;br />(Default: &lt;code>http://localhost:8096&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Organization&lt;/code>&lt;/td>
-&lt;td>The Influx3 Organization (Influx3 Cloud) &lt;br />(Default: &lt;code>Libre&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>TokenPrefix&lt;/code>&lt;/td>
-&lt;td>The prefix used in the authorization token (&lt;code>Token&lt;/code> for Influx 3 cloud, &lt;code>Bearer&lt;/code> for Influx3 Edge) &lt;br />(Default: &lt;code>Token&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Token&lt;/code>&lt;/td>
-&lt;td>The authorization token to attach to any Influx3 requests&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>Postgres&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="postgres">&lt;/span>
-&lt;a href="#postgres" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Postgres server options&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attribute&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>Host&lt;/code>&lt;/td>
-&lt;td>The hostname of the Postgres database &lt;br />(Default: &lt;code>localhost&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Port&lt;/code>&lt;/td>
-&lt;td>Those port of the Postgres database &lt;br />(Default: &lt;code>5432&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>User&lt;/code>&lt;/td>
-&lt;td>The Postgres user name &lt;br />(Default: &lt;code>postgres&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Password&lt;/code>&lt;/td>
-&lt;td>The Postgres instance password &lt;br />(Default: &lt;code>postgres&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Database&lt;/code>&lt;/td>
-&lt;td>The database name for the Postgres instance &lt;br />(Default: &lt;code>Libre&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>Database&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="database">&lt;/span>
-&lt;a href="#database" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Which database instance to use, either &lt;code>Postgres&lt;/code> or &lt;code>Influx3&lt;/code> &lt;br />(Default: &lt;code>Influx3&lt;/code>)&lt;/p></description></item><item><title>Core configuration</title><link>https://docs.rhize.com/versions/v3.0.3/reference/service-config/core-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/reference/service-config/core-configuration/</guid><description>
-&lt;p>The Core service oversees data sources such as OPC-UA servers and manages the publication and subscription of topics within the NATS messaging system.&lt;/p>
-&lt;h2>&lt;code>logging&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="logging">&lt;/span>
-&lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Logs the configuration to the console.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>type&lt;/code>&lt;/td>
-&lt;td>Specifies the logging configuration type: &lt;code>json&lt;/code>, &lt;code>multi&lt;/code>, or console. &lt;br />(Default: &lt;code>console&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>Level&lt;/code>&lt;/td>
-&lt;td>Configures the level of logging: &lt;code>Trace&lt;/code>, &lt;code>Debug&lt;/code>, &lt;code>Info&lt;/code>, &lt;code>Warn&lt;/code>, &lt;code>Error&lt;/code>, &lt;code>Fatal&lt;/code>, and &lt;code>Panic&lt;/code>. &lt;br />(Default: &lt;code>Trace&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>NATS&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="nats">&lt;/span>
-&lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Message broker that drives Rhize&amp;rsquo;s event-based architecture.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
-&lt;td>The URL of the NATS server. &lt;br />(Default: &lt;code>nats://system:system@localhost:4222&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>replicas&lt;/code>&lt;/td>
-&lt;td>The number of replicas or instances of the NATS server to be deployed. &lt;br />(Default: &lt;code>1&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>OIDC&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="oidc">&lt;/span>
-&lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
-&lt;td>The URL of the OpenID Connect server. &lt;br />(Default: &lt;code>http://localhost:8090&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>realm&lt;/code>&lt;/td>
-&lt;td>Identifies the authentication domain for which the authentication request is being made.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>client_id&lt;/code>&lt;/td>
-&lt;td>The unique identifier assigned to the client application by the OIDC server.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>client_secret&lt;/code>&lt;/td>
-&lt;td>Used to authenticate the client when making confidential requests.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>username&lt;/code>&lt;/td>
-&lt;td>The username credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>password&lt;/code>&lt;/td>
-&lt;td>The password credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>OpenTelemetry&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="opentelemetry">&lt;/span>
-&lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>serverUrl&lt;/code>&lt;/td>
-&lt;td>The URL of the OpenTelemetry server. &lt;br />(Default: &lt;code>localhost:4317&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>samplingRate&lt;/code>&lt;/td>
-&lt;td>The sampling rate for traces. &lt;br />(Default: &lt;code>1&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>SECRET&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="secret">&lt;/span>
-&lt;a href="#secret" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>KEY&lt;/code>&lt;/td>
-&lt;td>The SECRET KEY used for authorization within Core.&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>graphQLServer&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="graphqlserver">&lt;/span>
-&lt;a href="#graphqlserver" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The server used to connect to the GraphQL playground.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>Port&lt;/code>&lt;/td>
-&lt;td>The port used within the URL that connects to the graphQLServer. &lt;br />(Default: &lt;code>4001&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>libreDataStoreGraphQL&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="libredatastoregraphql">&lt;/span>
-&lt;a href="#libredatastoregraphql" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>GraphQLUrl&lt;/code>&lt;/td>
-&lt;td>The URL of the GraphQL endpoint to use for interacting with Rhize services. &lt;br />(Default: &lt;code>http://localhost:8080/graphql&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>BPMN&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="bpmn">&lt;/span>
-&lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>GraphQLUrl&lt;/code>&lt;/td>
-&lt;td>The URL of the BPMN endpoint to use for interacting with Rhize services. &lt;br />(Default: &lt;code>http://localhost:8081&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2>&lt;code>TimeSeries&lt;/code>&lt;span class="hx:absolute hx:-mt-20" id="timeseries">&lt;/span>
-&lt;a href="#timeseries" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Attributes&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>Enabled&lt;/code>&lt;/td>
-&lt;td>Enables the use of TimeSeries. &lt;br />(Default: &lt;code>false&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table></description></item></channel></rss>
+&lt;p&gt;The Rhize agent collects data that is emitted in the manufacturing process and makes this data visible in the Rhize system.
+It works by connecting to equipment or groups of equipment that run over protocols such as OPC UA.&lt;/p&gt;
+&lt;p&gt;As the communication bridge between the Rhize Data Hub and your plant, the agent has multiple functions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It subscribes to tags and republishes the changes in NATS.&lt;/li&gt;
+&lt;li&gt;It creates an interface for the BPMN engine to send reads and writes to a data source and its associated equipment.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;OPC UA authentication types&lt;span class="hx:absolute hx:-mt-20" id="opc-ua-authentication-types"&gt;&lt;/span&gt;
+&lt;a href="#opc-ua-authentication-types" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When authenticating over OPC UA, Rhize supports the following authentication types:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Authentication type&lt;/th&gt;
+&lt;th&gt;Behavior&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Anonymous&lt;/td&gt;
+&lt;td&gt;Connects without any necessary credential.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Username&lt;/td&gt;
+&lt;td&gt;Authenticates through a &lt;code&gt;username&lt;/code&gt; and &lt;code&gt;password&lt;/code&gt; in the config file, or through a Kubernetes secret.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Certificate&lt;/td&gt;
+&lt;td&gt;Uses the certificate on disk specified in the &lt;code&gt;OPCUA.CertFile&lt;/code&gt; and &lt;code&gt;OPCUA.KeyFile&lt;/code&gt; configs. If no certificate exists and the config specifies the &lt;code&gt;OPCUA.GenCert&lt;/code&gt; property as &lt;code&gt;true&lt;/code&gt;, automatically generates one.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;logging&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="logging"&gt;&lt;/span&gt;
+&lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Logs the configurations to the console.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;type&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Specifies the logging configuration type: &lt;code&gt;json&lt;/code&gt;, &lt;code&gt;multi&lt;/code&gt;, or console. &lt;br /&gt;(Default: &lt;code&gt;console&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Level&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Configures the level of logging: &lt;code&gt;Trace&lt;/code&gt;, &lt;code&gt;Debug&lt;/code&gt;, &lt;code&gt;Info&lt;/code&gt;, &lt;code&gt;Warn&lt;/code&gt;, &lt;code&gt;Error&lt;/code&gt;, &lt;code&gt;Fatal&lt;/code&gt;, &lt;code&gt;Panic&lt;/code&gt;. Defaults to &lt;code&gt;Trace&lt;/code&gt;. &lt;br /&gt;(Default: &lt;code&gt;trace&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;libreDataStoreGraphQL&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="libredatastoregraphql"&gt;&lt;/span&gt;
+&lt;a href="#libredatastoregraphql" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;GRAPHQL_URL&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the GraphQL endpoint to use for interacting with Rhize services. &lt;br /&gt;(Default: &lt;code&gt;http://localhost:8080/graphql&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;NATS&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="nats"&gt;&lt;/span&gt;
+&lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;SERVER_URL&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL for connecting to the NATS server. &lt;br /&gt;(Default: &lt;code&gt;nats://system:system@localhost:4222&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;OIDC&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="oidc"&gt;&lt;/span&gt;
+&lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;serverUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the OpenID Connect server. &lt;br /&gt;(Default: &lt;code&gt;http://localhost:8090&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;realm&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Identifies the authentication domain for which the authentication request is being made.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;client_id&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The unique identifier assigned to the client application by the OIDC server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;client_secret&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Used to authenticate the client alongside the client ID when making confidential requests.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The username credentials to authenticate with the OIDC server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The password credentials to authenticate with the OIDC server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;OpenTelemetry&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="opentelemetry"&gt;&lt;/span&gt;
+&lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;serverUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the OpenTelemetry server. &lt;br /&gt;(Default: &lt;code&gt;localhost:4317&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;OPCUA&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="opcua"&gt;&lt;/span&gt;
+&lt;a href="#opcua" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;DiscoveryUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL to locate and connect to OPC UA servers on a network. &lt;br /&gt;(Default: &lt;code&gt;opc.tcp://localhost:4840&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Endpoint&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the OPC UA service server. &lt;br /&gt;(Default: &lt;code&gt;opc.tcp://localhost:4840&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The username credentials to authenticate with the OPC UA server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The password credentials to authenticate with the OPC UA server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Mode&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The operational mode of the OPC UA server/client. &lt;br /&gt;(Default: &lt;code&gt;None&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Policy&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The security measures for OPC UA server communication. &lt;br /&gt;(Default: &lt;code&gt;None&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Auth&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The authentication mechanisms and user access control. &lt;br /&gt;(Default: &lt;code&gt;Anonymous&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;AppUri&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The application&amp;rsquo;s unique URI within the OPC UA system. &lt;br /&gt;(Default: &lt;code&gt;opc.tcp://localhost:4840&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;BUFFERS&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="buffers"&gt;&lt;/span&gt;
+&lt;a href="#buffers" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ProtocolQueueType&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The type of queue used for buffering communication protocol data. &lt;br /&gt;(Default: &lt;code&gt;0&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;HEALTH&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="health"&gt;&lt;/span&gt;
+&lt;a href="#health" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;PollInterval&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The frequency of scans for component status and health. &lt;br /&gt;(Default: &lt;code&gt;1000&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;SubscriptionTimeout&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The maximum duration to wait to receive updates from subscribed data sources. &lt;br /&gt;(Default: &lt;code&gt;60000&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;SubscriptionMaxCount&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The maximum number of concurrent subscriptions for monitoring. &lt;br /&gt;(Default: &lt;code&gt;5&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;MQTT&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="mqtt"&gt;&lt;/span&gt;
+&lt;a href="#mqtt" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Version&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The version of MQTT used: &lt;code&gt;5.0&lt;/code&gt; or &lt;code&gt;3.1.1&lt;/code&gt;. &lt;br /&gt;(Default: &lt;code&gt;3.1.1&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ClientId&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The ID used in the MQTT broker. &lt;br /&gt;(Default: &lt;code&gt;mqtt-client&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Endpoint&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the MQTT broker. &lt;br /&gt;(Default: &lt;code&gt;mqtt://localhost:1883&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The username credentials to authenticate with the MQTT broker.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The password credentials to authenticate with the MQTT broker.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;DecomposeJSON&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Enables or disables JSON payload decomposition into individual data fields. &lt;br /&gt;(Default: &lt;code&gt;false&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;TimestampField&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The field to search to return timestamp information. &lt;br /&gt;(Default: &lt;code&gt;timestamp&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;RequestTimeout&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The maximum duration to wait to receive a response to an MQTT request from the broker. &lt;br /&gt;(Default: &lt;code&gt;10&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;DATASOURCE&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="datasource"&gt;&lt;/span&gt;
+&lt;a href="#datasource" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ID&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The source ID to retrieve payload data from. &lt;br /&gt;(Default: &lt;code&gt;DS_0806&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;AZURE&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="azure"&gt;&lt;/span&gt;
+&lt;a href="#azure" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CLIENT_ID&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The ID used to securely authenticate Azure service access.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CLIENT_SECRET&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The secret key associated with the client ID for authentication.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;TENANT_ID&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The ID of the Azure Active Directory tenant where the service is registered.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;SERVICEBUS_HOSTNAME&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the Azure Service Bus namespace used for Azure ecosystem communication. &lt;br /&gt;(Default: &lt;code&gt;bsl-dev.servicebus.windows.net&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description></item><item><title>Audit configuration</title><link>https://docs.rhize.com/versions/v3.0.3/reference/service-config/audit-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/reference/service-config/audit-configuration/</guid><description>
+&lt;p&gt;Audit offers a secure and unchangeable record of all activities that happen within the Rhize system.&lt;/p&gt;
+&lt;h2&gt;&lt;code&gt;logging&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="logging"&gt;&lt;/span&gt;
+&lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Logs the configuration to the console.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;type&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Specifies the logging configuration type: &lt;code&gt;json&lt;/code&gt;, &lt;code&gt;multi&lt;/code&gt;, or console. &lt;br /&gt;(Default: &lt;code&gt;console&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Level&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Configures the level of logging: &lt;code&gt;Trace&lt;/code&gt;, &lt;code&gt;Debug&lt;/code&gt;, &lt;code&gt;Info&lt;/code&gt;, &lt;code&gt;Warn&lt;/code&gt;, &lt;code&gt;Error&lt;/code&gt;, &lt;code&gt;Fatal&lt;/code&gt;, and &lt;code&gt;Panic&lt;/code&gt;. &lt;br /&gt;(Default: &lt;code&gt;Trace&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;OIDC&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="oidc"&gt;&lt;/span&gt;
+&lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;serverUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the OpenID Connect server. &lt;br /&gt;(Default: &lt;code&gt;http://localhost:8090&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;realm&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Identifies the authentication domain for which the authentication request is being made.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;client_id&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The unique identifier assigned to the client application by the OIDC server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;client_secret&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Used to authenticate the client when making confidential requests.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The username credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The password credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;OpenTelemetry&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="opentelemetry"&gt;&lt;/span&gt;
+&lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;serverUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the OpenTelemetry server. &lt;br /&gt;(Default: &lt;code&gt;localhost:4317&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;storage&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="storage"&gt;&lt;/span&gt;
+&lt;a href="#storage" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Storage system for the configuration data. Value options include: &lt;code&gt;influxdb&lt;/code&gt; and &lt;code&gt;pg&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;influxdb&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="influxdb"&gt;&lt;/span&gt;
+&lt;a href="#influxdb" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A time-series database that is used in conjunction with Grafana designed for handling time-stamped data, such as metrics, events, and logs, that change over time.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;serverUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the InfluxDB server. &lt;br /&gt;(Default: &lt;code&gt;http://localhost:8086&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The authentication token to authenticate requests to the InfluxDB server. &lt;br /&gt;(Default: &lt;code&gt;my-token&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;pg&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="pg"&gt;&lt;/span&gt;
+&lt;a href="#pg" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;PostgreSQL is a general-purpose relational database management system that supports a wide range of features and data types.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;host&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The host name of the PostgreSQL database server to which the client application connects. &lt;br /&gt;(Default: &lt;code&gt;dbname&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;user&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The username to authenticate with the PostgreSQL database server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The password associated with the specified PostgreSQL user account.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;port&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The port number on which the PostgreSQL database server is listening for incoming connections. &lt;br /&gt;(Default: &lt;code&gt;5432&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description></item><item><title>BPMN configuration</title><link>https://docs.rhize.com/versions/v3.0.3/reference/service-config/bpmn-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/reference/service-config/bpmn-configuration/</guid><description>
+&lt;p&gt;The Rhize BPMN acts as the tailored engine for processing low-code workflows designed within the [BPMN UI]/versions/v3.0.3/how-to/bpmn/. The configurations manage the connection and data flow on the BPMN engine to the other Rhize microservices.&lt;/p&gt;
+&lt;h2&gt;&lt;code&gt;http&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="http"&gt;&lt;/span&gt;
+&lt;a href="#http" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;All HTTP configurations are measured in &lt;code&gt;seconds&lt;/code&gt;.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ReadHeaderTimeout&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Wait duration for the request header to be fully read before timing out. &lt;br /&gt;(Default: &lt;code&gt;10&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ReadTimeout&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Wait duration for the entire request to be read before timing out. &lt;br /&gt;(Default: &lt;code&gt;15&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;WriteTimeout&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Wait duration for the entire response to be written before timing out. &lt;br /&gt;(Default: &lt;code&gt;10&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;IdleTimeout&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Wait duration for the next request while the connection is idle before timing out. &lt;br /&gt;(Default: &lt;code&gt;30&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;logging&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="logging"&gt;&lt;/span&gt;
+&lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Logs the configurations to the console.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;type&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Specifies the logging configuration type: &lt;code&gt;json&lt;/code&gt;, &lt;code&gt;multi&lt;/code&gt;, or console. &lt;br /&gt;(Default: &lt;code&gt;console&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Level&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Configures the level of logging: &lt;code&gt;Trace&lt;/code&gt;, &lt;code&gt;Debug&lt;/code&gt;, &lt;code&gt;Info&lt;/code&gt;, &lt;code&gt;Warn&lt;/code&gt;, &lt;code&gt;Error&lt;/code&gt;, &lt;code&gt;Fatal&lt;/code&gt;, or &lt;code&gt;Panic&lt;/code&gt;. &lt;br /&gt;(Default: &lt;code&gt;Debug&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;libreDataStoreGraphQL&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="libredatastoregraphql"&gt;&lt;/span&gt;
+&lt;a href="#libredatastoregraphql" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;GRAPHQL_URL&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the GraphQL endpoint to use for interacting with Rhize services. &lt;br /&gt;(Default: &lt;code&gt;http://localhost:4000/&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;GRAPHQL_CA_FILE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The file path of the CA certificate used for secure communication with the GraphQL endpoint. &lt;br /&gt;(Default: &lt;code&gt;''&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;viewInstance&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="viewinstance"&gt;&lt;/span&gt;
+&lt;a href="#viewinstance" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Configuration for service viewing instances.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;grafana&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;org&lt;/code&gt;: The organization ID for the Grafana instance (Default: &lt;code&gt;1&lt;/code&gt;). &lt;br /&gt; &lt;code&gt;tempoUid&lt;/code&gt;: The UID for Tempo integration in Grafana (Default: &lt;code&gt;libre-tempo&lt;/code&gt;). &lt;br /&gt; &lt;code&gt;url&lt;/code&gt;: The URL of the Grafana instance (Default: &lt;code&gt;http://localhost:3000&lt;/code&gt;).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;loki&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;accessToken&lt;/code&gt;: The access token for authentication with Loki (Default: &lt;code&gt;''&lt;/code&gt;). &lt;br /&gt; &lt;code&gt;url&lt;/code&gt;: The URL of the Loki instance (Default: &lt;code&gt;http://localhost:3100&lt;/code&gt;).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;tempo&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;accessToken&lt;/code&gt;: The access token for authentication with Tempo (Default: &lt;code&gt;''&lt;/code&gt;). &lt;br /&gt; &lt;code&gt;url&lt;/code&gt;: The URL of the Tempo instance (Default: &lt;code&gt;http://localhost:3200&lt;/code&gt;).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;commandConsumer&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="commandconsumer"&gt;&lt;/span&gt;
+&lt;a href="#commandconsumer" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;threads&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The number of threads for command consumption. &lt;br /&gt;(Default: &lt;code&gt;3&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;GraphQLSubscriber&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="graphqlsubscriber"&gt;&lt;/span&gt;
+&lt;a href="#graphqlsubscriber" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;GRAPHQL_URL&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the GraphQL endpoint for the GraphQLSubscriber. &lt;br /&gt;(Default: &lt;code&gt;http://localhost:4000/&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;NATS&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="nats"&gt;&lt;/span&gt;
+&lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CommandStreamReplicas&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The number of replicas for the command stream. &lt;br /&gt;(Default: &lt;code&gt;1&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;JobResponseKVMaxGB&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The maximum size (in gigabytes) for the job response key-value store. &lt;br /&gt;(Default: &lt;code&gt;2&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;JobResponseKVReplicas&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The number of replicas for the job response key-value store. &lt;br /&gt;(Default: &lt;code&gt;1&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;JobResponseKVTTLMinutes&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;the &amp;ldquo;time-to-live&amp;rdquo; (in minutes) for job response key-values. &lt;br /&gt;(Default: &lt;code&gt;7&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;WorkflowSpecificationKVReplicas&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The number of replicas for the workflow specification key-value store. &lt;br /&gt;(Default: &lt;code&gt;1&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;serverUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL for connecting to the NATS server. &lt;br /&gt;(Default: &lt;code&gt;nats://system:system@localhost:4222&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;OIDC&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="oidc"&gt;&lt;/span&gt;
+&lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;serverUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the OpenID Connect server. &lt;br /&gt;(Default: &lt;code&gt;http://localhost:8090&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;realm&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Identifies the authentication domain for which the authentication request is being made.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;client_id&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The unique identifier assigned to the client application by the OIDC server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;client_secret&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Used to authenticate the client alongside the client ID when making confidential requests.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The username credentials to authenticate with the OIDC server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The password credentials to authenticate with the OIDC server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;OpenTelemetry&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="opentelemetry"&gt;&lt;/span&gt;
+&lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;serverUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the OpenTelemetry server. &lt;br /&gt;(Default: &lt;code&gt;localhost:4317&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;defaultDebug&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Enables or disables default debug mode. &lt;br /&gt;(Default: &lt;code&gt;false&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;RESTAPI&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="restapi"&gt;&lt;/span&gt;
+&lt;a href="#restapi" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;PORT&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The port number for RestAPI connection. &lt;br /&gt;(Default: &lt;code&gt;8080&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;SECRET&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="secret"&gt;&lt;/span&gt;
+&lt;a href="#secret" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;KEY&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The secret key used to connect to the BPMN client.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description></item><item><title>Calendar configuration</title><link>https://docs.rhize.com/versions/v3.0.3/reference/service-config/calendar-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/reference/service-config/calendar-configuration/</guid><description>
+&lt;p&gt;The Calendar Service handles polling work calendar definitions and generating work calendar entries in the graph and time series databases.&lt;/p&gt;
+&lt;h2&gt;&lt;code&gt;logging&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="logging"&gt;&lt;/span&gt;
+&lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Logs the configuration to the console.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;type&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Specifies the logging configuration type: &lt;code&gt;json&lt;/code&gt;, &lt;code&gt;multi&lt;/code&gt;, or console. &lt;br /&gt;(Default: &lt;code&gt;console&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Level&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Configures the level of logging: &lt;code&gt;Trace&lt;/code&gt;, &lt;code&gt;Debug&lt;/code&gt;, &lt;code&gt;Info&lt;/code&gt;, &lt;code&gt;Warn&lt;/code&gt;, &lt;code&gt;Error&lt;/code&gt;, &lt;code&gt;Fatal&lt;/code&gt;, and &lt;code&gt;Panic&lt;/code&gt;. &lt;br /&gt;(Default: &lt;code&gt;Trace&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;NATS&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="nats"&gt;&lt;/span&gt;
+&lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Message broker that drives Rhize&amp;rsquo;s event-based architecture.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;SERVER_URL&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the NATS server. &lt;br /&gt;(Default: &lt;code&gt;nats://system:system@localhost:4222&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;OIDC&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="oidc"&gt;&lt;/span&gt;
+&lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;serverUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the OpenID Connect server. &lt;br /&gt;(Default: &lt;code&gt;http://localhost:8090&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;realm&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Identifies the authentication domain for which the authentication request is being made.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;client_id&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The unique identifier assigned to the client application by the OIDC server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;client_secret&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Used to authenticate the client when making confidential requests.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The username credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The password credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;OpenTelemetry&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="opentelemetry"&gt;&lt;/span&gt;
+&lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;serverUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the OpenTelemetry server. &lt;br /&gt;(Default: &lt;code&gt;localhost:4317&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;samplingRate&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The sampling rate for traces. &lt;br /&gt;(Default: &lt;code&gt;1&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;libreDataStoreGraphQL&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="libredatastoregraphql"&gt;&lt;/span&gt;
+&lt;a href="#libredatastoregraphql" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;GRAPHQL_URL&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the GraphQL endpoint to use for interacting with Rhize services. &lt;br /&gt;(Default: &lt;code&gt;http://localhost:8080/graphql&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;GraphQLSubscriber&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="graphqlsubscriber"&gt;&lt;/span&gt;
+&lt;a href="#graphqlsubscriber" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;GRAPHQL_URL&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the GraphQL endpoint for the GraphQLSubscriber. &lt;br /&gt;(Default: &lt;code&gt;http://localhost:4000/&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;RESTAPI&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="restapi"&gt;&lt;/span&gt;
+&lt;a href="#restapi" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;PORT&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The port number for RestAPI connection. &lt;br /&gt;(Default: &lt;code&gt;8080&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;Calendar&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="calendar"&gt;&lt;/span&gt;
+&lt;a href="#calendar" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Specific configuration options for the calendar service.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;QueryIntervalMinutes&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;How often to poll the work calendar definitions &lt;br /&gt;(Default: &lt;code&gt;10&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;QUERY&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="query"&gt;&lt;/span&gt;
+&lt;a href="#query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Query options specific to the calendar service&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;hierarchyScopeRecursionDepth&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;How deep to recurse through the hierarchy scope hierarchy &lt;br /&gt;(Default: &lt;code&gt;3&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;equipmentRecursionDepth&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;How deep to recurse through the equipment hierarchy &lt;br /&gt;(Default: &lt;code&gt;3&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;Influx3&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="influx3"&gt;&lt;/span&gt;
+&lt;a href="#influx3" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;InfluxDB3 server options&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Database&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The name of the database to connect to &lt;br /&gt;(Default: &lt;code&gt;Libre_calendar-service&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Host&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The host of the Influx3 database &lt;br /&gt;(Default: &lt;code&gt;http://localhost:8096&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Organization&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The Influx3 Organization (Influx3 Cloud) &lt;br /&gt;(Default: &lt;code&gt;Libre&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;TokenPrefix&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The prefix used in the authorization token (&lt;code&gt;Token&lt;/code&gt; for Influx 3 cloud, &lt;code&gt;Bearer&lt;/code&gt; for Influx3 Edge) &lt;br /&gt;(Default: &lt;code&gt;Token&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Token&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The authorization token to attach to any Influx3 requests&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;Postgres&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="postgres"&gt;&lt;/span&gt;
+&lt;a href="#postgres" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Postgres server options&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Host&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The hostname of the Postgres database &lt;br /&gt;(Default: &lt;code&gt;localhost&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Port&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Those port of the Postgres database &lt;br /&gt;(Default: &lt;code&gt;5432&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;User&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The Postgres user name &lt;br /&gt;(Default: &lt;code&gt;postgres&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The Postgres instance password &lt;br /&gt;(Default: &lt;code&gt;postgres&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Database&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The database name for the Postgres instance &lt;br /&gt;(Default: &lt;code&gt;Libre&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;Database&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="database"&gt;&lt;/span&gt;
+&lt;a href="#database" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Which database instance to use, either &lt;code&gt;Postgres&lt;/code&gt; or &lt;code&gt;Influx3&lt;/code&gt; &lt;br /&gt;(Default: &lt;code&gt;Influx3&lt;/code&gt;)&lt;/p&gt;</description></item><item><title>Core configuration</title><link>https://docs.rhize.com/versions/v3.0.3/reference/service-config/core-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/reference/service-config/core-configuration/</guid><description>
+&lt;p&gt;The Core service oversees data sources such as OPC-UA servers and manages the publication and subscription of topics within the NATS messaging system.&lt;/p&gt;
+&lt;h2&gt;&lt;code&gt;logging&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="logging"&gt;&lt;/span&gt;
+&lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Logs the configuration to the console.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;type&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Specifies the logging configuration type: &lt;code&gt;json&lt;/code&gt;, &lt;code&gt;multi&lt;/code&gt;, or console. &lt;br /&gt;(Default: &lt;code&gt;console&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Level&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Configures the level of logging: &lt;code&gt;Trace&lt;/code&gt;, &lt;code&gt;Debug&lt;/code&gt;, &lt;code&gt;Info&lt;/code&gt;, &lt;code&gt;Warn&lt;/code&gt;, &lt;code&gt;Error&lt;/code&gt;, &lt;code&gt;Fatal&lt;/code&gt;, and &lt;code&gt;Panic&lt;/code&gt;. &lt;br /&gt;(Default: &lt;code&gt;Trace&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;NATS&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="nats"&gt;&lt;/span&gt;
+&lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Message broker that drives Rhize&amp;rsquo;s event-based architecture.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;serverUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the NATS server. &lt;br /&gt;(Default: &lt;code&gt;nats://system:system@localhost:4222&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;replicas&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The number of replicas or instances of the NATS server to be deployed. &lt;br /&gt;(Default: &lt;code&gt;1&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;OIDC&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="oidc"&gt;&lt;/span&gt;
+&lt;a href="#oidc" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Configurations for Keycloak authentication and connection with OpenID Connect.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;serverUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the OpenID Connect server. &lt;br /&gt;(Default: &lt;code&gt;http://localhost:8090&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;realm&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Identifies the authentication domain for which the authentication request is being made.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;client_id&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The unique identifier assigned to the client application by the OIDC server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;client_secret&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Used to authenticate the client when making confidential requests.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The username credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The password credentials of the user who is attempting to authenticate with the OIDC server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;OpenTelemetry&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="opentelemetry"&gt;&lt;/span&gt;
+&lt;a href="#opentelemetry" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;serverUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the OpenTelemetry server. &lt;br /&gt;(Default: &lt;code&gt;localhost:4317&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;samplingRate&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The sampling rate for traces. &lt;br /&gt;(Default: &lt;code&gt;1&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;SECRET&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="secret"&gt;&lt;/span&gt;
+&lt;a href="#secret" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;KEY&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The SECRET KEY used for authorization within Core.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;graphQLServer&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="graphqlserver"&gt;&lt;/span&gt;
+&lt;a href="#graphqlserver" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The server used to connect to the GraphQL playground.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Port&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The port used within the URL that connects to the graphQLServer. &lt;br /&gt;(Default: &lt;code&gt;4001&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;libreDataStoreGraphQL&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="libredatastoregraphql"&gt;&lt;/span&gt;
+&lt;a href="#libredatastoregraphql" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;GraphQLUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the GraphQL endpoint to use for interacting with Rhize services. &lt;br /&gt;(Default: &lt;code&gt;http://localhost:8080/graphql&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;BPMN&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="bpmn"&gt;&lt;/span&gt;
+&lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;GraphQLUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL of the BPMN endpoint to use for interacting with Rhize services. &lt;br /&gt;(Default: &lt;code&gt;http://localhost:8081&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;code&gt;TimeSeries&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="timeseries"&gt;&lt;/span&gt;
+&lt;a href="#timeseries" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attributes&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Enabled&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Enables the use of TimeSeries. &lt;br /&gt;(Default: &lt;code&gt;false&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description></item></channel></rss>
