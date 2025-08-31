@@ -73,6 +73,7 @@ params:
       dark: images/logo-dark.svg
       width: 100
       link: /
+  externalLinkDecoration: true
   footer:
     displayCopyright: false
     displayPoweredBy: false
