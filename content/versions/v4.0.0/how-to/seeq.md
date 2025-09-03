@@ -12,8 +12,11 @@ The Rhize Connector enables Seeq to access data from Rhize.
 > [!NOTE]
 > Requires Rhize v4.1.0+
 
+### Download
+Zip files containing the Rhize Connector are distributed at a dedicated [repository](https://github.com/libremfg/rhize-seeq-connector/releases).
+
 ## Rhize Compatibility
-Each release of the Rhize Seeq Connector is designed to align with the corresponding version of the Rhize platform for full compatibility.
+Each release of the Rhize Connector is designed to align with the corresponding version of the Rhize platform for full compatibility.
 
 ## Prerequisites
 You must gather some information and setup a Keycloak client to configure a connection to your Rhize instance.
@@ -37,7 +40,8 @@ The Rhize Connector requires a client configured for it in order to communicate 
 4. Select **Next**, then **Save**.
 5. Select the **Service accounts roles** tab, then **Assign role:**
     - Change the filter to **Filter by clients.**
-    - Assign **libreBaas** query roles:
+    - Assign roles as relevant in your **scopemap**.
+    - Alternatively, assign **libreBaas** query roles:
         - `resources:query`
         - `work-schedule:query`
         - `work-performance:query`
