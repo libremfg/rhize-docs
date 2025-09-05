@@ -3,7 +3,7 @@ title: v4.0.0
 description: User guides, deploy docs, references, and deep dives about the
   Rhize manufacturing data hub.
 cascade:
-  type: docs
+  type: versions
   v: "4.0.0"
 ---
 
