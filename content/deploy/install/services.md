@@ -8,6 +8,9 @@ categories: "how-to"
 
 The final installation step is to install the Rhize services in your Kubernetes cluster.
 
+> [!NOTE]
+> For the recommeneded compute per pod for each service, refer to [Cluster sizing]({{< relref "../cluster-sizing" >}})
+
 ## Prerequisites
 
 This topic assumes you have done the following:
