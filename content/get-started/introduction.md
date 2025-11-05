@@ -9,12 +9,12 @@ weight: 1
 
 Rhize is a real-time, event-driven [manufacturing data hub]({{< relref "../explanations/manufacturing-data-hub" >}}).
 It unites data analysis, event monitoring, and process execution in one platform.
-Its interface and architecture are designed to conform to your processes.
+Its interface and architecture conform to your processes.
 We assume nothing about what your operations looks like.
 
-Rhize has only one strong opinion: all manufacturing objects and data must be modeled on the [ISA-95 standard](https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa95).
+Rhize has only one strong opinion: all operational data that is persisted modeled on the [ISA-95 standard](https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa95).
 This standards-based schema is how Rhize connects every data event across an entire operation.
-If you aren't an ISA-95 fan, we're happy to convert you, but you must adopt it to use the platform.
+If you aren't an ISA-95 fan, we're [happy to convert you](https://university.rhize.com), but you must adopt it to use the platform.
 
 And if you do adopt ISA-95, you open your organization to Rhize's far-reaching transformations.
 
@@ -49,7 +49,7 @@ Some examples of the flexibility include:
 
 - **A headless MES**. While Rhize has a graphical interface, all data is reachable through a single API endpoint. This means your teams can rapidly build custom frontends―and do it with the most comfortable API for frontend development, GraphQL.
 - **Low-code interface**. Model your schema and execute processes using BPMN, a visual programming language. The visual interface makes Rhize and your manufacturing automation accessible to the widest possible audience.
-- **Generic data collection**. Rhize receives data from all levels of the manufacturing process. The [NATS](https://nats.io) broker publishes and subscribes to low-level data from [MQTT](https://mqtt.org/) and [OPC-UA](https://opcfoundation.org/about/opc-technologies/opc-ua/), but the database can also receive ERP inventories and documents sent over HTTP.
+- **Generic data collection**. Rhize receives data from all levels of the manufacturing process. The broker publishes and subscribes to low-level data from [MQTT](https://mqtt.org/) and [OPC-UA](https://opcfoundation.org/about/opc-technologies/opc-ua/), but the database can also receive ERP inventories and documents sent over HTTP.
 
 [Read about use cases]({{< relref "../use-cases" >}}).
 
