@@ -958,7 +958,7 @@ This makes it possible to configure calendars in the UI.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Reduce number of retries in &lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/maintain/bpmn-nodes/" &gt;BPMN recovery&lt;/a&gt;, speeding up response times when node does not exist.
+&lt;li&gt;Reduce number of retries in BPMN recovery, speeding up response times when node does not exist.
 From the user&amp;rsquo;s perspective, the delay was particularly notable on &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/trigger-workflows/#start-a-workflow-from-an-api" &gt;API BPMN triggers&lt;/a&gt; when the specified workflow did not exist.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Fixes&lt;/strong&gt;&lt;/p&gt;

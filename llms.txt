@@ -10,12 +10,15 @@
 ## Deploy
 - [Upgrade](https://docs.rhize.com/deploy/upgrade/): How to upgrade Rhize | This guide shows you how to upgrade Rhize.
 Back up first Before upgrading, consider backing up your … - Published 2023-10-18
+- [Cluster sizing](https://docs.rhize.com/deploy/cluster-sizing/): The recommended compute per pod | The Rhize Install includes many services that run in their own pod. These services have different …
 
 ### Install
 - [Overview](https://docs.rhize.com/deploy/install/overview/): A high-level overview of the Rhize install process. | This guide walks you through how to Install Rhize and its services in a Kubernetes environment. You …
 - [Set up Kubernetes](https://docs.rhize.com/deploy/install/setup-kubernetes/): How to install Rhize services on your Kubernetes cluster. | This guide shows you how to install Rhize services on your Kubernetes cluster. You can also use this … - Published 2023-09-22
 - [Configure Keycloak](https://docs.rhize.com/deploy/install/keycloak/): The Rhize GraphQL implementation uses OpenIDConnect for Authentication and role-based access control. This section describes how to set up Keycloak | Rhize uses Keycloak as an OpenID provider. In your cluster, the Keycloak server to authenticate …
-- [Install Rhize services](https://docs.rhize.com/deploy/install/services/): Instructions to install services in the Rhize Kubernetes cluster. | The final installation step is to install the Rhize services in your Kubernetes cluster. …
+- [Install Rhize services](https://docs.rhize.com/deploy/install/services/): Instructions to install services in the Rhize Kubernetes cluster. | The final installation step is to install the Rhize services in your Kubernetes cluster.
+Note
+For …
 - [Row Level Access Control](https://docs.rhize.com/deploy/install/row-level-access-control/): Instructions to configure Rhize BAAS scopemap for Row level Access Control. | Row Level Access Control (RLAC) restricts access to specific rows of data based on user roles and …
 
 ### Back up
@@ -84,7 +87,7 @@ These … - Published 2023-11-15
 - [Query the KPI service](https://docs.rhize.com/how-to/kpi-service/query-kpi-service/): An explanation of how to query the KPI service to obtain OEE values | 📝The KPI service is currently provided through a separate Helm chart. If you want to use for your …
 
 ## Use cases
-- [Overview of use cases](https://docs.rhize.com/use-cases/overview/): Handle manufacturing events, access the knowledge graph of the operation, and build custom MOM applications.  | Rhize&rsquo;s flexible, event-centric architecture serves many functions. While Rhize has components …
+- [Overview of use cases](https://docs.rhize.com/use-cases/overview/): Handle manufacturing events, access the knowledge graph of the operation, and build custom MOM applications. | Rhize&rsquo;s flexible, event-centric architecture serves many functions. While Rhize has components …
 - [Data collection (eBR example)](https://docs.rhize.com/use-cases/data-collection-ebr/): An example of how Rhize ingests data from various sources to create Electronic Batch Records for pharmaceutical manufacturing | &#x1f4dd; Looking to implement Rhize for your Pharma operation? Talk to an engineer
 This document …
 - [Electronic Batch Records](https://docs.rhize.com/use-cases/ebr/): The Rhize guide to querying all the information that happened in a manufacturing job. | This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use …
@@ -187,7 +190,6 @@ Prerequisites Before you … - Published 2023-10-19
 
 ##### Maintain
 - [Archive the PostgreSQL Audit trail](https://docs.rhize.com/versions/v4.0.0/deploy/maintain/audit/): How to archive a partition of the Audit trail on your Rhize deployment | The audit trail can generate a high volume of data, so it is a good practice to periodically archive … - Published 2024-03-26
-- [BPMN execution recovery](https://docs.rhize.com/versions/v4.0.0/deploy/maintain/bpmn-nodes/): If a BPMN node suddenly fails, Rhize has a number of recovery methods to ensure that the workflow finishes executing. | BPMN processes often have longer execution durations and many steps. If a BPMN node suddenly fails …
 - [Export Keycloak events](https://docs.rhize.com/versions/v4.0.0/deploy/maintain/keycloak-events/): Guide to export events from Keycloak | Keycloak stores User and Admin event data in its database. This information can be valuable for your …
 
 #### User guides
@@ -237,7 +239,7 @@ These … - Published 2023-11-15
 - [Query the KPI service](https://docs.rhize.com/versions/v4.0.0/how-to/kpi-service/query-kpi-service/): An explanation of how to query the KPI service to obtain OEE values | 📝The KPI service is currently provided through a separate Helm chart. If you want to use for your …
 
 #### Use cases
-- [Overview of use cases](https://docs.rhize.com/versions/v4.0.0/use-cases/overview/): Handle manufacturing events, access the knowledge graph of the operation, and build custom MOM applications.  | Rhize&rsquo;s flexible, event-centric architecture serves many functions. While Rhize has components …
+- [Overview of use cases](https://docs.rhize.com/versions/v4.0.0/use-cases/overview/): Handle manufacturing events, access the knowledge graph of the operation, and build custom MOM applications. | Rhize&rsquo;s flexible, event-centric architecture serves many functions. While Rhize has components …
 - [Data collection (eBR example)](https://docs.rhize.com/versions/v4.0.0/use-cases/data-collection-ebr/): An example of how Rhize ingests data from various sources to create Electronic Batch Records for pharmaceutical manufacturing | &#x1f4dd; Looking to implement Rhize for your Pharma operation? Talk to an engineer
 This document …
 - [Electronic Batch Records](https://docs.rhize.com/versions/v4.0.0/use-cases/ebr/): The Rhize guide to querying all the information that happened in a manufacturing job. | This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use …
@@ -399,7 +401,7 @@ These … - Published 2023-11-15
 - [Query the KPI service](https://docs.rhize.com/versions/v3.2.0/how-to/kpi-service/query-kpi-service/): An explanation of how to query the KPI service to obtain OEE values | 📝The KPI service is currently provided through a separate Helm chart. If you want to use for your …
 
 #### Use cases
-- [Overview of use cases](https://docs.rhize.com/versions/v3.2.0/use-cases/overview/): Handle manufacturing events, access the knowledge graph of the operation, and build custom MOM applications.  | Rhize&rsquo;s flexible, event-centric architecture serves many functions. While Rhize has components …
+- [Overview of use cases](https://docs.rhize.com/versions/v3.2.0/use-cases/overview/): Handle manufacturing events, access the knowledge graph of the operation, and build custom MOM applications. | Rhize&rsquo;s flexible, event-centric architecture serves many functions. While Rhize has components …
 - [Data collection (eBR example)](https://docs.rhize.com/versions/v3.2.0/use-cases/data-collection-ebr/): An example of how Rhize ingests data from various sources to create Electronic Batch Records for pharmaceutical manufacturing | &#x1f4dd; Looking to implement Rhize for your Pharma operation? Talk to an engineer
 This document …
 - [Electronic Batch Records](https://docs.rhize.com/versions/v3.2.0/use-cases/ebr/): The Rhize guide to querying all the information that happened in a manufacturing job. | This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use …
@@ -560,7 +562,7 @@ These … - Published 2023-11-15
 - [Query the KPI service](https://docs.rhize.com/versions/v3.0.3/how-to/kpi-service/query-kpi-service/): An explanation of how to query the KPI service to obtain OEE values | 📝The KPI service is currently provided through a separate Helm chart. If you want to use for your …
 
 #### Use cases
-- [Overview of use cases](https://docs.rhize.com/versions/v3.0.3/use-cases/overview/): Handle manufacturing events, access the knowledge graph of the operation, build custom MOM applications.  | Rhize&rsquo;s flexible, event-centric architecture serves many functions. While Rhize has components …
+- [Overview of use cases](https://docs.rhize.com/versions/v3.0.3/use-cases/overview/): Handle manufacturing events, access the knowledge graph of the operation, build custom MOM applications. | Rhize&rsquo;s flexible, event-centric architecture serves many functions. While Rhize has components …
 - [Data collection (eBR example)](https://docs.rhize.com/versions/v3.0.3/use-cases/data-collection-ebr/): An example of how Rhize ingests data from various sources to create Electronic Batch Records for pharmaceutical manufacturing | &#x1f4dd; Looking to implement Rhize for your Pharma operation? Talk to an engineer
 This document …
 - [Electronic Batch Records](https://docs.rhize.com/versions/v3.0.3/use-cases/ebr/): The Rhize guide to querying all the information that happened in a manufacturing job. | This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use …
@@ -707,7 +709,7 @@ These … - Published 2023-11-15
 - [Query the KPI service](https://docs.rhize.com/versions/v3.1.0/how-to/kpi-service/query-kpi-service/): An explanation of how to query the KPI service to obtain OEE values | 📝The KPI service is currently provided through a separate Helm chart. If you want to use for your …
 
 #### Use cases
-- [Overview of use cases](https://docs.rhize.com/versions/v3.1.0/use-cases/overview/): Handle manufacturing events, access the knowledge graph of the operation, and build custom MOM applications.  | Rhize&rsquo;s flexible, event-centric architecture serves many functions. While Rhize has components …
+- [Overview of use cases](https://docs.rhize.com/versions/v3.1.0/use-cases/overview/): Handle manufacturing events, access the knowledge graph of the operation, and build custom MOM applications. | Rhize&rsquo;s flexible, event-centric architecture serves many functions. While Rhize has components …
 - [Data collection (eBR example)](https://docs.rhize.com/versions/v3.1.0/use-cases/data-collection-ebr/): An example of how Rhize ingests data from various sources to create Electronic Batch Records for pharmaceutical manufacturing | &#x1f4dd; Looking to implement Rhize for your Pharma operation? Talk to an engineer
 This document …
 - [Electronic Batch Records](https://docs.rhize.com/versions/v3.1.0/use-cases/ebr/): The Rhize guide to querying all the information that happened in a manufacturing job. | This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use …
@@ -761,5 +763,5 @@ A …
 
 
 ---
-Generated on 2025-09-05 18:58:53 UTC
+Generated on 2025-11-07 13:43:45 UTC
 Site: https://docs.rhize.com/

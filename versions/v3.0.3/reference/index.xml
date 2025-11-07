@@ -763,10 +763,10 @@ This glossary is a reference of how Rhize defines terms used in this documentati
 &lt;dd&gt;The scope of the exchanged information, such as a site or area, for which the information is relevant. The scope identifies associated instances of objects such as material, personnel, and equipment&lt;/dd&gt;&lt;dt id="instance"&gt;Instance&lt;/dt&gt;
 &lt;dd&gt;An identifiable member of a manufacturing class, like a material or process segment, that can be tracked and scheduled&lt;/dd&gt;&lt;dt id="iso-22400"&gt;ISO 22400&lt;/dt&gt;
 &lt;dd&gt;A standard on KPIs in manufacturing operations management.&lt;/dd&gt;&lt;dt id="laboratory-information-management-system"&gt;Laboratory information management system (LIMS)&lt;/dt&gt;
-&lt;dd&gt;&lt;/dd&gt;&lt;dt id="level-or-an-operation"&gt;Level (or an operation)&lt;/dt&gt;
+&lt;dd&gt;Software that tracks laboratory data, including samples, experiments, and workflows&lt;/dd&gt;&lt;dt id="level-or-an-operation"&gt;Level (or an operation)&lt;/dt&gt;
 &lt;dd&gt;The degree of granularity necessary to discuss and exchange data for different purposes in the manufacturing operation.&lt;/dd&gt;&lt;dt id="level-3"&gt;level 3&lt;/dt&gt;
 &lt;dd&gt;The perspective of the operation as viewed from the granularity of a manufacturing execution or operations management system. Above level 3 is business planning, and below level 3 is monitoring and acquisition.&lt;/dd&gt;&lt;dt id="level-4"&gt;level 4&lt;/dt&gt;
-&lt;dd&gt;Software that tracks laboratory data, including samples, experiments, and workflows&lt;/dd&gt;&lt;dt id="manufacturing-data-hub"&gt;Manufacturing data hub (MDH)&lt;/dt&gt;
+&lt;dd&gt;The perspective of the operation as viewed from business planning.&lt;/dd&gt;&lt;dt id="manufacturing-data-hub"&gt;Manufacturing data hub (MDH)&lt;/dt&gt;
 &lt;dd&gt;A centralized platform or infrastructure that serves as a hub for collecting, integrating, storing, and processing manufacturing data from various sources within an organization.&lt;/dd&gt;&lt;dt id="manufacturing-execution-system"&gt;Manufacturing execution system (MES)&lt;/dt&gt;
 &lt;dd&gt;A system in a manufacturing process that tracks and documents the transformation of raw materials to finished goods&lt;/dd&gt;&lt;dt id="material"&gt;Material&lt;/dt&gt;
 &lt;dd&gt;Everything required to produce a finished good. They include raw materials, intermediate materials, and collections of parts&lt;/dd&gt;&lt;dt id="material-class"&gt;Material class&lt;/dt&gt;

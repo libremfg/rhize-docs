@@ -129,36 +129,7 @@ title="Copy code"
 &lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/backup/graphdb/" &gt;The Graph Database&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>BPMN execution recovery</title><link>https://docs.rhize.com/versions/v4.0.0/deploy/maintain/bpmn-nodes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/deploy/maintain/bpmn-nodes/</guid><description>
-&lt;p&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/" &gt;&lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt; processes&lt;/a&gt; often have longer execution durations and many steps.
-If a BPMN node suddenly fails (for example through a panic or loss of power),
-Rhize needs to ensure that the workflow completes.&lt;/p&gt;
-&lt;p&gt;To achieve high availability and resiliency, Rhize services run in &lt;a href="https://kubernetes.io/docs/concepts/architecture/nodes/" target="_blank" rel="noopener"&gt;Kubernetes nodes&lt;/a&gt;, and the NATS message broker typically has &lt;a href="https://docs.nats.io/running-a-nats-service/nats_admin/jetstream_admin/replication" target="_blank" rel="noopener"&gt;data replication&lt;/a&gt;.
-As long as the remaining BPMN nodes are not already at full processing capacity,
-if a BPMN node fails while executing a process,
-the Rhize system recovers and finishes the workflow.&lt;/p&gt;
-&lt;p&gt;This recovery is automatic, though users may experience an execution gap of up to 30 seconds.&lt;/p&gt;
-&lt;h2&gt;BPMN failure and recovery modes&lt;span class="hx:absolute hx:-mt-20" id="bpmn-failure-and-recovery-modes"&gt;&lt;/span&gt;
-&lt;a href="#bpmn-failure-and-recovery-modes" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;How Rhize recovers from a halted process depends on where the system failed.&lt;/p&gt;
-&lt;h3&gt;BPMN node failure&lt;span class="hx:absolute hx:-mt-20" id="bpmn-node-failure"&gt;&lt;/span&gt;
-&lt;a href="#bpmn-node-failure" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If a BPMN container suddenly fails, the process that was currently executing times out after 30 seconds.
-As long as the node had not been running for &lt;a href="#bpmn-age-out" &gt;longer than 10 minutes&lt;/a&gt;,
-NATS re-sends the message to another BPMN node and the process finishes.&lt;/p&gt;
-&lt;h3&gt;NATS node unavailable&lt;span class="hx:absolute hx:-mt-20" id="nats-node-unavailable"&gt;&lt;/span&gt;
-&lt;a href="#nats-node-unavailable" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If the NATS node fails, recovery depends on your replication and backup strategy.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;If the stream has R3 replication or greater, a new NATS node picks up the process. No noticeable performance issues should occur.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;If the stream has no replication, everything in the node is lost. However, if you took a snapshot of a stream with &lt;code&gt;nats stream backup&lt;/code&gt; before the node became unavailable, and the &lt;code&gt;WorkflowSpecifications&lt;/code&gt; KV is the same at backup and restore sites, then you can use the &lt;code&gt;nats stream restore&lt;/code&gt; command to replay the stream from when the backup was made.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;To learn more, read the NATS topic on &lt;a href="https://docs.nats.io/running-a-nats-service/nats_admin/jetstream_admin/disaster_recovery" target="_blank" rel="noopener"&gt;Disaster recovery&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;All BPMN elements age out after ten minutes&lt;span class="hx:absolute hx:-mt-20" id="bpmn-age-out"&gt;&lt;/span&gt;
-&lt;a href="#bpmn-age-out" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;If an element in a BPMN workflow takes longer than 10 minutes, NATS ages the workflow out of the queue. The process continues, but if the pod executing the element dies or is interrupted, that workflow is permanently dropped.&lt;/p&gt;
-&lt;p&gt;This ten-minute execution limit should be sufficient for any element in a BPMN process.
-Processes that take longer, such as cooling or fermentation periods, should be implemented as [BPMN event triggers]({{ relref &amp;ldquo;../../how-to/bpmn/bpmn-elements&amp;rdquo; &amp;gt;}}) or as polls that periodically check data sources between intervals of sleep.&lt;/p&gt;</description></item><item><title>Export Keycloak events</title><link>https://docs.rhize.com/versions/v4.0.0/deploy/maintain/keycloak-events/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/deploy/maintain/keycloak-events/</guid><description>
+&lt;/ul&gt;</description></item><item><title>Export Keycloak events</title><link>https://docs.rhize.com/versions/v4.0.0/deploy/maintain/keycloak-events/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/deploy/maintain/keycloak-events/</guid><description>
 &lt;p&gt;Keycloak stores User and Admin event data in its database. This information can be valuable for your audits.&lt;/p&gt;
 &lt;p&gt;This guide shows you how to export your Keycloak events to a file.
 To read Keycloak event data, use its &lt;a href="https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/22.0/html/server_administration_guide/admin_cli" target="_blank" rel="noopener"&gt;Admin CLI&lt;/a&gt;. You can access the CLI from within the Keycloak&amp;rsquo;s container.&lt;/p&gt;
