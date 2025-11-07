@@ -68,13 +68,13 @@
   definition: A standard on KPIs in manufacturing operations management.
 - term: Laboratory information management system
   abbr: LIMS
+  definition: Software that tracks laboratory data, including samples, experiments, and workflows
 - term: Level (or an operation)
   definition: The degree of granularity necessary to discuss and exchange data for different purposes in the manufacturing operation.
 - term: level 3
   definition: The perspective of the operation as viewed from the granularity of a manufacturing execution or operations management system. Above level 3 is business planning, and below level 3 is monitoring and acquisition.
 - term: level 4
   definition: The perspective of the operation as viewed from business planning.
-  definition: Software that tracks laboratory data, including samples, experiments, and workflows
 - term: Manufacturing execution system
   abbr: MES
   definition: A system in a manufacturing process that tracks and documents the transformation of raw materials to finished goods
