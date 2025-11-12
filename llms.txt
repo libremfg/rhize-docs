@@ -10,7 +10,7 @@
 ## Deploy
 - [Upgrade](https://docs.rhize.com/deploy/upgrade/): How to upgrade Rhize | This guide shows you how to upgrade Rhize.
 Back up first Before upgrading, consider backing up your … - Published 2023-10-18
-- [Recommended pod sizing](https://docs.rhize.com/deploy/cluster-sizing/): The recommended compute per pod | This document provides compute recommendations for the pods and services of your Rhize Install. Some …
+- [Cluster sizing](https://docs.rhize.com/deploy/cluster-sizing/): The recommended compute per pod | The Rhize Install includes many services that run in their own pod. These services have different …
 
 ### Install
 - [Overview](https://docs.rhize.com/deploy/install/overview/): A high-level overview of the Rhize install process. | This guide walks you through how to Install Rhize and its services in a Kubernetes environment. You …
@@ -763,5 +763,5 @@ A …
 
 
 ---
-Generated on 2025-11-12 14:41:33 UTC
+Generated on 2025-11-12 15:20:22 UTC
 Site: https://docs.rhize.com/
