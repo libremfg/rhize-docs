@@ -4,7 +4,7 @@ description: Get a Keycloak bearer token
 ---
 
 When build applications on Rhize, your clients to need authenticate requests.
-To do that, they need to periodically request a bearer token from the Keycloak service. 
+To do that, they need to periodically request a bearer token from the Keycloak service.
 
 ## Get token
 
