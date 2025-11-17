@@ -11,7 +11,7 @@
 - [Upgrade](https://docs.rhize.com/deploy/upgrade/): How to upgrade Rhize | This guide shows you how to upgrade Rhize.
 Back up first Before upgrading, consider backing up your … - Published 2023-10-18
 - [Get Keycloak Token](https://docs.rhize.com/deploy/get-keycloak-token/): Get a Keycloak bearer token | When build applications on Rhize, your clients to need authenticate requests. To do that, they need …
-- [Recommended Kubernetes cluster sizing](https://docs.rhize.com/deploy/cluster-sizing/): The recommended number of nodes and compute per pod in your Rhize Kubernetes Kluster | Rhize runs on Kubernetes.
+- [Recommended Kubernetes cluster sizing](https://docs.rhize.com/deploy/cluster-sizing/): The recommended number of nodes and compute per pod in your Rhize Kubernetes cluster | Rhize runs on Kubernetes.
 This document provides compute recommendations for the nodes, pods …
 
 ### Install
@@ -765,5 +765,5 @@ A …
 
 
 ---
-Generated on 2025-11-17 16:20:37 UTC
+Generated on 2025-11-17 16:29:15 UTC
 Site: https://docs.rhize.com/
