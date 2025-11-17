@@ -40,7 +40,7 @@ For the Rhize Agent, the minimum recommended specifications are as follows:
 
 ## Service-level recommendations
 
-The following table lists the **minimum** recommended specfications for the main services.
+The following table lists the **minimum** recommended specifications for the main services.
 Services with stateful PV have a persistent volume per pod.
 
 
