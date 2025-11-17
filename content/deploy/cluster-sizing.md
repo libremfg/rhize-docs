@@ -10,11 +10,11 @@ Some services also have recommended replication factors to increase reliability.
 
 ## Node recommendations
 
-For high availability,  Rhize recommends a **minimum of three nodes** with the following specifications.
+The following tables are the minimum recommended sizes to provision your cluster for Rhize {{% param v %}}.
 
 ### Rhize nodes
 
-    The following {{% param v %}} cluster,
+For high availability,  Rhize recommends a **minimum of three nodes** with the following specifications.
 
 
 | Property              | Value             |
