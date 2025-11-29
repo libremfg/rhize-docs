@@ -82,34 +82,9 @@ class `Berry Red Juice`
 }
 
 ```
-Note that material classes can contain material classes. For example, the `raw_materials` class might contain all raw ingredients.
 
-```mermaid
----
-subtitle: Material classes can contain material classes
----
-classDiagram
-namespace raw_materials{
-  class sweeteners
-  class flavors
-  class colors
-}
-namespace sweeteners{
-  class sugar
-  class aspertame
-}
-namespace flavors{
-  class `blue flavoring`
-  class `orange flavoring`
-}
-namespace colors{
-  class `blue`
-  class `orange`
-}
-
-
-
-```
+Note that material classes can contain material classes. For example, the `raw_materials` class might contain all classes of raw ingredients.
+So `raw_materials` might contain the `sweeteners` class, which might define `aspertame` and `sugar`.
 
 ## Is assembled from
 
