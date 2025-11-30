@@ -208,7 +208,7 @@
 &lt;li&gt;Change &lt;code&gt;startRule&lt;/code&gt; to required on &lt;code&gt;WorkCalendarDefinitionEntry&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc09</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc09/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc09/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc09</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc09/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc09/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc9 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 27th February, 2024&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -287,7 +287,7 @@
 &lt;h3&gt;Schema&lt;span class="hx:absolute hx:-mt-20" id="schema"&gt;&lt;/span&gt;
 &lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;No changes since previous release.&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc09, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc08</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc08/</link><pubDate>Tue, 19 Dec 2023 13:01:02 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc08/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc09, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc08</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc08/</link><pubDate>Tue, 19 Dec 2023 13:01:02 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc08/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc08 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 19th December, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -460,7 +460,7 @@
 &lt;li&gt;Change mermaid diagrams to include recent changes&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc08, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc07</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc07/</link><pubDate>Wed, 15 Nov 2023 09:32:12 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc07/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc08, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc07</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc07/</link><pubDate>Wed, 15 Nov 2023 09:32:12 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc07/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc07 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 15th November, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -574,10 +574,18 @@
 &lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Change dockerfile to use baas v3.0.0rc7&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/crypto" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/crypto&lt;/code&gt;&lt;/a&gt; to v0.15.0 from v0.14.0&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/net" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/net&lt;/code&gt;&lt;/a&gt; v0.18.0 from v0.16.0&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/sync" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/sync&lt;/code&gt;&lt;/a&gt; v0.5.0 from v0.4.0&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/tools" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/tools&lt;/code&gt;&lt;/a&gt; v0.15.0 from v0.14.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/crypto"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/crypto&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; to v0.15.0 from v0.14.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/net"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/net&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; v0.18.0 from v0.16.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/sync"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/sync&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; v0.5.0 from v0.4.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/tools"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/tools&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; v0.15.0 from v0.14.0&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Fix&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -585,7 +593,7 @@
 &lt;li&gt;Fix test for Signature relationship to &lt;code&gt;recordEntries&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc07, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc06</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc06/</link><pubDate>Tue, 31 Oct 2023 21:07:43 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc06/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc07, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc06</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc06/</link><pubDate>Tue, 31 Oct 2023 21:07:43 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc06/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc06 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; October 31, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -671,7 +679,7 @@
 &lt;li&gt;Remove entity interface from generated code&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc06, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc05</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc05/</link><pubDate>Tue, 31 Oct 2023 20:32:34 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc05/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc06, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc05</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc05/</link><pubDate>Tue, 31 Oct 2023 20:32:34 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc05/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc05 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; October 24, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -779,4 +787,4 @@
 &lt;li&gt;Fix omitting &lt;code&gt;omitempty&lt;/code&gt; for non-pointer Boolean types&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to `v3.0.0rc05, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to `v3.0.0rc05, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>

@@ -1,5 +1,5 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Connect event data</title><link>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/</link><description>Recent content in Connect event data on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 22 Sep 2023 14:50:39 -0300</lastBuildDate><atom:link href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/index.xml" rel="self" type="application/rss+xml"/><item><title>Tutorial: Trigger a workflow from a rule</title><link>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/create-equipment-class-rule/</link><pubDate>Mon, 29 Apr 2024 11:39:29 +0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/create-equipment-class-rule/</guid><description>
-&lt;p&gt;An equipment class rule &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/" &gt;triggers a BPMN&lt;/a&gt; workflow whenever a data source publishes a value that meets a specified threshold.&lt;/p&gt;
+&lt;p&gt;An equipment class rule &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/"&gt;triggers a BPMN&lt;/a&gt; workflow whenever a data source publishes a value that meets a specified threshold.&lt;/p&gt;
 &lt;p&gt;Imagine a scenario when an oven must be preheated every time a new order number is published to an MQTT edge device.
 You could automate this workflow with a rule that listens to messages published and evaluates a condition.
 If the condition evaluates to &lt;code&gt;true&lt;/code&gt;, the rule triggers a &lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt; workflow to preheat the oven.&lt;/p&gt;
@@ -19,7 +19,7 @@ B --&amp;gt;|&amp;#34;yes (optional: pass variables)&amp;#34;| D(Run BPMN workfl
 &lt;/ol&gt;
 &lt;p&gt;The following sections describe how to do these steps in more detail.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This tutorial assumes a data source that exchanges messages over the MQTT protocol.&lt;/div&gt;
 &lt;/div&gt;
@@ -28,7 +28,7 @@ B --&amp;gt;|&amp;#34;yes (optional: pass variables)&amp;#34;| D(Run BPMN workfl
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before you start, ensure you have the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Access your Rhize customer environment&lt;/li&gt;
-&lt;li&gt;The &lt;a href="https://docs.rhize.com/versions/v3.0.3/reference/service-config/" &gt;Agent configured&lt;/a&gt; to listen for your data-source ID&lt;/li&gt;
+&lt;li&gt;The &lt;a href="https://docs.rhize.com/versions/v3.0.3/reference/service-config/"&gt;Agent configured&lt;/a&gt; to listen for your data-source ID&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Set up: configure equipment and workflows&lt;span class="hx:absolute hx:-mt-20" id="set-up-configure-equipment-and-workflows"&gt;&lt;/span&gt;
 &lt;a href="#set-up-configure-equipment-and-workflows" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The setup involves modeling the objects associated with the rule.&lt;/p&gt;
@@ -176,7 +176,7 @@ A new equipment class property created in the UI.
 &lt;li&gt;Add a trigger expression that evaluates to true or false.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;The rule runs the preceding workflow only if the expression evaluates to &lt;code&gt;true&lt;/code&gt;.
 It’s common to compare the new value with the previous.&lt;/div&gt;
@@ -435,7 +435,7 @@ The bound property assumes the last value published to the data source.
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;If this is the first message published to the topic, the rule will not be triggered because Rhize has no previous value to compare it the message value to. However, if you publish another order number, a new topic called &lt;code&gt;Core&lt;/code&gt; will show up containing a subtopic called &lt;code&gt;RuleTriggered&lt;/code&gt; to indicate that the rule has indeed been triggered.&lt;/div&gt;
 &lt;/div&gt;
@@ -464,7 +464,9 @@ Grafana shows a recent trace with the id of the target BPMN.
 &lt;/figure&gt;
 &lt;h2&gt;Video example&lt;span class="hx:absolute hx:-mt-20" id="video-example"&gt;&lt;/span&gt;
 &lt;a href="#video-example" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&amp;#x1f3a5; &lt;a href="https://www.youtube.com/watch?v=y5lr9JRmxDA" target="_blank" rel="noopener"&gt;Trigger BPMN&lt;/a&gt;. This video provides an example of creating a rule based on values for an OPC UA server in a baking process.&lt;/li&gt;
+&lt;li&gt;&amp;#x1f3a5; &lt;a href="https://www.youtube.com/watch?v=y5lr9JRmxDA"target="_blank" rel="noopener"&gt;Trigger BPMN&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;. This video provides an example of creating a rule based on values for an OPC UA server in a baking process.&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Connect data source</title><link>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/connect-datasource/</link><pubDate>Fri, 22 Sep 2023 14:50:39 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/connect-datasource/</guid><description>
 &lt;p&gt;For Rhize to listen to and handle manufacturing events,
 you need to connect a &lt;abbr title="A source of real-time data that is collected by the Rhize agent, such as an MQTT or OPC UA device"&gt;data source&lt;/abbr&gt;.&lt;/p&gt;
@@ -482,17 +484,17 @@ you need to connect a &lt;abbr title="A source of real-time data that is collect
 &lt;p&gt;Sending topics from your MQTT, OPCUA, or NATS server to Rhize.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;In Rhize, &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/create-objects-ui/" &gt;defining the data source&lt;/a&gt; and its associated objects.&lt;/p&gt;
-&lt;p&gt;To do this, you can create entities in the Rhize UI or through its &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/" &gt;GraphQL API&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In Rhize, &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/create-objects-ui/"&gt;defining the data source&lt;/a&gt; and its associated objects.&lt;/p&gt;
+&lt;p&gt;To do this, you can create entities in the Rhize UI or through its &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/"&gt;GraphQL API&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Model the data source in the Rhize UI&lt;span class="hx:absolute hx:-mt-20" id="model-the-data-source-in-the-rhize-ui"&gt;&lt;/span&gt;
 &lt;a href="#model-the-data-source-in-the-rhize-ui" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Enter the Rhize UI and go to &lt;strong&gt;Master Data &amp;gt; Data sources&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Add the connection string, topics, and other necessary parameters. For details of what these fields mean, review the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/master-definitions/#data-sources" &gt;Data source object reference&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Add the connection string, topics, and other necessary parameters. For details of what these fields mean, review the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/master-definitions/#data-sources"&gt;Data source object reference&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; and then change version state to &lt;code&gt;Active&lt;/code&gt;.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Now add the data source to its equipment (or, if it doesn&amp;rsquo;t exist &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/master-definitions/#equipment" &gt;model new equipment&lt;/a&gt;):&lt;/p&gt;
+&lt;p&gt;Now add the data source to its equipment (or, if it doesn&amp;rsquo;t exist &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/master-definitions/#equipment"&gt;model new equipment&lt;/a&gt;):&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Select the equipment, then &lt;strong&gt;Data sources&lt;/strong&gt;.&lt;/li&gt;
 &lt;li&gt;If the equipment has properties bound to this data source, create the properties, then configure them as &lt;code&gt;BOUND&lt;/code&gt; to the data source.&lt;/li&gt;
@@ -501,9 +503,9 @@ you need to connect a &lt;abbr title="A source of real-time data that is collect
 &lt;h2&gt;Next steps&lt;span class="hx:absolute hx:-mt-20" id="next-steps"&gt;&lt;/span&gt;
 &lt;a href="#next-steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Now that you have the data source sending data you can:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Write a rule to &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/create-equipment-class-rule/" &gt;Turn data into events&lt;/a&gt; that trigger workflows.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/" &gt;Create a BPMN workflow&lt;/a&gt; to run on this trigger.
-You can also write a workflow that subscribes to data source directly through a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/bpmn-elements/#message" &gt;message start event&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Write a rule to &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/create-equipment-class-rule/"&gt;Turn data into events&lt;/a&gt; that trigger workflows.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/"&gt;Create a BPMN workflow&lt;/a&gt; to run on this trigger.
+You can also write a workflow that subscribes to data source directly through a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/bpmn-elements/#message"&gt;message start event&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Track changes (CDC)</title><link>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/track-changes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/track-changes/</guid><description>
 &lt;p&gt;You can use &lt;em&gt;change data capture&lt;/em&gt; (CDC) to track data changes over time, including
 a &lt;abbr title="A GraphQL operation that modifies some data in the database, usually creating, updating, or deleting a resource"&gt;mutation&lt;/abbr&gt; or drop in your database.

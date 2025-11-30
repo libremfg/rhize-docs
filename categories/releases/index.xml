@@ -93,9 +93,11 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.2.1-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.2.1-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.2.1-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.2.1-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.2.1, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.2.1</title><link>https://docs.rhize.com/versions/v4.0.0/releases/3-2-1/</link><pubDate>Mon, 04 Aug 2025 11:45:10 -0400</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/3-2-1/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.2.1, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.2.1</title><link>https://docs.rhize.com/versions/v4.0.0/releases/3-2-1/</link><pubDate>Mon, 04 Aug 2025 11:45:10 -0400</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/3-2-1/</guid><description>
 &lt;p&gt;Release notes for version 3.2.1 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt;
 8 Aug 2025&lt;/p&gt;
@@ -190,9 +192,11 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.2.1-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.2.1-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.2.1-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.2.1-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.2.1, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.2.0</title><link>https://docs.rhize.com/releases/3-2-0/</link><pubDate>Tue, 01 Jul 2025 15:13:10 -0400</pubDate><guid>https://docs.rhize.com/releases/3-2-0/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.2.1, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.2.0</title><link>https://docs.rhize.com/releases/3-2-0/</link><pubDate>Tue, 01 Jul 2025 15:13:10 -0400</pubDate><guid>https://docs.rhize.com/releases/3-2-0/</guid><description>
 &lt;p&gt;Release notes for version 3.2.0 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt;
 14 Jul 2025&lt;/p&gt;
@@ -279,7 +283,9 @@ title="Copy code"
 &lt;/ul&gt;
 &lt;h4&gt;Fix&lt;span class="hx:absolute hx:-mt-20" id="fix-4"&gt;&lt;/span&gt;
 &lt;a href="#fix-4" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;Fix relevant &lt;a href="https://pkg.go.dev/vuln/" target="_blank" rel="noopener"&gt;Go vulns&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fix relevant &lt;a href="https://pkg.go.dev/vuln/"target="_blank" rel="noopener"&gt;Go vulns&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Keycloak Theme&lt;span class="hx:absolute hx:-mt-20" id="keycloak-theme"&gt;&lt;/span&gt;
 &lt;a href="#keycloak-theme" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Change&lt;span class="hx:absolute hx:-mt-20" id="change-3"&gt;&lt;/span&gt;
@@ -342,9 +348,11 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.2.0-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.2.0-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.2.0-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.2.0-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.2.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.2.0</title><link>https://docs.rhize.com/versions/v3.2.0/releases/3-2-0/</link><pubDate>Tue, 01 Jul 2025 15:13:10 -0400</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/3-2-0/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.2.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.2.0</title><link>https://docs.rhize.com/versions/v3.2.0/releases/3-2-0/</link><pubDate>Tue, 01 Jul 2025 15:13:10 -0400</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/3-2-0/</guid><description>
 &lt;p&gt;Release notes for version 3.2.0 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt;
 14 Jul 2025&lt;/p&gt;
@@ -431,7 +439,9 @@ title="Copy code"
 &lt;/ul&gt;
 &lt;h4&gt;Fix&lt;span class="hx:absolute hx:-mt-20" id="fix-4"&gt;&lt;/span&gt;
 &lt;a href="#fix-4" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;Fix relevant &lt;a href="https://pkg.go.dev/vuln/" target="_blank" rel="noopener"&gt;Go vulns&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fix relevant &lt;a href="https://pkg.go.dev/vuln/"target="_blank" rel="noopener"&gt;Go vulns&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Keycloak Theme&lt;span class="hx:absolute hx:-mt-20" id="keycloak-theme"&gt;&lt;/span&gt;
 &lt;a href="#keycloak-theme" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Change&lt;span class="hx:absolute hx:-mt-20" id="change-3"&gt;&lt;/span&gt;
@@ -494,9 +504,11 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.2.0-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.2.0-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.2.0-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.2.0-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.2.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.2.0</title><link>https://docs.rhize.com/versions/v4.0.0/releases/3-2-0/</link><pubDate>Tue, 01 Jul 2025 15:13:10 -0400</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/3-2-0/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.2.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.2.0</title><link>https://docs.rhize.com/versions/v4.0.0/releases/3-2-0/</link><pubDate>Tue, 01 Jul 2025 15:13:10 -0400</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/3-2-0/</guid><description>
 &lt;p&gt;Release notes for version 3.2.0 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt;
 14 Jul 2025&lt;/p&gt;
@@ -583,7 +595,9 @@ title="Copy code"
 &lt;/ul&gt;
 &lt;h4&gt;Fix&lt;span class="hx:absolute hx:-mt-20" id="fix-4"&gt;&lt;/span&gt;
 &lt;a href="#fix-4" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;Fix relevant &lt;a href="https://pkg.go.dev/vuln/" target="_blank" rel="noopener"&gt;Go vulns&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fix relevant &lt;a href="https://pkg.go.dev/vuln/"target="_blank" rel="noopener"&gt;Go vulns&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Keycloak Theme&lt;span class="hx:absolute hx:-mt-20" id="keycloak-theme"&gt;&lt;/span&gt;
 &lt;a href="#keycloak-theme" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Change&lt;span class="hx:absolute hx:-mt-20" id="change-3"&gt;&lt;/span&gt;
@@ -646,16 +660,18 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.2.0-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.2.0-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.2.0-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.2.0-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.2.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.1.0</title><link>https://docs.rhize.com/releases/3-1-0/</link><pubDate>Fri, 28 Feb 2025 12:38:30 -0500</pubDate><guid>https://docs.rhize.com/releases/3-1-0/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.2.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.1.0</title><link>https://docs.rhize.com/releases/3-1-0/</link><pubDate>Fri, 28 Feb 2025 12:38:30 -0500</pubDate><guid>https://docs.rhize.com/releases/3-1-0/</guid><description>
 &lt;p&gt;Release notes for version 3.1.0 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt;
 7 Mar 2025&lt;/p&gt;
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-yellow-100 hx:bg-yellow-50 hx:text-yellow-900 hx:dark:border-yellow-200/30 hx:dark:bg-yellow-700/30 hx:dark:text-yellow-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;⚠️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-amber-200 hx:bg-amber-100 hx:text-amber-900 hx:dark:border-amber-200/30 hx:dark:bg-amber-900/30 hx:dark:text-amber-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This release includes a breaking change to permissions, review the &lt;a href="#upgrade" &gt;upgrade&lt;/a&gt; instructions for details.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This release includes a breaking change to permissions, review the &lt;a href="#upgrade"&gt;upgrade&lt;/a&gt; instructions for details.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service"&gt;&lt;/span&gt;
@@ -1043,7 +1059,9 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.1.0-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.1.0-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.1.0-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.1.0-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
 &lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="notices warning"&gt;
 &lt;span class="type"&gt;Back up first&lt;/span&gt;
@@ -1082,7 +1100,7 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Read how to &lt;a href="https://docs.rhize.com/deploy/install/row-level-access-control/" &gt;Configure your scopemap&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Read how to &lt;a href="https://docs.rhize.com/deploy/install/row-level-access-control/"&gt;Configure your scopemap&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;YAML config files&lt;span class="hx:absolute hx:-mt-20" id="yaml-config-files"&gt;&lt;/span&gt;
 &lt;a href="#yaml-config-files" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rhize services now use YAML instead of JSON for their configuration files. This is represented in Helm overrides by the object &lt;code&gt;rhize&amp;lt;SERVICE&amp;gt;Config&lt;/code&gt; (i.e. &lt;code&gt;rhizeAuditConfig&lt;/code&gt;). Charts for v3.1.0 should create only YAML config files, though there may be differences in the keys for certain configuration options. Consult the values file for each Helm chart and the changelog for specific changes as necessary.&lt;/p&gt;
 &lt;h3&gt;Notable schema changes&lt;span class="hx:absolute hx:-mt-20" id="notable-schema-changes"&gt;&lt;/span&gt;
@@ -1155,14 +1173,14 @@ title="Copy code"
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;After you&amp;rsquo;ve made the necessary mitigations, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.1.0</title><link>https://docs.rhize.com/versions/v3.2.0/releases/3-1-0/</link><pubDate>Fri, 28 Feb 2025 12:38:30 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/3-1-0/</guid><description>
+&lt;p&gt;After you&amp;rsquo;ve made the necessary mitigations, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.1.0</title><link>https://docs.rhize.com/versions/v3.2.0/releases/3-1-0/</link><pubDate>Fri, 28 Feb 2025 12:38:30 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/3-1-0/</guid><description>
 &lt;p&gt;Release notes for version 3.1.0 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt;
 7 Mar 2025&lt;/p&gt;
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-yellow-100 hx:bg-yellow-50 hx:text-yellow-900 hx:dark:border-yellow-200/30 hx:dark:bg-yellow-700/30 hx:dark:text-yellow-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;⚠️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-amber-200 hx:bg-amber-100 hx:text-amber-900 hx:dark:border-amber-200/30 hx:dark:bg-amber-900/30 hx:dark:text-amber-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This release includes a breaking change to permissions, review the &lt;a href="#upgrade" &gt;upgrade&lt;/a&gt; instructions for details.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This release includes a breaking change to permissions, review the &lt;a href="#upgrade"&gt;upgrade&lt;/a&gt; instructions for details.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service"&gt;&lt;/span&gt;
@@ -1550,7 +1568,9 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.1.0-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.1.0-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.1.0-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.1.0-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
 &lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="notices warning"&gt;
 &lt;span class="type"&gt;Back up first&lt;/span&gt;
@@ -1589,7 +1609,7 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Read how to &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/row-level-access-control/" &gt;Configure your scopemap&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Read how to &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/row-level-access-control/"&gt;Configure your scopemap&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;YAML config files&lt;span class="hx:absolute hx:-mt-20" id="yaml-config-files"&gt;&lt;/span&gt;
 &lt;a href="#yaml-config-files" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rhize services now use YAML instead of JSON for their configuration files. This is represented in Helm overrides by the object &lt;code&gt;rhize&amp;lt;SERVICE&amp;gt;Config&lt;/code&gt; (i.e. &lt;code&gt;rhizeAuditConfig&lt;/code&gt;). Charts for v3.1.0 should create only YAML config files, though there may be differences in the keys for certain configuration options. Consult the values file for each Helm chart and the changelog for specific changes as necessary.&lt;/p&gt;
 &lt;h3&gt;Notable schema changes&lt;span class="hx:absolute hx:-mt-20" id="notable-schema-changes"&gt;&lt;/span&gt;
@@ -1662,14 +1682,14 @@ title="Copy code"
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;After you&amp;rsquo;ve made the necessary mitigations, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.1.0</title><link>https://docs.rhize.com/versions/v4.0.0/releases/3-1-0/</link><pubDate>Fri, 28 Feb 2025 12:38:30 -0500</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/3-1-0/</guid><description>
+&lt;p&gt;After you&amp;rsquo;ve made the necessary mitigations, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.1.0</title><link>https://docs.rhize.com/versions/v4.0.0/releases/3-1-0/</link><pubDate>Fri, 28 Feb 2025 12:38:30 -0500</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/3-1-0/</guid><description>
 &lt;p&gt;Release notes for version 3.1.0 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt;
 7 Mar 2025&lt;/p&gt;
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-yellow-100 hx:bg-yellow-50 hx:text-yellow-900 hx:dark:border-yellow-200/30 hx:dark:bg-yellow-700/30 hx:dark:text-yellow-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;⚠️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-amber-200 hx:bg-amber-100 hx:text-amber-900 hx:dark:border-amber-200/30 hx:dark:bg-amber-900/30 hx:dark:text-amber-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This release includes a breaking change to permissions, review the &lt;a href="#upgrade" &gt;upgrade&lt;/a&gt; instructions for details.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This release includes a breaking change to permissions, review the &lt;a href="#upgrade"&gt;upgrade&lt;/a&gt; instructions for details.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service"&gt;&lt;/span&gt;
@@ -2057,7 +2077,9 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.1.0-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.1.0-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.1.0-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.1.0-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
 &lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="notices warning"&gt;
 &lt;span class="type"&gt;Back up first&lt;/span&gt;
@@ -2096,7 +2118,7 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Read how to &lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/install/row-level-access-control/" &gt;Configure your scopemap&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Read how to &lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/install/row-level-access-control/"&gt;Configure your scopemap&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;YAML config files&lt;span class="hx:absolute hx:-mt-20" id="yaml-config-files"&gt;&lt;/span&gt;
 &lt;a href="#yaml-config-files" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rhize services now use YAML instead of JSON for their configuration files. This is represented in Helm overrides by the object &lt;code&gt;rhize&amp;lt;SERVICE&amp;gt;Config&lt;/code&gt; (i.e. &lt;code&gt;rhizeAuditConfig&lt;/code&gt;). Charts for v3.1.0 should create only YAML config files, though there may be differences in the keys for certain configuration options. Consult the values file for each Helm chart and the changelog for specific changes as necessary.&lt;/p&gt;
 &lt;h3&gt;Notable schema changes&lt;span class="hx:absolute hx:-mt-20" id="notable-schema-changes"&gt;&lt;/span&gt;
@@ -2169,7 +2191,7 @@ title="Copy code"
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;After you&amp;rsquo;ve made the necessary mitigations, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.3</title><link>https://docs.rhize.com/releases/3-0-3/</link><pubDate>Wed, 13 Nov 2024 00:41:53 -0300</pubDate><guid>https://docs.rhize.com/releases/3-0-3/</guid><description>
+&lt;p&gt;After you&amp;rsquo;ve made the necessary mitigations, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.3</title><link>https://docs.rhize.com/releases/3-0-3/</link><pubDate>Wed, 13 Nov 2024 00:41:53 -0300</pubDate><guid>https://docs.rhize.com/releases/3-0-3/</guid><description>
 &lt;p&gt;Changelog for version 3.0.3 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt;
 13 Nov 2024&lt;/p&gt;
@@ -2332,9 +2354,11 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.3-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.3-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.3-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.3-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.3, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.3</title><link>https://docs.rhize.com/versions/v3.0.3/releases/3-0-3/</link><pubDate>Wed, 13 Nov 2024 00:41:53 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/3-0-3/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.3, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.3</title><link>https://docs.rhize.com/versions/v3.0.3/releases/3-0-3/</link><pubDate>Wed, 13 Nov 2024 00:41:53 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/3-0-3/</guid><description>
 &lt;p&gt;Changelog for version 3.0.3 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt;
 13 Nov 2024&lt;/p&gt;
@@ -2497,9 +2521,11 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.3-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.3-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.3-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.3-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.3, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.3</title><link>https://docs.rhize.com/versions/v3.2.0/releases/3-0-3/</link><pubDate>Wed, 13 Nov 2024 00:41:53 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/3-0-3/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.3, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.3</title><link>https://docs.rhize.com/versions/v3.2.0/releases/3-0-3/</link><pubDate>Wed, 13 Nov 2024 00:41:53 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/3-0-3/</guid><description>
 &lt;p&gt;Changelog for version 3.0.3 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt;
 13 Nov 2024&lt;/p&gt;
@@ -2662,9 +2688,11 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.3-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.3-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.3-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.3-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.3, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.3</title><link>https://docs.rhize.com/versions/v4.0.0/releases/3-0-3/</link><pubDate>Wed, 13 Nov 2024 00:41:53 -0300</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/3-0-3/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.3, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.3</title><link>https://docs.rhize.com/versions/v4.0.0/releases/3-0-3/</link><pubDate>Wed, 13 Nov 2024 00:41:53 -0300</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/3-0-3/</guid><description>
 &lt;p&gt;Changelog for version 3.0.3 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt;
 13 Nov 2024&lt;/p&gt;
@@ -2827,18 +2855,20 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.3-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.3-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.3-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.3-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.3, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.1</title><link>https://docs.rhize.com/releases/3-0-1/</link><pubDate>Tue, 23 Jul 2024 10:42:31 -0300</pubDate><guid>https://docs.rhize.com/releases/3-0-1/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.3, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.1</title><link>https://docs.rhize.com/releases/3-0-1/</link><pubDate>Tue, 23 Jul 2024 10:42:31 -0300</pubDate><guid>https://docs.rhize.com/releases/3-0-1/</guid><description>
 &lt;p&gt;Release notes for version 3.0.1 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;This release includes bug fixes, improvements for developer experience, and new relationships between entities in the ISA-95 schema.
 It also clears the way for the new, improved Work Calendar service (still in release candidacy).&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt;
 23 Jul 2024&lt;/p&gt;
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-yellow-100 hx:bg-yellow-50 hx:text-yellow-900 hx:dark:border-yellow-200/30 hx:dark:bg-yellow-700/30 hx:dark:text-yellow-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;⚠️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-amber-200 hx:bg-amber-100 hx:text-amber-900 hx:dark:border-amber-200/30 hx:dark:bg-amber-900/30 hx:dark:text-amber-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This release includes a few minor breaking changes, review the &lt;a href="#upgrade" &gt;upgrade&lt;/a&gt; instructions for details.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This release includes a few minor breaking changes, review the &lt;a href="#upgrade"&gt;upgrade&lt;/a&gt; instructions for details.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service"&gt;&lt;/span&gt;
@@ -2852,11 +2882,13 @@ It also clears the way for the new, improved Work Calendar service (still in rel
 &lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Error boundary events now support call-activity tasks. If a task in the called process aborts, the error boundary captures that event.&lt;/li&gt;
-&lt;li&gt;Support Custom &lt;a href="https://en.wikipedia.org/wiki/Certificate_authority" target="_blank" rel="noopener"&gt;Certificate authorities&lt;/a&gt; so that the BPMN service can run in networks with internal certificates authorities.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/how-to/bpmn/bpmn-elements/#events" &gt;Message events&lt;/a&gt; now support topics that use the &lt;code&gt;+&lt;/code&gt; wildcard.&lt;/li&gt;
-&lt;li&gt;Add configuration option to set __traceDebug flag on all BPMN executions. For details, read &lt;a href="https://docs.rhize.com/how-to/bpmn/debug-workflows/" &gt;Debug workflows&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Allow &lt;code&gt;__traceDebug&lt;/code&gt; to be set from &lt;a href="https://docs.rhize.com/how-to/bpmn/create-workflow/#access-process-variable-context" &gt;variable context&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Add support for querying a range of &lt;a href="https://docs.rhize.com/how-to/work-calendars/" &gt;work calendar&lt;/a&gt; entries for a Work Calendar Definition.
+&lt;li&gt;Support Custom &lt;a href="https://en.wikipedia.org/wiki/Certificate_authority"target="_blank" rel="noopener"&gt;Certificate authorities&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; so that the BPMN service can run in networks with internal certificates authorities.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/how-to/bpmn/bpmn-elements/#events"&gt;Message events&lt;/a&gt; now support topics that use the &lt;code&gt;+&lt;/code&gt; wildcard.&lt;/li&gt;
+&lt;li&gt;Add configuration option to set __traceDebug flag on all BPMN executions. For details, read &lt;a href="https://docs.rhize.com/how-to/bpmn/debug-workflows/"&gt;Debug workflows&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Allow &lt;code&gt;__traceDebug&lt;/code&gt; to be set from &lt;a href="https://docs.rhize.com/how-to/bpmn/create-workflow/#access-process-variable-context"&gt;variable context&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Add support for querying a range of &lt;a href="https://docs.rhize.com/how-to/work-calendars/"&gt;work calendar&lt;/a&gt; entries for a Work Calendar Definition.
 &lt;ul&gt;
 &lt;li&gt;When configured, calendar data persists to a timeseries DB.&lt;/li&gt;
 &lt;li&gt;⚠️&lt;span class="breaking-text"&gt;Breaking&lt;/span&gt;
@@ -2868,8 +2900,8 @@ This makes it possible to configure calendars in the UI.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Reduce number of retries in &lt;a href="https://docs.rhize.com/deploy/maintain/bpmn-nodes/" &gt;BPMN recovery&lt;/a&gt;, speeding up response times when node does not exist.
-From the user&amp;rsquo;s perspective, the delay was particularly notable on &lt;a href="https://docs.rhize.com/how-to/bpmn/trigger-workflows/#start-a-workflow-from-an-api" &gt;API BPMN triggers&lt;/a&gt; when the specified workflow did not exist.&lt;/li&gt;
+&lt;li&gt;Reduce number of retries in &lt;a href="https://docs.rhize.com/deploy/maintain/bpmn-nodes/"&gt;BPMN recovery&lt;/a&gt;, speeding up response times when node does not exist.
+From the user&amp;rsquo;s perspective, the delay was particularly notable on &lt;a href="https://docs.rhize.com/how-to/bpmn/trigger-workflows/#start-a-workflow-from-an-api"&gt;API BPMN triggers&lt;/a&gt; when the specified workflow did not exist.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Fixes&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -2879,7 +2911,7 @@ From the user&amp;rsquo;s perspective, the delay was particularly notable on &lt
 &lt;li&gt;Workflow specifications not found in NATS now fall back to database lookups before failing.
 Fixes issue when spinning up new development containers.&lt;/li&gt;
 &lt;li&gt;Include metadata fields for &lt;code&gt;jobResponse&lt;/code&gt;. Fixes panic if node tried to access these fields.&lt;/li&gt;
-&lt;li&gt;Respect &lt;a href="https://docs.rhize.com/how-to/bpmn/debug-workflows/#adding-the-debug-flag" &gt;&lt;code&gt;debug&lt;/code&gt;&lt;/a&gt; flag for BPMNs triggered with &lt;code&gt;createAndRunBpmn&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Respect &lt;a href="https://docs.rhize.com/how-to/bpmn/debug-workflows/#adding-the-debug-flag"&gt;&lt;code&gt;debug&lt;/code&gt;&lt;/a&gt; flag for BPMNs triggered with &lt;code&gt;createAndRunBpmn&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Reuse expected Audience for clients to match documented client name.&lt;/li&gt;
 &lt;li&gt;Do not create calendar entry for end events.&lt;/li&gt;
 &lt;li&gt;Fix nil pointer error when aborting tasks without parents.&lt;/li&gt;
@@ -2958,7 +2990,9 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.1-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.1-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.1-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.1-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
 &lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="notices warning"&gt;
 &lt;span class="type"&gt;Back up first&lt;/span&gt;
@@ -2972,13 +3006,13 @@ To fix this:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Log in to the Keycloak service in your Rhize environment.&lt;/li&gt;
 &lt;li&gt;Select the &lt;code&gt;libre&lt;/code&gt; realm.&lt;/li&gt;
-&lt;li&gt;Configure the audience and role for the Users or groups that should be able to run BPMN workflows. For details, read &lt;a href="https://docs.rhize.com/deploy/install/keycloak/" &gt;Install Keycloak&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Configure the audience and role for the Users or groups that should be able to run BPMN workflows. For details, read &lt;a href="https://docs.rhize.com/deploy/install/keycloak/"&gt;Install Keycloak&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Work calendars now query for &lt;code&gt;workCalendarDefinitions&lt;/code&gt;, not &lt;code&gt;workCalendars&lt;/code&gt;.
 There is a chance this may break some calendars that already exist.
 To mitigate this, ensure you set active definitions for the calendars you want to query.
-Read &lt;a href="https://docs.rhize.com/how-to/work-calendars/about-calendars-and-overrides/" &gt;About calendars and overrides&lt;/a&gt; for details about how the service and its relationships work.&lt;/p&gt;
-&lt;p&gt;After you&amp;rsquo;ve made the necessary mitigations, follow the upgrade the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;
+Read &lt;a href="https://docs.rhize.com/how-to/work-calendars/about-calendars-and-overrides/"&gt;About calendars and overrides&lt;/a&gt; for details about how the service and its relationships work.&lt;/p&gt;
+&lt;p&gt;After you&amp;rsquo;ve made the necessary mitigations, follow the upgrade the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Post upgrade&lt;span class="hx:absolute hx:-mt-20" id="post-upgrade"&gt;&lt;/span&gt;
 &lt;a href="#post-upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Two schema changes to the state model also might cause breaking changes after upgrade.
 You can correct these issues by re-uploading the data.&lt;/p&gt;
@@ -3004,7 +3038,7 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Use a &lt;a href="https://docs.rhize.com/how-to/gql/mutate/#update" &gt;mutation&lt;/a&gt; to update these to have an ID and label.&lt;/li&gt;
+&lt;li&gt;Use a &lt;a href="https://docs.rhize.com/how-to/gql/mutate/#update"&gt;mutation&lt;/a&gt; to update these to have an ID and label.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Any existing &lt;code&gt;StateModelTransitions&lt;/code&gt; using a &lt;code&gt;from&lt;/code&gt; or &lt;code&gt;to&lt;/code&gt; property will break. Change these to a relationship.&lt;/p&gt;</description></item><item><title>3.0.1</title><link>https://docs.rhize.com/versions/v3.0.3/releases/3-0-1/</link><pubDate>Tue, 23 Jul 2024 10:42:31 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/3-0-1/</guid><description>
 &lt;p&gt;Release notes for version 3.0.1 of the Rhize application.&lt;/p&gt;
@@ -3012,10 +3046,10 @@ title="Copy code"
 It also clears the way for the new, improved Work Calendar service (still in release candidacy).&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt;
 23 Jul 2024&lt;/p&gt;
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-yellow-100 hx:bg-yellow-50 hx:text-yellow-900 hx:dark:border-yellow-200/30 hx:dark:bg-yellow-700/30 hx:dark:text-yellow-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;⚠️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-amber-200 hx:bg-amber-100 hx:text-amber-900 hx:dark:border-amber-200/30 hx:dark:bg-amber-900/30 hx:dark:text-amber-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This release includes a few minor breaking changes, review the &lt;a href="#upgrade" &gt;upgrade&lt;/a&gt; instructions for details.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This release includes a few minor breaking changes, review the &lt;a href="#upgrade"&gt;upgrade&lt;/a&gt; instructions for details.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service"&gt;&lt;/span&gt;
@@ -3029,11 +3063,13 @@ It also clears the way for the new, improved Work Calendar service (still in rel
 &lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Error boundary events now support call-activity tasks. If a task in the called process aborts, the error boundary captures that event.&lt;/li&gt;
-&lt;li&gt;Support Custom &lt;a href="https://en.wikipedia.org/wiki/Certificate_authority" target="_blank" rel="noopener"&gt;Certificate authorities&lt;/a&gt; so that the BPMN service can run in networks with internal certificates authorities.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/bpmn-elements/#events" &gt;Message events&lt;/a&gt; now support topics that use the &lt;code&gt;+&lt;/code&gt; wildcard.&lt;/li&gt;
-&lt;li&gt;Add configuration option to set __traceDebug flag on all BPMN executions. For details, read &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/debug-workflows/" &gt;Debug workflows&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Allow &lt;code&gt;__traceDebug&lt;/code&gt; to be set from &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/create-workflow/#access-process-variable-context" &gt;variable context&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Add support for querying a range of &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/work-calendars/" &gt;work calendar&lt;/a&gt; entries for a Work Calendar Definition.
+&lt;li&gt;Support Custom &lt;a href="https://en.wikipedia.org/wiki/Certificate_authority"target="_blank" rel="noopener"&gt;Certificate authorities&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; so that the BPMN service can run in networks with internal certificates authorities.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/bpmn-elements/#events"&gt;Message events&lt;/a&gt; now support topics that use the &lt;code&gt;+&lt;/code&gt; wildcard.&lt;/li&gt;
+&lt;li&gt;Add configuration option to set __traceDebug flag on all BPMN executions. For details, read &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/debug-workflows/"&gt;Debug workflows&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Allow &lt;code&gt;__traceDebug&lt;/code&gt; to be set from &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/create-workflow/#access-process-variable-context"&gt;variable context&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Add support for querying a range of &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/work-calendars/"&gt;work calendar&lt;/a&gt; entries for a Work Calendar Definition.
 &lt;ul&gt;
 &lt;li&gt;When configured, calendar data persists to a timeseries DB.&lt;/li&gt;
 &lt;li&gt;⚠️&lt;span class="breaking-text"&gt;Breaking&lt;/span&gt;
@@ -3045,8 +3081,8 @@ This makes it possible to configure calendars in the UI.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Reduce number of retries in &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/maintain/bpmn-nodes/" &gt;BPMN recovery&lt;/a&gt;, speeding up response times when node does not exist.
-From the user&amp;rsquo;s perspective, the delay was particularly notable on &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/trigger-workflows/#start-a-workflow-from-an-api" &gt;API BPMN triggers&lt;/a&gt; when the specified workflow did not exist.&lt;/li&gt;
+&lt;li&gt;Reduce number of retries in &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/maintain/bpmn-nodes/"&gt;BPMN recovery&lt;/a&gt;, speeding up response times when node does not exist.
+From the user&amp;rsquo;s perspective, the delay was particularly notable on &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/trigger-workflows/#start-a-workflow-from-an-api"&gt;API BPMN triggers&lt;/a&gt; when the specified workflow did not exist.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Fixes&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -3056,7 +3092,7 @@ From the user&amp;rsquo;s perspective, the delay was particularly notable on &lt
 &lt;li&gt;Workflow specifications not found in NATS now fall back to database lookups before failing.
 Fixes issue when spinning up new development containers.&lt;/li&gt;
 &lt;li&gt;Include metadata fields for &lt;code&gt;jobResponse&lt;/code&gt;. Fixes panic if node tried to access these fields.&lt;/li&gt;
-&lt;li&gt;Respect &lt;a href="https://docs.rhize.com/how-to/bpmn/debug-workflows/#adding-the-debug-flag" &gt;&lt;code&gt;debug&lt;/code&gt;&lt;/a&gt; flag for BPMNs triggered with &lt;code&gt;createAndRunBpmn&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Respect &lt;a href="https://docs.rhize.com/how-to/bpmn/debug-workflows/#adding-the-debug-flag"&gt;&lt;code&gt;debug&lt;/code&gt;&lt;/a&gt; flag for BPMNs triggered with &lt;code&gt;createAndRunBpmn&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Reuse expected Audience for clients to match documented client name.&lt;/li&gt;
 &lt;li&gt;Do not create calendar entry for end events.&lt;/li&gt;
 &lt;li&gt;Fix nil pointer error when aborting tasks without parents.&lt;/li&gt;
@@ -3135,7 +3171,9 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.1-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.1-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.1-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.1-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
 &lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="notices warning"&gt;
 &lt;span class="type"&gt;Back up first&lt;/span&gt;
@@ -3149,13 +3187,13 @@ To fix this:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Log in to the Keycloak service in your Rhize environment.&lt;/li&gt;
 &lt;li&gt;Select the &lt;code&gt;libre&lt;/code&gt; realm.&lt;/li&gt;
-&lt;li&gt;Configure the audience and role for the Users or groups that should be able to run BPMN workflows. For details, read &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/install/keycloak/" &gt;Install Keycloak&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Configure the audience and role for the Users or groups that should be able to run BPMN workflows. For details, read &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/install/keycloak/"&gt;Install Keycloak&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Work calendars now query for &lt;code&gt;workCalendarDefinitions&lt;/code&gt;, not &lt;code&gt;workCalendars&lt;/code&gt;.
 There is a chance this may break some calendars that already exist.
 To mitigate this, ensure you set active definitions for the calendars you want to query.
-Read &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/work-calendars/about-calendars-and-overrides/" &gt;About calendars and overrides&lt;/a&gt; for details about how the service and its relationships work.&lt;/p&gt;
-&lt;p&gt;After you&amp;rsquo;ve made the necessary mitigations, follow the upgrade the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;
+Read &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/work-calendars/about-calendars-and-overrides/"&gt;About calendars and overrides&lt;/a&gt; for details about how the service and its relationships work.&lt;/p&gt;
+&lt;p&gt;After you&amp;rsquo;ve made the necessary mitigations, follow the upgrade the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Post upgrade&lt;span class="hx:absolute hx:-mt-20" id="post-upgrade"&gt;&lt;/span&gt;
 &lt;a href="#post-upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Two schema changes to the state model also might cause breaking changes after upgrade.
 You can correct these issues by re-uploading the data.&lt;/p&gt;
@@ -3181,7 +3219,7 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Use a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/mutate/#update" &gt;mutation&lt;/a&gt; to update these to have an ID and label.&lt;/li&gt;
+&lt;li&gt;Use a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/mutate/#update"&gt;mutation&lt;/a&gt; to update these to have an ID and label.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Any existing &lt;code&gt;StateModelTransitions&lt;/code&gt; using a &lt;code&gt;from&lt;/code&gt; or &lt;code&gt;to&lt;/code&gt; property will break. Change these to a relationship.&lt;/p&gt;</description></item><item><title>3.0.1</title><link>https://docs.rhize.com/versions/v3.2.0/releases/3-0-1/</link><pubDate>Tue, 23 Jul 2024 10:42:31 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/3-0-1/</guid><description>
 &lt;p&gt;Release notes for version 3.0.1 of the Rhize application.&lt;/p&gt;
@@ -3189,10 +3227,10 @@ title="Copy code"
 It also clears the way for the new, improved Work Calendar service (still in release candidacy).&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt;
 23 Jul 2024&lt;/p&gt;
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-yellow-100 hx:bg-yellow-50 hx:text-yellow-900 hx:dark:border-yellow-200/30 hx:dark:bg-yellow-700/30 hx:dark:text-yellow-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;⚠️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-amber-200 hx:bg-amber-100 hx:text-amber-900 hx:dark:border-amber-200/30 hx:dark:bg-amber-900/30 hx:dark:text-amber-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This release includes a few minor breaking changes, review the &lt;a href="#upgrade" &gt;upgrade&lt;/a&gt; instructions for details.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This release includes a few minor breaking changes, review the &lt;a href="#upgrade"&gt;upgrade&lt;/a&gt; instructions for details.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service"&gt;&lt;/span&gt;
@@ -3206,11 +3244,13 @@ It also clears the way for the new, improved Work Calendar service (still in rel
 &lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Error boundary events now support call-activity tasks. If a task in the called process aborts, the error boundary captures that event.&lt;/li&gt;
-&lt;li&gt;Support Custom &lt;a href="https://en.wikipedia.org/wiki/Certificate_authority" target="_blank" rel="noopener"&gt;Certificate authorities&lt;/a&gt; so that the BPMN service can run in networks with internal certificates authorities.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/bpmn-elements/#events" &gt;Message events&lt;/a&gt; now support topics that use the &lt;code&gt;+&lt;/code&gt; wildcard.&lt;/li&gt;
-&lt;li&gt;Add configuration option to set __traceDebug flag on all BPMN executions. For details, read &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/debug-workflows/" &gt;Debug workflows&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Allow &lt;code&gt;__traceDebug&lt;/code&gt; to be set from &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/create-workflow/#access-process-variable-context" &gt;variable context&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Add support for querying a range of &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/work-calendars/" &gt;work calendar&lt;/a&gt; entries for a Work Calendar Definition.
+&lt;li&gt;Support Custom &lt;a href="https://en.wikipedia.org/wiki/Certificate_authority"target="_blank" rel="noopener"&gt;Certificate authorities&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; so that the BPMN service can run in networks with internal certificates authorities.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/bpmn-elements/#events"&gt;Message events&lt;/a&gt; now support topics that use the &lt;code&gt;+&lt;/code&gt; wildcard.&lt;/li&gt;
+&lt;li&gt;Add configuration option to set __traceDebug flag on all BPMN executions. For details, read &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/debug-workflows/"&gt;Debug workflows&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Allow &lt;code&gt;__traceDebug&lt;/code&gt; to be set from &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/create-workflow/#access-process-variable-context"&gt;variable context&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Add support for querying a range of &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/work-calendars/"&gt;work calendar&lt;/a&gt; entries for a Work Calendar Definition.
 &lt;ul&gt;
 &lt;li&gt;When configured, calendar data persists to a timeseries DB.&lt;/li&gt;
 &lt;li&gt;⚠️&lt;span class="breaking-text"&gt;Breaking&lt;/span&gt;
@@ -3222,8 +3262,8 @@ This makes it possible to configure calendars in the UI.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Reduce number of retries in &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/maintain/bpmn-nodes/" &gt;BPMN recovery&lt;/a&gt;, speeding up response times when node does not exist.
-From the user&amp;rsquo;s perspective, the delay was particularly notable on &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/trigger-workflows/#start-a-workflow-from-an-api" &gt;API BPMN triggers&lt;/a&gt; when the specified workflow did not exist.&lt;/li&gt;
+&lt;li&gt;Reduce number of retries in &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/maintain/bpmn-nodes/"&gt;BPMN recovery&lt;/a&gt;, speeding up response times when node does not exist.
+From the user&amp;rsquo;s perspective, the delay was particularly notable on &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/trigger-workflows/#start-a-workflow-from-an-api"&gt;API BPMN triggers&lt;/a&gt; when the specified workflow did not exist.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Fixes&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -3233,7 +3273,7 @@ From the user&amp;rsquo;s perspective, the delay was particularly notable on &lt
 &lt;li&gt;Workflow specifications not found in NATS now fall back to database lookups before failing.
 Fixes issue when spinning up new development containers.&lt;/li&gt;
 &lt;li&gt;Include metadata fields for &lt;code&gt;jobResponse&lt;/code&gt;. Fixes panic if node tried to access these fields.&lt;/li&gt;
-&lt;li&gt;Respect &lt;a href="https://docs.rhize.com/how-to/bpmn/debug-workflows/#adding-the-debug-flag" &gt;&lt;code&gt;debug&lt;/code&gt;&lt;/a&gt; flag for BPMNs triggered with &lt;code&gt;createAndRunBpmn&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Respect &lt;a href="https://docs.rhize.com/how-to/bpmn/debug-workflows/#adding-the-debug-flag"&gt;&lt;code&gt;debug&lt;/code&gt;&lt;/a&gt; flag for BPMNs triggered with &lt;code&gt;createAndRunBpmn&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Reuse expected Audience for clients to match documented client name.&lt;/li&gt;
 &lt;li&gt;Do not create calendar entry for end events.&lt;/li&gt;
 &lt;li&gt;Fix nil pointer error when aborting tasks without parents.&lt;/li&gt;
@@ -3312,7 +3352,9 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.1-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.1-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.1-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.1-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
 &lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="notices warning"&gt;
 &lt;span class="type"&gt;Back up first&lt;/span&gt;
@@ -3326,13 +3368,13 @@ To fix this:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Log in to the Keycloak service in your Rhize environment.&lt;/li&gt;
 &lt;li&gt;Select the &lt;code&gt;libre&lt;/code&gt; realm.&lt;/li&gt;
-&lt;li&gt;Configure the audience and role for the Users or groups that should be able to run BPMN workflows. For details, read &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/keycloak/" &gt;Install Keycloak&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Configure the audience and role for the Users or groups that should be able to run BPMN workflows. For details, read &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/keycloak/"&gt;Install Keycloak&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Work calendars now query for &lt;code&gt;workCalendarDefinitions&lt;/code&gt;, not &lt;code&gt;workCalendars&lt;/code&gt;.
 There is a chance this may break some calendars that already exist.
 To mitigate this, ensure you set active definitions for the calendars you want to query.
-Read &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/work-calendars/about-calendars-and-overrides/" &gt;About calendars and overrides&lt;/a&gt; for details about how the service and its relationships work.&lt;/p&gt;
-&lt;p&gt;After you&amp;rsquo;ve made the necessary mitigations, follow the upgrade the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;
+Read &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/work-calendars/about-calendars-and-overrides/"&gt;About calendars and overrides&lt;/a&gt; for details about how the service and its relationships work.&lt;/p&gt;
+&lt;p&gt;After you&amp;rsquo;ve made the necessary mitigations, follow the upgrade the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Post upgrade&lt;span class="hx:absolute hx:-mt-20" id="post-upgrade"&gt;&lt;/span&gt;
 &lt;a href="#post-upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Two schema changes to the state model also might cause breaking changes after upgrade.
 You can correct these issues by re-uploading the data.&lt;/p&gt;
@@ -3358,7 +3400,7 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Use a &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/mutate/#update" &gt;mutation&lt;/a&gt; to update these to have an ID and label.&lt;/li&gt;
+&lt;li&gt;Use a &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/mutate/#update"&gt;mutation&lt;/a&gt; to update these to have an ID and label.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Any existing &lt;code&gt;StateModelTransitions&lt;/code&gt; using a &lt;code&gt;from&lt;/code&gt; or &lt;code&gt;to&lt;/code&gt; property will break. Change these to a relationship.&lt;/p&gt;</description></item><item><title>3.0.1</title><link>https://docs.rhize.com/versions/v4.0.0/releases/3-0-1/</link><pubDate>Tue, 23 Jul 2024 10:42:31 -0300</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/3-0-1/</guid><description>
 &lt;p&gt;Release notes for version 3.0.1 of the Rhize application.&lt;/p&gt;
@@ -3366,10 +3408,10 @@ title="Copy code"
 It also clears the way for the new, improved Work Calendar service (still in release candidacy).&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt;
 23 Jul 2024&lt;/p&gt;
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-yellow-100 hx:bg-yellow-50 hx:text-yellow-900 hx:dark:border-yellow-200/30 hx:dark:bg-yellow-700/30 hx:dark:text-yellow-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;⚠️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-amber-200 hx:bg-amber-100 hx:text-amber-900 hx:dark:border-amber-200/30 hx:dark:bg-amber-900/30 hx:dark:text-amber-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This release includes a few minor breaking changes, review the &lt;a href="#upgrade" &gt;upgrade&lt;/a&gt; instructions for details.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This release includes a few minor breaking changes, review the &lt;a href="#upgrade"&gt;upgrade&lt;/a&gt; instructions for details.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service"&gt;&lt;/span&gt;
@@ -3383,11 +3425,13 @@ It also clears the way for the new, improved Work Calendar service (still in rel
 &lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Error boundary events now support call-activity tasks. If a task in the called process aborts, the error boundary captures that event.&lt;/li&gt;
-&lt;li&gt;Support Custom &lt;a href="https://en.wikipedia.org/wiki/Certificate_authority" target="_blank" rel="noopener"&gt;Certificate authorities&lt;/a&gt; so that the BPMN service can run in networks with internal certificates authorities.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/bpmn-elements/#events" &gt;Message events&lt;/a&gt; now support topics that use the &lt;code&gt;+&lt;/code&gt; wildcard.&lt;/li&gt;
-&lt;li&gt;Add configuration option to set __traceDebug flag on all BPMN executions. For details, read &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/debug-workflows/" &gt;Debug workflows&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Allow &lt;code&gt;__traceDebug&lt;/code&gt; to be set from &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/create-workflow/#access-process-variable-context" &gt;variable context&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Add support for querying a range of &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/work-calendars/" &gt;work calendar&lt;/a&gt; entries for a Work Calendar Definition.
+&lt;li&gt;Support Custom &lt;a href="https://en.wikipedia.org/wiki/Certificate_authority"target="_blank" rel="noopener"&gt;Certificate authorities&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; so that the BPMN service can run in networks with internal certificates authorities.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/bpmn-elements/#events"&gt;Message events&lt;/a&gt; now support topics that use the &lt;code&gt;+&lt;/code&gt; wildcard.&lt;/li&gt;
+&lt;li&gt;Add configuration option to set __traceDebug flag on all BPMN executions. For details, read &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/debug-workflows/"&gt;Debug workflows&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Allow &lt;code&gt;__traceDebug&lt;/code&gt; to be set from &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/create-workflow/#access-process-variable-context"&gt;variable context&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Add support for querying a range of &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/work-calendars/"&gt;work calendar&lt;/a&gt; entries for a Work Calendar Definition.
 &lt;ul&gt;
 &lt;li&gt;When configured, calendar data persists to a timeseries DB.&lt;/li&gt;
 &lt;li&gt;⚠️&lt;span class="breaking-text"&gt;Breaking&lt;/span&gt;
@@ -3400,7 +3444,7 @@ This makes it possible to configure calendars in the UI.&lt;/li&gt;
 &lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Reduce number of retries in BPMN recovery, speeding up response times when node does not exist.
-From the user&amp;rsquo;s perspective, the delay was particularly notable on &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/trigger-workflows/#start-a-workflow-from-an-api" &gt;API BPMN triggers&lt;/a&gt; when the specified workflow did not exist.&lt;/li&gt;
+From the user&amp;rsquo;s perspective, the delay was particularly notable on &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/trigger-workflows/#start-a-workflow-from-an-api"&gt;API BPMN triggers&lt;/a&gt; when the specified workflow did not exist.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Fixes&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -3410,7 +3454,7 @@ From the user&amp;rsquo;s perspective, the delay was particularly notable on &lt
 &lt;li&gt;Workflow specifications not found in NATS now fall back to database lookups before failing.
 Fixes issue when spinning up new development containers.&lt;/li&gt;
 &lt;li&gt;Include metadata fields for &lt;code&gt;jobResponse&lt;/code&gt;. Fixes panic if node tried to access these fields.&lt;/li&gt;
-&lt;li&gt;Respect &lt;a href="https://docs.rhize.com/how-to/bpmn/debug-workflows/#adding-the-debug-flag" &gt;&lt;code&gt;debug&lt;/code&gt;&lt;/a&gt; flag for BPMNs triggered with &lt;code&gt;createAndRunBpmn&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Respect &lt;a href="https://docs.rhize.com/how-to/bpmn/debug-workflows/#adding-the-debug-flag"&gt;&lt;code&gt;debug&lt;/code&gt;&lt;/a&gt; flag for BPMNs triggered with &lt;code&gt;createAndRunBpmn&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Reuse expected Audience for clients to match documented client name.&lt;/li&gt;
 &lt;li&gt;Do not create calendar entry for end events.&lt;/li&gt;
 &lt;li&gt;Fix nil pointer error when aborting tasks without parents.&lt;/li&gt;
@@ -3489,7 +3533,9 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.1-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.1-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.1-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.1-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
 &lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="notices warning"&gt;
 &lt;span class="type"&gt;Back up first&lt;/span&gt;
@@ -3503,13 +3549,13 @@ To fix this:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Log in to the Keycloak service in your Rhize environment.&lt;/li&gt;
 &lt;li&gt;Select the &lt;code&gt;libre&lt;/code&gt; realm.&lt;/li&gt;
-&lt;li&gt;Configure the audience and role for the Users or groups that should be able to run BPMN workflows. For details, read &lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/install/keycloak/" &gt;Install Keycloak&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Configure the audience and role for the Users or groups that should be able to run BPMN workflows. For details, read &lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/install/keycloak/"&gt;Install Keycloak&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Work calendars now query for &lt;code&gt;workCalendarDefinitions&lt;/code&gt;, not &lt;code&gt;workCalendars&lt;/code&gt;.
 There is a chance this may break some calendars that already exist.
 To mitigate this, ensure you set active definitions for the calendars you want to query.
-Read &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/work-calendars/about-calendars-and-overrides/" &gt;About calendars and overrides&lt;/a&gt; for details about how the service and its relationships work.&lt;/p&gt;
-&lt;p&gt;After you&amp;rsquo;ve made the necessary mitigations, follow the upgrade the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;
+Read &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/work-calendars/about-calendars-and-overrides/"&gt;About calendars and overrides&lt;/a&gt; for details about how the service and its relationships work.&lt;/p&gt;
+&lt;p&gt;After you&amp;rsquo;ve made the necessary mitigations, follow the upgrade the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Post upgrade&lt;span class="hx:absolute hx:-mt-20" id="post-upgrade"&gt;&lt;/span&gt;
 &lt;a href="#post-upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Two schema changes to the state model also might cause breaking changes after upgrade.
 You can correct these issues by re-uploading the data.&lt;/p&gt;
@@ -3535,7 +3581,7 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Use a &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/gql/mutate/#update" &gt;mutation&lt;/a&gt; to update these to have an ID and label.&lt;/li&gt;
+&lt;li&gt;Use a &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/gql/mutate/#update"&gt;mutation&lt;/a&gt; to update these to have an ID and label.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Any existing &lt;code&gt;StateModelTransitions&lt;/code&gt; using a &lt;code&gt;from&lt;/code&gt; or &lt;code&gt;to&lt;/code&gt; property will break. Change these to a relationship.&lt;/p&gt;</description></item><item><title>Rhize 3.0</title><link>https://docs.rhize.com/releases/3-0/</link><pubDate>Tue, 27 Feb 2024 09:17:43 -0300</pubDate><guid>https://docs.rhize.com/releases/3-0/</guid><description>
 &lt;p&gt;Rhize version 3.0 is now in general release! &amp;#x1f973;
@@ -3579,11 +3625,11 @@ Users query exactly what they want without needing to handle the relational alge
 &lt;p&gt;With standardization, graph structure, and complete interfaces, the Rhize DB thus constitutes a knowledge graph that represents the entire state of a manufacturing operation.
 Users use this knowledge graph to run simulations, discover optimizations, and train machine-learning models for predictive analysis.&lt;/p&gt;
 &lt;p&gt;You can read and write to the knowledge graph through a GraphQL explorer, a BPMN workflow, a custom frontend, or through the Modeling UI.
-To learn how to use GraphQL for manufacturing analysis, read the &lt;a href="https://docs.rhize.com/how-to/gql/" &gt;Rhize guide to GraphQL&lt;/a&gt;.&lt;/p&gt;
+To learn how to use GraphQL for manufacturing analysis, read the &lt;a href="https://docs.rhize.com/how-to/gql/"&gt;Rhize guide to GraphQL&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Modeling UI&lt;span class="hx:absolute hx:-mt-20" id="modeling-ui"&gt;&lt;/span&gt;
 &lt;a href="#modeling-ui" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Rhize UI is a graphical interface to model and store the objects in your manufacturing process. Without needing programming knowledge, your operators can use the Admin UI to define the items in your role-based equipment hierarchy. For example, you can create and associate equipment with equipment classes, hierarchy scopes, data sources, and segments―all the objects that change infrequently.&lt;/p&gt;
 &lt;p&gt;These models provide the foundational data objects to associate with the dynamic data that you collect, analyze, and handle during ongoing operations.
-To learn more, read the &lt;a href="https://docs.rhize.com/how-to/model/create-objects-ui/" &gt;Model objects&lt;/a&gt; guide and its corresponding topic that describes the &lt;a href="https://docs.rhize.com/how-to/model/master-definitions/" &gt;Master definitions and fields&lt;/a&gt;.&lt;/p&gt;
+To learn more, read the &lt;a href="https://docs.rhize.com/how-to/model/create-objects-ui/"&gt;Model objects&lt;/a&gt; guide and its corresponding topic that describes the &lt;a href="https://docs.rhize.com/how-to/model/master-definitions/"&gt;Master definitions and fields&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Low-code workflow orchestration&lt;span class="hx:absolute hx:-mt-20" id="low-code-workflow-orchestration"&gt;&lt;/span&gt;
 &lt;a href="#low-code-workflow-orchestration" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;While some aspects of manufacturing, such as the plant site, are constant, most manufacturing data is emitted dynamically during production.
 Rhize&amp;rsquo;s &lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt; editor provides a graphical interface to listen to events, write logic based on event conditions, and process data to send to other devices or store in the knowledge graph.
@@ -3595,7 +3641,7 @@ It has gateways to represent conditions, messaging to subscribe and publish to t
 &lt;li&gt;Subscribe and publish to topics, coordinating communication between systems&lt;/li&gt;
 &lt;li&gt;Listen to events and read and write machine data through OPC-UA&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;To get started, read the Guides to &lt;a href="https://docs.rhize.com/how-to/bpmn/" &gt;Use BPMN&lt;/a&gt; and &lt;a href="https://docs.rhize.com/how-to/publish-subscribe/create-equipment-class-rule/" &gt;Write rules&lt;/a&gt; to trigger workflows from data source values.&lt;/p&gt;
+&lt;p&gt;To get started, read the Guides to &lt;a href="https://docs.rhize.com/how-to/bpmn/"&gt;Use BPMN&lt;/a&gt; and &lt;a href="https://docs.rhize.com/how-to/publish-subscribe/create-equipment-class-rule/"&gt;Write rules&lt;/a&gt; to trigger workflows from data source values.&lt;/p&gt;
 &lt;h3&gt;Agent and message broker&lt;span class="hx:absolute hx:-mt-20" id="agent-and-message-broker"&gt;&lt;/span&gt;
 &lt;a href="#agent-and-message-broker" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rhize collects data from multiple data sources and protocols.
 To bridge the Rhize system with your devices, Rhize has an agent to collect data from OPC UA and MQTT servers.
@@ -3604,17 +3650,17 @@ The Rhize agent listens for your devices&amp;rsquo; messages and publishes them 
 Rhize BPMN workflows can subscribe to topics and publish topics back.
 On your side, your manufacturing devices can publish topics to Rhize and subscribe to topics that are published from some BPMN trigger or to changes in the database.
 You can also use Rhize workflows to publish and subscribe to topics on an external broker.&lt;/p&gt;
-&lt;p&gt;To learn more, read the guide to &lt;a href="https://docs.rhize.com/how-to/publish-subscribe/" &gt;Connect a data source&lt;/a&gt; and the reference for &lt;a href="https://docs.rhize.com/reference/service-config/agent-configuration/" &gt;Agent Configuration&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To learn more, read the guide to &lt;a href="https://docs.rhize.com/how-to/publish-subscribe/"&gt;Connect a data source&lt;/a&gt; and the reference for &lt;a href="https://docs.rhize.com/reference/service-config/agent-configuration/"&gt;Agent Configuration&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Audit trails&lt;span class="hx:absolute hx:-mt-20" id="audit-trails"&gt;&lt;/span&gt;
 &lt;a href="#audit-trails" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Manufacturing often happens in strict regulatory environments and in systems where security is critical.
 The Rhize audit log maintains a record of all changes that happen in the system.
-To learn more, read the &lt;a href="https://docs.rhize.com/how-to/audit/" &gt;Audit&lt;/a&gt; guide.&lt;/p&gt;
+To learn more, read the &lt;a href="https://docs.rhize.com/how-to/audit/"&gt;Audit&lt;/a&gt; guide.&lt;/p&gt;
 &lt;h3&gt;Secure, vendor-agnostic infrastructure&lt;span class="hx:absolute hx:-mt-20" id="secure-vendor-agnostic-infrastructure"&gt;&lt;/span&gt;
 &lt;a href="#secure-vendor-agnostic-infrastructure" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rhize is built on open standards and heavily uses open-source cloud infrastructure.
 As such, Rhize is designed to conform to your operation&amp;rsquo;s IT and manufacturing processes.&lt;/p&gt;
 &lt;p&gt;Rhize runs on your IT infrastructure.
 The data model itself is based on a widely recognized standard, ISA-95.
-Your teams control its security and access policies, with authentication provided through &lt;a href="https://docs.rhize.com/explanations/about-openidconnect/" &gt;OpenID Connect&lt;/a&gt;.&lt;/p&gt;
+Your teams control its security and access policies, with authentication provided through &lt;a href="https://docs.rhize.com/explanations/about-openidconnect/"&gt;OpenID Connect&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;High availability and reliability&lt;span class="hx:absolute hx:-mt-20" id="high-availability-and-reliability"&gt;&lt;/span&gt;
 &lt;a href="#high-availability-and-reliability" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Mission-critical systems, such as an MES, must be highly reliable and available.
 Information flows in manufacturing can also have very high demands for CPU, network throughput, and memory.&lt;/p&gt;
@@ -3623,15 +3669,15 @@ This distributed execution ensures that the system continues functioning during 
 Specifically, Rhize uses Kubernetes for container orchestration, a distributed, ACID-compliant database, and a message broker that uses replication to harden against failure.&lt;/p&gt;
 &lt;p&gt;The reliance on open source also means that your operators do not need to learn a specialized skill to deploy Rhize.
 It uses the same cloud-native applications that power the modern web.&lt;/p&gt;
-&lt;p&gt;Read all about how to Deploy Rhize in the &lt;a href="https://docs.rhize.com/deploy/" &gt;Deploy&lt;/a&gt; guides.&lt;/p&gt;
+&lt;p&gt;Read all about how to Deploy Rhize in the &lt;a href="https://docs.rhize.com/deploy/"&gt;Deploy&lt;/a&gt; guides.&lt;/p&gt;
 &lt;h3&gt;A backend for MES applications&lt;span class="hx:absolute hx:-mt-20" id="a-backend-for-mes-applications"&gt;&lt;/span&gt;
 &lt;a href="#a-backend-for-mes-applications" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;With the knowledge graph, message broker, and workflow executor, and secure infrastructure,
 Rhize also provides all the components necessary to write custom applications for Manufacturing Execution Systems.
 Rather than rely on a vendor to sell an MES system that prescribes exactly what data it can use and how it can use this data, use Rhize to build the custom MES frontend of your choice.&lt;/p&gt;
 &lt;p&gt;Combined with rapid prototyping and low-code tools, you can use Rhize to build MES applications quickly and iterate on them as your operators use them in production.&lt;/p&gt;
 &lt;h2&gt;Install&lt;span class="hx:absolute hx:-mt-20" id="install"&gt;&lt;/span&gt;
-&lt;a href="#install" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To install, read the &lt;a href="https://docs.rhize.com/deploy/install/" &gt;Install guide&lt;/a&gt;.
-Or, if upgrading from a release candidate, use the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade guide&lt;/a&gt;.
+&lt;a href="#install" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To install, read the &lt;a href="https://docs.rhize.com/deploy/install/"&gt;Install guide&lt;/a&gt;.
+Or, if upgrading from a release candidate, use the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade guide&lt;/a&gt;.
 If upgrading, be sure to review the changelog to be aware of any possible breaking changes.&lt;/p&gt;
 &lt;div class="notices note"&gt;
 &lt;span class="type"&gt;v3.0.0 compatibility&lt;/span&gt;
@@ -3684,22 +3730,24 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.0-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.0-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.0-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.0-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Changelogs&lt;span class="hx:absolute hx:-mt-20" id="changelogs"&gt;&lt;/span&gt;
 &lt;a href="#changelogs" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The following changelogs document the features, fixes, and refactoring that went into this release.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/releases/changelog/3-0-0/" &gt;3.0.0&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/releases/changelog/3-0-0rc09/" &gt;3.0.0rc09&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/releases/changelog/3-0-0rc08/" &gt;3.0.0rc08&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/releases/changelog/3-0-0rc07/" &gt;3.0.0rc07&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/releases/changelog/3-0-0rc06/" &gt;3.0.0rc06&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/releases/changelog/3-0-0rc05/" &gt;3.0.0rc05&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/releases/changelog/3-0-0/"&gt;3.0.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/releases/changelog/3-0-0rc09/"&gt;3.0.0rc09&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/releases/changelog/3-0-0rc08/"&gt;3.0.0rc08&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/releases/changelog/3-0-0rc07/"&gt;3.0.0rc07&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/releases/changelog/3-0-0rc06/"&gt;3.0.0rc06&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/releases/changelog/3-0-0rc05/"&gt;3.0.0rc05&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Read more&lt;span class="hx:absolute hx:-mt-20" id="read-more"&gt;&lt;/span&gt;
 &lt;a href="#read-more" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/get-started/" &gt;Get started&lt;/a&gt; introduces Rhize&amp;rsquo;s application and architecture.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/explanations/" &gt;Manufacturing data hub&lt;/a&gt; explains why Rhize chose its design.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/use-cases/" &gt;Use cases&lt;/a&gt; explains ways customers use Rhize.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/get-started/"&gt;Get started&lt;/a&gt; introduces Rhize&amp;rsquo;s application and architecture.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/explanations/"&gt;Manufacturing data hub&lt;/a&gt; explains why Rhize chose its design.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/use-cases/"&gt;Use cases&lt;/a&gt; explains ways customers use Rhize.&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Rhize 3.0</title><link>https://docs.rhize.com/versions/v3.0.3/releases/3-0/</link><pubDate>Tue, 27 Feb 2024 09:17:43 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/3-0/</guid><description>
 &lt;p&gt;Rhize version 3.0 is now in general release! &amp;#x1f973;
 As a full rewrite of our earlier Libre 2.0 application, this release functionally announces a new product.&lt;/p&gt;
@@ -3742,11 +3790,11 @@ Users query exactly what they want without needing to handle the relational alge
 &lt;p&gt;With standardization, graph structure, and complete interfaces, the Rhize DB thus constitutes a knowledge graph that represents the entire state of a manufacturing operation.
 Users use this knowledge graph to run simulations, discover optimizations, and train machine-learning models for predictive analysis.&lt;/p&gt;
 &lt;p&gt;You can read and write to the knowledge graph through a GraphQL explorer, a BPMN workflow, a custom frontend, or through the Modeling UI.
-To learn how to use GraphQL for manufacturing analysis, read the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/" &gt;Rhize guide to GraphQL&lt;/a&gt;.&lt;/p&gt;
+To learn how to use GraphQL for manufacturing analysis, read the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/"&gt;Rhize guide to GraphQL&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Modeling UI&lt;span class="hx:absolute hx:-mt-20" id="modeling-ui"&gt;&lt;/span&gt;
 &lt;a href="#modeling-ui" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Rhize UI is a graphical interface to model and store the objects in your manufacturing process. Without needing programming knowledge, your operators can use the Admin UI to define the items in your role-based equipment hierarchy. For example, you can create and associate equipment with equipment classes, hierarchy scopes, data sources, and segments―all the objects that change infrequently.&lt;/p&gt;
 &lt;p&gt;These models provide the foundational data objects to associate with the dynamic data that you collect, analyze, and handle during ongoing operations.
-To learn more, read the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/create-objects-ui/" &gt;Model objects&lt;/a&gt; guide and its corresponding topic that describes the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/master-definitions/" &gt;Master definitions and fields&lt;/a&gt;.&lt;/p&gt;
+To learn more, read the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/create-objects-ui/"&gt;Model objects&lt;/a&gt; guide and its corresponding topic that describes the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/master-definitions/"&gt;Master definitions and fields&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Low-code workflow orchestration&lt;span class="hx:absolute hx:-mt-20" id="low-code-workflow-orchestration"&gt;&lt;/span&gt;
 &lt;a href="#low-code-workflow-orchestration" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;While some aspects of manufacturing, such as the plant site, are constant, most manufacturing data is emitted dynamically during production.
 Rhize&amp;rsquo;s &lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt; editor provides a graphical interface to listen to events, write logic based on event conditions, and process data to send to other devices or store in the knowledge graph.
@@ -3758,7 +3806,7 @@ It has gateways to represent conditions, messaging to subscribe and publish to t
 &lt;li&gt;Subscribe and publish to topics, coordinating communication between systems&lt;/li&gt;
 &lt;li&gt;Listen to events and read and write machine data through OPC-UA&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;To get started, read the Guides to &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/" &gt;Use BPMN&lt;/a&gt; and &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/create-equipment-class-rule/" &gt;Write rules&lt;/a&gt; to trigger workflows from data source values.&lt;/p&gt;
+&lt;p&gt;To get started, read the Guides to &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/"&gt;Use BPMN&lt;/a&gt; and &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/create-equipment-class-rule/"&gt;Write rules&lt;/a&gt; to trigger workflows from data source values.&lt;/p&gt;
 &lt;h3&gt;Agent and message broker&lt;span class="hx:absolute hx:-mt-20" id="agent-and-message-broker"&gt;&lt;/span&gt;
 &lt;a href="#agent-and-message-broker" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rhize collects data from multiple data sources and protocols.
 To bridge the Rhize system with your devices, Rhize has an agent to collect data from OPC UA and MQTT servers.
@@ -3767,17 +3815,17 @@ The Rhize agent listens for your devices&amp;rsquo; messages and publishes them 
 Rhize BPMN workflows can subscribe to topics and publish topics back.
 On your side, your manufacturing devices can publish topics to Rhize and subscribe to topics that are published from some BPMN trigger or to changes in the database.
 You can also use Rhize workflows to publish and subscribe to topics on an external broker.&lt;/p&gt;
-&lt;p&gt;To learn more, read the guide to &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/" &gt;Connect a data source&lt;/a&gt; and the reference for &lt;a href="https://docs.rhize.com/versions/v3.0.3/reference/service-config/agent-configuration/" &gt;Agent Configuration&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To learn more, read the guide to &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/"&gt;Connect a data source&lt;/a&gt; and the reference for &lt;a href="https://docs.rhize.com/versions/v3.0.3/reference/service-config/agent-configuration/"&gt;Agent Configuration&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Audit trails&lt;span class="hx:absolute hx:-mt-20" id="audit-trails"&gt;&lt;/span&gt;
 &lt;a href="#audit-trails" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Manufacturing often happens in strict regulatory environments and in systems where security is critical.
 The Rhize audit log maintains a record of all changes that happen in the system.
-To learn more, read the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/audit/" &gt;Audit&lt;/a&gt; guide.&lt;/p&gt;
+To learn more, read the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/audit/"&gt;Audit&lt;/a&gt; guide.&lt;/p&gt;
 &lt;h3&gt;Secure, vendor-agnostic infrastructure&lt;span class="hx:absolute hx:-mt-20" id="secure-vendor-agnostic-infrastructure"&gt;&lt;/span&gt;
 &lt;a href="#secure-vendor-agnostic-infrastructure" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rhize is built on open standards and heavily uses open-source cloud infrastructure.
 As such, Rhize is designed to conform to your operation&amp;rsquo;s IT and manufacturing processes.&lt;/p&gt;
 &lt;p&gt;Rhize runs on your IT infrastructure.
 The data model itself is based on a widely recognized standard, ISA-95.
-Your teams control its security and access policies, with authentication provided through &lt;a href="https://docs.rhize.com/versions/v3.0.3/explanations/about-openidconnect/" &gt;OpenID Connect&lt;/a&gt;.&lt;/p&gt;
+Your teams control its security and access policies, with authentication provided through &lt;a href="https://docs.rhize.com/versions/v3.0.3/explanations/about-openidconnect/"&gt;OpenID Connect&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;High availability and reliability&lt;span class="hx:absolute hx:-mt-20" id="high-availability-and-reliability"&gt;&lt;/span&gt;
 &lt;a href="#high-availability-and-reliability" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Mission-critical systems, such as an MES, must be highly reliable and available.
 Information flows in manufacturing can also have very high demands for CPU, network throughput, and memory.&lt;/p&gt;
@@ -3786,15 +3834,15 @@ This distributed execution ensures that the system continues functioning during 
 Specifically, Rhize uses Kubernetes for container orchestration, a distributed, ACID-compliant database, and a message broker that uses replication to harden against failure.&lt;/p&gt;
 &lt;p&gt;The reliance on open source also means that your operators do not need to learn a specialized skill to deploy Rhize.
 It uses the same cloud-native applications that power the modern web.&lt;/p&gt;
-&lt;p&gt;Read all about how to Deploy Rhize in the &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/" &gt;Deploy&lt;/a&gt; guides.&lt;/p&gt;
+&lt;p&gt;Read all about how to Deploy Rhize in the &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/"&gt;Deploy&lt;/a&gt; guides.&lt;/p&gt;
 &lt;h3&gt;A backend for MES applications&lt;span class="hx:absolute hx:-mt-20" id="a-backend-for-mes-applications"&gt;&lt;/span&gt;
 &lt;a href="#a-backend-for-mes-applications" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;With the knowledge graph, message broker, and workflow executor, and secure infrastructure,
 Rhize also provides all the components necessary to write custom applications for Manufacturing Execution Systems.
 Rather than rely on a vendor to sell an MES system that prescribes exactly what data it can use and how it can use this data, use Rhize to build the custom MES frontend of your choice.&lt;/p&gt;
 &lt;p&gt;Combined with rapid prototyping and low-code tools, you can use Rhize to build MES applications quickly and iterate on them as your operators use them in production.&lt;/p&gt;
 &lt;h2&gt;Install&lt;span class="hx:absolute hx:-mt-20" id="install"&gt;&lt;/span&gt;
-&lt;a href="#install" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To install, read the &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/install/" &gt;Install guide&lt;/a&gt;.
-Or, if upgrading from a release candidate, use the &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/upgrade/" &gt;Upgrade guide&lt;/a&gt;.
+&lt;a href="#install" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To install, read the &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/install/"&gt;Install guide&lt;/a&gt;.
+Or, if upgrading from a release candidate, use the &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/upgrade/"&gt;Upgrade guide&lt;/a&gt;.
 If upgrading, be sure to review the changelog to be aware of any possible breaking changes.&lt;/p&gt;
 &lt;div class="notices note"&gt;
 &lt;span class="type"&gt;v3.0.0 compatibility&lt;/span&gt;
@@ -3847,22 +3895,24 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.0-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.0-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.0-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.0-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Changelogs&lt;span class="hx:absolute hx:-mt-20" id="changelogs"&gt;&lt;/span&gt;
 &lt;a href="#changelogs" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The following changelogs document the features, fixes, and refactoring that went into this release.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0/" &gt;3.0.0&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc09/" &gt;3.0.0rc09&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc08/" &gt;3.0.0rc08&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc07/" &gt;3.0.0rc07&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc06/" &gt;3.0.0rc06&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc05/" &gt;3.0.0rc05&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0/"&gt;3.0.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc09/"&gt;3.0.0rc09&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc08/"&gt;3.0.0rc08&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc07/"&gt;3.0.0rc07&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc06/"&gt;3.0.0rc06&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc05/"&gt;3.0.0rc05&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Read more&lt;span class="hx:absolute hx:-mt-20" id="read-more"&gt;&lt;/span&gt;
 &lt;a href="#read-more" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/get-started/" &gt;Get started&lt;/a&gt; introduces Rhize&amp;rsquo;s application and architecture.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/explanations/" &gt;Manufacturing data hub&lt;/a&gt; explains why Rhize chose its design.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/use-cases/" &gt;Use cases&lt;/a&gt; explains ways customers use Rhize.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/get-started/"&gt;Get started&lt;/a&gt; introduces Rhize&amp;rsquo;s application and architecture.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/explanations/"&gt;Manufacturing data hub&lt;/a&gt; explains why Rhize chose its design.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/use-cases/"&gt;Use cases&lt;/a&gt; explains ways customers use Rhize.&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Rhize 3.0</title><link>https://docs.rhize.com/versions/v3.2.0/releases/3-0/</link><pubDate>Tue, 27 Feb 2024 09:17:43 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/3-0/</guid><description>
 &lt;p&gt;Rhize version 3.0 is now in general release! &amp;#x1f973;
 As a full rewrite of our earlier Libre 2.0 application, this release functionally announces a new product.&lt;/p&gt;
@@ -3905,11 +3955,11 @@ Users query exactly what they want without needing to handle the relational alge
 &lt;p&gt;With standardization, graph structure, and complete interfaces, the Rhize DB thus constitutes a knowledge graph that represents the entire state of a manufacturing operation.
 Users use this knowledge graph to run simulations, discover optimizations, and train machine-learning models for predictive analysis.&lt;/p&gt;
 &lt;p&gt;You can read and write to the knowledge graph through a GraphQL explorer, a BPMN workflow, a custom frontend, or through the Modeling UI.
-To learn how to use GraphQL for manufacturing analysis, read the &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/" &gt;Rhize guide to GraphQL&lt;/a&gt;.&lt;/p&gt;
+To learn how to use GraphQL for manufacturing analysis, read the &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/"&gt;Rhize guide to GraphQL&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Modeling UI&lt;span class="hx:absolute hx:-mt-20" id="modeling-ui"&gt;&lt;/span&gt;
 &lt;a href="#modeling-ui" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Rhize UI is a graphical interface to model and store the objects in your manufacturing process. Without needing programming knowledge, your operators can use the Admin UI to define the items in your role-based equipment hierarchy. For example, you can create and associate equipment with equipment classes, hierarchy scopes, data sources, and segments―all the objects that change infrequently.&lt;/p&gt;
 &lt;p&gt;These models provide the foundational data objects to associate with the dynamic data that you collect, analyze, and handle during ongoing operations.
-To learn more, read the &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/model/create-objects-ui/" &gt;Model objects&lt;/a&gt; guide and its corresponding topic that describes the &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/model/master-definitions/" &gt;Master definitions and fields&lt;/a&gt;.&lt;/p&gt;
+To learn more, read the &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/model/create-objects-ui/"&gt;Model objects&lt;/a&gt; guide and its corresponding topic that describes the &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/model/master-definitions/"&gt;Master definitions and fields&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Low-code workflow orchestration&lt;span class="hx:absolute hx:-mt-20" id="low-code-workflow-orchestration"&gt;&lt;/span&gt;
 &lt;a href="#low-code-workflow-orchestration" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;While some aspects of manufacturing, such as the plant site, are constant, most manufacturing data is emitted dynamically during production.
 Rhize&amp;rsquo;s &lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt; editor provides a graphical interface to listen to events, write logic based on event conditions, and process data to send to other devices or store in the knowledge graph.
@@ -3921,7 +3971,7 @@ It has gateways to represent conditions, messaging to subscribe and publish to t
 &lt;li&gt;Subscribe and publish to topics, coordinating communication between systems&lt;/li&gt;
 &lt;li&gt;Listen to events and read and write machine data through OPC-UA&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;To get started, read the Guides to &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/" &gt;Use BPMN&lt;/a&gt; and &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/publish-subscribe/create-equipment-class-rule/" &gt;Write rules&lt;/a&gt; to trigger workflows from data source values.&lt;/p&gt;
+&lt;p&gt;To get started, read the Guides to &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/"&gt;Use BPMN&lt;/a&gt; and &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/publish-subscribe/create-equipment-class-rule/"&gt;Write rules&lt;/a&gt; to trigger workflows from data source values.&lt;/p&gt;
 &lt;h3&gt;Agent and message broker&lt;span class="hx:absolute hx:-mt-20" id="agent-and-message-broker"&gt;&lt;/span&gt;
 &lt;a href="#agent-and-message-broker" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rhize collects data from multiple data sources and protocols.
 To bridge the Rhize system with your devices, Rhize has an agent to collect data from OPC UA and MQTT servers.
@@ -3930,17 +3980,17 @@ The Rhize agent listens for your devices&amp;rsquo; messages and publishes them 
 Rhize BPMN workflows can subscribe to topics and publish topics back.
 On your side, your manufacturing devices can publish topics to Rhize and subscribe to topics that are published from some BPMN trigger or to changes in the database.
 You can also use Rhize workflows to publish and subscribe to topics on an external broker.&lt;/p&gt;
-&lt;p&gt;To learn more, read the guide to &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/publish-subscribe/" &gt;Connect a data source&lt;/a&gt; and the reference for &lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/service-config/agent-configuration/" &gt;Agent Configuration&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To learn more, read the guide to &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/publish-subscribe/"&gt;Connect a data source&lt;/a&gt; and the reference for &lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/service-config/agent-configuration/"&gt;Agent Configuration&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Audit trails&lt;span class="hx:absolute hx:-mt-20" id="audit-trails"&gt;&lt;/span&gt;
 &lt;a href="#audit-trails" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Manufacturing often happens in strict regulatory environments and in systems where security is critical.
 The Rhize audit log maintains a record of all changes that happen in the system.
-To learn more, read the &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/audit/" &gt;Audit&lt;/a&gt; guide.&lt;/p&gt;
+To learn more, read the &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/audit/"&gt;Audit&lt;/a&gt; guide.&lt;/p&gt;
 &lt;h3&gt;Secure, vendor-agnostic infrastructure&lt;span class="hx:absolute hx:-mt-20" id="secure-vendor-agnostic-infrastructure"&gt;&lt;/span&gt;
 &lt;a href="#secure-vendor-agnostic-infrastructure" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rhize is built on open standards and heavily uses open-source cloud infrastructure.
 As such, Rhize is designed to conform to your operation&amp;rsquo;s IT and manufacturing processes.&lt;/p&gt;
 &lt;p&gt;Rhize runs on your IT infrastructure.
 The data model itself is based on a widely recognized standard, ISA-95.
-Your teams control its security and access policies, with authentication provided through &lt;a href="https://docs.rhize.com/versions/v3.2.0/explanations/about-openidconnect/" &gt;OpenID Connect&lt;/a&gt;.&lt;/p&gt;
+Your teams control its security and access policies, with authentication provided through &lt;a href="https://docs.rhize.com/versions/v3.2.0/explanations/about-openidconnect/"&gt;OpenID Connect&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;High availability and reliability&lt;span class="hx:absolute hx:-mt-20" id="high-availability-and-reliability"&gt;&lt;/span&gt;
 &lt;a href="#high-availability-and-reliability" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Mission-critical systems, such as an MES, must be highly reliable and available.
 Information flows in manufacturing can also have very high demands for CPU, network throughput, and memory.&lt;/p&gt;
@@ -3949,15 +3999,15 @@ This distributed execution ensures that the system continues functioning during 
 Specifically, Rhize uses Kubernetes for container orchestration, a distributed, ACID-compliant database, and a message broker that uses replication to harden against failure.&lt;/p&gt;
 &lt;p&gt;The reliance on open source also means that your operators do not need to learn a specialized skill to deploy Rhize.
 It uses the same cloud-native applications that power the modern web.&lt;/p&gt;
-&lt;p&gt;Read all about how to Deploy Rhize in the &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/" &gt;Deploy&lt;/a&gt; guides.&lt;/p&gt;
+&lt;p&gt;Read all about how to Deploy Rhize in the &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/"&gt;Deploy&lt;/a&gt; guides.&lt;/p&gt;
 &lt;h3&gt;A backend for MES applications&lt;span class="hx:absolute hx:-mt-20" id="a-backend-for-mes-applications"&gt;&lt;/span&gt;
 &lt;a href="#a-backend-for-mes-applications" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;With the knowledge graph, message broker, and workflow executor, and secure infrastructure,
 Rhize also provides all the components necessary to write custom applications for Manufacturing Execution Systems.
 Rather than rely on a vendor to sell an MES system that prescribes exactly what data it can use and how it can use this data, use Rhize to build the custom MES frontend of your choice.&lt;/p&gt;
 &lt;p&gt;Combined with rapid prototyping and low-code tools, you can use Rhize to build MES applications quickly and iterate on them as your operators use them in production.&lt;/p&gt;
 &lt;h2&gt;Install&lt;span class="hx:absolute hx:-mt-20" id="install"&gt;&lt;/span&gt;
-&lt;a href="#install" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To install, read the &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/" &gt;Install guide&lt;/a&gt;.
-Or, if upgrading from a release candidate, use the &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/upgrade/" &gt;Upgrade guide&lt;/a&gt;.
+&lt;a href="#install" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To install, read the &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/"&gt;Install guide&lt;/a&gt;.
+Or, if upgrading from a release candidate, use the &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/upgrade/"&gt;Upgrade guide&lt;/a&gt;.
 If upgrading, be sure to review the changelog to be aware of any possible breaking changes.&lt;/p&gt;
 &lt;div class="notices note"&gt;
 &lt;span class="type"&gt;v3.0.0 compatibility&lt;/span&gt;
@@ -4010,22 +4060,24 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.0-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.0-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.0-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.0-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Changelogs&lt;span class="hx:absolute hx:-mt-20" id="changelogs"&gt;&lt;/span&gt;
 &lt;a href="#changelogs" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The following changelogs document the features, fixes, and refactoring that went into this release.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0/" &gt;3.0.0&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc09/" &gt;3.0.0rc09&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc08/" &gt;3.0.0rc08&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc07/" &gt;3.0.0rc07&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc06/" &gt;3.0.0rc06&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc05/" &gt;3.0.0rc05&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0/"&gt;3.0.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc09/"&gt;3.0.0rc09&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc08/"&gt;3.0.0rc08&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc07/"&gt;3.0.0rc07&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc06/"&gt;3.0.0rc06&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc05/"&gt;3.0.0rc05&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Read more&lt;span class="hx:absolute hx:-mt-20" id="read-more"&gt;&lt;/span&gt;
 &lt;a href="#read-more" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/get-started/" &gt;Get started&lt;/a&gt; introduces Rhize&amp;rsquo;s application and architecture.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/explanations/" &gt;Manufacturing data hub&lt;/a&gt; explains why Rhize chose its design.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/use-cases/" &gt;Use cases&lt;/a&gt; explains ways customers use Rhize.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/get-started/"&gt;Get started&lt;/a&gt; introduces Rhize&amp;rsquo;s application and architecture.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/explanations/"&gt;Manufacturing data hub&lt;/a&gt; explains why Rhize chose its design.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/use-cases/"&gt;Use cases&lt;/a&gt; explains ways customers use Rhize.&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Rhize 3.0</title><link>https://docs.rhize.com/versions/v4.0.0/releases/3-0/</link><pubDate>Tue, 27 Feb 2024 09:17:43 -0300</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/3-0/</guid><description>
 &lt;p&gt;Rhize version 3.0 is now in general release! &amp;#x1f973;
 As a full rewrite of our earlier Libre 2.0 application, this release functionally announces a new product.&lt;/p&gt;
@@ -4068,11 +4120,11 @@ Users query exactly what they want without needing to handle the relational alge
 &lt;p&gt;With standardization, graph structure, and complete interfaces, the Rhize DB thus constitutes a knowledge graph that represents the entire state of a manufacturing operation.
 Users use this knowledge graph to run simulations, discover optimizations, and train machine-learning models for predictive analysis.&lt;/p&gt;
 &lt;p&gt;You can read and write to the knowledge graph through a GraphQL explorer, a BPMN workflow, a custom frontend, or through the Modeling UI.
-To learn how to use GraphQL for manufacturing analysis, read the &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/gql/" &gt;Rhize guide to GraphQL&lt;/a&gt;.&lt;/p&gt;
+To learn how to use GraphQL for manufacturing analysis, read the &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/gql/"&gt;Rhize guide to GraphQL&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Modeling UI&lt;span class="hx:absolute hx:-mt-20" id="modeling-ui"&gt;&lt;/span&gt;
 &lt;a href="#modeling-ui" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Rhize UI is a graphical interface to model and store the objects in your manufacturing process. Without needing programming knowledge, your operators can use the Admin UI to define the items in your role-based equipment hierarchy. For example, you can create and associate equipment with equipment classes, hierarchy scopes, data sources, and segments―all the objects that change infrequently.&lt;/p&gt;
 &lt;p&gt;These models provide the foundational data objects to associate with the dynamic data that you collect, analyze, and handle during ongoing operations.
-To learn more, read the &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/model/create-objects-ui/" &gt;Model objects&lt;/a&gt; guide and its corresponding topic that describes the &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/model/master-definitions/" &gt;Master definitions and fields&lt;/a&gt;.&lt;/p&gt;
+To learn more, read the &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/model/create-objects-ui/"&gt;Model objects&lt;/a&gt; guide and its corresponding topic that describes the &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/model/master-definitions/"&gt;Master definitions and fields&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Low-code workflow orchestration&lt;span class="hx:absolute hx:-mt-20" id="low-code-workflow-orchestration"&gt;&lt;/span&gt;
 &lt;a href="#low-code-workflow-orchestration" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;While some aspects of manufacturing, such as the plant site, are constant, most manufacturing data is emitted dynamically during production.
 Rhize&amp;rsquo;s &lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt; editor provides a graphical interface to listen to events, write logic based on event conditions, and process data to send to other devices or store in the knowledge graph.
@@ -4084,7 +4136,7 @@ It has gateways to represent conditions, messaging to subscribe and publish to t
 &lt;li&gt;Subscribe and publish to topics, coordinating communication between systems&lt;/li&gt;
 &lt;li&gt;Listen to events and read and write machine data through OPC-UA&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;To get started, read the Guides to &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/" &gt;Use BPMN&lt;/a&gt; and &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/publish-subscribe/create-equipment-class-rule/" &gt;Write rules&lt;/a&gt; to trigger workflows from data source values.&lt;/p&gt;
+&lt;p&gt;To get started, read the Guides to &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/"&gt;Use BPMN&lt;/a&gt; and &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/publish-subscribe/create-equipment-class-rule/"&gt;Write rules&lt;/a&gt; to trigger workflows from data source values.&lt;/p&gt;
 &lt;h3&gt;Agent and message broker&lt;span class="hx:absolute hx:-mt-20" id="agent-and-message-broker"&gt;&lt;/span&gt;
 &lt;a href="#agent-and-message-broker" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rhize collects data from multiple data sources and protocols.
 To bridge the Rhize system with your devices, Rhize has an agent to collect data from OPC UA and MQTT servers.
@@ -4093,17 +4145,17 @@ The Rhize agent listens for your devices&amp;rsquo; messages and publishes them 
 Rhize BPMN workflows can subscribe to topics and publish topics back.
 On your side, your manufacturing devices can publish topics to Rhize and subscribe to topics that are published from some BPMN trigger or to changes in the database.
 You can also use Rhize workflows to publish and subscribe to topics on an external broker.&lt;/p&gt;
-&lt;p&gt;To learn more, read the guide to &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/publish-subscribe/" &gt;Connect a data source&lt;/a&gt; and the reference for &lt;a href="https://docs.rhize.com/versions/v4.0.0/reference/service-config/agent-configuration/" &gt;Agent Configuration&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To learn more, read the guide to &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/publish-subscribe/"&gt;Connect a data source&lt;/a&gt; and the reference for &lt;a href="https://docs.rhize.com/versions/v4.0.0/reference/service-config/agent-configuration/"&gt;Agent Configuration&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Audit trails&lt;span class="hx:absolute hx:-mt-20" id="audit-trails"&gt;&lt;/span&gt;
 &lt;a href="#audit-trails" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Manufacturing often happens in strict regulatory environments and in systems where security is critical.
 The Rhize audit log maintains a record of all changes that happen in the system.
-To learn more, read the &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/audit/" &gt;Audit&lt;/a&gt; guide.&lt;/p&gt;
+To learn more, read the &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/audit/"&gt;Audit&lt;/a&gt; guide.&lt;/p&gt;
 &lt;h3&gt;Secure, vendor-agnostic infrastructure&lt;span class="hx:absolute hx:-mt-20" id="secure-vendor-agnostic-infrastructure"&gt;&lt;/span&gt;
 &lt;a href="#secure-vendor-agnostic-infrastructure" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rhize is built on open standards and heavily uses open-source cloud infrastructure.
 As such, Rhize is designed to conform to your operation&amp;rsquo;s IT and manufacturing processes.&lt;/p&gt;
 &lt;p&gt;Rhize runs on your IT infrastructure.
 The data model itself is based on a widely recognized standard, ISA-95.
-Your teams control its security and access policies, with authentication provided through &lt;a href="https://docs.rhize.com/versions/v4.0.0/explanations/about-openidconnect/" &gt;OpenID Connect&lt;/a&gt;.&lt;/p&gt;
+Your teams control its security and access policies, with authentication provided through &lt;a href="https://docs.rhize.com/versions/v4.0.0/explanations/about-openidconnect/"&gt;OpenID Connect&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;High availability and reliability&lt;span class="hx:absolute hx:-mt-20" id="high-availability-and-reliability"&gt;&lt;/span&gt;
 &lt;a href="#high-availability-and-reliability" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Mission-critical systems, such as an MES, must be highly reliable and available.
 Information flows in manufacturing can also have very high demands for CPU, network throughput, and memory.&lt;/p&gt;
@@ -4112,15 +4164,15 @@ This distributed execution ensures that the system continues functioning during 
 Specifically, Rhize uses Kubernetes for container orchestration, a distributed, ACID-compliant database, and a message broker that uses replication to harden against failure.&lt;/p&gt;
 &lt;p&gt;The reliance on open source also means that your operators do not need to learn a specialized skill to deploy Rhize.
 It uses the same cloud-native applications that power the modern web.&lt;/p&gt;
-&lt;p&gt;Read all about how to Deploy Rhize in the &lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/" &gt;Deploy&lt;/a&gt; guides.&lt;/p&gt;
+&lt;p&gt;Read all about how to Deploy Rhize in the &lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/"&gt;Deploy&lt;/a&gt; guides.&lt;/p&gt;
 &lt;h3&gt;A backend for MES applications&lt;span class="hx:absolute hx:-mt-20" id="a-backend-for-mes-applications"&gt;&lt;/span&gt;
 &lt;a href="#a-backend-for-mes-applications" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;With the knowledge graph, message broker, and workflow executor, and secure infrastructure,
 Rhize also provides all the components necessary to write custom applications for Manufacturing Execution Systems.
 Rather than rely on a vendor to sell an MES system that prescribes exactly what data it can use and how it can use this data, use Rhize to build the custom MES frontend of your choice.&lt;/p&gt;
 &lt;p&gt;Combined with rapid prototyping and low-code tools, you can use Rhize to build MES applications quickly and iterate on them as your operators use them in production.&lt;/p&gt;
 &lt;h2&gt;Install&lt;span class="hx:absolute hx:-mt-20" id="install"&gt;&lt;/span&gt;
-&lt;a href="#install" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To install, read the &lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/install/" &gt;Install guide&lt;/a&gt;.
-Or, if upgrading from a release candidate, use the &lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/upgrade/" &gt;Upgrade guide&lt;/a&gt;.
+&lt;a href="#install" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To install, read the &lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/install/"&gt;Install guide&lt;/a&gt;.
+Or, if upgrading from a release candidate, use the &lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/upgrade/"&gt;Upgrade guide&lt;/a&gt;.
 If upgrading, be sure to review the changelog to be aware of any possible breaking changes.&lt;/p&gt;
 &lt;div class="notices note"&gt;
 &lt;span class="type"&gt;v3.0.0 compatibility&lt;/span&gt;
@@ -4173,22 +4225,24 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.0-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.0-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.0-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.0.0-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Changelogs&lt;span class="hx:absolute hx:-mt-20" id="changelogs"&gt;&lt;/span&gt;
 &lt;a href="#changelogs" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The following changelogs document the features, fixes, and refactoring that went into this release.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0/" &gt;3.0.0&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc09/" &gt;3.0.0rc09&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc08/" &gt;3.0.0rc08&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc07/" &gt;3.0.0rc07&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc06/" &gt;3.0.0rc06&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc05/" &gt;3.0.0rc05&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0/"&gt;3.0.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc09/"&gt;3.0.0rc09&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc08/"&gt;3.0.0rc08&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc07/"&gt;3.0.0rc07&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc06/"&gt;3.0.0rc06&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc05/"&gt;3.0.0rc05&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Read more&lt;span class="hx:absolute hx:-mt-20" id="read-more"&gt;&lt;/span&gt;
 &lt;a href="#read-more" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/get-started/" &gt;Get started&lt;/a&gt; introduces Rhize&amp;rsquo;s application and architecture.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/explanations/" &gt;Manufacturing data hub&lt;/a&gt; explains why Rhize chose its design.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/use-cases/" &gt;Use cases&lt;/a&gt; explains ways customers use Rhize.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/get-started/"&gt;Get started&lt;/a&gt; introduces Rhize&amp;rsquo;s application and architecture.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/explanations/"&gt;Manufacturing data hub&lt;/a&gt; explains why Rhize chose its design.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/use-cases/"&gt;Use cases&lt;/a&gt; explains ways customers use Rhize.&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>3.0.0 (general release)</title><link>https://docs.rhize.com/releases/changelog/3-0-0/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 25th March, 2024&lt;/p&gt;
@@ -4399,7 +4453,7 @@ title="Copy code"
 &lt;li&gt;Change &lt;code&gt;startRule&lt;/code&gt; to required on &lt;code&gt;WorkCalendarDefinitionEntry&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0 (general release)</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0 (general release)</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 25th March, 2024&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -4609,7 +4663,7 @@ title="Copy code"
 &lt;li&gt;Change &lt;code&gt;startRule&lt;/code&gt; to required on &lt;code&gt;WorkCalendarDefinitionEntry&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0 (general release)</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0 (general release)</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 25th March, 2024&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -4819,7 +4873,7 @@ title="Copy code"
 &lt;li&gt;Change &lt;code&gt;startRule&lt;/code&gt; to required on &lt;code&gt;WorkCalendarDefinitionEntry&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0 (general release)</title><link>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0 (general release)</title><link>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 25th March, 2024&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -5029,7 +5083,7 @@ title="Copy code"
 &lt;li&gt;Change &lt;code&gt;startRule&lt;/code&gt; to required on &lt;code&gt;WorkCalendarDefinitionEntry&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc09</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc09/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc09/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc09</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc09/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc09/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc9 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 27th February, 2024&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -5108,7 +5162,7 @@ title="Copy code"
 &lt;h3&gt;Schema&lt;span class="hx:absolute hx:-mt-20" id="schema"&gt;&lt;/span&gt;
 &lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;No changes since previous release.&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc09, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc09</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc09/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc09/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc09, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc09</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc09/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc09/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc9 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 27th February, 2024&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -5187,7 +5241,7 @@ title="Copy code"
 &lt;h3&gt;Schema&lt;span class="hx:absolute hx:-mt-20" id="schema"&gt;&lt;/span&gt;
 &lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;No changes since previous release.&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc09, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc09</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc09/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc09/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc09, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc09</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc09/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc09/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc9 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 27th February, 2024&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -5266,7 +5320,7 @@ title="Copy code"
 &lt;h3&gt;Schema&lt;span class="hx:absolute hx:-mt-20" id="schema"&gt;&lt;/span&gt;
 &lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;No changes since previous release.&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc09, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc09</title><link>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc09/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc09/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc09, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc09</title><link>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc09/</link><pubDate>Mon, 25 Mar 2024 11:09:55 -0500</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc09/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc9 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 27th February, 2024&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -5345,7 +5399,7 @@ title="Copy code"
 &lt;h3&gt;Schema&lt;span class="hx:absolute hx:-mt-20" id="schema"&gt;&lt;/span&gt;
 &lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;No changes since previous release.&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc09, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc08</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc08/</link><pubDate>Tue, 19 Dec 2023 13:01:02 -0500</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc08/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc09, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc08</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc08/</link><pubDate>Tue, 19 Dec 2023 13:01:02 -0500</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc08/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc08 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 19th December, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -5518,7 +5572,7 @@ title="Copy code"
 &lt;li&gt;Change mermaid diagrams to include recent changes&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc08, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc08</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc08/</link><pubDate>Tue, 19 Dec 2023 13:01:02 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc08/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc08, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc08</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc08/</link><pubDate>Tue, 19 Dec 2023 13:01:02 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc08/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc08 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 19th December, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -5691,7 +5745,7 @@ title="Copy code"
 &lt;li&gt;Change mermaid diagrams to include recent changes&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc08, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc08</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc08/</link><pubDate>Tue, 19 Dec 2023 13:01:02 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc08/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc08, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc08</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc08/</link><pubDate>Tue, 19 Dec 2023 13:01:02 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc08/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc08 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 19th December, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -5864,7 +5918,7 @@ title="Copy code"
 &lt;li&gt;Change mermaid diagrams to include recent changes&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc08, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc08</title><link>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc08/</link><pubDate>Tue, 19 Dec 2023 13:01:02 -0500</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc08/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc08, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc08</title><link>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc08/</link><pubDate>Tue, 19 Dec 2023 13:01:02 -0500</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc08/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc08 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 19th December, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -6037,7 +6091,7 @@ title="Copy code"
 &lt;li&gt;Change mermaid diagrams to include recent changes&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc08, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc07</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc07/</link><pubDate>Wed, 15 Nov 2023 09:32:12 -0500</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc07/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc08, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc07</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc07/</link><pubDate>Wed, 15 Nov 2023 09:32:12 -0500</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc07/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc07 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 15th November, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -6151,10 +6205,18 @@ title="Copy code"
 &lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Change dockerfile to use baas v3.0.0rc7&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/crypto" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/crypto&lt;/code&gt;&lt;/a&gt; to v0.15.0 from v0.14.0&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/net" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/net&lt;/code&gt;&lt;/a&gt; v0.18.0 from v0.16.0&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/sync" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/sync&lt;/code&gt;&lt;/a&gt; v0.5.0 from v0.4.0&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/tools" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/tools&lt;/code&gt;&lt;/a&gt; v0.15.0 from v0.14.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/crypto"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/crypto&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; to v0.15.0 from v0.14.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/net"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/net&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; v0.18.0 from v0.16.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/sync"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/sync&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; v0.5.0 from v0.4.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/tools"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/tools&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; v0.15.0 from v0.14.0&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Fix&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -6162,7 +6224,7 @@ title="Copy code"
 &lt;li&gt;Fix test for Signature relationship to &lt;code&gt;recordEntries&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc07, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc07</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc07/</link><pubDate>Wed, 15 Nov 2023 09:32:12 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc07/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc07, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc07</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc07/</link><pubDate>Wed, 15 Nov 2023 09:32:12 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc07/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc07 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 15th November, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -6276,10 +6338,18 @@ title="Copy code"
 &lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Change dockerfile to use baas v3.0.0rc7&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/crypto" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/crypto&lt;/code&gt;&lt;/a&gt; to v0.15.0 from v0.14.0&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/net" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/net&lt;/code&gt;&lt;/a&gt; v0.18.0 from v0.16.0&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/sync" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/sync&lt;/code&gt;&lt;/a&gt; v0.5.0 from v0.4.0&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/tools" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/tools&lt;/code&gt;&lt;/a&gt; v0.15.0 from v0.14.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/crypto"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/crypto&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; to v0.15.0 from v0.14.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/net"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/net&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; v0.18.0 from v0.16.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/sync"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/sync&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; v0.5.0 from v0.4.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/tools"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/tools&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; v0.15.0 from v0.14.0&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Fix&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -6287,7 +6357,7 @@ title="Copy code"
 &lt;li&gt;Fix test for Signature relationship to &lt;code&gt;recordEntries&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc07, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc07</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc07/</link><pubDate>Wed, 15 Nov 2023 09:32:12 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc07/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc07, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc07</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc07/</link><pubDate>Wed, 15 Nov 2023 09:32:12 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc07/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc07 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 15th November, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -6401,10 +6471,18 @@ title="Copy code"
 &lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Change dockerfile to use baas v3.0.0rc7&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/crypto" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/crypto&lt;/code&gt;&lt;/a&gt; to v0.15.0 from v0.14.0&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/net" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/net&lt;/code&gt;&lt;/a&gt; v0.18.0 from v0.16.0&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/sync" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/sync&lt;/code&gt;&lt;/a&gt; v0.5.0 from v0.4.0&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/tools" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/tools&lt;/code&gt;&lt;/a&gt; v0.15.0 from v0.14.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/crypto"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/crypto&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; to v0.15.0 from v0.14.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/net"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/net&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; v0.18.0 from v0.16.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/sync"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/sync&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; v0.5.0 from v0.4.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/tools"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/tools&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; v0.15.0 from v0.14.0&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Fix&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -6412,7 +6490,7 @@ title="Copy code"
 &lt;li&gt;Fix test for Signature relationship to &lt;code&gt;recordEntries&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc07, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc07</title><link>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc07/</link><pubDate>Wed, 15 Nov 2023 09:32:12 -0500</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc07/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc07, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc07</title><link>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc07/</link><pubDate>Wed, 15 Nov 2023 09:32:12 -0500</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc07/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc07 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; 15th November, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -6526,10 +6604,18 @@ title="Copy code"
 &lt;p&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Change dockerfile to use baas v3.0.0rc7&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/crypto" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/crypto&lt;/code&gt;&lt;/a&gt; to v0.15.0 from v0.14.0&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/net" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/net&lt;/code&gt;&lt;/a&gt; v0.18.0 from v0.16.0&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/sync" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/sync&lt;/code&gt;&lt;/a&gt; v0.5.0 from v0.4.0&lt;/li&gt;
-&lt;li&gt;Change library &lt;a href="https://golang.org/x/tools" target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/tools&lt;/code&gt;&lt;/a&gt; v0.15.0 from v0.14.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/crypto"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/crypto&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; to v0.15.0 from v0.14.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/net"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/net&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; v0.18.0 from v0.16.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/sync"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/sync&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; v0.5.0 from v0.4.0&lt;/li&gt;
+&lt;li&gt;Change library &lt;a href="https://golang.org/x/tools"target="_blank" rel="noopener"&gt;&lt;code&gt;golang.org/x/tools&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; v0.15.0 from v0.14.0&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Fix&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -6537,7 +6623,7 @@ title="Copy code"
 &lt;li&gt;Fix test for Signature relationship to &lt;code&gt;recordEntries&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc07, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc06</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc06/</link><pubDate>Tue, 31 Oct 2023 21:07:43 -0300</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc06/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc07, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc06</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc06/</link><pubDate>Tue, 31 Oct 2023 21:07:43 -0300</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc06/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc06 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; October 31, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -6623,7 +6709,7 @@ title="Copy code"
 &lt;li&gt;Remove entity interface from generated code&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc06, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc06</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc06/</link><pubDate>Tue, 31 Oct 2023 21:07:43 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc06/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc06, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc06</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc06/</link><pubDate>Tue, 31 Oct 2023 21:07:43 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc06/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc06 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; October 31, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -6709,7 +6795,7 @@ title="Copy code"
 &lt;li&gt;Remove entity interface from generated code&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc06, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc06</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc06/</link><pubDate>Tue, 31 Oct 2023 21:07:43 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc06/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc06, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc06</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc06/</link><pubDate>Tue, 31 Oct 2023 21:07:43 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc06/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc06 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; October 31, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -6795,7 +6881,7 @@ title="Copy code"
 &lt;li&gt;Remove entity interface from generated code&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc06, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc06</title><link>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc06/</link><pubDate>Tue, 31 Oct 2023 21:07:43 -0300</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc06/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc06, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc06</title><link>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc06/</link><pubDate>Tue, 31 Oct 2023 21:07:43 -0300</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc06/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc06 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; October 31, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -6881,7 +6967,7 @@ title="Copy code"
 &lt;li&gt;Remove entity interface from generated code&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc06, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc05</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc05/</link><pubDate>Tue, 31 Oct 2023 20:32:34 -0300</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc05/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.0.0rc06, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc05</title><link>https://docs.rhize.com/releases/changelog/3-0-0rc05/</link><pubDate>Tue, 31 Oct 2023 20:32:34 -0300</pubDate><guid>https://docs.rhize.com/releases/changelog/3-0-0rc05/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc05 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; October 24, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -6989,7 +7075,7 @@ title="Copy code"
 &lt;li&gt;Fix omitting &lt;code&gt;omitempty&lt;/code&gt; for non-pointer Boolean types&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to `v3.0.0rc05, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc05</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc05/</link><pubDate>Tue, 31 Oct 2023 20:32:34 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc05/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to `v3.0.0rc05, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc05</title><link>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc05/</link><pubDate>Tue, 31 Oct 2023 20:32:34 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/releases/changelog/3-0-0rc05/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc05 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; October 24, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -7097,7 +7183,7 @@ title="Copy code"
 &lt;li&gt;Fix omitting &lt;code&gt;omitempty&lt;/code&gt; for non-pointer Boolean types&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to `v3.0.0rc05, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc05</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc05/</link><pubDate>Tue, 31 Oct 2023 20:32:34 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc05/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to `v3.0.0rc05, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc05</title><link>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc05/</link><pubDate>Tue, 31 Oct 2023 20:32:34 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/changelog/3-0-0rc05/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc05 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; October 24, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -7205,7 +7291,7 @@ title="Copy code"
 &lt;li&gt;Fix omitting &lt;code&gt;omitempty&lt;/code&gt; for non-pointer Boolean types&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to `v3.0.0rc05, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc05</title><link>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc05/</link><pubDate>Tue, 31 Oct 2023 20:32:34 -0300</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc05/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to `v3.0.0rc05, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.0.0rc05</title><link>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc05/</link><pubDate>Tue, 31 Oct 2023 20:32:34 -0300</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/releases/changelog/3-0-0rc05/</guid><description>
 &lt;p&gt;Changelog for version 3.0.0rc05 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt; October 24, 2023&lt;/p&gt;
 &lt;h2&gt;Breaking changes&lt;span class="hx:absolute hx:-mt-20" id="breaking-changes"&gt;&lt;/span&gt;
@@ -7313,7 +7399,7 @@ title="Copy code"
 &lt;li&gt;Fix omitting &lt;code&gt;omitempty&lt;/code&gt; for non-pointer Boolean types&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to `v3.0.0rc05, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.2.1</title><link>https://docs.rhize.com/versions/v3.2.0/releases/3-2-1/</link><pubDate>Mon, 04 Aug 2025 11:45:10 -0400</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/3-2-1/</guid><description>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to `v3.0.0rc05, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.2.1</title><link>https://docs.rhize.com/versions/v3.2.0/releases/3-2-1/</link><pubDate>Mon, 04 Aug 2025 11:45:10 -0400</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/releases/3-2-1/</guid><description>
 &lt;p&gt;Release notes for version 3.2.1 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt;
 8 Aug 2025&lt;/p&gt;
@@ -7408,6 +7494,8 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.2.1-checksums.txt" target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.2.1-checksums.txt&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.2.1-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.2.1-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
-&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.2.1, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/" &gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.2.1, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>

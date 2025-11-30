@@ -1,7 +1,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Use-Cases</title><link>https://docs.rhize.com/categories/use-cases/</link><description>Recent content in Use-Cases on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.rhize.com/categories/use-cases/index.xml" rel="self" type="application/rss+xml"/><item><title>Data collection (eBR example)</title><link>https://docs.rhize.com/use-cases/data-collection-ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/use-cases/data-collection-ebr/</guid><description>
 &lt;blockquote&gt;
 &lt;p&gt;&amp;#x1f4dd; Looking to implement Rhize for your Pharma operation?
-&lt;a href="https://rhize.com/contact-us/" target="_blank" rel="noopener"&gt;Talk to an engineer&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://rhize.com/contact-us/"target="_blank" rel="noopener"&gt;Talk to an engineer&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;This document provides examples of how you can use Rhize to automatically ingest data from various sources and store it in a standardized ISA-95 schema.
 The examples here are to produce an Electronic Batch Record, an important use case in pharmaceutical manufacturing.
@@ -19,9 +21,9 @@ However, the process described here is very similar to what data collection woul
 Before you start, ensure that you have the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Awareness of the different sources of eBR data&lt;/li&gt;
-&lt;li&gt;If real-time data comes from equipment, &lt;a href="https://docs.rhize.com/how-to/publish-subscribe/connect-datasource/" &gt;Connected data sources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;If real-time data comes from equipment, &lt;a href="https://docs.rhize.com/how-to/publish-subscribe/connect-datasource/"&gt;Connected data sources&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Sufficient knowledge of the ISA-95 standard to model the input data as ISA-95 schema&lt;/li&gt;
-&lt;li&gt;In the BPMN process, the ability to filter JSON and &lt;a href="https://docs.rhize.com/how-to/gql/" &gt;call the GraphQL API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;In the BPMN process, the ability to filter JSON and &lt;a href="https://docs.rhize.com/how-to/gql/"&gt;call the GraphQL API&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In larger operations, different teams may help with different parts of the eBR-creation process.
 For example, your integrators may help appropriately model the data, and the frontend team may render the outputted JSON into a final document.&lt;/p&gt;
@@ -60,29 +62,29 @@ A simplified BPMN workflow. For an example of a real workflow with nodes for eac
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;With the sources of data and their corresponding models, the next step
-is to write a &lt;a href="https://docs.rhize.com/how-to/bpmn/" &gt;&lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt;&lt;/a&gt; workflow to automatically transform the data and update the database.&lt;/p&gt;
+is to write a &lt;a href="https://docs.rhize.com/how-to/bpmn/"&gt;&lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt;&lt;/a&gt; workflow to automatically transform the data and update the database.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;You may want to break these steps into multiple parts.
-Or, for increased modularity, you can call another BPMN workflow with a &lt;a href="https://docs.rhize.com/how-to/bpmn/bpmn-elements/#call-activities" &gt;Call activity&lt;/a&gt;.&lt;/div&gt;
+Or, for increased modularity, you can call another BPMN workflow with a &lt;a href="https://docs.rhize.com/how-to/bpmn/bpmn-elements/#call-activities"&gt;Call activity&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;The procedure is as follows:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Create a BPMN that is &lt;a href="https://docs.rhize.com/how-to/bpmn/trigger-workflows/" &gt;triggered&lt;/a&gt; by a relevant eBR event. For example, the workflow might subscribe to a &lt;code&gt;/lims/lab1&lt;/code&gt;, or be triggered by a call to the Rhize API. If the data comes from certain equipment, you first need to &lt;a href="https://docs.rhize.com/how-to/publish-subscribe/connect-datasource/" &gt;Connect a data source&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Create a BPMN that is &lt;a href="https://docs.rhize.com/how-to/bpmn/trigger-workflows/"&gt;triggered&lt;/a&gt; by a relevant eBR event. For example, the workflow might subscribe to a &lt;code&gt;/lims/lab1&lt;/code&gt;, or be triggered by a call to the Rhize API. If the data comes from certain equipment, you first need to &lt;a href="https://docs.rhize.com/how-to/publish-subscribe/connect-datasource/"&gt;Connect a data source&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Transform with JSONata&lt;/p&gt;
-&lt;p&gt;Rhize has a built-in &lt;a href="https://docs.rhize.com/how-to/bpmn/use-jsonata/" &gt;JSONata&lt;/a&gt; interpreter, which can filter and transform JSON.
-Use a &lt;a href="https://docs.rhize.com/how-to/bpmn/bpmn-elements/#jsonata-transform" &gt;JSONata service task&lt;/a&gt; to map the data sources into the corresponding ISA-95 fields that you defined on the previous step.&lt;/p&gt;
+&lt;p&gt;Rhize has a built-in &lt;a href="https://docs.rhize.com/how-to/bpmn/use-jsonata/"&gt;JSONata&lt;/a&gt; interpreter, which can filter and transform JSON.
+Use a &lt;a href="https://docs.rhize.com/how-to/bpmn/bpmn-elements/#jsonata-transform"&gt;JSONata service task&lt;/a&gt; to map the data sources into the corresponding ISA-95 fields that you defined on the previous step.&lt;/p&gt;
 &lt;p&gt;Use the output as a variable for the next step.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;POST data with a graph mutation.&lt;/p&gt;
 &lt;p&gt;Use the variable returned by the JSONata step to send a mutation to update the Graph database with the new fields.
-To learn more, read the &lt;a href="https://docs.rhize.com/how-to/gql/" &gt;Guide to GraphQL with Rhize&lt;/a&gt;.&lt;/p&gt;
+To learn more, read the &lt;a href="https://docs.rhize.com/how-to/gql/"&gt;Guide to GraphQL with Rhize&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;In real BPMN workflows, you can dynamically create and assign fields as they enter the system.
@@ -99,14 +101,14 @@ As long as the incoming event data has a common association, for example, throug
 alt="Multiple BPMN processes can be united in one batch" width="75%"&gt;
 &lt;/figure&gt;
 &lt;h3&gt;Query the DB with the eBR fields&lt;span class="hx:absolute hx:-mt-20" id="query-the-db-with-the-ebr-fields"&gt;&lt;/span&gt;
-&lt;a href="#query-the-db-with-the-ebr-fields" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;After the batch finishes, use a &lt;a href="https://docs.rhize.com/how-to/gql/query/" &gt;GraphQL query&lt;/a&gt; to receive all relevant batch data.
+&lt;a href="#query-the-db-with-the-ebr-fields" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;After the batch finishes, use a &lt;a href="https://docs.rhize.com/how-to/gql/query/"&gt;GraphQL query&lt;/a&gt; to receive all relevant batch data.
 You only need one precise request to return exactly the data you specify.&lt;/p&gt;
 &lt;figure&gt;&lt;img src="https://docs.rhize.com/images/ebr/diagram-rhize-make-ebr-query.png"
 alt="Diagram showing how a query makes an ebr" width="55%"&gt;
 &lt;/figure&gt;
 &lt;p&gt;Here is a small, generic snippet of how it looks:
 Note how the query specifies exactly the fields to return: no further response filtering is required.
-For an idea of how a more complete query looks, refer to the &lt;a href="https://docs.rhize.com/use-cases/ebr/" &gt;Electronic Batch Records&lt;/a&gt; guide.&lt;/p&gt;
+For an idea of how a more complete query looks, refer to the &lt;a href="https://docs.rhize.com/use-cases/ebr/"&gt;Electronic Batch Records&lt;/a&gt; guide.&lt;/p&gt;
 &lt;details class="hx:last-of-type:mb-0 hx:rounded-lg hx:bg-neutral-50 hx:dark:bg-neutral-800 hx:p-2 hx:mt-4 hx:group" open&gt;
 &lt;summary class="hx:flex hx:items-center hx:cursor-pointer hx:select-none hx:list-none hx:p-1 hx:rounded-sm hx:transition-colors hx:hover:bg-gray-100 hx:dark:hover:bg-neutral-800 hx:before:mr-1 hx:before:inline-block hx:before:transition-transform hx:before:content-[''] hx:dark:before:invert hx:rtl:before:rotate-180 hx:group-open:before:rotate-90"&gt;
 &lt;strong class="hx:text-lg"&gt;Snippet of a makeEbr query&lt;/strong&gt;
@@ -152,7 +154,9 @@ With the same event data that you automatically ingest and filter in this workfl
 &lt;/ul&gt;</description></item><item><title>Data collection (eBR example)</title><link>https://docs.rhize.com/versions/v3.0.3/use-cases/data-collection-ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/use-cases/data-collection-ebr/</guid><description>
 &lt;blockquote&gt;
 &lt;p&gt;&amp;#x1f4dd; Looking to implement Rhize for your Pharma operation?
-&lt;a href="https://rhize.com/contact-us/" target="_blank" rel="noopener"&gt;Talk to an engineer&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://rhize.com/contact-us/"target="_blank" rel="noopener"&gt;Talk to an engineer&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;This document provides examples of how you can use Rhize to automatically ingest data from various sources and store it in a standardized ISA-95 schema.
 The examples here are to produce an Electronic Batch Record, an important use case in pharmaceutical manufacturing.
@@ -170,9 +174,9 @@ However, the process described here is very similar to what data collection woul
 Before you start, ensure that you have the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Awareness of the different sources of eBR data&lt;/li&gt;
-&lt;li&gt;If real-time data comes from equipment, &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/connect-datasource/" &gt;Connected data sources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;If real-time data comes from equipment, &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/connect-datasource/"&gt;Connected data sources&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Sufficient knowledge of the ISA-95 standard to model the input data as ISA-95 schema&lt;/li&gt;
-&lt;li&gt;In the BPMN process, the ability to filter JSON and &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/" &gt;call the GraphQL API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;In the BPMN process, the ability to filter JSON and &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/"&gt;call the GraphQL API&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In larger operations, different teams may help with different parts of the eBR-creation process.
 For example, your integrators may help appropriately model the data, and the frontend team may render the outputted JSON into a final document.&lt;/p&gt;
@@ -211,29 +215,29 @@ A simplified BPMN workflow. For an example of a real workflow with nodes for eac
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;With the sources of data and their corresponding models, the next step
-is to write a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/" &gt;&lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt;&lt;/a&gt; workflow to automatically transform the data and update the database.&lt;/p&gt;
+is to write a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/"&gt;&lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt;&lt;/a&gt; workflow to automatically transform the data and update the database.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;You may want to break these steps into multiple parts.
-Or, for increased modularity, you can call another BPMN workflow with a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/bpmn-elements/#call-activities" &gt;Call activity&lt;/a&gt;.&lt;/div&gt;
+Or, for increased modularity, you can call another BPMN workflow with a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/bpmn-elements/#call-activities"&gt;Call activity&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;The procedure is as follows:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Create a BPMN that is &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/trigger-workflows/" &gt;triggered&lt;/a&gt; by a relevant eBR event. For example, the workflow might subscribe to a &lt;code&gt;/lims/lab1&lt;/code&gt;, or be triggered by a call to the Rhize API. If the data comes from certain equipment, you first need to &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/connect-datasource/" &gt;Connect a data source&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Create a BPMN that is &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/trigger-workflows/"&gt;triggered&lt;/a&gt; by a relevant eBR event. For example, the workflow might subscribe to a &lt;code&gt;/lims/lab1&lt;/code&gt;, or be triggered by a call to the Rhize API. If the data comes from certain equipment, you first need to &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/connect-datasource/"&gt;Connect a data source&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Transform with JSONata&lt;/p&gt;
-&lt;p&gt;Rhize has a built-in &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/use-jsonata/" &gt;JSONata&lt;/a&gt; interpreter, which can filter and transform JSON.
-Use a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/bpmn-elements/#jsonata-transform" &gt;JSONata service task&lt;/a&gt; to map the data sources into the corresponding ISA-95 fields that you defined on the previous step.&lt;/p&gt;
+&lt;p&gt;Rhize has a built-in &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/use-jsonata/"&gt;JSONata&lt;/a&gt; interpreter, which can filter and transform JSON.
+Use a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/bpmn-elements/#jsonata-transform"&gt;JSONata service task&lt;/a&gt; to map the data sources into the corresponding ISA-95 fields that you defined on the previous step.&lt;/p&gt;
 &lt;p&gt;Use the output as a variable for the next step.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;POST data with a graph mutation.&lt;/p&gt;
 &lt;p&gt;Use the variable returned by the JSONata step to send a mutation to update the Graph database with the new fields.
-To learn more, read the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/" &gt;Guide to GraphQL with Rhize&lt;/a&gt;.&lt;/p&gt;
+To learn more, read the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/"&gt;Guide to GraphQL with Rhize&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;In real BPMN workflows, you can dynamically create and assign fields as they enter the system.
@@ -250,14 +254,14 @@ As long as the incoming event data has a common association, for example, throug
 alt="Multiple BPMN processes can be united in one batch" width="75%"&gt;
 &lt;/figure&gt;
 &lt;h3&gt;Query the DB with the eBR fields&lt;span class="hx:absolute hx:-mt-20" id="query-the-db-with-the-ebr-fields"&gt;&lt;/span&gt;
-&lt;a href="#query-the-db-with-the-ebr-fields" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;After the batch finishes, use a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/query/" &gt;GraphQL query&lt;/a&gt; to receive all relevant batch data.
+&lt;a href="#query-the-db-with-the-ebr-fields" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;After the batch finishes, use a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/query/"&gt;GraphQL query&lt;/a&gt; to receive all relevant batch data.
 You only need one precise request to return exactly the data you specify.&lt;/p&gt;
 &lt;figure&gt;&lt;img src="https://docs.rhize.com/images/ebr/diagram-rhize-make-ebr-query.png"
 alt="Diagram showing how a query makes an ebr" width="55%"&gt;
 &lt;/figure&gt;
 &lt;p&gt;Here is a small, generic snippet of how it looks:
 Note how the query specifies exactly the fields to return: no further response filtering is required.
-For an idea of how a more complete query looks, refer to the &lt;a href="https://docs.rhize.com/versions/v3.0.3/use-cases/ebr/" &gt;Electronic Batch Records&lt;/a&gt; guide.&lt;/p&gt;
+For an idea of how a more complete query looks, refer to the &lt;a href="https://docs.rhize.com/versions/v3.0.3/use-cases/ebr/"&gt;Electronic Batch Records&lt;/a&gt; guide.&lt;/p&gt;
 &lt;details class="hx:last-of-type:mb-0 hx:rounded-lg hx:bg-neutral-50 hx:dark:bg-neutral-800 hx:p-2 hx:mt-4 hx:group" open&gt;
 &lt;summary class="hx:flex hx:items-center hx:cursor-pointer hx:select-none hx:list-none hx:p-1 hx:rounded-sm hx:transition-colors hx:hover:bg-gray-100 hx:dark:hover:bg-neutral-800 hx:before:mr-1 hx:before:inline-block hx:before:transition-transform hx:before:content-[''] hx:dark:before:invert hx:rtl:before:rotate-180 hx:group-open:before:rotate-90"&gt;
 &lt;strong class="hx:text-lg"&gt;Snippet of a makeEbr query&lt;/strong&gt;
@@ -303,7 +307,9 @@ With the same event data that you automatically ingest and filter in this workfl
 &lt;/ul&gt;</description></item><item><title>Data collection (eBR example)</title><link>https://docs.rhize.com/versions/v3.1.0/use-cases/data-collection-ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/use-cases/data-collection-ebr/</guid><description>
 &lt;blockquote&gt;
 &lt;p&gt;&amp;#x1f4dd; Looking to implement Rhize for your Pharma operation?
-&lt;a href="https://rhize.com/contact-us/" target="_blank" rel="noopener"&gt;Talk to an engineer&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://rhize.com/contact-us/"target="_blank" rel="noopener"&gt;Talk to an engineer&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;This document provides examples of how you can use Rhize to automatically ingest data from various sources and store it in a standardized ISA-95 schema.
 The examples here are to produce an Electronic Batch Record, an important use case in pharmaceutical manufacturing.
@@ -321,9 +327,9 @@ However, the process described here is very similar to what data collection woul
 Before you start, ensure that you have the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Awareness of the different sources of eBR data&lt;/li&gt;
-&lt;li&gt;If real-time data comes from equipment, &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/publish-subscribe/connect-datasource/" &gt;Connected data sources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;If real-time data comes from equipment, &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/publish-subscribe/connect-datasource/"&gt;Connected data sources&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Sufficient knowledge of the ISA-95 standard to model the input data as ISA-95 schema&lt;/li&gt;
-&lt;li&gt;In the BPMN process, the ability to filter JSON and &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/" &gt;call the GraphQL API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;In the BPMN process, the ability to filter JSON and &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/"&gt;call the GraphQL API&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In larger operations, different teams may help with different parts of the eBR-creation process.
 For example, your integrators may help appropriately model the data, and the frontend team may render the outputted JSON into a final document.&lt;/p&gt;
@@ -362,29 +368,29 @@ A simplified BPMN workflow. For an example of a real workflow with nodes for eac
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;With the sources of data and their corresponding models, the next step
-is to write a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/" &gt;&lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt;&lt;/a&gt; workflow to automatically transform the data and update the database.&lt;/p&gt;
+is to write a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/"&gt;&lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt;&lt;/a&gt; workflow to automatically transform the data and update the database.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;You may want to break these steps into multiple parts.
-Or, for increased modularity, you can call another BPMN workflow with a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#call-activities" &gt;Call activity&lt;/a&gt;.&lt;/div&gt;
+Or, for increased modularity, you can call another BPMN workflow with a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#call-activities"&gt;Call activity&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;The procedure is as follows:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Create a BPMN that is &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/trigger-workflows/" &gt;triggered&lt;/a&gt; by a relevant eBR event. For example, the workflow might subscribe to a &lt;code&gt;/lims/lab1&lt;/code&gt;, or be triggered by a call to the Rhize API. If the data comes from certain equipment, you first need to &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/publish-subscribe/connect-datasource/" &gt;Connect a data source&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Create a BPMN that is &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/trigger-workflows/"&gt;triggered&lt;/a&gt; by a relevant eBR event. For example, the workflow might subscribe to a &lt;code&gt;/lims/lab1&lt;/code&gt;, or be triggered by a call to the Rhize API. If the data comes from certain equipment, you first need to &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/publish-subscribe/connect-datasource/"&gt;Connect a data source&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Transform with JSONata&lt;/p&gt;
-&lt;p&gt;Rhize has a built-in &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/use-jsonata/" &gt;JSONata&lt;/a&gt; interpreter, which can filter and transform JSON.
-Use a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#jsonata-transform" &gt;JSONata service task&lt;/a&gt; to map the data sources into the corresponding ISA-95 fields that you defined on the previous step.&lt;/p&gt;
+&lt;p&gt;Rhize has a built-in &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/use-jsonata/"&gt;JSONata&lt;/a&gt; interpreter, which can filter and transform JSON.
+Use a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#jsonata-transform"&gt;JSONata service task&lt;/a&gt; to map the data sources into the corresponding ISA-95 fields that you defined on the previous step.&lt;/p&gt;
 &lt;p&gt;Use the output as a variable for the next step.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;POST data with a graph mutation.&lt;/p&gt;
 &lt;p&gt;Use the variable returned by the JSONata step to send a mutation to update the Graph database with the new fields.
-To learn more, read the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/" &gt;Guide to GraphQL with Rhize&lt;/a&gt;.&lt;/p&gt;
+To learn more, read the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/"&gt;Guide to GraphQL with Rhize&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;In real BPMN workflows, you can dynamically create and assign fields as they enter the system.
@@ -401,14 +407,14 @@ As long as the incoming event data has a common association, for example, throug
 alt="Multiple BPMN processes can be united in one batch" width="75%"&gt;
 &lt;/figure&gt;
 &lt;h3&gt;Query the DB with the eBR fields&lt;span class="hx:absolute hx:-mt-20" id="query-the-db-with-the-ebr-fields"&gt;&lt;/span&gt;
-&lt;a href="#query-the-db-with-the-ebr-fields" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;After the batch finishes, use a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/" &gt;GraphQL query&lt;/a&gt; to receive all relevant batch data.
+&lt;a href="#query-the-db-with-the-ebr-fields" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;After the batch finishes, use a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/"&gt;GraphQL query&lt;/a&gt; to receive all relevant batch data.
 You only need one precise request to return exactly the data you specify.&lt;/p&gt;
 &lt;figure&gt;&lt;img src="https://docs.rhize.com/images/ebr/diagram-rhize-make-ebr-query.png"
 alt="Diagram showing how a query makes an ebr" width="55%"&gt;
 &lt;/figure&gt;
 &lt;p&gt;Here is a small, generic snippet of how it looks:
 Note how the query specifies exactly the fields to return: no further response filtering is required.
-For an idea of how a more complete query looks, refer to the &lt;a href="https://docs.rhize.com/versions/v3.1.0/use-cases/ebr/" &gt;Electronic Batch Records&lt;/a&gt; guide.&lt;/p&gt;
+For an idea of how a more complete query looks, refer to the &lt;a href="https://docs.rhize.com/versions/v3.1.0/use-cases/ebr/"&gt;Electronic Batch Records&lt;/a&gt; guide.&lt;/p&gt;
 &lt;details class="hx:last-of-type:mb-0 hx:rounded-lg hx:bg-neutral-50 hx:dark:bg-neutral-800 hx:p-2 hx:mt-4 hx:group" open&gt;
 &lt;summary class="hx:flex hx:items-center hx:cursor-pointer hx:select-none hx:list-none hx:p-1 hx:rounded-sm hx:transition-colors hx:hover:bg-gray-100 hx:dark:hover:bg-neutral-800 hx:before:mr-1 hx:before:inline-block hx:before:transition-transform hx:before:content-[''] hx:dark:before:invert hx:rtl:before:rotate-180 hx:group-open:before:rotate-90"&gt;
 &lt;strong class="hx:text-lg"&gt;Snippet of a makeEbr query&lt;/strong&gt;
@@ -454,7 +460,9 @@ With the same event data that you automatically ingest and filter in this workfl
 &lt;/ul&gt;</description></item><item><title>Data collection (eBR example)</title><link>https://docs.rhize.com/versions/v3.2.0/use-cases/data-collection-ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/use-cases/data-collection-ebr/</guid><description>
 &lt;blockquote&gt;
 &lt;p&gt;&amp;#x1f4dd; Looking to implement Rhize for your Pharma operation?
-&lt;a href="https://rhize.com/contact-us/" target="_blank" rel="noopener"&gt;Talk to an engineer&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://rhize.com/contact-us/"target="_blank" rel="noopener"&gt;Talk to an engineer&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;This document provides examples of how you can use Rhize to automatically ingest data from various sources and store it in a standardized ISA-95 schema.
 The examples here are to produce an Electronic Batch Record, an important use case in pharmaceutical manufacturing.
@@ -472,9 +480,9 @@ However, the process described here is very similar to what data collection woul
 Before you start, ensure that you have the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Awareness of the different sources of eBR data&lt;/li&gt;
-&lt;li&gt;If real-time data comes from equipment, &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/publish-subscribe/connect-datasource/" &gt;Connected data sources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;If real-time data comes from equipment, &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/publish-subscribe/connect-datasource/"&gt;Connected data sources&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Sufficient knowledge of the ISA-95 standard to model the input data as ISA-95 schema&lt;/li&gt;
-&lt;li&gt;In the BPMN process, the ability to filter JSON and &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/" &gt;call the GraphQL API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;In the BPMN process, the ability to filter JSON and &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/"&gt;call the GraphQL API&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In larger operations, different teams may help with different parts of the eBR-creation process.
 For example, your integrators may help appropriately model the data, and the frontend team may render the outputted JSON into a final document.&lt;/p&gt;
@@ -513,29 +521,29 @@ A simplified BPMN workflow. For an example of a real workflow with nodes for eac
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;With the sources of data and their corresponding models, the next step
-is to write a &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/" &gt;&lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt;&lt;/a&gt; workflow to automatically transform the data and update the database.&lt;/p&gt;
+is to write a &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/"&gt;&lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt;&lt;/a&gt; workflow to automatically transform the data and update the database.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;You may want to break these steps into multiple parts.
-Or, for increased modularity, you can call another BPMN workflow with a &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/bpmn-elements/#call-activities" &gt;Call activity&lt;/a&gt;.&lt;/div&gt;
+Or, for increased modularity, you can call another BPMN workflow with a &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/bpmn-elements/#call-activities"&gt;Call activity&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;The procedure is as follows:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Create a BPMN that is &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/trigger-workflows/" &gt;triggered&lt;/a&gt; by a relevant eBR event. For example, the workflow might subscribe to a &lt;code&gt;/lims/lab1&lt;/code&gt;, or be triggered by a call to the Rhize API. If the data comes from certain equipment, you first need to &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/publish-subscribe/connect-datasource/" &gt;Connect a data source&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Create a BPMN that is &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/trigger-workflows/"&gt;triggered&lt;/a&gt; by a relevant eBR event. For example, the workflow might subscribe to a &lt;code&gt;/lims/lab1&lt;/code&gt;, or be triggered by a call to the Rhize API. If the data comes from certain equipment, you first need to &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/publish-subscribe/connect-datasource/"&gt;Connect a data source&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Transform with JSONata&lt;/p&gt;
-&lt;p&gt;Rhize has a built-in &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/use-jsonata/" &gt;JSONata&lt;/a&gt; interpreter, which can filter and transform JSON.
-Use a &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/bpmn-elements/#jsonata-transform" &gt;JSONata service task&lt;/a&gt; to map the data sources into the corresponding ISA-95 fields that you defined on the previous step.&lt;/p&gt;
+&lt;p&gt;Rhize has a built-in &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/use-jsonata/"&gt;JSONata&lt;/a&gt; interpreter, which can filter and transform JSON.
+Use a &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/bpmn-elements/#jsonata-transform"&gt;JSONata service task&lt;/a&gt; to map the data sources into the corresponding ISA-95 fields that you defined on the previous step.&lt;/p&gt;
 &lt;p&gt;Use the output as a variable for the next step.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;POST data with a graph mutation.&lt;/p&gt;
 &lt;p&gt;Use the variable returned by the JSONata step to send a mutation to update the Graph database with the new fields.
-To learn more, read the &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/" &gt;Guide to GraphQL with Rhize&lt;/a&gt;.&lt;/p&gt;
+To learn more, read the &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/"&gt;Guide to GraphQL with Rhize&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;In real BPMN workflows, you can dynamically create and assign fields as they enter the system.
@@ -552,14 +560,14 @@ As long as the incoming event data has a common association, for example, throug
 alt="Multiple BPMN processes can be united in one batch" width="75%"&gt;
 &lt;/figure&gt;
 &lt;h3&gt;Query the DB with the eBR fields&lt;span class="hx:absolute hx:-mt-20" id="query-the-db-with-the-ebr-fields"&gt;&lt;/span&gt;
-&lt;a href="#query-the-db-with-the-ebr-fields" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;After the batch finishes, use a &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/query/" &gt;GraphQL query&lt;/a&gt; to receive all relevant batch data.
+&lt;a href="#query-the-db-with-the-ebr-fields" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;After the batch finishes, use a &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/query/"&gt;GraphQL query&lt;/a&gt; to receive all relevant batch data.
 You only need one precise request to return exactly the data you specify.&lt;/p&gt;
 &lt;figure&gt;&lt;img src="https://docs.rhize.com/images/ebr/diagram-rhize-make-ebr-query.png"
 alt="Diagram showing how a query makes an ebr" width="55%"&gt;
 &lt;/figure&gt;
 &lt;p&gt;Here is a small, generic snippet of how it looks:
 Note how the query specifies exactly the fields to return: no further response filtering is required.
-For an idea of how a more complete query looks, refer to the &lt;a href="https://docs.rhize.com/versions/v3.2.0/use-cases/ebr/" &gt;Electronic Batch Records&lt;/a&gt; guide.&lt;/p&gt;
+For an idea of how a more complete query looks, refer to the &lt;a href="https://docs.rhize.com/versions/v3.2.0/use-cases/ebr/"&gt;Electronic Batch Records&lt;/a&gt; guide.&lt;/p&gt;
 &lt;details class="hx:last-of-type:mb-0 hx:rounded-lg hx:bg-neutral-50 hx:dark:bg-neutral-800 hx:p-2 hx:mt-4 hx:group" open&gt;
 &lt;summary class="hx:flex hx:items-center hx:cursor-pointer hx:select-none hx:list-none hx:p-1 hx:rounded-sm hx:transition-colors hx:hover:bg-gray-100 hx:dark:hover:bg-neutral-800 hx:before:mr-1 hx:before:inline-block hx:before:transition-transform hx:before:content-[''] hx:dark:before:invert hx:rtl:before:rotate-180 hx:group-open:before:rotate-90"&gt;
 &lt;strong class="hx:text-lg"&gt;Snippet of a makeEbr query&lt;/strong&gt;
@@ -605,7 +613,9 @@ With the same event data that you automatically ingest and filter in this workfl
 &lt;/ul&gt;</description></item><item><title>Data collection (eBR example)</title><link>https://docs.rhize.com/versions/v4.0.0/use-cases/data-collection-ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/use-cases/data-collection-ebr/</guid><description>
 &lt;blockquote&gt;
 &lt;p&gt;&amp;#x1f4dd; Looking to implement Rhize for your Pharma operation?
-&lt;a href="https://rhize.com/contact-us/" target="_blank" rel="noopener"&gt;Talk to an engineer&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://rhize.com/contact-us/"target="_blank" rel="noopener"&gt;Talk to an engineer&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;This document provides examples of how you can use Rhize to automatically ingest data from various sources and store it in a standardized ISA-95 schema.
 The examples here are to produce an Electronic Batch Record, an important use case in pharmaceutical manufacturing.
@@ -623,9 +633,9 @@ However, the process described here is very similar to what data collection woul
 Before you start, ensure that you have the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Awareness of the different sources of eBR data&lt;/li&gt;
-&lt;li&gt;If real-time data comes from equipment, &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/publish-subscribe/connect-datasource/" &gt;Connected data sources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;If real-time data comes from equipment, &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/publish-subscribe/connect-datasource/"&gt;Connected data sources&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Sufficient knowledge of the ISA-95 standard to model the input data as ISA-95 schema&lt;/li&gt;
-&lt;li&gt;In the BPMN process, the ability to filter JSON and &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/gql/" &gt;call the GraphQL API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;In the BPMN process, the ability to filter JSON and &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/gql/"&gt;call the GraphQL API&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In larger operations, different teams may help with different parts of the eBR-creation process.
 For example, your integrators may help appropriately model the data, and the frontend team may render the outputted JSON into a final document.&lt;/p&gt;
@@ -664,29 +674,29 @@ A simplified BPMN workflow. For an example of a real workflow with nodes for eac
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;With the sources of data and their corresponding models, the next step
-is to write a &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/" &gt;&lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt;&lt;/a&gt; workflow to automatically transform the data and update the database.&lt;/p&gt;
+is to write a &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/"&gt;&lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt;&lt;/a&gt; workflow to automatically transform the data and update the database.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;You may want to break these steps into multiple parts.
-Or, for increased modularity, you can call another BPMN workflow with a &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/bpmn-elements/#call-activities" &gt;Call activity&lt;/a&gt;.&lt;/div&gt;
+Or, for increased modularity, you can call another BPMN workflow with a &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/bpmn-elements/#call-activities"&gt;Call activity&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;The procedure is as follows:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Create a BPMN that is &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/trigger-workflows/" &gt;triggered&lt;/a&gt; by a relevant eBR event. For example, the workflow might subscribe to a &lt;code&gt;/lims/lab1&lt;/code&gt;, or be triggered by a call to the Rhize API. If the data comes from certain equipment, you first need to &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/publish-subscribe/connect-datasource/" &gt;Connect a data source&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Create a BPMN that is &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/trigger-workflows/"&gt;triggered&lt;/a&gt; by a relevant eBR event. For example, the workflow might subscribe to a &lt;code&gt;/lims/lab1&lt;/code&gt;, or be triggered by a call to the Rhize API. If the data comes from certain equipment, you first need to &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/publish-subscribe/connect-datasource/"&gt;Connect a data source&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Transform with JSONata&lt;/p&gt;
-&lt;p&gt;Rhize has a built-in &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/use-jsonata/" &gt;JSONata&lt;/a&gt; interpreter, which can filter and transform JSON.
-Use a &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/bpmn-elements/#jsonata-transform" &gt;JSONata service task&lt;/a&gt; to map the data sources into the corresponding ISA-95 fields that you defined on the previous step.&lt;/p&gt;
+&lt;p&gt;Rhize has a built-in &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/use-jsonata/"&gt;JSONata&lt;/a&gt; interpreter, which can filter and transform JSON.
+Use a &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/bpmn-elements/#jsonata-transform"&gt;JSONata service task&lt;/a&gt; to map the data sources into the corresponding ISA-95 fields that you defined on the previous step.&lt;/p&gt;
 &lt;p&gt;Use the output as a variable for the next step.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;POST data with a graph mutation.&lt;/p&gt;
 &lt;p&gt;Use the variable returned by the JSONata step to send a mutation to update the Graph database with the new fields.
-To learn more, read the &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/gql/" &gt;Guide to GraphQL with Rhize&lt;/a&gt;.&lt;/p&gt;
+To learn more, read the &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/gql/"&gt;Guide to GraphQL with Rhize&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;In real BPMN workflows, you can dynamically create and assign fields as they enter the system.
@@ -703,14 +713,14 @@ As long as the incoming event data has a common association, for example, throug
 alt="Multiple BPMN processes can be united in one batch" width="75%"&gt;
 &lt;/figure&gt;
 &lt;h3&gt;Query the DB with the eBR fields&lt;span class="hx:absolute hx:-mt-20" id="query-the-db-with-the-ebr-fields"&gt;&lt;/span&gt;
-&lt;a href="#query-the-db-with-the-ebr-fields" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;After the batch finishes, use a &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/gql/query/" &gt;GraphQL query&lt;/a&gt; to receive all relevant batch data.
+&lt;a href="#query-the-db-with-the-ebr-fields" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;After the batch finishes, use a &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/gql/query/"&gt;GraphQL query&lt;/a&gt; to receive all relevant batch data.
 You only need one precise request to return exactly the data you specify.&lt;/p&gt;
 &lt;figure&gt;&lt;img src="https://docs.rhize.com/images/ebr/diagram-rhize-make-ebr-query.png"
 alt="Diagram showing how a query makes an ebr" width="55%"&gt;
 &lt;/figure&gt;
 &lt;p&gt;Here is a small, generic snippet of how it looks:
 Note how the query specifies exactly the fields to return: no further response filtering is required.
-For an idea of how a more complete query looks, refer to the &lt;a href="https://docs.rhize.com/versions/v4.0.0/use-cases/ebr/" &gt;Electronic Batch Records&lt;/a&gt; guide.&lt;/p&gt;
+For an idea of how a more complete query looks, refer to the &lt;a href="https://docs.rhize.com/versions/v4.0.0/use-cases/ebr/"&gt;Electronic Batch Records&lt;/a&gt; guide.&lt;/p&gt;
 &lt;details class="hx:last-of-type:mb-0 hx:rounded-lg hx:bg-neutral-50 hx:dark:bg-neutral-800 hx:p-2 hx:mt-4 hx:group" open&gt;
 &lt;summary class="hx:flex hx:items-center hx:cursor-pointer hx:select-none hx:list-none hx:p-1 hx:rounded-sm hx:transition-colors hx:hover:bg-gray-100 hx:dark:hover:bg-neutral-800 hx:before:mr-1 hx:before:inline-block hx:before:transition-transform hx:before:content-[''] hx:dark:before:invert hx:rtl:before:rotate-180 hx:group-open:before:rotate-90"&gt;
 &lt;strong class="hx:text-lg"&gt;Snippet of a makeEbr query&lt;/strong&gt;
@@ -755,7 +765,7 @@ With the same event data that you automatically ingest and filter in this workfl
 &lt;li&gt;Compare batches against some variable. For example, you can compare all runs for two versions of equipment.&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Electronic Batch Records</title><link>https://docs.rhize.com/use-cases/ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/use-cases/ebr/</guid><description>
 &lt;p&gt;This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use case that involves &lt;em&gt;Electronic batch records&lt;/em&gt;.
-As long as you properly &lt;a href="https://docs.rhize.com/use-cases/data-collection-ebr/" &gt;map and ingest&lt;/a&gt; the source data,
+As long as you properly &lt;a href="https://docs.rhize.com/use-cases/data-collection-ebr/"&gt;map and ingest&lt;/a&gt; the source data,
 the provided queries here should work for any operation, though you&amp;rsquo;ll need to tweak them to fit the particular structure of your job response and reporting requirements.&lt;/p&gt;
 &lt;p&gt;An Electronic Batch Record (eBR) is a detailed report about a specific batch.
 Generating eBRs is an important component of pharmaceutical manufacturing, whose high standards of compliance and complexity of inputs demand a great deal of detail in each report.&lt;/p&gt;
@@ -769,18 +779,18 @@ you can use Rhize to identify answers to questions such as:&lt;/p&gt;
 &lt;li&gt;Why was this work performed? That is, what is the order that initiated the work?&lt;/li&gt;
 &lt;li&gt;What are the results of quality testing for this work?&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&amp;#x1f4dd;
 The focus here is modeling and querying.
-For a high-level overview of how eBR data may enter the Rhize data hub, read the guide to &lt;a href="https://docs.rhize.com/use-cases/data-collection-ebr/" &gt;Data collection&lt;/a&gt;.&lt;/div&gt;
+For a high-level overview of how eBR data may enter the Rhize data hub, read the guide to &lt;a href="https://docs.rhize.com/use-cases/data-collection-ebr/"&gt;Data collection&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Quick query&lt;span class="hx:absolute hx:-mt-20" id="quick-query"&gt;&lt;/span&gt;
 &lt;a href="#quick-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt; 🎥Watch:&lt;/span&gt;&lt;a href="https://www.youtube.com/watch?v=oXG5f3O9xjU&amp;amp;t=0s"&gt;Full eBR in 1 query&lt;/a&gt;&lt;/blockquote&gt;
-&lt;p&gt;If you just want to build out a &lt;a href="https://docs.rhize.com/how-to/gql/query/" &gt;GraphQL query&lt;/a&gt; for your reporting, use these templates to get started.&lt;/p&gt;
+&lt;p&gt;If you just want to build out a &lt;a href="https://docs.rhize.com/how-to/gql/query/"&gt;GraphQL query&lt;/a&gt; for your reporting, use these templates to get started.&lt;/p&gt;
 &lt;p&gt;If you know the IDs for the relevant job response, job order, and test results, you can structure each group as a top-level object.
 If you want to input only one ID, you can also use nested fields on a response, order, or test specification to pull all necessary information.
 The Rhize DB stores relationships, so the values are identical—only the structure of the response changes.&lt;/p&gt;
@@ -856,13 +866,13 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;For more detail, refer to the
-&lt;a href="#example-query" &gt;complete example query&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="#example-query"&gt;complete example query&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Background: ISA-95 entities in an eBR query&lt;span class="hx:absolute hx:-mt-20" id="background-isa-95-entities-in-an-ebr-query"&gt;&lt;/span&gt;
-&lt;a href="#background-isa-95-entities-in-an-ebr-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;a href="#background-isa-95-entities-in-an-ebr-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&amp;#x1f4dd; For an introduction to ISA-95 and its terminology,
-read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/" &gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
+read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/"&gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;The following lists detail the ISA-95 entities that you might need when querying the Rhize database for an eBR.
@@ -929,8 +939,10 @@ For example:&lt;/p&gt;
 &lt;li&gt;Personnel actuals may record who performed the test.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Example query&lt;span class="hx:absolute hx:-mt-20" id="example-query"&gt;&lt;/span&gt;
-&lt;a href="#example-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following snippet is an example of how to pull a full eBR from a single &lt;a href="https://docs.rhize.com/how-to/gql/query/" &gt;GraphQL query&lt;/a&gt;.
-Each top-level object has an &lt;a href="https://graphql.org/learn/queries/#aliases" target="_blank" rel="noopener"&gt;alias&lt;/a&gt;, which serves as the key for the object in the JSON payload.&lt;/p&gt;
+&lt;a href="#example-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following snippet is an example of how to pull a full eBR from a single &lt;a href="https://docs.rhize.com/how-to/gql/query/"&gt;GraphQL query&lt;/a&gt;.
+Each top-level object has an &lt;a href="https://graphql.org/learn/queries/#aliases"target="_blank" rel="noopener"&gt;alias&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, which serves as the key for the object in the JSON payload.&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gql" data-lang="gql"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;query&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;eBR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="py"&gt;performance&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;getJobResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="py"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;ds1d-119-as&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
@@ -1248,9 +1260,9 @@ As always, you have a few options. Here are a few, from least to most interactiv
 &lt;/ul&gt;
 &lt;h2&gt;Next steps: combine with other use cases&lt;span class="hx:absolute hx:-mt-20" id="next-steps-combine-with-other-use-cases"&gt;&lt;/span&gt;
 &lt;a href="#next-steps-combine-with-other-use-cases" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can reuse and combine the queries here for other use cases that involve tracking and performance analysis.
-For example, if you want a detailed report for the movement of material, you can combine the queries here with a query for a &lt;a href="https://docs.rhize.com/use-cases/genealogy/" &gt;material lot genealogy&lt;/a&gt;. This would provide a detailed report for every job that involved an ancestor or descendent of the queried material.&lt;/p&gt;</description></item><item><title>Electronic Batch Records</title><link>https://docs.rhize.com/versions/v3.0.3/use-cases/ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/use-cases/ebr/</guid><description>
+For example, if you want a detailed report for the movement of material, you can combine the queries here with a query for a &lt;a href="https://docs.rhize.com/use-cases/genealogy/"&gt;material lot genealogy&lt;/a&gt;. This would provide a detailed report for every job that involved an ancestor or descendent of the queried material.&lt;/p&gt;</description></item><item><title>Electronic Batch Records</title><link>https://docs.rhize.com/versions/v3.0.3/use-cases/ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/use-cases/ebr/</guid><description>
 &lt;p&gt;This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use case that involves &lt;em&gt;Electronic batch records&lt;/em&gt;.
-As long as you properly &lt;a href="https://docs.rhize.com/versions/v3.0.3/use-cases/data-collection-ebr/" &gt;map and ingest&lt;/a&gt; the source data,
+As long as you properly &lt;a href="https://docs.rhize.com/versions/v3.0.3/use-cases/data-collection-ebr/"&gt;map and ingest&lt;/a&gt; the source data,
 the provided queries here should work for any operation, though you&amp;rsquo;ll need to tweak them to fit the particular structure of your job response and reporting requirements.&lt;/p&gt;
 &lt;p&gt;An Electronic Batch Record (eBR) is a detailed report about a specific batch.
 Generating eBRs is an important component of pharmaceutical manufacturing, whose high standards of compliance and complexity of inputs demand a great deal of detail in each report.&lt;/p&gt;
@@ -1264,18 +1276,18 @@ you can use Rhize to identify answers to questions such as:&lt;/p&gt;
 &lt;li&gt;Why was this work performed? That is, what is the order that initiated the work?&lt;/li&gt;
 &lt;li&gt;What are the results of quality testing for this work?&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&amp;#x1f4dd;
 The focus here is modeling and querying.
-For a high-level overview of how eBR data may enter the Rhize data hub, read the guide to &lt;a href="https://docs.rhize.com/versions/v3.0.3/use-cases/data-collection-ebr/" &gt;Data collection&lt;/a&gt;.&lt;/div&gt;
+For a high-level overview of how eBR data may enter the Rhize data hub, read the guide to &lt;a href="https://docs.rhize.com/versions/v3.0.3/use-cases/data-collection-ebr/"&gt;Data collection&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Quick query&lt;span class="hx:absolute hx:-mt-20" id="quick-query"&gt;&lt;/span&gt;
 &lt;a href="#quick-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt; 🎥Watch:&lt;/span&gt;&lt;a href="https://www.youtube.com/watch?v=oXG5f3O9xjU&amp;amp;t=0s"&gt;Full eBR in 1 query&lt;/a&gt;&lt;/blockquote&gt;
-&lt;p&gt;If you just want to build out a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/query/" &gt;GraphQL query&lt;/a&gt; for your reporting, use these templates to get started.&lt;/p&gt;
+&lt;p&gt;If you just want to build out a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/query/"&gt;GraphQL query&lt;/a&gt; for your reporting, use these templates to get started.&lt;/p&gt;
 &lt;p&gt;If you know the IDs for the relevant job response, job order, and test results, you can structure each group as a top-level object.
 If you want to input only one ID, you can also use nested fields on a response, order, or test specification to pull all necessary information.
 The Rhize DB stores relationships, so the values are identical—only the structure of the response changes.&lt;/p&gt;
@@ -1351,13 +1363,13 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;For more detail, refer to the
-&lt;a href="#example-query" &gt;complete example query&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="#example-query"&gt;complete example query&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Background: ISA-95 entities in an eBR query&lt;span class="hx:absolute hx:-mt-20" id="background-isa-95-entities-in-an-ebr-query"&gt;&lt;/span&gt;
-&lt;a href="#background-isa-95-entities-in-an-ebr-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;a href="#background-isa-95-entities-in-an-ebr-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&amp;#x1f4dd; For an introduction to ISA-95 and its terminology,
-read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/" &gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
+read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/"&gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;The following lists detail the ISA-95 entities that you might need when querying the Rhize database for an eBR.
@@ -1424,8 +1436,10 @@ For example:&lt;/p&gt;
 &lt;li&gt;Personnel actuals may record who performed the test.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Example query&lt;span class="hx:absolute hx:-mt-20" id="example-query"&gt;&lt;/span&gt;
-&lt;a href="#example-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following snippet is an example of how to pull a full eBR from a single &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/query/" &gt;GraphQL query&lt;/a&gt;.
-Each top-level object has an &lt;a href="https://graphql.org/learn/queries/#aliases" target="_blank" rel="noopener"&gt;alias&lt;/a&gt;, which serves as the key for the object in the JSON payload.&lt;/p&gt;
+&lt;a href="#example-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following snippet is an example of how to pull a full eBR from a single &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/query/"&gt;GraphQL query&lt;/a&gt;.
+Each top-level object has an &lt;a href="https://graphql.org/learn/queries/#aliases"target="_blank" rel="noopener"&gt;alias&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, which serves as the key for the object in the JSON payload.&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gql" data-lang="gql"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;query&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;eBR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="py"&gt;performance&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;getJobResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="py"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;ds1d-119-as&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
@@ -1743,9 +1757,9 @@ As always, you have a few options. Here are a few, from least to most interactiv
 &lt;/ul&gt;
 &lt;h2&gt;Next steps: combine with other use cases&lt;span class="hx:absolute hx:-mt-20" id="next-steps-combine-with-other-use-cases"&gt;&lt;/span&gt;
 &lt;a href="#next-steps-combine-with-other-use-cases" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can reuse and combine the queries here for other use cases that involve tracking and performance analysis.
-For example, if you want a detailed report for the movement of material, you can combine the queries here with a query for a &lt;a href="https://docs.rhize.com/versions/v3.0.3/use-cases/genealogy/" &gt;material lot genealogy&lt;/a&gt;. This would provide a detailed report for every job that involved an ancestor or descendent of the queried material.&lt;/p&gt;</description></item><item><title>Electronic Batch Records</title><link>https://docs.rhize.com/versions/v3.1.0/use-cases/ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/use-cases/ebr/</guid><description>
+For example, if you want a detailed report for the movement of material, you can combine the queries here with a query for a &lt;a href="https://docs.rhize.com/versions/v3.0.3/use-cases/genealogy/"&gt;material lot genealogy&lt;/a&gt;. This would provide a detailed report for every job that involved an ancestor or descendent of the queried material.&lt;/p&gt;</description></item><item><title>Electronic Batch Records</title><link>https://docs.rhize.com/versions/v3.1.0/use-cases/ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/use-cases/ebr/</guid><description>
 &lt;p&gt;This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use case that involves &lt;em&gt;Electronic batch records&lt;/em&gt;.
-As long as you properly &lt;a href="https://docs.rhize.com/versions/v3.1.0/use-cases/data-collection-ebr/" &gt;map and ingest&lt;/a&gt; the source data,
+As long as you properly &lt;a href="https://docs.rhize.com/versions/v3.1.0/use-cases/data-collection-ebr/"&gt;map and ingest&lt;/a&gt; the source data,
 the provided queries here should work for any operation, though you&amp;rsquo;ll need to tweak them to fit the particular structure of your job response and reporting requirements.&lt;/p&gt;
 &lt;p&gt;An Electronic Batch Record (eBR) is a detailed report about a specific batch.
 Generating eBRs is an important component of pharmaceutical manufacturing, whose high standards of compliance and complexity of inputs demand a great deal of detail in each report.&lt;/p&gt;
@@ -1759,18 +1773,18 @@ you can use Rhize to identify answers to questions such as:&lt;/p&gt;
 &lt;li&gt;Why was this work performed? That is, what is the order that initiated the work?&lt;/li&gt;
 &lt;li&gt;What are the results of quality testing for this work?&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&amp;#x1f4dd;
 The focus here is modeling and querying.
-For a high-level overview of how eBR data may enter the Rhize data hub, read the guide to &lt;a href="https://docs.rhize.com/versions/v3.1.0/use-cases/data-collection-ebr/" &gt;Data collection&lt;/a&gt;.&lt;/div&gt;
+For a high-level overview of how eBR data may enter the Rhize data hub, read the guide to &lt;a href="https://docs.rhize.com/versions/v3.1.0/use-cases/data-collection-ebr/"&gt;Data collection&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Quick query&lt;span class="hx:absolute hx:-mt-20" id="quick-query"&gt;&lt;/span&gt;
 &lt;a href="#quick-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt; 🎥Watch:&lt;/span&gt;&lt;a href="https://www.youtube.com/watch?v=oXG5f3O9xjU&amp;amp;t=0s"&gt;Full eBR in 1 query&lt;/a&gt;&lt;/blockquote&gt;
-&lt;p&gt;If you just want to build out a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/" &gt;GraphQL query&lt;/a&gt; for your reporting, use these templates to get started.&lt;/p&gt;
+&lt;p&gt;If you just want to build out a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/"&gt;GraphQL query&lt;/a&gt; for your reporting, use these templates to get started.&lt;/p&gt;
 &lt;p&gt;If you know the IDs for the relevant job response, job order, and test results, you can structure each group as a top-level object.
 If you want to input only one ID, you can also use nested fields on a response, order, or test specification to pull all necessary information.
 The Rhize DB stores relationships, so the values are identical—only the structure of the response changes.&lt;/p&gt;
@@ -1846,13 +1860,13 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;For more detail, refer to the
-&lt;a href="#example-query" &gt;complete example query&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="#example-query"&gt;complete example query&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Background: ISA-95 entities in an eBR query&lt;span class="hx:absolute hx:-mt-20" id="background-isa-95-entities-in-an-ebr-query"&gt;&lt;/span&gt;
-&lt;a href="#background-isa-95-entities-in-an-ebr-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;a href="#background-isa-95-entities-in-an-ebr-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&amp;#x1f4dd; For an introduction to ISA-95 and its terminology,
-read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/" &gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
+read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/"&gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;The following lists detail the ISA-95 entities that you might need when querying the Rhize database for an eBR.
@@ -1919,8 +1933,10 @@ For example:&lt;/p&gt;
 &lt;li&gt;Personnel actuals may record who performed the test.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Example query&lt;span class="hx:absolute hx:-mt-20" id="example-query"&gt;&lt;/span&gt;
-&lt;a href="#example-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following snippet is an example of how to pull a full eBR from a single &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/" &gt;GraphQL query&lt;/a&gt;.
-Each top-level object has an &lt;a href="https://graphql.org/learn/queries/#aliases" target="_blank" rel="noopener"&gt;alias&lt;/a&gt;, which serves as the key for the object in the JSON payload.&lt;/p&gt;
+&lt;a href="#example-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following snippet is an example of how to pull a full eBR from a single &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/"&gt;GraphQL query&lt;/a&gt;.
+Each top-level object has an &lt;a href="https://graphql.org/learn/queries/#aliases"target="_blank" rel="noopener"&gt;alias&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, which serves as the key for the object in the JSON payload.&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gql" data-lang="gql"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;query&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;eBR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="py"&gt;performance&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;getJobResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="py"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;ds1d-119-as&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
@@ -2238,9 +2254,9 @@ As always, you have a few options. Here are a few, from least to most interactiv
 &lt;/ul&gt;
 &lt;h2&gt;Next steps: combine with other use cases&lt;span class="hx:absolute hx:-mt-20" id="next-steps-combine-with-other-use-cases"&gt;&lt;/span&gt;
 &lt;a href="#next-steps-combine-with-other-use-cases" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can reuse and combine the queries here for other use cases that involve tracking and performance analysis.
-For example, if you want a detailed report for the movement of material, you can combine the queries here with a query for a &lt;a href="https://docs.rhize.com/versions/v3.1.0/use-cases/genealogy/" &gt;material lot genealogy&lt;/a&gt;. This would provide a detailed report for every job that involved an ancestor or descendent of the queried material.&lt;/p&gt;</description></item><item><title>Electronic Batch Records</title><link>https://docs.rhize.com/versions/v3.2.0/use-cases/ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/use-cases/ebr/</guid><description>
+For example, if you want a detailed report for the movement of material, you can combine the queries here with a query for a &lt;a href="https://docs.rhize.com/versions/v3.1.0/use-cases/genealogy/"&gt;material lot genealogy&lt;/a&gt;. This would provide a detailed report for every job that involved an ancestor or descendent of the queried material.&lt;/p&gt;</description></item><item><title>Electronic Batch Records</title><link>https://docs.rhize.com/versions/v3.2.0/use-cases/ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/use-cases/ebr/</guid><description>
 &lt;p&gt;This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use case that involves &lt;em&gt;Electronic batch records&lt;/em&gt;.
-As long as you properly &lt;a href="https://docs.rhize.com/versions/v3.2.0/use-cases/data-collection-ebr/" &gt;map and ingest&lt;/a&gt; the source data,
+As long as you properly &lt;a href="https://docs.rhize.com/versions/v3.2.0/use-cases/data-collection-ebr/"&gt;map and ingest&lt;/a&gt; the source data,
 the provided queries here should work for any operation, though you&amp;rsquo;ll need to tweak them to fit the particular structure of your job response and reporting requirements.&lt;/p&gt;
 &lt;p&gt;An Electronic Batch Record (eBR) is a detailed report about a specific batch.
 Generating eBRs is an important component of pharmaceutical manufacturing, whose high standards of compliance and complexity of inputs demand a great deal of detail in each report.&lt;/p&gt;
@@ -2254,18 +2270,18 @@ you can use Rhize to identify answers to questions such as:&lt;/p&gt;
 &lt;li&gt;Why was this work performed? That is, what is the order that initiated the work?&lt;/li&gt;
 &lt;li&gt;What are the results of quality testing for this work?&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&amp;#x1f4dd;
 The focus here is modeling and querying.
-For a high-level overview of how eBR data may enter the Rhize data hub, read the guide to &lt;a href="https://docs.rhize.com/versions/v3.2.0/use-cases/data-collection-ebr/" &gt;Data collection&lt;/a&gt;.&lt;/div&gt;
+For a high-level overview of how eBR data may enter the Rhize data hub, read the guide to &lt;a href="https://docs.rhize.com/versions/v3.2.0/use-cases/data-collection-ebr/"&gt;Data collection&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Quick query&lt;span class="hx:absolute hx:-mt-20" id="quick-query"&gt;&lt;/span&gt;
 &lt;a href="#quick-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt; 🎥Watch:&lt;/span&gt;&lt;a href="https://www.youtube.com/watch?v=oXG5f3O9xjU&amp;amp;t=0s"&gt;Full eBR in 1 query&lt;/a&gt;&lt;/blockquote&gt;
-&lt;p&gt;If you just want to build out a &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/query/" &gt;GraphQL query&lt;/a&gt; for your reporting, use these templates to get started.&lt;/p&gt;
+&lt;p&gt;If you just want to build out a &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/query/"&gt;GraphQL query&lt;/a&gt; for your reporting, use these templates to get started.&lt;/p&gt;
 &lt;p&gt;If you know the IDs for the relevant job response, job order, and test results, you can structure each group as a top-level object.
 If you want to input only one ID, you can also use nested fields on a response, order, or test specification to pull all necessary information.
 The Rhize DB stores relationships, so the values are identical—only the structure of the response changes.&lt;/p&gt;
@@ -2341,13 +2357,13 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;For more detail, refer to the
-&lt;a href="#example-query" &gt;complete example query&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="#example-query"&gt;complete example query&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Background: ISA-95 entities in an eBR query&lt;span class="hx:absolute hx:-mt-20" id="background-isa-95-entities-in-an-ebr-query"&gt;&lt;/span&gt;
-&lt;a href="#background-isa-95-entities-in-an-ebr-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;a href="#background-isa-95-entities-in-an-ebr-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&amp;#x1f4dd; For an introduction to ISA-95 and its terminology,
-read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/" &gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
+read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/"&gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;The following lists detail the ISA-95 entities that you might need when querying the Rhize database for an eBR.
@@ -2414,8 +2430,10 @@ For example:&lt;/p&gt;
 &lt;li&gt;Personnel actuals may record who performed the test.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Example query&lt;span class="hx:absolute hx:-mt-20" id="example-query"&gt;&lt;/span&gt;
-&lt;a href="#example-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following snippet is an example of how to pull a full eBR from a single &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/query/" &gt;GraphQL query&lt;/a&gt;.
-Each top-level object has an &lt;a href="https://graphql.org/learn/queries/#aliases" target="_blank" rel="noopener"&gt;alias&lt;/a&gt;, which serves as the key for the object in the JSON payload.&lt;/p&gt;
+&lt;a href="#example-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following snippet is an example of how to pull a full eBR from a single &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/query/"&gt;GraphQL query&lt;/a&gt;.
+Each top-level object has an &lt;a href="https://graphql.org/learn/queries/#aliases"target="_blank" rel="noopener"&gt;alias&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, which serves as the key for the object in the JSON payload.&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gql" data-lang="gql"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;query&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;eBR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="py"&gt;performance&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;getJobResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="py"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;ds1d-119-as&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
@@ -2733,9 +2751,9 @@ As always, you have a few options. Here are a few, from least to most interactiv
 &lt;/ul&gt;
 &lt;h2&gt;Next steps: combine with other use cases&lt;span class="hx:absolute hx:-mt-20" id="next-steps-combine-with-other-use-cases"&gt;&lt;/span&gt;
 &lt;a href="#next-steps-combine-with-other-use-cases" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can reuse and combine the queries here for other use cases that involve tracking and performance analysis.
-For example, if you want a detailed report for the movement of material, you can combine the queries here with a query for a &lt;a href="https://docs.rhize.com/versions/v3.2.0/use-cases/genealogy/" &gt;material lot genealogy&lt;/a&gt;. This would provide a detailed report for every job that involved an ancestor or descendent of the queried material.&lt;/p&gt;</description></item><item><title>Electronic Batch Records</title><link>https://docs.rhize.com/versions/v4.0.0/use-cases/ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/use-cases/ebr/</guid><description>
+For example, if you want a detailed report for the movement of material, you can combine the queries here with a query for a &lt;a href="https://docs.rhize.com/versions/v3.2.0/use-cases/genealogy/"&gt;material lot genealogy&lt;/a&gt;. This would provide a detailed report for every job that involved an ancestor or descendent of the queried material.&lt;/p&gt;</description></item><item><title>Electronic Batch Records</title><link>https://docs.rhize.com/versions/v4.0.0/use-cases/ebr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/use-cases/ebr/</guid><description>
 &lt;p&gt;This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use case that involves &lt;em&gt;Electronic batch records&lt;/em&gt;.
-As long as you properly &lt;a href="https://docs.rhize.com/versions/v4.0.0/use-cases/data-collection-ebr/" &gt;map and ingest&lt;/a&gt; the source data,
+As long as you properly &lt;a href="https://docs.rhize.com/versions/v4.0.0/use-cases/data-collection-ebr/"&gt;map and ingest&lt;/a&gt; the source data,
 the provided queries here should work for any operation, though you&amp;rsquo;ll need to tweak them to fit the particular structure of your job response and reporting requirements.&lt;/p&gt;
 &lt;p&gt;An Electronic Batch Record (eBR) is a detailed report about a specific batch.
 Generating eBRs is an important component of pharmaceutical manufacturing, whose high standards of compliance and complexity of inputs demand a great deal of detail in each report.&lt;/p&gt;
@@ -2749,18 +2767,18 @@ you can use Rhize to identify answers to questions such as:&lt;/p&gt;
 &lt;li&gt;Why was this work performed? That is, what is the order that initiated the work?&lt;/li&gt;
 &lt;li&gt;What are the results of quality testing for this work?&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&amp;#x1f4dd;
 The focus here is modeling and querying.
-For a high-level overview of how eBR data may enter the Rhize data hub, read the guide to &lt;a href="https://docs.rhize.com/versions/v4.0.0/use-cases/data-collection-ebr/" &gt;Data collection&lt;/a&gt;.&lt;/div&gt;
+For a high-level overview of how eBR data may enter the Rhize data hub, read the guide to &lt;a href="https://docs.rhize.com/versions/v4.0.0/use-cases/data-collection-ebr/"&gt;Data collection&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Quick query&lt;span class="hx:absolute hx:-mt-20" id="quick-query"&gt;&lt;/span&gt;
 &lt;a href="#quick-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt; 🎥Watch:&lt;/span&gt;&lt;a href="https://www.youtube.com/watch?v=oXG5f3O9xjU&amp;amp;t=0s"&gt;Full eBR in 1 query&lt;/a&gt;&lt;/blockquote&gt;
-&lt;p&gt;If you just want to build out a &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/gql/query/" &gt;GraphQL query&lt;/a&gt; for your reporting, use these templates to get started.&lt;/p&gt;
+&lt;p&gt;If you just want to build out a &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/gql/query/"&gt;GraphQL query&lt;/a&gt; for your reporting, use these templates to get started.&lt;/p&gt;
 &lt;p&gt;If you know the IDs for the relevant job response, job order, and test results, you can structure each group as a top-level object.
 If you want to input only one ID, you can also use nested fields on a response, order, or test specification to pull all necessary information.
 The Rhize DB stores relationships, so the values are identical—only the structure of the response changes.&lt;/p&gt;
@@ -2836,13 +2854,13 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;For more detail, refer to the
-&lt;a href="#example-query" &gt;complete example query&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="#example-query"&gt;complete example query&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Background: ISA-95 entities in an eBR query&lt;span class="hx:absolute hx:-mt-20" id="background-isa-95-entities-in-an-ebr-query"&gt;&lt;/span&gt;
-&lt;a href="#background-isa-95-entities-in-an-ebr-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;a href="#background-isa-95-entities-in-an-ebr-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&amp;#x1f4dd; For an introduction to ISA-95 and its terminology,
-read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/" &gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
+read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/"&gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;The following lists detail the ISA-95 entities that you might need when querying the Rhize database for an eBR.
@@ -2909,8 +2927,10 @@ For example:&lt;/p&gt;
 &lt;li&gt;Personnel actuals may record who performed the test.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Example query&lt;span class="hx:absolute hx:-mt-20" id="example-query"&gt;&lt;/span&gt;
-&lt;a href="#example-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following snippet is an example of how to pull a full eBR from a single &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/gql/query/" &gt;GraphQL query&lt;/a&gt;.
-Each top-level object has an &lt;a href="https://graphql.org/learn/queries/#aliases" target="_blank" rel="noopener"&gt;alias&lt;/a&gt;, which serves as the key for the object in the JSON payload.&lt;/p&gt;
+&lt;a href="#example-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following snippet is an example of how to pull a full eBR from a single &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/gql/query/"&gt;GraphQL query&lt;/a&gt;.
+Each top-level object has an &lt;a href="https://graphql.org/learn/queries/#aliases"target="_blank" rel="noopener"&gt;alias&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, which serves as the key for the object in the JSON payload.&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gql" data-lang="gql"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;query&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;eBR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="py"&gt;performance&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;getJobResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="py"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;ds1d-119-as&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
@@ -3228,7 +3248,7 @@ As always, you have a few options. Here are a few, from least to most interactiv
 &lt;/ul&gt;
 &lt;h2&gt;Next steps: combine with other use cases&lt;span class="hx:absolute hx:-mt-20" id="next-steps-combine-with-other-use-cases"&gt;&lt;/span&gt;
 &lt;a href="#next-steps-combine-with-other-use-cases" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can reuse and combine the queries here for other use cases that involve tracking and performance analysis.
-For example, if you want a detailed report for the movement of material, you can combine the queries here with a query for a &lt;a href="https://docs.rhize.com/versions/v4.0.0/use-cases/genealogy/" &gt;material lot genealogy&lt;/a&gt;. This would provide a detailed report for every job that involved an ancestor or descendent of the queried material.&lt;/p&gt;</description></item><item><title>Genealogy</title><link>https://docs.rhize.com/use-cases/genealogy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/use-cases/genealogy/</guid><description>
+For example, if you want a detailed report for the movement of material, you can combine the queries here with a query for a &lt;a href="https://docs.rhize.com/versions/v4.0.0/use-cases/genealogy/"&gt;material lot genealogy&lt;/a&gt;. This would provide a detailed report for every job that involved an ancestor or descendent of the queried material.&lt;/p&gt;</description></item><item><title>Genealogy</title><link>https://docs.rhize.com/use-cases/genealogy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/use-cases/genealogy/</guid><description>
 &lt;p&gt;This document provides a high-level overview of how to use Rhize for material genealogy.&lt;/p&gt;
 &lt;p&gt;In manufacturing, a &lt;em&gt;genealogy&lt;/em&gt; is the record of what a material contains or what it is now a part of.
 As its name implies, genealogy represents the family tree of material.
@@ -3381,9 +3401,9 @@ definition: "cookie-wrapper",
 (option.title.text = `Example frontend:\nreverse genealogy of ${option.series[0].data[0].name}`);
 chart.setOption(option);
 &lt;/script&gt;
-&lt;p&gt;&lt;em&gt;Data from a Rhize query in an Apache Echart. Read the &lt;a href="#frontend" &gt;Build frontend&lt;/a&gt; section for details.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Data from a Rhize query in an Apache Echart. Read the &lt;a href="#frontend"&gt;Build frontend&lt;/a&gt; section for details.&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;Quick query&lt;span class="hx:absolute hx:-mt-20" id="quick-query"&gt;&lt;/span&gt;
-&lt;a href="#quick-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To get started with genealogy quickly, use these &lt;a href="https://docs.rhize.com/how-to/gql/query/" &gt;query&lt;/a&gt; templates.
+&lt;a href="#quick-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To get started with genealogy quickly, use these &lt;a href="https://docs.rhize.com/how-to/gql/query/"&gt;query&lt;/a&gt; templates.
 One template is for the reverse genealogy, and the other is for the forward genealogy.
 For each, you need to input the Lot ID.&lt;/p&gt;
 &lt;div class="hextra-scrollbar hx:overflow-x-auto hx:overflow-y-hidden hx:overscroll-x-contain"&gt;
@@ -3454,13 +3474,13 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;You can modify the query to include more fields, levels, or get the forward and backward genealogy.
-For an idea of how a more complete query would look, refer to the &lt;a href="#examples" &gt;Examples&lt;/a&gt; section.&lt;/p&gt;
+For an idea of how a more complete query would look, refer to the &lt;a href="#examples"&gt;Examples&lt;/a&gt; section.&lt;/p&gt;
 &lt;h2&gt;Background: material entities in Rhize&lt;span class="hx:absolute hx:-mt-20" id="background-material-entities-in-rhize"&gt;&lt;/span&gt;
-&lt;a href="#background-material-entities-in-rhize" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;a href="#background-material-entities-in-rhize" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&amp;#x1f4dd; For a more complete introduction to ISA-95 and its terminology,
-read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/" &gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
+read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/"&gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;In ISA-95 terminology, the lineage of each material is expressed through the following entities:&lt;/p&gt;
@@ -3477,7 +3497,7 @@ read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/" &gt;How to 
 then lot &lt;code&gt;intermediate-1&lt;/code&gt; has the property &lt;code&gt;{isComponentOfMaterialLot: &amp;quot;final-1&amp;quot; }&lt;/code&gt;.
 The graph structure of the RhizeDB creates these links automatically.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;The distinction between sublots and material lots varies with processes.
 The rest of this document simplifies terminology by using only the word &amp;ldquo;lots&amp;rdquo;.&lt;/div&gt;
@@ -3519,9 +3539,11 @@ The following guidelines generally are true:&lt;/p&gt;
 &lt;li&gt;The pallets of packed goods (with individual packages being material sublots).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;For some best practices of how to model, read our blog &lt;a href="https://rhize.com/blog/how-much-do-i-need-to-model-when-applying-the-isa-95-standard/" target="_blank" rel="noopener"&gt;How much do I need to model?&lt;/a&gt;&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;For some best practices of how to model, read our blog &lt;a href="https://rhize.com/blog/how-much-do-i-need-to-model-when-applying-the-isa-95-standard/"target="_blank" rel="noopener"&gt;How much do I need to model?&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3&gt;Model these lots into your knowledge graph&lt;span class="hx:absolute hx:-mt-20" id="model-these-lots-into-your-knowledge-graph"&gt;&lt;/span&gt;
@@ -3547,7 +3569,7 @@ The broad patterns are as follows:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Scheduled.&lt;/strong&gt; Assign lots at the time of creating the work request or schedule (while the job response might create a material actual that maps to the requested lot ID).&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Scheduled and event-driven.&lt;/strong&gt; Generate lot IDs beforehand, and then use a GraphQL call to create records in the Rhize DB after some event. Example events might be a button press or an automated signal that indicates the lot has been physically created.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Event-driven.&lt;/strong&gt; Assign lot IDs at the exact time of work performance. For example, you can write a &lt;a href="https://docs.rhize.com/how-to/bpmn/" &gt;BPMN workflow&lt;/a&gt; to subscribe to a topic that receives information about lots and automatically forwards the IDs to your knowledge graph.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Event-driven.&lt;/strong&gt; Assign lot IDs at the exact time of work performance. For example, you can write a &lt;a href="https://docs.rhize.com/how-to/bpmn/"&gt;BPMN workflow&lt;/a&gt; to subscribe to a topic that receives information about lots and automatically forwards the IDs to your knowledge graph.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In the example baking process, lots may be collected in the following ways:&lt;/p&gt;
 &lt;ul&gt;
@@ -3559,11 +3581,15 @@ The broad patterns are as follows:&lt;/p&gt;
 &lt;a href="#query-the-data" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;After you start collecting data, you can also start querying it through the &lt;code&gt;materialLot&lt;/code&gt; query operations.
 The following section provides example genealogy queries.&lt;/p&gt;
 &lt;h2&gt;Examples&lt;span class="hx:absolute hx:-mt-20" id="examples"&gt;&lt;/span&gt;
-&lt;a href="#examples" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following examples show how to query for forward and backward genealogies using the &lt;a href="https://docs.rhize.com/how-to/gql/query/#get" target="_blank" rel="noopener"&gt;&lt;code&gt;get&lt;/code&gt;&lt;/a&gt; operation to query material lots.&lt;/p&gt;
+&lt;a href="#examples" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following examples show how to query for forward and backward genealogies using the &lt;a href="https://docs.rhize.com/how-to/gql/query/#get"target="_blank" rel="noopener"&gt;&lt;code&gt;get&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; operation to query material lots.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;You could also query for multiple genealogies—either through material lots or through aggregations such as material definitions and specifications— then apply &lt;a href="https://docs.rhize.com/how-to/gql/filter/" target="_blank" rel="noopener"&gt;filters&lt;/a&gt;.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;You could also query for multiple genealogies—either through material lots or through aggregations such as material definitions and specifications— then apply &lt;a href="https://docs.rhize.com/how-to/gql/filter/"target="_blank" rel="noopener"&gt;filters&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3&gt;Backward genealogy&lt;span class="hx:absolute hx:-mt-20" id="backward-genealogy"&gt;&lt;/span&gt;
@@ -3571,7 +3597,7 @@ The following section provides example genealogy queries.&lt;/p&gt;
 &lt;p&gt;In Rhize, you can query this relationship through the &lt;code&gt;isAssembledFromMaterialLot&lt;/code&gt; property,
 using nesting to indicate the level of material ancestry to return.
 For example, this returns four levels of backward genealogy for the material lot
-&lt;code&gt;cookie-box-2f&lt;/code&gt; (using a &lt;a href="https://docs.rhize.com/how-to/gql/call-the-graphql-api/#shortcuts-for-more-expressive-requests" &gt;fragment&lt;/a&gt; to standardize the properties returned for each lot).&lt;/p&gt;
+&lt;code&gt;cookie-box-2f&lt;/code&gt; (using a &lt;a href="https://docs.rhize.com/how-to/gql/call-the-graphql-api/#shortcuts-for-more-expressive-requests"&gt;fragment&lt;/a&gt; to standardize the properties returned for each lot).&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gql" data-lang="gql"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;query&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;getMaterialLot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="py"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;cookie-box-2f&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
@@ -3840,8 +3866,10 @@ For example, you might represent the genealogy in any of the following ways:&lt;
 &lt;li&gt;In a display using some data visualization library&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;For a visual example, the interactive chart in the introduction takes the data from the preceding reverse-genealogy query,
-transforms it with a &lt;a href="https://docs.rhize.com/how-to/bpmn/use-jsonata/" &gt;JSONata expression&lt;/a&gt;, and visualizes the relationship using
-&lt;a href="https://echarts.apache.org/" target="_blank" rel="noopener"&gt;Apache echarts&lt;/a&gt;.&lt;/p&gt;
+transforms it with a &lt;a href="https://docs.rhize.com/how-to/bpmn/use-jsonata/"&gt;JSONata expression&lt;/a&gt;, and visualizes the relationship using
+&lt;a href="https://echarts.apache.org/"target="_blank" rel="noopener"&gt;Apache echarts&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The JSONata expression accepts an array of material lots,
 then recursively renames all IDs and &lt;code&gt;isAssembledFrom&lt;/code&gt; properties to &lt;code&gt;name&lt;/code&gt; and &lt;code&gt;children&lt;/code&gt;, the data structure expected by the visualization.
 Additional properties remain to provide context in the chart&amp;rsquo;s tooltips.&lt;/p&gt;
@@ -4036,9 +4064,9 @@ definition: "cookie-wrapper",
 (option.title.text = `Example frontend:\nreverse genealogy of ${option.series[0].data[0].name}`);
 chart.setOption(option);
 &lt;/script&gt;
-&lt;p&gt;&lt;em&gt;Data from a Rhize query in an Apache Echart. Read the &lt;a href="#frontend" &gt;Build frontend&lt;/a&gt; section for details.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Data from a Rhize query in an Apache Echart. Read the &lt;a href="#frontend"&gt;Build frontend&lt;/a&gt; section for details.&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;Quick query&lt;span class="hx:absolute hx:-mt-20" id="quick-query"&gt;&lt;/span&gt;
-&lt;a href="#quick-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To get started with genealogy quickly, use these &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/query/" &gt;query&lt;/a&gt; templates.
+&lt;a href="#quick-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To get started with genealogy quickly, use these &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/query/"&gt;query&lt;/a&gt; templates.
 One template is for the reverse genealogy, and the other is for the forward genealogy.
 For each, you need to input the Lot ID.&lt;/p&gt;
 &lt;div class="hextra-scrollbar hx:overflow-x-auto hx:overflow-y-hidden hx:overscroll-x-contain"&gt;
@@ -4109,13 +4137,13 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;You can also modify the query to include more fields, levels, or get the forward and backward genealogy.
-For an idea of how a more complete query would look, refer to the &lt;a href="#examples" &gt;Examples&lt;/a&gt; section.&lt;/p&gt;
+For an idea of how a more complete query would look, refer to the &lt;a href="#examples"&gt;Examples&lt;/a&gt; section.&lt;/p&gt;
 &lt;h2&gt;Background: material entities in Rhize&lt;span class="hx:absolute hx:-mt-20" id="background-material-entities-in-rhize"&gt;&lt;/span&gt;
-&lt;a href="#background-material-entities-in-rhize" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;a href="#background-material-entities-in-rhize" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&amp;#x1f4dd; For a more complete introduction to ISA-95 and its terminology,
-read &lt;a href="https://docs.rhize.com/versions/v3.0.3/isa-95/how-to-speak-isa-95/" &gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
+read &lt;a href="https://docs.rhize.com/versions/v3.0.3/isa-95/how-to-speak-isa-95/"&gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;In ISA-95 terminology, the lineage of each material is expressed through the following entities:&lt;/p&gt;
@@ -4132,7 +4160,7 @@ read &lt;a href="https://docs.rhize.com/versions/v3.0.3/isa-95/how-to-speak-isa-
 then lot &lt;code&gt;intermediate-1&lt;/code&gt; has the property &lt;code&gt;{isComponentOfMaterialLot: &amp;quot;final-1&amp;quot; }&lt;/code&gt;.
 The graph structure of the RhizeDB creates these links automatically.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;The distinction between sublots and material lots varies with processes.
 The rest of this document simplifies terminology by using only the word &amp;ldquo;lots&amp;rdquo;.&lt;/div&gt;
@@ -4174,9 +4202,11 @@ The following guidelines generally are true:&lt;/p&gt;
 &lt;li&gt;The pallets of packed goods (with individual packages being material sublots).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;For some best practices of how to model, read our blog &lt;a href="https://rhize.com/blog/how-much-do-i-need-to-model-when-applying-the-isa-95-standard/" target="_blank" rel="noopener"&gt;How much do I need to model?&lt;/a&gt;&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;For some best practices of how to model, read our blog &lt;a href="https://rhize.com/blog/how-much-do-i-need-to-model-when-applying-the-isa-95-standard/"target="_blank" rel="noopener"&gt;How much do I need to model?&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3&gt;Model these lots into your knowledge graph&lt;span class="hx:absolute hx:-mt-20" id="model-these-lots-into-your-knowledge-graph"&gt;&lt;/span&gt;
@@ -4202,7 +4232,7 @@ The broad patterns are as follows:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Scheduled.&lt;/strong&gt; Assign lots at the time of creating the work request or schedule (while the job response might create a material actual that maps to the requested lot ID).&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Scheduled and event-driven.&lt;/strong&gt; Generate lot IDs beforehand, and then use a GraphQL call to create records in the Rhize DB after some event. Example events might be a button press or an automated signal that indicates the lot has been physically created.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Event-driven.&lt;/strong&gt; Assign lot IDs at the exact time of work performance. For example, you can write a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/" &gt;BPMN workflow&lt;/a&gt; to subscribe to a topic that receives information about lots and automatically forwards the IDs to your knowledge graph.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Event-driven.&lt;/strong&gt; Assign lot IDs at the exact time of work performance. For example, you can write a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/"&gt;BPMN workflow&lt;/a&gt; to subscribe to a topic that receives information about lots and automatically forwards the IDs to your knowledge graph.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In the example baking process, lots may be collected in the following ways:&lt;/p&gt;
 &lt;ul&gt;
@@ -4214,11 +4244,15 @@ The broad patterns are as follows:&lt;/p&gt;
 &lt;a href="#query-the-data" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;After you start collecting data, you can also start querying it through the &lt;code&gt;materialLot&lt;/code&gt; query operations.
 The following section provides example genealogy queries.&lt;/p&gt;
 &lt;h2&gt;Examples&lt;span class="hx:absolute hx:-mt-20" id="examples"&gt;&lt;/span&gt;
-&lt;a href="#examples" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following examples show how to query for forward and backward genealogies using the &lt;a href="https://docs.rhize.com/how-to/gql/query/#get" target="_blank" rel="noopener"&gt;&lt;code&gt;get&lt;/code&gt;&lt;/a&gt; operation to query material lots.&lt;/p&gt;
+&lt;a href="#examples" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following examples show how to query for forward and backward genealogies using the &lt;a href="https://docs.rhize.com/how-to/gql/query/#get"target="_blank" rel="noopener"&gt;&lt;code&gt;get&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; operation to query material lots.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;You could also query for multiple genealogies—either through material lots or through aggregations such as material definitions and specifications— then apply &lt;a href="https://docs.rhize.com/how-to/gql/filter/" target="_blank" rel="noopener"&gt;filters&lt;/a&gt;.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;You could also query for multiple genealogies—either through material lots or through aggregations such as material definitions and specifications— then apply &lt;a href="https://docs.rhize.com/how-to/gql/filter/"target="_blank" rel="noopener"&gt;filters&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3&gt;Backward genealogy&lt;span class="hx:absolute hx:-mt-20" id="backward-genealogy"&gt;&lt;/span&gt;
@@ -4226,7 +4260,7 @@ The following section provides example genealogy queries.&lt;/p&gt;
 &lt;p&gt;In Rhize, you can query this relationship through the &lt;code&gt;isAssembledFromMaterialLot&lt;/code&gt; property,
 using nesting to indicate the level of material ancestry to return.
 For example, this returns four levels of backward genealogy for the material lot
-&lt;code&gt;cookie-box-2f&lt;/code&gt; (using a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/call-the-graphql-api/#shortcuts-for-more-expressive-requests" &gt;fragment&lt;/a&gt; to standardize the properties returned for each lot).&lt;/p&gt;
+&lt;code&gt;cookie-box-2f&lt;/code&gt; (using a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/call-the-graphql-api/#shortcuts-for-more-expressive-requests"&gt;fragment&lt;/a&gt; to standardize the properties returned for each lot).&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gql" data-lang="gql"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;query&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;getMaterialLot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="py"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;cookie-box-2f&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
@@ -4495,8 +4529,10 @@ For example, you might represent the genealogy in any of the following ways:&lt;
 &lt;li&gt;In a display using some data visualization library&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;For a visual example, the interactive chart in the introduction takes the data from the preceding reverse-genealogy query,
-transforms it with a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/use-jsonata/" &gt;JSONata expression&lt;/a&gt;, and visualizes the relationship using
-&lt;a href="https://echarts.apache.org/" target="_blank" rel="noopener"&gt;Apache echarts&lt;/a&gt;.&lt;/p&gt;
+transforms it with a &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/use-jsonata/"&gt;JSONata expression&lt;/a&gt;, and visualizes the relationship using
+&lt;a href="https://echarts.apache.org/"target="_blank" rel="noopener"&gt;Apache echarts&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The JSONata expression accepts an array of material lots,
 then recursively renames all IDs and &lt;code&gt;isAssembledFrom&lt;/code&gt; properties to &lt;code&gt;name&lt;/code&gt; and &lt;code&gt;children&lt;/code&gt;, the data structure expected by the visualization.
 Additional properties remain to provide context in the chart&amp;rsquo;s tooltips.&lt;/p&gt;
@@ -4691,9 +4727,9 @@ definition: "cookie-wrapper",
 (option.title.text = `Example frontend:\nreverse genealogy of ${option.series[0].data[0].name}`);
 chart.setOption(option);
 &lt;/script&gt;
-&lt;p&gt;&lt;em&gt;Data from a Rhize query in an Apache Echart. Read the &lt;a href="#frontend" &gt;Build frontend&lt;/a&gt; section for details.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Data from a Rhize query in an Apache Echart. Read the &lt;a href="#frontend"&gt;Build frontend&lt;/a&gt; section for details.&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;Quick query&lt;span class="hx:absolute hx:-mt-20" id="quick-query"&gt;&lt;/span&gt;
-&lt;a href="#quick-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To get started with genealogy quickly, use these &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/" &gt;query&lt;/a&gt; templates.
+&lt;a href="#quick-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To get started with genealogy quickly, use these &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/"&gt;query&lt;/a&gt; templates.
 One template is for the reverse genealogy, and the other is for the forward genealogy.
 For each, you need to input the Lot ID.&lt;/p&gt;
 &lt;div class="hextra-scrollbar hx:overflow-x-auto hx:overflow-y-hidden hx:overscroll-x-contain"&gt;
@@ -4764,13 +4800,13 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;You can modify the query to include more fields, levels, or get the forward and backward genealogy.
-For an idea of how a more complete query would look, refer to the &lt;a href="#examples" &gt;Examples&lt;/a&gt; section.&lt;/p&gt;
+For an idea of how a more complete query would look, refer to the &lt;a href="#examples"&gt;Examples&lt;/a&gt; section.&lt;/p&gt;
 &lt;h2&gt;Background: material entities in Rhize&lt;span class="hx:absolute hx:-mt-20" id="background-material-entities-in-rhize"&gt;&lt;/span&gt;
-&lt;a href="#background-material-entities-in-rhize" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;a href="#background-material-entities-in-rhize" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&amp;#x1f4dd; For a more complete introduction to ISA-95 and its terminology,
-read &lt;a href="https://docs.rhize.com/versions/v3.1.0/isa-95/how-to-speak-isa-95/" &gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
+read &lt;a href="https://docs.rhize.com/versions/v3.1.0/isa-95/how-to-speak-isa-95/"&gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;In ISA-95 terminology, the lineage of each material is expressed through the following entities:&lt;/p&gt;
@@ -4787,7 +4823,7 @@ read &lt;a href="https://docs.rhize.com/versions/v3.1.0/isa-95/how-to-speak-isa-
 then lot &lt;code&gt;intermediate-1&lt;/code&gt; has the property &lt;code&gt;{isComponentOfMaterialLot: &amp;quot;final-1&amp;quot; }&lt;/code&gt;.
 The graph structure of the RhizeDB creates these links automatically.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;The distinction between sublots and material lots varies with processes.
 The rest of this document simplifies terminology by using only the word &amp;ldquo;lots&amp;rdquo;.&lt;/div&gt;
@@ -4829,9 +4865,11 @@ The following guidelines generally are true:&lt;/p&gt;
 &lt;li&gt;The pallets of packed goods (with individual packages being material sublots).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;For some best practices of how to model, read our blog &lt;a href="https://rhize.com/blog/how-much-do-i-need-to-model-when-applying-the-isa-95-standard/" target="_blank" rel="noopener"&gt;How much do I need to model?&lt;/a&gt;&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;For some best practices of how to model, read our blog &lt;a href="https://rhize.com/blog/how-much-do-i-need-to-model-when-applying-the-isa-95-standard/"target="_blank" rel="noopener"&gt;How much do I need to model?&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3&gt;Model these lots into your knowledge graph&lt;span class="hx:absolute hx:-mt-20" id="model-these-lots-into-your-knowledge-graph"&gt;&lt;/span&gt;
@@ -4857,7 +4895,7 @@ The broad patterns are as follows:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Scheduled.&lt;/strong&gt; Assign lots at the time of creating the work request or schedule (while the job response might create a material actual that maps to the requested lot ID).&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Scheduled and event-driven.&lt;/strong&gt; Generate lot IDs beforehand, and then use a GraphQL call to create records in the Rhize DB after some event. Example events might be a button press or an automated signal that indicates the lot has been physically created.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Event-driven.&lt;/strong&gt; Assign lot IDs at the exact time of work performance. For example, you can write a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/" &gt;BPMN workflow&lt;/a&gt; to subscribe to a topic that receives information about lots and automatically forwards the IDs to your knowledge graph.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Event-driven.&lt;/strong&gt; Assign lot IDs at the exact time of work performance. For example, you can write a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/"&gt;BPMN workflow&lt;/a&gt; to subscribe to a topic that receives information about lots and automatically forwards the IDs to your knowledge graph.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In the example baking process, lots may be collected in the following ways:&lt;/p&gt;
 &lt;ul&gt;
@@ -4869,11 +4907,15 @@ The broad patterns are as follows:&lt;/p&gt;
 &lt;a href="#query-the-data" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;After you start collecting data, you can also start querying it through the &lt;code&gt;materialLot&lt;/code&gt; query operations.
 The following section provides example genealogy queries.&lt;/p&gt;
 &lt;h2&gt;Examples&lt;span class="hx:absolute hx:-mt-20" id="examples"&gt;&lt;/span&gt;
-&lt;a href="#examples" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following examples show how to query for forward and backward genealogies using the &lt;a href="https://docs.rhize.com/how-to/gql/query/#get" target="_blank" rel="noopener"&gt;&lt;code&gt;get&lt;/code&gt;&lt;/a&gt; operation to query material lots.&lt;/p&gt;
+&lt;a href="#examples" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following examples show how to query for forward and backward genealogies using the &lt;a href="https://docs.rhize.com/how-to/gql/query/#get"target="_blank" rel="noopener"&gt;&lt;code&gt;get&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; operation to query material lots.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;You could also query for multiple genealogies—either through material lots or through aggregations such as material definitions and specifications— then apply &lt;a href="https://docs.rhize.com/how-to/gql/filter/" target="_blank" rel="noopener"&gt;filters&lt;/a&gt;.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;You could also query for multiple genealogies—either through material lots or through aggregations such as material definitions and specifications— then apply &lt;a href="https://docs.rhize.com/how-to/gql/filter/"target="_blank" rel="noopener"&gt;filters&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3&gt;Backward genealogy&lt;span class="hx:absolute hx:-mt-20" id="backward-genealogy"&gt;&lt;/span&gt;
@@ -4881,7 +4923,7 @@ The following section provides example genealogy queries.&lt;/p&gt;
 &lt;p&gt;In Rhize, you can query this relationship through the &lt;code&gt;isAssembledFromMaterialLot&lt;/code&gt; property,
 using nesting to indicate the level of material ancestry to return.
 For example, this returns four levels of backward genealogy for the material lot
-&lt;code&gt;cookie-box-2f&lt;/code&gt; (using a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/call-the-graphql-api/#shortcuts-for-more-expressive-requests" &gt;fragment&lt;/a&gt; to standardize the properties returned for each lot).&lt;/p&gt;
+&lt;code&gt;cookie-box-2f&lt;/code&gt; (using a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/call-the-graphql-api/#shortcuts-for-more-expressive-requests"&gt;fragment&lt;/a&gt; to standardize the properties returned for each lot).&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gql" data-lang="gql"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;query&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;getMaterialLot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="py"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;cookie-box-2f&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
@@ -5150,8 +5192,10 @@ For example, you might represent the genealogy in any of the following ways:&lt;
 &lt;li&gt;In a display using some data visualization library&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;For a visual example, the interactive chart in the introduction takes the data from the preceding reverse-genealogy query,
-transforms it with a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/use-jsonata/" &gt;JSONata expression&lt;/a&gt;, and visualizes the relationship using
-&lt;a href="https://echarts.apache.org/" target="_blank" rel="noopener"&gt;Apache echarts&lt;/a&gt;.&lt;/p&gt;
+transforms it with a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/use-jsonata/"&gt;JSONata expression&lt;/a&gt;, and visualizes the relationship using
+&lt;a href="https://echarts.apache.org/"target="_blank" rel="noopener"&gt;Apache echarts&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The JSONata expression accepts an array of material lots,
 then recursively renames all IDs and &lt;code&gt;isAssembledFrom&lt;/code&gt; properties to &lt;code&gt;name&lt;/code&gt; and &lt;code&gt;children&lt;/code&gt;, the data structure expected by the visualization.
 Additional properties remain to provide context in the chart&amp;rsquo;s tooltips.&lt;/p&gt;
@@ -5346,9 +5390,9 @@ definition: "cookie-wrapper",
 (option.title.text = `Example frontend:\nreverse genealogy of ${option.series[0].data[0].name}`);
 chart.setOption(option);
 &lt;/script&gt;
-&lt;p&gt;&lt;em&gt;Data from a Rhize query in an Apache Echart. Read the &lt;a href="#frontend" &gt;Build frontend&lt;/a&gt; section for details.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Data from a Rhize query in an Apache Echart. Read the &lt;a href="#frontend"&gt;Build frontend&lt;/a&gt; section for details.&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;Quick query&lt;span class="hx:absolute hx:-mt-20" id="quick-query"&gt;&lt;/span&gt;
-&lt;a href="#quick-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To get started with genealogy quickly, use these &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/query/" &gt;query&lt;/a&gt; templates.
+&lt;a href="#quick-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To get started with genealogy quickly, use these &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/query/"&gt;query&lt;/a&gt; templates.
 One template is for the reverse genealogy, and the other is for the forward genealogy.
 For each, you need to input the Lot ID.&lt;/p&gt;
 &lt;div class="hextra-scrollbar hx:overflow-x-auto hx:overflow-y-hidden hx:overscroll-x-contain"&gt;
@@ -5419,13 +5463,13 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;You can modify the query to include more fields, levels, or get the forward and backward genealogy.
-For an idea of how a more complete query would look, refer to the &lt;a href="#examples" &gt;Examples&lt;/a&gt; section.&lt;/p&gt;
+For an idea of how a more complete query would look, refer to the &lt;a href="#examples"&gt;Examples&lt;/a&gt; section.&lt;/p&gt;
 &lt;h2&gt;Background: material entities in Rhize&lt;span class="hx:absolute hx:-mt-20" id="background-material-entities-in-rhize"&gt;&lt;/span&gt;
-&lt;a href="#background-material-entities-in-rhize" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;a href="#background-material-entities-in-rhize" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&amp;#x1f4dd; For a more complete introduction to ISA-95 and its terminology,
-read &lt;a href="https://docs.rhize.com/versions/v3.2.0/isa-95/how-to-speak-isa-95/" &gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
+read &lt;a href="https://docs.rhize.com/versions/v3.2.0/isa-95/how-to-speak-isa-95/"&gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;In ISA-95 terminology, the lineage of each material is expressed through the following entities:&lt;/p&gt;
@@ -5442,7 +5486,7 @@ read &lt;a href="https://docs.rhize.com/versions/v3.2.0/isa-95/how-to-speak-isa-
 then lot &lt;code&gt;intermediate-1&lt;/code&gt; has the property &lt;code&gt;{isComponentOfMaterialLot: &amp;quot;final-1&amp;quot; }&lt;/code&gt;.
 The graph structure of the RhizeDB creates these links automatically.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;The distinction between sublots and material lots varies with processes.
 The rest of this document simplifies terminology by using only the word &amp;ldquo;lots&amp;rdquo;.&lt;/div&gt;
@@ -5484,9 +5528,11 @@ The following guidelines generally are true:&lt;/p&gt;
 &lt;li&gt;The pallets of packed goods (with individual packages being material sublots).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;For some best practices of how to model, read our blog &lt;a href="https://rhize.com/blog/how-much-do-i-need-to-model-when-applying-the-isa-95-standard/" target="_blank" rel="noopener"&gt;How much do I need to model?&lt;/a&gt;&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;For some best practices of how to model, read our blog &lt;a href="https://rhize.com/blog/how-much-do-i-need-to-model-when-applying-the-isa-95-standard/"target="_blank" rel="noopener"&gt;How much do I need to model?&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3&gt;Model these lots into your knowledge graph&lt;span class="hx:absolute hx:-mt-20" id="model-these-lots-into-your-knowledge-graph"&gt;&lt;/span&gt;
@@ -5512,7 +5558,7 @@ The broad patterns are as follows:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Scheduled.&lt;/strong&gt; Assign lots at the time of creating the work request or schedule (while the job response might create a material actual that maps to the requested lot ID).&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Scheduled and event-driven.&lt;/strong&gt; Generate lot IDs beforehand, and then use a GraphQL call to create records in the Rhize DB after some event. Example events might be a button press or an automated signal that indicates the lot has been physically created.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Event-driven.&lt;/strong&gt; Assign lot IDs at the exact time of work performance. For example, you can write a &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/" &gt;BPMN workflow&lt;/a&gt; to subscribe to a topic that receives information about lots and automatically forwards the IDs to your knowledge graph.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Event-driven.&lt;/strong&gt; Assign lot IDs at the exact time of work performance. For example, you can write a &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/"&gt;BPMN workflow&lt;/a&gt; to subscribe to a topic that receives information about lots and automatically forwards the IDs to your knowledge graph.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In the example baking process, lots may be collected in the following ways:&lt;/p&gt;
 &lt;ul&gt;
@@ -5524,11 +5570,15 @@ The broad patterns are as follows:&lt;/p&gt;
 &lt;a href="#query-the-data" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;After you start collecting data, you can also start querying it through the &lt;code&gt;materialLot&lt;/code&gt; query operations.
 The following section provides example genealogy queries.&lt;/p&gt;
 &lt;h2&gt;Examples&lt;span class="hx:absolute hx:-mt-20" id="examples"&gt;&lt;/span&gt;
-&lt;a href="#examples" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following examples show how to query for forward and backward genealogies using the &lt;a href="https://docs.rhize.com/how-to/gql/query/#get" target="_blank" rel="noopener"&gt;&lt;code&gt;get&lt;/code&gt;&lt;/a&gt; operation to query material lots.&lt;/p&gt;
+&lt;a href="#examples" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following examples show how to query for forward and backward genealogies using the &lt;a href="https://docs.rhize.com/how-to/gql/query/#get"target="_blank" rel="noopener"&gt;&lt;code&gt;get&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; operation to query material lots.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;You could also query for multiple genealogies—either through material lots or through aggregations such as material definitions and specifications— then apply &lt;a href="https://docs.rhize.com/how-to/gql/filter/" target="_blank" rel="noopener"&gt;filters&lt;/a&gt;.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;You could also query for multiple genealogies—either through material lots or through aggregations such as material definitions and specifications— then apply &lt;a href="https://docs.rhize.com/how-to/gql/filter/"target="_blank" rel="noopener"&gt;filters&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3&gt;Backward genealogy&lt;span class="hx:absolute hx:-mt-20" id="backward-genealogy"&gt;&lt;/span&gt;
@@ -5536,7 +5586,7 @@ The following section provides example genealogy queries.&lt;/p&gt;
 &lt;p&gt;In Rhize, you can query this relationship through the &lt;code&gt;isAssembledFromMaterialLot&lt;/code&gt; property,
 using nesting to indicate the level of material ancestry to return.
 For example, this returns four levels of backward genealogy for the material lot
-&lt;code&gt;cookie-box-2f&lt;/code&gt; (using a &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/call-the-graphql-api/#shortcuts-for-more-expressive-requests" &gt;fragment&lt;/a&gt; to standardize the properties returned for each lot).&lt;/p&gt;
+&lt;code&gt;cookie-box-2f&lt;/code&gt; (using a &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/call-the-graphql-api/#shortcuts-for-more-expressive-requests"&gt;fragment&lt;/a&gt; to standardize the properties returned for each lot).&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gql" data-lang="gql"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;query&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;getMaterialLot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="py"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;cookie-box-2f&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
@@ -5805,8 +5855,10 @@ For example, you might represent the genealogy in any of the following ways:&lt;
 &lt;li&gt;In a display using some data visualization library&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;For a visual example, the interactive chart in the introduction takes the data from the preceding reverse-genealogy query,
-transforms it with a &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/use-jsonata/" &gt;JSONata expression&lt;/a&gt;, and visualizes the relationship using
-&lt;a href="https://echarts.apache.org/" target="_blank" rel="noopener"&gt;Apache echarts&lt;/a&gt;.&lt;/p&gt;
+transforms it with a &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/use-jsonata/"&gt;JSONata expression&lt;/a&gt;, and visualizes the relationship using
+&lt;a href="https://echarts.apache.org/"target="_blank" rel="noopener"&gt;Apache echarts&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The JSONata expression accepts an array of material lots,
 then recursively renames all IDs and &lt;code&gt;isAssembledFrom&lt;/code&gt; properties to &lt;code&gt;name&lt;/code&gt; and &lt;code&gt;children&lt;/code&gt;, the data structure expected by the visualization.
 Additional properties remain to provide context in the chart&amp;rsquo;s tooltips.&lt;/p&gt;
@@ -6001,9 +6053,9 @@ definition: "cookie-wrapper",
 (option.title.text = `Example frontend:\nreverse genealogy of ${option.series[0].data[0].name}`);
 chart.setOption(option);
 &lt;/script&gt;
-&lt;p&gt;&lt;em&gt;Data from a Rhize query in an Apache Echart. Read the &lt;a href="#frontend" &gt;Build frontend&lt;/a&gt; section for details.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Data from a Rhize query in an Apache Echart. Read the &lt;a href="#frontend"&gt;Build frontend&lt;/a&gt; section for details.&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;Quick query&lt;span class="hx:absolute hx:-mt-20" id="quick-query"&gt;&lt;/span&gt;
-&lt;a href="#quick-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To get started with genealogy quickly, use these &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/gql/query/" &gt;query&lt;/a&gt; templates.
+&lt;a href="#quick-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To get started with genealogy quickly, use these &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/gql/query/"&gt;query&lt;/a&gt; templates.
 One template is for the reverse genealogy, and the other is for the forward genealogy.
 For each, you need to input the Lot ID.&lt;/p&gt;
 &lt;div class="hextra-scrollbar hx:overflow-x-auto hx:overflow-y-hidden hx:overscroll-x-contain"&gt;
@@ -6074,13 +6126,13 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;You can modify the query to include more fields, levels, or get the forward and backward genealogy.
-For an idea of how a more complete query would look, refer to the &lt;a href="#examples" &gt;Examples&lt;/a&gt; section.&lt;/p&gt;
+For an idea of how a more complete query would look, refer to the &lt;a href="#examples"&gt;Examples&lt;/a&gt; section.&lt;/p&gt;
 &lt;h2&gt;Background: material entities in Rhize&lt;span class="hx:absolute hx:-mt-20" id="background-material-entities-in-rhize"&gt;&lt;/span&gt;
-&lt;a href="#background-material-entities-in-rhize" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;a href="#background-material-entities-in-rhize" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&amp;#x1f4dd; For a more complete introduction to ISA-95 and its terminology,
-read &lt;a href="https://docs.rhize.com/versions/v4.0.0/isa-95/how-to-speak-isa-95/" &gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
+read &lt;a href="https://docs.rhize.com/versions/v4.0.0/isa-95/how-to-speak-isa-95/"&gt;How to speak ISA-95&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;In ISA-95 terminology, the lineage of each material is expressed through the following entities:&lt;/p&gt;
@@ -6097,7 +6149,7 @@ read &lt;a href="https://docs.rhize.com/versions/v4.0.0/isa-95/how-to-speak-isa-
 then lot &lt;code&gt;intermediate-1&lt;/code&gt; has the property &lt;code&gt;{isComponentOfMaterialLot: &amp;quot;final-1&amp;quot; }&lt;/code&gt;.
 The graph structure of the RhizeDB creates these links automatically.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;The distinction between sublots and material lots varies with processes.
 The rest of this document simplifies terminology by using only the word &amp;ldquo;lots&amp;rdquo;.&lt;/div&gt;
@@ -6139,9 +6191,11 @@ The following guidelines generally are true:&lt;/p&gt;
 &lt;li&gt;The pallets of packed goods (with individual packages being material sublots).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;For some best practices of how to model, read our blog &lt;a href="https://rhize.com/blog/how-much-do-i-need-to-model-when-applying-the-isa-95-standard/" target="_blank" rel="noopener"&gt;How much do I need to model?&lt;/a&gt;&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;For some best practices of how to model, read our blog &lt;a href="https://rhize.com/blog/how-much-do-i-need-to-model-when-applying-the-isa-95-standard/"target="_blank" rel="noopener"&gt;How much do I need to model?&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3&gt;Model these lots into your knowledge graph&lt;span class="hx:absolute hx:-mt-20" id="model-these-lots-into-your-knowledge-graph"&gt;&lt;/span&gt;
@@ -6167,7 +6221,7 @@ The broad patterns are as follows:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Scheduled.&lt;/strong&gt; Assign lots at the time of creating the work request or schedule (while the job response might create a material actual that maps to the requested lot ID).&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Scheduled and event-driven.&lt;/strong&gt; Generate lot IDs beforehand, and then use a GraphQL call to create records in the Rhize DB after some event. Example events might be a button press or an automated signal that indicates the lot has been physically created.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Event-driven.&lt;/strong&gt; Assign lot IDs at the exact time of work performance. For example, you can write a &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/" &gt;BPMN workflow&lt;/a&gt; to subscribe to a topic that receives information about lots and automatically forwards the IDs to your knowledge graph.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Event-driven.&lt;/strong&gt; Assign lot IDs at the exact time of work performance. For example, you can write a &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/"&gt;BPMN workflow&lt;/a&gt; to subscribe to a topic that receives information about lots and automatically forwards the IDs to your knowledge graph.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In the example baking process, lots may be collected in the following ways:&lt;/p&gt;
 &lt;ul&gt;
@@ -6179,11 +6233,15 @@ The broad patterns are as follows:&lt;/p&gt;
 &lt;a href="#query-the-data" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;After you start collecting data, you can also start querying it through the &lt;code&gt;materialLot&lt;/code&gt; query operations.
 The following section provides example genealogy queries.&lt;/p&gt;
 &lt;h2&gt;Examples&lt;span class="hx:absolute hx:-mt-20" id="examples"&gt;&lt;/span&gt;
-&lt;a href="#examples" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following examples show how to query for forward and backward genealogies using the &lt;a href="https://docs.rhize.com/how-to/gql/query/#get" target="_blank" rel="noopener"&gt;&lt;code&gt;get&lt;/code&gt;&lt;/a&gt; operation to query material lots.&lt;/p&gt;
+&lt;a href="#examples" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following examples show how to query for forward and backward genealogies using the &lt;a href="https://docs.rhize.com/how-to/gql/query/#get"target="_blank" rel="noopener"&gt;&lt;code&gt;get&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; operation to query material lots.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;You could also query for multiple genealogies—either through material lots or through aggregations such as material definitions and specifications— then apply &lt;a href="https://docs.rhize.com/how-to/gql/filter/" target="_blank" rel="noopener"&gt;filters&lt;/a&gt;.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;You could also query for multiple genealogies—either through material lots or through aggregations such as material definitions and specifications— then apply &lt;a href="https://docs.rhize.com/how-to/gql/filter/"target="_blank" rel="noopener"&gt;filters&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3&gt;Backward genealogy&lt;span class="hx:absolute hx:-mt-20" id="backward-genealogy"&gt;&lt;/span&gt;
@@ -6191,7 +6249,7 @@ The following section provides example genealogy queries.&lt;/p&gt;
 &lt;p&gt;In Rhize, you can query this relationship through the &lt;code&gt;isAssembledFromMaterialLot&lt;/code&gt; property,
 using nesting to indicate the level of material ancestry to return.
 For example, this returns four levels of backward genealogy for the material lot
-&lt;code&gt;cookie-box-2f&lt;/code&gt; (using a &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/gql/call-the-graphql-api/#shortcuts-for-more-expressive-requests" &gt;fragment&lt;/a&gt; to standardize the properties returned for each lot).&lt;/p&gt;
+&lt;code&gt;cookie-box-2f&lt;/code&gt; (using a &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/gql/call-the-graphql-api/#shortcuts-for-more-expressive-requests"&gt;fragment&lt;/a&gt; to standardize the properties returned for each lot).&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gql" data-lang="gql"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;query&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;getMaterialLot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="py"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;cookie-box-2f&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
@@ -6460,8 +6518,10 @@ For example, you might represent the genealogy in any of the following ways:&lt;
 &lt;li&gt;In a display using some data visualization library&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;For a visual example, the interactive chart in the introduction takes the data from the preceding reverse-genealogy query,
-transforms it with a &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/use-jsonata/" &gt;JSONata expression&lt;/a&gt;, and visualizes the relationship using
-&lt;a href="https://echarts.apache.org/" target="_blank" rel="noopener"&gt;Apache echarts&lt;/a&gt;.&lt;/p&gt;
+transforms it with a &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/use-jsonata/"&gt;JSONata expression&lt;/a&gt;, and visualizes the relationship using
+&lt;a href="https://echarts.apache.org/"target="_blank" rel="noopener"&gt;Apache echarts&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The JSONata expression accepts an array of material lots,
 then recursively renames all IDs and &lt;code&gt;isAssembledFrom&lt;/code&gt; properties to &lt;code&gt;name&lt;/code&gt; and &lt;code&gt;children&lt;/code&gt;, the data structure expected by the visualization.
 Additional properties remain to provide context in the chart&amp;rsquo;s tooltips.&lt;/p&gt;

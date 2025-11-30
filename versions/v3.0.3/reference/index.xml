@@ -13,7 +13,9 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;On successful deployment, this configuration is added to the Kubernetes &lt;a href="https://kubernetes.io/docs/concepts/configuration/configmap/" target="_blank" rel="noopener"&gt;ConfigMap&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;On successful deployment, this configuration is added to the Kubernetes &lt;a href="https://kubernetes.io/docs/concepts/configuration/configmap/"target="_blank" rel="noopener"&gt;ConfigMap&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="hextra-cards hx:mt-4 hx:gap-4 hx:grid not-prose"
 style="--hextra-cards-grid-cols: 4;"&gt;
 &lt;a
@@ -32,7 +34,9 @@ class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hid
 class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900"href="https://docs.rhize.com/versions/v3.0.3/reference/service-config/core-configuration/"
 &gt;&lt;span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:pt-4 hx:px-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/&gt;&lt;/svg&gt;Core configuration&lt;/span&gt;&lt;div class="hextra-card-subtitle hx:line-clamp-3 hx:text-sm hx:font-normal hx:text-gray-500 hx:dark:text-gray-400 hx:px-4 hx:mb-4 hx:mt-2"&gt;Configuration for the Rhize core&lt;/div&gt;&lt;/a&gt;
 &lt;/div&gt;</description></item><item><title>Observability metrics</title><link>https://docs.rhize.com/versions/v3.0.3/reference/observability-metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/reference/observability-metrics/</guid><description>
-&lt;p&gt;Rhize uses &lt;a href="https://prometheus.io/docs/introduction/overview/" target="_blank" rel="noopener"&gt;Prometheus&lt;/a&gt; to monitor metrics from many of its &lt;a href="https://docs.rhize.com/versions/v3.0.3/reference/service-config/" &gt;microservices&lt;/a&gt;.
+&lt;p&gt;Rhize uses &lt;a href="https://prometheus.io/docs/introduction/overview/"target="_blank" rel="noopener"&gt;Prometheus&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; to monitor metrics from many of its &lt;a href="https://docs.rhize.com/versions/v3.0.3/reference/service-config/"&gt;microservices&lt;/a&gt;.
 For the Kubernetes cluster, Rhize runs the Prometheus operator and monitors the accumulated metrics in Grafana dashboards.
 Monitoring occurs granularly, on the levels of cluster, pod, and container.&lt;/p&gt;
 &lt;h2&gt;Metrics endpoints&lt;span class="hx:absolute hx:-mt-20" id="metrics-endpoints"&gt;&lt;/span&gt;
@@ -117,7 +121,9 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3&gt;NATS&lt;span class="hx:absolute hx:-mt-20" id="nats"&gt;&lt;/span&gt;
-&lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;While NATS has no available metrics endpoint, the cluster includes a &lt;a href="https://github.com/nats-io/prometheus-nats-exporter" target="_blank" rel="noopener"&gt;NATS Prometheus exporter&lt;/a&gt;.
+&lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;While NATS has no available metrics endpoint, the cluster includes a &lt;a href="https://github.com/nats-io/prometheus-nats-exporter"target="_blank" rel="noopener"&gt;NATS Prometheus exporter&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.
 NATS metrics are exposed through port &lt;code&gt;7777&lt;/code&gt;.&lt;/p&gt;
 &lt;h4&gt;Cluster&lt;span class="hx:absolute hx:-mt-20" id="cluster"&gt;&lt;/span&gt;
 &lt;a href="#cluster" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Since the cluster already includes the exporter, no further configuration is required.
@@ -150,7 +156,9 @@ title="Copy code"
 &lt;h3&gt;Router&lt;span class="hx:absolute hx:-mt-20" id="router"&gt;&lt;/span&gt;
 &lt;a href="#router" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Cluster&lt;span class="hx:absolute hx:-mt-20" id="cluster-1"&gt;&lt;/span&gt;
 &lt;a href="#cluster-1" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;To enable metrics, the Router Helm chart needs to have several options added or changed, as follows:
-For details, refer to the &lt;a href="https://www.apollographql.com/docs/router/containerization/kubernetes/#deploy-with-metrics-endpoints" target="_blank" rel="noopener"&gt;Official Apollo instructions&lt;/a&gt;.&lt;/p&gt;
+For details, refer to the &lt;a href="https://www.apollographql.com/docs/router/containerization/kubernetes/#deploy-with-metrics-endpoints"target="_blank" rel="noopener"&gt;Official Apollo instructions&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;router&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;configuration&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
@@ -183,7 +191,9 @@ For example:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;router-demo.demo.svc.cluster.local:9090&lt;/code&gt;&lt;/p&gt;
 &lt;h4&gt;Docker&lt;span class="hx:absolute hx:-mt-20" id="docker-1"&gt;&lt;/span&gt;
 &lt;a href="#docker-1" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;To enable Router metrics, modify its configuration file.
-For details, refer to the &lt;a href="https://www.apollographql.com/docs/router/configuration/telemetry/exporters/metrics/prometheus/" target="_blank" rel="noopener"&gt;Official Apollo Instructions&lt;/a&gt;.&lt;/p&gt;
+For details, refer to the &lt;a href="https://www.apollographql.com/docs/router/configuration/telemetry/exporters/metrics/prometheus/"target="_blank" rel="noopener"&gt;Official Apollo Instructions&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The following is an example configuration:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# -- Other configuration prior&lt;/span&gt;&lt;span class="w"&gt;
@@ -217,7 +227,9 @@ Once the port is exposed, view the metrics at &lt;code&gt;localhost:9090/metrics
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Service&lt;/th&gt;
-&lt;th&gt;&lt;a href="https://prometheus.io/docs/guides/go-application/" target="_blank" rel="noopener"&gt;Instrumented Prometheus Go Application&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href="https://prometheus.io/docs/guides/go-application/"target="_blank" rel="noopener"&gt;Instrumented Prometheus Go Application&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/th&gt;
 &lt;th&gt;process metrics&lt;/th&gt;
 &lt;th&gt;HTTP metrics*&lt;/th&gt;
 &lt;th&gt;Additional&lt;/th&gt;
@@ -276,13 +288,15 @@ Once the port is exposed, view the metrics at &lt;code&gt;localhost:9090/metrics
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;HTTP metrics are noted as &lt;code&gt;promhttp&lt;/code&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3&gt;BAAS&lt;span class="hx:absolute hx:-mt-20" id="baas"&gt;&lt;/span&gt;
-&lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Additional metrics on BAAS are from &lt;a href="https://dgraph.io/docs/deploy/admin/metrics/" target="_blank" rel="noopener"&gt;dgraph&lt;/a&gt;. These include two categories: Badger and Dgraph.&lt;/p&gt;
+&lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Additional metrics on BAAS are from &lt;a href="https://dgraph.io/docs/deploy/admin/metrics/"target="_blank" rel="noopener"&gt;dgraph&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;. These include two categories: Badger and Dgraph.&lt;/p&gt;
 &lt;h4&gt;Sample&lt;span class="hx:absolute hx:-mt-20" id="sample"&gt;&lt;/span&gt;
 &lt;a href="#sample" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;# HELP badger_disk_reads_total Number of cumulative reads by Badger
@@ -421,7 +435,9 @@ title="Copy code"
 &lt;li&gt;&lt;code&gt;tempo&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;tempodb&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The Tempo documentation &lt;a href="https://grafana.com/docs/tempo/latest/metrics-generator/" target="_blank" rel="noopener"&gt;details&lt;/a&gt; what these metrics measure.&lt;/p&gt;
+&lt;p&gt;The Tempo documentation &lt;a href="https://grafana.com/docs/tempo/latest/metrics-generator/"target="_blank" rel="noopener"&gt;details&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; what these metrics measure.&lt;/p&gt;
 &lt;h4&gt;Sample&lt;span class="hx:absolute hx:-mt-20" id="sample-4"&gt;&lt;/span&gt;
 &lt;a href="#sample-4" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;# HELP jaeger_tracer_baggage_restrictions_updates_total Number of times baggage restrictions were successfully updated
@@ -500,8 +516,10 @@ title="Copy code"
 &lt;h2&gt;Dashboards&lt;span class="hx:absolute hx:-mt-20" id="dashboards"&gt;&lt;/span&gt;
 &lt;a href="#dashboards" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A number of Grafana dashboards are pre-configured for use with Prometheus metrics.
 All dashboards in Grafana use Prometheus as a data source.&lt;/p&gt;
-&lt;p&gt;You can download them from &lt;a href="https://github.com/libremfg/rhize-templates/tree/main/dashboards" target="_blank" rel="noopener"&gt;Rhize Dashboard templates&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Default URLs and local ports</title><link>https://docs.rhize.com/versions/v3.0.3/reference/default-ports/</link><pubDate>Thu, 02 Nov 2023 16:49:42 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/reference/default-ports/</guid><description>
-&lt;p&gt;After you &lt;a href="https://docs.rhize.com/deploy/install/services/" &gt;install Rhize services&lt;/a&gt;, they are accessible, by default, on the following ports:&lt;/p&gt;
+&lt;p&gt;You can download them from &lt;a href="https://github.com/libremfg/rhize-templates/tree/main/dashboards"target="_blank" rel="noopener"&gt;Rhize Dashboard templates&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Default URLs and local ports</title><link>https://docs.rhize.com/versions/v3.0.3/reference/default-ports/</link><pubDate>Thu, 02 Nov 2023 16:49:42 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/reference/default-ports/</guid><description>
+&lt;p&gt;After you &lt;a href="https://docs.rhize.com/deploy/install/services/"&gt;install Rhize services&lt;/a&gt;, they are accessible, by default, on the following ports:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -512,23 +530,33 @@ All dashboards in Grafana use Prometheus as a data source.&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Admin UI&lt;/td&gt;
-&lt;td&gt;&lt;a href="http://localhost:3030" target="_blank" rel="noopener"&gt;&lt;code&gt;localhost:3030&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="http://localhost:3030"target="_blank" rel="noopener"&gt;&lt;code&gt;localhost:3030&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Grafana&lt;/td&gt;
-&lt;td&gt;&lt;a href="http://localhost:3001" target="_blank" rel="noopener"&gt;&lt;code&gt;localhost:3001&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="http://localhost:3001"target="_blank" rel="noopener"&gt;&lt;code&gt;localhost:3001&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Router&lt;/td&gt;
-&lt;td&gt;&lt;a href="http://localhost:4000" target="_blank" rel="noopener"&gt;&lt;code&gt;localhost:4000&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="http://localhost:4000"target="_blank" rel="noopener"&gt;&lt;code&gt;localhost:4000&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Keycloak&lt;/td&gt;
-&lt;td&gt;&lt;a href="http://localhost:8090" target="_blank" rel="noopener"&gt;&lt;code&gt;localhost:8090&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="http://localhost:8090"target="_blank" rel="noopener"&gt;&lt;code&gt;localhost:8090&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;baas-alpha&lt;/code&gt; command line&lt;/td&gt;
-&lt;td&gt;&lt;a href="http://localhost:8080" target="_blank" rel="noopener"&gt;&lt;code&gt;localhost:8080&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="http://localhost:8080"target="_blank" rel="noopener"&gt;&lt;code&gt;localhost:8080&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -566,11 +594,13 @@ All dashboards in Grafana use Prometheus as a data source.&lt;/p&gt;
 &lt;/table&gt;</description></item><item><title>GraphQL types and filters</title><link>https://docs.rhize.com/versions/v3.0.3/reference/gql-types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/reference/gql-types/</guid><description>
 &lt;p&gt;This page provides a reference of the data types enforced by the Rhize database schema,
 and of the filters that can apply to these types when you query, update, or delete a set of resources.
-For an extended guide, with examples, read &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/filter/" &gt;Use query filters&lt;/a&gt;.&lt;/p&gt;
+For an extended guide, with examples, read &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/filter/"&gt;Use query filters&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;These filters are based on Rhize&amp;rsquo;s implementation of the Dgraph &lt;a href="https://dgraph.io/docs/graphql/schema/directives/search/" target="_blank" rel="noopener"&gt;&lt;code&gt;@search&lt;/code&gt; directives&lt;/a&gt;.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;These filters are based on Rhize&amp;rsquo;s implementation of the Dgraph &lt;a href="https://dgraph.io/docs/graphql/schema/directives/search/"target="_blank" rel="noopener"&gt;&lt;code&gt;@search&lt;/code&gt; directives&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Data types&lt;span class="hx:absolute hx:-mt-20" id="data-types"&gt;&lt;/span&gt;
@@ -579,7 +609,9 @@ From the other perspective, these data types define fields that compose manufact
 objects defined precisely by ISA-95 and enforced by Rhize&amp;rsquo;s database schema.&lt;/p&gt;
 &lt;h3&gt;Basic types&lt;span class="hx:absolute hx:-mt-20" id="basic-types"&gt;&lt;/span&gt;
 &lt;a href="#basic-types" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Every manufacturing object in the Rhize database is made of fields that are of one the following basic types.
-In official GraphQL terminology, these types are called &lt;a href="https://graphql.org/learn/schema/#scalar-types" target="_blank" rel="noopener"&gt;&lt;em&gt;scalar types&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+In official GraphQL terminology, these types are called &lt;a href="https://graphql.org/learn/schema/#scalar-types"target="_blank" rel="noopener"&gt;&lt;em&gt;scalar types&lt;/em&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;String&lt;/code&gt;: A sequence of characters. For example, &lt;code&gt;machine_2&lt;/code&gt;&lt;/p&gt;
@@ -597,13 +629,15 @@ In official GraphQL terminology, these types are called &lt;a href="https://grap
 &lt;p&gt;&lt;code&gt;Enum&lt;/code&gt;: A field whose values are restricted to a defined set. For example, &lt;code&gt;versionState&lt;/code&gt; might be one of &lt;code&gt;ACTIVE&lt;/code&gt;, &lt;code&gt;APPROVED&lt;/code&gt;, &lt;code&gt;FOR_REVIEW&lt;/code&gt;, &lt;code&gt;DRAFT&lt;/code&gt;, or &lt;code&gt;DEPRECATED&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;id&lt;/code&gt;: A string representing a unique object within a defined &lt;a href="#object-type" &gt;object type&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;id&lt;/code&gt;: A string representing a unique object within a defined &lt;a href="#object-type"&gt;object type&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;iid&lt;/code&gt;: The object&amp;rsquo;s unique address in the database. For example, &lt;code&gt;0xf9b49&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;DateTime&lt;/code&gt;: A timestamp in &lt;a href="https://datatracker.ietf.org/doc/html/rfc3339" target="_blank" rel="noopener"&gt;RFC 3339&lt;/a&gt; format.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;DateTime&lt;/code&gt;: A timestamp in &lt;a href="https://datatracker.ietf.org/doc/html/rfc3339"target="_blank" rel="noopener"&gt;RFC 3339&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; format.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;Geo&lt;/code&gt;: Geometry types for geo-spatial coordinates&lt;/p&gt;
@@ -622,7 +656,7 @@ For example, its fields include
 the array of associated &lt;code&gt;MaterialLot&lt;/code&gt; objects, the &lt;code&gt;MaterialDefinition&lt;/code&gt; object, and so on.
 All objects in the database have relationships to other objects.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;Metadata fields start with an underscore (&lt;code&gt;_&lt;/code&gt;).
 For example, &lt;code&gt;_createdOn&lt;/code&gt; reports the time when the object was created.&lt;/div&gt;
@@ -659,7 +693,9 @@ The filters that are available depend on the data type, but the behavior of the 
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;regexp&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;A regular expression match using &lt;a href="https://github.com/google/re2/wiki/Syntax/" target="_blank" rel="noopener"&gt;&lt;code&gt;RE2&lt;/code&gt; syntax&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;A regular expression match using &lt;a href="https://github.com/google/re2/wiki/Syntax/"target="_blank" rel="noopener"&gt;&lt;code&gt;RE2&lt;/code&gt; syntax&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;(filter: {id: {regexp: &amp;quot;/hello/i&amp;quot;}})&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -685,11 +721,13 @@ The filters that are available depend on the data type, but the behavior of the 
 &lt;li&gt;&lt;code&gt;ge&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;gt&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Each keyword has the same behavior as described in &lt;a href="#string-filters" &gt;string filters&lt;/a&gt;, only they operate on numerical rather than lexicographic values.
+&lt;p&gt;Each keyword has the same behavior as described in &lt;a href="#string-filters"&gt;string filters&lt;/a&gt;, only they operate on numerical rather than lexicographic values.
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;While the &lt;code&gt;dateTime&lt;/code&gt; type uses the RFC 3339 format, some string fields may use the &lt;a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank" rel="noopener"&gt;ISO 8601&lt;/a&gt; format. This depends on the object and customer requirement. For these fields, the string filters work as chronological filters too.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;While the &lt;code&gt;dateTime&lt;/code&gt; type uses the RFC 3339 format, some string fields may use the &lt;a href="https://en.wikipedia.org/wiki/ISO_8601"target="_blank" rel="noopener"&gt;ISO 8601&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; format. This depends on the object and customer requirement. For these fields, the string filters work as chronological filters too.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/p&gt;
@@ -704,12 +742,14 @@ The filters that are available depend on the data type, but the behavior of the 
 &lt;li&gt;&lt;code&gt;ge&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;gt&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Each keyword has the same behavior as described in &lt;a href="#string-filters" &gt;string filters&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Each keyword has the same behavior as described in &lt;a href="#string-filters"&gt;string filters&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Boolean filters&lt;span class="hx:absolute hx:-mt-20" id="boolean-filters"&gt;&lt;/span&gt;
 &lt;a href="#boolean-filters" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Boolean filters can be either &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt;
 &lt;h3&gt;Geolocation filters&lt;span class="hx:absolute hx:-mt-20" id="geolocation-filters"&gt;&lt;/span&gt;
 &lt;a href="#geolocation-filters" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Geolocation filters return objects within specified geographic coordinates.
-They return matches within the specified &lt;a href="https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.6" target="_blank" rel="noopener"&gt;GeoJSON polygon&lt;/a&gt;.&lt;/p&gt;
+They return matches within the specified &lt;a href="https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.6"target="_blank" rel="noopener"&gt;GeoJSON polygon&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If a geolocation field can act as a filter, then the filter can work in one of the following behaviors:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -735,8 +775,10 @@ They return matches within the specified &lt;a href="https://datatracker.ietf.or
 &lt;/table&gt;
 &lt;h2&gt;Read more&lt;span class="hx:absolute hx:-mt-20" id="read-more"&gt;&lt;/span&gt;
 &lt;a href="#read-more" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/how-to/gql/" &gt;Rhize guide to GraphQL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://dgraph.io/docs/graphql/schema/directives/search/" target="_blank" rel="noopener"&gt;Dgraph &lt;code&gt;@search&lt;/code&gt; directive&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/how-to/gql/"&gt;Rhize guide to GraphQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://dgraph.io/docs/graphql/schema/directives/search/"target="_blank" rel="noopener"&gt;Dgraph &lt;code&gt;@search&lt;/code&gt; directive&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Glossary</title><link>https://docs.rhize.com/versions/v3.0.3/reference/glossary/</link><pubDate>Tue, 12 Sep 2023 19:35:35 +1100</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/reference/glossary/</guid><description>
 &lt;p&gt;The manufacturing industry has many specialized terms—and many abbreviations.
 This glossary is a reference of how Rhize defines terms used in this documentation.&lt;/p&gt;

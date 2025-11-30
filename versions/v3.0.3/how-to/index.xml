@@ -81,7 +81,7 @@ class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hid
 &lt;path fill="currentColor" d="M28.447 16.106L23 13.381V7a1 1 0 0 0-.553-.894l-6-3a1 1 0 0 0-.894 0l-6 3A1 1 0 0 0 9 7v6.382l-5.447 2.723A1 1 0 0 0 3 17v7a1 1 0 0 0 .553.895l6 3a1 1 0 0 0 .894 0L16 25.118l5.553 2.777a1 1 0 0 0 .894 0l6-3A1 1 0 0 0 29 24v-7a1 1 0 0 0-.553-.895M21 13.381l-4 2v-4.764l4-2Zm-5-8.264L19.764 7L16 8.882L12.236 7Zm-5 3.5l4 2v4.764l-4-2ZM9 25.382l-4-2v-4.764l4 2Zm1-6.5L6.236 17L10 15.118L13.764 17Zm1 1.736l4-2v4.764l-4 2Zm10 4.764l-4-2v-4.764l4 2Zm1-6.5L18.236 17L22 15.118L25.764 17Zm5 4.5l-4 2v-4.764l4-2Z"/&gt;
 &lt;/svg&gt;Master definitions and fields&lt;/span&gt;&lt;div class="hextra-card-subtitle hx:line-clamp-3 hx:text-sm hx:font-normal hx:text-gray-500 hx:dark:text-gray-400 hx:px-4 hx:mb-4 hx:mt-2"&gt;A reference of all manufacturing data objects and properties that you can create in the Rhize UI&lt;/div&gt;&lt;/a&gt;
 &lt;/div&gt;</description></item><item><title>Connect event data</title><link>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/</link><pubDate>Fri, 22 Sep 2023 14:50:39 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/</guid><description>
-&lt;p&gt;For Rhize to listen to and &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/" &gt;handle&lt;/a&gt; manufacturing events,
+&lt;p&gt;For Rhize to listen to and &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/"&gt;handle&lt;/a&gt; manufacturing events,
 you need to connect a &lt;abbr title="A source of real-time data that is collected by the Rhize agent, such as an MQTT or OPC UA device"&gt;data source&lt;/abbr&gt;.&lt;/p&gt;
 &lt;div class="hextra-cards hx:mt-4 hx:gap-4 hx:grid not-prose"
 style="--hextra-cards-grid-cols: 4;"&gt;
@@ -111,7 +111,7 @@ which has close associations with the &lt;abbr title=""&gt;equipment&lt;/abbr&gt
 &lt;p&gt;Rhize also has a &lt;code&gt;calendar&lt;/code&gt; service that periodically queries the Rhize DB for workCalendarDefinitions.
 If it finds active definitions for that period, the service creates the work calendar entries and persists the data to a time-series database&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;Rhize&amp;rsquo;s implementation of work calendars was inspired by ISO/TR
 22400-10, a standard on KPIs in operations management.&lt;/div&gt;
@@ -123,7 +123,7 @@ If it finds active definitions for that period, the service creates the work cal
 &lt;p&gt;The KPI service records &lt;abbr title=""&gt;equipment&lt;/abbr&gt;-centric metrics related to the manufacturing operation.
 To use it, you must:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Record machine state data using the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/create-equipment-class-rule/" &gt;rule pipeline&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Record machine state data using the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/publish-subscribe/create-equipment-class-rule/"&gt;rule pipeline&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Persist this data to a time-series database.&lt;/li&gt;
 &lt;/ol&gt;</description></item><item><title>Audit</title><link>https://docs.rhize.com/versions/v3.0.3/how-to/audit/</link><pubDate>Wed, 20 Dec 2023 12:47:09 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/how-to/audit/</guid><description>
 &lt;p&gt;The &lt;em&gt;Audit Log&lt;/em&gt; provides a tamper-proof and immutable audit trail of all events that occur in the Rhize system.
@@ -137,10 +137,10 @@ Users with appropriate permissions can access the audit log either through the U
 &lt;li&gt;
 &lt;p&gt;If accessing through GraphQL, you also need:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;The ability to &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/" &gt;Use the Rhize GraphQL API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The ability to &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/"&gt;Use the Rhize GraphQL API&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;A token configured so that &lt;code&gt;audience&lt;/code&gt; includes &lt;code&gt;audit&lt;/code&gt;, and the scopes contain &lt;code&gt;audit:query&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;This scope should be created by BaaS, not manually. For details, refer to &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/install/keycloak/" &gt;Set up Keycloak&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This scope should be created by BaaS, not manually. For details, refer to &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/install/keycloak/"&gt;Set up Keycloak&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Audit through the UI&lt;span class="hx:absolute hx:-mt-20" id="audit-through-the-ui"&gt;&lt;/span&gt;
@@ -151,7 +151,7 @@ Users with appropriate permissions can access the audit log either through the U
 &lt;li&gt;Use the time filters to select the pre-defined or custom range that you want to return.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;On success, a log of events appears for the users and time ranges specified.
-For a description of the fields returned, refer to the &lt;a href="#audit-fields" &gt;Audit fields&lt;/a&gt; section.&lt;/p&gt;
+For a description of the fields returned, refer to the &lt;a href="#audit-fields"&gt;Audit fields&lt;/a&gt; section.&lt;/p&gt;
 &lt;h3&gt;Audit fields&lt;span class="hx:absolute hx:-mt-20" id="audit-fields"&gt;&lt;/span&gt;
 &lt;a href="#audit-fields" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In the audit UI, each record in the audit has the following fields:&lt;/p&gt;
 &lt;table&gt;
@@ -172,7 +172,7 @@ For a description of the fields returned, refer to the &lt;a href="#audit-fields
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Operation&lt;/td&gt;
-&lt;td&gt;The &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/call-the-graphql-api/#operations" &gt;GraphQL operation&lt;/a&gt; involved&lt;/td&gt;
+&lt;td&gt;The &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/call-the-graphql-api/#operations"&gt;GraphQL operation&lt;/a&gt; involved&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Entity Internal ID&lt;/td&gt;
@@ -190,7 +190,7 @@ For a description of the fields returned, refer to the &lt;a href="#audit-fields
 &lt;/table&gt;
 &lt;h2&gt;Audit through GraphQL&lt;span class="hx:absolute hx:-mt-20" id="audit-through-graphql"&gt;&lt;/span&gt;
 &lt;a href="#audit-through-graphql" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The audit log is also exposed through the GraphQL API.
-To access it, use the &lt;code&gt;queryAuditLog&lt;/code&gt; operation, and add &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/call-the-graphql-api/#filters" &gt;filters&lt;/a&gt; for the time range and users.&lt;/p&gt;
+To access it, use the &lt;code&gt;queryAuditLog&lt;/code&gt; operation, and add &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/gql/call-the-graphql-api/#filters"&gt;filters&lt;/a&gt; for the time range and users.&lt;/p&gt;
 &lt;p&gt;Here&amp;rsquo;s an example query:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gql" data-lang="gql"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;query&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;

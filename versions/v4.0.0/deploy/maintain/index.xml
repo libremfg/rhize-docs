@@ -1,6 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Maintain</title><link>https://docs.rhize.com/versions/v4.0.0/deploy/maintain/</link><description>Recent content in Maintain on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 26 Mar 2024 19:35:35 +1100</lastBuildDate><atom:link href="https://docs.rhize.com/versions/v4.0.0/deploy/maintain/index.xml" rel="self" type="application/rss+xml"/><item><title>Archive the PostgreSQL Audit trail</title><link>https://docs.rhize.com/versions/v4.0.0/deploy/maintain/audit/</link><pubDate>Tue, 26 Mar 2024 11:20:56 -0300</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/deploy/maintain/audit/</guid><description>
-&lt;p&gt;The &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/audit/" &gt;audit trail&lt;/a&gt; can generate a high volume of data, so it is a good practice to periodically &lt;em&gt;archive&lt;/em&gt; portions of it.
-An archive separates a portion of the data from the database and keeps it for long-term storage. This process involves the use of PostgreSQL &lt;a href="https://www.postgresql.org/docs/current/ddl-partitioning.html" target="_blank" rel="noopener"&gt;Table Partitions&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://docs.rhize.com/versions/v4.0.0/how-to/audit/"&gt;audit trail&lt;/a&gt; can generate a high volume of data, so it is a good practice to periodically &lt;em&gt;archive&lt;/em&gt; portions of it.
+An archive separates a portion of the data from the database and keeps it for long-term storage. This process involves the use of PostgreSQL &lt;a href="https://www.postgresql.org/docs/current/ddl-partitioning.html"target="_blank" rel="noopener"&gt;Table Partitions&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Archiving a partition improves query speed for current data, while providing a cost-effective way to store older data.&lt;/p&gt;
 &lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before you start, ensure you have the following:&lt;/p&gt;
@@ -9,17 +11,21 @@ An archive separates a portion of the data from the database and keeps it for lo
 &lt;p&gt;A designated backup location, for example &lt;code&gt;~/rhize-archives/libre-audit&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Access to the &lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/install/setup-kubernetes/" &gt;Rhize Kubernetes Environment&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Access to the &lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/install/setup-kubernetes/"&gt;Rhize Kubernetes Environment&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Optional: &lt;a href="https://github.com/ahmetb/kubectx" target="_blank" rel="noopener"&gt;kubectx&lt;/a&gt; utilities&lt;/p&gt;
+&lt;p&gt;Optional: &lt;a href="https://github.com/ahmetb/kubectx"target="_blank" rel="noopener"&gt;kubectx&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; utilities&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;kubectx&lt;/code&gt; to manage multiple clusters&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;kubens&lt;/code&gt; to switch between and configure namespaces easily&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Optional: the &lt;a href="https://k8slens.dev" target="_blank" rel="noopener"&gt;k8 Lens IDE&lt;/a&gt;, if you prefer to use Kubernetes graphically&lt;/p&gt;
+&lt;p&gt;Optional: the &lt;a href="https://k8slens.dev"target="_blank" rel="noopener"&gt;k8 Lens IDE&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, if you prefer to use Kubernetes graphically&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Also, before you start, confirm you are in the right context and namespace.&lt;/p&gt;
@@ -37,7 +43,9 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt; commands&lt;/a&gt; to &lt;code&gt;libre&lt;/code&gt;, run this command:&lt;/p&gt;
+&lt;p&gt;To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt; commands&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; to &lt;code&gt;libre&lt;/code&gt;, run this command:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubectl config set-context --current --namespace&lt;span class="o"&gt;=&lt;/span&gt;libre&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
@@ -123,16 +131,18 @@ title="Copy code"
 &lt;a href="#next-steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;For full backups or Rhize services, read how to back up:
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/backup/keycloak/" &gt;Keycloak&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/backup/audit/" &gt;The Audit trail&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/backup/grafana/" &gt;Grafana&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/backup/graphdb/" &gt;The Graph Database&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/backup/keycloak/"&gt;Keycloak&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/backup/audit/"&gt;The Audit trail&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/backup/grafana/"&gt;Grafana&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/backup/graphdb/"&gt;The Graph Database&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Export Keycloak events</title><link>https://docs.rhize.com/versions/v4.0.0/deploy/maintain/keycloak-events/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/deploy/maintain/keycloak-events/</guid><description>
 &lt;p&gt;Keycloak stores User and Admin event data in its database. This information can be valuable for your audits.&lt;/p&gt;
 &lt;p&gt;This guide shows you how to export your Keycloak events to a file.
-To read Keycloak event data, use its &lt;a href="https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/22.0/html/server_administration_guide/admin_cli" target="_blank" rel="noopener"&gt;Admin CLI&lt;/a&gt;. You can access the CLI from within the Keycloak&amp;rsquo;s container.&lt;/p&gt;
+To read Keycloak event data, use its &lt;a href="https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/22.0/html/server_administration_guide/admin_cli"target="_blank" rel="noopener"&gt;Admin CLI&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;. You can access the CLI from within the Keycloak&amp;rsquo;s container.&lt;/p&gt;
 &lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ensure you have the following:&lt;/p&gt;
 &lt;ul&gt;

@@ -65,7 +65,7 @@ Prerequisites Before you … - Published 2023-10-19
 - [Tune BPMN performance](https://docs.rhize.com/how-to/bpmn/tune-performance/): Tips to debug and improve the performance of your BPMN process | This page documents some tips to debug BPMN workflows and improve their performance.
 Manufacturing … - Published 2024-02-09
 - [Special variables](https://docs.rhize.com/how-to/bpmn/variables/): Special variables used by Rhize BPMN workflows | Rhize designates some variable names for a special purpose in BPMN workflow. This list these special …
-- [Naming conventions](https://docs.rhize.com/how-to/bpmn/naming-conventions/): Recommended naming conventions for BPMN processes and their nodes | ℹ️ These are recommendations. Your organization may adapt the conventions to its needs. Each BPMN …
+- [Naming conventions](https://docs.rhize.com/how-to/bpmn/naming-conventions/): Recommended naming conventions for BPMN processes and their nodes | These are recommendations. Your organization may adapt the conventions to its needs. Each BPMN …
 - [BPMN learning resources](https://docs.rhize.com/how-to/bpmn/learning-resources/): Links to supplemental tools and material to learn BPMN | Here are some links to supplemental tools and material to help you build BPMN workflows in Rhize: …
 - [BPMN elements](https://docs.rhize.com/how-to/bpmn/bpmn-elements/): A reference of all BPMN elements used in the Rhize BPMN engine. | This document describes the parameters available to each BPMN element in the Rhize UI. These … - Published 2023-09-26
 
@@ -90,8 +90,7 @@ These … - Published 2023-11-15
 
 ## Use cases
 - [Overview of use cases](https://docs.rhize.com/use-cases/overview/): Handle manufacturing events, access the knowledge graph of the operation, and build custom MOM applications. | Rhize&rsquo;s flexible, event-centric architecture serves many functions. While Rhize has components …
-- [Data collection (eBR example)](https://docs.rhize.com/use-cases/data-collection-ebr/): An example of how Rhize ingests data from various sources to create Electronic Batch Records for pharmaceutical manufacturing | &#x1f4dd; Looking to implement Rhize for your Pharma operation? Talk to an engineer
-This document …
+- [Data collection (eBR example)](https://docs.rhize.com/use-cases/data-collection-ebr/): An example of how Rhize ingests data from various sources to create Electronic Batch Records for pharmaceutical manufacturing | &#x1f4dd; Looking to implement Rhize for your Pharma operation? Talk to an engineer This document …
 - [Electronic Batch Records](https://docs.rhize.com/use-cases/ebr/): The Rhize guide to querying all the information that happened in a manufacturing job. | This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use …
 - [Genealogy](https://docs.rhize.com/use-cases/genealogy/): The Rhize guide to modeling and querying the forward and backward genealogy of a material lot | This document provides a high-level overview of how to use Rhize for material genealogy.
 In …
@@ -125,7 +124,7 @@ Release date: 14 Jul 2025
 Changes by … - Published 2025-07-01
 - [3.1.0](https://docs.rhize.com/releases/3-1-0/): Release notes for v3.1.0 of the Rhize application | Release notes for version 3.1.0 of the Rhize application.
 Release date: 7 Mar 2025
-⚠️ This release … - Published 2025-02-28
+This release … - Published 2025-02-28
 - [3.0.3](https://docs.rhize.com/releases/3-0-3/): Release notes for v3.0.3 of the Rhize application | Changelog for version 3.0.3 of the Rhize application.
 Release date: 13 Nov 2024
 Changes by service … - Published 2024-11-13
@@ -217,7 +216,7 @@ Download Zip … - Published 2025-08-24
 - [Tune BPMN performance](https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/tune-performance/): Tips to debug and improve the performance of your BPMN process | This page documents some tips to debug BPMN workflows and improve their performance.
 Manufacturing … - Published 2024-02-09
 - [Special variables](https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/variables/): Special variables used by Rhize BPMN workflows | Rhize designates some variable names for a special purpose in BPMN workflow. This list these special …
-- [Naming conventions](https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/naming-conventions/): Recommended naming conventions for BPMN processes and their nodes | ℹ️ These are recommendations. Your organization may adapt the conventions to its needs. Each BPMN …
+- [Naming conventions](https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/naming-conventions/): Recommended naming conventions for BPMN processes and their nodes | These are recommendations. Your organization may adapt the conventions to its needs. Each BPMN …
 - [BPMN learning resources](https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/learning-resources/): Links to supplemental tools and material to learn BPMN | Here are some links to supplemental tools and material to help you build BPMN workflows in Rhize: …
 - [BPMN elements](https://docs.rhize.com/versions/v4.0.0/how-to/bpmn/bpmn-elements/): A reference of all BPMN elements used in the Rhize BPMN engine. | This document describes the parameters available to each BPMN element in the Rhize UI. These … - Published 2023-09-26
 
@@ -242,8 +241,7 @@ These … - Published 2023-11-15
 
 #### Use cases
 - [Overview of use cases](https://docs.rhize.com/versions/v4.0.0/use-cases/overview/): Handle manufacturing events, access the knowledge graph of the operation, and build custom MOM applications. | Rhize&rsquo;s flexible, event-centric architecture serves many functions. While Rhize has components …
-- [Data collection (eBR example)](https://docs.rhize.com/versions/v4.0.0/use-cases/data-collection-ebr/): An example of how Rhize ingests data from various sources to create Electronic Batch Records for pharmaceutical manufacturing | &#x1f4dd; Looking to implement Rhize for your Pharma operation? Talk to an engineer
-This document …
+- [Data collection (eBR example)](https://docs.rhize.com/versions/v4.0.0/use-cases/data-collection-ebr/): An example of how Rhize ingests data from various sources to create Electronic Batch Records for pharmaceutical manufacturing | &#x1f4dd; Looking to implement Rhize for your Pharma operation? Talk to an engineer This document …
 - [Electronic Batch Records](https://docs.rhize.com/versions/v4.0.0/use-cases/ebr/): The Rhize guide to querying all the information that happened in a manufacturing job. | This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use …
 - [Genealogy](https://docs.rhize.com/versions/v4.0.0/use-cases/genealogy/): The Rhize guide to modeling and querying the forward and backward genealogy of a material lot | This document provides a high-level overview of how to use Rhize for material genealogy.
 In …
@@ -277,7 +275,7 @@ Release date: 14 Jul 2025
 Changes by … - Published 2025-07-01
 - [3.1.0](https://docs.rhize.com/versions/v4.0.0/releases/3-1-0/): Release notes for v3.1.0 of the Rhize application | Release notes for version 3.1.0 of the Rhize application.
 Release date: 7 Mar 2025
-⚠️ This release … - Published 2025-02-28
+This release … - Published 2025-02-28
 - [3.0.3](https://docs.rhize.com/versions/v4.0.0/releases/3-0-3/): Release notes for v3.0.3 of the Rhize application | Changelog for version 3.0.3 of the Rhize application.
 Release date: 13 Nov 2024
 Changes by service … - Published 2024-11-13
@@ -306,18 +304,18 @@ Release date: October 24, 2023
 Breaking … - Published 2023-10-31
 
 #### Learn ISA-95
-- [How to speak ISA-95](https://docs.rhize.com/versions/v4.0.0/isa-95/how-to-speak-isa-95/): More than a standard, ISA-95 is a specialized vocabulary that describes all elements of a manufacturing operation. | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets. …
-- [ISA-95 diagrams](https://docs.rhize.com/versions/v4.0.0/isa-95/isa-95-diagrams/): Helpful diagrams to present a high-level overview of the ISA-95 models for entities and information flows. | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets. …
+- [How to speak ISA-95](https://docs.rhize.com/versions/v4.0.0/isa-95/how-to-speak-isa-95/): More than a standard, ISA-95 is a specialized vocabulary that describes all elements of a manufacturing operation. | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets. …
+- [ISA-95 diagrams](https://docs.rhize.com/versions/v4.0.0/isa-95/isa-95-diagrams/): Helpful diagrams to present a high-level overview of the ISA-95 models for entities and information flows. | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets. …
 
 ##### Resources in ISA-95
-- [Equipment models in ISA-95](https://docs.rhize.com/versions/v4.0.0/isa-95/resources/equipment/): A guide to equipment entities and relationships in ISA-95 | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets. …
-- [Material models in ISA-95](https://docs.rhize.com/versions/v4.0.0/isa-95/resources/material/): A guide to material entities and relationships in ISA-95 | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+- [Equipment models in ISA-95](https://docs.rhize.com/versions/v4.0.0/isa-95/resources/equipment/): A guide to equipment entities and relationships in ISA-95 | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets. …
+- [Material models in ISA-95](https://docs.rhize.com/versions/v4.0.0/isa-95/resources/material/): A guide to material entities and relationships in ISA-95 | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets.
 In …
 
 ##### Models of work
-- [Process segments](https://docs.rhize.com/versions/v4.0.0/isa-95/models-of-work/process-segments/): Process segments represent shared steps across processes | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+- [Process segments](https://docs.rhize.com/versions/v4.0.0/isa-95/models-of-work/process-segments/): Process segments represent shared steps across processes | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets.
 A …
-- [Work masters](https://docs.rhize.com/versions/v4.0.0/isa-95/models-of-work/work-masters/): The most granular work definition in ISA-95, defining the resources and instructions necessary to do a unit of work. | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+- [Work masters](https://docs.rhize.com/versions/v4.0.0/isa-95/models-of-work/work-masters/): The most granular work definition in ISA-95, defining the resources and instructions necessary to do a unit of work. | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets.
 A …
 
 ### v3.2.0
@@ -379,7 +377,7 @@ Prerequisites Before you … - Published 2023-10-19
 - [Tune BPMN performance](https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/tune-performance/): Tips to debug and improve the performance of your BPMN process | This page documents some tips to debug BPMN workflows and improve their performance.
 Manufacturing … - Published 2024-02-09
 - [Special variables](https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/variables/): Special variables used by Rhize BPMN workflows | Rhize designates some variable names for a special purpose in BPMN workflow. This list these special …
-- [Naming conventions](https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/naming-conventions/): Recommended naming conventions for BPMN processes and their nodes | ℹ️ These are recommendations. Your organization may adapt the conventions to its needs. Each BPMN …
+- [Naming conventions](https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/naming-conventions/): Recommended naming conventions for BPMN processes and their nodes | These are recommendations. Your organization may adapt the conventions to its needs. Each BPMN …
 - [BPMN learning resources](https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/learning-resources/): Links to supplemental tools and material to learn BPMN | Here are some links to supplemental tools and material to help you build BPMN workflows in Rhize: …
 - [BPMN elements](https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/bpmn-elements/): A reference of all BPMN elements used in the Rhize BPMN engine. | This document describes the parameters available to each BPMN element in the Rhize UI. These … - Published 2023-09-26
 
@@ -404,8 +402,7 @@ These … - Published 2023-11-15
 
 #### Use cases
 - [Overview of use cases](https://docs.rhize.com/versions/v3.2.0/use-cases/overview/): Handle manufacturing events, access the knowledge graph of the operation, and build custom MOM applications. | Rhize&rsquo;s flexible, event-centric architecture serves many functions. While Rhize has components …
-- [Data collection (eBR example)](https://docs.rhize.com/versions/v3.2.0/use-cases/data-collection-ebr/): An example of how Rhize ingests data from various sources to create Electronic Batch Records for pharmaceutical manufacturing | &#x1f4dd; Looking to implement Rhize for your Pharma operation? Talk to an engineer
-This document …
+- [Data collection (eBR example)](https://docs.rhize.com/versions/v3.2.0/use-cases/data-collection-ebr/): An example of how Rhize ingests data from various sources to create Electronic Batch Records for pharmaceutical manufacturing | &#x1f4dd; Looking to implement Rhize for your Pharma operation? Talk to an engineer This document …
 - [Electronic Batch Records](https://docs.rhize.com/versions/v3.2.0/use-cases/ebr/): The Rhize guide to querying all the information that happened in a manufacturing job. | This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use …
 - [Genealogy](https://docs.rhize.com/versions/v3.2.0/use-cases/genealogy/): The Rhize guide to modeling and querying the forward and backward genealogy of a material lot | This document provides a high-level overview of how to use Rhize for material genealogy.
 In …
@@ -436,7 +433,7 @@ Release date: 14 Jul 2025
 Changes by … - Published 2025-07-01
 - [3.1.0](https://docs.rhize.com/versions/v3.2.0/releases/3-1-0/): Release notes for v3.1.0 of the Rhize application | Release notes for version 3.1.0 of the Rhize application.
 Release date: 7 Mar 2025
-⚠️ This release … - Published 2025-02-28
+This release … - Published 2025-02-28
 - [3.0.3](https://docs.rhize.com/versions/v3.2.0/releases/3-0-3/): Release notes for v3.0.3 of the Rhize application | Changelog for version 3.0.3 of the Rhize application.
 Release date: 13 Nov 2024
 Changes by service … - Published 2024-11-13
@@ -468,18 +465,18 @@ Release date: October 24, 2023
 Breaking … - Published 2023-10-31
 
 #### Learn ISA-95
-- [How to speak ISA-95](https://docs.rhize.com/versions/v3.2.0/isa-95/how-to-speak-isa-95/): More than a standard, ISA-95 is a specialized vocabulary that describes all elements of a manufacturing operation. | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets. …
-- [ISA-95 diagrams](https://docs.rhize.com/versions/v3.2.0/isa-95/isa-95-diagrams/): Helpful diagrams to present a high-level overview of the ISA-95 models for entities and information flows. | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets. …
+- [How to speak ISA-95](https://docs.rhize.com/versions/v3.2.0/isa-95/how-to-speak-isa-95/): More than a standard, ISA-95 is a specialized vocabulary that describes all elements of a manufacturing operation. | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets. …
+- [ISA-95 diagrams](https://docs.rhize.com/versions/v3.2.0/isa-95/isa-95-diagrams/): Helpful diagrams to present a high-level overview of the ISA-95 models for entities and information flows. | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets. …
 
 ##### Resources in ISA-95
-- [Equipment models in ISA-95](https://docs.rhize.com/versions/v3.2.0/isa-95/resources/equipment/): A guide to equipment entities and relationships in ISA-95 | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets. …
-- [Material models in ISA-95](https://docs.rhize.com/versions/v3.2.0/isa-95/resources/material/): A guide to material entities and relationships in ISA-95 | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+- [Equipment models in ISA-95](https://docs.rhize.com/versions/v3.2.0/isa-95/resources/equipment/): A guide to equipment entities and relationships in ISA-95 | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets. …
+- [Material models in ISA-95](https://docs.rhize.com/versions/v3.2.0/isa-95/resources/material/): A guide to material entities and relationships in ISA-95 | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets.
 In …
 
 ##### Models of work
-- [Process segments](https://docs.rhize.com/versions/v3.2.0/isa-95/models-of-work/process-segments/): Process segments represent shared steps across processes | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+- [Process segments](https://docs.rhize.com/versions/v3.2.0/isa-95/models-of-work/process-segments/): Process segments represent shared steps across processes | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets.
 A …
-- [Work masters](https://docs.rhize.com/versions/v3.2.0/isa-95/models-of-work/work-masters/): The most granular work definition in ISA-95, defining the resources and instructions necessary to do a unit of work. | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+- [Work masters](https://docs.rhize.com/versions/v3.2.0/isa-95/models-of-work/work-masters/): The most granular work definition in ISA-95, defining the resources and instructions necessary to do a unit of work. | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets.
 A …
 
 ### v3.0.3
@@ -540,7 +537,7 @@ Prerequisites Before you … - Published 2023-10-19
 - [Tune BPMN performance](https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/tune-performance/): Tips to debug and improve the performance of your BPMN process | This page documents some tips to debug BPMN workflows and improve their performance.
 Manufacturing … - Published 2024-02-09
 - [Special variables](https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/variables/): Special variables used by Rhize BPMN workflows | Rhize designates some variable names for a special purpose in BPMN workflow. This list these special …
-- [Naming conventions](https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/naming-conventions/): Recommended naming conventions for BPMN processes and their nodes | ℹ️ These are recommendations. Your organization may adapt the conventions to its needs. Each BPMN …
+- [Naming conventions](https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/naming-conventions/): Recommended naming conventions for BPMN processes and their nodes | These are recommendations. Your organization may adapt the conventions to its needs. Each BPMN …
 - [BPMN learning resources](https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/learning-resources/): Links to supplemental tools and material to learn BPMN | Here are some links to supplemental tools and material to help you build BPMN workflows in Rhize: …
 - [BPMN elements](https://docs.rhize.com/versions/v3.0.3/how-to/bpmn/bpmn-elements/): A reference of all BPMN elements used in the Rhize BPMN engine. | This document describes the parameters available to each BPMN element in the Rhize UI. These … - Published 2023-09-26
 
@@ -565,8 +562,7 @@ These … - Published 2023-11-15
 
 #### Use cases
 - [Overview of use cases](https://docs.rhize.com/versions/v3.0.3/use-cases/overview/): Handle manufacturing events, access the knowledge graph of the operation, build custom MOM applications. | Rhize&rsquo;s flexible, event-centric architecture serves many functions. While Rhize has components …
-- [Data collection (eBR example)](https://docs.rhize.com/versions/v3.0.3/use-cases/data-collection-ebr/): An example of how Rhize ingests data from various sources to create Electronic Batch Records for pharmaceutical manufacturing | &#x1f4dd; Looking to implement Rhize for your Pharma operation? Talk to an engineer
-This document …
+- [Data collection (eBR example)](https://docs.rhize.com/versions/v3.0.3/use-cases/data-collection-ebr/): An example of how Rhize ingests data from various sources to create Electronic Batch Records for pharmaceutical manufacturing | &#x1f4dd; Looking to implement Rhize for your Pharma operation? Talk to an engineer This document …
 - [Electronic Batch Records](https://docs.rhize.com/versions/v3.0.3/use-cases/ebr/): The Rhize guide to querying all the information that happened in a manufacturing job. | This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use …
 - [Genealogy](https://docs.rhize.com/versions/v3.0.3/use-cases/genealogy/): The Rhize guide to modelling and querying the forward and backward genealogy of a material lot | This document provides a high-level overview of how to use Rhize for material genealogy.
 In …
@@ -687,7 +683,7 @@ Prerequisites Before you … - Published 2023-10-19
 - [Tune BPMN performance](https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/tune-performance/): Tips to debug and improve the performance of your BPMN process | This page documents some tips to debug BPMN workflows and improve their performance.
 Manufacturing … - Published 2024-02-09
 - [Special variables](https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/variables/): Special variables used by Rhize BPMN workflows | Rhize designates some variable names for a special purpose in BPMN workflow. This list these special …
-- [Naming conventions](https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/naming-conventions/): Recommended naming conventions for BPMN processes and their nodes | ℹ️ These are recommendations. Your organization may adapt the conventions to its needs. Each BPMN …
+- [Naming conventions](https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/naming-conventions/): Recommended naming conventions for BPMN processes and their nodes | These are recommendations. Your organization may adapt the conventions to its needs. Each BPMN …
 - [BPMN learning resources](https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/learning-resources/): Links to supplemental tools and material to learn BPMN | Here are some links to supplemental tools and material to help you build BPMN workflows in Rhize: …
 - [BPMN elements](https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/): A reference of all BPMN elements used in the Rhize BPMN engine. | This document describes the parameters available to each BPMN element in the Rhize UI. These … - Published 2023-09-26
 
@@ -712,8 +708,7 @@ These … - Published 2023-11-15
 
 #### Use cases
 - [Overview of use cases](https://docs.rhize.com/versions/v3.1.0/use-cases/overview/): Handle manufacturing events, access the knowledge graph of the operation, and build custom MOM applications. | Rhize&rsquo;s flexible, event-centric architecture serves many functions. While Rhize has components …
-- [Data collection (eBR example)](https://docs.rhize.com/versions/v3.1.0/use-cases/data-collection-ebr/): An example of how Rhize ingests data from various sources to create Electronic Batch Records for pharmaceutical manufacturing | &#x1f4dd; Looking to implement Rhize for your Pharma operation? Talk to an engineer
-This document …
+- [Data collection (eBR example)](https://docs.rhize.com/versions/v3.1.0/use-cases/data-collection-ebr/): An example of how Rhize ingests data from various sources to create Electronic Batch Records for pharmaceutical manufacturing | &#x1f4dd; Looking to implement Rhize for your Pharma operation? Talk to an engineer This document …
 - [Electronic Batch Records](https://docs.rhize.com/versions/v3.1.0/use-cases/ebr/): The Rhize guide to querying all the information that happened in a manufacturing job. | This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use …
 - [Genealogy](https://docs.rhize.com/versions/v3.1.0/use-cases/genealogy/): The Rhize guide to modeling and querying the forward and backward genealogy of a material lot | This document provides a high-level overview of how to use Rhize for material genealogy.
 In …
@@ -749,21 +744,23 @@ Service … - Published 2023-11-02
 - [Work masters](https://docs.rhize.com/versions/v3.1.0/isa-95/models-of-work/work-masters/): The most granular work definition in ISA-95, defining the resources and instructions necessary to do a unit of work. | A work master defines the resources and instructions necessary to do a unit of work. As the most …
 
 ## Learn ISA-95
-- [How to speak ISA-95](https://docs.rhize.com/isa-95/how-to-speak-isa-95/): More than a standard, ISA-95 is a specialized vocabulary that describes all elements of a manufacturing operation. | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets. …
-- [ISA-95 diagrams](https://docs.rhize.com/isa-95/isa-95-diagrams/): Helpful diagrams to present a high-level overview of the ISA-95 models for entities and information flows. | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets. …
+- [How to speak ISA-95](https://docs.rhize.com/isa-95/how-to-speak-isa-95/): More than a standard, ISA-95 is a specialized vocabulary that describes all elements of a manufacturing operation. | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets. …
+- [ISA-95 diagrams](https://docs.rhize.com/isa-95/isa-95-diagrams/): Helpful diagrams to present a high-level overview of the ISA-95 models for entities and information flows. | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets. …
 
 ### Resources in ISA-95
-- [Equipment models in ISA-95](https://docs.rhize.com/isa-95/resources/equipment/): A guide to equipment entities and relationships in ISA-95 | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets. …
-- [Material models in ISA-95](https://docs.rhize.com/isa-95/resources/material/): A guide to material entities and relationships in ISA-95 | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+- [Equipment models in ISA-95](https://docs.rhize.com/isa-95/resources/equipment/): A guide to equipment entities and relationships in ISA-95 | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets. …
+- [Material models in ISA-95](https://docs.rhize.com/isa-95/resources/material/): A guide to material entities and relationships in ISA-95 | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets.
 In …
+- [Physical assets in ISA-95](https://docs.rhize.com/isa-95/resources/physical-assets/): A guide to swappable entities and relationships in ISA-95 | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets.
+A …
 
 ### Models of work
-- [Process segments](https://docs.rhize.com/isa-95/models-of-work/process-segments/): Process segments represent shared steps across processes | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+- [Process segments](https://docs.rhize.com/isa-95/models-of-work/process-segments/): Process segments represent shared steps across processes | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets.
 A …
-- [Work masters](https://docs.rhize.com/isa-95/models-of-work/work-masters/): The most granular work definition in ISA-95, defining the resources and instructions necessary to do a unit of work. | 📚 Want to Learn ISA-95? Take our ISA-95 fundamentals course! Lots of practice on real data sets.
+- [Work masters](https://docs.rhize.com/isa-95/models-of-work/work-masters/): The most granular work definition in ISA-95, defining the resources and instructions necessary to do a unit of work. | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets.
 A …
 
 
 ---
-Generated on 2025-11-17 16:29:15 UTC
+Generated on 2025-11-30 19:33:53 UTC
 Site: https://docs.rhize.com/

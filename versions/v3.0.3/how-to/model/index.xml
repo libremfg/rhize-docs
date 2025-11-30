@@ -15,7 +15,7 @@ These associations form nodes and edges in your knowledge graph, so the more inf
 &lt;li&gt;Select &lt;strong&gt;Master Data&lt;/strong&gt;, then the object you want to configure.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Create new&lt;/strong&gt; (or the plus sign).&lt;/li&gt;
 &lt;li&gt;Name the object according to your naming conventions.&lt;/li&gt;
-&lt;li&gt;Fill in the other fields. For details, refer to the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/master-definitions/" &gt;Master definitions and fields&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Fill in the other fields. For details, refer to the &lt;a href="https://docs.rhize.com/versions/v3.0.3/how-to/model/master-definitions/"&gt;Master definitions and fields&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;You can create many different objects, all with their own parameters and associations.
 For that reason, a general procedure such as the preceding lacks any interesting detail.&lt;/p&gt;
@@ -28,7 +28,7 @@ These brownies are produced in its UK site, &lt;code&gt;AG_House&lt;/code&gt;, s
 This equipment item also has a data source that gives temperature readings, which are published to a dashboard.&lt;/p&gt;
 &lt;p&gt;Here&amp;rsquo;s how you could use the Rhize UI to model this.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;If you are actively following to learn, make sure to use names that will easily identify the objects as example objects for testing.&lt;/div&gt;
 &lt;/div&gt;
@@ -64,7 +64,7 @@ This equipment item also has a data source that gives temperature readings, whic
 &lt;p&gt;Create the associated data source:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;From &lt;strong&gt;Master Data&lt;/strong&gt;, select &lt;strong&gt;Data Source&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Add the source&amp;rsquo;s connection string and protocol, along with any credentials (to configure authentication, refer to &lt;a href="https://docs.rhize.com/versions/v3.0.3/reference/service-config/" &gt;Agent configuration&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Add the source&amp;rsquo;s connection string and protocol, along with any credentials (to configure authentication, refer to &lt;a href="https://docs.rhize.com/versions/v3.0.3/reference/service-config/"&gt;Agent configuration&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Select the &lt;strong&gt;Topics&lt;/strong&gt; tab and add the label and data type.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; and make the version active.&lt;/li&gt;
 &lt;/ol&gt;
@@ -94,14 +94,16 @@ This equipment item also has a data source that gives temperature readings, whic
 For a complete reference of all objects and properties that you can add through the UI, refer to the Master definitions and Fields](/versions/v3.0.3/how-to/model/master-definitions/).&lt;/p&gt;</description></item><item><title>Master definitions and fields</title><link>https://docs.rhize.com/versions/v3.0.3/how-to/model/master-definitions/</link><pubDate>Wed, 15 Nov 2023 16:29:21 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/how-to/model/master-definitions/</guid><description>
 &lt;p&gt;To make a production object visible to the Rhize data hub, you must define it as a data model.&lt;/p&gt;
 &lt;p&gt;These sections document all the objects that you can add through the UI, and the fields and properties that you can associate with them.
-All these models are based on the ISA-95 standard, mostly from &lt;a href="https://www.isa.org/products/ansi-isa-95-00-02-2018-enterprise-control-system-i" target="_blank" rel="noopener"&gt;Part 2&lt;/a&gt;, which describes the role-based equipment hierarchy.&lt;/p&gt;
+All these models are based on the ISA-95 standard, mostly from &lt;a href="https://www.isa.org/products/ansi-isa-95-00-02-2018-enterprise-control-system-i"target="_blank" rel="noopener"&gt;Part 2&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, which describes the role-based equipment hierarchy.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&lt;ul&gt;
-&lt;li&gt;For an introduction to the language of ISA-95, read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/" &gt;How to speak ISA-95&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;For an introduction to the language of ISA-95, read &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/"&gt;How to speak ISA-95&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;For visual examples of how some of these models relate,
-look at our page of &lt;a href="https://docs.rhize.com/versions/v3.0.3/isa-95/isa-95-diagrams/" &gt;ISA-95 Diagrams&lt;/a&gt;.&lt;/li&gt;
+look at our page of &lt;a href="https://docs.rhize.com/versions/v3.0.3/isa-95/isa-95-diagrams/"&gt;ISA-95 Diagrams&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -119,7 +121,7 @@ Additionally, most objects have the following fields:&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Version&lt;/td&gt;
-&lt;td&gt;The version of the object (and each version has a &lt;a href="#version-states" &gt;state&lt;/a&gt;)&lt;/td&gt;
+&lt;td&gt;The version of the object (and each version has a &lt;a href="#version-states"&gt;state&lt;/a&gt;)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Description&lt;/td&gt;
@@ -136,7 +138,7 @@ Additionally, most objects have the following fields:&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;Deprecated&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;When recording actual execution, what matters is version of the object, not its general definition.
 Thus, &lt;strong&gt;to add a class to an object, you must give that object a version first.&lt;/strong&gt;&lt;/div&gt;
@@ -173,15 +175,15 @@ For example, in a baking process, a data source might be an OPC UA server that s
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;username&lt;/td&gt;
-&lt;td&gt;If needed, username for &lt;a href="https://docs.rhize.com/versions/v3.0.3/reference/service-config/" &gt;Agent authentication&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;If needed, username for &lt;a href="https://docs.rhize.com/versions/v3.0.3/reference/service-config/"&gt;Agent authentication&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;password&lt;/td&gt;
-&lt;td&gt;If needed, password for &lt;a href="https://docs.rhize.com/versions/v3.0.3/reference/service-config/" &gt;Agent authentication&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;If needed, password for &lt;a href="https://docs.rhize.com/versions/v3.0.3/reference/service-config/"&gt;Agent authentication&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;certificate&lt;/td&gt;
-&lt;td&gt;If needed, certificate for &lt;a href="https://docs.rhize.com/versions/v3.0.3/reference/service-config/" &gt;Agent authentication&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;If needed, certificate for &lt;a href="https://docs.rhize.com/versions/v3.0.3/reference/service-config/"&gt;Agent authentication&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -220,11 +222,11 @@ It provides a flexible way to group entities and data outside of the scope defin
 &lt;h2&gt;Resource models&lt;span class="hx:absolute hx:-mt-20" id="resource-models"&gt;&lt;/span&gt;
 &lt;a href="#resource-models" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;em&gt;Resource models&lt;/em&gt; are data objects that have a specific role in your role-based equipment hierarchy.&lt;/p&gt;
 &lt;h3&gt;Equipment class&lt;span class="hx:absolute hx:-mt-20" id="equipment-class"&gt;&lt;/span&gt;
-&lt;a href="#equipment-class" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;An &lt;em&gt;equipment class&lt;/em&gt; is a grouping of &lt;a href="#equipment" &gt;equipment&lt;/a&gt; for a definite purpose.
+&lt;a href="#equipment-class" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;An &lt;em&gt;equipment class&lt;/em&gt; is a grouping of &lt;a href="#equipment"&gt;equipment&lt;/a&gt; for a definite purpose.
 For example, in a baking process, an equipment class might be the category of all ovens, with properties such as &lt;code&gt;maximum temperature&lt;/code&gt; and &lt;code&gt;number of shelves&lt;/code&gt;.&lt;/p&gt;
 &lt;!---
 Equipment has **Rules**, which... --&gt;
-&lt;p&gt;Along with the &lt;a href="#global-object-fields" &gt;Global properties&lt;/a&gt;, an equipment class can include an indefinite number of properties with the following fields:&lt;/p&gt;
+&lt;p&gt;Along with the &lt;a href="#global-object-fields"&gt;Global properties&lt;/a&gt;, an equipment class can include an indefinite number of properties with the following fields:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -243,18 +245,18 @@ Equipment has **Rules**, which... --&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Unit of measure&lt;/td&gt;
-&lt;td&gt;The property &lt;a href="#uom" &gt;unit of measure&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;The property &lt;a href="#uom"&gt;unit of measure&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;!--
 | Expression | | --&gt;
 &lt;h3&gt;Equipment&lt;span class="hx:absolute hx:-mt-20" id="equipment"&gt;&lt;/span&gt;
-&lt;a href="#equipment" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A piece of &lt;em&gt;equipment&lt;/em&gt; is a tool with a defined role in a &lt;a href="#process-segment" &gt;process segment&lt;/a&gt;.
+&lt;a href="#equipment" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A piece of &lt;em&gt;equipment&lt;/em&gt; is a tool with a defined role in a &lt;a href="#process-segment"&gt;process segment&lt;/a&gt;.
 For example, in a baking process, equipment might be a specific brownie oven.&lt;/p&gt;
 &lt;p&gt;Equipment also might be part of hierarchy of levels, starting with Enterprise and ending with granular levels such as &lt;code&gt;WorkUnit&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Along with the following fields, you can also connect an equipment item to a &lt;a href="#data-source" &gt;data source&lt;/a&gt;, add additional properties, and toggle it to be active or inactive.&lt;/p&gt;
-&lt;p&gt;Along with the &lt;a href="#global-object-fields" &gt;global object fields&lt;/a&gt;,
+&lt;p&gt;Along with the following fields, you can also connect an equipment item to a &lt;a href="#data-source"&gt;data source&lt;/a&gt;, add additional properties, and toggle it to be active or inactive.&lt;/p&gt;
+&lt;p&gt;Along with the &lt;a href="#global-object-fields"&gt;global object fields&lt;/a&gt;,
 an
 equipment object has the following fields:&lt;/p&gt;
 &lt;table&gt;
@@ -267,7 +269,7 @@ equipment object has the following fields:&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Equipment class&lt;/td&gt;
-&lt;td&gt;The &lt;a href="#equipment-class" &gt;class of equipment&lt;/a&gt; that it belongs to.&lt;/td&gt;
+&lt;td&gt;The &lt;a href="#equipment-class"&gt;class of equipment&lt;/a&gt; that it belongs to.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Equipment level&lt;/td&gt;
@@ -277,7 +279,7 @@ equipment object has the following fields:&lt;/p&gt;
 &lt;/table&gt;
 &lt;h3&gt;Material Class&lt;span class="hx:absolute hx:-mt-20" id="material-class"&gt;&lt;/span&gt;
 &lt;a href="#material-class" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A &lt;em&gt;material class&lt;/em&gt; is a group of material with a shared purpose in the manufacturing process.&lt;/p&gt;
-&lt;p&gt;Along with the &lt;a href="#global-object-fields" &gt;global object fields&lt;/a&gt;,
+&lt;p&gt;Along with the &lt;a href="#global-object-fields"&gt;global object fields&lt;/a&gt;,
 a
 material-class object has the following fields:&lt;/p&gt;
 &lt;table&gt;
@@ -298,7 +300,7 @@ material-class object has the following fields:&lt;/p&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Hierarchy scope&lt;/td&gt;
-&lt;td&gt;The &lt;a href="#hierarchy-scope" &gt;hierarchy scope&lt;/a&gt; that material class belongs to&lt;/td&gt;
+&lt;td&gt;The &lt;a href="#hierarchy-scope"&gt;hierarchy scope&lt;/a&gt; that material class belongs to&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Includes properties of&lt;/td&gt;
@@ -313,12 +315,12 @@ material-class object has the following fields:&lt;/p&gt;
 &lt;p&gt;Material classes may have an indefinite number of properties with parameters for the following fields:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Value&lt;/li&gt;
-&lt;li&gt;&lt;a href="#uom" &gt;Unit of measure&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#uom"&gt;Unit of measure&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Material definition&lt;span class="hx:absolute hx:-mt-20" id="material-definition"&gt;&lt;/span&gt;
 &lt;a href="#material-definition" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Materials&lt;/em&gt; are everything required to produce a finished good.
 They include raw materials, intermediate materials, and collections of parts.&lt;/p&gt;
-&lt;p&gt;Along with the &lt;a href="#global-object-fields" &gt;global object fields&lt;/a&gt;,
+&lt;p&gt;Along with the &lt;a href="#global-object-fields"&gt;global object fields&lt;/a&gt;,
 a
 material object has the following fields:&lt;/p&gt;
 &lt;table&gt;
@@ -331,19 +333,19 @@ material object has the following fields:&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Material class&lt;/td&gt;
-&lt;td&gt;One or more &lt;a href="#material-class" &gt;material classes&lt;/a&gt; that a version inherits properties from&lt;/td&gt;
+&lt;td&gt;One or more &lt;a href="#material-class"&gt;material classes&lt;/a&gt; that a version inherits properties from&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Materials may have an indefinite number of properties with parameters for the following fields:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Value&lt;/li&gt;
-&lt;li&gt;&lt;a href="#uom" &gt;Unit of measure&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#uom"&gt;Unit of measure&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Personnel Class&lt;span class="hx:absolute hx:-mt-20" id="personnel-class"&gt;&lt;/span&gt;
 &lt;a href="#personnel-class" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A &lt;em&gt;personnel class&lt;/em&gt; is a grouping of persons whose work shares a definite purpose in the manufacturing process.
 In a baking process, an example of a personnel class may be &lt;code&gt;oven_operators&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Along with the &lt;a href="#global-object-fields" &gt;global object fields&lt;/a&gt;,
+&lt;p&gt;Along with the &lt;a href="#global-object-fields"&gt;global object fields&lt;/a&gt;,
 a
 personnel-class object has the following fields:&lt;/p&gt;
 &lt;table&gt;
@@ -356,13 +358,13 @@ personnel-class object has the following fields:&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Hierarchy scope&lt;/td&gt;
-&lt;td&gt;The &lt;a href="#hierarchy-scope" &gt;hierarchy scope&lt;/a&gt; within which this personnel exchanges data&lt;/td&gt;
+&lt;td&gt;The &lt;a href="#hierarchy-scope"&gt;hierarchy scope&lt;/a&gt; within which this personnel exchanges data&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3&gt;Person&lt;span class="hx:absolute hx:-mt-20" id="person"&gt;&lt;/span&gt;
-&lt;a href="#person" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A &lt;em&gt;person&lt;/em&gt; is a unique member of &lt;a href="#personnel-class" &gt;personnel class&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Along with the &lt;a href="#global-object-fields" &gt;global object fields&lt;/a&gt;,
+&lt;a href="#person" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A &lt;em&gt;person&lt;/em&gt; is a unique member of &lt;a href="#personnel-class"&gt;personnel class&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Along with the &lt;a href="#global-object-fields"&gt;global object fields&lt;/a&gt;,
 a
 person object has the following fields:&lt;/p&gt;
 &lt;table&gt;
@@ -379,7 +381,7 @@ person object has the following fields:&lt;/p&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Hierarchy scope&lt;/td&gt;
-&lt;td&gt;The &lt;a href="#hierarchy-scope" &gt;hierarchy scope&lt;/a&gt; that the person belongs to&lt;/td&gt;
+&lt;td&gt;The &lt;a href="#hierarchy-scope"&gt;hierarchy scope&lt;/a&gt; that the person belongs to&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Inherit personnel classes&lt;/td&gt;
@@ -387,12 +389,12 @@ person object has the following fields:&lt;/p&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Operational location&lt;/td&gt;
-&lt;td&gt;The associated &lt;a href="#operational-location" &gt;Operational location&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;The associated &lt;a href="#operational-location"&gt;Operational location&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3&gt;Physical asset class&lt;span class="hx:absolute hx:-mt-20" id="physical-asset-class"&gt;&lt;/span&gt;
-&lt;a href="#physical-asset-class" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A &lt;em&gt;physical asset class&lt;/em&gt; is a class of &lt;a href="#physical-assets" &gt;physical assets&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="#physical-asset-class" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A &lt;em&gt;physical asset class&lt;/em&gt; is a class of &lt;a href="#physical-assets"&gt;physical assets&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The physical asset class has properties for:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;ClassType&lt;/li&gt;
@@ -402,11 +404,11 @@ person object has the following fields:&lt;/p&gt;
 &lt;h3&gt;Physical Asset&lt;span class="hx:absolute hx:-mt-20" id="physical-asset"&gt;&lt;/span&gt;
 &lt;a href="#physical-asset" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A &lt;em&gt;physical asset&lt;/em&gt; is portable or swappable equipment.
 In a baking process, a physical asset might be the laser jet printer which adds labels to the boxes (and could be used in many segments across the plant).&lt;/p&gt;
-&lt;p&gt;In many cases, your process may need to model only &lt;a href="#equipment" &gt;equipment&lt;/a&gt;, not physical assets.&lt;/p&gt;
+&lt;p&gt;In many cases, your process may need to model only &lt;a href="#equipment"&gt;equipment&lt;/a&gt;, not physical assets.&lt;/p&gt;
 &lt;h3&gt;Operational Location Class&lt;span class="hx:absolute hx:-mt-20" id="operational-location-class"&gt;&lt;/span&gt;
-&lt;a href="#operational-location-class" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;An &lt;em&gt;operational location&lt;/em&gt; class is a grouping of &lt;a href="#operational-location" &gt;operational locations&lt;/a&gt; for a defined purpose.
+&lt;a href="#operational-location-class" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;An &lt;em&gt;operational location&lt;/em&gt; class is a grouping of &lt;a href="#operational-location"&gt;operational locations&lt;/a&gt; for a defined purpose.
 For example, in a baking process, an operational location class may be &lt;code&gt;Kitchens&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Along with the &lt;a href="#global-object-fields" &gt;global object fields&lt;/a&gt;,
+&lt;p&gt;Along with the &lt;a href="#global-object-fields"&gt;global object fields&lt;/a&gt;,
 an
 operational-location-class object has the following fields:&lt;/p&gt;
 &lt;table&gt;
@@ -419,7 +421,7 @@ operational-location-class object has the following fields:&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Hierarchy scope&lt;/td&gt;
-&lt;td&gt;The &lt;a href="#hierarchy-scope" &gt;hierarchy scope&lt;/a&gt; within which this location exchanges data&lt;/td&gt;
+&lt;td&gt;The &lt;a href="#hierarchy-scope"&gt;hierarchy scope&lt;/a&gt; within which this location exchanges data&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Inherit Operational location class&lt;/td&gt;
@@ -430,7 +432,7 @@ operational-location-class object has the following fields:&lt;/p&gt;
 &lt;h3&gt;Operational Location&lt;span class="hx:absolute hx:-mt-20" id="operational-location"&gt;&lt;/span&gt;
 &lt;a href="#operational-location" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;An &lt;em&gt;operational location&lt;/em&gt; is where resources are expected to be located in a plant.
 For example, in a baking process, an operational location class may be &lt;code&gt;northwing_kitchen_A&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Along with the &lt;a href="#global-object-fields" &gt;global object fields&lt;/a&gt;,
+&lt;p&gt;Along with the &lt;a href="#global-object-fields"&gt;global object fields&lt;/a&gt;,
 an
 operational-location object has the following fields:&lt;/p&gt;
 &lt;table&gt;
@@ -443,11 +445,11 @@ operational-location object has the following fields:&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Hierarchy scope&lt;/td&gt;
-&lt;td&gt;The &lt;a href="#hierarchy-scope" &gt;hierarchy scope&lt;/a&gt; within which this location exchanges data&lt;/td&gt;
+&lt;td&gt;The &lt;a href="#hierarchy-scope"&gt;hierarchy scope&lt;/a&gt; within which this location exchanges data&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Operational location classes&lt;/td&gt;
-&lt;td&gt;Zero or more &lt;a href="#operational-location-class" &gt;operational location classes&lt;/a&gt; that a version inherits properties from&lt;/td&gt;
+&lt;td&gt;Zero or more &lt;a href="#operational-location-class"&gt;operational location classes&lt;/a&gt; that a version inherits properties from&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Map view&lt;/td&gt;
@@ -464,7 +466,7 @@ In a baking process, an example segment might be &lt;code&gt;mixing&lt;/code&gt;
 &lt;ul&gt;
 &lt;li&gt;Equipment, Material, Personnel, and Physical Assets&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Along with the &lt;a href="#global-object-fields" &gt;global object fields&lt;/a&gt;,
+&lt;p&gt;Along with the &lt;a href="#global-object-fields"&gt;global object fields&lt;/a&gt;,
 a
 process-segment object has the following fields:&lt;/p&gt;
 &lt;table&gt;
@@ -489,11 +491,11 @@ process-segment object has the following fields:&lt;/p&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Duration unit of measure&lt;/td&gt;
-&lt;td&gt;The time &lt;a href="#uom" &gt;unit of measure&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;The time &lt;a href="#uom"&gt;unit of measure&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Hierarchy scope&lt;/td&gt;
-&lt;td&gt;The &lt;a href="#hierarchy-scope" &gt;hierarchy scope&lt;/a&gt; within which data is exchanged for this process segment&lt;/td&gt;
+&lt;td&gt;The &lt;a href="#hierarchy-scope"&gt;hierarchy scope&lt;/a&gt; within which data is exchanged for this process segment&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -506,8 +508,8 @@ process-segment object has the following fields:&lt;/p&gt;
 &lt;h3&gt;Operations Definition&lt;span class="hx:absolute hx:-mt-20" id="operations-definition"&gt;&lt;/span&gt;
 &lt;a href="#operations-definition" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Operations Definitions&lt;/em&gt; describe how resources come together to manufacture product from the perspective of
 the level-4 (ERP) systems.&lt;/p&gt;
-&lt;p&gt;The operation model carries enough detail to plan the work at resolutions of hours and days. For more granularity, refer to &lt;a href="#work-models" &gt;work models&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Along with the &lt;a href="#global-object-fields" &gt;global object fields&lt;/a&gt;,
+&lt;p&gt;The operation model carries enough detail to plan the work at resolutions of hours and days. For more granularity, refer to &lt;a href="#work-models"&gt;work models&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Along with the &lt;a href="#global-object-fields"&gt;global object fields&lt;/a&gt;,
 an
 operations-definition object has the following fields:&lt;/p&gt;
 &lt;table&gt;
@@ -524,7 +526,7 @@ operations-definition object has the following fields:&lt;/p&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Hierarchy scope&lt;/td&gt;
-&lt;td&gt;The &lt;a href="#hierarchy-scope" &gt;hierarchy scope&lt;/a&gt; within which data is exchanged for this operations definition&lt;/td&gt;
+&lt;td&gt;The &lt;a href="#hierarchy-scope"&gt;hierarchy scope&lt;/a&gt; within which data is exchanged for this operations definition&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -538,7 +540,7 @@ operations-definition object has the following fields:&lt;/p&gt;
 &lt;h3&gt;Operations event definition&lt;span class="hx:absolute hx:-mt-20" id="operations-event-definition"&gt;&lt;/span&gt;
 &lt;a href="#operations-event-definition" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;An &lt;em&gt;operations event definition&lt;/em&gt; defines the properties that pertain to an &lt;em&gt;event&lt;/em&gt; from the perspective of the level-4 (ERP) systems.
 Along with the event itself, it may have associated resources, such as material lots or physical assets received.&lt;/p&gt;
-&lt;p&gt;Along with the &lt;a href="#global-object-fields" &gt;global object fields&lt;/a&gt;,
+&lt;p&gt;Along with the &lt;a href="#global-object-fields"&gt;global object fields&lt;/a&gt;,
 an
 operations-event-definition object has the following fields:&lt;/p&gt;
 &lt;table&gt;
@@ -563,19 +565,19 @@ operations-event-definition object has the following fields:&lt;/p&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Operations event classes&lt;/td&gt;
-&lt;td&gt;One or more &lt;a href="#operations-event-class" &gt;operations event classes&lt;/a&gt; that a version definition inherits properties from.&lt;/td&gt;
+&lt;td&gt;One or more &lt;a href="#operations-event-class"&gt;operations event classes&lt;/a&gt; that a version definition inherits properties from.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2&gt;Work models&lt;span class="hx:absolute hx:-mt-20" id="work-models"&gt;&lt;/span&gt;
 &lt;a href="#work-models" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;em&gt;Work models&lt;/em&gt; describe how the resources come together to manufacture product from the perspective of level-3 (MES) systems.
-As with &lt;a href="#operations-models" &gt;Operations models&lt;/a&gt;,
+As with &lt;a href="#operations-models"&gt;Operations models&lt;/a&gt;,
 the steps in the process are called &lt;em&gt;segments&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;The work model carries enough detail to plan the work at resolutions of hours and minutes. For less granularity, refer to &lt;a href="#operations-definitions" &gt;operations definitions&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The work model carries enough detail to plan the work at resolutions of hours and minutes. For less granularity, refer to &lt;a href="#operations-definitions"&gt;operations definitions&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Work Master&lt;span class="hx:absolute hx:-mt-20" id="work-master"&gt;&lt;/span&gt;
 &lt;a href="#work-master" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A &lt;em&gt;work master&lt;/em&gt; is a template for a job order from the perspective of the level-3 (MES/MOM) systems.
 In a baking process, an example work master might be &lt;code&gt;Brownie Recipe&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Along with the &lt;a href="#global-object-fields" &gt;global object fields&lt;/a&gt;,
+&lt;p&gt;Along with the &lt;a href="#global-object-fields"&gt;global object fields&lt;/a&gt;,
 a
 work-master object has the following fields:&lt;/p&gt;
 &lt;table&gt;
@@ -613,13 +615,15 @@ work-master object has the following fields:&lt;/p&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Hierarchy scope&lt;/td&gt;
-&lt;td&gt;The &lt;a href="#hierarchy-scope" &gt;hierarchy scope&lt;/a&gt; that defines scope of data exchanged for the calendar entries&lt;/td&gt;
+&lt;td&gt;The &lt;a href="#hierarchy-scope"&gt;hierarchy scope&lt;/a&gt; that defines scope of data exchanged for the calendar entries&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;The work calendar can have properties with a &lt;code&gt;description&lt;/code&gt;, &lt;code&gt;value&lt;/code&gt;, and &lt;a href="#uom" &gt;&lt;code&gt;unit of measure&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The work calendar can have properties with a &lt;code&gt;description&lt;/code&gt;, &lt;code&gt;value&lt;/code&gt;, and &lt;a href="#uom"&gt;&lt;code&gt;unit of measure&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The work calendar object can have one or more &lt;em&gt;entries&lt;/em&gt;, which define the start, end, duration, and recurrence of a rule.
-The duration and recurrence attributes for a time-based rule are represented by the &lt;a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank" rel="noopener"&gt;ISO 8601&lt;/a&gt; standard.
+The duration and recurrence attributes for a time-based rule are represented by the &lt;a href="https://en.wikipedia.org/wiki/ISO_8601"target="_blank" rel="noopener"&gt;ISO 8601&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; standard.
 The attributes for an entry are as follows:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -647,11 +651,15 @@ The attributes for an entry are as follows:&lt;/p&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Recurrence time interval&lt;/td&gt;
-&lt;td&gt;How often the entry repeats according to the &lt;a href="https://en.wikipedia.org/wiki/ISO_8601#Repeating_intervals" target="_blank" rel="noopener"&gt;repeating interval representation&lt;/a&gt; of IS0 8601&lt;/td&gt;
+&lt;td&gt;How often the entry repeats according to the &lt;a href="https://en.wikipedia.org/wiki/ISO_8601#Repeating_intervals"target="_blank" rel="noopener"&gt;repeating interval representation&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; of IS0 8601&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Duration rule&lt;/td&gt;
-&lt;td&gt;How long the work calendar lasts, according to the &lt;a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank" rel="noopener"&gt;Duration representation&lt;/a&gt; of IS0 8601.&lt;/td&gt;
+&lt;td&gt;How long the work calendar lasts, according to the &lt;a href="https://en.wikipedia.org/wiki/ISO_8601"target="_blank" rel="noopener"&gt;Duration representation&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; of IS0 8601.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;</description></item></channel></rss>

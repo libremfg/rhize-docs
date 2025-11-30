@@ -4,7 +4,9 @@
 &lt;/div&gt;
 &lt;p&gt;Key Performance Indicators (KPIs) in manufacturing are metrics to help monitor, assess, and optimize the performance of various aspects of your production process.&lt;/p&gt;
 &lt;p&gt;Rhize has an optional &lt;code&gt;KPI&lt;/code&gt; service that queries process values persisted to a time-series database and then calculates various KPIs.
-Rhize&amp;rsquo;s implementation of work calendars is inspired by ISO/TR &lt;a href="https://www.iso.org/obp/ui/?_escaped_fragment_=iso:std:71283:en" target="_blank" rel="noopener"&gt;22400-10&lt;/a&gt;, a standard on KPIs in operations management.&lt;/p&gt;
+Rhize&amp;rsquo;s implementation of work calendars is inspired by ISO/TR &lt;a href="https://www.iso.org/obp/ui/?_escaped_fragment_=iso:std:71283:en"target="_blank" rel="noopener"&gt;22400-10&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, a standard on KPIs in operations management.&lt;/p&gt;
 &lt;h2&gt;What the service does&lt;span class="hx:absolute hx:-mt-20" id="what-the-service-does"&gt;&lt;/span&gt;
 &lt;a href="#what-the-service-does" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;pre class="mermaid hx:mt-6"&gt;
 sequenceDiagram
@@ -59,7 +61,7 @@ along with some other useful KPIs:&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;This guide shows you how to configure the time-series you need for the KPI service.
 It does not suggest how to persist these values.&lt;/p&gt;
-&lt;p&gt;To learn how the KPI service works, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/kpi-service/about-kpi-service/" &gt;About KPI service&lt;/a&gt;.
+&lt;p&gt;To learn how the KPI service works, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/kpi-service/about-kpi-service/"&gt;About KPI service&lt;/a&gt;.
 Example use cases include &lt;abbr title="Overall Equipment Effectiveness. A measure of manufacturing productivity. OEE is commonly calculated as the product of three critical factors: availability, performance, and quality."&gt;OEE&lt;/abbr&gt; and various performance metrics.&lt;/p&gt;
 &lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before you start, ensure you have the following:&lt;/p&gt;
@@ -73,7 +75,7 @@ Example use cases include &lt;abbr title="Overall Equipment Effectiveness. A mea
 &lt;li&gt;Persist machine state records to the &lt;code&gt;EquipmentState&lt;/code&gt; table&lt;/li&gt;
 &lt;li&gt;Persist quantity records to the &lt;code&gt;QuantityLog&lt;/code&gt; table&lt;/li&gt;
 &lt;li&gt;Persist job response data to the &lt;code&gt;JobOrderState&lt;/code&gt; table&lt;/li&gt;
-&lt;li&gt;(Optional) Configure the calendar service to record planned downtime events and shift records to time series. Refer to &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/work-calendars/" &gt;Use work calendars&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;(Optional) Configure the calendar service to record planned downtime events and shift records to time series. Refer to &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/work-calendars/"&gt;Use work calendars&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Record machine states&lt;span class="hx:absolute hx:-mt-20" id="record-machine-states"&gt;&lt;/span&gt;
 &lt;a href="#record-machine-states" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Every time an equipment changes state, it is persisted to the time-series table &lt;code&gt;EquipmentState&lt;/code&gt;.&lt;/p&gt;
@@ -109,7 +111,7 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&lt;p&gt;This table shows a QuestDB specific schema.
 You may also add additional columns as required.&lt;/p&gt;
@@ -140,7 +142,7 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This record includes an additional field, &lt;code&gt;PackMLState&lt;/code&gt;, to show that additional data can also be recorded.&lt;/div&gt;
 &lt;/div&gt;
@@ -962,7 +964,7 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h4&gt;Example 2&lt;span class="hx:absolute hx:-mt-20" id="example-2"&gt;&lt;/span&gt;
-&lt;a href="#example-2" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Following on from Example 1. &lt;code&gt;Machine A&lt;/code&gt; exists on a production line alongside &lt;code&gt;Machine B&lt;/code&gt;, they both produce parts with a planned cycle time of 10 seconds per part and runs on the same shift pattern. The &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/work-calendars/" &gt;work calendar service&lt;/a&gt; is configured with 3 distinct daily shifts:&lt;/p&gt;
+&lt;a href="#example-2" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Following on from Example 1. &lt;code&gt;Machine A&lt;/code&gt; exists on a production line alongside &lt;code&gt;Machine B&lt;/code&gt;, they both produce parts with a planned cycle time of 10 seconds per part and runs on the same shift pattern. The &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/work-calendars/"&gt;work calendar service&lt;/a&gt; is configured with 3 distinct daily shifts:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Morning (06:00-14:00)&lt;/li&gt;
 &lt;li&gt;Afternoon (14:00 - 22:00)&lt;/li&gt;

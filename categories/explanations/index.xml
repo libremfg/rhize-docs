@@ -2,7 +2,7 @@
 &lt;p&gt;This article explains the components of a &lt;em&gt;Manufacturing Data Hub&lt;/em&gt; (MDH) and why the system must have these particular components to meet the needs of large, modern manufacturing environments.&lt;/p&gt;
 &lt;p&gt;In other words, this article explains why Rhize made the choices it did to become the world&amp;rsquo;s first manufacturing data hub.
 For introductory explanations about Rhize in particular,
-read &lt;a href="https://docs.rhize.com/get-started/introduction/" &gt;What is Rhize?&lt;/a&gt; and &lt;a href="https://docs.rhize.com/get-started/how-rhize-works/" &gt;How Rhize works&lt;/a&gt;.&lt;/p&gt;
+read &lt;a href="https://docs.rhize.com/get-started/introduction/"&gt;What is Rhize?&lt;/a&gt; and &lt;a href="https://docs.rhize.com/get-started/how-rhize-works/"&gt;How Rhize works&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;What is an MDH?&lt;span class="hx:absolute hx:-mt-20" id="what-is-an-mdh"&gt;&lt;/span&gt;
 &lt;a href="#what-is-an-mdh" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A manufacturing data hub is a system that collects all manufacturing events, stores them in a standard model, and has a programmable engine that runs user logic to receive, transform, and send messages across different devices in a manufacturing operation.
 Since it comes with all the necessary backend components—message handling, logic, and storage—an MDH also serves as a backend for manufacturers to build custom MES and MOM applications.&lt;/p&gt;
@@ -31,8 +31,12 @@ It is a coherent system of interrelated parts and interfaces, whose components i
 This goal requires a high standard of operational performance, robustness, and extensibility:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Zero Downtime Architecture.&lt;/strong&gt; A data hub such as Rhize is used in mission-critical environments that run every hour of every day. Outages are unacceptable. Operators must be able to update every component of the system without taking it offline.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Secure.&lt;/strong&gt; Users must be able to securely access and integrate with the hub across applications in the enterprise. So the database requires native &lt;a href="https://datatracker.ietf.org/doc/html/rfc6749" target="_blank" rel="noopener"&gt;OAuth2&lt;/a&gt; security integration for seamless single-sign-on.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ACID-compliant.&lt;/strong&gt; The critical features of an MES require the guarantee of an &lt;a href="https://en.wikipedia.org/wiki/ACID" target="_blank" rel="noopener"&gt;ACID&lt;/a&gt; database. Consistency and availability must be maintained even as the system scales horizontally.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Secure.&lt;/strong&gt; Users must be able to securely access and integrate with the hub across applications in the enterprise. So the database requires native &lt;a href="https://datatracker.ietf.org/doc/html/rfc6749"target="_blank" rel="noopener"&gt;OAuth2&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; security integration for seamless single-sign-on.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ACID-compliant.&lt;/strong&gt; The critical features of an MES require the guarantee of an &lt;a href="https://en.wikipedia.org/wiki/ACID"target="_blank" rel="noopener"&gt;ACID&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; database. Consistency and availability must be maintained even as the system scales horizontally.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Headless operation.&lt;/strong&gt; Users must be able to use the data hub as a backend to run MES functions, using frameworks or low-code tools to build any frontend on top of these functions. This flexibility is how the MDH can adapt to any manufacturing process: Rhize provides the means to store, standardize, and handle information flows; users build on top of this backend to create the applications, workflows, and interfaces that make sense for their use cases.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Type-safe.&lt;/strong&gt; Uncontrolled schemas in messages become brittle at scale. Unlike a pure MQTT architecture, which does not check the schema of message payloads, the MDH must enforce that data has a standard structure at the moment that the data is written to the database.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Extensible but Standardized.&lt;/strong&gt; While the data hub is built on the ISA-95 standard, it must be able to extend to include customer-specific schemas.&lt;/li&gt;
@@ -183,13 +187,17 @@ and extra volumes add data replication.&lt;/p&gt;
 &lt;h2&gt;Read more&lt;span class="hx:absolute hx:-mt-20" id="read-more"&gt;&lt;/span&gt;
 &lt;a href="#read-more" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Our blog has some articles that define what a data hub is:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://rhize.com/blog/what-is-a-manufacturing-data-hub/" target="_blank" rel="noopener"&gt;What is a Manufacturing Data Hub?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://rhize.com/blog/manufacturing-data-hub-vs-data-lake/" target="_blank" rel="noopener"&gt;Data hub vs. Data lake: the difference for manufacturers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://rhize.com/blog/what-is-a-manufacturing-data-hub/"target="_blank" rel="noopener"&gt;What is a Manufacturing Data Hub?&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://rhize.com/blog/manufacturing-data-hub-vs-data-lake/"target="_blank" rel="noopener"&gt;Data hub vs. Data lake: the difference for manufacturers&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Manufacturing Data Hub</title><link>https://docs.rhize.com/versions/v3.0.3/explanations/manufacturing-data-hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/explanations/manufacturing-data-hub/</guid><description>
 &lt;p&gt;This article explains what the components of a &lt;em&gt;Manufacturing Data Hub&lt;/em&gt; (MDH) are and why the system must have these particular components to meet the needs of large, modern manufacturing environments.&lt;/p&gt;
 &lt;p&gt;In another phrasing, this article explains why Rhize made the choices it did to become the world&amp;rsquo;s first manufacturing data hub.
 For introductory explanations about Rhize in particular,
-read &lt;a href="https://docs.rhize.com/versions/v3.0.3/get-started/introduction/" &gt;What is Rhize?&lt;/a&gt; and &lt;a href="https://docs.rhize.com/versions/v3.0.3/get-started/how-rhize-works/" &gt;How Rhize works&lt;/a&gt;.&lt;/p&gt;
+read &lt;a href="https://docs.rhize.com/versions/v3.0.3/get-started/introduction/"&gt;What is Rhize?&lt;/a&gt; and &lt;a href="https://docs.rhize.com/versions/v3.0.3/get-started/how-rhize-works/"&gt;How Rhize works&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;What is an MDH?&lt;span class="hx:absolute hx:-mt-20" id="what-is-an-mdh"&gt;&lt;/span&gt;
 &lt;a href="#what-is-an-mdh" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A manufacturing data hub is a system that collects all manufacturing events, stores them in a standard model, and has a programmable engine that can run user logic to receive, transform, and send messages across different devices in a manufacturing operation.
 As it comes with all the necessary backend components—message handling, logic, and storage—an MDH also serves as a backend for manufacturers to build custom MES and MOM applications.&lt;/p&gt;
@@ -218,8 +226,12 @@ It is a coherent system of interrelated parts and interfaces whose components in
 This goal requires a high standard of operational performance, robustness, and extensibility:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Zero Downtime Architecture.&lt;/strong&gt; A data hub such as Rhize is used in mission-critical environments that run every hour of every day. Outages are unacceptable. Operators must be able to update every component of the system without taking it offline.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Secure.&lt;/strong&gt; Users must be able to securely access and integrate with the hub across applications in the enterprise. So the database requires native &lt;a href="https://datatracker.ietf.org/doc/html/rfc6749" target="_blank" rel="noopener"&gt;OAuth2&lt;/a&gt; security integration for seamless single-sign-on.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ACID-compliant.&lt;/strong&gt; The critical features of an MES require the guarantee of an &lt;a href="https://en.wikipedia.org/wiki/ACID" target="_blank" rel="noopener"&gt;ACID&lt;/a&gt; database. Consistency and availability must be maintained even as the system scales horizontally.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Secure.&lt;/strong&gt; Users must be able to securely access and integrate with the hub across applications in the enterprise. So the database requires native &lt;a href="https://datatracker.ietf.org/doc/html/rfc6749"target="_blank" rel="noopener"&gt;OAuth2&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; security integration for seamless single-sign-on.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ACID-compliant.&lt;/strong&gt; The critical features of an MES require the guarantee of an &lt;a href="https://en.wikipedia.org/wiki/ACID"target="_blank" rel="noopener"&gt;ACID&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; database. Consistency and availability must be maintained even as the system scales horizontally.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Headless operation.&lt;/strong&gt; Users must be able to use the data hub as a backend to run MES functions, using frameworks or low-code tools to build any frontend on top of these functions. This flexibility is how the MDH can adapt to any manufacturing process: Rhize provides the means to store, standardize, and handle information flows; users build on top of this backend to create the applications, workflows, and interfaces that make sense for their use cases.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Type-safe.&lt;/strong&gt; Uncontrolled schemas in messages become brittle at scale. Unlike a pure MQTT architecture, which does not check the schema of message payloads, the MDH must enforce that data has a standard structure at the moment that the data is written to the database.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Extensible but Standardized.&lt;/strong&gt; While the data hub is built on the ISA-95 standard, it must be able to extend to include customer-specific schemas.&lt;/li&gt;
@@ -370,13 +382,17 @@ and extra volumes add data replication.&lt;/p&gt;
 &lt;h2&gt;Read more&lt;span class="hx:absolute hx:-mt-20" id="read-more"&gt;&lt;/span&gt;
 &lt;a href="#read-more" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Our blog has some articles that define what a data hub is:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://rhize.com/blog/what-is-a-manufacturing-data-hub/" target="_blank" rel="noopener"&gt;What is a Manufacturing Data Hub?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://rhize.com/blog/manufacturing-data-hub-vs-data-lake/" target="_blank" rel="noopener"&gt;Data hub vs. Data lake: the difference for manufacturers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://rhize.com/blog/what-is-a-manufacturing-data-hub/"target="_blank" rel="noopener"&gt;What is a Manufacturing Data Hub?&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://rhize.com/blog/manufacturing-data-hub-vs-data-lake/"target="_blank" rel="noopener"&gt;Data hub vs. Data lake: the difference for manufacturers&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Manufacturing Data Hub</title><link>https://docs.rhize.com/versions/v3.1.0/explanations/manufacturing-data-hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/explanations/manufacturing-data-hub/</guid><description>
 &lt;p&gt;This article explains the components of a &lt;em&gt;Manufacturing Data Hub&lt;/em&gt; (MDH) and why the system must have these particular components to meet the needs of large, modern manufacturing environments.&lt;/p&gt;
 &lt;p&gt;In other words, this article explains why Rhize made the choices it did to become the world&amp;rsquo;s first manufacturing data hub.
 For introductory explanations about Rhize in particular,
-read &lt;a href="https://docs.rhize.com/versions/v3.1.0/get-started/introduction/" &gt;What is Rhize?&lt;/a&gt; and &lt;a href="https://docs.rhize.com/versions/v3.1.0/get-started/how-rhize-works/" &gt;How Rhize works&lt;/a&gt;.&lt;/p&gt;
+read &lt;a href="https://docs.rhize.com/versions/v3.1.0/get-started/introduction/"&gt;What is Rhize?&lt;/a&gt; and &lt;a href="https://docs.rhize.com/versions/v3.1.0/get-started/how-rhize-works/"&gt;How Rhize works&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;What is an MDH?&lt;span class="hx:absolute hx:-mt-20" id="what-is-an-mdh"&gt;&lt;/span&gt;
 &lt;a href="#what-is-an-mdh" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A manufacturing data hub is a system that collects all manufacturing events, stores them in a standard model, and has a programmable engine that runs user logic to receive, transform, and send messages across different devices in a manufacturing operation.
 Since it comes with all the necessary backend components—message handling, logic, and storage—an MDH also serves as a backend for manufacturers to build custom MES and MOM applications.&lt;/p&gt;
@@ -405,8 +421,12 @@ It is a coherent system of interrelated parts and interfaces, whose components i
 This goal requires a high standard of operational performance, robustness, and extensibility:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Zero Downtime Architecture.&lt;/strong&gt; A data hub such as Rhize is used in mission-critical environments that run every hour of every day. Outages are unacceptable. Operators must be able to update every component of the system without taking it offline.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Secure.&lt;/strong&gt; Users must be able to securely access and integrate with the hub across applications in the enterprise. So the database requires native &lt;a href="https://datatracker.ietf.org/doc/html/rfc6749" target="_blank" rel="noopener"&gt;OAuth2&lt;/a&gt; security integration for seamless single-sign-on.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ACID-compliant.&lt;/strong&gt; The critical features of an MES require the guarantee of an &lt;a href="https://en.wikipedia.org/wiki/ACID" target="_blank" rel="noopener"&gt;ACID&lt;/a&gt; database. Consistency and availability must be maintained even as the system scales horizontally.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Secure.&lt;/strong&gt; Users must be able to securely access and integrate with the hub across applications in the enterprise. So the database requires native &lt;a href="https://datatracker.ietf.org/doc/html/rfc6749"target="_blank" rel="noopener"&gt;OAuth2&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; security integration for seamless single-sign-on.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ACID-compliant.&lt;/strong&gt; The critical features of an MES require the guarantee of an &lt;a href="https://en.wikipedia.org/wiki/ACID"target="_blank" rel="noopener"&gt;ACID&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; database. Consistency and availability must be maintained even as the system scales horizontally.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Headless operation.&lt;/strong&gt; Users must be able to use the data hub as a backend to run MES functions, using frameworks or low-code tools to build any frontend on top of these functions. This flexibility is how the MDH can adapt to any manufacturing process: Rhize provides the means to store, standardize, and handle information flows; users build on top of this backend to create the applications, workflows, and interfaces that make sense for their use cases.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Type-safe.&lt;/strong&gt; Uncontrolled schemas in messages become brittle at scale. Unlike a pure MQTT architecture, which does not check the schema of message payloads, the MDH must enforce that data has a standard structure at the moment that the data is written to the database.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Extensible but Standardized.&lt;/strong&gt; While the data hub is built on the ISA-95 standard, it must be able to extend to include customer-specific schemas.&lt;/li&gt;
@@ -557,13 +577,17 @@ and extra volumes add data replication.&lt;/p&gt;
 &lt;h2&gt;Read more&lt;span class="hx:absolute hx:-mt-20" id="read-more"&gt;&lt;/span&gt;
 &lt;a href="#read-more" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Our blog has some articles that define what a data hub is:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://rhize.com/blog/what-is-a-manufacturing-data-hub/" target="_blank" rel="noopener"&gt;What is a Manufacturing Data Hub?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://rhize.com/blog/manufacturing-data-hub-vs-data-lake/" target="_blank" rel="noopener"&gt;Data hub vs. Data lake: the difference for manufacturers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://rhize.com/blog/what-is-a-manufacturing-data-hub/"target="_blank" rel="noopener"&gt;What is a Manufacturing Data Hub?&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://rhize.com/blog/manufacturing-data-hub-vs-data-lake/"target="_blank" rel="noopener"&gt;Data hub vs. Data lake: the difference for manufacturers&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Manufacturing Data Hub</title><link>https://docs.rhize.com/versions/v3.2.0/explanations/manufacturing-data-hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/explanations/manufacturing-data-hub/</guid><description>
 &lt;p&gt;This article explains the components of a &lt;em&gt;Manufacturing Data Hub&lt;/em&gt; (MDH) and why the system must have these particular components to meet the needs of large, modern manufacturing environments.&lt;/p&gt;
 &lt;p&gt;In other words, this article explains why Rhize made the choices it did to become the world&amp;rsquo;s first manufacturing data hub.
 For introductory explanations about Rhize in particular,
-read &lt;a href="https://docs.rhize.com/versions/v3.2.0/get-started/introduction/" &gt;What is Rhize?&lt;/a&gt; and &lt;a href="https://docs.rhize.com/versions/v3.2.0/get-started/how-rhize-works/" &gt;How Rhize works&lt;/a&gt;.&lt;/p&gt;
+read &lt;a href="https://docs.rhize.com/versions/v3.2.0/get-started/introduction/"&gt;What is Rhize?&lt;/a&gt; and &lt;a href="https://docs.rhize.com/versions/v3.2.0/get-started/how-rhize-works/"&gt;How Rhize works&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;What is an MDH?&lt;span class="hx:absolute hx:-mt-20" id="what-is-an-mdh"&gt;&lt;/span&gt;
 &lt;a href="#what-is-an-mdh" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A manufacturing data hub is a system that collects all manufacturing events, stores them in a standard model, and has a programmable engine that runs user logic to receive, transform, and send messages across different devices in a manufacturing operation.
 Since it comes with all the necessary backend components—message handling, logic, and storage—an MDH also serves as a backend for manufacturers to build custom MES and MOM applications.&lt;/p&gt;
@@ -592,8 +616,12 @@ It is a coherent system of interrelated parts and interfaces, whose components i
 This goal requires a high standard of operational performance, robustness, and extensibility:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Zero Downtime Architecture.&lt;/strong&gt; A data hub such as Rhize is used in mission-critical environments that run every hour of every day. Outages are unacceptable. Operators must be able to update every component of the system without taking it offline.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Secure.&lt;/strong&gt; Users must be able to securely access and integrate with the hub across applications in the enterprise. So the database requires native &lt;a href="https://datatracker.ietf.org/doc/html/rfc6749" target="_blank" rel="noopener"&gt;OAuth2&lt;/a&gt; security integration for seamless single-sign-on.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ACID-compliant.&lt;/strong&gt; The critical features of an MES require the guarantee of an &lt;a href="https://en.wikipedia.org/wiki/ACID" target="_blank" rel="noopener"&gt;ACID&lt;/a&gt; database. Consistency and availability must be maintained even as the system scales horizontally.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Secure.&lt;/strong&gt; Users must be able to securely access and integrate with the hub across applications in the enterprise. So the database requires native &lt;a href="https://datatracker.ietf.org/doc/html/rfc6749"target="_blank" rel="noopener"&gt;OAuth2&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; security integration for seamless single-sign-on.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ACID-compliant.&lt;/strong&gt; The critical features of an MES require the guarantee of an &lt;a href="https://en.wikipedia.org/wiki/ACID"target="_blank" rel="noopener"&gt;ACID&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; database. Consistency and availability must be maintained even as the system scales horizontally.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Headless operation.&lt;/strong&gt; Users must be able to use the data hub as a backend to run MES functions, using frameworks or low-code tools to build any frontend on top of these functions. This flexibility is how the MDH can adapt to any manufacturing process: Rhize provides the means to store, standardize, and handle information flows; users build on top of this backend to create the applications, workflows, and interfaces that make sense for their use cases.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Type-safe.&lt;/strong&gt; Uncontrolled schemas in messages become brittle at scale. Unlike a pure MQTT architecture, which does not check the schema of message payloads, the MDH must enforce that data has a standard structure at the moment that the data is written to the database.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Extensible but Standardized.&lt;/strong&gt; While the data hub is built on the ISA-95 standard, it must be able to extend to include customer-specific schemas.&lt;/li&gt;
@@ -744,13 +772,17 @@ and extra volumes add data replication.&lt;/p&gt;
 &lt;h2&gt;Read more&lt;span class="hx:absolute hx:-mt-20" id="read-more"&gt;&lt;/span&gt;
 &lt;a href="#read-more" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Our blog has some articles that define what a data hub is:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://rhize.com/blog/what-is-a-manufacturing-data-hub/" target="_blank" rel="noopener"&gt;What is a Manufacturing Data Hub?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://rhize.com/blog/manufacturing-data-hub-vs-data-lake/" target="_blank" rel="noopener"&gt;Data hub vs. Data lake: the difference for manufacturers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://rhize.com/blog/what-is-a-manufacturing-data-hub/"target="_blank" rel="noopener"&gt;What is a Manufacturing Data Hub?&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://rhize.com/blog/manufacturing-data-hub-vs-data-lake/"target="_blank" rel="noopener"&gt;Data hub vs. Data lake: the difference for manufacturers&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Manufacturing Data Hub</title><link>https://docs.rhize.com/versions/v4.0.0/explanations/manufacturing-data-hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/explanations/manufacturing-data-hub/</guid><description>
 &lt;p&gt;This article explains the components of a &lt;em&gt;Manufacturing Data Hub&lt;/em&gt; (MDH) and why the system must have these particular components to meet the needs of large, modern manufacturing environments.&lt;/p&gt;
 &lt;p&gt;In other words, this article explains why Rhize made the choices it did to become the world&amp;rsquo;s first manufacturing data hub.
 For introductory explanations about Rhize in particular,
-read &lt;a href="https://docs.rhize.com/versions/v4.0.0/get-started/introduction/" &gt;What is Rhize?&lt;/a&gt; and &lt;a href="https://docs.rhize.com/versions/v4.0.0/get-started/how-rhize-works/" &gt;How Rhize works&lt;/a&gt;.&lt;/p&gt;
+read &lt;a href="https://docs.rhize.com/versions/v4.0.0/get-started/introduction/"&gt;What is Rhize?&lt;/a&gt; and &lt;a href="https://docs.rhize.com/versions/v4.0.0/get-started/how-rhize-works/"&gt;How Rhize works&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;What is an MDH?&lt;span class="hx:absolute hx:-mt-20" id="what-is-an-mdh"&gt;&lt;/span&gt;
 &lt;a href="#what-is-an-mdh" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A manufacturing data hub is a system that collects all manufacturing events, stores them in a standard model, and has a programmable engine that runs user logic to receive, transform, and send messages across different devices in a manufacturing operation.
 Since it comes with all the necessary backend components—message handling, logic, and storage—an MDH also serves as a backend for manufacturers to build custom MES and MOM applications.&lt;/p&gt;
@@ -779,8 +811,12 @@ It is a coherent system of interrelated parts and interfaces, whose components i
 This goal requires a high standard of operational performance, robustness, and extensibility:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Zero Downtime Architecture.&lt;/strong&gt; A data hub such as Rhize is used in mission-critical environments that run every hour of every day. Outages are unacceptable. Operators must be able to update every component of the system without taking it offline.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Secure.&lt;/strong&gt; Users must be able to securely access and integrate with the hub across applications in the enterprise. So the database requires native &lt;a href="https://datatracker.ietf.org/doc/html/rfc6749" target="_blank" rel="noopener"&gt;OAuth2&lt;/a&gt; security integration for seamless single-sign-on.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ACID-compliant.&lt;/strong&gt; The critical features of an MES require the guarantee of an &lt;a href="https://en.wikipedia.org/wiki/ACID" target="_blank" rel="noopener"&gt;ACID&lt;/a&gt; database. Consistency and availability must be maintained even as the system scales horizontally.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Secure.&lt;/strong&gt; Users must be able to securely access and integrate with the hub across applications in the enterprise. So the database requires native &lt;a href="https://datatracker.ietf.org/doc/html/rfc6749"target="_blank" rel="noopener"&gt;OAuth2&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; security integration for seamless single-sign-on.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ACID-compliant.&lt;/strong&gt; The critical features of an MES require the guarantee of an &lt;a href="https://en.wikipedia.org/wiki/ACID"target="_blank" rel="noopener"&gt;ACID&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; database. Consistency and availability must be maintained even as the system scales horizontally.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Headless operation.&lt;/strong&gt; Users must be able to use the data hub as a backend to run MES functions, using frameworks or low-code tools to build any frontend on top of these functions. This flexibility is how the MDH can adapt to any manufacturing process: Rhize provides the means to store, standardize, and handle information flows; users build on top of this backend to create the applications, workflows, and interfaces that make sense for their use cases.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Type-safe.&lt;/strong&gt; Uncontrolled schemas in messages become brittle at scale. Unlike a pure MQTT architecture, which does not check the schema of message payloads, the MDH must enforce that data has a standard structure at the moment that the data is written to the database.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Extensible but Standardized.&lt;/strong&gt; While the data hub is built on the ISA-95 standard, it must be able to extend to include customer-specific schemas.&lt;/li&gt;
@@ -931,8 +967,12 @@ and extra volumes add data replication.&lt;/p&gt;
 &lt;h2&gt;Read more&lt;span class="hx:absolute hx:-mt-20" id="read-more"&gt;&lt;/span&gt;
 &lt;a href="#read-more" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Our blog has some articles that define what a data hub is:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://rhize.com/blog/what-is-a-manufacturing-data-hub/" target="_blank" rel="noopener"&gt;What is a Manufacturing Data Hub?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://rhize.com/blog/manufacturing-data-hub-vs-data-lake/" target="_blank" rel="noopener"&gt;Data hub vs. Data lake: the difference for manufacturers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://rhize.com/blog/what-is-a-manufacturing-data-hub/"target="_blank" rel="noopener"&gt;What is a Manufacturing Data Hub?&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://rhize.com/blog/manufacturing-data-hub-vs-data-lake/"target="_blank" rel="noopener"&gt;Data hub vs. Data lake: the difference for manufacturers&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Explanations</title><link>https://docs.rhize.com/explanations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/explanations/</guid><description>
 &lt;p&gt;The design of the Rhize Manufacturing Data Hub comes from decades of work in industrial automation.
 Rhize is designed to scale to the largest organizations, integrate with legacy systems, and address the complex reality of manufacturing head on.

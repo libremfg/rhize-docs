@@ -2,9 +2,13 @@
 &lt;p&gt;In a manufacturing operation, all event data is interrelated.
 To make these relations explorable, Rhize stores data in a special-purpose graph database designed to represent all levels of the manufacturing process.
 This database is enforced by our ISA-95 schema, the most comprehensive data representation of ISA-95 in the world.&lt;/p&gt;
-&lt;p&gt;Rhize exposes this database through a &lt;a href="https://graphql.org/" target="_blank" rel="noopener"&gt;GraphQL API&lt;/a&gt;.
+&lt;p&gt;Rhize exposes this database through a &lt;a href="https://graphql.org/"target="_blank" rel="noopener"&gt;GraphQL API&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.
 Unlike REST, GraphQL requires only one endpoint, and you can define exactly the data that you return for each operation.&lt;/p&gt;
-&lt;p&gt;If you are a customer, the best way to learn both GraphQL and ISA-95 modelling is to use the &lt;a href="https://www.apollographql.com/" target="_blank" rel="noopener"&gt;Apollo Explorer&lt;/a&gt; for our schema.
+&lt;p&gt;If you are a customer, the best way to learn both GraphQL and ISA-95 modelling is to use the &lt;a href="https://www.apollographql.com/"target="_blank" rel="noopener"&gt;Apollo Explorer&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; for our schema.
 However, for newcomers to GraphQL, the flexibility may look overwhelming.
 These topics introduce the basics of how to use GraphQL with Rhize&amp;rsquo;s custom database.&lt;/p&gt;
 &lt;p&gt;Once you learn how to explore the API, you&amp;rsquo;ll find that the interface is more comfortable and discoverable than a comparable OpenAPI (Swagger) document—and that&amp;rsquo;s before considering the improvements GraphQL brings to precision, performance, and developer experience.&lt;/p&gt;
@@ -12,9 +16,9 @@ These topics introduce the basics of how to use GraphQL with Rhize&amp;rsquo;s c
 &lt;a href="#operations" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In GraphQL, an &lt;em&gt;operation&lt;/em&gt; is a request to the server.
 Rhize supports three types of operations:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/" &gt;Queries&lt;/a&gt;&lt;/strong&gt; return data and subsets of data.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/" &gt;Mutations&lt;/a&gt;&lt;/strong&gt; change the data on the server side.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/subscribe/" &gt;Subscriptions&lt;/a&gt;&lt;/strong&gt; notify about data changes in real time.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/"&gt;Queries&lt;/a&gt;&lt;/strong&gt; return data and subsets of data.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/"&gt;Mutations&lt;/a&gt;&lt;/strong&gt; change the data on the server side.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/subscribe/"&gt;Subscriptions&lt;/a&gt;&lt;/strong&gt; notify about data changes in real time.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;For details and examples, refer to their specific documentation pages.&lt;/p&gt;
 &lt;h2&gt;Call syntax&lt;span class="hx:absolute hx:-mt-20" id="call-syntax"&gt;&lt;/span&gt;
@@ -25,7 +29,7 @@ Be sure to preface the value with the word &lt;code&gt;Bearer &lt;/code&gt;:&lt;
 &lt;figure&gt;&lt;img src="https://docs.rhize.com/images/screenshot-rhize-apollo-auth-headers.png"
 alt="Example of how it looks in Apollo explorer" width="50%"&gt;
 &lt;/figure&gt;
-&lt;p&gt;For an overview of how Rhize handles token exchange, read &lt;a href="https://docs.rhize.com/explanations/about-openidconnect/" &gt;About OpenID connect&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For an overview of how Rhize handles token exchange, read &lt;a href="https://docs.rhize.com/explanations/about-openidconnect/"&gt;About OpenID connect&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Request body&lt;span class="hx:absolute hx:-mt-20" id="request-body"&gt;&lt;/span&gt;
 &lt;a href="#request-body" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;By default, all GraphQL operations have the following structure:&lt;/p&gt;
 &lt;ol&gt;
@@ -281,7 +285,7 @@ Often, calls to production systems separate these arguments out as JSON &lt;em&g
 For example:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;If you build a low-code reporting application, you could use variables to change the arguments based on user input.&lt;/li&gt;
-&lt;li&gt;In a BPMN event orchestration, you could use variables to make a GraphQL call based on a previous JSONata filter. Refer to the example, &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/create-workflow/#write-erp-material-definition-to-database" &gt;Write ERP material definition to DB&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;In a BPMN event orchestration, you could use variables to make a GraphQL call based on a previous JSONata filter. Refer to the example, &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/create-workflow/#write-erp-material-definition-to-database"&gt;Write ERP material definition to DB&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;For example, this query places the ID of the resource that it requests as an inline variable:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -439,9 +443,11 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;To learn more, read the official GraphQL documentation on &lt;a href="https://graphql.org/learn/queries/#variables" target="_blank" rel="noopener"&gt;Variables&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To learn more, read the official GraphQL documentation on &lt;a href="https://graphql.org/learn/queries/#variables"target="_blank" rel="noopener"&gt;Variables&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Template requested fields with fragments&lt;span class="hx:absolute hx:-mt-20" id="template-requested-fields-with-fragments"&gt;&lt;/span&gt;
-&lt;a href="#template-requested-fields-with-fragments" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Along with &lt;a href="#variables" &gt;variables&lt;/a&gt;, you can use &lt;em&gt;fragments&lt;/em&gt; to reduce repetitive writing.&lt;/p&gt;
+&lt;a href="#template-requested-fields-with-fragments" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Along with &lt;a href="#variables"&gt;variables&lt;/a&gt;, you can use &lt;em&gt;fragments&lt;/em&gt; to reduce repetitive writing.&lt;/p&gt;
 &lt;p&gt;Fragments are common fields that you use when querying an object.
 For example, imagine you wanted to make queries to different equipment objects for their &lt;code&gt;id&lt;/code&gt;, &lt;code&gt;label&lt;/code&gt;, &lt;code&gt;_createdBy&lt;/code&gt;, and &lt;code&gt;versions[]&lt;/code&gt; properties.
 Instead of writing these fields in each operation, you could define them in a fragment, and then refer to that fragment in each specific operation or query.&lt;/p&gt;
@@ -553,9 +559,11 @@ a good query is likely the foundation of your workflow.&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;aggregate&lt;/code&gt; for calculations on arrays&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;These operations correspond to the &lt;code&gt;Get&lt;/code&gt; verb defined in &lt;a href="https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i" target="_blank" rel="noopener"&gt;Part 5&lt;/a&gt; of the ISA-95 standard.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;These operations correspond to the &lt;code&gt;Get&lt;/code&gt; verb defined in &lt;a href="https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i"target="_blank" rel="noopener"&gt;Part 5&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; of the ISA-95 standard.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;&lt;code&gt;query&lt;/code&gt; multiple resources&lt;span class="hx:absolute hx:-mt-20" id="query"&gt;&lt;/span&gt;
@@ -597,7 +605,7 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;If you don&amp;rsquo;t have the precise &lt;code&gt;iid&lt;/code&gt;, you can use one of the string &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/filter/" &gt;filters&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you don&amp;rsquo;t have the precise &lt;code&gt;iid&lt;/code&gt;, you can use one of the string &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/filter/"&gt;filters&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;&lt;code&gt;get&lt;/code&gt; single resource&lt;span class="hx:absolute hx:-mt-20" id="get"&gt;&lt;/span&gt;
 &lt;a href="#get" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Queries that start with &lt;code&gt;get&lt;/code&gt; return one object.
 A common use of &lt;code&gt;get&lt;/code&gt; is to explore all data related to a particular object.
@@ -647,17 +655,17 @@ title="Copy code"
 &lt;h2&gt;Sort and paginate&lt;span class="hx:absolute hx:-mt-20" id="sort-and-paginate"&gt;&lt;/span&gt;
 &lt;a href="#sort-and-paginate" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A query can take arguments to order and paginate your results.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;Without an &lt;code&gt;order&lt;/code&gt; parameter, a query returns items without any default or guaranteed order.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3&gt;Order&lt;span class="hx:absolute hx:-mt-20" id="order"&gt;&lt;/span&gt;
-&lt;a href="#order" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;a href="#order" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;Ordered queries &lt;strong&gt;return only the first 1000 records of the ordered field.&lt;/strong&gt;
-This behavior might exclude records that you expect, especially if you &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/filter/#avoid-using-cascade-with-the-orderhahahugoshortcode50s8hbhb-argument" &gt;combine &lt;code&gt;order&lt;/code&gt; with a &lt;code&gt;@cascade&lt;/code&gt;&lt;/a&gt; filter in a nested field.&lt;/div&gt;
+This behavior might exclude records that you expect, especially if you &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/filter/#avoid-using-cascade-with-the-orderhahahugoshortcode50s8hbhb-argument"&gt;combine &lt;code&gt;order&lt;/code&gt; with a &lt;code&gt;@cascade&lt;/code&gt;&lt;/a&gt; filter in a nested field.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;The &lt;code&gt;order&lt;/code&gt; argument works with any property whose type is &lt;code&gt;Int&lt;/code&gt;, &lt;code&gt;Float&lt;/code&gt;, &lt;code&gt;String&lt;/code&gt;, or &lt;code&gt;DateTime&lt;/code&gt;.
@@ -720,21 +728,21 @@ title="Copy code"
 &lt;/div&gt;
 &lt;h2&gt;Filter queries&lt;span class="hx:absolute hx:-mt-20" id="filter-queries"&gt;&lt;/span&gt;
 &lt;a href="#filter-queries" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Rhize also has many queries to filter or return subsets of items.
-To learn how to filter, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/filter/" &gt;Use query filters&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Filter</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/gql/filter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/gql/filter/</guid><description>
+To learn how to filter, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/filter/"&gt;Use query filters&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Filter</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/gql/filter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/gql/filter/</guid><description>
 &lt;p&gt;&lt;em&gt;Filters&lt;/em&gt; limit an operation to a subset of resources.
 You can use filters to make operations more precise, remove unneeded items from a payload, and reduce the need for secondary processing.&lt;/p&gt;
 &lt;p&gt;To use a filter, specify it in the operation&amp;rsquo;s argument.
 Most fields in an object can serve as a filter.
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This page provides a detailed guide of how to use the filters, with examples.
-For a bare reference of filters and data types, refer to the &lt;a href="https://docs.rhize.com/versions/v3.1.0/reference/gql-types/" &gt;GraphQL type reference&lt;/a&gt;.&lt;/div&gt;
+For a bare reference of filters and data types, refer to the &lt;a href="https://docs.rhize.com/versions/v3.1.0/reference/gql-types/"&gt;GraphQL type reference&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/p&gt;
 &lt;h2&gt;Filter by property&lt;span class="hx:absolute hx:-mt-20" id="filter-by-property"&gt;&lt;/span&gt;
-&lt;a href="#filter-by-property" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following sections show some common &lt;a href="https://docs.rhize.com/versions/v3.1.0/reference/gql-types/#scalar-filters" &gt;scalar filters&lt;/a&gt;, filters that work on &lt;code&gt;string&lt;/code&gt;, &lt;code&gt;dateTime&lt;/code&gt;, and numeric values.
+&lt;a href="#filter-by-property" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following sections show some common &lt;a href="https://docs.rhize.com/versions/v3.1.0/reference/gql-types/#scalar-filters"&gt;scalar filters&lt;/a&gt;, filters that work on &lt;code&gt;string&lt;/code&gt;, &lt;code&gt;dateTime&lt;/code&gt;, and numeric values.
 These filters return only the resources that have some specified property or property range.&lt;/p&gt;
 &lt;h3&gt;&lt;code&gt;between&lt;/code&gt; dates&lt;span class="hx:absolute hx:-mt-20" id="between-dates"&gt;&lt;/span&gt;
 &lt;a href="#between-dates" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;between&lt;/code&gt; property returns items within time ranges for a specific property.
@@ -868,7 +876,9 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3&gt;&lt;code&gt;regexp&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="regexp"&gt;&lt;/span&gt;
-&lt;a href="#regexp" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;regexp&lt;/code&gt; keyword searches for matches using the &lt;a href="https://github.com/google/re2" target="_blank" rel="noopener"&gt;RE2&lt;/a&gt; regular expression engine.&lt;/p&gt;
+&lt;a href="#regexp" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;regexp&lt;/code&gt; keyword searches for matches using the &lt;a href="https://github.com/google/re2"target="_blank" rel="noopener"&gt;RE2&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; regular expression engine.&lt;/p&gt;
 &lt;p&gt;For example,
 this query uses a regular expression in its variables to filter for items that begin with either &lt;code&gt;Kitchen_&lt;/code&gt; or &lt;code&gt;Cooling_&lt;/code&gt; (case insensitive):&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -907,8 +917,8 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-yellow-100 hx:bg-yellow-50 hx:text-yellow-900 hx:dark:border-yellow-200/30 hx:dark:bg-yellow-700/30 hx:dark:text-yellow-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;⚠️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-amber-200 hx:bg-amber-100 hx:text-amber-900 hx:dark:border-amber-200/30 hx:dark:bg-amber-900/30 hx:dark:text-amber-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;The &lt;code&gt;regexp&lt;/code&gt; filters can have performance costs.
 After you refine a query filter to return exactly what you need, consider ways to simplify the regular expression
@@ -917,7 +927,9 @@ or, if possible, use a different filter.&lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Combine filters with &lt;code&gt;and&lt;/code&gt;, &lt;code&gt;or&lt;/code&gt;, &lt;code&gt;not&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="combine-filters-with-and-or-not"&gt;&lt;/span&gt;
 &lt;a href="#combine-filters-with-and-or-not" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To filter by multiple properties, use the &lt;code&gt;and&lt;/code&gt;, &lt;code&gt;or&lt;/code&gt;, and &lt;code&gt;not&lt;/code&gt;, operators.
-GraphQL syntax uses &lt;a href="https://en.wikipedia.org/wiki/Infix_notation" target="_blank" rel="noopener"&gt;infix notation&lt;/a&gt;, so: &amp;ldquo;a and b&amp;rdquo; is &lt;code&gt;a, and: { b }&lt;/code&gt;, “a or b or c” is &lt;code&gt;a, or: { b, or: c }&lt;/code&gt;, and “not” is a prefix (&lt;code&gt;not:&lt;/code&gt;).&lt;/p&gt;
+GraphQL syntax uses &lt;a href="https://en.wikipedia.org/wiki/Infix_notation"target="_blank" rel="noopener"&gt;infix notation&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, so: &amp;ldquo;a and b&amp;rdquo; is &lt;code&gt;a, and: { b }&lt;/code&gt;, “a or b or c” is &lt;code&gt;a, or: { b, or: c }&lt;/code&gt;, and “not” is a prefix (&lt;code&gt;not:&lt;/code&gt;).&lt;/p&gt;
 &lt;h3&gt;this &lt;code&gt;and&lt;/code&gt; that property&lt;span class="hx:absolute hx:-mt-20" id="this-and-that-property"&gt;&lt;/span&gt;
 &lt;a href="#this-and-that-property" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;and&lt;/code&gt; operator filters for objects that include all specified properties.&lt;/p&gt;
 &lt;p&gt;For example, this query returns equipment objects that match two properties:&lt;/p&gt;
@@ -954,7 +966,7 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This preceding filter syntax is a shorter equivalent to &lt;code&gt;and: {has: nextVersion}&lt;/code&gt;.&lt;/div&gt;
 &lt;/div&gt;
@@ -1034,14 +1046,16 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Use directives&lt;span class="hx:absolute hx:-mt-20" id="use-directives"&gt;&lt;/span&gt;
-&lt;a href="#use-directives" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Rhize offers &lt;a href="https://the-guild.dev/graphql/tools/docs/schema-directives#what-about-query-directives" target="_blank" rel="noopener"&gt;&lt;em&gt;query directives&lt;/em&gt;&lt;/a&gt;, special instructions about how to look up and return values in a query.
+&lt;a href="#use-directives" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Rhize offers &lt;a href="https://the-guild.dev/graphql/tools/docs/schema-directives#what-about-query-directives"target="_blank" rel="noopener"&gt;&lt;em&gt;query directives&lt;/em&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, special instructions about how to look up and return values in a query.
 These directives can extend your filtering to look at nested properties or to conditionally display a field.&lt;/p&gt;
 &lt;p&gt;All directives begin with the &lt;code&gt;@&lt;/code&gt; sign.&lt;/p&gt;
 &lt;h3&gt;Cascade&lt;span class="hx:absolute hx:-mt-20" id="cascade"&gt;&lt;/span&gt;
 &lt;a href="#cascade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;@cascade&lt;/code&gt; directive filters for certain nodes within a query.
 Use it to filter requested resources by a nested sub-property, similar to a &lt;code&gt;WHERE&lt;/code&gt; clause in SQL.&lt;/p&gt;
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&lt;code&gt;@cascade&lt;/code&gt; is not as performant as flatter queries.
 Consider using it only after you&amp;rsquo;ve exhausted other query structures to return the data you want.&lt;/div&gt;
@@ -1105,7 +1119,7 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;h4&gt;Avoid using @cascade with the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/#order" &gt;&lt;code&gt;order&lt;/code&gt;&lt;/a&gt; argument&lt;span class="hx:absolute hx:-mt-20" id="avoid-using-cascade-with-the-order-argument"&gt;&lt;/span&gt;
+&lt;h4&gt;Avoid using @cascade with the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/#order"&gt;&lt;code&gt;order&lt;/code&gt;&lt;/a&gt; argument&lt;span class="hx:absolute hx:-mt-20" id="avoid-using-cascade-with-the-order-argument"&gt;&lt;/span&gt;
 &lt;a href="#avoid-using-cascade-with-the-order-argument" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The &lt;code&gt;order&lt;/code&gt; argument returns only the first 1000 records of the query.
 If a record matches the &lt;code&gt;@cascade&lt;/code&gt; filter but comes after these first 1000 records, the API does not return it.&lt;/p&gt;
 &lt;p&gt;For example, this query logic works as follows:&lt;/p&gt;
@@ -1189,13 +1203,15 @@ title="Copy code"
 &lt;/div&gt;</description></item><item><title>Mutate</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/</guid><description>
 &lt;blockquote&gt; 🎥Watch:&lt;/span&gt;&lt;a href="https://www.youtube.com/watch?v=zQ5X0mg3i_w&amp;amp;t=217s"&gt;Add manufacturing data through GraphQL&lt;/a&gt;&lt;/blockquote&gt;
 &lt;p&gt;&lt;em&gt;Mutations&lt;/em&gt; change the database in someway by creating, updating, or deleting a resource.
-You might use a mutation to update a personnel class, or in to a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/" &gt;&lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt;&lt;/a&gt; workflow that automatically creates records of incoming material lots.&lt;/p&gt;
+You might use a mutation to update a personnel class, or in to a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/"&gt;&lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt;&lt;/a&gt; workflow that automatically creates records of incoming material lots.&lt;/p&gt;
 &lt;p&gt;Rhize supports the following ways to change the API.&lt;/p&gt;
 &lt;h2&gt;&lt;code&gt;add&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="add"&gt;&lt;/span&gt;
 &lt;a href="#add" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;The &lt;code&gt;add&lt;/code&gt; operation corresponds to the &lt;code&gt;Process&lt;/code&gt; verb defined in &lt;a href="https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i" target="_blank" rel="noopener"&gt;Part 5&lt;/a&gt; of the ISA-95 standard.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;The &lt;code&gt;add&lt;/code&gt; operation corresponds to the &lt;code&gt;Process&lt;/code&gt; verb defined in &lt;a href="https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i"target="_blank" rel="noopener"&gt;Part 5&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; of the ISA-95 standard.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Mutations that start with &lt;code&gt;add&lt;/code&gt; create a resource on the server.&lt;/p&gt;
@@ -1306,11 +1322,13 @@ title="Copy code"
 &lt;/div&gt;
 &lt;h2&gt;&lt;code&gt;update&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="update"&gt;&lt;/span&gt;
 &lt;a href="#update" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Mutations that start with &lt;code&gt;update&lt;/code&gt; change something in an object that already exists.
-The &lt;code&gt;update&lt;/code&gt; operations can use &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/filter/" &gt;filters&lt;/a&gt;.&lt;/p&gt;
+The &lt;code&gt;update&lt;/code&gt; operations can use &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/filter/"&gt;filters&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;The &lt;code&gt;update&lt;/code&gt; operation corresponds to the &lt;code&gt;Change&lt;/code&gt; verb defined in &lt;a href="https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i" target="_blank" rel="noopener"&gt;Part 5&lt;/a&gt; of the ISA-95 standard.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;The &lt;code&gt;update&lt;/code&gt; operation corresponds to the &lt;code&gt;Change&lt;/code&gt; verb defined in &lt;a href="https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i"target="_blank" rel="noopener"&gt;Part 5&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; of the ISA-95 standard.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;For example, this operation updates the description for a specific version of an equipment item.&lt;/p&gt;
@@ -1352,18 +1370,20 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;&lt;code&gt;delete&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="delete"&gt;&lt;/span&gt;
-&lt;a href="#delete" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-yellow-100 hx:bg-yellow-50 hx:text-yellow-900 hx:dark:border-yellow-200/30 hx:dark:bg-yellow-700/30 hx:dark:text-yellow-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;⚠️&lt;/div&gt;&lt;/div&gt;
+&lt;a href="#delete" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-amber-200 hx:bg-amber-100 hx:text-amber-900 hx:dark:border-amber-200/30 hx:dark:bg-amber-900/30 hx:dark:text-amber-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;Be careful! Without a &lt;a href="https://docs.rhize.com/versions/v3.1.0/deploy/backup/graphdb/" &gt;Database backup&lt;/a&gt;, deleted items cannot be recovered.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;Be careful! Without a &lt;a href="https://docs.rhize.com/versions/v3.1.0/deploy/backup/graphdb/"&gt;Database backup&lt;/a&gt;, deleted items cannot be recovered.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Mutations that start with &lt;code&gt;delete&lt;/code&gt; remove a resource from the database.
-The &lt;code&gt;delete&lt;/code&gt; operations can use &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/filter/" &gt;filters&lt;/a&gt;.&lt;/p&gt;
+The &lt;code&gt;delete&lt;/code&gt; operations can use &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/filter/"&gt;filters&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;The &lt;code&gt;delete&lt;/code&gt; operation corresponds to the &lt;code&gt;Cancel&lt;/code&gt; verb defined in &lt;a href="https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i" target="_blank" rel="noopener"&gt;Part 5&lt;/a&gt; of the ISA-95 standard.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;The &lt;code&gt;delete&lt;/code&gt; operation corresponds to the &lt;code&gt;Cancel&lt;/code&gt; verb defined in &lt;a href="https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i"target="_blank" rel="noopener"&gt;Part 5&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; of the ISA-95 standard.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;For example, this operation deletes a unit of measure:&lt;/p&gt;
@@ -1512,12 +1532,14 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;To update an existing nested object, use the update mutation for its type.&lt;/p&gt;</description></item><item><title>Subscribe</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/gql/subscribe/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/gql/subscribe/</guid><description>
-&lt;p&gt;The operations for a &lt;code&gt;subscription&lt;/code&gt; are similar to the operations for a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/" &gt;&lt;code&gt;query&lt;/code&gt;&lt;/a&gt;.
+&lt;p&gt;The operations for a &lt;code&gt;subscription&lt;/code&gt; are similar to the operations for a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/"&gt;&lt;code&gt;query&lt;/code&gt;&lt;/a&gt;.
 But rather than providing information about the entire item, the purpose of subscriptions is to notify about real-time changes to a manufacturing resource.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;These operations correspond to the &lt;code&gt;SyncGet&lt;/code&gt; verb defined in &lt;a href="https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i" target="_blank" rel="noopener"&gt;Part 5&lt;/a&gt; of the ISA-95 standard.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;These operations correspond to the &lt;code&gt;SyncGet&lt;/code&gt; verb defined in &lt;a href="https://www.isa.org/products/ansi-isa-95-00-05-2018-enterprise-control-system-i"target="_blank" rel="noopener"&gt;Part 5&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; of the ISA-95 standard.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;This example query subscribes to changes in a specified set of &lt;code&gt;workResponses&lt;/code&gt;, reporting only their &lt;code&gt;id&lt;/code&gt; and effective end time.&lt;/p&gt;
@@ -1541,4 +1563,4 @@ title="Copy code"
 &lt;/div&gt;
 &lt;p&gt;Try to minimize the payload for subscription operations.
 Additionally, you need to subscribe only to changes that persist to the knowledge graph.
-For general event handling, it&amp;rsquo;s often better to use a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/" &gt;BPMN workflow&lt;/a&gt; that subscribes to a NATS, MQTT, or OPC UA topic.&lt;/p&gt;</description></item></channel></rss>
+For general event handling, it&amp;rsquo;s often better to use a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/"&gt;BPMN workflow&lt;/a&gt; that subscribes to a NATS, MQTT, or OPC UA topic.&lt;/p&gt;</description></item></channel></rss>

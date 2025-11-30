@@ -145,8 +145,9 @@ class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hid
 &gt;&lt;span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:pt-4 hx:px-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"/&gt;&lt;/svg&gt;Changelog&lt;/span&gt;&lt;div class="hextra-card-subtitle hx:line-clamp-3 hx:text-sm hx:font-normal hx:text-gray-500 hx:dark:text-gray-400 hx:px-4 hx:mb-4 hx:mt-2"&gt;A log of all changes to the Rhize application&lt;/div&gt;&lt;/a&gt;
 &lt;/div&gt;</description></item><item><title>Learn ISA-95</title><link>https://docs.rhize.com/versions/v4.0.0/isa-95/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/isa-95/</guid><description>
 &lt;blockquote&gt;
-&lt;p&gt;📚 Want to Learn ISA-95?
-Take our &lt;a href="https://university.rhize.com/certifications/" class="underline font-medium hover:text-blue-700 dark:hover:text-blue-300"&gt;ISA-95 fundamentals course&lt;/a&gt;! Lots of practice on real data sets.&lt;/p&gt;
+&lt;p&gt;📚
+&lt;a href="https://university.rhize.com/certifications/" class="underline font-medium hover:text-blue-700 dark:hover:text-blue-300"&gt;Take our ISA-95 fundamentals course&lt;/a&gt;!
+Learn ISA-95 through lots of practice on real data sets.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;More than a standard about interop,
 ISA-95 is a full &lt;em&gt;ontology&lt;/em&gt; of manufacturing:

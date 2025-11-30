@@ -1,7 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Resources in ISA-95</title><link>https://docs.rhize.com/isa-95/resources/</link><description>Recent content in Resources in ISA-95 on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.rhize.com/isa-95/resources/index.xml" rel="self" type="application/rss+xml"/><item><title>Equipment models in ISA-95</title><link>https://docs.rhize.com/isa-95/resources/equipment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/isa-95/resources/equipment/</guid><description>
 &lt;blockquote&gt;
-&lt;p&gt;📚 Want to Learn ISA-95?
-Take our &lt;a href="https://university.rhize.com/certifications/" class="underline font-medium hover:text-blue-700 dark:hover:text-blue-300"&gt;ISA-95 fundamentals course&lt;/a&gt;! Lots of practice on real data sets.&lt;/p&gt;
+&lt;p&gt;📚
+&lt;a href="https://university.rhize.com/certifications/" class="underline font-medium hover:text-blue-700 dark:hover:text-blue-300"&gt;Take our ISA-95 fundamentals course&lt;/a&gt;!
+Learn ISA-95 through lots of practice on real data sets.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Equipment is an object that has a defined role in the production process.
 Equipment can have &lt;em&gt;properties&lt;/em&gt;, which define some temporary or permanent value,
@@ -30,8 +31,8 @@ equipment o--&amp;gt; equipment : made up of
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h2&gt;The role-based hierarchy&lt;span class="hx:absolute hx:-mt-20" id="the-role-based-hierarchy"&gt;&lt;/span&gt;
-&lt;a href="#the-role-based-hierarchy" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The word &lt;em&gt;role&lt;/em&gt; is key to understanding the ISA-95 equipment models.
+&lt;h2&gt;The role-based hierarchy&lt;span class="hx:absolute hx:-mt-20" id="role"&gt;&lt;/span&gt;
+&lt;a href="#role" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The word &lt;em&gt;role&lt;/em&gt; is key to understanding the ISA-95 equipment models.
 All equipment has a particular function in the wider operation.
 The scope of a role varies widely, from the execution of an enterprise-level schedule to the production of a single unit of material.&lt;/p&gt;
 &lt;p&gt;Equipment with broader scopes occupy higher &lt;em&gt;levels&lt;/em&gt;,
@@ -882,10 +883,10 @@ When an equipment belongs to an equipment class, that equipment receives its pro
 So, equipment properties &lt;em&gt;map to&lt;/em&gt; the class properties.&lt;/p&gt;
 &lt;pre class="mermaid hx:mt-6"&gt;
 classDiagram
-equipment *--&amp;gt; `equipment \n property` :has values of
-equipment *--&amp;gt; `equipment \n class` :defined by
-`equipment \n class` *--&amp;gt; `equipment \n class \n property` :has properties of
-`equipment \n class \n property` &amp;lt;.. `equipment \n property` :maps to
+equipment *--&amp;gt; `equipment property` :has values of
+equipment *--&amp;gt; `equipment class` :defined by
+`equipment class` *--&amp;gt; `equipment class property` :has properties of
+`equipment class property` &amp;lt;.. `equipment property` :maps to
 &lt;/pre&gt;&lt;p&gt;Classes are abstract, and so class properties are abstract keys.
 An Equipment is tangible, and thus has a property key and an actual value.&lt;/p&gt;
 &lt;h3&gt;Equipment classes can be made of other classes&lt;span class="hx:absolute hx:-mt-20" id="equipment-classes-can-be-made-of-other-classes"&gt;&lt;/span&gt;
@@ -902,8 +903,9 @@ classDiagram
 `packaging line 1` *-- palletizer 1
 &lt;/pre&gt;</description></item><item><title>Material models in ISA-95</title><link>https://docs.rhize.com/isa-95/resources/material/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/isa-95/resources/material/</guid><description>
 &lt;blockquote&gt;
-&lt;p&gt;📚 Want to Learn ISA-95?
-Take our &lt;a href="https://university.rhize.com/certifications/" class="underline font-medium hover:text-blue-700 dark:hover:text-blue-300"&gt;ISA-95 fundamentals course&lt;/a&gt;! Lots of practice on real data sets.&lt;/p&gt;
+&lt;p&gt;📚
+&lt;a href="https://university.rhize.com/certifications/" class="underline font-medium hover:text-blue-700 dark:hover:text-blue-300"&gt;Take our ISA-95 fundamentals course&lt;/a&gt;!
+Learn ISA-95 through lots of practice on real data sets.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;In ISA-95, &lt;em&gt;material&lt;/em&gt; can be a finished good or anything that goes into this good.
 Examples of material include:&lt;/p&gt;
@@ -913,7 +915,7 @@ Examples of material include:&lt;/p&gt;
 &lt;li&gt;An intermediate substance, such as a produced reactant to be used in combination with another chemical&lt;/li&gt;
 &lt;li&gt;Raw materials, like the flour and water that make dough&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Like &lt;a href="https://docs.rhize.com/isa-95/resources/equipment/" &gt;equipment&lt;/a&gt;, material can have classes and properties.
+&lt;p&gt;Like &lt;a href="https://docs.rhize.com/isa-95/resources/equipment/"&gt;equipment&lt;/a&gt;, material can have classes and properties.
 However, to account for detailed tracking of unique material units,
 the material model has more entities than equipment.&lt;/p&gt;
 &lt;details class="hx:last-of-type:mb-0 hx:rounded-lg hx:bg-neutral-50 hx:dark:bg-neutral-800 hx:p-2 hx:mt-4 hx:group" &gt;
@@ -959,7 +961,7 @@ Obviously, these pallets are not literally the same: otherwise they would just b
 Rather, each pallet is a separate &lt;em&gt;lots&lt;/em&gt;, and all these lots share the same material definition.&lt;/p&gt;
 &lt;h3&gt;Definitions are defined by classes&lt;span class="hx:absolute hx:-mt-20" id="definitions-are-defined-by-classes"&gt;&lt;/span&gt;
 &lt;a href="#definitions-are-defined-by-classes" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you need another level of abstraction, you can also categorize your material definitions by &lt;em&gt;material class&lt;/em&gt;.
-Material classes provide a way to categorize material by function or shared &lt;a href="#material-properties" &gt;properties&lt;/a&gt;.
+Material classes provide a way to categorize material by function or shared &lt;a href="#material-properties"&gt;properties&lt;/a&gt;.
 For example, &lt;code&gt;The Juice Factory&lt;/code&gt; has five juice definitions, all part of the class &lt;code&gt;Juices&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class="mermaid hx:mt-6"&gt;
 classDiagram
@@ -970,30 +972,9 @@ class `Cosmic blue juice`
 class `Royal Purple Juice`
 class `Berry Red Juice`
 }
-&lt;/pre&gt;&lt;p&gt;Note that material classes can contain material classes. For example, the &lt;code&gt;raw_materials&lt;/code&gt; class might contain all raw ingredients.&lt;/p&gt;
-&lt;pre class="mermaid hx:mt-6"&gt;
----
-subtitle: Material classes can contain material classes
----
-classDiagram
-namespace raw_materials{
-class sweeteners
-class flavors
-class colors
-}
-namespace sweeteners{
-class sugar
-class aspertame
-}
-namespace flavors{
-class `blue flavoring`
-class `orange flavoring`
-}
-namespace colors{
-class `blue`
-class `orange`
-}
-&lt;/pre&gt;&lt;h2&gt;Is assembled from&lt;span class="hx:absolute hx:-mt-20" id="is-assembled-from"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Note that material classes can contain material classes. For example, the &lt;code&gt;raw_materials&lt;/code&gt; class might contain all classes of raw ingredients.
+So &lt;code&gt;raw_materials&lt;/code&gt; might contain the &lt;code&gt;sweeteners&lt;/code&gt; class, which might define &lt;code&gt;aspertame&lt;/code&gt; and &lt;code&gt;sugar&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Is assembled from&lt;span class="hx:absolute hx:-mt-20" id="is-assembled-from"&gt;&lt;/span&gt;
 &lt;a href="#is-assembled-from" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Material lots also might be &lt;em&gt;assembled from&lt;/em&gt; material &lt;em&gt;sublots&lt;/em&gt;.&lt;/p&gt;
 &lt;pre class="mermaid hx:mt-6"&gt;
 classDiagram
@@ -1051,4 +1032,38 @@ flavor_profile *--&amp;gt; sweetness
 flavor_profile *--&amp;gt; umami
 flavor_profile *--&amp;gt; aciditiy
 &lt;/pre&gt;&lt;p&gt;As with equipment properties, all properties can contain properties.
-For example, the property &lt;code&gt;flavor_profile&lt;/code&gt; might contain properties for &lt;code&gt;sweetness&lt;/code&gt;, &lt;code&gt;acidity&lt;/code&gt; and &lt;code&gt;umami&lt;/code&gt;.&lt;/p&gt;</description></item></channel></rss>
+For example, the property &lt;code&gt;flavor_profile&lt;/code&gt; might contain properties for &lt;code&gt;sweetness&lt;/code&gt;, &lt;code&gt;acidity&lt;/code&gt; and &lt;code&gt;umami&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Physical assets in ISA-95</title><link>https://docs.rhize.com/isa-95/resources/physical-assets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/isa-95/resources/physical-assets/</guid><description>
+&lt;blockquote&gt;
+&lt;p&gt;📚
+&lt;a href="https://university.rhize.com/certifications/" class="underline font-medium hover:text-blue-700 dark:hover:text-blue-300"&gt;Take our ISA-95 fundamentals course&lt;/a&gt;!
+Learn ISA-95 through lots of practice on real data sets.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A &lt;em&gt;physical asset&lt;/em&gt; is equipment that can be swapped in and out of an &lt;a href="https://docs.rhize.com/isa-95/resources/equipment/#role"&gt;equipment role&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Relationship to equipment&lt;span class="hx:absolute hx:-mt-20" id="relationship-to-equipment"&gt;&lt;/span&gt;
+&lt;a href="#relationship-to-equipment" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Physical assets &lt;em&gt;implement&lt;/em&gt; equipment roles.
+This relationship is tracked through the &lt;em&gt;equipment asset mapping&lt;/em&gt; entity.
+The equipment asset mapping maintains the relationship between the equipment and the physical assets that have implemented it.&lt;/p&gt;
+&lt;pre class="mermaid hx:mt-6"&gt;
+classDiagram
+equipment --&amp;gt; physicalAsset :implemented by
+equipmentAssetMapping --&amp;gt; equipment :records use of
+equipmentAssetMapping --&amp;gt; physicalAsset :records use of
+&lt;/pre&gt;&lt;p&gt;For example, imagine that the Juice Factory may have a &lt;code&gt;Make Juice&lt;/code&gt; process that requires the equipment &lt;code&gt;mixer&lt;/code&gt;.
+The plant has multiple physical mixers, which are periodically swapped in and out for maintenance.
+Through the physical asset, the operations team can track both the history of the specific mixer and the history of the equipment as it plays a role in jobs to make juice.&lt;/p&gt;
+&lt;p&gt;Except for this, the relationships between physical asset models are identical to the relationships between equipment models.
+For example,
+physical assets are defined by physical asset classes;
+physical asset classes have properties that the physical assets can inherit;
+and physical assets can be made up of physical assets.&lt;/p&gt;
+&lt;h3&gt;Common use cases&lt;span class="hx:absolute hx:-mt-20" id="common-use-cases"&gt;&lt;/span&gt;
+&lt;a href="#common-use-cases" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Physical assets are used less frequently than the equipment or material models.
+However, in some use cases, adding a physical assets can serve operational and analytical needs.
+For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When multiple assets perform the same equipment role, adding a physical asset and equipment asset mapping tracks use. This information might be used to plan maintenance or identify deviations in specific machines.&lt;/li&gt;
+&lt;li&gt;In scheduling, equipment availability may derive from physical asset availability&lt;/li&gt;
+&lt;li&gt;When an asset can be plugged into many roles, modeling a physical asset provides a way to track the asset&amp;rsquo;s history across its diverse functions.&lt;/li&gt;
+&lt;li&gt;Some operations exclude some physical equipment from the role-based equipment hierarchy. For example, a plant may have many processes that use a digital scale.
+In this case, the model might track scales only as physical assets and not create a precise role for all the processes that may require a scale.&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

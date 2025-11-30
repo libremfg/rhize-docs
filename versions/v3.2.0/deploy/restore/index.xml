@@ -4,8 +4,10 @@
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before you start, ensure you have the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The GraphDB Helm chart&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://kubernetes.io/docs/tasks/tools/" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;A &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/backup/graphdb/" &gt;Database backup&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kubernetes.io/docs/tasks/tools/"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/backup/graphdb/"&gt;Database backup&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Steps&lt;span class="hx:absolute hx:-mt-20" id="steps"&gt;&lt;/span&gt;
 &lt;a href="#steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;!-- if procedure is very long, consider using h3s --&gt;
@@ -26,7 +28,9 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt; commands&lt;/a&gt; to &lt;code&gt;libre&lt;/code&gt;, run this command:&lt;/p&gt;
+&lt;p&gt;To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt; commands&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; to &lt;code&gt;libre&lt;/code&gt;, run this command:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubectl config set-context --current --namespace&lt;span class="o"&gt;=&lt;/span&gt;libre&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
@@ -254,8 +258,10 @@ title="Copy code"
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before you start, ensure you have the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The GraphDB Helm chart&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://kubernetes.io/docs/tasks/tools/" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;A &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/backup/binary/" &gt;Database backup&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kubernetes.io/docs/tasks/tools/"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/backup/binary/"&gt;Database backup&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Steps&lt;span class="hx:absolute hx:-mt-20" id="steps"&gt;&lt;/span&gt;
 &lt;a href="#steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;!-- if procedure is very long, consider using h3s --&gt;
@@ -284,7 +290,9 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt; commands&lt;/a&gt; to &lt;code&gt;libre&lt;/code&gt;, run this command:&lt;/p&gt;
+&lt;p&gt;To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt; commands&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; to &lt;code&gt;libre&lt;/code&gt;, run this command:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubectl config set-context --current --namespace&lt;span class="o"&gt;=&lt;/span&gt;libre&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
@@ -379,8 +387,10 @@ title="Copy code"
 &lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before you start, ensure you have the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://kubernetes.io/docs/tasks/tools/" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;An &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/backup/audit/" &gt;Audit PostgreSQL backup&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kubernetes.io/docs/tasks/tools/"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;An &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/backup/audit/"&gt;Audit PostgreSQL backup&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Also, before you start, confirm you are in the right context and namespace.&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -397,7 +407,9 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt; commands&lt;/a&gt; to &lt;code&gt;libre&lt;/code&gt;, run this command:&lt;/p&gt;
+&lt;p&gt;To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt; commands&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; to &lt;code&gt;libre&lt;/code&gt;, run this command:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubectl config set-context --current --namespace&lt;span class="o"&gt;=&lt;/span&gt;libre&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
@@ -429,7 +441,9 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt; commands&lt;/a&gt; to &lt;code&gt;libre&lt;/code&gt;, run this command:&lt;/p&gt;
+&lt;p&gt;To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt; commands&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; to &lt;code&gt;libre&lt;/code&gt;, run this command:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubectl config set-context --current --namespace&lt;span class="o"&gt;=&lt;/span&gt;libre&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
@@ -487,12 +501,12 @@ title="Copy code"
 &lt;/ol&gt;
 &lt;h2&gt;Next Steps&lt;span class="hx:absolute hx:-mt-20" id="next-steps"&gt;&lt;/span&gt;
 &lt;a href="#next-steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Test the &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/backup/audit/" &gt;Backup Audit&lt;/a&gt; procedure&lt;/li&gt;
-&lt;li&gt;Plan and execute a &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/maintain/audit/" &gt;Maintenance Strategy&lt;/a&gt; to handle your audit data.&lt;/li&gt;
+&lt;li&gt;Test the &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/backup/audit/"&gt;Backup Audit&lt;/a&gt; procedure&lt;/li&gt;
+&lt;li&gt;Plan and execute a &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/maintain/audit/"&gt;Maintenance Strategy&lt;/a&gt; to handle your audit data.&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Restore Keycloak</title><link>https://docs.rhize.com/versions/v3.2.0/deploy/restore/keycloak/</link><pubDate>Mon, 08 Jan 2024 13:26:23 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/deploy/restore/keycloak/</guid><description>
 &lt;p&gt;This guide shows you how to restore Keycloak in your Rhize environment.&lt;/p&gt;
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;&lt;p&gt;Restoring Keycloak to a running instance involves downtime.&lt;/p&gt;
 &lt;p&gt;Typically, this downtime lasts less than a minute. The exact duration needed depends on network constraints, backup size, and the performance of the Kubernetes cluster.&lt;/p&gt;
@@ -502,8 +516,10 @@ title="Copy code"
 &lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before you start, ensure you have the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://kubernetes.io/docs/tasks/tools/" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;A &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/backup/keycloak/" &gt;Keycloak backup&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kubernetes.io/docs/tasks/tools/"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/backup/keycloak/"&gt;Keycloak backup&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Steps&lt;span class="hx:absolute hx:-mt-20" id="steps"&gt;&lt;/span&gt;
 &lt;a href="#steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
@@ -523,7 +539,9 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt; commands&lt;/a&gt; to &lt;code&gt;libre&lt;/code&gt;, run this command:&lt;/p&gt;
+&lt;p&gt;To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt; commands&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; to &lt;code&gt;libre&lt;/code&gt;, run this command:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubectl config set-context --current --namespace&lt;span class="o"&gt;=&lt;/span&gt;libre&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
@@ -709,8 +727,10 @@ title="Copy code"
 &lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before you start, ensure you have the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://kubernetes.io/docs/tasks/tools/" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;A &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/backup/grafana/" &gt;Grafana backup&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kubernetes.io/docs/tasks/tools/"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/backup/grafana/"&gt;Grafana backup&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Steps&lt;span class="hx:absolute hx:-mt-20" id="steps"&gt;&lt;/span&gt;
 &lt;a href="#steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
@@ -730,7 +750,9 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt; commands&lt;/a&gt; to &lt;code&gt;libre&lt;/code&gt;, run this command:&lt;/p&gt;
+&lt;p&gt;To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt; commands&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; to &lt;code&gt;libre&lt;/code&gt;, run this command:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubectl config set-context --current --namespace&lt;span class="o"&gt;=&lt;/span&gt;libre&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
@@ -858,9 +880,11 @@ title="Copy code"
 &lt;li&gt;
 &lt;p&gt;Move over the top of current configuration.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;Typically some files are configured as a Kubernetes &lt;a href="https://kubernetes.io/docs/concepts/configuration/configmap/" target="_blank" rel="noopener"&gt;&lt;code&gt;ConfigMap&lt;/code&gt;&lt;/a&gt; and may need to be configured as part of installation. The following command prompts when it is going to overwrite a file, and if it has the permissions to do so.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;Typically some files are configured as a Kubernetes &lt;a href="https://kubernetes.io/docs/concepts/configuration/configmap/"target="_blank" rel="noopener"&gt;&lt;code&gt;ConfigMap&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; and may need to be configured as part of installation. The following command prompts when it is going to overwrite a file, and if it has the permissions to do so.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;

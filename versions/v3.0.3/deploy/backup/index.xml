@@ -4,14 +4,18 @@
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before you start, ensure you have the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A designated S3 backup location, for example &lt;code&gt;s3://s3.&amp;lt;AWS-REGION&amp;gt;.amazonaws.com/&amp;lt;AWS-BUCKET-NAME&amp;gt;&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Access to your &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/install/" &gt;Rhize Kubernetes Environment&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Optional: &lt;a href="https://github.com/ahmetb/kubectx" target="_blank" rel="noopener"&gt;kubectx&lt;/a&gt; utilities
+&lt;li&gt;Access to your &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/install/"&gt;Rhize Kubernetes Environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Optional: &lt;a href="https://github.com/ahmetb/kubectx"target="_blank" rel="noopener"&gt;kubectx&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; utilities
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;kubectx&lt;/code&gt; to manage multiple clusters&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;kubens&lt;/code&gt; to switch between and configure namespaces easily&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Optional: the &lt;a href="https://k8slens.dev" target="_blank" rel="noopener"&gt;k8 Lens IDE&lt;/a&gt;, if you prefer to use Kubernetes graphically.&lt;/li&gt;
+&lt;li&gt;Optional: the &lt;a href="https://k8slens.dev"target="_blank" rel="noopener"&gt;k8 Lens IDE&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, if you prefer to use Kubernetes graphically.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Before you start, confirm you are in the right context and namespace:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -40,12 +44,16 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;For a reference of useful &lt;code&gt;kubectl&lt;/code&gt; commands, refer to the official &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener"&gt;kubectl Cheat Sheet&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For a reference of useful &lt;code&gt;kubectl&lt;/code&gt; commands, refer to the official &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/"target="_blank" rel="noopener"&gt;kubectl Cheat Sheet&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Steps&lt;span class="hx:absolute hx:-mt-20" id="steps"&gt;&lt;/span&gt;
 &lt;a href="#steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To back up the database, follow these steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Check the logs for the alpha and zero pods, either in Lens or with &lt;a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl logs&lt;/code&gt;&lt;/a&gt;.
+&lt;p&gt;Check the logs for the alpha and zero pods, either in Lens or with &lt;a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl logs&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.
 Ensure there are no errors.&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubectl logs libre-baas-baas-alpha-0 --tail&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;80&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
@@ -130,8 +138,8 @@ title="Copy code"
 &lt;/ol&gt;
 &lt;h2&gt;Next Steps&lt;span class="hx:absolute hx:-mt-20" id="next-steps"&gt;&lt;/span&gt;
 &lt;a href="#next-steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Test the &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/restore/binary/" &gt;Restore Graph Database From S3&lt;/a&gt; procedure to ensure you can recover data from Amazon S3 in case of an emergency.&lt;/li&gt;
-&lt;li&gt;To back up other Rhize services, read how to backup &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/backup/grafana/" &gt;Grafana&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Test the &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/restore/binary/"&gt;Restore Graph Database From S3&lt;/a&gt; procedure to ensure you can recover data from Amazon S3 in case of an emergency.&lt;/li&gt;
+&lt;li&gt;To back up other Rhize services, read how to backup &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/backup/grafana/"&gt;Grafana&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Back up the Graph DB</title><link>https://docs.rhize.com/versions/v3.0.3/deploy/backup/graphdb/</link><pubDate>Wed, 18 Oct 2023 11:01:46 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/deploy/backup/graphdb/</guid><description>
 &lt;p&gt;This guide shows you how to back up the Rhize Graph database.
 You can also use it to model an automation workflow.&lt;/p&gt;
@@ -139,14 +147,18 @@ You can also use it to model an automation workflow.&lt;/p&gt;
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before you start, ensure you have the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A designated backup location, for example &lt;code&gt;~/rhize-backups/database&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Access to your &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/install/" &gt;Rhize Kubernetes Environment&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Optional: &lt;a href="https://github.com/ahmetb/kubectx" target="_blank" rel="noopener"&gt;kubectx&lt;/a&gt; utilities
+&lt;li&gt;Access to your &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/install/"&gt;Rhize Kubernetes Environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Optional: &lt;a href="https://github.com/ahmetb/kubectx"target="_blank" rel="noopener"&gt;kubectx&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; utilities
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;kubectx&lt;/code&gt; to manage multiple clusters&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;kubens&lt;/code&gt; to switch between and configure namespaces easily&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Optional: the &lt;a href="https://k8slens.dev" target="_blank" rel="noopener"&gt;k8 Lens IDE&lt;/a&gt;, if you prefer to use Kubernetes graphically.&lt;/li&gt;
+&lt;li&gt;Optional: the &lt;a href="https://k8slens.dev"target="_blank" rel="noopener"&gt;k8 Lens IDE&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, if you prefer to use Kubernetes graphically.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Before you start, confirm you are in the right context and namespace:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -175,12 +187,16 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;For a reference of useful &lt;code&gt;kubectl&lt;/code&gt; commands, refer to the official &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener"&gt;kubectl Cheat Sheet&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For a reference of useful &lt;code&gt;kubectl&lt;/code&gt; commands, refer to the official &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/"target="_blank" rel="noopener"&gt;kubectl Cheat Sheet&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Steps&lt;span class="hx:absolute hx:-mt-20" id="steps"&gt;&lt;/span&gt;
 &lt;a href="#steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To back up the database, follow these steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Check the logs for the alpha and zero pods, either in Lens or with &lt;a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl logs&lt;/code&gt;&lt;/a&gt;.
+&lt;p&gt;Check the logs for the alpha and zero pods, either in Lens or with &lt;a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl logs&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.
 Ensure there are no errors.&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubectl logs libre-baas-baas-alpha-0 --tail&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;80&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
@@ -208,7 +224,9 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;For details, read the Kubernetes topic &lt;a href="https://kubernetes.io/docs/tasks/debug/debug-application/get-shell-running-container/" target="_blank" rel="noopener"&gt;Get Shell to a Running Container&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For details, read the Kubernetes topic &lt;a href="https://kubernetes.io/docs/tasks/debug/debug-application/get-shell-running-container/"target="_blank" rel="noopener"&gt;Get Shell to a Running Container&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Make a POST request to your Keycloak &lt;code&gt;/token&lt;/code&gt; endpoint to get an &lt;code&gt;access_token&lt;/code&gt; value.
@@ -316,7 +334,9 @@ title="Copy code"
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Use the checksum to confirm that the pod files and the local files are the same.
-If you are using Windows, you can run an equivalent check with the &lt;a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/certutil" target="_blank" rel="noopener"&gt;&lt;code&gt;CertUtil&lt;/code&gt;&lt;/a&gt; utility:&lt;/p&gt;
+If you are using Windows, you can run an equivalent check with the &lt;a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/certutil"target="_blank" rel="noopener"&gt;&lt;code&gt;CertUtil&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; utility:&lt;/p&gt;
 &lt;div class="hextra-scrollbar hx:overflow-x-auto hx:overflow-y-hidden hx:overscroll-x-contain"&gt;
 &lt;div class="hx:mt-4 hx:flex hx:w-max hx:min-w-full hx:border-b hx:border-gray-200 hx:pb-px hx:dark:border-neutral-800"&gt;&lt;button
 class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white"
@@ -375,22 +395,26 @@ title="Copy code"
 &lt;p&gt;To check that the backup succeeded, unzip the files and inspect the data.&lt;/p&gt;
 &lt;h2&gt;Next Steps&lt;span class="hx:absolute hx:-mt-20" id="next-steps"&gt;&lt;/span&gt;
 &lt;a href="#next-steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Test the &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/restore/graphdb/" &gt;Restore Graph Database&lt;/a&gt; procedure to ensure you can recover data in case of an emergency.&lt;/li&gt;
-&lt;li&gt;To back up other Rhize services, read how to backup &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/backup/grafana/" &gt;Grafana&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Test the &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/restore/graphdb/"&gt;Restore Graph Database&lt;/a&gt; procedure to ensure you can recover data in case of an emergency.&lt;/li&gt;
+&lt;li&gt;To back up other Rhize services, read how to backup &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/backup/grafana/"&gt;Grafana&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Back up Audit PostgreSQL</title><link>https://docs.rhize.com/versions/v3.0.3/deploy/backup/audit/</link><pubDate>Tue, 26 Mar 2024 11:20:56 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/deploy/backup/audit/</guid><description>
 &lt;p&gt;This guide shows you the procedure to backup your Audit PostgreSQL database on your Rhize Kubernetes deployment.&lt;/p&gt;
 &lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before you start, ensure you have the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A designated backup location, for example &lt;code&gt;~/rhize-backups/libre-audit&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Access to the &lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes/" &gt;Rhize Kubernetes Environment&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Optional: &lt;a href="https://github.com/ahmetb/kubectx" target="_blank" rel="noopener"&gt;kubectx&lt;/a&gt; utilities
+&lt;li&gt;Access to the &lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes/"&gt;Rhize Kubernetes Environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Optional: &lt;a href="https://github.com/ahmetb/kubectx"target="_blank" rel="noopener"&gt;kubectx&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; utilities
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;kubectx&lt;/code&gt; to manage multiple clusters&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;kubens&lt;/code&gt; to switch between and configure namespaces easily&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Optional: the &lt;a href="https://k8slens.dev" target="_blank" rel="noopener"&gt;k8 Lens IDE&lt;/a&gt;, if you prefer to use Kubernetes graphically&lt;/li&gt;
+&lt;li&gt;Optional: the &lt;a href="https://k8slens.dev"target="_blank" rel="noopener"&gt;k8 Lens IDE&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, if you prefer to use Kubernetes graphically&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Also, before you start, confirm you are in the right context and namespace.&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -419,12 +443,16 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;For a reference of useful &lt;code&gt;kubectl&lt;/code&gt; commands, refer to the official &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener"&gt;kubectl Cheat Sheet&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For a reference of useful &lt;code&gt;kubectl&lt;/code&gt; commands, refer to the official &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/"target="_blank" rel="noopener"&gt;kubectl Cheat Sheet&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Steps&lt;span class="hx:absolute hx:-mt-20" id="steps"&gt;&lt;/span&gt;
 &lt;a href="#steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To back up Audit PostgreSQL, follow these steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Check the logs for the Audit pods, either in Lens or with &lt;a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl logs&lt;/code&gt;&lt;/a&gt;.
+&lt;p&gt;Check the logs for the Audit pods, either in Lens or with &lt;a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl logs&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.
 Ensure there are no errors.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -462,9 +490,9 @@ To check that the backup succeeded, unzip the files and inspect the data.&lt;/p&
 &lt;a href="#next-steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;To back up other Rhize services, read how to backup:
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/backup/keycloak/" &gt;Keycloak&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/backup/grafana/" &gt;Grafana&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/backup/graphdb/" &gt;The Graph Database&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/backup/keycloak/"&gt;Keycloak&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/backup/grafana/"&gt;Grafana&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/backup/graphdb/"&gt;The Graph Database&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Back up Keycloak</title><link>https://docs.rhize.com/versions/v3.0.3/deploy/backup/keycloak/</link><pubDate>Mon, 08 Jan 2024 14:30:15 -0500</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/deploy/backup/keycloak/</guid><description>
@@ -473,14 +501,18 @@ To check that the backup succeeded, unzip the files and inspect the data.&lt;/p&
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before you start, ensure you have the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A designated backup location, for example &lt;code&gt;~/rhize-backups/keycloak&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Access to the &lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes/" &gt;Rhize Kubernetes Environment&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Optional: &lt;a href="https://github.com/ahmetb/kubectx" target="_blank" rel="noopener"&gt;kubectx&lt;/a&gt; utilities
+&lt;li&gt;Access to the &lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes/"&gt;Rhize Kubernetes Environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Optional: &lt;a href="https://github.com/ahmetb/kubectx"target="_blank" rel="noopener"&gt;kubectx&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; utilities
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;kubectx&lt;/code&gt; to manage multiple clusters&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;kubens&lt;/code&gt; to switch between and configure namespaces easily&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Optional: the &lt;a href="https://k8slens.dev" target="_blank" rel="noopener"&gt;k8 Lens IDE&lt;/a&gt;, if you prefer to use Kubernetes graphically&lt;/li&gt;
+&lt;li&gt;Optional: the &lt;a href="https://k8slens.dev"target="_blank" rel="noopener"&gt;k8 Lens IDE&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, if you prefer to use Kubernetes graphically&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Also, before you start, confirm you are in the right context and namespace.&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -509,12 +541,16 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;For a reference of useful &lt;code&gt;kubectl&lt;/code&gt; commands, refer to the official &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener"&gt;kubectl Cheat Sheet&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For a reference of useful &lt;code&gt;kubectl&lt;/code&gt; commands, refer to the official &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/"target="_blank" rel="noopener"&gt;kubectl Cheat Sheet&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Steps&lt;span class="hx:absolute hx:-mt-20" id="steps"&gt;&lt;/span&gt;
 &lt;a href="#steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To back up Keycloak, follow these steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Check the logs for the Keycloak pods, either in Lens or with &lt;a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl logs&lt;/code&gt;&lt;/a&gt;.
+&lt;p&gt;Check the logs for the Keycloak pods, either in Lens or with &lt;a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl logs&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.
 Ensure there are no errors.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -549,7 +585,9 @@ title="Copy code"
 &lt;p&gt;When prompted, use the password from the previous step. Expect the prompt multiple times for each database.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Check the logs for the Keycloak Postgres pods, either in Lens or with &lt;a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl logs&lt;/code&gt;&lt;/a&gt;.
+&lt;p&gt;Check the logs for the Keycloak Postgres pods, either in Lens or with &lt;a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl logs&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.
 Ensure there are no errors relating to the backup.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -558,28 +596,34 @@ Ensure there are no errors relating to the backup.&lt;/p&gt;
 &lt;p&gt;To check that the backup succeeded, unzip the files and inspect the data.&lt;/p&gt;
 &lt;h2&gt;Next Steps&lt;span class="hx:absolute hx:-mt-20" id="next-steps"&gt;&lt;/span&gt;
 &lt;a href="#next-steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Test the &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/restore/keycloak/" &gt;Restore Keycloak&lt;/a&gt; procedure to ensure you can recover data in case of an emergency.&lt;/li&gt;
+&lt;li&gt;Test the &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/restore/keycloak/"&gt;Restore Keycloak&lt;/a&gt; procedure to ensure you can recover data in case of an emergency.&lt;/li&gt;
 &lt;li&gt;To back up other Rhize services, read how to backup:
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/backup/grafana/" &gt;Grafana&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/backup/graphdb/" &gt;The Graph Database&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/backup/grafana/"&gt;Grafana&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/backup/graphdb/"&gt;The Graph Database&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Back up Grafana</title><link>https://docs.rhize.com/versions/v3.0.3/deploy/backup/grafana/</link><pubDate>Wed, 18 Oct 2023 11:01:56 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.0.3/deploy/backup/grafana/</guid><description>
 &lt;p&gt;This guide shows you the procedure to back up Grafana on your Rhize Kubernetes deployment.
-For general instructions, refer to the official &lt;a href="https://grafana.com/docs/grafana/latest/administration/back-up-grafana/" target="_blank" rel="noopener"&gt;Back up Grafana&lt;/a&gt; documentation.&lt;/p&gt;
+For general instructions, refer to the official &lt;a href="https://grafana.com/docs/grafana/latest/administration/back-up-grafana/"target="_blank" rel="noopener"&gt;Back up Grafana&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; documentation.&lt;/p&gt;
 &lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before you start, ensure you have the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A designated backup location, for example &lt;code&gt;~/rhize-backups/grafana&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Access to the &lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes/" &gt;Rhize Kubernetes Environment&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Optional: &lt;a href="https://github.com/ahmetb/kubectx" target="_blank" rel="noopener"&gt;kubectx&lt;/a&gt; utilities
+&lt;li&gt;Access to the &lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes/"&gt;Rhize Kubernetes Environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Optional: &lt;a href="https://github.com/ahmetb/kubectx"target="_blank" rel="noopener"&gt;kubectx&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; utilities
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;kubectx&lt;/code&gt; to manage multiple clusters&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;kubens&lt;/code&gt; to switch between and configure namespaces easily&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Optional: the &lt;a href="https://k8slens.dev" target="_blank" rel="noopener"&gt;k8 Lens IDE&lt;/a&gt;, if you prefer to use Kubernetes graphically&lt;/li&gt;
+&lt;li&gt;Optional: the &lt;a href="https://k8slens.dev"target="_blank" rel="noopener"&gt;k8 Lens IDE&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, if you prefer to use Kubernetes graphically&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Also, before you start, confirm you are in the right context and namespace.&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -608,12 +652,16 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;For a reference of useful &lt;code&gt;kubectl&lt;/code&gt; commands, refer to the official &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener"&gt;kubectl Cheat Sheet&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For a reference of useful &lt;code&gt;kubectl&lt;/code&gt; commands, refer to the official &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/"target="_blank" rel="noopener"&gt;kubectl Cheat Sheet&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Steps&lt;span class="hx:absolute hx:-mt-20" id="steps"&gt;&lt;/span&gt;
 &lt;a href="#steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To back up the Grafana, follow these steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Check the logs for the Grafana pods, either in Lens or with &lt;a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl logs&lt;/code&gt;&lt;/a&gt;.
+&lt;p&gt;Check the logs for the Grafana pods, either in Lens or with &lt;a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl logs&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.
 Ensure there are no errors.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -629,7 +677,9 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;For details, read the Kubernetes topic &lt;a href="https://kubernetes.io/docs/tasks/debug/debug-application/get-shell-running-container/" target="_blank" rel="noopener"&gt;Get Shell to a Running Container&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For details, read the Kubernetes topic &lt;a href="https://kubernetes.io/docs/tasks/debug/debug-application/get-shell-running-container/"target="_blank" rel="noopener"&gt;Get Shell to a Running Container&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Use &lt;code&gt;tar&lt;/code&gt; to backup the Grafana data and &lt;code&gt;conf&lt;/code&gt; directories:&lt;/p&gt;
@@ -741,6 +791,6 @@ title="Copy code"
 &lt;p&gt;To check that the content is correct, unzip the files and inspect the data.&lt;/p&gt;
 &lt;h2&gt;Next steps&lt;span class="hx:absolute hx:-mt-20" id="next-steps"&gt;&lt;/span&gt;
 &lt;a href="#next-steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Test the &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/restore/" &gt;Restore Grafana&lt;/a&gt; procedure to ensure you can recover data in case of an emergency.&lt;/li&gt;
-&lt;li&gt;To back up other Rhize services, read how to backup &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/backup/graphdb/" &gt;the Graph Database&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Test the &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/restore/"&gt;Restore Grafana&lt;/a&gt; procedure to ensure you can recover data in case of an emergency.&lt;/li&gt;
+&lt;li&gt;To back up other Rhize services, read how to backup &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/backup/graphdb/"&gt;the Graph Database&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;</description></item></channel></rss>

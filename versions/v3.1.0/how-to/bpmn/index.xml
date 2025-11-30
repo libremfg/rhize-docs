@@ -1,6 +1,6 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Write BPMN workflows</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/</link><description>Recent content in Write BPMN workflows on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 22 Sep 2023 14:50:39 -0300</lastBuildDate><atom:link href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview: orchestrate processes</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/create-workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/create-workflow/</guid><description>
 &lt;p&gt;This guide provides a quick overview of the major features of the Rhize &lt;abbr title="Business Process Model and Notation. A standardized graphical notation used to represent business processes in an intuitive, visual way. Rhize&amp;#39;s BPMN UI and engine provides a low-code interface for complex event handling"&gt;BPMN&lt;/abbr&gt; engine and interface, with links to detailed guides for specific topics.
-For a reference of all BPMN elements and their parameters, refer to &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/" &gt;BPMN elements&lt;/a&gt;.&lt;/p&gt;
+For a reference of all BPMN elements and their parameters, refer to &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/"&gt;BPMN elements&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The Rhize BPMN UI provides a graphical interface to transform and standardize data flows across systems.
 Such &lt;em&gt;process orchestration&lt;/em&gt; has many uses for manufacturing.
 For example, you can write a BPMN workflow to do any of the following:&lt;/p&gt;
@@ -17,9 +17,11 @@ width="70%"
 &lt;/a&gt;
 &lt;/figure&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;Rhize BPMN workflows conform to the visual grammar described in the OMG standard for &lt;a href="https://www.omg.org/spec/BPMN/2.0/" target="_blank" rel="noopener"&gt;Business Process Model and Notation&lt;/a&gt;.
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;Rhize BPMN workflows conform to the visual grammar described in the OMG standard for &lt;a href="https://www.omg.org/spec/BPMN/2.0/"target="_blank" rel="noopener"&gt;Business Process Model and Notation&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.
 Each process is made of &lt;em&gt;events&lt;/em&gt; (circles), &lt;em&gt;activities&lt;/em&gt; (rectangles), &lt;em&gt;gateways&lt;/em&gt; (diamonds), and &lt;em&gt;flows&lt;/em&gt; (arrows).
 Some elements are extended for Rhize-specific features, such as service tasks that call the GraphQL API.
 Some elements from the standard are unused and thus do not appear in the UI.&lt;/div&gt;
@@ -35,22 +37,22 @@ Additionally, &lt;em&gt;message&lt;/em&gt; events provide templates to publish a
 &lt;ol&gt;
 &lt;li&gt;Select the &lt;em&gt;activity&lt;/em&gt; (rectangle) element.&lt;/li&gt;
 &lt;li&gt;Select &lt;strong&gt;Template&lt;/strong&gt; and then choose the template you want.&lt;/li&gt;
-&lt;li&gt;Configure the template according to its &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#jsonata-transform" &gt;Task parameters&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Configure the template according to its &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#jsonata-transform"&gt;Task parameters&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;Interact with the Rhize API&lt;span class="hx:absolute hx:-mt-20" id="interact-with-the-rhize-api"&gt;&lt;/span&gt;
 &lt;a href="#interact-with-the-rhize-api" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Use GraphQL tasks to query and change data in your manufacturing knowledge graph.
 For example:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;A scheduling workflow could use the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#graphql-query" &gt;Query task&lt;/a&gt; to find all &lt;code&gt;JobResponses&lt;/code&gt; whose state is &lt;code&gt;COMPLETED&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;An ingestion workflow might use a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#graphql-mutation" &gt;Mutation task&lt;/a&gt; to update new &lt;code&gt;jobResponse&lt;/code&gt; data that was published from a SCADA system.&lt;/li&gt;
+&lt;li&gt;A scheduling workflow could use the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#graphql-query"&gt;Query task&lt;/a&gt; to find all &lt;code&gt;JobResponses&lt;/code&gt; whose state is &lt;code&gt;COMPLETED&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;An ingestion workflow might use a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#graphql-mutation"&gt;Mutation task&lt;/a&gt; to update new &lt;code&gt;jobResponse&lt;/code&gt; data that was published from a SCADA system.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;You can also use &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#jsonata-transform" &gt;JSONata&lt;/a&gt; in your GraphQL payloads to dynamically add values at runtime.
-For details about how to use the Rhize API, read the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/" &gt;Guide to GraphQL&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can also use &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#jsonata-transform"&gt;JSONata&lt;/a&gt; in your GraphQL payloads to dynamically add values at runtime.
+For details about how to use the Rhize API, read the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/"&gt;Guide to GraphQL&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Interact with external systems&lt;span class="hx:absolute hx:-mt-20" id="interact-with-external-systems"&gt;&lt;/span&gt;
-&lt;a href="#interact-with-external-systems" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To make HTTP requests to external systems, use the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#call-rest-api" &gt;REST task&lt;/a&gt;.
+&lt;a href="#interact-with-external-systems" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To make HTTP requests to external systems, use the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#call-rest-api"&gt;REST task&lt;/a&gt;.
 For example, you might send a &lt;code&gt;POST&lt;/code&gt; with performance values to an ERP system, or use a &lt;code&gt;GET&lt;/code&gt; operation to query test results.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;Besides REST, you can use this template to interact with any HTTP API.&lt;/div&gt;
 &lt;/div&gt;
@@ -72,14 +74,14 @@ A workflow that evaluates a message and throws a if the payload meets a certain 
 &lt;li&gt;Select a start (thin circle) or intermediate (double-line) circle.&lt;/li&gt;
 &lt;li&gt;Select the wrench icon.&lt;/li&gt;
 &lt;li&gt;Select the message event (circle with an envelope).&lt;/li&gt;
-&lt;li&gt;Configure the message topic and body according to the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#events" &gt;Event parameters&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;If using an &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#service-tasks" &gt;Intermediate throw event&lt;/a&gt;, name the variable &lt;code&gt;BODY&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Configure the message topic and body according to the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#events"&gt;Event parameters&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;If using an &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#service-tasks"&gt;Intermediate throw event&lt;/a&gt;, name the variable &lt;code&gt;BODY&lt;/code&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;To listen and publish to an edge device:&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/publish-subscribe/connect-datasource/" &gt;Create a data source&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/publish-subscribe/connect-datasource/"&gt;Create a data source&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;In your workflow, select the task. And choose the &lt;strong&gt;Data source&lt;/strong&gt; template.&lt;/li&gt;
-&lt;li&gt;Configure the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#service-tasks" &gt;Data Source task parameters&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Configure the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#service-tasks"&gt;Data Source task parameters&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;The strategy you choose to send and receive message data depends on your architectural setup.
 Generally, data-source messages come from level-1 and level-2 devices on the edge,
@@ -107,7 +109,7 @@ Annotated and truncated version of mapping an external event to the &lt;code&gt;
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;To calculate and transform data, BPMN nodes can interpret the JSONata expression language.
-For details, read the complete &lt;a href="https://docs.rhize.com/how-to/bpmn/use-jsonata/" &gt;Rhize guide to JSONata&lt;/a&gt;.&lt;/p&gt;
+For details, read the complete &lt;a href="https://docs.rhize.com/how-to/bpmn/use-jsonata/"&gt;Rhize guide to JSONata&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Control flows&lt;span class="hx:absolute hx:-mt-20" id="control-flows"&gt;&lt;/span&gt;
 &lt;a href="#control-flows" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;As data passes through a workflow, you might need to conditionally direct it to specific tasks, transformations, and events.
 For this, Rhize has &lt;em&gt;gateways&lt;/em&gt;, represented as diamonds.&lt;/p&gt;
@@ -159,7 +161,7 @@ Simultaneously add a record to the database and send an alert
 &lt;li&gt;&lt;strong&gt;Rule triggers&lt;/strong&gt; subscribe to the topics on a remote data source, such as an edge OPC-UA server or MQTT broker.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Timer triggers&lt;/strong&gt; start according to some schedule (once or repeating).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;To learn more, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/trigger-workflows/" &gt;Trigger workflows&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To learn more, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/trigger-workflows/"&gt;Trigger workflows&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Reuse workflows&lt;span class="hx:absolute hx:-mt-20" id="reuse-workflows"&gt;&lt;/span&gt;
 &lt;a href="#reuse-workflows" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;BPMN workflows are &lt;em&gt;composable&lt;/em&gt;, where each element can be reused by others.
 For example, you might create a workflow that calculates common statistics, or one that makes a specified call to an external system.
@@ -171,7 +173,9 @@ width="55%"
 &gt;
 &lt;/a&gt;
 &lt;figcaption class="caption"&gt;
-An example of a main workflow calling a function. &lt;a href="https://github.com/libremfg/rhize-templates/tree/main/bpmn/call-activity-calculate-stats" target="_blank" rel="noopener"&gt;Template&lt;/a&gt;
+An example of a main workflow calling a function. &lt;a href="https://github.com/libremfg/rhize-templates/tree/main/bpmn/call-activity-calculate-stats"target="_blank" rel="noopener"&gt;Template&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;To reuse a workflow:&lt;/p&gt;
@@ -179,7 +183,7 @@ An example of a main workflow calling a function. &lt;a href="https://github.com
 &lt;li&gt;Drag the task element (rectangle) into the workflow.&lt;/li&gt;
 &lt;li&gt;Select the wrench icon.&lt;/li&gt;
 &lt;li&gt;Select &lt;strong&gt;Call Activity&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Configure it according to the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#call-activities" &gt;call activity parameters&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Configure it according to the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#call-activities"&gt;call activity parameters&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Access process variable context&lt;span class="hx:absolute hx:-mt-20" id="access-process-variable-context"&gt;&lt;/span&gt;
 &lt;a href="#access-process-variable-context" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;As data passes through the nodes of a workflow, the nodes share access to a variable space.
@@ -190,7 +194,7 @@ This overall variable object is called &lt;em&gt;process variable context&lt;/em
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Access the root variable context through &lt;code&gt;$.&lt;/code&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;This follows the conventions of JSONata.
-For details and examples, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/use-jsonata/" &gt;Use JSONata&lt;/a&gt;.&lt;/p&gt;
+For details and examples, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/use-jsonata/"&gt;Use JSONata&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Access nested properties with dot notation.&lt;/strong&gt;&lt;/p&gt;
@@ -225,17 +229,19 @@ This behavior can be used to manage the overall memory footprint of a workflow.&
 &lt;p&gt;By default, the process variable context has a maximum size of 1MB.
 When an activity outputs data, the output is added to the process variable context.
 When variable size gets large, you have multiple strategies to reduce its size (besides mutating variables).
-For ideas, refer to &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/tune-performance/" &gt;Tune BPMN performance&lt;/a&gt;.&lt;/p&gt;
+For ideas, refer to &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/tune-performance/"&gt;Tune BPMN performance&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;You can trace variable context.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;For details, refer to the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/debug-workflows/" &gt;Debug guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For details, refer to the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/debug-workflows/"&gt;Debug guide&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Examples&lt;span class="hx:absolute hx:-mt-20" id="examples"&gt;&lt;/span&gt;
 &lt;a href="#examples" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Rhize has a repository of templates that you can import and use in your system.
 Use these to explore how the key functionality works.
-&lt;a href="https://github.com/libremfg/bpmn-templates" target="_blank" rel="noopener"&gt;Rhize BPMN templates&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Trigger workflows</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/trigger-workflows/</link><pubDate>Wed, 24 Apr 2024 19:35:09 +0300</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/trigger-workflows/</guid><description>
+&lt;a href="https://github.com/libremfg/bpmn-templates"target="_blank" rel="noopener"&gt;Rhize BPMN templates&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Trigger workflows</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/trigger-workflows/</link><pubDate>Wed, 24 Apr 2024 19:35:09 +0300</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/trigger-workflows/</guid><description>
 &lt;p&gt;You also have multiple ways to start, or &lt;em&gt;trigger&lt;/em&gt;, a BPMN workflow.
 The best choice of trigger depends on the context of the event and the system that initiates the workflow.&lt;/p&gt;
 &lt;ul&gt;
@@ -249,7 +255,7 @@ The best choice of trigger depends on the context of the event and the system th
 However, if the workflow uses the default blank start event, you must trigger it through API call.
 For example, an API trigger may originate from a custom frontend application or a developer&amp;rsquo;s local machine.&lt;/p&gt;
 &lt;p&gt;The Rhize API has two mutations to start workflows.
-Both must specify the workflow ID as an &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/call-the-graphql-api/#request-body" &gt;argument in the request body&lt;/a&gt;.
+Both must specify the workflow ID as an &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/call-the-graphql-api/#request-body"&gt;argument in the request body&lt;/a&gt;.
 Each run for a workflow returns a unique &lt;code&gt;ID&lt;/code&gt; that you can use for debugging.&lt;/p&gt;
 &lt;h3&gt;Synchronous and asynchronous API triggers&lt;span class="hx:absolute hx:-mt-20" id="synchronous-and-asynchronous-api-triggers"&gt;&lt;/span&gt;
 &lt;a href="#synchronous-and-asynchronous-api-triggers" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To start BPMN workflows, Rhize has two API operations:&lt;/p&gt;
@@ -324,7 +330,7 @@ title="Copy code"
 &lt;/ul&gt;
 &lt;h3&gt;&lt;code&gt;customResponse&lt;/code&gt;&lt;span class="hx:absolute hx:-mt-20" id="customresponse"&gt;&lt;/span&gt;
 &lt;a href="#customresponse" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;customResponse&lt;/code&gt; is a special variable to return data in the response to clients that run &lt;code&gt;createAndRunBPMNSync&lt;/code&gt; operations.&lt;/p&gt;
-&lt;p&gt;You can set the &lt;code&gt;customResponse&lt;/code&gt; in any &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/" &gt;element&lt;/a&gt; that has an &lt;code&gt;Output&lt;/code&gt; or &lt;code&gt;Input response&lt;/code&gt; parameter.
+&lt;p&gt;You can set the &lt;code&gt;customResponse&lt;/code&gt; in any &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/"&gt;element&lt;/a&gt; that has an &lt;code&gt;Output&lt;/code&gt; or &lt;code&gt;Input response&lt;/code&gt; parameter.
 It can use any data from the &lt;abbr title="The context and variables that are passed between tasks in a BPMN workflow"&gt;process variable context&lt;/abbr&gt;, including variables added on the fly.&lt;/p&gt;
 &lt;p&gt;Functionally, only the last value of the &lt;code&gt;customResponse&lt;/code&gt; is returned to the client that sent the response.
 However, you can use conditional branches and different end nodes to add error handling.
@@ -337,7 +343,9 @@ width="80%"
 &gt;
 &lt;/a&gt;
 &lt;figcaption class="caption"&gt;
-Download this workflow from &lt;a href="https://github.com/libremfg/rhize-templates/tree/main/bpmn/custom-response-error-events" target="_blank" rel="noopener"&gt;BPMN templates&lt;/a&gt;
+Download this workflow from &lt;a href="https://github.com/libremfg/rhize-templates/tree/main/bpmn/custom-response-error-events"target="_blank" rel="noopener"&gt;BPMN templates&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;!-- vale on --&gt;
@@ -375,12 +383,12 @@ title="Copy code"
 &lt;/div&gt;
 &lt;p&gt;If the &lt;code&gt;version&lt;/code&gt; property is empty, Rhize runs the active version of the workflow (if an active version exists).&lt;/p&gt;
 &lt;h2&gt;Start from a message&lt;span class="hx:absolute hx:-mt-20" id="start-from-a-message"&gt;&lt;/span&gt;
-&lt;a href="#start-from-a-message" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#message-start-event" &gt;message start event&lt;/a&gt; subscribes to a topic on the Rhize broker.
+&lt;a href="#start-from-a-message" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#message-start-event"&gt;message start event&lt;/a&gt; subscribes to a topic on the Rhize broker.
 Whenever a message is published to this topic, the workflow is triggered.
 The Rhize broker can receive messages published over MQTT, NATS, and OPC UA.&lt;/p&gt;
 &lt;p&gt;For example, this workflow subscribes to the topic &lt;code&gt;material/stuff&lt;/code&gt;.
 Whenever a message is published to the topic, it evaluates whether the quantity is in the correct threshold.
-If the quantity is correct, it uses the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#graphql-mutation/" &gt;mutation service task&lt;/a&gt; to add a material lot.
+If the quantity is correct, it uses the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#graphql-mutation/"&gt;mutation service task&lt;/a&gt; to add a material lot.
 If incorrect, it sends an alert back to the broker.&lt;/p&gt;
 &lt;!-- vale off --&gt;
 &lt;figure class="big-figure"&gt;
@@ -390,7 +398,9 @@ width="65%"
 &gt;
 &lt;/a&gt;
 &lt;figcaption class="caption"&gt;
-Download this workflow as a &lt;a href="https://github.com/libremfg/rhize-templates/tree/main/bpmn/msg-start-and-throw" target="_blank" rel="noopener"&gt;BPMN template&lt;/a&gt;.
+Download this workflow as a &lt;a href="https://github.com/libremfg/rhize-templates/tree/main/bpmn/msg-start-and-throw"target="_blank" rel="noopener"&gt;BPMN template&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;!-- vale on --&gt;
@@ -398,12 +408,14 @@ Download this workflow as a &lt;a href="https://github.com/libremfg/rhize-templa
 &lt;h2&gt;Rule-based triggers&lt;span class="hx:absolute hx:-mt-20" id="rule-based-triggers"&gt;&lt;/span&gt;
 &lt;a href="#rule-based-triggers" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Rule-based triggers subscribe to tag changes from a data source and trigger when the rule change condition is met.
 Typically, users choose this workflow trigger when they want to orchestrate processes originating from level-1 and level-2 systems.&lt;/p&gt;
-&lt;p&gt;To add a data source and create a rule based trigger, refer to &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/publish-subscribe/create-equipment-class-rule/" &gt;Turn values into events&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To add a data source and create a rule based trigger, refer to &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/publish-subscribe/create-equipment-class-rule/"&gt;Turn values into events&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Timer triggers&lt;span class="hx:absolute hx:-mt-20" id="timer-triggers"&gt;&lt;/span&gt;
 &lt;a href="#timer-triggers" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Timer triggers run according to a configured time or interval.
 For example, a timer trigger may start a workflow each day, or once at a certain time.&lt;/p&gt;
-&lt;p&gt;To use timer triggers, use the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#timer-start-event" &gt;timer start event&lt;/a&gt;. As with message start events, the workflow &lt;strong&gt;must be enabled&lt;/strong&gt; for it to run.&lt;/p&gt;</description></item><item><title>Use JSONata</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/use-jsonata/</link><pubDate>Fri, 10 May 2024 16:20:35 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/use-jsonata/</guid><description>
-&lt;p&gt;&lt;a href="https://jsonata.org/" target="_blank" rel="noopener"&gt;JSONata&lt;/a&gt;
+&lt;p&gt;To use timer triggers, use the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#timer-start-event"&gt;timer start event&lt;/a&gt;. As with message start events, the workflow &lt;strong&gt;must be enabled&lt;/strong&gt; for it to run.&lt;/p&gt;</description></item><item><title>Use JSONata</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/use-jsonata/</link><pubDate>Fri, 10 May 2024 16:20:35 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/use-jsonata/</guid><description>
+&lt;p&gt;&lt;a href="https://jsonata.org/"target="_blank" rel="noopener"&gt;JSONata&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;
 is a query language to filter, transform, and create JSON objects.
 Rhize BPMN workflows use JSONata expressions to
 transform JSON payloads as they pass through workflow nodes and across integrated systems.
@@ -414,7 +426,9 @@ In BPMN workflows, JSONata expressions have some essential functions:&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;Create logical conditions.&lt;/strong&gt; Generate values to feed to gateways to direct the flow of the BPMN.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This guide details how to use JSONata in your Rhize environment and provides some examples relevant to manufacturing workflows.
-For the full details of the JSONata expression language, read the &lt;a href="https://docs.jsonata.org/overview.html" target="_blank" rel="noopener"&gt;Official JSONata documentation&lt;/a&gt;.&lt;/p&gt;
+For the full details of the JSONata expression language, read the &lt;a href="https://docs.jsonata.org/overview.html"target="_blank" rel="noopener"&gt;Official JSONata documentation&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Use JSONata in Rhize&lt;span class="hx:absolute hx:-mt-20" id="use-jsonata-in-rhize"&gt;&lt;/span&gt;
 &lt;a href="#use-jsonata-in-rhize" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;JSONata returns the final value of its expression as output.
 This output can be of any data type that JSON supports.
@@ -562,17 +576,19 @@ title="Copy code"
 &lt;/div&gt;
 &lt;h3&gt;JSONata in BPMN elements&lt;span class="hx:absolute hx:-mt-20" id="jsonata-in-bpmn-elements"&gt;&lt;/span&gt;
 &lt;a href="#jsonata-in-bpmn-elements" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;JSONata can be used in many Rhize BPMN elements
-Particularly, the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#jsonata-transform" &gt;JSONata service task&lt;/a&gt; exists to receive input and pass it to another element or system.&lt;/p&gt;
+Particularly, the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#jsonata-transform"&gt;JSONata service task&lt;/a&gt; exists to receive input and pass it to another element or system.&lt;/p&gt;
 &lt;p&gt;Though JSONata tasks are the most common use of JSONata,
 you can use the &lt;code&gt;=&lt;/code&gt; prefix to declare an expression in many other fields.
 Parameters that accept expressions include API payloads, message payloads, and flow conditions.&lt;/p&gt;
-&lt;p&gt;To review the full list of elements and fields that accept JSONata, read the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/" &gt;BPMN element reference&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To review the full list of elements and fields that accept JSONata, read the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/"&gt;BPMN element reference&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;JSONata version&lt;span class="hx:absolute hx:-mt-20" id="jsonata-version"&gt;&lt;/span&gt;
 &lt;a href="#jsonata-version" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Many implementations of JSONata exist.
 Rhize uses a custom Go implementation for high performance and safe calculation.&lt;/p&gt;
 &lt;h2&gt;JSONata examples&lt;span class="hx:absolute hx:-mt-20" id="jsonata-examples"&gt;&lt;/span&gt;
 &lt;a href="#jsonata-examples" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;These snippets provide some examples of JSONata from manufacturing workflows.
-To experiment with how they work, copy the data and expression into a &lt;a href="https://try.jsonata.org/" target="_blank" rel="noopener"&gt;JSONata exerciser&lt;/a&gt; and try changing values.&lt;/p&gt;
+To experiment with how they work, copy the data and expression into a &lt;a href="https://try.jsonata.org/"target="_blank" rel="noopener"&gt;JSONata exerciser&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; and try changing values.&lt;/p&gt;
 &lt;h3&gt;Filter for items that contain&lt;span class="hx:absolute hx:-mt-20" id="filter-for-items-that-contain"&gt;&lt;/span&gt;
 &lt;a href="#filter-for-items-that-contain" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;This expression returns the ID of all &lt;code&gt;equipmentActual&lt;/code&gt; items that are associated with a specified job response &lt;code&gt;JR-4&lt;/code&gt;.
 It outputs the IDs as an array of strings in a new custom object.&lt;/p&gt;
@@ -1481,7 +1497,7 @@ The workflow author anticipates the error and then writes some logic to conditio
 However, you have many ways to handle conditions. When deciding how to direct flows, consider both the context of the error and overall readability of your diagram.
 This section describes some key strategies.&lt;/p&gt;
 &lt;h3&gt;Gateways&lt;span class="hx:absolute hx:-mt-20" id="gateways"&gt;&lt;/span&gt;
-&lt;a href="#gateways" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Use &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#gateways" &gt;exclusive gateways&lt;/a&gt; for any type of error handling.
+&lt;a href="#gateways" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Use &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#gateways"&gt;exclusive gateways&lt;/a&gt; for any type of error handling.
 For example, you might define a normal range for a value, then send alerts for when the value falls outside of this range.
 If it makes sense, these error branches also might flow into an early end event.&lt;/p&gt;
 &lt;!-- vale off --&gt;
@@ -1492,13 +1508,15 @@ width="80%"
 &gt;
 &lt;/a&gt;
 &lt;figcaption class="caption"&gt;
-Download this workflow from &lt;a href="https://github.com/libremfg/rhize-templates/tree/main/bpmn/custom-response-error-events" target="_blank" rel="noopener"&gt;BPMN templates&lt;/a&gt;
+Download this workflow from &lt;a href="https://github.com/libremfg/rhize-templates/tree/main/bpmn/custom-response-error-events"target="_blank" rel="noopener"&gt;BPMN templates&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;!-- vale on --&gt;
 &lt;h3&gt;JSON schema validation&lt;span class="hx:absolute hx:-mt-20" id="json-schema-validation"&gt;&lt;/span&gt;
 &lt;a href="#json-schema-validation" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Validation can greatly limit the scope of possible errors.
-To validate your JSON payloads, use the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#json-schema" &gt;JSON schema task&lt;/a&gt;.&lt;/p&gt;
+To validate your JSON payloads, use the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#json-schema"&gt;JSON schema task&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The JSON schema task outputs a boolean value that indicates whether the input conforms to the schema that you set.
 You can then set a condition based on whether this &lt;code&gt;valid&lt;/code&gt; variable is true, and create logic to handle errors accordingly.
 For example, this schema requires that the input variables include a property &lt;code&gt;arr&lt;/code&gt; whose
@@ -1528,7 +1546,9 @@ width="35%"
 &gt;
 &lt;/a&gt;
 &lt;figcaption class="caption"&gt;
-A conditional that branches when the JSON schema task receives invalid input. &lt;a href="https://github.com/libremfg/rhize-templates/tree/main/bpmn/call-activity-calculate-stats" target="_blank" rel="noopener"&gt;Download the template&lt;/a&gt;
+A conditional that branches when the JSON schema task receives invalid input. &lt;a href="https://github.com/libremfg/rhize-templates/tree/main/bpmn/call-activity-calculate-stats"target="_blank" rel="noopener"&gt;Download the template&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;h3&gt;JSONata conditions&lt;span class="hx:absolute hx:-mt-20" id="jsonata-conditions"&gt;&lt;/span&gt;
@@ -1635,13 +1655,15 @@ This strategy increases the observability of errors and facilitates future analy
 It may also be useful when combined with the debugging strategies described in the next section.&lt;/p&gt;
 &lt;h2&gt;Strategies to debug&lt;span class="hx:absolute hx:-mt-20" id="strategies-to-debug"&gt;&lt;/span&gt;
 &lt;a href="#strategies-to-debug" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For detailed debugging,
-you can use an embedded instance of &lt;a href="https://github.com/grafana/tempo" target="_blank" rel="noopener"&gt;Grafana Tempo&lt;/a&gt; to inspect each step of the workflow, node by node.
+you can use an embedded instance of &lt;a href="https://github.com/grafana/tempo"target="_blank" rel="noopener"&gt;Grafana Tempo&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; to inspect each step of the workflow, node by node.
 To debug on the fly, you may also find it useful to use &lt;code&gt;customResponse&lt;/code&gt; and intermediate message throws to print variables and output at different checkpoints.&lt;/p&gt;
 &lt;h3&gt;Debug from the API calls&lt;span class="hx:absolute hx:-mt-20" id="debug-from-the-api-calls"&gt;&lt;/span&gt;
 &lt;a href="#debug-from-the-api-calls" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;When you first test or run a workflow, consider starting the testing and debugging process from an API trigger.
 All API triggers return information about the workflow state (for example &lt;code&gt;COMPLETED&lt;/code&gt; or &lt;code&gt;ABORTED&lt;/code&gt;).
 With the &lt;code&gt;createAndRunBpmnSync&lt;/code&gt; operation, you can also use the &lt;code&gt;customResponse&lt;/code&gt; to provide information from the workflow&amp;rsquo;s variable context.
-For details of how this works, read the guide to &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/trigger-workflows/" &gt;triggering workflows&lt;/a&gt;.&lt;/p&gt;
+For details of how this works, read the guide to &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/trigger-workflows/"&gt;triggering workflows&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;For example, consider a workflow that has two nodes, a Message throw event and a REST task.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;When the message completes, the user writes &lt;code&gt;Message sent&lt;/code&gt; into &lt;code&gt;customResponse&lt;/code&gt; as an output variable.&lt;/li&gt;
@@ -1677,11 +1699,13 @@ However, while &lt;code&gt;customResponse&lt;/code&gt; and messages are undoubte
 For full-featured debugging, use the &lt;code&gt;traceID&lt;/code&gt; to explore the workflow through Tempo.&lt;/p&gt;
 &lt;h3&gt;Debug in Tempo&lt;span class="hx:absolute hx:-mt-20" id="debug-in-tempo"&gt;&lt;/span&gt;
 &lt;a href="#debug-in-tempo" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;The instructions here provide the minimum about using Tempo as a tool.
 To discover the many ways you can filter your BPMN traces for debugging and analysis,
-refer to the &lt;a href="https://grafana.com/docs/tempo/latest/" target="_blank" rel="noopener"&gt;official documentation&lt;/a&gt;.&lt;/div&gt;
+refer to the &lt;a href="https://grafana.com/docs/tempo/latest/"target="_blank" rel="noopener"&gt;official documentation&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Rhize creates a unique ID and trace for each workflow that runs.
@@ -1726,14 +1750,14 @@ A detailed view of an error for a BPMN process in Tempo
 &lt;p&gt;Also note the names of the spans in the previous two screenshots.
 Names that convey semantic information it easier to find specific nodes and easier to understand and follow the overall workflow.
 Well-named nodes make debugging easier.
-This is one of the reasons we recommend always following a set of &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/naming-conventions/" &gt;naming conventions&lt;/a&gt; when you author BPMN workflows.&lt;/p&gt;
+This is one of the reasons we recommend always following a set of &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/naming-conventions/"&gt;naming conventions&lt;/a&gt; when you author BPMN workflows.&lt;/p&gt;
 &lt;h3&gt;Adding the debug flag&lt;span class="hx:absolute hx:-mt-20" id="adding-the-debug-flag"&gt;&lt;/span&gt;
 &lt;a href="#adding-the-debug-flag" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;For granular debugging, it also helps to trace the variable context as it passes from node to node.
 To facilitate this, Rhize provides a debugging option that you can pass in multiple ways:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;From an API call with the &lt;code&gt;debug:true&lt;/code&gt; &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/call-the-graphql-api/#request-body" &gt;argument&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;From an API call with the &lt;code&gt;debug:true&lt;/code&gt; &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/call-the-graphql-api/#request-body"&gt;argument&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;In the process variable context, by setting &lt;code&gt;__traceDebug: true&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;In the &lt;a href="https://docs.rhize.com/versions/v3.1.0/reference/service-config/bpmn-configuration/" &gt;BPMN service configuration&lt;/a&gt; by setting &lt;code&gt;OpenTelemetry.defaultDebug&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;In the &lt;a href="https://docs.rhize.com/versions/v3.1.0/reference/service-config/bpmn-configuration/"&gt;BPMN service configuration&lt;/a&gt; by setting &lt;code&gt;OpenTelemetry.defaultDebug&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;When the debugging variable is set, Tempo reports the entire variable context in the &lt;strong&gt;Span Attributes&lt;/strong&gt; at the end of each node.&lt;/p&gt;
 &lt;figure class="big-figure"&gt;
@@ -1746,13 +1770,13 @@ width="55%"
 The process variable context at the end of a node in a BPMN workflow.
 &lt;/figcaption&gt;
 &lt;/figure&gt;</description></item><item><title>Tune BPMN performance</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/tune-performance/</link><pubDate>Fri, 09 Feb 2024 09:47:47 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/tune-performance/</guid><description>
-&lt;p&gt;This page documents some tips to debug &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/create-workflow/" &gt;BPMN workflows&lt;/a&gt; and improve their performance.&lt;/p&gt;
+&lt;p&gt;This page documents some tips to debug &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/create-workflow/"&gt;BPMN workflows&lt;/a&gt; and improve their performance.&lt;/p&gt;
 &lt;p&gt;Manufacturing events can generate a vast amount of data.
 And a BPMN workflow can have any number of logical flows and data transformations.
 So an inefficient BPMN process can introduce performance degradations.&lt;/p&gt;
 &lt;h2&gt;Manage the process context size&lt;span class="hx:absolute hx:-mt-20" id="manage-the-process-context-size"&gt;&lt;/span&gt;
 &lt;a href="#manage-the-process-context-size" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;The max size of the process variable context comes from the default max payload size of NATS Jetstreams.
 To increase this size, change your NATS configuration.&lt;/div&gt;
@@ -1768,14 +1792,18 @@ If a JSONata task slightly modifies and outputs it to a new variable, &lt;code&g
 That is, instead of outputting a new variable, you can output the transformed payload to the original variable name.&lt;/p&gt;
 &lt;h3&gt;Discard unneeded data from API responses&lt;span class="hx:absolute hx:-mt-20" id="discard-unneeded-data-from-api-responses"&gt;&lt;/span&gt;
 &lt;a href="#discard-unneeded-data-from-api-responses" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Additionally, in service tasks that call APIs, use the &lt;strong&gt;Response Transform Expression&lt;/strong&gt; to minimize the returned data to only the necessary fields.
-Rhize stores only the output of the expression, and discards the other part of the response. This is especially useful in service tasks that &lt;a href="https://docs.rhize.com/how-to/bpmn/bpmn-elements/#call-rest-api" target="_blank" rel="noopener"&gt;Call a REST API&lt;/a&gt;, since you cannot precisely specify the fields in the response (as you can with a GraphQL query).&lt;/p&gt;
+Rhize stores only the output of the expression, and discards the other part of the response. This is especially useful in service tasks that &lt;a href="https://docs.rhize.com/how-to/bpmn/bpmn-elements/#call-rest-api"target="_blank" rel="noopener"&gt;Call a REST API&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, since you cannot precisely specify the fields in the response (as you can with a GraphQL query).&lt;/p&gt;
 &lt;p&gt;If you still struggle to find what objects create memory bottlenecks, use a tool to observe their footprint, as documented in the next section.&lt;/p&gt;
 &lt;h3&gt;Observe payload size&lt;span class="hx:absolute hx:-mt-20" id="observe-payload-size"&gt;&lt;/span&gt;
 &lt;a href="#observe-payload-size" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Each element in a BPMN workflow passes, evaluates, or transforms a JSON body.
 Any unnecessary fields occupy unnecessary space in the &lt;abbr title="The context and variables that are passed between tasks in a BPMN workflow"&gt;process variable context&lt;/abbr&gt;.
 However, it&amp;rsquo;s hard for a human to reason about the size of the inflight payload without a tool to provide measurements and context.&lt;/p&gt;
 &lt;p&gt;It&amp;rsquo;s easier to find places to reduce the in-flight payload size if you can visualize its memory footprint.
-We recommend the &lt;a href="https://www.debugbear.com/json-size-analyzer" target="_blank" rel="noopener"&gt;JSON site analyzer&lt;/a&gt;, which presents a flame graph of the memory used by the objects in a JSON data structure.&lt;/p&gt;
+We recommend the &lt;a href="https://www.debugbear.com/json-size-analyzer"target="_blank" rel="noopener"&gt;JSON site analyzer&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, which presents a flame graph of the memory used by the objects in a JSON data structure.&lt;/p&gt;
 &lt;figure&gt;&lt;img src="https://docs.rhize.com/how-to/bpmn/screenshot-rhize-flamegraph-json.png"
 alt="A simplified diagram of Rhize&amp;#39;s architecture" width="70%"&gt;&lt;figcaption&gt;
 &lt;p&gt;&lt;em&gt;&lt;small&gt;The material lot object is dominating the size of this JSON payload. This a good place to start looking for optimizations.&lt;/small&gt;&lt;/em&gt;&lt;/p&gt;
@@ -1785,7 +1813,7 @@ alt="A simplified diagram of Rhize&amp;#39;s architecture" width="70%"&gt;&lt;fi
 &lt;a href="#look-for-inefficient-execution-logic" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you first write a workflow, you may use some logical flows slow down execution time.
 If a process seems slow, look for these places to refactor performance.&lt;/p&gt;
 &lt;h3&gt;Avoid parallel joins&lt;span class="hx:absolute hx:-mt-20" id="avoid-parallel-joins"&gt;&lt;/span&gt;
-&lt;a href="#avoid-parallel-joins" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Running processes in &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#parallel-gateway" &gt;parallel&lt;/a&gt; can increase the workflow&amp;rsquo;s complexity.
+&lt;a href="#avoid-parallel-joins" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Running processes in &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#parallel-gateway"&gt;parallel&lt;/a&gt; can increase the workflow&amp;rsquo;s complexity.
 Parallel joins in particular can also increase memory usage of the NATS service.&lt;/p&gt;
 &lt;p&gt;Where possible, prefer exclusive branching and sequential execution.
 When a task requires concurrency, keep the amount of data processed and the complexity of the tasks to the minimum necessary.&lt;/p&gt;
@@ -1800,7 +1828,9 @@ If a process with a loop is taking too long to execute, consider refactoring the
 &lt;h2&gt;Use the JSONata book extension&lt;span class="hx:absolute hx:-mt-20" id="use-the-jsonata-book-extension"&gt;&lt;/span&gt;
 &lt;a href="#use-the-jsonata-book-extension" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A BPMN process performs better when the JSONata transformations are precise.
 A strategy to debug and minimize necessary computation is to break transformations into smaller steps.&lt;/p&gt;
-&lt;p&gt;If you use Visual Studio Code, consider the &lt;a href="https://marketplace.visualstudio.com/items?itemName=bigbug.vscode-language-jsonata" target="_blank" rel="noopener"&gt;&lt;code&gt;jsonata-language&lt;/code&gt;&lt;/a&gt; extension.
+&lt;p&gt;If you use Visual Studio Code, consider the &lt;a href="https://marketplace.visualstudio.com/items?itemName=bigbug.vscode-language-jsonata"target="_blank" rel="noopener"&gt;&lt;code&gt;jsonata-language&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; extension.
 Similar to a Jupyter notebook, the extension provides an interactive environment to write JSONata expressions and pass the output from one expression into the input of another.
 Besides its benefit for monitoring performance, we have used it to incrementally build complex JSONata in a way that we can document and share (in the style of literate programming).&lt;/p&gt;</description></item><item><title>Special variables</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/variables/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/variables/</guid><description>
 &lt;p&gt;Rhize designates some variable names for a special purpose in BPMN workflow.
@@ -1815,11 +1845,11 @@ This list these special variables is as follows:&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;BODY&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;The name of the variable as &lt;strong&gt;Input&lt;/strong&gt; in &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#intermediate-message-events" &gt;Intermediate message throws&lt;/a&gt;. The value of this variable is the payload sent to the Rhize message broker.&lt;/td&gt;
+&lt;td&gt;The name of the variable as &lt;strong&gt;Input&lt;/strong&gt; in &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/#intermediate-message-events"&gt;Intermediate message throws&lt;/a&gt;. The value of this variable is the payload sent to the Rhize message broker.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;customResponse&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;A value to report at the end of a synchronous API call to trigger a workflow. On completion, the call reports whatever the value was in the &lt;code&gt;customResponse&lt;/code&gt; field of the GraphQL response. For details, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/trigger-workflows/" &gt;Trigger workflows&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;A value to report at the end of a synchronous API call to trigger a workflow. On completion, the call reports whatever the value was in the &lt;code&gt;customResponse&lt;/code&gt; field of the GraphQL response. For details, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/trigger-workflows/"&gt;Trigger workflows&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;__traceDebug&lt;/code&gt;&lt;/td&gt;
@@ -1828,7 +1858,7 @@ This list these special variables is as follows:&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>Naming conventions</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/naming-conventions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/naming-conventions/</guid><description>
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;These are recommendations. Your organization may adapt the conventions to its needs.&lt;/div&gt;
 &lt;/div&gt;
@@ -1875,7 +1905,7 @@ Standardizing BPMN names across an environment has multiple benefits:&lt;/p&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;RULE&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Invocation is expected from the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/publish-subscribe/create-equipment-class-rule/" &gt;rule engine&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Invocation is expected from the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/publish-subscribe/create-equipment-class-rule/"&gt;rule engine&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;FUNC&lt;/code&gt;&lt;/td&gt;
@@ -1904,7 +1934,7 @@ is the type of node&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;&amp;lt;DETAIL&amp;gt;&lt;/code&gt; describes the node behavior.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Start Events&lt;span class="hx:absolute hx:-mt-20" id="start-events"&gt;&lt;/span&gt;
-&lt;a href="#start-events" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;For &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/" &gt;start events&lt;/a&gt;,
+&lt;a href="#start-events" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;For &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/"&gt;start events&lt;/a&gt;,
 use the name to describe each trigger according to the following convention:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;START_&amp;lt;SUB_TYPE&amp;gt;_&amp;lt;DESCRIPTION&amp;gt;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;For message starts, include the topics.
@@ -1938,7 +1968,7 @@ For timers, indicate the frequency.&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;START_TIMER_EveryTenMinutes&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Query task&lt;span class="hx:absolute hx:-mt-20" id="query-task"&gt;&lt;/span&gt;
-&lt;a href="#query-task" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Runs a GraphQL &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/" &gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="#query-task" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Runs a GraphQL &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/"&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Prefix: &lt;code&gt;Q&lt;/code&gt;.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1950,15 +1980,15 @@ For timers, indicate the frequency.&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;GET&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/#get" &gt;Get query&lt;/a&gt;. Expected to return one item&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/#get"&gt;Get query&lt;/a&gt;. Expected to return one item&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;QUERY&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/#query" &gt;Query operation&lt;/a&gt;. May return multiple items&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/#query"&gt;Query operation&lt;/a&gt;. May return multiple items&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;AGG&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/#aggregate" &gt;Aggregate query&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/#aggregate"&gt;Aggregate query&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1968,7 +1998,7 @@ For timers, indicate the frequency.&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;Q_QUERY_JobOrdersByOperationsRequestId&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Mutation task&lt;span class="hx:absolute hx:-mt-20" id="mutation-task"&gt;&lt;/span&gt;
-&lt;a href="#mutation-task" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Runs a GraphQL &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/" &gt;&lt;abbr title="A GraphQL operation that modifies some data in the database, usually creating, updating, or deleting a resource"&gt;mutation&lt;/abbr&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="#mutation-task" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Runs a GraphQL &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/"&gt;&lt;abbr title="A GraphQL operation that modifies some data in the database, usually creating, updating, or deleting a resource"&gt;mutation&lt;/abbr&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Prefix: &lt;code&gt;M&lt;/code&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1980,19 +2010,19 @@ For timers, indicate the frequency.&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ADD&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/#add" &gt;Adds&lt;/a&gt; a new record&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/#add"&gt;Adds&lt;/a&gt; a new record&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;UPDATE&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/#update" &gt;Updates&lt;/a&gt; existing&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/#update"&gt;Updates&lt;/a&gt; existing&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;UPSERT&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Updates existing &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/#upsert" &gt;or adds new&lt;/a&gt; if not found&lt;/td&gt;
+&lt;td&gt;Updates existing &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/#upsert"&gt;or adds new&lt;/a&gt; if not found&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;DELETE&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/#delete" &gt;Deletes&lt;/a&gt; a record&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/#delete"&gt;Deletes&lt;/a&gt; a record&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -2150,11 +2180,21 @@ If a sequence flow carries a condition, indicate the condition in the naming as 
 &lt;a href="#response-field-naming" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When nodes generate a response, give the response field the same name as its node.&lt;/p&gt;</description></item><item><title>BPMN learning resources</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/learning-resources/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/learning-resources/</guid><description>
 &lt;p&gt;Here are some links to supplemental tools and material to help you build BPMN workflows in Rhize:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;i class="fa fa-github" aria-hidden="true"&gt;&lt;/i&gt; &lt;a href="https://github.com/libremfg/bpmn-templates" target="_blank" rel="noopener"&gt;BPMN templates&lt;/a&gt;. A repository of BPMN workflows that you can download and run yourself.&lt;/li&gt;
-&lt;li&gt;&lt;i class="fa fa-github" aria-hidden="true"&gt;&lt;/i&gt; &lt;a href="https://github.com/bpmn-io/bpmn-js" target="_blank" rel="noopener"&gt; bpmn.io&lt;/a&gt;. Open source rendering toolkits and editors for BPMN 2.0. You can use the &lt;code&gt;bpmn-js&lt;/code&gt; for local offline building.&lt;/li&gt;
-&lt;li&gt;&lt;i class="fa fa-youtube" aria-hidden="true"&gt;&lt;/i&gt; &lt;a href="https://www.youtube.com/@rhizemanufacturingdatahub" target="_blank" rel="noopener"&gt;Rhize Youtube channel&lt;/a&gt;. Includes demos of BPMN.&lt;/li&gt;
-&lt;li&gt;📝 &lt;a href="https://www.omg.org/spec/BPMN/2.0.2/" target="_blank" rel="noopener"&gt;OMG BPMN standard&lt;/a&gt;. The standard on which the Rhize BPMN engine and UI is based.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://marketplace.visualstudio.com/items?itemName=bigbug.vscode-language-jsonata" target="_blank" rel="noopener"&gt;&lt;code&gt;vscode-language-jsonata&lt;/code&gt;&lt;/a&gt;. A VS code extension to interactively pipe JSONata expressions together, in the literate-programming style of Jupyter notebooks.&lt;/li&gt;
+&lt;li&gt;&lt;i class="fa fa-github" aria-hidden="true"&gt;&lt;/i&gt; &lt;a href="https://github.com/libremfg/bpmn-templates"target="_blank" rel="noopener"&gt;BPMN templates&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;. A repository of BPMN workflows that you can download and run yourself.&lt;/li&gt;
+&lt;li&gt;&lt;i class="fa fa-github" aria-hidden="true"&gt;&lt;/i&gt; &lt;a href="https://github.com/bpmn-io/bpmn-js"target="_blank" rel="noopener"&gt; bpmn.io&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;. Open source rendering toolkits and editors for BPMN 2.0. You can use the &lt;code&gt;bpmn-js&lt;/code&gt; for local offline building.&lt;/li&gt;
+&lt;li&gt;&lt;i class="fa fa-youtube" aria-hidden="true"&gt;&lt;/i&gt; &lt;a href="https://www.youtube.com/@rhizemanufacturingdatahub"target="_blank" rel="noopener"&gt;Rhize Youtube channel&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;. Includes demos of BPMN.&lt;/li&gt;
+&lt;li&gt;📝 &lt;a href="https://www.omg.org/spec/BPMN/2.0.2/"target="_blank" rel="noopener"&gt;OMG BPMN standard&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;. The standard on which the Rhize BPMN engine and UI is based.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://marketplace.visualstudio.com/items?itemName=bigbug.vscode-language-jsonata"target="_blank" rel="noopener"&gt;&lt;code&gt;vscode-language-jsonata&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;. A VS code extension to interactively pipe JSONata expressions together, in the literate-programming style of Jupyter notebooks.&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>BPMN elements</title><link>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/</link><pubDate>Tue, 26 Sep 2023 11:10:37 -0300</pubDate><guid>https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/bpmn-elements/</guid><description>
 &lt;p&gt;This document describes the parameters available to each BPMN element in the Rhize UI.
 These parameters control how users set conditions, transform data, access variables, call services, and so on.&lt;/p&gt;
@@ -2170,7 +2210,7 @@ These parameters control how users set conditions, transform data, access variab
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;ID&lt;/td&gt;
-&lt;td&gt;Mandatory unique ID. For guidance, follow the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/naming-conventions/" &gt;BPMN naming conventions&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Mandatory unique ID. For guidance, follow the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/naming-conventions/"&gt;BPMN naming conventions&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Name&lt;/td&gt;
@@ -2235,7 +2275,7 @@ All start events are catch events; that is, they react to some trigger.
 All end events are throw events; that is, they terminate with some output—even an error.
 Intermediate events may throw or catch.&lt;/p&gt;
 &lt;p&gt;Rhize supports various event types to categorize an event, as described in the following sections.
-As with &lt;a href="#gateways" &gt;Gateways&lt;/a&gt; and &lt;a href="#activities" &gt;Activities&lt;/a&gt;, event types are marked by their icons.
+As with &lt;a href="#gateways"&gt;Gateways&lt;/a&gt; and &lt;a href="#activities"&gt;Activities&lt;/a&gt;, event types are marked by their icons.
 Throwing events are represented with icons that are filled in.&lt;/p&gt;
 &lt;h3&gt;Start events&lt;span class="hx:absolute hx:-mt-20" id="start-events"&gt;&lt;/span&gt;
 &lt;a href="#start-events" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Start events are triggered by the &lt;code&gt;CreateAndRunBPMN&lt;/code&gt; and &lt;code&gt;CreateAndRunBPMNSync&lt;/code&gt; &lt;abbr title="A GraphQL operation that modifies some data in the database, usually creating, updating, or deleting a resource"&gt;mutation&lt;/abbr&gt; operations.
@@ -2288,7 +2328,9 @@ The parameters for a timer start event are as follows:&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Timer&lt;/td&gt;
-&lt;td&gt;One of &lt;ul&gt;&lt;li&gt;&lt;code&gt;Cycle&lt;/code&gt;, to begin at recurring intervals. For example,&lt;code&gt;R5/2024-05-09T08:12:55/PT10S&lt;/code&gt; starts on &lt;code&gt;2024-05-09&lt;/code&gt; and executes every 10 seconds for 5 repetitions. If &lt;code&gt;&amp;lt;START_DATE&amp;gt;&lt;/code&gt; is not set, Rhize uses &lt;code&gt;2023-01-01T00:00:00Z&lt;/code&gt;.&lt;/li&gt; &lt;li&gt; &lt;code&gt;Date&lt;/code&gt;, to happen at a certain time, for example, &lt;code&gt;2024-05-09T08:12:55&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt; Enter values in &lt;a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank" rel="noopener"&gt;ISO 8601&lt;/a&gt; format.&lt;/td&gt;
+&lt;td&gt;One of &lt;ul&gt;&lt;li&gt;&lt;code&gt;Cycle&lt;/code&gt;, to begin at recurring intervals. For example,&lt;code&gt;R5/2024-05-09T08:12:55/PT10S&lt;/code&gt; starts on &lt;code&gt;2024-05-09&lt;/code&gt; and executes every 10 seconds for 5 repetitions. If &lt;code&gt;&amp;lt;START_DATE&amp;gt;&lt;/code&gt; is not set, Rhize uses &lt;code&gt;2023-01-01T00:00:00Z&lt;/code&gt;.&lt;/li&gt; &lt;li&gt; &lt;code&gt;Date&lt;/code&gt;, to happen at a certain time, for example, &lt;code&gt;2024-05-09T08:12:55&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt; Enter values in &lt;a href="https://en.wikipedia.org/wiki/ISO_8601"target="_blank" rel="noopener"&gt;ISO 8601&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; format.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Outputs&lt;/td&gt;
@@ -2314,7 +2356,7 @@ This may provide info for a subscribing third-party client, or initiate another 
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Inputs&lt;/td&gt;
-&lt;td&gt;Variables to send in the body. For messages to the Rhize broker, use the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/variables/" &gt;special variable&lt;/a&gt; &lt;code&gt;BODY&lt;/code&gt;. Value can be JSON or JSONata.&lt;/td&gt;
+&lt;td&gt;Variables to send in the body. For messages to the Rhize broker, use the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/variables/"&gt;special variable&lt;/a&gt; &lt;code&gt;BODY&lt;/code&gt;. Value can be JSON or JSONata.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Headers&lt;/td&gt;
@@ -2339,7 +2381,9 @@ The parameters for an intermediate timer event are as follows:&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Timer&lt;/td&gt;
-&lt;td&gt;A duration to pause. Enter values in &lt;a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank" rel="noopener"&gt;ISO 8601&lt;/a&gt; format.&lt;/td&gt;
+&lt;td&gt;A duration to pause. Enter values in &lt;a href="https://en.wikipedia.org/wiki/ISO_8601"target="_blank" rel="noopener"&gt;ISO 8601&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; format.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Outputs&lt;/td&gt;
@@ -2352,15 +2396,15 @@ The parameters for an intermediate timer event are as follows:&lt;/p&gt;
 &lt;p&gt;On the Rhize platform, most activities are &lt;em&gt;tasks&lt;/em&gt;, work that cannot be broken down into smaller levels of detail.
 Tasks are drawn with rectangles with rounded corners.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;Besides tasks, you can also use &lt;a href="#call-activities" &gt;&lt;em&gt;call activities&lt;/em&gt;&lt;/a&gt;, processes which call and invoke other processes.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;Besides tasks, you can also use &lt;a href="#call-activities"&gt;&lt;em&gt;call activities&lt;/em&gt;&lt;/a&gt;, processes which call and invoke other processes.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;A service task uses some service.
-In Rhize workflows, service tasks include &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/call-the-graphql-api/" &gt;Calls to the GraphQL API&lt;/a&gt; (and REST APIs), data source reads and writes, and JSON manipulation.
+In Rhize workflows, service tasks include &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/call-the-graphql-api/"&gt;Calls to the GraphQL API&lt;/a&gt; (and REST APIs), data source reads and writes, and JSON manipulation.
 These service tasks come with templates.&lt;/p&gt;
-&lt;p&gt;As with &lt;a href="#gateways" &gt;Gateways&lt;/a&gt; and &lt;a href="#events" &gt;events&lt;/a&gt;, service task are marked by their icons.&lt;/p&gt;
+&lt;p&gt;As with &lt;a href="#gateways"&gt;Gateways&lt;/a&gt; and &lt;a href="#events"&gt;events&lt;/a&gt;, service task are marked by their icons.&lt;/p&gt;
 &lt;figure&gt;&lt;img src="https://docs.rhize.com/images/bpmn/bpmn-service-task.svg"
 alt="An empty service task" width="100"&gt;&lt;figcaption&gt;
 &lt;p&gt;&lt;small&gt;&lt;em&gt;Service tasks have a gear icon marker&lt;/em&gt;&lt;/small&gt;&lt;/p&gt;
@@ -2371,7 +2415,7 @@ Use &lt;strong&gt;Templates&lt;/strong&gt; to structure the service task call an
 &lt;p&gt;The service task templates are as follows&lt;/p&gt;
 &lt;h3&gt;JSONata transform&lt;span class="hx:absolute hx:-mt-20" id="jsonata-transform"&gt;&lt;/span&gt;
 &lt;a href="#jsonata-transform" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Transform JSON data with a JSONata expression.
-For detailed examples, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/use-jsonata/" &gt;The Rhize Guide to JSONata&lt;/a&gt;.&lt;/p&gt;
+For detailed examples, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/use-jsonata/"&gt;The Rhize Guide to JSONata&lt;/a&gt;.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2410,7 +2454,7 @@ For detailed examples, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/h
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3&gt;GraphQL Query&lt;span class="hx:absolute hx:-mt-20" id="graphql-query"&gt;&lt;/span&gt;
-&lt;a href="#graphql-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Run a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/" &gt;GraphQL query&lt;/a&gt;&lt;/p&gt;
+&lt;a href="#graphql-query" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Run a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/query/"&gt;GraphQL query&lt;/a&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2448,7 +2492,9 @@ For detailed examples, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/h
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Input response&lt;/td&gt;
-&lt;td&gt;Optional &lt;a href="https://docs.jsonata.org/1.7.0/overview" target="_blank" rel="noopener"&gt;JSONata&lt;/a&gt; expression to map to the &lt;a href="#process-variable-context" &gt;process variable context&lt;/a&gt;. For GraphQL operations, use this only to map values. Rely on &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/filter/" &gt;GQL filters&lt;/a&gt; to limit the payload.&lt;/td&gt;
+&lt;td&gt;Optional &lt;a href="https://docs.jsonata.org/1.7.0/overview"target="_blank" rel="noopener"&gt;JSONata&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; expression to map to the &lt;a href="#process-variable-context"&gt;process variable context&lt;/a&gt;. For GraphQL operations, use this only to map values. Rely on &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/filter/"&gt;GQL filters&lt;/a&gt; to limit the payload.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Headers&lt;/td&gt;
@@ -2457,7 +2503,7 @@ For detailed examples, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/h
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3&gt;GraphQL Mutation&lt;span class="hx:absolute hx:-mt-20" id="graphql-mutation"&gt;&lt;/span&gt;
-&lt;a href="#graphql-mutation" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Run a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/" &gt;GraphQL mutation&lt;/a&gt;&lt;/p&gt;
+&lt;a href="#graphql-mutation" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Run a &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/gql/mutate/"&gt;GraphQL mutation&lt;/a&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2495,7 +2541,9 @@ For detailed examples, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/h
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Input response&lt;/td&gt;
-&lt;td&gt;Optional &lt;a href="https://docs.jsonata.org/1.7.0/overview" target="_blank" rel="noopener"&gt;JSONata&lt;/a&gt; expression to map to the &lt;a href="#process-variable-context" &gt;process variable context&lt;/a&gt;. For mutations, use this only to map values. Use the mutation call to limit the payload.&lt;/td&gt;
+&lt;td&gt;Optional &lt;a href="https://docs.jsonata.org/1.7.0/overview"target="_blank" rel="noopener"&gt;JSONata&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; expression to map to the &lt;a href="#process-variable-context"&gt;process variable context&lt;/a&gt;. For mutations, use this only to map values. Use the mutation call to limit the payload.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Headers&lt;/td&gt;
@@ -2554,7 +2602,9 @@ For detailed examples, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/h
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Input response&lt;/td&gt;
-&lt;td&gt;Optional &lt;a href="https://docs.jsonata.org/1.7.0/overview" target="_blank" rel="noopener"&gt;JSONata&lt;/a&gt; expression to map to the &lt;a href="#process-variable-context" &gt;process variable context&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Optional &lt;a href="https://docs.jsonata.org/1.7.0/overview"target="_blank" rel="noopener"&gt;JSONata&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; expression to map to the &lt;a href="#process-variable-context"&gt;process variable context&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Headers&lt;/td&gt;
@@ -2563,7 +2613,9 @@ For detailed examples, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/h
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3&gt;JSON schema&lt;span class="hx:absolute hx:-mt-20" id="json-schema"&gt;&lt;/span&gt;
-&lt;a href="#json-schema" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Validate that a payload conforms to a configured &lt;a href="https://json-schema.org/" target="_blank" rel="noopener"&gt;JSON schema&lt;/a&gt;.
+&lt;a href="#json-schema" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Validate that a payload conforms to a configured &lt;a href="https://json-schema.org/"target="_blank" rel="noopener"&gt;JSON schema&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.
 For example, you can validate that &lt;code&gt;data.arr&lt;/code&gt; contains an array of numbers
 and that &lt;code&gt;userID&lt;/code&gt; contains a string of certain length.&lt;/p&gt;
 &lt;table&gt;
@@ -2576,7 +2628,9 @@ and that &lt;code&gt;userID&lt;/code&gt; contains a string of certain length.&lt
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Schema&lt;/td&gt;
-&lt;td&gt;A JSON schema. You can also create one from a JSON file with a tool such as &lt;a href="https://transform.tools/json-to-json-schema" target="_blank" rel="noopener"&gt;JSON to JSON schema&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;A JSON schema. You can also create one from a JSON file with a tool such as &lt;a href="https://transform.tools/json-to-json-schema"target="_blank" rel="noopener"&gt;JSON to JSON schema&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Variable&lt;/td&gt;
@@ -2746,13 +2800,13 @@ In this flow, the process that contains the call is the &lt;em&gt;parent&lt;/em&
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;For a guide to reusing functions, read the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/create-workflow/#reuse-workflows" &gt;Reuse workflows section&lt;/a&gt; in the &amp;ldquo;Create workflow&amp;rdquo; guide.&lt;/p&gt;
+&lt;p&gt;For a guide to reusing functions, read the &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/create-workflow/#reuse-workflows"&gt;Reuse workflows section&lt;/a&gt; in the &amp;ldquo;Create workflow&amp;rdquo; guide.&lt;/p&gt;
 &lt;h2&gt;Gateways&lt;span class="hx:absolute hx:-mt-20" id="gateways"&gt;&lt;/span&gt;
 &lt;a href="#gateways" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;em&gt;Gateways&lt;/em&gt; control how sequence flows interact as they converge and diverge within a process.
 They represent mechanisms that either allow or disallow a passage.&lt;/p&gt;
 &lt;p&gt;BPMN notation represents gateways as diamonds with single thin lines, as is common in many diagrams with decision flows.
 Besides decisions, however, Rhize&amp;rsquo;s BPMN notation also includes parallel gateways.&lt;/p&gt;
-&lt;p&gt;As with &lt;a href="#events" &gt;Events&lt;/a&gt; and &lt;a href="#activities" &gt;Activities&lt;/a&gt;, gateway types are marked by their icons.&lt;/p&gt;
+&lt;p&gt;As with &lt;a href="#events"&gt;Events&lt;/a&gt; and &lt;a href="#activities"&gt;Activities&lt;/a&gt;, gateway types are marked by their icons.&lt;/p&gt;
 &lt;figure&gt;&lt;img src="https://docs.rhize.com/images/bpmn/bpmn-gateway-overview.svg"
 alt="Gateway with two branches"&gt;&lt;figcaption&gt;
 &lt;p&gt;&lt;small&gt;&lt;em&gt;Drawn as diamonds, gateways represent branches in a sequence flow.&lt;/em&gt;&lt;/small&gt;&lt;/p&gt;
@@ -2762,7 +2816,9 @@ alt="Gateway with two branches"&gt;&lt;figcaption&gt;
 &lt;a href="#exclusive-gateway" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;img src="https://docs.rhize.com/images/bpmn/bpmn-gateway-exclusive.svg" alt="exclusive gateways are marked by an “x” icon" loading="lazy" /&gt;&lt;/p&gt;
 &lt;p&gt;Marked by an &amp;ldquo;X&amp;rdquo; icon, an &lt;em&gt;exclusive gateway&lt;/em&gt; represents a point in a process where only one path is followed.
 In some conversations, an exclusive gateway is also called an &lt;em&gt;XOR&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;If a gateway has multiple sequence flows, all flows except one must have a conditional &lt;a href="https://docs.jsonata.org/1.7.0/overview" target="_blank" rel="noopener"&gt;JSONata expression&lt;/a&gt; that the engine can evaluate.
+&lt;p&gt;If a gateway has multiple sequence flows, all flows except one must have a conditional &lt;a href="https://docs.jsonata.org/1.7.0/overview"target="_blank" rel="noopener"&gt;JSONata expression&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; that the engine can evaluate.
 To designate a default, leave one flow without an expression.&lt;/p&gt;
 &lt;figure&gt;&lt;img src="https://docs.rhize.com/images/bpmn/screenshot-rhize-bpmn-exclusive-gateway.png"
 alt="An exclusive gateway that has a condition and a default" width="50%"&gt;&lt;figcaption&gt;
@@ -2784,9 +2840,9 @@ alt="A parallel gateway that branches and rejoins" width="50%"&gt;&lt;figcaption
 &lt;/summary&gt;
 &lt;div class="hx:p-2 hx:overflow-hidden"&gt;
 &lt;p&gt;You can join parallel tasks with another parallel gateway.
-This joins the variables from both branches to &lt;a href="#process-variable-context" &gt;process variable context&lt;/a&gt;.
+This joins the variables from both branches to &lt;a href="#process-variable-context"&gt;process variable context&lt;/a&gt;.
 Note that parallel joins have performance costs, so be mindful of using them, especially in large tasks.
-To learn more, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/tune-performance/" &gt;Tune BPMN performance&lt;/a&gt;.&lt;/p&gt;
+To learn more, read &lt;a href="https://docs.rhize.com/versions/v3.1.0/how-to/bpmn/tune-performance/"&gt;Tune BPMN performance&lt;/a&gt;.&lt;/p&gt;
 &lt;figure&gt;&lt;img src="https://docs.rhize.com/images/bpmn/screenshot-rhize-bpmn-parallel-join.png"
 alt="A parallel gateway that branches and rejoins" width="50%"&gt;&lt;figcaption&gt;
 &lt;p&gt;&lt;em&gt;Parallel joins join variable context, but have performance costs.&lt;/em&gt;&lt;/p&gt;

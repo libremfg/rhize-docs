@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Deploy</title><link>https://docs.rhize.com/versions/v4.0.0/deploy/</link><description>Recent content in Deploy on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 04 Nov 2024 11:01:46 -0300</lastBuildDate><atom:link href="https://docs.rhize.com/versions/v4.0.0/deploy/index.xml" rel="self" type="application/rss+xml"/><item><title>Install</title><link>https://docs.rhize.com/versions/v4.0.0/deploy/install/</link><pubDate>Fri, 22 Sep 2023 13:54:26 -0300</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/deploy/install/</guid><description>
 &lt;p&gt;This guide shows you how to install Rhize services on your Kubernetes cluster.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;This procedure aims to be as generic and vendor-neutral as possible.
 Some configuration depends on where and how you run your IT infrastructure—what cloud provider you use, preferred auxiliary tools, and so on&amp;mdash;so your team must adapt the process for its particular use cases.&lt;/div&gt;
@@ -49,7 +49,7 @@ class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hid
 class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900"href="https://docs.rhize.com/versions/v4.0.0/deploy/backup/grafana/"
 &gt;&lt;span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:pt-4 hx:px-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/&gt;&lt;/svg&gt;Back up Grafana&lt;/span&gt;&lt;div class="hextra-card-subtitle hx:line-clamp-3 hx:text-sm hx:font-normal hx:text-gray-500 hx:dark:text-gray-400 hx:px-4 hx:mb-4 hx:mt-2"&gt;How to backup Grafana on your Rhize deployment&lt;/div&gt;&lt;/a&gt;
 &lt;/div&gt;</description></item><item><title>Restore</title><link>https://docs.rhize.com/versions/v4.0.0/deploy/restore/</link><pubDate>Tue, 12 Sep 2023 19:35:35 +1100</pubDate><guid>https://docs.rhize.com/versions/v4.0.0/deploy/restore/</guid><description>
-&lt;p&gt;These guides show you how to restore data from &lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/backup/" &gt;backup&lt;/a&gt;.
+&lt;p&gt;These guides show you how to restore data from &lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/backup/"&gt;backup&lt;/a&gt;.
 They also serve as blueprints for automation.&lt;/p&gt;
 &lt;p&gt;Even if you don&amp;rsquo;t need to restore data, it&amp;rsquo;s a good practice to test restoration periodically.&lt;/p&gt;
 &lt;div class="hextra-cards hx:mt-4 hx:gap-4 hx:grid not-prose"
@@ -93,22 +93,30 @@ To review the procedure, read our &lt;a href="https://docs.rhize.com/deploy/back
 &lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before you start, ensure you have the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Access to the &lt;a href="https://docs.rhize.com/versions/v4.0.0/" &gt;Rhize Kubernetes Environment&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://helm.sh/docs/helm/helm_install/" target="_blank" rel="noopener"&gt;helm&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Optional: &lt;a href="https://github.com/ahmetb/kubectx" target="_blank" rel="noopener"&gt;kubectx&lt;/a&gt; utilities
+&lt;li&gt;Access to the &lt;a href="https://docs.rhize.com/versions/v4.0.0/"&gt;Rhize Kubernetes Environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://helm.sh/docs/helm/helm_install/"target="_blank" rel="noopener"&gt;helm&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Optional: &lt;a href="https://github.com/ahmetb/kubectx"target="_blank" rel="noopener"&gt;kubectx&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; utilities
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;kubectx&lt;/code&gt; to manage multiple clusters&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;kubens&lt;/code&gt; to switch between and configure namespaces easily&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Optional: the &lt;a href="https://k8slens.dev" target="_blank" rel="noopener"&gt;k8 Lens IDE&lt;/a&gt;, if you prefer to use Kubernetes graphically&lt;/li&gt;
+&lt;li&gt;Optional: the &lt;a href="https://k8slens.dev"target="_blank" rel="noopener"&gt;k8 Lens IDE&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, if you prefer to use Kubernetes graphically&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Be sure that you notify relevant parties of the coming upgrade.&lt;/p&gt;
 &lt;h2&gt;Procedure&lt;span class="hx:absolute hx:-mt-20" id="procedure"&gt;&lt;/span&gt;
 &lt;a href="#procedure" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;First, record the old and new versions, their context, and namespaces.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Check the logs for the libre pods, either in Lens or with &lt;a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl logs&lt;/code&gt;&lt;/a&gt;.
+&lt;p&gt;Check the logs for the libre pods, either in Lens or with &lt;a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl logs&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.
 Ensure there are no errors.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -133,7 +141,9 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt; commands&lt;/a&gt; to &lt;code&gt;libre&lt;/code&gt;, run this command:&lt;/p&gt;
+&lt;p&gt;To change the namespace for all subsequent &lt;a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt; commands&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; to &lt;code&gt;libre&lt;/code&gt;, run this command:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubectl config set-context --current --namespace&lt;span class="o"&gt;=&lt;/span&gt;libre&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button

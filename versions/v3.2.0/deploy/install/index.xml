@@ -10,7 +10,7 @@ Some configuration depends on where and how you run your IT infrastructure—wha
 The essential procedure is as follows:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes/" &gt;Set up the Kubernetes environment&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes/"&gt;Set up the Kubernetes environment&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Within a Kubernetes cluster, create a new namespace.&lt;/li&gt;
 &lt;li&gt;In this namespace, add the Rhize container images and Helm repositories.&lt;/li&gt;
@@ -19,14 +19,14 @@ The essential procedure is as follows:&lt;/p&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/keycloak/" &gt;Configure Keycloak&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/keycloak/"&gt;Configure Keycloak&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;In Keycloak, create a realm and clients for each service.&lt;/li&gt;
 &lt;li&gt;In the cluster, create secrets for the KeyCloak clients.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/services/" &gt;Install services&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/services/"&gt;Install services&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Use Helm to install libreBaas .&lt;/li&gt;
 &lt;li&gt;In Keycloak, give libreBaas admin permissions.&lt;/li&gt;
@@ -48,8 +48,12 @@ You can also use this procedure as the model for an automation workflow in your 
 &lt;a href="#prereqs" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before starting, ensure that you have the following technical requirements.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Software requirements&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://kubernetes.io/docs/tasks/tools/" target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://helm.sh" target="_blank" rel="noopener"&gt;Helm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kubernetes.io/docs/tasks/tools/"target="_blank" rel="noopener"&gt;&lt;code&gt;kubectl&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://helm.sh"target="_blank" rel="noopener"&gt;Helm&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Curl, or some similar program to make HTTP requests from the command line&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Access requirements&lt;/strong&gt;:&lt;/p&gt;
@@ -64,14 +68,18 @@ For manual installs, the following auxiliary tools might make
 the experience a little more human friendly:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Optional: &lt;a href="https://github.com/ahmetb/kubectx" target="_blank" rel="noopener"&gt;kubectx&lt;/a&gt; utilities&lt;/p&gt;
+&lt;p&gt;Optional: &lt;a href="https://github.com/ahmetb/kubectx"target="_blank" rel="noopener"&gt;kubectx&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; utilities&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;kubectx&lt;/code&gt; to manage multiple clusters&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;kubens&lt;/code&gt; to switch between and configure namespaces easily&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Optional: the &lt;a href="https://k8slens.dev" target="_blank" rel="noopener"&gt;k8 Lens IDE&lt;/a&gt;, if you prefer to use Kubernetes graphically&lt;/p&gt;
+&lt;p&gt;Optional: the &lt;a href="https://k8slens.dev"target="_blank" rel="noopener"&gt;k8 Lens IDE&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, if you prefer to use Kubernetes graphically&lt;/p&gt;
 &lt;p&gt;Again, these are helpers, not requirements.
 You can install everything with only the &lt;code&gt;kubectl&lt;/code&gt; and &lt;code&gt;helm&lt;/code&gt; commands.&lt;/p&gt;
 &lt;/li&gt;
@@ -223,16 +231,18 @@ title="Copy code"
 &lt;/ol&gt;
 &lt;h2&gt;Next steps&lt;span class="hx:absolute hx:-mt-20" id="next-steps"&gt;&lt;/span&gt;
 &lt;a href="#next-steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/keycloak/" &gt;Configure Keycloak&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/services/" &gt;Install services&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/keycloak/"&gt;Configure Keycloak&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/services/"&gt;Install services&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;</description></item><item><title>Configure Keycloak</title><link>https://docs.rhize.com/versions/v3.2.0/deploy/install/keycloak/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/deploy/install/keycloak/</guid><description>
-&lt;p&gt;Rhize uses &lt;a href="https://keycloak.org" target="_blank" rel="noopener"&gt;Keycloak&lt;/a&gt; as an OpenID provider.
+&lt;p&gt;Rhize uses &lt;a href="https://keycloak.org"target="_blank" rel="noopener"&gt;Keycloak&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; as an OpenID provider.
 In your cluster, the Keycloak server to authenticate users, services, and manage Role-based access controls.&lt;/p&gt;
 &lt;p&gt;This topic describes how to set up Keycloak in your Rhize cluster.
 For a conceptual overview of the authentication flow,
-read &lt;a href="https://docs.rhize.com/explanations/about-openidconnect/" &gt;About OpenID Connect&lt;/a&gt;&lt;/p&gt;
+read &lt;a href="https://docs.rhize.com/explanations/about-openidconnect/"&gt;About OpenID Connect&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
-&lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;First, ensure that you have followed the instructions from &lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes/" &gt;Set up Kubernetes&lt;/a&gt;.
+&lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;First, ensure that you have followed the instructions from &lt;a href="https://docs.rhize.com/deploy/install/setup-kubernetes/"&gt;Set up Kubernetes&lt;/a&gt;.
 All prerequisites for that step apply here.&lt;/p&gt;
 &lt;h2&gt;Steps&lt;span class="hx:absolute hx:-mt-20" id="steps"&gt;&lt;/span&gt;
 &lt;a href="#steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Follow these steps to configure a Keycloak realm and associate Rhize services to Keycloak clients, groups, roles, and policies.&lt;/p&gt;
@@ -306,10 +316,10 @@ You need to create a client for each service.&lt;/p&gt;
 &lt;p&gt;The DB client requires additional configuration of flows and grants.
 Other clients, such as the UI and Dashboard, use the standard flow to coordinate authorization between the browser and Keycloak to simplify security and improve user convenience.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;Each standard-flow client has its own subdomain.
-Refer to &lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/default-ports/" &gt;Default URLs and Ports&lt;/a&gt; for our recommended conventions.&lt;/div&gt;
+Refer to &lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/default-ports/"&gt;Default URLs and Ports&lt;/a&gt; for our recommended conventions.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h4&gt;Create DB client&lt;span class="hx:absolute hx:-mt-20" id="create-db-client"&gt;&lt;/span&gt;
@@ -687,13 +697,13 @@ Rhize requires authorization for the database service.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;h2&gt;Next steps&lt;span class="hx:absolute hx:-mt-20" id="next-steps"&gt;&lt;/span&gt;
-&lt;a href="#next-steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/services/" &gt;Install services&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Install Rhize services</title><link>https://docs.rhize.com/versions/v3.2.0/deploy/install/services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/deploy/install/services/</guid><description>
+&lt;a href="#next-steps" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/services/"&gt;Install services&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Install Rhize services</title><link>https://docs.rhize.com/versions/v3.2.0/deploy/install/services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/deploy/install/services/</guid><description>
 &lt;p&gt;The final installation step is to install the Rhize services in your Kubernetes cluster.&lt;/p&gt;
 &lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This topic assumes you have done the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/setup-kubernetes/" &gt;Set up Kubernetes&lt;/a&gt; and &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/keycloak/" &gt;Configured Keycloak&lt;/a&gt;. All the prerequisites for those topics apply here.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/setup-kubernetes/"&gt;Set up Kubernetes&lt;/a&gt; and &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/keycloak/"&gt;Configured Keycloak&lt;/a&gt;. All the prerequisites for those topics apply here.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Configured load balancing for the following DNS records:&lt;/p&gt;
@@ -747,11 +757,13 @@ For some of these services, you might need to edit this file to add credential i
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Create Kubernetes secrets for each service. You can either create a secret file, or pass raw data from the command line.&lt;/p&gt;
-&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;/div&gt;
+&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;How you create Kubernetes secrets &lt;strong&gt;depends on your implementation details and security procedures.&lt;/strong&gt;
-For guidance, refer to the official Kubernetes topic, &lt;a href="https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/" target="_blank" rel="noopener"&gt;Managing Secrets using &lt;code&gt;kubectl&lt;/code&gt;&lt;/a&gt;.&lt;/div&gt;
+For guidance, refer to the official Kubernetes topic, &lt;a href="https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/"target="_blank" rel="noopener"&gt;Managing Secrets using &lt;code&gt;kubectl&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;With raw data, the command might look something like this:&lt;/p&gt;
@@ -782,8 +794,8 @@ title="Copy code"
 &lt;h2&gt;Install and add roles for the DB&lt;span class="hx:absolute hx:-mt-20" id="db"&gt;&lt;/span&gt;
 &lt;a href="#db" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You must install the libreBaas database service first.
 You also need to configure the libreBaas service to have roles in Keycloak.&lt;/p&gt;
-&lt;p&gt;If enabling the Audit Trail, also the include the configuration in &lt;a href="#enable-change-data-capture" &gt;Enable change data capture&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you need Row Level Access Control, &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/row-level-access-control/" &gt;configure your scope map&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If enabling the Audit Trail, also the include the configuration in &lt;a href="#enable-change-data-capture"&gt;Enable change data capture&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you need Row Level Access Control, &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/row-level-access-control/"&gt;configure your scope map&lt;/a&gt;.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Modify the DB Helm file with your code editor. Edit any necessary overrides.&lt;/p&gt;
@@ -876,7 +888,7 @@ title="Copy code"
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;If the install is successful, the Keycloak UI is available on its
-&lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/default-ports/" &gt;default port&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/default-ports/"&gt;default port&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Install services&lt;span class="hx:absolute hx:-mt-20" id="install-services"&gt;&lt;/span&gt;
 &lt;a href="#install-services" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Each of the following procedures installs a service through Helm.&lt;/p&gt;
 &lt;p&gt;The syntax to install a Rhize service must have arguments for the following:&lt;/p&gt;
@@ -901,11 +913,15 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;For the full configuration options,
-read the official &lt;a href="https://helm.sh/docs/helm/helm_install/" target="_blank" rel="noopener"&gt;Helm &lt;code&gt;install&lt;/code&gt; reference&lt;/a&gt;.&lt;/p&gt;
+read the official &lt;a href="https://helm.sh/docs/helm/helm_install/"target="_blank" rel="noopener"&gt;Helm &lt;code&gt;install&lt;/code&gt; reference&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;!-- vale off --&gt;
 &lt;h3&gt;NATS&lt;span class="hx:absolute hx:-mt-20" id="nats"&gt;&lt;/span&gt;
 &lt;a href="#nats" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;!-- vale on --&gt;
-&lt;p&gt;&lt;a href="https://nats.io" target="_blank" rel="noopener"&gt;NATS&lt;/a&gt; is the message broker that powers Rhize&amp;rsquo;s event-driven architecture.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://nats.io"target="_blank" rel="noopener"&gt;NATS&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; is the message broker that powers Rhize&amp;rsquo;s event-driven architecture.&lt;/p&gt;
 &lt;p&gt;Install NATS with these steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -941,7 +957,9 @@ title="Copy code"
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;Tempo&lt;span class="hx:absolute hx:-mt-20" id="tempo"&gt;&lt;/span&gt;
-&lt;a href="#tempo" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rhize uses &lt;a href="https://grafana.com/oss/tempo/" target="_blank" rel="noopener"&gt;Tempo&lt;/a&gt; to trace BPMN processes.&lt;/p&gt;
+&lt;a href="#tempo" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rhize uses &lt;a href="https://grafana.com/oss/tempo/"target="_blank" rel="noopener"&gt;Tempo&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; to trace BPMN processes.&lt;/p&gt;
 &lt;p&gt;Install Tempo with these steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -979,7 +997,7 @@ title="Copy code"
 &lt;h3&gt;Core&lt;span class="hx:absolute hx:-mt-20" id="core"&gt;&lt;/span&gt;
 &lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Libre Core service is the custom edge agent that monitors data sources, like OPC-UA servers, and publishes and subscribes topics to NATS.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Requirements&lt;/strong&gt;: Core requires the &lt;a href="#db" &gt;libreBaas&lt;/a&gt; and &lt;a href="#nats" &gt;NATS&lt;/a&gt; services.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Requirements&lt;/strong&gt;: Core requires the &lt;a href="#db"&gt;libreBaas&lt;/a&gt; and &lt;a href="#nats"&gt;NATS&lt;/a&gt; services.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Install the Core agent with these steps:&lt;/p&gt;
 &lt;ol&gt;
@@ -1007,7 +1025,7 @@ title="Copy code"
 &lt;h3&gt;BPMN&lt;span class="hx:absolute hx:-mt-20" id="bpmn"&gt;&lt;/span&gt;
 &lt;a href="#bpmn" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The BPMN service is the custom engine Rhize uses to process low-code workflows modeled in the BPMN UI.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Requirements&lt;/strong&gt;: The BPMN service requires the &lt;a href="#db" &gt;libreBaas&lt;/a&gt;, &lt;a href="#nats" &gt;NATS&lt;/a&gt;, and &lt;a href="#tempo" &gt;Tempo&lt;/a&gt; services.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Requirements&lt;/strong&gt;: The BPMN service requires the &lt;a href="#db"&gt;libreBaas&lt;/a&gt;, &lt;a href="#nats"&gt;NATS&lt;/a&gt;, and &lt;a href="#tempo"&gt;Tempo&lt;/a&gt; services.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Install the BPMN engine with these steps:&lt;/p&gt;
 &lt;ol&gt;
@@ -1033,9 +1051,11 @@ title="Copy code"
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;Router&lt;span class="hx:absolute hx:-mt-20" id="router"&gt;&lt;/span&gt;
-&lt;a href="#router" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rhize uses the &lt;a href="https://www.apollographql.com/docs/router" target="_blank" rel="noopener"&gt;Apollo router&lt;/a&gt; to unite queries for different services in a single endpoint.&lt;/p&gt;
+&lt;a href="#router" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rhize uses the &lt;a href="https://www.apollographql.com/docs/router"target="_blank" rel="noopener"&gt;Apollo router&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; to unite queries for different services in a single endpoint.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt; Router requires the &lt;a href="#db" &gt;GraphDB&lt;/a&gt;, &lt;a href="#bpmn" &gt;BPMN&lt;/a&gt;, and &lt;a href="#core" &gt;Core&lt;/a&gt; services.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt; Router requires the &lt;a href="#db"&gt;GraphDB&lt;/a&gt;, &lt;a href="#bpmn"&gt;BPMN&lt;/a&gt;, and &lt;a href="#core"&gt;Core&lt;/a&gt; services.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Install the router with these steps:&lt;/p&gt;
 &lt;ol&gt;
@@ -1058,9 +1078,11 @@ title="Copy code"
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;If the install is successful, the Router explorer is available on its
-&lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/default-ports/" &gt;default port&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/default-ports/"&gt;default port&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Grafana&lt;span class="hx:absolute hx:-mt-20" id="grafana"&gt;&lt;/span&gt;
-&lt;a href="#grafana" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rhize uses &lt;a href="https://grafana.com" target="_blank" rel="noopener"&gt;Grafana&lt;/a&gt; for its dashboard to monitor real time data.&lt;/p&gt;
+&lt;a href="#grafana" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rhize uses &lt;a href="https://grafana.com"target="_blank" rel="noopener"&gt;Grafana&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; for its dashboard to monitor real time data.&lt;/p&gt;
 &lt;p&gt;Install Grafana with these steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -1096,12 +1118,12 @@ title="Copy code"
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;If the install is successful, the Grafana service is available on its
-&lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/default-ports/" &gt;default port&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/default-ports/"&gt;default port&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Agent&lt;span class="hx:absolute hx:-mt-20" id="agent"&gt;&lt;/span&gt;
 &lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Rhize agent bridges your plant processes with the Rhize data hub.
 It collects data emitted from the plant and publishes it to the NATS message broker.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt; Agent requires the &lt;a href="#db" &gt;Graph DB&lt;/a&gt;, &lt;a href="#nats" &gt;Nats&lt;/a&gt;, and &lt;a href="#tempo" &gt;Tempo&lt;/a&gt; services.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt; Agent requires the &lt;a href="#db"&gt;Graph DB&lt;/a&gt;, &lt;a href="#nats"&gt;Nats&lt;/a&gt;, and &lt;a href="#tempo"&gt;Tempo&lt;/a&gt; services.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Install the agent with these steps:&lt;/p&gt;
 &lt;ol&gt;
@@ -1134,9 +1156,9 @@ title="Copy code"
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Install Admin UI&lt;span class="hx:absolute hx:-mt-20" id="install-admin-ui"&gt;&lt;/span&gt;
-&lt;a href="#install-admin-ui" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The Admin UI is the graphical frontend to &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/" &gt;handle events&lt;/a&gt; and &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/model/" &gt;define work masters&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="#install-admin-ui" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The Admin UI is the graphical frontend to &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/bpmn/"&gt;handle events&lt;/a&gt; and &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/model/"&gt;define work masters&lt;/a&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt; The UI requires the &lt;a href="#db" &gt;GraphDB&lt;/a&gt;, &lt;a href="#bpmn" &gt;BPMN&lt;/a&gt;, &lt;a href="#core" &gt;Core&lt;/a&gt;, and &lt;a href="#router" &gt;Router&lt;/a&gt; services.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt; The UI requires the &lt;a href="#db"&gt;GraphDB&lt;/a&gt;, &lt;a href="#bpmn"&gt;BPMN&lt;/a&gt;, &lt;a href="#core"&gt;Core&lt;/a&gt;, and &lt;a href="#router"&gt;Router&lt;/a&gt; services.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;After installing all other services, install the UI with these steps:&lt;/p&gt;
 &lt;ol&gt;
@@ -1190,9 +1212,9 @@ title="Copy code"
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;If the install is successful, Admin UI is available on its
-&lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/default-ports/" &gt;default port&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/default-ports/"&gt;default port&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Optional: Audit Trail service&lt;span class="hx:absolute hx:-mt-20" id="optional-audit-trail-service"&gt;&lt;/span&gt;
-&lt;a href="#optional-audit-trail-service" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The Rhize &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/audit/" &gt;Audit&lt;/a&gt; service provides an audit trail for database changes to install. The Audit service uses PostgreSQL for storage.&lt;/p&gt;
+&lt;a href="#optional-audit-trail-service" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The Rhize &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/audit/"&gt;Audit&lt;/a&gt; service provides an audit trail for database changes to install. The Audit service uses PostgreSQL for storage.&lt;/p&gt;
 &lt;p&gt;Install Audit Service with these steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -1228,9 +1250,9 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;For details about maintaining the Audit trail, read &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/maintain/audit/" &gt;Archive the PostgresQL Audit trail&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For details about maintaining the Audit trail, read &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/maintain/audit/"&gt;Archive the PostgresQL Audit trail&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Enable change data capture&lt;span class="hx:absolute hx:-mt-20" id="enable-change-data-capture"&gt;&lt;/span&gt;
-&lt;a href="#enable-change-data-capture" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Audit trail requires &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/publish-subscribe/track-changes/" &gt;change data capture (CDC)&lt;/a&gt; to function. To enable CDC in libre BAAS, include the following values for the Helm chart overrides:&lt;/p&gt;
+&lt;a href="#enable-change-data-capture" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Audit trail requires &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/publish-subscribe/track-changes/"&gt;change data capture (CDC)&lt;/a&gt; to function. To enable CDC in libre BAAS, include the following values for the Helm chart overrides:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;alpha&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;# Change Data Capture (CDC)&lt;/span&gt;&lt;span class="w"&gt;
@@ -1296,14 +1318,20 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Optional: calendar service&lt;span class="hx:absolute hx:-mt-20" id="optional-calendar-service"&gt;&lt;/span&gt;
-&lt;a href="#optional-calendar-service" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/work-calendars/" &gt;Libre calendar service&lt;/a&gt; monitors work calendar definitions and creates work calendar entries in real time, both in the &lt;a href="#db" &gt;Graph&lt;/a&gt; and time-series databases.&lt;/p&gt;
+&lt;a href="#optional-calendar-service" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/work-calendars/"&gt;Libre calendar service&lt;/a&gt; monitors work calendar definitions and creates work calendar entries in real time, both in the &lt;a href="#db"&gt;Graph&lt;/a&gt; and time-series databases.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt; The calendar service requires the &lt;a href="#db" &gt;GraphDB&lt;/a&gt;, &lt;a href="#keycloak" &gt;Keycloak&lt;/a&gt;, and &lt;a href="#nats" &gt;NATS&lt;/a&gt; services.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt; The calendar service requires the &lt;a href="#db"&gt;GraphDB&lt;/a&gt;, &lt;a href="#keycloak"&gt;Keycloak&lt;/a&gt;, and &lt;a href="#nats"&gt;NATS&lt;/a&gt; services.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
-&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;The work calendar requires a time-series DB installed such as &lt;a href="https://influxdata.com/" target="_blank" rel="noopener"&gt;InfluxDB&lt;/a&gt;, &lt;a href="https://questdb.io" target="_blank" rel="noopener"&gt;QuestDB&lt;/a&gt; or &lt;a href="https://www.timescale.com/" target="_blank" rel="noopener"&gt;TimescaleDB&lt;/a&gt;. The following instructions are specific to QuestDB.&lt;/div&gt;
+&lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;The work calendar requires a time-series DB installed such as &lt;a href="https://influxdata.com/"target="_blank" rel="noopener"&gt;InfluxDB&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;, &lt;a href="https://questdb.io"target="_blank" rel="noopener"&gt;QuestDB&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; or &lt;a href="https://www.timescale.com/"target="_blank" rel="noopener"&gt;TimescaleDB&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;. The following instructions are specific to QuestDB.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Install the calendar service with these steps:&lt;/p&gt;
@@ -1403,9 +1431,11 @@ title="Copy code"
 &lt;/ol&gt;
 &lt;h2&gt;Optional: change service configuration&lt;span class="hx:absolute hx:-mt-20" id="optional-change-service-configuration"&gt;&lt;/span&gt;
 &lt;a href="#optional-change-service-configuration" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The services installed in the previous step have many parameters that you can configure for your performance and deployment requirements.
-Review the full list in the &lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/service-config/" &gt;Service configuration&lt;/a&gt; reference.&lt;/p&gt;
+Review the full list in the &lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/service-config/"&gt;Service configuration&lt;/a&gt; reference.&lt;/p&gt;
 &lt;h2&gt;Troubleshoot&lt;span class="hx:absolute hx:-mt-20" id="troubleshoot"&gt;&lt;/span&gt;
-&lt;a href="#troubleshoot" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For general Kubernetes issues, the &lt;a href="https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/" target="_blank" rel="noopener"&gt;Kubernetes dashboard&lt;/a&gt; is great for troubleshooting, and you can configure it to be accessible through the browser.&lt;/p&gt;
+&lt;a href="#troubleshoot" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For general Kubernetes issues, the &lt;a href="https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/"target="_blank" rel="noopener"&gt;Kubernetes dashboard&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; is great for troubleshooting, and you can configure it to be accessible through the browser.&lt;/p&gt;
 &lt;p&gt;For particular problems, try these commands:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -1427,7 +1457,7 @@ title="Copy code"
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Access service through browser&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Some services are accessible through the browser.
-To access them, visit local host on the service&amp;rsquo;s &lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/default-ports/" &gt;default port&lt;/a&gt;.&lt;/p&gt;
+To access them, visit local host on the service&amp;rsquo;s &lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/default-ports/"&gt;default port&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;I installed a service too early&lt;/strong&gt;.

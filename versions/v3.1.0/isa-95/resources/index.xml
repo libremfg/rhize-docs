@@ -905,7 +905,7 @@ Examples of material include:&lt;/p&gt;
 &lt;li&gt;An intermediate substance, such as a produced reactant to be used in combination with another chemical&lt;/li&gt;
 &lt;li&gt;Raw materials, like the flour and water that make dough&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Like &lt;a href="https://docs.rhize.com/versions/v3.1.0/isa-95/resources/equipment/" &gt;equipment&lt;/a&gt;, material can have classes and properties.
+&lt;p&gt;Like &lt;a href="https://docs.rhize.com/versions/v3.1.0/isa-95/resources/equipment/"&gt;equipment&lt;/a&gt;, material can have classes and properties.
 However, to account for detailed tracking of unique material units,
 the material model has more entities than equipment.&lt;/p&gt;
 &lt;details class="hx:last-of-type:mb-0 hx:rounded-lg hx:bg-neutral-50 hx:dark:bg-neutral-800 hx:p-2 hx:mt-4 hx:group" &gt;
@@ -951,7 +951,7 @@ Obviously, these pallets are not literally the same: otherwise they would just b
 Rather, each pallet is a separate &lt;em&gt;lots&lt;/em&gt;, and all these lots share the same material definition.&lt;/p&gt;
 &lt;h3&gt;Definitions are defined by classes&lt;span class="hx:absolute hx:-mt-20" id="definitions-are-defined-by-classes"&gt;&lt;/span&gt;
 &lt;a href="#definitions-are-defined-by-classes" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you need another level of abstraction, you can also categorize your material definitions by &lt;em&gt;material class&lt;/em&gt;.
-Material classes provide a way to categorize material by function or shared &lt;a href="#material-properties" &gt;properties&lt;/a&gt;.
+Material classes provide a way to categorize material by function or shared &lt;a href="#material-properties"&gt;properties&lt;/a&gt;.
 For example, &lt;code&gt;The Juice Factory&lt;/code&gt; has five juice definitions, all part of the class &lt;code&gt;Juices&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class="mermaid hx:mt-6"&gt;
 classDiagram

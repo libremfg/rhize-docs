@@ -7,7 +7,7 @@ They provide helpful abstractions for activities such as scheduling and performa
 If it finds active definitions and equipment for that period, the service creates work calendar entries and persists the data to a time-series database.
 This topic explains how that calendar service works.&lt;/p&gt;
 &lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;Rhize&amp;rsquo;s implementation of work calendars was inspired by ISO/TR
 22400-10, a standard on KPIs in operations management.&lt;/div&gt;
@@ -25,7 +25,7 @@ width="80%"
 A simplified view of how the calendar service coordinates and exchanges data with the Rhize DB and a time-series DB
 &lt;/figcaption&gt;
 &lt;/figure&gt;
-&lt;p&gt;The calendar service queries all active work calendar definitions at an interval designated in your &lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/service-config/" &gt;service configuration&lt;/a&gt;.
+&lt;p&gt;The calendar service queries all active work calendar definitions at an interval designated in your &lt;a href="https://docs.rhize.com/versions/v3.2.0/reference/service-config/"&gt;service configuration&lt;/a&gt;.
 The service then checks for any active &lt;code&gt;workCalendarDefinitionEntry&lt;/code&gt; items that start or end within that interval.
 If any exist, Rhize creates a &lt;code&gt;workCalendarEntry&lt;/code&gt; with the start and end time.&lt;/p&gt;
 &lt;p&gt;The service then traverses all the calendar &lt;code&gt;hierarchyScope&lt;/code&gt; entities (designated by the prefix &lt;code&gt;WorkCalendar&lt;/code&gt;) and their &lt;code&gt;equipmentHierarchy&lt;/code&gt; properties.
@@ -48,7 +48,7 @@ These entities work together to configure work calendars and automate changes of
 &lt;/ul&gt;
 &lt;p&gt;The Rhize service uses the hierarchy scope to establish calendar precedence.
 Then, it uses scope&amp;rsquo;s associated calendar states to automatically set the state of the equipment for each hierarchy.
-So, when you &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/work-calendars/create-work-calendar/" &gt;create a calendar&lt;/a&gt;, ensure that you configure these three objects.&lt;/p&gt;
+So, when you &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/work-calendars/create-work-calendar/"&gt;create a calendar&lt;/a&gt;, ensure that you configure these three objects.&lt;/p&gt;
 &lt;h3&gt;Calendar states&lt;span class="hx:absolute hx:-mt-20" id="calendar-states"&gt;&lt;/span&gt;
 &lt;a href="#calendar-states" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Rhize database and service has three calendar types:&lt;/p&gt;
 &lt;ul&gt;
@@ -88,17 +88,19 @@ For example, consider three scopes at the same hierarchy level.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;If an equipment item belonged to all these scopes, Rhize would calculate its planned downtime as being from 00:00 to 13:00.
 The planned busy time is locked out, since another active entry type has already taken effect.
-For a technical overview of how this locking and unlocking of states works, read about the &lt;a href="https://en.wikipedia.org/wiki/Semaphore_%28programming%29" target="_blank" rel="noopener"&gt;Semaphore pattern&lt;/a&gt; in computer science.&lt;/p&gt;</description></item><item><title>Create work calendars</title><link>https://docs.rhize.com/versions/v3.2.0/how-to/work-calendars/create-work-calendar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/how-to/work-calendars/create-work-calendar/</guid><description>
+For a technical overview of how this locking and unlocking of states works, read about the &lt;a href="https://en.wikipedia.org/wiki/Semaphore_%28programming%29"target="_blank" rel="noopener"&gt;Semaphore pattern&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; in computer science.&lt;/p&gt;</description></item><item><title>Create work calendars</title><link>https://docs.rhize.com/versions/v3.2.0/how-to/work-calendars/create-work-calendar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/versions/v3.2.0/how-to/work-calendars/create-work-calendar/</guid><description>
 &lt;p&gt;This guide shows you how to create a work calendar using the Rhize GraphQL API.
 As a calendar has associations with multiple other entities,
-he process involves a series of &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/mutate/" &gt;mutations&lt;/a&gt; to create
+he process involves a series of &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/gql/mutate/"&gt;mutations&lt;/a&gt; to create
 associated data.&lt;/p&gt;
 &lt;p&gt;To learn how work calendars work,
-read &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/work-calendars/about-calendars-and-overrides/" &gt;About work calendars&lt;/a&gt;.&lt;/p&gt;
+read &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/work-calendars/about-calendars-and-overrides/"&gt;About work calendars&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To use the work calendar service, ensure you have the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;The &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/services/" &gt;calendar service installed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/services/"&gt;calendar service installed&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;A plan for how to organize and name your calendars according to equipment.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Procedure&lt;span class="hx:absolute hx:-mt-20" id="procedure"&gt;&lt;/span&gt;
@@ -249,7 +251,7 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/details&gt;
 &lt;h3&gt;Add Hierarchy scope&lt;span class="hx:absolute hx:-mt-20" id="add-hierarchy-scope"&gt;&lt;/span&gt;
-&lt;a href="#add-hierarchy-scope" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The hierarchy scope establishes the calendar hierarchy that the Rhize calendar service uses to establish &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/work-calendars/about-calendars-and-overrides/" &gt;calendar precedence&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="#add-hierarchy-scope" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The hierarchy scope establishes the calendar hierarchy that the Rhize calendar service uses to establish &lt;a href="https://docs.rhize.com/versions/v3.2.0/how-to/work-calendars/about-calendars-and-overrides/"&gt;calendar precedence&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Requirements.&lt;/strong&gt;
 A calendar hierarchy scope must have the following properties.&lt;/p&gt;
 &lt;ul&gt;
@@ -387,7 +389,9 @@ The work calendar definition must have the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Start date&lt;/li&gt;
 &lt;li&gt;type (one of: &lt;code&gt;PlannedDowntime&lt;/code&gt;, &lt;code&gt;PlannedShutdown&lt;/code&gt;, and &lt;code&gt;PlannedBusyTime&lt;/code&gt;).&lt;/li&gt;
-&lt;li&gt;A recurrence time interval in the representation defined by the &lt;a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank" rel="noopener"&gt;ISO 8601&lt;/a&gt; standard&lt;/li&gt;
+&lt;li&gt;A recurrence time interval in the representation defined by the &lt;a href="https://en.wikipedia.org/wiki/ISO_8601"target="_blank" rel="noopener"&gt;ISO 8601&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt; standard&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

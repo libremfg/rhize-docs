@@ -1,13 +1,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Models of work</title><link>https://docs.rhize.com/isa-95/models-of-work/</link><description>Recent content in Models of work on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.rhize.com/isa-95/models-of-work/index.xml" rel="self" type="application/rss+xml"/><item><title>Process segments</title><link>https://docs.rhize.com/isa-95/models-of-work/process-segments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/isa-95/models-of-work/process-segments/</guid><description>
 &lt;blockquote&gt;
-&lt;p&gt;📚 Want to Learn ISA-95?
-Take our &lt;a href="https://university.rhize.com/certifications/" class="underline font-medium hover:text-blue-700 dark:hover:text-blue-300"&gt;ISA-95 fundamentals course&lt;/a&gt;! Lots of practice on real data sets.&lt;/p&gt;
+&lt;p&gt;📚
+&lt;a href="https://university.rhize.com/certifications/" class="underline font-medium hover:text-blue-700 dark:hover:text-blue-300"&gt;Take our ISA-95 fundamentals course&lt;/a&gt;!
+Learn ISA-95 through lots of practice on real data sets.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;A &lt;em&gt;process segment&lt;/em&gt; is a step that can be shared across processes.
 Process segments are flexible information objects,
 abstract enough to be shared by multiple procedures,
 and coarse-grained enough to be appropriate for business planning and analytics.&lt;/p&gt;
-&lt;p&gt;Process segments provide information that is relevant to both &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/#the-levels-of-a-manufacturing-operation" &gt;levels 3 and 4&lt;/a&gt;.
+&lt;p&gt;Process segments provide information that is relevant to both &lt;a href="https://docs.rhize.com/isa-95/how-to-speak-isa-95/#the-levels-of-a-manufacturing-operation"&gt;levels 3 and 4&lt;/a&gt;.
 In the manufacturing ontology, the process segment has relationships to diverse other entities, including objects for scheduling, definitions, and work performance.
 As such, the proper use of process segments provides much flexibility in how you implement an MOM system for both operational and analytical use cases.&lt;/p&gt;
 &lt;figure&gt;&lt;img src="https://docs.rhize.com/images/s95/rhize-s95-p2-p4-high-level-overview-ISA95_P2_P4.svg"
@@ -16,7 +17,7 @@ alt="A large overview of the ISA-95 object model"&gt;&lt;figcaption&gt;
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;h2&gt;The scope of a process segment&lt;span class="hx:absolute hx:-mt-20" id="the-scope-of-a-process-segment"&gt;&lt;/span&gt;
-&lt;a href="#the-scope-of-a-process-segment" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Process segments can have a &lt;a href="#is-made-up-of" &gt;parent-child hierarchy&lt;/a&gt;.
+&lt;a href="#the-scope-of-a-process-segment" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Process segments can have a &lt;a href="#is-made-up-of"&gt;parent-child hierarchy&lt;/a&gt;.
 At higher levels of this hierarchy, the scope of a process segment is often broader than that of a particular product.&lt;/p&gt;
 &lt;p&gt;For example, The Juice Factory produces five brands of juice.
 While the particular material consumed and produced differs in the production of each brand,
@@ -33,17 +34,17 @@ d[packing]
 Operational functions include:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;To avoid repetition when modeling steps that are common to different processes.&lt;/li&gt;
-&lt;li&gt;To define work from a business-process perspective. More granular entities might define a route of segments to follow in specific situations. For details, read the example in the &lt;a href="#section" &gt;corresponds to&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;To define work from a business-process perspective. More granular entities might define a route of segments to follow in specific situations. For details, read the example in the &lt;a href="#section"&gt;corresponds to&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You can also use process segments in various analytical functions, such as:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Comparing different product processes that are all derived from a common procedure.
-For example, the mixing segment might &lt;a href="#correspond-" &gt;correspond to&lt;/a&gt; to the production of &lt;code&gt;mixed red juice&lt;/code&gt; and &lt;code&gt;mixed blue juice&lt;/code&gt;.&lt;/li&gt;
+For example, the mixing segment might &lt;a href="#correspond-"&gt;correspond to&lt;/a&gt; to the production of &lt;code&gt;mixed red juice&lt;/code&gt; and &lt;code&gt;mixed blue juice&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Viewing data and parameters for similar steps in a single aggregation.
 For example, you might compare the average time of all jobs associated with &lt;code&gt;mixing&lt;/code&gt; against the other segments to find a general process bottleneck.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Segments vs. equipment hierarchies&lt;span class="hx:absolute hx:-mt-20" id="segments-vs-equipment-hierarchies"&gt;&lt;/span&gt;
-&lt;a href="#segments-vs-equipment-hierarchies" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Process segments are not necessarily connected to the &lt;a href="https://docs.rhize.com/isa-95/resources/equipment/#the-role-based-hierarchy" &gt;role-based equipment hierarchy&lt;/a&gt;.
+&lt;a href="#segments-vs-equipment-hierarchies" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Process segments are not necessarily connected to the &lt;a href="https://docs.rhize.com/isa-95/resources/equipment/#the-role-based-hierarchy"&gt;role-based equipment hierarchy&lt;/a&gt;.
 Since a defining aspect of equipment in ISA-95 is that it plays a precise role,
 you might wonder whether a process segment is just a needless duplication:
 why add a &lt;code&gt;mixing&lt;/code&gt; segment when the &lt;code&gt;mixers&lt;/code&gt; equipment model serves the same role?&lt;/p&gt;
@@ -90,7 +91,7 @@ mixing *--&amp;gt; `material specification` :contains
 Process segment parameters store additional information about the step.
 For example, the &lt;code&gt;mixing&lt;/code&gt; process segment might have a &lt;code&gt;mixing time&lt;/code&gt; parameter.&lt;/p&gt;
 &lt;p&gt;The parameter also can have a value or range of values.
-This process segment parameter value may serve as a default for lower-level work models that &lt;a href="#corresponds-to" &gt;correspond to&lt;/a&gt; this process segment.&lt;/p&gt;
+This process segment parameter value may serve as a default for lower-level work models that &lt;a href="#corresponds-to"&gt;correspond to&lt;/a&gt; this process segment.&lt;/p&gt;
 &lt;pre class="mermaid hx:mt-6"&gt;
 classDiagram
 class `mixing time`{
@@ -126,7 +127,7 @@ For this, use &lt;em&gt;segment dependancies&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Segment dependencies become more important when steps might be executed in parallel or dynamically.
 The dependency ensures nothing happens too early.&lt;/p&gt;
 &lt;p&gt;If your process segment is independent of a particular product,
-ensure that all entities that &lt;a href="#correspond-to" &gt;correspond to&lt;/a&gt; that segment also have that dependency.
+ensure that all entities that &lt;a href="#correspond-to"&gt;correspond to&lt;/a&gt; that segment also have that dependency.
 For example, in a pastry production, the &lt;code&gt;baking&lt;/code&gt; segment might have a dependency on &lt;code&gt;mixing&lt;/code&gt; and &lt;code&gt;preheating&lt;/code&gt;.
 This implies that all products that correspond to this &lt;code&gt;baking&lt;/code&gt;—such as a &lt;code&gt;chocolate chip cookies&lt;/code&gt; or &lt;code&gt;brownies&lt;/code&gt;—must also require &lt;code&gt;mixing&lt;/code&gt; and &lt;code&gt;preheating&lt;/code&gt; as dependencies.&lt;/p&gt;
 &lt;pre class="mermaid hx:mt-6"&gt;
@@ -135,8 +136,9 @@ baking ..&amp;gt; mixing : has execution dependency on
 baking ..&amp;gt; pre-heating : has execution dependency on
 &lt;/pre&gt;&lt;p&gt;If a dependency is product-dependent, define it on the level of the &lt;abbr title="A template for a job order, corresponding to an operations and process segment, from the perspective of the level-3 (MES/MOM) systems."&gt;work master&lt;/abbr&gt; or operation definition instead.&lt;/p&gt;</description></item><item><title>Work masters</title><link>https://docs.rhize.com/isa-95/models-of-work/work-masters/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.rhize.com/isa-95/models-of-work/work-masters/</guid><description>
 &lt;blockquote&gt;
-&lt;p&gt;📚 Want to Learn ISA-95?
-Take our &lt;a href="https://university.rhize.com/certifications/" class="underline font-medium hover:text-blue-700 dark:hover:text-blue-300"&gt;ISA-95 fundamentals course&lt;/a&gt;! Lots of practice on real data sets.&lt;/p&gt;
+&lt;p&gt;📚
+&lt;a href="https://university.rhize.com/certifications/" class="underline font-medium hover:text-blue-700 dark:hover:text-blue-300"&gt;Take our ISA-95 fundamentals course&lt;/a&gt;!
+Learn ISA-95 through lots of practice on real data sets.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;A &lt;em&gt;work master&lt;/em&gt; defines the resources and instructions necessary to do a unit of work.
 As the most granular work definition in ISA-95, the work master can serve a variety of operational purposes:&lt;/p&gt;
@@ -229,7 +231,7 @@ description: One pallet of cosmic blue juice
 `Specification: blue juice case` --&amp;gt; `Material definition: PBJ`
 `Specification: blue juice pallet` --&amp;gt; `Material definition: blue juice case`
 &lt;/pre&gt;&lt;div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"&gt;
-&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;div class="hx:select-none hx:text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+&lt;div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"&gt;&lt;svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;div class="hx:w-full hx:min-w-0 hx:leading-7"&gt;
 &lt;div class="hx:mt-6 hx:leading-7 hx:first:mt-0"&gt;Note that the preceding diagram includes only the material specification.
 The full work master may also contain specifications about the equipment, personnel, parameter specifications, and so on.&lt;/div&gt;
@@ -239,7 +241,7 @@ The full work master may also contain specifications about the equipment, person
 &lt;a href="#parameter-specifications" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Parameter specifications detail information that is specific to a work master but not specific to any particular resource.
 For example, the production of bulk juice might have a parameter specification called &lt;code&gt;pre-mix checklist&lt;/code&gt; that details a set of steps that the operator must perform before starting the equipment.&lt;/p&gt;
 &lt;h2&gt;Relationships to planning models&lt;span class="hx:absolute hx:-mt-20" id="relationships-to-planning-models"&gt;&lt;/span&gt;
-&lt;a href="#relationships-to-planning-models" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;As work masters &lt;a href="#contains" &gt;contain&lt;/a&gt; resource requirements and instructions, they also act as a source document for detailed scheduling and dispatching.
+&lt;a href="#relationships-to-planning-models" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;As work masters &lt;a href="#contains"&gt;contain&lt;/a&gt; resource requirements and instructions, they also act as a source document for detailed scheduling and dispatching.
 Conventionally, work masters are related to job orders through a work directive entity:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The job order says what to make&lt;/li&gt;
@@ -314,7 +316,7 @@ class instanceWorkMaster_red{
 patternWorkMaster --&amp;gt; instanceWorkMaster_blue :defines
 patternWorkMaster --&amp;gt; instanceWorkMaster_red :defines
 &lt;/pre&gt;&lt;h3&gt;Corresponds to a process segment&lt;span class="hx:absolute hx:-mt-20" id="corresponds-to-a-process-segment"&gt;&lt;/span&gt;
-&lt;a href="#corresponds-to-a-process-segment" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Work masters &lt;em&gt;correspond to&lt;/em&gt; &lt;a href="https://docs.rhize.com/isa-95/models-of-work/process-segments/" &gt;process segments&lt;/a&gt;, which are less granular, business-level definitions of work.
+&lt;a href="#corresponds-to-a-process-segment" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Work masters &lt;em&gt;correspond to&lt;/em&gt; &lt;a href="https://docs.rhize.com/isa-95/models-of-work/process-segments/"&gt;process segments&lt;/a&gt;, which are less granular, business-level definitions of work.
 For example, the &lt;code&gt;make juice&lt;/code&gt; process segment might have five corresponding work masters that describe how to produce each line of juice at the level of detail necessary for a manufacturing execution system.&lt;/p&gt;
 &lt;pre class="mermaid hx:mt-6"&gt;
 classDiagram
@@ -328,5 +330,5 @@ class `WM: make green juice kit`
 The workflow specification provides an overview of the steps to execute masters in sequence.&lt;/p&gt;
 &lt;p&gt;Each master can &lt;em&gt;have&lt;/em&gt; a node that exists in the workflow specification.
 For example, here are the production steps to make blue juice.
-Each node in this workflow might correspond to a work master, with the &lt;code&gt;pack&lt;/code&gt; node being a that corresponds to the &lt;code&gt;pack&lt;/code&gt; &lt;a href="#parent" &gt;parent&lt;/a&gt; work master.&lt;/p&gt;
+Each node in this workflow might correspond to a work master, with the &lt;code&gt;pack&lt;/code&gt; node being a that corresponds to the &lt;code&gt;pack&lt;/code&gt; &lt;a href="#parent"&gt;parent&lt;/a&gt; work master.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://docs.rhize.com/BPMNs/workflow-spec-make-bulk-blue-juice.png" alt="workflow specification to make blue juice" loading="lazy" /&gt;&lt;/p&gt;</description></item></channel></rss>
