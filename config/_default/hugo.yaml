@@ -51,7 +51,7 @@ markup:
       unsafe: true
     renderHooks:
       link:
-        enableDefault: true
+        useEmbedded: fallback
   # enable hextra syntax highlight
   highlight:
     noClasses: false
