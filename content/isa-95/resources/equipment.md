@@ -41,7 +41,7 @@ equipment o--> equipment : made up of
 {{< /details >}}
 
 
-## The role-based hierarchy
+## The role-based hierarchy {#role}
 
 
 The word _role_ is key to understanding the ISA-95 equipment models.
