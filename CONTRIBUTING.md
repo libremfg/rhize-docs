@@ -15,11 +15,13 @@ hugo new content/<PATH>/<TO>/<PAGE>.md
 Each page can have following frontmatter:
 
 - `title`: The name of the page as it appears in the H1
+- `linkTItle`: The name of the page as it appears in the sidebar and breadcrumbs
 - `description`: The text that is displayed in social media previews
 - `weight`: The page's relative position in the menu. Heavier weights "sink" to lower on the page.
 - `categories`: (Optional) Meta-data about the topic
 - `aliases`: URIs from old pages. Configure redirects here.
 - `sidebar.exclude`: Exclude page from sidebar
+
 - `images` (Optional) Array of images. First is [og:image](https://ogp.me/). Default og:image is Rhize logo
  
 

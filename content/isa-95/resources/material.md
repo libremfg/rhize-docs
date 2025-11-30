@@ -1,5 +1,6 @@
 ---
 title: Material models in ISA-95
+linkTitle: Material
 description: A guide to material entities and relationships in ISA-95
 icon: beaker
 ---

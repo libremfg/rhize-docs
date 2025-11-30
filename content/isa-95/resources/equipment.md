@@ -1,5 +1,6 @@
 ---
 title: Equipment models in ISA-95
+linkTitle: Equipment
 description: A guide to equipment entities and relationships in ISA-95
 icon: wrench
 images: 
