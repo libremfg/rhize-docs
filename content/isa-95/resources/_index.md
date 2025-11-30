@@ -8,7 +8,7 @@ cascade:
 
 {{% reusable/isa-95-course %}}
 
-No matter what you make, your manufacturing operation is going to use resources: 
+No matter what you make, your manufacturing operation requires resources:
 
 - Without material, you can’t make anything. 
 - Without equipment, you can't transform material into a product. 
@@ -16,5 +16,9 @@ No matter what you make, your manufacturing operation is going to use resources:
 
 Resources are present everywhere in a manufacturing operation, and the resource models are present everywhere in ISA-95. When you define processes, you need to mention material. When you plan production, you need information about resource definitions and availability. When you execute production, you need to use resources. And when you collect data, you need a model to record what resources were used. 
 
+{{< youtube  qwVm2Y9-MqY >}}
+
+## Resource Guides
 
 {{< card-list >}}
+
