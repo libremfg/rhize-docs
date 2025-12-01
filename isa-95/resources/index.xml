@@ -1038,7 +1038,8 @@ For example, the property &lt;code&gt;flavor_profile&lt;/code&gt; might contain 
 &lt;a href="https://university.rhize.com/certifications/" class="underline font-medium hover:text-blue-700 dark:hover:text-blue-300"&gt;Take our ISA-95 fundamentals course&lt;/a&gt;!
 Learn ISA-95 through lots of practice on real data sets.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;A &lt;em&gt;physical asset&lt;/em&gt; is equipment that can be swapped in and out of an &lt;a href="https://docs.rhize.com/isa-95/resources/equipment/#role"&gt;equipment role&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A &lt;em&gt;physical asset&lt;/em&gt; is equipment that can be swapped in and out of an &lt;a href="https://docs.rhize.com/isa-95/resources/equipment/#role"&gt;equipment role&lt;/a&gt;.
+They are primarily used for equipment that can be repaired or replace.&lt;/p&gt;
 &lt;h2&gt;Relationship to equipment&lt;span class="hx:absolute hx:-mt-20" id="relationship-to-equipment"&gt;&lt;/span&gt;
 &lt;a href="#relationship-to-equipment" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Physical assets &lt;em&gt;implement&lt;/em&gt; equipment roles.
 This relationship is tracked through the &lt;em&gt;equipment asset mapping&lt;/em&gt; entity.
