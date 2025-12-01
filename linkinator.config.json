@@ -7,17 +7,13 @@
   "skip": [
     ".*(\\.js|\\.css)$",
     "http://localhost",
-    "https://github.com/libremfg/libremfg.github.io/edit/main/content/",
-    "https://rhize.com/contact-us/",
-    "https://opcfoundation.org/about/opc-technologies/opc-ua/",
-    "https://the-guild.dev/graphql/tools/docs/schema-directives",
-    "https://rhize.com/blog/what-is-a-manufacturing-data-hub/",
-    "https://rhize.com/blog/manufacturing-data-hub-vs-data-lake/",
-    "https://rhize.com/blog/how-much-do-i-need-to-model-when-applying-the-isa-95-standard/",
-    "https://rhize.com/blog/reframing-perspective-on-isa95/",
-    "https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.0.1-checksums.txt",
-    "https://webstore.ansi.org/standards/isa/ansiisa9500032013"
+    "https://github.com/libremfg/libremfg.github.io/edit/main/content/"
   ],
   "verbosity": "error",
-  "format": "json"
+  "format": "json",
+  "statusCodes": {
+    "403": "warn",
+    "429": "warn",
+    "5xx": "skip"
+  }
 }
