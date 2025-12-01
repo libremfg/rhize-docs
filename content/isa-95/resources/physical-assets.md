@@ -2,14 +2,13 @@
 title: Physical assets in ISA-95
 linkTitle: Physical assets
 description: A guide to swappable entities and relationships in ISA-95
-sidebar:
-  exclude: true
 icon: scale
 ---
 
 {{% reusable/isa-95-course %}}
 
 A _physical asset_ is equipment that can be swapped in and out of an [equipment role](/isa-95/resources/equipment#role).
+They are primarily used for equipment that can be repaired or replace.
 
 
 ## Relationship to equipment
