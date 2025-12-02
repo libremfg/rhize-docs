@@ -206,10 +206,17 @@ Important personnel models include:
 - **Personnel actual.** The people who really perform a certain job.
 - **Personnel properties.** Attributes such as `trained to operate heavy machinery`. Properties could also communicate a person's location or current assignment.
 
+#### Physical assets
+
+Physical assets are equipment that can be swapped in and out of an equipment role.
+Typically, these models are to track asset history for maintenance and repair use cases.
+
+To learn more, read the Rhize guide to [Physical assets]({{< relref "resources/equipment" >}}).
+
 ### Hierarchy scope: multiple views of equipment hierarchies
 
 The hierarchy scope is a special grouping of equipment that does not necessarily follow the conventional role-based hierarchy.
-For example, Rhize uses hierarchy scope to [ define calendar rules and calculate metrics ]({{< relref "../how-to/work-calendars/about-calendars-and-overrides/" >}})for a set of machines whose shift rules don't necessarily correspond to the hierarchy. You might also set a hierarchy scope to calculate metrics or track production across an arbitrary grouping of equipment.
+For example, Rhize uses hierarchy scope to [define calendar rules and calculate metrics ]({{< relref "../how-to/work-calendars/about-calendars-and-overrides/" >}})for a set of machines whose shift rules don't necessarily correspond to the hierarchy. You might also set a hierarchy scope to calculate metrics or track production across an arbitrary grouping of equipment.
 
 {{< bigFigure
 src="/images/work-calendars/diagram-rhize-work-calendar-relationships.png"
