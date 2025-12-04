@@ -1,8 +1,9 @@
-- keycloak: "v26.4"
+- version: "v4.2.0"
+  keycloak: "v26.4"
   prometheus: "v3.7.3"
   questdb: "v9.1.1"
-  redpanda: "v25.2.10"
   redpanda: "console v3.2.2"
+  redpanda: "v25.2.10"
   restate: "v1.5.3"
 
 - version: "3.2.1"
