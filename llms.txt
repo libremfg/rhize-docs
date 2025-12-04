@@ -163,6 +163,8 @@ Breaking … - Published 2023-10-31
 #### Deploy
 - [Upgrade](https://docs.rhize.com/versions/v4.0.0/deploy/upgrade/): How to upgrade Rhize | This guide shows you how to upgrade Rhize.
 Back up first Before upgrading, consider backing up your … - Published 2023-10-18
+- [Recommended Kubernetes cluster sizing](https://docs.rhize.com/versions/v4.0.0/deploy/cluster-sizing/): The recommended number of nodes and compute per pod in your Rhize Kubernetes cluster | Rhize runs on Kubernetes.
+This document provides compute recommendations for the nodes, pods …
 
 ##### Install
 - [Overview](https://docs.rhize.com/versions/v4.0.0/deploy/install/overview/): A high-level overview of the Rhize install process. | This guide walks you through how to Install Rhize and its services in a Kubernetes environment. You …
@@ -762,5 +764,5 @@ A …
 
 
 ---
-Generated on 2025-12-02 11:42:14 UTC
+Generated on 2025-12-04 16:08:44 UTC
 Site: https://docs.rhize.com/
