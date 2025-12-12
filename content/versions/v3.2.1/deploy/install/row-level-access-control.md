@@ -23,7 +23,7 @@ Consider the following scenario: Acme Inc. contracts part of its supply chain to
 
 1. Create an OIDC Role: Define a role called `cmoAccess` in your OIDC provider (e.g., Keycloak).
 2. Define a Hierarchy Scope. Create a hierarchy scope in Rhize called `CMO`. This scope is applied to objects or nodes in the graph that relate to the CMO.
-3. Add a Rule to the Scope Map: Define a rule in the `scopemap.scopemap.json` file as follows:
+3. Add a Rule to the Scope Map: Define a rule in the `scopemap.json` file as follows:
 
 ```json
 {

@@ -15,23 +15,18 @@ _Release date:_
 
 The following sections document the changes this release brings to each service.
 
+
 ### Admin
-
-### BPMN engine
-
-### Schema
-
-### BAAS
-
-### Core
 
 ### Agent
 
-### Audit
+### BaaS
 
-### Keycloak Theme
+### ISA-95
 
-### Router
+### Typescript host service
+
+### Workflow
 
 ## Compatibility
 

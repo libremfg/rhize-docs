@@ -1,10 +1,9 @@
 ---
-title: ##Leave only home page without title
 description: User guides, deploy docs, references, and deep dives about the
   Rhize manufacturing data hub.
+type: "docs"
 cascade:
-  type: docs
-  v: "3.2.1"
+  v: "4.2.0"
 ---
 
 <!-- define h1 for all other pages in Title in frontmatter -->
