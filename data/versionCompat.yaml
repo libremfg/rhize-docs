@@ -1,5 +1,6 @@
 - version: "4.2.0"
   keycloak: "26.4"
+  grafana: "11.6.0 "
   prometheus: "3.7.3"
   questdb: "9.1.1"
   redpanda_console: "3.2.2"
