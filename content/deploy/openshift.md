@@ -10,47 +10,61 @@ This procedure will guide you through the installation of Rhize, including monit
 
 Prerequisites:
 
- - Red Hat OpenShift Platform Running
+ - Red Hat OpenShift Platform running
  - kubeadmin permissions to 
     - create/list namespaces
-    - create/list cluster helm chart repositories
+    - create/list cluster Helm chart repositories
     - create secret in `openshift-config` namespace
     - create release
- - Your cluster has access to public helm chart repositories
+ - Your cluster has access to public Helm chart repositories
+ - OpenShift CLI `oc` available
 
-## 1. Configure Helm Chart Repositories
+## 1. Create the Rhize OpenShift Project
 
-### 1.1 Add Libre Helm Chart Secret
+With the Red Hat OpenShift Console:
+1. Login using your existing credentials.
+1. Using the left hand menu, navigate to _Home_ and _Projects_.
+1. Click _Create Project_ and enter name 'rhize'
+1. Click _Create_ 
 
-The Libre helm chart repository requires authentication to access. Create a secret using the Red Hat OpenShift command line utility using your provided access token.
+> The 'rhize' project with the 'rhize' namespace has now been created
+
+1. Using the left hand menu, navigate to _Helm_ and _Releases_.
+1. Using the project selector, click the down arrow and ensure 'rhize' is selected.
+
+## 2. Configure Helm Chart Repositories
+
+### 2.1 Add Libre Helm Chart Secret
+
+The Libre Helm chart repository requires authentication to access. Create a secret using the Red Hat OpenShift command line utility using your provided access token.
 
 ```shell
 $ oc create secret generic libre-helmchart-repository --from-literal=username='tom561' --from-literal=password='glpat-XXXXX' --namespace openshift-config
 ```
 
-Now that the secret is configured, we can use it in the next step to create the helm chart repositories.
+Now that the secret is configured, we can use it in the next step to create the Helm chart repositories.
 
-### 1.1 Add Helm Chart Repositories
+### 2.1 Add Helm Chart Repositories
 
 With the Red Hat OpenShift Console:
 1. Login using your existing credentials.
 1. Using the left hand menu, navigate to _Helm_ and _Repositories_.
 1. Click _Create Helm Repository_ and create the following Helm Chart Repositories (HCR).
 
-| Type           | name                 | label                | description | url                                                              | secret                     |
-| Cluster Scoped | appsmith-ee          | appsmith-ee          |             | https://helm-ee.appsmith.com                                     | n/a                        |
-| Cluster Scoped | bitnami              | bitnami              |             | https://charts.bitnami.com/bitnami                               | n/a                        |
-| Cluster Scoped | codecentric          | codecentric          |             | https://codecentric.github.io/helm-charts                        | n/a                        |
-| Cluster Scoped | grafana              | grafana              |             | https://grafana.github.io/helm-charts                            | n/a                        |
-| Cluster Scoped | libre                | libre                |             | https://gitlab.com/api/v4/projects/42214456/packages/helm/stable | libre-helmchart-repository |
-| Cluster Scoped | prometheus-community | prometheus-community |             | https://prometheus-community.github.io/helm-charts               | n/a                        |
-| Cluster Scoped | questdb              | questdb              |             | https://helm.questdb.io                                          | n/a                        |
-| Cluster Scoped | redpanda             | redpanda             |             | https://charts.redpanda.com                                      | n/a                        |
+| Type           | name                 | label                | description | url                                                              |
+| Cluster Scoped | appsmith-ee          | appsmith-ee          |             | https://helm-ee.appsmith.com                                     |
+| Cluster Scoped | bitnami              | bitnami              |             | https://charts.bitnami.com/bitnami                               |
+| Cluster Scoped | codecentric          | codecentric          |             | https://codecentric.github.io/helm-charts                        |
+| Cluster Scoped | grafana              | grafana              |             | https://grafana.github.io/helm-charts                            |
+| Cluster Scoped | libre                | libre                |             | https://gitlab.com/api/v4/projects/42214456/packages/helm/stable |
+| Cluster Scoped | prometheus-community | prometheus-community |             | https://prometheus-community.github.io/helm-charts               |
+| Cluster Scoped | questdb              | questdb              |             | https://helm.questdb.io                                          |
+| Cluster Scoped | redpanda             | redpanda             |             | https://charts.redpanda.com                                      |
 
 Example configured helm repositories:
-![redhat-openshift-console-helm-repositories](./image/helm-chart-repositories.png)
+![redhat-openshift-console-helm-repositories](./images/helm-chart-repositories.png)
 
-## 2. Install Monitoring Applications
+## 3. Install Monitoring Applications
 
 | Rhize recommends a separate namespace for monitoring¹
 
@@ -65,7 +79,7 @@ With the Red Hat OpenShift Console:
 1. Using the left hand menu, navigate to _Helm_ and _Releases_.
 1. Using the project selector, click the down arrow and ensure 'monitoring' is selected.
 
-### 2.1 Install loki-Distributed
+### 3.1 Install loki-distributed
 1. Click _Create Helm Release_
 1. Using the filter, select _Chart Repository_: 'grafana'
 1. In the search filter for 'loki distributed'
@@ -78,7 +92,7 @@ With the Red Hat OpenShift Console:
 
 > Loki has now been installed
 
-### 2.2 Install tempo-distributed
+### 3.2 Install tempo-distributed
 1. Click _Create Helm Release_
 1. Using the filter, select _Chart Repository_: 'grafana'
 1. In the search filter for 'tempo distributed'
@@ -91,7 +105,7 @@ With the Red Hat OpenShift Console:
 
 > Tempo has now been installed
 
-### 2.3 Install prometheus
+### 3.3 Install prometheus
 1. Click _Create Helm Release_
 1. Using the filter, select _Chart Repository_: 'prometheus-community'
 1. In the search filter for 'prometheus'
@@ -105,43 +119,30 @@ With the Red Hat OpenShift Console:
 
 > Prometheus has now been installed
 
-### 2.4 Install Grafana
+### 3.4 Install Grafana
 <todo>
 
 Example running releases in the 'monitoring' namespace:
 ![redhat-openshift-console-helm-repositories](./image/helm-chart-repositories.png)
 
-## 3. Install Rhize
+## 4. Install and configure Keycloak
 
-With the Red Hat OpenShift Console:
-1. Login using your existing credentials.
-1. Using the left hand menu, navigate to _Administration_ and _Namespaces_.
-1. Click _Create Namespace_ and enter name 'rhize'
-1. Click _Create_ 
-
-> The 'rhize' namespace has now been created
-
-1. Using the left hand menu, navigate to _Helm_ and _Releases_.
-1. Using the project selector, click the down arrow and ensure 'rhize' is selected.
-
-### 3.1 Install Postgres (High Availability) for Keycloak
+### 4.1 Install Postgres (High Availability) for Keycloak
 <todo>
 
-### 3.2 Install Postgres (High Availability) for Rhize Audit (Optional)
-
-| This postgres instance is only installed if Rhize Audit is required
-
+### 4.3 Install Keycloak
 <todo>
 
-### 3.3 Install Keycloak
+#### 4.3.1 Keycloak Configuration
 <todo>
 
-#### 3.3.1 Keycloak Configuration
-
-### 3.1 Install Redpanda, including Redpanda Console
+## 5. Install Rhize Applications
 <todo>
 
-### 3.2 Install QuestDB
+### 5.1 Install Redpanda, including Redpanda Console
+<todo>
+
+### 5.2 Install QuestDB
 <todo>
 
 ### 3.3 Install Restate
@@ -163,6 +164,12 @@ With the Red Hat OpenShift Console:
 <todo>
 
 ### 3.9 Install Rhize Admin UI
+<todo>
+
+### 3. Install Rhize Audit (Optional)
+<todo>
+
+### 4.2 Install Postgres (High Availability) for Rhize Audit
 <todo>
 
 # Footnotes 
