@@ -28,7 +28,8 @@ The Rhize Connector requires a client configured for it in order to communicate 
 2. Configure the **General Settings:**
     - **Client Type:** OpenID Connect
     - **Client ID:** seeq
-    **Name** and **Description** can be anything.
+  
+        **Name** and **Description** can be anything.
 3. Configure the **Capability config:**
     - **Client Authentication:** On
     - **Authorization:** On
@@ -48,7 +49,7 @@ The Rhize Connector requires a client configured for it in order to communicate 
         - `operations-schedule:query`
         - `operations-performance:query`
         
-    Roles can be filted to only show **libreBaas** roles by using the search.
+    Roles can be filtered to only show **libreBaas** roles by using the search.
 6. Select the **Credentials** tab and copy the **Client secret**.
 
 > The Client ID and Client Secret are both necessary for authenticating the Rhize Connector.
@@ -57,6 +58,12 @@ The Rhize Connector requires a client configured for it in order to communicate 
 The API URL defines how to connect to Rhize's database. Commonly this is a domain with the `/graphql` path.
 
 ## Configuration
+
+### Max Results Per Request
+This determines the number of samples to query per request. For Rhize, this determines the limit applied to the history query when fetching samples. It is recommended to keep this value at around `10,000`.
+
+### Additional Configuration
+
 This is an example configuration.
 
 ```json
@@ -66,6 +73,8 @@ This is an example configuration.
     "ClientId" : "seeq",
     "ClientSecret" : "Dh8tdWmsBi9MB830Zmarj89yrC95mVSX",
     "Realm" : "libre",
+    "Overfetch" : true,
+    "HistoryRetries" : 0
 }
 ```
 
@@ -77,7 +86,8 @@ This is an example configuration.
 | ClientId | null | String | The ID for the configured Seeq client. |
 | ClientSecret | null | String | The secret for the configured Seeq client. |
 | Realm | null | String | The realm for Rhize's Keycloak configuration. |
+| Overfetch | true | Boolean | Determines if the connector should try to query samples beyond the given bounds, so Seeq can interpolate data. |
+| HistoryRetries | 0 | Integer | How many times the connector should try to query samples, in the case of a "table busy" error. |
 
 ## Known Issues
 There are no known issues for the Rhize Connector. Please report any issues you find to our [support portal](https://libremfg.atlassian.net/servicedesk/customer/portal/1) or to our support email: support@libremfg.atlassian.net.
-
