@@ -27,7 +27,7 @@ With the Red Hat OpenShift Console:
 1. Click _Create Project_ and create the following projects:
    - rhize
    - monitoring
-   - cloudnative-pg-operator
+   - cnpg-operator
 1. Click _Create_ for each project.
 
 > The 'rhize', 'monitoring', and 'cloudnative-pg-operator' projects have now been created
@@ -72,69 +72,50 @@ Example configured helm repositories:
 
 {{% /steps %}}
 
-## Install the Cloudnative PG Postgres operator
+## 3. Install CloudNativePG Postgres Operator
 
-```YAML {filename="Values.yaml",linenos=table}
-config:
-  clusterWide: true
-  create: true
-containerSecurityContext: null
-crds:
-  create: true
-image:
-  pullPolicy: IfNotPresent
-  repository: ghcr.io/cloudnative-pg/cloudnative-pg
-  tag: ''
-monitoring:
-  grafanaDashboard:
-    configMapName: cnpg-grafana-dashboard
-    create: true
-    namespace: monitoring
-podSecurityContext: null
-rbac:
-  aggregateClusterRoles: false
-  create: true
-replicaCount: 1
-serviceAccount:
-  create: true
-  name: ''
-```
+{{% steps %}}
 
-### Install keycloak-cnpg-cluster
+### Install the CloudNativePG Operator
 
-```YAML {filename="Values.yaml",linenos=table}
-backups:
-  enabled: false
-cluster:
-  initdb: 
-    database: keycloak
-    owner: keycloak
-  instances: 3
-  logLevel: info
-  monitoring:
-    enabled: false
-  postgresGID: -1
-  postgresUID: -1
-  storage:
-    size: 8Gi
-    storageClass: ''
-databases: []
-imageCatalog:
-  create: true
-  images: []
-mode: standalone
-nameOverride: 'keycloak-cnpg-cluster'
-replica:
-type: postgresql
-version:
-  postgis: '3.4'
-  postgresql: '16'
-  timescaledb: '2.15'
-```
+1. Using the left hand menu, navigate to _Helm_ and _Releases_.
+1. Using the project selector, click the down arrow and ensure 'cloudnative-pg-operator' is selected.
+1. Click _Create Helm Release_
+1. Using the filter, select _Chart Repository_: 'cloudnative-pg'
+1. In the search filter for 'cloudnative-pg'
+1. Click the 'cloudnative-pg' helm chart
+1. Click the _Create_ button
+1. Click the _Chart Version_ dropdown and wait for it to finish loading
+1. Select the latest version
+1. Make any environmental specific changes in the _YAML view_, using the Values.yaml below
+   ```YAML {filename="Values.yaml",linenos=table}
+   config:
+     clusterWide: true
+     create: true
+   containerSecurityContext: null
+   crds:
+     create: true
+   image:
+     pullPolicy: IfNotPresent
+     repository: ghcr.io/cloudnative-pg/cloudnative-pg
+     tag: ''
+   monitoring:
+     grafanaDashboard:
+        configMapName: cnpg-grafana-dashboard
+        create: true
+        namespace: monitoring
+   podSecurityContext: null
+   rbac:
+     aggregateClusterRoles: false
+     create: true
+   replicaCount: 1
+   serviceAccount:
+     create: true
+     name: ''
+   ```
+{{% /steps %}}
 
-### Install keycloakx
-
-## Install Monitoring Applications
+## 4. Install Monitoring Applications
 
 | Rhize recommends a separate namespace for monitoring¹
 
@@ -288,51 +269,95 @@ tempo:
 Example running releases in the 'monitoring' namespace:
 ![redhat-openshift-console-helm-repositories](./images/helm-monitoring-releases.png)
 
-## 4. Install and configure Keycloak
+## 5. Install and configure Keycloak
 
-### 4.1 Install Postgres (High Availability) for Keycloak
+### 5.1 Install Postgres for Keycloak
+
+1. Using the left hand menu, navigate to _Helm_ and _Releases_.
+1. Using the project selector, click the down arrow and ensure 'keycloak' is selected (create the project if it doesn't exist).
+1. Click _Create Helm Release_
+1. Using the filter, select _Chart Repository_: 'cloudnative-pg'
+1. In the search filter for 'cluster'
+1. Click the 'cluster' helm chart
+1. Click the _Create_ button
+1. Click the _Chart Version_ dropdown and wait for it to finish loading
+1. Select the latest version
+1. Make any environmental specific changes in the _YAML view_, using the Values.yaml below
+
+```YAML {filename="Values.yaml",linenos=table}
+backups:
+  enabled: false
+cluster:
+  initdb:
+    database: keycloak
+    owner: keycloak
+  instances: 3
+  logLevel: info
+  monitoring:
+    enabled: false
+  postgresGID: -1
+  postgresUID: -1
+  storage:
+    size: 8Gi
+    storageClass: ''
+databases: []
+imageCatalog:
+  create: true
+  images: []
+mode: standalone
+nameOverride: keycloak-cnpg-cluster
+replica: null
+type: postgresql
+version:
+  postgis: '3.4'
+  postgresql: '16'
+  timescaledb: '2.15'
+```
+
+1. Click the _Create_ button
+
+> The Keycloak Postgres cluster has now been installed
+
+### 5.2 Install KeycloakX
 <todo>
 
-### 4.3 Install Keycloak
+#### 5.2.1 Keycloak Configuration
 <todo>
 
-#### 4.3.1 Keycloak Configuration
+## 6. Install Rhize Applications
 <todo>
 
-## 5. Install Rhize Applications
+### 6.1 Install Redpanda, including Redpanda Console <todo>
 <todo>
 
-### 5.1 Install Redpanda, including Redpanda Console
+### 6.2 Install QuestDB
 <todo>
 
-### 5.2 Install QuestDB
+### 6.3 Install Restate
 <todo>
 
-### 3.3 Install Restate
+### 6.4 Install AppSmith-EE
 <todo>
 
-### 3.4 Install AppSmith-EE
+### 6.5 Install Rhize Typescript Host Service
 <todo>
 
-### 3.5 Install Rhize Typescript Host Service
+### 6.6 Install Rhize BaaS
 <todo>
 
-### 3.6 Install Rhize BaaS
+### 6.7 Install Rhize ISA-95
 <todo>
 
-### 3.7 Install Rhize ISA-95
+### 6.8 Install Rhize Workflow
 <todo>
 
-### 3.8 Install Rhize Workflow
+### 6.9 Install Rhize Admin UI
 <todo>
 
-### 3.9 Install Rhize Admin UI
+### 6.10 Install Rhize Audit (Optional)
 <todo>
 
-### 3. Install Rhize Audit (Optional)
-<todo>
-
-### 4.2 Install Postgres (High Availability) for Rhize Audit
+### 6.11 Install Postgres (High Availability) for Rhize Audit
 <todo>
 
 # Footnotes 
