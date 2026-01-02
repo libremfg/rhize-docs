@@ -318,41 +318,89 @@ version:
 
 > The Keycloak Postgres cluster has now been installed
 
-### 5.2 Install KeycloakX
-<todo>
+### 5.2 Create Keycloak Admin Secret
 
-#### 5.2.1 Keycloak Configuration
-<todo>
+With the Red Hat OpenShift Console:
+1. Using the left hand menu, navigate to _Workloads_ and _Secrets_.
+1. Using the project selector, click the down arrow and ensure 'keycloak' is selected.
+1. Click _Create_ and select _Key/value secret_.
+1. Enter the following details:
+   - **Secret name**: keycloak-admin-password
+   - **Key**: password
+   - **Value**: <insert password here>
+1. Click _Create_.
 
-## 6. Install Rhize Applications
-<todo>
+> The Keycloak admin secret has now been created.
 
-### 6.1 Install Redpanda, including Redpanda Console <todo>
-<todo>
+### 5.3 Install Keycloak
 
-### 6.2 Install QuestDB
-<todo>
+1. Using the left hand menu, navigate to _Helm_ and _Releases_.
+1. Using the project selector, click the down arrow and ensure 'keycloak' is selected.
+1. Click _Create Helm Release_
+1. Using the filter, select _Chart Repository_: 'codecentric'
+1. In the search filter for 'keycloak'
+1. Click the 'keycloak' helm chart
+1. Click the _Create_ button
+1. Click the _Chart Version_ dropdown and wait for it to finish loading
+1. Select the latest version
+1. Make any environmental specific changes in the _YAML view_, using the Values.yaml below
 
-### 6.3 Install Restate
-<todo>
+```YAML {filename="Values.yaml",linenos=table}
+clusterDomain: console-openshift-console.apps-crc.testing
+command:
+  - /opt/keycloak/bin/kc.sh
+  - start
+  - '--http-port=8080'
+  - '--hostname-strict=false'
+database:
+  database: keycloak
+  existingSecret: keycloak-cnpg-cluster-app
+  existingSecretKey: password
+  hostname: keycloak-cnpg-cluster-rw
+  username: keycloak
+  vendor: postgres
+extraEnv: |
+  - name: JAVA_OPTS_APPEND
+    value: >-
+      -Djgroups.dns.query={{ include "keycloak.fullname" . }}-headless
+  - name: KC_BOOTSTRAP_ADMIN_USERNAME
+    value: admin
+  - name: KC_BOOTSTRAP_ADMIN_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: keycloak-admin-password
+        key: password
+health:
+  enabled: true
+image:
+  digest: ''
+  pullPolicy: IfNotPresent
+  repository: quay.io/keycloak/keycloak
+  tag: 26.4.5
+metrics:
+  enabled: true
+nameOverride: keycloak
+podSecurityContext: null
+prometheusRule:
+  enabled: true
+  namespace: monitoring
+replicas: 1
+route:
+  enabled: true
+  host: keycloak.<openshift-domain>
+  path: /
+  tls:
+    enabled: true
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+securityContext: null
+```
 
-### 6.4 Install AppSmith-EE
-<todo>
+1. Click the _Create_ button
 
-### 6.5 Install Rhize Typescript Host Service
-<todo>
+> Keycloak has now been installed
 
-### 6.6 Install Rhize BaaS
-<todo>
-
-### 6.7 Install Rhize ISA-95
-<todo>
-
-### 6.8 Install Rhize Workflow
-<todo>
-
-### 6.9 Install Rhize Admin UI
-<todo>
+#### 5.3.1 Keycloak Configuration
 
 ### 6.10 Install Rhize Audit (Optional)
 <todo>
