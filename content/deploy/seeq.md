@@ -60,6 +60,7 @@ The API URL defines how to connect to Rhize's database. Commonly this is a domai
 ## Configuration
 
 ### Max Results Per Request
+
 This determines the number of samples to query per request. For Rhize, this determines the limit applied to the history query when fetching samples. It is recommended to keep this value at around `10,000`.
 
 ### Additional Configuration
