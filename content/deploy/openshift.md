@@ -346,7 +346,7 @@ With the Red Hat OpenShift Console:
 1. Make any environmental specific changes in the _YAML view_, using the Values.yaml below
 
 ```YAML {filename="Values.yaml",linenos=table}
-clusterDomain: console-openshift-console.apps-crc.testing
+clusterDomain: console-openshift-console.<openshift-domain>
 command:
   - /opt/keycloak/bin/kc.sh
   - start
@@ -402,11 +402,380 @@ securityContext: null
 
 #### 5.3.1 Keycloak Configuration
 
-### 6.10 Install Rhize Audit (Optional)
-<todo>
+## 6. Install Rhize Applications
 
-### 6.11 Install Postgres (High Availability) for Rhize Audit
-<todo>
+{{% steps %}}
+
+### 6.1 Install Redpanda, including Redpanda Console
+
+1. Using the left hand menu, navigate to _Helm_ and _Releases_.
+1. Using the project selector, click the down arrow and ensure 'rhize' is selected.
+1. Click _Create Helm Release_
+1. Using the filter, select _Chart Repository_: 'redpanda'
+1. In the search filter for 'redpanda'
+1. Click the 'redpanda' helm chart
+1. Click the _Create_ button
+1. Click the _Chart Version_ dropdown and wait for it to finish loading
+1. Select the latest version
+1. Make any environmental specific changes in the _YAML view_, using the Values.yaml below
+
+```YAML {filename="Values.yaml",linenos=table}
+console:
+  enabled: true
+  podSecurityContext: null
+  securityContext: null
+image:
+  repository: docker.redpanda.com/redpandadata/redpanda
+logging:
+  usageStats:
+    enabled: true
+  logLevel: info
+monitoring:
+  enabled: false
+  scrapeInterval: 30s
+podTemplate:
+  spec:
+    securityContext: null
+post_install_job:
+  podTemplate:
+    spec:
+      containers:
+        - name: post-install
+  enabled: true
+resources:
+  cpu:
+    cores: 1
+  memory:
+    container:
+      max: 2.5Gi
+serviceAccount:
+  create: true
+statefulset:
+  sideCars:
+    configWatcher:
+      enabled: true
+    image:
+      repository: docker.redpanda.com/redpandadata/redpanda-operator
+      tag: v25.3.1
+  replicas: 3
+storage:
+  persistentVolume:
+    enabled: true
+    size: 10Gi
+tests:
+  enabled: true
+tls:
+  certs:
+    default:
+      caEnabled: true
+    external:
+      caEnabled: true
+  enabled: false
+tuning:
+  tune_aio_events: false
+clusterDomain: cluster.local.
+```
+
+1. Click the _Create_ button
+
+> Redpanda has now been installed
+
+#### 6.1.1 Create Redpanda Console Route
+
+1. Using the left hand menu, navigate to _Networking_ and _Routes_.
+1. Click _Create Route_
+1. Fill in the following details:
+   - **Name**: redpanda-console
+   - **Hostname**: redpanda-console.<openshift-domain>
+   - **Service**: redpanda-console
+   - **Target port**: 8080 → 8080
+   - **Secure Route**: ✓
+   - **TLS termination**: Edge
+   - **Insecure traffic**: Redirect
+1. Click _Create_
+
+> Redpanda Console is now available
+
+### 6.2 Install QuestDB
+
+1. Using the left hand menu, navigate to _Helm_ and _Releases_.
+1. Using the project selector, click the down arrow and ensure 'rhize' is selected.
+1. Click _Create Helm Release_
+1. Using the filter, select _Chart Repository_: 'questdb'
+1. In the search filter for 'questdb'
+1. Click the 'questdb' helm chart
+1. Click the _Create_ button
+1. Click the _Chart Version_ dropdown and wait for it to finish loading
+1. Select the latest version
+1. Make any environmental specific changes in the _YAML view_, using the Values.yaml below
+
+```YAML {filename="Values.yaml",linenos=table}
+image:
+  pullPolicy: IfNotPresent
+  repository: questdb/questdb
+  tag: 8.2.1
+persistence:
+  enabled: true
+  size: 50Gi
+  storageClass: ''
+podSecurityContext: null
+resources:
+  limits:
+    cpu: 2000m
+    memory: 4Gi
+  requests:
+    cpu: 1000m
+    memory: 2Gi
+securityContext: null
+service:
+  port: 9000
+  type: ClusterIP
+```
+
+1. Click the _Create_ button
+
+> QuestDB has now been installed
+
+#### 6.2.1 Create QuestDB Route
+
+1. Using the left hand menu, navigate to _Networking_ and _Routes_.
+1. Click _Create Route_
+1. Fill in the following details:
+   - **Name**: questdb
+   - **Hostname**: questdb.<openshift-domain>
+   - **Service**: questdb
+   - **Target port**: 9000 → 9000
+   - **Secure Route**: ✓
+   - **TLS termination**: Edge
+   - **Insecure traffic**: Redirect
+1. Click _Create_
+
+> QuestDB console is now available
+
+### 6.3 Install Restate
+
+1. Using the left hand menu, navigate to _Helm_ and _Releases_.
+1. Using the project selector, click the down arrow and ensure 'rhize' is selected.
+1. Click _Create Helm Release_
+1. Using the filter, select _Chart Repository_: 'libre'
+1. In the search filter for 'restate'
+1. Click the 'restate' helm chart
+1. Click the _Create_ button
+1. Click the _Chart Version_ dropdown and wait for it to finish loading
+1. Select the latest version
+1. Make any environmental specific changes in the _YAML view_, using the Values.yaml below
+
+```YAML {filename="Values.yaml",linenos=table}
+```
+
+1. Click the _Create_ button
+
+> Restate has now been installed
+
+### 6.4 Install AppSmith-EE
+
+1. Using the left hand menu, navigate to _Helm_ and _Releases_.
+1. Using the project selector, click the down arrow and ensure 'rhize' is selected.
+1. Click _Create Helm Release_
+1. Using the filter, select _Chart Repository_: 'appsmith-ee'
+1. In the search filter for 'appsmith'
+1. Click the 'appsmith' helm chart
+1. Click the _Create_ button
+1. Click the _Chart Version_ dropdown and wait for it to finish loading
+1. Select the latest version
+1. Make any environmental specific changes in the _YAML view_, using the Values.yaml below
+
+```YAML {filename="Values.yaml",linenos=table}
+```
+
+1. Click the _Create_ button
+
+> AppSmith-EE has now been installed
+
+#### 6.4.1 Create AppSmith Route
+
+1. Using the left hand menu, navigate to _Networking_ and _Routes_.
+1. Click _Create Route_
+1. Fill in the following details:
+   - **Name**: appsmith
+   - **Hostname**: appsmith.<openshift-domain>
+   - **Service**: appsmith
+   - **Target port**: 80 → 80
+   - **Secure Route**: ✓
+   - **TLS termination**: Edge
+   - **Insecure traffic**: Redirect
+1. Click _Create_
+
+> AppSmith console is now available
+
+1. Click the _Create_ button
+
+> The Rhize Postgres cluster has now been installed
+
+### 6.6 Install Rhize Typescript Host Service
+
+1. Using the left hand menu, navigate to _Helm_ and _Releases_.
+1. Using the project selector, click the down arrow and ensure 'rhize' is selected.
+1. Click _Create Helm Release_
+1. Using the filter, select _Chart Repository_: 'libre'
+1. In the search filter for 'typescript-host'
+1. Click the 'rhize-typescript-host' helm chart
+1. Click the _Create_ button
+1. Click the _Chart Version_ dropdown and wait for it to finish loading
+1. Select the latest version
+1. Make any environmental specific changes in the _YAML view_, using the Values.yaml below
+
+```YAML {filename="Values.yaml",linenos=table}
+```
+
+1. Click the _Create_ button
+
+> Rhize Typescript Host Service has now been installed
+
+### 6.7 Install Rhize BaaS
+
+1. Using the left hand menu, navigate to _Helm_ and _Releases_.
+1. Using the project selector, click the down arrow and ensure 'rhize' is selected.
+1. Click _Create Helm Release_
+1. Using the filter, select _Chart Repository_: 'libre'
+1. In the search filter for 'baas'
+1. Click the 'rhize-baas' helm chart
+1. Click the _Create_ button
+1. Click the _Chart Version_ dropdown and wait for it to finish loading
+1. Select the latest version
+1. Make any environmental specific changes in the _YAML view_, using the Values.yaml below
+
+```YAML {filename="Values.yaml",linenos=table}
+```
+
+1. Click the _Create_ button
+
+> Rhize BaaS has now been installed
+
+### 6.8 Install Rhize ISA-95
+
+1. Using the left hand menu, navigate to _Helm_ and _Releases_.
+1. Using the project selector, click the down arrow and ensure 'rhize' is selected.
+1. Click _Create Helm Release_
+1. Using the filter, select _Chart Repository_: 'libre'
+1. In the search filter for 'isa-95'
+1. Click the 'rhize-isa95' helm chart
+1. Click the _Create_ button
+1. Click the _Chart Version_ dropdown and wait for it to finish loading
+1. Select the latest version
+1. Make any environmental specific changes in the _YAML view_, using the Values.yaml below
+
+```YAML {filename="Values.yaml",linenos=table}
+```
+
+1. Click the _Create_ button
+
+> Rhize ISA-95 has now been installed
+
+### 6.9 Install Rhize Workflow
+
+1. Using the left hand menu, navigate to _Helm_ and _Releases_.
+1. Using the project selector, click the down arrow and ensure 'rhize' is selected.
+1. Click _Create Helm Release_
+1. Using the filter, select _Chart Repository_: 'libre'
+1. In the search filter for 'workflow'
+1. Click the 'rhize-workflow' helm chart
+1. Click the _Create_ button
+1. Click the _Chart Version_ dropdown and wait for it to finish loading
+1. Select the latest version
+1. Make any environmental specific changes in the _YAML view_, using the Values.yaml below
+
+```YAML {filename="Values.yaml",linenos=table}
+```
+
+1. Click the _Create_ button
+
+> Rhize Workflow has now been installed
+
+### 6.10 Install Rhize Admin UI
+
+1. Using the left hand menu, navigate to _Helm_ and _Releases_.
+1. Using the project selector, click the down arrow and ensure 'rhize' is selected.
+1. Click _Create Helm Release_
+1. Using the filter, select _Chart Repository_: 'libre'
+1. In the search filter for 'admin-ui'
+1. Click the 'rhize-admin-ui' helm chart
+1. Click the _Create_ button
+1. Click the _Chart Version_ dropdown and wait for it to finish loading
+1. Select the latest version
+1. Make any environmental specific changes in the _YAML view_, using the Values.yaml below
+
+```YAML {filename="Values.yaml",linenos=table}
+```
+
+1. Click the _Create_ button
+
+> Rhize Admin UI has now been installed
+
+#### 6.10.1 Create Admin UI Route
+
+1. Using the left hand menu, navigate to _Networking_ and _Routes_.
+1. Click _Create Route_
+1. Fill in the following details:
+   - **Name**: rhize-admin-ui
+   - **Hostname**: rhize-admin.<openshift-domain>
+   - **Service**: rhize-admin-ui
+   - **Target port**: 80 → 80
+   - **Secure Route**: ✓
+   - **TLS termination**: Edge
+   - **Insecure traffic**: Redirect
+1. Click _Create_
+
+> Rhize Admin UI is now available
+
+### 6.11 Install Rhize Audit (Optional)
+
+The Rhize Audit service is optional and provides additional audit logging capabilities.
+
+#### 6.11.1 Install Postgres (High Availability) for Rhize Audit
+
+1. Using the left hand menu, navigate to _Helm_ and _Releases_.
+1. Using the project selector, click the down arrow and ensure 'rhize' is selected.
+1. Click _Create Helm Release_
+1. Using the filter, select _Chart Repository_: 'cloudnative-pg'
+1. In the search filter for 'cluster'
+1. Click the 'cluster' helm chart
+1. Click the _Create_ button
+1. Click the _Chart Version_ dropdown and wait for it to finish loading
+1. Select the latest version
+1. Make any environmental specific changes in the _YAML view_, using the Values.yaml below
+
+```YAML {filename="Values.yaml",linenos=table}
+```
+
+1. Click the _Create_ button
+
+> The Rhize Audit Postgres cluster has now been installed
+
+#### 6.11.2 Install Rhize Audit Service
+
+1. Using the left hand menu, navigate to _Helm_ and _Releases_.
+1. Using the project selector, click the down arrow and ensure 'rhize' is selected.
+1. Click _Create Helm Release_
+1. Using the filter, select _Chart Repository_: 'libre'
+1. In the search filter for 'audit'
+1. Click the 'rhize-audit' helm chart
+1. Click the _Create_ button
+1. Click the _Chart Version_ dropdown and wait for it to finish loading
+1. Select the latest version
+1. Make any environmental specific changes in the _YAML view_, using the Values.yaml below
+
+```YAML {filename="Values.yaml",linenos=table}
+```
+
+1. Click the _Create_ button
+
+> Rhize Audit has now been installed
+
+{{% /steps %}}
+
+Example running releases in the 'rhize' namespace:
+![redhat-openshift-console-helm-repositories](./images/helm-rhize-releases.png)
 
 # Footnotes 
 
