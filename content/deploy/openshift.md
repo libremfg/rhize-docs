@@ -256,7 +256,11 @@ tempo:
     podSecurityContext: null
     securityContext: null
   tokengenJob:
-    containerSecurityContext: null
+    containerSecurityContext: null 
+  traces:
+    otlp:
+      grpc:
+        enabled: true
 ```
 
 {{% /details %}}
@@ -557,15 +561,58 @@ service:
 1. Using the left hand menu, navigate to _Helm_ and _Releases_.
 1. Using the project selector, click the down arrow and ensure 'rhize' is selected.
 1. Click _Create Helm Release_
-1. Using the filter, select _Chart Repository_: 'libre'
+1. Using the filter, select _Chart Repository_: 'restate'
 1. In the search filter for 'restate'
-1. Click the 'restate' helm chart
+1. Click the 'Restae Helm' helm chart
 1. Click the _Create_ button
 1. Click the _Chart Version_ dropdown and wait for it to finish loading
 1. Select the latest version
 1. Make any environmental specific changes in the _YAML view_, using the Values.yaml below
 
 ```YAML {filename="Values.yaml",linenos=table}
+env:
+  - name: RESTATE_LOG_FORMAT
+    value: json
+  - name: RESTATE_TRACING_ENDPOINT
+    value: http://lgtm-distributed-tempo-distributor.rhize.svc.cluster.local:4317
+  - name: RESTATE_INGRESS__KAFKA_CLUSTERS
+    value: '[{name="redpanda.rhize.svc.cluster.local",brokers=["PLAINTEXT://redpanda.rhize.svc.cluster.local:9093"]}]'
+  - name: RESTATE_ROCKSDB_TOTAL_MEMORY_SIZE
+    value: '8.0 GB'
+  - name: RESTATE_DEFAULT_NUM_PARTITIONS
+    value: "10"
+  - name: RESTATE_WORKER__INVOKER__CONCURRENT_INVOCATIONS_LIMIT
+    value: "100000"
+  - name: RESTATE_WORKER__INTERNAL_QUEUE_LENGTH
+    value: "1000"
+  - name: RESTATE_NETWORKING__NUM_CONCURRENT_CONNECTIONS
+    value: "1000"
+  - name: RESTATE_BIFROST__LOCAL__ROCKSDB_COMPACTION_READAHEAD_SIZE
+    value: "10 MB"
+  # Maintain backward-compatible retry behavior (kill on max attempts instead of pause)
+  - name: RESTATE_DEFAULT_RETRY_POLICY__ON_MAX_ATTEMPTS
+    value: "kill"
+  - name: RESTATE_DEFAULT_RETRY_POLICY__INITIAL_INTERVAL
+    value: "10s"
+  - name: RESTATE_DEFAULT_RETRY_POLICY__MAX_ATTEMPTS
+    value: "100"
+image:
+  pullPolicy: IfNotPresent
+  repository: docker.restate.dev/restatedev/restate
+podSecurityContext: null
+replicaCount: 1
+resources:
+  limits:
+    cpu: 1
+    memory: 3Gi
+  requests:
+    cpu: 500m
+    memory: 1Gi
+securityContext: null
+serviceMonitor:
+  enabled: true
+storage:
+  size: 4Gi # 64Gi
 ```
 
 1. Click the _Create_ button
