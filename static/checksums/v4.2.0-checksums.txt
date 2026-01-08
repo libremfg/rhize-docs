@@ -4,7 +4,6 @@ sha256:5fe0adb19b058eb0ef5a37b72bde0aaddc12899b44bad0c15e97645e40bd1177
 
 Agent:
 
-
 BaaS:
 
 ISA-95:
