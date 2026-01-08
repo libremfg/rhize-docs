@@ -5,6 +5,8 @@ sha256:5fe0adb19b058eb0ef5a37b72bde0aaddc12899b44bad0c15e97645e40bd1177
 Agent:
 
 BaaS:
+registry.gitlab.com/libremfg/baas:v4.2.0
+sha256:8af0efe6b120f4980a01b62cf1d57df5018f7432d1fb1ab8a8689e6e3f878918
 
 ISA-95:
 registry.gitlab.com/libremfg/isa95/v4-2-0
@@ -22,3 +24,4 @@ Workflow:
 registry.gitlab.com/libremfg/workflow/v4-2-0
 sha256:fa853df021d985138fec7a43b8326f9e25e207e11ce0d1f387eeae5f72e573e7
 
+ 
