@@ -14,7 +14,6 @@ This database is enforced by our ISA-95 schema, the most comprehensive data repr
 Rhize exposes this database through a [GraphQL API](https://graphql.org/).
 Unlike REST, GraphQL requires only one endpoint, and you can define exactly the data that you return for each operation.
 
-
 If you are a customer, the best way to learn both GraphQL and ISA-95 modelling is to use the [Apollo Explorer](https://www.apollographql.com/) for our schema.
 However, for newcomers to GraphQL, the flexibility may look overwhelming.
 These topics introduce the basics of how to use GraphQL with Rhize's custom database.
@@ -38,7 +37,7 @@ The following sections show you the essential features to make a query.
 
 ### Authenticate
 
-To authenticate your requests, pass a bearer token as an `Authorization` header.
+To authenticate your requests, pass a bearer token as an `Authorization` header. This will be automatically added when using Apollo Playground in the Rhize Admin UI.
 Be sure to preface the value with the word `Bearer `:
 
 
