@@ -57,13 +57,6 @@ All this data is mapped to Rhize's ISA-95 schema, which creates a coherent model
 
 ## Message exchange
 
-{{< bigFigure
-src="/get-started/rhize-diagram-data-sources.png"
-alt="More granular view of Rhize-Customer messaging"
-caption="More granular view of Rhize-Customer messaging"
-width="90%"
->}}
-
 Rhize's architecture is event-driven, low-latency, and scalable.
 To communicate events in real-time and across services, Rhize uses a publish-subscribe model through the NATS message broker.
 The message infrastructure enables complex interaction between services without creating dependencies between them.
