@@ -33,6 +33,7 @@ To make the next sections less abstract, consider these examples of how Rhize cr
     - A business analyst sends an ERP order through an integration with the GraphQL API.
 - **[Message exchange](#message-exchange)**
     1. A piece of equipment publishes information about its status over MQTT.
+    1. A Rhize Agent detects the change and publishes it into Kafka topic `TestResult`.
     1. A BPMN process subscribes to the equipment's `TestResult` subtopic. When the `TestResult` status changes to `fail`, the BPMN process publishes a maintenance order to the broker.
     1. The ERP system, which subscribes to the `maintenance` topic, prepares a document for maintenance personnel. 
 - **[Data storage](#storage)**
@@ -49,7 +50,7 @@ To make the next sections less abstract, consider these examples of how Rhize cr
 
 A manufacturing data hub is useless without manufacturing data.
 
-The Rhize agent collects data from MQTT brokers and devices, OPC-UA servers.
+The Rhize agent collects data from MQTT brokers and devices, OPC-UA servers, Kafka topics and/or Azure Service Bus.
 You can also send data and documents over HTTP through a [GraphQL call]({{< relref "../how-to/gql/call-the-graphql-api" >}}).
 The Rhize UI also has a graphical interface to [model production]({{< relref "../how-to/model" >}}) objects.
 
@@ -58,11 +59,11 @@ All this data is mapped to Rhize's ISA-95 schema, which creates a coherent model
 ## Message exchange
 
 Rhize's architecture is event-driven, low-latency, and scalable.
-To communicate events in real-time and across services, Rhize uses a publish-subscribe model through the NATS message broker.
+To communicate events in real-time and across services, Rhize uses a publish-subscribe model through the Restate durable execution engine and Kafka message bus.
 The message infrastructure enables complex interaction between services without creating dependencies between them.
 
-Services in the Rhize application subscribe to their relevant topics and handle events as they come in.
-Services also publish events to the event broker.
+Rhize applications provide services and functions to Restate, allowing remote procedure calls in a durable fashion. Restate automatically handles failures and retries, as well as application discovery and lifecycle monitoring.
+
 Thus, Rhize services can communicate with each other and with customer systems in a completely decoupled manner.
 
 ## Data storage {#database}
@@ -87,7 +88,7 @@ Some uses include:
 These interfaces sit on top of the GraphQL API gateway, which serves as a programming interface for data analysis.
 Rhize customers also use the GraphQL interface to build their own applications, either with dedicated frontend developers or through low-code tools like Appsmith.
 
-Last but not least, the time-series data is observable through monitoring tools like Grafana.
+Last but not least, the time-series data is also observable through GraphQL and monitoring tools like Grafana.
 
 ## Deployment {#deployment}
 

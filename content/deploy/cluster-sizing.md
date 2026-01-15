@@ -22,7 +22,7 @@ For high availability,  Rhize recommends a **minimum of three nodes** with the f
 | CPU Speed (GHz)       | 3.3               |
 | vCPU per Node         | 16                |
 | Memory per node (GiB) | 32 (64 is better) |
-| Persisted volumes     | 16                |
+| Persisted Volumes     | 16                |
 | Persisted Volume IOPS | 5000              |
 | PV Throughput (MBps)  | 500               |
 | Total Disk Space (TB) | 3                 |
@@ -39,7 +39,7 @@ For the Rhize Agent, the minimum recommended specifications are as follows:
 | CPU Speed (GHz)       | 2.8   |
 | vCPU per Node         | 2     |
 | Memory per node (GiB) | 1     |
-| Persisted volumes     | 1     |
+| Persisted Volumes     | 1     |
 
 ## Service-level recommendations
 
@@ -49,22 +49,19 @@ Services with stateful PV have a persistent volume per pod.
 >![Warn]
 > Avoid NFS or SMB filesystems. These are known to lead to file corruption in BaaS and do not work at all with various other services.
 
-
 | Service                | Pods for HA (replica count) | vCPU per Pod | Memory Per Pod | Stateful PV | DiskSize (GiB) | Comments                                                             |
 |------------------------|-----------------------------|--------------|----------------|-------------|----------------|----------------------------------------------------------------------|
 | `baas-alpha`           | 3                           | 8            | 16 (at least)  | Yes         | 750            | High throughput and IOPS                                             |
 | `baas-zero`            | 3                           | 2            | 2              | Yes         | 300            | High throughput and IOPS                                             |
-| `workflow`      | 3                           | 1            | 2              | No          | N/A            | HA requires 2 pods, but 3 is to avoid hotkey issues and balance load |
-| `isa95`                | 2                           | 2            | 1              | NO          | N/A            |                                                                      |
+| `workflow`             | 3                           | 1            | 2              | No          | N/A            | HA requires 2 pods, but 3 is to avoid hotkey issues and balance load |
+| `isa95`                | 1*                          | 1            | 1              | No          | N/A            | *ISA-95 does not support HA                                          |
 | `keycloak-postgres`    | 2                           | 1            | 2              | No          | 200            | Runs in pod with `keycloak`                                          |
 | `keycloak`             | 2                           | 1            | 2              | No          | N/A            |                                                                      |
-| `libre-audit-postgres` | 2                           | 1            | 2              | Yes         | 250            | Runs in pod with `libre-audit`                                       |
 | `libre-ui`             | 3                           | 0.25         | 0.25           | No          | N/A            |                                                                      |
 | `quest-db`             | 1                           | 4            | 8              | Yes         | 250            | High Throughput and IPOS                                             |
 | `redpanda`             | 3                           |              |                | Yes         | 100            | High IOPS                                                            |
 | `restate`              | 3                           |              |                | Yes         | 50             | High Throughput and IPOS                                             |
 | `appsmith`             | 3                           | 4            |                | Yes         | 50             | High Throughput and IPOS                                             |
-
 
 ### Monitoring stack
 

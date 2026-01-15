@@ -66,6 +66,6 @@ In practice, this means that Rhize is interoperable with whatever system the man
 deployment is version-controlled, and your system can use rolling upgrades with zero downtime.
 
 - **Built on open standards.**
-Rhize is based on open standards, like ISA-95, and open protocols, like MQTT.
+Rhize is based on open standards, like ISA-95, and open protocols, like Apache Kafka.
 Open industry standards and protocols ensure that the application and your manufacturing processes speak a common language.
 Rhize heavily uses open-source software, which brings interoperability, reduced vendor lock, and robust tooling ecosystems.
