@@ -74,13 +74,6 @@ First, record the old and new versions, their context, and namespaces.
 
     The schema file is likely called something like `schema.sdl`.
 
-
-1. Restart the Apollo Router Statefulset so that the Supergraph is composed with all the latest changes. For example:
-
-```bash
-kubectl rollout restart statefulset router
-```
-
 ## Verify success
 
 Verify success in Kubernetes by checking that the version upgraded properly and that the logs are correct.

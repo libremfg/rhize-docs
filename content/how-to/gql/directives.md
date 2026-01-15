@@ -63,8 +63,7 @@ Reference: [Linking nodes in the graph](/graphql/schema/graph-links)
 
 ### @id
 
-`@id` directive is used to annotate a field which represents a unique identifier coming from outside
- of Dgraph.
+`@id` directive is used to annotate a field which represents a unique identifier coming from outside of BaaS.
 
 Reference: [Identity](/graphql/schema/ids)
 
@@ -79,6 +78,12 @@ Reference: [Include directive](/graphql/queries/skip-include)
 The `@lambda` directive allows you to call custom JavaScript resolvers. The `@lambda` queries, mutations, and fields are resolved through the lambda functions implemented on a given lambda server.
 
 Reference: [Lambda directive](/graphql/lambda/overview)
+
+### @local
+
+The `@local` directive allows you to specify which types (stored in Dgraph) to resolve from this instance of dgraph when using [@remote](how-to/gql/directives/#@remote) resolution. This enables Dgraph to resolve these local fields from the database while the parent remote type is resolved from an external HTTP endpoint.
+
+The `@local` directive requires a `by` parameter that specifies which fields from the remote response should be used to resolve the local type. These fields act as join keys between the remote data and the local data stored in Dgraph.
 
 ### @primary-key
 

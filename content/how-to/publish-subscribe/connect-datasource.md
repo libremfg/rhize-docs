@@ -19,7 +19,7 @@ To add a data source, you need the following:
 ## Steps to connect
 
 The process has two sides:
-- Sending topics from your MQTT, OPCUA, or NATS server to Rhize.
+- Sending topics from your MQTT, OPCUA, Azure Service Bus or Kafka server to Rhize.
 - In Rhize, [defining the data source]({{< relref "../model/create-objects-ui" >}}) and its associated objects.
 
   To do this, you can create entities in the Rhize UI or through its [GraphQL API]({{< relref "../gql" >}}).

@@ -100,13 +100,15 @@ Then, follow these steps.
 1. Update overrides to `keycloak.yaml`. Then install with this command:
 
      ```bash
-     helm install keycloak -f ./keycloak.yaml bitnami/keycloak -n {{< param application_name >}}
+     helm install keycloak -f ./keycloak.yaml bitnami/keycloak -n libre
      ```
 
-1. Set up port forwarding from Keycloak. For example, this forwards traffic to port `5101` on `localhost`:
+> Note: Version may have to be specified by appending on `--version` and the desired chart version.
+
+1. Set up port forwarding from Keycloak. For example, this forwards traffic to port `8080` on `localhost`.
 
      ```bash
-     kubectl port-forward svc/keycloak 5101:80
+     kubectl port-forward svc/keycloak 8080:80 -n libre
      ```
      
 ## Next steps

@@ -67,7 +67,7 @@ Besides REST, you can use this template to interact with any HTTP API.
 
 ### Publish and subscribe
 
-Besides HTTP, workflows can also publish and subscribe messages over MQTT, NATS, and OPC UA.
+Besides HTTP, workflows can also publish and subscribe messages over MQTT, Kafka, and OPC UA.
 
 {{< bigFigure
 alt="A workflow that listens to a message and throws a message"

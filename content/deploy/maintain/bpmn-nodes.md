@@ -2,44 +2,40 @@
 title: "BPMN execution recovery"
 weight: 200
 description: >-
-  If a BPMN node suddenly fails, Rhize has a number of recovery methods to ensure that the workflow finishes executing.
+  If a Workflow node suddenly fails, Rhize has a number of recovery methods to ensure that the workflow finishes executing.
 categories: ["concepts"]
 ---
 
 [{{< abbr "BPMN" >}} processes]({{< relref "../../how-to/bpmn" >}}) often have longer execution durations and many steps.
-If a BPMN node suddenly fails (for example through a panic or loss of power),
+If a Workflow node suddenly fails (for example through a panic or loss of power),
 Rhize needs to ensure that the workflow completes.
 
-To achieve high availability and resiliency, Rhize services run in [Kubernetes nodes](https://kubernetes.io/docs/concepts/architecture/nodes/), and the NATS message broker typically has [data replication](https://docs.nats.io/running-a-nats-service/nats_admin/jetstream_admin/replication).
-As long as the remaining BPMN nodes are not already at full processing capacity,
-if a BPMN node fails while executing a process,
-the Rhize system recovers and finishes the workflow.
+To achieve high availability and resiliency, Rhize services run in [Kubernetes nodes](https://kubernetes.io/docs/concepts/architecture/nodes/), and [Restate in high availability](https://docs.restate.dev/foundations/key-concepts#infrastructure-failures-e-g-server-crashes-vm-restarts).
 
-This recovery is automatic, though users may experience an execution gap of up to 30 seconds.
+As long as the remaining Workflow nodes are not already at full processing capacity,
+if a Workflow node fails while executing a process,
+the Rhize system recovers and finishes the BPMN execution.
+
+This recovery is automatic, though users may experience an execution gap of up to a few seconds.
 
 ## BPMN failure and recovery modes 
 
 How Rhize recovers from a halted process depends on where the system failed.
 
-### BPMN node failure
+### Workflow node failure
 
-If a BPMN container suddenly fails, the process that was currently executing times out after 30 seconds.
-As long as the node had not been running for [longer than 10 minutes](#bpmn-age-out),
-NATS re-sends the message to another BPMN node and the process finishes.
+If a Workflow container suddenly fails, the process that was currently executing times out after a few seconds.
 
-### NATS node unavailable
+Restate re-sends the message to another BPMN node and the process finishes.
 
-If the NATS node fails, recovery depends on your replication and backup strategy.
+### Restate node unavailable
 
-- If the stream has R3 replication or greater, a new NATS node picks up the process. No noticeable performance issues should occur.
+The Restate Server can be deployed as a high-availability cluster, so if a node fails, others can take over without losing any execution state. If Restate is deployed as a single node, it can still recover from crashes by recovering from persistent disk.
 
-- If the stream has no replication, everything in the node is lost. However, if you took a snapshot of a stream with `nats stream backup` before the node became unavailable, and the `WorkflowSpecifications` KV is the same at backup and restore sites, then you can use the `nats stream restore` command to replay the stream from when the backup was made.
+If the Restate server crashes or restates any on-going executions are retried on new instances.
 
-To learn more, read the NATS topic on [Disaster recovery](https://docs.nats.io/running-a-nats-service/nats_admin/jetstream_admin/disaster_recovery).
+If a handler calls an API that times out, Restate will retry the run action with exponential backoff.
 
-## All BPMN elements age out after ten minutes {#bpmn-age-out}
+An idempotency key is added to Workflow Execution to ensure that, Restate will automatically ensure requests are deduplicated. Deduplicated requests will return the same result as the original request.
 
-If an element in a BPMN workflow takes longer than 10 minutes, NATS ages the workflow out of the queue. The process continues, but if the pod executing the element dies or is interrupted, that workflow is permanently dropped.
-
-This ten-minute execution limit should be sufficient for any element in a BPMN process.
-Processes that take longer, such as cooling or fermentation periods, should be implemented as [BPMN event triggers]({{ relref "../../how-to/bpmn/bpmn-elements" >}}) or as polls that periodically check data sources between intervals of sleep.
+To learn more refer to [Restate documentation](https://docs.restate.dev/foundations/key-concepts#what-it-covers) for further details.

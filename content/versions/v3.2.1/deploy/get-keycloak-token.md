@@ -38,11 +38,9 @@ The `access_token` property has the token value.
 ```json
 {
   "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldU...",
-  "expires_in": 28800,
-  "refresh_expires_in": 0,
+  "expires_in": 300,
   "token_type": "Bearer",
-  "not-before-policy": 0,
-  "scope": "profile email"
+  "scope": "email profile"
 }
 ```
 
