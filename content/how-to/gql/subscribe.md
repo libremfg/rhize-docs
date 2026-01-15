@@ -31,4 +31,4 @@ subscription GetWorkResponse($getWorkResponseId: String) {
 
 Try to minimize the payload for subscription operations.
 Additionally, you need to subscribe only to changes that persist to the knowledge graph.
-For general event handling, it's often better to use a [BPMN workflow]({{< relref "../bpmn" >}}) that subscribes to a NATS, MQTT, or OPC UA topic.
+For general event handling, it's often better to use a [BPMN workflow]({{< relref "../bpmn" >}}) that subscribes to a Kafka, MQTT, or OPC UA topic.
