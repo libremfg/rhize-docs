@@ -53,24 +53,28 @@ You can use the following commands write the data to a file (replacing `<ADMIN_P
 {{< tabs items="Kubernetes,Docker" >}}
 {{% tab Kubernetes %}}
 
+Set Credentials
 ```shell
-kubectl exec -it keycloak_pod_name -n namespace_name -- \
-    /bin/sh -c "cd /opt/bitnami/keycloak/bin && (echo "<ADMIN_PW>" \
-    | ./kcadm.sh get realms/libre/events --server http://localhost:8080 \
-        --realm master --user admin)" \
-    | sed '1,2d' > output.json
+kubectl exec -it keycloak_pod_name -n namespace_name -- sh -c "export HOME=/opt/keycloak/data && /opt/keycloak/bin/kcadm.sh config credentials --server http://localhost:8080 --realm master --user user"
+```
+
+Export Events
+```shell
+kubectl exec -it keycloak_pod_name -n namespace_name -- sh -c "export HOME=/opt/keycloak/data && /opt/keycloak/bin/kcadm.sh get realms/libre/events --config /opt/keycloak/data/.keycloak/kcadm.config" > output.json
 ```
 
 {{% /tab %}}
 
 {{% tab docker %}}
 
+Set credentials
 ```shell
-docker exec -it keycloak_container_name \
-    /bin/sh -c "cd /opt/bitnami/keycloak/bin && (echo "<ADMIN_PW>" \
-    | ./kcadm.sh get realms/libre/events --server http://localhost:8080 \
-        --realm master --user admin)" \
-    | sed '1,2d'  > output.json
+docker exec -it keycloak sh -c "/opt/keycloak/bin/kcadm.sh config credentials --server http://localhost:8080 --realm master --user admin"
+```
+
+Export Events
+```shell
+docker exec -it keycloak sh -c "/opt/keycloak/bin/kcadm.sh get realms/libre/events" > output.json
 ```
 
 {{% /tab %}}
