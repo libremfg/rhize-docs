@@ -41,8 +41,6 @@
 &lt;a href="#router-initialization" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Releasing in step with other components&lt;/p&gt;
 &lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
 &lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.2.1 compatibility&lt;/span&gt;
 Rhize v3.2.1 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.61.0&lt;/li&gt;
@@ -53,7 +51,6 @@ Rhize v3.2.1 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.25&lt;/li&gt;
 &lt;li&gt; Tempo: 2.7.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;h2&gt;Checksums&lt;span class="hx:absolute hx:-mt-20" id="checksums"&gt;&lt;/span&gt;
 &lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -140,8 +137,6 @@ title="Copy code"
 &lt;a href="#router-initialization" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Releasing in step with other components&lt;/p&gt;
 &lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
 &lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.2.1 compatibility&lt;/span&gt;
 Rhize v3.2.1 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.61.0&lt;/li&gt;
@@ -152,7 +147,6 @@ Rhize v3.2.1 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.25&lt;/li&gt;
 &lt;li&gt; Tempo: 2.7.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;h2&gt;Checksums&lt;span class="hx:absolute hx:-mt-20" id="checksums"&gt;&lt;/span&gt;
 &lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -296,8 +290,6 @@ title="Copy code"
 &lt;a href="#router" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Releasing in step with other components&lt;/p&gt;
 &lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
 &lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.2.0 compatibility&lt;/span&gt;
 Rhize v3.2.0 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.61.0&lt;/li&gt;
@@ -308,7 +300,6 @@ Rhize v3.2.0 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.25&lt;/li&gt;
 &lt;li&gt; Tempo: 2.7.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;h2&gt;Checksums&lt;span class="hx:absolute hx:-mt-20" id="checksums"&gt;&lt;/span&gt;
 &lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -452,8 +443,6 @@ title="Copy code"
 &lt;a href="#router" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Releasing in step with other components&lt;/p&gt;
 &lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
 &lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.2.0 compatibility&lt;/span&gt;
 Rhize v3.2.0 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.61.0&lt;/li&gt;
@@ -464,7 +453,6 @@ Rhize v3.2.0 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.25&lt;/li&gt;
 &lt;li&gt; Tempo: 2.7.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;h2&gt;Checksums&lt;span class="hx:absolute hx:-mt-20" id="checksums"&gt;&lt;/span&gt;
 &lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -608,8 +596,6 @@ title="Copy code"
 &lt;a href="#router" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Releasing in step with other components&lt;/p&gt;
 &lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
 &lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.2.0 compatibility&lt;/span&gt;
 Rhize v3.2.0 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.61.0&lt;/li&gt;
@@ -620,7 +606,6 @@ Rhize v3.2.0 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.25&lt;/li&gt;
 &lt;li&gt; Tempo: 2.7.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;h2&gt;Checksums&lt;span class="hx:absolute hx:-mt-20" id="checksums"&gt;&lt;/span&gt;
 &lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -1007,8 +992,6 @@ Change permissions file structure from &lt;code&gt;map[string][]interface{}&lt;/
 &lt;a href="#router-initilazation" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;No changes for this release.&lt;/p&gt;
 &lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
 &lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.1.0 compatibility&lt;/span&gt;
 Rhize v3.1.0 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.61.0&lt;/li&gt;
@@ -1019,7 +1002,6 @@ Rhize v3.1.0 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.25&lt;/li&gt;
 &lt;li&gt; Tempo: 2.7.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;h2&gt;Checksums&lt;span class="hx:absolute hx:-mt-20" id="checksums"&gt;&lt;/span&gt;
 &lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -1516,8 +1498,6 @@ Change permissions file structure from &lt;code&gt;map[string][]interface{}&lt;/
 &lt;a href="#router-initilazation" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;No changes for this release.&lt;/p&gt;
 &lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
 &lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.1.0 compatibility&lt;/span&gt;
 Rhize v3.1.0 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.61.0&lt;/li&gt;
@@ -1528,7 +1508,6 @@ Rhize v3.1.0 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.25&lt;/li&gt;
 &lt;li&gt; Tempo: 2.7.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;h2&gt;Checksums&lt;span class="hx:absolute hx:-mt-20" id="checksums"&gt;&lt;/span&gt;
 &lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -2025,8 +2004,6 @@ Change permissions file structure from &lt;code&gt;map[string][]interface{}&lt;/
 &lt;a href="#router-initilazation" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;No changes for this release.&lt;/p&gt;
 &lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
 &lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.1.0 compatibility&lt;/span&gt;
 Rhize v3.1.0 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.61.0&lt;/li&gt;
@@ -2037,7 +2014,6 @@ Rhize v3.1.0 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.25&lt;/li&gt;
 &lt;li&gt; Tempo: 2.7.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;h2&gt;Checksums&lt;span class="hx:absolute hx:-mt-20" id="checksums"&gt;&lt;/span&gt;
 &lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -2302,8 +2278,6 @@ title="Copy code"
 &lt;a href="#router" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;No changes for this release.&lt;/p&gt;
 &lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
 &lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.0.3 compatibility&lt;/span&gt;
 Rhize v3.0.3 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.15.1&lt;/li&gt;
@@ -2314,7 +2288,6 @@ Rhize v3.0.3 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.17&lt;/li&gt;
 &lt;li&gt; Tempo: 2.3.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;h2&gt;Checksums&lt;span class="hx:absolute hx:-mt-20" id="checksums"&gt;&lt;/span&gt;
 &lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -2469,8 +2442,6 @@ title="Copy code"
 &lt;a href="#router" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;No changes for this release.&lt;/p&gt;
 &lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
 &lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.0.3 compatibility&lt;/span&gt;
 Rhize v3.0.3 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.15.1&lt;/li&gt;
@@ -2481,7 +2452,6 @@ Rhize v3.0.3 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.17&lt;/li&gt;
 &lt;li&gt; Tempo: 2.3.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;h2&gt;Checksums&lt;span class="hx:absolute hx:-mt-20" id="checksums"&gt;&lt;/span&gt;
 &lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -2636,8 +2606,6 @@ title="Copy code"
 &lt;a href="#router" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;No changes for this release.&lt;/p&gt;
 &lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
 &lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.0.3 compatibility&lt;/span&gt;
 Rhize v3.0.3 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.15.1&lt;/li&gt;
@@ -2648,7 +2616,6 @@ Rhize v3.0.3 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.17&lt;/li&gt;
 &lt;li&gt; Tempo: 2.3.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;h2&gt;Checksums&lt;span class="hx:absolute hx:-mt-20" id="checksums"&gt;&lt;/span&gt;
 &lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -2803,8 +2770,6 @@ title="Copy code"
 &lt;a href="#router" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;No changes for this release.&lt;/p&gt;
 &lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
 &lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.0.3 compatibility&lt;/span&gt;
 Rhize v3.0.3 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.15.1&lt;/li&gt;
@@ -2815,7 +2780,6 @@ Rhize v3.0.3 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.17&lt;/li&gt;
 &lt;li&gt; Tempo: 2.3.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;h2&gt;Checksums&lt;span class="hx:absolute hx:-mt-20" id="checksums"&gt;&lt;/span&gt;
 &lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -2938,8 +2902,6 @@ Fixes issue when spinning up new development containers.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
 &lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.0.1 compatibility&lt;/span&gt;
 Rhize v3.0.1 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.15.1&lt;/li&gt;
@@ -2950,7 +2912,6 @@ Rhize v3.0.1 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.17&lt;/li&gt;
 &lt;li&gt; Tempo: 2.3.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;h2&gt;Checksums&lt;span class="hx:absolute hx:-mt-20" id="checksums"&gt;&lt;/span&gt;
 &lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -3119,8 +3080,6 @@ Fixes issue when spinning up new development containers.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
 &lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.0.1 compatibility&lt;/span&gt;
 Rhize v3.0.1 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.15.1&lt;/li&gt;
@@ -3131,7 +3090,6 @@ Rhize v3.0.1 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.17&lt;/li&gt;
 &lt;li&gt; Tempo: 2.3.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;h2&gt;Checksums&lt;span class="hx:absolute hx:-mt-20" id="checksums"&gt;&lt;/span&gt;
 &lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -3300,8 +3258,6 @@ Fixes issue when spinning up new development containers.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
 &lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.0.1 compatibility&lt;/span&gt;
 Rhize v3.0.1 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.15.1&lt;/li&gt;
@@ -3312,7 +3268,6 @@ Rhize v3.0.1 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.17&lt;/li&gt;
 &lt;li&gt; Tempo: 2.3.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;h2&gt;Checksums&lt;span class="hx:absolute hx:-mt-20" id="checksums"&gt;&lt;/span&gt;
 &lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -3481,8 +3436,6 @@ Fixes issue when spinning up new development containers.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
 &lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.0.1 compatibility&lt;/span&gt;
 Rhize v3.0.1 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.15.1&lt;/li&gt;
@@ -3493,7 +3446,6 @@ Rhize v3.0.1 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.17&lt;/li&gt;
 &lt;li&gt; Tempo: 2.3.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;h2&gt;Checksums&lt;span class="hx:absolute hx:-mt-20" id="checksums"&gt;&lt;/span&gt;
 &lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
@@ -3679,8 +3631,6 @@ Rather than rely on a vendor to sell an MES system that prescribes exactly what 
 &lt;a href="#install" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To install, read the &lt;a href="https://docs.rhize.com/deploy/install/"&gt;Install guide&lt;/a&gt;.
 Or, if upgrading from a release candidate, use the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade guide&lt;/a&gt;.
 If upgrading, be sure to review the changelog to be aware of any possible breaking changes.&lt;/p&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.0.0 compatibility&lt;/span&gt;
 Rhize v3.0.0 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.15.1&lt;/li&gt;
@@ -3691,7 +3641,6 @@ Rhize v3.0.0 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.10&lt;/li&gt;
 &lt;li&gt; Tempo: 2.3.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;BPMN engine:
@@ -3844,8 +3793,6 @@ Rather than rely on a vendor to sell an MES system that prescribes exactly what 
 &lt;a href="#install" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To install, read the &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/install/"&gt;Install guide&lt;/a&gt;.
 Or, if upgrading from a release candidate, use the &lt;a href="https://docs.rhize.com/versions/v3.0.3/deploy/upgrade/"&gt;Upgrade guide&lt;/a&gt;.
 If upgrading, be sure to review the changelog to be aware of any possible breaking changes.&lt;/p&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.0.0 compatibility&lt;/span&gt;
 Rhize v3.0.0 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.15.1&lt;/li&gt;
@@ -3856,7 +3803,6 @@ Rhize v3.0.0 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.10&lt;/li&gt;
 &lt;li&gt; Tempo: 2.3.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;BPMN engine:
@@ -4009,8 +3955,6 @@ Rather than rely on a vendor to sell an MES system that prescribes exactly what 
 &lt;a href="#install" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To install, read the &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/install/"&gt;Install guide&lt;/a&gt;.
 Or, if upgrading from a release candidate, use the &lt;a href="https://docs.rhize.com/versions/v3.2.0/deploy/upgrade/"&gt;Upgrade guide&lt;/a&gt;.
 If upgrading, be sure to review the changelog to be aware of any possible breaking changes.&lt;/p&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.0.0 compatibility&lt;/span&gt;
 Rhize v3.0.0 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.15.1&lt;/li&gt;
@@ -4021,7 +3965,6 @@ Rhize v3.0.0 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.10&lt;/li&gt;
 &lt;li&gt; Tempo: 2.3.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;BPMN engine:
@@ -4174,8 +4117,6 @@ Rather than rely on a vendor to sell an MES system that prescribes exactly what 
 &lt;a href="#install" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To install, read the &lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/install/"&gt;Install guide&lt;/a&gt;.
 Or, if upgrading from a release candidate, use the &lt;a href="https://docs.rhize.com/versions/v4.0.0/deploy/upgrade/"&gt;Upgrade guide&lt;/a&gt;.
 If upgrading, be sure to review the changelog to be aware of any possible breaking changes.&lt;/p&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.0.0 compatibility&lt;/span&gt;
 Rhize v3.0.0 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.15.1&lt;/li&gt;
@@ -4186,7 +4127,6 @@ Rhize v3.0.0 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.10&lt;/li&gt;
 &lt;li&gt; Tempo: 2.3.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;BPMN engine:
@@ -7442,8 +7382,6 @@ title="Copy code"
 &lt;a href="#router-initialization" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Releasing in step with other components&lt;/p&gt;
 &lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
 &lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="notices note"&gt;
-&lt;span class="type"&gt;v3.2.1 compatibility&lt;/span&gt;
 Rhize v3.2.1 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.61.0&lt;/li&gt;
@@ -7454,7 +7392,6 @@ Rhize v3.2.1 has been tested to work with the following third-party applications
 &lt;li&gt; NATS: 2.10.25&lt;/li&gt;
 &lt;li&gt; Tempo: 2.7.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;h2&gt;Checksums&lt;span class="hx:absolute hx:-mt-20" id="checksums"&gt;&lt;/span&gt;
 &lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
