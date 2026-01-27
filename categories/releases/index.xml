@@ -11,10 +11,10 @@
 &lt;h3&gt;Schema&lt;span class="hx:absolute hx:-mt-20" id="schema"&gt;&lt;/span&gt;
 &lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Releasing in step with other components.&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;BAAS&lt;span class="hx:absolute hx:-mt-20" id="baas"&gt;&lt;/span&gt;
-&lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Fixes&lt;span class="hx:absolute hx:-mt-20" id="fixes"&gt;&lt;/span&gt;
-&lt;a href="#fixes" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;high memory use in spans&lt;/li&gt;
-&lt;li&gt;http request defer body close missing&lt;/li&gt;
+&lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Fix&lt;span class="hx:absolute hx:-mt-20" id="fix"&gt;&lt;/span&gt;
+&lt;a href="#fix" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Fix high memory use in spans&lt;/li&gt;
+&lt;li&gt;Fix memory leak in http request by adding defer body close method&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Core&lt;span class="hx:absolute hx:-mt-20" id="core"&gt;&lt;/span&gt;
 &lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Releasing in step with other components.&lt;/em&gt;&lt;/p&gt;
@@ -28,7 +28,7 @@
 &lt;a href="#router" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Releasing in step with other components.&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
 &lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
-Rhize v3.2.1 has been tested to work with the following third-party applications:
+Rhize v3.2.2 has been tested to work with the following third-party applications:
 &lt;ul&gt;
 &lt;li&gt;Apollo router 1.61.0&lt;/li&gt;
 &lt;li&gt; Grafana: 9.4.7&lt;/li&gt;
@@ -42,6 +42,8 @@ Rhize v3.2.1 has been tested to work with the following third-party applications
 &lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;Admin:
+registry.gitlab.com/libremfg/frontend/libre-admin-ui:v3.2.2
+sha256:dc22b84bc9aba36361ab2d64a8d57942ddc96efc0d4cb280669eda93ce6480ac
 BaaS:
 registry.gitlab.com/libremfg/baas:v3.2.2
 sha256:11fae14733b928854f8c326c61ce505097f0f6471bc35e1410559446db50da3c
@@ -55,7 +57,8 @@ Libre Core:
 registry.gitlab.com/libremfg/libre-core:v3.2.2
 sha256:b3a718c969f99781d8fd2f2e6a6db6d8695d5e17fd6f3da85a96f3bde3a2c8d6
 Libre Agent:
-MISSING
+registry.gitlab.com/libremfg/libre-agent:v3.2.2
+sha256:a8ace13d7e111bba1e1c9d6aff8d115a4650fd6f2eabaa589c8e602e65f3101a
 Libre Audit:
 registry.gitlab.com/libremfg/libre-audit:v3.2.2
 sha256:ce4fb902ab78c72870c6ae055e22f4c731332fbc15b0ee1c39b340fcc1f3a2c5
@@ -63,7 +66,8 @@ Libre Audit Postgres:
 registry.gitlab.com/libremfg/libre-audit/postgres:v3.2.2
 sha256:f8b5bfdef37e22c7e15c7be5414d3b0324a536712d22a87c688b419a7d81d2cb
 Libre Keycloak Theme:
-MISSING
+registry.gitlab.com/libremfg/frontend/libre-keycloak-theme:v3.2.2
+sha256:e36666fab9e83b2a6dca6c2efc83c274e042f78ea8447de5f544f75bea7d3fb6
 Libre Router Init:
 registry.gitlab.com/libremfg/libre-router-init:v3.2.2
 sha256:cb96969edd3ebc5cf1cd38946b5acd02c2a6383a751707e2c8fd764974ac5fa3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
