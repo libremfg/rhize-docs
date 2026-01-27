@@ -1,4 +1,86 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Releases</title><link>https://docs.rhize.com/categories/releases/</link><description>Recent content in Releases on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 04 Aug 2025 11:45:10 -0400</lastBuildDate><atom:link href="https://docs.rhize.com/categories/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>3.2.1</title><link>https://docs.rhize.com/releases/3-2-1/</link><pubDate>Mon, 04 Aug 2025 11:45:10 -0400</pubDate><guid>https://docs.rhize.com/releases/3-2-1/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhize documentation – Releases</title><link>https://docs.rhize.com/categories/releases/</link><description>Recent content in Releases on Rhize documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 27 Jan 2026 16:15:20 -0500</lastBuildDate><atom:link href="https://docs.rhize.com/categories/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>3.2.2</title><link>https://docs.rhize.com/releases/3-2-2/</link><pubDate>Tue, 27 Jan 2026 16:15:20 -0500</pubDate><guid>https://docs.rhize.com/releases/3-2-2/</guid><description>
+&lt;p&gt;Release notes for version 3.2.2 of the Rhize application.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt;
+27 Jan 2026&lt;/p&gt;
+&lt;h2&gt;Changes by service&lt;span class="hx:absolute hx:-mt-20" id="changes-by-service"&gt;&lt;/span&gt;
+&lt;a href="#changes-by-service" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following sections document the changes this release brings to each service.&lt;/p&gt;
+&lt;h3&gt;Admin&lt;span class="hx:absolute hx:-mt-20" id="admin"&gt;&lt;/span&gt;
+&lt;a href="#admin" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Releasing in step with other components.&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;BPMN engine&lt;span class="hx:absolute hx:-mt-20" id="bpmn-engine"&gt;&lt;/span&gt;
+&lt;a href="#bpmn-engine" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Releasing in step with other components.&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Schema&lt;span class="hx:absolute hx:-mt-20" id="schema"&gt;&lt;/span&gt;
+&lt;a href="#schema" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Releasing in step with other components.&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;BAAS&lt;span class="hx:absolute hx:-mt-20" id="baas"&gt;&lt;/span&gt;
+&lt;a href="#baas" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Fixes&lt;span class="hx:absolute hx:-mt-20" id="fixes"&gt;&lt;/span&gt;
+&lt;a href="#fixes" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;high memory use in spans&lt;/li&gt;
+&lt;li&gt;http request defer body close missing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Core&lt;span class="hx:absolute hx:-mt-20" id="core"&gt;&lt;/span&gt;
+&lt;a href="#core" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Releasing in step with other components.&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Agent&lt;span class="hx:absolute hx:-mt-20" id="agent"&gt;&lt;/span&gt;
+&lt;a href="#agent" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Releasing in step with other components.&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Audit&lt;span class="hx:absolute hx:-mt-20" id="audit"&gt;&lt;/span&gt;
+&lt;a href="#audit" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Releasing in step with other components.&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Keycloak Theme&lt;span class="hx:absolute hx:-mt-20" id="keycloak-theme"&gt;&lt;/span&gt;
+&lt;a href="#keycloak-theme" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Releasing in step with other components.&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Router&lt;span class="hx:absolute hx:-mt-20" id="router"&gt;&lt;/span&gt;
+&lt;a href="#router" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Releasing in step with other components.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Compatibility&lt;span class="hx:absolute hx:-mt-20" id="compatibility"&gt;&lt;/span&gt;
+&lt;a href="#compatibility" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;
+Rhize v3.2.1 has been tested to work with the following third-party applications:
+&lt;ul&gt;
+&lt;li&gt;Apollo router 1.61.0&lt;/li&gt;
+&lt;li&gt; Grafana: 9.4.7&lt;/li&gt;
+&lt;li&gt; Keycloak: 21.1.2&lt;/li&gt;
+&lt;li&gt; Keycloak Postgres: 15.3.0&lt;/li&gt;
+&lt;li&gt; Loki: 2.9.12&lt;/li&gt;
+&lt;li&gt; NATS: 2.10.25&lt;/li&gt;
+&lt;li&gt; Tempo: 2.7.1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Checksums&lt;span class="hx:absolute hx:-mt-20" id="checksums"&gt;&lt;/span&gt;
+&lt;a href="#checksums" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you install, check the container images against these checksums:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Admin:
+BaaS:
+registry.gitlab.com/libremfg/baas:v3.2.2
+sha256:11fae14733b928854f8c326c61ce505097f0f6471bc35e1410559446db50da3c
+BPMN Engine:
+registry.gitlab.com/libremfg/bpmn-engine:v3.2.2
+sha256:59b3d1875198d612c47f7561d197e7a7bcfb7822e99daa7947ba2f980a736b28
+BAAS:
+registry.gitlab.com/libremfg/baas:v3.2.2
+sha256:d952d2a3ae0242929284cdac27bc34a4dd3cdce2dba5cc6c2f0dd4e94e2643b8
+Libre Core:
+registry.gitlab.com/libremfg/libre-core:v3.2.2
+sha256:b3a718c969f99781d8fd2f2e6a6db6d8695d5e17fd6f3da85a96f3bde3a2c8d6
+Libre Agent:
+MISSING
+Libre Audit:
+registry.gitlab.com/libremfg/libre-audit:v3.2.2
+sha256:ce4fb902ab78c72870c6ae055e22f4c731332fbc15b0ee1c39b340fcc1f3a2c5
+Libre Audit Postgres:
+registry.gitlab.com/libremfg/libre-audit/postgres:v3.2.2
+sha256:f8b5bfdef37e22c7e15c7be5414d3b0324a536712d22a87c688b419a7d81d2cb
+Libre Keycloak Theme:
+MISSING
+Libre Router Init:
+registry.gitlab.com/libremfg/libre-router-init:v3.2.2
+sha256:cb96969edd3ebc5cf1cd38946b5acd02c2a6383a751707e2c8fd764974ac5fa3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a href="https://github.com/libremfg/libremfg.github.io/tree/main/static/checksums/v3.2.2-checksums.txt"target="_blank" rel="noopener"&gt;Download &lt;code&gt;v3.2.2-checksums.txt&lt;/code&gt;&lt;svg class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Upgrade&lt;span class="hx:absolute hx:-mt-20" id="upgrade"&gt;&lt;/span&gt;
+&lt;a href="#upgrade" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To upgrade to v3.2.2, follow the &lt;a href="https://docs.rhize.com/deploy/upgrade/"&gt;Upgrade instructions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>3.2.1</title><link>https://docs.rhize.com/releases/3-2-1/</link><pubDate>Mon, 04 Aug 2025 11:45:10 -0400</pubDate><guid>https://docs.rhize.com/releases/3-2-1/</guid><description>
 &lt;p&gt;Release notes for version 3.2.1 of the Rhize application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Release date:&lt;/em&gt;
 8 Aug 2025&lt;/p&gt;

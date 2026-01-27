@@ -116,6 +116,9 @@ Preact …
 - [About OpenID connect](https://docs.rhize.com/explanations/about-openidconnect/): The Rhize GraphQL implementation uses OpenIDConnect for Authentication and role-based access control. This section describes how to set up Keycloak | Rhize uses OpenIDConnect to connect to a Keycloak server to authenticate users and manage Role-based …
 
 ## Releases
+- [3.2.2](https://docs.rhize.com/releases/3-2-2/): Release notes for v3.2.2 of the Rhize application | Release notes for version 3.2.2 of the Rhize application.
+Release date: 27 Jan 2026
+Changes by … - Published 2026-01-27
 - [3.2.1](https://docs.rhize.com/releases/3-2-1/): Release notes for v3.2.1 of the Rhize application | Release notes for version 3.2.1 of the Rhize application.
 Release date: 8 Aug 2025
 Changes by … - Published 2025-08-04
@@ -764,5 +767,5 @@ A …
 
 
 ---
-Generated on 2026-01-27 22:43:24 UTC
+Generated on 2026-01-27 22:43:51 UTC
 Site: https://docs.rhize.com/
