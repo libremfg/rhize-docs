@@ -1,0 +1,35 @@
+Admin:
+
+BaaS:
+registry.gitlab.com/libremfg/baas:v3.2.2
+sha256:11fae14733b928854f8c326c61ce505097f0f6471bc35e1410559446db50da3c
+
+BPMN Engine:
+registry.gitlab.com/libremfg/bpmn-engine:v3.2.2
+sha256:59b3d1875198d612c47f7561d197e7a7bcfb7822e99daa7947ba2f980a736b28
+
+BAAS:
+registry.gitlab.com/libremfg/baas:v3.2.2
+sha256:d952d2a3ae0242929284cdac27bc34a4dd3cdce2dba5cc6c2f0dd4e94e2643b8
+
+Libre Core:
+registry.gitlab.com/libremfg/libre-core:v3.2.2
+sha256:b3a718c969f99781d8fd2f2e6a6db6d8695d5e17fd6f3da85a96f3bde3a2c8d6
+
+Libre Agent:
+MISSING
+
+Libre Audit:
+registry.gitlab.com/libremfg/libre-audit:v3.2.2
+sha256:ce4fb902ab78c72870c6ae055e22f4c731332fbc15b0ee1c39b340fcc1f3a2c5
+
+Libre Audit Postgres:
+registry.gitlab.com/libremfg/libre-audit/postgres:v3.2.2
+sha256:f8b5bfdef37e22c7e15c7be5414d3b0324a536712d22a87c688b419a7d81d2cb
+
+Libre Keycloak Theme:
+MISSING
+
+Libre Router Init:
+registry.gitlab.com/libremfg/libre-router-init:v3.2.2
+sha256:cb96969edd3ebc5cf1cd38946b5acd02c2a6383a751707e2c8fd764974ac5fa3
