@@ -7,9 +7,8 @@
 <!-- Find matches -->
 {{ if eq ( .version | lower) ( $arg | lower ) }}
 
-<div class="notices note">
-  <span class="type">v{{ $arg }} compatibility</span>
-  Rhize v{{ $arg }} has been tested to work with the following third-party applications:
+
+Rhize v{{ $arg }} has been tested to work with the following third-party applications:
   <ul>
     {{ with .apollo_router }}<li>Apollo router {{ . }}</li>{{ end }}
     {{ with .grafana }}<li> Grafana: {{ . }}</li> {{ end }}
@@ -19,6 +18,5 @@
     {{ with .nats }}<li> NATS: {{ . }}</li>{{ end }}
     {{ with .tempo }}<li> Tempo: {{ . }}</li> {{ end }}
   </ul>
-</div>
     {{end}}
 {{ end }}
