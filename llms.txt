@@ -157,6 +157,177 @@ Breaking … - Published 2023-10-31
 
 ## Documentation archive
 
+### 
+
+#### Get started
+- [What is Rhize?](https://docs.rhize.com/versions/v3.2.1/get-started/introduction/): A hub to join all manufacturing data in place. Build manufacturing execution systems and do deep analysis. | Rhize is a real-time, event-driven manufacturing data hub. It unites data analysis, event … - Published 2023-09-26
+- [How Rhize works](https://docs.rhize.com/versions/v3.2.1/get-started/how-rhize-works/): A high-level overview of how Rhize collects, exchanges, and stores data, starting with data collection and ending with user interaction. | This article provides a high-level overview of how Rhize works, starting with data collection and … - Published 2023-10-03
+
+#### Deploy
+- [Upgrade](https://docs.rhize.com/versions/v3.2.1/deploy/upgrade/): How to upgrade Rhize | This guide shows you how to upgrade Rhize.
+Back up first Before upgrading, consider backing up your … - Published 2023-10-18
+- [Get Keycloak Token](https://docs.rhize.com/versions/v3.2.1/deploy/get-keycloak-token/): Get a Keycloak bearer token | When build applications on Rhize, your clients to need authenticate requests. To do that, they need …
+- [Recommended Kubernetes cluster sizing](https://docs.rhize.com/versions/v3.2.1/deploy/cluster-sizing/): The recommended number of nodes and compute per pod in your Rhize Kubernetes cluster | Rhize runs on Kubernetes.
+This document provides compute recommendations for the nodes, pods …
+
+##### Install
+- [Overview](https://docs.rhize.com/versions/v3.2.1/deploy/install/overview/): A high-level overview of the Rhize install process. | This guide walks you through how to Install Rhize and its services in a Kubernetes environment. You …
+- [Set up Kubernetes](https://docs.rhize.com/versions/v3.2.1/deploy/install/setup-kubernetes/): How to install Rhize services on your Kubernetes cluster. | This guide shows you how to install Rhize services on your Kubernetes cluster. You can also use this … - Published 2023-09-22
+- [Configure Keycloak](https://docs.rhize.com/versions/v3.2.1/deploy/install/keycloak/): The Rhize GraphQL implementation uses OpenIDConnect for Authentication and role-based access control. This section describes how to set up Keycloak | Rhize uses Keycloak as an OpenID provider. In your cluster, the Keycloak server to authenticate …
+- [Install Rhize services](https://docs.rhize.com/versions/v3.2.1/deploy/install/services/): Instructions to install services in the Rhize Kubernetes cluster. | The final installation step is to install the Rhize services in your Kubernetes cluster.
+Note
+For …
+- [Row Level Access Control](https://docs.rhize.com/versions/v3.2.1/deploy/install/row-level-access-control/): Instructions to configure Rhize BAAS scopemap for Row level Access Control. | Row Level Access Control (RLAC) restricts access to specific rows of data based on user roles and …
+
+##### Back up
+- [Back up the Graph DB to S3](https://docs.rhize.com/versions/v3.2.1/deploy/backup/binary/): How to back up the Rhize graph database to Amazon S3 storage. | This guide shows you how to back up the Rhize Graph database to Amazon S3 and S3-compatible storage. … - Published 2024-11-04
+- [Back up the Graph DB](https://docs.rhize.com/versions/v3.2.1/deploy/backup/graphdb/): How to back up the Rhize graph database | This guide shows you how to back up the Rhize Graph database. You can also use it to model an … - Published 2023-10-18
+- [Back up Audit PostgreSQL](https://docs.rhize.com/versions/v3.2.1/deploy/backup/audit/): How to backup Audit PostgreSQL on your Rhize deployment | This guide shows you the procedure to backup your Audit PostgreSQL database on your Rhize Kubernetes … - Published 2024-03-26
+- [Back up Keycloak](https://docs.rhize.com/versions/v3.2.1/deploy/backup/keycloak/): How to backup Keycloak on your Rhize deployment | This guide shows you how to back up Keycloak on your Rhize Kubernetes deployment.
+Prerequisites … - Published 2024-01-08
+- [Back up Grafana](https://docs.rhize.com/versions/v3.2.1/deploy/backup/grafana/): How to backup Grafana on your Rhize deployment | This guide shows you the procedure to back up Grafana on your Rhize Kubernetes deployment. For … - Published 2023-10-18
+
+##### Restore
+- [Restore the GraphDB](https://docs.rhize.com/versions/v3.2.1/deploy/restore/graphdb/): How to restore a backup of the Rhize Graph DB. | This guide shows you how to restore the Graph database in your Rhize environment.
+Prerequisites … - Published 2023-10-19
+- [Restore the GraphDB from S3](https://docs.rhize.com/versions/v3.2.1/deploy/restore/binary/): How to restore a backup of the Rhize Graph DB from Amazon S3. | This guide shows you how to restore the Graph database from Amazon S3 to your Rhize environment. … - Published 2023-10-19
+- [Restore Audit backup](https://docs.rhize.com/versions/v3.2.1/deploy/restore/audit/): How to restore the backup of the Audit PostgreSQL on your Rhize deployment | This guide shows you the procedure to restore your Audit PostgreSQL database in your Rhize … - Published 2024-03-26
+- [Restore Keycloak](https://docs.rhize.com/versions/v3.2.1/deploy/restore/keycloak/): How to restore a Keycloak backup on Rhize | This guide shows you how to restore Keycloak in your Rhize environment.
+Restoring Keycloak to a … - Published 2024-01-08
+- [Restore Grafana](https://docs.rhize.com/versions/v3.2.1/deploy/restore/grafana/): How to restore a Grafana backup on Rhize | This guide shows you how to restore Grafana in your Rhize environment.
+Prerequisites Before you … - Published 2023-10-19
+
+##### Maintain
+- [Archive the PostgreSQL Audit trail](https://docs.rhize.com/versions/v3.2.1/deploy/maintain/audit/): How to archive a partition of the Audit trail on your Rhize deployment | The audit trail can generate a high volume of data, so it is a good practice to periodically archive … - Published 2024-03-26
+- [BPMN execution recovery](https://docs.rhize.com/versions/v3.2.1/deploy/maintain/bpmn-nodes/): If a BPMN node suddenly fails, Rhize has a number of recovery methods to ensure that the workflow finishes executing. | BPMN processes often have longer execution durations and many steps. If a BPMN node suddenly fails …
+- [Export Keycloak events](https://docs.rhize.com/versions/v3.2.1/deploy/maintain/keycloak-events/): Guide to export events from Keycloak | Keycloak stores User and Admin event data in its database. This information can be valuable for your …
+
+#### User guides
+- [Audit](https://docs.rhize.com/versions/v3.2.1/how-to/audit/): How to use the Audit log to inspect all events in the Rhize system | The Audit Log provides a tamper-proof and immutable audit trail of all events that occur in the … - Published 2023-12-20
+
+##### Use GraphQL
+- [Overview: the Rhize API](https://docs.rhize.com/versions/v3.2.1/how-to/gql/call-the-graphql-api/): How to query your manufacturing knowledge graph | In a manufacturing operation, all event data is interrelated. To make these relations explorable, … - Published 2023-11-22
+- [Query](https://docs.rhize.com/versions/v3.2.1/how-to/gql/query/): A guide to the three GraphQL operations in Rhize | A query returns one or more resources from the database. Whether you want to investigate …
+- [Filter](https://docs.rhize.com/versions/v3.2.1/how-to/gql/filter/): How to filter a GraphQL call to a subset of manufacturing items. | Filters limit an operation to a subset of resources. You can use filters to make operations more …
+- [Mutate](https://docs.rhize.com/versions/v3.2.1/how-to/gql/mutate/): A guide to adding, creating, and deleting data in the Rhize DB | 🎥Watch:Add manufacturing data through GraphQL Mutations change the database in someway by creating, …
+- [Subscribe](https://docs.rhize.com/versions/v3.2.1/how-to/gql/subscribe/): A guide to using GraphQL to subscribe to changes in the database. | The operations for a subscription are similar to the operations for a query. But rather than …
+
+##### Write BPMN workflows
+- [Overview: orchestrate processes](https://docs.rhize.com/versions/v3.2.1/how-to/bpmn/create-workflow/): An overview of how to use Rhize's custom BPMN engine and UI to orchestrate workflows.
+ | This guide provides a quick overview of the major features of the Rhize BPMN engine and interface, …
+- [Trigger workflows](https://docs.rhize.com/versions/v3.2.1/how-to/bpmn/trigger-workflows/): How to trigger a workflow in Rhize. Use the API, publish a message to the broker, listen to a data source, or set timers. | You also have multiple ways to start, or trigger, a BPMN workflow. The best choice of trigger … - Published 2024-04-24
+- [Use JSONata](https://docs.rhize.com/versions/v3.2.1/how-to/bpmn/use-jsonata/): The Rhize guide to JSONata, with example transformations and calculations that are relevant to manufacturing. | JSONata is a query language to filter, transform, and create JSON objects. Rhize BPMN workflows use … - Published 2024-05-10
+- [Handle errors and debug](https://docs.rhize.com/versions/v3.2.1/how-to/bpmn/debug-workflows/): Strategies to handle errors in your BPMN workflows, and ways to debug workflows when things don't work as expected. | Errors come in two categories: expected and unexpected. The Rhize BPMN engine has ways to handle … - Published 2024-04-24
+- [Tune BPMN performance](https://docs.rhize.com/versions/v3.2.1/how-to/bpmn/tune-performance/): Tips to debug and improve the performance of your BPMN process | This page documents some tips to debug BPMN workflows and improve their performance.
+Manufacturing … - Published 2024-02-09
+- [Special variables](https://docs.rhize.com/versions/v3.2.1/how-to/bpmn/variables/): Special variables used by Rhize BPMN workflows | Rhize designates some variable names for a special purpose in BPMN workflow. This list these special …
+- [Naming conventions](https://docs.rhize.com/versions/v3.2.1/how-to/bpmn/naming-conventions/): Recommended naming conventions for BPMN processes and their nodes | These are recommendations. Your organization may adapt the conventions to its needs. Each BPMN …
+- [BPMN learning resources](https://docs.rhize.com/versions/v3.2.1/how-to/bpmn/learning-resources/): Links to supplemental tools and material to learn BPMN | Here are some links to supplemental tools and material to help you build BPMN workflows in Rhize: …
+- [BPMN elements](https://docs.rhize.com/versions/v3.2.1/how-to/bpmn/bpmn-elements/): A reference of all BPMN elements used in the Rhize BPMN engine. | This document describes the parameters available to each BPMN element in the Rhize UI. These … - Published 2023-09-26
+
+##### Define production models
+- [Create objects from the UI](https://docs.rhize.com/versions/v3.2.1/how-to/model/create-objects-ui/): How to create manufacturing objects from the Rhize UI. | To make a production object visible to the Rhize data hub, you must define it as a data model. Along … - Published 2023-11-20
+- [Master definitions and fields](https://docs.rhize.com/versions/v3.2.1/how-to/model/master-definitions/): A reference of all manufacturing data objects and properties that you can create in the Rhize UI | To make a production object visible to the Rhize data hub, you must define it as a data model.
+These … - Published 2023-11-15
+
+##### Connect event data
+- [Tutorial: Trigger a workflow from a rule](https://docs.rhize.com/versions/v3.2.1/how-to/publish-subscribe/create-equipment-class-rule/): Follow this tutorial to create a rule to run a workflow every time a data source changes. | An equipment class rule triggers a BPMN workflow whenever a data source publishes a value that meets … - Published 2024-04-29
+- [Connect data source](https://docs.rhize.com/versions/v3.2.1/how-to/publish-subscribe/connect-datasource/): Configure a data source to publish topics for the Rhize platform. | For Rhize to listen to and handle manufacturing events, you need to connect a data source. … - Published 2023-09-22
+- [Track changes (CDC)](https://docs.rhize.com/versions/v3.2.1/how-to/publish-subscribe/track-changes/): Streaming data in and out of RHIZE | You can use change data capture (CDC) to track data changes over time, including a mutation or drop …
+
+##### Use work calendars
+- [About calendars and overrides](https://docs.rhize.com/versions/v3.2.1/how-to/work-calendars/about-calendars-and-overrides/): An explanation of how the Rhize calendar service works, and how it handles planned shutdowns across hierarchies. | Work calendars represent planned periods of time in your operation, including shifts, planned …
+- [Create work calendars](https://docs.rhize.com/versions/v3.2.1/how-to/work-calendars/create-work-calendar/): A guide to creating work calendars. Control, configure, and calculate planned downtime for your manufacturing equipment. | This guide shows you how to create a work calendar using the Rhize GraphQL API. As a calendar has …
+
+##### Use the KPI service
+- [About KPI Service and overrides](https://docs.rhize.com/versions/v3.2.1/how-to/kpi-service/about-kpi-service/): An explanation of how the Rhize KPI service works | 📝The KPI service is currently provided through a separate Helm chart. If you want to use for your …
+- [Configure the KPI service](https://docs.rhize.com/versions/v3.2.1/how-to/kpi-service/configure-kpi-service/): An explanation of how to configure the KPI service to feed it with process data | 📝The KPI service is currently provided through a separate Helm chart. If you want to use for your …
+- [Query the KPI service](https://docs.rhize.com/versions/v3.2.1/how-to/kpi-service/query-kpi-service/): An explanation of how to query the KPI service to obtain OEE values | 📝The KPI service is currently provided through a separate Helm chart. If you want to use for your …
+
+#### Use cases
+- [Overview of use cases](https://docs.rhize.com/versions/v3.2.1/use-cases/overview/): Handle manufacturing events, access the knowledge graph of the operation, and build custom MOM applications. | Rhize&rsquo;s flexible, event-centric architecture serves many functions. While Rhize has components …
+- [Data collection (eBR example)](https://docs.rhize.com/versions/v3.2.1/use-cases/data-collection-ebr/): An example of how Rhize ingests data from various sources to create Electronic Batch Records for pharmaceutical manufacturing | &#x1f4dd; Looking to implement Rhize for your Pharma operation? Talk to an engineer This document …
+- [Electronic Batch Records](https://docs.rhize.com/versions/v3.2.1/use-cases/ebr/): The Rhize guide to querying all the information that happened in a manufacturing job. | This document shows you how to use ISA-95 and Rhize to create a generic, reusable model for any use …
+- [Genealogy](https://docs.rhize.com/versions/v3.2.1/use-cases/genealogy/): The Rhize guide to modeling and querying the forward and backward genealogy of a material lot | This document provides a high-level overview of how to use Rhize for material genealogy.
+In …
+
+#### Reference
+- [Observability metrics](https://docs.rhize.com/versions/v3.2.1/reference/observability-metrics/): Metrics from the Rhize microservices, collected by Prometheus. | Rhize uses Prometheus to monitor metrics from many of its microservices. For the Kubernetes cluster, …
+- [Default URLs and local ports](https://docs.rhize.com/versions/v3.2.1/reference/default-ports/): A list of the default ports for the various Rhize services | After you install Rhize services, they are accessible, by default, on the following ports:
+Service … - Published 2023-11-02
+- [GraphQL types and filters](https://docs.rhize.com/versions/v3.2.1/reference/gql-types/): A reference of the data types in the Rhize API and of the filters available for each type. | This page provides a reference of the data types enforced by the Rhize database schema, and of the …
+- [Glossary](https://docs.rhize.com/versions/v3.2.1/reference/glossary/): A list of terms relevant to Rhize, or that are frequently used in manufacturing contexts. | The manufacturing industry has many specialized terms—and many abbreviations. This glossary is a … - Published 2023-09-12
+
+##### Service configuration
+- [Admin UI configuration](https://docs.rhize.com/versions/v3.2.1/reference/service-config/adminui-configuration/): List of Environmental Variables and their description | The Rhize Admin UI offers a graphical interface to configure master data and users.
+Preact …
+- [Agent configuration](https://docs.rhize.com/versions/v3.2.1/reference/service-config/agent-configuration/): Configuration parameters for the Rhize agent | The Rhize agent collects data that is emitted in the manufacturing process and makes this data …
+- [Audit configuration](https://docs.rhize.com/versions/v3.2.1/reference/service-config/audit-configuration/): Configuration for the Rhize audit | Audit offers a secure and unchangeable record of all activities that happen within the Rhize system. …
+- [BPMN configuration](https://docs.rhize.com/versions/v3.2.1/reference/service-config/bpmn-configuration/): Authentication types for the Rhize BPMN | The Rhize BPMN acts as the tailored engine for processing low-code workflows designed within the …
+- [Calendar configuration](https://docs.rhize.com/versions/v3.2.1/reference/service-config/calendar-configuration/): Configuration for the Rhize Calendar Service | The Calendar Service handles polling work calendar definitions and generating work calendar entries …
+- [Core configuration](https://docs.rhize.com/versions/v3.2.1/reference/service-config/core-configuration/): Configuration for the Rhize core | The Core service oversees data sources such as OPC-UA servers and manages the publication and …
+
+#### Explanations
+- [Manufacturing Data Hub](https://docs.rhize.com/versions/v3.2.1/explanations/manufacturing-data-hub/): What is a Manufacturing Data Hub? Why is it necessary? How the design of Rhize meets the needs of modern manufacturing. | This article explains the components of a Manufacturing Data Hub (MDH) and why the system must have …
+- [About OpenID connect](https://docs.rhize.com/versions/v3.2.1/explanations/about-openidconnect/): The Rhize GraphQL implementation uses OpenIDConnect for Authentication and role-based access control. This section describes how to set up Keycloak | Rhize uses OpenIDConnect to connect to a Keycloak server to authenticate users and manage Role-based …
+
+#### Releases
+- [3.2.2](https://docs.rhize.com/versions/v3.2.1/releases/3-2-2/): Release notes for v3.2.2 of the Rhize application | Release notes for version 3.2.2 of the Rhize application.
+Release date: 27 Jan 2026
+Changes by … - Published 2026-01-27
+- [3.2.1](https://docs.rhize.com/versions/v3.2.1/releases/3-2-1/): Release notes for v3.2.1 of the Rhize application | Release notes for version 3.2.1 of the Rhize application.
+Release date: 8 Aug 2025
+Changes by … - Published 2025-08-04
+- [3.2.0](https://docs.rhize.com/versions/v3.2.1/releases/3-2-0/): Release notes for v3.2.0 of the Rhize application | Release notes for version 3.2.0 of the Rhize application.
+Release date: 14 Jul 2025
+Changes by … - Published 2025-07-01
+- [3.1.0](https://docs.rhize.com/versions/v3.2.1/releases/3-1-0/): Release notes for v3.1.0 of the Rhize application | Release notes for version 3.1.0 of the Rhize application.
+Release date: 7 Mar 2025
+This release … - Published 2025-02-28
+- [3.0.3](https://docs.rhize.com/versions/v3.2.1/releases/3-0-3/): Release notes for v3.0.3 of the Rhize application | Changelog for version 3.0.3 of the Rhize application.
+Release date: 13 Nov 2024
+Changes by service … - Published 2024-11-13
+- [3.0.1](https://docs.rhize.com/versions/v3.2.1/releases/3-0-1/): Release notes for v3.0.1 of the Rhize application | Release notes for version 3.0.1 of the Rhize application.
+This release includes bug fixes, … - Published 2024-07-23
+- [Rhize 3.0](https://docs.rhize.com/versions/v3.2.1/releases/3-0/): Notes for v3.0 of the Rhize Manufacturing Data Hub. A flexible architecture for workflow orchestration, message handling, standards-based modeling, and custom MES apps. | Rhize version 3.0 is now in general release! &#x1f973; As a full rewrite of our earlier Libre 2.0 … - Published 2024-02-27
+
+##### Changelog
+- [3.0.0 (general release)](https://docs.rhize.com/versions/v3.2.1/releases/changelog/3-0-0/): Change Log for v3.0.0 of the Rhize application | Changelog for version 3.0.0 of the Rhize application.
+Release date: 25th March, 2024
+Breaking … - Published 2024-03-25
+- [3.0.0rc09](https://docs.rhize.com/versions/v3.2.1/releases/changelog/3-0-0rc09/): Change Log for v3.0.0rc9 of the Rhize application | Changelog for version 3.0.0rc9 of the Rhize application.
+Release date: 27th February, 2024
+Breaking … - Published 2024-03-25
+- [3.0.0rc08](https://docs.rhize.com/versions/v3.2.1/releases/changelog/3-0-0rc08/): Release notes for v3.0.0rc08 of the Rhize application | Changelog for version 3.0.0rc08 of the Rhize application.
+Release date: 19th December, 2023
+Breaking … - Published 2023-12-19
+- [3.0.0rc07](https://docs.rhize.com/versions/v3.2.1/releases/changelog/3-0-0rc07/): Release notes for v3.0.0rc07 of the Rhize application | Changelog for version 3.0.0rc07 of the Rhize application.
+Release date: 15th November, 2023
+Breaking … - Published 2023-11-15
+- [3.0.0rc06](https://docs.rhize.com/versions/v3.2.1/releases/changelog/3-0-0rc06/): Release notes for v3.0.0rc06 of the Rhize application | Changelog for version 3.0.0rc06 of the Rhize application.
+Release date: October 31, 2023
+Breaking … - Published 2023-10-31
+- [3.0.0rc05](https://docs.rhize.com/versions/v3.2.1/releases/changelog/3-0-0rc05/): Release notes for v3.0.0rc05 of the Rhize application | Changelog for version 3.0.0rc05 of the Rhize application.
+Release date: October 24, 2023
+Breaking … - Published 2023-10-31
+
+#### Learn ISA-95
+- [How to speak ISA-95](https://docs.rhize.com/versions/v3.2.1/isa-95/how-to-speak-isa-95/): More than a standard, ISA-95 is a specialized vocabulary that describes all elements of a manufacturing operation. | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets. …
+- [ISA-95 diagrams](https://docs.rhize.com/versions/v3.2.1/isa-95/isa-95-diagrams/): Helpful diagrams to present a high-level overview of the ISA-95 models for entities and information flows. | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets. …
+
+##### Resources in ISA-95
+- [Equipment models in ISA-95](https://docs.rhize.com/versions/v3.2.1/isa-95/resources/equipment/): A guide to equipment entities and relationships in ISA-95 | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets. …
+- [Material models in ISA-95](https://docs.rhize.com/versions/v3.2.1/isa-95/resources/material/): A guide to material entities and relationships in ISA-95 | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets.
+In …
+- [Physical assets in ISA-95](https://docs.rhize.com/versions/v3.2.1/isa-95/resources/physical-assets/): A guide to swappable entities and relationships in ISA-95 | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets.
+A …
+
+##### Models of work
+- [Process segments](https://docs.rhize.com/versions/v3.2.1/isa-95/models-of-work/process-segments/): Process segments represent shared steps across processes | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets.
+A …
+- [Work masters](https://docs.rhize.com/versions/v3.2.1/isa-95/models-of-work/work-masters/): The most granular work definition in ISA-95, defining the resources and instructions necessary to do a unit of work. | 📚 Take our ISA-95 fundamentals course! Learn ISA-95 through lots of practice on real data sets.
+A …
+
 ### v4.0.0
 
 #### Get started
@@ -767,5 +938,5 @@ A …
 
 
 ---
-Generated on 2026-01-27 23:48:13 UTC
+Generated on 2026-01-28 00:00:56 UTC
 Site: https://docs.rhize.com/
