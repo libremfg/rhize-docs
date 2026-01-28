@@ -1,0 +1,30 @@
+Admin:
+TBD
+
+BAAS:
+registry.gitlab.com/libremfg/baas:v3.2.3
+sha256:11fae14733b928854f8c326c61ce505097f0f6471bc35e1410559446db50da3c
+
+BPMN Engine:
+TBD
+
+
+Libre Core:
+
+Libre Agent:
+registry.gitlab.com/libremfg/libre-agent:v3.2.3
+sha256:14d274a8234c4a83f1853b8700dc0c26662aeeffe8572aed10b7ab3541eda7bc
+
+Libre Audit:
+registry.gitlab.com/libremfg/libre-audit:v3.2.3
+sha256:d935ffd47f1db1c4e84a234a65e652b0d610817a98097019249d08b48364c7f0
+
+Libre Audit Postgres:
+registry.gitlab.com/libremfg/libre-audit/postgres:v3.2.3
+sha256:23c062e6cb0f232a6173bd0de867b37009eb57b64e89592de4a308f3812c34d9
+
+Libre Keycloak Theme:
+TBD
+
+Libre Router Init:
+TBD
