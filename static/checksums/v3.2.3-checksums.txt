@@ -1,6 +1,6 @@
 Admin:
 registry.gitlab.com/libremfg/frontend/libre-admin-ui:v3.2.3
-<todo: SHA>
+sha256:40ce67c6e9bff3d8cef0408c27638d336c48a2e31208f5c098027718516f1632
 
 BAAS:
 registry.gitlab.com/libremfg/baas:v3.2.3
@@ -8,7 +8,7 @@ sha256:11fae14733b928854f8c326c61ce505097f0f6471bc35e1410559446db50da3c
 
 BPMN Engine:
 registry.gitlab.com/libremfg/bpmn-engine:v3.2.3
-<todo: SHA>
+sha256:59b3d1875198d612c47f7561d197e7a7bcfb7822e99daa7947ba2f980a736b28
 
 Libre Core:
 registry.gitlab.com/libremfg/libre-core:v3.2.3
