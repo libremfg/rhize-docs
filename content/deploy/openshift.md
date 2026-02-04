@@ -633,6 +633,42 @@ storage:
 1. Make any environmental specific changes in the _YAML view_, using the Values.yaml below
 
 ```YAML {filename="Values.yaml",linenos=table}
+image:
+  registry: index.docker.io
+  repository: appsmith/appsmith-ee
+  tag: latest
+metrics:
+  enabled: true
+  port: 2019
+mongodb:
+  enabled: false
+postgresql:
+  auth:
+    database: keycloak
+    password: password
+    postgresPassword: password
+    username: root
+  enabled: false
+  image:
+    registry: docker.io
+    repository: bitnamilegacy/postgresql
+    tag: 14.12.0
+prometheus:
+  enabled: true
+  image:
+    tag: v0.74.0
+redis:
+  enabled: true
+  image:
+    registry: docker.io
+    repository: redis
+    tag: 7.0.15
+replicas: 1
+resources:
+  limits: {}
+  requests:
+    cpu: 500m
+    memory: 3000Mi
 ```
 
 1. Click the _Create_ button
