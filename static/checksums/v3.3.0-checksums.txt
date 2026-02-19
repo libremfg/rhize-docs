@@ -1,0 +1,35 @@
+Admin:
+registry.gitlab.com/libremfg/frontend/libre-admin-ui:v3.3.0
+sha256:47213ad795943761b38ed6ffb27d771287b6b0f6724eedd36e69b5a319300146
+
+BAAS:
+registry.gitlab.com/libremfg/baas:v3.3.0
+sha256:479c2362da7aed9b50100773eaad59330a7d0b4754e7ffba3a16b3eaf78ffa53
+
+BPMN Engine:
+registry.gitlab.com/libremfg/bpmn-engine:v3.3.0
+todo: Add container sha
+
+Libre Core:
+registry.gitlab.com/libremfg/libre-core:v3.3.0
+sha256:347e6bb3bf78a0605092faba7d2c915b051bd77802dc8d38d1a007291390d36b
+
+Libre Agent:
+registry.gitlab.com/libremfg/libre-agent:v3.3.0
+sha256:03659b354f186a17e00048c3412191619200b0471dec74fe269f0f13b8e2bb2f
+
+Libre Audit:
+registry.gitlab.com/libremfg/libre-audit:v3.3.0
+sha256:1b47df721f8101a293b021a124ad5c048270339a3293bd7f8345fe5abcc7a5af
+
+Libre Audit Postgres:
+registry.gitlab.com/libremfg/libre-audit/postgres:v3.3.0
+sha256:31ee2bcce47ae027a583aa375bf3a944e67f81501a875f006b1b615d7486a385
+
+Libre Keycloak Theme:
+registry.gitlab.com/libremfg/frontend/libre-keycloak-theme:v3.3.0
+sha256:3e4f19b7ee01e805f6e3a0660b9af27295e0a8fc8959031e1339b032cfc4b266
+
+Libre Router Init:
+registry.gitlab.com/libremfg/libre-router-init:v3.3.0
+sha256:808013cb3c99f8ff5c900a8c8bc8b547f3b321cd6af02fa9fc54080dd4c5c6e6
