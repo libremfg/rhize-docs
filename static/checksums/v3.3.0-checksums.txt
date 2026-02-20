@@ -8,7 +8,7 @@ sha256:479c2362da7aed9b50100773eaad59330a7d0b4754e7ffba3a16b3eaf78ffa53
 
 BPMN Engine:
 registry.gitlab.com/libremfg/bpmn-engine:v3.3.0
-todo: Add container sha
+sha256:4bd425794731ee608e7328c3dc57805178607550caa1ef22d91532c3ebe1ca14
 
 Libre Core:
 registry.gitlab.com/libremfg/libre-core:v3.3.0
