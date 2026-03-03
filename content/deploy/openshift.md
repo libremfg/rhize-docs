@@ -121,50 +121,42 @@ Example configured helm repositories:
 
 {{% steps %}}
 
-### Install prometheus
-1. Using the left hand menu, navigate to _Helm_ and _Releases_.
-1. Using the project selector, click the down arrow and ensure 'monitoring' is selected.
-1. Click _Create Helm Release_
-1. Using the filter, select _Chart Repository_: 'prometheus-community'
-1. In the search filter for 'prometheus'
-1. Click the 'prometheus' helm chart
-1. Click the _Create_ button
-1. Click the _Chart Version_ dropdown and wait for it to finish loading
-1. Select version '27.52.0 / App Version v3.8.1 (Provided by Prometheus Community)' from the drop down.
-1. Make any environmental specific changes in the _YAML view_, including changing the replicas to 2  
-   ```YAML {filename="Values.yaml",linenos=table}
-   alertmanager:
-     enabled: true
-     persistence:
-       enabled: true
-       size: 2Gi
-     podSecurityContext: null
-     securityContext: null
-   imagePullSecrets: []
-   kube-state-metrics:
-     enabled: false
-   networkPolicy:
-     enabled: false
-   prometheus-node-exporter:
-     enabled: false
-   prometheus-pushgateway:
-     enabled: false
-   rbac:
-     create: true
-   server:
-     containerSecurityContext: null
-     image:
-       pullPolicy: IfNotPresent
-       repository: quay.io/prometheus/prometheus
-     name: server
-     persistentVolume:
-       enabled: true
-       size: 8Gi
-     securityContext: null
-   ```
-1. Click the _Create_ button
+### Prepare the monitoring namespace
 
-> Prometheus has now been installed
+With the Red Hat OpenShift Console:
+1. Login using your existing credentials.
+1. Using the left hand menu, navigate to _Administration_ and _Namespaces_.
+1. Click _Create Namespace_ and enter name 'monitoring'
+1. Click _Create_
+
+#### Prepare the cluster RBAC
+
+Within a terminal session logged into the OpenShift cluster as an OpenShift cluster admin:
+
+```bash
+# As ADMIN (kubeadmin):
+# 1. Pre-create cluster-scoped resources
+oc create clusterrole lgtm-grafana-metrics-reader \
+  --verb=get,list,watch \
+  --resource=pods,services,endpoints,nodes,namespaces
+
+oc create clusterrolebinding lgtm-distributed-grafana-clusterrolebinding \
+  --clusterrole=lgtm-grafana-metrics-reader \
+  --serviceaccount=monitoring:lgtm-distributed-grafana
+
+# 2. Grant necessary SCCs
+oc adm policy add-scc-to-user nonroot-v2 \
+  -z lgtm-distributed-grafana -n monitoring
+oc adm policy add-scc-to-user nonroot-v2 \
+  -z lgtm-distributed-loki -n monitoring
+oc adm policy add-scc-to-user nonroot-v2 \
+  -z lgtm-distributed-tempo -n monitoring
+
+# 3. Give developer namespace-admin role (NOT cluster-admin)
+oc adm policy add-role-to-user admin developer -n monitoring
+```
+
+> The monitoring namespace has now been created.
 
 ### Install lgtm-distributed
 1. Using the left hand menu, navigate to _Helm_ and _Releases_.
@@ -233,6 +225,9 @@ grafana:
           name: lgtm-distributed-grafana
           weight: 100
         wildcardPolicy: None
+  rbac:
+    create: false
+    useExistingRole: lgtm-grafana-metrics-reader
   securityContext: null
 grafana-oncall:
   enabled: false
