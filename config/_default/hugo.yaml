@@ -17,6 +17,9 @@ menu:
     - name: Learn ISA-95
       weight: 5
       url: /isa-95
+    - name: Versions
+      weight: 6
+      url: /versions
     - name: Search
       weight: 10
       params:
@@ -56,6 +59,8 @@ markup:
   highlight:
     noClasses: false
 enableEmoji: true
+
+refLinksErrorLevel: 'warning'
 
 security:
   enableInlineShortcodes: true
