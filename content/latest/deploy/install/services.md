@@ -338,7 +338,7 @@ Install ISA-95 with these steps:
 
 The Rhize agent bridges your plant processes with the Rhize data hub.
 
-The Admin UI is the graphical frontend to [handle events]({{< relref "/how-to/bpmn" >}}) and [define work masters]({{< relref "/how-to/model" >}}).
+The Admin UI is the graphical frontend to [handle events]({{< relref "/latest/how-to/bpmn" >}}) and [define work masters]({{< relref "/latest/how-to/model" >}}).
 
 > **Requirements:** The Admin UI requires the [Workflow](#workflow) services.
 
@@ -385,7 +385,7 @@ To verify that Agent is working, check the Redpanda UI.
 
 ### Audit Trail
 
-The Rhize [Audit]({{< relref "/how-to/audit" >}}) service provides an audit trail for database changes. The Audit service uses PostgreSQL for storage.
+The Rhize [Audit]({{< relref "/latest/how-to/audit" >}}) service provides an audit trail for database changes. The Audit service uses PostgreSQL for storage.
 
 Install Audit with these steps:
 

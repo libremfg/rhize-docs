@@ -51,8 +51,8 @@ To make the next sections less abstract, consider these examples of how Rhize cr
 A manufacturing data hub is useless without manufacturing data.
 
 The Rhize agent collects data from MQTT brokers and devices, OPC-UA servers, Kafka topics and/or Azure Service Bus.
-You can also send data and documents over HTTP through a [GraphQL call]({{< relref "../how-to/gql/call-the-graphql-api" >}}).
-The Rhize UI also has a graphical interface to [model production]({{< relref "../how-to/model" >}}) objects.
+You can also send data and documents over HTTP through a [GraphQL call]({{< relref "../latest/how-to/gql/call-the-graphql-api" >}}).
+The Rhize UI also has a graphical interface to [model production]({{< relref "../latest/how-to/model" >}}) objects.
 
 All this data is mapped to Rhize's ISA-95 schema, which creates a coherent model for all objects in the data hub.
 
@@ -81,9 +81,9 @@ Finally, the time-series component of the database accepts real-time data stream
 
 The Rhize application comes with a graphical interface.
 Some uses include:
-- [**Configure BPMN rules.**]({{< relref "../how-to/bpmn" >}}) A low-code tool for analysts and operators to create programmable events.
-- [**Upload master data.**]({{< relref "../how-to/model" >}})  Based on the ISA-95 object models.
-- [**Administrate.**]({{< relref "../deploy" >}}) Authenticate and scope access to systems and personnel.
+- [**Configure BPMN rules.**]({{< relref "../latest/how-to/bpmn" >}}) A low-code tool for analysts and operators to create programmable events.
+- [**Upload master data.**]({{< relref "../latest/how-to/model" >}})  Based on the ISA-95 object models.
+- [**Administrate.**]({{< relref "../latest/deploy" >}}) Authenticate and scope access to systems and personnel.
 
 These interfaces sit on top of the GraphQL API gateway, which serves as a programming interface for data analysis.
 Rhize customers also use the GraphQL interface to build their own applications, either with dedicated frontend developers or through low-code tools like Appsmith.

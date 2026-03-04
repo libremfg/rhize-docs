@@ -7,7 +7,7 @@ description: A hub to join all manufacturing data in place. Build manufacturing 
 weight: 1
 ---
 
-Rhize is a real-time, event-driven [manufacturing data hub]({{< relref "../explanations/manufacturing-data-hub" >}}).
+Rhize is a real-time, event-driven [manufacturing data hub]({{< relref "../latest/explanations" >}}).
 It unites data analysis, event monitoring, and process execution in one platform.
 Its interface and architecture conform to your processes.
 We assume nothing about what your operations looks like.

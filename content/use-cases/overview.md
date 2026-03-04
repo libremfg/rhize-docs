@@ -29,7 +29,7 @@ For example:
 - Train deep-learning models to detect conditions that lead to batch failures.
 - Use the historical record as a model to run simulations of new events
 
-Guide: [Use the knowledge graph]({{< relref "../how-to/gql" >}})
+Guide: [Use the knowledge graph]({{< relref "../latest/how-to/gql" >}})
 
 ## Headless MES or MOM
 
@@ -47,7 +47,7 @@ With the combination of its event-driven architecture and unified data model, Rh
 Besides building bespoke frontends, many operators choose to integrate Rhize with low-code systems like Appsmith.
 For some problems, lowcode models can reduce the time to create applications dramatically, making it easier to create and test prototypes, involve more stakeholders in the application design process, iterate on working models, and generally do useful things more quickly.
 
-Guides: [Model production]({{< relref "../how-to/model" >}}), [Connect process data]({{< relref "../how-to/publish-subscribe" >}}).
+Guides: [Model production]({{< relref "../latest/how-to/model" >}}), [Connect process data]({{< relref "../latest/how-to/publish-subscribe" >}}).
 
 ## Real-time event handling
 
@@ -57,10 +57,10 @@ Rhize can collect and monitor data from protocols like MQTT and OPC-UA.
 Rhize also has components to monitor and react to this data stream, ensuring that you can stop problems early&mdash;and program corrective measures to execute automatically.
 Event orchestration is handled through {{< abbr "BPMN" >}}, a low-code interface that can listen for events and initiate conditional flows.
 
-Guide: [Handle events]({{< relref "../how-to/bpmn" >}})
+Guide: [Handle events]({{< relref "../latest/how-to/bpmn" >}})
 
 ## Calculating OEE
 
 Rhize includes an optional KPI service which can calculate OEE. Using a combintion of Rhize Workflows and Real-time event handling. Data can be transformed and persisted to a time series database in a format that allows the KPI sercvice to calculate key metrics.
 
-Guide: [KPI Service]({{< relref "../how-to/kpi-service" >}})
+Guide: [KPI Service]({{< relref "../latest/how-to/kpi-service" >}})
