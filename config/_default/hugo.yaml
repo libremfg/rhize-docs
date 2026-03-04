@@ -59,9 +59,11 @@ enableEmoji: true
 
 security:
   enableInlineShortcodes: true
-
 params:
   site: rhize-docs
+  author:
+    name: Rhize Manufacturing Data Hub
+    email: training@rhize.com
   editURL:
     base: "https://github.com/libremfg/rhize-docs/edit/main/content"
     enable: true
@@ -84,6 +86,8 @@ outputs:
   home:
     - HTML
     - llms
+
+disableKinds: "rss"
 
 permalinks:
   page:
