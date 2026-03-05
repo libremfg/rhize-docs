@@ -6,6 +6,7 @@ description: User guides, deploy docs, references, and deep dives about the
 cascade:
   v: "4.2.0"
   type: "docs"
+  icon: molecule
 
 ---
 

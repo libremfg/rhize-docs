@@ -4,7 +4,7 @@ description: >-
     ISA-95 is vocabulary of entities and relationships to model the entire domain of manufacturing operations management.
 cascade:
   type: docs
-  icon: model 
+  icon: "academic-cap"
 ---
 
 {{% reusable/isa-95-course %}}
