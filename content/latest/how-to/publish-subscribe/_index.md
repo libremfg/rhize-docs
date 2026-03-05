@@ -7,6 +7,9 @@ description: Set up event-driven messaging for Rhize
 weight: 400
 cascade: 
     icon: mqtt
+aliases:
+  - /how-to/publish-subscribe/
+
 ---
 
 For Rhize to listen to and [handle]({{< relref "../BPMN" >}}) manufacturing events,

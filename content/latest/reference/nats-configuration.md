@@ -5,6 +5,9 @@ draft: true
 categories: ["reference"]
 description: Values and parameters to configure NATS in your Rhize operation
 weight: 300
+aliases:
+  - /reference/nats-configuration
+
 ---
 
 Rhize uses the [NATS message broker](https://nats.io/) for its publish-subscribe messaging.

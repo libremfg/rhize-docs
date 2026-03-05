@@ -6,6 +6,9 @@ categories: ["reference"]
 description: >-
   A reference of all manufacturing data objects and properties that you can create in the Rhize UI
 weight: 100
+aliases:
+  - /how-to/model/master-definitions
+
 ---
 
 To make a production object visible to the Rhize data hub, you must define it as a data model.

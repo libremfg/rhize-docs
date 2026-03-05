@@ -6,6 +6,9 @@ description: The Rhize GraphQL implementation uses OpenIDConnect for
 weight: 100
 icon: key
 categories: "how-to"
+aliases:
+  - /deploy/install/keycloak
+
 ---
 
 Rhize uses [Keycloak](https://keycloak.org) as an OpenID provider.

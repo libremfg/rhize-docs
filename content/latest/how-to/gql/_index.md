@@ -4,6 +4,9 @@ description: Guides to use the GraphQL interface to query information, add recor
 weight: 100
 cascade:
   icon: gql
+aliases:
+  - /how-to/gql/
+
 ---
 
 {{< card-list >}}

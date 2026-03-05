@@ -1,6 +1,9 @@
 ---
 title: Export Keycloak events
 description: Guide to export events from Keycloak
+aliases:
+  - /deploy/maintain/keycloak-events
+
 ---
 
 Keycloak stores User and Admin event data in its database. This information can be valuable for your audits.

@@ -4,6 +4,9 @@ date: '2024-02-09T09:47:47-03:00'
 categories: ["how-to"]
 description: Tips to debug and improve the performance of your BPMN process
 weight: 300
+aliases:
+  - /how-to/bpmn/tune-performance
+
 ---
 
 This page documents some tips to debug [BPMN workflows]({{< relref "./create-workflow" >}}) and improve their performance.

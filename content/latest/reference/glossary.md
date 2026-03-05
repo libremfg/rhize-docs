@@ -5,6 +5,9 @@ description: A list of terms relevant to Rhize, or that are frequently used in m
 categories: ["reference"]
 weight: 1500
 icon: dictionary
+aliases:
+  - /reference/glossary
+
 ---
 
 The manufacturing industry has many specialized terms&mdash;and many abbreviations.

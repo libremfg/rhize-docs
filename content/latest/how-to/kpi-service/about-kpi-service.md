@@ -3,6 +3,9 @@ title: About KPI Service and overrides
 description: >-
   An explanation of how the Rhize KPI service works
 weight: 200
+aliases:
+  - /how-to/kpi-service/about-kpi-service
+
 ---
 
 {{< experimental-kpi >}}

@@ -3,6 +3,9 @@ title: 'Query'
 categories: ["how-to"]
 description: A guide to the three GraphQL operations in Rhize
 weight: 200
+aliases:
+  - /how-to/gql/query
+
 ---
 
 A _query_ returns one or more resources from the database.

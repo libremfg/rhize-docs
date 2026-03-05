@@ -4,6 +4,9 @@ categories: ["how-to"]
 description: >-
   A high-level overview of the Rhize install process.
 weight: 010
+aliases:
+  - /deploy/install/overview
+
 ---
 
 This guide walks you through how to Install Rhize and its services in a Kubernetes environment.

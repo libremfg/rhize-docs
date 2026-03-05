@@ -5,6 +5,9 @@ date: '2023-11-22T09:43:30-03:00'
 categories: ["how-to"]
 description: How to query your manufacturing knowledge graph
 weight: 100
+aliases:
+  - /how-to/gql/call-the-graphql-api
+
 ---
 
 In a manufacturing operation, all event data is interrelated.

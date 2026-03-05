@@ -4,6 +4,9 @@ title: Maintain
 description: Guides to maintain your data on Rhize
 categories: ["how-to"]
 weight: 250
+aliases:
+  - /deploy/maintain/
+
 ---
 
 Maintenance is critical to ensure reliability over time.

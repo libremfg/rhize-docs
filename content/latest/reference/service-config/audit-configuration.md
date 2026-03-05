@@ -3,6 +3,9 @@ title: 'Audit configuration'
 categories: ["reference"]
 description: Configuration for the Rhize audit
 weight: 900
+aliases:
+  - /reference/service-config/audit-configuration
+
 ---
 
 Audit offers a secure and unchangeable record of all activities that happen within the Rhize system.

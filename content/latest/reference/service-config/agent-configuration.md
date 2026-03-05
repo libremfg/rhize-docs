@@ -2,7 +2,9 @@
 title: 'Agent configuration'
 categories: ["reference"]
 description: Configuration parameters for the Rhize agent
+
 aliases:
+  - /reference/service-config/agent-configuration
   - "/reference/agent-configuration/"
 weight: 900
 ---

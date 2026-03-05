@@ -1,6 +1,9 @@
 ---
 title: Get Keycloak Token
 description: Get a Keycloak bearer token
+aliases:
+  - /deploy/get-keycloak-token
+
 ---
 
 When build applications on Rhize, your clients to need authenticate requests.

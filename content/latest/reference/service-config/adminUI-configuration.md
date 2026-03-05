@@ -3,6 +3,9 @@ title: 'Admin UI configuration'
 categories: ["reference"]
 description: List of Environmental Variables and their description
 weight: 900
+aliases:
+  - /reference/service-config/adminUI-configuration
+
 ---
 
 The Rhize Admin UI offers a graphical interface to configure master data and users.

@@ -3,6 +3,9 @@ title: Configure the KPI service
 description: >-
   An explanation of how to configure the KPI service to feed it with process data
 weight: 200
+aliases:
+  - /how-to/kpi-service/configure-kpi-service
+
 ---
 
 {{< experimental-kpi >}}

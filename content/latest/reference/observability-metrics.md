@@ -3,6 +3,9 @@ title: Observability metrics
 description: Metrics from the Rhize microservices, collected by Prometheus.
 weight: 350
 category: "reference"
+aliases:
+  - /reference/observability-metrics
+
 ---
 
 Rhize uses [Prometheus](https://prometheus.io/docs/introduction/overview/) to monitor metrics from many of its [microservices]({{< relref "service-config" >}}).

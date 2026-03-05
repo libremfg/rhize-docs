@@ -4,6 +4,9 @@ description: >-
   Instructions to install services in the Rhize Kubernetes cluster.
 weight: 100
 categories: "how-to"
+aliases:
+  - /deploy/install/services
+
 ---
 
 The final installation step is to install the Rhize services in your Kubernetes cluster.

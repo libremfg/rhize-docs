@@ -30,6 +30,9 @@ cascade:
     kubectl config set-context --current --namespace=libre
     ```
 
+aliases:
+  - /deploy/
+
 ---
 
 A collection of pages to administrate Rhize: install, upgrade, back up, and more.

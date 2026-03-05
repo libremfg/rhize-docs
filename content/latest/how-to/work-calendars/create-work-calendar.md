@@ -3,6 +3,9 @@ title: Create work calendars
 description: >-
   A guide to creating work calendars. Control, configure, and calculate planned downtime for your manufacturing equipment.
 weight: 200
+aliases:
+  - /how-to/work-calendars/create-work-calendar
+
 ---
 
 This guide shows you how to create a work calendar using the Rhize GraphQL API.

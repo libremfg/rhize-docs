@@ -3,6 +3,9 @@ title: 'BPMN learning resources'
 categories: ["reference"]
 description: Links to supplemental tools and material to learn BPMN
 weight: 999
+aliases:
+  - /how-to/bpmn/learning-resources
+
 ---
 
 

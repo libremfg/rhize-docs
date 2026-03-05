@@ -4,6 +4,9 @@ date: '2024-03-26T11:20:56-03:00'
 categories: ["how-to"]
 description: How to archive a partition of the Audit trail on your Rhize deployment
 weight: 100
+aliases:
+  - /deploy/maintain/audit
+
 ---
 
 The [audit trail]({{< relref "../../how-to/audit" >}}) can generate a high volume of data, so it is a good practice to periodically _archive_ portions of it.

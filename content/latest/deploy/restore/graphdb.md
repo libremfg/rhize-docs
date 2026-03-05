@@ -4,6 +4,9 @@ date: '2023-10-19T13:52:23-03:00'
 ategories: ["how-to"]
 description: How to restore a backup of the Rhize Graph DB.
 weight: 200
+aliases:
+  - /deploy/restore/graphdb
+
 ---
 
 This guide shows you how to restore the Graph database in your Rhize environment.

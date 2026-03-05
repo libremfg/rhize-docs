@@ -21,6 +21,9 @@ boilerplate:
     JSON or JSONata expression. Topics and values to write to
   headers: >-
     Additional headers to send in the request
+aliases:
+  - /how-to/bpmn/bpmn-elements
+
 ---
 
 This document describes the parameters available to each BPMN element in the Rhize UI.

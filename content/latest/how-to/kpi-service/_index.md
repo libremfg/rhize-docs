@@ -6,6 +6,9 @@ weight: 500
 cascade: 
   experimental: true
   icon: oui-stats
+aliases:
+  - /how-to/kpi-service/
+
 ---
 
 {{< experimental-kpi >}}

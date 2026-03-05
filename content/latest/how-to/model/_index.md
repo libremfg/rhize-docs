@@ -6,6 +6,9 @@ draft: false
 weight: 300
 cascade:
     icon: model-cubes
+aliases:
+  - /how-to/model/
+
 ---
 
 You have multiple ways to update your production models:

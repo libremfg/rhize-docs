@@ -5,6 +5,9 @@ categories: ["how-to"]
 description: How to restore a Keycloak backup on Rhize
 icon: key
 weight: 300
+aliases:
+  - /deploy/restore/keycloak
+
 ---
 
 This guide shows you how to restore Keycloak in your Rhize environment.

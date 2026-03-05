@@ -6,6 +6,9 @@ categories: ["how-to"]
 weight: 200
 cascade:
   icon: database
+aliases:
+  - /deploy/backup/
+
 ---
 
 Backup is critical to ensure reliability and recovery.

@@ -6,6 +6,9 @@ categories: ["how-to"]
 cascade:
   icon: database
 weight: 200
+aliases:
+  - /deploy/restore/
+
 ---
 
 These guides show you how to restore data from [backup]({{< relref "../backup" >}}).

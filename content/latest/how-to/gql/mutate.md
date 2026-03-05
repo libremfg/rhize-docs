@@ -3,6 +3,9 @@ title: 'Mutate'
 categories: ["how-to"]
 description: A guide to adding, creating, and deleting data in the Rhize DB
 weight: 250
+aliases:
+  - /how-to/gql/mutate
+
 ---
 
 {{< watch

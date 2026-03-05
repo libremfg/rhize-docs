@@ -10,6 +10,9 @@ cascade:
   brand_name: Libre
   application_name: libre
   icon: terminal
+aliases:
+  - /deploy/install/
+
 ---
 
 This guide shows you how to install Rhize services on your Kubernetes cluster.

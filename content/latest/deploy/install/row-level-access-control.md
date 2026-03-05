@@ -4,6 +4,9 @@ description: >-
   Instructions to configure Rhize BAAS scopemap for Row level Access Control.
 weight: 200
 categories: "how-to"
+aliases:
+  - /deploy/install/row-level-access-control
+
 ---
 
 

@@ -3,6 +3,9 @@ title: About calendars and overrides
 description: >-
   An explanation of how the Rhize calendar service works, and how it handles planned shutdowns across hierarchies.
 weight: 200
+aliases:
+  - /how-to/work-calendars/about-calendars-and-overrides
+
 ---
 
 Work calendars represent planned periods of time in your operation,

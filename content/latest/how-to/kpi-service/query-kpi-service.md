@@ -3,6 +3,9 @@ title: Query the KPI service
 description: >-
   An explanation of how to query the KPI service to obtain OEE values
 weight: 200
+aliases:
+  - /how-to/kpi-service/query-kpi-service
+
 ---
 
 {{< experimental-kpi >}}

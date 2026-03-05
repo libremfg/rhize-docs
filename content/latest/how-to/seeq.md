@@ -5,6 +5,9 @@ categories: ["how-to"]
 description: How to use Seeq with Rhize
 weight: 600
 icon: search
+aliases:
+  - /how-to/seeq
+
 ---
 
 The Rhize Connector enables Seeq to access data from Rhize.

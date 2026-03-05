@@ -4,6 +4,9 @@ date: '2023-10-18T15:02:24-03:00'
 categories: ["how-to"]
 description: How to upgrade Rhize
 weight: 500
+aliases:
+  - /deploy/upgrade
+
 ---
 
 This guide shows you how to upgrade Rhize.

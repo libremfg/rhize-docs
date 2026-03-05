@@ -1,6 +1,9 @@
 ---
 title: Track changes (CDC)
 description: Streaming data in and out of RHIZE
+aliases:
+  - /how-to/publish-subscribe/track-changes
+
 ---
 
 

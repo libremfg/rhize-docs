@@ -5,6 +5,9 @@ categories: ["how-to"]
 description: How to restore an InfluxDB backup on Rhize
 draft: true
 weight: 400
+aliases:
+  - /deploy/restore/influxdb
+
 ---
 
 
