@@ -49,7 +49,7 @@ For the Rhize Agent, the minimum recommended specifications are as follows:
 The following table lists the **minimum** recommended specifications for the main services.
 Services with stateful PV have a persistent volume per pod.
 
->![Warn]
+> [!WARNING]
 > Avoid NFS or SMB filesystems. These are known to lead to file corruption in BaaS and do not work at all with various other services.
 
 | Service                | Pods for HA (replica count) | vCPU per Pod | Memory Per Pod | Stateful PV | DiskSize (GiB) | Comments                                                             |
