@@ -1,9 +1,8 @@
 ---
-title: ##Leave only home page without title
+title: v3.2.1
 description: User guides, deploy docs, references, and deep dives about the
   Rhize manufacturing data hub.
 cascade:
-  type: docs
   v: "3.2.1"
 ---
 

@@ -3,7 +3,7 @@ title: Use cases
 description: Examples of how to use Rhize for specific use cases.
 weight: 250
 cascade: 
-  icon: light-bulb
+  icon: "wrench"
 identifier: use-cases
 ---
 

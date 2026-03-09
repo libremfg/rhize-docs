@@ -4,6 +4,7 @@ description: An archive of documentation for old Rhize versions.
 sidebar:
   exclude: true
 cascade:
+  type: docs
   noindex: true
   excludeSearch: true
 ---

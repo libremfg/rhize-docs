@@ -39,7 +39,7 @@ For a high-level overview of how eBR data may enter the Rhize data hub, read the
 
 {{< watch src="https://www.youtube.com/watch?v=oXG5f3O9xjU&t=0s" text="Full eBR in 1 query" >}}
 
-If you just want to build out a [GraphQL query]({{< relref "../how-to/gql/query" >}}) for your reporting, use these templates to get started.
+If you just want to build out a [GraphQL query]({{< relref "../latest/how-to/gql/query" >}}) for your reporting, use these templates to get started.
 
 
 If you know the IDs for the relevant job response, job order, and test results, you can structure each group as a top-level object.
@@ -164,7 +164,7 @@ For example:
 
 ## Example query
 
-The following snippet is an example of how to pull a full eBR from a single [GraphQL query]({{< relref "../how-to/gql/query" >}}).
+The following snippet is an example of how to pull a full eBR from a single [GraphQL query]({{< relref "../latest/how-to/gql/query" >}}).
 Each top-level object has an [alias](https://graphql.org/learn/queries/#aliases), which serves as the key for the object in the JSON payload.
 
 ```gql
