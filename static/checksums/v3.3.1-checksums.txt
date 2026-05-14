@@ -1,5 +1,6 @@
 Admin:
 registry.gitlab.com/libremfg/frontend/libre-admin-ui:v3.3.1
+sha256:dce5eb835a50c0a7b4c02eb81575b7666e44e53713d728285bc1165c0bcd053a
 
 BAAS:
 registry.gitlab.com/libremfg/baas:v3.3.1
