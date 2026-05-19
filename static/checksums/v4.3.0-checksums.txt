@@ -1,0 +1,22 @@
+Admin:
+TBD
+
+Agent:
+TBD
+
+BaaS:
+TBD
+
+ISA-95:
+TBD
+
+Keycloak theme:
+TBD
+
+Typescript host:
+TBD
+
+Workflow:
+TBD
+
+ 
