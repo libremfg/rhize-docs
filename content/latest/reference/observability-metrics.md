@@ -21,13 +21,9 @@ The service metrics have endpoints at the following ports:
 |---------|-----------|---------|------|
 | Audit   | Y         | Y       | 8084 |
 | BAAS    | Y         | Y       | 8080 |
-| BPMN    | Y         | Y       | 8081 |
-| Core    | Y         | Y       | 8080 |
-| NATS    |           | Y       | 7777 |
 | Router  | Y         |         | 9090 |
 | Tempo   | Y         | Y       | 3100 |
 
-NATS has an available endpoint through an exporter that is present on the cluster.
 Router has an available endpoint that is disabled by default.
 
 ## Metrics configuration
@@ -46,41 +42,8 @@ For example:
   metrics_path: /metrics
   scheme: http
   static_configs:
-    - targets: ['audit-demo.demo.svc.cluster.local:8084', 'baas-alpha.demo.svc.cluster.local:8080', 'bpmn-demo.demo.svc.cluster.local:8081', 'core-demo.demo.svc.cluster.local:8080', 'grafana-demo.demo.svc.cluster.local:3000', 'tempo.demo.svc.cluster.local:3100', 'nats-demo-headless.demo.svc.cluster.local:7777', 'router-demo.demo.svc.cluster.local:9090']
+    - targets: ['audit-demo.demo.svc.cluster.local:8084', 'baas-alpha.demo.svc.cluster.local:8080', 'grafana-demo.demo.svc.cluster.local:3000', 'tempo.demo.svc.cluster.local:3100', 'router-demo.demo.svc.cluster.local:9090']
 ```
-
-### NATS
-
-While NATS has no available metrics endpoint, the cluster includes a [NATS Prometheus exporter](https://github.com/nats-io/prometheus-nats-exporter).
-NATS metrics are exposed through port `7777`.
-
-
-#### Cluster
-
-Since the cluster already includes the exporter, no further configuration is required.
-This endpoint should be connected through the NATS headless pod. For example:
-
-`nats-demo-headless.demo.svc.cluster.local:7777`
-
-#### Docker
-
-To get NATS metrics in Docker, use the exporter mentioned in the preceding section.
-The following is a sample docker-compose configuration for the exporter.
-
-```yaml
-services:
-	# -- Other services
-	nats-exporter:
-    image: natsio/prometheus-nats-exporter:latest
-    container_name: nats-exporter
-    command: "-varz 'http://nats:5555'"
-    depends_on:
-      - nats
-    ports:
-      - 7777:7777
-```
-
-Access NATS metrics at `localhost:7777/metrics`
 
 ### Router
 
@@ -138,6 +101,7 @@ This opens the metrics endpoint on port `9090`.
 To view it externally, you must expose the port in docker-compose.
 Once the port is exposed, view the metrics at `localhost:9090/metrics`
 
+
 ## Available Rhize microservice metrics
 
 Several common metrics appear between Rhize microservices:
@@ -150,9 +114,6 @@ Several common metrics appear between Rhize microservices:
 |---------|---------------------------------------------------|-----------------|---------------|------------|
 | Audit   | Y                                                 | Y               | Y             |            |
 | BAAS    | Y                                                 | Y               |               | Y          |
-| BPMN    | Y                                                 | Y               | Y             | Y          |
-| Core    | Y                                                 |                 | Y             |            |
-| NATS    | Y                                                 | Y               | Y             | Y          |
 | Router  |                                                   |                 |               | Y          |
 | Tempo   | Y                                                 |                 |               | Y          |
 
@@ -160,7 +121,7 @@ Several common metrics appear between Rhize microservices:
 HTTP metrics are noted as `promhttp`.
 {{< /callout >}}
 
-### BAAS
+
 
 Additional metrics on BAAS are from [dgraph](https://dgraph.io/docs/deploy/admin/metrics/). These include two categories: Badger and Dgraph.
 
@@ -192,66 +153,6 @@ dgraph_disk_free_bytes{dir="postings_fs"} 1.0153562112e+10
 # HELP dgraph_disk_total_bytes Total number of bytes on disk
 # TYPE dgraph_disk_total_bytes gauge
 dgraph_disk_total_bytes{dir="postings_fs"} 1.0447245312e+10
-```
-
-### BPMN
-
-BPMN has four metrics unique to it, shown in full in the sample below.
-
-#### Sample
-
-```
-# HELP bpmn_execution_commands The number of BPMN commands that have started executing
-# TYPE bpmn_execution_commands counter
-bpmn_execution_commands 1162
-
-# HELP bpmn_instances_started BPMN Instances started but not necessarily completed
-# TYPE bpmn_instances_started counter
-bpmn_instances_started 166
-
-# HELP bpmn_queue_CommandConsumerQueue Number of BPMN Commands currently waiting to be executed
-# TYPE bpmn_queue_CommandConsumerQueue gauge
-bpmn_queue_CommandConsumerQueue 0
-
-# HELP bpmn_queue_StartOnNatsMessages Number of BPMN trigger messages received from NATS
-# TYPE bpmn_queue_StartOnNatsMessages gauge
-bpmn_queue_StartOnNatsMessages 0
-```
-
-### NATS
-
-NATS has two categories of metrics:
-- `gnatsd`
-- `jetstream`
-
-#### Sample
-
-```
-# HELP gnatsd_connz_in_bytes in_bytes
-# TYPE gnatsd_connz_in_bytes counter
-gnatsd_connz_in_bytes{server_id="nats-demo-0"} 0
-
-# HELP gnatsd_connz_in_msgs in_msgs
-# TYPE gnatsd_connz_in_msgs counter
-gnatsd_connz_in_msgs{server_id="nats-demo-0"} 0
-
-# HELP gnatsd_connz_limit limit
-# TYPE gnatsd_connz_limit gauge
-gnatsd_connz_limit{server_id="nats-demo-0"} 1024
-```
-
-```
-# HELP jetstream_server_jetstream_disabled JetStream disabled or not
-# TYPE jetstream_server_jetstream_disabled gauge
-jetstream_server_jetstream_disabled{cluster="nats-demo",domain="",is_meta_leader="false",meta_leader="nats-demo-1",server_id="nats-demo-0",server_name="nats-demo-0"} 0
-
-# HELP jetstream_server_max_memory JetStream Max Memory
-# TYPE jetstream_server_max_memory gauge
-jetstream_server_max_memory{cluster="nats-demo",domain="",is_meta_leader="false",meta_leader="nats-demo-1",server_id="nats-demo-0",server_name="nats-demo-0"} 2.147483648e+09
-
-# HELP jetstream_server_max_storage JetStream Max Storage
-# TYPE jetstream_server_max_storage gauge
-jetstream_server_max_storage{cluster="nats-demo",domain="",is_meta_leader="false",meta_leader="nats-demo-1",server_id="nats-demo-0",server_name="nats-demo-0"} 5.36870912e+10
 ```
 
 ### Router

@@ -122,7 +122,7 @@ The parameters for a timer start event are as follows:
 
 ### Intermediate message events
 
-Intermediate message events throw a message to the Rhize NATS broker.
+Intermediate message events throw a message to the Rhize broker.
 This may provide info for a subscribing third-party client, or initiate another BPMN workflow.
 
 The parameters for an intermediate message event are as follows:

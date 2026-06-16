@@ -17,11 +17,6 @@ So an inefficient BPMN process can introduce performance degradations.
 
 ## Manage the process context size
 
-{{< callout type="info" >}}
-The max size of the process variable context comes from the default max payload size of NATS Jetstreams.
-To increase this size, change your NATS configuration.
-{{< /callout >}}
-
 By default, the size of the {{< abbr "process variable context" >}} is 1MB.
 If the sum size of all variables exceeds this limit, the BPMN process fails to execute.
 
@@ -67,7 +62,6 @@ If a process seems slow, look for these places to refactor performance.
 ### Avoid parallel joins
 
 Running processes in [parallel]({{< relref "./bpmn-elements#parallel-gateway" >}}) can increase the workflow's complexity.
-Parallel joins in particular can also increase memory usage of the NATS service.
 
 Where possible, prefer exclusive branching and sequential execution.
 When a task requires concurrency, keep the amount of data processed and the complexity of the tasks to the minimum necessary.

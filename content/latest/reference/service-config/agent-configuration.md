@@ -13,7 +13,7 @@ The Rhize agent collects data that is emitted in the manufacturing process and m
 It works by connecting to equipment or groups of equipment that run over protocols such as OPC UA.
 
 As the communication bridge between the Rhize Data Hub and your plant, the agent has multiple functions:
-- It subscribes to tags and republishes the changes in NATS.
+- It subscribes to tags and republishes the changes in the messsage broker.
 - It creates an interface for the BPMN engine to send reads and writes to a data source and its associated equipment.
 
 
@@ -41,12 +41,6 @@ As the communication bridge between the Rhize Data Hub and your plant, the agent
 | Attribute | Description |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `GRAPHQL_URL`         | The URL of the GraphQL endpoint to use for interacting with Rhize services. <br />(Default: `http://localhost:8080/graphql`) |
-
-## `NATS`
-
-| Attribute | Description |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `SERVER_URL`         | The URL for connecting to the NATS server. <br />(Default: `nats://system:system@localhost:4222`) | 
 
 ## `OIDC`
 

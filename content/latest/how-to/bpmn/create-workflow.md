@@ -92,7 +92,7 @@ width="60%"
 
 The strategy you choose to send and receive message data depends on your architectural setup. 
 Generally, data-source messages come from level-1 and level-2 devices on the edge,
-and messages published to the Rhize broker come from any NATS, MQTT, or OPC UA client.
+and messages published to the Rhize broker come from any MQTT or OPC UA client.
 The following diagram shows some common ways to interact with messages through BPMN.
 
 {{< bigFigure
