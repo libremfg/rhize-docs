@@ -125,7 +125,7 @@ HTTP metrics are noted as `promhttp`.
 
 Additional metrics on BAAS are from [dgraph](https://dgraph.io/docs/deploy/admin/metrics/). These include two categories: Badger and Dgraph.
 
-#### Sample
+**Example:**
 
 ```
 # HELP badger_disk_reads_total Number of cumulative reads by Badger
@@ -159,7 +159,7 @@ dgraph_disk_total_bytes{dir="postings_fs"} 1.0447245312e+10
 
 All metrics provided by Router are unique to Apollo Router.
 
-#### Sample
+**Example:**
 
 ```
 # HELP apollo_router_cache_hit_count apollo_router_cache_hit_count
@@ -183,7 +183,7 @@ Tempo has a few categories of metrics:
 
 The Tempo documentation [details](https://grafana.com/docs/tempo/latest/metrics-generator/) what these metrics measure.
 
-#### Sample
+**Example:**
 
 ```
 # HELP jaeger_tracer_baggage_restrictions_updates_total Number of times baggage restrictions were successfully updated
