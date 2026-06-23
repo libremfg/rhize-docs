@@ -26,7 +26,7 @@ Before you start, you will need to do the following:
 
 1. Confirm you are in the right context and namespace:
 
-{{% param "k8s_cluster_ns" %}}
+    {{% param "k8s_cluster_ns" %}}
 
 1. Check the logs for the alpha and zero pods, either in Lens or with [`kubectl logs`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs).
     Ensure there are no errors.
@@ -62,9 +62,9 @@ This method will use BAAS's web console to trigger a backup.
 
 1. Click "Backups" > "Local Export".
 
-{{< callout type="info" >}}
-Database backups support S3/Minio and includes an option to list backups in a specific destination. For this guide we will be performing a local backup.
-{{< /callout >}}
+    {{< callout type="info" >}}
+    Database backups support S3/Minio and includes an option to list backups in a specific destination. For this guide we will be performing a local backup.
+    {{< /callout >}}
 
 1. Enter your designated backup location along with the backup name, or use the default provided.
 
