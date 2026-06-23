@@ -36,14 +36,11 @@ Where:
 
 | InvocationTypes | Description                                                                                    |
 |-----------------|------------------------------------------------------------------------------------------------|
-| `NATS`          | Invoked when a message is received in the Rhize NATS broker                                    |
 | `API`           | Expects to be called from the API using `createAndRunBPMNSync` or `createAndRunBPMN` mutations |
 | `RULE`          | Invocation is expected from the [rule engine]({{< relref "../publish-subscribe/create-equipment-class-rule" >}})          |
 | `FUNC`          | Internal functions to be invoked as helpers                                                    |
 
 Examples:
-- `NATS_ProcessOrderV1TransformAndPersist`
-- `NATS_PLMMaterialMasterV2TransformPersistAndPublish`
 - `RULE_ChangeOEEStatusOfCNCEquipment`
 - `API_WST04_GetNextLibreBatchNumber`
 - `API_WAT01_CloseOpenJobOrders`

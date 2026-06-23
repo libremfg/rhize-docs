@@ -120,7 +120,7 @@ If the `version` property is empty, Rhize runs the active version of the workflo
 
 The [message start event]({{< relref "./bpmn-elements#message-start-event" >}}) subscribes to a topic on the Rhize broker.
 Whenever a message is published to this topic, the workflow is triggered.
-The Rhize broker can receive messages published over MQTT, NATS, and OPC UA.
+The Rhize broker can receive messages published over MQTT and OPC UA.
 
 For example, this workflow subscribes to the topic `material/stuff`.
 Whenever a message is published to the topic, it evaluates whether the quantity is in the correct threshold.
