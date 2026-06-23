@@ -13,7 +13,7 @@ The Rhize agent collects data that is emitted in the manufacturing process and m
 It works by connecting to equipment or groups of equipment that run over protocols such as OPC UA.
 
 As the communication bridge between the Rhize Data Hub and your plant, the agent has multiple functions:
-- It subscribes to tags and republishes the changes in the messsage broker.
+- It subscribes to tags and republishes the changes in the message broker.
 - It creates an interface for the BPMN engine to send reads and writes to a data source and its associated equipment.
 
 

@@ -292,7 +292,7 @@ Install Typescript Host Service with these steps:
 
 ### QuestDB
 
-QuestDB is used by Rhize to store timeseries data, however it can be substitude for another historian.
+QuestDB is used by Rhize to store timeseries data, however it can be substitute for another historian.
 
 Install QuestDB with these steps:
 
@@ -427,7 +427,7 @@ alpha:
 
 ### KPI
 
-The Rhize KPI service is a GraphQL service which calcualtes ISO22400 KPIs using timseries tables.
+The Rhize KPI service is a GraphQL service which calculates ISO22400 KPIs using timeseries tables.
 
 Install KPI with these steps:
 

@@ -54,7 +54,7 @@ To back up the database, you can use either of the following methods:
 
 #### BAAS Console
 
-This method will use BAAS's web console to trigger a backup.
+This method will use the BAAS web console to trigger a backup.
 
 1. Navigate to `<baas-url>/console` in your browser of choice.
 
