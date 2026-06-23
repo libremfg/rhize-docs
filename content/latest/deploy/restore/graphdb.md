@@ -97,44 +97,6 @@ Before you start, ensure you have the following:
 
 1. Wait for `{{< param application_name >}}-baas-alpha-0` to start serving the GraphQL API.
 
-1. Make a database mutation to force a snapshot to be taken.
-For example, create a `UnitOfMeasure` then delete it:
+1. Repeat the process, starting from step 4, for each Alpha replica.
 
-    ```bash
-    kubectl exec -t {{< param application_name >}}-baas-alpha-0 -c {{< param application_name >}}-baas-alpha -- \
-    curl --location --request POST 'http://localhost:8080/graphql' \
-    --header 'Content-Type: application/json' \
-    --data-raw '{"query":"mutation RestoringDatabase($input:[AddUnitOfMeasureInput!]!){\r\n addUnitOfMeasure(input:$input){\r\n unitOfMeasure{\r\n id\r\n dataType\r\n code\r\n }\r\n}\r\n}","variables":{"input":[{"code":"Restoring","isActive":true,"dataType":"BOOL"}]}}'
-    ```
-    Wait until you see {{< param application_name >}}-baas creating a snapshot in the logs. For example:
-
-    ```bash
-    $ kubectl logs {{< param application_name >}}-baas-alpha-0
-    ++ hostname -f
-    ++ awk '{gsub(/\.$/,""); print $0}'
-    ...
-    I0314 20:32:21.282271 19 draft.go:805] Creating snapshot at Index: 16, ReadTs: 9
-    ```
-
-    Revert any database mutations:
-
-    ```bash
-    kubectl exec -t {{< param application_name >}}-baas-alpha-0 -c {{< param application_name >}}-baas-alpha -- \
-    curl --location --request POST 'http://localhost:8080/graphql' \
-    --header 'Content-Type: application/json' \
-    --data-raw '{"query":"mutation {\r\n deleteUnitOfMeasure(filter:{code:{eq:\"Restoring\"}}){\r\n unitOfMeasure{\r\n id\r\n }\r\n }\r\n}","variables":{"input":[{"code":"Restoring","isActive":true,"dataType":"BOOL"}]}}'
-    ```
-
-1. Complete the initialization container for alpha 1:
-
-    ```bash
-    kubectl exec -t {{< param application_name >}}-baas-alpha-1 -c {{< param application_name >}}-baas-alpha-init -- \
-    touch /dgraph/doneinit
-    ```
-
-    And alpha 2:
-
-    ```bash
-    kubectl exec -t {{< param application_name >}}-baas-alpha-2 -c {{< param application_name >}}-baas-alpha-init -- \
-    touch /dgraph/doneinit
-    ```
+    In each step replace `{{< param application_name >}}-baas-alpha-0` with `{{< param application_name >}}-baas-alpha-<REPLICA-NUMBER>`, where `<REPLICA-NUMBER>` is the current Alpha replica being restored.
