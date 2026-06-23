@@ -1,14 +1,11 @@
 ---
-title: 'Calendar configuration'
+title: 'Core configuration'
 categories: ["reference"]
-description: Configuration for the Rhize Calendar Service
+description: Configuration for the Rhize core
 weight: 900
-aliases:
-  - /reference/service-config/calendar-configuration
-
 ---
 
- The Calendar Service handles polling work calendar definitions and generating work calendar entries in the graph and time series databases.
+ The Core service oversees data sources such as OPC-UA servers and manages the publication and subscription of topics within the NATS messaging system.
 
 ## `logging`
 
@@ -25,7 +22,8 @@ aliases:
 
 | Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `SERVER_URL`         | The URL of the NATS server. <br />(Default: `nats://system:system@localhost:4222`)                                                              |
+| `serverUrl`         | The URL of the NATS server. <br />(Default: `nats://system:system@localhost:4222`)       |                                                                                                                                                 
+| `replicas`          | The number of replicas or instances of the NATS server to be deployed. <br />(Default: `1`)                                                                                                    |
 
 
 ## `OIDC`
@@ -46,67 +44,39 @@ aliases:
 | Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `serverUrl`         | The URL of the OpenTelemetry server. <br />(Default: `localhost:4317`)                                                                                                                         | 
-| `samplingRate`      | The sampling rate for traces. <br />(Default: `1`)                                   |
+| `samplingRate`      | The sampling rate for traces. <br />(Default: `1`)                                                                                                                                         | 
+
+## `SECRET`
+
+| Attributes          | Description                                                                                                                                                                                    |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `KEY`               | The SECRET KEY used for authorization within Core.       |                                                                                                                                                 
+
+## `graphQLServer`
+
+ The server used to connect to the GraphQL playground.
+
+| Attributes          | Description                                                                                                                                                                                    |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Port`              | The port used within the URL that connects to the graphQLServer. <br />(Default: `4001`)     |                                                                                                                                                 
+
 
 ## `libreDataStoreGraphQL`
 
-| Attribute | Description |
+| Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `GRAPHQL_URL`         | The URL of the GraphQL endpoint to use for interacting with Rhize services. <br />(Default: `http://localhost:8080/graphql`) |
+| `GraphQLUrl`        | The URL of the GraphQL endpoint to use for interacting with Rhize services. <br />(Default: `http://localhost:8080/graphql`) |                                                                                                                                                 
 
-## `GraphQLSubscriber`
 
-| Attribute | Description |
+## `BPMN`
+
+| Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `GRAPHQL_URL`         | The URL of the GraphQL endpoint for the GraphQLSubscriber. <br />(Default: `http://localhost:4000/`)|
+| `GraphQLUrl`        | The URL of the BPMN endpoint to use for interacting with Rhize services. <br />(Default: `http://localhost:8081`) |                                                                                                                                                 
 
-## `RESTAPI`
+## `TimeSeries`
 
-| Attribute | Description |
+| Attributes          | Description                                                                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `PORT`         | The port number for RestAPI connection.  <br />(Default: `8080`)                                                                                                                                    |
+| `Enabled`           | Enables the use of TimeSeries. <br />(Default: `false`)     |                                                                                                                                                 
 
-## `Calendar`
-
-Specific configuration options for the calendar service.
-
-| Attribute | Description |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `QueryIntervalMinutes`         | How often to poll the work calendar definitions <br />(Default: `10`)|
-
-## `QUERY`
-
-Query options specific to the calendar service
-
-| Attribute | Description |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `hierarchyScopeRecursionDepth`         | How deep to recurse through the hierarchy scope hierarchy <br />(Default: `3`)|
-| `equipmentRecursionDepth`         | How deep to recurse through the equipment hierarchy <br />(Default: `3`)|
-
-## `Influx3`
-
-InfluxDB3 server options
-
-| Attribute | Description |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Database`         | The name of the database to connect to <br />(Default: `Libre_calendar-service`)|
-| `Host`         | The host of the Influx3 database <br />(Default: `http://localhost:8096`)|
-| `Organization`         | The Influx3 Organization (Influx3 Cloud) <br />(Default: `Libre`)|
-| `TokenPrefix`         | The prefix used in the authorization token (`Token` for Influx 3 cloud, `Bearer` for Influx3 Edge) <br />(Default: `Token`)|
-| `Token`         | The authorization token to attach to any Influx3 requests|
-
-## `Postgres`
-
-Postgres server options
-
-| Attribute | Description |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Host`         | The hostname of the Postgres database <br />(Default: `localhost`)|
-| `Port`         | Those port of the Postgres database <br />(Default: `5432`)|
-| `User`         | The Postgres user name <br />(Default: `postgres`)|
-| `Password`         | The Postgres instance password <br />(Default: `postgres`)|
-| `Database`         | The database name for the Postgres instance <br />(Default: `Libre`)|
-
-## `Database`
-
-Which database instance to use, either `Postgres` or `Influx3` <br />(Default: `Influx3`)

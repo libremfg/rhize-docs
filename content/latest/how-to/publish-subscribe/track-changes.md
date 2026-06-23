@@ -10,7 +10,7 @@ aliases:
 You can use _change data capture_ (CDC) to track data changes over time, including
 a {{< abbr "mutation" >}} or drop in your database.
 Rhize's CDC implementation can use
-Kafka, NATS, or a local file as a *{{< abbr "sink" >}}* to store CDC updates streamed by Rhize's Alpha
+Kafka or a local file as a *{{< abbr "sink" >}}* to store CDC updates streamed by Rhize's Alpha
 leader nodes.
 
 When CDC is enabled, Rhize streams events for:
@@ -55,16 +55,6 @@ with the `--cdc` command and the sub-option shown below, as follows:
 dgraph alpha --cdc "file=local-file-path"
 ```
 
-## Enable CDC with NATS JetStream KV store sink
-
-To enable CDC and sink results to a NATS JetStream KV store, start Dgraph Alpha
-with the `--cdc` command and the sub-option shown below, as follows:
-
-```bash
-dgraph alpha --cdc "nats=nats://system:system@localhost:4222"
-```
-
-
 ## CDC command reference
 
 The `--cdc` option includes several sub-options that you can use to configure
@@ -78,7 +68,6 @@ CDC when running the `dgraph alpha` command:
 | `client-cert`    | `--cdc "client-cert=/c-certs/client.crt"`                                | Path and filename of the client certificate used for TLS encryption                                              |
 | `client-key`     | `--cdc "client-cert=/c-certs/client.key"`                                | Path and filename of the client certificate private key                                                          |
 | `file`           | `--cdc "file=/sink-dir/cdc-file"`                                        | Path and filename of a local file sink (alternative to Kafka sink)                                               |
-| `nats`           | `--cdc "nats=nats://user:password@localhost:4222"`                       | URL connection string to nats sink (alternative to Kafka sink)                                                   |
 | `kafka`          | `--cdc "kafka=kafka-hostname; sasl-user=tstark; sasl-password=m3Ta11ic"` | Hostname(s) of the Kafka hosts. May require authentication using the `sasl-user` and `sasl-password` sub-options |
 | `sasl-user`      | `--cdc "kafka=kafka-hostname; sasl-user=tstark; sasl-password=m3Ta11ic"` | SASL username for Kafka. Requires the `kafka` and `sasl-password` sub-options                                    |
 | `sasl-password`  | `--cdc "kafka=kafka-hostname; sasl-user=tstark; sasl-password=m3Ta11ic"` | SASL password for Kafka. Requires the `kafka` and `sasl-username` sub-options                                    |

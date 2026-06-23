@@ -80,7 +80,7 @@ Each topic has the following fields:
 | Topic field       | Description                                                                   |
 |-------------------|-------------------------------------------------------------------------------|
 | Data type         | The data type Rhize expects to find when it receives data from that topic     |
-| Deduplication key | The field that NATS uses to de-duplicate messages from multiple data sources. |
+| Deduplication key | The field to de-duplicate messages from multiple data sources. |
 | Label             | The name of the topic on the side of the data source                          |
 | Description       | A freeform text field to add context                                          |
 
