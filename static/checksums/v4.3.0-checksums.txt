@@ -1,22 +1,27 @@
 Admin:
-TBD
+registry.gitlab.com/libremfg/frontend/libre-admin-ui:v4.3.0
+sha256:c88286242ca586c56110a33e1c99ed16eff789f7dad5af30de39735c13584623
 
 Agent:
-TBD
+registry.gitlab.com/libremfg/libre-agent:v4.3.0
+sha256:6c4a2085575ed47796bf14db2dcf0b144c11fe37295625a14782079ecff9487d
 
 BaaS:
-TBD
+registry.gitlab.com/libremfg/baas:v4.3.0
+sha256:94154216aef53cf4afb6d3e5906ad7d7908066d295e12a4f0e8ab53c7b62d55d
 
 ISA-95:
-TBD
+registry.gitlab.com/libremfg/isa95:v4.3.0
+sha256:23929da5d191f803722aec37df908ab3c55ca767bc92d579d8be5a90b1d05623
 
 Keycloak theme:
-TBD
+registry.gitlab.com/libremfg/frontend/libre-keycloak-theme:v4.3.0
+sha256:195c2d83869b89ca50efa97486a2527b23e0c0b4a9929b4676fe597d2f40e0db
 
 Typescript host:
-TBD
+registry.gitlab.com/libremfg/typescript-host-service:v4.3.0
+sha256:08261dbbe77855a37a2a7b5b8f6e2c4bd8e623643bf52673ec297d8a79a3b81b
 
 Workflow:
-TBD
-
- 
+registry.gitlab.com/libremfg/workflow:v4.3.0
+sha256:3cadbd1d3aa07dd71c23df5e3f03bdfdf0d04b919120c34940550bcbe981e3ca
