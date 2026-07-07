@@ -99,4 +99,4 @@ Before you start, ensure you have the following:
 
 1. Repeat the process, starting from step 4, for each Alpha replica.
 
-    In each step replace `{{< param application_name >}}-baas-alpha-0` with `{{< param application_name >}}-baas-alpha-<REPLICA-NUMBER>`, where `<REPLICA-NUMBER>` is the current Alpha replica being restored.
+    In each step, replace `{{< param application_name >}}-baas-alpha-0` with `{{< param application_name >}}-baas-alpha-<REPLICA-NUMBER>`, where `<REPLICA-NUMBER>` is the current Alpha replica being restored.

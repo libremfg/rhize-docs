@@ -22,7 +22,7 @@ Before you start, ensure you have the following:
 {{% param pre_reqs %}}.
 
 
-Before you start, you will need to do the following:
+Before you start, check the following:
 
 1. Confirm you are in the right context and namespace:
 
@@ -46,7 +46,7 @@ Before you start, you will need to do the following:
 
 ## Steps
 
-To back up the database, you will need to first trigger a backup, and then retrieve the backup using `kubectl`.
+To back up the database, you need to first trigger a backup, and then retrieve the backup using `kubectl`.
 
 ### Backup
 
@@ -54,13 +54,13 @@ To back up the database, you can use either of the following methods:
 
 #### BAAS Console
 
-This method will use the BAAS web console to trigger a backup.
+This method uses the BAAS web console to trigger a backup.
 
 1. Navigate to `<baas-url>/console` in your browser of choice.
 
-1. Login to the BAAS Console with your Keycloak credentials.
+1. Log in to the BAAS Console with your Keycloak credentials.
 
-1. Click "Backups" > "Local Export".
+1. Click **Backups > Local Export**.
 
     {{< callout type="info" >}}
     Database backups support S3/Minio and includes an option to list backups in a specific destination. For this guide we will be performing a local backup.
@@ -68,11 +68,11 @@ This method will use the BAAS web console to trigger a backup.
 
 1. Enter your designated backup location along with the backup name, or use the default provided.
 
-1. Click "Start Export" and wait for the operation to finish. A dialogue should appear saying "Export Completed Successfully".
+1. Click **Start Export** and wait for the operation to finish. A dialogue should appear saying **Export Completed Successfully**.
 
 #### Alpha Pod Shell
 
-This option will use the shell opened in the prerequisites to trigger a backup.
+This option uses the shell opened in the prerequisites to trigger a backup.
 
 1. Make a POST request to your Keycloak `/token` endpoint to get an `access_token` value.
 For example, with `curl` and `jq`:

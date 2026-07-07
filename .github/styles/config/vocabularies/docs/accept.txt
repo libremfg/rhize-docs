@@ -71,4 +71,6 @@ composable
 UIs
 subproperties
 url
+URL
+URLs
 configs
