@@ -22,13 +22,11 @@ Before you start, ensure you have the following:
 {{% param pre_reqs %}}.
 
 
-Before you start, confirm you are in the right context and namespace:
+Before you start, check the following:
 
-{{% param "k8s_cluster_ns" %}}
+1. Confirm you are in the right context and namespace:
 
-## Steps
-
-To back up the database, follow these steps:
+    {{% param "k8s_cluster_ns" %}}
 
 1. Check the logs for the alpha and zero pods, either in Lens or with [`kubectl logs`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs).
     Ensure there are no errors.
@@ -45,6 +43,36 @@ To back up the database, follow these steps:
     ```
 
     For details, read the Kubernetes topic [Get Shell to a Running Container](https://kubernetes.io/docs/tasks/debug/debug-application/get-shell-running-container/).
+
+## Steps
+
+To back up the database, you need to first trigger a backup, and then retrieve the backup using `kubectl`.
+
+### Backup
+
+To back up the database, you can use either of the following methods:
+
+#### BAAS Console
+
+This method uses the BAAS web console to trigger a backup.
+
+1. Navigate to `<baas-url>/console` in your browser of choice.
+
+1. Log in to the BAAS Console with your Keycloak credentials.
+
+1. Click **Backups > Local Export**.
+
+    {{< callout type="info" >}}
+    Database backups support S3/Minio and includes an option to list backups in a specific destination. For this guide we will be performing a local backup.
+    {{< /callout >}}
+
+1. Enter your designated backup location along with the backup name, or use the default provided.
+
+1. Click **Start Export** and wait for the operation to finish. A dialogue should appear saying **Export Completed Successfully**.
+
+#### Alpha Pod Shell
+
+This option uses the shell opened in the prerequisites to trigger a backup.
 
 1. Make a POST request to your Keycloak `/token` endpoint to get an `access_token` value.
 For example, with `curl` and `jq`:
@@ -72,6 +100,10 @@ For example, with `curl`:
     --header 'Content-Type: application/json' \
     --data-raw '{"query":"mutation {\r\n export(input: {format: \"json\", destination: \"/dgraph/backups/'"$(date +"%Y-%m-%dT%H.%M.%SZ")"'\"}) {\r\n response {\r\n message\r\n code\r\n }\r\n}\r\n}","variables":{}}'
     ```
+
+### Retrieve
+
+To retrieve the backup, we will need to use the alpha pod shell opened in the prerequisites.
 
 1. Change to the backup directory (the `destination` parameter in the preceding `curl` command). For example:
 

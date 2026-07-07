@@ -106,6 +106,10 @@ Then, follow these steps.
      helm install keycloak -f ./keycloak.yaml bitnami/keycloak -n {{< param application_name >}}
      ```
 
+    {{< callout type="warning" >}}
+    As of Augest 28th, 2026, Bitnami has migrated many of their container images from the public catalog to the **Bitnami Legacy** repository. While Bitnami's helm charts can be used, users should ensure that their keycloak values file has `bitnamilegacy/keycloak` as the repository for the container image.
+    {{< /callout >}}
+
 1. Set up port forwarding from Keycloak. For example, this forwards traffic to port `5101` on `localhost`:
 
      ```bash

@@ -4,7 +4,7 @@ weight: 002
 description: User guides, deploy docs, references, and deep dives about the
   Rhize manufacturing data hub.
 cascade:
-  v: "4.2.0"
+  v: "4.3.0"
   type: "docs"
   icon: molecule
 

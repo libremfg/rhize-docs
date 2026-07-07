@@ -23,5 +23,5 @@ jobs:
           debug: true
           separator: ","
           files: >-
-            content/deploy/,content/get-started/,content/how-to/,content/reference/
+            content/latest/deploy/,content/get-started/,content/latest/how-to/,content/latest/reference/
           vale_flags: '--glob=*.md'
