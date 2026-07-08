@@ -74,7 +74,7 @@ Besides HTTP, workflows can also publish and subscribe messages over MQTT, Kafka
 {{< bigFigure
 alt="A workflow that listens to a message and throws a message"
 src="/images/bpmn/rhize-bpmn-message-start-throw-conditional.png"
-caption="A workflow that evaluates a message and throws a if the payload meets a certain condition message"
+caption="A workflow that evaluates a message and throws an error if the payload meets a certain condition message"
 width="60%"
 >}}
 
