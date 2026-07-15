@@ -15,11 +15,25 @@ The final installation step is to install the Rhize services in your Kubernetes 
 
 This topic assumes you have done the following:
 - [Set up Kubernetes]({{< relref "setup-kubernetes" >}}) and [Configured Keycloak]({{< relref "keycloak" >}}). All the prerequisites for those topics apply here.
-- Configured load balancing for the following DNS records:
+- Configured load balancing for the following DNS records. 
 
-    {{< reusable/default-urls >}}
-
-    _Note that `rhize-` is only the recommended prefix of the subdomain. Your organization may use something else._
+    > [!TIP]
+    > The prefix `rhize-<SERVICE>` is used as an example.
+    
+    | Service | Example Domain |
+    | --- | --- |
+    | Admin UI | `rhize-ui.<YOUR_DOMAIN>` |
+    | Keycloak | `rhize-auth.<YOUR_DOMAIN>` |
+    | GraphQL | `rhize-api.<YOUR_DOMAIN>` |
+    | Grafana | `rhize-grafana.<YOUR_DOMAIN>` |
+    
+    To access their dashboards, you also may want to configure the following services:
+    
+    | Service          | Example Domain                 |
+    |------------------|--------------------------------|
+    | Restate          | `rhize-restate.<YOUR_DOMAIN>`  |
+    | QuestDB          | `rhize-quest.<YOUR_DOMAIN>`    |
+    | Redpanda-console | `rhize-redpanda.<YOUR_DOMAIN>` |
 
 
 ### Overrides
