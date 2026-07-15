@@ -25,13 +25,12 @@ This topic assumes you have done the following:
     | Admin UI | `rhize-ui.<YOUR_DOMAIN>` |
     | Keycloak | `rhize-auth.<YOUR_DOMAIN>` |
     | GraphQL | `rhize-api.<YOUR_DOMAIN>` |
-    | Grafana | `rhize-grafana.<YOUR_DOMAIN>` |
     
     To access their dashboards, you also may want to configure the following services:
     
     | Service          | Example Domain                 |
     |------------------|--------------------------------|
-    | Restate          | `rhize-restate.<YOUR_DOMAIN>`  |
+    | Grafana          | `rhize-grafana.<YOUR_DOMAIN>`  |
     | QuestDB          | `rhize-quest.<YOUR_DOMAIN>`    |
     | Redpanda-console | `rhize-redpanda.<YOUR_DOMAIN>` |
 
