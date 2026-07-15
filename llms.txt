@@ -100,8 +100,6 @@ These … - Published 2023-11-15
 
 ### Reference
 - [Observability metrics](https://docs.rhize.com/latest/reference/observability-metrics/): Metrics from the Rhize microservices, collected by Prometheus. | Rhize uses Prometheus to monitor metrics from many of its microservices. For the Kubernetes cluster, …
-- [Default URLs and local ports](https://docs.rhize.com/latest/reference/default-ports/): A list of the default ports for the various Rhize services | After you install Rhize services, they are accessible, by default, on the following ports:
-Service … - Published 2023-11-02
 - [GraphQL types and filters](https://docs.rhize.com/latest/reference/gql-types/): A reference of the data types in the Rhize API and of the filters available for each type. | This page provides a reference of the data types enforced by the Rhize database schema, and of the …
 - [Glossary](https://docs.rhize.com/latest/reference/glossary/): A list of terms relevant to Rhize, or that are frequently used in manufacturing contexts. | The manufacturing industry has many specialized terms—and many abbreviations. This glossary is a … - Published 2023-09-12
 
@@ -1448,5 +1446,5 @@ A …
 
 
 ---
-Generated on 2026-07-08 13:19:13 UTC
+Generated on 2026-07-15 16:47:05 UTC
 Site: https://docs.rhize.com/
