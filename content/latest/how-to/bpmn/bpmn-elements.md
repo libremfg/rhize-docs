@@ -212,8 +212,6 @@ Besides the call parameters, the Query task has following additional fields:
 | Parameter      | Description                                 |
 |----------------|---------------------------------------------|
 | Input response | {{% param boilerplate.jsonata_response %}}. |
-| Retries        | The number of retries                       |
-|                |                                             |
 
 ### GraphQL Query
 
