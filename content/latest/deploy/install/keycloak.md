@@ -88,7 +88,6 @@ Other clients, such as the UI and Dashboard, use the standard flow to coordinate
 
 {{< callout type="info" >}}
 Each standard-flow client has its own subdomain.
-Refer to [Default URLs and Ports]({{< relref "../../reference/default-ports" >}}) for our recommended conventions.
 {{< /callout >}}
 
 #### Create DB client

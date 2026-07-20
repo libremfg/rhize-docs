@@ -145,7 +145,7 @@ If you need Row Level Access Control, [configure your scope map]({{< relref "row
 1. Go to Keycloak UI and add all new {{< param db >}} roles to the `libreAdminGroup`.
 
 If the install is successful, the Keycloak UI is available on its
-[default port]({{< relref "../../reference/default-ports" >}}).
+port.
 
 
 ## Install services
@@ -224,8 +224,7 @@ Install Grafana LGTM with these steps:
     helm install lgtm-distributed -f lgtm-distributed.yaml grafana/lgtm-distributed -n {{< param application_name >}}
     ```
 
-If the install is successful, the Grafana service is available on its
-[default port]({{< relref "../../reference/default-ports" >}}).
+If the install is successful, the Grafana service is available on the port you configured.
 
 ### Restate
 
@@ -369,7 +368,7 @@ After installing all other services, install the UI with these steps:
     ```
 
 If the install is successful, the UI is available on its
-[default port]({{< relref "../../reference/default-ports" >}}).
+port.
 
 ### Agent
 
@@ -491,7 +490,7 @@ Install Router with these steps:
     helm install router -f router.yaml {{< param application_name >}}/router -n {{< param application_name >}}
     ```
 
-If the install is successful, the Router explorer is available on its [default port]({{< relref "../../reference/default-ports" >}}).
+If the install is successful, the Router explorer is available on its port.
 
 ## Optional: change service configuration
 
@@ -517,7 +516,7 @@ For particular problems, try these commands:
 - **Access service through browser**
 
     Some services are accessible through the browser.
-    To access them, visit local host on the service's [default port]({{< relref "../../reference/default-ports" >}}).
+    To access them, visit local host on the service's port.
 
 - **I installed a service too early**.
     If you installed a service too early, use Helm to uninstall:
