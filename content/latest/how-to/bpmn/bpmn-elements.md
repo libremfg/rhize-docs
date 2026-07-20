@@ -178,10 +178,8 @@ The service task templates are as follows
 
 ### JSONata transform
 
-
 Transform JSON data with a JSONata expression.
 For detailed examples, read [The Rhize Guide to JSONata]({{< relref "use-jsonata" >}}).
-
 
 | Call parameters  | Description                                                                   |
 |------------------|-------------------------------------------------------------------------------|
@@ -196,6 +194,26 @@ Besides the call parameters, the JSONata task has following additional fields:
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Input response | The name of the variable to add to the {{< abbr "process variable context" >}}|
 
+
+### Google BigQuery Query
+
+Call a Google BigQuery Project.
+
+| Parameters       | Description                                                                                                   |
+|------------------|---------------------------------------------------------------------------------------------------------------|
+| Project ID       | Google Cloud Project ID                                                                                       |
+| Location         | Google Cloud Dataset location                                                                                 |
+| Credentials File | BiqQuery credentials file, stored in Environment variables                                                    |
+| Body             | Query Body                                                                                                    |
+| Parameters       | JSON array to [parameterize queries](https://docs.cloud.google.com/bigquery/docs/parameterized-queries#api_1) |
+
+Besides the call parameters, the Query task has following additional fields:
+
+| Parameter      | Description                                 |
+|----------------|---------------------------------------------|
+| Input response | {{% param boilerplate.jsonata_response %}}. |
+| Retries        | The number of retries                       |
+|                |                                             |
 
 ### GraphQL Query
 
@@ -254,6 +272,23 @@ Besides the call parameters, the REST task has following additional fields:
 | Input response | {{% param boilerplate.jsonata_response %}} |
 | Headers        | {{% param boilerplate.headers %}}                                           |
 
+### Call SQL Query
+
+Query a SQL database.
+
+| Call parameters | Description                                     |
+|-----------------|--------------------------------------------------|
+| Database URL    | The URL of the SQL database to query             |
+| SQL Query       | The SQL query to send to the database            |
+| Arguments       | Argument JSON to send along with the SQL query   |
+
+Besides the call parameters, the SQL task has following additional fields:
+
+| Parameter                     | Description                                                                                          |
+|-------------------------------|-------------------------------------------------------------------------------------------------------|
+| Response Transform Expression | {{% param boilerplate.jsonata_response %}}                                                            |
+| Response Variable             | The name of the variable to store the transformed response in the {{< abbr "process variable context" >}}. Defaults to `response`. |
+
 ### JSON schema
 
 Validate that a payload conforms to a configured [JSON schema](https://json-schema.org/).
@@ -306,6 +341,19 @@ Besides the call parameters, the data source task has following additional field
 |----------------|--------------------------------------------------------------------------------|
 | Input response | The variable name to store the response in {{< abbr "process variable context" >}} |
 | Headers        | {{< param boilerplate.headers >}}                                              |
+
+### Log
+
+Output a log message from the workflow.
+
+Log messages are logged to the pod that the workflow is running in, with `workflowSpecificationId`, `version`, and `nodeID` automatically attached.
+You can use these messages to debug workflows and pods through tools like Grafana Loki or Datadog logs.
+
+| Call parameters | Description                                          |
+|-----------------|-------------------------------------------------------|
+| Log Level       | The logging level (for example, `Info`)               |
+| Log Message     | The log message to output                             |
+| Log Attributes  | JSON key-value pairs for additional log context       |
 
 
 ## Call activities
