@@ -86,7 +86,8 @@ These … - Published 2023-11-15
 
 #### Connect event data
 - [Tutorial: Trigger a workflow from a rule](https://docs.rhize.com/latest/how-to/publish-subscribe/create-equipment-class-rule/): Follow this tutorial to create a rule to run a workflow every time a data source changes. | An equipment class rule triggers a BPMN workflow whenever a data source publishes a value that meets … - Published 2024-04-29
-- [Connect data source](https://docs.rhize.com/latest/how-to/publish-subscribe/connect-datasource/): Configure a data source to publish topics for the Rhize platform. | For Rhize to listen to and handle manufacturing events, you need to connect a data source. … - Published 2023-09-22
+- [Connect data source](https://docs.rhize.com/latest/how-to/publish-subscribe/connect-datasource/): Configure a data source to publish topics for the Rhize platform. | For Rhize to listen to and handle manufacturing events, you need to connect a data source.
+As of … - Published 2023-09-22
 - [Track changes (CDC)](https://docs.rhize.com/latest/how-to/publish-subscribe/track-changes/): Streaming data in and out of RHIZE | You can use change data capture (CDC) to track data changes over time, including a mutation or drop …
 
 #### Use work calendars
@@ -1446,5 +1447,5 @@ A …
 
 
 ---
-Generated on 2026-07-20 21:22:40 UTC
+Generated on 2026-07-20 21:30:02 UTC
 Site: https://docs.rhize.com/
