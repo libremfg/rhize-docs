@@ -6,11 +6,29 @@ description: Configure a data source to publish topics for the Rhize platform.
 weight: 10
 aliases:
   - /how-to/publish-subscribe/connect-datasource
-
+sources:
+   - AzureEventBus
+   - AzureServiceBus
+   - Kafka
+   - MQTT
+   - OPCUA
 ---
+
+
 
 For Rhize to listen to and handle manufacturing events,
 you need to connect a {{< abbr "data source" >}}.
+
+As of v{{% param v %}}, Rhize has built-in support for the following data sources.
+
+{{% listSources.inline %}}
+{{ $s := $.Page.Params.sources }}
+{{ range $s }}
+- {{ . }}
+{{ end }}
+{{% /listSources.inline %}}
+
+If there's another source you want to add, just ask your contact on the Rhize team.
 
 ## Prerequisites
 
