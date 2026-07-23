@@ -270,9 +270,9 @@ Besides the call parameters, the REST task has following additional fields:
 | Input response | {{% param boilerplate.jsonata_response %}} |
 | Headers        | {{% param boilerplate.headers %}}                                           |
 
-### Call SQL Query
+### PostgreSQL Query
 
-Query a SQL database.
+Query a PostgreSQL database.
 
 | Call parameters | Description                                     |
 |-----------------|--------------------------------------------------|
@@ -339,6 +339,16 @@ Besides the call parameters, the data source task has following additional field
 |----------------|--------------------------------------------------------------------------------|
 | Input response | The variable name to store the response in {{< abbr "process variable context" >}} |
 | Headers        | {{< param boilerplate.headers >}}                                              |
+
+### Kafka Write
+
+Write a payload to a Kafka topic.
+
+| Call parameters  | Description                                                                                          |
+|------------------|--------------------------------------------------------------------------------------------------------|
+| Topic            | The Kafka topic to write to, for example, `libre-command-write`                                        |
+| Payload          | The data to write to the topic. Can be text or a JSONata expression. Expressions must start with `=`   |
+| Max Payload size | {{< param boilerplate.max_payload >}}                                                                   |
 
 ### Log
 
