@@ -1,0 +1,26 @@
+{{- /* Rhize: banner shown on pages under /versions/{VERSION}/, linking to
+   the equivalent page in the latest docs when one exists, else /latest. */ -}}
+{{- $page := . -}}
+{{- $pathSegments := strings.Split (strings.Trim $page.RelPermalink "/") "/" -}}
+{{- if and (ge (len $pathSegments) 2) (eq (index $pathSegments 0) "versions") -}}
+  {{- $version := $page.Params.v | default (strings.TrimPrefix "v" (index $pathSegments 1)) -}}
+
+  {{- $latestLink := "/latest" -}}
+  {{- $relSegments := after 2 $pathSegments -}}
+  {{- if gt (len $relSegments) 0 -}}
+    {{- with site.GetPage (printf "/latest/%s" (delimit $relSegments "/")) -}}
+      {{- $latestLink = .RelPermalink -}}
+    {{- end -}}
+  {{- else -}}
+    {{- with site.GetPage "/latest" -}}
+      {{- $latestLink = .RelPermalink -}}
+    {{- end -}}
+  {{- end -}}
+
+  <div class="version warning">
+    {{- $message := printf "You are viewing the documentation for Rhize **v%s**. View the [latest](%s)." $version $latestLink -}}
+    {{- $emoji := "⚠️" -}}
+    {{- $warningClass := "hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200" -}}
+    {{- partial "shortcodes/callout.html" (dict "content" ($message | $page.RenderString) "emoji" $emoji "class" $warningClass) -}}
+  </div>
+{{- end -}}
