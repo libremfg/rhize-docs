@@ -16,6 +16,20 @@
 
 {{- $changeLanguage := (T "changeVersion") | default "Change version" -}}
 
+{{- /* Rhize: work out the current page's path within its version tree, so
+   switching versions can try to land on the same page in the target
+   version instead of always going to that version's homepage. */ -}}
+{{- $pageURL := page.RelPermalink -}}
+{{- $pathSegments := strings.Split (strings.Trim $pageURL "/") "/" -}}
+{{- $relPath := "" -}}
+{{- if and (ge (len $pathSegments) 2) (eq (index $pathSegments 0) "versions") -}}
+  {{- $relPath = delimit (after 2 $pathSegments) "/" -}}
+{{- else if and (ge (len $pathSegments) 1) (eq (index $pathSegments 0) "latest") -}}
+  {{- $relPath = delimit (after 1 $pathSegments) "/" -}}
+{{- else -}}
+  {{- $relPath = delimit $pathSegments "/" -}}
+{{- end -}}
+
   <div class="hx:flex hx:justify-items-start {{ if $grow }}hx:grow{{ end }}">
     <button
       title="{{ $changeLanguage }}"
@@ -36,14 +50,16 @@
       style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
     >
       {{ range $versions }}
-        {{ $link := "/" }}
+        {{ $targetVersion := . }}
+        {{ $isLatest := eq $targetVersion $lastVersion }}
+        {{ $base := cond $isLatest "/latest" (printf "/versions/v%s" $targetVersion) }}
+        {{ $href := $base }}
+        {{ with site.GetPage (path.Join $base $relPath) }}
+          {{ $href = .RelPermalink }}
+        {{ end }}
         <li class="hx:flex hx:flex-col">
           <a
-            {{ if eq . $lastVersion }}
-            href="/"
-            {{ else }}
-            href="/versions/v{{ . }}"
-            {{ end }}
+            href="{{ $href }}"
             class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
           >
             {{- . -}}
