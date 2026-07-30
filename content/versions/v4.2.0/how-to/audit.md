@@ -5,8 +5,6 @@ categories: ["how-to"]
 description: How to use the Audit log to inspect all events in the Rhize system
 weight: 600
 icon: search
-aliases:
-  - /how-to/audit
 
 ---
 

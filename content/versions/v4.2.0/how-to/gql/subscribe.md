@@ -3,8 +3,6 @@ title: 'Subscribe'
 categories: ["how-to"]
 description: A guide to using GraphQL to subscribe to changes in the database.
 weight: 280
-aliases:
-  - /how-to/gql/subscribe
 
 ---
 

@@ -5,8 +5,6 @@ icon: chat-alt-2
 weight: 100
 images:
   - /images/og/graphic-rhize-how-to-speak-isa95.png
-aliases:
-  - /explanations/how-to-speak-isa-95
 ---
 
 {{% reusable/isa-95-course %}}

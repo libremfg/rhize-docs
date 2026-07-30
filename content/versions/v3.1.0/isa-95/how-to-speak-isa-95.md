@@ -5,8 +5,6 @@ icon: chat-alt-2
 weight: 100
 images:
   - /images/og/graphic-rhize-how-to-speak-isa95.png
-aliases:
-  - /explanations/how-to-speak-isa-95
 ---
 
 [ISA-95](https://www.isa.org/store?query=isa95) provides a common language to discuss manufacturing.

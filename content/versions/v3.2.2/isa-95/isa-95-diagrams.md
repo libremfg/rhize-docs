@@ -5,8 +5,6 @@ description: >-
     for entities and information flows.
 weight: 1000
 draft: false
-aliases:
-  - /explanations/isa-95-diagrams
 icon: diagram
 ---
 
