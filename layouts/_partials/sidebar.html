@@ -15,6 +15,14 @@
   {{- end -}}
 {{- end -}}
 
+{{- /* Rhize override: pages under /isa-95/ get a sidebar scoped
+   to that section's own content tree, not the top-level (site-wide) tree. */ -}}
+{{- if eq (index $pathSegments 0) "isa-95" -}}
+  {{- with site.GetPage "/isa-95" -}}
+    {{- $navRoot = . -}}
+  {{- end -}}
+{{- end -}}
+
 {{- if .context.Params.sidebar.hide -}}
   {{- $disableSidebar = true -}}
   {{- $displayPlaceholder = false -}}
