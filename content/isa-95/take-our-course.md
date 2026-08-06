@@ -7,7 +7,6 @@ next: /intro/why-learn-isa-95/
 params:
   images:
      - "/images/og/isa-95-fundamentals.png"
-
 ---
 
 Our ISA-95 course teaches you how to apply ISA-95 through a series of hands-on modules.
@@ -23,7 +22,6 @@ In it, you'll:
 <div style="text-align: center;">
 {{< hextra/hero-button text="Take our ISA-95 course" link="https://university.rhize.com/certifications/" >}}
 </div>
-
 
 ## What to expect
 
