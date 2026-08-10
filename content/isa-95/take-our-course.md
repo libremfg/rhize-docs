@@ -37,12 +37,11 @@ The other principle of this course is that all the lessons try to be grounded in
 
 Our goal is to give everything an example use case and business context. Incorporating some narrative makes the lessons more approachable and―we hope―more memorable. But this also has the effect of simulating how you'd apply ISA-95 in the real world. Where possible, we even try to incorporate real manufacturing datasets found in the wild.
 
-
 ### Training based on real experience
 
 At Rhize, we've spent a lot of time training new hires from a variety of disciplines. And what we've discovered time and again is that there is no better way to learn the standard than to practice it. The standard has all the theory you need, and our own docs have some approachable explainers, but there is no substitute for practice.
 
-
 <div style="text-align: center;">
 {{< hextra/hero-button text="Take our ISA-95 course" link="https://university.rhize.com/certifications/" >}}
 </div>
+
