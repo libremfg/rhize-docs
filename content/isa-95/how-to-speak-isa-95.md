@@ -88,7 +88,7 @@ For the full list of relationships, refer to ISA-95 Part 2.
 To explore the relationships in an interactive way,
 you can use the Rhize [GraphQL]({{< relref "../latest/how-to/gql" >}}) API explorer.
 
-## The activities of an MES
+## The activities of a manufacturing operations management
 
 Much of the ISA-95 standard discusses operations at the view of level 3, that is the MES or _Manufacturing Operations Management (MOM)_ system. But what activities are part of a MOM system? This is the subject of ISA-95 Part 3.
 
@@ -111,6 +111,22 @@ The 8 major activities of a MOM are as follows:
 * **Production performance analysis:** How well did the actual production run go, as compared to its ideal? For example, measures of OEE, deviation analysis, and golden batches are all use-cases of performance analysis.
 
 To make sense of these activities, you also need to have a concept of the relationship between planned and performed work.
+
+## The categories of manufacturing operations mangement
+
+Each of the activities described in the preceding section can apply to any of the four _categories_ of manufacturing operations management defined by ISA-95:
+
+- **Production.** Production relates to the planning, manufacturing, and tracking and analysis of products.
+- **Quality.** Quality operations examine the measurements collected on production artifacts to ensure product quality and minimize deviations.
+- **Inventory.** Inventory operations control the movement of resources in and out of the operation.
+- **Maintenance.** Maintenance operations are responsible for ensuring that equipment and physical assets are available for manufacturing.
+
+Note that, as with activities, each of these categories has shared information.
+Quality jobs are triggered after production jobs finish.
+The production operation is constantly consuming material from inventory and adding finished material back to inventory.
+Production cannot happen if maintenance operations do not exist to ensure availability.
+And efficient maintenance scheduling requires information from production about utilization.
+
 
 ### Definition, demand, result
 
