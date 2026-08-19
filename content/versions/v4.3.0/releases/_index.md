@@ -5,7 +5,6 @@ weight: 1000
 identifier: releases
 cascade:
   icon: rss
-  application_name: libre
 aliases:
   - /releases/
 
