@@ -1,5 +1,5 @@
 ---
-title: v3.3.1
+title: v3.3.2
 description: User guides, deploy docs, references, and deep dives about the
   Rhize manufacturing data hub.
 cascade:

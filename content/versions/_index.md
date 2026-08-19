@@ -11,4 +11,4 @@ cascade:
 
 Documentation for old versions. [View latest](/)
 
-{{< card-list >}}
+{{< versions-card-list >}}

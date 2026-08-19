@@ -1,0 +1,27 @@
+{{- /* Rhize: like card-list, but orders children by title (descending) instead
+   of weight/date, so newly archived versions (e.g. content/versions/vX.Y.Z)
+   slot into place without needing a hand-maintained weight. */ -}}
+
+{{ $pages := sort .Page.Pages "Title" "desc" }}
+
+<div class="hextra-cards hx:mt-4 hx:gap-4 hx:grid not-prose"
+     style="--hextra-cards-grid-cols: 4;">
+
+{{ range $pages }}
+    {{ if not .Params.sidebar.exclude }}
+        {{ $icon := .Params.icon }}
+        {{ $tags := .Params.tags }}
+        {{ $cardParams := dict
+            "link" .RelPermalink
+            "title" .Title
+            "subtitle" .Description
+            "tag" $tags
+        }}
+        {{ if $icon }}
+            {{ $cardParams = merge $cardParams (dict "icon" $icon) }}
+        {{ end }}
+        {{ partial "shortcodes/card.html" $cardParams }}
+    {{ end }}
+{{ end }}
+
+</div>
