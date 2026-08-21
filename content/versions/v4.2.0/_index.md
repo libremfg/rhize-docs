@@ -1,6 +1,5 @@
 ---
-title: Rhize Product documentation
-weight: 002
+title: v4.2.0
 description: User guides, deploy docs, references, and deep dives about the
   Rhize manufacturing data hub.
 cascade:
