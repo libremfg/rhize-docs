@@ -283,6 +283,12 @@ Preact …
 - [4.3.0](https://docs.rhize.com/versions/v4.3.0/releases/4-3-0/): Release notes for v4.3.0 of the Rhize application | Release notes for version 4.3.0 of the Rhize application.
 Release date: 7 July 2026
 Changes by …
+- [3.3.3](https://docs.rhize.com/versions/v4.3.0/releases/3-3-3/): Release notes for v3.3.2 of the Rhize application | Release notes for version 3.3.3 of the Rhize application.
+Release date: [ADD RELEASE DATE]
+Changes …
+- [3.3.2](https://docs.rhize.com/versions/v4.3.0/releases/3-3-2/): Release notes for v3.3.2 of the Rhize application | Release notes for version 3.3.2 of the Rhize application.
+Release date: [ADD RELEASE DATE]
+Changes …
 - [4.2.0](https://docs.rhize.com/versions/v4.3.0/releases/4-2-0/): Release notes for v4.2.0 of the Rhize application | Release notes for version 4.2.0 of the Rhize application.
 Release date: 15 Jan 2026
 Changes by …
@@ -607,6 +613,9 @@ Preact …
 - [Core configuration](https://docs.rhize.com/versions/v3.3.2/reference/service-config/core-configuration/): Configuration for the Rhize core | The Core service oversees data sources such as OPC-UA servers and manages the publication and …
 
 #### Releases
+- [3.3.2](https://docs.rhize.com/versions/v3.3.2/releases/3-3-2/): Release notes for v3.3.2 of the Rhize application | Release notes for version 3.3.2 of the Rhize application.
+Release date: [ADD RELEASE DATE]
+Changes …
 - [3.3.1](https://docs.rhize.com/versions/v3.3.2/releases/3-3-1/): Release notes for v3.3.1 of the Rhize application | Release notes for version 3.3.1 of the Rhize application.
 Release date: 13 May 2026
 Changes by … - Published 2026-05-13
@@ -634,8 +643,6 @@ Changes by service … - Published 2024-11-13
 - [3.0.1](https://docs.rhize.com/versions/v3.3.2/releases/3-0-1/): Release notes for v3.0.1 of the Rhize application | Release notes for version 3.0.1 of the Rhize application.
 This release includes bug fixes, … - Published 2024-07-23
 - [Rhize 3.0](https://docs.rhize.com/versions/v3.3.2/releases/3-0/): Notes for v3.0 of the Rhize Manufacturing Data Hub. A flexible architecture for workflow orchestration, message handling, standards-based modeling, and custom MES apps. | Rhize version 3.0 is now in general release! &#x1f973; As a full rewrite of our earlier Libre 2.0 … - Published 2024-02-27
-- [](https://docs.rhize.com/versions/v3.3.2/releases/3-3-2/):  | 3.3.2Release notes for version 3.3.2 of the Rhize application.
-Release date: [ADD RELEASE DATE] …
 
 ##### Changelog
 - [3.0.0 (general release)](https://docs.rhize.com/versions/v3.3.2/releases/changelog/3-0-0/): Change Log for v3.0.0 of the Rhize application | Changelog for version 3.0.0 of the Rhize application.
@@ -778,6 +785,12 @@ Preact …
 - [Core configuration](https://docs.rhize.com/versions/v3.3.3/reference/service-config/core-configuration/): Configuration for the Rhize core | The Core service oversees data sources such as OPC-UA servers and manages the publication and …
 
 #### Releases
+- [3.3.3](https://docs.rhize.com/versions/v3.3.3/releases/3-3-3/): Release notes for v3.3.2 of the Rhize application | Release notes for version 3.3.3 of the Rhize application.
+Release date: [ADD RELEASE DATE]
+Changes …
+- [3.3.2](https://docs.rhize.com/versions/v3.3.3/releases/3-3-2/): Release notes for v3.3.2 of the Rhize application | Release notes for version 3.3.2 of the Rhize application.
+Release date: [ADD RELEASE DATE]
+Changes …
 - [3.3.1](https://docs.rhize.com/versions/v3.3.3/releases/3-3-1/): Release notes for v3.3.1 of the Rhize application | Release notes for version 3.3.1 of the Rhize application.
 Release date: 13 May 2026
 Changes by … - Published 2026-05-13
@@ -805,10 +818,6 @@ Changes by service … - Published 2024-11-13
 - [3.0.1](https://docs.rhize.com/versions/v3.3.3/releases/3-0-1/): Release notes for v3.0.1 of the Rhize application | Release notes for version 3.0.1 of the Rhize application.
 This release includes bug fixes, … - Published 2024-07-23
 - [Rhize 3.0](https://docs.rhize.com/versions/v3.3.3/releases/3-0/): Notes for v3.0 of the Rhize Manufacturing Data Hub. A flexible architecture for workflow orchestration, message handling, standards-based modeling, and custom MES apps. | Rhize version 3.0 is now in general release! &#x1f973; As a full rewrite of our earlier Libre 2.0 … - Published 2024-02-27
-- [](https://docs.rhize.com/versions/v3.3.3/releases/3-3-2/):  | 3.3.2Release notes for version 3.3.2 of the Rhize application.
-Release date: [ADD RELEASE DATE] …
-- [](https://docs.rhize.com/versions/v3.3.3/releases/3-3-3/):  | 3.3.3Release notes for version 3.3.3 of the Rhize application.
-Release date: [ADD RELEASE DATE] …
 
 ##### Changelog
 - [3.0.0 (general release)](https://docs.rhize.com/versions/v3.3.3/releases/changelog/3-0-0/): Change Log for v3.0.0 of the Rhize application | Changelog for version 3.0.0 of the Rhize application.
@@ -1117,6 +1126,12 @@ Preact …
 - [Audit configuration](https://docs.rhize.com/versions/v4.2.0/reference/service-config/audit-configuration/): Configuration for the Rhize audit | Audit offers a secure and unchangeable record of all activities that happen within the Rhize system. …
 
 #### Releases
+- [3.3.3](https://docs.rhize.com/versions/v4.2.0/releases/3-3-3/): Release notes for v3.3.2 of the Rhize application | Release notes for version 3.3.3 of the Rhize application.
+Release date: [ADD RELEASE DATE]
+Changes …
+- [3.3.2](https://docs.rhize.com/versions/v4.2.0/releases/3-3-2/): Release notes for v3.3.2 of the Rhize application | Release notes for version 3.3.2 of the Rhize application.
+Release date: [ADD RELEASE DATE]
+Changes …
 - [3.3.0](https://docs.rhize.com/versions/v4.2.0/releases/3-3-0/): Release notes for v3.3.0 of the Rhize application | Release notes for version 3.3.0 of the Rhize application.
 Release date: 19 Feb 2026
 Changes by … - Published 2026-02-19
@@ -1952,5 +1967,5 @@ A …
 
 
 ---
-Generated on 2026-08-22 16:42:35 UTC
+Generated on 2026-08-22 16:59:07 UTC
 Site: https://docs.rhize.com/
