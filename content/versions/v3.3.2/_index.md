@@ -1,9 +1,16 @@
 ---
-title: v3.3.2
-description: User guides, deploy docs, references, and deep dives about the
-  Rhize manufacturing data hub.
+title: Releases
+description: Documentation about new features and upgrade instructions.
+weight: 1000
+identifier: releases
 cascade:
-  v: "3.3.2"
+  icon: rss
+aliases:
+  - /releases/
+
 ---
 
+Read about new Rhize features and how to upgrade versions.
+
 {{< card-list >}}
+
