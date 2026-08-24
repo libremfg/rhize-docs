@@ -117,7 +117,7 @@ Preact …
 - [Genealogy](https://docs.rhize.com/use-cases/genealogy/): The Rhize guide to modeling and querying the forward and backward genealogy of a material lot | This document provides a high-level overview of how to use Rhize for material genealogy.
 In …
 
-## Releases notes
+## Release notes
 - [4.4.0](https://docs.rhize.com/releases/4-4-0/): Release notes for v4.4.0 of the Rhize application | Release notes for version 4.4.0 of the Rhize application.
 Release date: 11 August 2026
 Changes by …
@@ -1510,5 +1510,5 @@ A …
 
 
 ---
-Generated on 2026-08-24 22:23:12 UTC
+Generated on 2026-08-24 22:34:35 UTC
 Site: https://docs.rhize.com/
