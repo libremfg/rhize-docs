@@ -1,5 +1,5 @@
 ---
-title: Releases notes
+title: Release notes
 description: Documentation about new features and upgrade instructions.
 weight: 1000
 identifier: releases
