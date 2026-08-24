@@ -23,6 +23,16 @@
   {{- end -}}
 {{- end -}}
 
+{{- /* Rhize override: each /versions/{VERSION} sidebar is scoped to that
+   version's own tree (see above), so it no longer picks up the shared,
+   top-level /releases/ section the way the rest of the site does. Splice
+   it back in as a normal, expandable tree item. */ -}}
+{{- $releasesOnly := eq $pageURL "/versions/" -}}
+{{- $releasesPage := "" -}}
+{{- if or $releasesOnly (findRE "^/versions/v[^/]+/$" $navRoot.RelPermalink) -}}
+  {{- $releasesPage = site.GetPage "/releases" -}}
+{{- end -}}
+
 {{- if .context.Params.sidebar.hide -}}
   {{- $disableSidebar = true -}}
   {{- $displayPlaceholder = false -}}
@@ -57,7 +67,7 @@
       {{ .context.Store.Set "enableFooterSwitches" true }}
     {{- else -}}
       <ul class="hx:flex hx:flex-col hx:gap-1 hx:max-md:hidden">
-        {{ template "sidebar-main" (dict "context" $navRoot "page" $context  "pageURL" $pageURL) }}
+        {{ template "sidebar-main" (dict "context" $navRoot "page" $context  "pageURL" $pageURL "releasesPage" $releasesPage "releasesOnly" $releasesOnly) }}
         {{ template "sidebar-footer" }}
       </ul>
     {{ end -}}
@@ -81,7 +91,7 @@
 </aside>
 
 {{- define "sidebar-main" -}}
-  {{ template "sidebar-tree" (dict "context" .context "level" 0 "page" .page "pageURL" .pageURL "toc" (.toc | default false)) }}
+  {{ template "sidebar-tree" (dict "context" .context "level" 0 "page" .page "pageURL" .pageURL "toc" (.toc | default false) "releasesPage" .releasesPage "releasesOnly" .releasesOnly) }}
 {{- end -}}
 
 {{- define "sidebar-tree" -}}
@@ -94,6 +104,8 @@
   {{- $pageURL := .page.RelPermalink -}}
   {{- $level := .level -}}
   {{- $toc := .toc | default false -}}
+  {{- $releasesPage := .releasesPage | default "" -}}
+  {{- $releasesOnly := and (eq $level 0) (.releasesOnly | default false) -}}
   {{- $useMainMenu := and (eq $level 0) $toc -}}
   {{- $mainMenuEntries := slice -}}
 
@@ -176,7 +188,7 @@
   {{- end -}}
 
   {{- $useMainMenuEntries := and $useMainMenu (gt (len $mainMenuEntries) 0) -}}
-  {{- $hasItems := or (gt (len $items) 0) $useMainMenuEntries -}}
+  {{- $hasItems := or (gt (len $items) 0) $useMainMenuEntries $releasesOnly -}}
 
   {{- if $hasItems -}}
     {{- if eq $level 0 -}}
@@ -226,6 +238,7 @@
           {{- end -}}
         {{- end -}}
       {{- else -}}
+        {{- if not $releasesOnly -}}
         {{- range $items.ByWeight }}
           {{- if .Params.sidebar.separator -}}
             <li class="[word-break:break-word] hx:mt-5 hx:mb-2 hx:px-2 hx:py-1.5 hx:text-sm hx:font-semibold hx:text-gray-900 hx:first:mt-0 hx:dark:text-gray-100">
@@ -243,6 +256,19 @@
               {{- template "sidebar-tree" dict "context" . "page" $page "pageURL" $pageURL "level" (add $level 1) "toc" $toc -}}
             </li>
           {{- end -}}
+        {{- end -}}
+        {{- end -}}
+        {{- with $releasesPage -}}
+          {{- $active := eq (strings.TrimSuffix "/" $pageURL) (strings.TrimSuffix "/" .RelPermalink) -}}
+          {{- $shouldOpen := or (.Params.sidebar.open) (.IsAncestor $page) $active | default true }}
+          <li class="{{ if $shouldOpen }}open{{ end }}">
+            {{- $linkTitle := partial "utils/title" . -}}
+            {{- template "sidebar-item-link" dict "context" . "active" $active "open" $shouldOpen "title" $linkTitle "link" .RelPermalink -}}
+            {{- if and $toc $active (ne .Params.toc false) -}}
+              {{- template "sidebar-toc" dict "page" . -}}
+            {{- end -}}
+            {{- template "sidebar-tree" dict "context" . "page" $page "pageURL" $pageURL "level" (add $level 1) "toc" $toc -}}
+          </li>
         {{- end -}}
       {{- end -}}
     {{- else -}}
