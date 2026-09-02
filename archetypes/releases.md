@@ -18,15 +18,27 @@ The following sections document the changes this release brings to each service.
 
 ### Admin
 
+_No changes. Releasing in step with other components._
+
 ### Agent
+
+_No changes. Releasing in step with other components._
 
 ### BaaS
 
+_No changes. Releasing in step with other components._
+
 ### ISA-95
+
+_No changes. Releasing in step with other components._
 
 ### Typescript host service
 
+_No changes. Releasing in step with other components._
+
 ### Workflow
+
+_No changes. Releasing in step with other components._
 
 ## Compatibility
 
