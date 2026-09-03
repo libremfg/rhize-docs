@@ -239,7 +239,7 @@ For granular debugging, it also helps to trace the variable context as it passes
 To facilitate this, Rhize provides a debugging option that you can pass in multiple ways:
 - From an API call with the `debug:true` [argument]({{< relref "../gql/call-the-graphql-api/#request-body" >}}).
 - In the process variable context, by setting `__traceDebug: true`
-- In the [BPMN service configuration]({{< relref "../../reference/service-config/bpmn-configuration/" >}}) by setting `OpenTelemetry.defaultDebug` to `true`
+- In the workflow service configuration by setting `OpenTelemetry.defaultDebug` to `true`
 
 When the debugging variable is set, Tempo reports the entire variable context in the **Span Attributes** at the end of each node.
 
