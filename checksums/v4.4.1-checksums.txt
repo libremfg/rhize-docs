@@ -2,27 +2,26 @@ Admin
 registry.gitlab.com/libremfg/frontend/libre-admin-ui:v4.4.1
 sha256:25c16573e7eed81d40e004567fcdc756a0af2d6c27fc181f6923875cb70a49c4
 
-Agent:
-registry.gitlab.com/libremfg/libre-agent:v4.4.1
-sha256:63fc5efbab9812dca6d913b8bfdfc36d4f572210ebcbee5b59da40a233f0aa3b
-
-BaaS:
+BAAS
 registry.gitlab.com/libremfg/baas:v4.4.1
 sha256:698656b367a7a839f7aab995b5a04e1d4b8b8c847b69d00da2097d52c89ed7e9
 
-ISA-95:
-registry.gitlab.com/libremfg/isa95:v4.4.1
-sha256:a22d1007e753a15a91e095aa33964ab17cc5ee93f54ab22faca2c6eda6e03229
+Libre Agent
+registry.gitlab.com/libremfg/libre-agent:v4.4.1
+sha256:63fc5efbab9812dca6d913b8bfdfc36d4f572210ebcbee5b59da40a233f0aa3b
 
-Keycloak theme:
+Libre Keycloak Theme
 registry.gitlab.com/libremfg/frontend/libre-keycloak-theme:v4.4.1
 sha256:3e8e38bc80b1eae21b44fd79d736611bd0b51ef0347e9e6307c26427c0873ad7
 
-Typescript host:
+ISA-95
+registry.gitlab.com/libremfg/isa95:v4.4.1
+sha256:a22d1007e753a15a91e095aa33964ab17cc5ee93f54ab22faca2c6eda6e03229
+
+Typescript Host
 registry.gitlab.com/libremfg/typescript-host-service:v4.4.1
 sha256:50905390ec1ac073ea661d3ab1a04a4b94a26bfad4185d53d82d4d6559bbf5bf
 
-Workflow:
+Workflow
 registry.gitlab.com/libremfg/workflow:v4.4.1
 sha256:31439647bf5e9126f84fcd487cd511b402d1ac48853ea1bf7caf53bd85d1c470
-
