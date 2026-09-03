@@ -103,6 +103,8 @@ As of … - Published 2023-09-22
 - [Observability metrics](https://docs.rhize.com/latest/reference/observability-metrics/): Metrics from the Rhize microservices, collected by Prometheus. | Rhize uses Prometheus to monitor metrics from many of its microservices. For the Kubernetes cluster, …
 - [GraphQL types and filters](https://docs.rhize.com/latest/reference/gql-types/): A reference of the data types in the Rhize API and of the filters available for each type. | This page provides a reference of the data types enforced by the Rhize database schema, and of the …
 - [Glossary](https://docs.rhize.com/latest/reference/glossary/): A list of terms relevant to Rhize, or that are frequently used in manufacturing contexts. | The manufacturing industry has many specialized terms—and many abbreviations. This glossary is a … - Published 2023-09-12
+- [FAQ](https://docs.rhize.com/latest/reference/faq/): Frequently asked questions about Rhize | Frequently asked questions about Rhize.
+Is an MDH like a kind of middleware? It certainly does sit …
 
 #### Service configuration
 - [Admin UI configuration](https://docs.rhize.com/latest/reference/service-config/adminui-configuration/): List of Environmental Variables and their description | The Rhize Admin UI offers a graphical interface to configure master data and users.
@@ -1616,5 +1618,5 @@ A …
 
 
 ---
-Generated on 2026-09-03 18:19:17 UTC
+Generated on 2026-09-03 21:02:08 UTC
 Site: https://docs.rhize.com/
