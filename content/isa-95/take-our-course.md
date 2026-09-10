@@ -9,6 +9,7 @@ params:
      - "/images/og/isa-95-fundamentals.png"
 ---
 
+
 Our ISA-95 course teaches you how to apply ISA-95 through a series of hands-on modules.
 While our written guides provide a more conceptual view, the course is designed to get you learning by doing.
 
@@ -18,10 +19,14 @@ In it, you'll:
 - Model the processes for a simple greenfield plant at all granularities
 - Apply the resource and process modules to schedule production across the planning cycle, from ERP operating schedules to individual dispatched orders.
 
+----
 
 <div style="text-align: center;">
 {{< hextra/hero-button text="Take our ISA-95 course" link="https://university.rhize.com/certifications/" >}}
 </div>
+
+-----
+
 
 ## What to expect
 
@@ -41,7 +46,12 @@ Our goal is to give everything an example use case and business context. Incorpo
 
 At Rhize, we've spent a lot of time training new hires from a variety of disciplines. And what we've discovered time and again is that there is no better way to learn the standard than to practice it. The standard has all the theory you need, and our own docs have some approachable explainers, but there is no substitute for practice.
 
+----
+
 <div style="text-align: center;">
 {{< hextra/hero-button text="Take our ISA-95 course" link="https://university.rhize.com/certifications/" >}}
 </div>
+
+----
+
 
