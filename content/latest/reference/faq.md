@@ -36,3 +36,16 @@ In performing these functions, all existing systems are retained and connected t
 
 The MDH also supports application development, in which case existing applications may be augmented or replaced entirely.
 
+### What size/type of manufacturers use and MDH?
+
+While there is no 'typical' manufacturer using our MDH, most commonly they have either a significant number of sites, a lot of complexity, or both.
+
+Double or triple digit numbers of sites is not uncommon. Though some complex industries may have only a few sites, yet with critical importance around the data traceability across those sites that the digital threads within the MDH's knowledge graph create.
+
+### How much of ISA-95 is modelled in the MDH?
+
+While there are many manufacturing software products out there stating they are based on ISA-95, almost without fail, they model only the equipment hierarchy and nothing more.
+
+The Rhize MDH? When we say we model all of ISA-95. We mean it.
+
+Every entity. Every relationship. Out of the box. All of the resources and processes to model your entire manufacturing operations, spanning production, quality, inventory and maintenance.
