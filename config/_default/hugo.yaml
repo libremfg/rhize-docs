@@ -31,7 +31,7 @@ menu:
         icon: youtube
     - name: Discord
       weight: 30
-      url: "https://discord.gg/ZRpUBXmrkV"
+      url: "https://discord.com/invite/3d5Tu3aU8"
       params:
         icon: discord
     - name: LinkedIn
