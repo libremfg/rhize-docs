@@ -351,8 +351,6 @@ Install ISA-95 with these steps:
 
 ## Install Admin UI
 
-The Rhize agent bridges your plant processes with the Rhize data hub.
-
 The Admin UI is the graphical frontend to [handle events]({{< relref "/latest/how-to/bpmn" >}}) and [define work masters]({{< relref "/latest/how-to/model" >}}).
 
 > **Requirements:** The Admin UI requires the [Workflow](#workflow) services.
