@@ -368,7 +368,7 @@ After installing all other services, install the UI with these steps:
 If the install is successful, the UI is available on its
 port.
 
-### Agent
+## Install Agent
 
 The Rhize agent bridges your plant processes with the Rhize data hub.
 It collects data emitted from the plant and publishes it to the message broker.
