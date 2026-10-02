@@ -1,5 +1,5 @@
 ---
-title: 'Agent configuration'
+title: 'DRAFT Agent configuration'
 categories: ["reference"]
 description: Configuration parameters for the Rhize agent
 draft: true
@@ -9,27 +9,45 @@ aliases:
 weight: 900
 ---
 
-The Rhize agent collects data that is emitted in the manufacturing process and makes this data visible in the Rhize system.
+
+Configure the libre-agent service through its Helm chart.
+
+The chart's `rhizeAgentConfig`
+value holds the application configuration, and the other chart values control
+the deployment, including environment variables that override individual
+settings.
 
 ## Application configuration
 
 Everything in this section goes into the chart's `rhizeAgentConfig` value, which
-becomes libre-agent's entire configuration file. The chart ships a populated
-`rhizeAgentConfig`, and the Default column is what libre-agent runs with when a
-setting is left alone. Delete a key from that block and most settings are left
-with no value at all, but a handful fall back to a built-in value meant for a
-developer's own machine: `libreDataStoreGraphQl.serverUrl` becomes
-`http://localhost:8080/graphql`, `oidc.serverUrl` becomes `http://localhost:8090`,
-`nats.serverUrl` becomes `nats://localhost:4222`, and `datasource.id` becomes
-`server`. Individual keys can be overridden with the environment variable in the
-second column, supplied through the chart's `envVars` or `additionalSecrets`.
+becomes libre-agent's entire configuration file. 
 
-Most of the sections below will not apply to any one deployment. There are three
-ways to set libre-agent up, and which sections matter follows from which one
-this deployment is: a subscription, commands, or a bridge. A subscription and
-commands belong in the same deployment, and most deployments run both. A bridge
-is on its own, and cannot be run with subscription or command.
+The chart ships a populated
+`rhizeAgentConfig` with defaults.
+If you delete a key, most take no value.
+Some revert to a built-in value meant for a developer's own machine:
+-`libreDataStoreGraphQl.serverUrl` becomes`http://localhost:8080/graphql`
+- `oidc.serverUrl` becomes `http://localhost:8090`,
+- `nats.serverUrl` becomes `nats://localhost:4222`,
+- `datasource.id` becomes `server`.
 
+
+To override individual keys, use the environment variable supplied through the chart's `envVars` or `additionalSecrets`.
+
+Many of the following sections are required for only some deployments. 
+There are three ways to set libre-agent up:
+
+- **Run a subscription:** watches a source system and publishes every value change it
+   sees.
+    This source is configured by the `datasource.id` value on the BAAS data source record.
+- **Answer commands:** answers a caller's request to read a tag, write a value, or call
+    a method on a device.
+- **Bridge:** carries messages from one broker to another.
+
+A subscription and commands can run in the same deployment, and most deployments run both.
+However, a bridge cannot run with a subscription or command.
+
+<!--
 A subscription has libre-agent watch a source system and publish every value
 change it sees. The source is not chosen here — that choice is made on the data
 source record in BAAS named by `datasource.id`, and is one of an OPC UA server,
@@ -45,55 +63,59 @@ for each tag or topic it wrote. The answer goes back to the caller rather than t
 the `egress` handlers, so the command settings cover how the command API is
 reached and leave the subscription alone.
 
+
 A bridge carries messages from one broker to another, and everything it needs is
 in the `bridge` section.
+-->
 
 ### General settings
 
-| Name | Environment variable | Description | Default | Example value | Type | Required | Required when |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `datasource.id` | `RHIZE_AGENT_DATASOURCE_ID` | ID of the data source record in BAAS that drives this deployment. Everything libre-agent subscribes to and publishes is read from that record, so a value matching no record in BAAS leaves libre-agent running but idle. Also used to build the OPC UA session name. | `libre-agent` | `DS_0806` | string | Yes |  |
-| `libreDataStoreGraphQl.serverUrl` | `RHIZE_AGENT_LIBREDATASTOREGRAPHQL_SERVERURL` | GraphQL endpoint libre-agent fetches the data source record from. Give the full address of the BAAS alpha Service, including the port and the `/graphql` path, since the path is not added for you. Startup fails with "Unable to get initial config" if this endpoint is unreachable. | `http://baas-alpha:8080/graphql` | `http://baas-alpha:8080/graphql` | string | Yes |  |
-| `libreDataStoreGraphQl.caFile` | `RHIZE_AGENT_LIBREDATASTOREGRAPHQL_CAFILE` | Path to a PEM CA certificate libre-agent trusts in addition to the system roots when making outbound HTTPS calls, to BAAS and to the OIDC provider. Set it to the path the certificate is mounted at, which is `/certs/ca-cert.pem` for a certificate supplied through the chart's `caFile` value. A path that cannot be read or parsed stops the calls that need it. |  | `/certs/ca-cert.pem` | string | No |  |
-| `logging.level` | `RHIZE_AGENT_LOGGING_LEVEL` | Lowest severity that reaches the log, one of `trace`, `debug`, `info`, `warn`, `error`, `fatal`, `panic`, or `disabled`. Each level lets through itself and everything more severe, so `info` keeps informational messages, warnings, and errors but drops trace and debug, and `disabled` stops libre-agent logging at all. Setting `trace` or `debug` also logs the full configuration libre-agent is running with at startup, which is the quickest way to check that a value you set actually reached libre-agent. | `info` | `info` | string | No |  |
-| `logging.type` | `RHIZE_AGENT_LOGGING_TYPE` | Output format. `json` writes structured JSON to stderr, for collection by a log aggregator. `multi` writes human-readable lines to stderr and JSON to stdout at the same time. `console`, which the chart ships, writes human-readable lines to stderr. | `console` | `json` | string | No |  |
-| `openTelemetry.serverUrl` | `RHIZE_AGENT_OPENTELEMETRY_SERVERURL` | OTLP gRPC endpoint for trace export, given as host and port with no scheme. Failure to initialise is logged as a warning and libre-agent continues without tracing. | `otel:4317` | `tempo-distributor.monitoring.svc.cluster.local:4317` | string | No |  |
+| Value | Description |
+| --- | --- |
+| **`datasource.id`**<br>[Required] | <ul><li>ID of the data source record in BAAS that drives this deployment. Everything libre-agent subscribes to and publishes is read from that record, so a value matching no record in BAAS leaves libre-agent running but idle. Also used to build the OPC UA session name.</li><li>Environment variable: `RHIZE_AGENT_DATASOURCE_ID`</li><li>Default: `libre-agent`</li><li>Example: `DS_0806`</li><li>Type: string</li></ul> |
+| **`libreDataStoreGraphQl.serverUrl`**<br>[Required] | <ul><li>GraphQL endpoint libre-agent fetches the data source record from. Give the full address of the BAAS alpha Service, including the port and the `/graphql` path, since the path is not added for you. Startup fails with `Unable to get initial config`` if this endpoint is unreachable.</li><li>Environment variable: `RHIZE_AGENT_LIBREDATASTOREGRAPHQL_SERVERURL`</li><li>Default: `http://baas-alpha:8080/graphql`</li><li>Example: `http://baas-alpha:8080/graphql`</li><li>Type: string</li></ul> |
+| **`libreDataStoreGraphQl.caFile`** | <ul><li>Path to a PEM CA certificate libre-agent trusts in addition to the system roots when making outbound HTTPS calls to BAAS and to the OIDC provider. Set it to the path the certificate is mounted at, which is `/certs/ca-cert.pem` for a certificate supplied through the chart's `caFile` value. A path that cannot be read or parsed stops the calls that need it.</li><li>Environment variable: `RHIZE_AGENT_LIBREDATASTOREGRAPHQL_CAFILE`</li><li>Example: `/certs/ca-cert.pem`</li><li>Type: string</li></ul> |
+| **`logging.level`** | <ul><li>Lowest severity that reaches the log, one of `trace`, `debug`, `info`, `warn`, `error`, `fatal`, `panic`, or `disabled`. Each level lets through itself and everything more severe, so `info` keeps informational messages, warnings, and errors but drops trace and debug, and `disabled` stops libre-agent logging at all. Setting `trace` or `debug` also logs the full configuration libre-agent is running with at startup, which is the quickest way to check that a value you set actually reached libre-agent.</li><li>Environment variable: `RHIZE_AGENT_LOGGING_LEVEL`</li><li>Default: `info`</li><li>Example: `info`</li><li>Type: string</li></ul> |
+| **`logging.type`** | <ul><li>Output format. `json` writes structured JSON to stderr, for collection by a log aggregator. `multi` writes human-readable lines to stderr and JSON to stdout at the same time. `console` writes human-readable lines to stderr.</li><li>Environment variable: `RHIZE_AGENT_LOGGING_TYPE`</li><li>Default: `console`</li><li>Example: `json`</li><li>Type: string</li></ul> |
+| **`openTelemetry.serverUrl`** | <ul><li>OTLP gRPC endpoint for trace export, given as host and port with no scheme. Failure to initialise is logged as a warning and libre-agent continues without tracing.</li><li>Environment variable: `RHIZE_AGENT_OPENTELEMETRY_SERVERURL`</li><li>Default: `otel:4317`</li><li>Example: `tempo-distributor.monitoring.svc.cluster.local:4317`</li><li>Type: string</li></ul> |
 
 ### `oidc`
 
-| Name | Environment variable | Description | Default | Example value | Type | Required | Required when |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `oidc.serverUrl` | `RHIZE_AGENT_OIDC_SERVERURL` | Base URL of the OIDC provider. Endpoints are discovered from `<serverUrl>/.well-known/openid-configuration`. | `http://keycloak:80` | `http://keycloak:80` | string | Yes |  |
-| `oidc.realm` | `RHIZE_AGENT_OIDC_REALM` | Keycloak realm. | `libre` | `libre` | string | Yes | `oidc.enableGenericOidc` is `false` |
-| `oidc.clientId` | `RHIZE_AGENT_OIDC_CLIENTID` | Client ID. Tokens are obtained with the client credentials grant, so the client's service account needs the required roles in the provider. | `libreAgent` | `libreAgent` | string | Yes |  |
-| `oidc.clientSecret` | `RHIZE_AGENT_OIDC_CLIENTSECRET` | Client secret paired with `oidc.clientId`. Supply from a Kubernetes Secret. |  | `8f3b6c21-4d5e-4a7b-9c0d-1e2f3a4b5c6d` | string | Yes |  |
-| `oidc.enableGenericOidc` | `RHIZE_AGENT_OIDC_ENABLEGENERICOIDC` | Switches to a generic OIDC provider such as Okta rather than Keycloak-specific handling. | `false` | `false` | boolean | No |  |
-| `oidc.customAudienceKey` | `RHIZE_AGENT_OIDC_CUSTOMAUDIENCEKEY` | Claim to read the audience from when using a non-Keycloak provider. |  | `rhize.com/aud` | string | No |  |
-| `oidc.credentialsScope` | `RHIZE_AGENT_OIDC_CREDENTIALSSCOPE` | Optional scope requested during the client credentials grant. |  | `openid` | string | No |  |
+| Value | Description |
+| --- | --- |
+| **`oidc.serverUrl`**<br>[Required] | <ul><li>Base URL of the OIDC provider. Endpoints are discovered from `<SERVER_URL>/.well-known/openid-configuration`.</li><li>Environment variable: `RHIZE_AGENT_OIDC_SERVERURL`</li><li>Default: `http://keycloak:80`</li><li>Example: `http://keycloak:80`</li><li>Type: string</li></ul> |
+| **`oidc.realm`**<br>[Required when `oidc.enableGenericOidc` is `false`] | <ul><li>Keycloak realm.</li><li>Environment variable: `RHIZE_AGENT_OIDC_REALM`</li><li>Default: `libre`</li><li>Example: `libre`</li><li>Type: string</li></ul> |
+| **`oidc.clientId`**<br>[Required] | <ul><li>Client ID. Tokens are obtained with the client credentials grant, so the client's service account needs the required roles in the provider.</li><li>Environment variable: `RHIZE_AGENT_OIDC_CLIENTID`</li><li>Default: `libreAgent`</li><li>Example: `libreAgent`</li><li>Type: string</li></ul> |
+| **`oidc.clientSecret`**<br>[Required] | <ul><li>Client secret paired with `oidc.clientId`. Supply from a Kubernetes Secret.</li><li>Environment variable: `RHIZE_AGENT_OIDC_CLIENTSECRET`</li><li>Example: `8f3b6c21-4d5e-4a7b-9c0d-1e2f3a4b5c6d`</li><li>Type: string</li></ul> |
+| **`oidc.enableGenericOidc`** | <ul><li>Switches to a generic OIDC provider, such as Okta, rather than Keycloak-specific handling.</li><li>Environment variable: `RHIZE_AGENT_OIDC_ENABLEGENERICOIDC`</li><li>Default: `false`</li><li>Example: `false`</li><li>Type: boolean</li></ul> |
+| **`oidc.customAudienceKey`** | <ul><li>Claim to read the audience from when using a non-Keycloak provider.</li><li>Environment variable: `RHIZE_AGENT_OIDC_CUSTOMAUDIENCEKEY`</li><li>Example: `rhize.com/aud`</li><li>Type: string</li></ul> |
+| **`oidc.credentialsScope`** | <ul><li>Optional scope requested during the client credentials grant.</li><li>Environment variable: `RHIZE_AGENT_OIDC_CREDENTIALSSCOPE`</li><li>Example: `openid`</li><li>Type: string</li></ul> |
 
 ### Commands
 
-Alongside the subscription, libre-agent answers individual commands: read a tag
-now, write a value to a tag or topic on the data source, or call a method on a
-device. When `restate.enabled` is on, which is the chart's default, the command
+Alongside the subscription, libre-agent answers individual commands:
+- Read a tag now.
+- Write a value to a tag or topic on the data source.
+- Call a method on a device.
+
+When `restate.enabled` is on, which is the chart's default, the command
 API is served through Restate, and these settings describe how it is reached.
 An answer returns to the caller the same way it came rather than through an
 `egress` handler.
 
-Which commands can be answered depends on the type of data source. An OPC UA
-data source answers all three, and libre-agent will not start without
-`restate.enabled`, stopping with "At least one of NATS or Kafka or Restate must
-be enabled for OPCUA data source". An MQTT data source answers writes only, and
-needs `restate.enabled` for them: turned off, libre-agent runs but accepts no
-commands at all. A Kafka, Azure Service Bus, or Azure Event Hubs data source
-answers no commands, so turn `restate.enabled` off there; left on, libre-agent
+Which commands can be answered depends on the type of data source.
+- An OPC UA data source answers all three. The libre-agent will not start without
+`restate.enabled`, stopping with `At least one of NATS or Kafka or Restate must be enabled for OPCUA data source`.
+- An MQTT data source answers writes only, and requires `restate.enabled` to be `true`: if `false`, libre-agent runs but accepts no commands at all.
+- A Kafka, Azure Service Bus, or Azure Event Hubs data source
+answers no commands. These need `restate.enabled` to be `false`. If `true`, libre-agent
 still tries to register with Restate at startup and exits if it cannot.
 
-| Name | Environment variable | Description | Default | Example value | Type | Required | Required when |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `restate.enabled` | `RHIZE_AGENT_RESTATE_ENABLED` | Makes libre-agent serve read, write, and method call commands over HTTP on the port the chart's `service.port` sets and register itself with Restate at startup, after which a caller reaches libre-agent by invoking it through Restate rather than by sending to it directly. Registration is a single attempt: libre-agent exits if it fails, so turn this off for a data source that answers no commands. | `true` | `true` | boolean | Yes | The data source is Kafka, Azure Service Bus, or Azure Event Hubs |
-| `restate.adminUrl` | `RHIZE_AGENT_RESTATE_ADMINURL` | Restate admin API libre-agent registers itself with. | `http://restate:9070` | `http://restate:9070` | string | Yes | `restate.enabled` is `true` |
-| `restate.serviceName` | `RHIZE_AGENT_RESTATE_SERVICENAME` | Hostname Restate calls back on. Derived from the pod hostname, which is the right answer in Kubernetes. | the Deployment name | `libre-agent` | string | No |  |
+| Value | Description |
+| --- | --- |
+| **`restate.enabled`**<br>[Required when the data source is Kafka, Azure Service Bus, or Azure Event Hubs] | <ul><li>Makes libre-agent serve read, write, and method call commands over HTTP on the port the chart's `service.port` sets and register itself with Restate at startup, after which a caller reaches libre-agent by invoking it through Restate rather than by sending to it directly. Registration is a single attempt: libre-agent exits if it fails, so turn this off for a data source that answers no commands.</li><li>Environment variable: `RHIZE_AGENT_RESTATE_ENABLED`</li><li>Default: `true`</li><li>Example: `true`</li><li>Type: boolean</li></ul> |
+| **`restate.adminUrl`**<br>[Required when `restate.enabled` is `true`] | <ul><li>Restate admin API libre-agent registers itself with.</li><li>Environment variable: `RHIZE_AGENT_RESTATE_ADMINURL`</li><li>Default: `http://restate:9070`</li><li>Example: `http://restate:9070`</li><li>Type: string</li></ul> |
+| **`restate.serviceName`** | <ul><li>Hostname Restate calls back on. Derived from the pod hostname. </li><li>Environment variable: `RHIZE_AGENT_RESTATE_SERVICENAME`</li><li>Default: the Deployment name</li><li>Example: `libre-agent`</li><li>Type: string</li></ul> |
 
 ### Data sources
 
@@ -106,41 +128,41 @@ applies only to an OPC UA server.
 
 How libre-agent connects to the Kafka broker supplying the data.
 
-| Name | Environment variable | Description | Default | Example value | Type | Required | Required when |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `kafka.bootstrapServerUrl` | `RHIZE_AGENT_KAFKA_BOOTSTRAPSERVERURL` | Kafka bootstrap server. |  | `redpanda:9092` | string | Yes | The data source is Kafka |
-| `kafka.groupId` | `RHIZE_AGENT_KAFKA_GROUPID` | Name of the Kafka consumer group libre-agent reads under. Every replica reads under this one group, so the topics are split between them and each message is read once rather than once per replica. The group also remembers how far it has read, so a restart carries on from there, and a group id that has not been used before starts at the oldest message the topic still holds. |  | `libre-agent` | string | Yes | The data source is Kafka |
-| `kafka.workerThreads` | `RHIZE_AGENT_KAFKA_WORKERTHREADS` | Number of worker threads reading from the broker in parallel. | `1` | `1` | integer | No |  |
-| `kafka.sessionTimeout` | `RHIZE_AGENT_KAFKA_SESSIONTIMEOUT` | Consumer session timeout in milliseconds. | `60000` | `30000` | integer | No |  |
-| `kafka.maxSendRetries` | `RHIZE_AGENT_KAFKA_MAXSENDRETRIES` | Retries for a failed send. | `3` | `3` | integer | No |  |
+| Value | Description |
+| --- | --- |
+| **`kafka.bootstrapServerUrl`**<br>[Required when the data source is Kafka] | <ul><li>Kafka bootstrap server.</li><li>Environment variable: `RHIZE_AGENT_KAFKA_BOOTSTRAPSERVERURL`</li><li>Example: `redpanda:9092`</li><li>Type: string</li></ul> |
+| **`kafka.groupId`**<br>[Required when the data source is Kafka] | <ul><li>Name of the Kafka consumer group libre-agent reads under. Every replica reads under this group, so the topics are split between them and each message is read once rather than once per replica. The group also remembers how far it has read, so a restart continues from the last read. A group ID that has not been used before starts at the oldest message the topic still holds.</li><li>Environment variable: `RHIZE_AGENT_KAFKA_GROUPID`</li><li>Example: `libre-agent`</li><li>Type: string</li></ul> |
+| **`kafka.workerThreads`** | <ul><li>Number of worker threads reading from the broker in parallel.</li><li>Environment variable: `RHIZE_AGENT_KAFKA_WORKERTHREADS`</li><li>Default: `1`</li><li>Example: `1`</li><li>Type: integer</li></ul> |
+| **`kafka.sessionTimeout`** | <ul><li>Consumer session timeout in milliseconds.</li><li>Environment variable: `RHIZE_AGENT_KAFKA_SESSIONTIMEOUT`</li><li>Default: `60000`</li><li>Example: `30000`</li><li>Type: integer</li></ul> |
+| **`kafka.maxSendRetries`** | <ul><li>Retries for a failed send.</li><li>Environment variable: `RHIZE_AGENT_KAFKA_MAXSENDRETRIES`</li><li>Default: `3`</li><li>Example: `3`</li><li>Type: integer</li></ul> |
 
 #### `opcUa`
 
-How libre-agent connects to the OPC UA server supplying the data. Only relevant
-when the data source is an OPC UA server.
+How libre-agent connects to the OPC UA server supplying the data. Relevant
+only when the data source is an OPC UA server.
 
-| Name | Environment variable | Description | Default | Example value | Type | Required | Required when |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `opcUa.serverUrl` | `RHIZE_AGENT_OPCUA_SERVERURL` | OPC UA endpoint to connect to. | `opc.tcp://opcua-server` | `opc.tcp://opcua-server:4840` | string | Yes | The data source is OPC UA |
-| `opcUa.discoveryUrl` | `RHIZE_AGENT_OPCUA_DISCOVERYURL` | OPC UA discovery endpoint, usually the same as `serverUrl`. | `opc.tcp://opcua-server` | `opc.tcp://opcua-server:4840` | string | Yes | The data source is OPC UA |
-| `opcUa.authentication` | `RHIZE_AGENT_OPCUA_AUTHENTICATION` | How libre-agent identifies itself to the server. `Anonymous` presents no identity and ignores `opcUa.username` and `opcUa.password`. `UserName` signs in with that pair. `Certificate` presents the client certificate from `opcUa.certFile` and proves ownership with `opcUa.keyFile`. The server has to offer the chosen method on the endpoint it selects. | `Anonymous` | `UserName` | string | No |  |
-| `opcUa.username` | `RHIZE_AGENT_OPCUA_USERNAME` | OPC UA username. |  | `opcuauser` | string | Yes | `opcUa.authentication` is `UserName` |
-| `opcUa.password` | `RHIZE_AGENT_OPCUA_PASSWORD` | OPC UA password. Supply from a Kubernetes Secret. |  | `ExamplePassword123` | string | Yes | `opcUa.authentication` is `UserName` |
-| `opcUa.mode` | `RHIZE_AGENT_OPCUA_MODE` | What protection is applied to each message. `None` sends them unsigned and in the clear. `Sign` signs them, so tampering is detectable while the contents stay readable on the wire. `SignAndEncrypt` signs and encrypts them. `Auto` takes the strongest mode the server advertises. Any other value logs "Invalid security Mode", matches no endpoint, and leaves libre-agent unable to connect. | `Auto` | `SignAndEncrypt` | string | No |  |
-| `opcUa.policy` | `RHIZE_AGENT_OPCUA_POLICY` | Cryptographic suite used for the signing and encryption `opcUa.mode` asks for, from the list under this table. Setting either this or `opcUa.mode` to `None` forces both to `None`, so security is off unless both carry a real value. Any other value stops libre-agent with "Invalid security Policy". | `None` | `Basic256Sha256` | string | No |  |
-| `opcUa.applicationUri` | `RHIZE_AGENT_OPCUA_APPLICATIONURI` | Application URI libre-agent presents. Must match the URI in the client certificate when a security policy is in use. | `urn:opcua-server.server.application` | `urn:opcua-server.server.application` | string | No |  |
-| `opcUa.certFile` / `opcUa.keyFile` | `RHIZE_AGENT_OPCUA_CERTFILE` / `RHIZE_AGENT_OPCUA_KEYFILE` | Paths inside the container to the client certificate and its private key, which has to be RSA. Both have to be set for either to be read. Mount the pair with `extraVolumes` and `extraVolumeMounts`, and register the certificate with the OPC UA server as a trusted client. A pair that fails to load logs "Failed to load certificate" and the connection goes on without a certificate, which the server then refuses. |  | `/certs/opcua-client.pem` / `/certs/opcua-client.key` | string | Yes | `opcUa.mode` is `Sign` or `SignAndEncrypt`, `opcUa.authentication` is `Certificate`, or `opcUa.genCert` is `true` |
-| `opcUa.genCert` | `RHIZE_AGENT_OPCUA_GENCERT` | Generates a self-signed 2048-bit certificate for `opcUa.applicationUri` at startup and writes it to `opcUa.certFile` and `opcUa.keyFile`, so both need to name writable paths; left empty, the certificate is written to `cert.pem` and `key.pem` and then not found, which logs "Failed to load certificate". A new certificate is generated on every start, even when the files already exist, so a server that trusted the last one rejects the next. | `false` | `false` | boolean | No |  |
-| `opcUa.subscription.publishingInterval` | `RHIZE_AGENT_OPCUA_SUBSCRIPTION_PUBLISHINGINTERVAL` | How often, in milliseconds, the server publishes notifications. | `1000` | `1000` | integer | No |  |
-| `opcUa.subscription.lifetimeCount` | `RHIZE_AGENT_OPCUA_SUBSCRIPTION_LIFETIMECOUNT` | Publishing cycles the server keeps the subscription alive without a publish request. Should be at least three times `maxKeepAliveCount`. | `10000` | `10000` | integer | No |  |
-| `opcUa.subscription.maxKeepAliveCount` | `RHIZE_AGENT_OPCUA_SUBSCRIPTION_MAXKEEPALIVECOUNT` | Publishing cycles without data before the server sends a keep-alive. | `3000` | `3000` | integer | No |  |
-| `opcUa.subscription.maxNotificationsPerPublish` | `RHIZE_AGENT_OPCUA_SUBSCRIPTION_MAXNOTIFICATIONSPERPUBLISH` | Cap on notifications in a single publish response. | `10000` | `10000` | integer | No |  |
-| `opcUa.subscription.priority` | `RHIZE_AGENT_OPCUA_SUBSCRIPTION_PRIORITY` | Relative priority of this subscription on the server. | `0` | `0` | integer | No |  |
-| `opcUa.monitoredItem.samplingInterval` | `RHIZE_AGENT_OPCUA_MONITOREDITEM_SAMPLINGINTERVAL` | How often, in milliseconds, the server samples each item. `0` means as fast as the server allows. | `0` | `0` | integer | No |  |
-| `opcUa.monitoredItem.queueSize` | `RHIZE_AGENT_OPCUA_MONITOREDITEM_QUEUESIZE` | Server-side queue depth per monitored item between publications. Raise the queue size if samples are being lost between publishes. | `100` | `100` | integer | No |  |
-| `opcUa.monitoredItem.discardOldest` | `RHIZE_AGENT_OPCUA_MONITOREDITEM_DISCARDOLDEST` | Whether a full queue discards the oldest sample rather than the newest. | `true` | `true` | boolean | No |  |
+| Value | Description |
+| --- | --- |
+| **`opcUa.serverUrl`**<br>[Required when the data source is OPC UA] | <ul><li>OPC UA endpoint to connect to.</li><li>Environment variable: `RHIZE_AGENT_OPCUA_SERVERURL`</li><li>Default: `opc.tcp://opcua-server`</li><li>Example: `opc.tcp://opcua-server:4840`</li><li>Type: string</li></ul> |
+| **`opcUa.discoveryUrl`**<br>[Required when the data source is OPC UA] | <ul><li>OPC UA discovery endpoint, usually the same as `serverUrl`.</li><li>Environment variable: `RHIZE_AGENT_OPCUA_DISCOVERYURL`</li><li>Default: `opc.tcp://opcua-server`</li><li>Example: `opc.tcp://opcua-server:4840`</li><li>Type: string</li></ul> |
+| **`opcUa.authentication`** | <ul><li>How libre-agent identifies itself to the server. `Anonymous` presents no identity and ignores `opcUa.username` and `opcUa.password`. `UserName` signs in with that pair. `Certificate` presents the client certificate from `opcUa.certFile` and proves ownership with `opcUa.keyFile`. The server has to offer the chosen method on the endpoint it selects.</li><li>Environment variable: `RHIZE_AGENT_OPCUA_AUTHENTICATION`</li><li>Default: `Anonymous`</li><li>Example: `UserName`</li><li>Type: string</li></ul> |
+| **`opcUa.username`**<br>[Required when `opcUa.authentication` is `UserName`] | <ul><li>OPC UA username.</li><li>Environment variable: `RHIZE_AGENT_OPCUA_USERNAME`</li><li>Example: `opcuauser`</li><li>Type: string</li></ul> |
+| **`opcUa.password`**<br>[Required when `opcUa.authentication` is `UserName`] | <ul><li>OPC UA password. Supply from a Kubernetes Secret.</li><li>Environment variable: `RHIZE_AGENT_OPCUA_PASSWORD`</li><li>Example: `ExamplePassword123`</li><li>Type: string</li></ul> |
+| **`opcUa.mode`** | <ul><li>What protection is applied to each message. `None` sends them unsigned and in the clear. `Sign` signs them, so tampering is detectable while the contents stay readable on the wire. `SignAndEncrypt` signs and encrypts them. `Auto` takes the strongest mode the server advertises. Any other value logs "Invalid security Mode", matches no endpoint, and leaves libre-agent unable to connect.</li><li>Environment variable: `RHIZE_AGENT_OPCUA_MODE`</li><li>Default: `Auto`</li><li>Example: `SignAndEncrypt`</li><li>Type: string</li></ul> |
+| **`opcUa.policy`** | <ul><li>Cryptographic suite used for the signing and encryption `opcUa.mode` asks for, from the list under this table. Setting either this or `opcUa.mode` to `None` forces both to `None`, so security is off unless both carry a real value. Any other value stops libre-agent with "Invalid security Policy".</li><li>Environment variable: `RHIZE_AGENT_OPCUA_POLICY`</li><li>Default: `None`</li><li>Example: `Basic256Sha256`</li><li>Type: string</li></ul> |
+| **`opcUa.applicationUri`** | <ul><li>Application URI libre-agent presents. Must match the URI in the client certificate when a security policy is in use.</li><li>Environment variable: `RHIZE_AGENT_OPCUA_APPLICATIONURI`</li><li>Default: `urn:opcua-server.server.application`</li><li>Example: `urn:opcua-server.server.application`</li><li>Type: string</li></ul> |
+| **`opcUa.certFile`** / **`opcUa.keyFile`**<br>[Required when `opcUa.mode` is `Sign` or `SignAndEncrypt`, `opcUa.authentication` is `Certificate`, or `opcUa.genCert` is `true`] | <ul><li>Paths inside the container to the client certificate and its private key, which has to be RSA. Both have to be set for either to be read. Mount the pair with `extraVolumes` and `extraVolumeMounts`, and register the certificate with the OPC UA server as a trusted client. A pair that fails to load logs `Failed to load certificate` and the connection goes on without a certificate, which the server then refuses.</li><li>Environment variable: `RHIZE_AGENT_OPCUA_CERTFILE` / `RHIZE_AGENT_OPCUA_KEYFILE`</li><li>Example: `/certs/opcua-client.pem` / `/certs/opcua-client.key`</li><li>Type: string</li></ul> |
+| **`opcUa.genCert`** | <ul><li>Generates a self-signed 2048-bit certificate for `opcUa.applicationUri` at startup and writes it to `opcUa.certFile` and `opcUa.keyFile`, so both need to name writable paths; left empty, the certificate is written to `cert.pem` and `key.pem` and then not found, which logs `Failed to load certificate`. A new certificate is generated on every start, even when the files already exist, so a server that trusted the last one rejects the next.</li><li>Environment variable: `RHIZE_AGENT_OPCUA_GENCERT`</li><li>Default: `false`</li><li>Example: `false`</li><li>Type: boolean</li></ul> |
+| **`opcUa.subscription.publishingInterval`** | <ul><li>How often, in milliseconds, the server publishes notifications.</li><li>Environment variable: `RHIZE_AGENT_OPCUA_SUBSCRIPTION_PUBLISHINGINTERVAL`</li><li>Default: `1000`</li><li>Example: `1000`</li><li>Type: integer</li></ul> |
+| **`opcUa.subscription.lifetimeCount`** | <ul><li>Publishing cycles the server keeps the subscription alive without a publish request. Should be at least three times `maxKeepAliveCount`.</li><li>Environment variable: `RHIZE_AGENT_OPCUA_SUBSCRIPTION_LIFETIMECOUNT`</li><li>Default: `10000`</li><li>Example: `10000`</li><li>Type: integer</li></ul> |
+| **`opcUa.subscription.maxKeepAliveCount`** | <ul><li>Publishing cycles without data before the server sends a keep-alive.</li><li>Environment variable: `RHIZE_AGENT_OPCUA_SUBSCRIPTION_MAXKEEPALIVECOUNT`</li><li>Default: `3000`</li><li>Example: `3000`</li><li>Type: integer</li></ul> |
+| **`opcUa.subscription.maxNotificationsPerPublish`** | <ul><li>The maximum notifications in a single publish response.</li><li>Environment variable: `RHIZE_AGENT_OPCUA_SUBSCRIPTION_MAXNOTIFICATIONSPERPUBLISH`</li><li>Default: `10000`</li><li>Example: `10000`</li><li>Type: integer</li></ul> |
+| **`opcUa.subscription.priority`** | <ul><li>Relative priority of this subscription on the server.</li><li>Environment variable: `RHIZE_AGENT_OPCUA_SUBSCRIPTION_PRIORITY`</li><li>Default: `0`</li><li>Example: `0`</li><li>Type: integer</li></ul> |
+| **`opcUa.monitoredItem.samplingInterval`** | <ul><li>How often, in milliseconds, the server samples each item. `0` means as fast as the server allows.</li><li>Environment variable: `RHIZE_AGENT_OPCUA_MONITOREDITEM_SAMPLINGINTERVAL`</li><li>Default: `0`</li><li>Example: `0`</li><li>Type: integer</li></ul> |
+| **`opcUa.monitoredItem.queueSize`** | <ul><li>Server-side queue depth per monitored item between publications. If samples are being lost between publishes, raise the queue size.</li><li>Environment variable: `RHIZE_AGENT_OPCUA_MONITOREDITEM_QUEUESIZE`</li><li>Default: `100`</li><li>Example: `100`</li><li>Type: integer</li></ul> |
+| **`opcUa.monitoredItem.discardOldest`** | <ul><li>Whether a full queue discards the oldest sample rather than the newest.</li><li>Environment variable: `RHIZE_AGENT_OPCUA_MONITOREDITEM_DISCARDOLDEST`</li><li>Default: `true`</li><li>Example: `true`</li><li>Type: boolean</li></ul> |
 
-The security policies `opcUa.policy` accepts:
+The `opcUa.policy` value accepts the following security policies:
 
 | Value | Description |
 | --- | --- |
@@ -158,20 +180,21 @@ Watches the tags libre-agent has subscribed to and renews the subscription for a
 that stop reporting or begin returning errors. Only relevant when the data
 source is an OPC UA server.
 
-| Name | Environment variable | Description | Default | Example value | Type | Required | Required when |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `health.pollInterval` | `RHIZE_AGENT_HEALTH_POLLINTERVAL` | How often, in milliseconds, every subscribed tag is checked. `0` turns the watcher off, so nothing is renewed. Anything under 200 is raised to 200, which is logged as "Poll interval is too low. Clamping." | `1000` | `1000` | integer | No |  |
-| `health.subscriptionTimeout` | `RHIZE_AGENT_HEALTH_SUBSCRIPTIONTIMEOUT` | How long, in milliseconds, a tag may report a bad status before its subscription is renewed. Anything over 24 hours is lowered to 24 hours, logged as "Node timeout is too high. Clamping." | `60000` | `60000` | integer | No |  |
-| `health.subscriptionMaxCount` | `RHIZE_AGENT_HEALTH_SUBSCRIPTIONMAXCOUNT` | How many OPC UA subscriptions libre-agent opens before it stops creating more and shares the existing ones between tags. Raise it where a server limits how many monitored items one subscription may carry. | `5` | `5` | integer | No |  |
+| Value | Description |
+| --- | --- |
+| **`health.pollInterval`** | <ul><li>How often, in milliseconds, every subscribed tag is checked. `0` turns the watcher off, so nothing is renewed. Anything under 200 is raised to 200, which is logged as `Poll interval is too low. Clamping.`</li><li>Environment variable: `RHIZE_AGENT_HEALTH_POLLINTERVAL`</li><li>Default: `1000`</li><li>Example: `1000`</li><li>Type: integer</li></ul> |
+| **`health.subscriptionTimeout`** | <ul><li>How long, in milliseconds, a tag may report a bad status before its subscription is renewed. Anything over 24 hours is lowered to 24 hours, logged as `Node timeout is too high. Clamping.`</li><li>Environment variable: `RHIZE_AGENT_HEALTH_SUBSCRIPTIONTIMEOUT`</li><li>Default: `60000`</li><li>Example: `60000`</li><li>Type: integer</li></ul> |
+| **`health.subscriptionMaxCount`** | <ul><li>How many OPC UA subscriptions libre-agent opens before it stops creating more and shares the existing ones between tags. Raise it where a server limits how many monitored items one subscription may carry.</li><li>Environment variable: `RHIZE_AGENT_HEALTH_SUBSCRIPTIONMAXCOUNT`</li><li>Default: `5`</li><li>Example: `5`</li><li>Type: integer</li></ul> |
 
-Health is reported in two places. The log carries a line per tag as it is
-renewed, at warn level, reading "Node status is not OK. Last seen 1m2s. Renewing
-subscription." with the tag in a `node` field and the OPC UA status alongside,
+Health is reported in two places:
+- The log carries a line per tag as it is
+renewed, at warn level, reading `Node status is not OK. Last seen 1m2s. Renewing
+subscription.` with the tag in a `node` field and the OPC UA status alongside,
 so a tag renewing over and over is a tag worth investigating at the server. Set
 `logging.level` to `debug` to also see the intervals in force at startup, or to
 `trace` to see every health update as it lands.
 
-Counts come from a Prometheus endpoint each pod serves on port 6061 at
+- Counts come from a Prometheus endpoint each pod serves on port 6061 at
 `/metrics`. Scrape it at the pod's own address, since the Service carries only
 `service.port`. Five values are published:
 `opcua_handles_active`, the number of monitored items currently subscribed;
@@ -186,18 +209,18 @@ is being sent.
 How libre-agent connects to the MQTT broker supplying the data. Only relevant
 when the data source is MQTT.
 
-| Name | Environment variable | Description | Default | Example value | Type | Required | Required when |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `mqtt.serverUrl` | `RHIZE_AGENT_MQTT_SERVERURL` | Broker URL. | `mqtt://mqtt:1883` | `mqtt://mqtt-broker:1883` | string | Yes | The data source is MQTT |
-| `mqtt.version` | `RHIZE_AGENT_MQTT_VERSION` | Which MQTT client libre-agent connects with. `3.1.1` selects the MQTT 3.1.1 client, for brokers that do not speak MQTT 5. `5` selects the MQTT 5 client. | `5` | `5` | string | No |  |
-| `mqtt.clientId` | `RHIZE_AGENT_MQTT_CLIENTID` | MQTT client id. Must be unique per broker connection; two agents sharing one will disconnect each other. | `rhize-agent` | `rhize-agent` | string | No |  |
-| `mqtt.username` | `RHIZE_AGENT_MQTT_USERNAME` | Broker username. Empty means anonymous. |  | `system` | string | No |  |
-| `mqtt.password` | `RHIZE_AGENT_MQTT_PASSWORD` | Broker password. Supply from a Kubernetes Secret. |  | `ExamplePassword123` | string | No |  |
-| `mqtt.qos` | `RHIZE_AGENT_MQTT_QOS` | How hard the broker works to deliver each message, chosen from the list under this table. One value covers both directions: the topics libre-agent subscribes to, and the values it publishes when answering a write. Anything outside `0`, `1`, and `2` fails the connection with "mqtt.qos must be 0, 1, or 2". | `0` | `1` | integer | No |  |
-| `mqtt.decomposeJson` | `RHIZE_AGENT_MQTT_DECOMPOSEJSON` | On, each field in a JSON payload is published as a reading in its own right. Off, the whole payload goes out as one value, leaving whatever consumes it to pull the readings apart. Turn it on for a device that reports several readings in one message. Fields whose name starts with `_` are left out. | `false` | `false` | boolean | No |  |
-| `mqtt.timestampField` | `RHIZE_AGENT_MQTT_TIMESTAMPFIELD` | Field in the payload holding the sample timestamp. | `timestamp` | `timestamp` | string | No |  |
-| `mqtt.timestampFormat` | `RHIZE_AGENT_MQTT_TIMESTAMPFORMAT` | Valid formats are : `RFC3339`, `RFC3339Nano`, `RFC822`, `RFC822Z`, `RFC850`, `RFC1123`, `RFC1123Z`, `ANSIC`, `UnixDate`, `RubyDate`, `Kitchen`, `Stamp`, `StampMilli`, `StampMicro`, `StampNano`, `UnixSeconds`, `UnixMilli`, `UnixMicro`, or `UnixNano`. An unset or unrecognised format logs "time format not recognized" and the value is stamped with the time libre-agent received it instead. | `RFC3339Nano` | `RFC3339Nano` | string | No |  |
-| `mqtt.requestTimeout` | `RHIZE_AGENT_MQTT_REQUESTTIMEOUT` | Request timeout in seconds. | `5` | `5` | integer | No |  |
+| Value | Description |
+| --- | --- |
+| **`mqtt.serverUrl`**<br>[Required when the data source is MQTT] | <ul><li>Broker URL.</li><li>Environment variable: `RHIZE_AGENT_MQTT_SERVERURL`</li><li>Default: `mqtt://mqtt:1883`</li><li>Example: `mqtt://mqtt-broker:1883`</li><li>Type: string</li></ul> |
+| **`mqtt.version`** | <ul><li>Which MQTT client libre-agent connects with. `3.1.1` selects the MQTT 3.1.1 client, for brokers that do not speak MQTT 5. `5` selects the MQTT 5 client.</li><li>Environment variable: `RHIZE_AGENT_MQTT_VERSION`</li><li>Default: `5`</li><li>Example: `5`</li><li>Type: string</li></ul> |
+| **`mqtt.clientId`** | <ul><li>MQTT client ID. Must be unique per broker connection; two agents sharing one will disconnect each other.</li><li>Environment variable: `RHIZE_AGENT_MQTT_CLIENTID`</li><li>Default: `rhize-agent`</li><li>Example: `rhize-agent`</li><li>Type: string</li></ul> |
+| **`mqtt.username`** | <ul><li>Broker username. Empty means anonymous.</li><li>Environment variable: `RHIZE_AGENT_MQTT_USERNAME`</li><li>Example: `system`</li><li>Type: string</li></ul> |
+| **`mqtt.password`** | <ul><li>Broker password. Supply from a Kubernetes Secret.</li><li>Environment variable: `RHIZE_AGENT_MQTT_PASSWORD`</li><li>Example: `ExamplePassword123`</li><li>Type: string</li></ul> |
+| **`mqtt.qos`** | <ul><li>How hard the broker works to deliver each message, chosen from the list under this table. One value covers both directions: the topics libre-agent subscribes to, and the values it publishes when answering a write. Anything outside `0`, `1`, and `2` fails the connection with `mqtt.qos must be 0, 1, or 2`.</li><li>Environment variable: `RHIZE_AGENT_MQTT_QOS`</li><li>Default: `0`</li><li>Example: `1`</li><li>Type: integer</li></ul> |
+| **`mqtt.decomposeJson`** | <ul><li>On, each field in a JSON payload is published as a reading in its own right. Off, the whole payload goes out as one value, leaving whatever consumes it to pull the readings apart. Turn it on for a device that reports several readings in one message. Fields whose name starts with `_` are left out.</li><li>Environment variable: `RHIZE_AGENT_MQTT_DECOMPOSEJSON`</li><li>Default: `false`</li><li>Example: `false`</li><li>Type: boolean</li></ul> |
+| **`mqtt.timestampField`** | <ul><li>Field in the payload holding the sample timestamp.</li><li>Environment variable: `RHIZE_AGENT_MQTT_TIMESTAMPFIELD`</li><li>Default: `timestamp`</li><li>Example: `timestamp`</li><li>Type: string</li></ul> |
+| **`mqtt.timestampFormat`** | <ul><li>Valid formats are : `RFC3339`, `RFC3339Nano`, `RFC822`, `RFC822Z`, `RFC850`, `RFC1123`, `RFC1123Z`, `ANSIC`, `UnixDate`, `RubyDate`, `Kitchen`, `Stamp`, `StampMilli`, `StampMicro`, `StampNano`, `UnixSeconds`, `UnixMilli`, `UnixMicro`, or `UnixNano`. An unset or unrecognised format logs `time format not recognized` and the value is stamped with the time libre-agent received it instead.</li><li>Environment variable: `RHIZE_AGENT_MQTT_TIMESTAMPFORMAT`</li><li>Default: `RFC3339Nano`</li><li>Example: `RFC3339Nano`</li><li>Type: string</li></ul> |
+| **`mqtt.requestTimeout`** | <ul><li>Request timeout in seconds.</li><li>Environment variable: `RHIZE_AGENT_MQTT_REQUESTTIMEOUT`</li><li>Default: `5`</li><li>Example: `5`</li><li>Type: integer</li></ul> |
 
 The delivery guarantees `mqtt.qos` accepts:
 
@@ -205,11 +228,13 @@ The delivery guarantees `mqtt.qos` accepts:
 | --- | --- |
 | `0` | Sent once, with no acknowledgement and no retry. The cheapest and the fastest, and the level at which a message is simply gone if it does not arrive. |
 | `1` | Redelivered until it is acknowledged, so a message is not lost, at the price of the same message sometimes arriving more than once. Nothing downstream filters repeats, so a second delivery becomes a second value change carrying the same reading. |
-| `2` | Delivered exactly once, using a four-step exchange per message where `1` uses two. The slowest of the three, and the one to think twice about on a fast-moving feed. |
+| `2` | Delivered exactly once, using a four-step exchange per message. The slowest of the three, so consider lowering the guarantee on a fast-moving feed. |
 
-Two things bound what raising the level buys. A message is delivered at the
+Two things bound what raising the level buys:
+- A message is delivered at the
 lower of the level it was published with and the level libre-agent subscribed
-with, so `2` cannot improve on a device that publishes at `0`. And a level above
+with, so `2` cannot improve on a device that publishes at `0`.
+- And a level above
 `0` only covers messages that arrive while libre-agent is connected, unless the
 broker is holding a session for it: on `3.1.1` the session outlives a dropped
 connection after the first one, so the broker queues what was missed and
@@ -220,30 +245,30 @@ ends the session with the connection and leaves nothing to queue into.
 
 Azure Service Bus credentials, used when the data source is Service Bus.
 
-| Name | Environment variable | Description | Default | Example value | Type | Required | Required when |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `azure.clientId` | `RHIZE_AGENT_AZURE_CLIENTID` | Azure AD application client ID. |  | `7c9e6679-7425-40de-944b-e07fc1f90ae7` | string | Yes | The data source is Azure Service Bus |
-| `azure.clientSecret` | `RHIZE_AGENT_AZURE_CLIENTSECRET` | Azure AD client secret. Supply from a Kubernetes Secret. |  | `Exa8Q~ExampleClientSecretValue1234567890` | string | Yes | The data source is Azure Service Bus |
-| `azure.tenantId` | `RHIZE_AGENT_AZURE_TENANTID` | Azure AD tenant ID. |  | `2b1f8d4c-93ae-4a61-8f0b-6d5c4e3a2b1f` | string | Yes | The data source is Azure Service Bus |
-| `azure.serviceBusHostName` | `RHIZE_AGENT_AZURE_SERVICEBUSHOSTNAME` | Service Bus namespace hostname. |  | `example.servicebus.windows.net` | string | Yes | The data source is Azure Service Bus |
+| Value | Description |
+| --- | --- |
+| **`azure.clientId`**<br>[Required when the data source is Azure Service Bus] | <ul><li>Azure AD application client ID.</li><li>Environment variable: `RHIZE_AGENT_AZURE_CLIENTID`</li><li>Example: `7c9e6679-7425-40de-944b-e07fc1f90ae7`</li><li>Type: string</li></ul> |
+| **`azure.clientSecret`**<br>[Required when the data source is Azure Service Bus] | <ul><li>Azure AD client secret. Supply from a Kubernetes Secret.</li><li>Environment variable: `RHIZE_AGENT_AZURE_CLIENTSECRET`</li><li>Example: `Exa8Q~ExampleClientSecretValue1234567890`</li><li>Type: string</li></ul> |
+| **`azure.tenantId`**<br>[Required when the data source is Azure Service Bus] | <ul><li>Azure AD tenant ID.</li><li>Environment variable: `RHIZE_AGENT_AZURE_TENANTID`</li><li>Example: `2b1f8d4c-93ae-4a61-8f0b-6d5c4e3a2b1f`</li><li>Type: string</li></ul> |
+| **`azure.serviceBusHostName`**<br>[Required when the data source is Azure Service Bus] | <ul><li>Service Bus namespace hostname.</li><li>Environment variable: `RHIZE_AGENT_AZURE_SERVICEBUSHOSTNAME`</li><li>Example: `example.servicebus.windows.net`</li><li>Type: string</li></ul> |
 
 #### `eventHubs`
 
 Azure Event Hubs consumer. Hub entity names come from the data source topic
 labels in BAAS rather than from configuration.
 
-| Name | Environment variable | Description | Default | Example value | Type | Required | Required when |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `eventHubs.namespaceConnectionString` | `RHIZE_AGENT_EVENTHUBS_NAMESPACECONNECTIONSTRING` | Connection string for the Event Hubs namespace. |  | `Endpoint=sb://example-ns.servicebus.windows.net/;SharedAccessKeyName=listen-policy;SharedAccessKey=ExampleSharedAccessKey1234567890=` | string | Yes | The data source is Event Hubs and `eventHubs.fullyQualifiedNamespace` is empty |
-| `eventHubs.fullyQualifiedNamespace` | `RHIZE_AGENT_EVENTHUBS_FULLYQUALIFIEDNAMESPACE` | Namespace hostname, used for Azure AD authentication instead of a connection string. |  | `example-ns.servicebus.windows.net` | string | No |  |
-| `eventHubs.consumerGroup` | `RHIZE_AGENT_EVENTHUBS_CONSUMERGROUP` | Event Hubs consumer group. | `$Default` | `agent-consumer` | string | No |  |
-| `eventHubs.checkpointStorageConnectionString` | `RHIZE_AGENT_EVENTHUBS_CHECKPOINTSTORAGECONNECTIONSTRING` | Storage account connection string for the blob checkpoint store, authenticating with a storage account key or a SAS token. |  | `DefaultEndpointsProtocol=https;AccountName=examplestorage;AccountKey=ExampleStorageAccountKey1234567890==;EndpointSuffix=core.windows.net` | string | Yes | The data source is Event Hubs and `eventHubs.checkpointStorageAccountUrl` is empty |
-| `eventHubs.checkpointStorageAccountUrl` | `RHIZE_AGENT_EVENTHUBS_CHECKPOINTSTORAGEACCOUNTURL` | Blob service URL for the checkpoint store. When set, it takes precedence over `eventHubs.checkpointStorageConnectionString`, and libre-agent signs in to the storage account as an Azure AD application rather than with a key. Set the application's tenant ID, client ID and client secret in the `AZURE_TENANT_ID`, `AZURE_CLIENT_ID` and `AZURE_CLIENT_SECRET` environment variables, which are separate from the `azure` settings. With them unset, it uses the managed identity of the node the pod runs on. Either identity needs the Storage Blob Data Contributor role on the account. |  | `https://examplestorage.blob.core.windows.net` | string | No |  |
-| `eventHubs.checkpointBlobContainerName` | `RHIZE_AGENT_EVENTHUBS_CHECKPOINTBLOBCONTAINERNAME` | Blob container holding the checkpoints. |  | `checkpoints` | string | Yes | The data source is Event Hubs |
-| `eventHubs.receivePartitionId` | `RHIZE_AGENT_EVENTHUBS_RECEIVEPARTITIONID` | Restricts the consumer to a single partition. Empty means all partitions are handled by the processor. |  | `0` | string | No |  |
-| `eventHubs.receiveAllPartitions` | `RHIZE_AGENT_EVENTHUBS_RECEIVEALLPARTITIONS` | Receives from all partitions. | `false` | `false` | boolean | No |  |
-| `eventHubs.receiveMaxBatchSize` | `RHIZE_AGENT_EVENTHUBS_RECEIVEMAXBATCHSIZE` | Maximum events fetched per receive call. Unset or `0` means `100`, and anything above `300` is rejected at startup. | `100` | `10` | integer | No |  |
-| `eventHubs.receiveStartFromEarliest` | `RHIZE_AGENT_EVENTHUBS_RECEIVESTARTFROMEARLIEST` | Starts from the earliest available event when no checkpoint exists, rather than from the latest. | `false` | `true` | boolean | No |  |
+| Value | Description |
+| --- | --- |
+| **`eventHubs.namespaceConnectionString`**<br>[Required when the data source is Event Hubs and `eventHubs.fullyQualifiedNamespace` is empty] | <ul><li>Connection string for the Event Hubs namespace.</li><li>Environment variable: `RHIZE_AGENT_EVENTHUBS_NAMESPACECONNECTIONSTRING`</li><li>Example: `Endpoint=sb://example-ns.servicebus.windows.net/;SharedAccessKeyName=listen-policy;SharedAccessKey=ExampleSharedAccessKey1234567890=`</li><li>Type: string</li></ul> |
+| **`eventHubs.fullyQualifiedNamespace`** | <ul><li>Namespace hostname, used for Azure AD authentication instead of a connection string.</li><li>Environment variable: `RHIZE_AGENT_EVENTHUBS_FULLYQUALIFIEDNAMESPACE`</li><li>Example: `example-ns.servicebus.windows.net`</li><li>Type: string</li></ul> |
+| **`eventHubs.consumerGroup`** | <ul><li>Event Hubs consumer group.</li><li>Environment variable: `RHIZE_AGENT_EVENTHUBS_CONSUMERGROUP`</li><li>Default: `$Default`</li><li>Example: `agent-consumer`</li><li>Type: string</li></ul> |
+| **`eventHubs.checkpointStorageConnectionString`**<br>[Required when the data source is Event Hubs and `eventHubs.checkpointStorageAccountUrl` is empty] | <ul><li>Storage account connection string for the blob checkpoint store, authenticating with a storage account key or a SAS token.</li><li>Environment variable: `RHIZE_AGENT_EVENTHUBS_CHECKPOINTSTORAGECONNECTIONSTRING`</li><li>Example: `DefaultEndpointsProtocol=https;AccountName=examplestorage;AccountKey=ExampleStorageAccountKey1234567890==;EndpointSuffix=core.windows.net`</li><li>Type: string</li></ul> |
+| **`eventHubs.checkpointStorageAccountUrl`** | <ul><li>Blob service URL for the checkpoint store. When set, it takes precedence over `eventHubs.checkpointStorageConnectionString`, and libre-agent signs in to the storage account as an Azure AD application rather than with a key. Set the application's tenant ID, client ID and client secret in the `AZURE_TENANT_ID`, `AZURE_CLIENT_ID` and `AZURE_CLIENT_SECRET` environment variables, which are separate from the `azure` settings. With them unset, it uses the managed identity of the node the pod runs on. Either identity needs the Storage Blob Data Contributor role on the account.</li><li>Environment variable: `RHIZE_AGENT_EVENTHUBS_CHECKPOINTSTORAGEACCOUNTURL`</li><li>Example: `https://examplestorage.blob.core.windows.net`</li><li>Type: string</li></ul> |
+| **`eventHubs.checkpointBlobContainerName`**<br>[Required when the data source is Event Hubs] | <ul><li>Blob container holding the checkpoints.</li><li>Environment variable: `RHIZE_AGENT_EVENTHUBS_CHECKPOINTBLOBCONTAINERNAME`</li><li>Example: `checkpoints`</li><li>Type: string</li></ul> |
+| **`eventHubs.receivePartitionId`** | <ul><li>Restricts the consumer to a single partition. Empty means all partitions are handled by the processor.</li><li>Environment variable: `RHIZE_AGENT_EVENTHUBS_RECEIVEPARTITIONID`</li><li>Example: `0`</li><li>Type: string</li></ul> |
+| **`eventHubs.receiveAllPartitions`** | <ul><li>Receives from all partitions.</li><li>Environment variable: `RHIZE_AGENT_EVENTHUBS_RECEIVEALLPARTITIONS`</li><li>Default: `false`</li><li>Example: `false`</li><li>Type: boolean</li></ul> |
+| **`eventHubs.receiveMaxBatchSize`** | <ul><li>Maximum events fetched per receive call. Unset or `0` means `100`, and anything above `300` is rejected at startup.</li><li>Environment variable: `RHIZE_AGENT_EVENTHUBS_RECEIVEMAXBATCHSIZE`</li><li>Default: `100`</li><li>Example: `10`</li><li>Type: integer</li></ul> |
+| **`eventHubs.receiveStartFromEarliest`** | <ul><li>Starts from the earliest available event when no checkpoint exists, rather than from the latest.</li><li>Environment variable: `RHIZE_AGENT_EVENTHUBS_RECEIVESTARTFROMEARLIEST`</li><li>Default: `false`</li><li>Example: `true`</li><li>Type: boolean</li></ul> |
 
 ### `egress`
 
@@ -257,12 +282,12 @@ written `egress.handlers.<name>.<field>`. Define each handler in
 handler's fields, provided each field is written in the handler's block. To
 take a field's value from its variable alone, write it in the block as `""`.
 
-| Name | Environment variable | Description | Default | Example value | Type | Required | Required when |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `egress.handlers.<name>.protocol` | `RHIZE_AGENT_EGRESS_HANDLERS_<NAME>_PROTOCOL` | Where the handler sends messages. `kafka` produces to the Kafka topic named by `topic`, or to the topic a `patterns` entry picks. `http` POSTs each message to `serverUrl`. `nats` publishes to a NATS subject over the connection the `nats` section configures. Any other value logs "Unknown egress protocol" and the handler is skipped. |  | `kafka` | string | Yes | The handler is defined |
-| `egress.handlers.<name>.serverUrl` | `RHIZE_AGENT_EGRESS_HANDLERS_<NAME>_SERVERURL` | Where to publish. For `kafka`, the broker address. For `http`, the URL to POST to, where a literal `{id}` in the URL is replaced with the message subject; the body is JSON and carries an `idempotency-key` header. Not used by `nats`, which takes its connection from the `nats` section instead. An empty value crashes libre-agent at startup for `kafka` and `http`. |  | `kafka:9092` for Kafka, `http://ingest:8080/values/{id}` for HTTP | string | Yes | The handler's `protocol` is not `nats` |
-| `egress.handlers.<name>.topic` | `RHIZE_AGENT_EGRESS_HANDLERS_<NAME>_TOPIC` | Kafka only. Topic to publish to when no entry in `patterns` matches. Topics are created on demand if the broker allows it. |  | `value-changes` | string | Yes | The handler's `protocol` is `kafka` |
-| `egress.handlers.<name>.patterns` | — | Kafka only. List of `{topic, regex}` pairs that route by source node name. When the regex matches the node, the message goes to that pair's `topic` instead of the handler's `topic`, and a `$1` in that topic is replaced with the text of the first capture group, so a single pattern can give each site or line its own topic. Keep the patterns mutually exclusive: when several match, which one wins is not predictable. An entry with an empty `topic`, or a regex that does not compile, crashes libre-agent at startup. |  | see the example block below | list | No |  |
+| Value | Description |
+| --- | --- |
+| **`egress.handlers.<name>.protocol`**<br>[Required when the handler is defined] | <ul><li>Where the handler sends messages. `kafka` produces to the Kafka topic named by `topic`, or to the topic a `patterns` entry picks. `http` POSTs each message to `serverUrl`. `nats` publishes to a NATS subject over the connection the `nats` section configures. Any other value logs `Unknown egress protocol` and the handler is skipped.</li><li>Environment variable: `RHIZE_AGENT_EGRESS_HANDLERS_<NAME>_PROTOCOL`</li><li>Example: `kafka`</li><li>Type: string</li></ul> |
+| **`egress.handlers.<name>.serverUrl`**<br>[Required when the handler's `protocol` is not `nats`] | <ul><li>Where to publish. For `kafka`, the broker address. For `http`, the URL to POST to, where a literal `{id}` in the URL is replaced with the message subject; the body is JSON and carries an `idempotency-key` header. Not used by `nats`, which takes its connection from the `nats` section instead. An empty value crashes libre-agent at startup for `kafka` and `http`.</li><li>Environment variable: `RHIZE_AGENT_EGRESS_HANDLERS_<NAME>_SERVERURL`</li><li>Example: `kafka:9092` for Kafka, `http://ingest:8080/values/{id}` for HTTP</li><li>Type: string</li></ul> |
+| **`egress.handlers.<name>.topic`**<br>[Required when the handler's `protocol` is `kafka`] | <ul><li>Kafka only. Topic to publish to when no entry in `patterns` matches. Topics are created on demand if the broker allows it.</li><li>Environment variable: `RHIZE_AGENT_EGRESS_HANDLERS_<NAME>_TOPIC`</li><li>Example: `value-changes`</li><li>Type: string</li></ul> |
+| **`egress.handlers.<name>.patterns`** | <ul><li>Kafka only. List of `{topic, regex}` pairs that route by source node name. When the regex matches the node, the message goes to that pair's `topic` instead of the handler's `topic`, and a `$1` in that topic is replaced with the text of the first capture group, so a single pattern can give each site or line its own topic. Keep the patterns mutually exclusive: when several match, which one wins is not predictable. An entry with an empty `topic`, or a regex that does not compile, crashes libre-agent at startup.</li><li>Environment variable: None</li><li>Example: see the example block below</li><li>Type: list</li></ul> |
 
 A Kafka handler that splits temperatures onto their own topic, alongside an HTTP
 handler, as the block appears inside `rhizeAgentConfig`:
@@ -290,21 +315,21 @@ The NATS connection an `egress` handler with protocol `nats` opens. Nothing else
 on this page uses it, and without such a handler none of these settings are
 read.
 
-| Name | Environment variable | Description | Default | Example value | Type | Required | Required when |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `nats.serverUrl` | `RHIZE_AGENT_NATS_SERVERURL` | NATS server address. The default reaches a NATS Service named `nats` on its usual port in the same namespace, so it only needs setting where the server is named or ported differently. An unreachable address stops libre-agent at startup. | `nats:4222` | `nats://nats:4222` | string | No |  |
-| `nats.username` | `RHIZE_AGENT_NATS_USERNAME` | NATS username. | `system` | `system` | string | No |  |
-| `nats.password` | `RHIZE_AGENT_NATS_PASSWORD` | NATS password. Supply from a Kubernetes Secret. | `system` | `ExamplePassword123` | string | No |  |
+| Value | Description |
+| --- | --- |
+| **`nats.serverUrl`** | <ul><li>NATS server address. The default reaches a NATS Service named `nats` on its usual port in the same namespace, so it only needs setting where the server is named or ported differently. An unreachable address stops libre-agent at startup.</li><li>Environment variable: `RHIZE_AGENT_NATS_SERVERURL`</li><li>Default: `nats:4222`</li><li>Example: `nats://nats:4222`</li><li>Type: string</li></ul> |
+| **`nats.username`** | <ul><li>NATS username.</li><li>Environment variable: `RHIZE_AGENT_NATS_USERNAME`</li><li>Default: `system`</li><li>Example: `system`</li><li>Type: string</li></ul> |
+| **`nats.password`** | <ul><li>NATS password. Supply from a Kubernetes Secret.</li><li>Environment variable: `RHIZE_AGENT_NATS_PASSWORD`</li><li>Default: `system`</li><li>Example: `ExamplePassword123`</li><li>Type: string</li></ul> |
 
 ### `bridge`
 
 Turns libre-agent into a broker-to-broker message bridge. This is a
-**replacement** for normal operation, not an addition: when a `bridge` section
-is present, libre-agent forwards messages between the brokers defined here and
+**replacement** for normal operation.
+When a `bridge` section is present, libre-agent forwards messages between the brokers defined here and
 ignores every other section on this page, `datasource` included.
 
 Each handler is one broker connection, and a message arriving on one is published
-to all of the others. Messages are never sent back to the handler they arrived
+to all others. Messages are never sent back to the handler they arrived
 on, and a message that has already been routed once is not routed again, so two
 handlers cannot loop.
 
@@ -313,14 +338,14 @@ identifies the connection in the logs. As with `egress`, define each handler in
 `rhizeAgentConfig`, writing every field that its variable should set, using `""`
 for a field whose value comes only from the variable.
 
-| Name | Environment variable | Description | Default | Example value | Type | Required | Required when |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `bridge.topics` | — | Topics to carry across the bridge, written the NATS way: a `.` between levels, `*` for any single level, and `>` for everything below that point. Every broker here subscribes to all of them. An MQTT broker gets the topics converted to MQTT form on the way, so `libre.*.values` reaches that broker as `libre/+/values`. |  | `[libre.>]` | list | Yes | A `bridge` section is present |
-| `bridge.handlers.<name>.protocol` | `RHIZE_AGENT_BRIDGE_HANDLERS_<NAME>_PROTOCOL` | Which broker the handler speaks to: `nats` for a NATS server, `mqtt` for an MQTT broker. A handler naming anything else is left out of the bridge. |  | `mqtt` | string | Yes | The handler is defined |
-| `bridge.handlers.<name>.serverUrl` | `RHIZE_AGENT_BRIDGE_HANDLERS_<NAME>_SERVERURL` | Broker address, including scheme and port. |  | `mqtt://broker:1883` for MQTT, `nats://nats:4222` for NATS | string | Yes | The handler is defined |
-| `bridge.handlers.<name>.username` | `RHIZE_AGENT_BRIDGE_HANDLERS_<NAME>_USERNAME` | Username for the broker. Omit for an anonymous connection. |  | `bridge` | string | No |  |
-| `bridge.handlers.<name>.password` | `RHIZE_AGENT_BRIDGE_HANDLERS_<NAME>_PASSWORD` | Password for the broker. Write it here as an empty value and supply the real one from a Kubernetes Secret. |  | `ExamplePassword123` | string | No |  |
-| `bridge.handlers.<name>.clientId` | `RHIZE_AGENT_BRIDGE_HANDLERS_<NAME>_CLIENTID` | MQTT only. Client id for the connection. Must be unique per broker, since two connections sharing one will disconnect each other. |  | `libre-bridge` | string | No |  |
+| Value | Description |
+| --- | --- |
+| **`bridge.topics`**<br>[Required when a `bridge` section is present] | <ul><li>Topics to carry across the bridge, written the NATS way: a `.` between levels, `*` for any single level, and `>` for everything below that point. Every broker here subscribes to all of them. An MQTT broker gets the topics converted to MQTT form on the way, so `libre.*.values` reaches that broker as `libre/+/values`.</li><li>Environment variable: None</li><li>Example: `[libre.>]`</li><li>Type: list</li></ul> |
+| **`bridge.handlers.<name>.protocol`**<br>[Required when the handler is defined] | <ul><li>Which broker the handler speaks to: `nats` for a NATS server, `mqtt` for an MQTT broker. A handler naming anything else is left out of the bridge.</li><li>Environment variable: `RHIZE_AGENT_BRIDGE_HANDLERS_<NAME>_PROTOCOL`</li><li>Example: `mqtt`</li><li>Type: string</li></ul> |
+| **`bridge.handlers.<name>.serverUrl`**<br>[Required when the handler is defined] | <ul><li>Broker address, including scheme and port.</li><li>Environment variable: `RHIZE_AGENT_BRIDGE_HANDLERS_<NAME>_SERVERURL`</li><li>Example: `mqtt://broker:1883` for MQTT, `nats://nats:4222` for NATS</li><li>Type: string</li></ul> |
+| **`bridge.handlers.<name>.username`** | <ul><li>Username for the broker. Omit for an anonymous connection.</li><li>Environment variable: `RHIZE_AGENT_BRIDGE_HANDLERS_<NAME>_USERNAME`</li><li>Example: `bridge`</li><li>Type: string</li></ul> |
+| **`bridge.handlers.<name>.password`** | <ul><li>Password for the broker. Write it here as an empty value and supply the real one from a Kubernetes Secret.</li><li>Environment variable: `RHIZE_AGENT_BRIDGE_HANDLERS_<NAME>_PASSWORD`</li><li>Example: `ExamplePassword123`</li><li>Type: string</li></ul> |
+| **`bridge.handlers.<name>.clientId`** | <ul><li>MQTT only. Client id for the connection. Must be unique per broker, since two connections sharing one will disconnect each other.</li><li>Environment variable: `RHIZE_AGENT_BRIDGE_HANDLERS_<NAME>_CLIENTID`</li><li>Example: `libre-bridge`</li><li>Type: string</li></ul> |
 
 A minimal two-broker bridge, as the block appears inside `rhizeAgentConfig`,
 with the NATS password left empty for `additionalSecrets` to fill:
@@ -345,23 +370,22 @@ bridge:
 
 These are read directly from the environment and carry no `RHIZE_AGENT_` prefix.
 
-| Name | Environment variable | Description | Default | Example value | Type | Required | Required when |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| — | `all_proxy` | SOCKS5 proxy that libre-agent dials MQTT broker connections through, both for an MQTT data source and for MQTT connections in the bridge. Requires either a `socks5://` or `socks5h://` URL. An MQTT data source pinned to `mqtt.version` `3.1.1` connects directly, as do all other connections libre-agent makes, including NATS, Kafka, and calls to BAAS. |  | `socks5://proxy.example.com:1080` | string | No |  |
+| Value | Description |
+| --- | --- |
+| **``all_proxy``** | <ul><li>SOCKS5 proxy that libre-agent dials MQTT broker connections through, both for an MQTT data source and for MQTT connections in the bridge. Requires either a `socks5://` or `socks5h://` URL. An MQTT data source pinned to `mqtt.version` `3.1.1` connects directly, as do all other connections libre-agent makes, including NATS, Kafka, and calls to BAAS.</li><li>Example: `socks5://proxy.example.com:1080`</li><li>Type: string</li></ul> |
 
 ## Helm chart values
 
-Values shared by every chart are documented in
-`shared-helm-values.md`.
+Values shared by every chart.
 
-| Name | Environment variable | Description | Default | Example value | Type | Required | Required when |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `rhizeAgentConfig` | — | The complete application configuration, rendered into a ConfigMap named after the release and mounted at `/config`. libre-agent exits if the file is missing. | the block described above | the Application configuration section | object | Yes |  |
-| `envVars` | — | Map of environment variable names to values passed to the container. |  | see the example block below | map | No |  |
-| `additionalSecrets` | — | List of entries that each carry one value from a Kubernetes Secret into an environment variable: `name` is the variable the service reads, `secretName` is the Secret to take the value from, and `secretKey` is the name of the entry within that Secret. This is how every credential should reach libre-agent, using the variable names in the second column of the tables above: `RHIZE_AGENT_OIDC_CLIENTSECRET` for the OIDC client, and `RHIZE_AGENT_OPCUA_PASSWORD`, `RHIZE_AGENT_MQTT_PASSWORD`, or `RHIZE_AGENT_NATS_PASSWORD` for the data source or broker in use. |  | see the example block below | list | No |  |
-| `caFile` | — | Contents of a PEM CA certificate for outbound HTTPS calls, given as a YAML block, `caFile: \|`, with the certificate's lines indented beneath. Trusting a certificate takes two values: give the certificate here, which mounts it at `/certs/ca-cert.pem`, and set `libreDataStoreGraphQl.caFile` in `rhizeAgentConfig` to that path. |  | `-----BEGIN CERTIFICATE-----…` | string | No |  |
-| `service.port` | — | Port for the Service, the container port, and the port libre-agent serves Restate handlers on. The chart writes it into the configuration as `restate.servicePort` as well, so the port Restate calls back on is always the one the Service exposes. | `8887` | `8887` | integer | No |  |
-| `extraVolumes` / `extraVolumeMounts` | — | How an OPC UA client certificate and key get into the container, which is the one file libre-agent reads that the chart does not place itself. Mount the pair, then name the mounted paths in `opcUa.certFile` and `opcUa.keyFile`. Give each value as a list of standard Kubernetes volume and volume mount entries, and set both: a mount whose volume is missing stops the pod from starting. |  | see the example block below | list | No |  |
+| Value | Description |
+| --- | --- |
+| **`rhizeAgentConfig`**<br>[Required] | <ul><li>The complete application configuration, rendered into a ConfigMap named after the release and mounted at `/config`. libre-agent exits if the file is missing.</li><li>Default: the block described above</li><li>Example: the Application configuration section</li><li>Type: object</li></ul> |
+| **`envVars`** | <ul><li>Map of environment variable names to values passed to the container.</li><li>Example: see the example block below</li><li>Type: map</li></ul> |
+| **`additionalSecrets`** | <ul><li>List of entries that each carry one value from a Kubernetes Secret into an environment variable: `name` is the variable the service reads, `secretName` is the Secret to take the value from, and `secretKey` is the name of the entry within that Secret. This is how every credential should reach libre-agent, using the variable names in the second column of the tables above: `RHIZE_AGENT_OIDC_CLIENTSECRET` for the OIDC client, and `RHIZE_AGENT_OPCUA_PASSWORD`, `RHIZE_AGENT_MQTT_PASSWORD`, or `RHIZE_AGENT_NATS_PASSWORD` for the data source or broker in use.</li><li>Example: see the example block below</li><li>Type: list</li></ul> |
+| **`caFile`** | <ul><li>Contents of a PEM CA certificate for outbound HTTPS calls, given as a YAML block, `caFile: \|`, with the certificate's lines indented beneath. Trusting a certificate takes two values: give the certificate here, which mounts it at `/certs/ca-cert.pem`, and set `libreDataStoreGraphQl.caFile` in `rhizeAgentConfig` to that path.</li><li>Example: `-----BEGIN CERTIFICATE-----…`</li><li>Type: string</li></ul> |
+| **`service.port`** | <ul><li>Port for the Service, the container port, and the port libre-agent serves Restate handlers on. The chart writes it into the configuration as `restate.servicePort` as well, so the port Restate calls back on is always the one the Service exposes.</li><li>Default: `8887`</li><li>Example: `8887`</li><li>Type: integer</li></ul> |
+| **`extraVolumes`** / **`extraVolumeMounts`** | <ul><li>How an OPC UA client certificate and key get into the container, which is the one file libre-agent reads that the chart does not place itself. Mount the pair, then name the mounted paths in `opcUa.certFile` and `opcUa.keyFile`. Give each value as a list of standard Kubernetes volume and volume mount entries, and set both: a mount whose volume is missing stops the pod from starting.</li><li>Example: refer to following block</li><li>Type: list</li></ul> |
 
 A log level set directly, two credentials taken from Secrets, and an OPC UA
 certificate pair mounted from a third:
@@ -385,3 +409,5 @@ extraVolumeMounts:
     mountPath: /opcua-certs
     readOnly: true
 ```
+
+
