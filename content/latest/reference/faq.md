@@ -49,3 +49,21 @@ While there are many manufacturing software products out there stating they are 
 The Rhize MDH? When we say we model all of ISA-95. We mean it.
 
 Every entity. Every relationship. Out of the box. All of the resources and processes to model your entire manufacturing operations, spanning production, quality, inventory and maintenance.
+
+### How is an MDH licensed?
+
+Far too many manufacturers find out all too late that the software they purchased came with all sorts of limitations.
+
+Data limits, user limits, connection limits. Extra to access the API, often at a very high additional cost, etc etc.
+
+Here at Rhize, we make licensing straight forward. One license per site. Full access. No add-ons. No caps.
+
+Have lots of sites? We have enterprise licensing as well.
+
+### How does an MDH get implemented?
+
+Build it yourself - Your team, leveraging the tools they already use, build directly on the documented API.
+
+Build it with Rhize - Forward-deployed engineers work alongside your team to get your applications live.
+
+Build it with your partner - Our engineers work with your systems integrator or implementation partner.
