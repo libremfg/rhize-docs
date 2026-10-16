@@ -1,5 +1,5 @@
 ---
-title: 'Connecting to Seeq'
+title: 'Connect to Seeq'
 date: '2025-08-24T21:46:50-07:00'
 categories: ["how-to"]
 description: How to use Seeq with Rhize
