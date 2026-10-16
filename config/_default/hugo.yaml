@@ -11,9 +11,12 @@ module:
 
 menu:
   main:
-    - name: Docs
+    - name: About Rhize
       weight: 1
-      url: /get-started/introduction
+      url: /about-rhize
+    - name: Docs
+      weight: 2
+      url: /latest/
     - name: Learn ISA-95
       weight: 5
       url: /isa-95
@@ -73,7 +76,7 @@ params:
     base: "https://github.com/libremfg/rhize-docs/edit/main/content"
     enable: true
   navbar:
-    displayTitle: true
+    displayTitle: false
     displayLogo: true
     logo:
       path: images/logo.svg

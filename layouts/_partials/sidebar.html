@@ -15,21 +15,48 @@
   {{- end -}}
 {{- end -}}
 
-{{- /* Rhize override: pages under /isa-95/ get a sidebar scoped
+{{- /* Rhize override: pages under /latest/, /isa-95/, and /about-rhize/ get a sidebar scoped
    to that section's own content tree, not the top-level (site-wide) tree. */ -}}
-{{- if eq (index $pathSegments 0) "isa-95" -}}
-  {{- with site.GetPage "/isa-95" -}}
+{{- if in (slice "latest" "isa-95" "about-rhize") (index $pathSegments 0) -}}
+  {{- with site.GetPage (printf "/%s" (index $pathSegments 0)) -}}
     {{- $navRoot = . -}}
   {{- end -}}
 {{- end -}}
 
-{{- /* Rhize override: each /versions/{VERSION} sidebar is scoped to that
-   version's own tree (see above), so it no longer picks up the shared,
+{{- /* Rhize override: /use-cases/ and /releases/ are unversioned top-level
+   sections, but they belong to the product docs, so render them with the
+   /latest/ sidebar (where they're spliced in below). */ -}}
+{{- if in (slice "use-cases" "releases") (index $pathSegments 0) -}}
+  {{- with site.GetPage "/latest" -}}
+    {{- $navRoot = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Rhize override: extra top-level sections to splice into a scoped sidebar.
+   $splicePages render as full expandable trees; $softLinks render as single
+   links that jump out to another section; $leadLinks are soft links rendered
+   above the section's own items. */ -}}
+{{- $splicePages := slice -}}
+{{- $softLinks := slice -}}
+{{- $leadLinks := slice -}}
+{{- if eq $navRoot.RelPermalink "/latest/" -}}
+  {{- with site.GetPage "/use-cases" }}{{ $splicePages = $splicePages | append . }}{{ end -}}
+{{- end -}}
+{{- if eq $navRoot.RelPermalink "/about-rhize/" -}}
+  {{- with site.GetPage "/use-cases" }}{{ $softLinks = $softLinks | append . }}{{ end -}}
+{{- end -}}
+{{- if and (eq $navRoot site.Home) (ne $pageURL "/versions/") -}}
+  {{- with site.GetPage "/about-rhize" }}{{ $leadLinks = $leadLinks | append . }}{{ end -}}
+  {{- with site.GetPage "/isa-95" }}{{ $softLinks = $softLinks | append . }}{{ end -}}
+{{- end -}}
+
+{{- /* Rhize override: /latest/ and each /versions/{VERSION} sidebar are scoped to
+   their own tree (see above), so they no longer pick up the shared,
    top-level /releases/ section the way the rest of the site does. Splice
    it back in as a normal, expandable tree item. */ -}}
 {{- $releasesOnly := eq $pageURL "/versions/" -}}
 {{- $releasesPage := "" -}}
-{{- if or $releasesOnly (findRE "^/versions/v[^/]+/$" $navRoot.RelPermalink) -}}
+{{- if or $releasesOnly (findRE "^/(latest|versions/v[^/]+)/$" $navRoot.RelPermalink) -}}
   {{- $releasesPage = site.GetPage "/releases" -}}
 {{- end -}}
 
@@ -67,7 +94,7 @@
       {{ .context.Store.Set "enableFooterSwitches" true }}
     {{- else -}}
       <ul class="hx:flex hx:flex-col hx:gap-1 hx:max-md:hidden">
-        {{ template "sidebar-main" (dict "context" $navRoot "page" $context  "pageURL" $pageURL "releasesPage" $releasesPage "releasesOnly" $releasesOnly) }}
+        {{ template "sidebar-main" (dict "context" $navRoot "page" $context  "pageURL" $pageURL "releasesPage" $releasesPage "releasesOnly" $releasesOnly "splicePages" $splicePages "softLinks" $softLinks "leadLinks" $leadLinks) }}
         {{ template "sidebar-footer" }}
       </ul>
     {{ end -}}
@@ -91,7 +118,7 @@
 </aside>
 
 {{- define "sidebar-main" -}}
-  {{ template "sidebar-tree" (dict "context" .context "level" 0 "page" .page "pageURL" .pageURL "toc" (.toc | default false) "releasesPage" .releasesPage "releasesOnly" .releasesOnly) }}
+  {{ template "sidebar-tree" (dict "context" .context "level" 0 "page" .page "pageURL" .pageURL "toc" (.toc | default false) "releasesPage" .releasesPage "releasesOnly" .releasesOnly "splicePages" .splicePages "softLinks" .softLinks "leadLinks" .leadLinks) }}
 {{- end -}}
 
 {{- define "sidebar-tree" -}}
@@ -106,6 +133,9 @@
   {{- $toc := .toc | default false -}}
   {{- $releasesPage := .releasesPage | default "" -}}
   {{- $releasesOnly := and (eq $level 0) (.releasesOnly | default false) -}}
+  {{- $splicePages := .splicePages | default slice -}}
+  {{- $softLinks := .softLinks | default slice -}}
+  {{- $leadLinks := .leadLinks | default slice -}}
   {{- $useMainMenu := and (eq $level 0) $toc -}}
   {{- $mainMenuEntries := slice -}}
 
@@ -238,6 +268,9 @@
           {{- end -}}
         {{- end -}}
       {{- else -}}
+        {{- range $leadLinks -}}
+          <li>{{ template "sidebar-item-link" dict "active" false "open" false "title" (partial "utils/title" .) "link" .RelPermalink }}</li>
+        {{- end -}}
         {{- if not $releasesOnly -}}
         {{- range $items.ByWeight }}
           {{- if .Params.sidebar.separator -}}
@@ -257,6 +290,21 @@
             </li>
           {{- end -}}
         {{- end -}}
+        {{- end -}}
+        {{- range $splicePages -}}
+          {{- $active := eq (strings.TrimSuffix "/" $pageURL) (strings.TrimSuffix "/" .RelPermalink) -}}
+          {{- $shouldOpen := or (.Params.sidebar.open) (.IsAncestor $page) $active | default true }}
+          <li class="{{ if $shouldOpen }}open{{ end }}">
+            {{- $linkTitle := partial "utils/title" . -}}
+            {{- template "sidebar-item-link" dict "context" . "active" $active "open" $shouldOpen "title" $linkTitle "link" .RelPermalink -}}
+            {{- if and $toc $active (ne .Params.toc false) -}}
+              {{- template "sidebar-toc" dict "page" . -}}
+            {{- end -}}
+            {{- template "sidebar-tree" dict "context" . "page" $page "pageURL" $pageURL "level" (add $level 1) "toc" $toc -}}
+          </li>
+        {{- end -}}
+        {{- range $softLinks -}}
+          <li>{{ template "sidebar-item-link" dict "active" false "open" false "title" (partial "utils/title" .) "link" .RelPermalink }}</li>
         {{- end -}}
         {{- with $releasesPage -}}
           {{- $active := eq (strings.TrimSuffix "/" $pageURL) (strings.TrimSuffix "/" .RelPermalink) -}}

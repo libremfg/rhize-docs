@@ -493,7 +493,7 @@ If the install is successful, the Router explorer is available on its port.
 ## Optional: change service configuration
 
 The services installed in the previous step have many parameters that you can configure for your performance and deployment requirements.
-Review the full list in the [Service configuration]({{< relref "../../reference/service-config" >}}) reference.
+Review the full list in the [Service configuration]({{< relref "../deploy-reference/service-config" >}}) reference.
 
 ## Troubleshoot
 

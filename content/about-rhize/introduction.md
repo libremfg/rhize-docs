@@ -5,9 +5,12 @@ draft: false
 categories: "concepts"
 description: A hub to join all manufacturing data in place. Build manufacturing execution systems and do deep analysis.
 weight: 1
+aliases:
+  - /get-started/introduction/
+
 ---
 
-Rhize is a real-time, event-driven [manufacturing data hub]({{< relref "../latest/deploy/about-openidconnect" >}}).
+Rhize is a real-time, event-driven [manufacturing data hub]({{< relref "manufacturing-data-hub" >}}).
 It unites data analysis, event monitoring, and process execution in one platform.
 Its interface and architecture conform to your processes.
 We assume nothing about what your operations looks like.

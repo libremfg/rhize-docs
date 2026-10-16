@@ -2,13 +2,14 @@
 title: Recommended Kubernetes cluster sizing
 description: The recommended number of nodes and compute per pod in your Rhize Kubernetes cluster
 aliases:
+  - /latest/deploy/cluster-sizing/
   - /deploy/cluster-sizing
 
 ---
 
 Rhize runs on Kubernetes.
 
-This document provides compute recommendations for the nodes, pods services of your [Rhize Install]({{< relref "install" >}}).
+This document provides compute recommendations for the nodes, pods services of your [Rhize Install]({{< relref "../install" >}}).
 Some services also have recommended replication factors to increase reliability.
 
 ## Node recommendations

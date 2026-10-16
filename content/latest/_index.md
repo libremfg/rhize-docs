@@ -1,5 +1,5 @@
 ---
-title: Rhize Product documentation
+title: Rhize product
 weight: 002
 description: User guides, deploy docs, references, and deep dives about the
   Rhize manufacturing data hub.

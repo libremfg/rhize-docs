@@ -3,6 +3,7 @@ title: Service configuration
 description: A collection of pages to look up configuration parameters for various Rhize services.
 weight: 100
 aliases:
+  - /latest/reference/service-config/
   - /reference/service-config/
 
 ---

@@ -4,6 +4,7 @@ categories: ["reference"]
 description: List of Environmental Variables and their description
 weight: 900
 aliases:
+  - /latest/reference/service-config/adminUI-configuration/
   - /reference/service-config/adminUI-configuration
 
 ---

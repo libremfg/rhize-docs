@@ -48,7 +48,7 @@ This tutorial assumes a data source that exchanges messages over the MQTT protoc
 
 Before you start, ensure you have the following:
 - Access your Rhize customer environment
-- The [Agent configured]({{< relref "../../reference/service-config/agent-configuration" >}}) to listen for your data-source ID
+- The [Agent configured]({{< relref "../../deploy/deploy-reference/service-config/agent-configuration" >}}) to listen for your data-source ID
 
 ## Set up: configure equipment and workflows
 

@@ -6,6 +6,9 @@ categories: "concepts"
 description: >-
   A high-level overview of how Rhize collects, exchanges, and stores data, starting with data collection and ending with user interaction.
 weight: 200
+aliases:
+  - /get-started/how-rhize-works/
+
 ---
 
 This article provides a high-level overview of how Rhize works, starting with data collection and ending with user interaction.
@@ -18,7 +21,7 @@ The system runs on distributed, containerized systems, ensuring horizontal scala
 Finally, outside of the Rhize deployment are the two most important components: the manufacturing operation, which sends event data to Rhize, and the Rhize users, who interact with Rhize data through a number of special-purpose interfaces.
 
 {{< bigFigure
-src="/get-started/diagram-rhize-arch-overview.png"
+src="/about-rhize/diagram-rhize-arch-overview.png"
 alt="A simplified diagram of Rhize's architecture"
 width="70%"
 caption="A simplified view of Rhize's architecture"

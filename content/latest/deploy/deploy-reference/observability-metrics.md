@@ -4,6 +4,7 @@ description: Metrics from the Rhize microservices, collected by Prometheus.
 weight: 350
 category: "reference"
 aliases:
+  - /latest/reference/observability-metrics/
   - /reference/observability-metrics
 
 ---

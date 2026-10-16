@@ -5,7 +5,10 @@ description: A list of terms relevant to Rhize, or that are frequently used in m
 categories: ["reference"]
 weight: 1500
 icon: dictionary
+sidebar:
+  exclude: hidden
 aliases:
+  - /latest/reference/glossary/
   - /reference/glossary
 
 ---

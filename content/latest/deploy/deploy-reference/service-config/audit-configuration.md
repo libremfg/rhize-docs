@@ -4,6 +4,7 @@ categories: ["reference"]
 description: Configuration for the Rhize audit
 weight: 900
 aliases:
+  - /latest/reference/service-config/audit-configuration/
   - /reference/service-config/audit-configuration
 
 ---

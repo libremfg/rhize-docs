@@ -3,6 +3,8 @@ title: FAQ
 description: Frequently asked questions about Rhize
 sidebar:
   exclude: hidden
+aliases:
+  - /latest/reference/faq/
 ---
 
 Frequently asked questions about Rhize.

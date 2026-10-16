@@ -32,6 +32,8 @@ cascade:
 
 aliases:
   - /deploy/
+  - /latest/reference/
+  - /reference/
 
 ---
 

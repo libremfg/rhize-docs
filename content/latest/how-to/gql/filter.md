@@ -16,13 +16,13 @@ To use a filter, specify it in the operation's argument.
 Most fields in an object can serve as a filter.
 {{< callout type="info" >}}
 This page provides a detailed guide of how to use the filters, with examples.
-For a bare reference of filters and data types, refer to the [GraphQL type reference]({{< relref "../../reference/gql-types" >}}).
+For a bare reference of filters and data types, refer to the [GraphQL type reference]({{< relref "gql-types" >}}).
 {{< /callout >}}
 
   
 ## Filter by property
 
-The following sections show some common [scalar filters]({{< relref "../../reference/gql-types#scalar-filters" >}}), filters that work on `string`, `dateTime`, and numeric values.
+The following sections show some common [scalar filters]({{< relref "gql-types#scalar-filters" >}}), filters that work on `string`, `dateTime`, and numeric values.
 These filters return only the resources that have some specified property or property range.
 
 ### `between` dates

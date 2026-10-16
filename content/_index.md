@@ -24,6 +24,12 @@ The tight integration of all levels of manufacturing data, from real-time sensor
   Design the MES system that makes sense for your processes and people.
 
 
-{{< card-list >}}
+{{< cards >}}
+  {{< card link="/about-rhize/" title="About Rhize" icon="light-bulb" subtitle="What Rhize is, how it works, and why manufacturing needs a data hub." >}}
+  {{< card link="/latest/" title="Product documentation" icon="molecule" subtitle="Deploy, configure, and use Rhize." >}}
+  {{< card link="/use-cases/" title="Use cases" icon="wrench" subtitle="Examples of how to use Rhize for specific use cases." >}}
+  {{< card link="/releases/" title="Release notes" icon="rss" subtitle="New features and upgrade instructions." >}}
+  {{< card link="/isa-95/" title="Learn ISA-95" icon="academic-cap" subtitle="The ontology of manufacturing operations management." >}}
+{{< /cards >}}
 
 
