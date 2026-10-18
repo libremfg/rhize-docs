@@ -1,8 +1,7 @@
 ---
-title: 'DRAFT ISA-95 configuration'
+title: 'ISA-95 configuration'
 categories: ["reference"]
 description: Configuration parameters for the Rhize ISA-95 service
-draft: true
 aliases:
   - /reference/service-config/isa-95-configuration
 weight: 900

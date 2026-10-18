@@ -1,8 +1,7 @@
 ---
-title: 'DRAFT Workflow configuration'
+title: 'Workflow configuration'
 categories: ["reference"]
 description: Configuration parameters for the Rhize workflow service
-draft: true
 aliases:
   - /reference/service-config/workflow-configuration
 weight: 900

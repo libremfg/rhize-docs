@@ -1,8 +1,7 @@
 ---
-title: 'DRAFT TypeScript host service configuration'
+title: 'TypeScript host service configuration'
 categories: ["reference"]
 description: Configuration parameters for the Rhize typescript-host-service
-draft: true
 aliases:
   - /reference/service-config/typescript-host-service-configuration
 weight: 900

@@ -1,8 +1,7 @@
 ---
-title: 'DRAFT BAAS configuration'
+title: 'BAAS configuration'
 categories: ["reference"]
 description: Configuration parameters for the Rhize BAAS service
-draft: true
 aliases:
   - /reference/service-config/baas-configuration
 weight: 900
