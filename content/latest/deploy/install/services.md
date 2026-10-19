@@ -276,6 +276,16 @@ Install Workflow with these steps:
       --data '{"uri":"http://workflow.{{< param application_name >}}.svc.cluster.local:29080", "force":true}'
     ```
 
+### Portal
+
+The portal provdes a gateway to different Rhize sites.
+
+Install with helm:
+
+```bash
+helm install portal -f portal.yaml libre/portal -n libre
+```
+
 ### Typescript Host Service
 
 Install Typescript Host Service with these steps:
