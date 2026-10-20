@@ -10,7 +10,7 @@ images:
 ---
 
 
-> :memo: Looking to implement Rhize for your Pharma operation?
+> :memo: Looking to implement Rhize for your pharmaceutical operation?
 [Talk to an engineer](https://rhize.com/contact-us/)
 
 
@@ -98,7 +98,7 @@ The procedure is as follows:
 1. Transform with JSONata
 
    Rhize has a built-in [JSONata]({{< relref "../latest/how-to/bpmn/use-jsonata" >}}) interpreter, which can filter and transform JSON.
-   Use a [JSONata service task]({{< relref "../latest/how-to/bpmn/bpmn-elements">}}#jsonata-transform) to map the data sources into the corresponding ISA-95 fields that you defined on the previous step.
+   Use a [JSONata service task]({{< relref "../latest/how-to/bpmn/bpmn-elements" >}}#jsonata-transform) to map the data sources into the corresponding ISA-95 fields that you defined on the previous step.
   
    Use the output as a variable for the next step.
    
@@ -131,7 +131,7 @@ After the batch finishes, use a [GraphQL query]({{< relref "../latest/how-to/gql
 You only need one precise request to return exactly the data you specify.
 
 {{< figure
-alt="Diagram showing how a query makes an ebr"
+alt="Diagram showing how a query makes an eBR"
 src="/images/ebr/diagram-rhize-make-ebr-query.png"
 width="55%"
 >}}

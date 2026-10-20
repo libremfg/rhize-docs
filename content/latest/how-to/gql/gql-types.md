@@ -78,7 +78,7 @@ String properties have the following filters:
 | `anyoftext`                    | A match for any entered strings, separated by spaces      | `(filter: {id: {anyoftext: "100 MD"}})`          |
 | `alloftext`                    | A match for all entered strings                           | `(filter: {id {alloftext: "MD"}})`               |
 
-### Integers, floats, DateTimes
+### Integers, floats, datetimes
 
 Properties that have a type of `Int`, `Float`, or `DateTime` can be filtered by the following keywords.
 

@@ -103,7 +103,7 @@ The `isMadeOf` relationship provides a way to organize equipment in its hierarch
 This structure often mimics the spatial hierarchy of the plant or the social hierarchy of the organization.
 
 Besides this, the `isMadeOf` relationship provides a way to do the following:
-- **Set required assemblies for sub items**. For example, a process specifies a `Sweeteners storage center` it also logically specifies the equipment that that storage center contains (e.g. `silos`)
+- **Set required assemblies for sub items**. For example, a process specifies a `Sweeteners storage center` it also logically specifies the equipment that the storage center contains (e.g. `silos`)
 - **Query and compare work by zone of interest.** For example, you could compare performance across all packing lines by querying the parent center. 
 - **Provide a view of the manufacturing operation that is intelligible from the business perspective.**
 The equipment model focuses on the production of new material, not individual controls.  

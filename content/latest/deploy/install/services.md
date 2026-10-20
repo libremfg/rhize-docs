@@ -390,7 +390,7 @@ Install Agent with these steps:
 1. Modify the Agent Helm overrides as needed.
 
 1. In the Rhize UI, add a Data Source for Agent to interact with:
-    - In the lefthand menu, open **Master Data > Data Sources > + Create Data Source**.
+    - In the left-hand menu, open **Master Data > Data Sources > + Create Data Source**.
     - Input a name for the Data Source.
     - Add a Connection String and Create.
     - Add any relevant Topics.

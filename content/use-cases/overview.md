@@ -45,7 +45,7 @@ With the combination of its event-driven architecture and unified data model, Rh
 - Execute dynamic workflows.
 
 Besides building bespoke frontends, many operators choose to integrate Rhize with low-code systems like Appsmith.
-For some problems, lowcode models can reduce the time to create applications dramatically, making it easier to create and test prototypes, involve more stakeholders in the application design process, iterate on working models, and generally do useful things more quickly.
+For some problems, low-code models can reduce the time to create applications dramatically, making it easier to create and test prototypes, involve more stakeholders in the application design process, iterate on working models, and generally do useful things more quickly.
 
 Guides: [Model production]({{< relref "../latest/how-to/model" >}}), [Connect process data]({{< relref "../latest/how-to/publish-subscribe" >}}).
 
@@ -61,6 +61,6 @@ Guide: [Handle events]({{< relref "../latest/how-to/bpmn" >}})
 
 ## Calculating OEE
 
-Rhize includes an optional KPI service which can calculate OEE. Using a combintion of Rhize Workflows and Real-time event handling. Data can be transformed and persisted to a time series database in a format that allows the KPI sercvice to calculate key metrics.
+Rhize includes an optional KPI service which can calculate OEE. Using a combination of Rhize Workflows and Real-time event handling. Data can be transformed and persisted to a time series database in a format that allows the KPI service to calculate key metrics.
 
 Guide: [KPI Service]({{< relref "../latest/how-to/kpi-service" >}})

@@ -56,7 +56,7 @@ Every entity. Every relationship. Out of the box. All of the resources and proce
 
 Far too many manufacturers find out all too late that the software they purchased came with all sorts of limitations.
 
-Data limits, user limits, connection limits. Extra to access the API, often at a very high additional cost, etc etc.
+Data limits, user limits, connection limits. Extra to access the API, often at a very high additional cost, etc.
 
 Here at Rhize, we make licensing straight forward. One license per site. Full access. No add-ons. No caps.
 

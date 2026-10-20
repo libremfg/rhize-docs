@@ -66,7 +66,7 @@ end
 
 ## Implement OEE in Rhize
 
-### Pre Requisties
+### Prerequisites
 
 Before you start, ensure you have the following:
 - Rhize installed and configured, including timeseries tools
@@ -140,7 +140,7 @@ Including:
     throw-->e((end))
     ```
 
-- Trigger a BPMN workflow when the produced quantity value changes to perist the value to timeseries
+- Trigger a BPMN workflow when the produced quantity value changes to persist the value to timeseries
 
     ```pseudocode
     TriggerProperty: QuantityCounter
@@ -170,7 +170,7 @@ In this scenario, a production order is published to the MQTT server. The Rhize 
 
 The production order contains information such as operations, materials produced, and consumed and any particular equipment requirements.
 It includes the planned rate of production for each operation, added as a job order parameter.
-The import workflow listens for the order to be published to NATS, then maps the data into ISA95 entities, and perists to the graph database.
+The import workflow listens for the order to be published to NATS, then maps the data into ISA95 entities, and persists to the graph database.
 
 Workflow NATS_ImportOrder:
 
@@ -237,7 +237,7 @@ Using the KPI Queries, we can create Grafana dashboards which may look as follow
 
 {{< bigFigure
 src="/images/oee/oee-dashboard.png"
-alt="A diagram showing the an example of an OEE dashboard in Grafana. It includes key metrics such as Availability, Performance, Quality, Quantites produced and an overall OEE figure"
+alt="A diagram showing the an example of an OEE dashboard in Grafana. It includes key metrics such as Availability, Performance, Quality, quantities produced and an overall OEE figure"
 caption="A diagram showing an example KPI dashboard in Grafana."
 width="90%"
 >}}

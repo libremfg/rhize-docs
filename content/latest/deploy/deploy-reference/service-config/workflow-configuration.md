@@ -45,7 +45,7 @@ over TLS.
 
 | Value | Description |
 | --- | --- |
-| **`logging.level`** | <ul><li>Minimum log level: `trace`, `debug`, `info`, `warn`, `error`, `fatal`, or `panic`. An unparseable value logs a warning and falls back to `trace`.</li><li>Environment variable: `RHIZE_WORKFLOW_LOGGING_LEVEL`</li><li>Default: `debug`</li><li>Example: `info`</li><li>Type: string</li></ul> |
+| **`logging.level`** | <ul><li>Minimum log level: `trace`, `debug`, `info`, `warn`, `error`, `fatal`, or `panic`. An invalid value logs a warning and falls back to `trace`.</li><li>Environment variable: `RHIZE_WORKFLOW_LOGGING_LEVEL`</li><li>Default: `debug`</li><li>Example: `info`</li><li>Type: string</li></ul> |
 | **`logging.type`** | <ul><li>Output format. `json` emits structured JSON to stderr, `multi` writes console format to stderr and JSON to stdout, and anything else falls back to console.</li><li>Environment variable: `RHIZE_WORKFLOW_LOGGING_TYPE`</li><li>Default: `console`</li><li>Example: `console`</li><li>Type: string</li></ul> |
 
 ### `oidc`

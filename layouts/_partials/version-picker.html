@@ -5,6 +5,10 @@
 
 {{- $class := .class | default "hx:h-7 hx:px-2 hx:text-xs hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50" -}}
 {{ $lastVersion := index $versions 0 }}
+{{- /* Rhize: the version lives in content/latest/_index.md (cascade.v).
+   Pages outside /latest and /versions (home, use-cases, releases, ...)
+   have no v of their own, so they count as latest. */ -}}
+{{- $current := page.Params.v | default (site.GetPage "/latest").Params.v | default $lastVersion -}}
 
 {{- $page := .context -}}
 {{- $iconName := .iconName | default "clock" -}}
@@ -42,7 +46,7 @@
       <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize">
         {{- partial "utils/icon" (dict "name" $iconName "attributes" (printf "height=%d" $iconHeight)) -}}
 
-        {{- if not $hideLabel }}<span>{{if eq page.Params.V $lastVersion}}{{ page.Params.V }} (latest){{else}}{{ page.Params.V }} {{ end }}</span>{{ end -}}
+        {{- if not $hideLabel }}<span>{{if eq $current $lastVersion}}{{ $current }} (latest){{else}}{{ $current }} {{ end }}</span>{{ end -}}
       </div>
     </button>
     <ul
@@ -63,7 +67,7 @@
             class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
           >
             {{- . -}}
-            {{- if eq . page.Params.V -}}
+            {{- if eq . $current -}}
               <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3">
                 {{- partial "utils/icon" (dict "name" "check" "attributes" "height=1em width=1em") -}}
               </span>

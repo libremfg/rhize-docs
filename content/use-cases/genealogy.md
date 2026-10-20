@@ -162,7 +162,7 @@ const option = {
   (option.title.text = `Example frontend:\nreverse genealogy of ${option.series[0].data[0].name}`);
 ```
 
-_Data from a Rhize query in an Apache Echart. Read the [Build frontend](#frontend) section for details._
+_Data from a Rhize query in an Apache ECharts chart. Read the [Build frontend](#frontend) section for details._
 
 
 ## Quick query
@@ -580,7 +580,7 @@ For example, you might represent the genealogy in any of the following ways:
 
 For a visual example, the interactive chart in the introduction takes the data from the preceding reverse-genealogy query,
 transforms it with a [JSONata expression]({{< relref "../latest/how-to/bpmn/use-jsonata" >}}), and visualizes the relationship using 
-[Apache echarts](https://echarts.apache.org/).
+[Apache ECharts](https://echarts.apache.org/).
 
 The JSONata expression accepts an array of material lots,
 then recursively renames all IDs and `isAssembledFrom` properties to `name` and `children`, the data structure expected by the visualization.
@@ -602,7 +602,7 @@ $makeParent($.data.getMaterialLot)
 )
 ```
 
-We've also embedded Echarts in Grafana workspaces to make interactive dashboards for forward and reverse genealogies:
+We've also embedded ECharts in Grafana workspaces to make interactive dashboards for forward and reverse genealogies:
 
 {{< bigFigure
 src="/images/genealogy/screenshot-rhize-genealogy-grafana.png"

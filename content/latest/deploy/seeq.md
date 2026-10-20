@@ -85,8 +85,8 @@ This is an example configuration.
 ### Standard Rhize Additional Configuration
 | Property Name | Default Value | Data Type | Description |
 |:---|:---|:---|:---|
-| ApiUrl | null | String | The url to Rhize's backend. |
-| AuthUrl | null | String | The url to Keycloak. |
+| ApiUrl | null | String | The URL of Rhize's backend. |
+| AuthUrl | null | String | The URL of Keycloak. |
 | ClientId | null | String | The ID for the configured Seeq client. |
 | ClientSecret | null | String | The secret for the configured Seeq client. |
 | Realm | null | String | The realm for Rhize's Keycloak configuration. |
