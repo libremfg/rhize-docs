@@ -32,6 +32,10 @@ _No changes. Releasing in step with other components._
 
 _No changes. Releasing in step with other components._
 
+### Portal
+
+_No changes. Releasing in step with other components._
+
 ### Typescript host service
 
 _No changes. Releasing in step with other components._
