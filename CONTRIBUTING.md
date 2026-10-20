@@ -5,13 +5,16 @@ How to contribute to the Rhize docs.
 ## New version
 
 Rhize docs are versioned.
-The process to make a new version involves archiving the old page to `content/versions` and updating frontmatter.
+The process to make a new version involves archiving the old page to `content/versions`, updating frontmatter,
+and adding data files for version checksums and compatibility.
 
 Don't do this manually. Instead use the script:
 
 ```bash
-./scripts/new-version.sh {NEW VERSION} #  (e.g. 4.4.1)
+./scripts/new-version.sh {NEW VERSION} # (e.g. 4.4.1)
 ```
+
+**Be sure to update checksums and version compatibility**
 
 
 ## Create new page
