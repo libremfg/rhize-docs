@@ -2,6 +2,7 @@
 description: User guides, deploy docs, references, and deep dives about the
   Rhize manufacturing data hub.
 cascade:
+  v: "4.5.2"
   type: "docs"
 ---
 

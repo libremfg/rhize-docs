@@ -1,0 +1,31 @@
+## Admin
+registry.gitlab.com/libremfg/frontend/libre-admin-ui:v4.5.2
+sha256:7e9db17d4d48916314f594343ac02aa2ee4eff01d55900027052a2af656b6c3e
+
+## BAAS
+registry.gitlab.com/libremfg/baas:v4.5.2
+sha256:9c19686e3359533049d886285f8df16a146faab077275087b7b8039f4aa594ea
+
+## Libre Agent
+registry.gitlab.com/libremfg/libre-agent:v4.5.2
+sha256:a282650dfbce9c8cc0191f928b6a5034c59f9a3cd6977ec8fd164f9839bf84ad
+
+## Libre Keycloak Theme
+registry.gitlab.com/libremfg/frontend/libre-keycloak-theme:v4.5.2
+sha256:663c922d17a876bfceea62aca83c8141960358859ed12af1f0ebda10ce9654e7
+
+## ISA-95
+registry.gitlab.com/libremfg/isa95:v4.5.2
+sha256:101513cdc26155e3ed63977eb7f4ed8a5c362c449dcc0303fc9b8c90ceb86603
+
+## Rhize Portal
+registry.gitlab.com/libremfg/rhize-portal:v4.5.2
+sha256:49d18a8e141689030a176d1784a1434eff3000b0ea43578dc166abbc6df67071
+
+## Typescript Host
+registry.gitlab.com/libremfg/typescript-host-service:v4.5.2
+sha256:374439cc8238bd38d305acc043f3a728a516c8308dfe1fa3b33b9b7ba8117eda
+
+## Workflow
+registry.gitlab.com/libremfg/workflow:v4.5.2
+sha256:dab8b4e4e1b877ef377fc7c77558b0193751f5d1ad730cc764e772910b932877
