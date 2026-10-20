@@ -26,7 +26,7 @@ Since it comes with all the necessary backend components—message handling, log
 
 {{< bigFigure
 width="75%"
-alt="simplified mdh"
+alt="simplified MDH"
 src="/images/arch/diagram-rhize-simplified-mdh.png"
 >}}
 

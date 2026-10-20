@@ -107,12 +107,12 @@ The 8 major activities of a MOM are as follows:
 * **Production dispatching:** How will the plant assign the available resources to produce the schedule? Once the schedule is received, the level-3 system can assign resources to orders by referencing the definitions and capabilities.
 * **Production execution management:** How does the plant execute the order?
 * **Production data collection:** What data is emitted and stored during execution?
-* **Production tracking:** What components and actions went into production? For example, [EBR](https://docs.rhize.com/use-cases/ebr/), [Genealogy](https://docs.rhize.com/use-cases/genealogy/), and Track and Trace are all use-cases of production tracking.
+* **Production tracking:** What components and actions went into production? For example, [eBR](https://docs.rhize.com/use-cases/ebr/), [Genealogy](https://docs.rhize.com/use-cases/genealogy/), and Track and Trace are all use-cases of production tracking.
 * **Production performance analysis:** How well did the actual production run go, as compared to its ideal? For example, measures of OEE, deviation analysis, and golden batches are all use-cases of performance analysis.
 
 To make sense of these activities, you also need to have a concept of the relationship between planned and performed work.
 
-## The categories of manufacturing operations mangement
+## The categories of manufacturing operations management
 
 Each of the activities described in the preceding section can apply to any of the four _categories_ of manufacturing operations management defined by ISA-95:
 

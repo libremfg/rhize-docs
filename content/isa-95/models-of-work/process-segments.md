@@ -51,7 +51,7 @@ Operational functions include:
 
 You can also use process segments in various analytical functions, such as:
 - Comparing different product processes that are all derived from a common procedure.
-  For example, the mixing segment might [correspond to](#correspond-) to the production of `mixed red juice` and `mixed blue juice`.
+  For example, the mixing segment might [correspond](#correspond-) to the production of `mixed red juice` and `mixed blue juice`.
 - Viewing data and parameters for similar steps in a single aggregation.
   For example, you might compare the average time of all jobs associated with `mixing` against the other segments to find a general process bottleneck.
 
@@ -159,7 +159,7 @@ flowchart LR
 ### Dependency
 
 In some instances, you might need to strictly model the order in which some or all steps happen.
-For this, use _segment dependancies_.
+For this, use _segment dependencies_.
 
 Segment dependencies become more important when steps might be executed in parallel or dynamically.
 The dependency ensures nothing happens too early.
