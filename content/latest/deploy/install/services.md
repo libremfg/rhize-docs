@@ -380,7 +380,7 @@ port.
 
 ## Install Agent
 
-The Rhize agent bridges your plant processes with the Rhize data hub.
+The Rhize agent bridges your plant telemetry with the Rhize data hub.
 It collects data emitted from the plant and publishes it to the message broker.
 
 > **Requirements:** Agent requires the [Graph DB](#db), [Tempo](#tempo), Redpanda, and an event broker service to communicate with.
