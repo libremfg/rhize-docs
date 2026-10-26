@@ -278,9 +278,13 @@ Install Workflow with these steps:
 
 ### Portal
 
-The portal provdes a gateway to different Rhize sites.
 
-Install with helm:
+> **Requirements**: The portal service requires [{{< param db >}}](#db)
+> to store configuration.
+
+The portal provides a gateway to your Rhize sites and custom apps.
+
+Install with Helm:
 
 ```bash
 helm install portal -f portal.yaml libre/portal -n libre
