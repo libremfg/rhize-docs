@@ -14,6 +14,8 @@
 Is an MDH like a kind of middleware? It certainly does sit …
 
 ### Deploy
+- [About Rhize services](https://docs.rhize.com/latest/deploy/about-rhize-services/): An overview of the Rhize services and the function each one plays | This document covers the major components of Rhize&rsquo;s architecture and services.
+Core Rhize …
 - [Upgrade](https://docs.rhize.com/latest/deploy/upgrade/): How to upgrade Rhize | This guide shows you how to upgrade Rhize.
 Back up first Before upgrading, consider backing up your … - Published 2023-10-18
 - [Connect to Seeq](https://docs.rhize.com/latest/deploy/seeq/): How to use Seeq with Rhize | The Rhize Connector enables Seeq to access data from Rhize.
@@ -600,7 +602,7 @@ As of … - Published 2023-09-22
 - [Observability metrics](https://docs.rhize.com/versions/v4.4.0/reference/observability-metrics/): Metrics from the Rhize microservices, collected by Prometheus. | Rhize uses Prometheus to monitor metrics from many of its microservices. For the Kubernetes cluster, …
 - [GraphQL types and filters](https://docs.rhize.com/versions/v4.4.0/reference/gql-types/): A reference of the data types in the Rhize API and of the filters available for each type. | This page provides a reference of the data types enforced by the Rhize database schema, and of the …
 - [Glossary](https://docs.rhize.com/versions/v4.4.0/reference/glossary/): A list of terms relevant to Rhize, or that are frequently used in manufacturing contexts. | The manufacturing industry has many specialized terms—and many abbreviations. This glossary is a … - Published 2023-09-12
-- [](https://docs.rhize.com/versions/v4.4.0/reference/faq/):  | Document TitleMANUFACTURING DATA HUB
+- [](https://docs.rhize.com/versions/v4.4.0/reference/faq/):  | Document Title MANUFACTURING DATA HUB
 FAQ&rsquo;s #1 Is an MDH like a kind of middleware?
 It …
 
@@ -1835,5 +1837,5 @@ A …
 
 
 ---
-Generated on 2026-10-26 22:42:07 UTC
+Generated on 2026-11-04 19:30:02 UTC
 Site: https://docs.rhize.com/
