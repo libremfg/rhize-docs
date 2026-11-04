@@ -9,27 +9,15 @@ weight: 1
 
 This document covers the major components of Rhize's architecture and services.
 
-
 {{< bigFigure
 width="75%"
 alt="rhize services and interaction"
 src="/images/arch/rhize-service-architecture.png"
 >}}
 
-
-## Core Rhize infrastructure
+## Core backend infrastructure
 
 The following services are the key components of the Rhize backend.
-
-- **Kubernetes.**
-    Rhize deploys on Kubernetes. Manufacturing is data-intensive, and outages can have severe consequences.
-    Kubernetes is a robust, battle-tested way to achieve high availability and scalability.
-
-    As a de facto standard, Kubernetes has a diverse ecosystem, providing many tools and resources to extend and learn about the system.
-
-    Rhize is agnostic about whether you deploy on-premises or in the cloud.
-
-    For local testing, we also offer customers a Docker Compose environment.
 
 -  **RhizeDB (BaaS).**
     An ACID-compliant graph database, exposed to users through a GraphQL API.
@@ -53,6 +41,16 @@ The following services are the key components of the Rhize backend.
     - **Concurrency control.** Restate ensures data integrity and idempotency for parallel processing.
     - **Decoupling.** Rhize services communicate through Restate's durable execution engine rather than directly with each other. This reduces complexity and ensures redelivery if a service is unavailable.
     - **Extensibility.** Users can write Restate handlers to deploy custom services.
+    
+    
+- **Kubernetes.**
+    Rhize deploys on Kubernetes. Manufacturing is data-intensive, and outages can have severe consequences.
+    Kubernetes is the core infrastructure for high availability and scalability.
+    As a de facto standard, Kubernetes has a diverse ecosystem, providing many tools and resources to extend and learn about the system.
+
+    Rhize is agnostic about whether you deploy on-premises or in the cloud.
+
+    For local testing, we also offer customers a Docker Compose environment.
 
 ## Rhize frontends
 
