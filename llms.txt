@@ -15,7 +15,7 @@ Is an MDH like a kind of middleware? It certainly does sit …
 
 ### Deploy
 - [About Rhize services](https://docs.rhize.com/latest/deploy/about-rhize-services/): An overview of the Rhize services and the function each one plays | This document covers the major components of Rhize&rsquo;s architecture and services.
-Core Rhize …
+Core backend …
 - [Upgrade](https://docs.rhize.com/latest/deploy/upgrade/): How to upgrade Rhize | This guide shows you how to upgrade Rhize.
 Back up first Before upgrading, consider backing up your … - Published 2023-10-18
 - [Connect to Seeq](https://docs.rhize.com/latest/deploy/seeq/): How to use Seeq with Rhize | The Rhize Connector enables Seeq to access data from Rhize.
@@ -1837,5 +1837,5 @@ A …
 
 
 ---
-Generated on 2026-11-04 19:30:02 UTC
+Generated on 2026-11-04 22:36:16 UTC
 Site: https://docs.rhize.com/
