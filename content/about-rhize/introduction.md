@@ -15,23 +15,20 @@ It unites data analysis, event monitoring, and process execution in one platform
 Its interface and architecture conform to your processes.
 We assume nothing about what your operations looks like.
 
-Rhize has only one strong opinion: all operational data that is persisted modeled on the [ISA-95 standard](https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa95).
+As a default, Rhize ships a schema to model all operational data on the [ISA-95 standard](https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa95).
 This standards-based schema is how Rhize connects every data event across an entire operation.
-If you aren't an ISA-95 fan, we're [happy to convert you](https://university.rhize.com), but you must adopt it to use the platform.
 
-And if you do adopt ISA-95, you open your organization to Rhize's far-reaching transformations.
+However, if you want to swap or extend schemas, Rhize's modular architecture is ready to support the data model you need.
 
-## A data hub for manufacturing
+## A data hub for manufacturing apps
 
 Rhize is a data hub that collects, stores, integrates, and processes data from your manufacturing system.
 Rhize accepts the _event_ as the driver of change in a manufacturing operation.
 Its architecture is designed to receive and process message events emitted from the operation in real time.
 
-To make each event coherent in the context of all others, the event object must conform to a standard.
-Rhize uses the ISA-95 standard as its data model, and the database schema is the most complete digital representation of ISA-95 in the world.
-The flexibility of ISA-95 scales to an entire enterprise operation, and future changes in processes require no ad-hoc changes of the schema.
+As a default, Rhize uses the ISA-95 standard as its data model.
+Operational data is represented a single graph, a structure ideally suited for the node and edge associations that link every element of a manfafcturing operation.
 
-The database represents data as a single graph, a structure ideally suited for the node and edge associations inherent in ISA-95.
 The database is exposed through a single GraphQL endpoint.
 Besides keeping the interface small, the GraphQL query language aligns exactly with the underlying graph model.
 
@@ -50,8 +47,8 @@ Even within the same company and segment, processes often differ from site to si
 Our design philosophy empowers manufacturing operators to shape their tool for their work demands.
 Some examples of the flexibility include:
 
-- **A headless MES**. While Rhize has a graphical interface, all data is reachable through a single API endpoint. This means your teams can rapidly build custom frontends―and do it with the most comfortable API for frontend development, GraphQL.
-- **Low-code interface**. Model your schema and execute processes using BPMN, a visual programming language. The visual interface makes Rhize and your manufacturing automation accessible to the widest possible audience.
+- **A headless application platform for secure, custom apps**. While Rhize has a graphical interface, all data is reachable through a single API endpoint. This means your teams and agents can rapidly build custom frontends―and do it with the most comfortable API for frontend development, GraphQL.
+- **Graphical presentation of operational processes**. Model your schema and execute processes using BPMN, a visual programming language. The visual interface makes Rhize and your manufacturing automation accessible to the widest possible audience.
 - **Generic data collection**. Rhize receives data from all levels of the manufacturing process. The broker publishes and subscribes to low-level data from [MQTT](https://mqtt.org/) and [OPC-UA](https://opcfoundation.org/about/opc-technologies/opc-ua/), but the database can also receive ERP inventories and documents sent over HTTP.
 
 [Read about use cases]({{< relref "../use-cases" >}}).
@@ -69,6 +66,6 @@ In practice, this means that Rhize is interoperable with whatever system the man
 deployment is version-controlled, and your system can use rolling upgrades with zero downtime.
 
 - **Built on open standards.**
-Rhize is based on open standards, like ISA-95, and open protocols, like Apache Kafka.
+Rhize is based on open standards and protocols.
 Open industry standards and protocols ensure that the application and your manufacturing processes speak a common language.
 Rhize heavily uses open-source software, which brings interoperability, reduced vendor lock, and robust tooling ecosystems.
