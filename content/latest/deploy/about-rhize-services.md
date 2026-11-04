@@ -5,6 +5,9 @@ description: An overview of the Rhize services and the function each one plays
 draft: false
 categories: ["concepts"]
 weight: 1
+params:
+  images:
+    - "/images/arch/rhize-service-architecture.png"
 ---
 
 This document covers the major components of Rhize's architecture and services.
