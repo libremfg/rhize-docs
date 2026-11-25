@@ -126,6 +126,9 @@ As of … - Published 2023-09-22
 In …
 
 ## Release notes
+- [4.6.0](https://docs.rhize.com/releases/4-6-0/): Release notes for v4.6.0 of the Rhize application | Release notes for version 4.6.0 of the Rhize application.
+Highlights for this release include:
+The … - Published 2026-11-25
 - [4.5.2](https://docs.rhize.com/releases/4-5-2/): Release notes for v4.5.2 of the Rhize application | Release notes for version 4.5.2 of the Rhize application.
 This release brings:
 Changes to paginate … - Published 2026-10-20
@@ -1837,5 +1840,5 @@ A …
 
 
 ---
-Generated on 2026-11-25 15:51:51 UTC
+Generated on 2026-11-25 22:44:37 UTC
 Site: https://docs.rhize.com/
